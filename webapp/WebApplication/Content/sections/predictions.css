@@ -126,10 +126,9 @@
   height: auto;
 }
 .calendar-grid .calendar-day img {
-  max-width: 72px;
-  padding: 9px;
-  padding-left: 11px;
-  padding-top: 3px;
+  max-width: 63px;
+  padding: 3px;
+  padding-left: 3px;
 }
 .calendar-grid .calendar-day.current {
   background-color: #e6e6e6;
@@ -242,6 +241,15 @@
   flex-direction: column;
   align-items: flex-start;
   min-width: 50px;
+}
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.extra-narrow {
+  flex: 0 0 72px;
+}
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.extra-narrow img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  max-width: 90px;
 }
 .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.narrow {
   flex: 0 0 150px;

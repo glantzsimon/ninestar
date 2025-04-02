@@ -7347,6 +7347,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to First Quarter.
+        /// </summary>
+        public static string FirstQuarter {
+            get {
+                return ResourceManager.GetString("FirstQuarter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Each of the 9 Energies is associated with 1 of the 5 elements: Water, Tree, Fire, Earth and Metal, which corresponds to a specific point in the cycle
         ///&lt;/h5&gt;
@@ -7576,6 +7585,15 @@ namespace K9.Globalisation {
         public static string full_feature_list {
             get {
                 return ResourceManager.GetString("full_feature_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full Moon.
+        /// </summary>
+        public static string FullMoon {
+            get {
+                return ResourceManager.GetString("FullMoon", resourceCulture);
             }
         }
         
@@ -9661,6 +9679,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last Quarter.
+        /// </summary>
+        public static string LastQuarter {
+            get {
+                return ResourceManager.GetString("LastQuarter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Late Autumn.
         /// </summary>
         public static string LateAutumn {
@@ -11563,6 +11590,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Moon Phase.
+        /// </summary>
+        public static string MoonPhase {
+            get {
+                return ResourceManager.GetString("MoonPhase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to More About 9 Star Ki.
         /// </summary>
         public static string MoreAboutNineStarKiTitle {
@@ -12058,6 +12094,15 @@ namespace K9.Globalisation {
         public static string NervousSystem {
             get {
                 return ResourceManager.GetString("NervousSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Moon.
+        /// </summary>
+        public static string NewMoon {
+            get {
+                return ResourceManager.GetString("NewMoon", resourceCulture);
             }
         }
         
@@ -17856,6 +17901,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Waning Crescent.
+        /// </summary>
+        public static string WaningCrescent {
+            get {
+                return ResourceManager.GetString("WaningCrescent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waning Gibbous.
+        /// </summary>
+        public static string WaningGibbous {
+            get {
+                return ResourceManager.GetString("WaningGibbous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Water.
         /// </summary>
         public static string Water {
@@ -18449,6 +18512,24 @@ namespace K9.Globalisation {
         public static string Waxing {
             get {
                 return ResourceManager.GetString("Waxing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waxing Crescent.
+        /// </summary>
+        public static string WaxingCrescent {
+            get {
+                return ResourceManager.GetString("WaxingCrescent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waxing Gibbous.
+        /// </summary>
+        public static string WaxingGibbous {
+            get {
+                return ResourceManager.GetString("WaxingGibbous", resourceCulture);
             }
         }
         

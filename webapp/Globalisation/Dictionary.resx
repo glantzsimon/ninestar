@@ -5212,13 +5212,40 @@
   <data name="WorstDirectionsToTravelIn" xml:space="preserve">
     <value>Directions of Travel Summary</value>
   </data>
+  <data name="FirstQuarter" xml:space="preserve">
+    <value>First Quarter</value>
+  </data>
+  <data name="FullMoon" xml:space="preserve">
+    <value>Full Moon</value>
+  </data>
   <data name="Illumination" xml:space="preserve">
     <value>Illumination</value>
+  </data>
+  <data name="LastQuarter" xml:space="preserve">
+    <value>Last Quarter</value>
+  </data>
+  <data name="MoonPhase" xml:space="preserve">
+    <value>Moon Phase</value>
+  </data>
+  <data name="NewMoon" xml:space="preserve">
+    <value>New Moon</value>
   </data>
   <data name="Waning" xml:space="preserve">
     <value>Waning</value>
   </data>
+  <data name="WaningCrescent" xml:space="preserve">
+    <value>Waning Crescent</value>
+  </data>
+  <data name="WaningGibbous" xml:space="preserve">
+    <value>Waning Gibbous</value>
+  </data>
   <data name="Waxing" xml:space="preserve">
     <value>Waxing</value>
+  </data>
+  <data name="WaxingCrescent" xml:space="preserve">
+    <value>Waxing Crescent</value>
+  </data>
+  <data name="WaxingGibbous" xml:space="preserve">
+    <value>Waxing Gibbous</value>
   </data>
 </root>

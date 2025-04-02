@@ -8,12 +8,7 @@
 }
 
 <div class="moon-phase">
-    <div class="moon-wrapper">
+    <div class="moon-wrapper" data-tooltip-title="@Dictionary.MoonPhase" data-tooltip=@($"{Dictionary.Illumination} {Model.IlluminationDisplay} {Model.GetMoonPhaseName()}")>
         <img src="@imagePath" alt="Moon Phase Image" />
     </div>
-    <p class="moon-text">
-        @Dictionary.Illumination: <strong>@($"{Model.IlluminationPercentage:F1}%")</strong>
-        <br />
-        <em>@(Model.IsWaxing ? Dictionary.Waxing : Dictionary.Waning)</em>
-    </p>
 </div>

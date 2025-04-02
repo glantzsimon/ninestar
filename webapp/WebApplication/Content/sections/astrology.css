@@ -5,28 +5,28 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  width: 100%;
 }
 .moon-phase .moon-wrapper {
-  background-color: black;
-  border-radius: 50%;
-  width: 81%;
-  aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
 }
-.moon-phase img {
-  width: 72px;
+.moon-phase .moon-wrapper img {
+  width: 45px;
   height: auto;
-  object-fit: contain;
+  margin-bottom: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .moon-text {
   font-size: 0.8rem;
   color: #ccc;
-  line-height: 1.1;
+  text-align: center;
 }
 .moon-text em {
   font-style: italic;

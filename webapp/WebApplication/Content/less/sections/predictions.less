@@ -145,10 +145,9 @@
         }
 
         img {
-            max-width: 72px;
-            padding: 9px;
-            padding-left: 11px;
-            padding-top: 3px;
+            max-width: 63px;
+            padding: 3px;
+            padding-left: 3px;            
         }
 
         &.current {
@@ -285,6 +284,17 @@
                     flex-direction: column;
                     align-items: flex-start;
                     min-width: 50px;
+
+                    &.extra-narrow {
+                        flex: 0 0 72px;
+                        
+                        img {
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 0.25rem;
+                            max-width: 90px;
+                        }
+                    }
 
                     &.narrow {
                         flex: 0 0 150px;

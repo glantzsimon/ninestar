@@ -7,31 +7,30 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    width: 100%;
 
     .moon-wrapper {
-        background-color: black;
-        border-radius: 50%;
-        width: 81%;
-        aspect-ratio: 1 / 1;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 1rem;
-    }
-
-    img {
-        width: 72px;
-        height: auto;
-        object-fit: contain;
+        width: 100%; // ensure it spans the container
+        text-align: center; // optional but safe
+        img {
+            width: 45px;
+            height: auto;
+            margin-bottom: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto; // this centers inline images
+        }
     }
 }
 
 .moon-text {
     font-size: 0.8rem;
     color: #ccc;
-    line-height: 1.1;
+    text-align: center;
 
     em {
         font-style: italic;

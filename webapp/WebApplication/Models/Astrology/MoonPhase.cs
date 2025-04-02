@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.Globalisation;
 
 namespace K9.WebApplication.Models
 {
@@ -47,13 +48,45 @@ namespace K9.WebApplication.Models
             (100, "100.png")
         };
 
-        public double IlluminationPercentage { get; }
-        public bool IsWaxing { get; }
-
         public MoonPhase(double illuminationPercentage, bool isWaxing)
         {
             IlluminationPercentage = illuminationPercentage;
             IsWaxing = isWaxing;
+        }
+
+        public double IlluminationPercentage { get; }
+
+        public bool IsWaxing { get; }
+
+        public string IlluminationDisplay => $"{IlluminationPercentage:F1}%";
+
+        public string GetMoonPhaseName()
+        {
+            double illum = IlluminationPercentage;
+
+            if (illum == 0)
+                return Dictionary.NewMoon;
+            if (illum == 100)
+                return Dictionary.FullMoon;
+
+            if (IsWaxing)
+            {
+                if (illum < 50)
+                    return Dictionary.WaxingCrescent;
+                else if (illum == 50)
+                    return Dictionary.FirstQuarter;
+                else
+                    return Dictionary.WaxingGibbous;
+            }
+            else
+            {
+                if (illum > 50)
+                    return Dictionary.WaningGibbous;
+                else if (illum == 50)
+                    return Dictionary.LastQuarter;
+                else
+                    return Dictionary.WaningCrescent;
+            }
         }
 
         public string GetMoonPhaseImageFile()

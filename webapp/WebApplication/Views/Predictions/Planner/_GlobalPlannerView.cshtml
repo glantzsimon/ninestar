@@ -7,6 +7,7 @@
 
 @{
     var activeChild = Model.Energies.FirstOrDefault(e => e.IsActive);
+    var periodDatesText = string.IsNullOrEmpty(Model.PeriodDatesDetails) ? "" : $"{Model.PeriodDatesDetails} |";
 }
 
 <div class="container main-content clear-both global-planner-container">
@@ -47,12 +48,17 @@
                 <div class="parent-summary-row clickable">
                     <div class="parent-label">
                         <div class="parent-title">@Model.PeriodDatesTitle</div>
-                        <div class="parent-dates">@Model.PeriodDatesDetails</div>
-                        <div class="parent-dates age-details">@Model.PeriodAgesDetails</div>
+                        <div class="parent-dates">@periodDatesText <strong>@Model.PeriodAgesDetails</strong></div>
                     </div>
                     <div class="parent-detail narrow">
                         <img loading="lazy" title="@Model.Energy.EnergyName" alt="@Model.ImgAlt" class="auto-size center-block" src="@Model.ImgSrc" />
                     </div>
+                    @if (Model.View == EPlannerView.Day)
+                    {
+                        <div class="parent-detail extra-narrow">
+                            @Html.Partial("~/Views/Astrology/_MoonPhase.cshtml", Model.MoonPhase)
+                        </div>
+                    }
                     <div class="parent-detail wide">
                         <div>
                             <h4 class="margin-0">@Model.Energy.HouseName</h4>
@@ -60,12 +66,6 @@
                         <div>
                             @Model.Energy.SeasonDescription / @Model.Energy.CycleDescriptiveName
                         </div>
-                        @if (Model.View == EPlannerView.Day)
-                        {
-                            <div>
-                                @Html.Partial("~/Views/Astrology/_MoonPhase.cshtml", Model.MoonPhase)
-                            </div>
-                        }
                     </div>
                     <div class="parent-detail wide level-up">
                         <div>

@@ -244,6 +244,7 @@
 }
 .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.extra-narrow {
   flex: 0 0 72px;
+  margin-right: 22px;
 }
 .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.extra-narrow img {
   height: 100%;

@@ -677,7 +677,7 @@ namespace K9.WebApplication.Services
             return localSegments.OrderBy(e => e.LocalStart).ToArray();
         }
 
-        public double GetMoonIlluminationPercentage(DateTime selectedDateTime, string timeZoneId)
+        public MoonPhase GetMoonIlluminationPercentage(DateTime selectedDateTime, string timeZoneId)
         {
             using (var sweph = new SwissEph())
             {
@@ -700,7 +700,7 @@ namespace K9.WebApplication.Services
                 if (retMoon < 0)
                     throw new Exception("Error calculating Moon position: " + serr);
 
-                // Get the ecliptic longitudes (in degrees).
+                // Get the ecliptic longitudes (in degrees)
                 double sunLong = xxSun[0];
                 double moonLong = xxMoon[0];
 
@@ -714,12 +714,19 @@ namespace K9.WebApplication.Services
 
                 // Compute illuminated fraction.
                 double illuminatedFraction = (1 - Math.Cos(phaseAngleRad)) / 2.0;
+                double illuminationPercentage = illuminatedFraction * 100.0;
 
-                // Return as a percentage.
-                return illuminatedFraction * 100.0;
+                // Determine waxing or waning.
+                // Calculate the raw difference (in degrees) and adjust it to [0,360).
+                double diff = (moonLong - sunLong) % 360;
+                if (diff < 0)
+                    diff += 360;
+                // If the difference is less than 180, then the Moon is waxing; otherwise it's waning.
+                bool isWaxing = diff < 180;
+
+                return new MoonPhase(illuminationPercentage, isWaxing);
             }
         }
-
 
         /// <summary>
         /// Generates fixed 2‑hour segments in UTC (with boundaries at 1:00, 3:00, etc.) over an extended range.

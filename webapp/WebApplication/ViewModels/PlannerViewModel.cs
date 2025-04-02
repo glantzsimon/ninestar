@@ -29,7 +29,7 @@ namespace K9.WebApplication.ViewModels
         public List<PlannerViewModelItem> Energies { get; set; }
         public string UpdateParentUrl { get; set; }
         public string UpdateChildUrl { get; set; }
-        public double MoonIlluminationPercentage { get; set; }
+        public MoonPhase MoonPhase { get; set; }
 
         public string SelectedDateTimeString => SelectedDateTime.ToAjaxDateTimeString();
 
@@ -50,7 +50,7 @@ namespace K9.WebApplication.ViewModels
         public string PeriodAgesDetails => GetPeriodAgeDetails();
 
         public EPlannerView ChildView => GetChildView();
-
+        
         public string GetEnergyTitle(PlannerViewModelItem energy)
         {
             switch (View)

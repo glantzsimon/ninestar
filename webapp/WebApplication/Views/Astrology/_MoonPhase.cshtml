@@ -1,7 +1,13 @@
-﻿@using K9.WebApplication.Helpers
-@model double
+﻿@using System.Globalization
+@using K9.WebApplication.Config
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.MoonPhase
 
-<div class="moon-phase" data-fullness="@Model>
-    <div class="moon-light"></div>
-    <div class="moon-shadow"></div>
+@{
+    string imagePath = Url.Content($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/astrology/moon-phases/{Model.GetMoonPhaseImageFile()}");
+}
+
+<div class="moon-phase">
+    <img src="@imagePath" alt="Moon Phase Image" />
+    <p>Illumination: @Model.IlluminationPercentage:F1% (@(Model.IsWaxing ? "Waxing" : "Waning"))</p>
 </div>

@@ -143,3 +143,15 @@ Show global predictions in tab
 Cycles - click on energies, display tab / info below
 
 --
+
+Add birth time and time zone to MyAccount. - Add UserData model
+
+--
+
+Add moon phase text to the daily calendar
+
+-
+
+Check out AI engines for blending all the different cycles and profile together
+
+--

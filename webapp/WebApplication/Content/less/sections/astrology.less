@@ -1,31 +1,12 @@
-﻿@import "../config/colours.less";
-
-@moon-size: 100px;
-@moon-bg: radial-gradient(circle, #fff 80%, #ccc 100%);
-@moon-shadow: #1a1a1a;
+﻿@import "../config/paths.less";
+@import "../config/colours.less";
 
 .moon-phase {
-    position: relative;
-    width: @moon-size;
-    height: @moon-size;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
 
-    .moon-light {
-        position: absolute;
-        inset: 0;
-        background: @moon-bg;
-        border-radius: 50%;
-        z-index: 1;
-    }
-
-    .moon-shadow {
-        position: absolute;
-        inset: 0;
-        background: @moon-shadow;
-        border-radius: 50%;
-        z-index: 2;
-        transform-origin: left center;
-        transition: transform 0.3s ease;
+    img {
+        width: 100%;
+        height: auto;
     }
 }

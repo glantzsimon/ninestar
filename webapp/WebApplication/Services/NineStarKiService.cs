@@ -313,8 +313,7 @@ namespace K9.WebApplication.Services
 
                 if (view == EPlannerView.Day)
                 {
-                    plannerModel.MoonIlluminationPercentage =
-                        _swissEphemerisService.GetMoonIlluminationPercentage(selectedDateTime, userTimeZoneId);
+                    plannerModel.MoonPhase = _swissEphemerisService.GetMoonIlluminationPercentage(selectedDateTime, userTimeZoneId);
                 }
 
                 var localNow = nineStarKiModel.GetLocalNow();
@@ -484,10 +483,9 @@ namespace K9.WebApplication.Services
 
                             var isActive = dailyEnergy.Day.Date == localNow.Date;
 
-                            var moonIlluminationPercentage =
-                                _swissEphemerisService.GetMoonIlluminationPercentage(dailyEnergy.Day, userTimeZoneId);
+                            var moonPhase = _swissEphemerisService.GetMoonIlluminationPercentage(dailyEnergy.Day.Date, userTimeZoneId);
 
-                            energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isActive, EPlannerView.Day, moonIlluminationPercentage));
+                            energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isActive, EPlannerView.Day, moonPhase));
                         }
 
                         if (navigationDirection != EPlannerNavigationDirection.None)

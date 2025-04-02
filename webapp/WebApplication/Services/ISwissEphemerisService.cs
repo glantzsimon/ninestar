@@ -1,4 +1,5 @@
 ﻿using System;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Services
 {
@@ -53,6 +54,7 @@ namespace K9.WebApplication.Services
 
         DateTime GetLichun(DateTime selectedDateTime, string timeZoneId);
 
-        double GetMoonIlluminationPercentage(DateTime selectedDateTime, string timeZoneId);
+        MoonPhase GetMoonIlluminationPercentage(DateTime selectedDateTime,
+            string timeZoneId);
     }
 }

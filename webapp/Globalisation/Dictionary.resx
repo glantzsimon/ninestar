@@ -5212,4 +5212,13 @@
   <data name="WorstDirectionsToTravelIn" xml:space="preserve">
     <value>Directions of Travel Summary</value>
   </data>
+  <data name="Illumination" xml:space="preserve">
+    <value>Illumination</value>
+  </data>
+  <data name="Waning" xml:space="preserve">
+    <value>Waning</value>
+  </data>
+  <data name="Waxing" xml:space="preserve">
+    <value>Waxing</value>
+  </data>
 </root>

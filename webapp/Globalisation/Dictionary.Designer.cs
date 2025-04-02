@@ -8623,6 +8623,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Illumination.
+        /// </summary>
+        public static string Illumination {
+            get {
+                return ResourceManager.GetString("Illumination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In any direction, as {Energy} is at the centre.
         /// </summary>
         public static string InAnyDirection {
@@ -17838,6 +17847,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Waning.
+        /// </summary>
+        public static string Waning {
+            get {
+                return ResourceManager.GetString("Waning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Water.
         /// </summary>
         public static string Water {
@@ -18422,6 +18440,15 @@ namespace K9.Globalisation {
         public static string WaterElement {
             get {
                 return ResourceManager.GetString("WaterElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waxing.
+        /// </summary>
+        public static string Waxing {
+            get {
+                return ResourceManager.GetString("Waxing", resourceCulture);
             }
         }
         

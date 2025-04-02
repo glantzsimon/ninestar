@@ -8,35 +8,43 @@ namespace K9.WebApplication.Models
     {
         private static List<(double Illum, string File)> waxingImages = new List<(double Illum, string File)>()
         {
-            (0.4, "wax-0.4.jpg"),
-            (16.8, "wax-16.8.jpg"),
-            (23.6, "wax-23.6.jpg"),
-            (36.7, "wax-36.7.jpg"),
-            (43.1, "wax-43.1.jpg"),
-            (46.7, "wax-46.7.jpg"),
-            (57.9, "wax-57.9.jpg"),
-            (63.2, "wax-63.2.jpg"),
-            (75.3, "wax-75.3.jpg"),
-            (85.7, "wax-85.7.jpg"),
-            (89.5, "wax-89.5.jpg"),
-            (95.3, "wax-95.3.jpg"),
-            (99.7, "wax-99.7.jpg")
+            (0, "0.png"),
+            (0.4, "wax-0.4.png"),
+            (3.3, "wax-3.3.png"),
+            (9, "wax-9.png"),
+            (16.8, "wax-16.8.png"),
+            (26.1, "wax-26.1.png"),
+            (36.3, "wax-36.3.png"),
+            (46.7, "wax-46.7.png"),
+            (57, "wax-57.png"),
+            (66.7, "wax-66.7.png"),
+            (75.5, "wax-75.5.png"),
+            (83.2, "wax-83.2.png"),
+            (89.7, "wax-89.7.png"),
+            (95, "wax-95.png"),
+            (98, "wax-98.png"),
+            (99.7, "wax-99.7.png"),
+            (100, "100.png")
         };
 
         private static List<(double Illum, string File)> waningImages = new List<(double Illum, string File)>()
         {
-            (2.2, "wane-2.2.jpg"),
-            (14.5, "wane-14.5.jpg"),
-            (23.6, "wane-23.6.jpg"),
-            (44.3, "wane-44.3.jpg"),
-            (54.7, "wane-54.7.jpg"),
-            (62.1, "wane-62.1.jpg"),
-            (73.8, "wane-73.8.jpg"),
-            (79.5, "wane-79.5.jpg"),
-            (87.9, "wane-87.9.jpg"),
-            (93.7, "wane-93.7.jpg"),
-            (98.3, "wane-98.3.jpg"),
-            (99.7, "wane-99.7.jpg")
+            (0, "0.png"),
+            (2.2, "wane-2.2.png"),
+            (7.2, "wane-7.2.png"),
+            (14.5, "wane-14.5.png"),
+            (23.6, "wane-23.6.png"),
+            (33.7, "wane-33.7.png"),
+            (44.3, "wane-44.3.png"),
+            (54.7, "wane-54.7.png"),
+            (64.7, "wane-64.7.png"),
+            (73.8, "wane-73.8.png"),
+            (81.9, "wane-81.9.png"),
+            (88.6, "wane-88.6.png"),
+            (97.6, "wane-97.6.png"),
+            (99.6, "wane-99.6.png"),
+            (99.8, "wane-99.8.png"),
+            (100, "100.png")
         };
 
         public double IlluminationPercentage { get; }
@@ -53,12 +61,28 @@ namespace K9.WebApplication.Models
             // Select the correct list based on IsWaxing.
             var candidateImages = IsWaxing ? waxingImages : waningImages;
 
+            // Ensure the list is sorted in ascending order by Illum.
+            candidateImages = candidateImages.OrderBy(x => x.Illum).ToList();
 
+            // If the illumination is lower than or equal to the minimum, return the minimum image.
+            if (IlluminationPercentage <= candidateImages.First().Illum)
+            {
+                return candidateImages.First().File;
+            }
+
+            // If the illumination is greater than or equal to the maximum, return the maximum image.
+            if (IlluminationPercentage >= candidateImages.Last().Illum)
+            {
+                return candidateImages.Last().File;
+            }
+
+            // Otherwise, pick the image with the closest Illum value.
             var bestMatch = candidateImages
                 .OrderBy(x => Math.Abs(x.Illum - IlluminationPercentage))
-                .FirstOrDefault();
+                .First();
 
             return bestMatch.File;
         }
+
     }
 }

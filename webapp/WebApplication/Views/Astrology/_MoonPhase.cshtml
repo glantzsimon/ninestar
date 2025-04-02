@@ -8,6 +8,12 @@
 }
 
 <div class="moon-phase">
-    <img src="@imagePath" alt="Moon Phase Image" />
-    <p>Illumination: @Model.IlluminationPercentage:F1% (@(Model.IsWaxing ? "Waxing" : "Waning"))</p>
+    <div class="moon-wrapper">
+        <img src="@imagePath" alt="Moon Phase Image" />
+    </div>
+    <p class="moon-text">
+        @Dictionary.Illumination: <strong>@($"{Model.IlluminationPercentage:F1}%")</strong>
+        <br />
+        <em>@(Model.IsWaxing ? Dictionary.Waxing : Dictionary.Waning)</em>
+    </p>
 </div>

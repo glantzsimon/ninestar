@@ -1693,6 +1693,9 @@
     <Content Include="Views\NineStarKi\_MagicSquareDisplay.cshtml" />
     <Content Include="Views\Predictions\_DirectionsChart.cshtml" />
     <Content Include="Views\Astrology\_MoonPhase.cshtml" />
+    <Content Include="Views\PersonalChart\_MainEnergyPills.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileFinances.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileSpirituality.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

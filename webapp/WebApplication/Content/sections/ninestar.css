@@ -361,3 +361,24 @@ a > .ninestar-summary-container:hover {
   font-weight: bold;
   font-size: 1rem;
 }
+.traits {
+  margin-bottom: 1.5rem;
+}
+.traits li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+.traits.positive li {
+  color: #b5ffb5;
+}
+.traits.challenging li {
+  color: #ffb5b5;
+}
+h3 + p em {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: -0.8rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}

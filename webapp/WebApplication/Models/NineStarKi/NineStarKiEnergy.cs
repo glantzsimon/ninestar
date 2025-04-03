@@ -840,6 +840,26 @@ namespace K9.WebApplication.Models
 
         #region Personal Chart
 
+        public string EnergyEssenceTitle => $"{ElementNameAndNumber} {Dictionary.Essence}";
+
+        public string EnergyIntellectualQualitiesTitle => $"{ElementNameAndNumber} {Dictionary.IntellectualQualities}";
+
+        public string EnergyInterpersonalQualitiesTitle => $"{ElementNameAndNumber} {Dictionary.InterpersonalQualities}";
+
+        public string EnergyEmotionalLandscapeTitle => $"{ElementNameAndNumber} {Dictionary.EmotionalLandscape}";
+        
+        public string EnergyCareerTitle => $"{ElementNameAndNumber} {Dictionary.Career}";
+        
+        public string EnergyOccupationsTitle => $"{ElementNameAndNumber} {Dictionary.OccupationsLabel}";
+
+        public string EnergyFinancesTitle => $"{ElementNameAndNumber} {Dictionary.Finances}";
+
+        public string EnergyHealthTitle => $"{ElementNameAndNumber} {Dictionary.Health}";
+        
+        public string EnergyIllnessesTitle => $"{ElementNameAndNumber} {Dictionary.Illnesses}";
+
+        public string EnergySpiritualityTitle => $"{ElementNameAndNumber} {Dictionary.Spirituality}";
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EpochEnergyLabel)]
         public string EpochDescription =>
             EnergyType == ENineStarKiEnergyType.EpochEnergy ? GetEpochDescription() : string.Empty;
@@ -878,7 +898,7 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OverviewLabel)]
         public string OverviewDescription =>
             EnergyType == ENineStarKiEnergyType.MainEnergy ? GetOverview() : string.Empty;
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CareerLabel)]
         public string CareerDescription =>
             EnergyType == ENineStarKiEnergyType.MainEnergy ? GetCareerDescription() : string.Empty;
@@ -1229,7 +1249,7 @@ namespace K9.WebApplication.Models
         private string GetInterpersonalQualities() => _interpersonalQualities.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetInterpersonalQualitiesSummary() => _interpersonalQualitiesSummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
-        
+
         private string GetCareerDescription() => _careerDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetCareerSummary() => _careerSummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
@@ -1240,7 +1260,7 @@ namespace K9.WebApplication.Models
 
         private string GetSpiritualitySummary() => _spiritualitySummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
-        
+
 
         private string GetSurfaceEnergyDescription() => _surfaceEnergyDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 

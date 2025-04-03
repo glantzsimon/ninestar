@@ -6,7 +6,9 @@
 @if (Model != null)
 {
     <div class="container main-content clear-both">
-        @Html.Panel($"{Model.MainEnergy.ElementNameAndNumber} {Dictionary.Health}", Model.Health, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel(Model.MainEnergy.EnergyHealthTitle, Model.Health, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        
+        @Html.Panel(Model.MainEnergy.EnergyIllnessesTitle, Model.MainEnergy.Illnesses, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
         @Html.Panel(Dictionary.StrongOrgans, Html.Partial("_ProfileHealthStrongOrgans").ToString(), "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
 

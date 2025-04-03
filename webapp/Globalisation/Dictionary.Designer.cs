@@ -7037,6 +7037,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Essence.
+        /// </summary>
+        public static string Essence {
+            get {
+                return ResourceManager.GetString("Essence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Examples.
         /// </summary>
         public static string ExamplesLabel {

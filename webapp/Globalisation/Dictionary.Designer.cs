@@ -4773,15 +4773,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Core Earth Energies are brilliant at bringing people together. For this reason, they can make great diplomats and political leaders.
-        ///    In addition, they are often comfortable with authority and control. Some Core Earth Energies have become famous military leaders due to
-        ///    their ambitious and dominant nature. 5 Earth Energies can also make exceptional entrepreneurs, for example Richard Branson and Simon Cowl.
-        ///    On the other hand, their down-to-earth nature also means that they can also make [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Core Earth Energies are natural catalysts and consolidators—individuals who bring structure, momentum, and clarity wherever they go. Their commanding presence and ability to unify people around a shared goal make them exceptional in leadership roles. They are often found at the center of organizations or movements, where their insight, decisiveness, and strength of will can drive major transformation.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    5 Earth individuals are well-suited  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_career {
             get {
                 return ResourceManager.GetString("coreearth_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Career and Professional Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Natural leaders and catalysts—able to unify people and steer direction.&lt;/li&gt;
+        ///    &lt;li&gt;Highly motivated, ambitious, and persistent when inspired by purpose.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent at problem-solving, innovation, and long-term strategy.&lt;/li&gt;
+        ///    &lt;li&gt;Comfortable with authority—suited to politics, diplomacy, business, or military roles.&lt;/li&gt;
+        ///    &lt;li&gt;Can turn hobbies or interests into successful professional paths.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_career_summary {
+            get {
+                return ResourceManager.GetString("coreearth_career_summary", resourceCulture);
             }
         }
         
@@ -4818,11 +4840,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Core Earth Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Core Earth / 5 Soil Energies occupy the center of the Nine Star Ki system—symbolizing a convergence point of all directions and elements. This centrality is not merely symbolic; it is deeply felt in the lives of 5 Earth individuals. They are often the gravitational center of their communities, families, or workplaces—people naturally turn to them for guidance, strength, and stability. When this central role is absent, they may feel displaced or invisible, as [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_description {
             get {
                 return ResourceManager.GetString("coreearth_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Core Earth Energies&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Strong presence—often the emotional or structural center in relationships and communities.&lt;/li&gt;
+        ///    &lt;li&gt;Resilient, grounded, and able to rise through life’s challenges.&lt;/li&gt;
+        ///    &lt;li&gt;Independent, insightful, and self-assured.&lt;/li&gt;
+        ///    &lt;li&gt;Natural problem-solvers and unifiers in times of crisis or chaos.&lt;/li&gt;
+        ///    &lt;li&gt;Honourable, principled, and deeply loyal once committed.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May attract [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_description_summary {
+            get {
+                return ResourceManager.GetString("coreearth_description_summary", resourceCulture);
             }
         }
         
@@ -4843,6 +4889,43 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    The emotional world of Core Earth Energies is deep, intense, and often defined by contrast. Their lives tend to mirror the full arc of experience—beginnings and endings, triumphs and losses, inner stillness and emotional turbulence. As the central point in the Nine Star Ki system, 5 Earth individuals often feel the weight of holding everything together, both within themselves and for others.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    They may experience dramatic emotional shifts throughout lif [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_emotional_landscape {
+            get {
+                return ResourceManager.GetString("coreearth_emotional_landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally resilient—able to bounce back from hardship with strength and clarity.&lt;/li&gt;
+        ///    &lt;li&gt;Calm, steady presence during emotionally intense situations.&lt;/li&gt;
+        ///    &lt;li&gt;Possesses deep emotional wisdom gained through lived experience.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of transmuting emotional pain into insight and compassion.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May experience emotional extremes or turbulence, especially early in life.&lt;/li&gt;
+        ///  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_emotional_landscape_summary {
+            get {
+                return ResourceManager.GetString("coreearth_emotional_landscape_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    5 Earth characters are born with &lt;strong&gt;natural leadership potential&lt;/strong&gt; and often have a &lt;strong&gt;bold and assertive&lt;/strong&gt; nature. They can be &lt;strong&gt;demanding&lt;/strong&gt; at times, to the point of aggressiveness.
         ///&lt;/p&gt;
@@ -4855,6 +4938,43 @@ namespace K9.Globalisation {
         public static string coreearth_epoch {
             get {
                 return ResourceManager.GetString("coreearth_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Core Earth Energies often possess a grounded, practical relationship with money. They are typically economical and conscientious, capable of building financial reserves over time. Whether through hard work or resourceful networking, they usually find ways to earn or attract money with relative ease. While they can receive support from others, their greatest success tends to come when they rely on their own efforts and initiative.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    5 Earth  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_finances {
+            get {
+                return ResourceManager.GetString("coreearth_finances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Economical and practical—often builds solid financial reserves.&lt;/li&gt;
+        ///    &lt;li&gt;Can earn money easily, especially through personal effort.&lt;/li&gt;
+        ///    &lt;li&gt;Disciplined and security-oriented in financial planning.&lt;/li&gt;
+        ///    &lt;li&gt;Resourceful and capable of attracting support when needed.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May become overly materialistic or rigid with money.&lt;/li&gt;
+        ///    &lt;li&gt;Can be excessively thrifty or anxious a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_finances_summary {
+            get {
+                return ResourceManager.GetString("coreearth_finances_summary", resourceCulture);
             }
         }
         
@@ -4875,19 +4995,149 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Generally speaking, Core Earth Energies have the constitution of an ox and are incredibly resilient. However, for this reason, it is also very important for
-        ///    people under this star to exercise and push themselves, so that they do not stagnate and seize up.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellness&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Being prone to ups and downs can mean that 5 Earth Energies can go through phases of being active/inactive, slim/overweight. These fluctuations are often brought
-        ///    about by the many emotional events in their lives.
+        ///    Core Earth Energies are often blessed with a constitution as strong and steady as an ox. Their physical resilience is one of their great strengths, allowing them to endure stress and hardship that might overwhelm others. However, this strength can also be deceptive. When they do not move or challenge themselves regularly, they risk stagnation—physically, emotionally, and energetically.
         ///&lt;/p&gt;
-        ///&lt; [rest of string was truncated]&quot;;.
+        ///
+        ///&lt;p&gt;
+        ///    5 Earth individuals tend to swing between extremes—active and inac [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_health {
             get {
                 return ResourceManager.GetString("coreearth_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Health and Wellness&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Exceptionally strong constitution—resilient and enduring under stress.&lt;/li&gt;
+        ///    &lt;li&gt;High physical vitality when balanced and active.&lt;/li&gt;
+        ///    &lt;li&gt;Drawn to practices that restore inner balance and emotional clarity.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Tendency toward extremes—either overly active or deeply stagnant.&lt;/li&gt;
+        ///    &lt;li&gt;Prone to digestive issues, immune imbalance, or circulatory problems.&lt;/li&gt;
+        ///    &lt;li&gt;Susceptible to emot [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_health_summary {
+            get {
+                return ResourceManager.GetString("coreearth_health_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Common Health Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Disorders related to excess (overeating, overstimulation, overwork)&lt;/li&gt;
+        ///    &lt;li&gt;Infectious diseases and immune-related conditions&lt;/li&gt;
+        ///    &lt;li&gt;Diarrhoea and digestive disturbances&lt;/li&gt;
+        ///    &lt;li&gt;Circulatory issues&lt;/li&gt;
+        ///    &lt;li&gt;Fever and inflammatory states&lt;/li&gt;
+        ///    &lt;li&gt;Tumours and abnormal tissue growth&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///.
+        /// </summary>
+        public static string coreearth_illnesses {
+            get {
+                return ResourceManager.GetString("coreearth_illnesses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Core Earth Energies are often clear, objective thinkers with a strong capacity to understand complexity and integrate diverse perspectives. Their thinking tends to be measured, grounded, and deeply thoughtful. They are especially gifted at keeping an overview of situations, allowing them to offer steady, realistic insights when others may feel overwhelmed or reactive.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    5 Earth individuals have an inquiring mind and a genuine eagerness to learn. Thei [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_intellectual_qualities {
+            get {
+                return ResourceManager.GetString("coreearth_intellectual_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Clear, lucid thinker with a grounded and realistic mindset.&lt;/li&gt;
+        ///    &lt;li&gt;Able to integrate diverse viewpoints and maintain broad perspective.&lt;/li&gt;
+        ///    &lt;li&gt;Eager to learn, with a practical and inquisitive nature.&lt;/li&gt;
+        ///    &lt;li&gt;Objective and thoughtful—valued for impartial judgments and steady insight.&lt;/li&gt;
+        ///    &lt;li&gt;Brings clarity and order to complex discussions or group dynamics.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can become r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_intellectual_qualities_summary {
+            get {
+                return ResourceManager.GetString("coreearth_intellectual_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Core Earth individuals are natural influencers—people who often find themselves at the heart of their relationships, groups, or communities. Their presence commands attention, not through flamboyance, but through clarity, strength, and grounded confidence. Others are drawn to them for guidance, support, and decisiveness, especially during times of uncertainty. They have a rare ability to steer relationships and social dynamics with purpose and resolve.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_interpersonal_qualities {
+            get {
+                return ResourceManager.GetString("coreearth_interpersonal_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Natural influencer—often at the center of relationships and group dynamics.&lt;/li&gt;
+        ///    &lt;li&gt;Bold, frank, open, and impartial in communication.&lt;/li&gt;
+        ///    &lt;li&gt;Draws people in need of stability, leadership, or clear guidance.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of steering situations with strength and fairness.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can come across as bossy, controlling, or domineering.&lt;/li&gt;
+        ///    &lt;li&gt;Prone to rejecting advice or crit [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_interpersonal_qualities_summary {
+            get {
+                return ResourceManager.GetString("coreearth_interpersonal_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Suitable Occupations&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Politician / government official / policymaker&lt;/li&gt;
+        ///    &lt;li&gt;Military officer / police officer / warden&lt;/li&gt;
+        ///    &lt;li&gt;Educator / academic / philosopher / thinker&lt;/li&gt;
+        ///    &lt;li&gt;Clergyman / spiritual leader&lt;/li&gt;
+        ///    &lt;li&gt;Manager / enterprise leader / staff supervisor&lt;/li&gt;
+        ///    &lt;li&gt;Doctor / healthcare professional&lt;/li&gt;
+        ///    &lt;li&gt;Judge / legal professional / critic&lt;/li&gt;
+        ///    &lt;li&gt;Actor / performer / public figure&lt;/li&gt;
+        ///    &lt;li&gt;Real estate broker / auctioneer / financie [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_occupations {
+            get {
+                return ResourceManager.GetString("coreearth_occupations", resourceCulture);
             }
         }
         
@@ -4920,11 +5170,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Core Earth Energies are compatible with any of the other energies. They can be sensitive and compassionate or, conversely, quite self-centred
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Core Earth is at the centre of the 9 Star Ki system and, as as such, these Energies are typically quite comfortable and compatible with any of the other energies. This central position occupied by 5 Earths can either result in their having quite a lot of compassion and sensitivity to others or, conversely, it can also make them quite &quot;self-c [rest of string was truncated]&quot;;.
+        ///    Core Earth Energies are uniquely positioned at the center of the Nine Star Ki system, and this centrality is often reflected in their relationship dynamics. They are typically compatible with all other energies and can easily connect with a wide range of personalities. People are naturally drawn to them, sensing their inner strength, stability, and capacity for guidance.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    In relationships, 5 Earth individuals can express both sensitivity and strength. On one [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_relationships {
             get {
@@ -4933,30 +5185,56 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Confident&lt;/td&gt;
-        ///                &lt;td&gt;Bossy&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Lively&lt;/td&gt;
-        ///                &lt;td&gt;Moody&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Resourceful&lt;/td&gt;
-        ///                &lt;td&gt;Thrifty [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Highly compatible with all other energies—naturally magnetic and emotionally impactful.&lt;/li&gt;
+        ///    &lt;li&gt;Often seen as a source of strength, guidance, and stability in relationships.&lt;/li&gt;
+        ///    &lt;li&gt;Passionate, loyal, and deeply devoted when emotionally connected.&lt;/li&gt;
+        ///    &lt;li&gt;Sexually expressive and attentive to the pleasure and satisfaction of their partner.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of navigating complex or unconventional relationship dynamics with maturity [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_relationships_summary {
+            get {
+                return ResourceManager.GetString("coreearth_relationships_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Core Earth Energies have a natural affinity for spiritual depth, rooted in a profound connection to the ancestral and the eternal. In Tibetan tradition, they are seen as spiritual types—guardians of ancient wisdom with an instinctive reverence for the unseen forces that shape human experience. This connection often gives them a sense of destiny or a deep inner calling, even if they cannot always name it.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Their spiritual growth unfolds most powerfully throu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_spirituality {
             get {
                 return ResourceManager.GetString("coreearth_spirituality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Deep ancestral and spiritual connection—often seen as guardians of wisdom.&lt;/li&gt;
+        ///    &lt;li&gt;Drawn to contemplation, silence, and grounding practices.&lt;/li&gt;
+        ///    &lt;li&gt;Altruistic and morally centered—naturally motivated to serve others.&lt;/li&gt;
+        ///    &lt;li&gt;Responsive to sound-based spiritual practices (chanting, bells, drums).&lt;/li&gt;
+        ///    &lt;li&gt;Capable of becoming powerful stabilizing forces and grounded mystics.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Restl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_spirituality_summary {
+            get {
+                return ResourceManager.GetString("coreearth_spirituality_summary", resourceCulture);
             }
         }
         
@@ -8035,18 +8313,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Heaven Energies make excellent leaders and often excel in roles where they can use this skill to its fullest,
-        ///    whether it be in business, politics, the armed forces or even teachers. Many head teachers are Heaven Energies.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Their great sense of justice also makes 6 Metal Energies great lawyers and arbitrators. In addition, these Energies
-        ///    often thrive under pressure and therefore prefer challenging careers.
-        ///&lt;/p&gt;.
+        ///    Heaven Energies are natural leaders—strategic, reliable, and highly capable under pressure. With strong willpower and a deep sense of purpose, 6 Metal individuals often rise to positions of authority in business, education, the military, or government. They thrive in structured environments that demand focus, order, and long-term vision.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    These individuals are often ambitious and upward-striving, with a deep inner drive to succeed. They a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_career {
             get {
                 return ResourceManager.GetString("heaven_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Career and Professional Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Natural leadership—strategic, authoritative, and reliable under pressure.&lt;/li&gt;
+        ///    &lt;li&gt;Highly organized, detail-oriented, and focused on results.&lt;/li&gt;
+        ///    &lt;li&gt;Persistent, disciplined, and purposeful in their pursuit of goals.&lt;/li&gt;
+        ///    &lt;li&gt;Excel in challenging roles—business, politics, military, education, and law.&lt;/li&gt;
+        ///    &lt;li&gt;Strong moral compass—effective in legal, justice, or arbitration work.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_career_summary {
+            get {
+                return ResourceManager.GetString("heaven_career_summary", resourceCulture);
             }
         }
         
@@ -8102,11 +8399,39 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Heaven Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Heaven Energies embody the full expression of Yang—structured, principled, and driven by a powerful sense of duty. 6 Metal individuals are often seen as natural leaders, grounded in clarity, discipline, and moral conviction. Whether in politics, military, business, education, or the arts, they frequently rise to positions of authority through steady commitment and strength of character.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Their influence is not loud or flashy; it is quiet, consis [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_description {
             get {
                 return ResourceManager.GetString("heaven_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Heaven Energies&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Natural leaders with strong moral clarity and personal integrity.&lt;/li&gt;
+        ///    &lt;li&gt;Disciplined, focused, and deeply responsible—often pillars of their families or communities.&lt;/li&gt;
+        ///    &lt;li&gt;Consistent, dependable, and enduring in their impact.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of blending rational thinking with deep emotional wisdom.&lt;/li&gt;
+        ///    &lt;li&gt;Motivated by honour, loyalty, duty, and ethical principles.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;l [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_description_summary {
+            get {
+                return ResourceManager.GetString("heaven_description_summary", resourceCulture);
             }
         }
         
@@ -8122,6 +8447,43 @@ namespace K9.Globalisation {
         public static string heaven_emotional_description {
             get {
                 return ResourceManager.GetString("heaven_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    The emotional life of Heaven Energies is characterized by strength, endurance, and unwavering loyalty. 6 Metal individuals often carry a powerful emotional presence that inspires confidence in those around them. They are steady and emotionally grounded, able to hold space for others during times of stress or instability. Their emotions, like their nature, tend to be deep and lasting, with a strong emphasis on commitment and responsibility.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Beneath thi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_emotional_landscape {
+            get {
+                return ResourceManager.GetString("heaven_emotional_landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally steady, loyal, and grounded—able to hold space for others.&lt;/li&gt;
+        ///    &lt;li&gt;Enduring emotional strength and deep sense of responsibility.&lt;/li&gt;
+        ///    &lt;li&gt;Protective and committed, especially in close relationships.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of emotional wisdom and integrity when balanced.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to internalizing stress, grief, or pressure to stay strong.&lt;/li&gt;
+        ///    &lt;li&gt;May experience depression,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_emotional_landscape_summary {
+            get {
+                return ResourceManager.GetString("heaven_emotional_landscape_summary", resourceCulture);
             }
         }
         
@@ -8160,6 +8522,43 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    6 Metal individuals tend to have a strong and structured relationship with money. Their natural sense of order, discipline, and long-term vision often translates into sound financial management. Whether managing personal resources or overseeing large budgets, they tend to be cautious, strategic, and capable of building stable wealth over time.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Heaven Energies value security, consistency, and self-reliance. They are not impulsive spenders  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_finances {
+            get {
+                return ResourceManager.GetString("heaven_finances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Disciplined and structured approach to money management.&lt;/li&gt;
+        ///    &lt;li&gt;Long-term thinkers—skilled at saving, planning, and building financial security.&lt;/li&gt;
+        ///    &lt;li&gt;Reliable and ethical—often trusted with shared or institutional resources.&lt;/li&gt;
+        ///    &lt;li&gt;Strategic and cautious—avoids impulsive or risky decisions.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May become overly conservative or rigid with finances.&lt;/li&gt;
+        ///    &lt;li&gt;Ten [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_finances_summary {
+            get {
+                return ResourceManager.GetString("heaven_finances_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    6 Metal characters tend to have a very &lt;strong&gt;direct, down-to-earth and uncompromising nature&lt;/strong&gt;.
         ///
@@ -8194,20 +8593,39 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The organ governed by Yang Metal is the lungs and care must be taken to look after this organ. Therefore, it is especially important
-        ///    to avoid smoking. It is also beneficial to engage in a healthy amount of exercise to improve cardiovascular fitness.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellness&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    The lungs are the seat of grief and it is very important for Heaven Energies to frequently &quot;get things off their chest&quot; so that the lung
-        ///    meridian does not become blocked and stressed.
+        ///    Heaven Energies are typically blessed with a strong constitution and considerable physical endurance. However, as representatives of the Yang Metal element, they must take particular care of the lungs, which are their most vulnerable organ. Maintaining lung health is critical to their overall wellbeing, making it essential to avoid smoking and environmental pollutants, and to engage in regular cardiovascular activity that supports healthy respiration.
         ///&lt;/p&gt;
+        ///
         ///&lt;p&gt;
-        ///    In Chinese medicine the lun [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_health {
             get {
                 return ResourceManager.GetString("heaven_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Health and Wellness&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Strong constitution with natural endurance and stamina.&lt;/li&gt;
+        ///    &lt;li&gt;Responds well to structured exercise and breath-based practices.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of maintaining long-term wellness through discipline and routine.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to lung conditions, skin disorders, and respiratory issues.&lt;/li&gt;
+        ///    &lt;li&gt;Suppressed grief and emotional tension may impact breathing or immunity.&lt;/li&gt;
+        ///    &lt;li&gt;Overthinki [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_health_summary {
+            get {
+                return ResourceManager.GetString("heaven_health_summary", resourceCulture);
             }
         }
         
@@ -8227,6 +8645,97 @@ namespace K9.Globalisation {
         public static string heaven_hour_cycle {
             get {
                 return ResourceManager.GetString("heaven_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Common Health Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Skull injuries or head trauma&lt;/li&gt;
+        ///    &lt;li&gt;Lung imbalances (e.g., asthma, respiratory issues)&lt;/li&gt;
+        ///    &lt;li&gt;Large intestine imbalances (e.g., constipation, digestive irregularities)&lt;/li&gt;
+        ///    &lt;li&gt;Skin disorders (e.g., eczema, psoriasis, rashes)&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///.
+        /// </summary>
+        public static string heaven_illnesses {
+            get {
+                return ResourceManager.GetString("heaven_illnesses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Heaven Energies possess a sharp, analytical intellect and a highly structured, logical approach to understanding the world. Their thinking is precise, methodical, and rooted in clarity and practicality. They are often gifted in technical or mechanical fields, able to break down complex systems and understand how things function on both a conceptual and operational level.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    6 Metal individuals are naturally rational and measured in their decision-maki [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_intellectual_qualities {
+            get {
+                return ResourceManager.GetString("heaven_intellectual_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Analytical, logical, and highly structured thinkers.&lt;/li&gt;
+        ///    &lt;li&gt;Strong technical and mechanical understanding.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent concentration and sound judgment.&lt;/li&gt;
+        ///    &lt;li&gt;Clear communicators—capable of simplifying complex ideas.&lt;/li&gt;
+        ///    &lt;li&gt;Reliable in planning, strategy, and practical problem-solving.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can become rigid, overly conservative, or resistant to new ideas.&lt;/li&gt;
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_intellectual_qualities_summary {
+            get {
+                return ResourceManager.GetString("heaven_intellectual_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Heaven Energies naturally radiate dignity, composure, and quiet authority. They tend to carry themselves with a sense of inner strength and purpose that often sets them apart in social settings. Others frequently perceive them as distinguished, principled, and respectable—people who command attention not through loudness, but through presence.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    6 Metal individuals communicate with clarity and intention. They typically value directness and prefer co [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_interpersonal_qualities {
+            get {
+                return ResourceManager.GetString("heaven_interpersonal_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Dignified and composed—naturally commands respect in social settings.&lt;/li&gt;
+        ///    &lt;li&gt;Direct, clear communicator with a preference for meaningful dialogue.&lt;/li&gt;
+        ///    &lt;li&gt;Loyal, responsible, and stabilizing in relationships.&lt;/li&gt;
+        ///    &lt;li&gt;Protective and principled—offers grounded guidance and support.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can appear distant, formal, or emotionally unavailable.&lt;/li&gt;
+        ///    &lt;li&gt;Tendency toward aloofness, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_interpersonal_qualities_summary {
+            get {
+                return ResourceManager.GetString("heaven_interpersonal_qualities_summary", resourceCulture);
             }
         }
         
@@ -8277,20 +8786,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    6 Metal women may appear overly dominant in relationships, especially in straight couples
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    6 Metal women can be quite authoritative and dominant, which can cause problems in relationships.
+        ///    6 Metal women often carry a commanding presence—strong, capable, and unwavering in their values. With the full force of Yang energy, they are typically bold, consistent, and principled in their approach to love. In relationships, they seek trust, loyalty, and emotional stability, and they tend to lead with confidence and clarity.
         ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Heaven Energies are typically bold and consistent in relationships
-        ///&lt;/h5&gt;
+        ///
         ///&lt;p&gt;
-        ///    With the full force of Yang, Heaven Energies are strong, bold and consistant. Similarly, they typically look for a partner whom they can trust.
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    For Heaven Energies, sex may be on  [rest of string was truncated]&quot;;.
+        ///    Their assertiveness can be deeply attractive, though in more traditional or heteronormative relationships, it may occasionally be [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_relationships_female {
             get {
@@ -8299,20 +8801,34 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    6 Metal men are often the stereotypical alpha male
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Strong, loyal, and principled—committed to lasting, trustworthy relationships.&lt;/li&gt;
+        ///    &lt;li&gt;Clear and direct in expressing desires and boundaries.&lt;/li&gt;
+        ///    &lt;li&gt;Protective, dependable, and emotionally consistent once committed.&lt;/li&gt;
+        ///    &lt;li&gt;Holds herself and her relationships to high moral and personal standards.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May appear dominant or overly controlling, especially in traditional relationship dynamic [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_relationships_female_summary {
+            get {
+                return ResourceManager.GetString("heaven_relationships_female_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    6 Metal men are typically quite comfortable in their sexuality, as this energy is often the stereotypical expression of the alpha male.
+        ///    6 Metal men often embody the classic image of the “alpha male”—strong, composed, and confident in both presence and sexuality. With the full force of Yang behind them, they typically approach relationships with consistency, clarity, and quiet authority. Trust, loyalty, and structure are key values in their romantic lives.
         ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Heaven Energies are typically bold and consistent in relationships
-        ///&lt;/h5&gt;
+        ///
         ///&lt;p&gt;
-        ///    With the full force of Yang, Heaven Energies are strong, bold and consistant. Similarly, they typically look for a partner whom they can trust.
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    For Heaven Energies, sex may be on t [rest of string was truncated]&quot;;.
+        ///    They are generally selective when it comes to choosing a partner. Proud and principled, 6 Metal men tend to take their time in committing [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_relationships_male {
             get {
@@ -8321,32 +8837,61 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Leader&lt;/td&gt;
-        ///            &lt;td&gt;Bossy&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Responsible&lt;/td&gt;
-        ///            &lt;td&gt;Controlling&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Action-oriented&lt;/td&gt;
-        ///            &lt;td&gt;Reckless&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Confident, loyal, and emotionally steadfast in committed relationships.&lt;/li&gt;
+        ///    &lt;li&gt;Selective and principled—seeks meaningful connection over casual encounters.&lt;/li&gt;
+        ///    &lt;li&gt;Direct communicator—clear about needs, boundaries, and expectations.&lt;/li&gt;
+        ///    &lt;li&gt;Protective and reliable—values trust, honour, and long-term commitment.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of deep devotion when emotionally secure and mature.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_relationships_male_summary {
+            get {
+                return ResourceManager.GetString("heaven_relationships_male_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    6 Metal individuals possess a deep and innate connection to the spiritual dimension, often accompanied by profound intuitive insight or latent psychic sensitivity. Their inner world is rich with moral reflection, and many are drawn to philosophy, sacred texts, or spiritual traditions that emphasize clarity, order, and ethical living.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    They are naturally contemplative and often experience life through a lens of idealism and higher purpose. Many feel a quiet  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_spirituality {
             get {
                 return ResourceManager.GetString("heaven_spirituality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Broad intuitive awareness and a natural sensitivity to spiritual energies.&lt;/li&gt;
+        ///    &lt;li&gt;Potential for deep insight when grounded and present.&lt;/li&gt;
+        ///    &lt;li&gt;Responsive to serene, clean environments that support inner stillness.&lt;/li&gt;
+        ///    &lt;li&gt;Drawn to practices that integrate movement and mindfulness.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Tendency to rush ahead before fully absorbing the present moment.&lt;/li&gt;
+        ///    &lt;li&gt;Restlessness and boredo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_spirituality_summary {
+            get {
+                return ResourceManager.GetString("heaven_spirituality_summary", resourceCulture);
             }
         }
         
@@ -14952,15 +15497,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Owing to their supportive, caring nature, many Soil Energies make excellent nurses, carers, social workers as well as teachers and various types of assistants.
-        ///    Their strong connection with the land also makes Soil Energies excellent at careers in agriculture or horticulture.
-        ///    On the other hand, any job involving group work would also be well suited to number two Soil Energies.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Two Earth individuals excel in careers that allow them to &lt;strong&gt;support, stabilize, and nurture others&lt;/strong&gt;. With a natural inclination toward service, they bring diligence, warmth, and quiet strength to their professional lives. These individuals are not drawn to the spotlight, but instead find purpose and fulfillment &lt;strong&gt;working behind the scenes&lt;/strong&gt;, creating harmony within teams and organizations.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;h5&gt;Skills and Natural Roles [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_career {
             get {
                 return ResourceManager.GetString("soil_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Supportive, service-oriented, and emotionally grounded&lt;/li&gt;
+        ///    &lt;li&gt;Thrives in teamwork and community-focused environments&lt;/li&gt;
+        ///    &lt;li&gt;Highly reliable, diligent, and accurate with details&lt;/li&gt;
+        ///    &lt;li&gt;Creates harmony, structure, and emotional cohesion in the workplace&lt;/li&gt;
+        ///    &lt;li&gt;Excellent at organizing, managing routines, and providing continuity&lt;/li&gt;
+        ///    &lt;li&gt;Frugal and steady with finances; careful and non-speculative&lt;/li&gt;        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_career_summary {
+            get {
+                return ResourceManager.GetString("soil_career_summary", resourceCulture);
             }
         }
         
@@ -15017,11 +15582,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of 2 Soil&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    All three Soil types share a &lt;strong&gt;centered, balanced, and grounded character&lt;/strong&gt;. Among them, Two Soil is the most &lt;strong&gt;yin, receptive, and nurturing&lt;/strong&gt;. Individuals born under this number tend to be &lt;strong&gt;socially inclined, caring, and quietly resilient&lt;/strong&gt;. They are often drawn to &lt;strong&gt;music, philosophy, politics, business, and culture&lt;/strong&gt;, bringing a steady, stabilizing energy to whatever they engage in.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Two Soil people  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_description {
             get {
                 return ResourceManager.GetString("soil_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of 2 Soil&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Deeply nurturing, maternal, and emotionally generous&lt;/li&gt;
+        ///    &lt;li&gt;Stable, grounded, and reliable — a calming presence&lt;/li&gt;
+        ///    &lt;li&gt;Hardworking, loyal, and devoted to the needs of others&lt;/li&gt;
+        ///    &lt;li&gt;Strong sense of duty and quiet inner strength&lt;/li&gt;
+        ///    &lt;li&gt;Observant and perceptive in social and group settings&lt;/li&gt;
+        ///    &lt;li&gt;Thrives within structured roles, especially in groups or teams&lt;/li&gt;
+        ///    &lt;li&gt;Balances gentleness with tenacity; caring wit [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_description_summary {
+            get {
+                return ResourceManager.GetString("soil_description_summary", resourceCulture);
             }
         }
         
@@ -15040,6 +15629,44 @@ namespace K9.Globalisation {
         public static string soil_emotional_description {
             get {
                 return ResourceManager.GetString("soil_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Emotionally, Two Soil Energies are grounded in &lt;strong&gt;sympathy, humility, and compassion&lt;/strong&gt;. Their emotional responses tend to be steady and considered, offering others a sense of calm presence and emotional containment. They are often the quiet emotional anchors of their relationships and communities, resonating deeply with the feelings of others and providing support without needing to take the spotlight.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    They have a natural inclination to acce [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_emotional_landscape {
+            get {
+                return ResourceManager.GetString("soil_emotional_landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape – 2 Soil&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally grounded, humble, and steady&lt;/li&gt;
+        ///    &lt;li&gt;Compassionate and deeply sympathetic&lt;/li&gt;
+        ///    &lt;li&gt;Creates a stabilizing presence in relationships&lt;/li&gt;
+        ///    &lt;li&gt;Resonant and accepting of others’ feelings&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May feel misunderstood or unappreciated&lt;/li&gt;
+        ///    &lt;li&gt;Tendency to withdraw or shut down emotionally&lt;/li&gt;
+        ///    &lt;li&gt;Prone to quiet jealousy, pride, or worry&lt;/li&gt;
+        ///    &lt;li&gt;May suffer  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_emotional_landscape_summary {
+            get {
+                return ResourceManager.GetString("soil_emotional_landscape_summary", resourceCulture);
             }
         }
         
@@ -15078,6 +15705,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Two Soil Energies are &lt;strong&gt;steady, practical, and quietly resourceful&lt;/strong&gt; when it comes to managing finances. Rarely extravagant, they prefer to build slowly over time, valuing &lt;strong&gt;security, stability, and consistency&lt;/strong&gt; over risky ventures or sudden gains. Money, for them, is less about ambition and more about &lt;strong&gt;providing care and creating a stable foundation for those around them&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Naturally &lt;strong&gt;frugal  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_finances {
+            get {
+                return ResourceManager.GetString("soil_finances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances&lt;/h4&gt;
+        ///
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Gift:&lt;/strong&gt; Steady, modest, and resourceful with money; naturally frugal and careful with spending.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Strengths:&lt;/strong&gt; Good at budgeting, saving, and managing household or team resources. Finds value in security and long-term stability.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Challenges:&lt;/strong&gt; May overextend themselves financially due to generosity or desire to help others; can struggle to assert boundaries around money.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Risk:&lt;/stro [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_finances_summary {
+            get {
+                return ResourceManager.GetString("soil_finances_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Soil characters tend to be &lt;strong&gt;stable, reliable and helpful&lt;/strong&gt; people.
         ///
@@ -15112,14 +15768,36 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being sensitive by nature, Soil Energies do not typically have a strong constitution. In Traditional Chinese Medicine, the earth element governs the spleen, pancreas and stomach and
-        ///    there for the lymphatic and immune systems. Soil Energies must take extra care to look after these organs with a healthy balanced diet which does not contain excessive carbohydrate.
-        ///    It is also advisable to engage in activities which are calming, such as meditation and yoga, in order to avoid excessive anxiety  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellbeing – 2 Soil Energies&lt;/h4&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Two Earth individuals often find it difficult to accept that &lt;strong&gt;they must prioritize their own health&lt;/strong&gt;. Their natural orientation toward service and care for others can cause them to feel undeserving of attention or support themselves. In some cases, they may even refuse help. However, with encouragement—often from persistent yet kind friends—they begin to understand that &lt;strong&gt;serving others begins with caring for the self&lt;/strong&gt;. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_health {
             get {
                 return ResourceManager.GetString("soil_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellbeing&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Grounded and steady when in good health&lt;/li&gt;
+        ///    &lt;li&gt;Strong nurturing instincts can motivate better self-care when aligned&lt;/li&gt;
+        ///    &lt;li&gt;Responds well to structured routines, natural therapies, and nourishment&lt;/li&gt;
+        ///    &lt;li&gt;Beneficial response to massage, calming movement (e.g., yoga), and meaningful rest&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May neglect self-care due to focus on others&lt;/li&gt;
+        ///    &lt;li&gt;Tendency toward emotional over-i [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_health_summary {
+            get {
+                return ResourceManager.GetString("soil_health_summary", resourceCulture);
             }
         }
         
@@ -15140,6 +15818,95 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Common Health Challenges&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Skin disorders&lt;/li&gt;
+        ///    &lt;li&gt;Blood disorders&lt;/li&gt;
+        ///    &lt;li&gt;Goitre&lt;/li&gt;
+        ///    &lt;li&gt;Tongue and throat symptoms&lt;/li&gt;
+        ///    &lt;li&gt;Digestive tract ailments&lt;/li&gt;
+        ///    &lt;li&gt;Congestion&lt;/li&gt;
+        ///    &lt;li&gt;Blood sugar imbalances&lt;/li&gt;
+        ///    &lt;li&gt;Depression&lt;/li&gt;
+        ///    &lt;li&gt;Sense of being overwhelmed&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///.
+        /// </summary>
+        public static string soil_illnesses {
+            get {
+                return ResourceManager.GetString("soil_illnesses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Intellectually, Two Soil Energies are &lt;strong&gt;thoughtful, perceptive, attentive, and sensible&lt;/strong&gt;. They tend to absorb information gradually but thoroughly, allowing ideas to sink in through a steady process of reflection. Their thinking style is &lt;strong&gt;practical, grounded, and rooted in real-life experience&lt;/strong&gt;. Rather than seeking abstract or theoretical knowledge, they are &lt;strong&gt;down-to-earth thinkers&lt;/strong&gt; who place great value on common sense, l [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_intellectual_qualities {
+            get {
+                return ResourceManager.GetString("soil_intellectual_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities – 2 Soil&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Thoughtful, reflective, and perceptive&lt;/li&gt;
+        ///    &lt;li&gt;Attentive to detail and able to absorb information steadily&lt;/li&gt;
+        ///    &lt;li&gt;Practical, grounded, and sensible in thinking&lt;/li&gt;
+        ///    &lt;li&gt;Down-to-earth and values common sense over theory&lt;/li&gt;
+        ///    &lt;li&gt;Sharp-witted with strong powers of observation&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May become rigid or resistant to change&lt;/li&gt;
+        ///    &lt;li&gt;Can cling to outdated beliefs or fam [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_intellectual_qualities_summary {
+            get {
+                return ResourceManager.GetString("soil_intellectual_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Two Soil Energies are among the most &lt;strong&gt;friendly, sociable, and deeply nurturing&lt;/strong&gt; of the Nine Star Ki types. They often serve as the emotional glue within a family, group, or community, offering steady &lt;strong&gt;support, warmth, and understanding&lt;/strong&gt;. With a naturally &lt;strong&gt;diplomatic and tactful&lt;/strong&gt; nature, they know how to read a room and respond with care. Their ability to arouse &lt;strong&gt;trust and sympathy&lt;/strong&gt; makes them beloved frien [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_interpersonal_qualities {
+            get {
+                return ResourceManager.GetString("soil_interpersonal_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities – 2 Soil&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Warm, nurturing, and emotionally generous&lt;/li&gt;
+        ///    &lt;li&gt;Creates safety and trust in relationships&lt;/li&gt;
+        ///    &lt;li&gt;Diplomatic, tactful, and quietly supportive&lt;/li&gt;
+        ///    &lt;li&gt;Friendly, sociable, and community-minded&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally receptive and patient with others&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May become submissive, overly accommodating, or a doormat&lt;/li&gt;
+        ///    &lt;li&gt;Struggles to assert needs or speak up when b [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_interpersonal_qualities_summary {
+            get {
+                return ResourceManager.GetString("soil_interpersonal_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month represents late winter and is a time of planning and slow movement
         ///&lt;/h5&gt;
@@ -15152,6 +15919,25 @@ namespace K9.Globalisation {
         public static string soil_month {
             get {
                 return ResourceManager.GetString("soil_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Suitable Occupations for 2 Soil Energies&lt;/h4&gt;
+        ///
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Wise woman, shamaness, matriarch&lt;/li&gt;
+        ///    &lt;li&gt;Obstetrician, nurse, doctor, therapist, midwife&lt;/li&gt;
+        ///    &lt;li&gt;Teacher, educator, early childhood carer (crèche)&lt;/li&gt;
+        ///    &lt;li&gt;Social worker, labour organizer, union member&lt;/li&gt;
+        ///    &lt;li&gt;Farmer, agrarian sector, garden architect&lt;/li&gt;
+        ///    &lt;li&gt;Gardener, florist, environmental conservationist&lt;/li&gt;
+        ///    &lt;li&gt;Civil or construction engineer, real estate broker&lt;/li&gt;
+        ///    &lt;li&gt;Office manager, secretary, a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_occupations {
+            get {
+                return ResourceManager.GetString("soil_occupations", resourceCulture);
             }
         }
         
@@ -15184,19 +15970,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Soil women often embody the full expression of femininity
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Romantic Relationships – 2 Soil Women&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Embodiment of Femininity and Sensuality&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Soil women often embody the full expression of femininity and sensuality. They are typically attracted to more Yang energies, who are willing to make the first move.
-        ///    
-        ///    They also have a mothering nature, which natrually comes out in relationships.
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    2 Earth Energies may appear reserved, but make extremely supportie partners
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Although they may appear somewhat reserved sexually, Soil Ene [rest of string was truncated]&quot;;.
+        ///    Two Earth women often embody the full expression of &lt;strong&gt;femininity, softness, and sensuality&lt;/strong&gt;. Their natural warmth and nurturing presence draw people to them effortlessly. They tend to be attracted to &lt;strong&gt;Yang energies&lt;/strong&gt; — individuals who are confident, assertive, and able to take the lead romantically. When she finds someone she is genuinely drawn to, a Two Earth woman is usu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_relationships_female {
             get {
@@ -15205,11 +15983,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Soil men are typically gentle and nurturing and relationships
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Romantic Relationships – 2 Soil Men&lt;/h4&gt;
+        ///
         ///&lt;p&gt;
-        ///    Soil men are gentle and nurturing and often have quite a mothering quality to them, which may be attractive to potential mates or not, depending on what they are looking for. Due to gender stereotypes that exist today, many men, especially straight men, feel uncomfortable expressing this role. Similarly, potential mates may subconsciously judge 2 Soil men as overly mothering and feminine, unaware that they may be respon [rest of string was truncated]&quot;;.
+        ///    In romantic relationships, 2 Soil men often embody a quietly powerful form of &lt;strong&gt;emotional strength, dependability, and nurturing&lt;/strong&gt;. Their love is not loud or showy, but deeply sincere. They tend to show affection through &lt;strong&gt;acts of service, thoughtful gestures, and their constant emotional presence&lt;/strong&gt;, often becoming the steady centre in their partner&apos;s life.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;h5&gt;Masculine Yin: A Quiet Strength&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Though 2  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_relationships_male {
             get {
@@ -15218,30 +16000,40 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;th&gt;When in balance:&lt;/th&gt;
-        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///            &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Supportive&lt;/td&gt;
-        ///                &lt;td&gt;Stubborn&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Social&lt;/td&gt;
-        ///                &lt;td&gt;Cynical&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Tactful&lt;/td&gt;
-        ///          [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Service to others is the hallmark of the Two Earth spirit. Their natural orientation toward &lt;strong&gt;care, humility, and reliability&lt;/strong&gt; makes them ideally suited to spiritual paths grounded in devotion and service. However, for their spiritual life to blossom fully, they must first confront &lt;strong&gt;the inner shadows of self-doubt and quiet sorrow&lt;/strong&gt; that sometimes linger beneath their steady exterior.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    When these feelings go unacknowledged, the [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_spirituality {
             get {
                 return ResourceManager.GetString("soil_spirituality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to w&lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Deeply devoted and service-oriented at heart&lt;/li&gt;
+        ///    &lt;li&gt;Spiritual strength through humility, steadiness, and compassion&lt;/li&gt;
+        ///    &lt;li&gt;Feels spiritually nourished through community, ritual, and shared purpose&lt;/li&gt;
+        ///    &lt;li&gt;Can be a powerful force of healing and support when self-doubt is overcome&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May confuse faith with blind obedience&lt;/li&gt;
+        ///    &lt;li&gt;Struggles with self-doubt, sadness, or quiet resent [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_spirituality_summary {
+            get {
+                return ResourceManager.GetString("soil_spirituality_summary", resourceCulture);
             }
         }
         
@@ -16736,16 +17528,30 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Thunder Energies have tremendous potential for planning and seeing the road ahead, without getting bogged down in details. They are often able to find elegant solutions to the
-        ///    most complex problems, providing a clear vision of what needs to be done. For this reason, they may excel in computing, science, research as well as in business intelligence and consulting, to name a few.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Thunder Energies can also make energetic performers, artists and speakers and breaking ground in thes [rest of string was truncated]&quot;;.
+        ///    Thunder Energies possess a remarkable ability to perceive the bigger picture with clarity and foresight. Their natural gift for planning, visioning, and identifying pathways forward—without becoming entangled in minutiae—makes them especially suited to roles requiring strategic insight and innovative thinking. Whether in computing, science, research, business intelligence, or consulting, Thunder Energies often excel where complexity calls for elegant solu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_career {
             get {
                 return ResourceManager.GetString("thunder_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Exceptional strategic vision and the ability to see the bigger picture.&lt;/li&gt;
+        ///    &lt;li&gt;Skilled in planning, brainstorming, mapping, and environmental scanning.&lt;/li&gt;
+        ///    &lt;li&gt;Strong creative instincts with potential in the arts, public speaking, and performance.&lt;/li&gt;
+        ///    &lt;li&gt;Innovative thinkers who excel in fields like computing, research, consulting, and business intelligence.&lt;/li&gt;
+        ///    &lt;li&gt;Natural ability to detect energy dynamics  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_career_summary {
+            get {
+                return ResourceManager.GetString("thunder_career_summary", resourceCulture);
             }
         }
         
@@ -16805,11 +17611,31 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Thunder Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Thunder Energies embody the vitality and power of springtime. They are &lt;strong&gt;dynamic, action-oriented, and full of life&lt;/strong&gt;, preferring to &lt;strong&gt;do rather than be&lt;/strong&gt;. They are &lt;strong&gt;initiators and catalysts&lt;/strong&gt;, with a boldness that pushes things forward and shakes up stagnation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Known for their &lt;strong&gt;joyful, optimistic energy&lt;/strong&gt;, Thunder Energies often emerge as &lt;strong&gt;pioneers and change-makers&lt;/strong&gt;. Their en [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_description {
             get {
                 return ResourceManager.GetString("thunder_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Thunder Energies&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Bold, dynamic, and full of vitality&lt;/strong&gt; — like the first crack of thunder in spring.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Initiators and catalysts&lt;/strong&gt; — thrive on movement, momentum, and fresh starts.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Joyful, optimistic, and expressive&lt;/strong&gt; — often the spark that inspires others.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Creative and visionary&lt;/strong&gt;, but can be &lt;strong&gt;ungrounded or impractical&lt;/strong&gt;.&lt;/li&gt;
+        ///    &lt;li&gt;Act quickly — often &lt;stron [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_description_summary {
+            get {
+                return ResourceManager.GetString("thunder_description_summary", resourceCulture);
             }
         }
         
@@ -16829,6 +17655,43 @@ namespace K9.Globalisation {
         public static string thunder_emotional_description {
             get {
                 return ResourceManager.GetString("thunder_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
+        ///
+        ///&lt;p&gt;
+        ///    At their core, Thunder Energies embody &lt;strong&gt;enthusiasm, hope, and creative innocence&lt;/strong&gt;. Their spark can uplift those around them and bring light to even the darkest situations. With a natural energy and forward momentum, they are effective at cutting through stagnation, constantly pushing forward to initiate change and new ideas.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, Thunder Energies may also experience &lt;strong&gt;anger, irritation, and emotional explosiveness&lt;/strong&gt;. Th [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_emotional_landscape {
+            get {
+                return ResourceManager.GetString("thunder_emotional_landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape – 3 Tree&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Full of enthusiasm, hope, and creative innocence&lt;/li&gt;
+        ///    &lt;li&gt;Natural ability to uplift others and break through stagnation&lt;/li&gt;
+        ///    &lt;li&gt;Initiative-driven, pioneering, and achievement-oriented&lt;/li&gt;
+        ///    &lt;li&gt;Quick to forgive, passionate, and emotionally generous&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can be over-sensitive, hot-headed, and reactive&lt;/li&gt;
+        ///    &lt;li&gt;May experience explosive emotions or frustration, especially when [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_emotional_landscape_summary {
+            get {
+                return ResourceManager.GetString("thunder_emotional_landscape_summary", resourceCulture);
             }
         }
         
@@ -16871,6 +17734,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Thunder Energies often possess a natural magnetism for financial success. Their dynamic nature, sharp intellect, and willingness to take bold steps can lead to prosperous ventures and lucrative opportunities. When aligned with purpose and vision, they are capable of generating significant wealth through innovation, leadership, or entrepreneurial pursuits.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    However, with this potential for abundance comes a tendency toward extravagance. 3 T [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_finances {
+            get {
+                return ResourceManager.GetString("thunder_finances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    The 3 Tree character has the full force of spring in its nature, or the dawn.
         ///
@@ -16909,22 +17787,31 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Tree element governs the liver and gallbladder. 
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Physical Wellbeing&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    It is advisable for Thunder Energies to avoid eating two to three hours before sleep as well as overeating.
+        ///    The Tree element governs the liver and gallbladder—organs vital to detoxification and the smooth flow of energy throughout the body. For those born under the influence of Thunder Energy, nurturing these organs is especially important for maintaining balance, vitality, and emotional clarity.
         ///&lt;/p&gt;
+        ///
         ///&lt;p&gt;
-        ///    It is also wise to avoid too many late nights, as this is the time when the liver repairs itself the most.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Eating an abundance of green leafy vegetables is especially important for Thunder Energies, 
-        ///    as well as citrus fruits such as lemons, limes and grapefruits and apple cider vinegar, w [rest of string was truncated]&quot;;.
+        ///    Thunder Energies are highly sensitive and energetic by nature. As such, they benefit greatly from dietary and lifestyle habits that promote internal harm [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_health {
             get {
                 return ResourceManager.GetString("thunder_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Physical Wellbeing&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;The liver and gallbladder are the primary organs associated with the Tree element and require special care.&lt;/li&gt;
+        ///    &lt;li&gt;Avoid eating 2–3 hours before sleep and refrain from overeating to support nighttime liver regeneration.&lt;/li&gt;
+        ///    &lt;li&gt;Late nights and nocturnal lifestyles can disrupt the liver’s repair cycle—prioritize restful sleep.&lt;/li&gt;
+        ///    &lt;li&gt;Eat plenty of green leafy vegetables and citrus fruits (lemons, limes, grapefruits); apple cider vinega [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_health_summary {
+            get {
+                return ResourceManager.GetString("thunder_health_summary", resourceCulture);
             }
         }
         
@@ -16948,6 +17835,75 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Thunder Energies are &lt;strong&gt;visionary, inventive, and creatively inspired&lt;/strong&gt;. They possess a natural gift for &lt;strong&gt;forward-thinking, intuitive insight, and grasping the big picture&lt;/strong&gt;. Their minds are typically &lt;strong&gt;idealistic, poetic, quick-witted, and inquisitive&lt;/strong&gt;, always seeking new frontiers of thought and expression. They thrive on innovation, fueled by a &lt;strong&gt;refined sense of aesthetics, a playful sense of humor, and a deep apprec [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_intellectual_qualities {
+            get {
+                return ResourceManager.GetString("thunder_intellectual_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities – 3 Tree&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Visionary, inventive, and creatively inspired&lt;/li&gt;
+        ///    &lt;li&gt;Forward-thinking, intuitive, and able to see the big picture&lt;/li&gt;
+        ///    &lt;li&gt;Quick-witted, poetic, and inquisitive&lt;/li&gt;
+        ///    &lt;li&gt;Creative and progressive in ideas&lt;/li&gt;
+        ///    &lt;li&gt;Driven by strong aesthetic, humorous, and spiritual values&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May become unrealistic or grandiose in thinking&lt;/li&gt;
+        ///    &lt;li&gt;Prone to jumping to conclusions  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_intellectual_qualities_summary {
+            get {
+                return ResourceManager.GetString("thunder_intellectual_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities – 3 Tree&lt;/h4&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Socially, Thunder Energies are &lt;strong&gt;expressive, open, approachable, and full of charm&lt;/strong&gt;. They tend to be &lt;strong&gt;talkative, sociable, and honest&lt;/strong&gt;, with a straightforward manner that can be both refreshing and disarming. Their ability to &lt;strong&gt;inspire and stimulate those around them&lt;/strong&gt; is one of their greatest strengths, and they often possess a natural talent for humor, which makes them engaging and likable in social settings.
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_interpersonal_qualities {
+            get {
+                return ResourceManager.GetString("thunder_interpersonal_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities – 3 Tree&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Expressive, open, approachable, and full of charm&lt;/li&gt;
+        ///    &lt;li&gt;Talkative, sociable, and honest, with a straightforward manner&lt;/li&gt;
+        ///    &lt;li&gt;Inspires and stimulates those around them with energy and humor&lt;/li&gt;
+        ///    &lt;li&gt;Has a natural talent for humor and connects easily with others&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May become too raw or intense, leading to impatience or rashness&lt;/li&gt;
+        ///    &lt;li&gt;Can be undiplomatic, overl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_interpersonal_qualities_summary {
+            get {
+                return ResourceManager.GetString("thunder_interpersonal_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month represents early spring or the dawn.
         ///&lt;/h5&gt;
@@ -16961,6 +17917,31 @@ namespace K9.Globalisation {
         public static string thunder_month {
             get {
                 return ResourceManager.GetString("thunder_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Suitable Occupations&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Innovator&lt;/li&gt;
+        ///    &lt;li&gt;Inventor&lt;/li&gt;
+        ///    &lt;li&gt;Constructor&lt;/li&gt;
+        ///    &lt;li&gt;Engineer&lt;/li&gt;
+        ///    &lt;li&gt;Electrician&lt;/li&gt;
+        ///    &lt;li&gt;Computer expert / IT industry&lt;/li&gt;
+        ///    &lt;li&gt;Television industry professional&lt;/li&gt;
+        ///    &lt;li&gt;Communications specialist&lt;/li&gt;
+        ///    &lt;li&gt;Journalist / Reporter / Essayist&lt;/li&gt;
+        ///    &lt;li&gt;Writer&lt;/li&gt;
+        ///    &lt;li&gt;Speaker&lt;/li&gt;
+        ///    &lt;li&gt;Master of ceremonies&lt;/li&gt;
+        ///    &lt;li&gt;Public relations specialist&lt;/li&gt;
+        ///    &lt;li&gt;Advisor / Consultant&lt;/li&gt;
+        ///    &lt;li&gt;Teacher&lt;/li&gt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_occupations {
+            get {
+                return ResourceManager.GetString("thunder_occupations", resourceCulture);
             }
         }
         
@@ -16993,14 +17974,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    3 Tree Energies often have a high sex drive
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;3 Tree / Thunder Women and Relationships&lt;/h4&gt;
+        ///
         ///&lt;p&gt;
-        ///    Representing the full force of spring, 3 Tree Energies often have the strongest libido of all 9 Energies. Indeed, sex is usually of great importance to them. 3 Tree women, as their Fundamental Energy is opposite to their gender, are often quite sexually active and even promiscuous. They sometimes even struggle with sex addition.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    3 Tree women, of all the 9 Energies, are perhaps the least likely to conform to gender stereot [rest of string was truncated]&quot;;.
+        ///    A 3 Tree woman seeks a relationship where she can be deeply engaged yet retain her sense of autonomy. Her fiery passions and intense nature often lead her to have multiple love affairs, but she tends to marry at a relatively young age. If she does not, it is likely due to the many ambitions that drive her. When in a relationship with a 3 Tree woman, her partner must recognize that her intensity may extend beyond romantic relationships into other  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_relationships_female {
             get {
@@ -17009,14 +17986,32 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    3 Tree Energies often have a high sex drive
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;3 Tree / Thunder Women and Relationships&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Romantic, passionate, affectionate, and chivalric in love&lt;/li&gt;
+        ///    &lt;li&gt;Highly expressive, erotic, and confident in sexual relationships&lt;/li&gt;
+        ///    &lt;li&gt;Spontaneous and full of energy in both life and love&lt;/li&gt;
+        ///    &lt;li&gt;Vibrant and loving when allowed to express her free-spirited nature&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to becoming love-sick, infatuated quickly, and losing her heart&lt;/li&gt;
+        ///    &lt;li&gt;Struggles [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_relationships_female_summary {
+            get {
+                return ResourceManager.GetString("thunder_relationships_female_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;3 Tree / Thunder Men and Relationships&lt;/h4&gt;
+        ///
         ///&lt;p&gt;
-        ///    Representing the full force of spring, 3 Tree Energies often have the strongest libido of all 9 Energies. Indeed, sex is usually of great importance to them. However, 3 Tree men, owing to the fact that their Fundamental Energy is in line with their gender, typically express their high sex drive in relationship, but don&apos;t usually get into trouble with sex addiction.
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    3 Tree men are typically strong and virile and their sex [rest of string was truncated]&quot;;.
+        ///    A 3 Tree man seeks a relationship that allows him to be deeply involved while preserving his independence. His intense passions often lead him into numerous love affairs, yet he tends to marry early. If marriage is delayed, it is due to his many ambitions rather than a lack of desire for commitment. Those who enter into a relationship with a 3 Tree must understand that his powerful energy is often expressed across multiple endeavors, though not nec [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_relationships_male {
             get {
@@ -17025,30 +18020,59 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Pioneering&lt;/td&gt;
-        ///                &lt;td&gt;Unrealistic&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Proactive&lt;/td&gt;
-        ///                &lt;td&gt;Chaotic&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Strong&lt;/td&gt;
-        ///                &lt;td&gt; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h4&gt;3 Tree / Thunder Men and Relationships&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Romantic, with an amorous disposition and a chivalric love&lt;/li&gt;
+        ///    &lt;li&gt;Highly passionate and erotic, bringing energy and excitement to relationships&lt;/li&gt;
+        ///    &lt;li&gt;Vibrant and sensitive when allowed to express their playful, free-spirited nature&lt;/li&gt;
+        ///    &lt;li&gt;Strong sexual drive, with a natural ability to chase and express their desires&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May become love-sick or infatuated quickl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_relationships_male_summary {
+            get {
+                return ResourceManager.GetString("thunder_relationships_male_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    In the spiritual journey of Thunder Energies, the central themes are maturation and grounding. 3 Tree people possess an expansive, spacious quality to their being, often paired with a dynamic intensity that can sometimes give rise to inner chaos or restlessness. Their energy is vibrant and far-reaching, but without proper focus, it can become scattered.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Because their powers of perception are vivid and far-sighted, spiritual practices that involve visualiza [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_spirituality {
             get {
                 return ResourceManager.GetString("thunder_spirituality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Vivid perception and expansive awareness support deep spiritual insight.&lt;/li&gt;
+        ///    &lt;li&gt;Strong affinity for visualization practices and meditations on spaciousness.&lt;/li&gt;
+        ///    &lt;li&gt;Powerful vocal energy makes sound-based practices like chanting or mantra especially effective.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to spiritual restlessness—may jump between practices without depth.&lt;/li&gt;
+        ///    &lt;li&gt;Can become scattered or ungrounded due to e [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_spirituality_summary {
+            get {
+                return ResourceManager.GetString("thunder_spirituality_summary", resourceCulture);
             }
         }
         
@@ -17941,7 +18965,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
         ///
-        ///&lt;h5&gt;Gift:&lt;/h5&gt;
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Excellent at &lt;strong&gt;distilling complex ideas into clear, succinct communication&lt;/strong&gt;&lt;/li&gt;
         ///    &lt;li&gt;Strong in &lt;strong&gt;strategy, vision, and systems thinking&lt;/strong&gt;&lt;/li&gt;
@@ -18074,7 +19098,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
         ///
-        ///&lt;h5&gt;Gift:&lt;/h5&gt;
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Emotionally deep and resilient&lt;/li&gt;
         ///    &lt;li&gt;Courageous in facing internal and external unknowns&lt;/li&gt;
@@ -18084,7 +19108,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Feels life deeply and responds with compassion and insight&lt;/li&gt;
         ///&lt;/ul&gt;
         ///
-        ///&lt;h5&gt;Challenge:&lt;/h5&gt;
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;May [rest of string was truncated]&quot;;.
         /// </summary>
@@ -18129,12 +19153,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Financial Outlook&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Financially, One-Water individuals tend to live somewhere between extremes. They are not typically destined for great riches, but neither are they burdened by lasting misfortune. Instead, they generally &lt;strong&gt;get by with quiet resourcefulness&lt;/strong&gt;, sustaining themselves with what they have and being cautious in how they use it.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In fast-paced or competitive business environments — particularly those involving &lt;strong&gt;risk, high-stakes negotiation, or [rest of string was truncated]&quot;;.
+        ///    In fast-paced or competitive business environments — particularly those involving &lt;strong&gt;risk, high-stakes  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_finances {
             get {
@@ -18143,12 +19167,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Financial Outlook&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Neither extremely wealthy nor impoverished — typically &lt;strong&gt;gets by with quiet resourcefulness&lt;/strong&gt;.&lt;/li&gt;
         ///    &lt;li&gt;Not well-suited to &lt;strong&gt;high-risk or competitive financial environments&lt;/strong&gt;; may be easily swindled.&lt;/li&gt;
         ///    &lt;li&gt;Can be &lt;strong&gt;impressed or influenced by displays of power and wealth&lt;/strong&gt;, especially from the opposite sex.&lt;/li&gt;
-        ///    &lt;li&gt;&lt;strong&gt;Cautious and measured&lt;/strong&gt; when dealing with non-monetary resources like time, energ [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;&lt;strong&gt;Cautious and measured&lt;/strong&gt; when dealing with non-monetary resources like time, energy, and re [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_finances_summary {
             get {
@@ -18244,7 +19268,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Common Health Vulnerabilities&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Common Health Challenges&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Kidney ailments&lt;/li&gt;
         ///    &lt;li&gt;Earache&lt;/li&gt;
@@ -18277,7 +19301,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
         ///
-        ///&lt;h5&gt;Gift:&lt;/h5&gt;
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Penetrating, reflective, and philosophical thinker&lt;/li&gt;
         ///    &lt;li&gt;Deeply intuitive and spiritually perceptive&lt;/li&gt;
@@ -18287,7 +19311,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Brings wisdom through quiet observation and deep understanding&lt;/li&gt;
         ///&lt;/ul&gt;
         ///
-        ///&lt;h5&gt;Challenge:&lt;/h5 [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;Challenges&lt;/h5 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_intellectual_qualities_summary {
             get {
@@ -18312,7 +19336,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
         ///
-        ///&lt;h5&gt;Gift:&lt;/h5&gt;
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Adaptive, flexible, and emotionally attuned&lt;/li&gt;
         ///    &lt;li&gt;Diplomatic and patient in social situations&lt;/li&gt;
@@ -18322,7 +19346,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Creates emotional safety and harmony for others&lt;/li&gt;
         ///&lt;/ul&gt;
         ///
-        ///&lt;h5&gt;Challenge:&lt;/h5&gt;
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Can become shy, rese [rest of string was truncated]&quot;;.
         /// </summary>
@@ -18739,15 +19763,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    4 Tree Energies are excellent planners and organisers and often do extremely well at activities and jobs that require such skills.
-        ///    On the other hand, being naturally adaptable and sensitive to others, they can also do very well at public relations. 
-        ///    Wind Energies would also suit broadcasting, television or cinema where they could exploit their sensitivity to the arts.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    4 Tree individuals possess a natural talent for planning, organizing, and clarifying complex situations. Their strong sense of timing, coupled with emotional sensitivity and adaptability, makes them excellent in roles that require foresight, structure, and people skills. Whether in administrative settings, advisory positions, or creative fields like media and the arts, they bring thoughtful insight and steady contribution.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Wind Energies  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_career {
             get {
                 return ResourceManager.GetString("wind_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Career and Professional Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Excellent planners and organizers with a clear sense of timing.&lt;/li&gt;
+        ///    &lt;li&gt;Strong intuition—able to see the bigger picture and point the way forward.&lt;/li&gt;
+        ///    &lt;li&gt;Reliable, steady, and loyal in supportive work environments.&lt;/li&gt;
+        ///    &lt;li&gt;Skilled in advising, consulting, conflict resolution, and simplifying complexity.&lt;/li&gt;
+        ///    &lt;li&gt;Well-suited to public relations, broadcasting, film, education, and organizational roles.&lt;/li&gt;
+        ///&lt;/ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_career_summary {
+            get {
+                return ResourceManager.GetString("wind_career_summary", resourceCulture);
             }
         }
         
@@ -18796,11 +19840,39 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Wind Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    4 Tree people, also known as Wind Energies, represent the mature, deep green growth of spring—a symbol of developed potential and reaching for light. Like wind, they can express a broad spectrum of movement, from soft stillness to sweeping change. Among the Nine Star Ki numbers, Wind is one of the most emotionally expressive and adaptable forces, marked by an innate desire for growth, independence, and harmony.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Wind Energies often carry a quiet d [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_description {
             get {
                 return ResourceManager.GetString("wind_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Wind Energies&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Thoughtful, mature, and emotionally intelligent.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent communicators—eloquent, expressive, and persuasive.&lt;/li&gt;
+        ///    &lt;li&gt;Driven by ideals of freedom, justice, and harmony.&lt;/li&gt;
+        ///    &lt;li&gt;Strong generalists with quick understanding and intuitive insight.&lt;/li&gt;
+        ///    &lt;li&gt;Highly adaptable and resilient, with a fresh and visionary outlook.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally sensitive, moody, and prone to [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_description_summary {
+            get {
+                return ResourceManager.GetString("wind_description_summary", resourceCulture);
             }
         }
         
@@ -18817,6 +19889,43 @@ namespace K9.Globalisation {
         public static string wind_emotional_description {
             get {
                 return ResourceManager.GetString("wind_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    The emotional world of Wind Energies is rich, tender, and deeply attuned to both personal and collective experience. At their best, 4 Tree people express genuine compassion, heartfelt empathy, and an innate desire to grow emotionally and support the growth of those around them. Their feelings are nuanced and often rooted in a profound understanding of the human condition, making their emotional presence healing and inspiring.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Their emotional strength  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_emotional_landscape {
+            get {
+                return ResourceManager.GetString("wind_emotional_landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Deeply compassionate and emotionally insightful.&lt;/li&gt;
+        ///    &lt;li&gt;Tender, empathetic, and emotionally supportive of others.&lt;/li&gt;
+        ///    &lt;li&gt;Driven by a desire for personal and collective emotional growth.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally healing presence when grounded and centered.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to emotional overwhelm and instability when ungrounded.&lt;/li&gt;
+        ///    &lt;li&gt;May become rigid, reactive, or withdrawn under stress [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_emotional_landscape_summary {
+            get {
+                return ResourceManager.GetString("wind_emotional_landscape_summary", resourceCulture);
             }
         }
         
@@ -18853,6 +19962,43 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    4 Tree individuals often possess a natural instinct for opportunity and a strong potential to create financial success. Their adaptability, emotional intelligence, and intuitive understanding of timing can lead them toward affluence, particularly when their talents are nurtured in supportive environments. When focused and grounded, they are capable of attracting wealth and turning ideas into profitable ventures.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    However, Wind Energies can [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_finances {
+            get {
+                return ResourceManager.GetString("wind_finances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Strong potential to generate profit and financial success.&lt;/li&gt;
+        ///    &lt;li&gt;Affluent when grounded and supported.&lt;/li&gt;
+        ///    &lt;li&gt;Good instincts for timing and opportunity.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Inclined to take financial risks without proper assessment.&lt;/li&gt;
+        ///    &lt;li&gt;Can be a spendthrift—emotionally driven or impulsive with money.&lt;/li&gt;
+        ///    &lt;li&gt;May struggle with long-term planning or financial discipline.&lt;/li&gt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_finances_summary {
+            get {
+                return ResourceManager.GetString("wind_finances_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    The Wind character is &lt;strong&gt;exceptionally adaptable&lt;/strong&gt;. However, they do require quite a bit of support from others.
         ///&lt;/p&gt;
@@ -18885,18 +20031,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like the other Tree element, Thunder, Wind Energies need to take good care of the liver and gall bladder. Unlike Thunder Energies who, being Yang, are more prone to liver imbalances, Yin Wind Energies are more likely to experience issues with the Yin gall bladder.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellness&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    It is important for Wind Energies to eat slowly and when relaxed and without distraction. Also, it is better to not eat when not hungry.
+        ///    As a Yin expression of the Tree element, 4 Tree individuals—unlike their Yang counterparts in Thunder Energy—are more prone to imbalances of the gall bladder rather than the liver. However, like all Tree types, care must be taken to support the health of both organs, as they are central to energy flow, digestion, and emotional regulation.
         ///&lt;/p&gt;
+        ///
         ///&lt;p&gt;
-        ///    It is best to avoid cold foods and fluids, as this impairs digestion. [rest of string was truncated]&quot;;.
+        ///    A calm and mindful approach to eating is essential. Wind Energies benefit from eating slowly, only when hungry, an [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_health {
             get {
                 return ResourceManager.GetString("wind_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Health and Wellness&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Sensitive and responsive to the body’s signals and environment.&lt;/li&gt;
+        ///    &lt;li&gt;Strong potential for physical vitality, mental clarity, and emotional balance when well cared for.&lt;/li&gt;
+        ///    &lt;li&gt;Responsive to meditation, relaxation, and gentle movement practices.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of maintaining robust health through steady routines and self-awareness.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to gall bladder imbalances, digestive w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_health_summary {
+            get {
+                return ResourceManager.GetString("wind_health_summary", resourceCulture);
             }
         }
         
@@ -18917,6 +20083,97 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Common Health Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Colds and respiratory sensitivity&lt;/li&gt;
+        ///    &lt;li&gt;Hyperactivity or nervous tension&lt;/li&gt;
+        ///    &lt;li&gt;Intestinal upsets and digestive imbalance&lt;/li&gt;
+        ///    &lt;li&gt;Gall bladder ailments&lt;/li&gt;
+        ///    &lt;li&gt;Connective tissue problems&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///.
+        /// </summary>
+        public static string wind_illnesses {
+            get {
+                return ResourceManager.GetString("wind_illnesses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Wind Energies possess a mind that is both deep and expansive, combining analytical precision with imaginative breadth. They are often drawn to abstract and complex ideas, showing a natural affinity for philosophy, scientific reasoning, and poetic or artistic thought. Their intellectual world is rich and layered, capable of holding multiple perspectives and subtle nuances with ease.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Highly reflective by nature, 4 Tree people tend to think in broad,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_intellectual_qualities {
+            get {
+                return ResourceManager.GetString("wind_intellectual_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Thoughtful, analytical, and deeply reflective.&lt;/li&gt;
+        ///    &lt;li&gt;Strong affinity for philosophy, scientific reasoning, and theoretical insight.&lt;/li&gt;
+        ///    &lt;li&gt;Creative and expressive, with a natural sense for poetry, music, and the arts.&lt;/li&gt;
+        ///    &lt;li&gt;Liberal, open-minded thinkers who excel in abstract and conceptual exploration.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent at formulating ideas, frameworks, and visionary concepts.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;u [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_intellectual_qualities_summary {
+            get {
+                return ResourceManager.GetString("wind_intellectual_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Wind Energies are naturally warm, kind-hearted, and emotionally attuned. They exude a quiet grace that inspires trust and draws others in. With their soft presence, empathy, and ability to truly listen, they often serve as gentle guides, confidants, or mediators in their communities. Their manner is courteous, well-adjusted, and emotionally expressive without being overwhelming, giving others a sense of comfort and safety in their presence.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Highly [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_interpersonal_qualities {
+            get {
+                return ResourceManager.GetString("wind_interpersonal_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Kind, compassionate, and emotionally sensitive.&lt;/li&gt;
+        ///    &lt;li&gt;Gentle presence that inspires trust and confidence.&lt;/li&gt;
+        ///    &lt;li&gt;Charismatic, eloquent, and naturally sociable.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent listener and supportive counsellor.&lt;/li&gt;
+        ///    &lt;li&gt;Flexible, well-mannered, and emotionally expressive in healthy ways.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can be overly trusting, gullible, or easily swayed by others.&lt;/li&gt;
+        ///    &lt;li&gt;St [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_interpersonal_qualities_summary {
+            get {
+                return ResourceManager.GetString("wind_interpersonal_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month represents mid morning or mid to late spring
         ///&lt;/h5&gt;
@@ -18930,6 +20187,26 @@ namespace K9.Globalisation {
         public static string wind_month {
             get {
                 return ResourceManager.GetString("wind_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Suitable Occupations&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Travel agent / travel industry professional&lt;/li&gt;
+        ///    &lt;li&gt;Broadcaster / media professional / journalist&lt;/li&gt;
+        ///    &lt;li&gt;Public relations specialist&lt;/li&gt;
+        ///    &lt;li&gt;Advertising executive / marketing professional&lt;/li&gt;
+        ///    &lt;li&gt;Teacher / instructor&lt;/li&gt;
+        ///    &lt;li&gt;Mediator / guide / master of ceremonies&lt;/li&gt;
+        ///    &lt;li&gt;Businessperson / entrepreneur / stockbroker&lt;/li&gt;
+        ///    &lt;li&gt;Importer / exporter&lt;/li&gt;
+        ///    &lt;li&gt;Publisher / film producer / television director&lt;/li&gt;
+        ///    &lt;li&gt;Com [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_occupations {
+            get {
+                return ResourceManager.GetString("wind_occupations", resourceCulture);
             }
         }
         
@@ -18962,18 +20239,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    4 Tree Energies tend to be dynamic, expressive and unpredictable in relationships
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    The sexual nature of 4 Tree Energies combines the blossoming, dynamic force of spring with the more changeable quality of wind. This means that they are typically rather expressive, forthcoming and romantic, on the one hand, but can be extremely changeable and even fickle on the other.
+        ///    4 Tree individuals are deeply romantic by nature. As a Wind Energy type, they are idealists who believe in “true love” and often carry innocent, heartfelt notions about finding the right person at the right time. Their emotional maturity, physical expressiveness, and alluring, soulful eyes make them naturally magnetic to others. Yet behind their charm lies a vulnerability that leads them to be cautious about revealing their true feelings.
         ///&lt;/p&gt;
         ///
-        ///&lt;h5&gt;
-        ///    Wind Energies can be overly impulsive in their sexual / romantic encounters
-        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The  [rest of string was truncated]&quot;;.
+        ///    Though attractive  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_relationships {
             get {
@@ -18982,30 +20254,57 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Influential&lt;/td&gt;
-        ///                &lt;td&gt;Single-minded&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Penetrating&lt;/td&gt;
-        ///                &lt;td&gt;Unrealistic&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Visionary&lt;/td&gt;
-        ///         [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Romantic, expressive, and idealistic in love.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally mature, physically affectionate, and deeply magnetic.&lt;/li&gt;
+        ///    &lt;li&gt;Loyal and committed—seeks soulful, meaningful partnerships.&lt;/li&gt;
+        ///    &lt;li&gt;Draws others in with warmth, sensitivity, and alluring presence.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May project fantasies onto partners and overlook reality.&lt;/li&gt;
+        ///    &lt;li&gt;Can be overly impulsive, trusting, or drawn to status a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_relationships_summary {
+            get {
+                return ResourceManager.GetString("wind_relationships_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    The spiritual journey of 4 Tree individuals involves cultivating depth, presence, and patience. Their Wind Energy gives them a broad, intuitive sense of what is happening around them—like hovering in space, observing with sensitivity. However, their natural tendency is to move quickly, to leap toward what’s next before fully absorbing what is present. Their growth lies in slowing down, relaxing into the moment, and allowing their inner vision to deepen beyond first impressi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_spirituality {
             get {
                 return ResourceManager.GetString("wind_spirituality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Broad intuitive awareness and a natural sensitivity to spiritual energies.&lt;/li&gt;
+        ///    &lt;li&gt;Potential for deep insight when grounded and present.&lt;/li&gt;
+        ///    &lt;li&gt;Responsive to serene, clean environments that support inner stillness.&lt;/li&gt;
+        ///    &lt;li&gt;Drawn to practices that integrate movement and mindfulness.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Tendency to rush ahead before fully absorbing the present moment.&lt;/li&gt;
+        ///    &lt;li&gt;Restlessness and boredo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_spirituality_summary {
+            get {
+                return ResourceManager.GetString("wind_spirituality_summary", resourceCulture);
             }
         }
         

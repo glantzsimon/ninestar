@@ -87,6 +87,7 @@
             public const string AfternoonEnergyLabel = "AfternoonEnergyLabel";
             public const string DailyInvertedEnergyLabel = "DailyInvertedEnergyLabel";
             public const string DayStarLabel = "DayStarLabel";
+            public const string CareerLabel = "Career";
             public const string YinYangLabel = "YinYangLabel";
             public const string ModalityLabel = "ModalityLabel";
             public const string ModalityDescriptionLabel = "ModalityDescriptionLabel";
@@ -106,8 +107,14 @@
             public const string EnergyTypeLabel = "EnergyTypeLabel";
             public const string EnergyDescriptionLabel = "EnergyDescriptionLabel";
             public const string HealthLabel = "HealthLabel";
+            public const string IllnessesLabel = "Illnesses";
+            public const string IntellectualQualitiesLabel = "IntellectualQualities";
+            public const string InterpersonalQualitiesLabel = "InterpersonalQualities";
+            public const string SpiritualityLabel = "Spirituality";
             public const string ChildLabel = "ChildLabel";
             public const string OccupationsLabel = "OccupationsLabel";
+            public const string EmotionalLandscapeLabel = "EmotionalLandscape";
+            public const string FinancesLabel = "Finances";
             public const string PersonalDevelopemntLabel = "PersonalDevelopemntLabel";
             public const string ExamplesLabel = "ExamplesLabel";
             public const string StripeCustomerIdLabel = "StripeCustomerIdLabel";

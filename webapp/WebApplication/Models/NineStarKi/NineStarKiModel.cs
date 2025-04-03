@@ -476,7 +476,7 @@ namespace K9.WebApplication.Models
         public string Overview => MainEnergy?.OverviewDescription;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthLabel)]
-        public string Health => MainEnergy?.HealthDescription;
+        public string Health => MainEnergy?.Health;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
         public string Career => MainEnergy?.CareerDescription;

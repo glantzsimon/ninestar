@@ -5422,6 +5422,12 @@
   <data name="coreearth_spirituality_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\spirituality\en-gb\summary\coreearth-spirituality-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="EmotionalLandscape" xml:space="preserve">
+    <value>Emotional Landscape</value>
+  </data>
+  <data name="Finances" xml:space="preserve">
+    <value>Finances</value>
+  </data>
   <data name="fire_career_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\career\en-gb\summary\fire-career-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -5514,6 +5520,15 @@
   </data>
   <data name="heaven_spirituality_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\spirituality\en-gb\summary\heaven-spirituality-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Illnesses" xml:space="preserve">
+    <value>Common Health Challenges</value>
+  </data>
+  <data name="IntellectualQualities" xml:space="preserve">
+    <value>Intellectual Qualities</value>
+  </data>
+  <data name="InterpersonalQualities" xml:space="preserve">
+    <value>Interpersonal Qualities</value>
   </data>
   <data name="lake_career_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\career\en-gb\summary\lake-career-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -5610,6 +5625,9 @@
   </data>
   <data name="soil_relationships_male_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\relationships\en-gb\summary\soil-relationships-male-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Spirituality" xml:space="preserve">
+    <value>Spirituality</value>
   </data>
   <data name="thunder_finances_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\finances\en-gb\summary\thunder-finances-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

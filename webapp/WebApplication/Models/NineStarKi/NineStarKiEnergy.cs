@@ -424,6 +424,20 @@ namespace K9.WebApplication.Models
                 {ENineStarKiEnergy.Fire, Dictionary.fire_description}
             };
 
+        private static readonly Dictionary<ENineStarKiEnergy, string> _mainEnergySummaries =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_description_summary},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_description_summary},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_description_summary},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_description_summary},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_description_summary},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_description_summary},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_description_summary},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_description_summary},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_description_summary}
+            };
+
         private static readonly Dictionary<ENineStarKiEnergy, string> _emotionalDescriptions =
             new Dictionary<ENineStarKiEnergy, string>
             {
@@ -634,18 +648,88 @@ namespace K9.WebApplication.Models
                 {ENineStarKiEnergy.Fire, Dictionary.fire_illnesses}
             };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _careerDetails
+        private static readonly Dictionary<ENineStarKiEnergy, string> _intellectualQualities
             = new Dictionary<ENineStarKiEnergy, string>
             {
-                {ENineStarKiEnergy.Water, Dictionary.water_career},
-                {ENineStarKiEnergy.Soil, Dictionary.soil_career},
-                {ENineStarKiEnergy.Thunder, Dictionary.thunder_career},
-                {ENineStarKiEnergy.Wind, Dictionary.wind_career},
-                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_career},
-                {ENineStarKiEnergy.Heaven, Dictionary.heaven_career},
-                {ENineStarKiEnergy.Lake, Dictionary.lake_career},
-                {ENineStarKiEnergy.Mountain, Dictionary.mountain_career},
-                {ENineStarKiEnergy.Fire, Dictionary.fire_career}
+                {ENineStarKiEnergy.Water, Dictionary.water_intellectual_qualities},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_intellectual_qualities},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_intellectual_qualities},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_intellectual_qualities},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_intellectual_qualities},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_intellectual_qualities},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_intellectual_qualities},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_intellectual_qualities},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_intellectual_qualities}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _intellectualQualitiesSummaries
+            = new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_intellectual_qualities_summary},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_intellectual_qualities_summary},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_intellectual_qualities_summary},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_intellectual_qualities_summary},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_intellectual_qualities_summary},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_intellectual_qualities_summary},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_intellectual_qualities_summary},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_intellectual_qualities_summary},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_intellectual_qualities_summary}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _interpersonalQualities
+            = new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_interpersonal_qualities},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_interpersonal_qualities},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_interpersonal_qualities},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_interpersonal_qualities},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_interpersonal_qualities},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_interpersonal_qualities},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_interpersonal_qualities},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_interpersonal_qualities},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_interpersonal_qualities}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _interpersonalQualitiesSummaries
+            = new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_interpersonal_qualities_summary},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_interpersonal_qualities_summary},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_interpersonal_qualities_summary},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_interpersonal_qualities_summary},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_interpersonal_qualities_summary},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_interpersonal_qualities_summary},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_interpersonal_qualities_summary},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_interpersonal_qualities_summary},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_interpersonal_qualities_summary}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _spiritualityDetails
+            = new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_spirituality},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_spirituality},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_spirituality},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_spirituality},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_spirituality},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_spirituality},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_spirituality},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_spirituality},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_spirituality}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _spiritualitySummaries
+            = new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_spirituality_summary},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_spirituality_summary},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_spirituality_summary},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_spirituality_summary},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_spirituality_summary},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_spirituality_summary},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_spirituality_summary},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_spirituality_summary},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_spirituality_summary}
             };
 
         #endregion
@@ -769,6 +853,10 @@ namespace K9.WebApplication.Models
         public string MainEnergyDescription =>
             EnergyType == ENineStarKiEnergyType.MainEnergy ? GetMainEnergyDescription() : string.Empty;
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
+        public string MainEnergySummary =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetMainEnergySummary() : string.Empty;
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
         public string EmotionalEnergyDescription => EnergyType == ENineStarKiEnergyType.CharacterEnergy
             ? GetEmotionalEnergyDescription()
@@ -787,17 +875,73 @@ namespace K9.WebApplication.Models
         public string DayStarDescription =>
             EnergyType == ENineStarKiEnergyType.DailyEnergy ? GetDayStarDescription() : string.Empty;
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OverviewLabel)]
         public string OverviewDescription =>
             EnergyType == ENineStarKiEnergyType.MainEnergy ? GetOverview() : string.Empty;
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
-        public string HealthDescription =>
-            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetHealthDescription() : string.Empty;
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
+        
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CareerLabel)]
         public string CareerDescription =>
             EnergyType == ENineStarKiEnergyType.MainEnergy ? GetCareerDescription() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CareerLabel)]
+        public string CareerSummary =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetCareerSummary() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
+        public string Occupations =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetOccupationsDescription() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmotionalLandscapeLabel)]
+        public string EmotionalLandscape =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetEmotionalLandscape() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmotionalLandscapeLabel)]
+        public string EmotionalLandscapeSummary =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetEmotionalLandscapeSummary() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FinancesLabel)]
+        public string Finances =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetFinancesDescription() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FinancesLabel)]
+        public string FinancesSummary =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetFinancesSummary() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthLabel)]
+        public string Health =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetHealthDescription() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthLabel)]
+        public string HealthSummary =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetHealthSummary() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IllnessesLabel)]
+        public string Illnesses =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetIllnesses() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IntellectualQualitiesLabel)]
+        public string IntellectualQualities =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetIntellectualQualities() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IntellectualQualitiesLabel)]
+        public string IntellectualQualitiesSummary =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetIntellectualQualitiesSummary() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InterpersonalQualitiesLabel)]
+        public string InterpersonalQualities =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetInterpersonalQualities() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InterpersonalQualitiesLabel)]
+        public string InterpersonalQualitiesSummary =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetInterpersonalQualitiesSummary() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SpiritualityLabel)]
+        public string Spirituality =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetSpiritualityDescription() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SpiritualityLabel)]
+        public string SpiritualitySummary =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetSpiritualitySummary() : string.Empty;
 
         #endregion
 
@@ -1062,20 +1206,51 @@ namespace K9.WebApplication.Models
 
         private string GetMainEnergyDescription() => _mainEnergyDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
-        private string GetEmotionalEnergyDescription() => _emotionalDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+        private string GetMainEnergySummary() => _mainEnergySummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetEmotionalLandscape() => _emotionalLandscapeDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetEmotionalLandscapeSummary() => _emotionalLandscapeSummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetFinancesDescription() => _finances.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetFinancesSummary() => _financesSummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetHealthDescription() => _healthDetails.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetHealthSummary() => _healthSummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetIllnesses() => _illnesses.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetIntellectualQualities() => _intellectualQualities.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetIntellectualQualitiesSummary() => _intellectualQualitiesSummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetInterpersonalQualities() => _interpersonalQualities.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetInterpersonalQualitiesSummary() => _interpersonalQualitiesSummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+        
+        private string GetCareerDescription() => _careerDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetCareerSummary() => _careerSummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetOccupationsDescription() => _occupations.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetSpiritualityDescription() => _spiritualityDetails.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetSpiritualitySummary() => _spiritualitySummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        
 
         private string GetSurfaceEnergyDescription() => _surfaceEnergyDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetChildDescription() => _childDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
+        private string GetEmotionalEnergyDescription() => _emotionalDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
         private string GetDayStarDescription() => _dayStarDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetOverview() => _overviews.TryGetValue(Energy, out var desc) ? desc : string.Empty;
-
-        private string GetHealthDescription() => _healthDetails.TryGetValue(Energy, out var desc) ? desc : string.Empty;
-
-        private string GetCareerDescription() => _careerDetails.TryGetValue(Energy, out var desc) ? desc : string.Empty;
-
 
         private string GetEpochCycleDescription() => _epochCycleDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 

@@ -6822,6 +6822,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Emotional Landscape.
+        /// </summary>
+        public static string EmotionalLandscape {
+            get {
+                return ResourceManager.GetString("EmotionalLandscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ends On.
         /// </summary>
         public static string EndsOnLabel {
@@ -7166,6 +7175,15 @@ namespace K9.Globalisation {
         public static string Female {
             get {
                 return ResourceManager.GetString("Female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finances.
+        /// </summary>
+        public static string Finances {
+            get {
+                return ResourceManager.GetString("Finances", resourceCulture);
             }
         }
         
@@ -9490,6 +9508,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Common Health Challenges.
+        /// </summary>
+        public static string Illnesses {
+            get {
+                return ResourceManager.GetString("Illnesses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Illumination.
         /// </summary>
         public static string Illumination {
@@ -9800,6 +9827,24 @@ namespace K9.Globalisation {
         public static string IntellectualBiorhythm {
             get {
                 return ResourceManager.GetString("IntellectualBiorhythm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Intellectual Qualities.
+        /// </summary>
+        public static string IntellectualQualities {
+            get {
+                return ResourceManager.GetString("IntellectualQualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interpersonal Qualities.
+        /// </summary>
+        public static string InterpersonalQualities {
+            get {
+                return ResourceManager.GetString("InterpersonalQualities", resourceCulture);
             }
         }
         
@@ -17158,6 +17203,15 @@ namespace K9.Globalisation {
         public static string SpiritualBiorhytm {
             get {
                 return ResourceManager.GetString("SpiritualBiorhytm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spirituality.
+        /// </summary>
+        public static string Spirituality {
+            get {
+                return ResourceManager.GetString("Spirituality", resourceCulture);
             }
         }
         

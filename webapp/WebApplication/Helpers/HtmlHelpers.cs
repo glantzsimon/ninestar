@@ -78,7 +78,8 @@ namespace K9.WebApplication.Helpers
                 ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
                 ImageSize = imageSize,
                 ImageLayout = imageLayout,
-                IsDualView = true
+                IsDualView = true,
+                PanelView = SessionHelper.GetCurrentUserDefaultPanelView()
             });
         }
 

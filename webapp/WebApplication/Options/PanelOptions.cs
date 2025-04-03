@@ -30,11 +30,11 @@ namespace K9.WebApplication.Options
         public EPanelImageLayout ImageLayout { get; set; }
         public bool IsDualView { get; set; }
 
-        public string PanelId => $"panel-{Id}";
+        public string FullTextOptionId { get; }
+        public string SummaryOptionId { get; }
+        public string UniqueRadioName { get; }
 
-        public string FullTextOptionId => Guid.NewGuid().ToString();
-        public string SummaryOptionId => Guid.NewGuid().ToString();
-        public string UniqueRadioName => Guid.NewGuid().ToString();
+        public string PanelId => $"panel-{Id}";
         public string SummaryChecked => PanelView == EPanelView.SummaryView ? "checked" : "";
         public string FullTextChecked => PanelView == EPanelView.FullTextView ? "checked" : "";
 
@@ -45,5 +45,12 @@ namespace K9.WebApplication.Options
         public string ImageLayoutCss => ImageLayout == EPanelImageLayout.Contain
             ? "background-size: contain"
             : "background-size: cover";
+
+        public PanelOptions()
+        {
+            FullTextOptionId = Guid.NewGuid().ToString();
+            SummaryOptionId = Guid.NewGuid().ToString();
+            UniqueRadioName = Guid.NewGuid().ToString();
+        }
     }
 }

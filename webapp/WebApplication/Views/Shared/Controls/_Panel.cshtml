@@ -8,10 +8,11 @@
         : Model.ImageSize == EPanelImageSize.Small
                 ? "image-panel-small" : "";
     var panelBodyClass = hasImage ? "panel-body-image" : "";
-    
+
     var panelBodyFullTextDisplayStyle = Model.PanelView == EPanelView.FullTextView ? "" : "display: none;";
     var panelSummaryDisplayStyle = Model.PanelView == EPanelView.FullTextView ? "display: none;" : "";
 }
+
 @*Bookmark*@
 <div id="@Model.Id" style="position: relative; top: -180px;"></div>
 <div class="panel panel-default" id="@Model.PanelId">
@@ -21,11 +22,15 @@
             <h4 class="margin-0 float-left"><strong>@Model.Title</strong></h4>
             @if (Model.IsDualView)
             {
-                <div class="float-right">
-                    @Html.BootstrapEditorFor(e => e.PanelView, new EditorOptions
-                    {
-                        Label = ""
-                    })
+                <div class="float-right d-flex align-items-center panel-display-options">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.SummaryOptionId" value="@EPanelView.SummaryView" @Model.SummaryChecked>
+                        <label class="form-check-label" for="@Model.SummaryOptionId">@Dictionary.SummaryView</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.FullTextOptionId" value="@EPanelView.FullTextView" @Model.FullTextChecked>
+                        <label class="form-check-label" for="@Model.FullTextOptionId">@Dictionary.FullTextView</label>
+                    </div>
                 </div>
             }
         </div>

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using K9.Globalisation;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
@@ -30,6 +31,12 @@ namespace K9.WebApplication.Options
         public bool IsDualView { get; set; }
 
         public string PanelId => $"panel-{Id}";
+
+        public string FullTextOptionId => Guid.NewGuid().ToString();
+        public string SummaryOptionId => Guid.NewGuid().ToString();
+        public string UniqueRadioName => Guid.NewGuid().ToString();
+        public string SummaryChecked => PanelView == EPanelView.SummaryView ? "checked" : "";
+        public string FullTextChecked => PanelView == EPanelView.FullTextView ? "checked" : "";
 
         [UIHint("PanelView")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PanelViewLabel)]

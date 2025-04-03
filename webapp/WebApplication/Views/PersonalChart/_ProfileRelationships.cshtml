@@ -6,7 +6,7 @@
 {
     <div class="container main-content clear-both">
         <div>
-            @Html.CollapsiblePanel(Model.RelationshipsLabel, Model.MainEnergyRelationshipsDetails, true)
+            @Html.PanelWithSummary(Model.RelationshipsLabel, Model.MainEnergyRelationshipsDetails, Model.MainEnergyRelationshipsSummary)
 
             @Html.CollapsiblePanel(Dictionary.SexualityGenderRelationLabel, Html.Partial("_ProfileSexualityRelationType").ToString(), true)
         </div>

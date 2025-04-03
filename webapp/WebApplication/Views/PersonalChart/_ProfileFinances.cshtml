@@ -6,6 +6,6 @@
 @if (Model != null)
 {
     <div class="container main-content clear-both">
-        @Html.Panel(Model.MainEnergy.EnergyFinancesTitle, Model.MainEnergy.Finances, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.PanelWithSummary(Model.MainEnergy.EnergyFinancesTitle, Model.MainEnergy.Finances, Model.MainEnergy.FinancesSummary, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
     </div>
 }

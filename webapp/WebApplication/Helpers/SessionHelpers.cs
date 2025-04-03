@@ -40,7 +40,7 @@ namespace K9.WebApplication.Helpers
             HttpContext.Current.Session[key] = value;
         }
 
-        public static int GetIntValue(string key)
+        public static int GetIntValue(string key, int? defaultValue = 0)
         {
             object value = null;
             try
@@ -51,6 +51,10 @@ namespace K9.WebApplication.Helpers
             {
             }
             var stringValue = value?.ToString() ?? string.Empty;
+            if (string.IsNullOrEmpty(stringValue))
+            {
+                return defaultValue ?? 0;
+            }
             int.TryParse(stringValue, out var intValue);
             return intValue;
         }
@@ -84,7 +88,7 @@ namespace K9.WebApplication.Helpers
 
         public static EPanelView GetCurrentUserDefaultPanelView()
         {
-            var intValue = GetIntValue(Constants.SessionConstants.DefaultPanelView);
+            var intValue = GetIntValue(Constants.SessionConstants.DefaultPanelView, (int)EPanelView.SummaryView);
             return (EPanelView)intValue;
         }
 

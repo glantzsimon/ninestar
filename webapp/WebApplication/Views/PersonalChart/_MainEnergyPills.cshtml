@@ -38,14 +38,14 @@
             <div id="m-essence" class="tab-pane fade in active">
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.PanelWithSummary(Model.MainEnergy.EnergyEssenceTitle, $"{ Model.MainEnergy.EnergyDescription} <hr /> {Html.Raw(Model.Overview)}", Model.MainEnergy.MainEnergySummary)
+                    @Html.PanelWithSummary(Model.MainEnergy.EnergyEssenceTitle, $"{ Model.MainEnergy.EnergyDescription} <hr/> {Html.Raw(Model.Overview)}", Model.MainEnergy.MainEnergySummary)
                 }
             </div>
 
             <div id="m-intellectual-qualities" class="tab-pane fade">
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Panel(Model.MainEnergy.EnergyIntellectualQualitiesTitle, Model.MainEnergy.IntellectualQualities)
+                    @Html.PanelWithSummary(Model.MainEnergy.EnergyIntellectualQualitiesTitle, Model.MainEnergy.IntellectualQualities, Model.MainEnergy.IntellectualQualitiesSummary)
                 }
 
                 <br />
@@ -55,7 +55,7 @@
             <div id="m-interpersonal-qualities" class="tab-pane fade">
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Panel(Model.MainEnergy.EnergyInterpersonalQualitiesTitle, Model.MainEnergy.InterpersonalQualities)
+                    @Html.PanelWithSummary(Model.MainEnergy.EnergyInterpersonalQualitiesTitle, Model.MainEnergy.InterpersonalQualities, Model.MainEnergy.InterpersonalQualitiesSummary)
                 }
 
                 <br />
@@ -65,7 +65,7 @@
             <div id="m-emotional-landscape" class="tab-pane fade">
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Panel(Model.MainEnergy.EnergyEmotionalLandscapeTitle, Model.MainEnergy.EmotionalLandscape)
+                    @Html.PanelWithSummary(Model.MainEnergy.EnergyEmotionalLandscapeTitle, Model.MainEnergy.EmotionalLandscape, Model.MainEnergy.EmotionalLandscapeSummary)
                 }
 
                 <br />

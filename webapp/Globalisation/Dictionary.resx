@@ -5422,6 +5422,45 @@
   <data name="coreearth_spirituality_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\spirituality\en-gb\summary\coreearth-spirituality-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="fire_career_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\summary\fire-career-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\summary\fire-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_emotional_landscape" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotionallandscape\en-gb\fire-emotional-landscape.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_emotional_landscape_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotionallandscape\en-gb\summary\fire-emotional-landscape-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_finances_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\finances\en-gb\summary\fire-finances-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_intellectual_qualities" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\intellectualqualities\en-gb\fire-intellectual-qualities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_intellectual_qualities_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\intellectualqualities\en-gb\summary\fire-intellectual-qualities-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_interpersonal_qualities" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\interpersonalqualities\en-gb\fire-interpersonal-qualities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_interpersonal_qualities_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\interpersonalqualities\en-gb\summary\fire-interpersonal-qualities-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\occupations\fire-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_relationships_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\summary\fire-relationships-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_spirituality_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\summary\fire-spirituality-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_career_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\summary\heaven-career-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="heaven_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\main\en-gb\summary\heaven-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -5430,6 +5469,18 @@
   </data>
   <data name="heaven_emotional_landscape_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotionallandscape\en-gb\summary\heaven-emotional-landscape-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_finances" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\finances\en-gb\heaven-finances.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_finances_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\finances\en-gb\summary\heaven-finances-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_health_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\summary\heaven-health-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_illnesses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\illnesses\heaven-illnesses.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="heaven_intellectual_qualities" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\intellectualqualities\en-gb\heaven-intellectual-qualities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -5448,5 +5499,92 @@
   </data>
   <data name="heaven_relationships_male_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\relationships\en-gb\summary\heaven-relationships-male-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_spirituality_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\summary\heaven-spirituality-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_career_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\summary\lake-career-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\summary\lake-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_emotional_landscape" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotionallandscape\en-gb\lake-emotional-landscape.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_emotional_landscape_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotionallandscape\en-gb\summary\lake-emotional-landscape-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_finances" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\finances\en-gb\lake-finances.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_finances_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\finances\en-gb\summary\lake-finances-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_health_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\summary\lake-health-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_illnesses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\illnesses\lake-illnesses.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_intellectual_qualities" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\intellectualqualities\en-gb\lake-intellectual-qualities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_intellectual_qualities_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\intellectualqualities\en-gb\summary\lake-intellectual-qualities-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_interpersonal_qualities" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\interpersonalqualities\en-gb\lake-interpersonal-qualities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_interpersonal_qualities_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\interpersonalqualities\en-gb\summary\lake-interpersonal-qualities-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_relationships_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\summary\lake-relationships-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_spirituality_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\summary\lake-spirituality-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_career_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\summary\mountain-career-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\summary\mountain-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_emotional_landscape" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotionallandscape\en-gb\mountain-emotional-landscape.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_emotional_landscape_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotionallandscape\en-gb\summary\mountain-emotional-landscape-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_finances_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\finances\en-gb\summary\mountain-finances-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_health_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\summary\mountain-health-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_illnesses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\illnesses\mountain-illnesses.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_intellectual_qualities" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\intellectualqualities\en-gb\mountain-intellectual-qualities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_intellectual_qualities_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\intellectualqualities\en-gb\summary\mountain-intellectual-qualities-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_interpersonal_qualities" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\interpersonalqualities\en-gb\mountain-interpersonal-qualities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_interpersonal_qualities_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\interpersonalqualities\en-gb\summary\mountain-interpersonal-qualities-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\occupations\mountain-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_relationships_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\summary\mountain-relationships-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_spirituality_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\summary\mountain-spirituality-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

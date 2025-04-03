@@ -7188,13 +7188,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire Energies are well suited to jobs which are centred around communication and relationship building, or in careers in which they can express themselves as fully as possible, be it creatively, emotionally or artistically.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Fire Energies thrive in careers that allow for &lt;strong&gt;expression, communication, and visibility&lt;/strong&gt;. They are natural performers, presenters, and communicators—drawn to roles that put them in contact with others and allow them to share their charisma and insight. Whether in creative, emotional, or artistic domains, Fires shine when given room to inspire.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    They are &lt;strong&gt;highly efficient, quick thinkers, and excellent problem solve [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_career {
             get {
                 return ResourceManager.GetString("fire_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Career and Professional Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Excellent communicators and natural leaders in public-facing roles.&lt;/li&gt;
+        ///    &lt;li&gt;Inspiring, charismatic, and able to catalyze movement and morale.&lt;/li&gt;
+        ///    &lt;li&gt;Creative, expressive, and highly effective in promotional, artistic, or transformational work.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of overcoming obstacles with agility and passion—quick to adapt and energize others.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Struggles with routine [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_career_summary {
+            get {
+                return ResourceManager.GetString("fire_career_summary", resourceCulture);
             }
         }
         
@@ -7252,11 +7277,34 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Fire Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Fire Energies radiate brilliance, vision, and warmth. Of all the Nine Star Ki types, they are the most expansive—burning brightly with charisma, emotional presence, and creative vitality. They often carry a natural ability to &lt;strong&gt;inspire, uplift, and illuminate&lt;/strong&gt;, making them powerful catalysts for transformation and change.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    With a gift for &lt;strong&gt;communication, storytelling, and expression&lt;/strong&gt;, Fires tend to shine in roles that  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_description {
             get {
                 return ResourceManager.GetString("fire_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Fire Energies&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Brilliant, radiant, and emotionally expressive—naturally captivating and charismatic.&lt;/li&gt;
+        ///    &lt;li&gt;Clear communicators with a gift for storytelling, performance, and emotional leadership.&lt;/li&gt;
+        ///    &lt;li&gt;Able to see the bigger picture and navigate complexity with intuitive clarity.&lt;/li&gt;
+        ///    &lt;li&gt;Resilient, mobile, and emotionally elastic—bounce back quickly from setbacks.&lt;/li&gt;
+        ///    &lt;li&gt;Warm-hearted, honourable, and inspirational to those arou [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_description_summary {
+            get {
+                return ResourceManager.GetString("fire_description_summary", resourceCulture);
             }
         }
         
@@ -7308,6 +7356,42 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Fire Energies are emotionally radiant—defined by &lt;strong&gt;joy, humour, and a sparkling sense of presence&lt;/strong&gt;. Their warmth is contagious, and they often bring &lt;strong&gt;lightness, laughter, and vibrant emotional expression&lt;/strong&gt; to the people and spaces around them. Deeply intuitive, they tend to read the emotional tone of a room instinctively, often sensing what others feel before it&apos;s spoken.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    They are &lt;strong&gt;emotionally transparent and express [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_emotional_landscape {
+            get {
+                return ResourceManager.GetString("fire_emotional_landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Joyful, expressive, and emotionally radiant—brings light and laughter to others.&lt;/li&gt;
+        ///    &lt;li&gt;Highly intuitive and emotionally attuned—sensitive to the moods of people and spaces.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally elastic—bounces back quickly from setbacks or conflict.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of great empathy and compassion when grounded in presence.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to jealousy, agitation, and emotional overreaction [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_emotional_landscape_summary {
+            get {
+                return ResourceManager.GetString("fire_emotional_landscape_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Fire characters are some of the &lt;strong&gt;brightest and liveliest of all the nine characters&lt;/strong&gt;. 
         ///&lt;/p&gt;
@@ -7342,6 +7426,28 @@ namespace K9.Globalisation {
         public static string fire_epoch_cycle {
             get {
                 return ResourceManager.GetString("fire_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Magnetic ability to attract wealth and opportunities.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent at making money through charisma, creativity, and influence.&lt;/li&gt;
+        ///    &lt;li&gt;Generous, open-handed, and loves to share success with others.&lt;/li&gt;
+        ///    &lt;li&gt;Thrives in financial roles tied to beauty, entertainment, or self-expression.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Impulsive spender with a taste for luxury and fine things.&lt;/li&gt;
+        ///    &lt;li&gt;May pr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_finances_summary {
+            get {
+                return ResourceManager.GetString("fire_finances_summary", resourceCulture);
             }
         }
         
@@ -7393,13 +7499,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    In Chinese medicine, the element Fire controls the function of the heart and small intestine and therefore these Energies must guard against circulatory disorders. It is also advisable to avoid 
-        ///    overly hot, spicy or salty foods.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellness&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    It is important for Fire Energies to get plenty of rest and to take extra care to calm their minds and nervous system.
-        ///&lt;/p&gt;.
+        ///    In Traditional Chinese Medicine, the Fire element governs the &lt;strong&gt;heart and small intestine&lt;/strong&gt;, making these areas particularly important for 9 Fire Energies. They are also more prone to imbalances in the &lt;strong&gt;glandular and circulatory systems&lt;/strong&gt;, especially under stress. When overwhelmed or overstimulated, these Energies may experience symptoms ranging from &lt;strong&gt;nervousness and anxiety&lt;/strong&gt; to digestive upset or circulatory issues.
+        ///&lt;/p&gt;
+        ///
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_health {
             get {
@@ -7427,6 +7532,79 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Fire Energies possess a &lt;strong&gt;quick, intuitive, and discerning mind&lt;/strong&gt;. Their thoughts move swiftly, and they often bring &lt;strong&gt;clarity and insight to complex or concealed matters&lt;/strong&gt;. They have a gift for illuminating what lies beneath the surface—naming, classifying, and refining ideas that others may only sense in vague terms.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Their intelligence is often paired with &lt;strong&gt;aesthetic sensitivity and spiritual awareness&lt;/strong&gt;. F [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_intellectual_qualities {
+            get {
+                return ResourceManager.GetString("fire_intellectual_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Quick, sharp, and discerning mind with intuitive clarity.&lt;/li&gt;
+        ///    &lt;li&gt;Brings hidden or complex matters to light—excellent at refining and classifying ideas.&lt;/li&gt;
+        ///    &lt;li&gt;Strong aesthetic and spiritual sensitivity—refined taste and progressive views.&lt;/li&gt;
+        ///    &lt;li&gt;Communicates insightfully and persuasively—sees the bigger picture clearly.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May become overly opinionated or express views without [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_intellectual_qualities_summary {
+            get {
+                return ResourceManager.GetString("fire_intellectual_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Fire Energies are naturally &lt;strong&gt;sociable, radiant, and expressive&lt;/strong&gt;. They tend to be magnetic presences in any room—warm, charming, and full of life. Their flair for drama, style, and emotional expression makes them highly engaging companions, and they often find themselves surrounded by friends and admirers.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    In conversation, they are &lt;strong&gt;eloquent and stimulating&lt;/strong&gt;, with a tendency to uplift, entertain, and inspire. They’re g [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_interpersonal_qualities {
+            get {
+                return ResourceManager.GetString("fire_interpersonal_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Charismatic, outgoing, and socially magnetic.&lt;/li&gt;
+        ///    &lt;li&gt;Warm, generous, and quick to forgive—uplifts others with ease.&lt;/li&gt;
+        ///    &lt;li&gt;Skilled in public relations, emotional expression, and hospitality.&lt;/li&gt;
+        ///    &lt;li&gt;Stylish, cheerful, and naturally inspiring—radiates confidence and presence.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can become dramatic, vain, or self-absorbed when unbalanced.&lt;/li&gt;
+        ///    &lt;li&gt;Struggles with deeper emo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_interpersonal_qualities_summary {
+            get {
+                return ResourceManager.GetString("fire_interpersonal_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Metal people tend to be pragmatic, critical and clear and generally have a broad perspective and lots of common sense. However, they can also become overly rigid and stuck in one particular point of view. Fire Energies, who benefit from the perspective of the midday sun, often have a clearer, more balanced perspective than Metal Energies, as well as a warm, dynamic quality to them which is particularly good at gently melting and softening the rigidity of Metal people..
         /// </summary>
         public static string fire_metal {
@@ -7449,6 +7627,28 @@ namespace K9.Globalisation {
         public static string fire_month {
             get {
                 return ResourceManager.GetString("fire_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Suitable Occupations&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Actor / Actress&lt;/li&gt;
+        ///    &lt;li&gt;Fashion designer / Model&lt;/li&gt;
+        ///    &lt;li&gt;Journalist / War correspondent&lt;/li&gt;
+        ///    &lt;li&gt;Public relations specialist&lt;/li&gt;
+        ///    &lt;li&gt;Diplomat / Politician / Public servant&lt;/li&gt;
+        ///    &lt;li&gt;Author / Writer / Publisher&lt;/li&gt;
+        ///    &lt;li&gt;Painter / Artist / Artisan / Craftsman&lt;/li&gt;
+        ///    &lt;li&gt;Advertising agent / Announcer&lt;/li&gt;
+        ///    &lt;li&gt;Judge / Barrister / Broker&lt;/li&gt;
+        ///    &lt;li&gt;Beautician / Beauty parlor owner&lt;/li&gt;
+        ///    &lt;li&gt;Optometrist / Doctor&lt;/li&gt;
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_occupations {
+            get {
+                return ResourceManager.GetString("fire_occupations", resourceCulture);
             }
         }
         
@@ -7481,17 +7681,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    9 Fires are typically passionate and warm in relationships
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
+        ///
         ///&lt;p&gt;
-        ///    9 Fires are typically the most passionate of the 9 Energies and express themselves with great charisma and warmth in relationships. They wear their emotions on their sleeve and let thei partners know where they stand.
+        ///    Fire Energies bring &lt;strong&gt;passion, warmth, and charisma&lt;/strong&gt; to their relationships. Often among the most romantic of the Nine Star Ki types, they express affection openly and vividly. Their natural expressiveness means their partners are rarely left guessing—9 Fires typically wear their hearts on their sleeves and speak with emotional clarity.
         ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Fire Energies often have quite a flamboyant nature, but they are not necessarily flirting with you
-        ///&lt;/h5&gt;
+        ///
         ///&lt;p&gt;
-        ///    The Fire element makes these Energies very attractive to others. However, t [rest of string was truncated]&quot;;.
+        ///    Radiant and emotionally attuned, Fire Energies often attract many admirers. Their magnetic charm can lead  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_relationships {
             get {
@@ -7500,30 +7697,60 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;th&gt;When in balance:&lt;/th&gt;
-        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///            &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Clear&lt;/td&gt;
-        ///                &lt;td&gt;Whimsical&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Radiant&lt;/td&gt;
-        ///                &lt;td&gt;Vain&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Passionate&lt;/td&gt;
-        ///             [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Passionate, romantic, and emotionally expressive partners.&lt;/li&gt;
+        ///    &lt;li&gt;Intuitive and sensitive—tuned in to their partner’s emotional needs.&lt;/li&gt;
+        ///    &lt;li&gt;Charismatic, affectionate, and spontaneous in love.&lt;/li&gt;
+        ///    &lt;li&gt;Drawn to beauty, warmth, and shared joy in relationship dynamics.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May appear flirtatious or impulsive, even when not intending to be.&lt;/li&gt;
+        ///    &lt;li&gt;Struggles with long-term commitment  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_relationships_summary {
+            get {
+                return ResourceManager.GetString("fire_relationships_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Fire Energies possess a &lt;strong&gt;natural clarity and spiritual discernment&lt;/strong&gt; that allows them to quickly identify what is meaningful and what is merely superficial. Their intuitive insight is strong, and many spiritual truths strike them not as mysteries but as &lt;strong&gt;obvious, self-evident facts&lt;/strong&gt;. They often value &lt;strong&gt;illumination, elegance, and truth-telling&lt;/strong&gt; over mystical abstraction or dogma.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Because they are so emotionally vi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_spirituality {
             get {
                 return ResourceManager.GetString("fire_spirituality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Strong intuitive clarity—able to discern truth from illusion with ease.&lt;/li&gt;
+        ///    &lt;li&gt;Spiritual insights often come as obvious, lived realities rather than abstract theories.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent at expressing spiritual truth through communication, art, or presence.&lt;/li&gt;
+        ///    &lt;li&gt;Uplifts others with radiant wisdom and heartfelt guidance.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May be swept up in appearances, emotion, or drama without grou [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_spirituality_summary {
+            get {
+                return ResourceManager.GetString("fire_spirituality_summary", resourceCulture);
             }
         }
         
@@ -8878,16 +9105,16 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Broad intuitive awareness and a natural sensitivity to spiritual energies.&lt;/li&gt;
-        ///    &lt;li&gt;Potential for deep insight when grounded and present.&lt;/li&gt;
-        ///    &lt;li&gt;Responsive to serene, clean environments that support inner stillness.&lt;/li&gt;
-        ///    &lt;li&gt;Drawn to practices that integrate movement and mindfulness.&lt;/li&gt;
+        ///    &lt;li&gt;Deep intuitive insight and natural connection to spiritual realms.&lt;/li&gt;
+        ///    &lt;li&gt;Strong moral compass—guided by ideals of truth, justice, and ethical living.&lt;/li&gt;
+        ///    &lt;li&gt;Drawn to contemplative practices and philosophical inquiry.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of spiritual leadership rooted in clarity and integrity.&lt;/li&gt;
         ///&lt;/ul&gt;
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Tendency to rush ahead before fully absorbing the present moment.&lt;/li&gt;
-        ///    &lt;li&gt;Restlessness and boredo [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May become spiritually rigid, perfectionistic, or overly idealistic.&lt;/li&gt;
+        ///    &lt;li&gt;Risk of dis [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_spirituality_summary {
             get {
@@ -9901,15 +10128,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    7 Metal Energies are often very good with money and therefore make great accountants, stock controllers and financial advisers. Their eloquence and personal skills 
-        ///    would make them good teachers, lecturers or counsellors. 
-        ///    Being natural leaders, Lake Energies are comfortable in managerial positions but equally, these Energies can excel in the arts, television or fashion.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    7 Metal Energies embody the spirit of “work hard, play hard.” They often bring flair, efficiency, and grace to their professional lives—delivering results with a touch of elegance. With a natural sense for quality and refinement, they’re well-suited to careers that require discernment, communication, and style.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    These individuals tend to keep a clear boundary between their work and personal lives. At work, they are efficient, driven, and  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_career {
             get {
                 return ResourceManager.GetString("lake_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Career and Professional Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Efficient, stylish, and charismatic—naturally noticed and promoted.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent organisers and communicators—strong in leadership and public roles.&lt;/li&gt;
+        ///    &lt;li&gt;Skilled at evaluating, refining, and managing change and quality control.&lt;/li&gt;
+        ///    &lt;li&gt;Financially savvy—well-suited to accounting, advising, or stock control.&lt;/li&gt;
+        ///    &lt;li&gt;Creative and expressive—excel in fashion, media, arts, and design.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;C [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_career_summary {
+            get {
+                return ResourceManager.GetString("lake_career_summary", resourceCulture);
             }
         }
         
@@ -9960,11 +10209,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Lake Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Lake Energies embody the qualities of late autumn—a season of celebration, reflection, and joyful release. These individuals are often bright, charming, and emotionally expressive, carrying with them a natural appreciation for beauty, comfort, and connection. Of all the Nine Star Ki types, 7 Metal people are perhaps the most socially graceful, stylish, and attuned to the pleasures of life.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    They are often warm, optimistic, and open-hearted, posses [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_description {
             get {
                 return ResourceManager.GetString("lake_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Lake Energies&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Charming, joyful, and emotionally expressive—brings lightness and warmth to others.&lt;/li&gt;
+        ///    &lt;li&gt;Natural entertainers and communicators—graceful, witty, and magnetic.&lt;/li&gt;
+        ///    &lt;li&gt;Highly adaptable with intuitive understanding of life’s rhythms.&lt;/li&gt;
+        ///    &lt;li&gt;Loves beauty, fashion, and aesthetics—drawn to pleasure and refinement.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally resilient—can recover quickly from challenges.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_description_summary {
+            get {
+                return ResourceManager.GetString("lake_description_summary", resourceCulture);
             }
         }
         
@@ -9977,6 +10253,43 @@ namespace K9.Globalisation {
         public static string lake_emotional_description {
             get {
                 return ResourceManager.GetString("lake_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    At their best, Lake Energies are radiant with joy, laughter, and a sense of celebration. They bring a lightness of spirit that can lift the mood of an entire room, often embodying mirth, playfulness, and hopeful anticipation. Their emotional expression is vibrant and contagious, making them beloved companions, especially among children and those who appreciate spontaneity and warmth.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Lake Energies often carry a nostalgic or romantic attachment to the  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_emotional_landscape {
+            get {
+                return ResourceManager.GetString("lake_emotional_landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Radiates joy, playfulness, and light-hearted celebration.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally expressive and uplifting—brings delight and optimism to others.&lt;/li&gt;
+        ///    &lt;li&gt;Childlike wonder and nostalgia—deep appreciation for memory and beauty.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally warm, spontaneous, and beloved by children and close friends.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can swing between joy and melancholy—emotionally ungrounded at times.&lt;/li&gt;
+        ///   [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_emotional_landscape_summary {
+            get {
+                return ResourceManager.GetString("lake_emotional_landscape_summary", resourceCulture);
             }
         }
         
@@ -10009,6 +10322,43 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    7 Metal Energies generally have a natural flair for handling money. With their keen sense of value, style, and enjoyment, they know how to spend wisely—especially on things that enhance quality of life. Whether it’s fashion, fine dining, décor, or entertainment, they tend to invest in experiences and aesthetics that bring them joy.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    They are often financially intuitive and able to attract resources when needed. Their social intelligence an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_finances {
+            get {
+                return ResourceManager.GetString("lake_finances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Natural ability to handle and attract money.&lt;/li&gt;
+        ///    &lt;li&gt;Spends well on meaningful, enjoyable, and aesthetically pleasing experiences.&lt;/li&gt;
+        ///    &lt;li&gt;Strong sense of value—invests in quality, style, and refinement.&lt;/li&gt;
+        ///    &lt;li&gt;Financially intuitive—often finds opportunities through charm and timing.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to impulsive or pleasure-driven spending.&lt;/li&gt;
+        ///    &lt;li&gt;Can be wasteful or sp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_finances_summary {
+            get {
+                return ResourceManager.GetString("lake_finances_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    7 Metal characters are generally very &lt;strong&gt;easy-going and adaptable&lt;/strong&gt;. Many express themselves with great &lt;strong&gt;diplomacy&lt;/strong&gt; and they often have a &lt;strong&gt;great capacity to listen to others&lt;/strong&gt; and to make them feel understood and validated, thanks to their &lt;strong&gt;patient and compassionate&lt;/strong&gt; nature.
         ///&lt;p&gt;
@@ -10037,15 +10387,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Metal element controls the function of the large intestine and therefore it is important for 7 Metal Energies not to overeat or eat too quickly.
-        ///    Eating late at night is also ill advised. In addition, the regular consumption of fermented foods is highly beneficial as it provides beneficial bacteria
-        ///    which can keep the colon healthy.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellness&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    As a reflection of the Metal element, 7 Metal Energies are closely linked to the lungs, large intestine, and skin. These areas are often the most sensitive and require regular care and attention. Emotional states, dietary habits, and lifestyle patterns all strongly affect their overall wellbeing.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    The lungs, being energetically tied to breath and emotional expression, can become stressed by overstimulation, anxiety, or inconsistent breathing. Practices [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_health {
             get {
                 return ResourceManager.GetString("lake_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Health and Wellness&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Responsive to healthy structure, breathwork, and routine.&lt;/li&gt;
+        ///    &lt;li&gt;Can maintain glowing skin, calm digestion, and emotional balance with consistent self-care.&lt;/li&gt;
+        ///    &lt;li&gt;Benefits greatly from fermented foods and fiber-rich diets.&lt;/li&gt;
+        ///    &lt;li&gt;Sensitive to energetic environments—thrives in calm, supportive spaces.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Vulnerable to overstimulation, erratic breathing, and nervous tension.&lt;/li&gt;        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_health_summary {
+            get {
+                return ResourceManager.GetString("lake_health_summary", resourceCulture);
             }
         }
         
@@ -10062,6 +10435,99 @@ namespace K9.Globalisation {
         public static string lake_hour_cycle {
             get {
                 return ResourceManager.GetString("lake_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Common Health Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Chest and breast issues&lt;/li&gt;
+        ///    &lt;li&gt;Pelvic disorders&lt;/li&gt;
+        ///    &lt;li&gt;Hip joint disorders&lt;/li&gt;
+        ///    &lt;li&gt;Skull injuries or head trauma&lt;/li&gt;
+        ///    &lt;li&gt;Lung imbalances (e.g., asthma, shallow breathing)&lt;/li&gt;
+        ///    &lt;li&gt;Large intestine imbalances (e.g., constipation, sluggish digestion)&lt;/li&gt;
+        ///    &lt;li&gt;Skin disorders (e.g., eczema, rashes, psoriasis)&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///.
+        /// </summary>
+        public static string lake_illnesses {
+            get {
+                return ResourceManager.GetString("lake_illnesses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Lake Energies possess a light, agile intellect that blends humour, insight, and subtlety. They are often witty, clever, and deeply observant—able to read between the lines and respond with grace and impeccable timing. Their intelligence is not always showy, but it is sharp, intuitive, and attuned to the emotional undercurrents of a conversation or environment.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    They tend to have clear opinions and strong common sense. With their natural discernment, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_intellectual_qualities {
+            get {
+                return ResourceManager.GetString("lake_intellectual_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Witty, clever, and resourceful with a sharp sense of humour.&lt;/li&gt;
+        ///    &lt;li&gt;Clear opinions and strong common sense—can quickly discern what matters.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally intelligent and articulate—excellent conversationalists.&lt;/li&gt;
+        ///    &lt;li&gt;Thoughtful and reflective when emotionally supported.&lt;/li&gt;
+        ///    &lt;li&gt;Intuitive and subtle in thought—naturally attuned to timing and nuance.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May become s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_intellectual_qualities_summary {
+            get {
+                return ResourceManager.GetString("lake_intellectual_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Lake Energies are some of the most charming and socially graceful individuals in the Nine Star Ki system. They radiate warmth, optimism, and approachability, often lighting up any room they enter. Naturally expressive and eloquent, they know how to speak with grace, humour, and impeccable timing—making them captivating conversationalists and magnetic public speakers.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    They are typically cheerful, fashionably stylish, with a natural ability to read  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_interpersonal_qualities {
+            get {
+                return ResourceManager.GetString("lake_interpersonal_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Charming, expressive, and eloquent communicators.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent sense of timing—captivating speakers and natural entertainers.&lt;/li&gt;
+        ///    &lt;li&gt;Socially graceful, cheerful, and fashionably stylish.&lt;/li&gt;
+        ///    &lt;li&gt;Warm, approachable, and emotionally receptive—often act as mediators or peacemakers.&lt;/li&gt;
+        ///    &lt;li&gt;Bring ease, humour, and joy to social environments.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May avoid confrontation—us [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_interpersonal_qualities_summary {
+            get {
+                return ResourceManager.GetString("lake_interpersonal_qualities_summary", resourceCulture);
             }
         }
         
@@ -10117,17 +10583,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    7 Metal Energies often have a deep inner security
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    7 Metal Energies often have a deep inner security, which often makes them very stable and mature partners.
+        ///    7 Metal Energies often bring a unique blend of charm, ease, and emotional receptivity into their relationships. Naturally flirtatious and sensuous, they are magnetic to others and tend to attract admirers without much effort. Their social grace, aesthetic awareness, and joyful presence make them delightful partners—fun-loving, attentive, and emotionally responsive.
         ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Lake Energies are typically laid-back and fun-loving and make very thoughtful, receptive partners
-        ///&lt;/h5&gt;
+        ///
         ///&lt;p&gt;
-        ///    Metal is the element associated with the autumn, which is a time of year when the harvest is in and we can put our feet up and enjoy the fruits of our labour. 7 Metals are often relaxed and fun-lo [rest of string was truncated]&quot;;.
+        ///    Rooted in the element of autumn, Lake Energies reflect a time of enjoyment and maturity. Many [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_relationships {
             get {
@@ -10136,33 +10598,55 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Easy-going&lt;/td&gt;
-        ///            &lt;td&gt;Spoilt&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Charismatic&lt;/td&gt;
-        ///            &lt;td&gt;Wasteful&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Wise&lt;/td&gt;
-        ///            &lt;td&gt;Shallow&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///      [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Charming, playful, and sensuous—brings joy and lightness to romantic connections.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally receptive and attentive—deeply responsive to a partner’s needs.&lt;/li&gt;
+        ///    &lt;li&gt;Stylish and expressive—drawn to beauty, intimacy, and shared pleasure.&lt;/li&gt;
+        ///    &lt;li&gt;Possesses inner security—can be stable, loyal, and nurturing once grounded.&lt;/li&gt;
+        ///    &lt;li&gt;Graceful communicators—naturally diplomatic and often disarm tension with humour or charm.&lt;/li&gt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_relationships_summary {
+            get {
+                return ResourceManager.GetString("lake_relationships_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    7 Metal individuals have a naturally receptive and intuitive spiritual disposition. Their spirituality often expresses itself through beauty, celebration, and a love of life’s simple pleasures. Rather than seeking rigid doctrines, they are more likely to resonate with paths that emphasize joy, connection, and emotional wisdom.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Lake Energies tend to be drawn to spiritual practices that engage the senses—such as music, movement, ritual, and sacred space. The [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_spirituality {
             get {
                 return ResourceManager.GetString("lake_spirituality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Deeply intuitive and emotionally attuned—connects spiritually through feeling and beauty.&lt;/li&gt;
+        ///    &lt;li&gt;Drawn to sacred art, music, nature, and aesthetically rich rituals.&lt;/li&gt;
+        ///    &lt;li&gt;Able to elevate everyday life into something meaningful and sacred.&lt;/li&gt;
+        ///    &lt;li&gt;Softens others and inspires emotional openness through grace and charm.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May treat spiritual life lightly or inconsistently—especially whe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_spirituality_summary {
+            get {
+                return ResourceManager.GetString("lake_spirituality_summary", resourceCulture);
             }
         }
         
@@ -12180,16 +12664,34 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being hard working, reliable and able to deliver, Mountain Energies are very well suited to service-related occupations, such as a shopkeeper, accountant, or a doctor or nurse.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Mountains have a great sense of justice and may also be suited to law enforcement, human rights or other similar professions.
-        ///&lt;/p&gt;.
+        ///    8 Earth individuals are reliable, persistent, and deeply committed to doing quality work. As pragmatic and grounded professionals, they are often seen as the ones who can be counted on to see a task through to completion—no matter how long it takes. While not always innovative or flashy, they are often the backbone of any operation, producing consistent, dependable results with quiet strength.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Mountain Energies excel in service-oriented  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_career {
             get {
                 return ResourceManager.GetString("mountain_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Career and Professional Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Reliable, pragmatic, and diligent—excellent at finishing what they start.&lt;/li&gt;
+        ///    &lt;li&gt;Strong work ethic and attention to detail; produces consistently high-quality results.&lt;/li&gt;
+        ///    &lt;li&gt;Effective in logistics, service, health care, law, and finance-related roles.&lt;/li&gt;
+        ///    &lt;li&gt;Quiet achiever—prefers acknowledgment over the spotlight.&lt;/li&gt;
+        ///    &lt;li&gt;Resourceful with money and materials; often successful investors, especially in pro [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_career_summary {
+            get {
+                return ResourceManager.GetString("mountain_career_summary", resourceCulture);
             }
         }
         
@@ -12242,11 +12744,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Mountain Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    8 Earth—known as Mountain Energy—embodies the qualities of stillness, stability, and enduring strength. As the most Yang expression of the Earth element, Mountain types move slowly, methodically, and with great intention. Like a real mountain, their strength is not flashy but rooted and immovable. They have a quiet presence that communicates dependability, self-reliance, and unwavering focus.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    As the symbolic youngest son in the Nine Star Ki f [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_description {
             get {
                 return ResourceManager.GetString("mountain_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Mountain Energies&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Deeply grounded, stable, and self-reliant with immense inner strength.&lt;/li&gt;
+        ///    &lt;li&gt;Calm, steady, and principled—natural leaders through quiet consistency.&lt;/li&gt;
+        ///    &lt;li&gt;Persistent and resilient—able to weather long-term challenges and hardships.&lt;/li&gt;
+        ///    &lt;li&gt;Strong sense of justice—motivated by fairness and social responsibility.&lt;/li&gt;
+        ///    &lt;li&gt;Loyal, trustworthy, and capable of profound inner transformation over time.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_description_summary {
+            get {
+                return ResourceManager.GetString("mountain_description_summary", resourceCulture);
             }
         }
         
@@ -12260,6 +12788,43 @@ namespace K9.Globalisation {
         public static string mountain_emotional_description {
             get {
                 return ResourceManager.GetString("mountain_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Emotionally, Mountain Energies reflect the qualities of their namesake—still, solid, and quietly profound. They have a natural emotional depth that is not easily disturbed by external events, and they tend to process feelings inwardly, in their own time and space. Solitude is essential for their wellbeing, and they often retreat into their metaphorical “cave” to rest, reflect, and reset.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    This stillness brings emotional strength, endurance, and reliabi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_emotional_landscape {
+            get {
+                return ResourceManager.GetString("mountain_emotional_landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally steady, grounded, and deeply reflective.&lt;/li&gt;
+        ///    &lt;li&gt;Values solitude and uses it to recharge and maintain inner balance.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally loyal—once trust is built, they are steadfast and supportive.&lt;/li&gt;
+        ///    &lt;li&gt;Brings a calming, unshakable presence to relationships and crises.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can become emotionally withdrawn or stagnant if overwhelmed or unexpressed.&lt;/li&gt;
+        ///    &lt;li&gt;Tends  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_emotional_landscape_summary {
+            get {
+                return ResourceManager.GetString("mountain_emotional_landscape_summary", resourceCulture);
             }
         }
         
@@ -12293,6 +12858,27 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Strong, grounded sense of financial responsibility and planning.&lt;/li&gt;
+        ///    &lt;li&gt;Accumulates wealth steadily over time—often through work, investments, or inheritance.&lt;/li&gt;
+        ///    &lt;li&gt;Good with managing money, property, and long-term resources.&lt;/li&gt;
+        ///    &lt;li&gt;Spends wisely on quality, durability, and things that enhance stability.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May become overly cautious, thrifty, or resistant to taking [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_finances_summary {
+            get {
+                return ResourceManager.GetString("mountain_finances_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the Energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
         ///&lt;/p&gt;
@@ -12322,19 +12908,39 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being highly contemplative can mean that 8 Earth Energies have a tendency to be hypochondriacs as they are overly aware of bodily aches and pains.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Health&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Their strength and solidity need to be challenged by movement and exercise and they need to be cautious about becoming overweight.
+        ///    Mountain Energies tend to be physically solid and energetically dense—often carrying strength and resilience in both body and constitution. Regardless of appearance, there is a heaviness or gravity to their presence that makes them grounded and enduring. However, this same stability can become a liability if it turns into stagnation or immobility.
         ///&lt;/p&gt;
+        ///
         ///&lt;p&gt;
-        ///    As with other Earth Energies, attention needs to be paid to the pancreas, which is more prone to imbalances in these individuals. For this reason, refined sugars are
-        ///    especially problematic [rest of string was truncated]&quot;;.
+        ///    Emotionally reflective and often inward-facing, 8 Earth individuals may struggle with depression, hopelessness, or anx [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_health {
             get {
                 return ResourceManager.GetString("mountain_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Health&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Strong, grounded constitution with natural physical resilience.&lt;/li&gt;
+        ///    &lt;li&gt;Responds well to regular routines, nourishing foods, and mindful movement.&lt;/li&gt;
+        ///    &lt;li&gt;Highly responsive to massage, stretching, and lymphatic stimulation.&lt;/li&gt;
+        ///    &lt;li&gt;Can maintain long-term physical vitality when balanced.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to depression, hopelessness, and overthinking—especially under stress.&lt;/li&gt;
+        ///    &lt;li&gt;At risk of hypog [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_health_summary {
+            get {
+                return ResourceManager.GetString("mountain_health_summary", resourceCulture);
             }
         }
         
@@ -12355,6 +12961,101 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Common Health Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Arthritis&lt;/li&gt;
+        ///    &lt;li&gt;Chronic fatigue&lt;/li&gt;
+        ///    &lt;li&gt;Nasal congestion and sinus issues&lt;/li&gt;
+        ///    &lt;li&gt;Leg and lower body disorders&lt;/li&gt;
+        ///    &lt;li&gt;Constipation and sluggish digestion&lt;/li&gt;
+        ///    &lt;li&gt;Deep muscular aches and pains&lt;/li&gt;
+        ///    &lt;li&gt;Blood sugar imbalances (e.g., hypoglycemia, risk of diabetes)&lt;/li&gt;
+        ///    &lt;li&gt;Depression and emotional stagnation&lt;/li&gt;
+        ///    &lt;li&gt;Feelings of hopelessness or despair&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///.
+        /// </summary>
+        public static string mountain_illnesses {
+            get {
+                return ResourceManager.GetString("mountain_illnesses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Mountain Energies possess a quiet, inward-facing intellect rooted in thoughtfulness, reflection, and depth. They are introspective and deliberate thinkers who prefer to observe, analyze, and understand before speaking or acting. Their ideas are carefully considered, often the product of deep contemplation rather than spontaneous inspiration.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    With a strong moral compass and keen memory, 8 Earth individuals tend to learn from past mistakes and are mo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_intellectual_qualities {
+            get {
+                return ResourceManager.GetString("mountain_intellectual_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Introspective and thoughtful—deep, meditative thinkers.&lt;/li&gt;
+        ///    &lt;li&gt;Carefully considers opinions—grounded in clarity and moral awareness.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent at defining, diagnosing, and analyzing complex problems.&lt;/li&gt;
+        ///    &lt;li&gt;Strong memory and a desire to learn from past mistakes.&lt;/li&gt;
+        ///    &lt;li&gt;Thinks practically—prefers ideas with real-world application.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May inhibit creative thinking— [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_intellectual_qualities_summary {
+            get {
+                return ResourceManager.GetString("mountain_intellectual_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Mountain Energies often embody the archetype of the “strong, silent type.” Calm, dependable, and emotionally composed, they bring a stabilizing presence into social environments. They are not typically expressive or flamboyant, but they communicate a quiet confidence that others instinctively trust.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    In relationships and group settings, 8 Earth individuals tend to observe more than speak, offering support through consistency rather than overt emoti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_interpersonal_qualities {
+            get {
+                return ResourceManager.GetString("mountain_interpersonal_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Calm, steady, and deeply dependable in relationships.&lt;/li&gt;
+        ///    &lt;li&gt;Offers quiet, sympathetic support—especially in times of need.&lt;/li&gt;
+        ///    &lt;li&gt;Communicates with clarity and power when speaking from conviction.&lt;/li&gt;
+        ///    &lt;li&gt;Often respected for their strong moral presence and integrity.&lt;/li&gt;
+        ///    &lt;li&gt;Trusted confidant—values loyalty and long-term connection.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally reserved—can seem dist [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_interpersonal_qualities_summary {
+            get {
+                return ResourceManager.GetString("mountain_interpersonal_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month represents early winter or nightfall
         ///&lt;/h5&gt;
@@ -12370,6 +13071,28 @@ namespace K9.Globalisation {
         public static string mountain_month {
             get {
                 return ResourceManager.GetString("mountain_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Suitable Occupations&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Monk or nun&lt;/li&gt;
+        ///    &lt;li&gt;Clergy or spiritual worker&lt;/li&gt;
+        ///    &lt;li&gt;Sculptor&lt;/li&gt;
+        ///    &lt;li&gt;Service worker (shopkeeper, hospitality, care roles)&lt;/li&gt;
+        ///    &lt;li&gt;Police officer or detective&lt;/li&gt;
+        ///    &lt;li&gt;Civil service worker&lt;/li&gt;
+        ///    &lt;li&gt;Bank teller or banker&lt;/li&gt;
+        ///    &lt;li&gt;Financier or investment advisor&lt;/li&gt;
+        ///    &lt;li&gt;Lawyer or legal advisor&lt;/li&gt;
+        ///    &lt;li&gt;Scientist or researcher&lt;/li&gt;
+        ///    &lt;li&gt;Building or warehouse manager&lt;/li&gt;
+        ///    &lt;li&gt;Guard or security personnel&lt;/li [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_occupations {
+            get {
+                return ResourceManager.GetString("mountain_occupations", resourceCulture);
             }
         }
         
@@ -12404,20 +13127,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Mountains bring a strong, steady energy to their relationships
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
+        ///
         ///&lt;p&gt;
-        ///    Mountain Energies bring quite a strong energy to their sexual relationships and are stable and reliable partners. 
+        ///    Mountain Energies bring a quiet strength and depth to their relationships. Often seen as calm and dependable, they tend to form strong emotional bonds that are grounded more in loyalty and presence than overt displays of passion. While not typically expressive or flirtatious, they are capable of deep intimacy once trust is established.
         ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Mountains are quite pensive and often retreat to their &quot;caves&quot;
-        ///&lt;/h5&gt;
+        ///
         ///&lt;p&gt;
-        ///    Mountains have a deep, pensive nature and their partners may find them rather shy or uncommunicative at times. Indeed, it is not uncommon for them to regularly retreat to their &quot;cave&quot;.
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    8 Earth  [rest of string was truncated]&quot;;.
+        ///    In romantic and sexual relationships, Mountain types are intense experiencers. They may not show their desires openly, bu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_relationships {
             get {
@@ -12426,32 +13143,61 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Composed&lt;/td&gt;
-        ///            &lt;td&gt;Reserved&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Focussed&lt;/td&gt;
-        ///            &lt;td&gt;Overly serious&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Pragmatic&lt;/td&gt;
-        ///            &lt;td&gt;Impassive&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Stable, loyal, and deeply committed once trust is established.&lt;/li&gt;
+        ///    &lt;li&gt;Brings a calm, grounding presence into relationships.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally and sexually intense—quiet but powerful intimacy.&lt;/li&gt;
+        ///    &lt;li&gt;Protective and supportive—often seen as a steady anchor by their partner.&lt;/li&gt;
+        ///    &lt;li&gt;Accumulates relationship wisdom over time—able to grow into deeper maturity.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally reserved [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_relationships_summary {
+            get {
+                return ResourceManager.GetString("mountain_relationships_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Mountain Energies have a natural affinity for stillness and contemplation. Their quiet strength and reflective nature make them particularly well-suited to &lt;strong&gt;simple, grounded spiritual practices&lt;/strong&gt; that are steady, nourishing, and rooted in daily life. Unlike more expressive or dramatic energies, 8 Earth individuals often connect with the spiritual through &lt;strong&gt;consistency, solitude, and silence&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    They are naturally drawn to &lt;strong&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_spirituality {
             get {
                 return ResourceManager.GetString("mountain_spirituality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Natural inclination toward stillness, reflection, and inner depth.&lt;/li&gt;
+        ///    &lt;li&gt;Thrives in peaceful, simple, and grounded spiritual practices.&lt;/li&gt;
+        ///    &lt;li&gt;Drawn to consistency over intensity—spiritual growth unfolds gradually.&lt;/li&gt;
+        ///    &lt;li&gt;Finds strength through presence, patience, and quiet devotion.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can become rigid in belief systems or overly fixed in identity.&lt;/li&gt;
+        ///    &lt;li&gt;May resist change or [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_spirituality_summary {
+            get {
+                return ResourceManager.GetString("mountain_spirituality_summary", resourceCulture);
             }
         }
         

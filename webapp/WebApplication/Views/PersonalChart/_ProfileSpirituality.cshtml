@@ -6,6 +6,6 @@
 @if (Model != null)
 {
     <div class="container main-content clear-both">
-        @Html.Panel(Model.MainEnergy.EnergySpiritualityTitle, Model.MainEnergy.Spirituality, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.PanelWithSummary(Model.MainEnergy.EnergySpiritualityTitle, Model.MainEnergy.Spirituality, Model.MainEnergy.SpiritualitySummary, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
     </div>
 }

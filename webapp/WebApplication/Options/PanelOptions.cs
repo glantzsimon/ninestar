@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using K9.Globalisation;
 using K9.WebApplication.Enums;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Options
 {
@@ -37,5 +38,11 @@ namespace K9.WebApplication.Options
         public string ImageLayoutCss => ImageLayout == EPanelImageLayout.Contain
             ? "background-size: contain"
             : "background-size: cover";
+
+        public PanelOptions()
+        {
+            PanelView = SessionHelper.GetCurrentUserDefaultPanelView();
+            IsDualView = PanelView == EPanelView.SummaryView;
+        }
     }
 }

@@ -38,11 +38,8 @@
             <div id="m-essence" class="tab-pane fade in active">
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.PanelWithSummary(Model.MainEnergy.EnergyEssenceTitle, $"{ Model.MainEnergy.EnergyDescription} {Html.Raw(Model.Overview)}", $"{ Model.MainEnergy.MainEnergySummary} {Html.Raw(Model.Overview)}")
+                    @Html.PanelWithSummary(Model.MainEnergy.EnergyEssenceTitle, $"{ Model.MainEnergy.EnergyDescription} {Html.Raw(Model.Overview)}", Model.MainEnergy.MainEnergySummary)
                 }
-
-                <br />
-                @Html.Partial("_ButtonsFooter")
             </div>
 
             <div id="m-intellectual-qualities" class="tab-pane fade">

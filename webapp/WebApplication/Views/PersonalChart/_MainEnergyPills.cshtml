@@ -11,7 +11,7 @@
             <li class="active">
                 <a data-toggle="tab" href="#m-essence">
                     @Dictionary.Essence
-                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/essence.png');"></div>
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/fundamental-nature.png');"></div>
                 </a>
             </li>
             <li>
@@ -29,7 +29,7 @@
             <li>
                 <a data-toggle="tab" href="#m-emotional-landscape">
                     @Dictionary.EmotionalLandscape
-                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/emotional-landscape.png');"></div>
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/emotional-energy.png');"></div>
                 </a>
             </li>
         </ul>
@@ -38,7 +38,7 @@
             <div id="m-essence" class="tab-pane fade in active">
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Panel(Model.MainEnergy.EnergyEssenceTitle, $"{ Model.MainEnergy.EnergyDescription} {Html.Raw(Model.Overview)}")
+                    @Html.PanelWithSummary(Model.MainEnergy.EnergyEssenceTitle, $"{ Model.MainEnergy.EnergyDescription} {Html.Raw(Model.Overview)}", $"{ Model.MainEnergy.MainEnergySummary} {Html.Raw(Model.Overview)}")
                 }
 
                 <br />

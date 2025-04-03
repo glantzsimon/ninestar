@@ -354,6 +354,7 @@
     <Compile Include="Controllers\UserPromotionsController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
+    <Compile Include="Enums\EPanelView.cs" />
     <Compile Include="Enums\EUnfavourableDirection.cs" />
     <Compile Include="Enums\EPrimaryAttribute.cs" />
     <Compile Include="Enums\EDisplayDataForPeriod.cs" />
@@ -1020,7 +1021,7 @@
     <Content Include="Images\ui\overview.png" />
     <Content Include="Images\ui\predictions.png" />
     <Content Include="Images\ui\relationships-strengths-challenges.png" />
-    <Content Include="Images\ui\sexuality.png" />
+    <Content Include="Images\ui\relationships.png" />
     <Content Include="Images\ninestar\seasons\centre.png" />
     <Content Include="Images\ninestar\seasons\earlyspring.png" />
     <Content Include="Images\ninestar\seasons\earlyautumn.png" />
@@ -1078,6 +1079,7 @@
     <Content Include="Images\ui\locked.png" />
     <Content Include="Images\ui\question-mark.jpg" />
     <Content Include="Images\ui\selected.png" />
+    <Content Include="Images\ui\social-expression.png" />
     <Content Include="Images\ui\spirituality.png" />
     <Content Include="Images\ui\success.png" />
     <Content Include="Images\ui\facebook_sm.png" />
@@ -1701,6 +1703,7 @@
     <Content Include="Views\PersonalChart\_MainEnergyPills.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileFinances.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileSpirituality.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PanelView.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

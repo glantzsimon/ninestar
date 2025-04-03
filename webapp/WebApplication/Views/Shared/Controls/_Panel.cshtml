@@ -10,10 +10,18 @@
 }
 @*Bookmark*@
 <div id="@Model.Id" style="position: relative; top: -180px;"></div>
-<div class="panel panel-default">
+<div class="panel panel-default" id="@Model.PanelId">
     @if (!string.IsNullOrEmpty(Model.Title))
     {
-        <div class="panel-heading"><h4 class="margin-0"><strong>@Model.Title</strong></h4></div>
+        <div class="panel-heading clearfix">
+            <h4 class="margin-0 float-left"><strong>@Model.Title</strong></h4>
+            @if (Model.IsDualView)
+            {
+                <div class="float-right">
+                    @Html.BootstrapEditorFor(e => e.PanelView)
+                </div>
+            }
+        </div>
     }
 
     @if (hasImage)
@@ -22,5 +30,6 @@
             <div class="image-panel img-rounded @imageSizeClass" style="background-image: url('@Model.ImageSrc'); @Model.ImageLayoutCss;"></div>
         </div>
     }
-    <div class="panel-body @panelBodyClass">@MvcHtmlString.Create(Model.Body)</div>
+    <div class="panel-body panel-fulltext @panelBodyClass">@MvcHtmlString.Create(Model.Body)</div>
+    <div class="panel-body panel-summary @panelBodyClass">@MvcHtmlString.Create(Model.Summary)</div>
 </div>

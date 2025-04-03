@@ -67,6 +67,21 @@ namespace K9.WebApplication.Helpers
             });
         }
 
+        public static MvcHtmlString PanelWithSummary(this HtmlHelper html, string title, string body, string summary, string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
+        {
+            return html.Partial("Controls/_Panel", new PanelOptions
+            {
+                Id = id,
+                Title = title,
+                Body = body,
+                Summary = summary,
+                ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
+                ImageSize = imageSize,
+                ImageLayout = imageLayout,
+                IsDualView = true
+            });
+        }
+
         public static MvcHtmlString ImagePanel(this HtmlHelper html, PanelOptions options)
         {
             return html.Partial("Controls/_ImagePanel", options);
@@ -175,7 +190,7 @@ namespace K9.WebApplication.Helpers
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
-            var isAuthorised = (activeUserMembership != null && (activeUserMembership.IsAuthorisedToViewPaidContent() || 
+            var isAuthorised = (activeUserMembership != null && (activeUserMembership.IsAuthorisedToViewPaidContent() ||
                                 activeUserMembership.MembershipOption.SubscriptionType >= subscriptionType)) ||
                                 SessionHelper.CurrentUserIsAdmin();
 
@@ -231,7 +246,7 @@ namespace K9.WebApplication.Helpers
 
             return new MvcHtmlString(content);
         }
-        
+
         public static IDisposable BeginBootstrapFormWithToken(this HtmlHelper html, string title = "", string titleTag = Tags.H2, bool insertAntiForgeryToken = true)
         {
             var div = new TagBuilder(Tags.Div);
@@ -273,7 +288,7 @@ namespace K9.WebApplication.Helpers
 
             return new TagCloser(html, Tags.Div);
         }
-        
+
         private static string GetSectionCode(ESection section)
         {
             return section.GetAttribute<EnumDescriptionAttribute>().CultureCode;

@@ -1,0 +1,6 @@
+﻿@using K9.Base.DataAccessLayer.Enums
+@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@model K9.WebApplication.Enums.EPanelView
+
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<K9.WebApplication.Enums.EPanelView>(Convert.ToInt32(Model), true))

@@ -454,28 +454,40 @@ a > .ninestar-summary-container {
     }
 }
 
-.traits {
-    margin-bottom: 1.5rem;
+.overview-container {
+    h4 {
+        margin-bottom: 0;
 
-    li {
-        margin-bottom: 0.3rem;
-        font-size: 0.95rem;
+        & + p em {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 0;
+            margin-bottom: 0;
+            display: block;
+        }
     }
 
-    &.positive li {
-        color: #b5ffb5;
-    }
+    ul {
+        padding: 0;
+        margin: 0;
 
-    &.challenging li {
-        color: #ffb5b5;
-    }
-}
+        li {
+            display: inline-block;
+            margin-right: 1em;
+            position: relative;
+            padding-left: 1.2em;
+            color: inherit;
 
-h3 + p em {
-    font-style: italic;
-    font-size: 0.9rem;
-    color: #aaa;
-    margin-top: -0.8rem;
-    margin-bottom: 0.6rem;
-    display: block;
+            &::before {
+                content: '•';
+                position: absolute;
+                left: 0;
+                font-size: 1.6em;
+                color: @light-grey;
+                line-height: 1.00;
+                margin-top: 0;
+            }
+        }
+    }
 }

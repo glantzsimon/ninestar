@@ -5641,4 +5641,16 @@
   <data name="water_relationships_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\relationships\en-gb\summary\water-relationships-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="ChildNature" xml:space="preserve">
+    <value>Child Nature</value>
+  </data>
+  <data name="FullTextView" xml:space="preserve">
+    <value>View Full Text</value>
+  </data>
+  <data name="PanelViewLabel" xml:space="preserve">
+    <value>Panel View</value>
+  </data>
+  <data name="SummaryView" xml:space="preserve">
+    <value>View Summary</value>
+  </data>
 </root>

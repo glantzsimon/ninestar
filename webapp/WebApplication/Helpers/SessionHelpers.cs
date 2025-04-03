@@ -77,6 +77,18 @@ namespace K9.WebApplication.Helpers
             return false;
         }
 
+        public static void SetCurrentUserPanelView(EPanelView value)
+        {
+            SetValue(Constants.SessionConstants.DefaultPanelView, (int)value);
+        }
+
+        public static EPanelView GetCurrentUserDefaultPanelView()
+        {
+            var intValue = GetIntValue(Constants.SessionConstants.DefaultPanelView);
+            return (EPanelView)intValue;
+        }
+
+
         public static int GetEnergyDefaultDisplay()
         {
             return GetIntValue(Constants.SessionConstants.DefaultEnergyDisplay);

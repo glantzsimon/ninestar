@@ -26,6 +26,7 @@
             public const string SelectedDateAndTime = "SelectedDateAndTime";
             public const string ViewLabel = "ViewLabel";
             public const string DisplayLabel = "DisplayLabel";
+            public const string PanelViewLabel = "PanelViewLabel";
 
             public const string ShowDirectionsLabel = "ShowDirectionsLabel";
             public const string EnergyDisplayLabel = "EnergyDisplayLabel";
@@ -160,6 +161,9 @@
 
         public static class Names
         {
+            public const string FullTextView = "FullTextView";
+            public const string SummaryView = "SummaryView";
+
             public const string RedeemPromoCode = "RedeemPromoCode";
             public const string AllowMarketingEmails = "AllowMarketingEmails";
             public const string UserData = "UserData";

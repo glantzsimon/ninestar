@@ -4056,6 +4056,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Child Nature.
+        /// </summary>
+        public static string ChildNature {
+            get {
+                return ResourceManager.GetString("ChildNature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chinese Method (Ascending Ki for Females).
         /// </summary>
         public static string ChineseMethod {
@@ -5142,26 +5151,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits positive&quot;&gt;
-        ///    &lt;li&gt;Confident&lt;/li&gt;
-        ///    &lt;li&gt;Lively&lt;/li&gt;
-        ///    &lt;li&gt;Resourceful&lt;/li&gt;
-        ///    &lt;li&gt;Objective&lt;/li&gt;
-        ///    &lt;li&gt;Compassionate&lt;/li&gt;
-        ///    &lt;li&gt;Supportive&lt;/li&gt;
-        ///    &lt;li&gt;Hard-working&lt;/li&gt;
-        ///    &lt;li&gt;Organised&lt;/li&gt;
-        ///    &lt;li&gt;Strong&lt;/li&gt;
-        ///    &lt;li&gt;Selfless&lt;/li&gt;
-        ///    &lt;li&gt;Open&lt;/li&gt;
-        ///&lt;/ul&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
+        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///    &lt;ul class=&quot;traits positive&quot;&gt;
+        ///        &lt;li&gt;Confident&lt;/li&gt;
+        ///        &lt;li&gt;Lively&lt;/li&gt;
+        ///        &lt;li&gt;Resourceful&lt;/li&gt;
+        ///        &lt;li&gt;Objective&lt;/li&gt;
+        ///        &lt;li&gt;Compassionate&lt;/li&gt;
+        ///        &lt;li&gt;Supportive&lt;/li&gt;
+        ///        &lt;li&gt;Hard-working&lt;/li&gt;
+        ///        &lt;li&gt;Organised&lt;/li&gt;
+        ///        &lt;li&gt;Strong&lt;/li&gt;
+        ///        &lt;li&gt;Selfless&lt;/li&gt;
+        ///        &lt;li&gt;Open&lt;/li&gt;
+        ///    &lt;/ul&gt;
         ///
-        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits challenging&quot;&gt;
-        ///    &lt;li&gt;Bossy&lt;/li&gt;        /// [rest of string was truncated]&quot;;.
+        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_overview {
             get {
@@ -7737,27 +7745,23 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits positive&quot;&gt;
-        ///    &lt;li&gt;Clear&lt;/li&gt;
-        ///    &lt;li&gt;Radiant&lt;/li&gt;
-        ///    &lt;li&gt;Passionate&lt;/li&gt;
-        ///    &lt;li&gt;Intuitive&lt;/li&gt;
-        ///    &lt;li&gt;Sociable&lt;/li&gt;
-        ///    &lt;li&gt;Sensitive&lt;/li&gt;
-        ///    &lt;li&gt;Emotional&lt;/li&gt;
-        ///    &lt;li&gt;Charismatic&lt;/li&gt;
-        ///&lt;/ul&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
+        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///    &lt;ul class=&quot;traits positive&quot;&gt;
+        ///        &lt;li&gt;Clear&lt;/li&gt;
+        ///        &lt;li&gt;Radiant&lt;/li&gt;
+        ///        &lt;li&gt;Passionate&lt;/li&gt;
+        ///        &lt;li&gt;Intuitive&lt;/li&gt;
+        ///        &lt;li&gt;Sociable&lt;/li&gt;
+        ///        &lt;li&gt;Sensitive&lt;/li&gt;
+        ///        &lt;li&gt;Emotional&lt;/li&gt;
+        ///        &lt;li&gt;Charismatic&lt;/li&gt;
+        ///    &lt;/ul&gt;
         ///
-        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits challenging&quot;&gt;
-        ///    &lt;li&gt;Whimsical&lt;/li&gt;
-        ///    &lt;li&gt;Vain&lt;/li&gt;
-        ///    &lt;li&gt;Volatile&lt;/li&gt;
-        ///    &lt;li&gt;Hasty&lt;/li&gt;
-        ///    &lt;li [rest of string was truncated]&quot;;.
+        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
+        ///    &lt;ul class=&quot;traits challenging&quot;&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_overview {
             get {
@@ -8184,6 +8188,15 @@ namespace K9.Globalisation {
         public static string FullMoon {
             get {
                 return ResourceManager.GetString("FullMoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Full Text.
+        /// </summary>
+        public static string FullTextView {
+            get {
+                return ResourceManager.GetString("FullTextView", resourceCulture);
             }
         }
         
@@ -9088,27 +9101,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits positive&quot;&gt;
-        ///    &lt;li&gt;Leader&lt;/li&gt;
-        ///    &lt;li&gt;Responsible&lt;/li&gt;
-        ///    &lt;li&gt;Action-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Direct&lt;/li&gt;
-        ///    &lt;li&gt;Rational&lt;/li&gt;
-        ///    &lt;li&gt;Objective&lt;/li&gt;
-        ///    &lt;li&gt;Moral&lt;/li&gt;
-        ///    &lt;li&gt;Diligent&lt;/li&gt;
-        ///    &lt;li&gt;Reasonable&lt;/li&gt;
-        ///    &lt;li&gt;Wise&lt;/li&gt;
-        ///&lt;/ul&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
+        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///    &lt;ul class=&quot;traits positive&quot;&gt;
+        ///        &lt;li&gt;Leader&lt;/li&gt;
+        ///        &lt;li&gt;Responsible&lt;/li&gt;
+        ///        &lt;li&gt;Action-oriented&lt;/li&gt;
+        ///        &lt;li&gt;Direct&lt;/li&gt;
+        ///        &lt;li&gt;Rational&lt;/li&gt;
+        ///        &lt;li&gt;Objective&lt;/li&gt;
+        ///        &lt;li&gt;Moral&lt;/li&gt;
+        ///        &lt;li&gt;Diligent&lt;/li&gt;
+        ///        &lt;li&gt;Reasonable&lt;/li&gt;
+        ///        &lt;li&gt;Wise&lt;/li&gt;
+        ///    &lt;/ul&gt;
         ///
-        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits challenging&quot;&gt;
-        ///    &lt;li&gt;Bossy&lt;/li&gt;
-        ///    &lt;li&gt;Controlling&lt;/li&gt;
-        ///    [rest of string was truncated]&quot;;.
+        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when out of ba [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_overview {
             get {
@@ -10703,26 +10713,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits positive&quot;&gt;
-        ///    &lt;li&gt;Easy-going&lt;/li&gt;
-        ///    &lt;li&gt;Charismatic&lt;/li&gt;
-        ///    &lt;li&gt;Wise&lt;/li&gt;
-        ///    &lt;li&gt;Objective&lt;/li&gt;
-        ///    &lt;li&gt;Diplomatic&lt;/li&gt;
-        ///    &lt;li&gt;Observant&lt;/li&gt;
-        ///    &lt;li&gt;Receptive&lt;/li&gt;
-        ///    &lt;li&gt;Leader&lt;/li&gt;
-        ///    &lt;li&gt;Good communicator&lt;/li&gt;
-        ///    &lt;li&gt;Fun-loving&lt;/li&gt;
-        ///&lt;/ul&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
+        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///    &lt;ul class=&quot;traits positive&quot;&gt;
+        ///        &lt;li&gt;Easy-going&lt;/li&gt;
+        ///        &lt;li&gt;Charismatic&lt;/li&gt;
+        ///        &lt;li&gt;Wise&lt;/li&gt;
+        ///        &lt;li&gt;Objective&lt;/li&gt;
+        ///        &lt;li&gt;Diplomatic&lt;/li&gt;
+        ///        &lt;li&gt;Observant&lt;/li&gt;
+        ///        &lt;li&gt;Receptive&lt;/li&gt;
+        ///        &lt;li&gt;Leader&lt;/li&gt;
+        ///        &lt;li&gt;Good communicator&lt;/li&gt;
+        ///        &lt;li&gt;Fun-loving&lt;/li&gt;
+        ///    &lt;/ul&gt;
         ///
-        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits challenging&quot;&gt;
-        ///    &lt;li&gt;Spoilt&lt;/li&gt;
-        ///    &lt;li&gt;Wastefu [rest of string was truncated]&quot;;.
+        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_overview {
             get {
@@ -13260,26 +13268,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits positive&quot;&gt;
-        ///    &lt;li&gt;Composed&lt;/li&gt;
-        ///    &lt;li&gt;Focussed&lt;/li&gt;
-        ///    &lt;li&gt;Pragmatic&lt;/li&gt;
-        ///    &lt;li&gt;Loyal&lt;/li&gt;
-        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Thorough&lt;/li&gt;
-        ///    &lt;li&gt;Reliable&lt;/li&gt;
-        ///    &lt;li&gt;Supportive&lt;/li&gt;
-        ///    &lt;li&gt;Thoughtful&lt;/li&gt;
-        ///&lt;/ul&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
+        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///    &lt;ul class=&quot;traits positive&quot;&gt;
+        ///        &lt;li&gt;Composed&lt;/li&gt;
+        ///        &lt;li&gt;Focussed&lt;/li&gt;
+        ///        &lt;li&gt;Pragmatic&lt;/li&gt;
+        ///        &lt;li&gt;Loyal&lt;/li&gt;
+        ///        &lt;li&gt;Detail-oriented&lt;/li&gt;
+        ///        &lt;li&gt;Thorough&lt;/li&gt;
+        ///        &lt;li&gt;Reliable&lt;/li&gt;
+        ///        &lt;li&gt;Supportive&lt;/li&gt;
+        ///        &lt;li&gt;Thoughtful&lt;/li&gt;
+        ///    &lt;/ul&gt;
         ///
-        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits challenging&quot;&gt;
-        ///    &lt;li&gt;Reserved&lt;/li&gt;
-        ///    &lt;li&gt;Overly serious&lt;/li&gt;
-        ///    &lt;li&gt;Impas [rest of string was truncated]&quot;;.
+        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_overview {
             get {
@@ -14191,6 +14197,15 @@ namespace K9.Globalisation {
         public static string Pancreas {
             get {
                 return ResourceManager.GetString("Pancreas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Panel View.
+        /// </summary>
+        public static string PanelViewLabel {
+            get {
+                return ResourceManager.GetString("PanelViewLabel", resourceCulture);
             }
         }
         
@@ -16849,26 +16864,23 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits positive&quot;&gt;
-        ///    &lt;li&gt;Stable&lt;/li&gt;
-        ///    &lt;li&gt;Grounded&lt;/li&gt;
-        ///    &lt;li&gt;Supportive&lt;/li&gt;
-        ///    &lt;li&gt;Reliable&lt;/li&gt;
-        ///    &lt;li&gt;Calm under pressure&lt;/li&gt;
-        ///    &lt;li&gt;Practical&lt;/li&gt;
-        ///    &lt;li&gt;Loyal&lt;/li&gt;
-        ///    &lt;li&gt;Selfless&lt;/li&gt;
-        ///    &lt;li&gt;Tolerant&lt;/li&gt;
-        ///    &lt;li&gt;Steady&lt;/li&gt;
-        ///    &lt;li&gt;Organised&lt;/li&gt;
-        ///    &lt;li&gt;Honest&lt;/li&gt;
-        ///    &lt;li&gt;Emotionally steady&lt;/li&gt;
-        ///    &lt;li&gt;Observant&lt;/li&gt;
-        ///    &lt;li&gt;Caring&lt;/li&gt;
-        ///    &lt;li&gt;Hardworking&lt;/li&gt;
-        ///    &lt;li&gt;Tactful&lt;/li&gt; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
+        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///    &lt;ul class=&quot;traits positive&quot;&gt;
+        ///        &lt;li&gt;Stable&lt;/li&gt;
+        ///        &lt;li&gt;Grounded&lt;/li&gt;
+        ///        &lt;li&gt;Supportive&lt;/li&gt;
+        ///        &lt;li&gt;Reliable&lt;/li&gt;
+        ///        &lt;li&gt;Calm under pressure&lt;/li&gt;
+        ///        &lt;li&gt;Practical&lt;/li&gt;
+        ///        &lt;li&gt;Loyal&lt;/li&gt;
+        ///        &lt;li&gt;Selfless&lt;/li&gt;
+        ///        &lt;li&gt;Tolerant&lt;/li&gt;
+        ///        &lt;li&gt;Steady&lt;/li&gt;
+        ///        &lt;li&gt;Organised&lt;/li&gt;
+        ///        &lt;li&gt;Honest&lt;/li&gt;
+        ///        &lt;li&gt;Emotionally steady [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_overview {
             get {
@@ -17568,6 +17580,15 @@ namespace K9.Globalisation {
         public static string SummaryLabel {
             get {
                 return ResourceManager.GetString("SummaryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Summary.
+        /// </summary>
+        public static string SummaryView {
+            get {
+                return ResourceManager.GetString("SummaryView", resourceCulture);
             }
         }
         
@@ -18951,27 +18972,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits positive&quot;&gt;
-        ///    &lt;li&gt;Pioneering&lt;/li&gt;
-        ///    &lt;li&gt;Proactive&lt;/li&gt;
-        ///    &lt;li&gt;Energetic&lt;/li&gt;
-        ///    &lt;li&gt;Passionate&lt;/li&gt;
-        ///    &lt;li&gt;Cheerful&lt;/li&gt;
-        ///    &lt;li&gt;Optimistic&lt;/li&gt;
-        ///    &lt;li&gt;Youthful&lt;/li&gt;
-        ///    &lt;li&gt;Independent&lt;/li&gt;
-        ///    &lt;li&gt;Flexible&lt;/li&gt;
-        ///    &lt;li&gt;Strong&lt;/li&gt;
-        ///    &lt;li&gt;Frank&lt;/li&gt;
-        ///    &lt;li&gt;Open&lt;/li&gt;
-        ///    &lt;li&gt;Outgoing&lt;/li&gt;
-        ///    &lt;li&gt;Chivalrous&lt;/li&gt;
-        ///    &lt;li&gt;Patient&lt;/li&gt;
-        ///    &lt;li&gt;Sensitive&lt;/li&gt;
-        ///    &lt;li&gt;Humorous&lt;/li&gt;
-        ///    &lt;li&gt;Vis [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
+        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///    &lt;ul class=&quot;traits positive&quot;&gt;
+        ///        &lt;li&gt;Pioneering&lt;/li&gt;
+        ///        &lt;li&gt;Proactive&lt;/li&gt;
+        ///        &lt;li&gt;Energetic&lt;/li&gt;
+        ///        &lt;li&gt;Passionate&lt;/li&gt;
+        ///        &lt;li&gt;Cheerful&lt;/li&gt;
+        ///        &lt;li&gt;Optimistic&lt;/li&gt;
+        ///        &lt;li&gt;Youthful&lt;/li&gt;
+        ///        &lt;li&gt;Independent&lt;/li&gt;
+        ///        &lt;li&gt;Flexible&lt;/li&gt;
+        ///        &lt;li&gt;Strong&lt;/li&gt;
+        ///        &lt;li&gt;Frank&lt;/li&gt;
+        ///        &lt;li&gt;Open&lt;/li&gt;
+        ///        &lt;li&gt;Outgoing&lt;/li&gt;
+        ///        [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_overview {
             get {
@@ -20402,26 +20420,23 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits positive&quot;&gt;
-        ///    &lt;li&gt;Independent&lt;/li&gt;
-        ///    &lt;li&gt;Self-confident&lt;/li&gt;
-        ///    &lt;li&gt;Courageous&lt;/li&gt;
-        ///    &lt;li&gt;Willful&lt;/li&gt;
-        ///    &lt;li&gt;Self-reliant&lt;/li&gt;
-        ///    &lt;li&gt;Inspired&lt;/li&gt;
-        ///    &lt;li&gt;Adventurous&lt;/li&gt;
-        ///    &lt;li&gt;Wise&lt;/li&gt;
-        ///    &lt;li&gt;Persistent&lt;/li&gt;
-        ///    &lt;li&gt;Curious&lt;/li&gt;
-        ///    &lt;li&gt;Empathetic&lt;/li&gt;
-        ///    &lt;li&gt;Sensitive&lt;/li&gt;
-        ///    &lt;li&gt;Diplomatic&lt;/li&gt;
-        ///    &lt;li&gt;Reflective&lt;/li&gt;
-        ///    &lt;li&gt;Flexible&lt;/li&gt;
-        ///    &lt;li&gt;Transparent&lt;/li&gt;
-        ///    &lt;li&gt;Cautio [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
+        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///    &lt;ul class=&quot;traits positive&quot;&gt;
+        ///        &lt;li&gt;Independent&lt;/li&gt;
+        ///        &lt;li&gt;Self-confident&lt;/li&gt;
+        ///        &lt;li&gt;Courageous&lt;/li&gt;
+        ///        &lt;li&gt;Willful&lt;/li&gt;
+        ///        &lt;li&gt;Self-reliant&lt;/li&gt;
+        ///        &lt;li&gt;Inspired&lt;/li&gt;
+        ///        &lt;li&gt;Adventurous&lt;/li&gt;
+        ///        &lt;li&gt;Wise&lt;/li&gt;
+        ///        &lt;li&gt;Persistent&lt;/li&gt;
+        ///        &lt;li&gt;Curious&lt;/li&gt;
+        ///        &lt;li&gt;Empathetic&lt;/li&gt;
+        ///        &lt;li&gt;Sensitive&lt;/li&gt;
+        ///        &lt;li&gt;Diploma [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_overview {
             get {
@@ -21237,26 +21252,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits positive&quot;&gt;
-        ///    &lt;li&gt;Influential&lt;/li&gt;
-        ///    &lt;li&gt;Penetrating&lt;/li&gt;
-        ///    &lt;li&gt;Visionary&lt;/li&gt;
-        ///    &lt;li&gt;Sensitive&lt;/li&gt;
-        ///    &lt;li&gt;Thoughtful&lt;/li&gt;
-        ///    &lt;li&gt;Flexible&lt;/li&gt;
-        ///    &lt;li&gt;Trusting&lt;/li&gt;
-        ///    &lt;li&gt;Reliable&lt;/li&gt;
-        ///    &lt;li&gt;Social&lt;/li&gt;
-        ///    &lt;li&gt;Emotional&lt;/li&gt;
-        ///    &lt;li&gt;Practical&lt;/li&gt;
-        ///&lt;/ul&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
+        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///    &lt;ul class=&quot;traits positive&quot;&gt;
+        ///        &lt;li&gt;Influential&lt;/li&gt;
+        ///        &lt;li&gt;Penetrating&lt;/li&gt;
+        ///        &lt;li&gt;Visionary&lt;/li&gt;
+        ///        &lt;li&gt;Sensitive&lt;/li&gt;
+        ///        &lt;li&gt;Thoughtful&lt;/li&gt;
+        ///        &lt;li&gt;Flexible&lt;/li&gt;
+        ///        &lt;li&gt;Trusting&lt;/li&gt;
+        ///        &lt;li&gt;Reliable&lt;/li&gt;
+        ///        &lt;li&gt;Social&lt;/li&gt;
+        ///        &lt;li&gt;Emotional&lt;/li&gt;
+        ///        &lt;li&gt;Practical&lt;/li&gt;
+        ///    &lt;/ul&gt;
         ///
-        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
-        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
-        ///&lt;ul class=&quot;traits challenging&quot;&gt;
-        ///    &lt;li&gt;Single-min [rest of string was truncated]&quot;;.
+        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
+        ///    &lt;p&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_overview {
             get {

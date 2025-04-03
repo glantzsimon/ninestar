@@ -509,7 +509,7 @@ namespace K9.WebApplication.Models
         public string OverviewLabel => MainEnergy != null ? $"{MainEnergy.ElementNameAndNumber} Overview" : "";
 
         [ScriptIgnore]
-        public string EnergySexualityLabel => MainEnergy != null ? $"{MainEnergy.ElementNameAndNumber} {Dictionary.Relationships}" : "";
+        public string RelationshipsLabel => MainEnergy != null ? $"{MainEnergy.ElementNameAndNumber} {Dictionary.Relationships}" : "";
 
         [ScriptIgnore]
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();
@@ -518,7 +518,10 @@ namespace K9.WebApplication.Models
         public string SexualityRelationTypeDetailsGay => GetSexualityGenderDescription(true);
 
         [ScriptIgnore]
-        public string MainEnergySexualityDetails => GetMainEnergySexualityDetails();
+        public string MainEnergyRelationshipsDetails => GetMainEnergyRelationshipDetails();
+        
+        [ScriptIgnore]
+        public string MainEnergyRelationshipsSummary => GetMainEnergyRelationshipSummary();
 
         [ScriptIgnore]
         public string GayLabel => PersonModel?.Gender == EGender.Female ? Dictionary.Lesbian : Dictionary.Gay;
@@ -836,10 +839,31 @@ namespace K9.WebApplication.Models
                 { ENineStarKiEnergy.Fire, _ => Dictionary.fire_relationships }
             };
 
-        private string GetMainEnergySexualityDetails()
+        private static readonly Dictionary<ENineStarKiEnergy, Func<EGender, string>> _relationshipSummaries
+            = new Dictionary<ENineStarKiEnergy, Func<EGender, string>>
+            {
+                { ENineStarKiEnergy.Water, _ => Dictionary.water_relationships_summary },
+                { ENineStarKiEnergy.Soil, g => g == EGender.Female ? Dictionary.soil_relationships_female_summary : Dictionary.soil_relationships_male_summary },
+                { ENineStarKiEnergy.Thunder, g => g == EGender.Female ? Dictionary.thunder_relationships_female_summary : Dictionary.thunder_relationships_male_summary },
+                { ENineStarKiEnergy.Wind, _ => Dictionary.wind_relationships_summary },
+                { ENineStarKiEnergy.CoreEarth, _ => Dictionary.coreearth_relationships_summary },
+                { ENineStarKiEnergy.Heaven, g => g == EGender.Female ? Dictionary.heaven_relationships_female_summary : Dictionary.heaven_relationships_male_summary },
+                { ENineStarKiEnergy.Lake, _ => Dictionary.lake_relationships_summary },
+                { ENineStarKiEnergy.Mountain, _ => Dictionary.mountain_relationships_summary },
+                { ENineStarKiEnergy.Fire, _ => Dictionary.fire_relationships_summary }
+            };
+
+        private string GetMainEnergyRelationshipDetails()
         {
-            return MainEnergy != null ? _relationshipDetails.TryGetValue(MainEnergy.Energy, out var getSexuality)
-                ? getSexuality(PersonModel.Gender)
+            return MainEnergy != null ? _relationshipDetails.TryGetValue(MainEnergy.Energy, out var getValue)
+                ? getValue(PersonModel.Gender)
+                : string.Empty : string.Empty;
+        }
+
+        private string GetMainEnergyRelationshipSummary()
+        {
+            return MainEnergy != null ? _relationshipSummaries.TryGetValue(MainEnergy.Energy, out var getValue)
+                ? getValue(PersonModel.Gender)
                 : string.Empty : string.Empty;
         }
 

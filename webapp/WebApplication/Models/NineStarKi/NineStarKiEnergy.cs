@@ -480,6 +480,104 @@ namespace K9.WebApplication.Models
                 {ENineStarKiEnergy.Fire, Dictionary.fire_daystar}
             };
 
+        private static readonly Dictionary<ENineStarKiEnergy, string> _occupations =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_occupations},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_occupations},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_occupations},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_occupations},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_occupations},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_occupations},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_occupations},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_occupations},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_occupations}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _careerDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_career},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_career},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_career},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_career},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_career},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_career},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_career},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_career},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_career}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _careerSummaries =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_career_summary},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_career_summary},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_career_summary},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_career_summary},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_career_summary},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_career_summary},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_career_summary},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_career_summary},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_career_summary}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _emotionalLandscapeDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_emotional_landscape},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_emotional_landscape},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_emotional_landscape},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_emotional_landscape},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_emotional_landscape},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_emotional_landscape},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_emotional_landscape},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_emotional_landscape},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_emotional_landscape}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _emotionalLandscapeSummaries =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_emotional_landscape_summary},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_emotional_landscape_summary},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_emotional_landscape_summary},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_emotional_landscape_summary},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_emotional_landscape_summary},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_emotional_landscape_summary},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_emotional_landscape_summary},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_emotional_landscape_summary},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_emotional_landscape_summary}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _finances =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_finances},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_finances},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_finances},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_finances},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_finances},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_finances},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_finances},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_finances},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_finances}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _financesSummaries =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_finances_summary},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_finances_summary},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_finances_summary},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_finances_summary},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_finances_summary},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_finances_summary},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_finances_summary},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_finances_summary},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_finances_summary}
+            };
+
         private static readonly Dictionary<ENineStarKiEnergy, string> _overviews
             = new Dictionary<ENineStarKiEnergy, string>
             {
@@ -506,6 +604,34 @@ namespace K9.WebApplication.Models
                 {ENineStarKiEnergy.Lake, Dictionary.lake_health},
                 {ENineStarKiEnergy.Mountain, Dictionary.mountain_health},
                 {ENineStarKiEnergy.Fire, Dictionary.fire_health}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _healthSummaries
+            = new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_health_summary},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_health_summary},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_health_summary},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_health_summary},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_health_summary},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_health_summary},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_health_summary},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_health_summary},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_health_summary}
+            };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _illnesses
+            = new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_illnesses},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_illnesses},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_illnesses},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_illnesses},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_illnesses},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_illnesses},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_illnesses},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_illnesses},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_illnesses}
             };
 
         private static readonly Dictionary<ENineStarKiEnergy, string> _careerDetails

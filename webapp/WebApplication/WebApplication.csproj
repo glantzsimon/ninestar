@@ -1444,7 +1444,7 @@
     <Content Include="Views\Predictions\Index.cshtml" />
     <Content Include="Views\Compatibility\_CalculatorForm.cshtml" />
     <Content Include="Views\Shared\_VideoFilesDisplay.cshtml" />
-    <Content Include="Views\PersonalChart\_ProfileSexuality.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileRelationships.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileSexualityRelationType.cshtml" />
     <Content Include="Views\UserMemberships\_DisplayFields.cshtml" />
     <Content Include="Views\UserMemberships\Delete.cshtml" />

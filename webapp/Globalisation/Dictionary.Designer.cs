@@ -7430,6 +7430,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Fire Energies tend to have a &lt;strong&gt;magnetic relationship with money&lt;/strong&gt;—they know how to attract it and are often skilled at making it through their charisma, creativity, or entrepreneurial flair. Their ability to inspire and communicate makes them excellent at &lt;strong&gt;sales, promotion, or client-facing work&lt;/strong&gt; where money naturally follows their influence.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    However, they are also known for being &lt;strong&gt;impulsive spenders&lt;/st [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_finances {
+            get {
+                return ResourceManager.GetString("fire_finances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
@@ -7513,6 +7528,28 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Health and Wellness&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Strong circulatory vitality and radiant energy when balanced.&lt;/li&gt;
+        ///    &lt;li&gt;Responsive to plant-based diets and gentle, flowing exercise.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally attuned—sensitive to the body’s energetic rhythms.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to circulatory and glandular issues—especially under stress.&lt;/li&gt;
+        ///    &lt;li&gt;Overstimulation may cause anxiety, nervous tension, or digestive upset.&lt;/li&gt;
+        ///    &lt;li&gt;Can burn out quick [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_health_summary {
+            get {
+                return ResourceManager.GetString("fire_health_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    This is the year we take the spotlight
         ///&lt;/h5&gt;
@@ -7528,6 +7565,26 @@ namespace K9.Globalisation {
         public static string fire_hour_cycle {
             get {
                 return ResourceManager.GetString("fire_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Common Health Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Brain tumors&lt;/li&gt;
+        ///    &lt;li&gt;Mental illness&lt;/li&gt;
+        ///    &lt;li&gt;Heart ailments&lt;/li&gt;
+        ///    &lt;li&gt;Blood disorders&lt;/li&gt;
+        ///    &lt;li&gt;Fevers&lt;/li&gt;
+        ///    &lt;li&gt;Eye diseases&lt;/li&gt;
+        ///    &lt;li&gt;Glandular disorders&lt;/li&gt;
+        ///    &lt;li&gt;Upper gastrointestinal tract issues&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///.
+        /// </summary>
+        public static string fire_illnesses {
+            get {
+                return ResourceManager.GetString("fire_illnesses", resourceCulture);
             }
         }
         
@@ -8979,6 +9036,26 @@ namespace K9.Globalisation {
         public static string heaven_month {
             get {
                 return ResourceManager.GetString("heaven_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Suitable Occupations&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;President / political leader / government administrator&lt;/li&gt;
+        ///    &lt;li&gt;Judge / lawyer / legal arbitrator&lt;/li&gt;
+        ///    &lt;li&gt;CEO / executive / manager / strategist&lt;/li&gt;
+        ///    &lt;li&gt;Military officer / martial artist&lt;/li&gt;
+        ///    &lt;li&gt;Teacher / headmaster / educator&lt;/li&gt;
+        ///    &lt;li&gt;Priest / monk / spiritual leader / sage&lt;/li&gt;
+        ///    &lt;li&gt;Psychiatrist / therapist / counselor&lt;/li&gt;
+        ///    &lt;li&gt;Engineer / mechanic / technician&lt;/li&gt;
+        ///    &lt;li&gt;Metalworker / jeweller / miner&lt;/li&gt;
+        ///    &lt;li&gt;Banke [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_occupations {
+            get {
+                return ResourceManager.GetString("heaven_occupations", resourceCulture);
             }
         }
         
@@ -10548,6 +10625,26 @@ namespace K9.Globalisation {
         public static string lake_month {
             get {
                 return ResourceManager.GetString("lake_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Suitable Occupations&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Public relations specialist&lt;/li&gt;
+        ///    &lt;li&gt;Entertainer / artist / performer&lt;/li&gt;
+        ///    &lt;li&gt;Accountant / banker / savings &amp; loans worker&lt;/li&gt;
+        ///    &lt;li&gt;Lecturer / teacher / spokesperson&lt;/li&gt;
+        ///    &lt;li&gt;Dentist / dental technician&lt;/li&gt;
+        ///    &lt;li&gt;Financial advisor / administrator&lt;/li&gt;
+        ///    &lt;li&gt;Restaurant, bar, or nightclub manager&lt;/li&gt;
+        ///    &lt;li&gt;Hotelier / restaurateur / delicatessen owner&lt;/li&gt;
+        ///    &lt;li&gt;Interior designer / fashion designer / stylist&lt;/li&gt;
+        ///    &lt;li&gt;Food indu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_occupations {
+            get {
+                return ResourceManager.GetString("lake_occupations", resourceCulture);
             }
         }
         
@@ -12854,6 +12951,21 @@ namespace K9.Globalisation {
         public static string mountain_epoch_cycle {
             get {
                 return ResourceManager.GetString("mountain_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Mountain Energies tend to be fortunate when it comes to finances. Whether through &lt;strong&gt;steady effort, long-term investments, or family legacies&lt;/strong&gt;, they often accumulate wealth gradually—and sometimes significantly—over the course of their lives. Many 8 Earth individuals benefit from an inheritance or other material support that adds to their natural ability to build and preserve wealth.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    They have a &lt;strong&gt;good instinct for inve [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_finances {
+            get {
+                return ResourceManager.GetString("mountain_finances", resourceCulture);
             }
         }
         
@@ -16729,6 +16841,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Romantic Relationships – 2 Soil Women&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Embodies softness, warmth, and feminine sensuality&lt;/li&gt;
+        ///    &lt;li&gt;Affectionate, emotionally generous, and nurturing&lt;/li&gt;
+        ///    &lt;li&gt;Loyal, devoted, and supportive in long-term relationships&lt;/li&gt;
+        ///    &lt;li&gt;Direct when interested; confident in setting boundaries&lt;/li&gt;
+        ///    &lt;li&gt;Creates emotional safety and a deeply caring bond&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Tendency toward co-dependence or over-involvement&lt;/li&gt;
+        ///    &lt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_relationships_female_summary {
+            get {
+                return ResourceManager.GetString("soil_relationships_female_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Romantic Relationships – 2 Soil Men&lt;/h4&gt;
         ///
         ///&lt;p&gt;
@@ -16742,6 +16877,29 @@ namespace K9.Globalisation {
         public static string soil_relationships_male {
             get {
                 return ResourceManager.GetString("soil_relationships_male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Romantic Relationships – 2 Soil Men&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Deeply loyal and emotionally dependable&lt;/li&gt;
+        ///    &lt;li&gt;Expresses love through care, presence, and practical support&lt;/li&gt;
+        ///    &lt;li&gt;Gentle, nurturing, and respectful in intimacy&lt;/li&gt;
+        ///    &lt;li&gt;Creates emotionally safe, stable, and enduring relationships&lt;/li&gt;
+        ///    &lt;li&gt;Attracts others through sincerity, warmth, and emotional depth&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can become overly attached or emotionally enmeshed&lt;/li&gt;
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_relationships_male_summary {
+            get {
+                return ResourceManager.GetString("soil_relationships_male_summary", resourceCulture);
             }
         }
         
@@ -18495,6 +18653,27 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Often financially successful due to boldness, vision, and entrepreneurial drive.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of generating wealth through innovation and dynamic leadership.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to overspending and impulsive purchases.&lt;/li&gt;
+        ///    &lt;li&gt;Can be overly generous or indulgent, sometimes at the expense of financial stability.&lt;/li&gt;
+        ///    &lt;li&gt;May struggle with materialism and lack of long-term plannin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_finances_summary {
+            get {
+                return ResourceManager.GetString("thunder_finances_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    The 3 Tree character has the full force of spring in its nature, or the dawn.
         ///
@@ -18577,6 +18756,28 @@ namespace K9.Globalisation {
         public static string thunder_hour_cycle {
             get {
                 return ResourceManager.GetString("thunder_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Common Health Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Ulcers&lt;/li&gt;
+        ///    &lt;li&gt;Tumours&lt;/li&gt;
+        ///    &lt;li&gt;Liver diseases&lt;/li&gt;
+        ///    &lt;li&gt;Foot ailments&lt;/li&gt;
+        ///    &lt;li&gt;Disorders of the nervous system&lt;/li&gt;
+        ///    &lt;li&gt;Phobias&lt;/li&gt;
+        ///    &lt;li&gt;Hysteria&lt;/li&gt;
+        ///    &lt;li&gt;Muscular disorders&lt;/li&gt;
+        ///    &lt;li&gt;Vision disturbances&lt;/li&gt;
+        ///    &lt;li&gt;Throat ailments&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///.
+        /// </summary>
+        public static string thunder_illnesses {
+            get {
+                return ResourceManager.GetString("thunder_illnesses", resourceCulture);
             }
         }
         
@@ -20180,6 +20381,25 @@ namespace K9.Globalisation {
         public static string water_relationships {
             get {
                 return ResourceManager.GetString("water_relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Romantic Relationships&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally deep, intuitive, and passionate in love&lt;/li&gt;
+        ///    &lt;li&gt;Strong libido and committed when emotionally engaged&lt;/li&gt;
+        ///    &lt;li&gt;Sensuality linked to spirituality and personal growth&lt;/li&gt;
+        ///    &lt;li&gt;Faithful and affectionate when trust is established&lt;/li&gt;
+        ///    &lt;li&gt;Discreet, emotionally complex, and magnetically mysterious&lt;/li&gt;
+        ///    &lt;li&gt;Deeply empathetic, attuned to partner’s emotional needs&lt;/li&gt;
+        ///    &lt;li&gt;Capable of creating rich, emotionally [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_relationships_summary {
+            get {
+                return ResourceManager.GetString("water_relationships_summary", resourceCulture);
             }
         }
         

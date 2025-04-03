@@ -221,7 +221,7 @@
     <value>Centre</value>
   </data>
   <data name="CharacterEnergyLabel" xml:space="preserve">
-    <value>Emotional Ki</value>
+    <value>Character / Inner Child</value>
   </data>
   <data name="CoreEarth" xml:space="preserve">
     <value>Core Earth</value>
@@ -308,7 +308,7 @@
     <value>Red</value>
   </data>
   <data name="SurfaceEnergyLabel" xml:space="preserve">
-    <value>Mirror Ki</value>
+    <value>Social Expression</value>
   </data>
   <data name="SeventhChild" xml:space="preserve">
     <value>Seventh Child</value>
@@ -623,10 +623,10 @@
     <value>Adult Nature</value>
   </data>
   <data name="CharacterEnergyShortLabel" xml:space="preserve">
-    <value>Emotional Ki</value>
+    <value>Character / Inner Child</value>
   </data>
   <data name="ExternalPersona" xml:space="preserve">
-    <value>Mirror Ki</value>
+    <value>Social Expression</value>
   </data>
   <data name="MainChildLabel" xml:space="preserve">
     <value>Fundamental Nature</value>
@@ -641,7 +641,7 @@
     <value>Personal Chart Details</value>
   </data>
   <data name="SurfaceEnergyShortLabel" xml:space="preserve">
-    <value>Mirror Ki</value>
+    <value>Social Expression</value>
   </data>
   <data name="_216" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_216.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1103,7 +1103,7 @@
     <value>articles\en-gb\modalities-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NineCharacterEnergiesTitle" xml:space="preserve">
-    <value>The 9 Emotional Energies</value>
+    <value>The 9 Character Energies</value>
   </data>
   <data name="NineMainEnergiesTitle" xml:space="preserve">
     <value>The 9 Main Energies</value>
@@ -1430,7 +1430,7 @@
     <value>Amount</value>
   </data>
   <data name="CharacterEnergiesCompatibility" xml:space="preserve">
-    <value>Emotional Energies Compatibility</value>
+    <value>Character Energies Compatibility</value>
   </data>
   <data name="CompatibilityDetails" xml:space="preserve">
     <value>Compatibility Details</value>
@@ -4316,7 +4316,7 @@
     <value>Biorhythms Overview</value>
   </data>
   <data name="CharacterElementsAnalysis" xml:space="preserve">
-    <value>Emotional Elements Analysis</value>
+    <value>Character Elements Analysis</value>
   </data>
   <data name="ClickOnATabBelowForMoreInformation" xml:space="preserve">
     <value>Click on a tab below to uncover more information!</value>

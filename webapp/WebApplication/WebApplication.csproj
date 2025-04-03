@@ -994,8 +994,12 @@
     <Content Include="Images\ninestar\organs\urinarybladder.png" />
     <Content Include="Images\ui\daily-cycle.png" />
     <Content Include="Images\ui\daily-planner.png" />
+    <Content Include="Images\ui\finances.png" />
     <Content Include="Images\ui\hourly-cycle.png" />
     <Content Include="Images\ui\hourly-planner.png" />
+    <Content Include="Images\ui\inner-child.png" />
+    <Content Include="Images\ui\intellectual-qualities.png" />
+    <Content Include="Images\ui\interpersonal-qualities.png" />
     <Content Include="Images\ui\nine-year-cycle.png" />
     <Content Include="Images\ui\nine-year-planner.png" />
     <Content Include="Images\ui\eighty-one-cycle.png" />
@@ -1074,6 +1078,7 @@
     <Content Include="Images\ui\locked.png" />
     <Content Include="Images\ui\question-mark.jpg" />
     <Content Include="Images\ui\selected.png" />
+    <Content Include="Images\ui\spirituality.png" />
     <Content Include="Images\ui\success.png" />
     <Content Include="Images\ui\facebook_sm.png" />
     <Content Include="Images\ui\google_sm.png" />

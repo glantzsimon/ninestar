@@ -3568,10 +3568,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Both Fundamental and Emotional Energies are Yang
+        ///    Both Fundamental and Character Energies are Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both the Fundamental and Emotional Energies are Yang. This could lead to increased conflict as Yang Energies tend to be more confrontational than Yin Energies. On the other hand, as both Energies are Yang, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransforma [rest of string was truncated]&quot;;.
+        ///    Both the Fundamental and Character Energies are Yang. This could lead to increased conflict as Yang Energies tend to be more confrontational than Yin Energies. On the other hand, as both Energies are Yang, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransforma [rest of string was truncated]&quot;;.
         /// </summary>
         public static string both_gender_same_yang {
             get {
@@ -3581,10 +3581,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Both Fundamental and Emotional Energies are Yin
+        ///    Both Fundamental and Character Energies are Yin
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both the Fundamental and Emotional Energies are Yin. In the absence of Yang, there could be a breakdown in communication and the relationship could become stagnant. On the other hand, as both Energies are Yin, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransfo [rest of string was truncated]&quot;;.
+        ///    Both the Fundamental and Character Energies are Yin. In the absence of Yang, there could be a breakdown in communication and the relationship could become stagnant. On the other hand, as both Energies are Yin, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransfo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string both_gender_same_yin {
             get {
@@ -3822,7 +3822,7 @@ namespace K9.Globalisation {
         ///    Same Element - &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformationLink}&quot;&gt;Sibling Relationship&lt;/a&gt;
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Emotional Energies have the same element. There is a potential for a &lt;strong&gt;deep emotional connection&lt;/strong&gt; as well as a very good &lt;strong&gt;mutual understanding on an emotional level&lt;/strong&gt;. This can help to create more harmony in the relationship, especially if the fundamental Energies are antagonistic.
+        ///    The Character Energies have the same element. There is a potential for a &lt;strong&gt;deep emotional connection&lt;/strong&gt; as well as a very good &lt;strong&gt;mutual understanding on an emotional level&lt;/strong&gt;. This can help to create more harmony in the relationship, especially if the fundamental Energies are antagonistic.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    In romantic relationships, sharing the same Emotional Ki elemen [rest of string was truncated]&quot;;.
@@ -3838,10 +3838,10 @@ namespace K9.Globalisation {
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt; - Parent Child Relationship
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Emotional Energies are in a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt;, in which one Energy supports or nourishes the next. This typically creates a &lt;strong&gt;strong emotional connection and mutual understanding&lt;/strong&gt;.
+        ///    The Character Energies are in a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt;, in which one Energy supports or nourishes the next. This typically creates a &lt;strong&gt;strong emotional connection and mutual understanding&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, when the Emotional Energies in a &lt;a target=&quot;_blank&quot; href=&quot;{ [rest of string was truncated]&quot;;.
+        ///    In romantic relationships, when the Character Energies in a &lt;a target=&quot;_blank&quot; href=&quot;{ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_supportive {
             get {
@@ -3862,7 +3862,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Emotional Energies - Yin / Yang
+        ///    Character Energies - Yin / Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This combination typically leads to &lt;strong&gt;much greater compatibility and chemistry&lt;/strong&gt; in romantic relationships. This combination also typically results in &lt;strong&gt;greater complementarity on an emotional level&lt;/strong&gt;, but may result in &lt;strong&gt;some misunderstandings&lt;/strong&gt;.
@@ -3876,7 +3876,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Emotional Energies - Both Yang
+        ///    Character Energies - Both Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    In romantic relationships, this typically leads to &lt;strong&gt;less chemistry&lt;/strong&gt; than with a Yin / Yang combination. Yang Energies tend to be more engaging and in the absence of Yin, this can lead to a lack of magnetism. Essentially there isn&apos;t enough mystery to maintain the magic. 
@@ -3892,7 +3892,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Emotional Energies - Both Yin
+        ///    Character Energies - Both Yin
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    In romantic relationships, this typically leads to &lt;strong&gt;less chemistry&lt;/strong&gt; than with a Yin / Yang combination. Yin Energies tend to be more receptive and less engaging. In the absence of Yang, the relationship could start to stagnate. There could also be a build up of resentment due to lack of communication.
@@ -3908,7 +3908,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Emotional Energies - Different Modality
+        ///    Character Energies - Different Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater complementarity between the couple on an emotional level&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;.
@@ -3922,7 +3922,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Emotional Energies - Same Modality
+        ///    Character Energies - Same Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple on an emotional level&lt;/strong&gt;, but there may be &lt;strong&gt;less chemistry&lt;/strong&gt; between the couple.
@@ -3944,7 +3944,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emotional Elements Analysis.
+        ///   Looks up a localized string similar to Character Elements Analysis.
         /// </summary>
         public static string CharacterElementsAnalysis {
             get {
@@ -3953,7 +3953,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emotional Energies Compatibility.
+        ///   Looks up a localized string similar to Character Energies Compatibility.
         /// </summary>
         public static string CharacterEnergiesCompatibility {
             get {
@@ -3975,7 +3975,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emotional Ki.
+        ///   Looks up a localized string similar to Character / Inner Child.
         /// </summary>
         public static string CharacterEnergyLabel {
             get {
@@ -3984,7 +3984,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emotional Ki.
+        ///   Looks up a localized string similar to Character / Inner Child.
         /// </summary>
         public static string CharacterEnergyShortLabel {
             get {
@@ -5142,26 +5142,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Confident&lt;/td&gt;
-        ///                &lt;td&gt;Bossy&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Lively&lt;/td&gt;
-        ///                &lt;td&gt;Moody&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Resourceful&lt;/td&gt;
-        ///                &lt;td&gt;Thrifty [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits positive&quot;&gt;
+        ///    &lt;li&gt;Confident&lt;/li&gt;
+        ///    &lt;li&gt;Lively&lt;/li&gt;
+        ///    &lt;li&gt;Resourceful&lt;/li&gt;
+        ///    &lt;li&gt;Objective&lt;/li&gt;
+        ///    &lt;li&gt;Compassionate&lt;/li&gt;
+        ///    &lt;li&gt;Supportive&lt;/li&gt;
+        ///    &lt;li&gt;Hard-working&lt;/li&gt;
+        ///    &lt;li&gt;Organised&lt;/li&gt;
+        ///    &lt;li&gt;Strong&lt;/li&gt;
+        ///    &lt;li&gt;Selfless&lt;/li&gt;
+        ///    &lt;li&gt;Open&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits challenging&quot;&gt;
+        ///    &lt;li&gt;Bossy&lt;/li&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_overview {
             get {
@@ -7064,7 +7064,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mirror Ki.
+        ///   Looks up a localized string similar to Social Expression.
         /// </summary>
         public static string ExternalPersona {
             get {
@@ -7737,26 +7737,27 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;th&gt;When in balance:&lt;/th&gt;
-        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///            &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Clear&lt;/td&gt;
-        ///                &lt;td&gt;Whimsical&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Radiant&lt;/td&gt;
-        ///                &lt;td&gt;Vain&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Passionate&lt;/td&gt;
-        ///             [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits positive&quot;&gt;
+        ///    &lt;li&gt;Clear&lt;/li&gt;
+        ///    &lt;li&gt;Radiant&lt;/li&gt;
+        ///    &lt;li&gt;Passionate&lt;/li&gt;
+        ///    &lt;li&gt;Intuitive&lt;/li&gt;
+        ///    &lt;li&gt;Sociable&lt;/li&gt;
+        ///    &lt;li&gt;Sensitive&lt;/li&gt;
+        ///    &lt;li&gt;Emotional&lt;/li&gt;
+        ///    &lt;li&gt;Charismatic&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits challenging&quot;&gt;
+        ///    &lt;li&gt;Whimsical&lt;/li&gt;
+        ///    &lt;li&gt;Vain&lt;/li&gt;
+        ///    &lt;li&gt;Volatile&lt;/li&gt;
+        ///    &lt;li&gt;Hasty&lt;/li&gt;
+        ///    &lt;li [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_overview {
             get {
@@ -9087,28 +9088,27 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Leader&lt;/td&gt;
-        ///            &lt;td&gt;Bossy&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Responsible&lt;/td&gt;
-        ///            &lt;td&gt;Controlling&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Action-oriented&lt;/td&gt;
-        ///            &lt;td&gt;Reckless&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits positive&quot;&gt;
+        ///    &lt;li&gt;Leader&lt;/li&gt;
+        ///    &lt;li&gt;Responsible&lt;/li&gt;
+        ///    &lt;li&gt;Action-oriented&lt;/li&gt;
+        ///    &lt;li&gt;Direct&lt;/li&gt;
+        ///    &lt;li&gt;Rational&lt;/li&gt;
+        ///    &lt;li&gt;Objective&lt;/li&gt;
+        ///    &lt;li&gt;Moral&lt;/li&gt;
+        ///    &lt;li&gt;Diligent&lt;/li&gt;
+        ///    &lt;li&gt;Reasonable&lt;/li&gt;
+        ///    &lt;li&gt;Wise&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits challenging&quot;&gt;
+        ///    &lt;li&gt;Bossy&lt;/li&gt;
+        ///    &lt;li&gt;Controlling&lt;/li&gt;
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_overview {
             get {
@@ -10703,29 +10703,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Easy-going&lt;/td&gt;
-        ///            &lt;td&gt;Spoilt&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Charismatic&lt;/td&gt;
-        ///            &lt;td&gt;Wasteful&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Wise&lt;/td&gt;
-        ///            &lt;td&gt;Shallow&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///      [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits positive&quot;&gt;
+        ///    &lt;li&gt;Easy-going&lt;/li&gt;
+        ///    &lt;li&gt;Charismatic&lt;/li&gt;
+        ///    &lt;li&gt;Wise&lt;/li&gt;
+        ///    &lt;li&gt;Objective&lt;/li&gt;
+        ///    &lt;li&gt;Diplomatic&lt;/li&gt;
+        ///    &lt;li&gt;Observant&lt;/li&gt;
+        ///    &lt;li&gt;Receptive&lt;/li&gt;
+        ///    &lt;li&gt;Leader&lt;/li&gt;
+        ///    &lt;li&gt;Good communicator&lt;/li&gt;
+        ///    &lt;li&gt;Fun-loving&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits challenging&quot;&gt;
+        ///    &lt;li&gt;Spoilt&lt;/li&gt;
+        ///    &lt;li&gt;Wastefu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_overview {
             get {
@@ -12188,7 +12185,7 @@ namespace K9.Globalisation {
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of conflict&lt;/strong&gt; as two Yang Energies may clash at times.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Sometimes in a Yang / Yang combination, there isn&apos;t enough mystery to maintain the magic and so the chemistry can start to fizzle out. This is less of an issue if the Emotional Energies are in a Yin / Yang combination or if either the Fundamen [rest of string was truncated]&quot;;.
+        ///    Sometimes in a Yang / Yang combination, there isn&apos;t enough mystery to maintain the magic and so the chemistry can start to fizzle out. This is less of an issue if the Character Energies are in a Yin / Yang combination or if either the Fundamen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_gender_same_yang {
             get {
@@ -12204,7 +12201,7 @@ namespace K9.Globalisation {
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of stagnation&lt;/strong&gt; or &lt;strong&gt;hidden resentments&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Sometimes in a Yin / Yin combination, there isn&apos;t enough engagement to maintain a strong connection and so the relationship can start to fizzle out. This is less of an issue if the Emotional Energies are in a Yin / Yang combination or if eithe [rest of string was truncated]&quot;;.
+        ///    Sometimes in a Yin / Yin combination, there isn&apos;t enough engagement to maintain a strong connection and so the relationship can start to fizzle out. This is less of an issue if the Character Energies are in a Yin / Yang combination or if eithe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_gender_same_yin {
             get {
@@ -13263,28 +13260,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Composed&lt;/td&gt;
-        ///            &lt;td&gt;Reserved&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Focussed&lt;/td&gt;
-        ///            &lt;td&gt;Overly serious&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td&gt;Pragmatic&lt;/td&gt;
-        ///            &lt;td&gt;Impassive&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits positive&quot;&gt;
+        ///    &lt;li&gt;Composed&lt;/li&gt;
+        ///    &lt;li&gt;Focussed&lt;/li&gt;
+        ///    &lt;li&gt;Pragmatic&lt;/li&gt;
+        ///    &lt;li&gt;Loyal&lt;/li&gt;
+        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
+        ///    &lt;li&gt;Thorough&lt;/li&gt;
+        ///    &lt;li&gt;Reliable&lt;/li&gt;
+        ///    &lt;li&gt;Supportive&lt;/li&gt;
+        ///    &lt;li&gt;Thoughtful&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits challenging&quot;&gt;
+        ///    &lt;li&gt;Reserved&lt;/li&gt;
+        ///    &lt;li&gt;Overly serious&lt;/li&gt;
+        ///    &lt;li&gt;Impas [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_overview {
             get {
@@ -13628,7 +13623,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 9 Emotional Energies.
+        ///   Looks up a localized string similar to The 9 Character Energies.
         /// </summary>
         public static string NineCharacterEnergiesTitle {
             get {
@@ -15978,7 +15973,7 @@ namespace K9.Globalisation {
         ///    Practically Nonexistent
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is &lt;strong&gt;extremely unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. Almost all of the energetic aspects of this relationship are identical for both the Fundamental and Emotional Energies, resulting in very little magnetism. This type of connection is far &lt;strong&gt;more likely to be a deep and long-lasting friends [rest of string was truncated]&quot;;.
+        ///    It is &lt;strong&gt;extremely unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. Almost all of the energetic aspects of this relationship are identical for both the Fundamental and Character Energies, resulting in very little magnetism. This type of connection is far &lt;strong&gt;more likely to be a deep and long-lasting friends [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_nonexistant {
             get {
@@ -15991,7 +15986,7 @@ namespace K9.Globalisation {
         ///    Off The Charts
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The &lt;strong&gt;sexuality chemistry between these two individuals is potentially off the charts&lt;/strong&gt;. The forces and elements governing this combination are all opposing one another, both between the Fundamental and Emotional Energies, creating an &lt;strong&gt;extremely strong magnetic attraction&lt;/strong&gt;. This can be a truly &lt;strong&gt;explosive combination&lt;/strong&gt;, but it could be &lt;strong&gt;too hot to handle&lt;/strong&gt;!
+        ///    The &lt;strong&gt;sexuality chemistry between these two individuals is potentially off the charts&lt;/strong&gt;. The forces and elements governing this combination are all opposing one another, both between the Fundamental and Character Energies, creating an &lt;strong&gt;extremely strong magnetic attraction&lt;/strong&gt;. This can be a truly &lt;strong&gt;explosive combination&lt;/strong&gt;, but it could be &lt;strong&gt;too hot to handle&lt;/strong&gt;!
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_off_the_charts {
@@ -16019,7 +16014,7 @@ namespace K9.Globalisation {
         ///    Very Low
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is highly &lt;strong&gt;unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, &lt;strong&gt;it is likely to be short-lived&lt;/strong&gt;. This has the &lt;strong&gt;potential to be a very harmonious combination&lt;/strong&gt; which many of the energetic elements are the same for both the Fundamental and Emotional Energies, which results in &lt;strong&gt;little to any magnetism&lt;/strong&gt;. This type of connection is far more likely to be a &lt;strong&gt; [rest of string was truncated]&quot;;.
+        ///    It is highly &lt;strong&gt;unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, &lt;strong&gt;it is likely to be short-lived&lt;/strong&gt;. This has the &lt;strong&gt;potential to be a very harmonious combination&lt;/strong&gt; which many of the energetic elements are the same for both the Fundamental and Character Energies, which results in &lt;strong&gt;little to any magnetism&lt;/strong&gt;. This type of connection is far more likely to be a &lt;strong&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_verylow {
             get {
@@ -16098,7 +16093,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Emotional Energies are Yin and therefore in line with gender
+        ///    Both Fundamental and Character Energies are Yin and therefore in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality.
@@ -16116,7 +16111,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Emotional Energies are Yang and therefore in line with gender
+        ///    Both Fundamental and Character Energies are Yang and therefore in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality.
@@ -16210,7 +16205,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Emotional Energies are Yang and therefore opposite to gender
+        ///    Both Fundamental and Character Energies are Yang and therefore opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a challenging combination for women who feel pressure to behave in a typically feminine and sensual way
@@ -16229,7 +16224,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Emotional Energies are Yin and therefore opposite to gender
+        ///    Both Fundamental and Character Energies are Yin and therefore opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a challenging combination for men who feel pressure to behave more like alpha males
@@ -16854,26 +16849,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;th&gt;When in balance:&lt;/th&gt;
-        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///            &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Supportive&lt;/td&gt;
-        ///                &lt;td&gt;Stubborn&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Social&lt;/td&gt;
-        ///                &lt;td&gt;Cynical&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Tactful&lt;/td&gt;
-        ///          [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits positive&quot;&gt;
+        ///    &lt;li&gt;Stable&lt;/li&gt;
+        ///    &lt;li&gt;Grounded&lt;/li&gt;
+        ///    &lt;li&gt;Supportive&lt;/li&gt;
+        ///    &lt;li&gt;Reliable&lt;/li&gt;
+        ///    &lt;li&gt;Calm under pressure&lt;/li&gt;
+        ///    &lt;li&gt;Practical&lt;/li&gt;
+        ///    &lt;li&gt;Loyal&lt;/li&gt;
+        ///    &lt;li&gt;Selfless&lt;/li&gt;
+        ///    &lt;li&gt;Tolerant&lt;/li&gt;
+        ///    &lt;li&gt;Steady&lt;/li&gt;
+        ///    &lt;li&gt;Organised&lt;/li&gt;
+        ///    &lt;li&gt;Honest&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally steady&lt;/li&gt;
+        ///    &lt;li&gt;Observant&lt;/li&gt;
+        ///    &lt;li&gt;Caring&lt;/li&gt;
+        ///    &lt;li&gt;Hardworking&lt;/li&gt;
+        ///    &lt;li&gt;Tactful&lt;/li&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_overview {
             get {
@@ -17666,7 +17661,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mirror Ki.
+        ///   Looks up a localized string similar to Social Expression.
         /// </summary>
         public static string SurfaceEnergyLabel {
             get {
@@ -17675,7 +17670,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mirror Ki.
+        ///   Looks up a localized string similar to Social Expression.
         /// </summary>
         public static string SurfaceEnergyShortLabel {
             get {
@@ -18956,26 +18951,27 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Pioneering&lt;/td&gt;
-        ///                &lt;td&gt;Unrealistic&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Proactive&lt;/td&gt;
-        ///                &lt;td&gt;Chaotic&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Strong&lt;/td&gt;
-        ///                &lt;td&gt; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits positive&quot;&gt;
+        ///    &lt;li&gt;Pioneering&lt;/li&gt;
+        ///    &lt;li&gt;Proactive&lt;/li&gt;
+        ///    &lt;li&gt;Energetic&lt;/li&gt;
+        ///    &lt;li&gt;Passionate&lt;/li&gt;
+        ///    &lt;li&gt;Cheerful&lt;/li&gt;
+        ///    &lt;li&gt;Optimistic&lt;/li&gt;
+        ///    &lt;li&gt;Youthful&lt;/li&gt;
+        ///    &lt;li&gt;Independent&lt;/li&gt;
+        ///    &lt;li&gt;Flexible&lt;/li&gt;
+        ///    &lt;li&gt;Strong&lt;/li&gt;
+        ///    &lt;li&gt;Frank&lt;/li&gt;
+        ///    &lt;li&gt;Open&lt;/li&gt;
+        ///    &lt;li&gt;Outgoing&lt;/li&gt;
+        ///    &lt;li&gt;Chivalrous&lt;/li&gt;
+        ///    &lt;li&gt;Patient&lt;/li&gt;
+        ///    &lt;li&gt;Sensitive&lt;/li&gt;
+        ///    &lt;li&gt;Humorous&lt;/li&gt;
+        ///    &lt;li&gt;Vis [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_overview {
             get {
@@ -20406,25 +20402,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;th&gt;When in balance:&lt;/th&gt;
-        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///            &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Sensitive&lt;/td&gt;
-        ///                &lt;td&gt;Hypersensitive&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Curious&lt;/td&gt;
-        ///                &lt;td&gt;Disinterested&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Diplomatic&lt; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits positive&quot;&gt;
+        ///    &lt;li&gt;Independent&lt;/li&gt;
+        ///    &lt;li&gt;Self-confident&lt;/li&gt;
+        ///    &lt;li&gt;Courageous&lt;/li&gt;
+        ///    &lt;li&gt;Willful&lt;/li&gt;
+        ///    &lt;li&gt;Self-reliant&lt;/li&gt;
+        ///    &lt;li&gt;Inspired&lt;/li&gt;
+        ///    &lt;li&gt;Adventurous&lt;/li&gt;
+        ///    &lt;li&gt;Wise&lt;/li&gt;
+        ///    &lt;li&gt;Persistent&lt;/li&gt;
+        ///    &lt;li&gt;Curious&lt;/li&gt;
+        ///    &lt;li&gt;Empathetic&lt;/li&gt;
+        ///    &lt;li&gt;Sensitive&lt;/li&gt;
+        ///    &lt;li&gt;Diplomatic&lt;/li&gt;
+        ///    &lt;li&gt;Reflective&lt;/li&gt;
+        ///    &lt;li&gt;Flexible&lt;/li&gt;
+        ///    &lt;li&gt;Transparent&lt;/li&gt;
+        ///    &lt;li&gt;Cautio [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_overview {
             get {
@@ -21240,26 +21237,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Influential&lt;/td&gt;
-        ///                &lt;td&gt;Single-minded&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Penetrating&lt;/td&gt;
-        ///                &lt;td&gt;Unrealistic&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Visionary&lt;/td&gt;
-        ///         [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h3&gt;Positive Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits positive&quot;&gt;
+        ///    &lt;li&gt;Influential&lt;/li&gt;
+        ///    &lt;li&gt;Penetrating&lt;/li&gt;
+        ///    &lt;li&gt;Visionary&lt;/li&gt;
+        ///    &lt;li&gt;Sensitive&lt;/li&gt;
+        ///    &lt;li&gt;Thoughtful&lt;/li&gt;
+        ///    &lt;li&gt;Flexible&lt;/li&gt;
+        ///    &lt;li&gt;Trusting&lt;/li&gt;
+        ///    &lt;li&gt;Reliable&lt;/li&gt;
+        ///    &lt;li&gt;Social&lt;/li&gt;
+        ///    &lt;li&gt;Emotional&lt;/li&gt;
+        ///    &lt;li&gt;Practical&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h3&gt;Challenging Traits&lt;/h3&gt;
+        ///&lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
+        ///&lt;ul class=&quot;traits challenging&quot;&gt;
+        ///    &lt;li&gt;Single-min [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_overview {
             get {

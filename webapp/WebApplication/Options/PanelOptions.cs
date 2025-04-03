@@ -34,7 +34,7 @@ namespace K9.WebApplication.Options
         public string SummaryOptionId { get; }
         public string UniqueRadioName { get; }
 
-        public string PanelId => $"panel-{Id}";
+        public string PanelId => $"panel-{Id}"; 
         public string SummaryChecked => PanelView == EPanelView.SummaryView ? "checked" : "";
         public string FullTextChecked => PanelView == EPanelView.FullTextView ? "checked" : "";
 

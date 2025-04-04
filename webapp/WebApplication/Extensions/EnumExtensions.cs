@@ -16,6 +16,16 @@ namespace K9.WebApplication.Extensions
             }.Contains(gender);
         }
 
+        public static ETransformationType GetTransformationTypeWithYingYang(this ENineStarKiEnergy energy1,
+            ENineStarKiEnergy energy2)
+        {
+            if (energy1 == energy2)
+            {
+                return ETransformationType.Same;
+            }
+            return GetTransformationType(energy1, energy2);
+        }
+
         public static ETransformationType GetTransformationType(this ENineStarKiEnergy energy1, ENineStarKiEnergy energy2)
         {
             switch (energy1)

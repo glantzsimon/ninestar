@@ -1705,6 +1705,7 @@
     <Content Include="Views\PersonalChart\_ProfileFinances.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileSpirituality.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PanelView.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileStressResponse.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

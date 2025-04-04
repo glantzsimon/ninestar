@@ -5815,31 +5815,25 @@
   <data name="PersonalView" xml:space="preserve">
     <value>View Personal Houses Occupied</value>
   </data>
-  <data name="coreearth_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>energies\stressresponse\en-gb\coreearth-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="child_controlled_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\child-controlled-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="fire_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>energies\stressresponse\en-gb\fire-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="child_controls_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\child-controls-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="heaven_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>energies\stressresponse\en-gb\heaven-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="child_house_of_five_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\child-house-of-five-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="lake_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>energies\stressresponse\en-gb\lake-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="child_same_element_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\child-same-element-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="mountain_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>energies\stressresponse\en-gb\mountain-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="child_supported_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\child-supported-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="soil_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>energies\stressresponse\en-gb\soil-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="child_supports_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\child-supports-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="thunder_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>energies\stressresponse\en-gb\thunder-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>energies\stressresponse\en-gb\water-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>energies\stressresponse\en-gb\wind-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="StressResponse" xml:space="preserve">
+    <value>Stress Response</value>
   </data>
 </root>

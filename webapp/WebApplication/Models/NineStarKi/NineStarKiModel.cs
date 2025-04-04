@@ -514,6 +514,8 @@ namespace K9.WebApplication.Models
         [ScriptIgnore]
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();
 
+        public string StressResponseDetails => GetStressResponseDetails();
+
         [ScriptIgnore]
         public string SexualityRelationTypeDetailsGay => GetSexualityGenderDescription(true);
 
@@ -709,7 +711,7 @@ namespace K9.WebApplication.Models
         public ETransformationType GetChildNatalHouseTransformation()
         {
             var childNatalHouse = GetChildNatalHouse();
-            return CharacterEnergy.Energy.GetTransformationType(childNatalHouse.Energy);
+            return CharacterEnergy.Energy.GetTransformationTypeWithYingYang(childNatalHouse.Energy);
         }
 
         public NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, int energyNumber, ENineStarKiEnergyCycleType cycleType)
@@ -865,6 +867,17 @@ namespace K9.WebApplication.Models
                 { ENineStarKiEnergy.Fire, _ => Dictionary.fire_relationships_summary }
             };
 
+        private static readonly Dictionary<ETransformationType, string> _stressResponses
+            = new Dictionary<ETransformationType, string>
+            {
+                { ETransformationType.IsControlled, Dictionary.child_controlled_stress },
+                { ETransformationType.Controls, Dictionary.child_controls_stress },
+                { ETransformationType.Sibling, Dictionary.child_same_element_stress },
+                { ETransformationType.Same, Dictionary.child_house_of_five_stress },
+                { ETransformationType.IsSupported, Dictionary.child_supported_stress},
+                { ETransformationType.Supports, Dictionary.child_supports_stress}
+            };
+
         private string GetMainEnergyRelationshipDetails()
         {
             return MainEnergy != null ? _relationshipDetails.TryGetValue(MainEnergy.Energy, out var getValue)
@@ -876,6 +889,13 @@ namespace K9.WebApplication.Models
         {
             return MainEnergy != null ? _relationshipSummaries.TryGetValue(MainEnergy.Energy, out var getValue)
                 ? getValue(PersonModel.Gender)
+                : string.Empty : string.Empty;
+        }
+
+        private string GetStressResponseDetails()
+        {
+            return MainEnergy != null ? _stressResponses.TryGetValue(GetChildNatalHouseTransformation(), out var details)
+                ? details
                 : string.Empty : string.Empty;
         }
 

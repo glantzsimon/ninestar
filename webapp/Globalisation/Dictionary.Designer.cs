@@ -5224,6 +5224,22 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like other Earth children, it is especially important for 5 Earth children to have a stable family and school life.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Core Earth is at the centre of the magic square, which brings many different paths and opportunities to choose from. This can sometimes make it hard for these children to move forward with clarity. Without appropriate guidance, they may lose their way and even succumb to undesirable influences.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    5 Earth characters are naturally nurturing and supportive a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_stress {
+            get {
+                return ResourceManager.GetString("coreearth_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    You come across as commanding and possibly a little domineering at times. 
         ///    
         ///    It is very important for you to feel involved and at the centre of what you do. 
@@ -7764,6 +7780,23 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    9 Fire children do much better when they are supported by parents and caregivers who can teach them consideration for others, patience, how to plan ahead and to see tasks through to completion.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Without adequate discipline, Fire children can become spoilt, conceited and vain.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Fire needs to be contained, and since this Emotional Ki can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string fire_stress {
+            get {
+                return ResourceManager.GetString("fire_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    You may appear rather showy and ostentatious at times. You are naturally gregarious and sociable and love to be the centre of attention.
         ///
         ///    You also have a deeper intuitive nature that shines through and others benefit greatly from your insights and wisdom.
@@ -9777,6 +9810,22 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Heaven children need good moral guidance. They have a natural ability to pick up on what is right and need parents and teachers that lead by example.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is important for Heaven children not to become overly rigid and opinionated. They should be encouraged to enter into debate and to be more flexible in their standpoint, allowing for differences of opinion.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    6 Metal children are exceptionally sensitive to criticism. They are naturally hypersensitive, proud and strongly [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_stress {
+            get {
+                return ResourceManager.GetString("heaven_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    You are straightforward and sincere in your expression. At times you can be rather blunt and a little overbearing. However, you are basically careful, prudent and well organised. Your actions are clear, precise and well thought-out.
         ///&lt;/p&gt;.
         /// </summary>
@@ -11305,6 +11354,21 @@ namespace K9.Globalisation {
         public static string lake_spirituality_summary {
             get {
                 return ResourceManager.GetString("lake_spirituality_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    7 Metal children are naturally fun-loving and it is very important for them to have plenty of social interaction. 7 Lake children&apos;s naturally gregarious and outgoing character could easily be damanged if they spend too much time alone in their formative years and could lead to their being withdrawn, aloof and introverted later on in life.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Lake children are quite independent and free-spirited and this should be encouraged by allowing them greater freedom.
+        ///
+        ///    However, care must be [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_stress {
+            get {
+                return ResourceManager.GetString("lake_stress", resourceCulture);
             }
         }
         
@@ -13840,6 +13904,22 @@ namespace K9.Globalisation {
         public static string mountain_spirituality_summary {
             get {
                 return ResourceManager.GetString("mountain_spirituality_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Mountain children also need structure and routine and should be encouraged develop self-discipline early on in their lives.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is highly beneficial to encourage Mountain children to develop their innate strengths through intellectual argument, such as debate and discussion on a wide range of topics.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///   8 Earth children are harmed by over-indulgence and hypocritical behaviour on the part of parents or teachers. They require consistency and clear direction from adults who  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_stress {
+            get {
+                return ResourceManager.GetString("mountain_stress", resourceCulture);
             }
         }
         
@@ -17461,6 +17541,24 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    2 Earth children need a lot of consistency from their parents, teachers. Promises should be kept and a steady routine put in place.
+        ///
+        ///    Their character can be damaged if their caregivers frequently break their promises or fail to observe the moral standards they set.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Soil children tend to have a very diplomatic nature, even at an early age. They may often adopt the role of peacemaker when siblings and friends fall out.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    These children have a strong sense of justice [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_stress {
+            get {
+                return ResourceManager.GetString("soil_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    You mau well appear reserved. You are reliable, steady and tend to keep your word. You can also be quite detail-minded and potentially overly fussy.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -19509,6 +19607,24 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    It is vital to allow the Thunder child to explore his or her talents and interests to the full. 
+        ///    
+        ///    Encourage them to pursue their interests and do any practice necessary.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Thunder children are exceptionally curious. It is important not to discourage them in any way and, whilst their endless questions can be become tiring, try your best not to ignore them, as this can be detrimental to their development.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    3 Tree children are quite sociable and it&apos;s not uncommon [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_stress {
+            get {
+                return ResourceManager.GetString("thunder_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    You are spontaneous and energetic. You have great optimism and are full of enthusiasm for the things that interest you. 
         ///    
         ///    You are probably quite dynamic, vivacious and even a little noisy and hectic at times. This could be distracting to those who prefer more stillness and quiet.
@@ -20872,6 +20988,19 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water children, whilst they often have a naturally exploratory side, tend to be loners and need lots of encouragement to socialise and expand their horizons.
+        ///
+        ///    Parents ought to be careful not to be overly protective of Water children. This could cause them to further isolate from other children.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string water_stress {
+            get {
+                return ResourceManager.GetString("water_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    On the one hand you may appear passionate, sociable and bubbly, like a mountain stream. On the other , you could give the impression of being shy, cautious, indecisive and prone to procrastination.
         ///&lt;/p&gt;.
         /// </summary>
@@ -21674,6 +21803,20 @@ namespace K9.Globalisation {
         public static string wind_spirituality_summary {
             get {
                 return ResourceManager.GetString("wind_spirituality_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    4 Tree children have tremendous creative potential and can be quite pioneering in the areas that most interest them.
+        ///    It&apos;s important that they get lots of encouragement and appreciation from parents and teachers as well as plenty of inspiration, space and time to explore their talents freely.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    If they show early signs of talent in a given field, do not dismiss it. Anything that acts to suppress their creativity and dreams in any way could be extremely damaging to 4 Tree children. [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_stress {
+            get {
+                return ResourceManager.GetString("wind_stress", resourceCulture);
             }
         }
         

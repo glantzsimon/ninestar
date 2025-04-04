@@ -27,6 +27,7 @@
             public const string ViewLabel = "ViewLabel";
             public const string DisplayLabel = "DisplayLabel";
             public const string PanelViewLabel = "PanelViewLabel";
+            public const string PanelCycleViewLabel = "PanelCycleViewLabel";
 
             public const string ShowDirectionsLabel = "ShowDirectionsLabel";
             public const string EnergyDisplayLabel = "EnergyDisplayLabel";
@@ -163,6 +164,8 @@
         {
             public const string FullTextView = "FullTextView";
             public const string SummaryView = "SummaryView";
+            public const string GlobalView = "GlobalView";
+            public const string PersonalView = "PersonalView";
 
             public const string RedeemPromoCode = "RedeemPromoCode";
             public const string AllowMarketingEmails = "AllowMarketingEmails";

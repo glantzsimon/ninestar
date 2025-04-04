@@ -4388,7 +4388,7 @@
     <value>Day Star</value>
   </data>
   <data name="EightyOneYearlyEnergy" xml:space="preserve">
-    <value>Eighty-One-Yearly Ki</value>
+    <value>81-Yearly Ki</value>
   </data>
   <data name="EpochCycleEnergy" xml:space="preserve">
     <value>Epoch Cycle Energy</value>
@@ -4502,7 +4502,7 @@
     <value>Daily Prediction</value>
   </data>
   <data name="EightyOneYearlyPrediction" xml:space="preserve">
-    <value>Eighty-One-Year Prediction</value>
+    <value>81-Year Prediction</value>
   </data>
   <data name="fire_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\career\en-gb\fire-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -4691,7 +4691,7 @@
     <value>energies\surface\en-gb\mountain-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NineYearlyPrediction" xml:space="preserve">
-    <value>Nine-Year Prediction</value>
+    <value>9-Year Prediction</value>
   </data>
   <data name="soil_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\career\en-gb\soil-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -4958,10 +4958,10 @@
     <value>Display</value>
   </data>
   <data name="EightyOneYearPeriod" xml:space="preserve">
-    <value>Eighty-One-Year Period</value>
+    <value>81-Year Period</value>
   </data>
   <data name="EightyOneYearView" xml:space="preserve">
-    <value>Eighty-One-Year View</value>
+    <value>81-Year View</value>
   </data>
   <data name="epoch_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\epoch\en-gb\epoch-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -5653,6 +5653,9 @@
   <data name="SummaryView" xml:space="preserve">
     <value>View Summary</value>
   </data>
+  <data name="GlobalView" xml:space="preserve">
+    <value>View Global Ki</value>
+  </data>
   <data name="global_core_earth_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\day\en-gb\global-core-earth-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -5802,5 +5805,11 @@
   </data>
   <data name="global_year_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\yearly\en-gb\global-year-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PanelCycleViewLabel" xml:space="preserve">
+    <value>Panel Cycle View</value>
+  </data>
+  <data name="PersonalView" xml:space="preserve">
+    <value>View Personal Houses Occupied</value>
   </data>
 </root>

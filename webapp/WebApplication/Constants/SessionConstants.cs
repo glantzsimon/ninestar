@@ -46,6 +46,7 @@
         public const string UserCalculationMethod = "UserCalculationMethod";
         public const string UseHolograhpicCycles = "UseHolograhpicCycles";
         public const string DefaultPanelView = "DefaultPanelView";
+        public const string DefaultPanelCycleView = "DefaultPanelCycleView";
         public const string InvertDailyAndHourlyKiForSouthernHemisphere = "InvertDailyAndHourlyKiForSouthernHemisphere";
         public const string InvertDailyAndHourlyCycleKiForSouthernHemisphere = "InvertDailyAndHourlyCycleKiForSouthernHemisphere";
         public const string DefaultEnergyDisplay = "DefaultEnergyDisplay";

@@ -519,7 +519,7 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public string MainEnergyRelationshipsDetails => GetMainEnergyRelationshipDetails();
-        
+
         [ScriptIgnore]
         public string MainEnergyRelationshipsSummary => GetMainEnergyRelationshipSummary();
 
@@ -697,7 +697,7 @@ namespace K9.WebApplication.Models
 
             var energy = (ENineStarKiEnergy)cycleEnergy;
 
-            return new NineStarKiEnergy(energy, cycleType);
+            return new NineStarKiEnergy(energy, cycleType) { IsGlobal = true };
         }
 
         public NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, int energyNumber, ENineStarKiEnergyCycleType cycleType)

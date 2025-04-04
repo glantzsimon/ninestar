@@ -38,6 +38,13 @@
         </li>
 
         <li>
+            <a data-toggle="tab" href="#current-epoch-cycle">
+                @Dictionary.EightyOneYearlyPrediction
+                <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/eighty-one-cycle.png');"></div>
+            </a>
+        </li>
+
+        <li>
             <a data-toggle="tab" href="#global-planner">
                 @Dictionary.Calendar
                 <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/yearly-planner.png');"></div>
@@ -46,12 +53,15 @@
     </ul>
 
     <div class="tab-content">
-        <div id="current-daily-cycle" class="tab-pane fade in active">
+        <div id="current-daily-cycle" class="tab-pane fade">
             @Html.Panel(Dictionary.DailyPrediction, Dictionary.day_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Partial("_Cycle", Model.MonthlyCycleEnergy)
+                @Html.PanelWithGlobal(
+                    Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
+                    Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
+                    Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
             }
 
             <br />
@@ -63,7 +73,10 @@
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Partial("_Cycle", Model.MonthlyCycleEnergy)
+                @Html.PanelWithGlobal(
+                    Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
+                    Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
+                    Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
             }
 
             <br />
@@ -75,34 +88,43 @@
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Partial("_Cycle", Model.YearlyCycleEnergy)
+                @Html.PanelWithGlobal(
+                    Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
+                    Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Year).ToString(),
+                    Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Year).ToString())
             }
 
             <br />
             @Html.Partial("_ButtonsFooter")
         </div>
 
-        <div id="current-yearly-cycle" class="tab-pane fade">
+        <div id="current-nine-yearly-cycle" class="tab-pane fade">
             @Html.Panel(Dictionary.NineYearlyPrediction, Dictionary.generation_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Partial("_Cycle", Model.PersonalHousesOccupiedEnergies.Generation)
+                @Html.PanelWithGlobal(
+                    Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
+                    Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Generation).ToString(),
+                    Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Generation).ToString())
             }
 
             <br />
             @Html.Partial("_ButtonsFooter")
         </div>
 
-        <div id="current-daily-cycle" class="tab-pane fade">
+        <div id="current-epoch-cycle" class="tab-pane fade">
+            @Html.Panel(Dictionary.EightyOneYearlyPrediction, Dictionary.epoch_description)
+
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Partial("_Cycle", Model.PersonalHousesOccupiedEnergies.Day)
+                @Html.Partial("_Cycle", Model.GlobalCycleEnergies.Epoch)
             }
 
-            <br />
+            <br/>
             @Html.Partial("_ButtonsFooter")
         </div>
+
 
         <div id="global-planner" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
@@ -112,7 +134,7 @@
                 </div>
             }
 
-            <hr />
+            <hr/>
             @Html.Partial("_ButtonsFooter")
         </div>
     </div>

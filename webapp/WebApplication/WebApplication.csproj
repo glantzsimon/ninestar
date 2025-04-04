@@ -354,6 +354,7 @@
     <Compile Include="Controllers\UserPromotionsController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
+    <Compile Include="Enums\EPanelCycleView.cs" />
     <Compile Include="Enums\EPanelView.cs" />
     <Compile Include="Enums\EUnfavourableDirection.cs" />
     <Compile Include="Enums\EPrimaryAttribute.cs" />

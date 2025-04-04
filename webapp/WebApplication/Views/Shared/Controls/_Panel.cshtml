@@ -9,8 +9,17 @@
                 ? "image-panel-small" : "";
     var panelBodyClass = hasImage ? "panel-body-image" : "";
 
-    var panelBodyFullTextDisplayStyle = Model.PanelView == EPanelView.FullTextView ? "" : "display: none;";
-    var panelSummaryDisplayStyle = Model.PanelView == EPanelView.FullTextView ? "display: none;" : "";
+    var bodyDisplayStyle = Model.IsDualView ?
+        Model.IsGlobalSwitch ?
+            Model.PanelCycleView == EPanelCycleView.PersonalView ? "" : "display: none;" :
+            Model.PanelView == EPanelView.FullTextView ? "" : "display: none;" :
+        "";
+
+    var body2DisplayStyle = Model.IsDualView ?
+        Model.IsGlobalSwitch ?
+            Model.PanelCycleView == EPanelCycleView.GlobalView ? "" : "display: none;" :
+            Model.PanelView == EPanelView.SummaryView ? "" : "display: none;" :
+        "";
 }
 
 @*Bookmark*@
@@ -22,16 +31,32 @@
             <h4 class="margin-0 float-left"><strong>@Model.Title</strong></h4>
             @if (Model.IsDualView)
             {
-                <div class="float-right d-flex align-items-center panel-display-options">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.SummaryOptionId" value="@((int)EPanelView.SummaryView)" @Model.SummaryChecked>
-                        <label class="form-check-label" for="@Model.SummaryOptionId">@Dictionary.SummaryView</label>
+                if (Model.IsGlobalSwitch)
+                {
+                    <div class="float-right d-flex align-items-center panel-display-options">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option1Id" value="@((int)EPanelCycleView.PersonalView)" @Model.PersonalViewChecked>
+                            <label class="form-check-label" for="@Model.Option1Id">@Dictionary.PersonalView</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option2Id" value="@((int)EPanelCycleView.GlobalView)" @Model.GlobalViewChecked>
+                            <label class="form-check-label" for="@Model.Option2Id">@Dictionary.GlobalView</label>
+                        </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.FullTextOptionId" value="@((int)EPanelView.FullTextView)" @Model.FullTextChecked>
-                        <label class="form-check-label" for="@Model.FullTextOptionId">@Dictionary.FullTextView</label>
+                }
+                else
+                {
+                    <div class="float-right d-flex align-items-center panel-display-options">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option1Id" value="@((int)EPanelView.SummaryView)" @Model.SummaryChecked>
+                            <label class="form-check-label" for="@Model.Option1Id">@Dictionary.SummaryView</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option2Id" value="@((int)EPanelView.FullTextView)" @Model.FullTextChecked>
+                            <label class="form-check-label" for="@Model.Option2Id">@Dictionary.FullTextView</label>
+                        </div>
                     </div>
-                </div>
+                }
             }
         </div>
     }
@@ -42,6 +67,6 @@
             <div class="image-panel img-rounded @imageSizeClass" style="background-image: url('@Model.ImageSrc'); @Model.ImageLayoutCss;"></div>
         </div>
     }
-    <div class="panel-body panel-fulltext @panelBodyClass" style="@panelBodyFullTextDisplayStyle">@MvcHtmlString.Create(Model.Body)</div>
-    <div class="panel-body panel-summary @panelBodyClass" style="@panelSummaryDisplayStyle">@MvcHtmlString.Create(Model.Summary)</div>
+    <div class="panel-body panel-fulltext @panelBodyClass" style="@bodyDisplayStyle">@MvcHtmlString.Create(Model.Body)</div>
+    <div class="panel-body panel-summary @panelBodyClass" style="@body2DisplayStyle">@MvcHtmlString.Create(Model.Body2)</div>
 </div>

@@ -74,12 +74,29 @@ namespace K9.WebApplication.Helpers
                 Id = id,
                 Title = title,
                 Body = body,
-                Summary = summary,
+                Body2 = summary,
                 ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
                 ImageSize = imageSize,
                 ImageLayout = imageLayout,
                 IsDualView = true,
                 PanelView = SessionHelper.GetCurrentUserDefaultPanelView()
+            });
+        }
+
+        public static MvcHtmlString PanelWithGlobal(this HtmlHelper html, string title, string personalBody, string globalBody, string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
+        {
+            return html.Partial("Controls/_Panel", new PanelOptions
+            {
+                Id = id,
+                Title = title,
+                Body = personalBody,
+                Body2 = globalBody,
+                ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
+                ImageSize = imageSize,
+                ImageLayout = imageLayout,
+                IsDualView = true,
+                IsGlobalSwitch = true,
+                PanelCycleView = SessionHelper.GetCurrentUserDefaultPanelCycleView()
             });
         }
 

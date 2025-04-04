@@ -4912,14 +4912,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    5 Earth characters are born with &lt;strong&gt;natural leadership potential&lt;/strong&gt; and often have a &lt;strong&gt;bold and assertive&lt;/strong&gt; nature. They can be &lt;strong&gt;demanding&lt;/strong&gt; at times, to the point of aggressiveness.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Generations Born in the 5 Earth Epoch — The Axis Holders, Integrators, and Agents of Karmic Reckoning
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    5 is at the centre of the 9 Star Ki system and this gives 5 soil characters a &lt;strong&gt;great capacity to influence&lt;/strong&gt; those around them.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Core Earth characters are &lt;strong&gt;extremely persevering&lt;/strong&gt;. They can also express different extremes.  [rest of string was truncated]&quot;;.
+        ///    Generations born during a 5 Earth Epoch carry the weight and complexity of living at the center point of a much larger cycle. This epoch is marked by intense reorientation—personally, politically, and spiritually—and those born under its influence often feel the gravity of that collective turning. These generations are not just witnesses to major global shifts—they ar [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_epoch {
             get {
@@ -4965,14 +4962,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    5 Earth characters are born with &lt;strong&gt;natural leadership potential&lt;/strong&gt; and often have a &lt;strong&gt;bold and assertive&lt;/strong&gt; nature. They can be &lt;strong&gt;demanding&lt;/strong&gt; at times, to the point of aggressiveness.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 5 Earth Generation — Anchors, Catalysts, and Keepers of the Threshold
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    5 is at the centre of the 9 Star Ki system and this gives 5 soil characters a &lt;strong&gt;great capacity to influence&lt;/strong&gt; those around them.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Core Earth characters are &lt;strong&gt;extremely persevering&lt;/strong&gt;. They can also express different extremes.  [rest of string was truncated]&quot;;.
+        ///    The 5 Earth generation is born at the center of the Nine Star Ki cycle—a position of intense gravity and paradox. These individuals arrive during times of deep global transition, often marked by instability, power shifts, or existential questioning. As such, their lives are rarely simple or linear. They carry both the weight of history and the potential to redirect it. This generation tends to f [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_generation {
             get {
@@ -6418,7 +6412,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Eighty-One-Yearly Ki.
+        ///   Looks up a localized string similar to 81-Yearly Ki.
         /// </summary>
         public static string EightyOneYearlyEnergy {
             get {
@@ -6427,7 +6421,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Eighty-One-Year Prediction.
+        ///   Looks up a localized string similar to 81-Year Prediction.
         /// </summary>
         public static string EightyOneYearlyPrediction {
             get {
@@ -6436,7 +6430,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Eighty-One-Year Period.
+        ///   Looks up a localized string similar to 81-Year Period.
         /// </summary>
         public static string EightyOneYearPeriod {
             get {
@@ -6445,7 +6439,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Eighty-One-Year View.
+        ///   Looks up a localized string similar to 81-Year View.
         /// </summary>
         public static string EightyOneYearView {
             get {
@@ -6957,11 +6951,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Epoch Ki represents the dominant energy during the 81-year cycle in which a person is born. Its influence is vast and sweeping, shaping not just individuals or generations, but entire eras of human development. Unlike the more immediate and personal effects of yearly or monthly Ki, the Epoch Ki works in the background, guiding the collective trajectory of thought, innovation, and societal evolution across decades.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The Epoch Ki — The Deep Current Beneath Collective Evolution
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This Ki is most visible in the global movements and defining them [rest of string was truncated]&quot;;.
+        ///    The Epoch Ki represents the dominant energy of the 81-year cycle into which a person is born. It is the slowest and most far-reaching rhythm within the Nine Star Ki system—a vast energetic wave that shapes not just individual lives or single generations, but entire civilizational arcs. This Ki sets the backdrop for the era’s global tone, acting as a kind of cultural atmosphere that permeates thought, technol [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EpochEnergyDescription {
             get {
@@ -7392,17 +7386,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire characters are some of the &lt;strong&gt;brightest and liveliest of all the nine characters&lt;/strong&gt;. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    They tend to &lt;strong&gt;wear their heart on their sleeve&lt;/strong&gt; and can be exceptionally &lt;strong&gt;warm and affectionate&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    9 Fire characters have a &lt;strong&gt;bubbly personality with lots of charisma&lt;/strong&gt; and often possess great &lt;strong&gt;clarity and intuition&lt;/strong&gt;, whch can help to &lt;strong&gt;shine light on situations&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Sometimes Fire ch [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string fire_epoch {
             get {
@@ -7466,17 +7450,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire characters are some of the &lt;strong&gt;brightest and liveliest of all the nine characters&lt;/strong&gt;. 
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 9 Fire Generation — Visionaries, Amplifiers, and the Carriers of Collective Illumination
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    They tend to &lt;strong&gt;wear their heart on their sleeve&lt;/strong&gt; and can be exceptionally &lt;strong&gt;warm and affectionate&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    9 Fire characters have a &lt;strong&gt;bubbly personality with lots of charisma&lt;/strong&gt; and often possess great &lt;strong&gt;clarity and intuition&lt;/strong&gt;, whch can help to &lt;strong&gt;shine light on situations&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Sometimes Fire ch [rest of string was truncated]&quot;;.
+        ///    The 9 Fire generation is born under the influence of radiant energy—an era where visibility, emotion, and revelation take center stage. This is a generation that arrives to light things up. They are often expressive, passionate, and wired to question what is hidden. Whether through art, activism, or sheer charisma, they are natural amplifiers of truth, emotion, and story. They [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_generation {
             get {
@@ -8284,8 +8262,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Generational Ki is the Ki that was present during the 9-year period in which a person was born. This is wider-reaching and has a less personal effect than the yearly or monthly Ki. Its influence is generally more visible in the behaviour and thinking of the generation or group. The influence of this energy can also be seen and felt in how a person or generation feels they can contribute to solving the problems of the era into which they were born and how that might shape career choices and proj [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Generational Ki — The Collective Pulse We Are Born Into
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In addition to the yearly and monthly energies that shape the rhythms of our personal lives, each person is also born into a larger generational cycle—a 9-year span governed by a single Ki energy. This influence, often overlooked, weaves itself through the collective psyche of an entire cohort. It informs the spirit of a generation: their instincts, strengths, blind spots, and the broader historical tone into whi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GenerationalEnergyDescription {
             get {
@@ -8325,7 +8306,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    5 Earth Epoch — Crisis, Convergence, and the Recalibration of Power
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 5 Earth epoch marks the great turning point of the global cycle—a moment of collective reckoning, convergence, and potential collapse or rebirth. It is the still center of the 81-year rhythm, where everything slows, intensifies, and reveals its true nature. This is not a time of steady progress or wild expansion; it is a time of breakdown and breakthrough. The world reaches a saturation point—politi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_core_earth_epoch_cycle {
             get {
@@ -8387,8 +8372,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The 81-Year Cycle represents a much broader energetic rhythm, shaping the collective tone of an era. Unlike the more personal influence of yearly or monthly Ki, this cycle moves slowly, influencing entire generations across cultural, political, and spiritual landscapes. It reflects deeper collective themes — what humanity as a whole is exploring, questioning, and becoming. The spirit of the age, from revolutions and renaissances to periods of decline or technological growth, often mirrors the natur [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 81-Year Epochs — The Deep Pulse of Civilizational Change
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Beyond the daily, monthly, yearly, and even 9-year rhythms of Nine Star Ki lies its deepest and slowest cycle: the great 81-year epochs. Each of these long arcs is governed by one of the nine Ki energies and shapes the tone of an entire era—an epoch that influences multiple generations, global consciousness, and the evolutionary trajectory of humanity as a whole. These periods are subtle in their beginnings  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_epoch_description {
             get {
@@ -8410,7 +8398,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    9 Fire Epoch — Illumination, Collapse, and the Final Revelation
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 9 Fire epoch marks the high noon of the global consciousness cycle—radiant, expressive, and ultimately, unsparing. It is the final act before descent, when everything is brought into the light. The brilliance of this era can be blinding. Truths long hidden are exposed, both glorious and catastrophic. The world becomes hyperconnected, emotionally charged, and saturated with media, art, technology, and in [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_fire_epoch_cycle {
             get {
@@ -8484,7 +8476,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    6 Metal Epoch — Order, Industry, and the Architecture of Power
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 6 Metal epoch is characterized by a drive to reimpose order, structure, and long-range vision on a world in need of coherence and offers the clarity, discipline, and structural focus needed to rebuild. It is an era of consolidation, where the world seeks to impose order on prior chaos. Systems are redesigned, institutions are strengthened, and a collective emphasis on law, discipline, and productivity ta [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_heaven_epoch_cycle {
             get {
@@ -8497,7 +8493,7 @@ namespace K9.Globalisation {
         ///    6 Metal Period — Authority, Order, and Structural Realignment
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 6 Metal period brings a sharp shift from the chaos and emotional intensity of 5 Earth into a time of discipline, consolidation, and moral focus. This is the early autumn of the global cycle—a phase when the world seeks clarity, structure, and a return to order. There is often a collective push to restore boundaries, define laws, and reinforce systems that were tested or broken in the previous period. The  [rest of string was truncated]&quot;;.
+        ///    A 6 Metal period brings a sharp shift into a time of discipline, consolidation, and moral focus. This is the early autumn of the global cycle—a phase when the world seeks clarity, structure, and a return to order. There is often a collective push to restore boundaries, define laws, and reinforce systems that were tested or broken in the previous period. The energy becomes more yang, more strategic, and more [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_heaven_generation_cycle {
             get {
@@ -8523,7 +8519,7 @@ namespace K9.Globalisation {
         ///    6 Metal — Discipline, Structure, and Moral Authority
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 6 Metal global phase brings a sharp shift in energy following the ambiguity of the 5 Earth period. It signals a return to structure, order, and moral clarity—at least in appearance. This is the early autumn of the cycle, when what has been growing is pruned and shaped. Collectively, this often manifests as a renewed emphasis on law, leadership, discipline, and national identity. Governments may assert control more [rest of string was truncated]&quot;;.
+        ///    A 6 Metal global phase brings a sharp shift in energy. It signals a return to structure, order, and moral clarity—at least in appearance. This is the early autumn of the cycle, when what has been growing is pruned and shaped. Collectively, this often manifests as a renewed emphasis on law, leadership, discipline, and national identity. Governments may assert control more strongly, policies may tighten, and the publi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_heaven_year {
             get {
@@ -8545,7 +8541,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    7 Metal Epoch — Refinement, Decadence, and the Illusion of Arrival
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 7 Metal epoch marks the late-autumn stage of the global cycle—a time of elegance, gratification, and cultural refinement. It is a period where the structures established during 6 Metal have reached maturity, and the world shifts from building to enjoying, from effort to reward. On the surface, this epoch may appear peaceful, prosperous, and well-ordered. Wealth circulates, institutions operate smooth [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_lake_epoch_cycle {
             get {
@@ -8558,7 +8558,7 @@ namespace K9.Globalisation {
         ///    7 Metal Period — Reflection, Indulgence, and the Illusion of Peace
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 7 Metal period brings a softer, more refined energy after the structure and austerity of 6 Metal. This is the late autumn of the cycle—a time when the world slows its forward drive and begins to enjoy the fruits of what has been built. Superficially, this phase may appear calm, elegant, or even celebratory. It can bring periods of prosperity, cultural flourishing, and the illusion of stability. But b [rest of string was truncated]&quot;;.
+        ///    A 7 Metal period brings a softer, more refined energy, compared to the structure and austerity of 6 Metal. This is the late autumn of the cycle—a time when the world slows its forward drive and begins to enjoy the fruits of what has been built. Superficially, this phase may appear calm, elegant, or even celebratory. It can bring periods of prosperity, cultural flourishing, and the illusion of stability [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_lake_generation_cycle {
             get {
@@ -8571,7 +8571,7 @@ namespace K9.Globalisation {
         ///    7 Metal Month — Gratification, Exposure, and Emotional Undercurrents
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 7 Metal month signals a softening of the collective energy. After the firm structure and moral clarity of 6 Metal, the tone shifts toward enjoyment, aesthetics, and emotional reflection. This is the golden hour of the monthly cycle—a time when the world becomes more focused on comfort, beauty, and personal pleasure. While not as action-oriented, this energy can bring welcome relief, allowing space  [rest of string was truncated]&quot;;.
+        ///    A 7 Metal month signals a softening of the collective energy. If 6 Metal brings firm structure and moral clarity, 7 Metal steers us more towards enjoyment, aesthetics, and emotional reflection. This is the golden hour of the monthly cycle—a time when the world becomes more focused on comfort, beauty, and personal pleasure. While not as action-oriented, this energy can bring welcome relief, allowing s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_lake_month {
             get {
@@ -8584,7 +8584,7 @@ namespace K9.Globalisation {
         ///    7 Metal — Reflection, Pleasure, and Emotional Exposure
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The 7 Metal phase brings a softening of global energy after the hard lines and moral rigor of 6 Metal. It is the late autumn of the cycle—a time of enjoyment, refinement, and release. Collectively, this phase encourages a pause from striving. There is more focus on comfort, beauty, and emotional connection, but also a subtle vulnerability. Underneath the surface, deeper truths may begin to rise. The global mood be [rest of string was truncated]&quot;;.
+        ///    The 7 Metal phase brings a softening of global energy and differs in tone from the hard lines and moral rigor of 6 Metal. It is the late autumn of the cycle—a time of enjoyment, refinement, and release. Collectively, this phase encourages a pause from striving. There is more focus on comfort, beauty, and emotional connection, but also a subtle vulnerability. Underneath the surface, deeper truths may begin to rise. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_lake_year {
             get {
@@ -8619,7 +8619,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    8 Earth Epoch — Contraction, Reckoning, and the Mountain of Memory
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    An 8 Earth epoch marks the great slowing at the edge of winter. It is a time of contraction, introspection, and karmic reckoning—when the excesses of previous eras return in search of resolution. The global pace decelerates. Momentum gives way to inertia. What once soared now settles, and the world is called back to the mountain—to face itself with honesty, stillness, and discipline. In many ways, this [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_mountain_epoch_cycle {
             get {
@@ -8680,7 +8684,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    2 Soil Epoch — Restoration, Realignment, and the Rebuilding of Foundations
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 2 Soil epoch is a time of slow and steady stabilization—an era focused on rebuilding trust, structure, and a sense of collective ground. It is not yet a time of expansion, but of tending to what remains—rebuilding structures, restoring trust, and quietly reweaving the social and spiritual fabric of the world. The energy of this era is humble and restorative. Rather than revolution or conquest [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_soil_epoch_cycle {
             get {
@@ -8693,7 +8701,7 @@ namespace K9.Globalisation {
         ///    2 Soil Period — Groundwork, Caretaking, and Collective Rebalancing
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 2 Soil period brings a slow and steady re-emergence from the uncertainty of 1 Water. Though the future may still be unclear, the world begins to focus on stability, support, and meeting basic needs. This is a time of rebuilding—not through ambition, but through care. The collective energy turns toward nourishment, repair, and quiet reorganization. Rather than dramatic shifts, this phase encourages sm [rest of string was truncated]&quot;;.
+        ///    A 2 Soil period brings a period of planning and slow, steady progress. Though the future may still be unclear, the world begins to focus on stability, support, and meeting basic needs. This is a time of rebuilding—not through ambition, but through care. The collective energy turns toward nourishment, repair, and quiet reorganization. Rather than dramatic shifts, this phase encourages small, tangible ef [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_soil_generation_cycle {
             get {
@@ -8706,7 +8714,7 @@ namespace K9.Globalisation {
         ///    2 Soil Month — Stabilisation, Caretaking, and Ground-Level Reform
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 2 Soil month brings the collective energy down to earth. After the fluid uncertainty of 1 Water, this period calls for steadying the ground beneath us. The global tone shifts toward pragmatism, caregiving, and quiet preparation. Rather than bold moves or sweeping declarations, attention turns to what is immediate and foundational—food, shelter, health, education, and daily routines. It’s a time when c [rest of string was truncated]&quot;;.
+        ///    A 2 Soil month brings the collective energy down to earth. This period calls for steadying the ground beneath us. The global tone shifts toward pragmatism, caregiving, and quiet preparation. Rather than bold moves or sweeping declarations, attention turns to what is immediate and foundational—food, shelter, health, education, and daily routines. It’s a time when communities may focus more on taking care [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_soil_month {
             get {
@@ -8719,7 +8727,7 @@ namespace K9.Globalisation {
         ///    2 Soil — Collective Rebuilding and Groundwork
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    When the global Ki enters a 2 Soil phase, the collective energy shifts toward stabilisation, caregiving, and preparation. After the emotional depth and uncertainty of a 1 Water year, 2 Earth calls humanity back to the basics. It is a time to tend to what has been neglected, to restore what’s been broken, and to reconnect with foundational values. Politically, this phase often brings a focus on domestic issues—healthcare, f [rest of string was truncated]&quot;;.
+        ///    When the global Ki enters a 2 Soil phase, the collective energy shifts toward stabilisation, caregiving, and preparation. 2 Earth calls humanity back to the basics. It is a time to tend to what has been neglected, to restore what’s been broken, and to reconnect with foundational values. Politically, this phase often brings a focus on domestic issues—healthcare, food systems, education, and housing come to the forefront. Go [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_soil_year {
             get {
@@ -8741,7 +8749,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    3 Tree Epoch — Emergence, Innovation, and the Rise of Youthful Power
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 3 Tree epoch brings a vibrant surge of outward energy—a time of disruption, invention, and bold expression that reshapes the public voice. It is a time of emergence, when the world bursts upward from the quiet soil and reclaims its momentum. This is the epoch of invention, rebellion, and youthful force—a civilizational spring marked by rapid technological growth, social upheaval, and the bold redef [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_thunder_epoch_cycle {
             get {
@@ -8754,7 +8766,10 @@ namespace K9.Globalisation {
         ///    3 Tree Period — Uprising, Innovation, and the Surge of Youthful Energy
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 3 Tree period marks a dramatic shift from the quiet caretaking of 2 Soil into a phase of movement, expansion, and disruption. This is the energetic equivalent of early spring—when the collective energy bursts upward after a long dormancy. The world becomes restless, expressive, and eager to break new ground. Ideas accelerate, voices rise, and previously suppressed energy demands expression. While [rest of string was truncated]&quot;;.
+        ///    This is the energetic equivalent of early spring—when the collective energy bursts upward after a long dormancy. The world becomes restless, expressive, and eager to break new ground. Ideas accelerate, voices rise, and previously suppressed energy demands expression. While this can lead to breakthroughs and innovation, it can also stir instability if not anchored by wisdom.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Politica [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_thunder_generation_cycle {
             get {
@@ -8802,7 +8817,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    1 Water Epoch — Dissolution, Migration, and the Search for Meaning
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 1 Water epoch marks a time of profound descent in the collective rhythm—a civilizational winter that invites humanity inward. These periods often arise after times of excess or collapse, when the structures of the previous era have weakened and the world must navigate uncertainty, fragmentation, and emotional reckoning. The flow of history becomes less linear and more cyclical, marked by migration, e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_water_epoch_cycle {
             get {
@@ -8863,7 +8882,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    4 Tree Epoch — Expansion, Exchange, and the Age of Global Connectivity
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 4 Tree epoch is a time of expansion, dialogue, and rapid exchange. It emphasizes connectivity, cultural mixing, and emotional flow on a global scale. This is the mid-spring of the great cycle—a time of flourishing ideas, expanding networks, and accelerated exchange between cultures, ideologies, and economies. Where 3 Tree tears things open, 4 Tree seeks to connect the pieces. It is an era marked  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_wind_epoch_cycle {
             get {
@@ -8889,7 +8912,7 @@ namespace K9.Globalisation {
         ///    4 Tree Month — Communication, Collaboration, and Subtle Instability
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 4 Tree month brings a more refined and expansive version of the energetic momentum stirred up by 3 Tree. The global mood shifts toward communication, diplomacy, and creative exchange. This is mid-spring energy—an atmosphere of blossoming ideas, open dialogue, and emerging connections. It’s a time when the collective becomes more socially engaged and emotionally expressive. Agreements may be reached, [rest of string was truncated]&quot;;.
+        ///    A 4 Tree month brings a more refined and expansive quality than the high-energy stirred up by 3 Tree. The global mood shifts toward communication, diplomacy, and creative exchange. This is mid-spring energy—an atmosphere of blossoming ideas, open dialogue, and emerging connections. It’s a time when the collective becomes more socially engaged and emotionally expressive. Agreements may be reached, part [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_wind_month {
             get {
@@ -8903,7 +8926,7 @@ namespace K9.Globalisation {
         ///&lt;/h5&gt;
         ///
         ///&lt;p&gt;
-        ///    In a 4 Tree phase, the world moves from the volatile uprising of 3 Tree into a more expansive, communicative, and emotionally expressive period. This is mid-spring energy—an atmosphere of growth, optimism, and experimentation. Collectively, there is an emphasis on dialogue, connection, and building upon the breakthroughs of the previous phase. New ideas and movements begin to take more organized form, and the global mood [rest of string was truncated]&quot;;.
+        ///    In a 4 Tree phase, the world moves into a more expansive, communicative, and emotionally expressive period. This is mid-spring energy—an atmosphere of growth, optimism, and experimentation. Collectively, there is an emphasis on dialogue, connection, and building upon the breakthroughs of the previous phase. New ideas and movements begin to take more organized form, and the global mood becomes more open, idealistic, and s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_wind_year {
             get {
@@ -8930,6 +8953,15 @@ namespace K9.Globalisation {
         public static string GlobalKi {
             get {
                 return ResourceManager.GetString("GlobalKi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Global Ki.
+        /// </summary>
+        public static string GlobalView {
+            get {
+                return ResourceManager.GetString("GlobalView", resourceCulture);
             }
         }
         
@@ -9349,13 +9381,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    6 Metal characters tend to have a very &lt;strong&gt;direct, down-to-earth and uncompromising nature&lt;/strong&gt;.
-        ///
-        ///    They tend to have very &lt;strong&gt;clear opinions about what is fair and ethical&lt;/strong&gt; and what is not and can be quite &lt;strong&gt;opinionated and inflexible&lt;/strong&gt; in their views. They are certainly &lt;strong&gt;not afraid to express their opinion&lt;/strong&gt; and can be quite &lt;strong&gt;sharp and blunt&lt;/strong&gt; in the way they communicate at times.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Generations Born in the 6 Metal Epoch — The Organizers, Reformers, and Standard-Bearers of Integrity
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Heaven character as &lt;strong&gt;trem [rest of string was truncated]&quot;;.
+        ///    Generations born during a 6 Metal Epoch carry a collective imprint of discipline, order, and a deep drive to create structure in a world that may feel uncertain or morally ambiguous. These cohorts often feel called to bring clarity and direction, both to themselves and to the societies they inhabit. There is an innate seriousness to these generations—not necessarily in [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_epoch {
             get {
@@ -9410,13 +9440,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    6 Metal characters tend to have a very &lt;strong&gt;direct, down-to-earth and uncompromising nature&lt;/strong&gt;.
-        ///
-        ///    They tend to have very &lt;strong&gt;clear opinions about what is fair and ethical&lt;/strong&gt; and what is not and can be quite &lt;strong&gt;opinionated and inflexible&lt;/strong&gt; in their views. They are certainly &lt;strong&gt;not afraid to express their opinion&lt;/strong&gt; and can be quite &lt;strong&gt;sharp and blunt&lt;/strong&gt; in the way they communicate at times.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 6 Metal Generation — Builders, Strategists, and Architects of Order
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Heaven character as &lt;strong&gt;trem [rest of string was truncated]&quot;;.
+        ///    The 6 Metal generation&apos;s collective imprint carries themes of discipline, focus, and moral clarity. They come with a drive to restore order, establish systems, and define what is right and true. Often perceived as mature beyond their years, this generation tends to value integrity, accountability, and a well-defined path forward. They are rarely drawn to chaos—they seek coherence, and they are oft [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_generation {
             get {
@@ -10929,10 +10957,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    7 Metal characters are generally very &lt;strong&gt;easy-going and adaptable&lt;/strong&gt;. Many express themselves with great &lt;strong&gt;diplomacy&lt;/strong&gt; and they often have a &lt;strong&gt;great capacity to listen to others&lt;/strong&gt; and to make them feel understood and validated, thanks to their &lt;strong&gt;patient and compassionate&lt;/strong&gt; nature.
-        ///&lt;p&gt;
-        ///    Lake characters typically make &lt;strong&gt;great hosts&lt;/strong&gt;, owing to their &lt;strong&gt;charming, laid-back nature&lt;/strong&gt;. They are usually very &lt;strong&gt;expressive [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string lake_epoch {
             get {
@@ -10987,10 +11012,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    7 Metal characters are generally very &lt;strong&gt;easy-going and adaptable&lt;/strong&gt;. Many express themselves with great &lt;strong&gt;diplomacy&lt;/strong&gt; and they often have a &lt;strong&gt;great capacity to listen to others&lt;/strong&gt; and to make them feel understood and validated, thanks to their &lt;strong&gt;patient and compassionate&lt;/strong&gt; nature.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 7 Metal Generation — Artists, Reformers, and the Keepers of Grace
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Lake characters typically make &lt;strong&gt;great hosts&lt;/strong&gt;, owing to their &lt;strong&gt;charming, laid-back nature&lt;/strong&gt;. They are usually very &lt;strong&gt;expressive [rest of string was truncated]&quot;;.
+        ///    The 7 Metal generation often carry a mix of polish and emotional sensitivity—elegant on the outside, yet complex and deeply feeling within. This is a generation that seeks beauty, balance, and emotional authenticity. Their lives are often shaped by a desire to reconcile the outer image with inner truth.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Socially and politically, the 7 Metal generation may at first seem less driven by [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_generation {
             get {
@@ -13446,11 +13475,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the Energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The Mountain is a good description of this character, with its &lt;strong&gt;hard exterior protecting a much softer underbelly&lt;/strong&gt;, which is usually only revealed once people get to k [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string mountain_epoch {
             get {
@@ -13504,11 +13529,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the Energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 8 Earth Generation — Witnesses, Guardians, and the Architects of Inner Resolve
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Mountain is a good description of this character, with its &lt;strong&gt;hard exterior protecting a much softer underbelly&lt;/strong&gt;, which is usually only revealed once people get to k [rest of string was truncated]&quot;;.
+        ///    The 8 Earth generation arrives with the imprint of the mountain—strong, still, and contemplative. These individuals are often born during times of cultural saturation or spiritual fatigue, when the momentum of previous generations begins to slow. As a result, they may seem more introverted, restrained, or difficult to read. Their collective role is not to push forward but to pause—to re [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_generation {
             get {
@@ -14222,7 +14247,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine-Year Prediction.
+        ///   Looks up a localized string similar to 9-Year Prediction.
         /// </summary>
         public static string NineYearlyPrediction {
             get {
@@ -14641,6 +14666,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Panel Cycle View.
+        /// </summary>
+        public static string PanelCycleViewLabel {
+            get {
+                return ResourceManager.GetString("PanelCycleViewLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Panel View.
         /// </summary>
         public static string PanelViewLabel {
@@ -14873,6 +14907,15 @@ namespace K9.Globalisation {
         public static string PersonalProfileTitle {
             get {
                 return ResourceManager.GetString("PersonalProfileTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Personal Houses Occupied.
+        /// </summary>
+        public static string PersonalView {
+            get {
+                return ResourceManager.GetString("PersonalView", resourceCulture);
             }
         }
         
@@ -17027,16 +17070,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Soil characters tend to be &lt;strong&gt;stable, reliable and helpful&lt;/strong&gt; people.
-        ///
-        ///    They are often quite &lt;strong&gt;dedicated to their families as well as to their work&lt;/strong&gt;, where they like to get to get stuck in and actively participate in activities.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Generations Born in the 2 Soil Epoch — The Rebuilders of Trust and Carriers of Quiet Strength
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Soil characters are usually &lt;strong&gt;tactful and diplomatic&lt;/strong&gt;. They are quite willing to put others&apos; needs first. In fact they get a deep sense of satisfaction from it.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    2 Earth characters also need to be ca [rest of string was truncated]&quot;;.
+        ///    Generations born during a 2 Soil Epoch are shaped by an energetic atmosphere of restoration, steadiness, and quiet responsibility. They carry an instinct for care—of people, communities, and the foundations that hold society together. Often practical, emotionally intuitive, and community-oriented, they move through the world with a strong sense of what needs tending. Their st [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_epoch {
             get {
@@ -17083,16 +17121,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Soil characters tend to be &lt;strong&gt;stable, reliable and helpful&lt;/strong&gt; people.
-        ///
-        ///    They are often quite &lt;strong&gt;dedicated to their families as well as to their work&lt;/strong&gt;, where they like to get to get stuck in and actively participate in activities.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 2 Soil Generation — Healers, Caretakers, and the Stewards of Belonging
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Soil characters are usually &lt;strong&gt;tactful and diplomatic&lt;/strong&gt;. They are quite willing to put others&apos; needs first. In fact they get a deep sense of satisfaction from it.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    2 Earth characters also need to be ca [rest of string was truncated]&quot;;.
+        ///    The 2 Soil generation are the caretakers of collective wounds, deeply attuned to the emotional needs of others and often carrying a strong sense of responsibility from a young age. Their formative environment may be marked by uncertainty or scarcity—not always material, but emotional—and so they develop as nurturers, stabilizers, and quiet organizers. They crave safety, continuity, and somethin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_generation {
             get {
@@ -19088,17 +19121,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The 3 Tree character has the full force of spring in its nature, or the dawn.
-        ///
-        ///    Thunder characters are &lt;strong&gt;forward-thinking and enjoy initiating new projects&lt;/strong&gt; and
-        ///    discussing new concepts.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Generations Born in the 3 Tree Epoch — The Disruptors, Inventors, and Cultural Firestarters
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    3 Tree characters tend to be &lt;strong&gt;very lively and energetic&lt;/strong&gt;. They can also be very &lt;strong&gt;verbally expressive&lt;/strong&gt; and some of the quieter Energies may find them a &lt;strong&gt;overly talkative at times&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Whilst Thunder characters are full o [rest of string was truncated]&quot;;.
+        ///    Generations born during a 3 Tree Epoch carry a collective impulse to move, to break ground, and to push boundaries. They are marked by high creative energy, restlessness, and a refusal to accept the world as it is. As a group, they tend to question authority, challenge convention, and initiate change—often without waiting for permission. Their shared temperament is bold, expres [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_epoch {
             get {
@@ -19152,17 +19179,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The 3 Tree character has the full force of spring in its nature, or the dawn.
-        ///
-        ///    Thunder characters are &lt;strong&gt;forward-thinking and enjoy initiating new projects&lt;/strong&gt; and
-        ///    discussing new concepts.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 3 Tree Generation — Pioneers, Disruptors, and Voices of the Future
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    3 Tree characters tend to be &lt;strong&gt;very lively and energetic&lt;/strong&gt;. They can also be very &lt;strong&gt;verbally expressive&lt;/strong&gt; and some of the quieter Energies may find them a &lt;strong&gt;overly talkative at times&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Whilst Thunder characters are full o [rest of string was truncated]&quot;;.
+        ///    The 3 Tree generation enters the world with a charge of upward-moving energy—a force that seeks to break through limits, challenge norms, and launch new beginnings. They are often restless from the start and carry the spirit of youth, rebellion, and invention. Their lives are marked by movement—physical, ideological, or technological—and they often feel driven to question authority, resist conventi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_generation {
             get {
@@ -20511,16 +20532,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water characters may appear rather &lt;strong&gt;shy, reserved and aloof&lt;/strong&gt; at times and tend to keep their thoughts and emotions to themselves.
-        ///
-        ///    However, sometimes the Water character can be expressed as the exact opposite, appearing quite &lt;strong&gt;sociable, vivacious and bubbly&lt;/strong&gt;.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Generations Born in the 1 Water Epoch — The Dreamers Between Worlds
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Water characters can be incredibly &lt;strong&gt;charming, charismatic and deeply alluring&lt;/strong&gt;. Some would say there is a somewhat &lt;strong&gt;mysterious quality&lt;/strong&gt; to them.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///     [rest of string was truncated]&quot;;.
+        ///    Generations born during a 1 Water Epoch emerge into a world in retreat—a time of endings, dissolving structures, and global reflection. As a collective, they carry the subtle imprint of this era: sensitive, introspective, and attuned to the unseen. These generations tend to grow up in environments of uncertainty, where the old social, spiritual, or political foundations are no longer reliable, yet a n [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_epoch {
             get {
@@ -20575,16 +20591,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water characters may appear rather &lt;strong&gt;shy, reserved and aloof&lt;/strong&gt; at times and tend to keep their thoughts and emotions to themselves.
-        ///
-        ///    However, sometimes the Water character can be expressed as the exact opposite, appearing quite &lt;strong&gt;sociable, vivacious and bubbly&lt;/strong&gt;.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 1 Water Generation — Seekers, Dreamers, and Carriers of the Hidden Stream
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Water characters can be incredibly &lt;strong&gt;charming, charismatic and deeply alluring&lt;/strong&gt;. Some would say there is a somewhat &lt;strong&gt;mysterious quality&lt;/strong&gt; to them.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///     [rest of string was truncated]&quot;;.
+        ///    Those born during a 1 Water generational period tend to carry a deep, often unspoken sensitivity to the undercurrents of life. This is a generation shaped by subtlety, uncertainty, and the spiritual necessity of listening beneath the noise. Their formative years may be marked by fragmentation, transition, or widespread dissolution of established systems—governments losing authority, institut [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_generation {
             get {
@@ -21311,14 +21322,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Wind character is &lt;strong&gt;exceptionally adaptable&lt;/strong&gt;. However, they do require quite a bit of support from others.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Generations Born in the 4 Tree Epoch — The Connectors, Collaborators, and Voices of Flow
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///   4 Tree is also called &apos;Wind&apos; and this is quite an apt description, as these characters can be &lt;strong&gt;extremely changeable, scatty and unpredictable at times&lt;/strong&gt;, especially when under stress.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    4 Trees have a &lt;strong&gt;sensitive and emotional nature&lt;/strong&gt;, which makes them prone to &lt;strong&gt;mood swings&lt;/strong&gt; at times. They are very &lt;stron [rest of string was truncated]&quot;;.
+        ///    Generations born during a 4 Tree Epoch carry the essence of wind—expansive, communicative, and ever in motion. These cohorts tend to be socially gifted, curious, and emotionally expressive. Their collective energy moves toward connection: between cultures, ideas, people, and systems. They are often bridge-builders, diplomats, and cultural synthesizers who instinctively know how to [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_epoch {
             get {
@@ -21373,14 +21381,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Wind character is &lt;strong&gt;exceptionally adaptable&lt;/strong&gt;. However, they do require quite a bit of support from others.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 4 Tree Generation — Connectors, Creatives, and Carriers of the Winds of Change
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///   4 Tree is also called &apos;Wind&apos; and this is quite an apt description, as these characters can be &lt;strong&gt;extremely changeable, scatty and unpredictable at times&lt;/strong&gt;, especially when under stress.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    4 Trees have a &lt;strong&gt;sensitive and emotional nature&lt;/strong&gt;, which makes them prone to &lt;strong&gt;mood swings&lt;/strong&gt; at times. They are very &lt;stron [rest of string was truncated]&quot;;.
+        ///    The 4 Tree generation arrives with a gift for communication, movement, and expansion. Compard to the 3 Tree generation, they bring a softer but equally powerful energy—less confrontational, more relational. This is a generation that seeks to bridge differences, spread ideas, and cultivate emotional and cultural resonance. They are often diplomatic, curious, and quick to adapt. Born into [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_generation {
             get {

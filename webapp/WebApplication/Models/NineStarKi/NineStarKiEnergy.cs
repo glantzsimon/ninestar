@@ -917,6 +917,11 @@ namespace K9.WebApplication.Models
 
         #endregion
 
+        /// <summary>
+        /// Flag for displaying Global energy description
+        /// </summary>
+        public bool IsGlobal { get; set; }
+
         public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyType type, bool isAdult = true)
         {
             Energy = energy;

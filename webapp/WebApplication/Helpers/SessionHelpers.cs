@@ -86,12 +86,22 @@ namespace K9.WebApplication.Helpers
             SetValue(Constants.SessionConstants.DefaultPanelView, (int)value);
         }
 
+        public static void SetCurrentUserPanelCycleView(EPanelCycleView value)
+        {
+            SetValue(Constants.SessionConstants.DefaultPanelCycleView, (int)value);
+        }
+
         public static EPanelView GetCurrentUserDefaultPanelView()
         {
             var intValue = GetIntValue(Constants.SessionConstants.DefaultPanelView, (int)EPanelView.SummaryView);
             return (EPanelView)intValue;
         }
 
+        public static EPanelCycleView GetCurrentUserDefaultPanelCycleView()
+        {
+            var intValue = GetIntValue(Constants.SessionConstants.DefaultPanelCycleView, (int)EPanelCycleView.PersonalView);
+            return (EPanelCycleView)intValue;
+        }
 
         public static int GetEnergyDefaultDisplay()
         {

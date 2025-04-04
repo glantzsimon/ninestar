@@ -8313,17 +8313,36 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    A day of inner steadiness and centering
+        ///    5 Earth Day — Collective Crossroads and Energetic Tension
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 5 Earth day places you right in the centre of the energetic cycle. It can feel busy and full, with many moving parts demanding your attention. You might feel more sensitive than usual to external influences or find yourself playing the role of mediator or organiser within your environment. It’s an excellent day to practice healthy boundaries and to consciously centre yourself amidst the activity.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is also a [rest of string was truncated]&quot;;.
+        ///    A 5 Earth day brings a feeling of pause and internal pressure to global affairs. It often carries a sense of standing at a crossroads—uncertain, weighty, and charged with unseen momentum. The collective may feel emotionally off-center or restless without knowing exactly why. It’s a day when global decisions may be delayed, clarity is harder to reach, and public reactions can be unusually intense or polarized. T [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_core_earth_day_cycle {
             get {
                 return ResourceManager.GetString("global_core_earth_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string global_core_earth_epoch_cycle {
+            get {
+                return ResourceManager.GetString("global_core_earth_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    5 Earth Period — Crisis, Centering, and Global Turning Points
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 5 Earth period marks the central pivot in the global Ki cycle—a moment of reckoning, instability, and potential transformation. This is the axis around which the rest of the cycle turns, and its energy often feels dense, chaotic, and emotionally charged. It is a time when hidden tensions rise to the surface, long-standing systems come under pressure, and the need for clarity becomes unavoidable. Because t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_core_earth_generation_cycle {
+            get {
+                return ResourceManager.GetString("global_core_earth_generation_cycle", resourceCulture);
             }
         }
         
@@ -8368,18 +8387,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The 81-Year Cycle represents a much broader energetic rhythm, shaping the collective tone of an era. Unlike the more personal influence of yearly or monthly Ki, this cycle moves slowly, influencing entire generations across cultural, political, and spiritual landscapes. It reflects deeper collective themes — what humanity as a whole is exploring, questioning, and becoming. The spirit of the age, from revolutions and renaissances to periods of decline or technological growth, often mirrors the natur [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_epoch_description {
+            get {
+                return ResourceManager.GetString("global_epoch_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    A day of brightness, clarity, and connection
+        ///    9 Fire Day — Illumination, Exposure, and Emotional Intensity
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 9 Fire day is like the midday sun—radiant, illuminating, and full of vitality. This is a time when our energy rises, and we’re more likely to feel sociable, expressive, and intuitive. It&apos;s an ideal day for sharing ideas, making your voice heard, or enjoying the company of others. Conversations tend to flow more easily, and insight can strike suddenly and clearly.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    However, Fire energy also brings intensity. [rest of string was truncated]&quot;;.
+        ///    A 9 Fire day brings visibility, passion, and intensity to global affairs. It is a time when truths surface, attention sharpens, and emotions rise to meet the moment. Events that unfold today are likely to draw public attention, and issues that have been hidden may come into the light—sometimes dramatically. This energy supports creative expression, bold leadership, and moments of collective clarity, but it c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_fire_day_cycle {
             get {
                 return ResourceManager.GetString("global_fire_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string global_fire_epoch_cycle {
+            get {
+                return ResourceManager.GetString("global_fire_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    9 Fire Period — Illumination, Exposure, and Collective Reckoning
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 9 Fire period marks the full visibility of the global cycle—a time when what has been hidden is brought into the light. It is the energetic peak before the next descent, characterized by emotional intensity, public attention, and rapid exposure. This is the “high noon” of the collective rhythm, when clarity burns bright and nothing remains comfortably concealed. The world becomes louder, more expressiv [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_fire_generation_cycle {
+            get {
+                return ResourceManager.GetString("global_fire_generation_cycle", resourceCulture);
             }
         }
         
@@ -8411,17 +8459,49 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    A day for clarity, composure, and confident direction
+        ///    The 9-Year Global Ki Spiral — Shaping Eras of Collective Transformation
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 6 Metal day invites a sense of structure, focus, and calm authority. It’s a great time to bring order to your environment—clear out clutter, refine your schedule, or tackle important decisions with logic and precision. There’s a natural boost in mental clarity and self-discipline, making this a strong day for leadership, planning, or setting boundaries with clarity and grace.
-        ///&lt;/p&gt;
+        ///    Beyond the daily, monthly, and yearly shifts in Ki, there exists a longer and more influential rhythm: the 9-year global cycle. Each of these extended phases is governed by one of the nine energies of the Nine Star Ki system and collectively defines the energetic character of nearly a decade. These periods set the tone for political ideologies, global priorities, cultural movements, and spiritual  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_generation_description {
+            get {
+                return ResourceManager.GetString("global_generation_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    6 Metal Day — Precision, Accountability, and Strategic Focus
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Emotionally, this ene [rest of string was truncated]&quot;;.
+        ///    A 6 Metal day brings a clear, focused, and disciplined tone to global affairs. It is a time when structure, rules, and moral clarity take center stage. Decisions made under this influence tend to be calculated, strategic, and aimed at long-term outcomes. Governments, institutions, and public figures may adopt a firmer stance, emphasizing order, justice, or responsibility. This energy supports reform, correct [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_heaven_day_cycle {
             get {
                 return ResourceManager.GetString("global_heaven_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string global_heaven_epoch_cycle {
+            get {
+                return ResourceManager.GetString("global_heaven_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    6 Metal Period — Authority, Order, and Structural Realignment
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 6 Metal period brings a sharp shift from the chaos and emotional intensity of 5 Earth into a time of discipline, consolidation, and moral focus. This is the early autumn of the global cycle—a phase when the world seeks clarity, structure, and a return to order. There is often a collective push to restore boundaries, define laws, and reinforce systems that were tested or broken in the previous period. The  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_heaven_generation_cycle {
+            get {
+                return ResourceManager.GetString("global_heaven_generation_cycle", resourceCulture);
             }
         }
         
@@ -8453,17 +8533,36 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    A day for pleasure, ease, and heartfelt connection
+        ///    7 Metal Day — Reflection and Underlying Vulnerability
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 7 Metal day carries a light, sociable energy that invites us to relax, connect, and enjoy life’s small pleasures. It’s an ideal time to take a break from intensity, indulge your senses, and seek out beauty—whether that’s through music, art, nature, or good company. Conversations tend to flow more easily today, and there may be moments of laughter, charm, and emotional warmth.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    However, it&apos;s easy to ge [rest of string was truncated]&quot;;.
+        ///    A 7 Metal day brings a softer, more polished energy to global affairs. The collective mood tends toward diplomacy, aesthetics, and public appeal. Events on the world stage may be framed with more care or emotional nuance, and leaders may focus on charm, messaging, or public perception. It’s a favorable time for cultural expression, creative announcements, or moments of lightness after heavier days—but it also carri [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_lake_day_cycle {
             get {
                 return ResourceManager.GetString("global_lake_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string global_lake_epoch_cycle {
+            get {
+                return ResourceManager.GetString("global_lake_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    7 Metal Period — Reflection, Indulgence, and the Illusion of Peace
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 7 Metal period brings a softer, more refined energy after the structure and austerity of 6 Metal. This is the late autumn of the cycle—a time when the world slows its forward drive and begins to enjoy the fruits of what has been built. Superficially, this phase may appear calm, elegant, or even celebratory. It can bring periods of prosperity, cultural flourishing, and the illusion of stability. But b [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_lake_generation_cycle {
+            get {
+                return ResourceManager.GetString("global_lake_generation_cycle", resourceCulture);
             }
         }
         
@@ -8508,17 +8607,36 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    A day for stillness, grounding, and quiet reflection
+        ///    8 Earth Day — Stillness, Boundaries, and Internal Reassessment
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    An 8 Earth day brings a sense of pause and introspection. Like a mountain standing firm and unmoving, this is a time to turn inward, slow down, and reflect deeply. You may feel less inclined to engage with the outside world and more drawn to solitude or spiritual practice. It’s a good day for reviewing your goals, meditating, or tending to matters that require patience and quiet focus.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Emotionally, t [rest of string was truncated]&quot;;.
+        ///    An 8 Earth day brings a quiet, grounded, and often immovable quality to global affairs. The collective mood tends to slow down, with a focus on boundaries, consolidation, and reflection. On the world stage, progress may seem stalled or delayed, but this is often a sign that deeper processes are underway. Institutions and individuals alike may resist change, choosing instead to fortify their positions or re [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_mountain_day_cycle {
             get {
                 return ResourceManager.GetString("global_mountain_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string global_mountain_epoch_cycle {
+            get {
+                return ResourceManager.GetString("global_mountain_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    8 Earth Period — Pause, Pressure, and the Turning of the Inner Compass
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    An 8 Earth period marks a time of energetic compression and stillness on the global stage. It is the moment just before winter—the quiet before transformation fully arrives. The pace of change slows dramatically, and the world may feel as if it is holding its breath. This is not a period of expansion or celebration, but one of reflection, planning, and inward tension. Collective focus turns toward  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_mountain_generation_cycle {
+            get {
+                return ResourceManager.GetString("global_mountain_generation_cycle", resourceCulture);
             }
         }
         
@@ -8550,14 +8668,36 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    A day for nourishment, care, and quiet preparation
+        ///    2 Soil Day — Grounding, Caution, and Quiet Stabilisation
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 2 Soil day brings the gentle, grounding energy of late winter or early spring. It’s a day best spent tending to the details of everyday life—cooking, planning, tidying, shopping, or supporting loved ones. There&apos;s a humble, caring rhythm to this energy that invites us to slow down and reconnect with what’s simple, nourishing, and essential. It’s an ideal time to create order, care for your home or your body, and prep [rest of string was truncated]&quot;;.
+        ///    A 2 Soil day brings a steady, nurturing energy to global affairs. It’s a time when the world slows down slightly, emphasizing care, maintenance, and attention to foundational matters. Major announcements or bold moves may not land as effectively now—this energy favors practical efforts, behind-the-scenes support, and gentle coordination. The public tone may be more subdued, with an increased focus on domestic or [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_soil_day_cycle {
             get {
                 return ResourceManager.GetString("global_soil_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string global_soil_epoch_cycle {
+            get {
+                return ResourceManager.GetString("global_soil_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    2 Soil Period — Groundwork, Caretaking, and Collective Rebalancing
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 2 Soil period brings a slow and steady re-emergence from the uncertainty of 1 Water. Though the future may still be unclear, the world begins to focus on stability, support, and meeting basic needs. This is a time of rebuilding—not through ambition, but through care. The collective energy turns toward nourishment, repair, and quiet reorganization. Rather than dramatic shifts, this phase encourages sm [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_soil_generation_cycle {
+            get {
+                return ResourceManager.GetString("global_soil_generation_cycle", resourceCulture);
             }
         }
         
@@ -8589,17 +8729,36 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    A little burst of energy, movement, and inspiration
+        ///    3 Tree Day — Breakthroughs, Excitement, and Collective Activation
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 3 Tree day brings a lively surge of early spring energy—fresh, impulsive, and full of possibility. It’s a day for action, creativity, and breaking through inertia. This is the energy of a seed cracking open, of ideas rushing in, of laughter and forward momentum. It’s a great day to get moving, start something new, or speak your truth with clarity and courage.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    You might feel more restless or excitabl [rest of string was truncated]&quot;;.
+        ///    A 3 Tree day brings an energetic surge to global affairs. This is a time of movement, disruption, and emotional charge. Public sentiment may be more expressive, unpredictable, or reactive. Announcements, protests, and breaking news are more likely to occur, often with a bold or impulsive tone. The world feels more alive—but also more volatile. This is a powerful day for launching new initiatives, making [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_thunder_day_cycle {
             get {
                 return ResourceManager.GetString("global_thunder_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string global_thunder_epoch_cycle {
+            get {
+                return ResourceManager.GetString("global_thunder_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    3 Tree Period — Uprising, Innovation, and the Surge of Youthful Energy
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 3 Tree period marks a dramatic shift from the quiet caretaking of 2 Soil into a phase of movement, expansion, and disruption. This is the energetic equivalent of early spring—when the collective energy bursts upward after a long dormancy. The world becomes restless, expressive, and eager to break new ground. Ideas accelerate, voices rise, and previously suppressed energy demands expression. While [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_thunder_generation_cycle {
+            get {
+                return ResourceManager.GetString("global_thunder_generation_cycle", resourceCulture);
             }
         }
         
@@ -8631,14 +8790,36 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    A time for introspection, dreams, and inner quiet
+        ///    1 Water Day — Quiet Undercurrents and Hidden Influences
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 1 Water day carries the quiet stillness of night and the depth of winter. It&apos;s a time when our energy naturally turns inward and we may feel more reflective, introverted, or even emotionally delicate. Communication may feel a little harder to initiate, and our minds might drift toward big questions, unresolved emotions, or even dreams from the night before. This is a perfect day for contemplation, study, writing, or  [rest of string was truncated]&quot;;.
+        ///    A 1 Water day brings a subtle, inward-turning energy to global affairs. The collective mood often becomes quieter, more introspective, or uncertain. This is not a day for bold declarations or dramatic shifts—communication may feel subdued, and events that unfold tend to happen behind the scenes. On the surface, the world may appear calm or even uneventful, but deeper currents are in motion. Intuition is heightene [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_water_day_cycle {
             get {
                 return ResourceManager.GetString("global_water_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string global_water_epoch_cycle {
+            get {
+                return ResourceManager.GetString("global_water_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    1 Water Period — Descent, Dissolution, and the Hidden Seeds of Change
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 1 Water period represents the darkest point in the global cycle—an energetic descent into stillness, uncertainty, and unknowing. It is a time when collective momentum slows, familiar structures lose coherence, and public trust in leadership and institutions may quietly erode. Rather than forward movement, the world enters a liminal space where the future is unclear and the past no longer holds. Th [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_water_generation_cycle {
+            get {
+                return ResourceManager.GetString("global_water_generation_cycle", resourceCulture);
             }
         }
         
@@ -8670,17 +8851,36 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    A day for graceful flow, expression, and gentle progress
+        ///    4 Tree Day — Communication, Diplomacy, and Emotional Sensitivity
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 4 Tree day carries the energy of a warm spring breeze—steady, spacious, and gently uplifting. It’s a wonderful time to engage in thoughtful conversations, creative work, or anything that requires flexibility and nuance. The mood today is more reflective than assertive, and there’s a softness in the air that encourages diplomacy, open-mindedness, and easeful communication.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    You may feel more emot [rest of string was truncated]&quot;;.
+        ///    A 4 Tree day brings a softer, more expressive energy to global affairs. The focus shifts toward dialogue, connection, and the exchange of ideas. It&apos;s a favorable time for diplomacy, public relations, and cultural events that emphasize beauty, cooperation, or emotional resonance. News stories may center on relationships, education, the arts, or the environment. Collective attention leans toward what feels [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_wind_day_cycle {
             get {
                 return ResourceManager.GetString("global_wind_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string global_wind_epoch_cycle {
+            get {
+                return ResourceManager.GetString("global_wind_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    4 Tree Period — Expansion, Communication, and Winds of Change
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 4 Tree period brings a more refined, expressive energy to the global stage. Where 3 Tree bursts upward with raw urgency, 4 Tree spreads outward with grace, complexity, and far-reaching influence. This is the mid-spring of the cycle—a time of movement, interaction, and the sharing of ideas across borders and boundaries. The world becomes more interconnected, and diplomacy, trade, and cultural dialogue take [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_wind_generation_cycle {
+            get {
+                return ResourceManager.GetString("global_wind_generation_cycle", resourceCulture);
             }
         }
         

@@ -346,7 +346,7 @@
             public const string DarkSwordKilling = "DarkSwordKilling";
             public const string SelfLifeKilling = "SelfLifeKilling";
             public const string TargetKilling = "TargetKilling";
-            
+
             public const string UnchangingYang = "UnchangingYang";
             public const string UnchangingYin = "UnchangingYin";
             public const string YangToYin = "YangToYin";
@@ -410,25 +410,55 @@
             public const string MountainGeneration = "mountain_generation";
             public const string FireGeneration = "fire_generation";
 
-            public const string WaterYear = "water_year";
-            public const string SoilYear = "soil_year";
-            public const string ThunderYear = "thunder_year";
-            public const string WindYear = "wind_year";
-            public const string CoreEarthYear = "core_earth_year";
-            public const string HeavenYear = "heaven_year";
-            public const string LakeYear = "lake_year";
-            public const string MountainYear = "mountain_year";
-            public const string FireYear = "fire_year";
+            public const string WaterDay = "water_day";
+            public const string SoilDay = "soil_day";
+            public const string ThunderDay = "thunder_day";
+            public const string WindDay = "wind_day";
+            public const string CoreEarthDay = "core_earth_day";
+            public const string HeavenDay = "heaven_day";
+            public const string LakeDay = "lake_day";
+            public const string MountainDay = "mountain_day";
+            public const string FireDay = "fire_day";
 
-            public const string WaterMonth = "water_month";
-            public const string SoilMonth = "soil_month";
-            public const string ThunderMonth = "thunder_month";
-            public const string WindMonth = "wind_month";
-            public const string CoreEarthMonth = "core_earth_month";
-            public const string HeavenMonth = "heaven_month";
-            public const string LakeMonth = "lake_month";
-            public const string MountainMonth = "mountain_month";
-            public const string FireMonth = "fire_month";
+            public const string WaterEpochCycle = "water_epoch_cycle";
+            public const string SoilEpochCycle = "soil_epoch_cycle";
+            public const string ThunderEpochCycle = "thunder_epoch_cycle";
+            public const string WindEpochCycle = "wind_epoch_cycle";
+            public const string CoreEarthEpochCycle = "coreearth_epoch_cycle";
+            public const string HeavenEpochCycle = "heaven_epoch_cycle";
+            public const string LakeEpochCycle = "lake_epoch_cycle";
+            public const string MountainEpochCycle = "mountain_epoch_cycle";
+            public const string FireEpochCycle = "fire_epoch_cycle";
+
+            public const string WaterGenerationCycle = "water_generation_cycle";
+            public const string SoilGenerationCycle = "soil_generation_cycle";
+            public const string ThunderGenerationCycle = "thunder_generation_cycle";
+            public const string WindGenerationCycle = "wind_generation_cycle";
+            public const string CoreEarthGenerationCycle = "coreearth_generation_cycle";
+            public const string HeavenGenerationCycle = "heaven_generation_cycle";
+            public const string LakeGenerationCycle = "lake_generation_cycle";
+            public const string MountainGenerationCycle = "mountain_generation_cycle";
+            public const string FireGenerationCycle = "fire_generation_cycle";
+
+            public const string WaterYearCycle = "water_year";
+            public const string SoilYearCycle = "soil_year";
+            public const string ThunderYearCycle = "thunder_year";
+            public const string WindYearCycle = "wind_year";
+            public const string CoreEarthYearCycle = "core_earth_year";
+            public const string HeavenYearCycle = "heaven_year";
+            public const string LakeYearCycle = "lake_year";
+            public const string MountainYearCycle = "mountain_year";
+            public const string FireYearCycle = "fire_year";
+
+            public const string WaterMonthCycle = "water_month";
+            public const string SoilMonthCycle = "soil_month";
+            public const string ThunderMonthCycle = "thunder_month";
+            public const string WindMonthCycle = "wind_month";
+            public const string CoreEarthMonthCycle = "core_earth_month";
+            public const string HeavenMonthCycle = "heaven_month";
+            public const string LakeMonthCycle = "lake_month";
+            public const string MountainMonthCycle = "mountain_month";
+            public const string FireMonthCycle = "fire_month";
 
             public const string WaterDayCycle = "water_day_cycle";
             public const string SoilDayCycle = "soil_day_cycle";
@@ -439,6 +469,76 @@
             public const string LakeDayCycle = "lake_day_cycle";
             public const string MountainDayCycle = "mountain_day_cycle";
             public const string FireDayCycle = "fire_day_cycle";
+
+            public const string WaterHourlyCycle = "water_hour_cycle";
+            public const string SoilHourlyCycle = "soil_hour_cycle";
+            public const string ThunderHourlyCycle = "thunder_hour_cycle";
+            public const string WindHourlyCycle = "wind_hour_cycle";
+            public const string CoreEarthHourlyCycle = "core_earth_hour_cycle";
+            public const string HeavenHourlyCycle = "heaven_hour_cycle";
+            public const string LakeHourlyCycle = "lake_hour_cycle";
+            public const string MountainHourlyCycle = "mountain_hour_cycle";
+            public const string FireHourlyCycle = "fire_hour_cycle";
+
+            public const string GlobalWaterEpochCycle = "global_water_epoch_cycle";
+            public const string GlobalSoilEpochCycle = "global_soil_epoch_cycle";
+            public const string GlobalThunderEpochCycle = "global_thunder_epoch_cycle";
+            public const string GlobalWindEpochCycle = "global_wind_epoch_cycle";
+            public const string GlobalCoreEarthEpochCycle = "global_coreearth_epoch_cycle";
+            public const string GlobalHeavenEpochCycle = "global_heaven_epoch_cycle";
+            public const string GlobalLakeEpochCycle = "global_lake_epoch_cycle";
+            public const string GlobalMountainEpochCycle = "global_mountain_epoch_cycle";
+            public const string GlobalFireEpochCycle = "global_fire_epoch_cycle";
+
+            public const string GlobalWaterGenerationCycle = "global_water_generation_cycle";
+            public const string GlobalSoilGenerationCycle = "global_soil_generation_cycle";
+            public const string GlobalThunderGenerationCycle = "global_thunder_generation_cycle";
+            public const string GlobalWindGenerationCycle = "global_wind_generation_cycle";
+            public const string GlobalCoreEarthGenerationCycle = "global_coreearth_generation_cycle";
+            public const string GlobalHeavenGenerationCycle = "global_heaven_generation_cycle";
+            public const string GlobalLakeGenerationCycle = "global_lake_generation_cycle";
+            public const string GlobalMountainGenerationCycle = "global_mountain_generation_cycle";
+            public const string GlobalFireGenerationCycle = "global_fire_generation_cycle";
+
+            public const string GlobalWaterYearCycle = "global_water_year";
+            public const string GlobalSoilYearCycle = "global_soil_year";
+            public const string GlobalThunderYearCycle = "global_thunder_year";
+            public const string GlobalWindYearCycle = "global_wind_year";
+            public const string GlobalCoreEarthYearCycle = "global_core_earth_year";
+            public const string GlobalHeavenYearCycle = "global_heaven_year";
+            public const string GlobalLakeYearCycle = "global_lake_year";
+            public const string GlobalMountainYearCycle = "global_mountain_year";
+            public const string GlobalFireYearCycle = "global_fire_year";
+
+            public const string GlobalWaterMonthCycle = "global_water_month";
+            public const string GlobalSoilMonthCycle = "global_soil_month";
+            public const string GlobalThunderMonthCycle = "global_thunder_month";
+            public const string GlobalWindMonthCycle = "global_wind_month";
+            public const string GlobalCoreEarthMonthCycle = "global_core_earth_month";
+            public const string GlobalHeavenMonthCycle = "global_heaven_month";
+            public const string GlobalLakeMonthCycle = "global_lake_month";
+            public const string GlobalMountainMonthCycle = "global_mountain_month";
+            public const string GlobalFireMonthCycle = "global_fire_month";
+
+            public const string GlobalWaterDayCycle = "global_water_day_cycle";
+            public const string GlobalSoilDayCycle = "global_soil_day_cycle";
+            public const string GlobalThunderDayCycle = "global_thunder_day_cycle";
+            public const string GlobalWindDayCycle = "global_wind_day_cycle";
+            public const string GlobalCoreEarthDayCycle = "global_core_earth_day_cycle";
+            public const string GlobalHeavenDayCycle = "global_heaven_day_cycle";
+            public const string GlobalLakeDayCycle = "global_lake_day_cycle";
+            public const string GlobalMountainDayCycle = "global_mountain_day_cycle";
+            public const string GlobalFireDayCycle = "global_fire_day_cycle";
+
+            public const string GlobalWaterHourlyCycle = "global_water_hour_cycle";
+            public const string GlobalSoilHourlyCycle = "global_soil_hour_cycle";
+            public const string GlobalThunderHourlyCycle = "global_thunder_hour_cycle";
+            public const string GlobalWindHourlyCycle = "global_wind_hour_cycle";
+            public const string GlobalCoreEarthHourlyCycle = "global_core_earth_hour_cycle";
+            public const string GlobalHeavenHourlyCycle = "global_heaven_hour_cycle";
+            public const string GlobalLakeHourlyCycle = "global_lake_hour_cycle";
+            public const string GlobalMountainHourlyCycle = "global_mountain_hour_cycle";
+            public const string GlobalFireHourlyCycle = "global_fire_hour_cycle";
         }
     }
 }

@@ -4677,14 +4677,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling is beginning to mature.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    A day of inner steadiness and centering
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
+        ///    A 5 Earth day places you right in the centre of the energetic cycle. It can feel busy and full, with many moving parts demanding your attention. You might feel more sensitive than usual to external influences or find yourself playing the role of mediator or organiser within your environment. It’s an excellent day to practice healthy boundaries and to consciously centre yourself amidst the activity.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
+        ///    This is also a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string core_earth_day_cycle {
             get {
@@ -4693,14 +4693,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling is beginning to mature.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string core_earth_epoch_cycle {
             get {
@@ -4709,14 +4702,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling is beginning to mature.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The still center — a time of reckoning, redirection, and deep personal transformation
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
+        ///    The 5 Earth House in the generational cycle marks a powerful pivot point. Sitting at the very center of the Magic Square, this phase connects to all other houses and holds the greatest potential for deep change. It is not a time for forging ahead with new plans, but rather for reflecting on the path behind and realigning with what truly matters. Everything may feel like it&apos;s up in th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string core_earth_generation_cycle {
             get {
@@ -4725,14 +4715,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling is beginning to mature.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string core_earth_hour_cycle {
             get {
@@ -4742,13 +4725,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month is associated with the energy of adolescence and also rebirth
+        ///    The centre shifts — uncertainty and rebirth swirl at the heart of this month.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Core Earth months are associated with the energy of adolescence, often making us feel like we are experiencing adolescence again. It is an unpredictable time and there may well be ups and downs and feelings of uncertainty.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    There may well be many different opportunities to explore and it may be difficult to decide what to do or where to go. It is important for us to try to stay gro [rest of string was truncated]&quot;;.
+        ///    A 5 Core Earth month brings us into the energetic centre of the Nine Star Ki cycle, where the still point of the compass lies. It is often a time of emotional unpredictability and deep inner change. Like adolescence, this period can feel disorienting and intense, with shifting moods, fluctuating clarity, and a strong sense that something within us is being reorganised. It is a month of poten [rest of string was truncated]&quot;;.
         /// </summary>
         public static string core_earth_month {
             get {
@@ -4761,10 +4741,10 @@ namespace K9.Globalisation {
         ///    The seedling is beginning to mature.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
+        ///    The House of Five is the centre of the Nine Star Ki system, and its energy is unlike any other. It represents both the beginning and the end—a turning point where the past and future meet in a moment of deep reflection. Everyone passes through this house at regular nine-year intervals—ages 9, 18, 27, 36, and so on—and each time we do, we stand at the threshold of a new cycle.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kin [rest of string was truncated]&quot;;.
+        ///    During this year, the stars align exactl [rest of string was truncated]&quot;;.
         /// </summary>
         public static string core_earth_year {
             get {
@@ -4898,13 +4878,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    The emotional world of Core Earth Energies is deep, intense, and often defined by contrast. Their lives tend to mirror the full arc of experience—beginnings and endings, triumphs and losses, inner stillness and emotional turbulence. As the central point in the Nine Star Ki system, 5 Earth individuals often feel the weight of holding everything together, both within themselves and for others.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    They may experience dramatic emotional shifts throughout lif [rest of string was truncated]&quot;;.
+        ///    They may experience dramatic emotional shifts throughout life, often rooted in early chall [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_emotional_landscape {
             get {
@@ -4913,9 +4892,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Emotionally resilient—able to bounce back from hardship with strength and clarity.&lt;/li&gt;
         ///    &lt;li&gt;Calm, steady presence during emotionally intense situations.&lt;/li&gt;
@@ -4926,7 +4903,7 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;May experience emotional extremes or turbulence, especially early in life.&lt;/li&gt;
-        ///  [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Struggles with vulnerabil [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_emotional_landscape_summary {
             get {
@@ -4966,7 +4943,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -5074,9 +5051,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Clear, lucid thinker with a grounded and realistic mindset.&lt;/li&gt;
         ///    &lt;li&gt;Able to integrate diverse viewpoints and maintain broad perspective.&lt;/li&gt;
@@ -5087,7 +5062,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Can become r [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Can become rigid, opinionated, or overly convin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_intellectual_qualities_summary {
             get {
@@ -5096,12 +5071,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Core Earth individuals are natural influencers—people who often find themselves at the heart of their relationships, groups, or communities. Their presence commands attention, not through flamboyance, but through clarity, strength, and grounded confidence. Others are drawn to them for guidance, support, and decisiveness, especially during times of uncertainty. They have a rare ability to steer relationships and social dynamics with purpose and resolve.
         ///&lt;/p&gt;
         ///
-        ///&lt;p&gt; [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    Their interpersonal style is [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_interpersonal_qualities {
             get {
@@ -5110,9 +5085,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Natural influencer—often at the center of relationships and group dynamics.&lt;/li&gt;
         ///    &lt;li&gt;Bold, frank, open, and impartial in communication.&lt;/li&gt;
@@ -5123,7 +5096,7 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Can come across as bossy, controlling, or domineering.&lt;/li&gt;
-        ///    &lt;li&gt;Prone to rejecting advice or crit [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Prone to rejecting advice or criticism—especially under stress.&lt;/li&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_interpersonal_qualities_summary {
             get {
@@ -5152,7 +5125,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
-        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Gifts&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
         ///    &lt;ul class=&quot;traits positive&quot;&gt;
         ///        &lt;li&gt;Confident&lt;/li&gt;
@@ -5168,8 +5141,8 @@ namespace K9.Globalisation {
         ///        &lt;li&gt;Open&lt;/li&gt;
         ///    &lt;/ul&gt;
         ///
-        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
-        ///    &lt;p&gt;&lt; [rest of string was truncated]&quot;;.
+        ///    &lt;h5&gt;Challenging Traits&lt;/h5&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_overview {
             get {
@@ -5193,7 +5166,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -5225,7 +5198,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -5781,11 +5754,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives also move in monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy or &apos;Ki&apos; of the yearly cycle or &apos;spiral&apos; is always felt and is the overarching influence in our lives. However, the effect of the monthly ki is more immediate and felt on an emotional level. For example, we could be in the 1 Water house dur [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    As well as yearly and monthly cycles or &apos;spirals&apos;, there is also a daily energetic rhythm. The daily Ki affects us on a more immediate and energetic level. The energy or &apos;Ki&apos; of the yearly and monthly cycles is always felt and serves as the overarching influence in our lives. However, the effect of the daily Ki is even more immediate than the monthly influence. It can affect our mood, our energy levels, and also influence the kinds of activities we engage in, as well as when we take rest periods. F [rest of string was truncated]&quot;;.
         /// </summary>
         public static string day_description {
             get {
@@ -5795,8 +5765,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Day Star Ki is similar to the Mirror Ki in that its influence is more superficial than the yearly or monthly Ki of our birth chart. The Day Star influences &lt;strong&gt;how we appear to others&lt;/strong&gt; and also our general mannerisms and demeanour. 
-        ///&lt;/p&gt;.
+        ///    The Day Star Ki, which is the influence of the daily Global Ki at the time of birth, carries a more surface-level influence compared to the deeper, more foundational energies of the yearly or monthly Ki in a person&apos;s birth chart. It influences the way we appear to the world—our outward expression, body language, tone, and style of communication. The Day Star colours our general mannerisms, emotional tone, and the first impression we tend to make on others, although to a slightly lesser extent.
+        ///&lt;/p [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DayStarDescription {
             get {
@@ -6968,11 +6938,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives also move in monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy or &apos;Ki&apos; of the yearly cycle or &apos;spiral&apos; is always felt and is the overarching influence in our lives. However, the effect of the monthly ki is more immediate and felt on an emotional level. For example, we could be in the 1 Water house dur [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The 81-Year Cycle represents a much broader energetic rhythm, shaping the collective tone of an era. Unlike the more personal influence of yearly or monthly Ki, this cycle moves slowly, influencing entire generations across cultural, political, and spiritual landscapes. It reflects deeper collective themes — what humanity as a whole is exploring, questioning, and becoming. The spirit of the age, from revolutions and renaissances to periods of decline or technological growth, often mirrors the natur [rest of string was truncated]&quot;;.
         /// </summary>
         public static string epoch_description {
             get {
@@ -6991,7 +6958,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Epoch Ki is the Ki that was present during the 81-year period in which a person was born. Its influence is similar to the generational Ki, but is very broad, affecting multiple generations. The Epoch Ki is visible in the global themes of the period in question and its influence extends to broader areas of human endeavour and activity, such as politics, science, technology, education, philosophy, ethics, culture, economics, and spirituality, as well as trends in the arts, architecture, fashion,  [rest of string was truncated]&quot;;.
+        ///    The Epoch Ki represents the dominant energy during the 81-year cycle in which a person is born. Its influence is vast and sweeping, shaping not just individuals or generations, but entire eras of human development. Unlike the more immediate and personal effects of yearly or monthly Ki, the Epoch Ki works in the background, guiding the collective trajectory of thought, innovation, and societal evolution across decades.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This Ki is most visible in the global movements and defining them [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EpochEnergyDescription {
             get {
@@ -7276,17 +7246,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is the year we take the spotlight
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    A day of brightness, clarity, and connection
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents the full force of summer or the midday sun. It brings illumination, heat and clarity.
+        ///    A 9 Fire day is like the midday sun—radiant, illuminating, and full of vitality. This is a time when our energy rises, and we’re more likely to feel sociable, expressive, and intuitive. It&apos;s an ideal day for sharing ideas, making your voice heard, or enjoying the company of others. Conversations tend to flow more easily, and insight can strike suddenly and clearly.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
+        ///    However, Fire energy also brings intensity. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_day_cycle {
             get {
@@ -7391,13 +7358,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Fire Energies are emotionally radiant—defined by &lt;strong&gt;joy, humour, and a sparkling sense of presence&lt;/strong&gt;. Their warmth is contagious, and they often bring &lt;strong&gt;lightness, laughter, and vibrant emotional expression&lt;/strong&gt; to the people and spaces around them. Deeply intuitive, they tend to read the emotional tone of a room instinctively, often sensing what others feel before it&apos;s spoken.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    They are &lt;strong&gt;emotionally transparent and express [rest of string was truncated]&quot;;.
+        ///    They are &lt;strong&gt;emotionally transparent and expressive&lt;/strong&gt;, able to share th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_emotional_landscape {
             get {
@@ -7406,9 +7372,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Joyful, expressive, and emotionally radiant—brings light and laughter to others.&lt;/li&gt;
         ///    &lt;li&gt;Highly intuitive and emotionally attuned—sensitive to the moods of people and spaces.&lt;/li&gt;
@@ -7418,7 +7382,8 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Prone to jealousy, agitation, and emotional overreaction [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Prone to jealousy, agitation, and emotional overreaction.&lt;/li&gt;
+        ///    &lt;li&gt;Can be theatrica [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_emotional_landscape_summary {
             get {
@@ -7446,17 +7411,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is the year we take the spotlight
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents the full force of summer or the midday sun. It brings illumination, heat and clarity.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string fire_epoch_cycle {
             get {
@@ -7480,7 +7435,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -7530,17 +7485,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is the year we take the spotlight
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    9 Fire House — Illumination and Completion
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents the full force of summer or the midday sun. It brings illumination, heat and clarity.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
+        ///    The 9 Fire phase is the final stage of the 81-year generational spiral—a time of illumination, visibility, and culmination. Like the sun at its highest point, this phase casts light on the entire journey that has come before. Truths are revealed, both inner and outer, and we are called to integrate all that we&apos;ve experienced with clarity and grace. For many, this is a period of recognition—of being seen, celebrated, or finall [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_generation_cycle {
             get {
@@ -7585,17 +7534,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is the year we take the spotlight
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents the full force of summer or the midday sun. It brings illumination, heat and clarity.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string fire_hour_cycle {
             get {
@@ -7639,9 +7578,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Quick, sharp, and discerning mind with intuitive clarity.&lt;/li&gt;
         ///    &lt;li&gt;Brings hidden or complex matters to light—excellent at refining and classifying ideas.&lt;/li&gt;
@@ -7651,7 +7588,8 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;May become overly opinionated or express views without [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May become overly opinionated or express views without full reflection.&lt;/li&gt;
+        ///    &lt;li&gt;Pro [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_intellectual_qualities_summary {
             get {
@@ -7660,13 +7598,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Fire Energies are naturally &lt;strong&gt;sociable, radiant, and expressive&lt;/strong&gt;. They tend to be magnetic presences in any room—warm, charming, and full of life. Their flair for drama, style, and emotional expression makes them highly engaging companions, and they often find themselves surrounded by friends and admirers.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    In conversation, they are &lt;strong&gt;eloquent and stimulating&lt;/strong&gt;, with a tendency to uplift, entertain, and inspire. They’re g [rest of string was truncated]&quot;;.
+        ///    In conversation, they are &lt;strong&gt;eloquent and stimulating&lt;/strong&gt;, with a tendency to uplift, entertain, and inspire. They’re generous with their attention and e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_interpersonal_qualities {
             get {
@@ -7675,9 +7612,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Charismatic, outgoing, and socially magnetic.&lt;/li&gt;
         ///    &lt;li&gt;Warm, generous, and quick to forgive—uplifts others with ease.&lt;/li&gt;
@@ -7688,7 +7623,7 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Can become dramatic, vain, or self-absorbed when unbalanced.&lt;/li&gt;
-        ///    &lt;li&gt;Struggles with deeper emo [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Struggles with deeper emotional intimacy or consistency in fr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_interpersonal_qualities_summary {
             get {
@@ -7707,14 +7642,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month represents midday or high summer
+        ///    This month represents the height of summer—illumination, expression, and revelation.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During quieter years, such as 1, 2 and 8, a Fire month can be a much welcomed change, bringing much more vibrant energy and light.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    During this month, we often feel more sociable, enthusiastic and adventurous. Communication comes much more naturally to us and it is a good time to speak up about things we may have not found the words to express in previous months.
-        ///&lt;/p&gt;.
+        ///    A Fire month lights up the emotional landscape like the midday sun. It brings warmth, visibility, and the opportunity to be seen and heard. If you&apos;ve been navigating quieter, more internal months—such as 1 Water, 2 Soil, or 8 Earth—this sudden surge of energy can feel like a welcome breath of fresh air. There&apos;s often a sense of renewal, brightness, and emotional clarity that cuts thro [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_month {
             get {
@@ -7746,7 +7677,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
-        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Gifts&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
         ///    &lt;ul class=&quot;traits positive&quot;&gt;
         ///        &lt;li&gt;Clear&lt;/li&gt;
@@ -7759,9 +7690,10 @@ namespace K9.Globalisation {
         ///        &lt;li&gt;Charismatic&lt;/li&gt;
         ///    &lt;/ul&gt;
         ///
-        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Challenging Traits&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
-        ///    &lt;ul class=&quot;traits challenging&quot;&gt;        /// [rest of string was truncated]&quot;;.
+        ///    &lt;ul class=&quot;traits challenging&quot;&gt;
+        ///        &lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_overview {
             get {
@@ -7786,7 +7718,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -7823,7 +7755,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -7876,13 +7808,10 @@ namespace K9.Globalisation {
         ///    This is the year we take the spotlight
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents the full force of summer or the midday sun. It brings illumination, heat and clarity.
+        ///    The Fire House corresponds to the full brilliance of summer—the high noon of the Nine Star Ki cycle. It is a time of visibility, exposure, and illumination. Like the sun at its zenith, this year casts light upon everything: our accomplishments, our desires, and even our shadows.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is also a year when things we would rather keep a secret  [rest of string was truncated]&quot;;.
+        ///    This is a year of great personal magnetism. We are more likely to be noticed—whether for praise or critique—and may find ourselves in the [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_year {
             get {
@@ -8333,11 +8262,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives also move in monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The 9-Yearly Cycle — A Deeper Life Theme
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy or &apos;Ki&apos; of the yearly cycle or &apos;spiral&apos; is always felt and is the overarching influence in our lives. However, the effect of the monthly ki is more immediate and felt on an emotional level. For example, we could be in the 1 Water house dur [rest of string was truncated]&quot;;.
+        ///    Beneath the yearly, monthly, daily, and even hourly shifts in energy, there is a deeper rhythm at play: the 9-Yearly Cycle. This overarching cycle defines a long-term energetic theme that influences the tone and direction of nearly a decade of our lives. While the yearly and monthly houses tend to be more immediate in their impact—shaping our moods, events, and circumstances—the 9-Yearly Cycle weaves a broader narrative, colour [rest of string was truncated]&quot;;.
         /// </summary>
         public static string generation_description {
             get {
@@ -8379,6 +8308,277 @@ namespace K9.Globalisation {
         public static string GlandularSystem {
             get {
                 return ResourceManager.GetString("GlandularSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The centre shifts — uncertainty and rebirth swirl at the heart of this month.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 5 Core Earth month brings us into the energetic centre of the Nine Star Ki cycle, where the still point of the compass lies. It is often a time of emotional unpredictability and deep inner change. Like adolescence, this period can feel disorienting and intense, with shifting moods, fluctuating clarity, and a strong sense that something within us is being reorganised. It is a month of poten [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_core_earth_month {
+            get {
+                return ResourceManager.GetString("global_core_earth_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    5 Earth — Crisis, Centering, and Turning Points
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;p&gt;
+        ///    The 5 Earth phase marks the energetic center of the global Nine Star Ki cycle—a year of karmic reckoning, collective uncertainty, and profound transition. It is neither outwardly expansive nor inwardly retreating; instead, it acts as a still point between polarities, often marked by confusion, volatility, or dramatic shifts in direction. Globally, this is a time of testing. Institutions may falter, leadership may waver [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_core_earth_year {
+            get {
+                return ResourceManager.GetString("global_core_earth_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This month represents the height of summer—illumination, expression, and revelation.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A Fire month lights up the emotional landscape like the midday sun. It brings warmth, visibility, and the opportunity to be seen and heard. If you&apos;ve been navigating quieter, more internal months—such as 1 Water, 2 Soil, or 8 Earth—this sudden surge of energy can feel like a welcome breath of fresh air. There&apos;s often a sense of renewal, brightness, and emotional clarity that cuts thro [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_fire_month {
+            get {
+                return ResourceManager.GetString("global_fire_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    9 Fire — Revelation, Exposure, and Collective Illumination
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The 9 Fire phase is the full illumination of the cycle—a time of heightened visibility, emotional intensity, and collective revelation. It is the high summer of the global rhythm, when what was hidden comes into full view. This can be a period of great enlightenment or great drama, depending on how consciously the energy is engaged. The collective becomes more reactive, expressive, and impassioned. Truths emer [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_fire_year {
+            get {
+                return ResourceManager.GetString("global_fire_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The light sharpens. This month brings clarity, confidence, and a need for precision.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A Heaven month aligns with the energy of early autumn and the quiet, commanding presence of the Metal element. Emotionally, it often brings a sense of focus, purpose, and inner strength. There may be a heightened drive to take responsibility, organise your life, and bring things into alignment with your values. It can feel like a month of “gathering”—clarifying your direction and maki [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_heaven_month {
+            get {
+                return ResourceManager.GetString("global_heaven_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    6 Metal — Discipline, Structure, and Moral Authority
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 6 Metal global phase brings a sharp shift in energy following the ambiguity of the 5 Earth period. It signals a return to structure, order, and moral clarity—at least in appearance. This is the early autumn of the cycle, when what has been growing is pruned and shaped. Collectively, this often manifests as a renewed emphasis on law, leadership, discipline, and national identity. Governments may assert control more [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_heaven_year {
+            get {
+                return ResourceManager.GetString("global_heaven_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The light softens. This month invites reflection, pleasure, and emotional openness.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A Lake month, aligned with 7 Metal energy, brings the essence of late autumn and early evening. It’s a time when the energy begins to descend, inviting us to enjoy the fruits of our recent efforts and to find moments of lightness, connection, and quiet celebration. Emotionally, there’s often a softening. We may feel more open-hearted, charming, and receptive to beauty, humour, and plea [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_lake_month {
+            get {
+                return ResourceManager.GetString("global_lake_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    7 Metal — Reflection, Pleasure, and Emotional Exposure
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The 7 Metal phase brings a softening of global energy after the hard lines and moral rigor of 6 Metal. It is the late autumn of the cycle—a time of enjoyment, refinement, and release. Collectively, this phase encourages a pause from striving. There is more focus on comfort, beauty, and emotional connection, but also a subtle vulnerability. Underneath the surface, deeper truths may begin to rise. The global mood be [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_lake_year {
+            get {
+                return ResourceManager.GetString("global_lake_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    As well as yearly cycles, there are also smaller, monthly energetic cycles or &apos;spirals&apos;
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In addition to the yearly cycles that shape the broader flow of our lives, there are also smaller, monthly cycles. The energy, or &apos;Ki&apos;, of the yearly cycle is always present and serves as the overarching influence. However, the effect of the monthly Ki is more immediate and tends to be felt on an emotional level. For example, we might be in the 1 Water house for the year—a time that often bring [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_month_description {
+            get {
+                return ResourceManager.GetString("global_month_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This month represents early winter or nightfall
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During a Mountain month, we often have a sense of uncertainty and may feel the need to retreat into our cave. We are more withdrawn and uncommunicative than usual. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This can be a time of change and it is important not to be too impulsive.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It can be very helpful for us to make an extra effort to connect with others during this time, so as not to become overly isolated. We should seek the su [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_mountain_month {
+            get {
+                return ResourceManager.GetString("global_mountain_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    8 Earth — Stillness, Isolation, and Deep Reassessment
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The 8 Earth phase marks the beginning of the descent toward the end of the cycle—a time of withdrawal, stillness, and inner consolidation. This is the mountain phase, where global energy turns inward and upward stops making sense. It’s a period of pause and potential recalibration. On the surface, very little may seem to happen. But beneath, tectonic shifts are underway. There is a collective sense of standing at a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_mountain_year {
+            get {
+                return ResourceManager.GetString("global_mountain_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The seed begins to stir, gently pushing its way up through the soil.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 2 Soil month represents the quiet moment before spring—when the stillness of winter begins to soften and we feel the subtle stirrings of new life beneath the surface. It is a month of transition, where our awareness gently shifts from reflection to intention. Though the outward world may still appear motionless, inwardly we are starting to take stock and prepare for the growth to come.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_soil_month {
+            get {
+                return ResourceManager.GetString("global_soil_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    2 Soil — Collective Rebuilding and Groundwork
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the global Ki enters a 2 Soil phase, the collective energy shifts toward stabilisation, caregiving, and preparation. After the emotional depth and uncertainty of a 1 Water year, 2 Earth calls humanity back to the basics. It is a time to tend to what has been neglected, to restore what’s been broken, and to reconnect with foundational values. Politically, this phase often brings a focus on domestic issues—healthcare, f [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_soil_year {
+            get {
+                return ResourceManager.GetString("global_soil_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The seedling has sprouted, breaking through the surface with a burst of energy.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 3 Tree month corresponds to the early stirrings of spring—like the first clap of thunder awakening the still earth. It is a month of movement, energy, and new beginnings. After a period of quiet or planning, the Tree energy propels us forward with a jolt of vitality, urging us to act, speak, and create. Emotionally, it often feels like a switch has been flipped—we feel more animated, exp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_thunder_month {
+            get {
+                return ResourceManager.GetString("global_thunder_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    3 Tree — A Surge of Change and Unrest
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the world enters a 3 Tree phase, the collective energy shifts dramatically upward and outward. This is the “spring awakening” of the global cycle—a time of new beginnings, disruptive energy, and forward momentum. It often brings a burst of innovation and expression, but also tension and volatility. Politically, Tree years tend to coincide with protest, upheaval, and a youthful push against old structures. The desire for freed [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_thunder_year {
+            get {
+                return ResourceManager.GetString("global_thunder_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This month represents night and winter. It is a time for stillness, intuition, and inner depth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During a 1 Water month, we may feel the pull to withdraw from the world, to retreat into ourselves and take shelter in quietude. Our energy tends to be low and introspective, and it’s common to experience a heightened sensitivity to our environment and to the people around us. Like winter, this month invites hibernation—a slowing down of the body and a deepening of the inne [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_water_month {
+            get {
+                return ResourceManager.GetString("global_water_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    1 Water — The Descent
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the world enters a 1 Water year collectively, we find ourselves in a global moment of descent. The energy moves inward and downward, mirroring winter in the natural cycle—a time when activity slows, uncertainty rises, and deeper emotional or spiritual questions begin to surface. Politically and socially, this often marks a period of withdrawal, secrecy, or destabilisation. Major decisions may be made behind closed doors. Transparency may wan [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_water_year {
+            get {
+                return ResourceManager.GetString("global_water_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The seedling is growing rapidly with many leaves and shoots unfurling toward the light.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 4 Tree month carries the gentle, expansive energy of mid- to late spring. After the bold burst of 3 Tree, this phase brings more flow and continuity. It’s a time of organic growth, emotional openness, and deeper engagement with life. Where 3 Tree acts like a spark, 4 Tree unfolds like a breeze—constant, flexible, and subtly influential. You may find yourself feeling more expressi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_wind_month {
+            get {
+                return ResourceManager.GetString("global_wind_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    4 Tree — Expansion, Dialogue, and Uncertainty
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;p&gt;
+        ///    In a 4 Tree phase, the world moves from the volatile uprising of 3 Tree into a more expansive, communicative, and emotionally expressive period. This is mid-spring energy—an atmosphere of growth, optimism, and experimentation. Collectively, there is an emphasis on dialogue, connection, and building upon the breakthroughs of the previous phase. New ideas and movements begin to take more organized form, and the global mood [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_wind_year {
+            get {
+                return ResourceManager.GetString("global_wind_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The Yearly Cycle of Global Ki
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Just as individuals move through a personal Nine Star Ki houses year by year, month by month, etc., the world as a whole also progresses through these nine energetic phases on a collective level. Each calendar year is governed by one of the nine Ki energies, shaping the tone of global events, societal moods, and the underlying emotional atmosphere experienced across cultures. This yearly influence doesn’t dictate what happens, but it sets [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_year_description {
+            get {
+                return ResourceManager.GetString("global_year_description", resourceCulture);
             }
         }
         
@@ -8689,17 +8889,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The fruits are beginning to ripen
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    A day for clarity, composure, and confident direction
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
+        ///    A 6 Metal day invites a sense of structure, focus, and calm authority. It’s a great time to bring order to your environment—clear out clutter, refine your schedule, or tackle important decisions with logic and precision. There’s a natural boost in mental clarity and self-discipline, making this a strong day for leadership, planning, or setting boundaries with clarity and grace.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        ///    Emotionally, this ene [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_day_cycle {
             get {
@@ -8776,13 +8973,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    The emotional life of Heaven Energies is characterized by strength, endurance, and unwavering loyalty. 6 Metal individuals often carry a powerful emotional presence that inspires confidence in those around them. They are steady and emotionally grounded, able to hold space for others during times of stress or instability. Their emotions, like their nature, tend to be deep and lasting, with a strong emphasis on commitment and responsibility.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Beneath thi [rest of string was truncated]&quot;;.
+        ///    Beneath this strength, however, lies a vu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_emotional_landscape {
             get {
@@ -8791,9 +8987,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Emotionally steady, loyal, and grounded—able to hold space for others.&lt;/li&gt;
         ///    &lt;li&gt;Enduring emotional strength and deep sense of responsibility.&lt;/li&gt;
@@ -8804,7 +8998,7 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Prone to internalizing stress, grief, or pressure to stay strong.&lt;/li&gt;
-        ///    &lt;li&gt;May experience depression,  [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May experience depression, emotional fatigue, or insecurity [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_emotional_landscape_summary {
             get {
@@ -8828,17 +9022,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The fruits are beginning to ripen
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string heaven_epoch_cycle {
             get {
@@ -8862,7 +9046,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -8899,17 +9083,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The fruits are beginning to ripen
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    A time of clarity recognition, abundance and stepping into your strength
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        ///    When we occupy the 6 Metal House in the generational cycle, we begin to reap what we have sown throughout the earlier phases. This represents beginning of the harvest. After the intense inner transformation of the 5 Core Earth period, this phase brings a sense of structure, confidence, and tangible reward. It is often a time when the work and lessons of previous years begin to crystallise into su [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_generation_cycle {
             get {
@@ -8955,17 +9133,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The fruits are beginning to ripen
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string heaven_hour_cycle {
             get {
@@ -9005,9 +9173,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Analytical, logical, and highly structured thinkers.&lt;/li&gt;
         ///    &lt;li&gt;Strong technical and mechanical understanding.&lt;/li&gt;
@@ -9019,7 +9185,7 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Can become rigid, overly conservative, or resistant to new ideas.&lt;/li&gt;
-        ///     [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May devalue intuition or emotio [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_intellectual_qualities_summary {
             get {
@@ -9028,13 +9194,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Heaven Energies naturally radiate dignity, composure, and quiet authority. They tend to carry themselves with a sense of inner strength and purpose that often sets them apart in social settings. Others frequently perceive them as distinguished, principled, and respectable—people who command attention not through loudness, but through presence.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    6 Metal individuals communicate with clarity and intention. They typically value directness and prefer co [rest of string was truncated]&quot;;.
+        ///    6 Metal individuals communicate with clarity and intention. They typically value directness and prefer conversations that are efficient, me [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_interpersonal_qualities {
             get {
@@ -9043,9 +9208,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Dignified and composed—naturally commands respect in social settings.&lt;/li&gt;
         ///    &lt;li&gt;Direct, clear communicator with a preference for meaningful dialogue.&lt;/li&gt;
@@ -9056,7 +9219,7 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Can appear distant, formal, or emotionally unavailable.&lt;/li&gt;
-        ///    &lt;li&gt;Tendency toward aloofness, [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Tendency toward aloofness, suspicion, or controlling behavior  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_interpersonal_qualities_summary {
             get {
@@ -9066,13 +9229,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month is associated with early autumn or evening
+        ///    The light sharpens. This month brings clarity, confidence, and a need for precision.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During a Heaven month, we often begin to feel more confident and clear, with a strong sense of purpose. Our will is typically stronger during this time and we have a natural sense of being right. We need to be careful not to become overbearing or inflexible.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is also advisable to pay extra attention to the way we communicate verbally during this time, as we may hurt people if we are too bold or di [rest of string was truncated]&quot;;.
+        ///    A Heaven month aligns with the energy of early autumn and the quiet, commanding presence of the Metal element. Emotionally, it often brings a sense of focus, purpose, and inner strength. There may be a heightened drive to take responsibility, organise your life, and bring things into alignment with your values. It can feel like a month of “gathering”—clarifying your direction and maki [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_month {
             get {
@@ -9102,7 +9262,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
-        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Gifts&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
         ///    &lt;ul class=&quot;traits positive&quot;&gt;
         ///        &lt;li&gt;Leader&lt;/li&gt;
@@ -9117,8 +9277,8 @@ namespace K9.Globalisation {
         ///        &lt;li&gt;Wise&lt;/li&gt;
         ///    &lt;/ul&gt;
         ///
-        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
-        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when out of ba [rest of string was truncated]&quot;;.
+        ///    &lt;h5&gt;Challenging Traits&lt;/h5&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_overview {
             get {
@@ -9142,7 +9302,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -9178,7 +9338,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -9215,7 +9375,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -9268,13 +9428,10 @@ namespace K9.Globalisation {
         ///    The fruits are beginning to ripen
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
+        ///    This year corresponds to early autumn or evening—the time when the fruits of our labour begin to ripen. It marks a natural culmination of the effort, discipline, and perseverance we&apos;ve shown in prior years. What was once merely planted and tended is now beginning to bear results.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, per [rest of string was truncated]&quot;;.
+        ///    The energy of this house is infused with the full force of Yang—clarity, strength, and purpose. We may feel more confident, determined, and f [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_year {
             get {
@@ -9357,11 +9514,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives also move in monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Hourly energetic cycles&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy or &apos;Ki&apos; of the yearly cycle or &apos;spiral&apos; is always felt and is the overarching influence in our lives. However, the effect of the monthly ki is more immediate and felt on an emotional level. For example, we could be in the 1 Water house dur [rest of string was truncated]&quot;;.
+        ///    In addition to the yearly, monthly, and daily cycles, there are also subtle hourly movements within the 9 Star Ki system. Though far more delicate in their influence, these hourly rhythms gently shape the emotional tone and energy of the day—often affecting our focus, mood, and the way we interact with others moment to moment. Becoming attuned to these subtle shifts can help us better understand the natural ebb and flow of our energy throughout the day and guide us [rest of string was truncated]&quot;;.
         /// </summary>
         public static string hour_description {
             get {
@@ -10319,14 +10474,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    A day for pleasure, ease, and heartfelt connection
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
+        ///    A 7 Metal day carries a light, sociable energy that invites us to relax, connect, and enjoy life’s small pleasures. It’s an ideal time to take a break from intensity, indulge your senses, and seek out beauty—whether that’s through music, art, nature, or good company. Conversations tend to flow more easily today, and there may be moments of laughter, charm, and emotional warmth.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        ///    However, it&apos;s easy to ge [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_day_cycle {
             get {
@@ -10398,13 +10553,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    At their best, Lake Energies are radiant with joy, laughter, and a sense of celebration. They bring a lightness of spirit that can lift the mood of an entire room, often embodying mirth, playfulness, and hopeful anticipation. Their emotional expression is vibrant and contagious, making them beloved companions, especially among children and those who appreciate spontaneity and warmth.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Lake Energies often carry a nostalgic or romantic attachment to the  [rest of string was truncated]&quot;;.
+        ///    Lake Energies often carry a nostalgic or romantic attachment to the past, with strong emotional ti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_emotional_landscape {
             get {
@@ -10413,9 +10567,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Radiates joy, playfulness, and light-hearted celebration.&lt;/li&gt;
         ///    &lt;li&gt;Emotionally expressive and uplifting—brings delight and optimism to others.&lt;/li&gt;
@@ -10426,7 +10578,7 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Can swing between joy and melancholy—emotionally ungrounded at times.&lt;/li&gt;
-        ///   [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May avoid emotional depth  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_emotional_landscape_summary {
             get {
@@ -10447,14 +10599,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string lake_epoch_cycle {
             get {
@@ -10478,7 +10623,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -10512,14 +10657,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    7 Metal House — The Harvest
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        ///    The 7 Metal phase in the 81-year generational cycle corresponds to a period of reflection, enjoyment, and emotional refinement. If the 6 Metal phase brought a sharpening of clarity and purpose, the 7 Metal phase invites us to soften—trading ambition for appreciation, and effort for ease. This is the golden hour of the larger cycle, when the sun begins to set and we’re encouraged to savour the view. While some may continue to build or contri [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_generation_cycle {
             get {
@@ -10564,14 +10706,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string lake_hour_cycle {
             get {
@@ -10614,9 +10749,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Witty, clever, and resourceful with a sharp sense of humour.&lt;/li&gt;
         ///    &lt;li&gt;Clear opinions and strong common sense—can quickly discern what matters.&lt;/li&gt;
@@ -10627,7 +10760,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;May become s [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May become superficial or overly focused on app [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_intellectual_qualities_summary {
             get {
@@ -10636,13 +10769,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Lake Energies are some of the most charming and socially graceful individuals in the Nine Star Ki system. They radiate warmth, optimism, and approachability, often lighting up any room they enter. Naturally expressive and eloquent, they know how to speak with grace, humour, and impeccable timing—making them captivating conversationalists and magnetic public speakers.
+        ///   Looks up a localized string similar to &lt;p&gt;Lake Energies are some of the most charming and socially graceful individuals in the Nine Star Ki system. They radiate warmth, optimism, and approachability, often lighting up any room they enter. Naturally expressive and eloquent, they know how to speak with grace, humour, and impeccable timing—making them captivating conversationalists and magnetic public speakers.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    They are typically cheerful, fashionably stylish, with a natural ability to read  [rest of string was truncated]&quot;;.
+        ///    They are typically cheerful, fashionably stylish, with a natural ability to read social cues and put others at ease. Thei [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_interpersonal_qualities {
             get {
@@ -10651,9 +10782,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Charming, expressive, and eloquent communicators.&lt;/li&gt;
         ///    &lt;li&gt;Excellent sense of timing—captivating speakers and natural entertainers.&lt;/li&gt;
@@ -10664,7 +10793,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;May avoid confrontation—us [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May avoid confrontation—uses white lies or charm to sidestep d [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_interpersonal_qualities_summary {
             get {
@@ -10674,17 +10803,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month represents late evening or autumn
+        ///    The light softens. This month invites reflection, pleasure, and emotional openness.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    7 Metal is associated with the harvest and this is a month for us to relax and unwind, as well as to socialise and have fun.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    We often feel more carefree and adventurous during a 7 month, with a sense of quiet, inner confidence.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This can also be a great time for self-reflection and solitude.
-        ///&lt;/p&gt;.
+        ///    A Lake month, aligned with 7 Metal energy, brings the essence of late autumn and early evening. It’s a time when the energy begins to descend, inviting us to enjoy the fruits of our recent efforts and to find moments of lightness, connection, and quiet celebration. Emotionally, there’s often a softening. We may feel more open-hearted, charming, and receptive to beauty, humour, and plea [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_month {
             get {
@@ -10714,7 +10836,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
-        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Gifts&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
         ///    &lt;ul class=&quot;traits positive&quot;&gt;
         ///        &lt;li&gt;Easy-going&lt;/li&gt;
@@ -10729,8 +10851,8 @@ namespace K9.Globalisation {
         ///        &lt;li&gt;Fun-loving&lt;/li&gt;
         ///    &lt;/ul&gt;
         ///
-        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
-        ///    &lt;p&gt;&lt;em&gt;Tend to manifest w [rest of string was truncated]&quot;;.
+        ///    &lt;h5&gt;Challenging Traits&lt;/h5&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend to manifest when out of [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_overview {
             get {
@@ -10754,7 +10876,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -10786,7 +10908,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -10843,10 +10965,10 @@ namespace K9.Globalisation {
         ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
+        ///    This year corresponds to late autumn or twilight—the golden hour of the Nine Star Ki cycle. It is a time for rest, enjoyment, and gratitude. The hard work of previous years has borne fruit, and now we are invited to savour the harvest, appreciate our accomplishments, and share our abundance with others.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often [rest of string was truncated]&quot;;.
+        ///    Often considered one of the smoothest and most pleasurable Houses to occupy, the Lake y [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_year {
             get {
@@ -12661,10 +12783,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives also move in monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
+        ///    As well as yearly cycles, there are also smaller, monthly energetic cycles or &apos;spirals&apos;
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy or &apos;Ki&apos; of the yearly cycle or &apos;spiral&apos; is always felt and is the overarching influence in our lives. However, the effect of the monthly ki is more immediate and felt on an emotional level. For example, we could be in the 1 Water house dur [rest of string was truncated]&quot;;.
+        ///    In addition to the yearly cycles that shape the broader flow of our lives, there are also smaller, monthly cycles. The energy, or &apos;Ki&apos;, of the yearly cycle is always present and serves as the overarching influence. However, the effect of the monthly Ki is more immediate and tends to be felt on an emotional level. For example, we might be in the 1 Water house for the year—a time that often bring [rest of string was truncated]&quot;;.
         /// </summary>
         public static string month_description {
             get {
@@ -12868,14 +12990,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is over. Winter is nigh.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    A day for stillness, grounding, and quiet reflection
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
+        ///    An 8 Earth day brings a sense of pause and introspection. Like a mountain standing firm and unmoving, this is a time to turn inward, slow down, and reflect deeply. You may feel less inclined to engage with the outside world and more drawn to solitude or spiritual practice. It’s a good day for reviewing your goals, meditating, or tending to matters that require patience and quiet focus.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        ///    Emotionally, t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_day_cycle {
             get {
@@ -12948,13 +13070,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Emotionally, Mountain Energies reflect the qualities of their namesake—still, solid, and quietly profound. They have a natural emotional depth that is not easily disturbed by external events, and they tend to process feelings inwardly, in their own time and space. Solitude is essential for their wellbeing, and they often retreat into their metaphorical “cave” to rest, reflect, and reset.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    This stillness brings emotional strength, endurance, and reliabi [rest of string was truncated]&quot;;.
+        ///    This stillness brings emotional strength, endurance, and reliability. Mountain Energies rarely [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_emotional_landscape {
             get {
@@ -12963,9 +13084,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Emotionally steady, grounded, and deeply reflective.&lt;/li&gt;
         ///    &lt;li&gt;Values solitude and uses it to recharge and maintain inner balance.&lt;/li&gt;
@@ -12976,7 +13095,7 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Can become emotionally withdrawn or stagnant if overwhelmed or unexpressed.&lt;/li&gt;
-        ///    &lt;li&gt;Tends  [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Tends to retreat from others instead o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_emotional_landscape_summary {
             get {
@@ -12998,14 +13117,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is over. Winter is nigh.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string mountain_epoch_cycle {
             get {
@@ -13029,7 +13141,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -13063,14 +13175,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is over. Winter is nigh.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    8 Earth House — Stillness and Revolution
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        ///    The 8 Earth phase marks a turning point in the 81-year cycle—a time of stillness, integration, and quiet strength. Like a mountain at dusk, this phase offers both refuge and challenge. It is not a time for outward expansion, but for turning inward and consolidating the journey so far. Many find themselves withdrawing from external noise, seeking solitude or simplicity. Life may slow down, not as a punishment, but as an invitati [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_generation_cycle {
             get {
@@ -13116,14 +13225,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is over. Winter is nigh.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string mountain_hour_cycle {
             get {
@@ -13168,9 +13270,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Introspective and thoughtful—deep, meditative thinkers.&lt;/li&gt;
         ///    &lt;li&gt;Carefully considers opinions—grounded in clarity and moral awareness.&lt;/li&gt;
@@ -13181,7 +13281,8 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;May inhibit creative thinking— [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May inhibit creative thinking—both in self and others.&lt;/li&gt;
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_intellectual_qualities_summary {
             get {
@@ -13190,13 +13291,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Mountain Energies often embody the archetype of the “strong, silent type.” Calm, dependable, and emotionally composed, they bring a stabilizing presence into social environments. They are not typically expressive or flamboyant, but they communicate a quiet confidence that others instinctively trust.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    In relationships and group settings, 8 Earth individuals tend to observe more than speak, offering support through consistency rather than overt emoti [rest of string was truncated]&quot;;.
+        ///    In relationships and group settings, 8 Earth individuals tend to observe more than speak, offering support through consistency rather than overt emotionality. Their sympathy is subtle  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_interpersonal_qualities {
             get {
@@ -13205,9 +13305,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Calm, steady, and deeply dependable in relationships.&lt;/li&gt;
         ///    &lt;li&gt;Offers quiet, sympathetic support—especially in times of need.&lt;/li&gt;
@@ -13218,7 +13316,8 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Emotionally reserved—can seem dist [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Emotionally reserved—can seem distant, cold, or hard to read.&lt;/li&gt;
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_interpersonal_qualities_summary {
             get {
@@ -13269,7 +13368,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
-        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Gifts&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
         ///    &lt;ul class=&quot;traits positive&quot;&gt;
         ///        &lt;li&gt;Composed&lt;/li&gt;
@@ -13283,9 +13382,9 @@ namespace K9.Globalisation {
         ///        &lt;li&gt;Thoughtful&lt;/li&gt;
         ///    &lt;/ul&gt;
         ///
-        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Challenging Traits&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when out of balance&lt;/em&gt;&lt;/p&gt;
-        ///     [rest of string was truncated]&quot;;.
+        ///    &lt;ul class= [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_overview {
             get {
@@ -13310,7 +13409,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -13347,7 +13446,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -13400,10 +13499,9 @@ namespace K9.Globalisation {
         ///    The harvest is over. Winter is nigh.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
+        ///    Traditionally, it is said that the 8 Earth House, given its position as North East in the Magic Square, corresponds to the period when night changes into day, or the transition from late winter to early spring. However, owing to its placement in the cycle from 1 to 9, it can also be viewed as representing the transition from late autumn to winter — and in many ways, this interpretation is far more logical.
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to t [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;When considerin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_year {
             get {
@@ -16075,7 +16173,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Our 9 Star Ki chart is intimately connected to our sense of sexual identity and affects how comfortable an individual is likely to feel with his or her sexuality as well as the way they relate sexually to others.
+        ///    9 Star Ki has a profound effect on our relationships and also to physical intimacy and our sexual identity. It influences how comfortable an individual is likely to feel with his or her sexuality as well as the way they relate to others in their intimate relationships.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexuality_description {
@@ -16471,13 +16569,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The seed is starting to germinate and make its way up through the soil.
+        ///    A day for nourishment, care, and quiet preparation
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        ///    A 2 Soil day brings the gentle, grounding energy of late winter or early spring. It’s a day best spent tending to the details of everyday life—cooking, planning, tidying, shopping, or supporting loved ones. There&apos;s a humble, caring rhythm to this energy that invites us to slow down and reconnect with what’s simple, nourishing, and essential. It’s an ideal time to create order, care for your home or your body, and prep [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_day_cycle {
             get {
@@ -16555,12 +16650,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Emotionally, Two Soil Energies are grounded in &lt;strong&gt;sympathy, humility, and compassion&lt;/strong&gt;. Their emotional responses tend to be steady and considered, offering others a sense of calm presence and emotional containment. They are often the quiet emotional anchors of their relationships and communities, resonating deeply with the feelings of others and providing support without needing to take the spotlight.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    They have a natural inclination to acce [rest of string was truncated]&quot;;.
+        ///    They have a natural inclination to accept people as they are, meeting [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_emotional_landscape {
             get {
@@ -16569,9 +16663,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape – 2 Soil&lt;/h4&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Emotionally grounded, humble, and steady&lt;/li&gt;
         ///    &lt;li&gt;Compassionate and deeply sympathetic&lt;/li&gt;
@@ -16584,7 +16676,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;May feel misunderstood or unappreciated&lt;/li&gt;
         ///    &lt;li&gt;Tendency to withdraw or shut down emotionally&lt;/li&gt;
         ///    &lt;li&gt;Prone to quiet jealousy, pride, or worry&lt;/li&gt;
-        ///    &lt;li&gt;May suffer  [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May suffer silently rather than express emotional ne [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_emotional_landscape_summary {
             get {
@@ -16611,14 +16703,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The seed is starting to germinate and make its way up through the soil.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string soil_epoch_cycle {
             get {
@@ -16641,13 +16726,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Finances&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///
         ///&lt;ul&gt;
         ///    &lt;li&gt;&lt;strong&gt;Gift:&lt;/strong&gt; Steady, modest, and resourceful with money; naturally frugal and careful with spending.&lt;/li&gt;
         ///    &lt;li&gt;&lt;strong&gt;Strengths:&lt;/strong&gt; Good at budgeting, saving, and managing household or team resources. Finds value in security and long-term stability.&lt;/li&gt;
         ///    &lt;li&gt;&lt;strong&gt;Challenges:&lt;/strong&gt; May overextend themselves financially due to generosity or desire to help others; can struggle to assert boundaries around money.&lt;/li&gt;
-        ///    &lt;li&gt;&lt;strong&gt;Risk:&lt;/stro [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_finances_summary {
             get {
@@ -16675,13 +16760,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The seed is starting to germinate and make its way up through the soil.
+        ///    A time of preparation, grounding, and gentle momentum
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        ///    The 2 Soil House in the generational cycle represents the quiet stirring of life just beneath the surface. It follows the deep rest and introspection of the 1 Water phase and marks the beginning of a slow return to movement. Like early spring or the quiet hours before dawn, this is a time for gentle activity, careful planning, and creating a solid foundation for the cycle ahead. Though it may feel like not much is  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_generation_cycle {
             get {
@@ -16724,14 +16806,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The seed is starting to germinate and make its way up through the soil.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string soil_hour_cycle {
             get {
@@ -16772,9 +16847,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities – 2 Soil&lt;/h4&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Thoughtful, reflective, and perceptive&lt;/li&gt;
         ///    &lt;li&gt;Attentive to detail and able to absorb information steadily&lt;/li&gt;
@@ -16786,7 +16859,8 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;May become rigid or resistant to change&lt;/li&gt;
-        ///    &lt;li&gt;Can cling to outdated beliefs or fam [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Can cling to outdated beliefs or familiar routines&lt;/li&gt;
+        ///    &lt;li&gt;Overly conserva [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_intellectual_qualities_summary {
             get {
@@ -16795,9 +16869,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Two Soil Energies are among the most &lt;strong&gt;friendly, sociable, and deeply nurturing&lt;/strong&gt; of the Nine Star Ki types. They often serve as the emotional glue within a family, group, or community, offering steady &lt;strong&gt;support, warmth, and understanding&lt;/strong&gt;. With a naturally &lt;strong&gt;diplomatic and tactful&lt;/strong&gt; nature, they know how to read a room and respond with care. Their ability to arouse &lt;strong&gt;trust and sympathy&lt;/strong&gt; makes them beloved frien [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Two Soil Energies are among the most &lt;strong&gt;friendly, sociable, and deeply nurturing&lt;/strong&gt; of the Nine Star Ki types. They often serve as the emotional glue within a family, group, or community, offering steady &lt;strong&gt;support, warmth, and understanding&lt;/strong&gt;. With a naturally &lt;strong&gt;diplomatic and tactful&lt;/strong&gt; nature, they know how to read a room and respond with care. Their ability to arouse &lt;strong&gt;trust and sympathy&lt;/strong&gt; makes them beloved friends, devoted partners, and excellen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_interpersonal_qualities {
             get {
@@ -16806,9 +16879,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities – 2 Soil&lt;/h4&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Warm, nurturing, and emotionally generous&lt;/li&gt;
         ///    &lt;li&gt;Creates safety and trust in relationships&lt;/li&gt;
@@ -16820,7 +16891,8 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;May become submissive, overly accommodating, or a doormat&lt;/li&gt;
-        ///    &lt;li&gt;Struggles to assert needs or speak up when b [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Struggles to assert needs or speak up when boundaries are crossed&lt;/li&gt;
+        ///    &lt;li&gt;Over-depe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_interpersonal_qualities_summary {
             get {
@@ -16830,13 +16902,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month represents late winter and is a time of planning and slow movement
+        ///    The seed begins to stir, gently pushing its way up through the soil.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During a Soil month, we often still feel the stillness and stagnation of winter, however there is a sense of light at the end of the tunnel and an urge to start planning and moving.
+        ///    A 2 Soil month represents the quiet moment before spring—when the stillness of winter begins to soften and we feel the subtle stirrings of new life beneath the surface. It is a month of transition, where our awareness gently shifts from reflection to intention. Though the outward world may still appear motionless, inwardly we are starting to take stock and prepare for the growth to come.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Socialising can be somewhat challenging during a Soil month as our energy is typically still fairly reserved and introverted. This is a great time for slowing down, making plans and sorting out al [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_month {
             get {
@@ -16865,7 +16937,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
-        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Gifts&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
         ///    &lt;ul class=&quot;traits positive&quot;&gt;
         ///        &lt;li&gt;Stable&lt;/li&gt;
@@ -16880,7 +16952,8 @@ namespace K9.Globalisation {
         ///        &lt;li&gt;Steady&lt;/li&gt;
         ///        &lt;li&gt;Organised&lt;/li&gt;
         ///        &lt;li&gt;Honest&lt;/li&gt;
-        ///        &lt;li&gt;Emotionally steady [rest of string was truncated]&quot;;.
+        ///        &lt;li&gt;Emotionally steady&lt;/li&gt;
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_overview {
             get {
@@ -16891,7 +16964,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Romantic Relationships – 2 Soil Women&lt;/h4&gt;
         ///
-        ///&lt;h5&gt;Embodiment of Femininity and Sensuality&lt;/h5&gt;
+        ///&lt;h4&gt;Embodiment of Femininity and Sensuality&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Two Earth women often embody the full expression of &lt;strong&gt;femininity, softness, and sensuality&lt;/strong&gt;. Their natural warmth and nurturing presence draw people to them effortlessly. They tend to be attracted to &lt;strong&gt;Yang energies&lt;/strong&gt; — individuals who are confident, assertive, and able to take the lead romantically. When she finds someone she is genuinely drawn to, a Two Earth woman is usu [rest of string was truncated]&quot;;.
         /// </summary>
@@ -16931,7 +17004,7 @@ namespace K9.Globalisation {
         ///    In romantic relationships, 2 Soil men often embody a quietly powerful form of &lt;strong&gt;emotional strength, dependability, and nurturing&lt;/strong&gt;. Their love is not loud or showy, but deeply sincere. They tend to show affection through &lt;strong&gt;acts of service, thoughtful gestures, and their constant emotional presence&lt;/strong&gt;, often becoming the steady centre in their partner&apos;s life.
         ///&lt;/p&gt;
         ///
-        ///&lt;h5&gt;Masculine Yin: A Quiet Strength&lt;/h5&gt;
+        ///&lt;h4&gt;Masculine Yin: A Quiet Strength&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Though 2  [rest of string was truncated]&quot;;.
         /// </summary>
@@ -17030,13 +17103,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The seed is starting to germinate and make its way up through the soil.
+        ///    The seed begins to stir, gently pushing its way up through the soil.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
+        ///    Traditionally, it is said that 2 Soil represents the transition from late summer to early autumn, given its position in the Magic Square as South West. However, owing to its placement in the cycle from 1 to 9, it can also be viewed as representing the transition from winter to spring—and in many ways, this interpretation makes far more sense.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        ///    When considering how it feels to occupy th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_year {
             get {
@@ -18557,17 +18630,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    A little burst of energy, movement, and inspiration
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
+        ///    A 3 Tree day brings a lively surge of early spring energy—fresh, impulsive, and full of possibility. It’s a day for action, creativity, and breaking through inertia. This is the energy of a seed cracking open, of ideas rushing in, of laughter and forward momentum. It’s a great day to get moving, start something new, or speak your truth with clarity and courage.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Having the full [rest of string was truncated]&quot;;.
+        ///    You might feel more restless or excitabl [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_day_cycle {
             get {
@@ -18642,13 +18712,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
-        ///
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    At their core, Thunder Energies embody &lt;strong&gt;enthusiasm, hope, and creative innocence&lt;/strong&gt;. Their spark can uplift those around them and bring light to even the darkest situations. With a natural energy and forward momentum, they are effective at cutting through stagnation, constantly pushing forward to initiate change and new ideas.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, Thunder Energies may also experience &lt;strong&gt;anger, irritation, and emotional explosiveness&lt;/strong&gt;. Th [rest of string was truncated]&quot;;.
+        ///    However, Thunder Energies may also experience &lt;strong&gt;anger, irritation, and emotional explosiveness&lt;/strong&gt;. They can be &lt;strong&gt;over-sensitive [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_emotional_landscape {
             get {
@@ -18657,9 +18725,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape – 3 Tree&lt;/h4&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Full of enthusiasm, hope, and creative innocence&lt;/li&gt;
         ///    &lt;li&gt;Natural ability to uplift others and break through stagnation&lt;/li&gt;
@@ -18670,7 +18736,8 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Can be over-sensitive, hot-headed, and reactive&lt;/li&gt;
-        ///    &lt;li&gt;May experience explosive emotions or frustration, especially when [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May experience explosive emotions or frustration, especially when challenged&lt;/li&gt;
+        ///    &lt;li&gt;Prone to quick  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_emotional_landscape_summary {
             get {
@@ -18698,17 +18765,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Having the full [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string thunder_epoch_cycle {
             get {
@@ -18732,7 +18789,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -18772,17 +18829,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The cycle begins to move — energy bursts forth, and life starts to stir
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Having the full [rest of string was truncated]&quot;;.
+        ///    The 3 Tree House in the generational cycle marks a dynamic phase of emergence, movement, and new beginnings. Like the energy of spring after a long winter, this is a time of creativity, excitement, and action. Ideas flow more freely, and there’s a powerful urge to initiate, to try something different, to plant the seeds of bold new ventures. This can be an exhilarating period, particularly after a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_generation_cycle {
             get {
@@ -18820,17 +18871,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Having the full [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string thunder_hour_cycle {
             get {
@@ -18872,9 +18913,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities – 3 Tree&lt;/h4&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Visionary, inventive, and creatively inspired&lt;/li&gt;
         ///    &lt;li&gt;Forward-thinking, intuitive, and able to see the big picture&lt;/li&gt;
@@ -18886,7 +18925,8 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;May become unrealistic or grandiose in thinking&lt;/li&gt;
-        ///    &lt;li&gt;Prone to jumping to conclusions  [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Prone to jumping to conclusions or acting without reflection&lt;/li&gt;
+        ///    &lt;li&gt;C [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_intellectual_qualities_summary {
             get {
@@ -18895,11 +18935,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities – 3 Tree&lt;/h4&gt;
-        ///
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Socially, Thunder Energies are &lt;strong&gt;expressive, open, approachable, and full of charm&lt;/strong&gt;. They tend to be &lt;strong&gt;talkative, sociable, and honest&lt;/strong&gt;, with a straightforward manner that can be both refreshing and disarming. Their ability to &lt;strong&gt;inspire and stimulate those around them&lt;/strong&gt; is one of their greatest strengths, and they often possess a natural talent for humor, which makes them engaging and likable in social settings.
-        /// [rest of string was truncated]&quot;;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, this openness can som [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_interpersonal_qualities {
             get {
@@ -18908,9 +18948,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities – 3 Tree&lt;/h4&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Expressive, open, approachable, and full of charm&lt;/li&gt;
         ///    &lt;li&gt;Talkative, sociable, and honest, with a straightforward manner&lt;/li&gt;
@@ -18921,7 +18959,8 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;May become too raw or intense, leading to impatience or rashness&lt;/li&gt;
-        ///    &lt;li&gt;Can be undiplomatic, overl [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Can be undiplomatic, overly blunt, or too bold&lt;/li&gt;
+        ///    &lt;li&gt;Displays e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_interpersonal_qualities_summary {
             get {
@@ -18931,14 +18970,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month represents early spring or the dawn.
+        ///    The seedling has sprouted, breaking through the surface with a burst of energy.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During a Tree month, we usually feel a surge of energy and vitality. We typically feel creative, enthusiastic and spontaneous with a deep sense of optimism and fun.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is a great time to start projects and for putting plans into action. This is also an excellent time for socializing and enjoyment.
-        ///&lt;/p&gt;.
+        ///    A 3 Tree month corresponds to the early stirrings of spring—like the first clap of thunder awakening the still earth. It is a month of movement, energy, and new beginnings. After a period of quiet or planning, the Tree energy propels us forward with a jolt of vitality, urging us to act, speak, and create. Emotionally, it often feels like a switch has been flipped—we feel more animated, exp [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_month {
             get {
@@ -18973,7 +19008,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
-        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Gifts&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
         ///    &lt;ul class=&quot;traits positive&quot;&gt;
         ///        &lt;li&gt;Pioneering&lt;/li&gt;
@@ -18989,7 +19024,7 @@ namespace K9.Globalisation {
         ///        &lt;li&gt;Frank&lt;/li&gt;
         ///        &lt;li&gt;Open&lt;/li&gt;
         ///        &lt;li&gt;Outgoing&lt;/li&gt;
-        ///        [rest of string was truncated]&quot;;.
+        ///        &lt;li&gt;Chiva [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_overview {
             get {
@@ -19080,7 +19115,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -19129,13 +19164,10 @@ namespace K9.Globalisation {
         ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
+        ///    This House represents early spring—dawn in the Nine Star Ki cycle—where the energy of new growth surges upward with a sense of urgency and vitality. It is a time of breakthrough, when momentum builds and creative ideas flow freely. Plans made in the previous cycle can now take root in action.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Ha [rest of string was truncated]&quot;;.
+        ///    With this upward movement comes enthusiasm, confidence, and e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_year {
             get {
@@ -20018,13 +20050,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
+        ///    A time for introspection, dreams, and inner quiet
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
+        ///    A 1 Water day carries the quiet stillness of night and the depth of winter. It&apos;s a time when our energy naturally turns inward and we may feel more reflective, introverted, or even emotionally delicate. Communication may feel a little harder to initiate, and our minds might drift toward big questions, unresolved emotions, or even dreams from the night before. This is a perfect day for contemplation, study, writing, or  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_day_cycle {
             get {
@@ -20106,12 +20135,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Water people possess a profound and often mysterious emotional depth. Beneath their calm exterior lies an inner world that is &lt;strong&gt;capable of intense feeling, subtle intuition, and quiet emotional strength&lt;/strong&gt;. When balanced, they demonstrate a rare &lt;strong&gt;courage to venture into the unknown&lt;/strong&gt; — not only outwardly, through exploration and discovery, but also inwardly, into the hidden landscapes of the soul.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    These individuals are not afra [rest of string was truncated]&quot;;.
+        ///    These individuals are not afraid of emotional depth; in fact [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_emotional_landscape {
             get {
@@ -20120,9 +20148,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Emotionally deep and resilient&lt;/li&gt;
         ///    &lt;li&gt;Courageous in facing internal and external unknowns&lt;/li&gt;
@@ -20134,7 +20160,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;May [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May experience abysmal fear or exis [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_emotional_landscape_summary {
             get {
@@ -20161,14 +20187,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string water_epoch_cycle {
             get {
@@ -20191,12 +20210,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Finances&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Neither extremely wealthy nor impoverished — typically &lt;strong&gt;gets by with quiet resourcefulness&lt;/strong&gt;.&lt;/li&gt;
         ///    &lt;li&gt;Not well-suited to &lt;strong&gt;high-risk or competitive financial environments&lt;/strong&gt;; may be easily swindled.&lt;/li&gt;
         ///    &lt;li&gt;Can be &lt;strong&gt;impressed or influenced by displays of power and wealth&lt;/strong&gt;, especially from the opposite sex.&lt;/li&gt;
-        ///    &lt;li&gt;&lt;strong&gt;Cautious and measured&lt;/strong&gt; when dealing with non-monetary resources like time, energy, and re [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;&lt;strong&gt;Cautious and measured&lt;/strong&gt; when dealing with non-monetary resources l [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_finances_summary {
             get {
@@ -20233,13 +20252,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
+        ///    A time of retreat, reflection, and rebirth
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
+        ///    The 1 Water House is the most inward-facing phase of the generational cycle, often characterised by a desire to retreat from the world, simplify one&apos;s life, and reconnect with the deeper, more essential parts of the self. It’s a time of deep rest, quiet reflection, and preparation—not of outward action, but of inner gestation. Just like winter nourishes the seed in darkness, this phase allows us to rediscover our essence with [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_generation_cycle {
             get {
@@ -20276,14 +20292,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string water_hour_cycle {
             get {
@@ -20323,9 +20332,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Penetrating, reflective, and philosophical thinker&lt;/li&gt;
         ///    &lt;li&gt;Deeply intuitive and spiritually perceptive&lt;/li&gt;
@@ -20335,7 +20342,9 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Brings wisdom through quiet observation and deep understanding&lt;/li&gt;
         ///&lt;/ul&gt;
         ///
-        ///&lt;h5&gt;Challenges&lt;/h5 [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Vague, indecisive, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_intellectual_qualities_summary {
             get {
@@ -20344,12 +20353,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    In relationships, Water Energies move with grace and sensitivity. They are often &lt;strong&gt;adaptive, flexible, diplomatic, and deeply receptive&lt;/strong&gt;, able to feel the emotional currents in a room without anyone needing to speak. Their presence tends to be subtle yet magnetic — they draw others in without demanding attention, connecting in ways that are gentle, intuitive, and emotionally resonant.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    As listeners, they are exceptional — quiet, patient [rest of string was truncated]&quot;;.
+        ///    As listeners, they are exceptional — quiet, patient, and discerning. They know when t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_interpersonal_qualities {
             get {
@@ -20358,9 +20366,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Adaptive, flexible, and emotionally attuned&lt;/li&gt;
         ///    &lt;li&gt;Diplomatic and patient in social situations&lt;/li&gt;
@@ -20372,7 +20378,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Can become shy, rese [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Can become shy, reserved, or emotionally withdrawn&lt;/li&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_interpersonal_qualities_summary {
             get {
@@ -20382,16 +20388,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month represents night and winter. We can often feel introverted and withdrawn
+        ///    This month represents night and winter. It is a time for stillness, intuition, and inner depth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During a Water month, we often feel quite quiet, cautious, introverted and even vulnerable at times.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    We may also find it more challenging to communicate with others during this month. This may lead to feelings of isolation and being left out.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is a time when we are more likely to find ourselves in states of deep reflection and introspection. It is an [rest of string was truncated]&quot;;.
+        ///    During a 1 Water month, we may feel the pull to withdraw from the world, to retreat into ourselves and take shelter in quietude. Our energy tends to be low and introspective, and it’s common to experience a heightened sensitivity to our environment and to the people around us. Like winter, this month invites hibernation—a slowing down of the body and a deepening of the inne [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_month {
             get {
@@ -20421,7 +20421,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
-        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Gifts&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
         ///    &lt;ul class=&quot;traits positive&quot;&gt;
         ///        &lt;li&gt;Independent&lt;/li&gt;
@@ -20436,7 +20436,8 @@ namespace K9.Globalisation {
         ///        &lt;li&gt;Curious&lt;/li&gt;
         ///        &lt;li&gt;Empathetic&lt;/li&gt;
         ///        &lt;li&gt;Sensitive&lt;/li&gt;
-        ///        &lt;li&gt;Diploma [rest of string was truncated]&quot;;.
+        ///        &lt;li&gt;Diplomatic&lt;/li&gt;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_overview {
             get {
@@ -20548,13 +20549,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
+        ///    This year represents night and winter. It is cold, dark, and still—the seed remains hidden in the ground.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
+        ///    This is a time of hibernation, retreat, and deep reflection. The House of Water, associated with the north and the depth of winter, invites us to pause and turn inward. There is little movement on the surface, yet beneath the stillness, something vital is gestating. It is a time for dreaming rather than doing, for looking within rather than pushing ahead.
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_year {
             get {
@@ -20851,14 +20851,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling is growing rapidly with many leaves and shoots appearing.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    A day for graceful flow, expression, and gentle progress
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
+        ///    A 4 Tree day carries the energy of a warm spring breeze—steady, spacious, and gently uplifting. It’s a wonderful time to engage in thoughtful conversations, creative work, or anything that requires flexibility and nuance. The mood today is more reflective than assertive, and there’s a softness in the air that encourages diplomacy, open-mindedness, and easeful communication.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        ///    You may feel more emot [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_day_cycle {
             get {
@@ -20934,13 +20934,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    The emotional world of Wind Energies is rich, tender, and deeply attuned to both personal and collective experience. At their best, 4 Tree people express genuine compassion, heartfelt empathy, and an innate desire to grow emotionally and support the growth of those around them. Their feelings are nuanced and often rooted in a profound understanding of the human condition, making their emotional presence healing and inspiring.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Their emotional strength  [rest of string was truncated]&quot;;.
+        ///    Their emotional strength lies in their ability to care— [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_emotional_landscape {
             get {
@@ -20949,9 +20948,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Emotional Landscape&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Deeply compassionate and emotionally insightful.&lt;/li&gt;
         ///    &lt;li&gt;Tender, empathetic, and emotionally supportive of others.&lt;/li&gt;
@@ -20962,7 +20959,8 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Prone to emotional overwhelm and instability when ungrounded.&lt;/li&gt;
-        ///    &lt;li&gt;May become rigid, reactive, or withdrawn under stress [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May become rigid, reactive, or withdrawn under stress.&lt;/li&gt;
+        ///    &lt;li&gt;Struggles to reg [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_emotional_landscape_summary {
             get {
@@ -20987,14 +20985,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling is growing rapidly with many leaves and shoots appearing.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string wind_epoch_cycle {
             get {
@@ -21018,7 +21009,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Finances and Resource Management&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -21056,14 +21047,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling is growing rapidly with many leaves and shoots appearing.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The winds of change carry us forward — a time of refinement, communication, and subtle growth
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        ///    The 4 Tree House in the generational cycle brings a more measured and contemplative form of growth compared to the bold expansion of the 3 Tree phase. The energy here is still of spring, but it is softer — like a gentle breeze rather than a thunderclap. This is a time when ideas begin to settle and take form, and there’s greater clarity around how to nurture the seeds planted [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_generation_cycle {
             get {
@@ -21108,14 +21096,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling is growing rapidly with many leaves and shoots appearing.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string wind_hour_cycle {
             get {
@@ -21156,9 +21137,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Intellectual Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Thoughtful, analytical, and deeply reflective.&lt;/li&gt;
         ///    &lt;li&gt;Strong affinity for philosophy, scientific reasoning, and theoretical insight.&lt;/li&gt;
@@ -21168,7 +21147,8 @@ namespace K9.Globalisation {
         ///&lt;/ul&gt;
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
-        ///&lt;u [rest of string was truncated]&quot;;.
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can become overly theor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_intellectual_qualities_summary {
             get {
@@ -21177,13 +21157,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Wind Energies are naturally warm, kind-hearted, and emotionally attuned. They exude a quiet grace that inspires trust and draws others in. With their soft presence, empathy, and ability to truly listen, they often serve as gentle guides, confidants, or mediators in their communities. Their manner is courteous, well-adjusted, and emotionally expressive without being overwhelming, giving others a sense of comfort and safety in their presence.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Highly [rest of string was truncated]&quot;;.
+        ///    Highly sociable and attuned to emotional [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_interpersonal_qualities {
             get {
@@ -21192,9 +21171,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Interpersonal Qualities&lt;/h5&gt;
-        ///
-        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Kind, compassionate, and emotionally sensitive.&lt;/li&gt;
         ///    &lt;li&gt;Gentle presence that inspires trust and confidence.&lt;/li&gt;
@@ -21206,7 +21183,7 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Can be overly trusting, gullible, or easily swayed by others.&lt;/li&gt;
-        ///    &lt;li&gt;St [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Struggles with setting boundaries or a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_interpersonal_qualities_summary {
             get {
@@ -21216,14 +21193,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month represents mid morning or mid to late spring
+        ///    The seedling is growing rapidly with many leaves and shoots unfurling toward the light.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During a Wind month, we feel the energy of spring, which bring us joy, enthusiasm and optimism.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It&apos;s important for us not to overdo it during a Wind month, both in terms of getting carried away with things we&apos;re involved in as well as being careful not to exhaust ourselves. It&apos;s important to rest and to remain grounded.
-        ///&lt;/p&gt;.
+        ///    A 4 Tree month carries the gentle, expansive energy of mid- to late spring. After the bold burst of 3 Tree, this phase brings more flow and continuity. It’s a time of organic growth, emotional openness, and deeper engagement with life. Where 3 Tree acts like a spark, 4 Tree unfolds like a breeze—constant, flexible, and subtly influential. You may find yourself feeling more expressi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_month {
             get {
@@ -21253,7 +21226,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;overview-container&quot;&gt;
-        ///    &lt;h4&gt;Positive Traits&lt;/h4&gt;
+        ///    &lt;h5&gt;Gifts&lt;/h5&gt;
         ///    &lt;p&gt;&lt;em&gt;Tend to manifest when in balance&lt;/em&gt;&lt;/p&gt;
         ///    &lt;ul class=&quot;traits positive&quot;&gt;
         ///        &lt;li&gt;Influential&lt;/li&gt;
@@ -21269,8 +21242,8 @@ namespace K9.Globalisation {
         ///        &lt;li&gt;Practical&lt;/li&gt;
         ///    &lt;/ul&gt;
         ///
-        ///    &lt;h4&gt;Challenging Traits&lt;/h4&gt;
-        ///    &lt;p&gt; [rest of string was truncated]&quot;;.
+        ///    &lt;h5&gt;Challenging Traits&lt;/h5&gt;
+        ///    &lt;p&gt;&lt;em&gt;Tend t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_overview {
             get {
@@ -21294,7 +21267,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Relationships&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -21327,7 +21300,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Spiritual Life&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -21379,10 +21352,10 @@ namespace K9.Globalisation {
         ///    The seedling is growing rapidly with many leaves and shoots appearing.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
+        ///    This year corresponds to mid-morning or mid-to-late spring—a time of steady, expansive growth. The initial burst of energy that emerged last year now begins to take form. Progress continues, and if the groundwork was laid thoughtfully in the past, life flows with ease and grace.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or h [rest of string was truncated]&quot;;.
+        ///    This is often a joyful and communicative period. Relationships flourish, new opportunities arise, and opt [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_year {
             get {
@@ -21485,12 +21458,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
+        ///    Our lives pass through each of the houses in nine-year cycles, with each year reflecting one of the nine Energies of the 9 Star Ki system.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
+        ///    While each person has a unique 9 Star Ki birth chart based on their date of birth, we also move through nine-year life cycles that mirror the nine Energies of the system. Each year, we find ourselves in a different house, governed by one of these nine Energies—each influencing our lives in subtle yet powerful ways.
         ///&lt;/p&gt;
-        ///&lt; [rest of string was truncated]&quot;;.
+        ///
+        ///&lt;h5&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string year_description {
             get {

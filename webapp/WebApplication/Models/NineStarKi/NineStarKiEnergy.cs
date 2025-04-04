@@ -102,99 +102,180 @@ namespace K9.WebApplication.Models
             Season = Strings.Names.Winter,
             Element = ENineStarKiElement.Water,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Hibernation,
-            YearlyDescriptionName = Strings.Names.WaterYear,
-            MonthlyDescriptionName = Strings.Names.WaterMonth,
-            EightyOneYearDescriptionName = Strings.Names.WaterEpoch,
-            NineYearDescriptionName = Strings.Names.WaterGeneration,
-            DailyDescriptionName = Strings.Names.WaterDayCycle)]
+
+            GlobalYearlyDescriptionName = Strings.Names.GlobalWaterYearCycle,
+            GlobalMonthlyDescriptionName = Strings.Names.GlobalWaterMonthCycle,
+            GlobalEightyOneYearDescriptionName = Strings.Names.GlobalWaterEpochCycle,
+            GlobalNineYearDescriptionName = Strings.Names.GlobalWaterGenerationCycle,
+            GlobalDailyDescriptionName = Strings.Names.GlobalWaterDayCycle,
+            GlobalHourlyDescriptionName = Strings.Names.GlobalWaterHourlyCycle,
+
+            YearlyDescriptionName = Strings.Names.WaterYearCycle,
+            MonthlyDescriptionName = Strings.Names.WaterMonthCycle,
+            EightyOneYearDescriptionName = Strings.Names.WaterEpochCycle,
+            NineYearDescriptionName = Strings.Names.WaterGenerationCycle,
+            DailyDescriptionName = Strings.Names.WaterDayCycle,
+            HourlyDescriptionName = Strings.Names.WaterHourlyCycle)]
         Winter,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
             Season = Strings.Names.WinterToSpring,
             Element = ENineStarKiElement.Earth,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Planning,
-            YearlyDescriptionName = Strings.Names.SoilYear,
-            MonthlyDescriptionName = Strings.Names.SoilMonth,
-            EightyOneYearDescriptionName = Strings.Names.SoilEpoch,
-            NineYearDescriptionName = Strings.Names.SoilGeneration,
-            DailyDescriptionName = Strings.Names.SoilDayCycle)]
+
+            GlobalYearlyDescriptionName = Strings.Names.GlobalSoilYearCycle,
+            GlobalMonthlyDescriptionName = Strings.Names.GlobalSoilMonthCycle,
+            GlobalEightyOneYearDescriptionName = Strings.Names.GlobalSoilEpochCycle,
+            GlobalNineYearDescriptionName = Strings.Names.GlobalSoilGenerationCycle,
+            GlobalDailyDescriptionName = Strings.Names.GlobalSoilDayCycle,
+            GlobalHourlyDescriptionName = Strings.Names.GlobalSoilHourlyCycle,
+
+            YearlyDescriptionName = Strings.Names.SoilYearCycle,
+            MonthlyDescriptionName = Strings.Names.SoilMonthCycle,
+            EightyOneYearDescriptionName = Strings.Names.SoilEpochCycle,
+            NineYearDescriptionName = Strings.Names.SoilGenerationCycle,
+            DailyDescriptionName = Strings.Names.SoilDayCycle,
+            HourlyDescriptionName = Strings.Names.SoilHourlyCycle)]
         WinterToSpring,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
             Season = Strings.Names.EarlySpring,
             Element = ENineStarKiElement.Tree,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Sprouting,
-            YearlyDescriptionName = Strings.Names.ThunderYear,
-            MonthlyDescriptionName = Strings.Names.ThunderMonth,
-            EightyOneYearDescriptionName = Strings.Names.ThunderEpoch,
-            NineYearDescriptionName = Strings.Names.ThunderGeneration,
-            DailyDescriptionName = Strings.Names.ThunderDayCycle)]
+
+            GlobalYearlyDescriptionName = Strings.Names.GlobalThunderYearCycle,
+            GlobalMonthlyDescriptionName = Strings.Names.GlobalThunderMonthCycle,
+            GlobalEightyOneYearDescriptionName = Strings.Names.GlobalThunderEpochCycle,
+            GlobalNineYearDescriptionName = Strings.Names.GlobalThunderGenerationCycle,
+            GlobalDailyDescriptionName = Strings.Names.GlobalThunderDayCycle,
+            GlobalHourlyDescriptionName = Strings.Names.GlobalThunderHourlyCycle,
+
+            YearlyDescriptionName = Strings.Names.ThunderYearCycle,
+            MonthlyDescriptionName = Strings.Names.ThunderMonthCycle,
+            EightyOneYearDescriptionName = Strings.Names.ThunderEpochCycle,
+            NineYearDescriptionName = Strings.Names.ThunderGenerationCycle,
+            DailyDescriptionName = Strings.Names.ThunderDayCycle,
+            HourlyDescriptionName = Strings.Names.ThunderHourlyCycle)]
         EarlySpring,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
             Season = Strings.Names.LateSpring,
             Element = ENineStarKiElement.Tree,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Blossoming,
-            YearlyDescriptionName = Strings.Names.WindYear,
-            MonthlyDescriptionName = Strings.Names.WindMonth,
-            EightyOneYearDescriptionName = Strings.Names.WindEpoch,
-            NineYearDescriptionName = Strings.Names.WindGeneration,
-            DailyDescriptionName = Strings.Names.WindDayCycle)]
+
+            GlobalYearlyDescriptionName = Strings.Names.GlobalWindYearCycle,
+            GlobalMonthlyDescriptionName = Strings.Names.GlobalWindMonthCycle,
+            GlobalEightyOneYearDescriptionName = Strings.Names.GlobalWindEpochCycle,
+            GlobalNineYearDescriptionName = Strings.Names.GlobalWindGenerationCycle,
+            GlobalDailyDescriptionName = Strings.Names.GlobalWindDayCycle,
+            GlobalHourlyDescriptionName = Strings.Names.GlobalWindHourlyCycle,
+
+            YearlyDescriptionName = Strings.Names.WindYearCycle,
+            MonthlyDescriptionName = Strings.Names.WindMonthCycle,
+            EightyOneYearDescriptionName = Strings.Names.WindEpochCycle,
+            NineYearDescriptionName = Strings.Names.WindGenerationCycle,
+            DailyDescriptionName = Strings.Names.WindDayCycle,
+            HourlyDescriptionName = Strings.Names.WindHourlyCycle)]
         LateSpring,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
             Season = Strings.Names.Centre,
             Element = ENineStarKiElement.Earth,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Consolidating,
-            YearlyDescriptionName = Strings.Names.CoreEarthYear,
-            MonthlyDescriptionName = Strings.Names.CoreEarthMonth,
-            EightyOneYearDescriptionName = Strings.Names.CoreEarthEpoch,
-            NineYearDescriptionName = Strings.Names.CoreEarthGeneration,
-            DailyDescriptionName = Strings.Names.CoreEarthDayCycle)]
+
+            GlobalYearlyDescriptionName = Strings.Names.GlobalCoreEarthYearCycle,
+            GlobalMonthlyDescriptionName = Strings.Names.GlobalCoreEarthMonthCycle,
+            GlobalEightyOneYearDescriptionName = Strings.Names.GlobalCoreEarthEpochCycle,
+            GlobalNineYearDescriptionName = Strings.Names.GlobalCoreEarthGenerationCycle,
+            GlobalDailyDescriptionName = Strings.Names.GlobalCoreEarthDayCycle,
+            GlobalHourlyDescriptionName = Strings.Names.GlobalCoreEarthHourlyCycle,
+
+            YearlyDescriptionName = Strings.Names.CoreEarthYearCycle,
+            MonthlyDescriptionName = Strings.Names.CoreEarthMonthCycle,
+            EightyOneYearDescriptionName = Strings.Names.CoreEarthEpochCycle,
+            NineYearDescriptionName = Strings.Names.CoreEarthGenerationCycle,
+            DailyDescriptionName = Strings.Names.CoreEarthDayCycle,
+            HourlyDescriptionName = Strings.Names.CoreEarthHourlyCycle)]
         Centre,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
             Season = Strings.Names.EarlyAutumn,
             Element = ENineStarKiElement.Metal,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Ripening,
-            YearlyDescriptionName = Strings.Names.HeavenYear,
-            MonthlyDescriptionName = Strings.Names.HeavenMonth,
-            EightyOneYearDescriptionName = Strings.Names.HeavenEpoch,
-            NineYearDescriptionName = Strings.Names.HeavenGeneration,
-            DailyDescriptionName = Strings.Names.HeavenDayCycle)]
+
+            GlobalYearlyDescriptionName = Strings.Names.GlobalHeavenYearCycle,
+            GlobalMonthlyDescriptionName = Strings.Names.GlobalHeavenMonthCycle,
+            GlobalEightyOneYearDescriptionName = Strings.Names.GlobalHeavenEpochCycle,
+            GlobalNineYearDescriptionName = Strings.Names.GlobalHeavenGenerationCycle,
+            GlobalDailyDescriptionName = Strings.Names.GlobalHeavenDayCycle,
+            GlobalHourlyDescriptionName = Strings.Names.GlobalHeavenHourlyCycle,
+
+            YearlyDescriptionName = Strings.Names.HeavenYearCycle,
+            MonthlyDescriptionName = Strings.Names.HeavenMonthCycle,
+            EightyOneYearDescriptionName = Strings.Names.HeavenEpochCycle,
+            NineYearDescriptionName = Strings.Names.HeavenGenerationCycle,
+            DailyDescriptionName = Strings.Names.HeavenDayCycle,
+            HourlyDescriptionName = Strings.Names.HeavenHourlyCycle)]
         EarlyAutumn,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
             Season = Strings.Names.LateAutumn,
             Element = ENineStarKiElement.Metal,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Harvest,
-            YearlyDescriptionName = Strings.Names.LakeYear,
-            MonthlyDescriptionName = Strings.Names.LakeMonth,
-            EightyOneYearDescriptionName = Strings.Names.LakeEpoch,
-            NineYearDescriptionName = Strings.Names.LakeGeneration,
-            DailyDescriptionName = Strings.Names.LakeDayCycle)]
+
+            GlobalYearlyDescriptionName = Strings.Names.GlobalLakeYearCycle,
+            GlobalMonthlyDescriptionName = Strings.Names.GlobalLakeMonthCycle,
+            GlobalEightyOneYearDescriptionName = Strings.Names.GlobalLakeEpochCycle,
+            GlobalNineYearDescriptionName = Strings.Names.GlobalLakeGenerationCycle,
+            GlobalDailyDescriptionName = Strings.Names.GlobalLakeDayCycle,
+            GlobalHourlyDescriptionName = Strings.Names.GlobalLakeHourlyCycle,
+
+            YearlyDescriptionName = Strings.Names.LakeYearCycle,
+            MonthlyDescriptionName = Strings.Names.LakeMonthCycle,
+            EightyOneYearDescriptionName = Strings.Names.LakeEpochCycle,
+            NineYearDescriptionName = Strings.Names.LakeGenerationCycle,
+            DailyDescriptionName = Strings.Names.LakeDayCycle,
+            HourlyDescriptionName = Strings.Names.LakeHourlyCycle)]
         LateAutumn,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
             Season = Strings.Names.AutumnToWinter,
             Element = ENineStarKiElement.Earth,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Revolution,
-            YearlyDescriptionName = Strings.Names.MountainYear,
-            MonthlyDescriptionName = Strings.Names.MountainMonth,
-            EightyOneYearDescriptionName = Strings.Names.MountainEpoch,
-            NineYearDescriptionName = Strings.Names.MountainGeneration,
-            DailyDescriptionName = Strings.Names.MountainDayCycle)]
+
+            GlobalYearlyDescriptionName = Strings.Names.GlobalMountainYearCycle,
+            GlobalMonthlyDescriptionName = Strings.Names.GlobalMountainMonthCycle,
+            GlobalEightyOneYearDescriptionName = Strings.Names.GlobalMountainEpochCycle,
+            GlobalNineYearDescriptionName = Strings.Names.GlobalMountainGenerationCycle,
+            GlobalDailyDescriptionName = Strings.Names.GlobalMountainDayCycle,
+            GlobalHourlyDescriptionName = Strings.Names.GlobalMountainHourlyCycle,
+
+            YearlyDescriptionName = Strings.Names.MountainYearCycle,
+            MonthlyDescriptionName = Strings.Names.MountainMonthCycle,
+            EightyOneYearDescriptionName = Strings.Names.MountainEpochCycle,
+            NineYearDescriptionName = Strings.Names.MountainGenerationCycle,
+            DailyDescriptionName = Strings.Names.MountainDayCycle,
+            HourlyDescriptionName = Strings.Names.MountainHourlyCycle)]
         AutumnToWinter,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
             Season = Strings.Names.Summer,
             Element = ENineStarKiElement.Fire,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Spotlight,
-            YearlyDescriptionName = Strings.Names.FireYear,
-            MonthlyDescriptionName = Strings.Names.FireMonth,
-            EightyOneYearDescriptionName = Strings.Names.WindEpoch,
-            NineYearDescriptionName = Strings.Names.FireGeneration,
-            DailyDescriptionName = Strings.Names.FireDayCycle)]
+
+            GlobalYearlyDescriptionName = Strings.Names.GlobalFireYearCycle,
+            GlobalMonthlyDescriptionName = Strings.Names.GlobalFireMonthCycle,
+            GlobalEightyOneYearDescriptionName = Strings.Names.GlobalFireEpochCycle,
+            GlobalNineYearDescriptionName = Strings.Names.GlobalFireGenerationCycle,
+            GlobalDailyDescriptionName = Strings.Names.GlobalFireDayCycle,
+            GlobalHourlyDescriptionName = Strings.Names.GlobalFireHourlyCycle,
+
+            YearlyDescriptionName = Strings.Names.FireYearCycle,
+            MonthlyDescriptionName = Strings.Names.FireMonthCycle,
+            EightyOneYearDescriptionName = Strings.Names.WindEpochCycle,
+            NineYearDescriptionName = Strings.Names.FireGenerationCycle,
+            DailyDescriptionName = Strings.Names.FireDayCycle,
+            HourlyDescriptionName = Strings.Names.FireHourlyCycle)]
         Summer
     }
 
@@ -778,6 +859,20 @@ namespace K9.WebApplication.Models
                 {ENineStarKiEnergy.Fire, Dictionary.fire_year}
             };
 
+        private static readonly Dictionary<ENineStarKiEnergy, string> _yearlyGlobalCycleDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.global_water_year},
+                {ENineStarKiEnergy.Soil, Dictionary.global_soil_year},
+                {ENineStarKiEnergy.Thunder, Dictionary.global_thunder_year},
+                {ENineStarKiEnergy.Wind, Dictionary.global_wind_year},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.global_core_earth_year},
+                {ENineStarKiEnergy.Heaven, Dictionary.global_heaven_year},
+                {ENineStarKiEnergy.Lake, Dictionary.global_lake_year},
+                {ENineStarKiEnergy.Mountain, Dictionary.global_mountain_year},
+                {ENineStarKiEnergy.Fire, Dictionary.global_fire_year}
+            };
+
         private static readonly Dictionary<ENineStarKiEnergy, string> _monthlyCycleDescriptions =
             new Dictionary<ENineStarKiEnergy, string>
             {
@@ -847,19 +942,19 @@ namespace K9.WebApplication.Models
         public string EnergyInterpersonalQualitiesTitle => $"{ElementNameAndNumber} {Dictionary.InterpersonalQualities}";
 
         public string EnergyEmotionalLandscapeTitle => $"{ElementNameAndNumber} {Dictionary.EmotionalLandscape}";
-        
+
         public string EnergyCareerTitle => $"{ElementNameAndNumber} {Dictionary.Career}";
-        
+
         public string EnergyOccupationsTitle => $"{ElementNameAndNumber} {Dictionary.OccupationsLabel}";
 
         public string EnergyFinancesTitle => $"{ElementNameAndNumber} {Dictionary.Finances}";
 
         public string EnergyHealthTitle => $"{ElementNameAndNumber} {Dictionary.Health}";
-        
+
         public string EnergyIllnessesTitle => $"{ElementNameAndNumber} {Dictionary.Illnesses}";
 
         public string EnergySpiritualityTitle => $"{ElementNameAndNumber} {Dictionary.Spirituality}";
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EpochEnergyLabel)]
         public string EpochDescription =>
             EnergyType == ENineStarKiEnergyType.EpochEnergy ? GetEpochDescription() : string.Empty;
@@ -982,6 +1077,11 @@ namespace K9.WebApplication.Models
             ? GetYearlyCycleDescription()
             : string.Empty;
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.YearlyCycleEnergy)]
+        public string YearlyGlobalCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy
+            ? GetGlobalYearlyCycleDescription()
+            : string.Empty;
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyCycleEnergy)]
         public string MonthlyCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy
             ? GetMonthlyCycleDescription()
@@ -1050,6 +1150,8 @@ namespace K9.WebApplication.Models
         public string SeasonDescription => CycleMetaData.SeasonDescription;
 
         public string CycleDescription => GetCycleDescription();
+
+        public string GlobalCycleDescription => GetGlobalCycleDescription();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
         public string Trigram => MetaData.GetTrigram();
@@ -1215,6 +1317,33 @@ namespace K9.WebApplication.Models
                 case ENineStarKiEnergyCycleType.DailyEnergy:
                     return CycleMetaData.DailyDescription;
 
+                case ENineStarKiEnergyCycleType.HourlyEnergy:
+                    return CycleMetaData.DailyDescription;
+
+                default:
+                    return string.Empty;
+            }
+        }
+
+        private string GetGlobalCycleDescription()
+        {
+            switch (EnergyCycleType)
+            {
+                case ENineStarKiEnergyCycleType.EpochEnergy:
+                    return CycleMetaData.GlobalEightyOneYearDescription;
+
+                case ENineStarKiEnergyCycleType.GenerationalEnergy:
+                    return CycleMetaData.GlobalNineYearDescription;
+
+                case ENineStarKiEnergyCycleType.YearlyCycleEnergy:
+                    return CycleMetaData.GlobalYearlyDescription;
+
+                case ENineStarKiEnergyCycleType.MonthlyCycleEnergy:
+                    return CycleMetaData.GlobalMonthlyDescription;
+
+                case ENineStarKiEnergyCycleType.DailyEnergy:
+                    return CycleMetaData.GlobalDailyDescription;
+
                 default:
                     return string.Empty;
             }
@@ -1277,6 +1406,8 @@ namespace K9.WebApplication.Models
         private string GetGenerationCycleDescription() => _generationCycleDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetYearlyCycleDescription() => _yearlyCycleDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetGlobalYearlyCycleDescription() => _yearlyGlobalCycleDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetMonthlyCycleDescription() => _monthlyCycleDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 

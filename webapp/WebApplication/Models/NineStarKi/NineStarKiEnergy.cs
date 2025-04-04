@@ -1154,7 +1154,7 @@ namespace K9.WebApplication.Models
         public string Season => CycleMetaData.Season;
         public string SeasonDescription => CycleMetaData.SeasonDescription;
 
-        public string CycleDescription => GetCycleDescription();
+        public string CycleDescription => IsGlobal ? GetGlobalCycleDescription() : GetCycleDescription();
 
         public string GlobalCycleDescription => GetGlobalCycleDescription();
 

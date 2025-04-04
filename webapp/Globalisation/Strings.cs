@@ -427,7 +427,7 @@
             public const string SoilEpochCycle = "soil_epoch_cycle";
             public const string ThunderEpochCycle = "thunder_epoch_cycle";
             public const string WindEpochCycle = "wind_epoch_cycle";
-            public const string CoreEarthEpochCycle = "coreearth_epoch_cycle";
+            public const string CoreEarthEpochCycle = "core_earth_epoch_cycle";
             public const string HeavenEpochCycle = "heaven_epoch_cycle";
             public const string LakeEpochCycle = "lake_epoch_cycle";
             public const string MountainEpochCycle = "mountain_epoch_cycle";

@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Models;
+﻿using System;
+using K9.WebApplication.Models;
 using Xunit;
 
 namespace K9.WebApplication.Tests.Unit.Mdels

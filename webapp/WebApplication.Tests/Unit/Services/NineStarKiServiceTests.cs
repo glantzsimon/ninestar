@@ -45,6 +45,24 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
+        [InlineData(1979, 6, 16, EGender.Male, ENineStarKiEnergy.Thunder, ETransformationType.Supports)]
+        [InlineData(1985, 9, 07, EGender.Male, ENineStarKiEnergy.Lake, ETransformationType.Supports)]
+        [InlineData(1976, 5, 01, EGender.Female, ENineStarKiEnergy.Mountain, ETransformationType.Controls)]
+        public void ChildNatalHouseTransformation_HappyPath(int year, int month, int day, EGender gender, ENineStarKiEnergy childNatalHouse, ETransformationType childNatalTransformationType)
+        {
+            var personModel = new PersonModel
+            {
+                DateOfBirth = new DateTime(year, month, day),
+                Gender = gender
+            };
+
+            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel);
+
+            Assert.Equal(childNatalHouse, nineStarKiModel.GetChildNatalHouse().Energy);
+            Assert.Equal(childNatalTransformationType, nineStarKiModel.GetChildNatalHouseTransformation());
+        }
+
+        [Theory]
         [InlineData(1979, 6, 16, EGender.Male, ESexualityRelationType.MatchMatch)]
         [InlineData(1979, 7, 16, EGender.Male, ESexualityRelationType.MatchOpposite)]
         [InlineData(1984, 6, 21, EGender.Male, ESexualityRelationType.OppositeOpposite)]
@@ -422,7 +440,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             bool isDebug = false)
         {
 
-            if(isDebug)
+            if (isDebug)
                 Debugger.Break();
 
             var ninestar = _nineStarKiService.CalculateNineStarKiProfile(

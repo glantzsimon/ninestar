@@ -82,6 +82,7 @@
             public const string MonthlyEnergyLabel = "MonthlyEnergyLabel";
             public const string HourlyEnergyLabel = "HourlyEnergyLabel";
             public const string GenerationalEnergyLabel = "GenerationalEnergyLabel";
+            public const string ChildNatalHouseEnergyLabel = "ChildNatalHouseEnergyLabel";
             public const string CharacterEnergyLabel = "CharacterEnergyLabel";
             public const string CharacterLabel = "CharacterLabel";
             public const string SurfaceEnergyLabel = "SurfaceEnergyLabel";

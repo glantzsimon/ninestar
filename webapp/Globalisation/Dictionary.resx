@@ -5653,6 +5653,9 @@
   <data name="SummaryView" xml:space="preserve">
     <value>View Summary</value>
   </data>
+  <data name="ChildNatalHouseEnergyLabel" xml:space="preserve">
+    <value>Child Natal House</value>
+  </data>
   <data name="GlobalView" xml:space="preserve">
     <value>View Global Ki</value>
   </data>

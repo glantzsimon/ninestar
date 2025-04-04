@@ -3,10 +3,10 @@
     public enum ETransformationType
     {
         Unspecified,
-        Same,
+        Sibling,
         Supports,
-        Challenges,
+        Controls,
         IsSupported,
-        IsChallenged
+        IsControlled
     }
 }

@@ -102,7 +102,7 @@ namespace K9.WebApplication.Models
         public bool FundamentalElementsAreSupportive => IsSupportive(FundamentalEnergiesTransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergiesAreSame => FundamentalEnergiesTransformationType == ETransformationType.Same;
+        public bool FundamentalEnergiesAreSame => FundamentalEnergiesTransformationType == ETransformationType.Sibling;
 
         [ScriptIgnore]
         public bool FundamentalEnergiesAreChallenging => IsChallenging(FundamentalEnergiesTransformationType);
@@ -114,7 +114,7 @@ namespace K9.WebApplication.Models
         public bool CharacterEnergiesAreSupportive => IsSupportive(CharacterEnergiesTransformationType);
 
         [ScriptIgnore]
-        public bool CharacterEnergiesAreSame => CharacterEnergiesTransformationType == ETransformationType.Same;
+        public bool CharacterEnergiesAreSame => CharacterEnergiesTransformationType == ETransformationType.Sibling;
 
         [ScriptIgnore]
         public bool CharacterEnergiesAreChallenging => IsChallenging(CharacterEnergiesTransformationType);
@@ -126,7 +126,7 @@ namespace K9.WebApplication.Models
         public bool SurfaceEnergiesAreSupportive => IsSupportive(SurfaceEnergiesTransformationType);
 
         [ScriptIgnore]
-        public bool SurfaceEnergiesAreSame => SurfaceEnergiesTransformationType == ETransformationType.Same;
+        public bool SurfaceEnergiesAreSame => SurfaceEnergiesTransformationType == ETransformationType.Sibling;
 
         [ScriptIgnore]
         public bool SurfaceEnergiesAreChallenging => IsChallenging(SurfaceEnergiesTransformationType);
@@ -436,8 +436,8 @@ namespace K9.WebApplication.Models
                 type1Name,
                 type2Name,
                 "is the same as",
-                ETransformationType.Same,
-                ETransformationType.Same,
+                ETransformationType.Sibling,
+                ETransformationType.Sibling,
                 person1,
                 person2,
                 titleOnly)));
@@ -456,8 +456,8 @@ namespace K9.WebApplication.Models
                 type1Name,
                 type2Name,
                 "challenges",
-                ETransformationType.Challenges,
-                ETransformationType.IsChallenged,
+                ETransformationType.Controls,
+                ETransformationType.IsControlled,
                 person1,
                 person2,
                 titleOnly)));
@@ -581,9 +581,9 @@ namespace K9.WebApplication.Models
             var sbSame = new StringBuilder();
 
             var allOtherElements = GetAllOtherElements();
-            var challengingItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Challenges || e.Item1 == ETransformationType.IsChallenged);
+            var challengingItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Controls || e.Item1 == ETransformationType.IsControlled);
             var supportiveItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Supports || e.Item1 == ETransformationType.IsSupported);
-            var sameItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Same);
+            var sameItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Sibling);
 
             if (supportiveItems.Any())
             {
@@ -635,19 +635,19 @@ namespace K9.WebApplication.Models
 
         private bool IsSame(ETransformationType transformationType)
         {
-            return transformationType == ETransformationType.Same;
+            return transformationType == ETransformationType.Sibling;
         }
 
         private bool IsChallenging(ETransformationType transformationType)
         {
-            return new List<ETransformationType> { ETransformationType.IsChallenged, ETransformationType.Challenges }.Contains(transformationType);
+            return new List<ETransformationType> { ETransformationType.IsControlled, ETransformationType.Controls }.Contains(transformationType);
         }
 
         private void CalculateScore()
         {
             switch (FundamentalEnergiesTransformationType)
             {
-                case ETransformationType.Same:
+                case ETransformationType.Sibling:
                     Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, 9);
 
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyHigh, 9);
@@ -675,8 +675,8 @@ namespace K9.WebApplication.Models
                     Score.AddLearningPotentialScore(ECompatibilityScore.MediumToHigh, 9);
                     break;
 
-                case ETransformationType.Challenges:
-                case ETransformationType.IsChallenged:
+                case ETransformationType.Controls:
+                case ETransformationType.IsControlled:
                     Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, 9);
 
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyLow, 12);
@@ -719,7 +719,7 @@ namespace K9.WebApplication.Models
         {
             switch (transformationType)
             {
-                case ETransformationType.Same:
+                case ETransformationType.Sibling:
                     Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, factor);
 
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyHigh, factor);
@@ -747,8 +747,8 @@ namespace K9.WebApplication.Models
                     Score.AddLearningPotentialScore(ECompatibilityScore.MediumToHigh, factor);
                     break;
 
-                case ETransformationType.Challenges:
-                case ETransformationType.IsChallenged:
+                case ETransformationType.Controls:
+                case ETransformationType.IsControlled:
                     Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, factor);
 
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyLow, factor);
@@ -767,7 +767,7 @@ namespace K9.WebApplication.Models
         {
             switch (transformationType)
             {
-                case ETransformationType.Same:
+                case ETransformationType.Sibling:
                     Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, factor);
 
                     Score.AddHarmonyScore(ECompatibilityScore.High, factor);
@@ -790,8 +790,8 @@ namespace K9.WebApplication.Models
                     Score.AddLearningPotentialScore(ECompatibilityScore.MediumToHigh, factor);
                     break;
 
-                case ETransformationType.Challenges:
-                case ETransformationType.IsChallenged:
+                case ETransformationType.Controls:
+                case ETransformationType.IsControlled:
                     Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, factor);
 
                     Score.AddHarmonyScore(ECompatibilityScore.Low, factor);

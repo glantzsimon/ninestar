@@ -365,6 +365,9 @@ namespace K9.WebApplication.Models
         EpochEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Labels.GenerationalEnergyLabel)]
         GenerationalEnergy,
+
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildNatalHouseEnergyLabel)]
+        ChildNatalHouseEnergy,
     }
 
     public enum ENineStarKiEnergyCycleType

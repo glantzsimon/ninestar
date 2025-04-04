@@ -24,7 +24,7 @@ namespace K9.WebApplication.Extensions
                     switch (energy2)
                     {
                         case ENineStarKiEnergy.Water:
-                            return ETransformationType.Same;
+                            return ETransformationType.Sibling;
 
                         case ENineStarKiEnergy.Thunder:
                         case ENineStarKiEnergy.Wind:
@@ -33,14 +33,14 @@ namespace K9.WebApplication.Extensions
                         case ENineStarKiEnergy.Soil:
                         case ENineStarKiEnergy.CoreEarth:
                         case ENineStarKiEnergy.Mountain:
-                            return ETransformationType.IsChallenged;
+                            return ETransformationType.IsControlled;
 
                         case ENineStarKiEnergy.Heaven:
                         case ENineStarKiEnergy.Lake:
                             return ETransformationType.IsSupported;
 
                         case ENineStarKiEnergy.Fire:
-                            return ETransformationType.Challenges;
+                            return ETransformationType.Controls;
                     }
 
                     break;
@@ -51,16 +51,16 @@ namespace K9.WebApplication.Extensions
                     switch (energy2)
                     {
                         case ENineStarKiEnergy.Water:
-                            return ETransformationType.Challenges;
+                            return ETransformationType.Controls;
 
                         case ENineStarKiEnergy.Thunder:
                         case ENineStarKiEnergy.Wind:
-                            return ETransformationType.IsChallenged;
+                            return ETransformationType.IsControlled;
 
                         case ENineStarKiEnergy.Soil:
                         case ENineStarKiEnergy.CoreEarth:
                         case ENineStarKiEnergy.Mountain:
-                            return ETransformationType.Same;
+                            return ETransformationType.Sibling;
 
                         case ENineStarKiEnergy.Heaven:
                         case ENineStarKiEnergy.Lake:
@@ -81,16 +81,16 @@ namespace K9.WebApplication.Extensions
 
                         case ENineStarKiEnergy.Thunder:
                         case ENineStarKiEnergy.Wind:
-                            return ETransformationType.Same;
+                            return ETransformationType.Sibling;
 
                         case ENineStarKiEnergy.Soil:
                         case ENineStarKiEnergy.CoreEarth:
                         case ENineStarKiEnergy.Mountain:
-                            return ETransformationType.Challenges;
+                            return ETransformationType.Controls;
 
                         case ENineStarKiEnergy.Heaven:
                         case ENineStarKiEnergy.Lake:
-                            return ETransformationType.IsChallenged;
+                            return ETransformationType.IsControlled;
 
                         case ENineStarKiEnergy.Fire:
                             return ETransformationType.Supports;
@@ -107,7 +107,7 @@ namespace K9.WebApplication.Extensions
 
                         case ENineStarKiEnergy.Thunder:
                         case ENineStarKiEnergy.Wind:
-                            return ETransformationType.Challenges;
+                            return ETransformationType.Controls;
 
                         case ENineStarKiEnergy.Soil:
                         case ENineStarKiEnergy.CoreEarth:
@@ -116,10 +116,10 @@ namespace K9.WebApplication.Extensions
 
                         case ENineStarKiEnergy.Heaven:
                         case ENineStarKiEnergy.Lake:
-                            return ETransformationType.Same;
+                            return ETransformationType.Sibling;
 
                         case ENineStarKiEnergy.Fire:
-                            return ETransformationType.IsChallenged;
+                            return ETransformationType.IsControlled;
                     }
 
                     break;
@@ -128,7 +128,7 @@ namespace K9.WebApplication.Extensions
                     switch (energy2)
                     {
                         case ENineStarKiEnergy.Water:
-                            return ETransformationType.IsChallenged;
+                            return ETransformationType.IsControlled;
 
                         case ENineStarKiEnergy.Thunder:
                         case ENineStarKiEnergy.Wind:
@@ -141,10 +141,10 @@ namespace K9.WebApplication.Extensions
 
                         case ENineStarKiEnergy.Heaven:
                         case ENineStarKiEnergy.Lake:
-                            return ETransformationType.Challenges;
+                            return ETransformationType.Controls;
 
                         case ENineStarKiEnergy.Fire:
-                            return ETransformationType.Same;
+                            return ETransformationType.Sibling;
                     }
 
                     break;

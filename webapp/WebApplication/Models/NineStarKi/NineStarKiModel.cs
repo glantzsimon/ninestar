@@ -700,6 +700,18 @@ namespace K9.WebApplication.Models
             return new NineStarKiEnergy(energy, cycleType) { IsGlobal = true };
         }
 
+        public NineStarKiEnergy GetChildNatalHouse()
+        {
+            var energy = (ENineStarKiEnergy)GetHouseOccupiedByNumber(MainEnergy.EnergyNumber, CharacterEnergy.EnergyNumber);
+            return new NineStarKiEnergy(energy, ENineStarKiEnergyType.ChildNatalHouseEnergy);
+        }
+
+        public ETransformationType GetChildNatalHouseTransformation()
+        {
+            var childNatalHouse = GetChildNatalHouse();
+            return CharacterEnergy.Energy.GetTransformationType(childNatalHouse.Energy);
+        }
+
         public NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, int energyNumber, ENineStarKiEnergyCycleType cycleType)
         {
             var invertCycle = (CalculationMethod == ECalculationMethod.Chinese && PersonModel.Gender.IsYin()) || IsCycleSwitchActive;

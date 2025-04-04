@@ -4056,6 +4056,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Child Natal House.
+        /// </summary>
+        public static string ChildNatalHouseEnergyLabel {
+            get {
+                return ResourceManager.GetString("ChildNatalHouseEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Child Nature.
         /// </summary>
         public static string ChildNature {

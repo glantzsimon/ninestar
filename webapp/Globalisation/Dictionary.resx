@@ -5653,11 +5653,20 @@
   <data name="SummaryView" xml:space="preserve">
     <value>View Summary</value>
   </data>
+  <data name="global_core_earth_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>globalpredictions\day\en-gb\global-core-earth-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="global_core_earth_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\monthly\en-gb\global-core-earth-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="global_core_earth_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\yearly\en-gb\global-core-earth-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="global_day_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>globalpredictions\day\en-gb\global-day-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="global_fire_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>globalpredictions\day\en-gb\global-fire-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="global_fire_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\monthly\en-gb\global-fire-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -5665,11 +5674,17 @@
   <data name="global_fire_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\yearly\en-gb\global-fire-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="global_heaven_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>globalpredictions\day\en-gb\global-heaven-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="global_heaven_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\monthly\en-gb\global-heaven-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="global_heaven_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\yearly\en-gb\global-heaven-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="global_lake_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>globalpredictions\day\en-gb\global-lake-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="global_lake_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\monthly\en-gb\global-lake-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -5680,11 +5695,17 @@
   <data name="global_month_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\monthly\en-gb\global-month-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="global_mountain_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>globalpredictions\day\en-gb\global-mountain-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="global_mountain_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\monthly\en-gb\global-mountain-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="global_mountain_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\yearly\en-gb\global-mountain-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="global_soil_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>globalpredictions\day\en-gb\global-soil-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="global_soil_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\monthly\en-gb\global-soil-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -5692,17 +5713,26 @@
   <data name="global_soil_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\yearly\en-gb\global-soil-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="global_thunder_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>globalpredictions\day\en-gb\global-thunder-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="global_thunder_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\monthly\en-gb\global-thunder-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="global_thunder_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\yearly\en-gb\global-thunder-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="global_water_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>globalpredictions\day\en-gb\global-water-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="global_water_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\monthly\en-gb\global-water-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="global_water_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\yearly\en-gb\global-water-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="global_wind_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>globalpredictions\day\en-gb\global-wind-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="global_wind_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\monthly\en-gb\global-wind-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

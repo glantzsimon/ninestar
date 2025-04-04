@@ -8313,10 +8313,26 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The centre shifts — uncertainty and rebirth swirl at the heart of this month.
+        ///    A day of inner steadiness and centering
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 5 Core Earth month brings us into the energetic centre of the Nine Star Ki cycle, where the still point of the compass lies. It is often a time of emotional unpredictability and deep inner change. Like adolescence, this period can feel disorienting and intense, with shifting moods, fluctuating clarity, and a strong sense that something within us is being reorganised. It is a month of poten [rest of string was truncated]&quot;;.
+        ///    A 5 Earth day places you right in the centre of the energetic cycle. It can feel busy and full, with many moving parts demanding your attention. You might feel more sensitive than usual to external influences or find yourself playing the role of mediator or organiser within your environment. It’s an excellent day to practice healthy boundaries and to consciously centre yourself amidst the activity.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is also a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_core_earth_day_cycle {
+            get {
+                return ResourceManager.GetString("global_core_earth_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    5 Earth Month — Collective Crossroads and Energetic Recalibration
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 5 Earth month marks a powerful and often unpredictable turning point in the global rhythm. It is the energetic center of the cycle—a moment of pause between expansion and contraction. The collective may feel destabilized, directionless, or caught in a swirl of conflicting forces. Events during this time can feel karmic or consequential, as if the past is converging with the present to initiate a deepe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_core_earth_month {
             get {
@@ -8340,10 +8356,39 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month represents the height of summer—illumination, expression, and revelation.
+        ///    The Daily Cycle of Global Ki
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A Fire month lights up the emotional landscape like the midday sun. It brings warmth, visibility, and the opportunity to be seen and heard. If you&apos;ve been navigating quieter, more internal months—such as 1 Water, 2 Soil, or 8 Earth—this sudden surge of energy can feel like a welcome breath of fresh air. There&apos;s often a sense of renewal, brightness, and emotional clarity that cuts thro [rest of string was truncated]&quot;;.
+        ///    In the Nine Star Ki system, the energy of each day also cycles through the nine houses, creating a subtle but perceptible influence on the collective mood. Unlike the broader sweep of yearly and monthly energies, the daily Ki does not tend to define major historical moments—but it can influence the tone, timing, and emotional undercurrent of global events as they unfold. It acts like the weather of the collective field: light and passing,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_day_description {
+            get {
+                return ResourceManager.GetString("global_day_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    A day of brightness, clarity, and connection
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 9 Fire day is like the midday sun—radiant, illuminating, and full of vitality. This is a time when our energy rises, and we’re more likely to feel sociable, expressive, and intuitive. It&apos;s an ideal day for sharing ideas, making your voice heard, or enjoying the company of others. Conversations tend to flow more easily, and insight can strike suddenly and clearly.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, Fire energy also brings intensity. [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_fire_day_cycle {
+            get {
+                return ResourceManager.GetString("global_fire_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    9 Fire Month — Illumination, Exposure, and Collective Awakening
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 9 Fire month brings a burst of energy, visibility, and intensity to global affairs. It is the full expression of the cycle—the high summer moment where truths are revealed and the collective is thrust into the spotlight. Emotions run high, and the world becomes more reactive, passionate, and expressive. This is a time of exposure, when hidden matters come to light, secrets are revealed, and the collecti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_fire_month {
             get {
@@ -8366,10 +8411,26 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The light sharpens. This month brings clarity, confidence, and a need for precision.
+        ///    A day for clarity, composure, and confident direction
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A Heaven month aligns with the energy of early autumn and the quiet, commanding presence of the Metal element. Emotionally, it often brings a sense of focus, purpose, and inner strength. There may be a heightened drive to take responsibility, organise your life, and bring things into alignment with your values. It can feel like a month of “gathering”—clarifying your direction and maki [rest of string was truncated]&quot;;.
+        ///    A 6 Metal day invites a sense of structure, focus, and calm authority. It’s a great time to bring order to your environment—clear out clutter, refine your schedule, or tackle important decisions with logic and precision. There’s a natural boost in mental clarity and self-discipline, making this a strong day for leadership, planning, or setting boundaries with clarity and grace.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Emotionally, this ene [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_heaven_day_cycle {
+            get {
+                return ResourceManager.GetString("global_heaven_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    6 Metal Month — Discipline, Order, and the Rise of Authority
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 6 Metal month brings a sharpening of focus to global affairs. The collective energy becomes more structured, serious, and directive. This is the early autumn of the monthly cycle—a time when clarity is valued, systems are tested, and actions must be justified. Globally, it tends to be a period of strong leadership, decisive policies, and heightened attention to law, order, and accountability. Where the 5 E [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_heaven_month {
             get {
@@ -8392,10 +8453,26 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The light softens. This month invites reflection, pleasure, and emotional openness.
+        ///    A day for pleasure, ease, and heartfelt connection
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A Lake month, aligned with 7 Metal energy, brings the essence of late autumn and early evening. It’s a time when the energy begins to descend, inviting us to enjoy the fruits of our recent efforts and to find moments of lightness, connection, and quiet celebration. Emotionally, there’s often a softening. We may feel more open-hearted, charming, and receptive to beauty, humour, and plea [rest of string was truncated]&quot;;.
+        ///    A 7 Metal day carries a light, sociable energy that invites us to relax, connect, and enjoy life’s small pleasures. It’s an ideal time to take a break from intensity, indulge your senses, and seek out beauty—whether that’s through music, art, nature, or good company. Conversations tend to flow more easily today, and there may be moments of laughter, charm, and emotional warmth.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, it&apos;s easy to ge [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_lake_day_cycle {
+            get {
+                return ResourceManager.GetString("global_lake_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    7 Metal Month — Gratification, Exposure, and Emotional Undercurrents
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 7 Metal month signals a softening of the collective energy. After the firm structure and moral clarity of 6 Metal, the tone shifts toward enjoyment, aesthetics, and emotional reflection. This is the golden hour of the monthly cycle—a time when the world becomes more focused on comfort, beauty, and personal pleasure. While not as action-oriented, this energy can bring welcome relief, allowing space  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_lake_month {
             get {
@@ -8417,11 +8494,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    As well as yearly cycles, there are also smaller, monthly energetic cycles or &apos;spirals&apos;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The Monthly Cycle of Global Ki
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In addition to the yearly cycles that shape the broader flow of our lives, there are also smaller, monthly cycles. The energy, or &apos;Ki&apos;, of the yearly cycle is always present and serves as the overarching influence. However, the effect of the monthly Ki is more immediate and tends to be felt on an emotional level. For example, we might be in the 1 Water house for the year—a time that often bring [rest of string was truncated]&quot;;.
+        ///    In addition to the annual energetic rhythm that shapes the collective tone of each year, there is also a faster-moving monthly cycle of global Ki. Every month, the world temporarily occupies a different energetic house, influencing the emotional atmosphere, public focus, and the types of events that tend to emerge. These monthly shifts don’t override the overarching yearly energy, but they do add a layer of immediacy and emotional flavor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_month_description {
             get {
@@ -8431,16 +8508,26 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month represents early winter or nightfall
+        ///    A day for stillness, grounding, and quiet reflection
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During a Mountain month, we often have a sense of uncertainty and may feel the need to retreat into our cave. We are more withdrawn and uncommunicative than usual. 
+        ///    An 8 Earth day brings a sense of pause and introspection. Like a mountain standing firm and unmoving, this is a time to turn inward, slow down, and reflect deeply. You may feel less inclined to engage with the outside world and more drawn to solitude or spiritual practice. It’s a good day for reviewing your goals, meditating, or tending to matters that require patience and quiet focus.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This can be a time of change and it is important not to be too impulsive.
-        ///&lt;/p&gt;
+        ///    Emotionally, t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_mountain_day_cycle {
+            get {
+                return ResourceManager.GetString("global_mountain_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    8 Earth Month — Stillness, Reflection, and the Weight of Consequences
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It can be very helpful for us to make an extra effort to connect with others during this time, so as not to become overly isolated. We should seek the su [rest of string was truncated]&quot;;.
+        ///    An 8 Earth month draws the global energy inward once again. It is a time of stillness, gravity, and introspection—like standing on the edge of winter. This phase often feels dense, unmoving, or heavy, and on the world stage, progress may appear stalled. However, this is not stagnation—it’s consolidation. The global focus turns to boundaries, accountability, and the long-term consequences of past act [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_mountain_month {
             get {
@@ -8463,13 +8550,23 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The seed begins to stir, gently pushing its way up through the soil.
+        ///    A day for nourishment, care, and quiet preparation
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 2 Soil month represents the quiet moment before spring—when the stillness of winter begins to soften and we feel the subtle stirrings of new life beneath the surface. It is a month of transition, where our awareness gently shifts from reflection to intention. Though the outward world may still appear motionless, inwardly we are starting to take stock and prepare for the growth to come.
-        ///&lt;/p&gt;
+        ///    A 2 Soil day brings the gentle, grounding energy of late winter or early spring. It’s a day best spent tending to the details of everyday life—cooking, planning, tidying, shopping, or supporting loved ones. There&apos;s a humble, caring rhythm to this energy that invites us to slow down and reconnect with what’s simple, nourishing, and essential. It’s an ideal time to create order, care for your home or your body, and prep [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_soil_day_cycle {
+            get {
+                return ResourceManager.GetString("global_soil_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    2 Soil Month — Stabilisation, Caretaking, and Ground-Level Reform
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        /// [rest of string was truncated]&quot;;.
+        ///    A 2 Soil month brings the collective energy down to earth. After the fluid uncertainty of 1 Water, this period calls for steadying the ground beneath us. The global tone shifts toward pragmatism, caregiving, and quiet preparation. Rather than bold moves or sweeping declarations, attention turns to what is immediate and foundational—food, shelter, health, education, and daily routines. It’s a time when c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_soil_month {
             get {
@@ -8492,10 +8589,26 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The seedling has sprouted, breaking through the surface with a burst of energy.
+        ///    A little burst of energy, movement, and inspiration
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 3 Tree month corresponds to the early stirrings of spring—like the first clap of thunder awakening the still earth. It is a month of movement, energy, and new beginnings. After a period of quiet or planning, the Tree energy propels us forward with a jolt of vitality, urging us to act, speak, and create. Emotionally, it often feels like a switch has been flipped—we feel more animated, exp [rest of string was truncated]&quot;;.
+        ///    A 3 Tree day brings a lively surge of early spring energy—fresh, impulsive, and full of possibility. It’s a day for action, creativity, and breaking through inertia. This is the energy of a seed cracking open, of ideas rushing in, of laughter and forward momentum. It’s a great day to get moving, start something new, or speak your truth with clarity and courage.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You might feel more restless or excitabl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_thunder_day_cycle {
+            get {
+                return ResourceManager.GetString("global_thunder_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    3 Tree Month — Breakthroughs, Uprisings, and the Surge of New Energy
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 3 Tree month jolts the collective out of inertia and into movement. This is the thunderclap after stillness—the early spring energy that brings sudden change, public outcry, and the emergence of bold new voices. Globally, this period is often marked by protest, innovation, and the energetic surge of beginnings. Ideas, frustrations, and hopes that have been simmering in the background suddenly erupt [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_thunder_month {
             get {
@@ -8518,10 +8631,23 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This month represents night and winter. It is a time for stillness, intuition, and inner depth.
+        ///    A time for introspection, dreams, and inner quiet
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During a 1 Water month, we may feel the pull to withdraw from the world, to retreat into ourselves and take shelter in quietude. Our energy tends to be low and introspective, and it’s common to experience a heightened sensitivity to our environment and to the people around us. Like winter, this month invites hibernation—a slowing down of the body and a deepening of the inne [rest of string was truncated]&quot;;.
+        ///    A 1 Water day carries the quiet stillness of night and the depth of winter. It&apos;s a time when our energy naturally turns inward and we may feel more reflective, introverted, or even emotionally delicate. Communication may feel a little harder to initiate, and our minds might drift toward big questions, unresolved emotions, or even dreams from the night before. This is a perfect day for contemplation, study, writing, or  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_water_day_cycle {
+            get {
+                return ResourceManager.GetString("global_water_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    1 Water Month — Collective Descent and Emotional Undercurrents
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the world passes through a 1 Water month, the collective energy turns inward. This is a time of descent—into stillness, uncertainty, and deeper emotional terrain. Globally, the mood may feel more subdued, secretive, or withdrawn. There is often a slowing of momentum as people, governments, and institutions pull back to reassess, retreat, or consolidate. Events may unfold behind the scenes rather than  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_water_month {
             get {
@@ -8544,10 +8670,26 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The seedling is growing rapidly with many leaves and shoots unfurling toward the light.
+        ///    A day for graceful flow, expression, and gentle progress
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 4 Tree month carries the gentle, expansive energy of mid- to late spring. After the bold burst of 3 Tree, this phase brings more flow and continuity. It’s a time of organic growth, emotional openness, and deeper engagement with life. Where 3 Tree acts like a spark, 4 Tree unfolds like a breeze—constant, flexible, and subtly influential. You may find yourself feeling more expressi [rest of string was truncated]&quot;;.
+        ///    A 4 Tree day carries the energy of a warm spring breeze—steady, spacious, and gently uplifting. It’s a wonderful time to engage in thoughtful conversations, creative work, or anything that requires flexibility and nuance. The mood today is more reflective than assertive, and there’s a softness in the air that encourages diplomacy, open-mindedness, and easeful communication.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You may feel more emot [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string global_wind_day_cycle {
+            get {
+                return ResourceManager.GetString("global_wind_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    4 Tree Month — Communication, Collaboration, and Subtle Instability
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A 4 Tree month brings a more refined and expansive version of the energetic momentum stirred up by 3 Tree. The global mood shifts toward communication, diplomacy, and creative exchange. This is mid-spring energy—an atmosphere of blossoming ideas, open dialogue, and emerging connections. It’s a time when the collective becomes more socially engaged and emotionally expressive. Agreements may be reached, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_wind_month {
             get {

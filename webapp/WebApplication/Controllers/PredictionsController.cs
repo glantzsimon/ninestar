@@ -144,9 +144,9 @@ namespace K9.WebApplication.Controllers
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.HourlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
 
-            return Json(cycle, JsonRequestBehavior.AllowGet);
+            return PredictionsJsonResult(display, cycle);
         }
-
+        
         [Route("get-daily-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
         public JsonResult GetDailyPredictions(ENineStarKiEnergy energy, EPlannerDisplay display = EPlannerDisplay.PersonalKi)
@@ -154,7 +154,7 @@ namespace K9.WebApplication.Controllers
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.DailyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
 
-            return Json(cycle, JsonRequestBehavior.AllowGet);
+            return PredictionsJsonResult(display, cycle);
         }
 
         [Route("get-monthly-predictions")]
@@ -164,7 +164,7 @@ namespace K9.WebApplication.Controllers
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.MonthlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
 
-            return Json(cycle, JsonRequestBehavior.AllowGet);
+            return PredictionsJsonResult(display, cycle);
         }
 
         [Route("get-yearly-predictions")]
@@ -173,7 +173,8 @@ namespace K9.WebApplication.Controllers
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.YearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
-            return Json(cycle, JsonRequestBehavior.AllowGet);
+            
+            return PredictionsJsonResult(display, cycle);
         }
 
         [Route("get-nine-yearly-predictions")]
@@ -183,7 +184,7 @@ namespace K9.WebApplication.Controllers
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.NineYearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
 
-            return Json(cycle, JsonRequestBehavior.AllowGet);
+            return PredictionsJsonResult(display, cycle);
         }
 
         [Route("get-eighty-one-yearly-predictions")]
@@ -193,7 +194,7 @@ namespace K9.WebApplication.Controllers
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.EightyOneYearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
 
-            return Json(cycle, JsonRequestBehavior.AllowGet);
+            return PredictionsJsonResult(display, cycle);
         }
 
         [Authorize]
@@ -224,9 +225,13 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
-        public override string GetObjectName()
+        private JsonResult PredictionsJsonResult(EPlannerDisplay display, NineStarKiEnergy cycle)
         {
-            return string.Empty;
+            return Json(new
+            {
+                cycle.CycleDescriptiveName,
+                CycleDescription = display == EPlannerDisplay.PersonalKi ? cycle.CycleDescription : cycle.GlobalCycleDescription
+            }, JsonRequestBehavior.AllowGet);
         }
 
         private void UpdatePlannerUrls(PlannerViewModel plannerData)
@@ -258,6 +263,11 @@ namespace K9.WebApplication.Controllers
                     plannerData.UpdateChildUrl = Url.Action("GetMonthlyPredictions");
                     break;
             }
+        }
+
+        public override string GetObjectName()
+        {
+            return string.Empty;
         }
     }
 }

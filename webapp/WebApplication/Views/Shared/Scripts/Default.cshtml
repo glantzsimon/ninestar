@@ -3,6 +3,7 @@
 @using K9.SharedLibrary.Extensions
 @using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Config
+@using K9.WebApplication.Enums
 @using SessionConstants = K9.WebApplication.Constants.SessionConstants
 
 <script type="text/javascript">
@@ -186,7 +187,9 @@
             updatePreferencesBoolUrl: '@Url.Action("UpdateUserPreferenceBool")',
             defaultEnergyDisplayKey: '@SessionConstants.DefaultEnergyDisplay',
             defaultPanelViewKey: '@SessionConstants.DefaultPanelView',
-            showDirectionsKey: '@SessionConstants.ShowDirections'
+            showDirectionsKey: '@SessionConstants.ShowDirections',
+            personalKiValue: '@((int)EScopeDisplay.PersonalKi)',
+            magicSquareValue: '@((int)EEnergyDisplay.MagicSquare)',
         }).init();
 
 		fadePageIn({

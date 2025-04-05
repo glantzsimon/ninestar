@@ -54,7 +54,7 @@
 
     <div class="tab-content">
         <div id="current-daily-cycle" class="tab-pane fade">
-            @Html.Panel(Dictionary.DailyPrediction, Dictionary.day_description)
+            @Html.CollapsiblePanel(Dictionary.DailyPrediction, Dictionary.day_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {

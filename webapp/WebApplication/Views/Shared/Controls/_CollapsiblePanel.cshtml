@@ -11,10 +11,19 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="collapsible-panel-link" data-panel-id="@Model.Id" data-toggle="collapse" href="#@id">@Model.Title <i class="fa @Model.CaretCssClass"></i></a>
+                <a class="collapsible-panel-link" data-panel-id="@Model.Id" data-toggle="collapse" href="#@id">
+                    @Model.Title <i class="fa @Model.CaretCssClass"></i>
+                </a>
             </h4>
         </div>
-        
+
+        @* SHOW PREVIEW OUTSIDE COLLAPSIBLE AREA *@
+        <div class="panel-preview" data-toggle="collapse" data-target="#@id" aria-expanded="false" aria-controls="@id">
+            <div class="panel-preview-content">@MvcHtmlString.Create(Model.Body)</div>
+            <div class="read-more-overlay"><span>@Dictionary.ReadMore</span></div>
+        </div>
+
+        @* FULL CONTENT HIDDEN INITIALLY *@
         <div id="@id" data-panel-id="@Model.Id" class="panel-collapse collapse @Model.ExpadedCssClass">
             @if (hasImage)
             {

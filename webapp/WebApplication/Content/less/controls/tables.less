@@ -59,16 +59,24 @@ form .pull-right .btn {
     border-top-right-radius: 9px !important;
     background-color: #f0f8ff; // AliceBlue
     background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
-    border: 1px solid @border-grey;
+    outline: 1px solid @border-grey;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
     table {
         margin-bottom: 0 !important;
 
         thead {
-
             th {
                 padding-top: 12px !important;
                 padding-bottom: 12px !important;
+            }
+        }
+
+        tbody {
+            tr:first-child {
+                td {
+                    border-top: none;
+                }
             }
         }
     }

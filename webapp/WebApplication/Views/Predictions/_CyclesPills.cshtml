@@ -118,9 +118,7 @@
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.PanelWithGlobal(
-                    Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
-                    Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Epoch).ToString(),
+                @Html.Panel(Model.GlobalCycleEnergies.Epoch.CycleDescriptiveName,                    
                     Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Epoch).ToString())
             }
 

@@ -221,7 +221,7 @@
     <value>Centre</value>
   </data>
   <data name="CharacterEnergyLabel" xml:space="preserve">
-    <value>Character / Inner Child</value>
+    <value>Lunar Nature / Inner Child</value>
   </data>
   <data name="CoreEarth" xml:space="preserve">
     <value>Core Earth</value>
@@ -266,7 +266,7 @@
     <value>Lake</value>
   </data>
   <data name="MainEnergyLabel" xml:space="preserve">
-    <value>Fundamental Nature</value>
+    <value>Solar Nature</value>
   </data>
   <data name="Male" xml:space="preserve">
     <value>Male</value>
@@ -371,7 +371,7 @@
     <value>Youngest Son</value>
   </data>
   <data name="MainEnergy" xml:space="preserve">
-    <value>Fundamental Nature</value>
+    <value>Solar Nature</value>
   </data>
   <data name="Trigram" xml:space="preserve">
     <value>Trigram</value>
@@ -623,16 +623,16 @@
     <value>Adult Nature</value>
   </data>
   <data name="CharacterEnergyShortLabel" xml:space="preserve">
-    <value>Character / Inner Child</value>
+    <value>Lunar Nature / Inner Child</value>
   </data>
   <data name="ExternalPersona" xml:space="preserve">
     <value>Social Expression</value>
   </data>
   <data name="MainChildLabel" xml:space="preserve">
-    <value>Fundamental Nature</value>
+    <value>Solar Nature</value>
   </data>
   <data name="MainEnergyShortLabel" xml:space="preserve">
-    <value>Fundamental Nature</value>
+    <value>Solar Nature</value>
   </data>
   <data name="MoreDetails" xml:space="preserve">
     <value>More Details</value>
@@ -1103,10 +1103,10 @@
     <value>articles\en-gb\modalities-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NineCharacterEnergiesTitle" xml:space="preserve">
-    <value>The 9 Character Energies</value>
+    <value>The 9 Lunar Energies</value>
   </data>
   <data name="NineMainEnergiesTitle" xml:space="preserve">
-    <value>The 9 Main Energies</value>
+    <value>The 9 Solar Energies</value>
   </data>
   <data name="ProfileCalculator" xml:space="preserve">
     <value>Chart Calculator</value>
@@ -1430,7 +1430,7 @@
     <value>Amount</value>
   </data>
   <data name="CharacterEnergiesCompatibility" xml:space="preserve">
-    <value>Character Energies Compatibility</value>
+    <value>Lunar Energies Compatibility</value>
   </data>
   <data name="CompatibilityDetails" xml:space="preserve">
     <value>Compatibility Details</value>
@@ -1445,7 +1445,7 @@
     <value>Thank you for your email</value>
   </data>
   <data name="FundamentalEnergiesCompatibility" xml:space="preserve">
-    <value>Fundamental Energies Compatibility</value>
+    <value>Solar Energies Compatibility</value>
   </data>
   <data name="main_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-26.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1847,7 +1847,7 @@
     <value>predictions\yearly\en-gb\fire-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="FundamentalElements" xml:space="preserve">
-    <value>Fundamental Elements</value>
+    <value>Solar Elements</value>
   </data>
   <data name="heaven_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\monthly\en-gb\heaven-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1937,7 +1937,7 @@
     <value>All Elements</value>
   </data>
   <data name="CharacterElements" xml:space="preserve">
-    <value>Character Elements</value>
+    <value>Lunar Elements</value>
   </data>
   <data name="character_element_challenging" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\character-element-challenging.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -4316,7 +4316,7 @@
     <value>Biorhythms Overview</value>
   </data>
   <data name="CharacterElementsAnalysis" xml:space="preserve">
-    <value>Character Elements Analysis</value>
+    <value>Lunar Elements Analysis</value>
   </data>
   <data name="ClickOnATabBelowForMoreInformation" xml:space="preserve">
     <value>Click on a tab below to uncover more information!</value>
@@ -4325,7 +4325,7 @@
     <value>Displaying data for</value>
   </data>
   <data name="FundamentalElementsAnalysis" xml:space="preserve">
-    <value>Fundamental Elements Analysis</value>
+    <value>Solar Elements Analysis</value>
   </data>
   <data name="ViewBiorhythmsForSelectedDate" xml:space="preserve">
     <value>View Biorhythms for Selected Date</value>

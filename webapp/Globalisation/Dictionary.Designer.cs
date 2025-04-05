@@ -197,12 +197,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Core Earth Energies are at the centre of the system and this is often reflected in life, as they are often at the centre of
-        ///    everything they do, in the personal life and at work. Indeed, Core Earth Energies may even feel left out if this is not so.
+        ///    Core Earth energies are at the centre of the system and this is often reflected in life, as they are often at the centre of
+        ///    everything they do, in the personal life and at work. Indeed, Core Earth energies may even feel left out if this is not so.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In their private life, Core Earth Energies tend to be outspoken and often take the lead, with others coming to them for guidance
-        ///    and support. Whilst this can be fulfilling, these Energies must be cautious not to allow themselves  [rest of string was truncated]&quot;;.
+        ///    In their private life, Core Earth energies tend to be outspoken and often take the lead, with others coming to them for guidance
+        ///    and support. Whilst this can be fulfilling, these energies must be cautious not to allow themselves  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _115 {
             get {
@@ -3568,10 +3568,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Both Fundamental and Character Energies are Yang
+        ///    Both Solar and Lunar Energies are Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both the Fundamental and Character Energies are Yang. This could lead to increased conflict as Yang Energies tend to be more confrontational than Yin Energies. On the other hand, as both Energies are Yang, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransforma [rest of string was truncated]&quot;;.
+        ///    Both the Solar and Lunar Energies are Yang. This could lead to increased conflict as Yang energies tend to be more confrontational than Yin energies. On the other hand, as both energies are Yang, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformation}&quot;&gt;Supportive Tr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string both_gender_same_yang {
             get {
@@ -3581,10 +3581,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Both Fundamental and Character Energies are Yin
+        ///    Both Solar and Lunar Energies are Yin
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both the Fundamental and Character Energies are Yin. In the absence of Yang, there could be a breakdown in communication and the relationship could become stagnant. On the other hand, as both Energies are Yin, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransfo [rest of string was truncated]&quot;;.
+        ///    Both the Solar and Lunar Energiesy are Yin. In the absence of Yang, there could be a breakdown in communication and the relationship could become stagnant. On the other hand, as both energies are Yin, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformation}&quot;&gt;Supportiv [rest of string was truncated]&quot;;.
         /// </summary>
         public static string both_gender_same_yin {
             get {
@@ -3809,7 +3809,7 @@ namespace K9.Globalisation {
         ///    Character Elements are in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This combination typically results in a lot of &lt;strong&gt;natural chemistry and magnetism&lt;/strong&gt; between people, but it also increases the &lt;strong&gt;risk of conflict and emotional misunderstandings&lt;/strong&gt;. This can be offset if the other Energies, especially the Fundamental Energies are in a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transfor [rest of string was truncated]&quot;;.
+        ///    This combination typically results in a lot of &lt;strong&gt;natural chemistry and magnetism&lt;/strong&gt; between people, but it also increases the &lt;strong&gt;risk of conflict and emotional misunderstandings&lt;/strong&gt;. This can be offset if the other energies, especially the Fundamental energies are in a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transfor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_challenging {
             get {
@@ -3822,10 +3822,10 @@ namespace K9.Globalisation {
         ///    Same Element - &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformationLink}&quot;&gt;Sibling Relationship&lt;/a&gt;
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Character Energies have the same element. There is a potential for a &lt;strong&gt;deep emotional connection&lt;/strong&gt; as well as a very good &lt;strong&gt;mutual understanding on an emotional level&lt;/strong&gt;. This can help to create more harmony in the relationship, especially if the fundamental Energies are antagonistic.
+        ///    The Lunar Energies have the same element. There is a potential for a &lt;strong&gt;deep emotional connection&lt;/strong&gt; as well as a very good &lt;strong&gt;mutual understanding on an emotional level&lt;/strong&gt;. This can help to create more harmony in the relationship, especially if the fundamental energies are antagonistic.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, sharing the same Emotional Ki elemen [rest of string was truncated]&quot;;.
+        ///    In romantic relationships, sharing the same Emotional Ki element ca [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_same {
             get {
@@ -3838,10 +3838,10 @@ namespace K9.Globalisation {
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt; - Parent Child Relationship
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Character Energies are in a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt;, in which one Energy supports or nourishes the next. This typically creates a &lt;strong&gt;strong emotional connection and mutual understanding&lt;/strong&gt;.
+        ///    The Character energies are in a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt;, in which one Energy supports or nourishes the next. This typically creates a &lt;strong&gt;strong emotional connection and mutual understanding&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, when the Character Energies in a &lt;a target=&quot;_blank&quot; href=&quot;{ [rest of string was truncated]&quot;;.
+        ///    In romantic relationships, when the Character energies in a &lt;a target=&quot;_blank&quot; href=&quot;{ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_supportive {
             get {
@@ -3862,7 +3862,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Yin / Yang
+        ///    Character energies - Yin / Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This combination typically leads to &lt;strong&gt;much greater compatibility and chemistry&lt;/strong&gt; in romantic relationships. This combination also typically results in &lt;strong&gt;greater complementarity on an emotional level&lt;/strong&gt;, but may result in &lt;strong&gt;some misunderstandings&lt;/strong&gt;.
@@ -3876,13 +3876,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Both Yang
+        ///    Character energies - Both Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, this typically leads to &lt;strong&gt;less chemistry&lt;/strong&gt; than with a Yin / Yang combination. Yang Energies tend to be more engaging and in the absence of Yin, this can lead to a lack of magnetism. Essentially there isn&apos;t enough mystery to maintain the magic. 
+        ///    In romantic relationships, this typically leads to &lt;strong&gt;less chemistry&lt;/strong&gt; than with a Yin / Yang combination. Yang energies tend to be more engaging and in the absence of Yin, this can lead to a lack of magnetism. Essentially there isn&apos;t enough mystery to maintain the magic. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, if the Fundamental Energies are in a Yin / Yang combination and / or in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging [rest of string was truncated]&quot;;.
+        ///    However, if the Fundamental energies are in a Yin / Yang combination and / or in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_gender_same_yang {
             get {
@@ -3892,13 +3892,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Both Yin
+        ///    Character energies - Both Yin
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, this typically leads to &lt;strong&gt;less chemistry&lt;/strong&gt; than with a Yin / Yang combination. Yin Energies tend to be more receptive and less engaging. In the absence of Yang, the relationship could start to stagnate. There could also be a build up of resentment due to lack of communication.
+        ///    In romantic relationships, this typically leads to &lt;strong&gt;less chemistry&lt;/strong&gt; than with a Yin / Yang combination. Yin energies tend to be more receptive and less engaging. In the absence of Yang, the relationship could start to stagnate. There could also be a build up of resentment due to lack of communication.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, if the Fundamental Energies are in a Yin / Yang combination and / or in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingT [rest of string was truncated]&quot;;.
+        ///    However, if the Fundamental energies are in a Yin / Yang combination and / or in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingT [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_gender_same_yin {
             get {
@@ -3908,7 +3908,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Different Modality
+        ///    Character energies - Different Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater complementarity between the couple on an emotional level&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;.
@@ -3922,7 +3922,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Same Modality
+        ///    Character energies - Same Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple on an emotional level&lt;/strong&gt;, but there may be &lt;strong&gt;less chemistry&lt;/strong&gt; between the couple.
@@ -3935,7 +3935,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Character Elements.
+        ///   Looks up a localized string similar to Lunar Elements.
         /// </summary>
         public static string CharacterElements {
             get {
@@ -3944,7 +3944,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Character Elements Analysis.
+        ///   Looks up a localized string similar to Lunar Elements Analysis.
         /// </summary>
         public static string CharacterElementsAnalysis {
             get {
@@ -3953,7 +3953,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Character Energies Compatibility.
+        ///   Looks up a localized string similar to Lunar Energies Compatibility.
         /// </summary>
         public static string CharacterEnergiesCompatibility {
             get {
@@ -3975,7 +3975,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Character / Inner Child.
+        ///   Looks up a localized string similar to Lunar Nature / Inner Child.
         /// </summary>
         public static string CharacterEnergyLabel {
             get {
@@ -3984,7 +3984,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Character / Inner Child.
+        ///   Looks up a localized string similar to Lunar Nature / Inner Child.
         /// </summary>
         public static string CharacterEnergyShortLabel {
             get {
@@ -4073,7 +4073,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Inner Harmony&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    When the adult and character energies share the same elemental transformation but differ in polarity—one being more yin, the other more yang—there’s often a natural sense of internal harmony. These individuals tend to feel more at ease with themselves, and under stress, they often present a calm, composed, even masterful front. Rather than pushing against unwanted situations, they’re more inclined to adapt and flow with what is. This can lead to a compliant or accommodating  [rest of string was truncated]&quot;;.
+        ///    When the adult and character energies share the same elemental transformation but differ in polarity—one being more Yin, the other more Yang—there’s often a natural sense of internal harmony. These individuals tend to feel more at ease with themselves, and under stress, they often present a calm, composed, even masterful front. Rather than pushing against unwanted situations, they’re more inclined to adapt and flow with what is. This can lead to a compliant or accommodating  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string child_same_element_stress {
             get {
@@ -4839,7 +4839,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Core Earth Energies are natural catalysts and consolidators—individuals who bring structure, momentum, and clarity wherever they go. Their commanding presence and ability to unify people around a shared goal make them exceptional in leadership roles. They are often found at the center of organizations or movements, where their insight, decisiveness, and strength of will can drive major transformation.
+        ///    Core Earth energies are natural catalysts and consolidators—individuals who bring structure, momentum, and clarity wherever they go. Their commanding presence and ability to unify people around a shared goal make them exceptional in leadership roles. They are often found at the center of organizations or movements, where their insight, decisiveness, and strength of will can drive major transformation.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -4904,9 +4904,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Core Earth Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Core Earth energies&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Core Earth / 5 Soil Energies occupy the center of the Nine Star Ki system—symbolizing a convergence point of all directions and elements. This centrality is not merely symbolic; it is deeply felt in the lives of 5 Earth individuals. They are often the gravitational center of their communities, families, or workplaces—people naturally turn to them for guidance, strength, and stability. When this central role is absent, they may feel displaced or invisible, as [rest of string was truncated]&quot;;.
+        ///    Core Earth / 5 Soil energies occupy the center of the Nine Star Ki system—symbolizing a convergence point of all directions and elements. This centrality is not merely symbolic; it is deeply felt in the lives of 5 Earth individuals. They are often the gravitational center of their communities, families, or workplaces—people naturally turn to them for guidance, strength, and stability. When this central role is absent, they may feel displaced or invisible, as [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_description {
             get {
@@ -4915,7 +4915,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Core Earth Energies&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Core Earth energies&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -4954,7 +4954,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The emotional world of Core Earth Energies is deep, intense, and often defined by contrast. Their lives tend to mirror the full arc of experience—beginnings and endings, triumphs and losses, inner stillness and emotional turbulence. As the central point in the Nine Star Ki system, 5 Earth individuals often feel the weight of holding everything together, both within themselves and for others.
+        ///    The emotional world of Core Earth energies is deep, intense, and often defined by contrast. Their lives tend to mirror the full arc of experience—beginnings and endings, triumphs and losses, inner stillness and emotional turbulence. As the central point in the Nine Star Ki system, 5 Earth individuals often feel the weight of holding everything together, both within themselves and for others.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -5002,7 +5002,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Core Earth Energies often possess a grounded, practical relationship with money. They are typically economical and conscientious, capable of building financial reserves over time. Whether through hard work or resourceful networking, they usually find ways to earn or attract money with relative ease. While they can receive support from others, their greatest success tends to come when they rely on their own efforts and initiative.
+        ///    Core Earth energies often possess a grounded, practical relationship with money. They are typically economical and conscientious, capable of building financial reserves over time. Whether through hard work or resourceful networking, they usually find ways to earn or attract money with relative ease. While they can receive support from others, their greatest success tends to come when they rely on their own efforts and initiative.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -5052,7 +5052,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellness&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Core Earth Energies are often blessed with a constitution as strong and steady as an ox. Their physical resilience is one of their great strengths, allowing them to endure stress and hardship that might overwhelm others. However, this strength can also be deceptive. When they do not move or challenge themselves regularly, they risk stagnation—physically, emotionally, and energetically.
+        ///    Core Earth energies are often blessed with a constitution as strong and steady as an ox. Their physical resilience is one of their great strengths, allowing them to endure stress and hardship that might overwhelm others. However, this strength can also be deceptive. When they do not move or challenge themselves regularly, they risk stagnation—physically, emotionally, and energetically.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -5107,7 +5107,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Core Earth Energies are often clear, objective thinkers with a strong capacity to understand complexity and integrate diverse perspectives. Their thinking tends to be measured, grounded, and deeply thoughtful. They are especially gifted at keeping an overview of situations, allowing them to offer steady, realistic insights when others may feel overwhelmed or reactive.
+        ///    Core Earth energies are often clear, objective thinkers with a strong capacity to understand complexity and integrate diverse perspectives. Their thinking tends to be measured, grounded, and deeply thoughtful. They are especially gifted at keeping an overview of situations, allowing them to offer steady, realistic insights when others may feel overwhelmed or reactive.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -5222,7 +5222,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Core Earth Energies are uniquely positioned at the center of the Nine Star Ki system, and this centrality is often reflected in their relationship dynamics. They are typically compatible with all other energies and can easily connect with a wide range of personalities. People are naturally drawn to them, sensing their inner strength, stability, and capacity for guidance.
+        ///    Core Earth energies are uniquely positioned at the center of the Nine Star Ki system, and this centrality is often reflected in their relationship dynamics. They are typically compatible with all other energies and can easily connect with a wide range of personalities. People are naturally drawn to them, sensing their inner strength, stability, and capacity for guidance.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -5254,7 +5254,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Core Earth Energies have a natural affinity for spiritual depth, rooted in a profound connection to the ancestral and the eternal. In Tibetan tradition, they are seen as spiritual types—guardians of ancient wisdom with an instinctive reverence for the unseen forces that shape human experience. This connection often gives them a sense of destiny or a deep inner calling, even if they cannot always name it.
+        ///    Core Earth energies have a natural affinity for spiritual depth, rooted in a profound connection to the ancestral and the eternal. In Tibetan tradition, they are seen as spiritual types—guardians of ancient wisdom with an instinctive reverence for the unseen forces that shape human experience. This connection often gives them a sense of destiny or a deep inner calling, even if they cannot always name it.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -5306,9 +5306,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being at the centre of the 9 Energies, 5 Soil Energies have no trigram of their own. Rather, they are the axis 
-        ///    around which the other Energies revolve. As such, this sign draws its nature from each of the other Energies. 
-        ///    However, it is also said that this Energy is somewhat between Soil and Mountain Energies, the other Earth Energies in the system.
+        ///    Being at the centre of the 9 energies, 5 Soil energies have no trigram of their own. Rather, they are the axis 
+        ///    around which the other energies revolve. As such, this sign draws its nature from each of the other energies. 
+        ///    However, it is also said that this Energy is somewhat between Soil and Mountain energies, the other Earth energies in the system.
         ///&lt;/p&gt;.
         /// </summary>
         public static string coreearth_trigram {
@@ -6378,13 +6378,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Dynamic Energies get things started and are good leaders. They are generally expressive, extroverted, and process information quickly.
+        ///    Dynamic energies get things started and are good leaders. They are generally expressive, extroverted, and process information quickly.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Energies {thunder}, {heaven}, and {fire} are classified as &apos;Dynamic&apos;. This energy type is similar to the Cardinal Modality of the Zodiac and the &lt;strong&gt;Action Group&lt;/strong&gt; Chinese Zodiac, which includes Tiger, Horse, Dog, and Dragon. These signs are known for their courage, dynamism, leadership, and initiative.
+        ///    energies {thunder}, {heaven}, and {fire} are classified as &apos;Dynamic&apos;. This energy type is similar to the Cardinal Modality of the Zodiac and the &lt;strong&gt;Action Group&lt;/strong&gt; Chinese Zodiac, which includes Tiger, Horse, Dog, and Dragon. These signs are known for their courage, dynamism, leadership, and initiative.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Dynamic Energies,  [rest of string was truncated]&quot;;.
+        ///    Dynamic energies,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string dynamic_modality {
             get {
@@ -6460,7 +6460,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Water people, with their deep, flowing, exploratory nature, can sometimes become undisciplined, chaotic and too thinly spread. Without a container, they can lack direction and purpose. Earth people can be of great importance in helping to provide some structure and support to Water Energies. However, too much Earth element can be overly restrictive and rigid, thwarting Water&apos;s natural flexible, exploratory nature..
+        ///   Looks up a localized string similar to Water people, with their deep, flowing, exploratory nature, can sometimes become undisciplined, chaotic and too thinly spread. Without a container, they can lack direction and purpose. Earth people can be of great importance in helping to provide some structure and support to Water energies. However, too much Earth element can be overly restrictive and rigid, thwarting Water&apos;s natural flexible, exploratory nature..
         /// </summary>
         public static string earth_water {
             get {
@@ -7264,7 +7264,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Fire Energies thrive in careers that allow for &lt;strong&gt;expression, communication, and visibility&lt;/strong&gt;. They are natural performers, presenters, and communicators—drawn to roles that put them in contact with others and allow them to share their charisma and insight. Whether in creative, emotional, or artistic domains, Fires shine when given room to inspire.
+        ///    Fire energies thrive in careers that allow for &lt;strong&gt;expression, communication, and visibility&lt;/strong&gt;. They are natural performers, presenters, and communicators—drawn to roles that put them in contact with others and allow them to share their charisma and insight. Whether in creative, emotional, or artistic domains, Fires shine when given room to inspire.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -7348,9 +7348,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Fire Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Fire energies&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Fire Energies radiate brilliance, vision, and warmth. Of all the Nine Star Ki types, they are the most expansive—burning brightly with charisma, emotional presence, and creative vitality. They often carry a natural ability to &lt;strong&gt;inspire, uplift, and illuminate&lt;/strong&gt;, making them powerful catalysts for transformation and change.
+        ///    Fire energies radiate brilliance, vision, and warmth. Of all the Nine Star Ki types, they are the most expansive—burning brightly with charisma, emotional presence, and creative vitality. They often carry a natural ability to &lt;strong&gt;inspire, uplift, and illuminate&lt;/strong&gt;, making them powerful catalysts for transformation and change.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -7363,7 +7363,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Fire Energies&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Fire energies&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -7399,7 +7399,7 @@ namespace K9.Globalisation {
         ///    The Fire element is connected with our &lt;strong&gt;fame and outward appearance&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Fire Energies tend to be very &lt;strong&gt;expressive, passionate, warm&lt;/str [rest of string was truncated]&quot;;.
+        ///    Fire energies tend to be very &lt;strong&gt;expressive, passionate, warm&lt;/str [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_element {
             get {
@@ -7428,7 +7428,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire Energies are emotionally radiant—defined by &lt;strong&gt;joy, humour, and a sparkling sense of presence&lt;/strong&gt;. Their warmth is contagious, and they often bring &lt;strong&gt;lightness, laughter, and vibrant emotional expression&lt;/strong&gt; to the people and spaces around them. Deeply intuitive, they tend to read the emotional tone of a room instinctively, often sensing what others feel before it&apos;s spoken.
+        ///    Fire energies are emotionally radiant—defined by &lt;strong&gt;joy, humour, and a sparkling sense of presence&lt;/strong&gt;. Their warmth is contagious, and they often bring &lt;strong&gt;lightness, laughter, and vibrant emotional expression&lt;/strong&gt; to the people and spaces around them. Deeply intuitive, they tend to read the emotional tone of a room instinctively, often sensing what others feel before it&apos;s spoken.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -7461,7 +7461,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Generations Born in the 9 Fire Epoch — The Illuminators, Amplifiers, and Agents of Cultural Revelation
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Generations born during a 9 Fire Epoch carry the brilliant, intense energy of light at its peak. These are cohorts marked by visibility, emotional charge, and rapid cultural transformation. They are born into eras where truth—whether beautiful or uncomfortable—demands to be seen, and their collective role is to illuminate. As a group, they are expressive, passionate, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_epoch {
             get {
@@ -7481,7 +7485,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Fire Energies tend to have a &lt;strong&gt;magnetic relationship with money&lt;/strong&gt;—they know how to attract it and are often skilled at making it through their charisma, creativity, or entrepreneurial flair. Their ability to inspire and communicate makes them excellent at &lt;strong&gt;sales, promotion, or client-facing work&lt;/strong&gt; where money naturally follows their influence.
+        ///    Fire energies tend to have a &lt;strong&gt;magnetic relationship with money&lt;/strong&gt;—they know how to attract it and are often skilled at making it through their charisma, creativity, or entrepreneurial flair. Their ability to inspire and communicate makes them excellent at &lt;strong&gt;sales, promotion, or client-facing work&lt;/strong&gt; where money naturally follows their influence.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -7553,7 +7557,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellness&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    In Traditional Chinese Medicine, the Fire element governs the &lt;strong&gt;heart and small intestine&lt;/strong&gt;, making these areas particularly important for 9 Fire Energies. They are also more prone to imbalances in the &lt;strong&gt;glandular and circulatory systems&lt;/strong&gt;, especially under stress. When overwhelmed or overstimulated, these Energies may experience symptoms ranging from &lt;strong&gt;nervousness and anxiety&lt;/strong&gt; to digestive upset or circulatory issues.
+        ///    In Traditional Chinese Medicine, the Fire element governs the &lt;strong&gt;heart and small intestine&lt;/strong&gt;, making these areas particularly important for 9 Fire energies. They are also more prone to imbalances in the &lt;strong&gt;glandular and circulatory systems&lt;/strong&gt;, especially under stress. When overwhelmed or overstimulated, these energies may experience symptoms ranging from &lt;strong&gt;nervousness and anxiety&lt;/strong&gt; to digestive upset or circulatory issues.
         ///&lt;/p&gt;
         ///
         ///&lt; [rest of string was truncated]&quot;;.
@@ -7618,7 +7622,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Fire Energies possess a &lt;strong&gt;quick, intuitive, and discerning mind&lt;/strong&gt;. Their thoughts move swiftly, and they often bring &lt;strong&gt;clarity and insight to complex or concealed matters&lt;/strong&gt;. They have a gift for illuminating what lies beneath the surface—naming, classifying, and refining ideas that others may only sense in vague terms.
+        ///    Fire energies possess a &lt;strong&gt;quick, intuitive, and discerning mind&lt;/strong&gt;. Their thoughts move swiftly, and they often bring &lt;strong&gt;clarity and insight to complex or concealed matters&lt;/strong&gt;. They have a gift for illuminating what lies beneath the surface—naming, classifying, and refining ideas that others may only sense in vague terms.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -7652,7 +7656,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire Energies are naturally &lt;strong&gt;sociable, radiant, and expressive&lt;/strong&gt;. They tend to be magnetic presences in any room—warm, charming, and full of life. Their flair for drama, style, and emotional expression makes them highly engaging companions, and they often find themselves surrounded by friends and admirers.
+        ///    Fire energies are naturally &lt;strong&gt;sociable, radiant, and expressive&lt;/strong&gt;. They tend to be magnetic presences in any room—warm, charming, and full of life. Their flair for drama, style, and emotional expression makes them highly engaging companions, and they often find themselves surrounded by friends and admirers.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -7685,7 +7689,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Metal people tend to be pragmatic, critical and clear and generally have a broad perspective and lots of common sense. However, they can also become overly rigid and stuck in one particular point of view. Fire Energies, who benefit from the perspective of the midday sun, often have a clearer, more balanced perspective than Metal Energies, as well as a warm, dynamic quality to them which is particularly good at gently melting and softening the rigidity of Metal people..
+        ///   Looks up a localized string similar to Metal people tend to be pragmatic, critical and clear and generally have a broad perspective and lots of common sense. However, they can also become overly rigid and stuck in one particular point of view. Fire energies, who benefit from the perspective of the midday sun, often have a clearer, more balanced perspective than Metal energies, as well as a warm, dynamic quality to them which is particularly good at gently melting and softening the rigidity of Metal people..
         /// </summary>
         public static string fire_metal {
             get {
@@ -7758,11 +7762,11 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///
         ///&lt;p&gt;
-        ///    Fire Energies bring &lt;strong&gt;passion, warmth, and charisma&lt;/strong&gt; to their relationships. Often among the most romantic of the Nine Star Ki types, they express affection openly and vividly. Their natural expressiveness means their partners are rarely left guessing—9 Fires typically wear their hearts on their sleeves and speak with emotional clarity.
+        ///    Fire energies bring &lt;strong&gt;passion, warmth, and charisma&lt;/strong&gt; to their relationships. Often among the most romantic of the Nine Star Ki types, they express affection openly and vividly. Their natural expressiveness means their partners are rarely left guessing—9 Fires typically wear their hearts on their sleeves and speak with emotional clarity.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Radiant and emotionally attuned, Fire Energies often attract many admirers. Their magnetic charm can lead  [rest of string was truncated]&quot;;.
+        ///    Radiant and emotionally attuned, Fire energies often attract many admirers. Their magnetic charm can lead  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_relationships {
             get {
@@ -7795,7 +7799,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Fire Energies possess a &lt;strong&gt;natural clarity and spiritual discernment&lt;/strong&gt; that allows them to quickly identify what is meaningful and what is merely superficial. Their intuitive insight is strong, and many spiritual truths strike them not as mysteries but as &lt;strong&gt;obvious, self-evident facts&lt;/strong&gt;. They often value &lt;strong&gt;illumination, elegance, and truth-telling&lt;/strong&gt; over mystical abstraction or dogma.
+        ///    Fire energies possess a &lt;strong&gt;natural clarity and spiritual discernment&lt;/strong&gt; that allows them to quickly identify what is meaningful and what is merely superficial. Their intuitive insight is strong, and many spiritual truths strike them not as mysteries but as &lt;strong&gt;obvious, self-evident facts&lt;/strong&gt;. They often value &lt;strong&gt;illumination, elegance, and truth-telling&lt;/strong&gt; over mystical abstraction or dogma.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -7847,7 +7851,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Two Yang lines encapsulating an inner Yin lines. This represents the vanity and brilliance of fire, with a softer inner nature,
         ///    which can manifest as a quietly self-critical and doubting quality. Just as fire needs a constant supply of material to burn, 
-        ///    Fire Energies require the acknowledgment and support of others in order to reach their full expression and potential. 
+        ///    Fire energies require the acknowledgment and support of others in order to reach their full expression and potential. 
         ///&lt;/p&gt;.
         /// </summary>
         public static string fire_trigram {
@@ -7933,10 +7937,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Each of the 9 Energies is associated with 1 of the 5 elements: Water, Tree, Fire, Earth and Metal, which corresponds to a specific point in the cycle
+        ///    Each of the 9 energies is associated with 1 of the 5 elements: Water, Tree, Fire, Earth and Metal, which corresponds to a specific point in the cycle
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Each of the nine Energies are associated with one of the five elements: Water, Tree, Fire, Earth and Metal. Each of the elements is associated with a season, a time of day, as well as a stage in the development from birth to death. A more accurate and helpful description is the &apos;five transformations&apos;, as in essence, &lt;strong&gt;each elem [rest of string was truncated]&quot;;.
+        ///    Each of the nine energies are associated with one of the five elements: Water, Tree, Fire, Earth and Metal. Each of the elements is associated with a season, a time of day, as well as a stage in the development from birth to death. A more accurate and helpful description is the &apos;five transformations&apos;, as in essence, &lt;strong&gt;each elem [rest of string was truncated]&quot;;.
         /// </summary>
         public static string five_elements {
             get {
@@ -8183,7 +8187,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fundamental Elements.
+        ///   Looks up a localized string similar to Solar Elements.
         /// </summary>
         public static string FundamentalElements {
             get {
@@ -8192,7 +8196,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fundamental Elements Analysis.
+        ///   Looks up a localized string similar to Solar Elements Analysis.
         /// </summary>
         public static string FundamentalElementsAnalysis {
             get {
@@ -8201,7 +8205,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fundamental Energies Compatibility.
+        ///   Looks up a localized string similar to Solar Energies Compatibility.
         /// </summary>
         public static string FundamentalEnergiesCompatibility {
             get {
@@ -8568,7 +8572,7 @@ namespace K9.Globalisation {
         ///    6 Metal Period — Authority, Order, and Structural Realignment
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A 6 Metal period brings a sharp shift into a time of discipline, consolidation, and moral focus. This is the early autumn of the global cycle—a phase when the world seeks clarity, structure, and a return to order. There is often a collective push to restore boundaries, define laws, and reinforce systems that were tested or broken in the previous period. The energy becomes more yang, more strategic, and more [rest of string was truncated]&quot;;.
+        ///    A 6 Metal period brings a sharp shift into a time of discipline, consolidation, and moral focus. This is the early autumn of the global cycle—a phase when the world seeks clarity, structure, and a return to order. There is often a collective push to restore boundaries, define laws, and reinforce systems that were tested or broken in the previous period. The energy becomes more Yang, more strategic, and more [rest of string was truncated]&quot;;.
         /// </summary>
         public static string global_heaven_generation_cycle {
             get {
@@ -9289,7 +9293,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Heaven Energies are natural leaders—strategic, reliable, and highly capable under pressure. With strong willpower and a deep sense of purpose, 6 Metal individuals often rise to positions of authority in business, education, the military, or government. They thrive in structured environments that demand focus, order, and long-term vision.
+        ///    Heaven energies are natural leaders—strategic, reliable, and highly capable under pressure. With strong willpower and a deep sense of purpose, 6 Metal individuals often rise to positions of authority in business, education, the military, or government. They thrive in structured environments that demand focus, order, and long-term vision.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -9370,9 +9374,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Heaven Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Heaven energies&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Heaven Energies embody the full expression of Yang—structured, principled, and driven by a powerful sense of duty. 6 Metal individuals are often seen as natural leaders, grounded in clarity, discipline, and moral conviction. Whether in politics, military, business, education, or the arts, they frequently rise to positions of authority through steady commitment and strength of character.
+        ///    Heaven energies embody the full expression of Yang—structured, principled, and driven by a powerful sense of duty. 6 Metal individuals are often seen as natural leaders, grounded in clarity, discipline, and moral conviction. Whether in politics, military, business, education, or the arts, they frequently rise to positions of authority through steady commitment and strength of character.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -9385,7 +9389,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Heaven Energies&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Heaven energies&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -9423,7 +9427,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The emotional life of Heaven Energies is characterized by strength, endurance, and unwavering loyalty. 6 Metal individuals often carry a powerful emotional presence that inspires confidence in those around them. They are steady and emotionally grounded, able to hold space for others during times of stress or instability. Their emotions, like their nature, tend to be deep and lasting, with a strong emphasis on commitment and responsibility.
+        ///    The emotional life of Heaven energies is characterized by strength, endurance, and unwavering loyalty. 6 Metal individuals often carry a powerful emotional presence that inspires confidence in those around them. They are steady and emotionally grounded, able to hold space for others during times of stress or instability. Their emotions, like their nature, tend to be deep and lasting, with a strong emphasis on commitment and responsibility.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -9484,7 +9488,7 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Heaven Energies value security, consistency, and self-reliance. They are not impulsive spenders  [rest of string was truncated]&quot;;.
+        ///    Heaven energies value security, consistency, and self-reliance. They are not impulsive spenders  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_finances {
             get {
@@ -9543,7 +9547,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellness&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Heaven Energies are typically blessed with a strong constitution and considerable physical endurance. However, as representatives of the Yang Metal element, they must take particular care of the lungs, which are their most vulnerable organ. Maintaining lung health is critical to their overall wellbeing, making it essential to avoid smoking and environmental pollutants, and to engage in regular cardiovascular activity that supports healthy respiration.
+        ///    Heaven energies are typically blessed with a strong constitution and considerable physical endurance. However, as representatives of the Yang Metal element, they must take particular care of the lungs, which are their most vulnerable organ. Maintaining lung health is critical to their overall wellbeing, making it essential to avoid smoking and environmental pollutants, and to engage in regular cardiovascular activity that supports healthy respiration.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -9605,7 +9609,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Heaven Energies possess a sharp, analytical intellect and a highly structured, logical approach to understanding the world. Their thinking is precise, methodical, and rooted in clarity and practicality. They are often gifted in technical or mechanical fields, able to break down complex systems and understand how things function on both a conceptual and operational level.
+        ///    Heaven energies possess a sharp, analytical intellect and a highly structured, logical approach to understanding the world. Their thinking is precise, methodical, and rooted in clarity and practicality. They are often gifted in technical or mechanical fields, able to break down complex systems and understand how things function on both a conceptual and operational level.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -9640,7 +9644,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Heaven Energies naturally radiate dignity, composure, and quiet authority. They tend to carry themselves with a sense of inner strength and purpose that often sets them apart in social settings. Others frequently perceive them as distinguished, principled, and respectable—people who command attention not through loudness, but through presence.
+        ///    Heaven energies naturally radiate dignity, composure, and quiet authority. They tend to carry themselves with a sense of inner strength and purpose that often sets them apart in social settings. Others frequently perceive them as distinguished, principled, and respectable—people who command attention not through loudness, but through presence.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -9855,7 +9859,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    In this trigram, three Yang lines can be seen, representing the full force of Heaven Energy. This brings consistency, strength and boldness.
-        ///    These Energies are direct, straightforward and clear in their views and intentions.
+        ///    These energies are direct, straightforward and clear in their views and intentions.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    As there is no Yin in this Energy, it may become imbalanced
@@ -10871,7 +10875,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    7 Metal Energies embody the spirit of “work hard, play hard.” They often bring flair, efficiency, and grace to their professional lives—delivering results with a touch of elegance. With a natural sense for quality and refinement, they’re well-suited to careers that require discernment, communication, and style.
+        ///    7 Metal energies embody the spirit of “work hard, play hard.” They often bring flair, efficiency, and grace to their professional lives—delivering results with a touch of elegance. With a natural sense for quality and refinement, they’re well-suited to careers that require discernment, communication, and style.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -10950,9 +10954,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Lake Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Lake energies&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Lake Energies embody the qualities of late autumn—a season of celebration, reflection, and joyful release. These individuals are often bright, charming, and emotionally expressive, carrying with them a natural appreciation for beauty, comfort, and connection. Of all the Nine Star Ki types, 7 Metal people are perhaps the most socially graceful, stylish, and attuned to the pleasures of life.
+        ///    Lake energies embody the qualities of late autumn—a season of celebration, reflection, and joyful release. These individuals are often bright, charming, and emotionally expressive, carrying with them a natural appreciation for beauty, comfort, and connection. Of all the Nine Star Ki types, 7 Metal people are perhaps the most socially graceful, stylish, and attuned to the pleasures of life.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -10965,7 +10969,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Lake Energies&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Lake energies&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -10999,11 +11003,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    At their best, Lake Energies are radiant with joy, laughter, and a sense of celebration. They bring a lightness of spirit that can lift the mood of an entire room, often embodying mirth, playfulness, and hopeful anticipation. Their emotional expression is vibrant and contagious, making them beloved companions, especially among children and those who appreciate spontaneity and warmth.
+        ///    At their best, Lake energies are radiant with joy, laughter, and a sense of celebration. They bring a lightness of spirit that can lift the mood of an entire room, often embodying mirth, playfulness, and hopeful anticipation. Their emotional expression is vibrant and contagious, making them beloved companions, especially among children and those who appreciate spontaneity and warmth.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Lake Energies often carry a nostalgic or romantic attachment to the past, with strong emotional ti [rest of string was truncated]&quot;;.
+        ///    Lake energies often carry a nostalgic or romantic attachment to the past, with strong emotional ti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_emotional_landscape {
             get {
@@ -11032,7 +11036,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Generations Born in the 7 Metal Epoch — The Stylists, Harmonizers, and Keepers of Emotional Grace
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Generations born during a 7 Metal Epoch tend to bring a collective energy of refinement, beauty, and emotional nuance. They emerge during periods of relative comfort or stabilization—times when society begins to enjoy the fruits of earlier struggles, but also risks becoming complacent. As a group, these generations carry an awareness of both pleasure and loss, and their o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_epoch {
             get {
@@ -11052,7 +11060,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    7 Metal Energies generally have a natural flair for handling money. With their keen sense of value, style, and enjoyment, they know how to spend wisely—especially on things that enhance quality of life. Whether it’s fashion, fine dining, décor, or entertainment, they tend to invest in experiences and aesthetics that bring them joy.
+        ///    7 Metal energies generally have a natural flair for handling money. With their keen sense of value, style, and enjoyment, they know how to spend wisely—especially on things that enhance quality of life. Whether it’s fashion, fine dining, décor, or entertainment, they tend to invest in experiences and aesthetics that bring them joy.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -11118,7 +11126,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellness&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    As a reflection of the Metal element, 7 Metal Energies are closely linked to the lungs, large intestine, and skin. These areas are often the most sensitive and require regular care and attention. Emotional states, dietary habits, and lifestyle patterns all strongly affect their overall wellbeing.
+        ///    As a reflection of the Metal element, 7 Metal energies are closely linked to the lungs, large intestine, and skin. These areas are often the most sensitive and require regular care and attention. Emotional states, dietary habits, and lifestyle patterns all strongly affect their overall wellbeing.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -11182,7 +11190,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Lake Energies possess a light, agile intellect that blends humour, insight, and subtlety. They are often witty, clever, and deeply observant—able to read between the lines and respond with grace and impeccable timing. Their intelligence is not always showy, but it is sharp, intuitive, and attuned to the emotional undercurrents of a conversation or environment.
+        ///    Lake energies possess a light, agile intellect that blends humour, insight, and subtlety. They are often witty, clever, and deeply observant—able to read between the lines and respond with grace and impeccable timing. Their intelligence is not always showy, but it is sharp, intuitive, and attuned to the emotional undercurrents of a conversation or environment.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -11215,7 +11223,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;Lake Energies are some of the most charming and socially graceful individuals in the Nine Star Ki system. They radiate warmth, optimism, and approachability, often lighting up any room they enter. Naturally expressive and eloquent, they know how to speak with grace, humour, and impeccable timing—making them captivating conversationalists and magnetic public speakers.
+        ///   Looks up a localized string similar to &lt;p&gt;Lake energies are some of the most charming and socially graceful individuals in the Nine Star Ki system. They radiate warmth, optimism, and approachability, often lighting up any room they enter. Naturally expressive and eloquent, they know how to speak with grace, humour, and impeccable timing—making them captivating conversationalists and magnetic public speakers.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -11309,11 +11317,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    7 Metal Energies often bring a unique blend of charm, ease, and emotional receptivity into their relationships. Naturally flirtatious and sensuous, they are magnetic to others and tend to attract admirers without much effort. Their social grace, aesthetic awareness, and joyful presence make them delightful partners—fun-loving, attentive, and emotionally responsive.
+        ///    7 Metal energies often bring a unique blend of charm, ease, and emotional receptivity into their relationships. Naturally flirtatious and sensuous, they are magnetic to others and tend to attract admirers without much effort. Their social grace, aesthetic awareness, and joyful presence make them delightful partners—fun-loving, attentive, and emotionally responsive.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Rooted in the element of autumn, Lake Energies reflect a time of enjoyment and maturity. Many [rest of string was truncated]&quot;;.
+        ///    Rooted in the element of autumn, Lake energies reflect a time of enjoyment and maturity. Many [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_relationships {
             get {
@@ -11345,7 +11353,7 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Lake Energies tend to be drawn to spiritual practices that engage the senses—such as music, movement, ritual, and sacred space. The [rest of string was truncated]&quot;;.
+        ///    Lake energies tend to be drawn to spiritual practices that engage the senses—such as music, movement, ritual, and sacred space. The [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_spirituality {
             get {
@@ -11816,10 +11824,10 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Water&quot;. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for an extremely deep and intuitive connection between these two people. 
+        ///    Both people share the same Solar Energy &quot;Water&quot;. Water is perhaps the most intuitive and empathetic of the 9 energies and so there is a potential for an extremely deep and intuitive connection between these two people. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water Energy is naturally flexible, easy-going and generally non-confrontatio [rest of string was truncated]&quot;;.
+        ///    Water Energy is naturally flexible, easy-going and generally non-confrontational, s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_11 {
             get {
@@ -11829,7 +11837,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///    This is potentially quite a challenging combination, as the Fundamental energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -11886,7 +11894,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially quite a tricky combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} controlling {Person1}. There is also potential for very good relationship chemistry and for a lot of growth.
+        ///    This is potentially quite a tricky combination, as the Fundamental energies are in a Challenging Transformation, with {Person2} controlling {Person1}. There is also potential for very good relationship chemistry and for a lot of growth.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -11903,7 +11911,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially a very harmonious and complementary combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for reasonable chemistry and for quite a bit of growth. Conflict is less likely in this combination.
+        ///    This is potentially a very harmonious and complementary combination, as the Fundamental energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for reasonable chemistry and for quite a bit of growth. Conflict is less likely in this combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -11920,7 +11928,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially a very harmonious and exciting combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good chemistry and for quite a bit of growth. Conflict is far less likely in this combination.
+        ///    This is potentially a very harmonious and exciting combination, as the Fundamental energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good chemistry and for quite a bit of growth. Conflict is far less likely in this combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -11937,7 +11945,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially a very challenging combination indeed. The Fundamental Energies are in a Challenging Transformation, with {Person2} controlling {Person1}. Whilst there is potential for good chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
+        ///    This is potentially a very challenging combination indeed. The Fundamental energies are in a Challenging Transformation, with {Person2} controlling {Person1}. Whilst there is potential for good chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -11954,7 +11962,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially a very challenging combination. The Fundamental Energies are in a Challenging Transformation, with {Person1} controlling {Person2}. Whilst there is potential for good chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
+        ///    This is potentially a very challenging combination. The Fundamental energies are in a Challenging Transformation, with {Person1} controlling {Person2}. Whilst there is potential for good chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -11978,10 +11986,10 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Soil&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
+        ///    Both people share the same Solar Energy &quot;Soil&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    There [rest of string was truncated]&quot;;.
+        ///    There is a  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_22 {
             get {
@@ -11991,7 +11999,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///    This is potentially quite a challenging combination, as the Fundamental energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -12008,7 +12016,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///    This is potentially quite a challenging combination, as the Fundamental energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -12045,7 +12053,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially a very harmonious and complementary combination. Soil and Heaven Energies represent the &quot;Mother&quot; and &quot;Father&quot; archetype, with the former being all Yin and the latter all Yang. This is a very strong combination.
+        ///    This is potentially a very harmonious and complementary combination. Soil and Heaven energies represent the &quot;Mother&quot; and &quot;Father&quot; archetype, with the former being all Yin and the latter all Yang. This is a very strong combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -12117,7 +12125,7 @@ namespace K9.Globalisation {
         ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to greater harmony and mutual understanding.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Soil Energy. Soil Energies are typically stable, reliable, supportive and practical.        /// [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} is a Soil Energy. Soil energies are typically stable, reliable, supportive and practical.        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_29 {
             get {
@@ -12134,7 +12142,7 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Thunder&quot;. Thunder Energies typically really enjoy talking to and spending time with other Thunder Energies. One of the reasons for this is that they often find that other Thunders are the only people who can truly keep up! As the other Energies in the 9 Star Ki system sometimes find Thunder [rest of string was truncated]&quot;;.
+        ///    Both people share the same Solar Energy &quot;Thunder&quot;. Thunder energies typically really enjoy talking to and spending time with other Thunder energies. One of the reasons for this is that they often find that other Thunders are the only people who can truly keep up! As the other energies in the 9 Star Ki system sometimes find Thunder energ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_33 {
             get {
@@ -12151,7 +12159,7 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Element &quot;Tree&quot;. Tree Energies typically really enjoy talking to and spending time with other Tree Energies. One of the reasons for this is that they often find that Trees are the only people who can truly keep up! The conversation between Tree Energies is often very dynamic, moving quickly from idea to idea. T [rest of string was truncated]&quot;;.
+        ///    Both people share the same Element &quot;Tree&quot;. Tree energies typically really enjoy talking to and spending time with other Tree energies. One of the reasons for this is that they often find that Trees are the only people who can truly keep up! The conversation between Tree energies is often very dynamic, moving quickly from idea to idea. T [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_34 {
             get {
@@ -12251,7 +12259,7 @@ namespace K9.Globalisation {
         ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Both 3 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can often lead to an exciting, [rest of string was truncated]&quot;;.
+        ///    Both 3 Tree and Fire energies can be very energetic, changeable and even impulsive at times. This can often lead to an exciting, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_39 {
             get {
@@ -12268,10 +12276,10 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Wind&quot;. Wind Energies often enjoy each other&apos;s company as they are quite talkative by nature, but are equally receptive and good listeners. This tends to create very enjoyable conversation.
+        ///    Both people share the same Solar Energy &quot;Wind&quot;. Wind energies often enjoy each other&apos;s company as they are quite talkative by nature, but are equally receptive and good listeners. This tends to create very enjoyable conversation.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Both people are full of energy and spontaneity and are likely to enjoy lots of differe [rest of string was truncated]&quot;;.
+        ///    Both people are full of energy and spontaneity and are likely to enjoy lots of different act [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_44 {
             get {
@@ -12371,7 +12379,7 @@ namespace K9.Globalisation {
         ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Both 4 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can work very well, lead [rest of string was truncated]&quot;;.
+        ///    Both 4 Tree and Fire energies can be very energetic, changeable and even impulsive at times. This can work very well, lead [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_49 {
             get {
@@ -12411,7 +12419,7 @@ namespace K9.Globalisation {
         ///    {Person1Proper} and {Person2} are in a Supportive Transformation, which typically results in little conflict and a much deeper sense of harmony and mutual respect.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Both 6 Metal Energies and Core Earths are quite grounded and reliable. In addition, both Energies usually have a strong [rest of string was truncated]&quot;;.
+        ///    Both 6 Metal energies and Core Earths are quite grounded and reliable. In addition, both energies usually have a strong [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_56 {
             get {
@@ -12471,7 +12479,7 @@ namespace K9.Globalisation {
         ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to greater harmony and mutual understanding.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Core Earth Energy. Core Earth Energies are typically stable, reliable, supportive and practical.
+        ///    {Person1Proper} is a Core Earth Energy. Core Earth energies are typically stable, reliable, supportive and practical.
         ///
         ///   [rest of string was truncated]&quot;;.
         /// </summary>
@@ -12510,10 +12518,10 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Heaven Energies and is typically authoritative, straightforward and direct. {Person2Proper} is a Lake Energy and is generally far more laid-back and flexible and more able to accomodate the potentially bolder and more dominant nature of {Person2}.
+        ///    {Person1Proper} is a Heaven energies and is typically authoritative, straightforward and direct. {Person2Proper} is a Lake Energy and is generally far more laid-back and flexible and more able to accomodate the potentially bolder and more dominant nature of {Person2}.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Heaven Energies are typically quite moral and noble. Lake Energies also [rest of string was truncated]&quot;;.
+        ///    Heaven energies are typically quite moral and noble. Lake energies also [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_67 {
             get {
@@ -12570,7 +12578,7 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people are Lake Energies and as such are naturally laid-back and enjoy many of the same kinds of activities and interests and are fun-loving. This is a recipe for a very enjoyable friendship!
+        ///    Both people are Lake energies and as such are naturally laid-back and enjoy many of the same kinds of activities and interests and are fun-loving. This is a recipe for a very enjoyable friendship!
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Both people have a great sense of optimism and are both great communicators and listeners. This typically  [rest of string was truncated]&quot;;.
@@ -12630,10 +12638,10 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Mountain&quot;. Both people are stable, steady and reliable who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
+        ///    Both people share the same Solar Energy &quot;Mountain&quot;. Both people are stable, steady and reliable who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    There is [rest of string was truncated]&quot;;.
+        ///    There is a pot [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_88 {
             get {
@@ -12653,7 +12661,7 @@ namespace K9.Globalisation {
         ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to greater harmony and mutual understanding.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Mountain Energy. Mountain Energies are  [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} is a Mountain Energy. Mountain energies are  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_89 {
             get {
@@ -12670,7 +12678,7 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    As both people are Fire Energies, they share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a strong potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfortable i [rest of string was truncated]&quot;;.
+        ///    As both people are Fire energies, they share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a strong potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfortable i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_99 {
             get {
@@ -12702,7 +12710,7 @@ namespace K9.Globalisation {
         ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    The Fundamental Energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; with an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;mutual  [rest of string was truncated]&quot;;.
+        ///    The Fundamental energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; with an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;mutual  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_same {
             get {
@@ -12718,7 +12726,7 @@ namespace K9.Globalisation {
         ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-supportive.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    The Fundamental Energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. On the surface, it may appear that it is more of a one-way street. However, in reality, &lt;strong&gt;it does work both w [rest of string was truncated]&quot;;.
+        ///    The Fundamental energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. On the surface, it may appear that it is more of a one-way street. However, in reality, &lt;strong&gt;it does work both w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_supportive {
             get {
@@ -12728,10 +12736,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The Fundamental Energy description alone is not very granular and only describes one aspect of the chart.
+        ///    The Solar Energy description alone only describes one aspect of the chart.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Please note that the &apos;Fundamental Energy&apos; alone does not give a very granular description of a person. The &apos;Emotional Ki&apos;, as well as the &apos;Mirror Ki&apos; play a significant role in shaping a person&apos;s character traits. However, the Fundamental Energy does give a very useful overview. Also, of the three components of a personal chart, the Fundamental Energy has the most significant  [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Solar Energy&apos; alone does not give a very granular description of a person. The &apos;Emotional Ki&apos;, as well as the &apos;Mirror Ki&apos; play a significant role in shaping a person&apos;s character traits. However, the Solar Energy does give a very useful overview. Also, of the three components of a personal chart, the Solar Energy has the most significant influence on a person&apos;s nature and is especially  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_energies_short_description {
             get {
@@ -12741,10 +12749,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental Energies - Yin / Yang
+        ///    Fundamental energies - Yin / Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Th Fundamental Energies consist of one Yin and one Yang Energy. This typically leads to &lt;strong&gt;greater complementarity&lt;/strong&gt; and can lead to greater harmony. However, this combination also carries a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;, especially if the elements are in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;.
+        ///    Th Fundamental energies consist of one Yin and one Yang Energy. This typically leads to &lt;strong&gt;greater complementarity&lt;/strong&gt; and can lead to greater harmony. However, this combination also carries a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;, especially if the elements are in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string main_gender_opposite {
@@ -12755,13 +12763,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental Energies - Both Yang
+        ///    Fundamental energies - Both Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of conflict&lt;/strong&gt; as two Yang Energies may clash at times.
+        ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of conflict&lt;/strong&gt; as two Yang energies may clash at times.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Sometimes in a Yang / Yang combination, there isn&apos;t enough mystery to maintain the magic and so the chemistry can start to fizzle out. This is less of an issue if the Character Energies are in a Yin / Yang combination or if either the Fundamen [rest of string was truncated]&quot;;.
+        ///    Sometimes in a Yang / Yang combination, there isn&apos;t enough mystery to maintain the magic and so the chemistry can start to fizzle out. This is less of an issue if the Character energies are in a Yin / Yang combination or if either the Fundamen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_gender_same_yang {
             get {
@@ -12771,13 +12779,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental Energies - Both Yin
+        ///    Fundamental energies - Both Yin
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of stagnation&lt;/strong&gt; or &lt;strong&gt;hidden resentments&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Sometimes in a Yin / Yin combination, there isn&apos;t enough engagement to maintain a strong connection and so the relationship can start to fizzle out. This is less of an issue if the Character Energies are in a Yin / Yang combination or if eithe [rest of string was truncated]&quot;;.
+        ///    Sometimes in a Yin / Yin combination, there isn&apos;t enough engagement to maintain a strong connection and so the relationship can start to fizzle out. This is less of an issue if the Character energies are in a Yin / Yang combination or if eithe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_gender_same_yin {
             get {
@@ -12787,7 +12795,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental Energies - Different Modality
+        ///    Fundamental energies - Different Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater complementarity between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;.
@@ -12801,7 +12809,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental Energies - Same Modality
+        ///    Fundamental energies - Same Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of conflict&lt;/strong&gt; as they may clash at times.
@@ -12814,7 +12822,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fundamental Nature.
+        ///   Looks up a localized string similar to Solar Nature.
         /// </summary>
         public static string MainChildLabel {
             get {
@@ -12823,7 +12831,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fundamental Nature.
+        ///   Looks up a localized string similar to Solar Nature.
         /// </summary>
         public static string MainEnergy {
             get {
@@ -12845,7 +12853,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fundamental Nature.
+        ///   Looks up a localized string similar to Solar Nature.
         /// </summary>
         public static string MainEnergyLabel {
             get {
@@ -12854,7 +12862,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fundamental Nature.
+        ///   Looks up a localized string similar to Solar Nature.
         /// </summary>
         public static string MainEnergyShortLabel {
             get {
@@ -13143,7 +13151,7 @@ namespace K9.Globalisation {
         ///    9 Star Ki has 3 groups or &apos;Modalities&apos;, similar to those of the Zodiac and of Chinese Astrology
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The nine Energies in the 9 Star Ki system, as well as being grouped by Yin or Yang and by the five elements, can also be split into three groups or &apos;Modalities&apos;. This is very similar to the modalities described in the Zodiac and the three groups of Chinese Astrology. It is another simple yet useful &apos;map&apos; that can be used to understand people&apos;s fundamental nature.
+        ///    The nine energies in the 9 Star Ki system, as well as being grouped by Yin or Yang and by the five elements, can also be split into three groups or &apos;Modalities&apos;. This is very similar to the modalities described in the Zodiac and the three groups of Chinese Astrology. It is another simple yet useful &apos;map&apos; that can be used to understand people&apos;s fundamental nature.
         ///&lt;/p&gt;.
         /// </summary>
         public static string modalities_description {
@@ -13394,7 +13402,7 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Mountain Energies excel in service-oriented  [rest of string was truncated]&quot;;.
+        ///    Mountain energies excel in service-oriented  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_career {
             get {
@@ -13468,7 +13476,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Mountain Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Mountain energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    8 Earth—known as Mountain Energy—embodies the qualities of stillness, stability, and enduring strength. As the most Yang expression of the Earth element, Mountain types move slowly, methodically, and with great intention. Like a real mountain, their strength is not flashy but rooted and immovable. They have a quiet presence that communicates dependability, self-reliance, and unwavering focus.
         ///&lt;/p&gt;
@@ -13483,7 +13491,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Mountain Energies&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Mountain energies&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -13504,7 +13512,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the Energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
+        ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    The Mountain is a good description of this character, with its &lt;strong&gt;hard exterior protecting a much softer underbelly&lt;/strong&gt;, which is usually only revealed once people get to k [rest of string was truncated]&quot;;.
@@ -13517,11 +13525,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Emotionally, Mountain Energies reflect the qualities of their namesake—still, solid, and quietly profound. They have a natural emotional depth that is not easily disturbed by external events, and they tend to process feelings inwardly, in their own time and space. Solitude is essential for their wellbeing, and they often retreat into their metaphorical “cave” to rest, reflect, and reset.
+        ///    Emotionally, Mountain energies reflect the qualities of their namesake—still, solid, and quietly profound. They have a natural emotional depth that is not easily disturbed by external events, and they tend to process feelings inwardly, in their own time and space. Solitude is essential for their wellbeing, and they often retreat into their metaphorical “cave” to rest, reflect, and reset.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    This stillness brings emotional strength, endurance, and reliability. Mountain Energies rarely [rest of string was truncated]&quot;;.
+        ///    This stillness brings emotional strength, endurance, and reliability. Mountain energies rarely [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_emotional_landscape {
             get {
@@ -13550,7 +13558,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Generations Born in the 8 Earth Epoch — The Witnesses, Preservers, and Architects of Inner Strength
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Generations born during an 8 Earth Epoch carry the deep, still energy of the mountain—firm, introspective, and enduring. These cohorts emerge during times of energetic consolidation, when momentum slows and society turns inward to evaluate, conserve, and protect. As a group, they tend to be more private, contemplative, and measured than the generations that came before. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_epoch {
             get {
@@ -13570,7 +13582,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Mountain Energies tend to be fortunate when it comes to finances. Whether through &lt;strong&gt;steady effort, long-term investments, or family legacies&lt;/strong&gt;, they often accumulate wealth gradually—and sometimes significantly—over the course of their lives. Many 8 Earth individuals benefit from an inheritance or other material support that adds to their natural ability to build and preserve wealth.
+        ///    Mountain energies tend to be fortunate when it comes to finances. Whether through &lt;strong&gt;steady effort, long-term investments, or family legacies&lt;/strong&gt;, they often accumulate wealth gradually—and sometimes significantly—over the course of their lives. Many 8 Earth individuals benefit from an inheritance or other material support that adds to their natural ability to build and preserve wealth.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -13632,7 +13644,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Health&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Mountain Energies tend to be physically solid and energetically dense—often carrying strength and resilience in both body and constitution. Regardless of appearance, there is a heaviness or gravity to their presence that makes them grounded and enduring. However, this same stability can become a liability if it turns into stagnation or immobility.
+        ///    Mountain energies tend to be physically solid and energetically dense—often carrying strength and resilience in both body and constitution. Regardless of appearance, there is a heaviness or gravity to their presence that makes them grounded and enduring. However, this same stability can become a liability if it turns into stagnation or immobility.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -13699,7 +13711,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Mountain Energies possess a quiet, inward-facing intellect rooted in thoughtfulness, reflection, and depth. They are introspective and deliberate thinkers who prefer to observe, analyze, and understand before speaking or acting. Their ideas are carefully considered, often the product of deep contemplation rather than spontaneous inspiration.
+        ///    Mountain energies possess a quiet, inward-facing intellect rooted in thoughtfulness, reflection, and depth. They are introspective and deliberate thinkers who prefer to observe, analyze, and understand before speaking or acting. Their ideas are carefully considered, often the product of deep contemplation rather than spontaneous inspiration.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -13734,7 +13746,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Mountain Energies often embody the archetype of the “strong, silent type.” Calm, dependable, and emotionally composed, they bring a stabilizing presence into social environments. They are not typically expressive or flamboyant, but they communicate a quiet confidence that others instinctively trust.
+        ///    Mountain energies often embody the archetype of the “strong, silent type.” Calm, dependable, and emotionally composed, they bring a stabilizing presence into social environments. They are not typically expressive or flamboyant, but they communicate a quiet confidence that others instinctively trust.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -13838,7 +13850,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;h4&gt;Relationships&lt;/h4&gt;
         ///
         ///&lt;p&gt;
-        ///    Mountain Energies bring a quiet strength and depth to their relationships. Often seen as calm and dependable, they tend to form strong emotional bonds that are grounded more in loyalty and presence than overt displays of passion. While not typically expressive or flirtatious, they are capable of deep intimacy once trust is established.
+        ///    Mountain energies bring a quiet strength and depth to their relationships. Often seen as calm and dependable, they tend to form strong emotional bonds that are grounded more in loyalty and presence than overt displays of passion. While not typically expressive or flirtatious, they are capable of deep intimacy once trust is established.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -13875,7 +13887,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Mountain Energies have a natural affinity for stillness and contemplation. Their quiet strength and reflective nature make them particularly well-suited to &lt;strong&gt;simple, grounded spiritual practices&lt;/strong&gt; that are steady, nourishing, and rooted in daily life. Unlike more expressive or dramatic energies, 8 Earth individuals often connect with the spiritual through &lt;strong&gt;consistency, solitude, and silence&lt;/strong&gt;.
+        ///    Mountain energies have a natural affinity for stillness and contemplation. Their quiet strength and reflective nature make them particularly well-suited to &lt;strong&gt;simple, grounded spiritual practices&lt;/strong&gt; that are steady, nourishing, and rooted in daily life. Unlike more expressive or dramatic energies, 8 Earth individuals often connect with the spiritual through &lt;strong&gt;consistency, solitude, and silence&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -14169,7 +14181,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 9 Character Energies.
+        ///   Looks up a localized string similar to The 9 Lunar Energies.
         /// </summary>
         public static string NineCharacterEnergiesTitle {
             get {
@@ -14187,7 +14199,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 9 Main Energies.
+        ///   Looks up a localized string similar to The 9 Solar Energies.
         /// </summary>
         public static string NineMainEnergiesTitle {
             get {
@@ -14875,10 +14887,10 @@ namespace K9.Globalisation {
         ///    The main part of the 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9. For example: &lt;strong&gt;&quot;3.1.7&quot;&lt;/strong&gt;. 
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    First Number - Fundamental Energy
+        ///    First Number - Solar Energy
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The first number is &lt;strong&gt;determined by the year we were born&lt;/strong&gt; and corresponds to our &lt;strong&gt;fundamental nature&lt;/strong&gt;; the lens through which we view the world and the way we make sense of reality. It is also the Energy &lt;strong&gt;that holds the strongest influence as we reach adulthood&lt;/ [rest of string was truncated]&quot;;.
+        ///    The first number is &lt;strong&gt;determined by the year we were born&lt;/strong&gt; and corresponds to our &lt;strong&gt;fundamental nature&lt;/strong&gt;; the lens through which we view the world and the way we make sense of reality. It is also the Energy &lt;strong&gt;that holds the strongest influence as we reach adulthood&lt;/strong [rest of string was truncated]&quot;;.
         /// </summary>
         public static string personal_chart {
             get {
@@ -15840,10 +15852,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Reflective Energies are easy-going, patient, and empathetic, with a broad perspective and balanced view of the world. They are generally more introverted and sometimes unpredictable.
+        ///    Reflective energies are easy-going, patient, and empathetic, with a broad perspective and balanced view of the world. They are generally more introverted and sometimes unpredictable.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Energies {water}, {wind}, and {lake} are classified as &apos;Reflective&apos;. They tend to be easy-going and have a &apos;go with the flow&apos; kind of attitude to life, often happy to adapt to those around them. This group is similar to the Mutable Modality of the Zodiac and the &apos;Thinking Group&apos; of Chinese Astrology,  [rest of string was truncated]&quot;;.
+        ///    energies {water}, {wind}, and {lake} are classified as &apos;Reflective&apos;. They tend to be easy-going and have a &apos;go with the flow&apos; kind of attitude to life, often happy to adapt to those around them. This group is similar to the Mutable Modality of the Zodiac and the &apos;Thinking Group&apos; of Chinese Astrology,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string reflective_modality {
             get {
@@ -16546,7 +16558,7 @@ namespace K9.Globalisation {
         ///    Practically Nonexistent
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is &lt;strong&gt;extremely unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. Almost all of the energetic aspects of this relationship are identical for both the Fundamental and Character Energies, resulting in very little magnetism. This type of connection is far &lt;strong&gt;more likely to be a deep and long-lasting friends [rest of string was truncated]&quot;;.
+        ///    It is &lt;strong&gt;extremely unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. Almost all of the energetic aspects of this relationship are identical for both the Solar and Lunar Energies, resulting in very little magnetism. This type of connection is far &lt;strong&gt;more likely to be a deep and long-lasting friendship&lt;/stron [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_nonexistant {
             get {
@@ -16559,7 +16571,7 @@ namespace K9.Globalisation {
         ///    Off The Charts
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The &lt;strong&gt;sexuality chemistry between these two individuals is potentially off the charts&lt;/strong&gt;. The forces and elements governing this combination are all opposing one another, both between the Fundamental and Character Energies, creating an &lt;strong&gt;extremely strong magnetic attraction&lt;/strong&gt;. This can be a truly &lt;strong&gt;explosive combination&lt;/strong&gt;, but it could be &lt;strong&gt;too hot to handle&lt;/strong&gt;!
+        ///    The &lt;strong&gt;sexuality chemistry between these two individuals is potentially off the charts&lt;/strong&gt;. The forces and elements governing this combination are all opposing one another, both between the Solar and Lunar Energies, creating an &lt;strong&gt;extremely strong magnetic attraction&lt;/strong&gt;. This can be a truly &lt;strong&gt;explosive combination&lt;/strong&gt;, but it could be &lt;strong&gt;too hot to handle&lt;/strong&gt;!
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_off_the_charts {
@@ -16587,7 +16599,7 @@ namespace K9.Globalisation {
         ///    Very Low
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is highly &lt;strong&gt;unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, &lt;strong&gt;it is likely to be short-lived&lt;/strong&gt;. This has the &lt;strong&gt;potential to be a very harmonious combination&lt;/strong&gt; which many of the energetic elements are the same for both the Fundamental and Character Energies, which results in &lt;strong&gt;little to any magnetism&lt;/strong&gt;. This type of connection is far more likely to be a &lt;strong&gt; [rest of string was truncated]&quot;;.
+        ///    It is highly &lt;strong&gt;unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, &lt;strong&gt;it is likely to be short-lived&lt;/strong&gt;. This has the &lt;strong&gt;potential to be a very harmonious combination&lt;/strong&gt; which many of the energetic elements are the same for both the Solar and Lunar Energies, which results in &lt;strong&gt;little to any magnetism&lt;/strong&gt;. This type of connection is far more likely to be a &lt;strong&gt;deep and l [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_verylow {
             get {
@@ -16666,15 +16678,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Character Energies are Yin and therefore in line with gender
+        ///    Both Solar and Lunar Energies are Yin and therefore in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    As both the Character and Fundamental Energies are in line with gender, women with this combination tend to find it easier to be fully at ease with their sexuality.
+        ///    As both the Lunar and Solar Energies are in line with gender, women with this combination tend to find it easier to be fully at ease with their sexuality.
         ///
-        ///    This combination is essentially &quot;all female&quot; and can therefore give rise to all the traditionally accepte [rest of string was truncated]&quot;;.
+        ///    This combination is essentially &quot;all female&quot; and can therefore give rise to all the traditionally accepted feminine traits, s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_match_female {
             get {
@@ -16684,15 +16696,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Character Energies are Yang and therefore in line with gender
+        ///    Both Solar and Lunar Energies are Yang and therefore in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    As both the Character and Fundamental Energies are in line with gender, men with this combination tend to find it easier to be fully at ease with their sexuality.
+        ///    As both the Lunar and Solar Energies are in line with gender, men with this combination tend to find it easier to be fully at ease with their sexuality.
         ///
-        ///    This combination is essentially &quot;all male&quot; and can therefore give rise to all the traditionally accepted m [rest of string was truncated]&quot;;.
+        ///    This combination is essentially &quot;all male&quot; and can therefore give rise to all the traditionally accepted masculine traits, suc [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_match_male {
             get {
@@ -16702,7 +16714,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yin and in line with gender. Emotional Ki is Yang and opposite to gender
+        ///    Solar Energy is Yin and in line with gender. Emotional Ki is Yang and opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a balanced combination
@@ -16714,7 +16726,7 @@ namespace K9.Globalisation {
         ///    Emotional Ki is opposite to gender, resulting in these men having a good understanding of {PotentialMatesText}
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Emotional Ki is opposite to g [rest of string was truncated]&quot;;.
+        ///    Emotional Ki is opposite to gender, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_female {
             get {
@@ -16724,7 +16736,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yang and in line with gender. Emotional Ki is Yin and opposite to gender
+        ///    Solar Energy is Yang and in line with gender. Emotional Ki is Yin and opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a balanced combination
@@ -16736,7 +16748,7 @@ namespace K9.Globalisation {
         ///    Emotional Ki is opposite to gender, resulting in a good understanding of {PotentialMatesText}
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Emotional Ki is opposite to gender, which likely gives men with this [rest of string was truncated]&quot;;.
+        ///    Emotional Ki is opposite to gender, which likely gives men with this combi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_male {
             get {
@@ -16746,13 +16758,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yang and opposite to gender. Emotional Ki is Yin and in line with gender
+        ///    Solar Energy is Yang and opposite to gender. Emotional Ki is Yin and in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Women with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During adolescence, the Emotional Ki is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Women with this combination are therefore typically very confident and at ease with {SexualPartners [rest of string was truncated]&quot;;.
+        ///    During adolescence, the Emotional Ki is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Women with this combination are therefore typically very confident and at ease with {SexualPartnersText}  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_female {
             get {
@@ -16762,13 +16774,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yin and opposite to gender. Emotional Ki is Yang and in line with gender
+        ///    Solar Energy is Yin and opposite to gender. Emotional Ki is Yang and in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Men with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During adolescence, the Emotional Ki is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Men with this combination are therefore typically very confident and at ease with {SexualPartnersText [rest of string was truncated]&quot;;.
+        ///    During adolescence, the Emotional Ki is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Men with this combination are therefore typically very confident and at ease with {SexualPartnersText} duri [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_male {
             get {
@@ -16778,7 +16790,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Character Energies are Yang and therefore opposite to gender
+        ///    Both Solar and Lunar Energies are Yang and therefore opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a challenging combination for women who feel pressure to behave in a typically feminine and sensual way
@@ -16787,7 +16799,7 @@ namespace K9.Globalisation {
         ///    This combination can be quite challenging, especially for women whose culture or upbringing might may require them to be especially feminine and sensual, or even submissive and passive.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    This combination can result in some insecurity around sexuality, leading [rest of string was truncated]&quot;;.
+        ///    This combination can result in some insecurity around sexuality, leading to potent [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_opposite_female {
             get {
@@ -16797,7 +16809,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Character Energies are Yin and therefore opposite to gender
+        ///    Both Solar and Lunar Energies are Yin and therefore opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a challenging combination for men who feel pressure to behave more like alpha males
@@ -16806,7 +16818,7 @@ namespace K9.Globalisation {
         ///    This combination can be quite challenging, especially for men whose culture or upbringing might put even more pressure on them to behave like alpha males, or whichever role model is most culturally and socially appropriate.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    This combination can result in some insecurity around s [rest of string was truncated]&quot;;.
+        ///    This combination can result in some insecurity around sexuality,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_opposite_male {
             get {
@@ -17111,7 +17123,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Emotionally, Two Soil Energies are grounded in &lt;strong&gt;sympathy, humility, and compassion&lt;/strong&gt;. Their emotional responses tend to be steady and considered, offering others a sense of calm presence and emotional containment. They are often the quiet emotional anchors of their relationships and communities, resonating deeply with the feelings of others and providing support without needing to take the spotlight.
+        ///    Emotionally, Two Soil energies are grounded in &lt;strong&gt;sympathy, humility, and compassion&lt;/strong&gt;. Their emotional responses tend to be steady and considered, offering others a sense of calm presence and emotional containment. They are often the quiet emotional anchors of their relationships and communities, resonating deeply with the feelings of others and providing support without needing to take the spotlight.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    They have a natural inclination to accept people as they are, meeting [rest of string was truncated]&quot;;.
@@ -17169,7 +17181,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Two Soil Energies are &lt;strong&gt;steady, practical, and quietly resourceful&lt;/strong&gt; when it comes to managing finances. Rarely extravagant, they prefer to build slowly over time, valuing &lt;strong&gt;security, stability, and consistency&lt;/strong&gt; over risky ventures or sudden gains. Money, for them, is less about ambition and more about &lt;strong&gt;providing care and creating a stable foundation for those around them&lt;/strong&gt;.
+        ///    Two Soil energies are &lt;strong&gt;steady, practical, and quietly resourceful&lt;/strong&gt; when it comes to managing finances. Rarely extravagant, they prefer to build slowly over time, valuing &lt;strong&gt;security, stability, and consistency&lt;/strong&gt; over risky ventures or sudden gains. Money, for them, is less about ambition and more about &lt;strong&gt;providing care and creating a stable foundation for those around them&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Naturally &lt;strong&gt;frugal  [rest of string was truncated]&quot;;.
@@ -17222,7 +17234,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellbeing – 2 Soil Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Wellbeing – 2 Soil energies&lt;/h4&gt;
         ///
         ///&lt;p&gt;
         ///    Two Earth individuals often find it difficult to accept that &lt;strong&gt;they must prioritize their own health&lt;/strong&gt;. Their natural orientation toward service and care for others can cause them to feel undeserving of attention or support themselves. In some cases, they may even refuse help. However, with encouragement—often from persistent yet kind friends—they begin to understand that &lt;strong&gt;serving others begins with caring for the self&lt;/strong&gt;. [rest of string was truncated]&quot;;.
@@ -17288,7 +17300,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Intellectually, Two Soil Energies are &lt;strong&gt;thoughtful, perceptive, attentive, and sensible&lt;/strong&gt;. They tend to absorb information gradually but thoroughly, allowing ideas to sink in through a steady process of reflection. Their thinking style is &lt;strong&gt;practical, grounded, and rooted in real-life experience&lt;/strong&gt;. Rather than seeking abstract or theoretical knowledge, they are &lt;strong&gt;down-to-earth thinkers&lt;/strong&gt; who place great value on common sense, l [rest of string was truncated]&quot;;.
+        ///    Intellectually, Two Soil energies are &lt;strong&gt;thoughtful, perceptive, attentive, and sensible&lt;/strong&gt;. They tend to absorb information gradually but thoroughly, allowing ideas to sink in through a steady process of reflection. Their thinking style is &lt;strong&gt;practical, grounded, and rooted in real-life experience&lt;/strong&gt;. Rather than seeking abstract or theoretical knowledge, they are &lt;strong&gt;down-to-earth thinkers&lt;/strong&gt; who place great value on common sense, l [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_intellectual_qualities {
             get {
@@ -17320,7 +17332,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Two Soil Energies are among the most &lt;strong&gt;friendly, sociable, and deeply nurturing&lt;/strong&gt; of the Nine Star Ki types. They often serve as the emotional glue within a family, group, or community, offering steady &lt;strong&gt;support, warmth, and understanding&lt;/strong&gt;. With a naturally &lt;strong&gt;diplomatic and tactful&lt;/strong&gt; nature, they know how to read a room and respond with care. Their ability to arouse &lt;strong&gt;trust and sympathy&lt;/strong&gt; makes them beloved friends, devoted partners, and excellen [rest of string was truncated]&quot;;.
+        ///    Two Soil energies are among the most &lt;strong&gt;friendly, sociable, and deeply nurturing&lt;/strong&gt; of the Nine Star Ki types. They often serve as the emotional glue within a family, group, or community, offering steady &lt;strong&gt;support, warmth, and understanding&lt;/strong&gt;. With a naturally &lt;strong&gt;diplomatic and tactful&lt;/strong&gt; nature, they know how to read a room and respond with care. Their ability to arouse &lt;strong&gt;trust and sympathy&lt;/strong&gt; makes them beloved friends, devoted partners, and excellen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_interpersonal_qualities {
             get {
@@ -17367,7 +17379,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Suitable Occupations for 2 Soil Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Suitable Occupations for 2 Soil energies&lt;/h4&gt;
         ///
         ///&lt;ul&gt;
         ///    &lt;li&gt;Wise woman, shamaness, matriarch&lt;/li&gt;
@@ -17849,10 +17861,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Stable Energies are steady and solid. They generally process information more slowly, are pragmatic and risk-averse, and prefer to plan ahead. They are less comfortable with change—especially when it is instigated by others.
+        ///    Stable energies are steady and solid. They generally process information more slowly, are pragmatic and risk-averse, and prefer to plan ahead. They are less comfortable with change—especially when it is instigated by others.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Energies {soil}, {coreearth}, and {mountain} are classified as &apos;stable&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, grounded, and reliable. This group is similar to the Fixed Modality of the Zodiac and the &lt;strong&gt;Relational [rest of string was truncated]&quot;;.
+        ///    energies {soil}, {coreearth}, and {mountain} are classified as &apos;stable&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, grounded, and reliable. This group is similar to the Fixed Modality of the Zodiac and the &lt;strong&gt;Relational [rest of string was truncated]&quot;;.
         /// </summary>
         public static string stable_modality {
             get {
@@ -19045,7 +19057,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Thunder Energies possess a remarkable ability to perceive the bigger picture with clarity and foresight. Their natural gift for planning, visioning, and identifying pathways forward—without becoming entangled in minutiae—makes them especially suited to roles requiring strategic insight and innovative thinking. Whether in computing, science, research, business intelligence, or consulting, Thunder Energies often excel where complexity calls for elegant solu [rest of string was truncated]&quot;;.
+        ///    Thunder energies possess a remarkable ability to perceive the bigger picture with clarity and foresight. Their natural gift for planning, visioning, and identifying pathways forward—without becoming entangled in minutiae—makes them especially suited to roles requiring strategic insight and innovative thinking. Whether in computing, science, research, business intelligence, or consulting, Thunder energies often excel where complexity calls for elegant solu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_career {
             get {
@@ -19123,12 +19135,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Thunder Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Thunder energies&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Thunder Energies embody the vitality and power of springtime. They are &lt;strong&gt;dynamic, action-oriented, and full of life&lt;/strong&gt;, preferring to &lt;strong&gt;do rather than be&lt;/strong&gt;. They are &lt;strong&gt;initiators and catalysts&lt;/strong&gt;, with a boldness that pushes things forward and shakes up stagnation.
+        ///    Thunder energies embody the vitality and power of springtime. They are &lt;strong&gt;dynamic, action-oriented, and full of life&lt;/strong&gt;, preferring to &lt;strong&gt;do rather than be&lt;/strong&gt;. They are &lt;strong&gt;initiators and catalysts&lt;/strong&gt;, with a boldness that pushes things forward and shakes up stagnation.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Known for their &lt;strong&gt;joyful, optimistic energy&lt;/strong&gt;, Thunder Energies often emerge as &lt;strong&gt;pioneers and change-makers&lt;/strong&gt;. Their en [rest of string was truncated]&quot;;.
+        ///    Known for their &lt;strong&gt;joyful, optimistic energy&lt;/strong&gt;, Thunder energies often emerge as &lt;strong&gt;pioneers and change-makers&lt;/strong&gt;. Their en [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_description {
             get {
@@ -19137,7 +19149,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Thunder Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Thunder energies&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;&lt;strong&gt;Bold, dynamic, and full of vitality&lt;/strong&gt; — like the first crack of thunder in spring.&lt;/li&gt;
         ///    &lt;li&gt;&lt;strong&gt;Initiators and catalysts&lt;/strong&gt; — thrive on movement, momentum, and fresh starts.&lt;/li&gt;
@@ -19159,7 +19171,7 @@ namespace K9.Globalisation {
         ///    discussing new concepts.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    3 Tree characters tend to be &lt;strong&gt;very lively and energetic&lt;/strong&gt;. They can also be very &lt;strong&gt;verbally expressive&lt;/strong&gt; and some of the quieter Energies may find them a &lt;strong&gt;overly talkative at times&lt;/strong&gt;.
+        ///    3 Tree characters tend to be &lt;strong&gt;very lively and energetic&lt;/strong&gt;. They can also be very &lt;strong&gt;verbally expressive&lt;/strong&gt; and some of the quieter energies may find them a &lt;strong&gt;overly talkative at times&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Whilst Thunder characters are full o [rest of string was truncated]&quot;;.
@@ -19172,10 +19184,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    At their core, Thunder Energies embody &lt;strong&gt;enthusiasm, hope, and creative innocence&lt;/strong&gt;. Their spark can uplift those around them and bring light to even the darkest situations. With a natural energy and forward momentum, they are effective at cutting through stagnation, constantly pushing forward to initiate change and new ideas.
+        ///    At their core, Thunder energies embody &lt;strong&gt;enthusiasm, hope, and creative innocence&lt;/strong&gt;. Their spark can uplift those around them and bring light to even the darkest situations. With a natural energy and forward momentum, they are effective at cutting through stagnation, constantly pushing forward to initiate change and new ideas.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, Thunder Energies may also experience &lt;strong&gt;anger, irritation, and emotional explosiveness&lt;/strong&gt;. They can be &lt;strong&gt;over-sensitive [rest of string was truncated]&quot;;.
+        ///    However, Thunder energies may also experience &lt;strong&gt;anger, irritation, and emotional explosiveness&lt;/strong&gt;. They can be &lt;strong&gt;over-sensitive [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_emotional_landscape {
             get {
@@ -19229,7 +19241,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Finances and Resource Management&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Thunder Energies often possess a natural magnetism for financial success. Their dynamic nature, sharp intellect, and willingness to take bold steps can lead to prosperous ventures and lucrative opportunities. When aligned with purpose and vision, they are capable of generating significant wealth through innovation, leadership, or entrepreneurial pursuits.
+        ///    Thunder energies often possess a natural magnetism for financial success. Their dynamic nature, sharp intellect, and willingness to take bold steps can lead to prosperous ventures and lucrative opportunities. When aligned with purpose and vision, they are capable of generating significant wealth through innovation, leadership, or entrepreneurial pursuits.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -19295,7 +19307,7 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Thunder Energies are highly sensitive and energetic by nature. As such, they benefit greatly from dietary and lifestyle habits that promote internal harm [rest of string was truncated]&quot;;.
+        ///    Thunder energies are highly sensitive and energetic by nature. As such, they benefit greatly from dietary and lifestyle habits that promote internal harm [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_health {
             get {
@@ -19351,7 +19363,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Thunder Energies are &lt;strong&gt;visionary, inventive, and creatively inspired&lt;/strong&gt;. They possess a natural gift for &lt;strong&gt;forward-thinking, intuitive insight, and grasping the big picture&lt;/strong&gt;. Their minds are typically &lt;strong&gt;idealistic, poetic, quick-witted, and inquisitive&lt;/strong&gt;, always seeking new frontiers of thought and expression. They thrive on innovation, fueled by a &lt;strong&gt;refined sense of aesthetics, a playful sense of humor, and a deep apprec [rest of string was truncated]&quot;;.
+        ///    Thunder energies are &lt;strong&gt;visionary, inventive, and creatively inspired&lt;/strong&gt;. They possess a natural gift for &lt;strong&gt;forward-thinking, intuitive insight, and grasping the big picture&lt;/strong&gt;. Their minds are typically &lt;strong&gt;idealistic, poetic, quick-witted, and inquisitive&lt;/strong&gt;, always seeking new frontiers of thought and expression. They thrive on innovation, fueled by a &lt;strong&gt;refined sense of aesthetics, a playful sense of humor, and a deep apprec [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_intellectual_qualities {
             get {
@@ -19383,7 +19395,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Socially, Thunder Energies are &lt;strong&gt;expressive, open, approachable, and full of charm&lt;/strong&gt;. They tend to be &lt;strong&gt;talkative, sociable, and honest&lt;/strong&gt;, with a straightforward manner that can be both refreshing and disarming. Their ability to &lt;strong&gt;inspire and stimulate those around them&lt;/strong&gt; is one of their greatest strengths, and they often possess a natural talent for humor, which makes them engaging and likable in social settings.
+        ///    Socially, Thunder energies are &lt;strong&gt;expressive, open, approachable, and full of charm&lt;/strong&gt;. They tend to be &lt;strong&gt;talkative, sociable, and honest&lt;/strong&gt;, with a straightforward manner that can be both refreshing and disarming. Their ability to &lt;strong&gt;inspire and stimulate those around them&lt;/strong&gt; is one of their greatest strengths, and they often possess a natural talent for humor, which makes them engaging and likable in social settings.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    However, this openness can som [rest of string was truncated]&quot;;.
@@ -19549,7 +19561,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    In the spiritual journey of Thunder Energies, the central themes are maturation and grounding. 3 Tree people possess an expansive, spacious quality to their being, often paired with a dynamic intensity that can sometimes give rise to inner chaos or restlessness. Their energy is vibrant and far-reaching, but without proper focus, it can become scattered.
+        ///    In the spiritual journey of Thunder energies, the central themes are maturation and grounding. 3 Tree people possess an expansive, spacious quality to their being, often paired with a dynamic intensity that can sometimes give rise to inner chaos or restlessness. Their energy is vibrant and far-reaching, but without proper focus, it can become scattered.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -19803,7 +19815,7 @@ namespace K9.Globalisation {
         ///    The Tree element is associated with the dawn or spring and embodies the power of growth and new beginnings. Tree people have plenty of &lt;strong&gt;vitality and energy&lt;/strong&gt; and are typically &lt;strong&gt;optimistic and forward-looking&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Whilst Metal Energies like to digest and consolidate that which is already manifest, Tree Energies are much more &lt;strong&gt;focussed on gener [rest of string was truncated]&quot;;.
+        ///    Whilst Metal energies like to digest and consolidate that which is already manifest, Tree energies are much more &lt;strong&gt;focussed on gener [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tree_element {
             get {
@@ -19812,7 +19824,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Tree element nourishes the Fire by providing constant fuel to burn. For example, Tree people are often naturally complimentary and express their appreciation for others. This helps to boost the somewhat delicate confidence of Fire Energies, so that they can continue to burn brightly and inspire those around them..
+        ///   Looks up a localized string similar to The Tree element nourishes the Fire by providing constant fuel to burn. For example, Tree people are often naturally complimentary and express their appreciation for others. This helps to boost the somewhat delicate confidence of Fire energies, so that they can continue to burn brightly and inspire those around them..
         /// </summary>
         public static string tree_fire {
             get {
@@ -20522,7 +20534,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Water Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Water energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Water people can often appear &lt;strong&gt;quiet, brooding, and contemplative&lt;/strong&gt;, like a deep lake or the silent ocean. Yet, like a bubbling mountain stream, they may also be &lt;strong&gt;lively, curious, and vivacious&lt;/strong&gt;, animated by a &lt;strong&gt;natural sense of adventure and exploration&lt;/strong&gt;. Indeed, &lt;strong&gt;many famous explorers were born under this sign&lt;/strong&gt;.
         ///&lt;/p&gt;
@@ -20536,7 +20548,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Water Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Water energies&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;&lt;strong&gt;Fluid, contemplative, and mysterious&lt;/strong&gt; — like a still lake or an ocean trench.&lt;/li&gt;
         ///    &lt;li&gt;Can also be &lt;strong&gt;lively, curious, and adventurous&lt;/strong&gt;, like a bubbling stream.&lt;/li&gt;
@@ -20703,7 +20715,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Health and Physical Wellbeing&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Water Energies are inherently sensitive beings, both emotionally and physically. In Traditional Chinese Medicine, the Water element governs the &lt;strong&gt;kidneys, bladder, reproductive system, adrenal glands, and skeletal structure&lt;/strong&gt;, making these the primary areas of vulnerability for those born under this sign.
+        ///    Water energies are inherently sensitive beings, both emotionally and physically. In Traditional Chinese Medicine, the Water element governs the &lt;strong&gt;kidneys, bladder, reproductive system, adrenal glands, and skeletal structure&lt;/strong&gt;, making these the primary areas of vulnerability for those born under this sign.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Individuals with strong Water energy must pay careful attention to their &lt;strong&gt;internal warmth and physical resilience&lt;/stron [rest of string was truncated]&quot;;.
@@ -20760,7 +20772,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Water Energies are gifted with a mind that flows beneath the surface — &lt;strong&gt;penetrating, reflective, and drawn to depths unseen&lt;/strong&gt;. They are often captivated by &lt;strong&gt;philosophy, spirituality, and the mysteries of life&lt;/strong&gt;, and they have a natural inclination to explore things from all angles before forming a conclusion. Their ability to &lt;strong&gt;gather information, synthesize meaning, and perceive subtle nuances&lt;/strong&gt; gives them a kind of wisdom t [rest of string was truncated]&quot;;.
+        ///    Water energies are gifted with a mind that flows beneath the surface — &lt;strong&gt;penetrating, reflective, and drawn to depths unseen&lt;/strong&gt;. They are often captivated by &lt;strong&gt;philosophy, spirituality, and the mysteries of life&lt;/strong&gt;, and they have a natural inclination to explore things from all angles before forming a conclusion. Their ability to &lt;strong&gt;gather information, synthesize meaning, and perceive subtle nuances&lt;/strong&gt; gives them a kind of wisdom t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_intellectual_qualities {
             get {
@@ -20791,7 +20803,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    In relationships, Water Energies move with grace and sensitivity. They are often &lt;strong&gt;adaptive, flexible, diplomatic, and deeply receptive&lt;/strong&gt;, able to feel the emotional currents in a room without anyone needing to speak. Their presence tends to be subtle yet magnetic — they draw others in without demanding attention, connecting in ways that are gentle, intuitive, and emotionally resonant.
+        ///    In relationships, Water energies move with grace and sensitivity. They are often &lt;strong&gt;adaptive, flexible, diplomatic, and deeply receptive&lt;/strong&gt;, able to feel the emotional currents in a room without anyone needing to speak. Their presence tends to be subtle yet magnetic — they draw others in without demanding attention, connecting in ways that are gentle, intuitive, and emotionally resonant.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    As listeners, they are exceptional — quiet, patient, and discerning. They know when t [rest of string was truncated]&quot;;.
@@ -20837,7 +20849,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Suitable Occupations for Water Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Suitable Occupations for Water energies&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Philosopher, thinker, or writer&lt;/li&gt;
         ///    &lt;li&gt;Lawyer or legal consultant&lt;/li&gt;
@@ -20883,9 +20895,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Relationships and Intimacy for Water Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships and Intimacy for Water energies&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Of all the Nine Star Ki types, &lt;strong&gt;1 Water Energies are among the most deeply intuitive and emotionally complex&lt;/strong&gt;, and this sensitivity extends profoundly into their romantic and intimate lives. In traditional Chinese medicine, Water governs the reproductive system, and this symbolic link often corresponds to a &lt;strong&gt;natural connection to sensuality and emotional intimacy&lt;/strong&gt;.
+        ///    Of all the Nine Star Ki types, &lt;strong&gt;1 Water energies are among the most deeply intuitive and emotionally complex&lt;/strong&gt;, and this sensitivity extends profoundly into their romantic and intimate lives. In traditional Chinese medicine, Water governs the reproductive system, and this symbolic link often corresponds to a &lt;strong&gt;natural connection to sensuality and emotional intimacy&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///
         ///&lt;h4&gt;A Dual Expression of Energy&lt;/h4&gt;
@@ -20976,7 +20988,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both people have the Water element in their chart. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for a deep and intuitive connection between two people who share the Water element..
+        ///   Looks up a localized string similar to Both people have the Water element in their chart. Water is perhaps the most intuitive and empathetic of the 9 energies and so there is a potential for a deep and intuitive connection between two people who share the Water element..
         /// </summary>
         public static string water_water {
             get {
@@ -21247,7 +21259,7 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Wind Energies  [rest of string was truncated]&quot;;.
+        ///    Wind energies  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_career {
             get {
@@ -21318,13 +21330,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Wind Energies&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Wind energies&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    4 Tree people, also known as Wind Energies, represent the mature, deep green growth of spring—a symbol of developed potential and reaching for light. Like wind, they can express a broad spectrum of movement, from soft stillness to sweeping change. Among the Nine Star Ki numbers, Wind is one of the most emotionally expressive and adaptable forces, marked by an innate desire for growth, independence, and harmony.
+        ///    4 Tree people, also known as Wind energies, represent the mature, deep green growth of spring—a symbol of developed potential and reaching for light. Like wind, they can express a broad spectrum of movement, from soft stillness to sweeping change. Among the Nine Star Ki numbers, Wind is one of the most emotionally expressive and adaptable forces, marked by an innate desire for growth, independence, and harmony.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    Wind Energies often carry a quiet d [rest of string was truncated]&quot;;.
+        ///    Wind energies often carry a quiet d [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_description {
             get {
@@ -21333,7 +21345,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Wind Energies&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Essence of Wind energies&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
         ///&lt;ul&gt;
@@ -21372,7 +21384,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The emotional world of Wind Energies is rich, tender, and deeply attuned to both personal and collective experience. At their best, 4 Tree people express genuine compassion, heartfelt empathy, and an innate desire to grow emotionally and support the growth of those around them. Their feelings are nuanced and often rooted in a profound understanding of the human condition, making their emotional presence healing and inspiring.
+        ///    The emotional world of Wind energies is rich, tender, and deeply attuned to both personal and collective experience. At their best, 4 Tree people express genuine compassion, heartfelt empathy, and an innate desire to grow emotionally and support the growth of those around them. Their feelings are nuanced and often rooted in a profound understanding of the human condition, making their emotional presence healing and inspiring.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -21434,7 +21446,7 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    However, Wind Energies can [rest of string was truncated]&quot;;.
+        ///    However, Wind energies can [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_finances {
             get {
@@ -21497,7 +21509,7 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///    A calm and mindful approach to eating is essential. Wind Energies benefit from eating slowly, only when hungry, an [rest of string was truncated]&quot;;.
+        ///    A calm and mindful approach to eating is essential. Wind energies benefit from eating slowly, only when hungry, an [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_health {
             get {
@@ -21555,7 +21567,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Wind Energies possess a mind that is both deep and expansive, combining analytical precision with imaginative breadth. They are often drawn to abstract and complex ideas, showing a natural affinity for philosophy, scientific reasoning, and poetic or artistic thought. Their intellectual world is rich and layered, capable of holding multiple perspectives and subtle nuances with ease.
+        ///    Wind energies possess a mind that is both deep and expansive, combining analytical precision with imaginative breadth. They are often drawn to abstract and complex ideas, showing a natural affinity for philosophy, scientific reasoning, and poetic or artistic thought. Their intellectual world is rich and layered, capable of holding multiple perspectives and subtle nuances with ease.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -21589,7 +21601,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Wind Energies are naturally warm, kind-hearted, and emotionally attuned. They exude a quiet grace that inspires trust and draws others in. With their soft presence, empathy, and ability to truly listen, they often serve as gentle guides, confidants, or mediators in their communities. Their manner is courteous, well-adjusted, and emotionally expressive without being overwhelming, giving others a sense of comfort and safety in their presence.
+        ///    Wind energies are naturally warm, kind-hearted, and emotionally attuned. They exude a quiet grace that inspires trust and draws others in. With their soft presence, empathy, and ability to truly listen, they often serve as gentle guides, confidants, or mediators in their communities. Their manner is courteous, well-adjusted, and emotionally expressive without being overwhelming, giving others a sense of comfort and safety in their presence.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -21889,10 +21901,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Our lives pass through each of the houses in nine-year cycles, with each year reflecting one of the nine Energies of the 9 Star Ki system.
+        ///    Our lives pass through each of the houses in nine-year cycles, with each year reflecting one of the nine energies of the 9 Star Ki system.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    While each person has a unique 9 Star Ki birth chart based on their date of birth, we also move through nine-year life cycles that mirror the nine Energies of the system. Each year, we find ourselves in a different house, governed by one of these nine Energies—each influencing our lives in subtle yet powerful ways.
+        ///    While each person has a unique 9 Star Ki birth chart based on their date of birth, we also move through nine-year life cycles that mirror the nine energies of the system. Each year, we find ourselves in a different house, governed by one of these nine energies—each influencing our lives in subtle yet powerful ways.
         ///&lt;/p&gt;
         ///
         ///&lt;h5&gt;

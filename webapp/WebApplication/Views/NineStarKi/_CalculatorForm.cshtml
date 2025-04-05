@@ -20,6 +20,20 @@
 
     if (isUnlimited)
     {
+        if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+        {
+            if (Model.IsPredictionsScreen)
+            {
+                <label>@Dictionary.HousesDisplayLabel</label>
+                <a target="_blank" href="@Url.Action("CalculationMethods","Home")"><i class="fa fa-question-circle"></i></a>
+
+                @Html.BootstrapEditorFor(model => model.HousesDisplay, new EditorOptions
+                {
+                    Label= ""
+                })
+            }
+        }
+
         <div class="form-options">
             @if (Model.IsPredictionsScreen)
             {
@@ -32,17 +46,6 @@
             <label>@Dictionary.InvertDailyAndHourlyKiForSouthernHemisphereLabel</label>
             <p class="hint">@Dictionary.OptionalForSouthernHemisphere</p>
         </div>
-    }
-
-    if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
-    {
-        if (Model.IsPredictionsScreen)
-        {
-            <div class="form-options">
-                @Html.BootstrapEditorFor(model => model.HousesDisplay)
-                <a target="_blank" href="@Url.Action("CalculationMethods", "Home")"><i class="fa fa-question-circle"></i></a>
-            </div>
-        }
     }
 
     <hr />

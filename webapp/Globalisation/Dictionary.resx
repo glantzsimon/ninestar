@@ -5837,7 +5837,7 @@
     <value>Stress Response</value>
   </data>
   <data name="HousesDisplayLabel" xml:space="preserve">
-    <value>Houses Display</value>
+    <value>Houses Display Options</value>
   </data>
   <data name="IsometricHouses" xml:space="preserve">
     <value>Display Isometric Houses</value>

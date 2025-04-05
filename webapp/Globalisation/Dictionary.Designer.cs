@@ -10010,7 +10010,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Houses Display.
+        ///   Looks up a localized string similar to Houses Display Options.
         /// </summary>
         public static string HousesDisplayLabel {
             get {

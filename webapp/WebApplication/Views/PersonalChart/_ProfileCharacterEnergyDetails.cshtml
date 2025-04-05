@@ -16,11 +16,18 @@
                         <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Model.CharacterEnergy.EnergyLowerCase}.png")');"></div>
                     </a>
                 </li>
+                
+                <li>
+                    <a data-toggle="tab" href="#child">
+                        @Dictionary.ChildNature
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/inner-child.png")');"></div>
+                    </a>
+                </li>
 
                 <li>
                     <a data-toggle="tab" href="#stress">
                         @Dictionary.StressResponse
-                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/stress-response.png');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/stress-response.png")');"></div>
                     </a>
                 </li>
             </ul>
@@ -28,7 +35,14 @@
                 <div id="c-details" class="tab-pane fade in active">
                     @using (Html.PayWall(ESection.Profile, Model))
                     {
-                        @Html.Panel(Model.CharacterEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.CharacterEnergy).ToString()}{Model.CharacterEnergy.EnergyDescription} {Model.CharacterEnergy.ChildDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                        @Html.Panel(Model.CharacterEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.CharacterEnergy).ToString()}{Model.CharacterEnergy.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    }
+                </div>
+                
+                <div id="child" class="tab-pane fade">
+                    @using (Html.PayWall(ESection.Profile, Model))
+                    {
+                        @Html.Partial("_ProfileChildNature", Model)
                     }
                 </div>
 

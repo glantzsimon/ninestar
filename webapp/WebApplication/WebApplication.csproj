@@ -1712,6 +1712,7 @@
     <Content Include="Views\PersonalChart\_ProfileStressResponse.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileCharacterEnergyDetails.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\HousesDisplay.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileChildNature.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

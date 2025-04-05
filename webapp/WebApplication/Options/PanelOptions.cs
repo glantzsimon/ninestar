@@ -23,6 +23,14 @@ namespace K9.WebApplication.Options
     {
         public string Id { get; set; }
         public string Title { get; set; }
+
+        private string _title2;
+        public string Title2
+        {
+            get { return string.IsNullOrEmpty(_title2) ? Title : _title2; }
+            set { _title2 = value; }
+        }
+
         public string Body { get; set; }
         public string Body2 { get; set; }
         public string ImageSrc { get; set; }
@@ -30,7 +38,7 @@ namespace K9.WebApplication.Options
         public EPanelImageLayout ImageLayout { get; set; }
         public bool IsDualView { get; set; }
         public bool IsGlobalSwitch { get; set; }
-        
+
         public string Option1Id { get; }
         public string Option2Id { get; }
         public string UniqueRadioName { get; }

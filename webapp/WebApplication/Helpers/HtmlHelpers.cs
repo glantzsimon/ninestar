@@ -83,12 +83,13 @@ namespace K9.WebApplication.Helpers
             });
         }
 
-        public static MvcHtmlString PanelWithGlobal(this HtmlHelper html, string title, string personalBody, string globalBody, string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
+        public static MvcHtmlString PanelWithGlobal(this HtmlHelper html, string title, string title2, string personalBody, string globalBody, string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
         {
             return html.Partial("Controls/_Panel", new PanelOptions
             {
                 Id = id,
                 Title = title,
+                Title2 = title2,
                 Body = personalBody,
                 Body2 = globalBody,
                 ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),

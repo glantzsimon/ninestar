@@ -59,7 +59,8 @@
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
                 @Html.PanelWithGlobal(
-                    Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
+                    Model.PersonalHousesOccupiedEnergies.Day.CycleDescriptiveName,
+                    Model.GlobalCycleEnergies.Day.CycleDescriptiveName,
                     Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
                     Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
             }
@@ -74,7 +75,8 @@
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
                 @Html.PanelWithGlobal(
-                    Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
+                    Model.PersonalHousesOccupiedEnergies.Month.CycleDescriptiveName,
+                    Model.GlobalCycleEnergies.Month.CycleDescriptiveName,
                     Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
                     Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
             }
@@ -89,7 +91,8 @@
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
                 @Html.PanelWithGlobal(
-                    Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
+                    Model.PersonalHousesOccupiedEnergies.Year.CycleDescriptiveName,
+                    Model.GlobalCycleEnergies.Year.CycleDescriptiveName,
                     Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Year).ToString(),
                     Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Year).ToString())
             }
@@ -105,6 +108,7 @@
             {
                 @Html.PanelWithGlobal(
                     Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
+                    Model.GlobalCycleEnergies.Generation.CycleDescriptiveName,
                     Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Generation).ToString(),
                     Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Generation).ToString())
             }

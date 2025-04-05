@@ -522,6 +522,20 @@ namespace K9.WebApplication.Models
                 {ENineStarKiEnergy.Fire, Dictionary.fire_description_summary}
             };
 
+        private static readonly Dictionary<ENineStarKiEnergy, string> _characterEnergySummaries =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_emotional_description_summary},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_emotional_description_summary},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_emotional_description_summary},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_emotional_description_summary},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_emotional_description_summary},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_emotional_description_summary},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_emotional_description_summary},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_emotional_description_summary},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_emotional_description_summary}
+            };
+
         private static readonly Dictionary<ENineStarKiEnergy, string> _emotionalDescriptions =
             new Dictionary<ENineStarKiEnergy, string>
             {
@@ -980,6 +994,10 @@ namespace K9.WebApplication.Models
         public string MainEnergySummary =>
             EnergyType == ENineStarKiEnergyType.MainEnergy ? GetMainEnergySummary() : string.Empty;
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
+        public string CharacterEnergySummary =>
+            EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetCharacterEnergySummary() : string.Empty;
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
         public string EmotionalEnergyDescription => EnergyType == ENineStarKiEnergyType.CharacterEnergy
             ? GetEmotionalEnergyDescription()
@@ -1362,6 +1380,8 @@ namespace K9.WebApplication.Models
         private string GetGenerationDescription() => _generationDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetMainEnergyDescription() => _mainEnergyDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetCharacterEnergySummary() => _characterEnergySummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetMainEnergySummary() => _mainEnergySummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 

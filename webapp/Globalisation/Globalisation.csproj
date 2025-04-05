@@ -214,6 +214,15 @@
     <Content Include="Energies\EmotionalLandscape\en-gb\Summary\water-emotional-landscape-summary.htm" />
     <Content Include="Energies\EmotionalLandscape\en-gb\soil-emotional-landscape.htm" />
     <Content Include="Energies\EmotionalLandscape\en-gb\water-emotional-landscape.htm" />
+    <Content Include="Energies\Emotional\en-gb\Summary\coreearth-emotional-description-summary.htm" />
+    <Content Include="Energies\Emotional\en-gb\Summary\fire-emotional-description-summary.htm" />
+    <Content Include="Energies\Emotional\en-gb\Summary\heaven-emotional-description-summary.htm" />
+    <Content Include="Energies\Emotional\en-gb\Summary\lake-emotional-description-summary.htm" />
+    <Content Include="Energies\Emotional\en-gb\Summary\mountain-emotional-description-summary.htm" />
+    <Content Include="Energies\Emotional\en-gb\Summary\soil-emotional-description-summary.htm" />
+    <Content Include="Energies\Emotional\en-gb\Summary\thunder-emotional-description-summary.htm" />
+    <Content Include="Energies\Emotional\en-gb\Summary\water-emotional-description-summary.htm" />
+    <Content Include="Energies\Emotional\en-gb\Summary\wind-emotional-description-summary.htm" />
     <Content Include="Energies\Epoch\en-gb\coreearth-epoch.htm" />
     <Content Include="Energies\Epoch\en-gb\fire-epoch.htm" />
     <Content Include="Energies\Epoch\en-gb\heaven-epoch.htm" />

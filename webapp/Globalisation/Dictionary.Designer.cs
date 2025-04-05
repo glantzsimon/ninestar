@@ -4872,14 +4872,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like other Earth children, it is especially important for 5 Earth children to have a stable family and school life.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Core Earth Children — Natural Nurturers, Carriers of Inner Gravity
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Core Earth is at the centre of the magic square, which brings many different paths and opportunities to choose from. This can sometimes make it hard for these children to move forward with clarity. Without appropriate guidance, they may lose their way and even succumb to undesirable influences.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    5 Earth characters are naturally nurturing and supportive a [rest of string was truncated]&quot;;.
+        ///    5 Earth children possess a quiet strength and an instinctive sense of responsibility from a young age. As the energetic center of the Nine Star Ki system, they often feel pulled in many directions—absorbing the influences of those around them while trying to find their own sense of identity and purpose. Because of this, they need a stable and emotionally supportive home and school life, where clear bou [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_child {
             get {
@@ -4888,14 +4885,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like other Earth children, it is especially important for 5 Earth children to have a stable family and school life.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    5 Earth Day Star — Centered Presence, Quiet Gravity
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Core Earth is at the centre of 9 Star Ki and this can sometimes make it hard for these children to navigate a clear path. Without appropriate guidance, they may lose their way and even succumb to undesirable influences.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    5 Earth characters are naturally nurturing and supportive and children with this character number display these qualities early on in t [rest of string was truncated]&quot;;.
+        ///    Those with a 5 Earth Day Star often project a sense of quiet authority and emotional density, even when they’re not trying to. There’s something grounded and unmoving in the way they hold themselves—like the center of a storm or the stillness of a mountain. In casual interactions, they may appear calm, steady, or emotionally reserved, but with an intensity that others can feel. People often sense that there&apos;s more go [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_daystar {
             get {
@@ -4937,6 +4931,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string coreearth_emotional_description {
+            get {
+                return ResourceManager.GetString("coreearth_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    5 Earth characters are born with &lt;strong&gt;natural leadership potential&lt;/strong&gt; and often have a &lt;strong&gt;bold and assertive&lt;/strong&gt; nature. They can be &lt;strong&gt;demanding&lt;/strong&gt; at times, to the point of aggressiveness.
         ///&lt;/p&gt;
@@ -4946,9 +4949,9 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    Core Earth characters are &lt;strong&gt;extremely persevering&lt;/strong&gt;. They can also express different extremes.  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string coreearth_emotional_description {
+        public static string coreearth_emotional_description_summary {
             get {
-                return ResourceManager.GetString("coreearth_emotional_description", resourceCulture);
+                return ResourceManager.GetString("coreearth_emotional_description_summary", resourceCulture);
             }
         }
         
@@ -5833,9 +5836,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Day Star Ki, which is the influence of the daily Global Ki at the time of birth, carries a more surface-level influence compared to the deeper, more foundational energies of the yearly or monthly Ki in a person&apos;s birth chart. It influences the way we appear to the world—our outward expression, body language, tone, and style of communication. The Day Star colours our general mannerisms, emotional tone, and the first impression we tend to make on others, although to a slightly lesser extent.
-        ///&lt;/p [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The Day Star — Surface Energy, Subtle Expression
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Day Star Ki reflects the daily Global Ki present at the exact moment of birth. While it doesn’t shape the deep structure of a person’s life path like the Yearly or Monthly Ki, it does play a meaningful role in how one appears on the surface—particularly in social settings and first impressions. It is similar to the Social Expression energy, but even more subtle and transient in its influence. The Day Star often colo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DayStarDescription {
             get {
@@ -7298,15 +7303,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Fire children do much better when they are supported by parents and caregivers who can teach them consideration for others, patience, how to plan ahead and to see tasks through to completion.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Fire Children — Radiant, Expressive, and Emotionally Intense
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Without adequate discipline, Fire children can become spoilt, conceited and vain.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Fire needs to be contained, and since this Emotional Ki can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
-        ///&lt;/p&gt;.
+        ///    9 Fire children are bright, passionate, and emotionally vivid. They often shine with natural charisma and can light up a room with their presence, enthusiasm, or dramatic flair. Emotionally expressive and quick to react, they thrive in environments where they feel seen, heard, and appreciated. However, their strong inner flame can become destabilizing if not balanced with grounding support. To flourish, they [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_child {
             get {
@@ -7331,15 +7332,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Fire children do much better when they are supported by parents and caregivers who can teach them consideration for others, patience, how to plan ahead and to see tasks through to completion.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    9 Fire Day Star — Radiant Presence, Expressive Spark
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Without adequate discipline, Fire children can become spoilt, conceited and vain.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Fire needs to be contained, and since this Emotional Ki can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
-        ///&lt;/p&gt;.
+        ///    Those with a 9 Fire Day Star often shine brightly in social settings—whether through their smile, voice, or expressive gestures. Their energy is typically animated, emotive, and attention-catching, even when they’re not consciously trying to stand out. They tend to make strong first impressions and are often perceived as charismatic, passionate, or theatrical in the way they carry themselves. Their body language may [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_daystar {
             get {
@@ -7423,6 +7420,25 @@ namespace K9.Globalisation {
         public static string fire_emotional_description {
             get {
                 return ResourceManager.GetString("fire_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Fire characters are some of the &lt;strong&gt;brightest and liveliest of all the nine characters&lt;/strong&gt;. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    They tend to &lt;strong&gt;wear their heart on their sleeve&lt;/strong&gt; and can be exceptionally &lt;strong&gt;warm and affectionate&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    9 Fire characters have a &lt;strong&gt;bubbly personality with lots of charisma&lt;/strong&gt; and often possess great &lt;strong&gt;clarity and intuition&lt;/strong&gt;, whch can help to &lt;strong&gt;shine light on situations&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Sometimes Fire ch [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_emotional_description_summary {
+            get {
+                return ResourceManager.GetString("fire_emotional_description_summary", resourceCulture);
             }
         }
         
@@ -9347,14 +9363,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Heaven children need good moral guidance. They have a natural ability to pick up on what is right and need parents and teachers that lead by example.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Heaven Children — Principled, Sensitive, and Born to Lead
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is important for Heaven children not to become overly rigid and opinionated. They should be encouraged to enter into debate and to be more flexible in their standpoint, allowing for differences of opinion.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    6 Metal children are exceptionally sensitive to criticism. They are naturally hypersensitive, proud and strongly [rest of string was truncated]&quot;;.
+        ///    6 Metal children are naturally principled and discerning, often showing a clear sense of right and wrong from an early age. They tend to be serious, mature, and emotionally aware of structure—both in the world around them and within themselves. These children are strongly influenced by example, so it is essential that parents and teachers lead with integrity and fairness. When they see adults living by the valu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_child {
             get {
@@ -9379,14 +9392,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Heaven children need good moral guidance. They have a natural ability to pick up on what is right and need parents and teachers that lead by example.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    6 Metal Day Star — Clear Presence, Composed Precision
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is important for Heaven children not to become overly rigid and opinionated. They should be encouraged to enter into debate and to be more flexible in their standpoint, allowing for differences of opinion.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    6 Metal children are exceptionally sensitive to criticism. They are naturally hypersensitive, proud and strongly [rest of string was truncated]&quot;;.
+        ///    Those with a 6 Metal Day Star tend to present themselves with a sense of clarity, refinement, and inner control. Their outward expression often feels polished—neither flashy nor overly expressive, but measured, articulate, and focused. In casual settings, they may come across as composed or even formal, with a tendency to choose their words and movements carefully. There is usually a sense of emotional restraint or [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_daystar {
             get {
@@ -9443,6 +9453,21 @@ namespace K9.Globalisation {
         public static string heaven_emotional_description {
             get {
                 return ResourceManager.GetString("heaven_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    6 Metal characters tend to have a very &lt;strong&gt;direct, down-to-earth and uncompromising nature&lt;/strong&gt;.
+        ///
+        ///    They tend to have very &lt;strong&gt;clear opinions about what is fair and ethical&lt;/strong&gt; and what is not and can be quite &lt;strong&gt;opinionated and inflexible&lt;/strong&gt; in their views. They are certainly &lt;strong&gt;not afraid to express their opinion&lt;/strong&gt; and can be quite &lt;strong&gt;sharp and blunt&lt;/strong&gt; in the way they communicate at times.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The Heaven character as &lt;strong&gt;trem [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_emotional_description_summary {
+            get {
+                return ResourceManager.GetString("heaven_emotional_description_summary", resourceCulture);
             }
         }
         
@@ -10947,13 +10972,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    7 Metal children are naturally fun-loving and it is very important for them to have plenty of social interaction. 7 Lake children&apos;s naturally gregarious and outgoing character could easily be damanged if they spend too much time alone in their formative years and could lead to their being withdrawn, aloof and introverted later on in life.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Lake Children — Joyful Spirits, Sensitive Hearts
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Lake children are quite independent and free-spirited and this should be encouraged by allowing them greater freedom.
-        ///
-        ///    However, care must be [rest of string was truncated]&quot;;.
+        ///    7 Metal children, often referred to as Lake children, have a naturally cheerful, outgoing, and sociable disposition. They thrive in environments where there is laughter, beauty, and shared connection. Play, conversation, and creative expression are essential to their emotional development. If they are isolated or overly constrained in early life, their radiant nature may dim, leading them to become withdrawn or emotiona [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_child {
             get {
@@ -10978,13 +11001,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    7 Metal children are naturally fun-loving and it is very important for them to have plenty of social interaction. 7 Lake children&apos;s naturally gregarious and outgoing character could easily be damanged if they spend too much time alone in their formative years and could lead to their being withdrawn, aloof and introverted later on in life.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    7 Metal Day Star — Charming Presence, Soft Precision
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Lake children are quite independent and free-spirited and this should be encouraged by allowing them greater freedom.
-        ///
-        ///    However, care must be [rest of string was truncated]&quot;;.
+        ///    Those with a 7 Metal Day Star often radiate a gentle charisma that blends social ease with emotional subtlety. Their outer expression tends to be polished yet personable—refined, but rarely rigid. In casual settings, they may come across as charming, humorous, and emotionally intelligent, with a natural ability to read a room and respond gracefully. Their energy often carries a touch of sweetness or sophistication,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_daystar {
             get {
@@ -11037,6 +11058,18 @@ namespace K9.Globalisation {
         public static string lake_emotional_description {
             get {
                 return ResourceManager.GetString("lake_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    7 Metal characters are generally very &lt;strong&gt;easy-going and adaptable&lt;/strong&gt;. Many express themselves with great &lt;strong&gt;diplomacy&lt;/strong&gt; and they often have a &lt;strong&gt;great capacity to listen to others&lt;/strong&gt; and to make them feel understood and validated, thanks to their &lt;strong&gt;patient and compassionate&lt;/strong&gt; nature.
+        ///&lt;p&gt;
+        ///    Lake characters typically make &lt;strong&gt;great hosts&lt;/strong&gt;, owing to their &lt;strong&gt;charming, laid-back nature&lt;/strong&gt;. They are usually very &lt;strong&gt;expressive [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_emotional_description_summary {
+            get {
+                return ResourceManager.GetString("lake_emotional_description_summary", resourceCulture);
             }
         }
         
@@ -13485,14 +13518,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Mountain children also need structure and routine and should be encouraged develop self-discipline early on in their lives.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Mountain Children — Quiet Strength, Thoughtful Independence
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is highly beneficial to encourage Mountain children to develop their innate strengths through intellectual argument, such as debate and discussion on a wide range of topics.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///   8 Earth children are harmed by over-indulgence and hypocritical behaviour on the part of parents or teachers. They require consistency and clear direction from adults who  [rest of string was truncated]&quot;;.
+        ///    8 Earth children, often called Mountain children, are born with a deep inner stillness and an instinct for solitude. They value order, structure, and clear expectations from an early age. These children often respond well to routine and benefit greatly from being encouraged to develop healthy self-discipline. They tend to be self-contained and quietly observant, and while they may not always share their thoug [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_child {
             get {
@@ -13517,14 +13547,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Mountain children also need structure and routine and should be encouraged develop self-discipline early on in their lives.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    8 Earth Day Star — Quiet Strength, Contained Stillness
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is highly beneficial to encourage Mountain children to develop their innate strengths through intellectual argument, such as debate and discussion on a wide range of topics.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///   8 Earth children are harmed by over-indulgence and hypocritical behaviour on the part of parents or teachers. They require consistency and clear direction from adults who  [rest of string was truncated]&quot;;.
+        ///    Those with an 8 Earth Day Star often carry a reserved, composed energy that can feel grounded, introspective, or even enigmatic in casual interactions. There’s usually a stillness about them—an inner self-containment that may read as stoic, focused, or difficult to approach at first. Their movements tend to be deliberate, their expressions subdued. While they may not be immediately expressive, they often project a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_daystar {
             get {
@@ -13577,6 +13604,19 @@ namespace K9.Globalisation {
         public static string mountain_emotional_description {
             get {
                 return ResourceManager.GetString("mountain_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The Mountain is a good description of this character, with its &lt;strong&gt;hard exterior protecting a much softer underbelly&lt;/strong&gt;, which is usually only revealed once people get to k [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_emotional_description_summary {
+            get {
+                return ResourceManager.GetString("mountain_emotional_description_summary", resourceCulture);
             }
         }
         
@@ -17088,16 +17128,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    2 Earth children need a lot of consistency from their parents, teachers. Promises should be kept and a steady routine put in place.
-        ///
-        ///    Their character can be damaged if their caregivers frequently break their promises or fail to observe the moral standards they set.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Soil Children — Gentle Peacemakers, Lovers of Order and Nature
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Soil children tend to have a very diplomatic nature, even at an early age. They may often adopt the role of peacemaker when siblings and friends fall out.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    These children have a strong sense of justice [rest of string was truncated]&quot;;.
+        ///    Soil children are naturally grounded and relational, often displaying a surprising sense of maturity and emotional sensitivity from a young age. They tend to be caring, diplomatic, and deeply affected by the moods and needs of those around them. Even in childhood, they may instinctively step into the role of mediator or peacemaker—soothing tension between siblings or classmates, and often seeking to restor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_child {
             get {
@@ -17119,16 +17154,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    2 Earth children need a lot of consistency from their parents, teachers. Promises should be kept and a steady routine put in place.
-        ///
-        ///    Their character can be damaged if their caregivers frequently break their promises or fail to observe the moral standards they set.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    2 Soil Day Star — Warm Presence, Grounded Simplicity
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Soil children tend to have a very diplomatic nature, even at an early age. They may often adopt the role of peacemaker when siblings and friends fall out.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    These children have a strong sense of justice [rest of string was truncated]&quot;;.
+        ///    Those with a 2 Soil Day Star tend to come across as approachable, steady, and emotionally available. Their presence often has a comforting, earthy quality—one that puts others at ease without trying. In casual settings, they are usually warm, nurturing, and dependable, with a natural ability to hold space for others. There’s something slow and grounded about the way they move and speak—gentle gestures, soft tones, a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_daystar {
             get {
@@ -17170,20 +17200,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Soil characters tend to be &lt;strong&gt;stable, reliable and helpful&lt;/strong&gt; people.
-        ///
-        ///    They are often quite &lt;strong&gt;dedicated to their families as well as to their work&lt;/strong&gt;, where they like to get to get stuck in and actively participate in activities.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    2 Soil Character — Gentle Steadiness, Supportive Heart
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Soil characters are usually &lt;strong&gt;tactful and diplomatic&lt;/strong&gt;. They are quite willing to put others&apos; needs first. In fact they get a deep sense of satisfaction from it.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    2 Earth characters also need to be ca [rest of string was truncated]&quot;;.
+        ///    Those with 2 Soil as their emotional character energy tend to embody warmth, patience, and reliability. They are often grounded and generous, with a quiet strength that comes from a deep desire to care for others. These individuals are most comfortable when they feel useful—whether supporting loved ones, contributing to group efforts, or simply offering a steady presence in someone’s life. Their emotional world is [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_emotional_description {
             get {
                 return ResourceManager.GetString("soil_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Warm, supportive, and deeply loyal—natural caregivers and companions.&lt;/li&gt;
+        ///    &lt;li&gt;Practical and reliable in relationships—strong sense of emotional duty.&lt;/li&gt;
+        ///    &lt;li&gt;Tactful and diplomatic—skilled at maintaining harmony in groups.&lt;/li&gt;
+        ///    &lt;li&gt;Hardworking and steady—able to give consistent care over time.&lt;/li&gt;
+        ///    &lt;li&gt;Derives deep satisfaction from helping others feel safe and supported.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May overgive or neglect their own n [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_emotional_description_summary {
+            get {
+                return ResourceManager.GetString("soil_emotional_description_summary", resourceCulture);
             }
         }
         
@@ -19158,16 +19203,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    It is vital to allow the Thunder child to explore his or her talents and interests to the full. 
-        ///    
-        ///    Encourage them to pursue their interests and do any practice necessary.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Thunder Children — Curious Explorers, Bursts of Spring Energy
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Thunder children are exceptionally curious. It is important not to discourage them in any way and, whilst their endless questions can be become tiring, try your best not to ignore them, as this can be detrimental to their development.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    3 Tree children are quite sociable and it&apos;s not uncommon [rest of string was truncated]&quot;;.
+        ///    Thunder children are bursting with life force—curious, expressive, and full of potential. They have a natural drive to explore the world around them and an instinctive need to move, speak, and ask questions. Their energy is like early spring: rising fast, sometimes erratic, but always full of promise. Encouraging them to pursue their interests, hobbies, and creative passions helps them stay connected to the [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_child {
             get {
@@ -19192,16 +19232,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    It is vital to allow the Thunder child to explore his or her talents and interests to the full. 
-        ///    
-        ///    Encourage them to pursue their interests and do any practice necessary.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    3 Tree Day Star — Lively Presence, Expressive Spark
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Thunder children are exceptionally curious. It is important not to discourage them in any way and, whilst their endless questions can be become tiring, try your best not to ignore them, as this can be detrimental to their development.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    3 Tree children are quite sociable and it&apos;s not uncommon [rest of string was truncated]&quot;;.
+        ///    Those with a 3 Tree Day Star tend to appear animated, spontaneous, and emotionally transparent in casual interactions. Their presence is often bright and engaging, with a natural upward movement in their tone, posture, or energy. Even when they&apos;re not trying to stand out, they often exude a kind of freshness or urgency—like spring breaking through the soil. Their body language may be quick or unfiltered, and their em [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_daystar {
             get {
@@ -19239,21 +19274,34 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The 3 Tree character has the full force of spring in its nature, or the dawn.
-        ///
-        ///    Thunder characters are &lt;strong&gt;forward-thinking and enjoy initiating new projects&lt;/strong&gt; and
-        ///    discussing new concepts.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    3 Tree Character — Bold Energy, Expressive Spirit, Restless Growth
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    3 Tree characters tend to be &lt;strong&gt;very lively and energetic&lt;/strong&gt;. They can also be very &lt;strong&gt;verbally expressive&lt;/strong&gt; and some of the quieter energies may find them a &lt;strong&gt;overly talkative at times&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Whilst Thunder characters are full o [rest of string was truncated]&quot;;.
+        ///    Those with a 3 Tree emotional character embody the vibrant, rising energy of early spring—bright, bold, and bursting with momentum. Their emotional nature is forward-moving and energized by possibility. They’re often at their best when initiating something new, whether it’s a project, idea, conversation, or adventure. Naturally curious and future-oriented, they bring a spark of enthusiasm to their rela [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_emotional_description {
             get {
                 return ResourceManager.GetString("thunder_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Energetic, enthusiastic, and full of fresh ideas—natural initiators and innovators.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally expressive and charismatic—bring vibrancy to social environments.&lt;/li&gt;
+        ///    &lt;li&gt;Quick-thinking and adaptable—can pivot rapidly in changing circumstances.&lt;/li&gt;
+        ///    &lt;li&gt;Fearless in the face of new challenges—willing to take emotional and creative risks.&lt;/li&gt;
+        ///    &lt;li&gt;Inspire others with their boldness, humor, and passion for life.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_emotional_description_summary {
+            get {
+                return ResourceManager.GetString("thunder_emotional_description_summary", resourceCulture);
             }
         }
         
@@ -20570,11 +20618,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water children, whilst they often have a naturally exploratory side, tend to be loners and need lots of encouragement to socialise and expand their horizons.
-        ///
-        ///    Parents ought to be careful not to be overly protective of Water children. This could cause them to further isolate from other children.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Water Children — Sensitive Explorers, Emotional Depth
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Water children are often quiet observers with rich inner worlds. Sensitive, intuitive, and emotionally fluid, they may appear dreamy or withdrawn, especially in unfamiliar or overwhelming environments. While they often possess a natural curiosity and a strong imagination, they tend to explore life in subtle, inward ways rather than through outward boldness. These children may prefer solitude or one-on-one connectio [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_child {
             get {
@@ -20596,11 +20644,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water children, whilst they often have a naturally exploratory side, tend to be loners and need lots of encouragement to socialise and expand their horizons.
-        ///
-        ///    Parents ought to be careful not to be overly protective of Water children. This could cause them to further isolate from other children.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    1 Water Day Star — Fluid Presence, Quiet Observation
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those born with a 1 Water Day Star often carry an aura of subtlety and softness in their daily expression. Whether they speak or remain silent, there’s something fluid and quiet in the way they move through space—frequently giving others the impression of depth, mystery, or calm detachment. Their mannerisms tend to be gentle, adaptable, and emotionally attuned, though they may reveal little directly. This can make t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_daystar {
             get {
@@ -20651,20 +20699,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water characters may appear rather &lt;strong&gt;shy, reserved and aloof&lt;/strong&gt; at times and tend to keep their thoughts and emotions to themselves.
-        ///
-        ///    However, sometimes the Water character can be expressed as the exact opposite, appearing quite &lt;strong&gt;sociable, vivacious and bubbly&lt;/strong&gt;.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    1 Water Character — Sensitivity, Mystery, and the Flowing Heart
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Water characters can be incredibly &lt;strong&gt;charming, charismatic and deeply alluring&lt;/strong&gt;. Some would say there is a somewhat &lt;strong&gt;mysterious quality&lt;/strong&gt; to them.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///     [rest of string was truncated]&quot;;.
+        ///    Those with 1 Water as their emotional or character energy often carry a deep, fluid emotional world beneath the surface—one that may not always be easy to see or understand from the outside. In daily life or intimate relationships, they may appear shy, quiet, or self-contained, keeping their thoughts and feelings to themselves. There is often a sense of distance or mystery around them, as if they are alwa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_emotional_description {
             get {
                 return ResourceManager.GetString("water_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Highly intuitive and emotionally perceptive—can sense unspoken dynamics with ease.&lt;/li&gt;
+        ///    &lt;li&gt;Compassionate, gentle, and deeply empathetic toward others.&lt;/li&gt;
+        ///    &lt;li&gt;Charming, mysterious, and often magnetic in social or creative settings.&lt;/li&gt;
+        ///    &lt;li&gt;Adaptable and fluid—able to move around obstacles rather than confront them directly.&lt;/li&gt;
+        ///    &lt;li&gt;Creative and soulful, often drawn to music, poetry, art, or spiritual inquiry.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_emotional_description_summary {
+            get {
+                return ResourceManager.GetString("water_emotional_description_summary", resourceCulture);
             }
         }
         
@@ -21361,12 +21424,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    4 Tree children have tremendous creative potential and can be quite pioneering in the areas that most interest them.
-        ///    It&apos;s important that they get lots of encouragement and appreciation from parents and teachers as well as plenty of inspiration, space and time to explore their talents freely.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Wind Children — Creative Spirits, Sensitive Dreamers
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    If they show early signs of talent in a given field, do not dismiss it. Anything that acts to suppress their creativity and dreams in any way could be extremely damaging to 4 Tree children. [rest of string was truncated]&quot;;.
+        ///    4 Tree children are imaginative, expressive, and full of creative promise. Like a spring breeze, their energy is fluid and changeable—blowing in new directions as inspiration strikes. They often show early signs of talent in music, writing, performance, or other creative forms of communication. These children flourish when given encouragement, emotional warmth, and a sense of spaciousness in which to explore their i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_child {
             get {
@@ -21391,12 +21453,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    4 Tree children have tremendous creative potential and can be quite pioneering in the areas that most interest them.
-        ///    It&apos;s important that they get lots of encouragement and appreciation from parents and teachers as well as plenty of inspiration, space and time to explore their talents freely.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    4 Tree Day Star — Graceful Presence, Emotional Resonance
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    If they show early signs of talent in a given field, do not dismiss it. Anything that acts to suppress their creativity and dreams in any way could be extremely damaging to 4 Tree children. [rest of string was truncated]&quot;;.
+        ///    Those with a 4 Tree Day Star tend to carry a soft, graceful energy in everyday interactions. Their outward manner is often fluid and charming, with a natural sense of rhythm and aesthetic. They typically come across as approachable and emotionally attuned, with an ability to sense the tone of a room and adapt with subtlety. There’s often a gentleness in their body language—relaxed shoulders, a melodic voice, or  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_daystar {
             get {
@@ -21442,18 +21503,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Wind character is &lt;strong&gt;exceptionally adaptable&lt;/strong&gt;. However, they do require quite a bit of support from others.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    4 Tree Character — Graceful Expression, Emotional Movement, Sensitive Intuition
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///   4 Tree is also called &apos;Wind&apos; and this is quite an apt description, as these characters can be &lt;strong&gt;extremely changeable, scatty and unpredictable at times&lt;/strong&gt;, especially when under stress.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    4 Trees have a &lt;strong&gt;sensitive and emotional nature&lt;/strong&gt;, which makes them prone to &lt;strong&gt;mood swings&lt;/strong&gt; at times. They are very &lt;stron [rest of string was truncated]&quot;;.
+        ///    Those with a 4 Tree character energy, also known as Wind, carry a subtle, emotional sensitivity that moves beneath the surface like a breeze. Adaptable and responsive to their environment, they often shift moods, thoughts, or plans with surprising fluidity. This ability to move and adjust is one of their greatest strengths, but it also means they require regular support and emotional groun [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_emotional_description {
             get {
                 return ResourceManager.GetString("wind_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally expressive, intuitive, and empathetic—strong interpersonal sensitivity.&lt;/li&gt;
+        ///    &lt;li&gt;Excellent communicators—natural charm and influence through language and presence.&lt;/li&gt;
+        ///    &lt;li&gt;Highly adaptable—able to respond gracefully to change and new ideas.&lt;/li&gt;
+        ///    &lt;li&gt;Persistent and dedicated—willing to work hard when emotionally committed.&lt;/li&gt;
+        ///    &lt;li&gt;Creative and emotionally intelligent—drawn to healing, teaching, or artistic work.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_emotional_description_summary {
+            get {
+                return ResourceManager.GetString("wind_emotional_description_summary", resourceCulture);
             }
         }
         

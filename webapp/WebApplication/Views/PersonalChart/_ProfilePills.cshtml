@@ -82,7 +82,7 @@
                 <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Partial("_ProfileCharacterEnergyDetails")
+                    @Html.Panel(Model.CharacterEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.CharacterEnergy).ToString()} {Html.Partial("_ProfileCharacterEnergyDetails").ToString()}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
                 @Html.Partial("_ButtonsFooter")
             </div>

@@ -118,6 +118,16 @@ namespace K9.WebApplication.Helpers
             return (EHousesDisplay)GetIntValue(Constants.SessionConstants.UserHousesDisplay);
         }
 
+        public static void SetCurrentUserScopeDisplay(EScopeDisplay value)
+        {
+            SetValue(Constants.SessionConstants.UserScopeDisplay, (int)value);
+        }
+
+        public static EScopeDisplay GetCurrentUserScopeDisplay()
+        {
+            return (EScopeDisplay)GetIntValue(Constants.SessionConstants.UserScopeDisplay);
+        }
+
         public static void SetCurrentUserCalculationMethod(int value)
         {
             SetValue(Constants.SessionConstants.UserCalculationMethod, value);

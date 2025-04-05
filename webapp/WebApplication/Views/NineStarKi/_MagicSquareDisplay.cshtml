@@ -26,8 +26,12 @@
 
     var displayPreference = K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
     var magicStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "display: none;" : "";
-    var houseDetails = Model.IsPersonalChart ? Model.PersonalHouseOccupied.ElementNameAndNumber : $"{Model.PersonalHouseOccupied.ElementNameAndNumber} {Dictionary.House}";
-    var houseDetails2 = Model.IsSplit ? Model.IsPersonalChart ? Model.SecondMagicSquareViewModel.PersonalHouseOccupied.ElementNameAndNumber : $"{Model.SecondMagicSquareViewModel.PersonalHouseOccupied.ElementNameAndNumber} {Dictionary.House}" : "";
+    var houseDetails = Model.IsPersonalChart ? Model.PersonalHouseOccupied.ElementNameAndNumber :
+        Model.IsGlobal ? $"{Model.GlobalKi.ElementNameAndNumber} {Dictionary.House}" :
+            $"{Model.PersonalHouseOccupied.ElementNameAndNumber} {Dictionary.House}";
+    var houseDetails2 = Model.IsSplit ? Model.IsPersonalChart ? Model.SecondMagicSquareViewModel.PersonalHouseOccupied.ElementNameAndNumber :
+        Model.IsGlobal ? $"{Model.SecondMagicSquareViewModel.GlobalKi.ElementNameAndNumber} {Dictionary.House}" :
+            $"{Model.SecondMagicSquareViewModel.PersonalHouseOccupied.ElementNameAndNumber} {Dictionary.House}" : "";
 }
 
 <div class="magic-square-display" style="@magicStyle">

@@ -11,15 +11,15 @@
     var showDirections = K9.WebApplication.Helpers.SessionHelper.GetShowDirections();
     var directionsStyle = !showDirections ? "display: none;" : "";
 
-    var isActive1 = Model.IsPersonalChart ? false : 4 == Model.PersonalHouseOccupied.EnergyNumber;
-    var isActive2 = Model.IsPersonalChart ? false : 9 == Model.PersonalHouseOccupied.EnergyNumber;
-    var isActive3 = Model.IsPersonalChart ? false : 2 == Model.PersonalHouseOccupied.EnergyNumber;
-    var isActive4 = Model.IsPersonalChart ? false : 3 == Model.PersonalHouseOccupied.EnergyNumber;
-    var isActive5 = Model.IsPersonalChart ? true : 5 == Model.PersonalHouseOccupied.EnergyNumber;
-    var isActive6 = Model.IsPersonalChart ? false : 7 == Model.PersonalHouseOccupied.EnergyNumber;
-    var isActive7 = Model.IsPersonalChart ? false : 8 == Model.PersonalHouseOccupied.EnergyNumber;
-    var isActive8 = Model.IsPersonalChart ? false : 1 == Model.PersonalHouseOccupied.EnergyNumber;
-    var isActive9 = Model.IsPersonalChart ? false : 6 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive1 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 4 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive2 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 9 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive3 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 2 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive4 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 3 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive5 = Model.IsPersonalChart ? true : Model.IsGlobal ? true : 5 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive6 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 7 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive7 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 8 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive8 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 1 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive9 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 6 == Model.PersonalHouseOccupied.EnergyNumber;
 
     var active1Class = isActive1 ? "active " : "";
     var active2Class = isActive2 ? "active " : "";
@@ -45,7 +45,7 @@
         <div class="cell @active8Class number-@magicSquareNumbers[0]" data-index="8">@magicSquareNumbers[0]</div>
         <div class="cell @active9Class number-@magicSquareNumbers[5]" data-index="9">@magicSquareNumbers[5]</div>
 
-        @if (Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.EpochEnergy && Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.GenerationalEnergy)
+        @if (Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.EpochEnergy && Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.GenerationalEnergy && !Model.IsGlobal)
         {
             <div class="directions-line-overlay" style="@directionsStyle">
                 <div data-tooltip-title="@directions.FiveYelloKilling.Name" data-tooltip="@directions.FiveYellowKillingDescription" class="line five-yellow-killing to-@directions.FiveYelloKilling.Direction"></div>

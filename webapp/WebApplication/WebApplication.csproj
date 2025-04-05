@@ -1699,7 +1699,7 @@
     <Content Include="Views\Predictions\Planner\_GlobalPlanner.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PlannerView.cshtml" />
     <Content Include="Views\Predictions\Planner\_HourlyPlanner.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\PlannerDisplay.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ScopeDisplay.cshtml" />
     <Content Include="Views\NineStarKi\_MagicSquare.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EnergyDisplay.cshtml" />
     <Content Include="Views\NineStarKi\_MagicSquareDisplay.cshtml" />

@@ -3,7 +3,7 @@ using K9.Globalisation;
 
 namespace K9.WebApplication.Enums
 {
-    public enum EPlannerDisplay
+    public enum EScopeDisplay
     {
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Labels.PersonalHouses)]
         PersonalKi,

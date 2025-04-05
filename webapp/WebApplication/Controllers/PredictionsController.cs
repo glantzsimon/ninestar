@@ -9,7 +9,6 @@ using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI;
-using Hangfire.Storage;
 
 namespace K9.WebApplication.Controllers
 {
@@ -102,7 +101,7 @@ namespace K9.WebApplication.Controllers
                     processedModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere = model.InvertDailyAndHourlyCycleKiForSouthernHemisphere;
 
                     var plannerData = _nineStarKiService.GetPlannerData(model.PersonModel.DateOfBirth, model.PersonModel.BirthTimeZoneId, model.PersonModel.TimeOfBirth, model.PersonModel.Gender, model.SelectedDate.Value, model.UserTimeZoneId, model.CalculationMethod, model.DisplayDataForPeriod, model.HousesDisplay, model.InvertDailyAndHourlyKiForSouthernHemisphere, model.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
-                        EPlannerView.Year, EPlannerDisplay.PersonalKi, EPlannerNavigationDirection.None, processedModel);
+                        EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, processedModel);
 
                     UpdatePlannerUrls(plannerData);
 
@@ -126,7 +125,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-planner")]
-        public ActionResult GetPlanner(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, EDisplayDataForPeriod displayDataForPeriod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere, EPlannerView view, EPlannerDisplay display, EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None)
+        public ActionResult GetPlanner(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, EDisplayDataForPeriod displayDataForPeriod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere, EPlannerView view, EScopeDisplay display, EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None)
         {
             var plannerData = _nineStarKiService.GetPlannerData(dateOfBirth, birthTimeZoneId, timeOfBirth, gender,
                 selectedDateTime, userTimeZoneId, calculationMethod, displayDataForPeriod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere,
@@ -139,7 +138,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("get-hourly-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetHourlyPredictions(ENineStarKiEnergy energy, EPlannerDisplay display = EPlannerDisplay.PersonalKi)
+        public JsonResult GetHourlyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.HourlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
@@ -149,7 +148,7 @@ namespace K9.WebApplication.Controllers
         
         [Route("get-daily-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetDailyPredictions(ENineStarKiEnergy energy, EPlannerDisplay display = EPlannerDisplay.PersonalKi)
+        public JsonResult GetDailyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.DailyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
@@ -159,7 +158,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("get-monthly-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetMonthlyPredictions(ENineStarKiEnergy energy, EPlannerDisplay display = EPlannerDisplay.PersonalKi)
+        public JsonResult GetMonthlyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.MonthlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
@@ -169,7 +168,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("get-yearly-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetYearlyPredictions(ENineStarKiEnergy energy, EPlannerDisplay display = EPlannerDisplay.PersonalKi)
+        public JsonResult GetYearlyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.YearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
@@ -179,7 +178,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("get-nine-yearly-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetNineYearlyPredictions(ENineStarKiEnergy energy, EPlannerDisplay display = EPlannerDisplay.PersonalKi)
+        public JsonResult GetNineYearlyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.NineYearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
@@ -189,7 +188,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("get-eighty-one-yearly-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetEightyOneYearlyPredictions(ENineStarKiEnergy energy, EPlannerDisplay display = EPlannerDisplay.PersonalKi)
+        public JsonResult GetEightyOneYearlyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.EightyOneYearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
@@ -225,12 +224,12 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
-        private JsonResult PredictionsJsonResult(EPlannerDisplay display, NineStarKiEnergy cycle)
+        private JsonResult PredictionsJsonResult(EScopeDisplay display, NineStarKiEnergy cycle)
         {
             return Json(new
             {
                 cycle.CycleDescriptiveName,
-                CycleDescription = display == EPlannerDisplay.PersonalKi ? cycle.CycleDescription : cycle.GlobalCycleDescription
+                CycleDescription = display == EScopeDisplay.PersonalKi ? cycle.CycleDescription : cycle.GlobalCycleDescription
             }, JsonRequestBehavior.AllowGet);
         }
 

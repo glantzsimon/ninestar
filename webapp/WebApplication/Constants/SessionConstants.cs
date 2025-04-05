@@ -45,6 +45,7 @@
         public const string UserTimeZone = "UserTimeZone";
         public const string UserCalculationMethod = "UserCalculationMethod";
         public const string UserHousesDisplay = "UserHousesDisplay";
+        public const string UserScopeDisplay = "UserScopeDisplay";
         public const string UseHolograhpicCycles = "UseHolograhpicCycles";
         public const string DefaultPanelView = "DefaultPanelView";
         public const string DefaultPanelCycleView = "DefaultPanelCycleView";

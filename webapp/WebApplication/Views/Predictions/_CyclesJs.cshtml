@@ -14,7 +14,7 @@
         updateGlobalPlanner(view, display, selectedDate, navigationDirection);
     }
 
-    function bindGlobalPlannerEvents() {
+    function bindGlobalEvents() {
         let clickTimeout;
         let scrollTimeout;
 
@@ -27,6 +27,30 @@
             e.stopPropagation();
             clearTimeouts();
             processUiEvent($(this));
+        });
+
+        $("#ScopeDisplay").change(function (e) {
+            e.stopPropagation();
+            clearTimeouts();
+
+            var scope = $("#ScopeDisplay").val();
+            var energyDisplay = $("#EnergyDisplay").val();
+
+            if (scope === '@((int)EScopeDisplay.PersonalKi)') {
+                $("#global-cycles-container").hide();
+                $("#personal-cycles-container").fadeIn();
+                ninestarki().showPanelOne(".cycles-tabs-container");
+
+                if (energyDisplay === '@((int)EEnergyDisplay.MagicSquare)') {
+                    $(".show-directions-container").fadeIn();
+                }
+
+            } else {
+                $("#personal-cycles-container").hide();
+                $("#global-cycles-container").fadeIn();
+                ninestarki().showPanelTwo(".cycles-tabs-container");
+                $(".show-directions-container").fadeOut();
+            }
         });
 
         $("#View, #Display").change(function(e) {
@@ -124,7 +148,7 @@
                         $container.html(result.data);
                         $container.fadeIn(100);
 
-                        bindGlobalPlannerEvents();
+                        bindGlobalEvents();
                         bootstrapControls().init();
                         ninestarki().initMagicTooltips();
 
@@ -140,7 +164,7 @@
 
     $(function() {
 
-        bindGlobalPlannerEvents();
+        bindGlobalEvents();
     });
 
 </script>

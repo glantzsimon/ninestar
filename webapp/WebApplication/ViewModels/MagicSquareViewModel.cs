@@ -11,6 +11,7 @@ namespace K9.WebApplication.ViewModels
         public MagicSquareViewModel SecondMagicSquareViewModel { get; set; }
 
         public bool IsPersonalChart { get; set; }
+        public bool IsGlobal { get; set; }
         public bool IsSplit { get; set; }
         
         public NineStarKiDirections GetDirections()

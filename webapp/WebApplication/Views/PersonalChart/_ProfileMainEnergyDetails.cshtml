@@ -48,13 +48,6 @@
                 </li>
 
                 <li>
-                    <a data-toggle="tab" href="#stress">
-                        @Dictionary.StressResponse
-                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/stress.png');"></div>
-                    </a>
-                </li>
-
-                <li>
                     <a data-toggle="tab" href="#spirituality">
                         @Dictionary.Spirituality
                         <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/spirituality.png');"></div>
@@ -96,13 +89,6 @@
                     @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileHealth", Model)
-                    }
-                </div>
-
-                <div id="stress" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model))
-                    {
-                        @Html.Partial("_ProfileStressResponse", Model)
                     }
                 </div>
 

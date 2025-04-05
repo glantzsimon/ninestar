@@ -1082,6 +1082,7 @@
     <Content Include="Images\ui\selected.png" />
     <Content Include="Images\ui\social-expression.png" />
     <Content Include="Images\ui\spirituality.png" />
+    <Content Include="Images\ui\stress-response.png" />
     <Content Include="Images\ui\success.png" />
     <Content Include="Images\ui\facebook_sm.png" />
     <Content Include="Images\ui\google_sm.png" />
@@ -1706,6 +1707,7 @@
     <Content Include="Views\PersonalChart\_ProfileSpirituality.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PanelView.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileStressResponse.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileCharacterEnergyDetails.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

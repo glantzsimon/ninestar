@@ -71,7 +71,7 @@
                 <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Partial("_ProfileMainEnergyDetails", Model)
+                    @Html.Partial("_ProfileMainEnergyDetails")
                 }
                 @Html.Partial("_ButtonsFooter")
             </div>
@@ -79,12 +79,11 @@
             <div id="character" class="tab-pane fade @childActiveClass">
                 @Html.Panel(Dictionary.CharacterEnergyLabel, $"{Dictionary.CharacterEnergyDescription}")
 
+                <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Panel(Model.CharacterEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.CharacterEnergy).ToString()}{Model.CharacterEnergy.EnergyDescription}{Model.CharacterEnergy.ChildDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    @Html.Partial("_ProfileCharacterEnergyDetails")
                 }
-
-                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
@@ -102,7 +101,7 @@
 
             <div id="daystar" class="tab-pane fade">
                 @Html.Panel(Dictionary.DayStarLabel, Dictionary.DayStarDescription)
-                
+
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel(Model.PersonalChartEnergies.Day.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Day).ToString()}{Model.PersonalChartEnergies.Day.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
@@ -114,7 +113,7 @@
 
             <div id="generation" class="tab-pane fade">
                 @Html.Panel(Dictionary.GenerationalEnergyLabel, Dictionary.GenerationalEnergyDescription)
-                
+
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel(Model.PersonalChartEnergies.Generation.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Generation).ToString()}{Model.PersonalChartEnergies.Generation.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
@@ -126,7 +125,7 @@
 
             <div id="epoch" class="tab-pane fade">
                 @Html.Panel(Dictionary.EpochEnergyLabel, Dictionary.EpochEnergyDescription)
-                
+
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel(Model.PersonalChartEnergies.Epoch.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Epoch).ToString()}{Model.PersonalChartEnergies.Epoch.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)

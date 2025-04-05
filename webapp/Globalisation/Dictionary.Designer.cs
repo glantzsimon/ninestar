@@ -4931,7 +4931,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    5 Earth Character — Centred Strength, Inner Authority, Unshakable Presence
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with a 5 Earth emotional character sit at the energetic centre of the Nine Star Ki system, and this central position is reflected in their deep influence and commanding presence. They often come into the world with strong leadership potential, a bold nature, and a grounded intensity that can be felt even in childhood. Emotionally, they tend to assert themselves with confidence and can be  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_emotional_description {
             get {
@@ -4940,14 +4944,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    5 Earth characters are born with &lt;strong&gt;natural leadership potential&lt;/strong&gt; and often have a &lt;strong&gt;bold and assertive&lt;/strong&gt; nature. They can be &lt;strong&gt;demanding&lt;/strong&gt; at times, to the point of aggressiveness.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    5 is at the centre of the 9 Star Ki system and this gives 5 soil characters a &lt;strong&gt;great capacity to influence&lt;/strong&gt; those around them.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Core Earth characters are &lt;strong&gt;extremely persevering&lt;/strong&gt;. They can also express different extremes.  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Natural leaders with a commanding emotional presence and inner strength.&lt;/li&gt;
+        ///    &lt;li&gt;Persistent and resilient—able to overcome significant life challenges.&lt;/li&gt;
+        ///    &lt;li&gt;Protective, loyal, and willing to sacrifice for those they care about.&lt;/li&gt;
+        ///    &lt;li&gt;Deep capacity to influence and stabilize others in emotional or practical ways.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of profound inner growth and transformation over time.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can become emotion [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_emotional_description_summary {
             get {
@@ -5304,6 +5312,22 @@ namespace K9.Globalisation {
         public static string coreearth_surface_description {
             get {
                 return ResourceManager.GetString("coreearth_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You come across as commanding and possibly a little domineering at times. 
+        ///    
+        ///    It is very important for you to feel involved and at the centre of what you do. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    When the number 5 is situated at the third position, it enhanes the first and second numbers, which are always the same, giving rise to a particularly strong expression of that element.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string coreearth_surface_description_summary {
+            get {
+                return ResourceManager.GetString("coreearth_surface_description_summary", resourceCulture);
             }
         }
         
@@ -7405,17 +7429,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire characters are some of the &lt;strong&gt;brightest and liveliest of all the nine characters&lt;/strong&gt;. 
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    9 Fire Character — Radiance, Charisma, and the Wisdom of Light
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    They tend to &lt;strong&gt;wear their heart on their sleeve&lt;/strong&gt; and can be exceptionally &lt;strong&gt;warm and affectionate&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    9 Fire characters have a &lt;strong&gt;bubbly personality with lots of charisma&lt;/strong&gt; and often possess great &lt;strong&gt;clarity and intuition&lt;/strong&gt;, whch can help to &lt;strong&gt;shine light on situations&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Sometimes Fire ch [rest of string was truncated]&quot;;.
+        ///    Those with a 9 Fire character energy shine brightly in nearly everything they do. These individuals are often expressive, lively, and full of warmth. They tend to wear their hearts on their sleeves, openly sharing their feelings, passions, and ideas. Naturally magnetic, they often draw others in with ease—lighting up a room with their presence and infusing conversations with energy and colour. Their expres [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_emotional_description {
             get {
@@ -7424,17 +7442,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire characters are some of the &lt;strong&gt;brightest and liveliest of all the nine characters&lt;/strong&gt;. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    They tend to &lt;strong&gt;wear their heart on their sleeve&lt;/strong&gt; and can be exceptionally &lt;strong&gt;warm and affectionate&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    9 Fire characters have a &lt;strong&gt;bubbly personality with lots of charisma&lt;/strong&gt; and often possess great &lt;strong&gt;clarity and intuition&lt;/strong&gt;, whch can help to &lt;strong&gt;shine light on situations&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Sometimes Fire ch [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Charismatic, expressive, and emotionally transparent—easy to connect with.&lt;/li&gt;
+        ///    &lt;li&gt;Highly intuitive—able to perceive and articulate emotional truths clearly.&lt;/li&gt;
+        ///    &lt;li&gt;Inspiring and radiant—bring joy, passion, and colour to those around them.&lt;/li&gt;
+        ///    &lt;li&gt;Generous and warm-hearted—naturally supportive in relationships and community.&lt;/li&gt;
+        ///    &lt;li&gt;Live fully in the present—know how to experience life with spontaneity and zest.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_emotional_description_summary {
             get {
@@ -7860,6 +7878,21 @@ namespace K9.Globalisation {
         public static string fire_surface_description {
             get {
                 return ResourceManager.GetString("fire_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You may appear rather showy and ostentatious at times. You are naturally gregarious and sociable and love to be the centre of attention.
+        ///
+        ///    You also have a deeper intuitive nature that shines through and others benefit greatly from your insights and wisdom.
+        ///
+        ///    Watch out for being overly impulsive!
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string fire_surface_description_summary {
+            get {
+                return ResourceManager.GetString("fire_surface_description_summary", resourceCulture);
             }
         }
         
@@ -9442,13 +9475,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    6 Metal characters tend to have a very &lt;strong&gt;direct, down-to-earth and uncompromising nature&lt;/strong&gt;.
-        ///
-        ///    They tend to have very &lt;strong&gt;clear opinions about what is fair and ethical&lt;/strong&gt; and what is not and can be quite &lt;strong&gt;opinionated and inflexible&lt;/strong&gt; in their views. They are certainly &lt;strong&gt;not afraid to express their opinion&lt;/strong&gt; and can be quite &lt;strong&gt;sharp and blunt&lt;/strong&gt; in the way they communicate at times.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    6 Metal Character — Inner Authority, Quiet Intensity, and a Deep Sense of Justice
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Heaven character as &lt;strong&gt;trem [rest of string was truncated]&quot;;.
+        ///    Those with a 6 Metal emotional character embody the energy of clear skies and high ideals. They are often principled, focused, and quietly commanding—individuals with a strong internal compass and a direct approach to life. They tend to have well-defined views about what is right and fair, and are not afraid to voice their opinions. While this clarity can be a great strength, it can also [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_emotional_description {
             get {
@@ -9457,13 +9488,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    6 Metal characters tend to have a very &lt;strong&gt;direct, down-to-earth and uncompromising nature&lt;/strong&gt;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Strong inner compass and moral clarity—deep sense of fairness and justice.&lt;/li&gt;
+        ///    &lt;li&gt;Natural leadership presence—commands respect and inspires order.&lt;/li&gt;
+        ///    &lt;li&gt;Highly focused, efficient, and precise—values structure and purpose.&lt;/li&gt;
+        ///    &lt;li&gt;Deeply intuitive and sensitive beneath a composed exterior.&lt;/li&gt;
+        ///    &lt;li&gt;Capable of great integrity, loyalty, and mentorship when emotionally balanced.&lt;/li&gt;
+        ///&lt;/ul&gt;
         ///
-        ///    They tend to have very &lt;strong&gt;clear opinions about what is fair and ethical&lt;/strong&gt; and what is not and can be quite &lt;strong&gt;opinionated and inflexible&lt;/strong&gt; in their views. They are certainly &lt;strong&gt;not afraid to express their opinion&lt;/strong&gt; and can be quite &lt;strong&gt;sharp and blunt&lt;/strong&gt; in the way they communicate at times.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The Heaven character as &lt;strong&gt;trem [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally guarded—can be d [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_emotional_description_summary {
             get {
@@ -9899,6 +9935,17 @@ namespace K9.Globalisation {
         public static string heaven_surface_description {
             get {
                 return ResourceManager.GetString("heaven_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You are straightforward and sincere in your expression. At times you can be rather blunt and a little overbearing. However, you are basically careful, prudent and well organised. Your actions are clear, precise and well thought-out.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string heaven_surface_description_summary {
+            get {
+                return ResourceManager.GetString("heaven_surface_description_summary", resourceCulture);
             }
         }
         
@@ -11050,10 +11097,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    7 Metal characters are generally very &lt;strong&gt;easy-going and adaptable&lt;/strong&gt;. Many express themselves with great &lt;strong&gt;diplomacy&lt;/strong&gt; and they often have a &lt;strong&gt;great capacity to listen to others&lt;/strong&gt; and to make them feel understood and validated, thanks to their &lt;strong&gt;patient and compassionate&lt;/strong&gt; nature.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    7 Metal Character — Poise, Charm, and the Deep Stillness Beneath
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Lake characters typically make &lt;strong&gt;great hosts&lt;/strong&gt;, owing to their &lt;strong&gt;charming, laid-back nature&lt;/strong&gt;. They are usually very &lt;strong&gt;expressive [rest of string was truncated]&quot;;.
+        ///    Those with a 7 Metal character, also known as the Lake energy, tend to be graceful, charming, and emotionally expressive in a way that draws people in with ease. They are typically sociable, good-humoured, and eloquent—possessing a natural sense of timing and tact. Many are excellent listeners, with the ability to make others feel heard and emotionally understood, and their diplomacy makes them especiall [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_emotional_description {
             get {
@@ -11062,10 +11110,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    7 Metal characters are generally very &lt;strong&gt;easy-going and adaptable&lt;/strong&gt;. Many express themselves with great &lt;strong&gt;diplomacy&lt;/strong&gt; and they often have a &lt;strong&gt;great capacity to listen to others&lt;/strong&gt; and to make them feel understood and validated, thanks to their &lt;strong&gt;patient and compassionate&lt;/strong&gt; nature.
-        ///&lt;p&gt;
-        ///    Lake characters typically make &lt;strong&gt;great hosts&lt;/strong&gt;, owing to their &lt;strong&gt;charming, laid-back nature&lt;/strong&gt;. They are usually very &lt;strong&gt;expressive [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Charming, expressive, and emotionally intelligent—natural communicators and hosts.&lt;/li&gt;
+        ///    &lt;li&gt;Patient listeners with a talent for helping others feel understood and seen.&lt;/li&gt;
+        ///    &lt;li&gt;Witty, humorous, and persuasive—skilled in public speaking or storytelling.&lt;/li&gt;
+        ///    &lt;li&gt;Emotionally deep and reflective—often drawn to music, art, or poetic expression.&lt;/li&gt;
+        ///    &lt;li&gt;Accumulates wisdom over time—can offer gentle, valuable counsel to others.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_emotional_description_summary {
             get {
@@ -11468,6 +11522,23 @@ namespace K9.Globalisation {
         public static string lake_surface_description {
             get {
                 return ResourceManager.GetString("lake_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You come across as fun-loving and laid-back, with a great sense of humour.
+        ///    
+        ///    You enjoy your independence and have a calm, relaxed demeanour that makes others feel at ease.
+        ///    
+        ///    You are a good listener and others willingly come to you to share stories and benefit from your wise and thoughtful reflections. 
+        ///    
+        ///    Your sincerity, wit, charm and sense of humour make a strong impression on others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string lake_surface_description_summary {
+            get {
+                return ResourceManager.GetString("lake_surface_description_summary", resourceCulture);
             }
         }
         
@@ -13595,11 +13666,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    8 Earth Character — Stillness, Depth, and the Unshakable Inner Core
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Mountain is a good description of this character, with its &lt;strong&gt;hard exterior protecting a much softer underbelly&lt;/strong&gt;, which is usually only revealed once people get to k [rest of string was truncated]&quot;;.
+        ///    Those with an 8 Earth character energy often carry an air of quiet solitude and strong emotional boundaries. Of all the Nine Star Ki types, they are among the most private and introspective. They value their personal space, their silence, and their independence. Often slow to speak or share openly, they may not always express themselves verbally—but their presence speaks volumes. Many 8 Mountain chara [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_emotional_description {
             get {
@@ -13608,11 +13679,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The Mountain is a good description of this character, with its &lt;strong&gt;hard exterior protecting a much softer underbelly&lt;/strong&gt;, which is usually only revealed once people get to k [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Deeply loyal, grounded, and reliable—natural emotional anchors for others.&lt;/li&gt;
+        ///    &lt;li&gt;Private, introspective, and strong-willed—possess inner depth and self-containment.&lt;/li&gt;
+        ///    &lt;li&gt;Highly focused and determined—can accomplish great things through steady effort.&lt;/li&gt;
+        ///    &lt;li&gt;Supportive and caring—offering help through action more than words.&lt;/li&gt;
+        ///    &lt;li&gt;Creative and expressive through non-verbal channels such as art, music, or craftsmanship.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenge [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_emotional_description_summary {
             get {
@@ -14030,6 +14106,21 @@ namespace K9.Globalisation {
         public static string mountain_surface_description {
             get {
                 return ResourceManager.GetString("mountain_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You tend to find your own, often unorthodox ways of doing things and are a bit of a loner.
+        ///    
+        ///    Outwardly you appear calm, which may even make you seem shy. However, you are not afraid to express your opinion and can deliver a strong argument when necessar. 
+        ///    
+        ///    You are tenacious and have great persistence in the face of great challenges.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string mountain_surface_description_summary {
+            get {
+                return ResourceManager.GetString("mountain_surface_description_summary", resourceCulture);
             }
         }
         
@@ -17649,16 +17740,28 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You mau well appear reserved. You are reliable, steady and tend to keep your word. You can also be quite detail-minded and potentially overly fussy.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    2 Soil Social Expression — Quiet Reliability, Gentle Diplomacy, and Practical Warmth
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    You are diplomatic and helpful towards others.
-        ///&lt;/p&gt;.
+        ///    Those with 2 Soil as their surface energy often appear calm, grounded, and composed in social settings. First impressions tend to highlight their steady, dependable nature. They give off a subtle but comforting sense of reliability—someone who listens well, honours their word, and shows up when it counts. Their presence may not be loud or showy, but it is quietly reassuring. Others ar [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_surface_description {
             get {
                 return ResourceManager.GetString("soil_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    2 Soil Social Expression — Quiet Reliability, Gentle Diplomacy, and Practical Warmth
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with 2 Soil as their surface energy often appear calm, grounded, and composed in social settings. First impressions tend to highlight their steady, dependable nature. They give off a subtle but comforting sense of reliability—someone who listens well, honours their word, and shows up when it counts. Their presence may not be loud or showy, but it is quietly reassuring. Others ar [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_surface_description_summary {
+            get {
+                return ResourceManager.GetString("soil_surface_description_summary", resourceCulture);
             }
         }
         
@@ -19718,15 +19821,28 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You are spontaneous and energetic. You have great optimism and are full of enthusiasm for the things that interest you. 
-        ///    
-        ///    You are probably quite dynamic, vivacious and even a little noisy and hectic at times. This could be distracting to those who prefer more stillness and quiet.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    3 Tree Social Expression — Bright Enthusiasm, Spontaneity, and Unfiltered Energy
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with 3 Tree as their surface energy tend to make an immediate impression as lively, energetic, and full of ideas. They often appear enthusiastic and animated, especially when discussing topics they’re passionate about. Their energy feels like spring breaking through the soil—spontaneous, bold, and full of momentum. People often find them uplifting and fun to be around, drawn to thei [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_surface_description {
             get {
                 return ResourceManager.GetString("thunder_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    3 Tree Social Expression — Bright Enthusiasm, Spontaneity, and Unfiltered Energy
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with 3 Tree as their surface energy tend to make an immediate impression as lively, energetic, and full of ideas. They often appear enthusiastic and animated, especially when discussing topics they’re passionate about. Their energy feels like spring breaking through the soil—spontaneous, bold, and full of momentum. People often find them uplifting and fun to be around, drawn to thei [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_surface_description_summary {
+            get {
+                return ResourceManager.GetString("thunder_surface_description_summary", resourceCulture);
             }
         }
         
@@ -21096,13 +21212,28 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    On the one hand you may appear passionate, sociable and bubbly, like a mountain stream. On the other , you could give the impression of being shy, cautious, indecisive and prone to procrastination.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    1 Water Social Expression — Fluid Presence, Elusive Charisma, Shifting Impressions
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with 1 Water as their social expression energy tend to make varied and sometimes paradoxical first impressions. At times, they may appear charming, witty, and animated—like a sparkling stream weaving effortlessly through conversation. They can be curious, engaging, and even magnetic in social settings when they feel emotionally safe. Their presence can feel refreshing and quietly  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_surface_description {
             get {
                 return ResourceManager.GetString("water_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    1 Water Social Expression — Fluid Presence, Elusive Charisma, Shifting Impressions
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with 1 Water as their social expression energy tend to make varied and sometimes paradoxical first impressions. At times, they may appear charming, witty, and animated—like a sparkling stream weaving effortlessly through conversation. They can be curious, engaging, and even magnetic in social settings when they feel emotionally safe. Their presence can feel refreshing and quietly  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_surface_description_summary {
+            get {
+                return ResourceManager.GetString("water_surface_description_summary", resourceCulture);
             }
         }
         
@@ -21927,6 +22058,21 @@ namespace K9.Globalisation {
         public static string wind_surface_description {
             get {
                 return ResourceManager.GetString("wind_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You have a quiet, dependable and gentle nature. You are helpful and thoughtful and keep your word.
+        ///    
+        ///    You are easily influenced by events and people around you. 
+        ///    
+        ///    Of all the nine energetic types, you are the most changeable in your expression,  like the wind!
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string wind_surface_description_summary {
+            get {
+                return ResourceManager.GetString("wind_surface_description_summary", resourceCulture);
             }
         }
         

@@ -5839,8 +5839,14 @@
   <data name="coreearth_emotional_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotional\en-gb\summary\coreearth-emotional-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="coreearth_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\summary\coreearth-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="fire_emotional_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotional\en-gb\summary\fire-emotional-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\summary\fire-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="GlobalKiLabel" xml:space="preserve">
     <value>Global Ki</value>
@@ -5851,6 +5857,9 @@
   <data name="heaven_emotional_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotional\en-gb\summary\heaven-emotional-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="heaven_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\summary\heaven-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="HousesDisplayLabel" xml:space="preserve">
     <value>Houses Display Options</value>
   </data>
@@ -5859,6 +5868,9 @@
   </data>
   <data name="lake_emotional_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotional\en-gb\summary\lake-emotional-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\summary\lake-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="LunarHouses" xml:space="preserve">
     <value>Display Lunar Houses</value>
@@ -5869,11 +5881,17 @@
   <data name="mountain_emotional_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotional\en-gb\summary\mountain-emotional-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="mountain_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\summary\mountain-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="ReadMore" xml:space="preserve">
     <value>Read more...</value>
   </data>
   <data name="soil_emotional_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotional\en-gb\summary\soil-emotional-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\summary\soil-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SolarHouses" xml:space="preserve">
     <value>Display Solar Houses</value>
@@ -5881,10 +5899,19 @@
   <data name="thunder_emotional_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotional\en-gb\summary\thunder-emotional-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="thunder_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\summary\thunder-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="water_emotional_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotional\en-gb\summary\water-emotional-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="water_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\summary\water-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="wind_emotional_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotional\en-gb\summary\wind-emotional-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\summary\wind-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

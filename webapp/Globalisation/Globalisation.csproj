@@ -358,6 +358,15 @@
     <Content Include="Energies\StressResponse\en-gb\child-controls-stress.htm" />
     <Content Include="Energies\StressResponse\en-gb\child-same-element-stress.htm" />
     <Content Include="Energies\StressResponse\en-gb\child-supports-stress.htm" />
+    <Content Include="Energies\Surface\en-gb\Summary\coreearth-surface-description-summary.htm" />
+    <Content Include="Energies\Surface\en-gb\Summary\fire-surface-description-summary.htm" />
+    <Content Include="Energies\Surface\en-gb\Summary\heaven-surface-description-summary.htm" />
+    <Content Include="Energies\Surface\en-gb\Summary\lake-surface-description-summary.htm" />
+    <Content Include="Energies\Surface\en-gb\Summary\mountain-surface-description-summary.htm" />
+    <Content Include="Energies\Surface\en-gb\Summary\soil-surface-description-summary.htm" />
+    <Content Include="Energies\Surface\en-gb\Summary\thunder-surface-description-summary.htm" />
+    <Content Include="Energies\Surface\en-gb\Summary\water-surface-description-summary.htm" />
+    <Content Include="Energies\Surface\en-gb\Summary\wind-surface-description-summary.htm" />
     <Content Include="GlobalPredictions\Hour\en-gb\global-core-earth-hour-cycle.htm" />
     <Content Include="GlobalPredictions\Hour\en-gb\global-fire-hour-cycle.htm" />
     <Content Include="GlobalPredictions\Hour\en-gb\global-heaven-hour-cycle.htm" />

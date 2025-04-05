@@ -92,7 +92,7 @@
 
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Panel(Model.SurfaceEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.SurfaceEnergy).ToString()}{Model.SurfaceEnergy.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    @Html.PanelWithSummary(Model.SurfaceEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.SurfaceEnergy).ToString()}{Model.SurfaceEnergy.EnergyDescription}", $"{Html.Partial("_ProfileHeader", Model.SurfaceEnergy).ToString()}{Model.SurfaceEnergy.SurfaceEnergySummary}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
 
                 <br />

@@ -536,6 +536,20 @@ namespace K9.WebApplication.Models
                 {ENineStarKiEnergy.Fire, Dictionary.fire_emotional_description_summary}
             };
 
+        private static readonly Dictionary<ENineStarKiEnergy, string> _surfaceEnergySummaries =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_surface_description_summary},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_surface_description_summary},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_surface_description_summary},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_surface_description_summary},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_surface_description_summary},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_surface_description_summary},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_surface_description_summary},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_surface_description_summary},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_surface_description_summary}
+            };
+
         private static readonly Dictionary<ENineStarKiEnergy, string> _emotionalDescriptions =
             new Dictionary<ENineStarKiEnergy, string>
             {
@@ -994,7 +1008,7 @@ namespace K9.WebApplication.Models
         public string MainEnergySummary =>
             EnergyType == ENineStarKiEnergyType.MainEnergy ? GetMainEnergySummary() : string.Empty;
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
         public string CharacterEnergySummary =>
             EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetCharacterEnergySummary() : string.Empty;
 
@@ -1007,6 +1021,10 @@ namespace K9.WebApplication.Models
         public string SurfaceEnergyDescription => EnergyType == ENineStarKiEnergyType.SurfaceEnergy
             ? GetSurfaceEnergyDescription()
             : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SurfaceEnergyLabel)]
+        public string SurfaceEnergySummary =>
+            EnergyType == ENineStarKiEnergyType.SurfaceEnergy ? GetSurfaceEnergySummary() : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildLabel)]
         public string ChildDescription =>
@@ -1382,6 +1400,8 @@ namespace K9.WebApplication.Models
         private string GetMainEnergyDescription() => _mainEnergyDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetCharacterEnergySummary() => _characterEnergySummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetSurfaceEnergySummary() => _surfaceEnergySummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetMainEnergySummary() => _mainEnergySummaries.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 

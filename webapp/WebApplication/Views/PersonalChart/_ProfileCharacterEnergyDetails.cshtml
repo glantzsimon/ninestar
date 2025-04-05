@@ -12,8 +12,8 @@
             <ul class="nav nav-pills nav-justified image-pill" data-autoscroll="true">
                 <li class="active">
                     <a data-toggle="tab" href="#c-details">
-                        @Model.MainEnergy.DescriptiveTitle
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Model.MainEnergy.EnergyLowerCase}.png")');"></div>
+                        @Model.CharacterEnergy.DescriptiveTitle
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Model.CharacterEnergy.EnergyLowerCase}.png")');"></div>
                     </a>
                 </li>
 
@@ -25,7 +25,7 @@
                 </li>
             </ul>
             <div class="tab-content">
-                <div id="c-details" class="tab-pane fade">
+                <div id="c-details" class="tab-pane fade in active">
                     @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Panel(Model.CharacterEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.CharacterEnergy).ToString()}{Model.CharacterEnergy.EnergyDescription} {Model.CharacterEnergy.ChildDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)

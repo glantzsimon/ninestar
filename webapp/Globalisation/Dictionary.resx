@@ -5845,6 +5845,9 @@
   <data name="LunarHouses" xml:space="preserve">
     <value>Display Lunar Houses</value>
   </data>
+  <data name="LunarNature" xml:space="preserve">
+    <value>Lunar Nature</value>
+  </data>
   <data name="SolarHouses" xml:space="preserve">
     <value>Display Solar Houses</value>
   </data>

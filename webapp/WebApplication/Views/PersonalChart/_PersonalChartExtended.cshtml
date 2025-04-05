@@ -23,7 +23,7 @@
 
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        <a href="#" id="epoch-energy">
+        <a href="#" class="scroll-to-tab" data-tab-id="epoch">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Epoch)
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Epoch)
         </a>
@@ -31,7 +31,7 @@
 </div>
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        <a href="#" id="generation-energy">
+        <a href="#" class="scroll-to-tab" data-tab-id="generation">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Generation)
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Generation)
         </a>
@@ -39,21 +39,21 @@
 </div>
 <div class="row">
     <div class="col-sm-4 medium-energy">
-        <a href="#" id="character-energy">
+        <a href="#" class="scroll-to-tab" data-tab-id="character">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Emotional)
         </a>
     </div>
     <div class="col-sm-4 @childClass">
         <div class="adult-profile">
-            <a href="#" id="fundamental-energy">
+            <a href="#" class="scroll-to-tab" data-tab-id="fundamental">
                 @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
                 @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Main)
             </a>
         </div>
     </div>
     <div class="col-sm-4 small-energy">
-        <a href="#" id="surface-energy">
+        <a href="#" class="scroll-to-tab" data-tab-id="surface">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Surface)
         </a>
@@ -61,7 +61,7 @@
 </div>
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4 small-energy">
-        <a href="#" id="daystar-energy">
+        <a href="#" class="scroll-to-tab" data-tab-id="daystar">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Day)
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.DayStar)
         </a>

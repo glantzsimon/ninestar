@@ -3660,7 +3660,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;margin-top-0&quot;&gt;
-        ///    When using the Personal Chart and Predictions calculators, there are three calculation methods to choose from:
+        ///    When using the Personal Chart and Predictions calculators, there are two calculation methods to choose from:
         ///&lt;/h5&gt;
         ///
         ///&lt;ul&gt;
@@ -3670,7 +3670,7 @@ namespace K9.Globalisation {
         ///    &lt;/li&gt;
         ///    &lt;li&gt;
         ///        &lt;p class=&quot;margin-bottom-0&quot;&gt;&lt;strong&gt;The Chinese Method (Ascending Yin Ki for Females)&lt;/strong&gt;&lt;/p&gt;
-        ///        &lt;p&gt;Uses a Yang materialising spir [rest of string was truncated]&quot;;.
+        ///        &lt;p&gt;Uses a Yang materialising spiral [rest of string was truncated]&quot;;.
         /// </summary>
         public static string calculation_methods {
             get {
@@ -11758,6 +11758,15 @@ namespace K9.Globalisation {
         public static string LunarHouses {
             get {
                 return ResourceManager.GetString("LunarHouses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lunar Nature.
+        /// </summary>
+        public static string LunarNature {
+            get {
+                return ResourceManager.GetString("LunarNature", resourceCulture);
             }
         }
         

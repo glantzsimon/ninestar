@@ -96,9 +96,12 @@
 
 	    $.fn.scrollToTopOf = function(el, adjustment) {
 	        var offset = $(el).offset();
-	        $("html, body").animate({
-	            scrollTop: offset.top + (adjustment || 0)
-	        }, 600, "swing"); // 600ms duration, 'swing' easing for smooth transition
+	        try {
+	            $("html, body").animate({
+	                scrollTop: offset.top + (adjustment || 0)
+	            }, 600, "swing"); // 600ms duration, 'swing' easing for smooth transition
+	        } catch (e) {
+	        }
 	    };
 
 	    $.fn.displayValidationWarningFor = function(field, validationMessage) {

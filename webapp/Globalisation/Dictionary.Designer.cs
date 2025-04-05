@@ -9036,6 +9036,27 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;hr /&gt;
+        ///&lt;div class=&quot;display-warning&quot;&gt;
+        ///    &lt;strong&gt;Note: &lt;/strong&gt;Below is a summary of the &lt;strong&gt;Global Ki&lt;/strong&gt;. The personal Epoch Ki is too vast in its reach to be able to give a meaningful summary of its influence here.
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string globalki_display_warning {
+            get {
+                return ResourceManager.GetString("globalki_display_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global Ki.
+        /// </summary>
+        public static string GlobalKiLabel {
+            get {
+                return ResourceManager.GetString("GlobalKiLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Global Ki.
         /// </summary>
         public static string GlobalView {

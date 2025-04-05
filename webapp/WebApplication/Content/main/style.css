@@ -140,3 +140,6 @@ li.divider {
   overflow: hidden !important;
   background-color: #a5a5a5 !important;
 }
+.display-warning {
+  font-style: italic;
+}

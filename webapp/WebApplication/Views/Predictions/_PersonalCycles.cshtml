@@ -92,14 +92,12 @@
     </div>
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-            <a href="#" class="scroll-to-tab" data-tab-id="current-hourly-cycle">
-                @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
-                @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
-                {
-                    GlobalKi = Model.GlobalCycleEnergies.Hour,
-                    PersonalHouseOccupied = Model.PersonalHousesOccupiedEnergies.Hour
-                })
-            </a>
+            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalKi = Model.GlobalCycleEnergies.Hour,
+                PersonalHouseOccupied = Model.PersonalHousesOccupiedEnergies.Hour
+            })
         </div>
     </div>
 

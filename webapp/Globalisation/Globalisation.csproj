@@ -102,6 +102,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Articles\en-gb\globalki-display-warning.htm" />
     <Content Include="Articles\en-gb\calculation-methods.htm" />
     <Content Include="Articles\en-gb\EpochEnergyDescription.htm" />
     <Content Include="Articles\en-gb\GenerationalEnergyDescription.htm" />

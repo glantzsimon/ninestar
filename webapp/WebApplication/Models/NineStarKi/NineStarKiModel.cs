@@ -744,22 +744,22 @@ namespace K9.WebApplication.Models
             switch (cycleType)
             {
                 case ENineStarKiEnergyCycleType.HourlyEnergy:
-                    return PersonalHousesOccupiedEnergies.Hour.EnergyNumber;
+                    return PersonalChartEnergies.Hour.EnergyNumber;
 
                 case ENineStarKiEnergyCycleType.DailyEnergy:
-                    return PersonalHousesOccupiedEnergies.Day.EnergyNumber;
+                    return PersonalChartEnergies.Day.EnergyNumber;
 
                 case ENineStarKiEnergyCycleType.MonthlyCycleEnergy:
-                    return PersonalHousesOccupiedEnergies.Month.EnergyNumber;
+                    return PersonalChartEnergies.Month.EnergyNumber;
 
                 case ENineStarKiEnergyCycleType.YearlyCycleEnergy:
-                    return PersonalHousesOccupiedEnergies.Year.EnergyNumber;
+                    return PersonalChartEnergies.Year.EnergyNumber;
 
                 case ENineStarKiEnergyCycleType.GenerationalEnergy:
-                    return PersonalHousesOccupiedEnergies.Generation.EnergyNumber;
+                    return PersonalChartEnergies.Generation.EnergyNumber;
 
                 case ENineStarKiEnergyCycleType.EpochEnergy:
-                    return PersonalHousesOccupiedEnergies.Epoch.EnergyNumber;
+                    return PersonalChartEnergies.Epoch.EnergyNumber;
 
                 default:
                     return MainEnergy.EnergyNumber;

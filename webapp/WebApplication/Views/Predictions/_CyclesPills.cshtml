@@ -118,7 +118,7 @@
         </div>
 
         <div id="current-epoch-cycle" class="tab-pane fade">
-            @Html.Panel(Dictionary.EightyOneYearlyPrediction, Dictionary.epoch_description)
+            @Html.Panel($"{Dictionary.EightyOneYearlyPrediction} ({Dictionary.GlobalKiLabel})", $"{Dictionary.epoch_description} {Dictionary.globalki_display_warning}")
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
@@ -144,45 +144,3 @@
         </div>
     </div>
 </div>
-
-<script language="javascript">
-
-    function scrollProfile(tab) {
-        setTimeout(function () {
-            $.fn.scrollToTopOf(tab, -261);
-        }, 200);
-    }
-
-    $(function () {
-        $("#fundamental-energy").click(function () {
-            $("a[href='#fundamental']").tab("show");
-            scrollProfile("#fundamental");
-        });
-
-        $("#character-energy").click(function () {
-            $("a[href='#character']").tab("show");
-            scrollProfile("#character");
-        });
-
-        $("#surface-energy").click(function () {
-            $("a[href='#surface']").tab("show");
-            scrollProfile("#surface");
-        });
-
-        $("#daystar-energy").click(function () {
-            $("a[href='#daystar']").tab("show");
-            scrollProfile("#daystar");
-        });
-
-        $("#generation-energy").click(function () {
-            $("a[href='#generation']").tab("show");
-            scrollProfile("#generation");
-        });
-
-        $("#epoch-energy").click(function () {
-            $("a[href='#epoch']").tab("show");
-            scrollProfile("#epoch");
-        });
-    });
-
-</script>

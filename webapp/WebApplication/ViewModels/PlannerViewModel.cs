@@ -19,6 +19,8 @@ namespace K9.WebApplication.ViewModels
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DisplayLabel)]
         public EScopeDisplay Display { get; set; }
 
+        public EHousesDisplay HousesDisplay { get; set; }
+
         public NineStarKiModel NineStarKiModel { get; set; }
         public NineStarKiEnergy Energy { get; set; }
         public NineStarKiEnergy SecondEnergy { get; set; }

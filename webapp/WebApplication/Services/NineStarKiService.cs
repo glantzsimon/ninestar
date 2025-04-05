@@ -306,6 +306,7 @@ namespace K9.WebApplication.Services
                 {
                     View = view,
                     Display = display,
+                    HousesDisplay = housesDisplay,
                     NineStarKiModel = nineStarKiModel,
                     Lichun = lichun,
                     SelectedDateTime = selectedDateTime

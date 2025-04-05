@@ -12,13 +12,13 @@
     var displayStyle1 = Model.IsDualView ?
         Model.IsGlobalSwitch ?
             Model.PanelCycleView == EPanelCycleView.PersonalView ? "" : "display: none;" :
-            Model.PanelView == EPanelView.FullTextView ? "" : "display: none;" :
+            Model.PanelView == EPanelView.SummaryView ? "" : "display: none;" :
         "";
 
     var displayStyle2 = Model.IsDualView ?
         Model.IsGlobalSwitch ?
             Model.PanelCycleView == EPanelCycleView.GlobalView ? "" : "display: none;" :
-            Model.PanelView == EPanelView.SummaryView ? "" : "display: none;" :
+            Model.PanelView == EPanelView.FullTextView ? "" : "display: none;" :
         "display: none;";
 }
 

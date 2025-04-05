@@ -73,8 +73,8 @@ namespace K9.WebApplication.Helpers
             {
                 Id = id,
                 Title = title,
-                Body = body,
-                Body2 = summary,
+                Body = summary,
+                Body2 = body,
                 ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
                 ImageSize = imageSize,
                 ImageLayout = imageLayout,

@@ -27,7 +27,7 @@
 
 @if (isUnlimited)
 {
-    <div class="row margin-0 margin-bottom-20">
+    <div class="row margin-0">
         <div class="col-sm-4 col-sm-offset-2 col-xs-12 col-xs-offset-0 padding-0">
             @Html.BootstrapEditorFor(e => e.ScopeDisplay, new EditorOptions
             {
@@ -41,9 +41,11 @@
             })
         </div>
     </div>
-    <div>
-        <div class="col-sm-4 col-sm-offset-4 col-xs-12 col-xs-offset-0 padding-0 padding-0 show-directions-container" style="@magicStyle">
-            @Html.BootstrapEditorFor(e => e.ShowDirections)
+    <div class="row">
+        <div class="col-sm-12 padding-0 padding-0 show-directions-container" style="@magicStyle">
+            <div class="text-center">
+                @Html.BootstrapEditorFor(e => e.ShowDirections)
+            </div>
             <div id="directions-instructions" class="magic-tooltip" style="@showDirectionsStyle">
                 @Dictionary.DirectionsInstructions
             </div>

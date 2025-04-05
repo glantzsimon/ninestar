@@ -347,6 +347,7 @@ a > .ninestar-summary-container:hover {
   width: 333px;
   height: auto;
   background: #337ab7;
+  opacity: 0.9;
   color: #fff;
   padding: 6px 10px;
   border-radius: 4px;

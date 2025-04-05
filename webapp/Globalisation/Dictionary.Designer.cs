@@ -3908,7 +3908,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character energies - Different Modality
+        ///    Character energies - Different Group
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater complementarity between the couple on an emotional level&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;.
@@ -3922,7 +3922,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character energies - Same Modality
+        ///    Character energies - Same Group
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple on an emotional level&lt;/strong&gt;, but there may be &lt;strong&gt;less chemistry&lt;/strong&gt; between the couple.
@@ -5300,14 +5300,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You come across as commanding and possibly a little domineering at times. 
-        ///    
-        ///    It is very important for you to feel involved and at the centre of what you do. 
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    5 Earth Social Expression — Central Presence, Commanding Focus, and Quiet Authority
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    When the number 5 is situated at the third position, it enhanes the first and second numbers, which are always the same, giving rise to a particularly strong expression of that element.
-        ///&lt;/p&gt;.
+        ///    Those with 5 Earth as their surface energy often come across as commanding, confident, and highly centred in themselves. Whether they speak softly or assertively, there’s usually a natural authority in their presence that draws attention. Others may instinctively look to them for guidance or direction—even in casual settings. They tend to give the impression of someone who wants to be  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_surface_description {
             get {
@@ -5316,14 +5313,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You come across as commanding and possibly a little domineering at times. 
-        ///    
-        ///    It is very important for you to feel involved and at the centre of what you do. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    When the number 5 is situated at the third position, it enhanes the first and second numbers, which are always the same, giving rise to a particularly strong expression of that element.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    5 Earth Social Expression — Central Presence, Commanding Focus, and Quiet Authority
+        ///&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Appears centred, composed, and quietly authoritative—naturally attracts attention.&lt;/li&gt;
+        ///    &lt;li&gt;May come across as commanding or dominant—especially when stressed or excluded.&lt;/li&gt;
+        ///    &lt;li&gt;Feels most comfortable when directly involved and connected to what’s happening.&lt;/li&gt;
+        ///    &lt;li&gt;Strong, clear energy—often amplifies the essence of their primary Ki numbers.&lt;/li&gt;
+        ///    &lt;li&gt;Can b [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_surface_description_summary {
             get {
@@ -5632,13 +5630,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    9 Star Ki astrology is based on cycles of light and dark and the various stages the cycles move through. It is the contrast between light and dark which gives rise to the &apos;experience&apos; of being alive
+        ///    9 Star Ki is based on cycles of light and dark—and the transformations that move between them
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    These cosmic cycles, eternally spiralling throughout time and space, underpin all of our experienced reality in the cosmos. Indeed, it is these cycles that give rise to the very experience of being &quot;alive&quot;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    In order for us to be able to experience anything at all, it is [rest of string was truncated]&quot;;.
+        ///    9 Star Ki astrology is founded on the eternal spirals of light and dark—the movement between fullness and emptiness, activity and stillness, life and rest. These cosmic cycles underpin all of existence, and it is through their contrast that we experience what it means to be alive. Without light, there is no darkness. Without cold, there is no warmth. And without change, there can be no aw [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cycles {
             get {
@@ -5648,7 +5643,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    &lt;strong&gt;9 Star Ki astrology is based on the universal cycles of light and dark&lt;/strong&gt; and the various transformations between the stages between them. These cosmic cycles, eternally spiralling throughout time and space, underpin our entire reality in this cosmos and give rise to the very experience of being &quot;alive&quot;. Examples of these light and dark cycles we all know are the daily solar cycle, the monthly lunar cycle and the yearly seasonal cycle. However, there are many more cycles we have forgo [rest of string was truncated]&quot;;.
+        ///    &lt;strong&gt;9 Star Ki astrology is based on the universal cycles of light and dark&lt;/strong&gt;, and the countless transformations that take place between them. These spiralling cosmic rhythms underlie all of life—from the pulse of a human heart to the motion of planets and galaxies. We’re most familiar with the solar day, the lunar month, and the four seasons—but there are many other cycles that subtly shape our experiences, most of which modern life has forgotten.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &lt;strong&gt;Ancient cultures [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cycles_description {
             get {
@@ -6407,13 +6405,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Dynamic energies get things started and are good leaders. They are generally expressive, extroverted, and process information quickly.
+        ///    Dynamic Energies are expressive, fast-moving, and often take the lead. They process information quickly and thrive on forward momentum.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    energies {thunder}, {heaven}, and {fire} are classified as &apos;Dynamic&apos;. This energy type is similar to the Cardinal Modality of the Zodiac and the &lt;strong&gt;Action Group&lt;/strong&gt; Chinese Zodiac, which includes Tiger, Horse, Dog, and Dragon. These signs are known for their courage, dynamism, leadership, and initiative.
+        ///    Energies {thunder}, {heaven}, and {fire} are considered ‘Dynamic’. This group shares many qualities with the Cardinal signs of the Western Zodiac and the &lt;strong&gt;Action Group&lt;/strong&gt; in Chinese astrology—which includes the Tiger, Horse, Dog, and Dragon—types known for initiative, courage, and an innate drive to act.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Dynamic energies,  [rest of string was truncated]&quot;;.
+        ///    True to their  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string dynamic_modality {
             get {
@@ -7867,13 +7865,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You may appear rather showy and ostentatious at times. You are naturally gregarious and sociable and love to be the centre of attention.
-        ///
-        ///    You also have a deeper intuitive nature that shines through and others benefit greatly from your insights and wisdom.
-        ///
-        ///    Watch out for being overly impulsive!
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    9 Fire Social Expression — Radiant Presence, Expressive Spirit, and Illuminating Insight
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with 9 Fire as their surface energy tend to make an immediate impact. They are often expressive, gregarious, and full of personality—easily taking centre stage in social settings without even trying. There’s a natural magnetism to their presence, and people are often drawn to them for their warmth, humour, and animated storytelling. They may appear dramatic or even flamboyan [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_surface_description {
             get {
@@ -7882,13 +7878,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You may appear rather showy and ostentatious at times. You are naturally gregarious and sociable and love to be the centre of attention.
-        ///
-        ///    You also have a deeper intuitive nature that shines through and others benefit greatly from your insights and wisdom.
-        ///
-        ///    Watch out for being overly impulsive!
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    9 Fire Social Expression — Radiant Presence, Expressive Spirit, and Illuminating Insight
+        ///&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Appears bold, expressive, and socially magnetic—often draws attention easily.&lt;/li&gt;
+        ///    &lt;li&gt;Comes across as passionate and charismatic—brings humour and energy to conversations.&lt;/li&gt;
+        ///    &lt;li&gt;Highly intuitive—offers sudden insights or wisdom that surprises others.&lt;/li&gt;
+        ///    &lt;li&gt;May appear impulsive, dramatic, or overly dominant in fast-paced environments.&lt;/li&gt;
+        ///    &lt;li&gt;Leaves [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_surface_description_summary {
             get {
@@ -9928,9 +9926,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You are straightforward and sincere in your expression. At times you can be rather blunt and a little overbearing. However, you are basically careful, prudent and well organised. Your actions are clear, precise and well thought-out.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    6 Metal Social Expression — Precision, Sincerity, and Clear Command
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with 6 Metal as their surface energy often come across as direct, composed, and highly self-assured. There’s usually a no-nonsense quality to their manner—they say what they mean, and they mean what they say. Others may admire their clarity, efficiency, and strong sense of personal integrity. Socially, they tend to present themselves with formality or restraint, but also with unmistakable presen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_surface_description {
             get {
@@ -9939,9 +9939,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You are straightforward and sincere in your expression. At times you can be rather blunt and a little overbearing. However, you are basically careful, prudent and well organised. Your actions are clear, precise and well thought-out.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    6 Metal Social Expression — Precision, Sincerity, and Clear Command
+        ///&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Appears clear, principled, and organised—often seen as competent and mature.&lt;/li&gt;
+        ///    &lt;li&gt;Communicates in a direct, concise way—avoids emotional drama or vagueness.&lt;/li&gt;
+        ///    &lt;li&gt;May come across as blunt, overly formal, or intimidating if not softened with warmth.&lt;/li&gt;
+        ///    &lt;li&gt;Strong sense of personal ethics—often holds themselves and others to high standards.&lt;/li&gt;
+        ///    &lt;li&gt;Projects an air of p [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_surface_description_summary {
             get {
@@ -11509,15 +11515,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You come across as fun-loving and laid-back, with a great sense of humour.
-        ///    
-        ///    You enjoy your independence and have a calm, relaxed demeanour that makes others feel at ease.
-        ///    
-        ///    You are a good listener and others willingly come to you to share stories and benefit from your wise and thoughtful reflections. 
-        ///    
-        ///    Your sincerity, wit, charm and sense of humour make a strong impression on others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    7 Metal Social Expression — Charm, Lightness, and Thoughtful Ease
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with 7 Metal as their surface energy often give off a light, relaxed, and approachable vibe. They come across as fun-loving, witty, and easy to be around. Their charm feels natural and effortless, and they often disarm others with humour, sincerity, or a well-timed observation. This is a social energy that doesn’t push or demand—it invites, entertains, and gently includes.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    There is [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_surface_description {
             get {
@@ -11526,15 +11531,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You come across as fun-loving and laid-back, with a great sense of humour.
-        ///    
-        ///    You enjoy your independence and have a calm, relaxed demeanour that makes others feel at ease.
-        ///    
-        ///    You are a good listener and others willingly come to you to share stories and benefit from your wise and thoughtful reflections. 
-        ///    
-        ///    Your sincerity, wit, charm and sense of humour make a strong impression on others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    7 Metal Social Expression — Charm, Lightness, and Thoughtful Ease
+        ///&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Appears light-hearted, charming, and relaxed—often witty and socially magnetic.&lt;/li&gt;
+        ///    &lt;li&gt;Has a calming and pleasant presence—others feel at ease around them.&lt;/li&gt;
+        ///    &lt;li&gt;Comes across as wise and thoughtful—people often open up easily in their presence.&lt;/li&gt;
+        ///    &lt;li&gt;Values independence—may seem aloof or emotionally distant if overwhelmed.&lt;/li&gt;
+        ///    &lt;li&gt;Communicates with grace and humour—bala [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_surface_description_summary {
             get {
@@ -12956,7 +12961,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental energies - Different Modality
+        ///    Fundamental energies - Different Group
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater complementarity between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;.
@@ -12970,7 +12975,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental energies - Same Modality
+        ///    Fundamental energies - Same Group
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of conflict&lt;/strong&gt; as they may clash at times.
@@ -13322,7 +13327,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modality Description.
+        ///   Looks up a localized string similar to Group Description.
         /// </summary>
         public static string ModalityDescriptionLabel {
             get {
@@ -13331,7 +13336,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modality.
+        ///   Looks up a localized string similar to Group.
         /// </summary>
         public static string ModalityLabel {
             get {
@@ -14095,13 +14100,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You tend to find your own, often unorthodox ways of doing things and are a bit of a loner.
-        ///    
-        ///    Outwardly you appear calm, which may even make you seem shy. However, you are not afraid to express your opinion and can deliver a strong argument when necessar. 
-        ///    
-        ///    You are tenacious and have great persistence in the face of great challenges.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    8 Earth Social Expression — Quiet Strength, Independent Thinking, and Steady Resolve
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with 8 Earth as their surface energy tend to come across as calm, measured, and self-contained. They often give the impression of being grounded and quietly observant—someone who doesn’t speak unnecessarily but who listens carefully and forms thoughtful opinions. Their outward stillness can make them seem shy or distant at first, but there is usually a deep reservoir of strength [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_surface_description {
             get {
@@ -14110,13 +14113,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You tend to find your own, often unorthodox ways of doing things and are a bit of a loner.
-        ///    
-        ///    Outwardly you appear calm, which may even make you seem shy. However, you are not afraid to express your opinion and can deliver a strong argument when necessar. 
-        ///    
-        ///    You are tenacious and have great persistence in the face of great challenges.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    8 Earth Social Expression — Quiet Strength, Independent Thinking, and Steady Resolve
+        ///&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Appears calm, reserved, and self-contained—may initially seem shy or distant.&lt;/li&gt;
+        ///    &lt;li&gt;Tends to think independently—often has unconventional methods or views.&lt;/li&gt;
+        ///    &lt;li&gt;Can express strong opinions when needed—delivers arguments with quiet clarity.&lt;/li&gt;
+        ///    &lt;li&gt;Highly persistent and tenacious—does not give up easily in the face of difficulty.&lt;/li&gt;
+        ///    &lt;li&gt;Offers a stead [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_surface_description_summary {
             get {
@@ -14865,11 +14870,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Originating from China, this 4000-year-old system of astrology is possibly the oldest in the world
+        ///    A 4000-Year-Old System Rooted in the Wisdom of the East
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    9 Star Ki (pronounced &apos;key&apos;, which is the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world today. Originating in China, it is closely related to the 4000-year-old Book of Changes - the &apos;I Ching&apos; - whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.
-        ///&lt;/p&gt;.
+        ///    9 Star Ki (pronounced “key,” the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world. It originated in ancient China and is closely connected to the &lt;em&gt;I Ching&lt;/em&gt;, or Book of Changes—a 4000-year-old text that forms the philosophical foundation of Feng Shui, traditional Chinese medicine, acupuncture, and the Five Element system.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Originally used for decision- [rest of string was truncated]&quot;;.
         /// </summary>
         public static string origins {
             get {
@@ -17756,8 +17763,12 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    2 Soil Social Expression — Quiet Reliability, Gentle Diplomacy, and Practical Warmth
         ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Those with 2 Soil as their surface energy often appear calm, grounded, and composed in social settings. First impressions tend to highlight their steady, dependable nature. They give off a subtle but comforting sense of reliability—someone who listens well, honours their word, and shows up when it counts. Their presence may not be loud or showy, but it is quietly reassuring. Others ar [rest of string was truncated]&quot;;.
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Gives off a steady, grounded, and reliable impression—calm and practical in conversation.&lt;/li&gt;
+        ///    &lt;li&gt;Comes across as friendly, supportive, and quietly helpful—often seen as trustworthy.&lt;/li&gt;
+        ///    &lt;li&gt;May appear reserved or overly cautious—takes time to warm up in new situations.&lt;/li&gt;
+        ///    &lt;li&gt;Often noticed for their diplomacy and tact—rarely speaks out of turn.&lt;/li&gt;
+        ///    &lt;li&gt;C [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_surface_description_summary {
             get {
@@ -18084,10 +18095,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Stable energies are steady and solid. They generally process information more slowly, are pragmatic and risk-averse, and prefer to plan ahead. They are less comfortable with change—especially when it is instigated by others.
+        ///    Stable Energies are steady and grounded. They tend to be pragmatic, cautious, and future-oriented—less comfortable with change, especially when it’s externally imposed.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    energies {soil}, {coreearth}, and {mountain} are classified as &apos;stable&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, grounded, and reliable. This group is similar to the Fixed Modality of the Zodiac and the &lt;strong&gt;Relational [rest of string was truncated]&quot;;.
+        ///    Energies {soil}, {coreearth}, and {mountain} are considered ‘stable’. All three belong to the Earth element, which is by nature grounded, dependable, and enduring. This group shares qualities with the Fixed Modality in Western astrology and the &lt;strong&gt;Relational Group&lt;/strong&gt; in Chinese astrology—represented by s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string stable_modality {
             get {
@@ -19837,8 +19848,12 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    3 Tree Social Expression — Bright Enthusiasm, Spontaneity, and Unfiltered Energy
         ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Those with 3 Tree as their surface energy tend to make an immediate impression as lively, energetic, and full of ideas. They often appear enthusiastic and animated, especially when discussing topics they’re passionate about. Their energy feels like spring breaking through the soil—spontaneous, bold, and full of momentum. People often find them uplifting and fun to be around, drawn to thei [rest of string was truncated]&quot;;.
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Appears lively, animated, and full of enthusiasm—often the first to speak or laugh.&lt;/li&gt;
+        ///    &lt;li&gt;Projects spontaneity and excitement—brings high energy into social spaces.&lt;/li&gt;
+        ///    &lt;li&gt;May be seen as noisy, scattered, or overwhelming in quieter groups.&lt;/li&gt;
+        ///    &lt;li&gt;Tends to speak openly and emotionally—sometimes too quickly or impulsively.&lt;/li&gt;
+        ///    &lt;li&gt;Leaves a bright and playful [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_surface_description_summary {
             get {
@@ -21228,8 +21243,12 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    1 Water Social Expression — Fluid Presence, Elusive Charisma, Shifting Impressions
         ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Those with 1 Water as their social expression energy tend to make varied and sometimes paradoxical first impressions. At times, they may appear charming, witty, and animated—like a sparkling stream weaving effortlessly through conversation. They can be curious, engaging, and even magnetic in social settings when they feel emotionally safe. Their presence can feel refreshing and quietly  [rest of string was truncated]&quot;;.
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can appear either sociable and charismatic or quiet and withdrawn, depending on mood or environment.&lt;/li&gt;
+        ///    &lt;li&gt;Highly adaptable—tends to mirror the emotional tone of the room.&lt;/li&gt;
+        ///    &lt;li&gt;Comes across as mysterious, subtle, or elusive—leaves a lasting impression without being obvious.&lt;/li&gt;
+        ///    &lt;li&gt;Often appears intuitive, thoughtful, or dreamy—may be slow to open up.&lt;/li&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_surface_description_summary {
             get {
@@ -21374,20 +21393,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    9 Star Ki Astrology - Ancient wisdom for the modern era
-        ///&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;9 Star Ki Astrology — Ancient Wisdom for the modern era&lt;/h4&gt;
         ///
         ///&lt;p&gt;
-        ///    Greetings and thank you for visiting 9 Star Ki Astrology. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology.
-        ///&lt;/p&gt;
-        ///
-        ///&lt;h5&gt;
-        ///    Possibly the oldest system of astrology in the world
-        ///&lt;/h5&gt;
-        ///
-        ///&lt;p&gt;
-        ///    9 Star Ki is based off the 4000-year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos; [rest of string was truncated]&quot;;.
+        ///    Welcome to 9 Star Ki Astrology. Whether you&apos;re completely new to astrology or already well-versed in other systems, this site offers an in-depth, thoughtful, and intuitive exploration of one of the world’s oldest forms of astrological insight. Rooted in the wisdom of the &lt;em&gt;I Ching&lt;/em&gt; and the Five Element Theory of Chinese philosophy, 9 Star Ki is as elegant as it is profound—offering timeless truths that remain deeply relevant  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {
@@ -22047,13 +22056,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You have a quiet, dependable and gentle nature. You are helpful and thoughtful and keep your word.
-        ///    
-        ///    You are easily influenced by events and people around you. 
-        ///    
-        ///    Of all the nine energetic types, you are the most changeable in your expression,  like the wind!
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    4 Tree Social Expression — Gentle Strength, Sensitivity, and the Winds of Change
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Those with 4 Tree as their surface energy tend to appear gentle, dependable, and considerate. Their tone is soft and their manner sincere, often leaving others with the impression of someone kind, thoughtful, and emotionally available. They are usually attentive listeners who take their time when speaking and interacting, preferring meaningful dialogue over superficial chatter.
+        ///&lt;/p&gt;
+        ///&lt;p&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_surface_description {
             get {
@@ -22062,13 +22071,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You have a quiet, dependable and gentle nature. You are helpful and thoughtful and keep your word.
-        ///    
-        ///    You are easily influenced by events and people around you. 
-        ///    
-        ///    Of all the nine energetic types, you are the most changeable in your expression,  like the wind!
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    4 Tree Social Expression — Gentle Strength, Sensitivity, and the Winds of Change
+        ///&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Appears kind, gentle, and emotionally receptive—easily approachable.&lt;/li&gt;
+        ///    &lt;li&gt;Highly influenced by their surroundings—emotional atmosphere shapes behaviour.&lt;/li&gt;
+        ///    &lt;li&gt;Can seem changeable or inconsistent—mood and energy may fluctuate noticeably.&lt;/li&gt;
+        ///    &lt;li&gt;Thoughtful communicators—may be poetic, soft-spoken, or indirect at times.&lt;/li&gt;
+        ///    &lt;li&gt;Brings grace and emotional ha [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_surface_description_summary {
             get {
@@ -22359,10 +22370,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Many ancient civilisations had an in-depth understanding of the cosmic male and female energies
+        ///    Many ancient civilisations understood the cosmic masculine and feminine energies
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Many ancient civilisations had a more in-depth understanding of the cosmic male and female energies that underpin our reality. There are many different terms used to describe these cosmic energies, such as Shakti / Shiva in Sanskrit or Yin and Yang, as described in the &apos;Great Principle&apos; in the Chinese tradition. However, they are all essentially understood to be on the one hand feminine [rest of string was truncated]&quot;;.
+        ///    Many ancient civilisations held a deep understanding of the cosmic masculine and feminine energies that underpin all of reality. Though different traditions used different terms—such as &lt;em&gt;Shakti&lt;/em&gt; and &lt;em&gt;Shiva&lt;/em&gt; in Sanskrit, or &lt;em&gt;Yin&lt;/em&gt; and &lt;em&gt;Yang&lt;/em&gt; in the Chinese system—the essence remains the same: one represents dark, receptive, and feminine energy; the other, light, active, and m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string yinyang {
             get {

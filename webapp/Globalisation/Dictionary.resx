@@ -503,7 +503,7 @@
     <value>Static</value>
   </data>
   <data name="ModalityLabel" xml:space="preserve">
-    <value>Modality</value>
+    <value>Group</value>
   </data>
   <data name="cycles" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\cycles.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1112,7 +1112,7 @@
     <value>Chart Calculator</value>
   </data>
   <data name="ModalityDescriptionLabel" xml:space="preserve">
-    <value>Modality Description</value>
+    <value>Group Description</value>
   </data>
   <data name="NotInEffectUntilEighteen" xml:space="preserve">
     <value>From 18 years old</value>

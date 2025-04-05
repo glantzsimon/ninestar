@@ -10571,6 +10571,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Internal Representation.
+        /// </summary>
+        public static string InternalRepresentation {
+            get {
+                return ResourceManager.GetString("InternalRepresentation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Interpersonal Qualities.
         /// </summary>
         public static string InterpersonalQualities {
@@ -15314,6 +15323,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Physiognomy.
+        /// </summary>
+        public static string Physiognomy {
+            get {
+                return ResourceManager.GetString("Physiognomy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pineal Gland.
         /// </summary>
         public static string PinealGland {
@@ -15644,6 +15662,15 @@ namespace K9.Globalisation {
         public static string primary_blueprint {
             get {
                 return ResourceManager.GetString("primary_blueprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primary Attributes.
+        /// </summary>
+        public static string PrimaryAttributes {
+            get {
+                return ResourceManager.GetString("PrimaryAttributes", resourceCulture);
             }
         }
         

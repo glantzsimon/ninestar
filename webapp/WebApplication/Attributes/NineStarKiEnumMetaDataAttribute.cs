@@ -6,6 +6,8 @@ using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace K9.WebApplication.Attributes
 {
@@ -59,6 +61,21 @@ namespace K9.WebApplication.Attributes
             return GetEnumDescription(FamilyMember);
         }
 
+        public string GetInternalRepresentation()
+        {
+            return string.Join(", ", GetResourceNames(InternalRepresentation));
+        }
+
+        public string GetPhysiognomy()
+        {
+            return string.Join(", ", GetResourceNames(Physiognomy));
+        }
+
+        public string GetPrimaryAttributes()
+        {
+            return string.Join(", ", GetResourceNames(PrimaryAttributes));
+        }
+
         public string GetElement()
         {
             return GetEnumDescription(Element);
@@ -106,6 +123,17 @@ namespace K9.WebApplication.Attributes
         {
             var attr = value.GetAttribute<EnumDescriptionAttribute>();
             return attr != null ? attr.GetDescription() : value.ToString();
+        }
+
+        private string[] GetResourceNames<TEnum>(TEnum[] values) where TEnum : Enum
+        {
+            return values
+                .Select(value =>
+                {
+                    var key = value.GetAttribute<EnumDescriptionAttribute>().Name;
+                    return ResourceType.GetValueFromResource(key);
+                })
+                .ToArray();
         }
 
         /// <summary>

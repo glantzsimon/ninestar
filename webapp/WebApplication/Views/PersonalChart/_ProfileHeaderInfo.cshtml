@@ -1,0 +1,41 @@
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiEnergy
+
+@{
+    var yinYangUrl = Url.ActionWithBookmark("Index", "KnowledgeBase", "yinyang");
+    var elementUrl = Url.ActionWithBookmark("Index", "KnowledgeBase", Model.ElementName.ToLower());
+    var modalityUrl = Url.ActionWithBookmark("Index", "KnowledgeBase", Model.ModalityName.ToLower());
+}
+
+<div class="container main-content clear-both ninestar-header-container margin-top-5">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@Dictionary.Colour</th>
+                            <th>@Dictionary.Direction</th>
+                            <th>@Dictionary.FamilyMember</th>
+                            <th>@Dictionary.Season</th>
+                            <th>@Dictionary.InternalRepresentation</th>
+                            <th>@Dictionary.Physiognomy</th>
+                            <th>@Dictionary.PrimaryAttributes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Model.MetaData.GetColour()</td>
+                            <td>@Model.MetaData.GetDirection()</td>
+                            <td>@Model.MetaData.GetFamilyMember()</td>
+                            <td>@Model.Season</td>
+                            <td>@Model.MetaData.GetInternalRepresentation()</td>
+                            <td>@Model.MetaData.GetPhysiognomy()</td>
+                            <td>@Model.MetaData.GetPrimaryAttributes()</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

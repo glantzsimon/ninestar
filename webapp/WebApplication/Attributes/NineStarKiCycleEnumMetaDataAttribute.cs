@@ -121,11 +121,11 @@ namespace K9.WebApplication.Attributes
         {
             get
             {
-                if (_dailyDescription == null)
+                if (_hourlyDescription == null)
                 {
-                    _dailyDescription = GetResourceValue(DailyDescriptionName);
+                    _hourlyDescription = GetResourceValue(HourlyDescription);
                 }
-                return _dailyDescription;
+                return _hourlyDescription;
             }
         }
 

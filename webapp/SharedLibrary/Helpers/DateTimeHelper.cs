@@ -8,7 +8,7 @@ namespace K9.SharedLibrary.Helpers
 
 	    public static DateTime ConvertToLocaleDateTime(DateTime rawdateTime, string timeZoneId)
 	    {
-	        rawdateTime = DateTime.SpecifyKind(rawdateTime, DateTimeKind.Unspecified);
+	        rawdateTime = DateTime.SpecifyKind(rawdateTime, DateTimeKind.Utc);
 	        TimeZoneInfo tz = TZConvert.GetTimeZoneInfo(timeZoneId);
 	        return TimeZoneInfo.ConvertTimeFromUtc(rawdateTime, tz);
 	    }

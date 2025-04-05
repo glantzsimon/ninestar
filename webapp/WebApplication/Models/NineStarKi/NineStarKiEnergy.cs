@@ -1362,7 +1362,7 @@ namespace K9.WebApplication.Models
                     return CycleMetaData.DailyDescription;
 
                 case ENineStarKiEnergyCycleType.HourlyEnergy:
-                    return CycleMetaData.DailyDescription;
+                    return CycleMetaData.HourlyDescription;
 
                 default:
                     return string.Empty;

@@ -98,12 +98,13 @@ namespace K9.WebApplication.Models
 
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, (int DailyKi, int? InvertedDailyKi)[] preciseDailyCycleEnergies, int preciseHourlyCycleEnergy, DateTime? selectedDate = null,
 
-            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string displayDataForTimeZoneId = "")
+            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string userTimeZoneId = "", EDisplayDataForPeriod displayDataForPeiod = EDisplayDataForPeriod.Now)
         {
             Init();
 
-            UserTimeZoneId = string.IsNullOrEmpty(displayDataForTimeZoneId) ? Current.UserTimeZoneId : displayDataForTimeZoneId;
+            UserTimeZoneId = string.IsNullOrEmpty(userTimeZoneId) ? Current.UserTimeZoneId : userTimeZoneId;
             SelectedDate = selectedDate ?? DateTime.UtcNow;
+            SelectedLocaDateTime = DateTimeHelper.ConvertToLocaleDateTime(SelectedDate.Value, UserTimeZoneId);
             CalculationMethod = calculationMethod;
             HousesDisplay = housesDisplay;
             InvertDailyAndHourlyKiForSouthernHemisphere = invertDailyAndHourlyKiForSouthernHemisphere;
@@ -251,6 +252,9 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
+        public DateTime? SelectedLocaDateTime { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedTimeLabel)]
         public TimeSpan? SelectedTime { get; set; }

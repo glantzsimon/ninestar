@@ -66,7 +66,7 @@
 
         <div class="tab-content">
             <div id="fundamental" class="tab-pane fade @adultActiveClass">
-                @Html.Panel(Dictionary.MainEnergyLabel, $"{Dictionary.MainEnergyDescription} {Html.Partial("_ClickOnATabBelow").ToString()}")
+                @Html.CollapsiblePanel(Dictionary.MainEnergyLabel, $"{Dictionary.MainEnergyDescription} {Html.Partial("_ClickOnATabBelow").ToString()}")
 
                 <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
@@ -77,7 +77,7 @@
             </div>
 
             <div id="character" class="tab-pane fade @childActiveClass">
-                @Html.Panel(Dictionary.CharacterEnergyLabel, $"{Dictionary.CharacterEnergyDescription}")
+                @Html.CollapsiblePanel(Dictionary.CharacterEnergyLabel, $"{Dictionary.CharacterEnergyDescription}")
 
                 <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
@@ -88,7 +88,7 @@
             </div>
 
             <div id="surface" class="tab-pane fade">
-                @Html.Panel(Dictionary.SurfaceEnergyLabel, Dictionary.SurfaceEnergyDescription)
+                @Html.CollapsiblePanel(Dictionary.SurfaceEnergyLabel, Dictionary.SurfaceEnergyDescription)
 
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
@@ -100,7 +100,7 @@
             </div>
 
             <div id="daystar" class="tab-pane fade">
-                @Html.Panel(Dictionary.DayStarLabel, Dictionary.DayStarDescription)
+                @Html.CollapsiblePanel(Dictionary.DayStarLabel, Dictionary.DayStarDescription)
 
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
@@ -112,7 +112,7 @@
             </div>
 
             <div id="generation" class="tab-pane fade">
-                @Html.Panel(Dictionary.GenerationalEnergyLabel, Dictionary.GenerationalEnergyDescription)
+                @Html.CollapsiblePanel(Dictionary.GenerationalEnergyLabel, Dictionary.GenerationalEnergyDescription)
 
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
@@ -124,7 +124,7 @@
             </div>
 
             <div id="epoch" class="tab-pane fade">
-                @Html.Panel(Dictionary.EpochEnergyLabel, Dictionary.EpochEnergyDescription)
+                @Html.CollapsiblePanel(Dictionary.EpochEnergyLabel, Dictionary.EpochEnergyDescription)
 
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {

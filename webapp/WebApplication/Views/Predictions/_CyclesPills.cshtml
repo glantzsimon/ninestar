@@ -70,7 +70,7 @@
         </div>
 
         <div id="current-monthly-cycle" class="tab-pane fade in active">
-            @Html.Panel(Dictionary.MonthlyPrediction, Dictionary.month_description)
+            @Html.CollapsiblePanel(Dictionary.MonthlyPrediction, Dictionary.month_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
@@ -86,7 +86,7 @@
         </div>
 
         <div id="current-yearly-cycle" class="tab-pane fade">
-            @Html.Panel(Dictionary.YearlyPrediction, Dictionary.year_description)
+            @Html.CollapsiblePanel(Dictionary.YearlyPrediction, Dictionary.year_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
@@ -102,7 +102,7 @@
         </div>
 
         <div id="current-generation-cycle" class="tab-pane fade">
-            @Html.Panel(Dictionary.NineYearlyPrediction, Dictionary.generation_description)
+            @Html.CollapsiblePanel(Dictionary.NineYearlyPrediction, Dictionary.generation_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
@@ -118,7 +118,7 @@
         </div>
 
         <div id="current-epoch-cycle" class="tab-pane fade">
-            @Html.Panel($"{Dictionary.EightyOneYearlyPrediction} ({Dictionary.GlobalKiLabel})", $"{Dictionary.epoch_description} {Dictionary.globalki_display_warning}")
+            @Html.CollapsiblePanel($"{Dictionary.EightyOneYearlyPrediction} ({Dictionary.GlobalKiLabel})", $"{Dictionary.epoch_description} {Dictionary.globalki_display_warning}")
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {

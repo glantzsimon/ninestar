@@ -62,7 +62,7 @@
                 @if (Model.PersonModel.IsSixteenOrOver())
                 {
                     <div id="relationships" class="tab-pane fade">
-                        @Html.Panel(Dictionary.SexualityTitle, Dictionary.sexuality_description)
+                        @Html.CollapsiblePanel(Dictionary.SexualityTitle, Dictionary.sexuality_description)
 
                         @using (Html.PayWall(ESection.Profile, Model))
                         {

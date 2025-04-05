@@ -1002,6 +1002,7 @@
     <Content Include="Images\ui\inner-child.png" />
     <Content Include="Images\ui\intellectual-qualities.png" />
     <Content Include="Images\ui\interpersonal-qualities.png" />
+    <Content Include="Images\ui\lunar-nature.png" />
     <Content Include="Images\ui\nine-year-cycle.png" />
     <Content Include="Images\ui\nine-year-planner.png" />
     <Content Include="Images\ui\eighty-one-cycle.png" />
@@ -1081,6 +1082,7 @@
     <Content Include="Images\ui\question-mark.jpg" />
     <Content Include="Images\ui\selected.png" />
     <Content Include="Images\ui\social-expression.png" />
+    <Content Include="Images\ui\solar-nature.png" />
     <Content Include="Images\ui\spirituality.png" />
     <Content Include="Images\ui\stress-response.png" />
     <Content Include="Images\ui\success.png" />

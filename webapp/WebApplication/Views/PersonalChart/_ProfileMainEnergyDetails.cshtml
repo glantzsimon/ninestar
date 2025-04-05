@@ -58,7 +58,7 @@
             <div class="tab-content">
                 <div id="details" class="tab-pane fade in active">
                     @Html.Panel(Model.MainEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.MainEnergy).ToString()} " +
-                                                              $"{Html.Partial("_ProfileHeaderInfo", Model.MainEnergy).ToString()} " +   
+                                                              $"{Html.Partial("_ProfileHeaderInfo", Model.MainEnergy).ToString()} " +
                                                               $"{Html.Partial("_MainEnergyPills").ToString()}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 </div>
                 @if (Model.PersonModel.IsSixteenOrOver())

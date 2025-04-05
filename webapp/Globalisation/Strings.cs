@@ -31,6 +31,7 @@
 
             public const string ShowDirectionsLabel = "ShowDirectionsLabel";
             public const string EnergyDisplayLabel = "EnergyDisplayLabel";
+            public const string HousesDisplayLabel = "HousesDisplayLabel";
             public const string CalculationMethodLabel = "CalculationMethodLabel";
             public const string InvertDailyAndHourlyKiForSouthernHemisphereLabel = "InvertDailyAndHourlyKiForSouthernHemisphereLabel";
             public const string InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel = "InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel";
@@ -163,6 +164,10 @@
 
         public static class Names
         {
+            public const string SolarHouses = "SolarHouses";
+            public const string LunarHouses = "LunarHouses";
+            public const string IsometricHouses = "IsometricHouses";
+
             public const string FullTextView = "FullTextView";
             public const string SummaryView = "SummaryView";
             public const string GlobalView = "GlobalView";

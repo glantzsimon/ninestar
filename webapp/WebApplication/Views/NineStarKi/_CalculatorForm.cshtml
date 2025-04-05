@@ -39,8 +39,7 @@
         if (Model.IsPredictionsScreen)
         {
             <div class="form-options">
-                @Html.CheckBoxFor(model => model.UseHolograhpicCycleCalculation)
-                <label>@Dictionary.UseHolographicMethod</label>
+                @Html.BootstrapEditorFor(model => model.HousesDisplay)
                 <a target="_blank" href="@Url.Action("CalculationMethods", "Home")"><i class="fa fa-question-circle"></i></a>
             </div>
         }

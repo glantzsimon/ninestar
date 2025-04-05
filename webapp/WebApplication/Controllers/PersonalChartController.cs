@@ -49,7 +49,7 @@ namespace K9.WebApplication.Controllers
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        model.SelectedDate, model.CalculationMethod, false, model.UseHolograhpicCycleCalculation, model.PersonModel.BirthTimeZoneId, model.InvertDailyAndHourlyKiForSouthernHemisphere);
+                        model.SelectedDate, model.CalculationMethod, false, false, model.PersonModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, model.InvertDailyAndHourlyKiForSouthernHemisphere);
 
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
                     model.ActiveCycleTabId = activeTabId;

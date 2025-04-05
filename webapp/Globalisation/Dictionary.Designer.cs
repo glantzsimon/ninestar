@@ -10010,6 +10010,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Houses Display.
+        /// </summary>
+        public static string HousesDisplayLabel {
+            get {
+                return ResourceManager.GetString("HousesDisplayLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Houses You Currently Occupy.
         /// </summary>
         public static string HousesYouCurrentlyOccupy {
@@ -10636,6 +10645,15 @@ namespace K9.Globalisation {
         public static string IsActiveLabel {
             get {
                 return ResourceManager.GetString("IsActiveLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Isometric Houses.
+        /// </summary>
+        public static string IsometricHouses {
+            get {
+                return ResourceManager.GetString("IsometricHouses", resourceCulture);
             }
         }
         
@@ -11731,6 +11749,15 @@ namespace K9.Globalisation {
         public static string LowerBody {
             get {
                 return ResourceManager.GetString("LowerBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Lunar Houses.
+        /// </summary>
+        public static string LunarHouses {
+            get {
+                return ResourceManager.GetString("LunarHouses", resourceCulture);
             }
         }
         
@@ -17576,6 +17603,15 @@ namespace K9.Globalisation {
         public static string soil_year {
             get {
                 return ResourceManager.GetString("soil_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Solar Houses.
+        /// </summary>
+        public static string SolarHouses {
+            get {
+                return ResourceManager.GetString("SolarHouses", resourceCulture);
             }
         }
         

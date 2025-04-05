@@ -21,22 +21,20 @@ namespace K9.WebApplication.Models
 
         public static DateTime CYCLE_SWITCH_DATE = new DateTime(2105, 2, 4);
 
-        [ScriptIgnore]
         [UIHint("CalculationMethod")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculationMethodLabel)]
         public ECalculationMethod CalculationMethod { get; set; }
 
+        [UIHint("HousesDisplay")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HousesDisplayLabel)]
+        public EHousesDisplay HousesDisplay { get; set; }
+
         [ScriptIgnore]
         public bool EnableCycleSwitch { get; set; } = true;
 
-        [ScriptIgnore]
-        public bool UseHolograhpicCycleCalculation { get; set; } = SessionHelper.GetCurrentUserUseHolograhpicCycles();
-
-        [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertDailyAndHourlyKiForSouthernHemisphereLabel)]
         public bool InvertDailyAndHourlyKiForSouthernHemisphere { get; set; }
 
-        [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertDailyAndHourlyKiForSouthernHemisphereLabel)]
         public bool InvertDailyAndHourlyCycleKiForSouthernHemisphere { get; set; }
 
@@ -62,6 +60,7 @@ namespace K9.WebApplication.Models
             InvertDailyAndHourlyKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyKiForSouthernHemisphere();
             InvertDailyAndHourlyCycleKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyCycleKiForSouthernHemisphere();
             ShowDirections = SessionHelper.GetShowDirections();
+
         }
 
         public NineStarKiModel()
@@ -94,14 +93,14 @@ namespace K9.WebApplication.Models
 
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, (int DailyKi, int? InvertedDailyKi)[] preciseDailyCycleEnergies, int preciseHourlyCycleEnergy, DateTime? selectedDate = null,
 
-            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string displayDataForTimeZoneId = "")
+            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string displayDataForTimeZoneId = "")
         {
             Init();
 
             UserTimeZoneId = string.IsNullOrEmpty(displayDataForTimeZoneId) ? Current.UserTimeZoneId : displayDataForTimeZoneId;
             SelectedDate = selectedDate ?? DateTime.UtcNow;
             CalculationMethod = calculationMethod;
-            UseHolograhpicCycleCalculation = useHolograhpicCycleCalculation;
+            HousesDisplay = housesDisplay;
             InvertDailyAndHourlyKiForSouthernHemisphere = invertDailyAndHourlyKiForSouthernHemisphere;
             InvertDailyAndHourlyCycleKiForSouthernHemisphere = invertDailyAndHourlyCycleKiForSouthernHemisphere;
 
@@ -202,34 +201,34 @@ namespace K9.WebApplication.Models
 
             #region Personal Cycle Energies / Houses Occupied
 
-            PersonalHousesOccupiedEnergies.Epoch = GetOrAddToCache($"Epoch_h_{SelectedDate}_{personalInfoString}_{preciseEpochCycleEnergy}_{UseHolograhpicCycleCalculation}",
-                () => GetPersonalCycleEnergy(preciseEpochCycleEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Epoch.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.EpochEnergy), TimeSpan.FromDays(30));
+            PersonalHousesOccupiedEnergies.Epoch = GetOrAddToCache($"Epoch_h_{SelectedDate}_{personalInfoString}_{preciseEpochCycleEnergy}_{housesDisplay}",
+                () => GetPersonalCycleEnergy(preciseEpochCycleEnergy, ENineStarKiEnergyCycleType.EpochEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Generation = GetOrAddToCache($"Generation_h_{SelectedDate}_{preciseGenerationalCycleEnergy}_{UseHolograhpicCycleCalculation}",
-                () => GetPersonalCycleEnergy(preciseGenerationalCycleEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Generation.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.GenerationalEnergy), TimeSpan.FromDays(30));
+            PersonalHousesOccupiedEnergies.Generation = GetOrAddToCache($"Generation_h_{SelectedDate}_{preciseGenerationalCycleEnergy}_{housesDisplay}",
+                () => GetPersonalCycleEnergy(preciseGenerationalCycleEnergy, ENineStarKiEnergyCycleType.GenerationalEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Year = GetOrAddToCache($"Year_h_{SelectedDate}_{personalInfoString}_{preciseYearlyCycleEnergy}_{UseHolograhpicCycleCalculation}",
-                () => GetPersonalCycleEnergy(preciseYearlyCycleEnergy, MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.YearlyCycleEnergy), TimeSpan.FromDays(30));
+            PersonalHousesOccupiedEnergies.Year = GetOrAddToCache($"Year_h_{SelectedDate}_{personalInfoString}_{preciseYearlyCycleEnergy}_{HousesDisplay}",
+                () => GetPersonalCycleEnergy(preciseYearlyCycleEnergy, ENineStarKiEnergyCycleType.YearlyCycleEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Month = GetOrAddToCache($"Month_h_{SelectedDate}_{personalInfoString}_{preciseMonthlyCycleEnergy}_{UseHolograhpicCycleCalculation}",
-                () => GetPersonalCycleEnergy(preciseMonthlyCycleEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Month.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy), TimeSpan.FromDays(30));
+            PersonalHousesOccupiedEnergies.Month = GetOrAddToCache($"Month_h_{SelectedDate}_{personalInfoString}_{preciseMonthlyCycleEnergy}_{HousesDisplay}",
+                () => GetPersonalCycleEnergy(preciseMonthlyCycleEnergy, ENineStarKiEnergyCycleType.MonthlyCycleEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Day = GetOrAddToCache($"Day_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleMorningEnergy}_{preciseInvertedDailyCycleMorningEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
-                () => GetPersonalCycleEnergy(preciseDailyCycleMorningEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
+            PersonalHousesOccupiedEnergies.Day = GetOrAddToCache($"Day_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleMorningEnergy}_{preciseInvertedDailyCycleMorningEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
+                () => GetPersonalCycleEnergy(preciseDailyCycleMorningEnergy, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Day2 = GetOrAddToCache($"DayTwo_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleAfternoonEnergy}_{preciseInvertedDailyCycleAfternoonEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
-                () => GetPersonalCycleEnergy(preciseDailyCycleAfternoonEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
+            PersonalHousesOccupiedEnergies.Day2 = GetOrAddToCache($"DayTwo_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleAfternoonEnergy}_{preciseInvertedDailyCycleAfternoonEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
+                () => GetPersonalCycleEnergy(preciseDailyCycleAfternoonEnergy, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Hour = GetOrAddToCache($"Hour_h_{SelectedDate:yyyyMMddHHmm}_{personalInfoString}_{preciseHourlyCycleEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
-                () => GetPersonalCycleEnergy(preciseHourlyCycleEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Hour.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.HourlyEnergy), TimeSpan.FromDays(30));
+            PersonalHousesOccupiedEnergies.Hour = GetOrAddToCache($"Hour_h_{SelectedDate:yyyyMMddHHmm}_{personalInfoString}_{preciseHourlyCycleEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
+                () => GetPersonalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy), TimeSpan.FromDays(30));
 
             if (preciseInvertedDailyCycleMorningEnergy.HasValue)
             {
-                PersonalHousesOccupiedEnergies.DayInverted = GetOrAddToCache($"DayInverted_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseInvertedDailyCycleMorningEnergy}_{preciseInvertedDailyCycleMorningEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
-                    () => GetPersonalCycleEnergy(preciseInvertedDailyCycleMorningEnergy.Value, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Hour.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
+                PersonalHousesOccupiedEnergies.DayInverted = GetOrAddToCache($"DayInverted_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseInvertedDailyCycleMorningEnergy}_{preciseInvertedDailyCycleMorningEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
+                    () => GetPersonalCycleEnergy(preciseInvertedDailyCycleMorningEnergy.Value, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
 
-                PersonalHousesOccupiedEnergies.Day2Inverted = GetOrAddToCache($"DayTwoInverted_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseInvertedDailyCycleAfternoonEnergy}_{preciseInvertedDailyCycleAfternoonEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
-                    () => GetPersonalCycleEnergy(preciseInvertedDailyCycleAfternoonEnergy.Value, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Hour.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
+                PersonalHousesOccupiedEnergies.Day2Inverted = GetOrAddToCache($"DayTwoInverted_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseInvertedDailyCycleAfternoonEnergy}_{preciseInvertedDailyCycleAfternoonEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
+                    () => GetPersonalCycleEnergy(preciseInvertedDailyCycleAfternoonEnergy.Value, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
             }
 
             #endregion
@@ -576,7 +575,7 @@ namespace K9.WebApplication.Models
                             monthlyPeriod.PeriodStartOn,
                             monthlyPeriod.PeriodEndsOn,
 
-                            monthlyPeriod.PeriodStartOn.ToString("MMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Month.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
+                            monthlyPeriod.PeriodStartOn.ToString("MMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
                     }
 
                     yearlyCycles.Add(new Tuple<int, DateTime, DateTime, NineStarKiEnergy, List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>>(
@@ -584,7 +583,7 @@ namespace K9.WebApplication.Models
                         yearlyPeriod.PeriodStartOn,
                         yearlyPeriod.PeriodEndsOn,
 
-                        GetPersonalCycleEnergy(yearlyPeriod.YearlyKi, MainEnergy.EnergyNumber,
+                        GetPersonalCycleEnergy(yearlyPeriod.YearlyKi,
                             ENineStarKiEnergyCycleType.YearlyCycleEnergy),
 
                         monthlyCycles));
@@ -602,7 +601,7 @@ namespace K9.WebApplication.Models
 
                 foreach (var yearlyPeriod in YearlyPeriods)
                 {
-                    cycles.Add(new Tuple<int, NineStarKiEnergy>(yearlyPeriod.PeriodStartOn.Year, GetPersonalCycleEnergy(yearlyPeriod.YearlyKi, MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.YearlyCycleEnergy)));
+                    cycles.Add(new Tuple<int, NineStarKiEnergy>(yearlyPeriod.PeriodStartOn.Year, GetPersonalCycleEnergy(yearlyPeriod.YearlyKi, ENineStarKiEnergyCycleType.YearlyCycleEnergy)));
                 }
 
                 return cycles;
@@ -617,7 +616,7 @@ namespace K9.WebApplication.Models
 
                 foreach (var monthlyPeriod in MonthlyPeriods)
                 {
-                    cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(monthlyPeriod.PeriodStartOn.Year, monthlyPeriod.PeriodStartOn.Month, monthlyPeriod.PeriodStartOn.ToString("MMMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Month.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
+                    cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(monthlyPeriod.PeriodStartOn.Year, monthlyPeriod.PeriodStartOn.Month, monthlyPeriod.PeriodStartOn.ToString("MMMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
                 }
 
                 return cycles;
@@ -635,9 +634,9 @@ namespace K9.WebApplication.Models
                 {
                     cycles.Add(new Tuple<int, int, int, string, string, NineStarKiEnergy, NineStarKiEnergy>(day.Date.Year, day.Date.Month, day.Date.Day, day.Date.ToString("MMM"), day.Date.ToString("ddd"),
 
-                        GetPersonalCycleEnergy(InvertDailyAndHourlyCycleKiForSouthernHemisphere ? GetOppositeEnergyInMagicSquare(day.DailyKi) : day.DailyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy),
+                        GetPersonalCycleEnergy(InvertDailyAndHourlyCycleKiForSouthernHemisphere ? GetOppositeEnergyInMagicSquare(day.DailyKi) : day.DailyKi, ENineStarKiEnergyCycleType.DailyEnergy),
 
-                        day.AfternoonKi == null ? null : GetPersonalCycleEnergy(InvertDailyAndHourlyCycleKiForSouthernHemisphere ? GetOppositeEnergyInMagicSquare(day.AfternoonKi.Value) : day.AfternoonKi.Value, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)
+                        day.AfternoonKi == null ? null : GetPersonalCycleEnergy(InvertDailyAndHourlyCycleKiForSouthernHemisphere ? GetOppositeEnergyInMagicSquare(day.AfternoonKi.Value) : day.AfternoonKi.Value, ENineStarKiEnergyCycleType.DailyEnergy)
                         ));
                 }
 
@@ -654,7 +653,7 @@ namespace K9.WebApplication.Models
 
                 foreach (var hour in DailyPeriods)
                 {
-                    cycles.Add(new Tuple<int, int, int, string, string, NineStarKiEnergy>(hour.Date.Year, hour.Date.Month, hour.Date.Day, hour.Date.ToString("MMM"), hour.Date.ToString("ddd"), GetPersonalCycleEnergy(hour.DailyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)));
+                    cycles.Add(new Tuple<int, int, int, string, string, NineStarKiEnergy>(hour.Date.Year, hour.Date.Month, hour.Date.Day, hour.Date.ToString("MMM"), hour.Date.ToString("ddd"), GetPersonalCycleEnergy(hour.DailyKi, ENineStarKiEnergyCycleType.DailyEnergy)));
                 }
 
                 return cycles;
@@ -714,11 +713,11 @@ namespace K9.WebApplication.Models
             return CharacterEnergy.Energy.GetTransformationTypeWithYingYang(childNatalHouse.Energy);
         }
 
-        public NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, int energyNumber, ENineStarKiEnergyCycleType cycleType)
+        public NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, ENineStarKiEnergyCycleType cycleType)
         {
             var invertCycle = (CalculationMethod == ECalculationMethod.Chinese && PersonModel.Gender.IsYin()) || IsCycleSwitchActive;
             cycleEnergy = invertCycle ? InvertEnergy(cycleEnergy) : cycleEnergy;
-            var houseOccupied = GetHouseOccupiedByNumber(cycleEnergy, energyNumber);
+            var houseOccupied = GetHouseOccupiedByNumber(cycleEnergy, GetCycleHouseEnergyNumber(cycleType));
 
             var energy = (ENineStarKiEnergy)(houseOccupied);
 
@@ -729,6 +728,42 @@ namespace K9.WebApplication.Models
         {
             var offset = (5 - cycleEnergy);
             return GetNineStarKiNumber(personalPrimaryEnergy + offset);
+        }
+
+        private int GetCycleHouseEnergyNumber(ENineStarKiEnergyCycleType cycleType)
+        {
+            if (HousesDisplay == EHousesDisplay.SolarHouse)
+            {
+                return MainEnergy.EnergyNumber;
+            }
+            if (HousesDisplay == EHousesDisplay.LunarHouse)
+            {
+                return CharacterEnergy.EnergyNumber;
+            }
+
+            switch (cycleType)
+            {
+                case ENineStarKiEnergyCycleType.HourlyEnergy:
+                    return PersonalHousesOccupiedEnergies.Hour.EnergyNumber;
+
+                case ENineStarKiEnergyCycleType.DailyEnergy:
+                    return PersonalHousesOccupiedEnergies.Day.EnergyNumber;
+
+                case ENineStarKiEnergyCycleType.MonthlyCycleEnergy:
+                    return PersonalHousesOccupiedEnergies.Month.EnergyNumber;
+
+                case ENineStarKiEnergyCycleType.YearlyCycleEnergy:
+                    return PersonalHousesOccupiedEnergies.Year.EnergyNumber;
+
+                case ENineStarKiEnergyCycleType.GenerationalEnergy:
+                    return PersonalHousesOccupiedEnergies.Generation.EnergyNumber;
+
+                case ENineStarKiEnergyCycleType.EpochEnergy:
+                    return PersonalHousesOccupiedEnergies.Epoch.EnergyNumber;
+
+                default:
+                    return MainEnergy.EnergyNumber;
+            }
         }
 
         private static readonly Dictionary<int, int> _invertedEnergies = new Dictionary<int, int>

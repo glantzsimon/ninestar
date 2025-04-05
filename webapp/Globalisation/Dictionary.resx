@@ -5836,4 +5836,16 @@
   <data name="StressResponse" xml:space="preserve">
     <value>Stress Response</value>
   </data>
+  <data name="HousesDisplayLabel" xml:space="preserve">
+    <value>Houses Display</value>
+  </data>
+  <data name="IsometricHouses" xml:space="preserve">
+    <value>Display Isometric Houses</value>
+  </data>
+  <data name="LunarHouses" xml:space="preserve">
+    <value>Display Lunar Houses</value>
+  </data>
+  <data name="SolarHouses" xml:space="preserve">
+    <value>Display Solar Houses</value>
+  </data>
 </root>

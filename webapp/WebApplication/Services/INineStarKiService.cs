@@ -15,7 +15,7 @@ namespace K9.WebApplication.Services
         NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
             bool isMyProfile = false, DateTime? today = null,
             ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false,
-            bool includePlannerData = false, string userTimeZoneId = "", bool useHolograhpicCycleCalculation = false,
+            bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse,
             bool invertDailyAndHourlyKiForSouthernHemisphere = false,
             bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
             EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate);
@@ -38,7 +38,7 @@ namespace K9.WebApplication.Services
                 string userTimeZoneId,
                 ECalculationMethod calculationMethod,
                 EDisplayDataForPeriod displayDataForPeriod,
-                bool useHolograhpicCycleCalculation,
+                EHousesDisplay housesDisplay,
                 bool invertDailyAndHourlyKiForSouthernHemisphere,
                 bool invertDailyAndHourlyCycleKiForSouthernHemisphere,
                 EPlannerView view = EPlannerView.Year,

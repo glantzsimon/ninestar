@@ -3,12 +3,7 @@
 @using SessionHelper = K9.WebApplication.Helpers.SessionHelper
 @model K9.WebApplication.Models.NineStarKiEnergy
 
-@{
-    var displayPreference = SessionHelper.GetEnergyDefaultDisplay();
-    var graphicalStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "" : "display: none";
-}
-
-<div class="graphical-display" style="@graphicalStyle">
+<div>
     <div class="ninestar-summary-container margin-3">
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@Dictionary.Energy</h3>
         <p>@Model.EnergyName</p>

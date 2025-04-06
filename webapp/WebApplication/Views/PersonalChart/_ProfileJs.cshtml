@@ -7,7 +7,7 @@
 
         $.fn.displaySpinner("#profile-alchemy-container");
 
-        ajaxcontroller().getHtml(url,
+        ajaxcontroller().get(url,
             {
                 dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
                 birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",

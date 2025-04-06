@@ -123,7 +123,7 @@ namespace K9.WebApplication.Attributes
             {
                 if (_hourlyDescription == null)
                 {
-                    _hourlyDescription = GetResourceValue(HourlyDescription);
+                    _hourlyDescription = GetResourceValue(HourlyDescriptionName);
                 }
                 return _hourlyDescription;
             }

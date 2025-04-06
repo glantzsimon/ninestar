@@ -537,6 +537,8 @@ namespace K9.WebApplication.Models
 
         public string StressResponseDetails => GetStressResponseDetails();
 
+        public string AdultChildRelationsihpDescription => GetAdultChildRelationshipDetails();
+
         [ScriptIgnore]
         public string SexualityRelationTypeDetailsGay => GetSexualityGenderDescription(true);
 
@@ -935,6 +937,17 @@ namespace K9.WebApplication.Models
                 { ETransformationType.Supports, Dictionary.child_supports_stress}
             };
 
+        private static readonly Dictionary<ETransformationType, string> _adultChildRelationships
+            = new Dictionary<ETransformationType, string>
+            {
+                { ETransformationType.IsControlled, Dictionary.child_controlled_stress },
+                { ETransformationType.Controls, Dictionary.child_controls_stress },
+                { ETransformationType.Sibling, Dictionary.child_same_element_stress },
+                { ETransformationType.Same, Dictionary.child_house_of_five_stress },
+                { ETransformationType.IsSupported, Dictionary.child_supported_stress},
+                { ETransformationType.Supports, Dictionary.child_supports_stress}
+            };
+
         private string GetMainEnergyRelationshipDetails()
         {
             return MainEnergy != null ? _relationshipDetails.TryGetValue(MainEnergy.Energy, out var getValue)
@@ -952,6 +965,13 @@ namespace K9.WebApplication.Models
         private string GetStressResponseDetails()
         {
             return MainEnergy != null ? _stressResponses.TryGetValue(GetChildNatalHouseTransformation(), out var details)
+                ? details
+                : string.Empty : string.Empty;
+        }
+
+        private string GetAdultChildRelationshipDetails()
+        {
+            return CharacterEnergy != null ? _adultChildRelationships.TryGetValue(GetChildNatalHouseTransformation(), out var details)
                 ? details
                 : string.Empty : string.Empty;
         }

@@ -5932,6 +5932,12 @@
   <data name="wind_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\surface\en-gb\summary\wind-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="AdultChildRelationship" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\adultchildrelationship.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AdultChildRelationshipTitle" xml:space="preserve">
+    <value>Adult / Child Relationship</value>
+  </data>
   <data name="Alchemy" xml:space="preserve">
     <value>Alchemy</value>
   </data>

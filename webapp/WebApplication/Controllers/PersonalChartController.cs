@@ -91,7 +91,11 @@ namespace K9.WebApplication.Controllers
                     null, calculationMethod, false, false, personModel.BirthTimeZoneId, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere);
 
                 var alchemy = await _nineStarKiService.GetNineStarKiAlchemy(model);
-                return Json(new { success = true, data = alchemy }, JsonRequestBehavior.AllowGet);
+                return Json(new
+                {
+                    alchemy.AlchemisedSummary,
+                    alchemy.AlchemisedDescription
+                }, JsonRequestBehavior.AllowGet);
             }
 
             return Json(new { success = false });

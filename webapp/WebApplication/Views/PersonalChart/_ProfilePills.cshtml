@@ -145,7 +145,7 @@
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     <div id="profile-alchemy-container">
-                        @Html.PanelWithSummary(Dictionary.ProfileAlchemisedDescription, Model.AlchemisedDescription, Model.AlchemisedSummary)
+                        @Html.PanelWithSummary(Dictionary.ProfileAlchemisedDescription, Dictionary.Loading, Dictionary.Loading)
                     </div>
                 }
 

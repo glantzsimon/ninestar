@@ -494,7 +494,7 @@
             public const string GlobalSoilEpochCycle = "global_soil_epoch_cycle";
             public const string GlobalThunderEpochCycle = "global_thunder_epoch_cycle";
             public const string GlobalWindEpochCycle = "global_wind_epoch_cycle";
-            public const string GlobalCoreEarthEpochCycle = "global_coreearth_epoch_cycle";
+            public const string GlobalCoreEarthEpochCycle = "global_core_earth_epoch_cycle";
             public const string GlobalHeavenEpochCycle = "global_heaven_epoch_cycle";
             public const string GlobalLakeEpochCycle = "global_lake_epoch_cycle";
             public const string GlobalMountainEpochCycle = "global_mountain_epoch_cycle";
@@ -504,7 +504,7 @@
             public const string GlobalSoilGenerationCycle = "global_soil_generation_cycle";
             public const string GlobalThunderGenerationCycle = "global_thunder_generation_cycle";
             public const string GlobalWindGenerationCycle = "global_wind_generation_cycle";
-            public const string GlobalCoreEarthGenerationCycle = "global_coreearth_generation_cycle";
+            public const string GlobalCoreEarthGenerationCycle = "global_core_earth_generation_cycle";
             public const string GlobalHeavenGenerationCycle = "global_heaven_generation_cycle";
             public const string GlobalLakeGenerationCycle = "global_lake_generation_cycle";
             public const string GlobalMountainGenerationCycle = "global_mountain_generation_cycle";

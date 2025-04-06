@@ -23,6 +23,13 @@
                         <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/inner-child.png")');"></div>
                     </a>
                 </li>
+                
+                <li>
+                    <a data-toggle="tab" href="#adult-child">
+                        @Dictionary.AdultChildRelationshipTitle
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/adult-child-relationship.png")');"></div>
+                    </a>
+                </li>
 
                 <li>
                     <a data-toggle="tab" href="#stress">
@@ -43,6 +50,13 @@
                     @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileChildNature", Model)
+                    }
+                </div>
+
+                <div id="adult-child" class="tab-pane fade">
+                    @using (Html.PayWall(ESection.Profile, Model))
+                    {
+                        @Html.Partial("_ProfileAdultChildRelationship", Model)
                     }
                 </div>
 

@@ -2733,6 +2733,27 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Relationship Between the Adult and Child Energies&lt;/h5&gt;
+        ///
+        ///&lt;p&gt;
+        ///    In a Nine Star Ki chart, the Adult (or Primary) number reflects our &lt;strong&gt;core potential and purpose in life&lt;/strong&gt;. It represents our natural direction for growth and self-actualisation—physically, mentally, and spiritually. When we are aligned with this energy, we feel purposeful, empowered, and able to navigate life with clarity. If this energy is not visibly expressed, it may indicate that &lt;strong&gt;external circumstances or in [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string AdultChildRelationship {
+            get {
+                return ResourceManager.GetString("AdultChildRelationship", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adult / Child Relationship.
+        /// </summary>
+        public static string AdultChildRelationshipTitle {
+            get {
+                return ResourceManager.GetString("AdultChildRelationshipTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adult Nature.
         /// </summary>
         public static string AdultPersona {

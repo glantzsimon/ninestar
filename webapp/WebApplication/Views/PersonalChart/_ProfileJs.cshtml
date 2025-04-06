@@ -18,15 +18,21 @@
                 invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()'
             }).done(
             function(result) {
-                console.log("result");
                 if (result.success) {
                     let $container = $("#profile-alchemy-container");
-                    $container.fadeOut(200, function() {
-                        $container.html(result.data);
-                        $container.fadeIn(100);
+                    $container.fadeOut(200,
+                        function() {
+                            $container.find(".panel .panel-one").html(result.data.AlchemisedSummary);
+                            $container.find(".panel .panel-two").html(result.data.AlchemisedDescription);
+                            $container.fadeIn(100);
 
-                        bootstrapControls().init();
-                    });
+                            bootstrapControls().init();
+                            ninestarki().init();
+
+                            $.fn.hideSpinner("#profile-alchemy-container");
+                        });
+                } else {
+                    $.fn.hideSpinner("#profile-alchemy-container");
                 }
             });
     }

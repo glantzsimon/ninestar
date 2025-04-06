@@ -997,6 +997,7 @@
     <Content Include="Images\ninestar\organs\spleenpancreas.png" />
     <Content Include="Images\ninestar\organs\stomach.png" />
     <Content Include="Images\ninestar\organs\urinarybladder.png" />
+    <Content Include="Images\ui\adult-child-relationship.png" />
     <Content Include="Images\ui\alchemy.png" />
     <Content Include="Images\ui\daily-cycle.png" />
     <Content Include="Images\ui\daily-planner.png" />
@@ -1718,6 +1719,7 @@
     <Content Include="Views\PersonalChart\_ProfileChildNature.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileHeaderInfo.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileJs.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileAdultChildRelationship.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -170,6 +170,15 @@
 	        $overlay.show();
 	    };
 
+        $.fn.hideSpinner = function (selector) {
+            var $this = selector === undefined ? $(this) : $(selector);
+            var $spinner = $this.find('.partialSpinner');
+            var $overlay = $this.find('.partialOverlay');
+
+            $spinner.fadeOut();
+            $overlay.fadeOut();
+	    };
+
 		bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
             dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()",

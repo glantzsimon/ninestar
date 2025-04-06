@@ -120,20 +120,23 @@
             function(result) {
                 if (result.success) {
                     let $container = $("#global-planner-container");
-                    $container.fadeOut(200, function() {
-                        $container.html(result.data);
-                        $container.fadeIn(100);
+                    $container.fadeOut(200,
+                        function() {
+                            $container.html(result.data);
+                            $container.fadeIn(100);
 
-                        bindGlobalEvents();
-                        bootstrapControls().init();
-                        ninestarki().initMagicTooltips();
+                            bindGlobalEvents();
+                            bootstrapControls().init();
+                            ninestarki().initMagicTooltips();
 
-                        var view = $("#PlannerView").val();
-                        $("#View").val(view).selectpicker("refresh");
+                            var view = $("#PlannerView").val();
+                            $("#View").val(view).selectpicker("refresh");
 
-                        var display = $("#PlannerDisplay").val();
-                        $("#Display").val(display).selectpicker("refresh");
-                    });
+                            var display = $("#PlannerDisplay").val();
+                            $("#Display").val(display).selectpicker("refresh");
+                        });
+                } else {
+                    $.fn.hideSpinner("#global-planner-container");
                 }
             });
     }

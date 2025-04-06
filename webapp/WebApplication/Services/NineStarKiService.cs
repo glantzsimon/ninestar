@@ -8,6 +8,7 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Web.UI;
 
 namespace K9.WebApplication.Services
 {
@@ -43,37 +44,46 @@ namespace K9.WebApplication.Services
 
         public async Task<NineStarKiModel> GetNineStarKiPersonalChartAlchemy(NineStarKiModel model)
         {
-            var textToMerge = new string[]
+            var textToMerge = new (string theme, string[] texts)[]
             {
-                model.PersonalChartEnergies.Generation.GenerationDescription,
-                model.PersonalChartEnergies.Year.MainEnergySummary,
-                model.PersonalChartEnergies.Month.CharacterEnergySummary,
-                model.PersonalChartEnergies.Surface.SurfaceEnergySummary,
-                model.PersonalChartEnergies.Day.DayStarDescription,
-                model.PersonalChartEnergies.Year.IntellectualQualitiesSummary,
-                model.PersonalChartEnergies.Year.InterpersonalQualitiesSummary,
-                model.PersonalChartEnergies.Year.EmotionalLandscapeSummary,
-                model.StressResponseDetails,
-                model.MainEnergyRelationshipsSummary,
-                model.Health
+                ($"{model.PersonalChartEnergies.Generation.EnergyNameNumberAndElement} {Dictionary.Generation}", new []
+                {
+                    model.PersonalChartEnergies.Generation.GenerationDescription,
+                }),
+                (Dictionary.Personality, new[]
+                {
+                    model.PersonalChartEnergies.Year.MainEnergySummary,
+                    model.PersonalChartEnergies.Month.CharacterEnergySummary,
+                    model.PersonalChartEnergies.Surface.SurfaceEnergySummary,
+                    model.PersonalChartEnergies.Day.DayStarDescription,
+                }),
+                (Dictionary.IntellectualQualities, new[]
+                {
+                    model.PersonalChartEnergies.Year.IntellectualQualitiesSummary,
+                }),
+                (Dictionary.InterpersonalQualities, new[]
+                {
+                    model.PersonalChartEnergies.Year.InterpersonalQualitiesSummary,
+                }),
+                (Dictionary.EmotionalLandscape, new[]
+                {
+                    model.PersonalChartEnergies.Year.EmotionalLandscapeSummary,
+                    model.StressResponseDetails,
+                }),
+                (Dictionary.Relationships, new[]
+                {
+                    model.PersonalChartEnergies.Year.MainEnergySummary,
+                    model.PersonalChartEnergies.Month.CharacterEnergySummary,
+                    model.MainEnergyRelationshipsSummary
+                }),
+                (Dictionary.Health, new []
+                {
+                    model.Health
+                })
             };
 
-            var themes = new[]
-            {
-                Dictionary.Generation,
-                Dictionary.MainEnergy,
-                Dictionary.CharacterEnergyLabel,
-                Dictionary.SurfaceEnergyLabel,
-                Dictionary.IntellectualQualities,
-                Dictionary.InterpersonalQualities,
-                Dictionary.EmotionalLandscape,
-                Dictionary.StressResponse,
-                Dictionary.Relationships,
-                Dictionary.Health
-            };
-
-            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge, themes);
-            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge, themes);
+            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge);
+            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge);
             model.AIMergedProfileTextIsSet = true;
 
             return model;
@@ -81,24 +91,28 @@ namespace K9.WebApplication.Services
 
         public async Task<NineStarKiModel> GetNineStarKiPredictionsAlchemy(NineStarKiModel model)
         {
-            var textToMerge = new string[]
+            var textToMerge = new (string theme, string[] texts)[]
             {
-                model.PersonalHousesOccupiedEnergies.Generation.CycleDescription,
-                model.PersonalHousesOccupiedEnergies.Year.CycleDescription,
-                model.PersonalHousesOccupiedEnergies.Month.CycleDescription,
-                model.PersonalHousesOccupiedEnergies.Day.CycleDescription
+                (Dictionary.NineYearlyPrediction, new[]
+                {
+                    model.PersonalHousesOccupiedEnergies.Generation.CycleDescription
+                }),
+                (Dictionary.YearlyPrediction, new[]
+                {
+                    model.PersonalHousesOccupiedEnergies.Year.CycleDescription,
+                }),
+                (Dictionary.MonthlyPrediction, new[]
+                {
+                    model.PersonalHousesOccupiedEnergies.Month.CycleDescription
+                }),
+                (Dictionary.DailyPrediction, new[]
+                {
+                    model.PersonalHousesOccupiedEnergies.Day.CycleDescription
+                })
             };
 
-            var themes = new[]
-            {
-                Dictionary.NineYearlyPrediction,
-                Dictionary.YearlyPrediction,
-                Dictionary.MonthlyPrediction,
-                Dictionary.DailyPrediction
-            };
-
-            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge, themes);
-            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge, themes);
+            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge);
+            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge);
             model.AIMergedProfileTextIsSet = true;
 
             return model;

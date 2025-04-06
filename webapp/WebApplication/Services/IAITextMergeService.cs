@@ -4,7 +4,7 @@ namespace K9.WebApplication.Services
 {
     public interface IAITextMergeService
     {
-        Task<string> MergeTextsAsync(string[] inputTexts, string[] themes = null);
-        Task<string> MergeTextsIntoSummaryAsync(string[] inputTexts, string[] themes = null);
+        Task<string> MergeTextsAsync((string theme, string[] texts)[] groups);
+        Task<string> MergeTextsIntoSummaryAsync((string theme, string[] texts)[] groups);
     }
 }

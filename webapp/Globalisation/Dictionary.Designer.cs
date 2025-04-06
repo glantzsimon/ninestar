@@ -15233,6 +15233,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personality.
+        /// </summary>
+        public static string Personality {
+            get {
+                return ResourceManager.GetString("Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personal Chart Calculator.
         /// </summary>
         public static string PersonalProfileCalculator {

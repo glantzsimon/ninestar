@@ -10,26 +10,28 @@ namespace K9.WebApplication.Services
 {
     public class AITextMergeService : BaseService, IAITextMergeService
     {
-        private const string ElegantTone = "elegant and refined, yet succint";
+        private const string ElegantTone = "elegant and refined, yet succinct";
 
         private static string WritingStyle = $"Maintain an {ElegantTone} tone throughout and keep the writing clear, organized, and free-flowing, but without unnecessary explanation.";
 
         private const string CrossReferenceText =
-            "Where applicable, cross-reference the different thematic sections. For example, if in one section it discusses a period of rest and renewal for the 9-year cycle, but in the yearly cycle the energy is more active, then one would mention this, as both influences are relevant at the same time. Similarly, there can be different and seemingly opposing influences coming from different parts of the nine star ki personal chart, so again, where appropriate, it may be useful to cross-reference. Avoid prefacing the response (e.g., 'Here is...') — just return the final result as clean HTML";
+            "Where applicable, cross-reference different influences. For example, if the yearly cycle suggests rest but the 9-year cycle suggests activity, mention both. This also applies to different influences from the same chart.";
 
         private const string DoNotAnnounceText =
-            "Do not preface the output (e.g. 'Here is...'). Just return the clean HTML output only";
+            "Do not preface the output (e.g., 'Here is...'). Just return clean HTML output only.";
 
         private const string PositiveAndChallengingText =
-            "Within each section, compare positive and challenging aspects where relevant";
+            "Within each section, compare positive and challenging aspects where relevant, and add sub-themes if it helps organize the section better.";
+
+        private const string OrganisationText =
+            "Organize the text into one or more thematic groups, each introduced with an appropriate heading.";
 
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
         private readonly string _model;
         private readonly string _endpoint;
 
-        public AITextMergeService(INineStarKiBasePackage my)
-            : base(my)
+        public AITextMergeService(INineStarKiBasePackage my) : base(my)
         {
             _httpClient = new HttpClient();
             _apiKey = My.ApiConfiguration.OpenAIApiKey;
@@ -37,33 +39,46 @@ namespace K9.WebApplication.Services
             _endpoint = My.ApiConfiguration.OpenApiEndpoint;
 
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
-            //_httpClient.DefaultRequestHeaders.Add("HTTP-Referer", $"https://{My.DefaultValuesConfiguration.SiteBaseUrl}");
         }
 
-        public async Task<string> MergeTextsAsync(string[] inputTexts, string[] themes = null)
+        public async Task<string> MergeTextsAsync((string theme, string[] texts)[] groups)
         {
-            return await ProcessRequest(GetPrompt("Blend the following texts into a clear, well-organized passage using only <h5> and <p> HTML tags.", inputTexts, themes));
+            var prompt = GetPrompt(
+                "Blend the following texts into a clear, well-organized passage using only <h5> and <p> HTML tags.",
+                groups
+            );
+            return await ProcessRequest(prompt);
         }
 
-        public async Task<string> MergeTextsIntoSummaryAsync(string[] inputTexts, string[] themes = null)
+        public async Task<string> MergeTextsIntoSummaryAsync((string theme, string[] texts)[] groups)
         {
-            return await ProcessRequest(GetPrompt("Blend the following texts into a clear, well-organized summary using only <h5>, <ul>, and <li> HTML tags.", inputTexts, themes));
+            var prompt = GetPrompt(
+                "Blend the following texts into a clear, well-organized summary using only <h5>, <ul>, and <li> HTML tags.",
+                groups
+            );
+            return await ProcessRequest(prompt);
         }
 
-        private static string GetPrompt(string prompt, string[] inputTexts, string[] themes = null)
+        private static string GetPrompt(string intro, (string theme, string[] texts)[] groups)
         {
-            var joinedText = string.Join("\n\n", inputTexts);
-            var groupingText = GetGroupingText(themes);
-            return $"{prompt} {groupingText}. {WritingStyle}. {PositiveAndChallengingText}. {CrossReferenceText}. {DoNotAnnounceText}. :\n\n{joinedText}";
+            var sb = new StringBuilder();
+
+            sb.AppendLine($"{intro} {WritingStyle} {PositiveAndChallengingText} {CrossReferenceText} {DoNotAnnounceText} {OrganisationText}");
+
+            var i = 1;
+            foreach (var group in groups)
+            {
+                sb.AppendLine(GetGroupingText(group, i));
+                i++;
+            }
+
+            return sb.ToString();
         }
 
-        private static string GetGroupingText(string[] groups)
+        private static string GetGroupingText((string theme, string[] texts) group, int number)
         {
-            var groupsList = string.Join(",", groups);
-            var groupingText = groups != null && groups.Any()
-                ? $"the following themed sections: {groupsList}"
-                : "themed sections";
-            return $"Group related ideas into {groupingText}";
+            var joinedText = string.Join("\n\n", group.texts);
+            return $"Theme {number}: {group.theme}\n\n{joinedText}\n";
         }
 
         private async Task<string> ProcessRequest(string prompt)
@@ -73,11 +88,7 @@ namespace K9.WebApplication.Services
                 model = _model,
                 messages = new[]
                 {
-                    new
-                    {
-                        role = "user",
-                        content = prompt
-                    }
+                    new { role = "user", content = prompt }
                 }
             };
 
@@ -90,8 +101,7 @@ namespace K9.WebApplication.Services
             var responseString = await response.Content.ReadAsStringAsync();
             var parsed = JObject.Parse(responseString);
 
-            return StripMarkdownCodeFencing(parsed["choices"]?[0]?["message"]?["content"]?.ToString()?.Trim() ??
-                                            "[No response]");
+            return StripMarkdownCodeFencing(parsed["choices"]?[0]?["message"]?["content"]?.ToString()?.Trim() ?? "[No response]");
         }
 
         private static string StripMarkdownCodeFencing(string input)
@@ -112,6 +122,5 @@ namespace K9.WebApplication.Services
 
             return string.Join("\n", lines).Trim();
         }
-
     }
 }

@@ -12,17 +12,7 @@
 
 <div class="ninestar-summmary container padding-0">
     <div id="personal-profile">
-        <ul class="nav nav-pills image-pill" data-autoscroll="true">
-            @if (Model.AIMergedProfileTextIsSet)
-            {
-                <li>
-                    <a data-toggle="tab" href="#alchemy">
-                        @Dictionary.Alchemy
-                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/alchemy.png');"></div>
-                    </a>
-                </li>
-            }
-
+        <ul class="nav nav-pills nav-justified image-pill" data-autoscroll="true">
             @if (Model.PersonModel.IsAdult())
             {
                 <li class="active">
@@ -72,19 +62,15 @@
                     <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/epoch.png');"></div>
                 </a>
             </li>
+            <li>
+                <a data-toggle="tab" href="#alchemy">
+                    @Dictionary.Alchemy
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/alchemy.png');"></div>
+                </a>
+            </li>
         </ul>
 
         <div class="tab-content">
-            <div id="alchemy" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
-                {
-                    <div id="profile-alchemy-container">
-                        @Html.PanelWithSummary(Dictionary.ProfileAlchemisedDescription, Model.AlchemisedDescription, Model.AlchemisedSummary)
-                    </div>
-                }
-                @Html.Partial("_ButtonsFooter")
-            </div>
-
             <div id="fundamental" class="tab-pane fade @adultActiveClass">
                 @Html.CollapsiblePanel(Dictionary.MainEnergyLabel, $"{Dictionary.MainEnergyDescription} {Html.Partial("_ClickOnATabBelow").ToString()}")
 
@@ -149,6 +135,18 @@
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel(Model.PersonalChartEnergies.Epoch.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Epoch).ToString()}{Model.PersonalChartEnergies.Epoch.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                }
+
+                <br />
+                @Html.Partial("_ButtonsFooter")
+            </div>
+
+            <div id="alchemy" class="tab-pane fade">
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                {
+                    <div id="profile-alchemy-container">
+                        @Html.PanelWithSummary(Dictionary.ProfileAlchemisedDescription, Model.AlchemisedDescription, Model.AlchemisedSummary)
+                    </div>
                 }
 
                 <br />

@@ -68,7 +68,6 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("free-calculator/alchemy")]
-        [HttpPost]
         public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, ECalculationMethod calculationMethod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere)
         {
             var userId = Current.GetUserId(System.Web.HttpContext.Current);

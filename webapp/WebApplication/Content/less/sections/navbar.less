@@ -1,6 +1,14 @@
 ﻿@import "../config/colours.less";
 @import "../config/paths.less";
 
+.nav-justified {
+    li {
+        a {
+            white-space: nowrap !important;
+        }
+    }
+}
+
 .navbar {
     margin-bottom: 0 !important;
     height: 0;
@@ -72,7 +80,7 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
                 font-weight: 300 !important;
                 margin: 0;
                 text-decoration: none;
-                padding: 1em;                
+                padding: 1em;
                 padding-left: 0;
                 padding-right: 0;
                 letter-spacing: 1px;
@@ -352,4 +360,3 @@ div.small-logo {
     overflow-y: auto;
     max-height: 95%
 }
-

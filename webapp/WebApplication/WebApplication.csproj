@@ -1720,6 +1720,7 @@
     <Content Include="Views\PersonalChart\_ProfileHeaderInfo.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileJs.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileAdultChildRelationship.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileSexualityRelationTypeSummary.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

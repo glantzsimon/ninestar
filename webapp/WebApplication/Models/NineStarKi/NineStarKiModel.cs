@@ -535,8 +535,11 @@ namespace K9.WebApplication.Models
         [ScriptIgnore]
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();
 
+        [ScriptIgnore]
+        public string SexualityRelationTypeSummaryStraight => GetSexualityGenderDescription(false, true);
+
         public string StressResponseDetails => GetStressResponseDetails();
-        
+
         public string StressResponseFromNatalHouseDetails => GetStressResponseFromNatalHouseDetails();
 
         public string AdultChildRelationsihpTitle => GetAdultChildRelationshipTitle();
@@ -545,6 +548,9 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public string SexualityRelationTypeDetailsGay => GetSexualityGenderDescription(true);
+
+        [ScriptIgnore]
+        public string SexualityRelationTypeSummaryGay => GetSexualityGenderDescription(true, true);
 
         [ScriptIgnore]
         public string MainEnergyRelationshipsDetails => GetMainEnergyRelationshipDetails();
@@ -740,7 +746,7 @@ namespace K9.WebApplication.Models
             var childNatalHouse = GetChildNatalHouse();
             return CharacterEnergy.Energy.GetTransformationTypeWithYingYang(childNatalHouse.Energy);
         }
-        
+
         public ETransformationType GetChildToAdultTransformation()
         {
             return CharacterEnergy.Energy.GetTransformationTypeWithYingYang(MainEnergy.Energy);
@@ -853,7 +859,7 @@ namespace K9.WebApplication.Models
                 : ESexualityRelationType.Unspecified;
         }
 
-        private string GetSexualityGenderDescription(bool isGay = false)
+        private string GetSexualityGenderDescription(bool isGay = false, bool isSummary = false)
         {
             if (PersonModel.Gender == EGender.Other)
             {
@@ -864,34 +870,70 @@ namespace K9.WebApplication.Models
             var potentialMatesText = isGay ? "potential mates" : "members of the opposite sex";
             var sexualPartnersText = isGay ? "their sexual partners" : "members of the opposite sex";
 
-            switch (SexualityRelationType)
+            if (isSummary)
             {
-                case ESexualityRelationType.MatchMatch:
-                    text = PersonModel.Gender == EGender.Male
-                        ? Dictionary.sexuality_match_match_male
-                        : Dictionary.sexuality_match_match_female;
-                    break;
+                switch (SexualityRelationType)
+                {
+                    case ESexualityRelationType.MatchMatch:
+                        text = PersonModel.Gender == EGender.Male
+                            ? Dictionary.sexuality_match_match_male_summary
+                            : Dictionary.sexuality_match_match_female_summary;
+                        break;
 
-                case ESexualityRelationType.MatchOpposite:
-                    text = PersonModel.Gender == EGender.Male
-                        ? Dictionary.sexuality_match_opposite_male
-                        : Dictionary.sexuality_match_opposite_female;
-                    break;
+                    case ESexualityRelationType.MatchOpposite:
+                        text = PersonModel.Gender == EGender.Male
+                            ? Dictionary.sexuality_match_opposite_male_summary
+                            : Dictionary.sexuality_match_opposite_female_summary;
+                        break;
 
-                case ESexualityRelationType.OppositeMatch:
-                    text = PersonModel.Gender == EGender.Male
-                        ? Dictionary.sexuality_opposite_match_male
-                        : Dictionary.sexuality_opposite_match_female;
-                    break;
+                    case ESexualityRelationType.OppositeMatch:
+                        text = PersonModel.Gender == EGender.Male
+                            ? Dictionary.sexuality_opposite_match_male_summary
+                            : Dictionary.sexuality_opposite_match_female_summary;
+                        break;
 
-                case ESexualityRelationType.OppositeOpposite:
-                    text = PersonModel.Gender == EGender.Male
-                        ? Dictionary.sexuality_opposite_opposite_male
-                        : Dictionary.sexuality_opposite_opposite_female;
-                    break;
+                    case ESexualityRelationType.OppositeOpposite:
+                        text = PersonModel.Gender == EGender.Male
+                            ? Dictionary.sexuality_opposite_opposite_male_summary
+                            : Dictionary.sexuality_opposite_opposite_female_summary;
+                        break;
 
-                default:
-                    return string.Empty;
+                    default:
+                        return string.Empty;
+                }
+            }
+            else
+            {
+
+                switch (SexualityRelationType)
+                {
+                    case ESexualityRelationType.MatchMatch:
+                        text = PersonModel.Gender == EGender.Male
+                            ? Dictionary.sexuality_match_match_male
+                            : Dictionary.sexuality_match_match_female;
+                        break;
+
+                    case ESexualityRelationType.MatchOpposite:
+                        text = PersonModel.Gender == EGender.Male
+                            ? Dictionary.sexuality_match_opposite_male
+                            : Dictionary.sexuality_match_opposite_female;
+                        break;
+
+                    case ESexualityRelationType.OppositeMatch:
+                        text = PersonModel.Gender == EGender.Male
+                            ? Dictionary.sexuality_opposite_match_male
+                            : Dictionary.sexuality_opposite_match_female;
+                        break;
+
+                    case ESexualityRelationType.OppositeOpposite:
+                        text = PersonModel.Gender == EGender.Male
+                            ? Dictionary.sexuality_opposite_opposite_male
+                            : Dictionary.sexuality_opposite_opposite_female;
+                        break;
+
+                    default:
+                        return string.Empty;
+                }
             }
 
             // Apply sexuality specific vocabulary
@@ -970,7 +1012,7 @@ namespace K9.WebApplication.Models
                 { ETransformationType.IsSupported, Dictionary.adult_supports_child},
                 { ETransformationType.Supports, Dictionary.child_supports_adult}
             };
-        
+
         private static readonly Dictionary<ETransformationType, string> _adultChildRelationshipTitles
             = new Dictionary<ETransformationType, string>
             {

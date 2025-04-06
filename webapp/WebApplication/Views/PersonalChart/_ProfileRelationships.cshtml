@@ -8,7 +8,8 @@
         <div>
             @Html.PanelWithSummary(Model.RelationshipsLabel, Model.MainEnergyRelationshipsDetails, Model.MainEnergyRelationshipsSummary)
 
-            @Html.Panel(Dictionary.SexualityGenderRelationLabel, Html.Partial("_ProfileSexualityRelationType").ToString())
+            @Html.PanelWithSummary(Dictionary.SexualityGenderRelationLabel, Html.Partial("_ProfileSexualityRelationType").ToString(),
+                Html.Partial("_ProfileSexualityRelationTypeSummary").ToString())
         </div>
     </div>
 }

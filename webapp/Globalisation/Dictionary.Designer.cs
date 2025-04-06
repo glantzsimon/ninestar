@@ -17200,7 +17200,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Note: for LGBTQ+ people, much of the above may well depend on the exact combination of gender and sexual traits and their relationship to the stereotypes associated with their biological gender. It is sometimes hard to predict; however, in many non heteronormative relationships one can still observe the Yin and Yang roles adopted by each partner.
+        ///    Note: For LGBTQ+ individuals, many of the factors mentioned above may vary based on the unique interplay of their gender and sexual characteristics and how these relate to traditional stereotypes associated with their biological sex. While these dynamics can be difficult to predict, many non-heteronormative relationships still exhibit distinct Yin and Yang roles between partners.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexuality_gay_notes {
@@ -17211,7 +17211,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Many people today are realising that they do not identify strongly with either gender. It is hard to accurately predict the kind of relationship such individuals might have with their sexuality solely based on their 9 Star Ki chart and is beyond the scope of this website.
+        ///    Many individuals today recognize that they don&apos;t strongly identify with a specific gender. Consequently, it is challenging to accurately predict how their sexuality might manifest based solely on their 9 Star Ki chart, and this topic extends beyond the scope of this website.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexuality_gender_other {
@@ -17224,13 +17224,12 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;h4&gt;
         ///    Both Solar and Lunar Energies are Yin and therefore in line with gender
         ///&lt;/h4&gt;
+        ///
         ///&lt;h5&gt;
-        ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality.
+        ///    A confident and integrated expression of femininity and sexuality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    As both the Lunar and Solar Energies are in line with gender, women with this combination tend to find it easier to be fully at ease with their sexuality.
-        ///
-        ///    This combination is essentially &quot;all female&quot; and can therefore give rise to all the traditionally accepted feminine traits, s [rest of string was truncated]&quot;;.
+        ///    Women with this configuration tend to be confident in their gender identity and at ease with their sexual expression. There is rarely any internal conflict regarding self-expression, and they generally relate well to both men and women. Their inner and outer energies are aligned, giving rise to a strong sense of self and clar [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_match_female {
             get {
@@ -17240,15 +17239,31 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies are Yang and therefore in line with gender
+        ///    Both Solar and Lunar Energies are Yin and therefore in line with gender
         ///&lt;/h4&gt;
+        ///
         ///&lt;h5&gt;
-        ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality.
+        ///    A confident and integrated expression of femininity and sexuality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    As both the Lunar and Solar Energies are in line with gender, men with this combination tend to find it easier to be fully at ease with their sexuality.
+        ///    Women with this configuration tend to be confident in their gender identity and at ease with their sexual expression. There is rarely any internal conflict regarding self-expression, and they generally relate well to both men and women. Their inner and outer energies are aligned, giving rise to a strong sense of self and clar [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_match_match_female_summary {
+            get {
+                return ResourceManager.GetString("sexuality_match_match_female_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Both Solar and Lunar Energies Are Yang and Therefore Aligned With Gender
+        ///&lt;/h4&gt;
         ///
-        ///    This combination is essentially &quot;all male&quot; and can therefore give rise to all the traditionally accepted masculine traits, suc [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;
+        ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    As both the Lunar and Solar Energies are in line with gender, men with this combination tend to feel naturally comfortable with their masculine identity and expression. This often gives rise to confidence in self-presentation and an ease in both platonic and romantic relationships. Th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_match_male {
             get {
@@ -17258,19 +17273,31 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Both Solar and Lunar Energies Are Yang and Therefore Aligned With Gender
+        ///&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    As both the Lunar and Solar Energies are in line with gender, men with this combination tend to feel naturally comfortable with their masculine identity and expression. This often gives rise to confidence in self-presentation and an ease in both platonic and romantic relationships. Th [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_match_match_male_summary {
+            get {
+                return ResourceManager.GetString("sexuality_match_match_male_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
         ///    Solar Energy is Yin and in line with gender. Emotional Ki is Yang and opposite to gender
         ///&lt;/h4&gt;
+        ///
         ///&lt;h5&gt;
-        ///    Quite a balanced combination
+        ///    A well-balanced combination with insight into both genders
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is quite a balanced combination that gives women of this combination a fairly even keel in understanding both their own sexuality and that of {SexualPartnersText}.
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Emotional Ki is opposite to gender, resulting in these men having a good understanding of {PotentialMatesText}
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Emotional Ki is opposite to gender, [rest of string was truncated]&quot;;.
+        ///    This combination creates a natural inner balance between feminine and masculine qualities. The Solar Energy is in line with gender, providing women with this configuration a grounded and confident connection to their femininity. At the same time, the Emotional Ki—being opposite to gender—gives them a lived understan [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_female {
             get {
@@ -17280,19 +17307,31 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Solar Energy is Yin and in line with gender. Emotional Ki is Yang and opposite to gender
+        ///&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    A well-balanced combination with insight into both genders
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This combination creates a natural inner balance between feminine and masculine qualities. The Solar Energy is in line with gender, providing women with this configuration a grounded and confident connection to their femininity. At the same time, the Emotional Ki—being opposite to gender—gives them a lived understan [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_match_opposite_female_summary {
+            get {
+                return ResourceManager.GetString("sexuality_match_opposite_female_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
         ///    Solar Energy is Yang and in line with gender. Emotional Ki is Yin and opposite to gender
         ///&lt;/h4&gt;
+        ///
         ///&lt;h5&gt;
-        ///    Quite a balanced combination
+        ///    A naturally balanced and empathetic combination
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is quite a balanced combination that gives men a fairly even keel in understanding both their own sexuality and that of {SexualPartnersText}.
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Emotional Ki is opposite to gender, resulting in a good understanding of {PotentialMatesText}
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Emotional Ki is opposite to gender, which likely gives men with this combi [rest of string was truncated]&quot;;.
+        ///    This configuration tends to create a sense of balance between self-awareness and relational sensitivity. Men with this combination often have a healthy sense of self rooted in their masculine identity (via the Solar Energy), while also embodying a deep emotional understanding of {PotentialMatesText} due to the opposing Yin qua [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_male {
             get {
@@ -17302,13 +17341,31 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Solar Energy is Yang and opposite to gender. Emotional Ki is Yin and in line with gender
+        ///    Solar Energy is Yang and in line with gender. Emotional Ki is Yin and opposite to gender
         ///&lt;/h4&gt;
+        ///
         ///&lt;h5&gt;
-        ///    Women with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
+        ///    A naturally balanced and empathetic combination
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During adolescence, the Emotional Ki is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Women with this combination are therefore typically very confident and at ease with {SexualPartnersText}  [rest of string was truncated]&quot;;.
+        ///    This configuration tends to create a sense of balance between self-awareness and relational sensitivity. Men with this combination often have a healthy sense of self rooted in their masculine identity (via the Solar Energy), while also embodying a deep emotional understanding of {PotentialMatesText} due to the opposing Yin qua [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_match_opposite_male_summary {
+            get {
+                return ResourceManager.GetString("sexuality_match_opposite_male_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Solar Energy is Yang and opposite to gender. Emotional Ki is Yin and in line with gender
+        ///&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    These women may feel confident in youth, but experience deeper insecurity later on
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In childhood and adolescence, the Emotional Ki is dominant and, in this configuration, is in line with gender. This tends to make women with this combination feel confident in their femininity early in life. They often relate easily and playfully with {SexualPartnersText}, and may express the [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_female {
             get {
@@ -17318,13 +17375,31 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Solar Energy is Yin and opposite to gender. Emotional Ki is Yang and in line with gender
+        ///    Solar Energy is Yang and opposite to gender. Emotional Ki is Yin and in line with gender
         ///&lt;/h4&gt;
+        ///
         ///&lt;h5&gt;
-        ///    Men with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
+        ///    These women may feel confident in youth, but experience deeper insecurity later on
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During adolescence, the Emotional Ki is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Men with this combination are therefore typically very confident and at ease with {SexualPartnersText} duri [rest of string was truncated]&quot;;.
+        ///    In childhood and adolescence, the Emotional Ki is dominant and, in this configuration, is in line with gender. This tends to make women with this combination feel confident in their femininity early in life. They often relate easily and playfully with {SexualPartnersText}, and may express the [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_opposite_match_female_summary {
+            get {
+                return ResourceManager.GetString("sexuality_opposite_match_female_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Solar Energy is Yin and opposite to gender. Emotional Ki is Yang and in line with gender
+        ///&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Confidence in youth, followed by inner conflict in adulthood
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During adolescence, the Emotional Ki is the dominant influence, and in this case, it aligns with gender. This often results in boys with this combination expressing themselves with confidence and ease in social and romantic situations. They may be charismatic, self-assured, and comfortable around {SexualPartnersTe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_male {
             get {
@@ -17334,16 +17409,31 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies are Yang and therefore opposite to gender
+        ///    Solar Energy is Yin and opposite to gender. Emotional Ki is Yang and in line with gender
         ///&lt;/h4&gt;
+        ///
         ///&lt;h5&gt;
-        ///    Quite a challenging combination for women who feel pressure to behave in a typically feminine and sensual way
+        ///    Confidence in youth, followed by inner conflict in adulthood
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This combination can be quite challenging, especially for women whose culture or upbringing might may require them to be especially feminine and sensual, or even submissive and passive.
-        ///&lt;/p&gt;
+        ///    During adolescence, the Emotional Ki is the dominant influence, and in this case, it aligns with gender. This often results in boys with this combination expressing themselves with confidence and ease in social and romantic situations. They may be charismatic, self-assured, and comfortable around {SexualPartnersTe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_opposite_match_male_summary {
+            get {
+                return ResourceManager.GetString("sexuality_opposite_match_male_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Both Solar and Lunar Energies are Yang and therefore opposite to gender
+        ///&lt;/h4&gt;
+        ///
         ///&lt;h5&gt;
-        ///    This combination can result in some insecurity around sexuality, leading to potent [rest of string was truncated]&quot;;.
+        ///    A challenging combination for women in environments with strong feminine ideals
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This configuration can be particularly difficult for women whose culture, family, or upbringing expects them to embody traditional traits of femininity—gentleness, sensuality, and emotional softness. These women may feel inwardly misaligned with such expectations, leading to a subtle or overt sense of inner conf [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_opposite_female {
             get {
@@ -17353,20 +17443,52 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies are Yin and therefore opposite to gender
+        ///    Both Solar and Lunar Energies are Yang and therefore opposite to gender
         ///&lt;/h4&gt;
+        ///
         ///&lt;h5&gt;
-        ///    Quite a challenging combination for men who feel pressure to behave more like alpha males
+        ///    A challenging combination for women in environments with strong feminine ideals
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This combination can be quite challenging, especially for men whose culture or upbringing might put even more pressure on them to behave like alpha males, or whichever role model is most culturally and socially appropriate.
-        ///&lt;/p&gt;
+        ///    This configuration can be particularly difficult for women whose culture, family, or upbringing expects them to embody traditional traits of femininity—gentleness, sensuality, and emotional softness. These women may feel inwardly misaligned with such expectations, leading to a subtle or overt sense of inner conf [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_opposite_opposite_female_summary {
+            get {
+                return ResourceManager.GetString("sexuality_opposite_opposite_female_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Both Solar and Lunar Energies are Yin and therefore opposite to gender
+        ///&lt;/h4&gt;
+        ///
         ///&lt;h5&gt;
-        ///    This combination can result in some insecurity around sexuality,  [rest of string was truncated]&quot;;.
+        ///    A challenging configuration for men—especially in masculine cultures
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This configuration presents one of the more challenging dynamics, particularly for men who are raised in environments that prize traditional masculinity or “alpha male” archetypes. With both Solar and Emotional Ki being Yin and therefore opposite to gender, there is a sense of internal misalignment that can manifest as a su [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_opposite_male {
             get {
                 return ResourceManager.GetString("sexuality_opposite_opposite_male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Both Solar and Lunar Energies are Yin and therefore opposite to gender
+        ///&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    A challenging configuration for men—especially in masculine cultures
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This configuration presents one of the more challenging dynamics, particularly for men who are raised in environments that prize traditional masculinity or “alpha male” archetypes. With both Solar and Emotional Ki being Yin and therefore opposite to gender, there is a sense of internal misalignment that can manifest as a su [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_opposite_opposite_male_summary {
+            get {
+                return ResourceManager.GetString("sexuality_opposite_opposite_male_summary", resourceCulture);
             }
         }
         

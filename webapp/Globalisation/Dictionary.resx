@@ -5881,6 +5881,12 @@
   <data name="LunarNature" xml:space="preserve">
     <value>Lunar Nature</value>
   </data>
+  <data name="MostChallengingCombinations" xml:space="preserve">
+    <value>Most Challenging Combinations</value>
+  </data>
+  <data name="MostHarmoniousCombinations" xml:space="preserve">
+    <value>Most Harmonious Combinations</value>
+  </data>
   <data name="mountain_emotional_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotional\en-gb\summary\mountain-emotional-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -5892,6 +5898,9 @@
   </data>
   <data name="PrimaryAttributes" xml:space="preserve">
     <value>Primary Attributes</value>
+  </data>
+  <data name="ProfileInDepthDescriptionLabel" xml:space="preserve">
+    <value>Personal Profile In Depth</value>
   </data>
   <data name="ReadMore" xml:space="preserve">
     <value>Read more...</value>
@@ -5922,5 +5931,8 @@
   </data>
   <data name="wind_surface_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\surface\en-gb\summary\wind-surface-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ProfileAlchemisedDescription" xml:space="preserve">
+    <value>Alchemised Description *BETA</value>
   </data>
 </root>

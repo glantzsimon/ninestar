@@ -7,6 +7,7 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using System;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
 
@@ -32,8 +33,10 @@ namespace K9.WebApplication.Controllers
 
         [Route("free-calculator/result")]
         [HttpPost]
-        public ActionResult IndexPost(NineStarKiModel model)
+        public async Task<ActionResult> IndexPost(NineStarKiModel model)
         {
+            var userId = Current.GetUserId(System.Web.HttpContext.Current);
+            
             if (ModelState.IsValid)
             {
                 // Set user calculation method preference cookie
@@ -48,15 +51,16 @@ namespace K9.WebApplication.Controllers
 
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
-                    model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
+                    
+                    model = await _nineStarKiService.CalculateNineStarKiProfileAsync(model.PersonModel, false, false,
                         model.SelectedDate, model.CalculationMethod, false, false, model.PersonModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, model.InvertDailyAndHourlyKiForSouthernHemisphere);
 
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
                     model.ActiveCycleTabId = activeTabId;
 
-                    if (Current.UserId > 0)
+                    if (userId > 0)
                     {
-                        var user = My.UserService.Find(Current.UserId);
+                        var user = My.UserService.Find(userId);
                         model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth && model.PersonModel.TimeOfBirth == user.BirthDate.TimeOfDay && user.Gender == model.PersonModel.Gender;
                     }
                 }

@@ -3,6 +3,7 @@ using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.ViewModels;
 using System;
+using System.Threading.Tasks;
 
 namespace K9.WebApplication.Services
 {
@@ -13,6 +14,14 @@ namespace K9.WebApplication.Services
         NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, DateTime today);
 
         NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
+            bool isMyProfile = false, DateTime? today = null,
+            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false,
+            bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse,
+            bool invertDailyAndHourlyKiForSouthernHemisphere = false,
+            bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
+            EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate);
+
+        Task<NineStarKiModel> CalculateNineStarKiProfileAsync(PersonModel personModel, bool isCompatibility = false,
             bool isMyProfile = false, DateTime? today = null,
             ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false,
             bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse,

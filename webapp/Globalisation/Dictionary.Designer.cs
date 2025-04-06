@@ -3963,10 +3963,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This describes our &lt;strong&gt;deeper, emotional nature&lt;/strong&gt;, which is typically only &lt;strong&gt;revealed as people get to know us better&lt;/strong&gt;. It&apos;s also the Energy that &lt;strong&gt;most influences us when we are stressed or emotional&lt;/strong&gt;. Our Emotional Ki also &lt;strong&gt;plays a significant role in our romantic relationships&lt;/strong&gt; and close friendships.
+        ///    This number reveals our &lt;strong&gt;deeper emotional nature&lt;/strong&gt;—the part of us that is often hidden beneath the surface and only becomes visible to those who know us well. Sometimes called the &lt;em&gt;Character Energy&lt;/em&gt; or &lt;em&gt;Inner Child&lt;/em&gt;, this Ki governs how we respond emotionally, especially in close relationships and intimate settings. It is also the Energy most likely to surface when we are under stress or emotionally vulnerable.
         ///&lt;/p&gt;
+        ///
         ///&lt;p&gt;
-        ///    This Energy is also &lt;strong&gt;connected to our inner child&lt;/strong&gt;, as it is the Energy that we &lt;strong&gt;primarily embody and expr [rest of string was truncated]&quot;;.
+        ///    Because it shapes the way we feel, react,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CharacterEnergyDescription {
             get {
@@ -13016,10 +13017,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This describes our &lt;strong&gt;fundamental adult nature&lt;/strong&gt;, which typically &lt;strong&gt;starts to be expressed at around 18 years&lt;/strong&gt;, after two nine year cycles. It is the Energy that has the &lt;strong&gt;greatest impact on the way we think&lt;/strong&gt;, &lt;strong&gt;process information&lt;/strong&gt; and &lt;strong&gt;make sense of the world &lt;/strong&gt; us. It also has a &lt;strong&gt;profound influence on our interactions with others&lt;/strong&gt;. 
+        ///    The Solar Energy represents our &lt;strong&gt;core nature&lt;/strong&gt;—the energetic foundation of our adult self. Sometimes referred to as the Main Energy or Principal Ki, it begins to express more fully around the age of 18, after we’ve completed two full nine-year cycles. From that point onward, it becomes the dominant influence in our lives, shaping our worldview, decisions, and identity.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is also this primary Energy that has the &lt;strong&gt;most influence [rest of string was truncated]&quot;;.
+        ///    It has a powerful effect on the way we &lt;strong&gt;think, process information, and engage with the world  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MainEnergyDescription {
             get {
@@ -13549,6 +13550,24 @@ namespace K9.Globalisation {
         public static string MoreDetails {
             get {
                 return ResourceManager.GetString("MoreDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Most Challenging Combinations.
+        /// </summary>
+        public static string MostChallengingCombinations {
+            get {
+                return ResourceManager.GetString("MostChallengingCombinations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Most Harmonious Combinations.
+        /// </summary>
+        public static string MostHarmoniousCombinations {
+            get {
+                return ResourceManager.GetString("MostHarmoniousCombinations", resourceCulture);
             }
         }
         
@@ -15710,11 +15729,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alchemised Description *BETA.
+        /// </summary>
+        public static string ProfileAlchemisedDescription {
+            get {
+                return ResourceManager.GetString("ProfileAlchemisedDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chart Calculator.
         /// </summary>
         public static string ProfileCalculator {
             get {
                 return ResourceManager.GetString("ProfileCalculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Profile In Depth.
+        /// </summary>
+        public static string ProfileInDepthDescriptionLabel {
+            get {
+                return ResourceManager.GetString("ProfileInDepthDescriptionLabel", resourceCulture);
             }
         }
         
@@ -18477,8 +18514,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    In some ways, this Energy is similar to the Rising Sign in the Western Zodiac system, although it is not calculated from the same data. It describes &lt;strong&gt;how we appear to others&lt;/strong&gt;, especially on &lt;strong&gt;first impression&lt;/strong&gt;. It influences how we &lt;strong&gt;interact with others out in the world&lt;/strong&gt; and our outward behaviours and mannerisms. 
-        ///&lt;/p&gt;.
+        ///    This Energy describes &lt;strong&gt;how we appear to others&lt;/strong&gt;, especially upon &lt;strong&gt;first impression&lt;/strong&gt;. It shapes the way we present ourselves in social settings—our body language, tone of voice, and overall style of communication. While it may not always reflect our deeper inner world, it plays a strong role in our &lt;strong&gt;social behaviour, public interactions, and the way we navigate everyday life&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The Surface Energy also influences our &lt;strong&gt;thinking pattern [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SurfaceEnergyDescription {
             get {

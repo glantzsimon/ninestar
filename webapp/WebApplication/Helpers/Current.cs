@@ -1,4 +1,5 @@
-﻿using WebMatrix.WebData;
+﻿using System.Web;
+using WebMatrix.WebData;
 
 namespace K9.WebApplication.Helpers
 {
@@ -20,6 +21,12 @@ namespace K9.WebApplication.Helpers
                 var currentUsername = SessionHelper.GetCurrentUserName();
                 return string.IsNullOrEmpty(currentUsername) ? WebSecurity.CurrentUserName : currentUsername;
             }
+        }
+
+        public static int GetUserId(HttpContext httpContext)
+        {
+            var currentUserId = SessionHelper.GetCurrentUserId(httpContext);
+            return currentUserId > 0 ? currentUserId : WebSecurity.CurrentUserId;
         }
 
         public static string UserTimeZoneId

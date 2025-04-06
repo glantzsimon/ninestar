@@ -378,6 +378,8 @@
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
     <Compile Include="Extensions\NumerologyExtensions.cs" />
     <Compile Include="Models\Astrology\MoonPhase.cs" />
+    <Compile Include="Services\IAITextMergeService.cs" />
+    <Compile Include="Services\AITextMergeService.cs" />
     <Compile Include="ViewModels\MagicSquareViewModel.cs" />
     <Compile Include="ViewModels\NineStarKiDrectionsChartViewModel.cs" />
     <Compile Include="ViewModels\PlannerViewModelItem.cs" />

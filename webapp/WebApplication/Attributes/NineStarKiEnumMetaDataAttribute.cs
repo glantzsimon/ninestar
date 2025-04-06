@@ -26,6 +26,8 @@ namespace K9.WebApplication.Attributes
         public EBodyPart[] InternalRepresentation { get; set; }
         public EBodyPart[] Physiognomy { get; set; }
         public EPrimaryAttribute[] PrimaryAttributes { get; set; }
+        public int[] MostHarmoniousCombinations { get; set; }
+        public int[] MostChallengingCombinations { get; set; }
 
         public EOrgan StrongYinOrgans => GetStrongYinOrgans();
         public EOrgan StrongYangOrgans => GetStrongYangOrgans();
@@ -74,6 +76,26 @@ namespace K9.WebApplication.Attributes
         public string GetPrimaryAttributes()
         {
             return string.Join(", ", GetResourceNames(PrimaryAttributes));
+        }
+
+        public List<ENineStarKiEnergy> GetMostHarmoniousCombinations()
+        {
+            return MostHarmoniousCombinations.Select(e => (ENineStarKiEnergy)e).ToList();
+        }
+
+        public string GetMostHarmoniousCombinationsString()
+        {
+            return string.Join(", ", GetMostHarmoniousCombinations().Select(e => GetNumberAndElementName(e)));
+        }
+
+        public List<ENineStarKiEnergy> GetMostChallengingCombinations()
+        {
+            return MostChallengingCombinations.Select(e => (ENineStarKiEnergy)e).ToList();
+        }
+
+        public string GetMostChallengingCombinationsString()
+        {
+            return string.Join(", ", GetMostChallengingCombinations().Select(e => GetNumberAndElementName(e)));
         }
 
         public string GetElement()
@@ -160,6 +182,16 @@ namespace K9.WebApplication.Attributes
         {
             var attr = energy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
             return string.Format("{0} {1}", (int)energy, attr != null ? attr.Name : energy.ToString());
+        }
+
+        /// <summary>
+        /// Returns the energy number and name in a formatted string.
+        /// </summary>
+        private string GetNumberAndElementName(ENineStarKiEnergy energy)
+        {
+            var attr = energy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
+            var energyName = attr != null ? attr.GetElement() : energy.ToString();
+            return $"{(int)energy} {energyName}";
         }
 
         /// <summary>

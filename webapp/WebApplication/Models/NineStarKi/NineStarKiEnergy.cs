@@ -393,54 +393,72 @@ namespace K9.WebApplication.Models
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
         Unspecified,
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Water, Colour = ENineStarKiColour.White, Element = ENineStarKiElement.Water, Direction = ENineStarKiDirection.North, FamilyMember = ENineStarKiFamilyMember.MiddleSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Kan", DescriptiveName = ENineStarKiDescriptiveName.Diplomat, Modality = ENineStarKiModality.Reflective, Cycle = ENineStarKiCycle.Winter,
+            MostHarmoniousCombinations = new[] { 3, 4, 6, 7 },
+            MostChallengingCombinations = new[] { 2, 5, 8, 9 },
             InternalRepresentation = new[] { EBodyPart.Kidneys, EBodyPart.Bladder, EBodyPart.Bones, EBodyPart.NervousSystem, EBodyPart.SexOrgans },
             Physiognomy = new[] { EBodyPart.Ear },
             PrimaryAttributes = new[] { EPrimaryAttribute.Hardship, EPrimaryAttribute.Danger })]
         Water,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Soil, Colour = ENineStarKiColour.Black, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.SouthWest, FamilyMember = ENineStarKiFamilyMember.Mother, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Kun", DescriptiveName = ENineStarKiDescriptiveName.Nurturer, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.WinterToSpring,
+            MostHarmoniousCombinations = new[] { 5, 6, 7, 8, 9 },
+            MostChallengingCombinations = new[] { 1, 3, 4 },
             InternalRepresentation = new[] { EBodyPart.Stomach, EBodyPart.Spleen, EBodyPart.LowerBody, EBodyPart.SoftTissue },
             Physiognomy = new[] { EBodyPart.Abdomen },
             PrimaryAttributes = new[] { EPrimaryAttribute.Receptive })]
         Soil,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Thunder, Colour = ENineStarKiColour.BrightGreen, Element = ENineStarKiElement.Tree, Direction = ENineStarKiDirection.East, FamilyMember = ENineStarKiFamilyMember.EldestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chen", DescriptiveName = ENineStarKiDescriptiveName.Pioneer, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.EarlySpring,
+            MostHarmoniousCombinations = new[] { 1, 4, 9 },
+            MostChallengingCombinations = new[] { 2, 5, 6, 7, 8 },
             InternalRepresentation = new[] { EBodyPart.Liver, EBodyPart.Feet, EBodyPart.Muscles, EBodyPart.ConnectiveTissue },
             Physiognomy = new[] { EBodyPart.VocalAnatomy },
             PrimaryAttributes = new[] { EPrimaryAttribute.Rousing })]
         Thunder,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Wind, Colour = ENineStarKiColour.Green, Element = ENineStarKiElement.Tree, Direction = ENineStarKiDirection.SouthEast, FamilyMember = ENineStarKiFamilyMember.EldestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Sun", DescriptiveName = ENineStarKiDescriptiveName.Influencer, Modality = ENineStarKiModality.Reflective, Cycle = ENineStarKiCycle.LateSpring,
+            MostHarmoniousCombinations = new[] { 1, 3, 9 },
+            MostChallengingCombinations = new[] { 2, 5, 6, 7, 8 },
             InternalRepresentation = new[] { EBodyPart.NervousSystem, EBodyPart.Diaphragm, EBodyPart.Gallbladder },
             Physiognomy = new[] { EBodyPart.Legs, EBodyPart.Eyes },
             PrimaryAttributes = new[] { EPrimaryAttribute.Penetrating })]
         Wind,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "None", DescriptiveName = ENineStarKiDescriptiveName.Hub, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.Centre,
+            MostHarmoniousCombinations = new[] { 2, 6, 7, 8, 9 },
+            MostChallengingCombinations = new[] { 1, 3, 4 },
             InternalRepresentation = new[] { EBodyPart.Stomach, EBodyPart.Spleen, EBodyPart.Pancreas, EBodyPart.LymphaticSystem },
             Physiognomy = new[] { EBodyPart.Hands, EBodyPart.Abdomen },
             PrimaryAttributes = new[] { EPrimaryAttribute.Catalyst })]
         CoreEarth,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Heaven, Colour = ENineStarKiColour.White, Element = ENineStarKiElement.Metal, Direction = ENineStarKiDirection.NorthWest, FamilyMember = ENineStarKiFamilyMember.Father, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chien", DescriptiveName = ENineStarKiDescriptiveName.Leader, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.EarlyAutumn,
+            MostHarmoniousCombinations = new[] { 1, 2, 5, 7, 8 },
+            MostChallengingCombinations = new[] { 3, 4, 9 },
             InternalRepresentation = new[] { EBodyPart.PinealGland, EBodyPart.Lungs, EBodyPart.LargeIntestine, EBodyPart.Skin },
             Physiognomy = new[] { EBodyPart.Skull, EBodyPart.Head },
             PrimaryAttributes = new[] { EPrimaryAttribute.Creative })]
         Heaven,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Lake, Colour = ENineStarKiColour.Red, Element = ENineStarKiElement.Metal, Direction = ENineStarKiDirection.West, FamilyMember = ENineStarKiFamilyMember.YoungestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Tui", DescriptiveName = ENineStarKiDescriptiveName.Advisor, Modality = ENineStarKiModality.Reflective, Cycle = ENineStarKiCycle.LateAutumn,
+            MostHarmoniousCombinations = new[] { 1, 2, 5, 6, 8 },
+            MostChallengingCombinations = new[] { 3, 4, 9 },
             InternalRepresentation = new[] { EBodyPart.SpeechAnatomy, EBodyPart.Lungs, EBodyPart.LargeIntestine, EBodyPart.Skin },
             Physiognomy = new[] { EBodyPart.Mouth, EBodyPart.Lips },
             PrimaryAttributes = new[] { EPrimaryAttribute.Ease })]
         Lake,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Mountain, Colour = ENineStarKiColour.White, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.NorthEast, FamilyMember = ENineStarKiFamilyMember.YoungestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Ken", DescriptiveName = ENineStarKiDescriptiveName.Pragmatist, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.AutumnToWinter,
+            MostHarmoniousCombinations = new[] { 2, 5, 6, 7, 9 },
+            MostChallengingCombinations = new[] { 1, 3, 4 },
             InternalRepresentation = new[] { EBodyPart.Back, EBodyPart.Spleen, EBodyPart.Pancreas, EBodyPart.Stomach },
             Physiognomy = new[] { EBodyPart.Hands },
             PrimaryAttributes = new[] { EPrimaryAttribute.Stillness })]
         Mountain,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Fire, Colour = ENineStarKiColour.Purple, Element = ENineStarKiElement.Fire, Direction = ENineStarKiDirection.South, FamilyMember = ENineStarKiFamilyMember.MiddleDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Li", DescriptiveName = ENineStarKiDescriptiveName.Communicator, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.Summer,
+            MostHarmoniousCombinations = new[] { 2, 3, 4, 5, 8 },
+            MostChallengingCombinations = new[] { 1, 6, 7 },
             InternalRepresentation = new[] { EBodyPart.CardiovascularSystem, EBodyPart.Heart, EBodyPart.HeartGovernor, EBodyPart.SmallIntestine, EBodyPart.TripleHeater },
             Physiognomy = new[] { EBodyPart.Eyes },
             PrimaryAttributes = new[] { EPrimaryAttribute.Clarity })]
@@ -1191,6 +1209,7 @@ namespace K9.WebApplication.Models
         public string DirectionName => MetaData.GetDirection();
 
         public string Season => CycleMetaData.Season;
+
         public string SeasonDescription => CycleMetaData.SeasonDescription;
 
         public string CycleDescription => IsGlobal ? GetGlobalCycleDescription() : GetCycleDescription();

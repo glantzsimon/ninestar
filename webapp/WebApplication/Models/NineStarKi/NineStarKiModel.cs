@@ -269,6 +269,14 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UserTimeZone)]
         public string UserTimeZoneId { get; set; }
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ProfileAlchemisedDescriptionLabel)]
+        public string AlchemisedDescription { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ProfileAlchemisedDescriptionLabel)]
+        public string AlchemisedSummary { get; set; }
+
+        public bool AIMergedProfileTextIsSet { get; set; }
+
         public NineStarKiEnergiesModel PersonalChartEnergies { get; }
 
         private NineStarKiDrectionsChartViewModel _directionsChartViewModel;

@@ -4,6 +4,7 @@ using System;
 using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -32,6 +33,8 @@ namespace K9.WebApplication
             AntiForgeryConfig.SuppressIdentityHeuristicChecks = true;
 
             Stripe.StripeConfiguration.ApiKey = ConfigurationManager.AppSettings["SecretKey"];
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             ConfigureMiniProfiler();
         }

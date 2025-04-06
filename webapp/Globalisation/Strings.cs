@@ -104,6 +104,7 @@
             public const string LichunLabel = "LichunLabel";
             public const string DisplayDataForLabel = "DisplayDataForLabel";
             public const string OverviewLabel = "OverviewLabel";
+            public const string ProfileAlchemisedDescriptionLabel = "ProfileAlchemisedDescription";
             public const string ColourLabel = "Colour";
             public const string EnergyLabel = "Energy";
             public const string DescriptiveNameLabel = "DescriptiveNameLabel";

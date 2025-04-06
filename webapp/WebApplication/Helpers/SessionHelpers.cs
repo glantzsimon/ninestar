@@ -11,22 +11,23 @@ namespace K9.WebApplication.Helpers
 {
     public static class SessionHelper
     {
-        public static object GetValue(string key)
+        public static object GetValue(string key, HttpContext httpContext = null)
         {
-            return HttpContext.Current?.Session == null ? null : HttpContext.Current.Session[key] ?? null;
+            httpContext = httpContext == null ? HttpContext.Current : httpContext;
+            return httpContext?.Session?[key];
         }
 
-        public static string GetStringValue(string key)
+        public static string GetStringValue(string key, HttpContext httpContext = null)
         {
-            return GetValue(key)?.ToString();
+            return GetValue(key, httpContext)?.ToString();
         }
 
-        public static bool GetBoolValue(string key)
+        public static bool GetBoolValue(string key, HttpContext httpContext = null)
         {
             object value = null;
             try
             {
-                value = GetValue(key);
+                value = GetValue(key, httpContext);
             }
             catch (Exception e)
             {
@@ -35,17 +36,18 @@ namespace K9.WebApplication.Helpers
             return boolValue;
         }
 
-        public static void SetValue(string key, object value)
+        public static void SetValue(string key, object value, HttpContext httpContext = null)
         {
-            HttpContext.Current.Session[key] = value;
+            httpContext = httpContext == null ? HttpContext.Current : httpContext;
+            httpContext.Session[key] = value;
         }
 
-        public static int GetIntValue(string key, int? defaultValue = 0)
+        public static int GetIntValue(string key, int? defaultValue = 0, HttpContext httpContext = null)
         {
             object value = null;
             try
             {
-                value = GetValue(key);
+                value = GetValue(key, httpContext);
             }
             catch (Exception e)
             {
@@ -59,7 +61,7 @@ namespace K9.WebApplication.Helpers
             return intValue;
         }
 
-        public static DateTime? GetDateTimeValue(string key)
+        public static DateTime? GetDateTimeValue(string key, HttpContext httpContext = null)
         {
             var value = GetValue(key);
             var stringValue = value?.ToString() ?? string.Empty;
@@ -70,9 +72,9 @@ namespace K9.WebApplication.Helpers
             return null;
         }
 
-        public static bool GetBooleanValue(string key)
+        public static bool GetBooleanValue(string key, HttpContext httpContext = null)
         {
-            var value = GetValue(key);
+            var value = GetValue(key, httpContext);
             var stringValue = value?.ToString() ?? string.Empty;
             if (bool.TryParse(stringValue, out var boolValue))
             {
@@ -185,9 +187,9 @@ namespace K9.WebApplication.Helpers
             return stringValue;
         }
 
-        public static int GetCurrentUserId()
+        public static int GetCurrentUserId(HttpContext httpContext = null)
         {
-            return GetIntValue(Constants.SessionConstants.CurrentUserId);
+            return GetIntValue(Constants.SessionConstants.CurrentUserId, 0, httpContext);
         }
 
         public static void SetCurrentUserId(int value)

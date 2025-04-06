@@ -25,6 +25,8 @@ namespace K9.WebApplication.Tests.Unit.Services
             var basePackage = new Mock<INineStarKiBasePackage>();
             basePackage.SetupGet(e => e.Authentication).Returns(mockAuthentication.Object);
 
+            var textMergeService = new Mock<IAITextMergeService>();
+
             var nineStarKiBasePackage = new Mock<INineStarKiBasePackage>();
             nineStarKiBasePackage.SetupGet(e => e.DefaultValuesConfiguration).Returns(new DefaultValuesConfiguration
             {
@@ -32,7 +34,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             });
 
             _swissEphemerisService = new SwissEphemerisService(nineStarKiBasePackage.Object);
-            _nineStarKiService = new NineStarKiService(basePackage.Object, _swissEphemerisService);
+            _nineStarKiService = new NineStarKiService(basePackage.Object, _swissEphemerisService, textMergeService.Object);
         }
 
         //[Theory]

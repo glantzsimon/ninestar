@@ -1,23 +1,25 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using K9.SharedLibrary.Extensions;
+using System.Threading.Tasks;
 
 namespace K9.WebApplication.Services
 {
     public class NineStarKiService : BaseService, INineStarKiService
     {
         private readonly ISwissEphemerisService _swissEphemerisService;
+        private readonly IAITextMergeService _textMergeService;
 
-        public NineStarKiService(INineStarKiBasePackage my, ISwissEphemerisService swissEphemerisService) : base(my)
+        public NineStarKiService(INineStarKiBasePackage my, ISwissEphemerisService swissEphemerisService, IAITextMergeService textMergeService) : base(my)
         {
             _swissEphemerisService = swissEphemerisService;
+            _textMergeService = textMergeService;
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male)
@@ -37,6 +39,53 @@ namespace K9.WebApplication.Services
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, DateTime today)
         {
             return CalculateNineStarKiProfile(personModel, false, false, today);
+        }
+
+        public async Task<NineStarKiModel> CalculateNineStarKiProfileAsync(PersonModel personModel, bool isCompatibility = false,
+            bool isMyProfile = false, DateTime? today = null,
+            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false,
+            bool includePlannerData = false, string userTimeZoneId = "",
+            EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse,
+            bool invertDailyAndHourlyKiForSouthernHemisphere = false,
+            bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
+            EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate)
+        {
+            var model = CalculateNineStarKiProfile(personModel, isCompatibility, isMyProfile, today,
+                calculationMethod,
+                includeCycles, includePlannerData, userTimeZoneId, housesDisplay,
+                invertDailyAndHourlyKiForSouthernHemisphere,
+                invertDailyAndHourlyCycleKiForSouthernHemisphere, displayDataForPeriod);
+
+            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(new[]
+            {
+                model.PersonalChartEnergies.Year.MainEnergySummary,
+                model.PersonalChartEnergies.Year.IntellectualQualitiesSummary,
+                model.PersonalChartEnergies.Year.InterpersonalQualitiesSummary,
+                model.PersonalChartEnergies.Year.EmotionalLandscapeSummary,
+                model.MainEnergyRelationshipsSummary,
+                model.PersonalChartEnergies.Year.CareerSummary,
+                model.PersonalChartEnergies.Year.Finances,
+                model.PersonalChartEnergies.Year.Health,
+                model.PersonalChartEnergies.Year.Spirituality,
+
+                model.PersonalChartEnergies.Month.CharacterEnergySummary,
+                model.PersonalChartEnergies.Month.ChildDescription,
+                model.StressResponseDetails,
+                
+                model.PersonalChartEnergies.Surface.SurfaceEnergySummary,
+                model.PersonalChartEnergies.Day.DayStarDescription,
+                model.PersonalChartEnergies.Generation.GenerationDescription,
+                model.PersonalChartEnergies.Epoch.EpochDescription,
+            });
+
+            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(new[]
+            {
+                model.AlchemisedSummary,
+            });
+
+            model.AIMergedProfileTextIsSet = true;
+
+            return model;
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,

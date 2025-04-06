@@ -728,6 +728,107 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public int GetLunarDay(DateTime selectedDateTime, string timeZoneId)
+        {
+            using (var sweph = new SwissEph())
+            {
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                // Convert the selected date to UT.
+                DateTime utDate = ConvertToUT(selectedDateTime, timeZoneId);
+                double jd = GetJulianDate(sweph, utDate);
+
+                // Find the precise moment of the last new moon (in Julian Date).
+                double newMoonJD = GetLastNewMoonJulianDate(jd, sweph);
+
+                // Compute the elapsed time (in days) since the new moon.
+                double daysSinceNewMoon = jd - newMoonJD;
+
+                // Lunar day: day one starts at the exact new moon.
+                // Here we simply take the integer part (floor) and add 1.
+                int lunarDay = (int)Math.Floor(daysSinceNewMoon) + 1;
+
+                return lunarDay;
+            }
+        }
+
+        /// <summary>
+        /// Finds the Julian Date of the most recent new moon (when the Moon-Sun phase angle is near 0).
+        /// </summary>
+        private double GetLastNewMoonJulianDate(double jd, SwissEph sweph)
+        {
+            // Use an iterative search over a window (e.g., the last 5 days) to find when the phase angle is minimized.
+            // This first pass uses a coarse step.
+            double minPhase = 360.0;
+            double minJD = jd;
+            double step = 0.01; // step size in days (~14.4 minutes)
+            for (double currentJD = jd; currentJD > jd - 5; currentJD -= step)
+            {
+                double phaseAngle = GetPhaseAngle(currentJD, sweph);
+                if (phaseAngle < minPhase)
+                {
+                    minPhase = phaseAngle;
+                    minJD = currentJD;
+                }
+            }
+
+            // Refine the new moon time using binary search around the minimum.
+            double tolerance = 0.000001; // in phase angle (degrees), adjust as needed
+            double lower = minJD - step;
+            double upper = minJD + step;
+            double refinedJD = minJD;
+            for (int i = 0; i < 20; i++) // 20 iterations for refinement
+            {
+                double mid = (lower + upper) / 2;
+                double phaseAtMid = GetPhaseAngle(mid, sweph);
+                if (phaseAtMid < tolerance)
+                {
+                    refinedJD = mid;
+                    break;
+                }
+                // Determine which half contains the new moon.
+                double phaseLower = GetPhaseAngle(lower, sweph);
+                if (Math.Abs(phaseLower) < Math.Abs(phaseAtMid))
+                {
+                    // New moon lies closer to the lower bound.
+                    upper = mid;
+                }
+                else
+                {
+                    lower = mid;
+                }
+                refinedJD = mid;
+            }
+            return refinedJD;
+        }
+
+        /// <summary>
+        /// Computes the phase angle (Moon's longitude minus Sun's longitude, normalized to [0,360)) for a given Julian Date.
+        /// </summary>
+        private double GetPhaseAngle(double jd, SwissEph sweph)
+        {
+            double[] xxSun = new double[6];
+            double[] xxMoon = new double[6];
+            string serr = "";
+
+            int retSun = sweph.swe_calc_ut(jd, SwissEph.SE_SUN, SwissEph.SEFLG_SWIEPH, xxSun, ref serr);
+            if (retSun < 0)
+                throw new Exception("Error calculating Sun position: " + serr);
+
+            int retMoon = sweph.swe_calc_ut(jd, SwissEph.SE_MOON, SwissEph.SEFLG_SWIEPH, xxMoon, ref serr);
+            if (retMoon < 0)
+                throw new Exception("Error calculating Moon position: " + serr);
+
+            double sunLong = xxSun[0];
+            double moonLong = xxMoon[0];
+
+            // Calculate the phase angle and normalize it to 0-360 degrees.
+            double phaseAngle = (moonLong - sunLong) % 360;
+            if (phaseAngle < 0)
+                phaseAngle += 360;
+            return phaseAngle;
+        }
+
+
         /// <summary>
         /// Generates fixed 2‑hour segments in UTC (with boundaries at 1:00, 3:00, etc.) over an extended range.
         /// </summary>

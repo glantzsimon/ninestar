@@ -56,5 +56,7 @@ namespace K9.WebApplication.Services
 
         MoonPhase GetMoonIlluminationPercentage(DateTime selectedDateTime,
             string timeZoneId);
+
+        int GetLunarDay(DateTime selectedDateTime, string timeZoneId);
     }
 }

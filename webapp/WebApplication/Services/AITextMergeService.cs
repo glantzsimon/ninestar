@@ -10,13 +10,18 @@ namespace K9.WebApplication.Services
 {
     public class AITextMergeService : BaseService, IAITextMergeService
     {
-        public const string ElegantTone = "elegant and refined, yet succint";
+        private const string ElegantTone = "elegant and refined, yet succint";
 
-        public const string CrossReferenceText =
+        private static string WritingStyle = $"Maintain an {ElegantTone} tone throughout and keep the writing clear, organized, and free-flowing, but without unnecessary explanation.";
+
+        private const string CrossReferenceText =
             "Where applicable, cross-reference the different thematic sections. For example, if in one section it discusses a period of rest and renewal for the 9-year cycle, but in the yearly cycle the energy is more active, then one would mention this, as both influences are relevant at the same time. Similarly, there can be different and seemingly opposing influences coming from different parts of the nine star ki personal chart, so again, where appropriate, it may be useful to cross-reference. Avoid prefacing the response (e.g., 'Here is...') — just return the final result as clean HTML";
 
-        public const string DoNotAnnounceText =
+        private const string DoNotAnnounceText =
             "Do not preface the output (e.g. 'Here is...'). Just return the clean HTML output only";
+
+        private const string PositiveAndChallengingText =
+            "Within each section, compare positive and challenging aspects where relevant";
 
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
@@ -37,22 +42,19 @@ namespace K9.WebApplication.Services
 
         public async Task<string> MergeTextsAsync(string[] inputTexts, string[] themes = null)
         {
-            var joinedText = string.Join("\n\n", inputTexts);
-            var groupingText = GetGroupingText(themes);
-
-            var prompt = $"Blend the following texts into a clear, well-organized passage using only <h5> and <p> HTML tags. Group related ideas into {groupingText}, and maintain a {ElegantTone} tone throughout. {CrossReferenceText}. {DoNotAnnounceText}. :\n\n{joinedText}";
-
-            return await ProcessRequest(prompt);
+            return await ProcessRequest(GetPrompt("Blend the following texts into a clear, well-organized passage using only <h5> and <p> HTML tags.", inputTexts, themes));
         }
 
         public async Task<string> MergeTextsIntoSummaryAsync(string[] inputTexts, string[] themes = null)
         {
+            return await ProcessRequest(GetPrompt("Blend the following texts into a clear, well-organized summary using only <h5>, <ul>, and <li> HTML tags.", inputTexts, themes));
+        }
+
+        private static string GetPrompt(string prompt, string[] inputTexts, string[] themes = null)
+        {
             var joinedText = string.Join("\n\n", inputTexts);
             var groupingText = GetGroupingText(themes);
-
-            var prompt = $"Merge the following texts into a single, well-structured summary using only 'h5', 'ul', and 'li' HTML tags. Group related ideas into {groupingText}. Within each section, compare positive and challenging aspects where relevant. The tone should be {ElegantTone} — clear, organized, and free-flowing, but without unnecessary explanation. {CrossReferenceText}. {DoNotAnnounceText}:\n\n{joinedText}";
-
-            return await ProcessRequest(prompt);
+            return $"{prompt} {groupingText}. {WritingStyle}. {PositiveAndChallengingText}. {CrossReferenceText}. {DoNotAnnounceText}. :\n\n{joinedText}";
         }
 
         private static string GetGroupingText(string[] groups)
@@ -61,7 +63,7 @@ namespace K9.WebApplication.Services
             var groupingText = groups != null && groups.Any()
                 ? $"the following themed sections: {groupsList}"
                 : "themed sections";
-            return groupingText;
+            return $"Group related ideas into {groupingText}";
         }
 
         private async Task<string> ProcessRequest(string prompt)

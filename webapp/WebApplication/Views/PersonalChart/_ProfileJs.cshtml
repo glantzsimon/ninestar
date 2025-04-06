@@ -1,0 +1,37 @@
+﻿@model K9.WebApplication.Models.NineStarKiModel
+
+<script>
+
+    function initAlchemy() {
+        var url = '@Url.Action("GetAlchemy")';
+
+        $.fn.displaySpinner("#profile-alchemy-container");
+
+        ajaxcontroller().getHtml(url,
+            {
+                dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
+                birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
+                timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
+                gender: '@Model.PersonModel.Gender',
+                calculationMethod: '@Model.CalculationMethod.ToString()',
+                housesDisplay: '@Model.HousesDisplay.ToString()',
+                invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()'
+            }).done(
+            function(result) {
+                if (result.success) {
+                    let $container = $("#profile-alchemy-container");
+                    $container.fadeOut(200, function() {
+                        $container.html(result.data);
+                        $container.fadeIn(100);
+
+                        bootstrapControls().init();
+                    });
+                }
+            });
+    }
+
+    $(function() {
+        initAlchemy();
+    });
+
+</script>

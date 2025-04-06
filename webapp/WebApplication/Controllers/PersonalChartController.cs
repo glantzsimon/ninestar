@@ -33,10 +33,8 @@ namespace K9.WebApplication.Controllers
 
         [Route("free-calculator/result")]
         [HttpPost]
-        public async Task<ActionResult> IndexPost(NineStarKiModel model)
+        public ActionResult IndexPost(NineStarKiModel model)
         {
-            var userId = Current.GetUserId(System.Web.HttpContext.Current);
-            
             if (ModelState.IsValid)
             {
                 // Set user calculation method preference cookie
@@ -51,22 +49,53 @@ namespace K9.WebApplication.Controllers
 
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
-                    
-                    model = await _nineStarKiService.CalculateNineStarKiProfileAsync(model.PersonModel, false, false,
+
+                    model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
                         model.SelectedDate, model.CalculationMethod, false, false, model.PersonModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, model.InvertDailyAndHourlyKiForSouthernHemisphere);
 
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
                     model.ActiveCycleTabId = activeTabId;
 
-                    if (userId > 0)
+                    if (Current.UserId > 0)
                     {
-                        var user = My.UserService.Find(userId);
+                        var user = My.UserService.Find(Current.UserId);
                         model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth && model.PersonModel.TimeOfBirth == user.BirthDate.TimeOfDay && user.Gender == model.PersonModel.Gender;
                     }
                 }
             }
 
             return View("Index", model);
+        }
+
+        [Route("free-calculator/alchemy")]
+        [HttpPost]
+        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, ECalculationMethod calculationMethod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere)
+        {
+            var userId = Current.GetUserId(System.Web.HttpContext.Current);
+
+            if (ModelState.IsValid)
+            {
+                var personModel = new PersonModel
+                {
+                    DateOfBirth = dateOfBirth,
+                    BirthTimeZoneId = birthTimeZoneId,
+                    TimeOfBirth = timeOfBirth,
+                    Gender = gender
+                };
+
+                // Add time of birth
+                personModel.DateOfBirth = personModel.DateOfBirth.Add(personModel.TimeOfBirth);
+
+                var invertYinEnergies = calculationMethod == ECalculationMethod.Chinese;
+
+                var model = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false,
+                    null, calculationMethod, false, false, personModel.BirthTimeZoneId, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere);
+
+                var alchemy = await _nineStarKiService.GetNineStarKiAlchemy(model);
+                return Json(new { success = true, data = alchemy }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { success = false });
         }
 
         [Authorize]

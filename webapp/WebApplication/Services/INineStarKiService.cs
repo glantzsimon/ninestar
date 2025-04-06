@@ -21,13 +21,7 @@ namespace K9.WebApplication.Services
             bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
             EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate);
 
-        Task<NineStarKiModel> CalculateNineStarKiProfileAsync(PersonModel personModel, bool isCompatibility = false,
-            bool isMyProfile = false, DateTime? today = null,
-            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false,
-            bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse,
-            bool invertDailyAndHourlyKiForSouthernHemisphere = false,
-            bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
-            EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate);
+        Task<NineStarKiModel> GetNineStarKiAlchemy(NineStarKiModel model);
 
         NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel();
         CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,

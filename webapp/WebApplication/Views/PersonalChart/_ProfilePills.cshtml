@@ -12,12 +12,12 @@
 
 <div class="ninestar-summmary container padding-0">
     <div id="personal-profile">
-        <ul class="nav nav-pills nav-justified image-pill" data-autoscroll="true">
+        <ul class="nav nav-pills image-pill" data-autoscroll="true">
             @if (Model.AIMergedProfileTextIsSet)
             {
                 <li>
                     <a data-toggle="tab" href="#alchemy">
-                        @Dictionary.LunarNature
+                        @Dictionary.Alchemy
                         <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/alchemy.png');"></div>
                     </a>
                 </li>
@@ -76,10 +76,11 @@
 
         <div class="tab-content">
             <div id="alchemy" class="tab-pane fade">
-                <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.PanelWithSummary(Dictionary.ProfileAlchemisedDescription, Model.AlchemisedDescription, Model.AlchemisedSummary)
+                    <div id="profile-alchemy-container">
+                        @Html.PanelWithSummary(Dictionary.ProfileAlchemisedDescription, Model.AlchemisedDescription, Model.AlchemisedSummary)
+                    </div>
                 }
                 @Html.Partial("_ButtonsFooter")
             </div>
@@ -87,7 +88,7 @@
             <div id="fundamental" class="tab-pane fade @adultActiveClass">
                 @Html.CollapsiblePanel(Dictionary.MainEnergyLabel, $"{Dictionary.MainEnergyDescription} {Html.Partial("_ClickOnATabBelow").ToString()}")
 
-                <br/>
+                <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Partial("_ProfileMainEnergyDetails")
@@ -98,7 +99,7 @@
             <div id="character" class="tab-pane fade @childActiveClass">
                 @Html.CollapsiblePanel(Dictionary.CharacterEnergyLabel, $"{Dictionary.CharacterEnergyDescription}")
 
-                <br/>
+                <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel(Model.CharacterEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.CharacterEnergy).ToString()} {Html.Partial("_ProfileCharacterEnergyDetails").ToString()}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
@@ -114,7 +115,7 @@
                     @Html.PanelWithSummary(Model.SurfaceEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.SurfaceEnergy).ToString()}{Model.SurfaceEnergy.EnergyDescription}", $"{Html.Partial("_ProfileHeader", Model.SurfaceEnergy).ToString()}{Model.SurfaceEnergy.SurfaceEnergySummary}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
 
-                <br/>
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
@@ -126,7 +127,7 @@
                     @Html.Panel(Model.PersonalChartEnergies.Day.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Day).ToString()}{Model.PersonalChartEnergies.Day.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
 
-                <br/>
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
@@ -138,7 +139,7 @@
                     @Html.Panel(Model.PersonalChartEnergies.Generation.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Generation).ToString()}{Model.PersonalChartEnergies.Generation.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
 
-                <br/>
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
@@ -150,9 +151,11 @@
                     @Html.Panel(Model.PersonalChartEnergies.Epoch.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Epoch).ToString()}{Model.PersonalChartEnergies.Epoch.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
 
-                <br/>
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
         </div>
     </div>
 </div>
+
+@Html.Partial("_ProfileJs")

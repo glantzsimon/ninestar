@@ -24,7 +24,7 @@ namespace K9.WebApplication.Services
         public async Task<string> MergeTextsAsync(string[] inputTexts, string tone = ElegantTone)
         {
             var joinedText = string.Join("\n\n", inputTexts);
-            var prompt = $"Please blend the following texts into a well-structured and organised text. Use h5 and p tags (html) and keep the {tone}. Maintain clarity and logical flow:\n\n{joinedText}";
+            var prompt = $"Please blend the following texts into a well-structured and organised text. Try to organise it in themed paragraphs. Use h5 and p tags only (html). Keep the {tone}. Maintain clarity and logical flow throughout. There is no need to announce what you are doing with 'here is a...' - just stick to the result. :\n\n{joinedText}";
 
             var requestBody = new
             {
@@ -53,7 +53,7 @@ namespace K9.WebApplication.Services
         public async Task<string> MergeTextsIntoSummaryAsync(string[] inputTexts, string tone = ElegantTone)
         {
             var joinedText = string.Join("\n\n", inputTexts);
-            var prompt = $"Please blend the following texts together and output a single, well-structured summary using 'ul' and 'li' and h5 tags where appropriate. Try to group things together logically into 'Gifts' and 'Challenges' and 'Best Practices'. The tone should be {tone}e. Maintain clarity and logical flow, even where contradictory information seems to exist. No need to start by declaring what you are doing. Just stick to the result - so that it's presentable. :\n\n{joinedText}";
+            var prompt = $"Please blend the following texts together and output a single, well-structured, succint summary using 'h5', 'ul' and 'li' tags only. Group things together logically into themed sections and try to compare positive and challenging aspects. The tone should be {tone}. Maintain clarity and logical flow. No need to start by declaring what you are doing with 'Here is a...'. Just stick to the result - so that it's presentable. :\n\n{joinedText}";
 
             var requestBody = new
             {

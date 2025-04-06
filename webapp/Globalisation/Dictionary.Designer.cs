@@ -2835,6 +2835,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alchemy.
+        /// </summary>
+        public static string Alchemy {
+            get {
+                return ResourceManager.GetString("Alchemy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Elements.
         /// </summary>
         public static string AllElements {
@@ -15729,7 +15738,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alchemised Description *BETA.
+        ///   Looks up a localized string similar to Alchemised Description BETA.
         /// </summary>
         public static string ProfileAlchemisedDescription {
             get {
@@ -16160,10 +16169,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Star Ki is an immensely &lt;strong&gt;useful tool for understanding the underlying and often misunderstood dynamics that drive our relationships&lt;/strong&gt;. Have you ever wondered why certain individuals just seem to rub you up the wrong way, or conversely, why you just can&apos;t seem to get through to certain types of people under certain circumstances? 
+        ///    9 Star Ki is a profoundly &lt;strong&gt;insightful tool for understanding the deeper energetic dynamics that shape our relationships&lt;/strong&gt;. Have you ever wondered why some people instantly feel easy to connect with, while others seem to trigger frustration, tension, or miscommunication—often without any obvious reason?
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Many of us are aware that &lt;strong&gt;some relationships are naturally more harmonious&lt;/strong&gt; and require less &quot;effort&quot; than others. However, [rest of string was truncated]&quot;;.
+        ///    Most of us recognise that &lt;strong&gt;some connections flow effortlessly&lt;/strong&gt;, while others take more work to navigate. What 9 Star Ki offers is a clear, compassionate l [rest of string was truncated]&quot;;.
         /// </summary>
         public static string relationships_description {
             get {

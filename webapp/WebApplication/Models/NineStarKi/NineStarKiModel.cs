@@ -737,6 +737,11 @@ namespace K9.WebApplication.Models
             return CharacterEnergy.Energy.GetTransformationTypeWithYingYang(childNatalHouse.Energy);
         }
 
+        public ETransformationType GetChildToAdultTransformation()
+        {
+            return CharacterEnergy.Energy.GetTransformationTypeWithYingYang(MainEnergy.Energy);
+        }
+
         public NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, ENineStarKiEnergyCycleType cycleType)
         {
             var invertCycle = (CalculationMethod == ECalculationMethod.Chinese && PersonModel.Gender.IsYin()) || IsCycleSwitchActive;

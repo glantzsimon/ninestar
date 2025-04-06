@@ -90,12 +90,12 @@ namespace K9.WebApplication.Controllers
                 var model = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false,
                     null, calculationMethod, false, false, personModel.BirthTimeZoneId, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere);
 
-                var alchemy = await _nineStarKiService.GetNineStarKiAlchemy(model);
-                return Json(new { success = true, data = new
+                var alchemy = await _nineStarKiService.GetNineStarKiPersonalChartAlchemy(model);
+                return Json(new
                 {
                     alchemy.AlchemisedSummary,
                     alchemy.AlchemisedDescription
-                } }, JsonRequestBehavior.AllowGet);
+                }, JsonRequestBehavior.AllowGet);
             }
 
             return Json(new { success = false });

@@ -7,6 +7,7 @@ using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
 
@@ -122,6 +123,40 @@ namespace K9.WebApplication.Controllers
 
             model.IsPredictionsScreen = true;
             return View("Index", new PredictionsViewModel(model, _nineStarKiService.GetNineStarKiSummaryViewModel()));
+        }
+
+        [Route("calculator/alchemy")]
+        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, EDisplayDataForPeriod displayDataForPeriod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere)
+        {
+            var userId = Current.GetUserId(System.Web.HttpContext.Current);
+
+            if (ModelState.IsValid)
+            {
+                var personModel = new PersonModel
+                {
+                    DateOfBirth = dateOfBirth,
+                    BirthTimeZoneId = birthTimeZoneId,
+                    TimeOfBirth = timeOfBirth,
+                    Gender = gender
+                };
+
+                // Add time of birth
+                personModel.DateOfBirth = personModel.DateOfBirth.Add(personModel.TimeOfBirth);
+                var invertYinEnergies = calculationMethod == ECalculationMethod.Chinese;
+                var model = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false,
+                    selectedDateTime, calculationMethod, true, false, userTimeZoneId, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, 
+                    invertDailyAndHourlyCycleKiForSouthernHemisphere, displayDataForPeriod);
+
+                var alchemy = await _nineStarKiService.GetNineStarKiPredictionsAlchemy(model);
+
+                return Json(new
+                {
+                    alchemy.AlchemisedSummary,
+                    alchemy.AlchemisedDescription
+                }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { success = false });
         }
 
         [Route("get-planner")]

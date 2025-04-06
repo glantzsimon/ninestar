@@ -21,7 +21,9 @@ namespace K9.WebApplication.Services
             bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
             EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate);
 
-        Task<NineStarKiModel> GetNineStarKiAlchemy(NineStarKiModel model);
+        Task<NineStarKiModel> GetNineStarKiPersonalChartAlchemy(NineStarKiModel model);
+
+        Task<NineStarKiModel> GetNineStarKiPredictionsAlchemy(NineStarKiModel model);
 
         NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel();
         CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,

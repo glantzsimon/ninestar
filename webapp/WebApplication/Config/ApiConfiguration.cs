@@ -6,6 +6,8 @@
 
         public string ApiKey { get; set; }
         public string OpenAIApiKey { get; set; }
+        public string OpenApiEndpoint { get; set; }
+        public string OpenApiModel { get; set; }
         public string NineStarKiAstrologerGptUrl { get; set; }
         public string GroqApiKey { get; set; }
         public string GroqEndpoint { get; set; }

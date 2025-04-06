@@ -41,7 +41,7 @@ namespace K9.WebApplication.Services
             return CalculateNineStarKiProfile(personModel, false, false, today);
         }
 
-        public async Task<NineStarKiModel> GetNineStarKiAlchemy(NineStarKiModel model)
+        public async Task<NineStarKiModel> GetNineStarKiPersonalChartAlchemy(NineStarKiModel model)
         {
             var textToMerge = new string[]
             {
@@ -49,11 +49,27 @@ namespace K9.WebApplication.Services
                 model.PersonalChartEnergies.Year.IntellectualQualitiesSummary,
                 model.PersonalChartEnergies.Year.InterpersonalQualitiesSummary,
                 model.PersonalChartEnergies.Year.EmotionalLandscapeSummary,
-                model.MainEnergyRelationshipsSummary,
                 model.PersonalChartEnergies.Month.CharacterEnergySummary,
                 model.StressResponseDetails,
                 model.PersonalChartEnergies.Surface.SurfaceEnergySummary,
                 model.PersonalChartEnergies.Day.DayStarDescription
+            };
+
+            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge);
+            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge);
+            model.AIMergedProfileTextIsSet = true;
+
+            return model;
+        }
+
+        public async Task<NineStarKiModel> GetNineStarKiPredictionsAlchemy(NineStarKiModel model)
+        {
+            var textToMerge = new string[]
+            {
+                model.PersonalHousesOccupiedEnergies.Generation.CycleDescription,
+                model.PersonalHousesOccupiedEnergies.Year.CycleDescription,
+                model.PersonalHousesOccupiedEnergies.Month.CycleDescription,
+                model.PersonalHousesOccupiedEnergies.Day.CycleDescription
             };
 
             model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge);

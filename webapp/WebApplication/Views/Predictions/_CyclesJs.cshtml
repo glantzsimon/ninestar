@@ -141,8 +141,52 @@
             });
     }
 
+    function initAlchemy() {
+        var url = '@Url.Action("GetAlchemy")';
+        var selectedDate = $("#SelectedDateTimeString").val();
+
+        $.fn.displaySpinner("#profile-alchemy-container");
+
+        ajaxcontroller().get(url,
+            {
+                dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
+                birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
+                timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
+                gender: '@Model.PersonModel.Gender',
+                selectedDateTime: selectedDate,
+                displayDataForPeriod: '@Model.DisplayDataForPeriod',
+                userTimeZoneId: '@Model.UserTimeZoneId',
+                calculationMethod: '@Model.CalculationMethod.ToString()',
+                housesDisplay: '@Model.HousesDisplay.ToString()',
+                invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
+                invertDailyAndHourlyCycleKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()'
+            }).done(
+            function(result) {
+                if (result.success) {
+                    let $container = $("#profile-alchemy-container");
+                    $container.fadeOut(200,
+                        function() {
+                            $container.find(".panel .panel-one").html(result.data.AlchemisedSummary);
+                            $container.find(".panel .panel-two").html(result.data.AlchemisedDescription);
+                            $container.fadeIn(100);
+
+                            bootstrapControls().init();
+                            ninestarki().init();
+
+                            $.fn.hideSpinner("#profile-alchemy-container");
+                        });
+                } else {
+                    $.fn.hideSpinner("#profile-alchemy-container");
+                }
+            });
+    }
+
     $(function() {
         bindGlobalEvents();
+
+        setTimeout(function () {
+            initAlchemy();
+        }, 2000);
     });
 
 </script>

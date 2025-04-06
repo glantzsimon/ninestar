@@ -50,13 +50,29 @@ namespace K9.WebApplication.Services
                 model.PersonalChartEnergies.Year.InterpersonalQualitiesSummary,
                 model.PersonalChartEnergies.Year.EmotionalLandscapeSummary,
                 model.PersonalChartEnergies.Month.CharacterEnergySummary,
-                model.StressResponseDetails,
                 model.PersonalChartEnergies.Surface.SurfaceEnergySummary,
-                model.PersonalChartEnergies.Day.DayStarDescription
+                model.PersonalChartEnergies.Day.DayStarDescription,
+                model.StressResponseDetails,
+                model.MainEnergyRelationshipsSummary,
+                model.Health
             };
 
-            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge);
-            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge);
+            var themes = new []
+            {
+                Dictionary.Generation,
+                Dictionary.MainEnergy,
+                Dictionary.CharacterEnergyLabel,
+                Dictionary.SurfaceEnergyLabel,
+                Dictionary.IntellectualQualities,
+                Dictionary.InterpersonalQualities,
+                Dictionary.EmotionalLandscape,
+                Dictionary.StressResponse,
+                Dictionary.Relationships,
+                Dictionary.Health
+            };
+
+            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge, themes);
+            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge, themes);
             model.AIMergedProfileTextIsSet = true;
 
             return model;
@@ -72,8 +88,16 @@ namespace K9.WebApplication.Services
                 model.PersonalHousesOccupiedEnergies.Day.CycleDescription
             };
 
-            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge);
-            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge);
+            var themes = new []
+            {
+                Dictionary.NineYearlyPrediction,
+                Dictionary.YearlyPrediction,
+                Dictionary.MonthlyPrediction,
+                Dictionary.DailyPrediction
+            };
+
+            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge, themes);
+            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge, themes);
             model.AIMergedProfileTextIsSet = true;
 
             return model;

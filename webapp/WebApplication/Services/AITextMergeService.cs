@@ -29,23 +29,33 @@ namespace K9.WebApplication.Services
             //_httpClient.DefaultRequestHeaders.Add("HTTP-Referer", $"https://{My.DefaultValuesConfiguration.SiteBaseUrl}");
         }
 
-        public async Task<string> MergeTextsAsync(string[] inputTexts, string tone = ElegantTone, string[] groups = null)
+        public async Task<string> MergeTextsAsync(string[] inputTexts, string[] themes = null)
         {
             var joinedText = string.Join("\n\n", inputTexts);
-            var groupsList = string.Join(",", groups);
-            var groupingText = groups != null && groups.Any() ? $"the following themed sections: {groupsList}" : "themed sections";
+            var groupingText = GetGroupingText(themes);
 
-            var prompt = $"Blend the following texts into a clear, well-organized passage using only <h5> and <p> HTML tags. Group related ideas into {groupingText}, and maintain a {tone} tone throughout. Avoid prefacing the response (e.g., 'Here is...') — just return the final result as clean HTML:\n\n{joinedText}";
+            var prompt = $"Blend the following texts into a clear, well-organized passage using only <h5> and <p> HTML tags. Group related ideas into {groupingText}, and maintain a {ElegantTone} tone throughout. Avoid prefacing the response (e.g., 'Here is...') — just return the final result as clean HTML:\n\n{joinedText}";
 
             return await ProcessRequest(prompt);
         }
 
-        public async Task<string> MergeTextsIntoSummaryAsync(string[] inputTexts, string tone = ElegantTone)
+        public async Task<string> MergeTextsIntoSummaryAsync(string[] inputTexts, string[] themes = null)
         {
             var joinedText = string.Join("\n\n", inputTexts);
-            var prompt = $"Merge the following texts into a single, well-structured summary using only 'h5', 'ul', and 'li' HTML tags. Group related points into thematic sections. Within each section, compare positive and challenging aspects where relevant. The tone should be {tone} — clear, organized, and free-flowing, but without unnecessary explanation. Do not preface the output (e.g. 'Here is...'). Just return the clean HTML output only:\n\n{joinedText}";
+            var groupingText = GetGroupingText(themes);
+
+            var prompt = $"Merge the following texts into a single, well-structured summary using only 'h5', 'ul', and 'li' HTML tags. Group related points into {groupingText}. Within each section, compare positive and challenging aspects where relevant. The tone should be {ElegantTone} — clear, organized, and free-flowing, but without unnecessary explanation. Do not preface the output (e.g. 'Here is...'). Just return the clean HTML output only:\n\n{joinedText}";
 
             return await ProcessRequest(prompt);
+        }
+
+        private static string GetGroupingText(string[] groups)
+        {
+            var groupsList = string.Join(",", groups);
+            var groupingText = groups != null && groups.Any()
+                ? $"the following themed sections: {groupsList}"
+                : "themed sections";
+            return groupingText;
         }
 
         private async Task<string> ProcessRequest(string prompt)

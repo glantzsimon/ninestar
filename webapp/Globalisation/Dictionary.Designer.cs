@@ -8397,6 +8397,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generation.
+        /// </summary>
+        public static string Generation {
+            get {
+                return ResourceManager.GetString("Generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    The 9-Yearly Cycle — A Deeper Life Theme
         ///&lt;/h5&gt;

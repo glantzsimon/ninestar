@@ -2733,6 +2733,49 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Adult Energy controls the Child Energy&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In this configuration, the adult energy tends to dominate and regulate the child energy, creating a strong sense of internal discipline. This often manifests as a high level of self-control, where the adult energy acts like an internalised authority or superego, observing and restraining the more spontaneous and emotionally reactive impulses of the child energy. While this can lead to maturity and responsibility from an early age, it may also sup [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string adult_controls_child {
+            get {
+                return ResourceManager.GetString("adult_controls_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Adult Energy controls the Child Energy.
+        /// </summary>
+        public static string adult_controls_child_title {
+            get {
+                return ResourceManager.GetString("adult_controls_child_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Adult Energy supports the Child Energy&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In this configuration, there is a natural sense of ease or compatibility between the adult and child energies, but with the adult energy now supporting the child. A person with this combination may initially operate from the strengths and clarity of their adult energy, but over time, the more reactive or emotional traits of the child energy can begin to emerge—especially in personal interactions.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This may lead to moments of pushin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string adult_supports_child {
+            get {
+                return ResourceManager.GetString("adult_supports_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Adult Energy supports the Child Energy.
+        /// </summary>
+        public static string adult_supports_child_title {
+            get {
+                return ResourceManager.GetString("adult_supports_child_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Relationship Between the Adult and Child Energies&lt;/h5&gt;
         ///
         ///&lt;p&gt;
@@ -4069,6 +4112,49 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Adult and Child Energies Share the Same Element (Different Yin/Yang)&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In this configuration, both the adult and child energies belong to the same elemental transformation, yet they differ in terms of Yin and Yang expression. This creates a sense of cohesion and familiarity within the individual’s inner and outer world, while still allowing for contrast and movement between the introverted and extroverted expressions of the same element.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Compared to those whose adult and chi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_adult_same_element {
+            get {
+                return ResourceManager.GetString("child_adult_same_element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adult and Child Energies Share the Same Element (Different Yin/Yang).
+        /// </summary>
+        public static string child_adult_same_element_title {
+            get {
+                return ResourceManager.GetString("child_adult_same_element_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Adult and Child Energies Are the Same&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When both the adult and child energies are the same, there is no noticeable inner shift as the person transitions from childhood to adulthood. Life tends to feel continuous, as if the emotional tone and personality of the child simply extend into adult life. While this can bring a deep sense of consistency and familiarity, it can also result in a strong identification with one&apos;s own way of being, making it difficult to appreciate alternative perspecti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_adult_same_energy {
+            get {
+                return ResourceManager.GetString("child_adult_same_energy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adult and Child Energies Are the Same.
+        /// </summary>
+        public static string child_adult_same_energy_title {
+            get {
+                return ResourceManager.GetString("child_adult_same_energy_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Internal Restriction&lt;/h4&gt;
         ///&lt;p&gt;
         ///    When a person’s character number is controlled by that of the house it occupies at birth, they may experience stress as a kind of invisible restraint. Rather than acting out, they often internalize this dynamic, leading to resignation or a quiet sense of defeat—“This is just how things are.” However, unlike the passive complacency seen in other configurations, this pattern carries a subtle but potent undercurrent of frustration. These individuals may yearn for freedom [rest of string was truncated]&quot;;.
@@ -4080,6 +4166,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Child Energy controls the Adult Energy&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In this configuration, the adult energy is frequently overpowered by unresolved patterns and emotional needs from childhood. The person may find it difficult to fully express their mature potential, as their adult responses are frequently challenged or undermined by inner emotional habits. This can result in a lack of follow-through, avoidance of responsibility, or a tendency to procrastinate—especially when faced with challenging or unfamiliar s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_controls_adult {
+            get {
+                return ResourceManager.GetString("child_controls_adult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Child Energy controls the Adult Energy.
+        /// </summary>
+        public static string child_controls_adult_title {
+            get {
+                return ResourceManager.GetString("child_controls_adult_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Inner Power Struggle&lt;/h4&gt;
         ///&lt;p&gt;
         ///    When a person’s character energy controls the energy of the house it occupies at birth, a surprising reversal can occur under stress. Instead of feeling empowered, they may feel stifled—like a leader whose influence is blocked by the very system they’re meant to guide. This inner tension often surfaces as emotional volatility, especially during moments of pressure. The individual may react suddenly or intensely, not because of the situation itself, but due to deeper p [rest of string was truncated]&quot;;.
@@ -4087,6 +4193,105 @@ namespace K9.Globalisation {
         public static string child_controls_stress {
             get {
                 return ResourceManager.GetString("child_controls_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 5 Earth House at the time of birth&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the Child Energy was in the 5 Earth House at the time of birth, stress can lead to a powerful sense of inner instability. At the core of their being lies a desire for control and coherence, so when life feels chaotic or uncertain, they may become rigid, reactive, or emotionally overwhelmed. The response to stress can swing between extremes: on one hand, a desire to assert dominance or take charge; on the other, complete inert [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_coreearth_house {
+            get {
+                return ResourceManager.GetString("child_energy_coreearth_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 9 Fire House at the time of birth&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the Child Energy was in the 9 Fire House at the time of birth, stress tends to heighten emotional sensitivity and reactivity. These individuals often feel things very deeply and may become easily overwhelmed when under pressure. Their stress response can involve sudden emotional outbursts, dramatic mood swings, or a burning desire to be seen, heard, or validated—especially if they feel misunderstood or dismissed. Fire energy,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_fire_house {
+            get {
+                return ResourceManager.GetString("child_energy_fire_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 6 Metal House at the time of birth&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the Child Energy was in the 6 Metal House at the time of birth, the stress response is often characterised by a strong desire to regain control, maintain order, or “hold it all together.” These individuals tend to internalise pressure by becoming overly disciplined, emotionally distant, or hypercritical—especially toward themselves. Their natural strength and clarity may harden into perfectionism, rigidity, or harsh judgment  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_heaven_house {
+            get {
+                return ResourceManager.GetString("child_energy_heaven_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 7 Metal House at the time of birth&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the Child Energy was in the 7 Metal House at the time of birth, stress tends to manifest through emotional withdrawal, moodiness, or a retreat into distractions. These individuals often try to maintain a light-hearted, sociable exterior, but under stress, that surface charm may give way to inner sadness, melancholy, or passive resistance. Rather than expressing their discomfort directly, they may become aloof, sarcastic, or e [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_lake_house {
+            get {
+                return ResourceManager.GetString("child_energy_lake_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 8 Earth House at the time of birth&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the Child Energy was in the 8 Earth House at the time of birth, stress often triggers withdrawal, silence, or stubborn resistance. These individuals tend to turn inward when overwhelmed, retreating into solitude rather than seeking comfort or support. Like a mountain, they appear immovable—but this apparent calm can mask deep internal pressure. They may struggle to articulate what they are feeling and can become emotionally s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_mountain_house {
+            get {
+                return ResourceManager.GetString("child_energy_mountain_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 2 Soil House at the time of birth&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the Child Energy was in the 2 Soil House at the time of birth, the stress response tends to manifest as worry, overthinking, and emotional heaviness. These individuals often try to stabilise their world by taking care of others or over-managing their environment—but when under pressure, they can become overwhelmed by their own sense of responsibility. Stress may lead them to ruminate, fixate on details, or internalise blame. T [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_soil_house {
+            get {
+                return ResourceManager.GetString("child_energy_soil_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 3 Tree House at the time of birth&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the Child Energy was in the 3 Tree House at the time of birth, stress tends to provoke a quick, expressive, and sometimes chaotic reaction. This is not a withdrawn or passive response—on the contrary, these individuals are more likely to speak loudly, act impulsively, or lash out in frustration. There may be a surge of energy that needs immediate release, often through talking, movement, or creative expression. Their minds rac [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_thunder_house {
+            get {
+                return ResourceManager.GetString("child_energy_thunder_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 1 Water House at the time of birth&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the Child Energy was in the 1 Water House at the time of birth, the stress response often reflects the deeper qualities of Water: retreat, stillness, and internalisation. In challenging or overwhelming situations, the person may instinctively withdraw—emotionally, mentally, or even physically. There can be a strong urge to hide, to become invisible, or to avoid confrontation entirely. Rather than reacting with anger or action [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_water_house {
+            get {
+                return ResourceManager.GetString("child_energy_water_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 4 Tree House at the time of birth&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When the Child Energy was in the 4 Tree House at the time of birth, stress often triggers feelings of restlessness, emotional instability, and uncertainty. This is a highly sensitive and changeable energy, and when overwhelmed, the person may appear scattered, indecisive, or mentally overstimulated. Their thoughts may race in circles, and they may struggle to settle on a clear course of action. The tendency is to overthink, overtal [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_wind_house {
+            get {
+                return ResourceManager.GetString("child_energy_wind_house", resourceCulture);
             }
         }
         
@@ -4120,6 +4325,29 @@ namespace K9.Globalisation {
         public static string child_supported_stress {
             get {
                 return ResourceManager.GetString("child_supported_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Child Energy supports the Adult Energy&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In this configuration, there tends to be a smooth and supportive transition from childhood into adulthood. The child energy, positioned as the “mother” in the mother–child relationship described in Five Element theory, naturally nourishes and uplifts the adult energy. As a result, the individual is less likely to experience deep conflict or trauma in adapting to life’s challenges.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Even in adulthood, the qualities of the child ener [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_supports_adult {
+            get {
+                return ResourceManager.GetString("child_supports_adult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Child Energy supports the Adult Energy.
+        /// </summary>
+        public static string child_supports_adult_title {
+            get {
+                return ResourceManager.GetString("child_supports_adult_title", resourceCulture);
             }
         }
         

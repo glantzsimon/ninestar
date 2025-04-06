@@ -5938,8 +5938,71 @@
   <data name="AdultChildRelationshipTitle" xml:space="preserve">
     <value>Adult / Child Relationship</value>
   </data>
+  <data name="adult_controls_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\adult-controls-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="adult_controls_child_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\titles\adult-controls-child-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="adult_supports_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\adult-supports-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="adult_supports_child_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\titles\adult-supports-child-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="Alchemy" xml:space="preserve">
     <value>Alchemy</value>
+  </data>
+  <data name="child_adult_same_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\child-adult-same-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_adult_same_element_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\titles\child-adult-same-element-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_adult_same_energy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\child-adult-same-energy.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_adult_same_energy_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\titles\child-adult-same-energy-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_controls_adult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\child-controls-adult.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_controls_adult_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\titles\child-controls-adult-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_coreearth_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\houses\child-energy-coreearth-house.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_fire_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\houses\child-energy-fire-house.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_heaven_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\houses\child-energy-heaven-house.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_lake_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\houses\child-energy-lake-house.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_mountain_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\houses\child-energy-mountain-house.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_soil_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\houses\child-energy-soil-house.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_thunder_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\houses\child-energy-thunder-house.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_water_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\houses\child-energy-water-house.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_wind_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\houses\child-energy-wind-house.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_supports_adult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\child-supports-adult.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_supports_adult_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\adulttochildrelationship\en-gb\titles\child-supports-adult-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Generation" xml:space="preserve">
     <value>Generation</value>

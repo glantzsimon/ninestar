@@ -536,6 +536,10 @@ namespace K9.WebApplication.Models
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();
 
         public string StressResponseDetails => GetStressResponseDetails();
+        
+        public string StressResponseFromNatalHouseDetails => GetStressResponseFromNatalHouseDetails();
+
+        public string AdultChildRelationsihpTitle => GetAdultChildRelationshipTitle();
 
         public string AdultChildRelationsihpDescription => GetAdultChildRelationshipDetails();
 
@@ -736,7 +740,7 @@ namespace K9.WebApplication.Models
             var childNatalHouse = GetChildNatalHouse();
             return CharacterEnergy.Energy.GetTransformationTypeWithYingYang(childNatalHouse.Energy);
         }
-
+        
         public ETransformationType GetChildToAdultTransformation()
         {
             return CharacterEnergy.Energy.GetTransformationTypeWithYingYang(MainEnergy.Energy);
@@ -942,15 +946,40 @@ namespace K9.WebApplication.Models
                 { ETransformationType.Supports, Dictionary.child_supports_stress}
             };
 
+        private static readonly Dictionary<ENineStarKiEnergy, string> _stressResponsesFromNatalHouses
+            = new Dictionary<ENineStarKiEnergy, string>
+            {
+                { ENineStarKiEnergy.Water, Dictionary.child_energy_water_house },
+                { ENineStarKiEnergy.Soil, Dictionary.child_energy_soil_house },
+                { ENineStarKiEnergy.Thunder, Dictionary.child_energy_thunder_house },
+                { ENineStarKiEnergy.Wind, Dictionary.child_energy_wind_house },
+                { ENineStarKiEnergy.CoreEarth, Dictionary.child_energy_coreearth_house },
+                { ENineStarKiEnergy.Heaven, Dictionary.child_energy_heaven_house },
+                { ENineStarKiEnergy.Lake, Dictionary.child_energy_lake_house },
+                { ENineStarKiEnergy.Mountain, Dictionary.child_energy_mountain_house },
+                { ENineStarKiEnergy.Fire, Dictionary.child_energy_fire_house },
+            };
+
         private static readonly Dictionary<ETransformationType, string> _adultChildRelationships
             = new Dictionary<ETransformationType, string>
             {
-                { ETransformationType.IsControlled, Dictionary.child_controlled_stress },
-                { ETransformationType.Controls, Dictionary.child_controls_stress },
-                { ETransformationType.Sibling, Dictionary.child_same_element_stress },
-                { ETransformationType.Same, Dictionary.child_house_of_five_stress },
-                { ETransformationType.IsSupported, Dictionary.child_supported_stress},
-                { ETransformationType.Supports, Dictionary.child_supports_stress}
+                { ETransformationType.IsControlled, Dictionary.adult_controls_child},
+                { ETransformationType.Controls, Dictionary.child_controls_adult },
+                { ETransformationType.Sibling, Dictionary.child_adult_same_element },
+                { ETransformationType.Same, Dictionary.child_adult_same_energy },
+                { ETransformationType.IsSupported, Dictionary.adult_supports_child},
+                { ETransformationType.Supports, Dictionary.child_supports_adult}
+            };
+        
+        private static readonly Dictionary<ETransformationType, string> _adultChildRelationshipTitles
+            = new Dictionary<ETransformationType, string>
+            {
+                { ETransformationType.IsControlled, Dictionary.adult_controls_child_title},
+                { ETransformationType.Controls, Dictionary.child_controls_adult_title },
+                { ETransformationType.Sibling, Dictionary.child_adult_same_element_title },
+                { ETransformationType.Same, Dictionary.child_adult_same_energy_title },
+                { ETransformationType.IsSupported, Dictionary.adult_supports_child_title},
+                { ETransformationType.Supports, Dictionary.child_supports_adult_title}
             };
 
         private string GetMainEnergyRelationshipDetails()
@@ -974,9 +1003,23 @@ namespace K9.WebApplication.Models
                 : string.Empty : string.Empty;
         }
 
+        private string GetStressResponseFromNatalHouseDetails()
+        {
+            return MainEnergy != null ? _stressResponsesFromNatalHouses.TryGetValue(GetChildNatalHouse().Energy, out var details)
+                ? details
+                : string.Empty : string.Empty;
+        }
+
         private string GetAdultChildRelationshipDetails()
         {
-            return CharacterEnergy != null ? _adultChildRelationships.TryGetValue(GetChildNatalHouseTransformation(), out var details)
+            return CharacterEnergy != null ? _adultChildRelationships.TryGetValue(GetChildToAdultTransformation(), out var details)
+                ? details
+                : string.Empty : string.Empty;
+        }
+
+        private string GetAdultChildRelationshipTitle()
+        {
+            return CharacterEnergy != null ? _adultChildRelationshipTitles.TryGetValue(GetChildToAdultTransformation(), out var details)
                 ? details
                 : string.Empty : string.Empty;
         }

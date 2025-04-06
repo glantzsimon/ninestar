@@ -45,19 +45,20 @@ namespace K9.WebApplication.Services
         {
             var textToMerge = new string[]
             {
+                model.PersonalChartEnergies.Generation.GenerationDescription,
                 model.PersonalChartEnergies.Year.MainEnergySummary,
-                model.PersonalChartEnergies.Year.IntellectualQualitiesSummary,
-                model.PersonalChartEnergies.Year.InterpersonalQualitiesSummary,
-                model.PersonalChartEnergies.Year.EmotionalLandscapeSummary,
                 model.PersonalChartEnergies.Month.CharacterEnergySummary,
                 model.PersonalChartEnergies.Surface.SurfaceEnergySummary,
                 model.PersonalChartEnergies.Day.DayStarDescription,
+                model.PersonalChartEnergies.Year.IntellectualQualitiesSummary,
+                model.PersonalChartEnergies.Year.InterpersonalQualitiesSummary,
+                model.PersonalChartEnergies.Year.EmotionalLandscapeSummary,
                 model.StressResponseDetails,
                 model.MainEnergyRelationshipsSummary,
                 model.Health
             };
 
-            var themes = new []
+            var themes = new[]
             {
                 Dictionary.Generation,
                 Dictionary.MainEnergy,
@@ -88,7 +89,7 @@ namespace K9.WebApplication.Services
                 model.PersonalHousesOccupiedEnergies.Day.CycleDescription
             };
 
-            var themes = new []
+            var themes = new[]
             {
                 Dictionary.NineYearlyPrediction,
                 Dictionary.YearlyPrediction,

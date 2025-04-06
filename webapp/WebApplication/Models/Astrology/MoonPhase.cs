@@ -117,5 +117,9 @@ namespace K9.WebApplication.Models
             return bestMatch.File;
         }
 
+        public int LunarDay { get; set; }
+
+        public string LunarDayDescription { get; set; }
+
     }
 }

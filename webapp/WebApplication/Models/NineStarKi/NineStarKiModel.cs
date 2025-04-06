@@ -98,7 +98,7 @@ namespace K9.WebApplication.Models
 
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, (int DailyKi, int? InvertedDailyKi)[] preciseDailyCycleEnergies, int preciseHourlyCycleEnergy, DateTime? selectedDate = null,
 
-            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string userTimeZoneId = "", EDisplayDataForPeriod displayDataForPeiod = EDisplayDataForPeriod.Now)
+            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string userTimeZoneId = "", EDisplayDataForPeriod displayDataForPeiod = EDisplayDataForPeriod.Now, MoonPhase moonPhase = null)
         {
             Init();
 
@@ -109,6 +109,8 @@ namespace K9.WebApplication.Models
             HousesDisplay = housesDisplay;
             InvertDailyAndHourlyKiForSouthernHemisphere = invertDailyAndHourlyKiForSouthernHemisphere;
             InvertDailyAndHourlyCycleKiForSouthernHemisphere = invertDailyAndHourlyCycleKiForSouthernHemisphere;
+
+            MoonPhase = moonPhase;
 
             PersonModel = personModel;
             PersonalChartEnergies = new NineStarKiEnergiesModel();
@@ -276,6 +278,8 @@ namespace K9.WebApplication.Models
         public string AlchemisedSummary { get; set; }
 
         public bool AIMergedProfileTextIsSet { get; set; }
+
+        public MoonPhase MoonPhase { get; set; }
 
         public NineStarKiEnergiesModel PersonalChartEnergies { get; }
 

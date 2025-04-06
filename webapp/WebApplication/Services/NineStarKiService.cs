@@ -141,6 +141,8 @@ namespace K9.WebApplication.Services
                 {
                     userTimeZoneId = displayDataForPeriod == EDisplayDataForPeriod.Now ? "" : string.IsNullOrEmpty(userTimeZoneId) ? personModel.BirthTimeZoneId : userTimeZoneId;
 
+                    var moonPhase = _swissEphemerisService.GetMoonPhase(selectedDateTime, userTimeZoneId);
+
                     var preciseEightyOneYearEnergy =
                         _swissEphemerisService.GetNineStarKiEightyOneYearKi(selectedDateTime, userTimeZoneId);
                     var preciseNineYearEnergy =
@@ -158,7 +160,7 @@ namespace K9.WebApplication.Services
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
                         preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy,
-                        preciseDailyEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod);
+                        preciseDailyEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod, moonPhase);
                 }
                 else
                 {

@@ -58,5 +58,7 @@ namespace K9.WebApplication.Services
             string timeZoneId);
 
         int GetLunarDay(DateTime selectedDateTime, string timeZoneId);
+
+        MoonPhase GetMoonPhase(DateTime selectedDateTime, string timeZoneId);
     }
 }

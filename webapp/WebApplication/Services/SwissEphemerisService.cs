@@ -677,6 +677,13 @@ namespace K9.WebApplication.Services
             return localSegments.OrderBy(e => e.LocalStart).ToArray();
         }
 
+        public MoonPhase GetMoonPhase(DateTime selectedDateTime, string timeZoneId)
+        {
+            var moonPhase = GetMoonIlluminationPercentage(selectedDateTime, timeZoneId);
+            moonPhase.LunarDay = GetLunarDay(selectedDateTime, timeZoneId);
+            return moonPhase;
+        }
+
         public MoonPhase GetMoonIlluminationPercentage(DateTime selectedDateTime, string timeZoneId)
         {
             using (var sweph = new SwissEph())

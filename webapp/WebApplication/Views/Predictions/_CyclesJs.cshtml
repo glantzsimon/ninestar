@@ -55,13 +55,14 @@
             var energy = $el.attr("data-energy");
             var type = $el.attr("data-type");
             var url = $el.attr("data-update-url");
-            var $container, $parentBlock, $childBlock, $timeSlot, $details, url;
+            var $container, $parentBlock, $childBlock, $timeSlot, $details, $moonDetails, url;
 
             $container = $el.closest(".global-planner-container");
             $parentBlock = $el.closest(".parent-block");
             $childBlock = $el.find(".child-block");
             $timeSlot = $el.find(".time-slot");
             $details = $("#global-planner-details");
+            $moonDetails = $("#global-planner-moon-details");
 
             // clear current class from all items
             $container.find(".parent-block, .child-block, .time-slot").removeClass("active");
@@ -83,6 +84,13 @@
                         if (result.success) {
                             $details.find(".panel .panel-heading h4 strong").html(result.data.CycleDescriptiveName);
                             $details.find(".panel .panel-body").html(result.data.CycleDescription);
+
+                            if (result.data.MoonPhase.LunarDay > 0) {
+                                $moonDetails.find(".panel .panel-body").html(result.data.MoonPhase.LunarDayDescription);
+                                $moonDetails.fadeIn();
+                            } else {
+                                $moonDetails.hide();
+                            }
                         }
                     });
 

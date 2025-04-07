@@ -259,12 +259,13 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
-        private JsonResult PredictionsJsonResult(EScopeDisplay display, NineStarKiEnergy cycle)
+        private JsonResult PredictionsJsonResult(EScopeDisplay display, NineStarKiEnergy cycle, MoonPhase moonPhase = null)
         {
             return Json(new
             {
                 cycle.CycleDescriptiveName,
-                CycleDescription = display == EScopeDisplay.PersonalKi ? cycle.CycleDescription : cycle.GlobalCycleDescription
+                CycleDescription = display == EScopeDisplay.PersonalKi ? cycle.CycleDescription : cycle.GlobalCycleDescription,
+                MoonPhase = moonPhase
             }, JsonRequestBehavior.AllowGet);
         }
 

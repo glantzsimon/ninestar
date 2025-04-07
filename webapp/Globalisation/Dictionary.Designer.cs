@@ -12807,6 +12807,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lunar Cycle.
+        /// </summary>
+        public static string LunarCycle {
+            get {
+                return ResourceManager.GetString("LunarCycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Display Lunar Houses.
         /// </summary>
         public static string LunarHouses {

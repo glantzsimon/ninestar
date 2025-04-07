@@ -11,11 +11,12 @@ namespace K9.WebApplication.Models
         public NineStarKiPredictionsSummaryModel(NineStarKiModel nineStarKiModel)
         {
             _nineStarKiModel = nineStarKiModel;
+
             NineYearlyPrediction = nineStarKiModel.PersonalHousesOccupiedEnergies?.Generation;
             YearlyPrediction = nineStarKiModel.PersonalHousesOccupiedEnergies?.Year;
             MonthlyPrediction = nineStarKiModel.PersonalHousesOccupiedEnergies?.Month;
             DailyPrediction = nineStarKiModel.PersonalHousesOccupiedEnergies?.Day;
-            LunarDayDescription = nineStarKiModel.MoonPhase.LunarDayDescription;
+            LunarDayDescription = nineStarKiModel?.MoonPhase?.LunarDayDescription;
         }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.GenerationalCycleEnergy)]

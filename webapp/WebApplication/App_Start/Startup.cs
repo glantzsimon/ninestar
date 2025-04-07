@@ -12,6 +12,7 @@ using K9.Base.WebApplication.Security;
 using K9.Base.WebApplication.Services;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Database;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
@@ -26,6 +27,7 @@ using System;
 using System.Configuration;
 using System.Data.Entity;
 using System.IO;
+using System.Linq;
 using System.Web.Mvc;
 using HtmlHelpers = K9.Base.WebApplication.Helpers.HtmlHelpers;
 
@@ -116,6 +118,13 @@ namespace K9.WebApplication
 
             RecurringJob.AddOrUpdate("CleanupOldJobs", () =>
                 CleanupOldJobs(), Cron.Daily);
+
+            // Set SystemSettings
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var repo = scope.Resolve<IRepository<SystemSetting>>();
+                DefaultValuesConfiguration.Instance.SystemSettings = repo.List().FirstOrDefault() ?? new SystemSetting();
+            }
         }
 
         public static void CleanupOldJobs()
@@ -172,6 +181,7 @@ namespace K9.WebApplication
             var defaultConfig = ConfigHelper.GetConfiguration<DefaultValuesConfiguration>(json);
             builder.Register(c => defaultConfig).SingleInstance();
             DefaultValuesConfiguration.Instance = defaultConfig.Value;
+
 
             defaultConfig.Value.BaseEmailTemplateImagesPath = defaultConfig.Value.BaseImagesPath;
             defaultConfig.Value.BaseBaseEmailTemplateVideosPath = defaultConfig.Value.BaseVideosPath;

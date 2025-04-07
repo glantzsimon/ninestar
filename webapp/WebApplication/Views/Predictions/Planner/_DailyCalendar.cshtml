@@ -6,13 +6,21 @@
 <div class="container main-content clear-both daily-planner-container margin-bottom-0">
     <div class="calendar-grid">
         <!-- Day headers -->
-        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Monday)</div>
-        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Tuesday)</div>
-        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Wednesday)</div>
-        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Thursday)</div>
-        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Friday)</div>
-        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Saturday)</div>
-        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Sunday)</div>
+            <div class="calendar-header desktop-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Monday)</div>
+            <div class="calendar-header desktop-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Tuesday)</div>
+            <div class="calendar-header desktop-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Wednesday)</div>
+            <div class="calendar-header desktop-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Thursday)</div>
+            <div class="calendar-header desktop-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Friday)</div>
+            <div class="calendar-header desktop-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Saturday)</div>
+            <div class="calendar-header desktop-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Sunday)</div>
+        
+            <div class="calendar-header device-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Monday).Substring(0, 3)</div>
+            <div class="calendar-header device-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Tuesday).Substring(0, 3)</div>
+            <div class="calendar-header device-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Wednesday).Substring(0, 3)</div>
+            <div class="calendar-header device-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Thursday).Substring(0, 3)</div>
+            <div class="calendar-header device-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Friday).Substring(0, 3)</div>
+            <div class="calendar-header device-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Saturday).Substring(0, 3)</div>
+            <div class="calendar-header device-only">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Sunday).Substring(0, 3)</div>
 
         @{
             bool isFirst = true;

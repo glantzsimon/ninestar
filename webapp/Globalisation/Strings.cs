@@ -161,6 +161,7 @@
             public const string AreMarketingEmailsAllowedLabel = "AreMarketingEmailsAllowedLabel";
             public const string IsSendMembershipUpgradeRemindersLabel = "IsSendMembershipUpgradeRemindersLabel";
             public const string IsPausedEmailJobQueueLabel = "IsPausedEmailJobQueueLabel";
+            public const string IsEnabledAlchemyLabel = "IsEnabledAlchemyLabel";
         }
 
         public static class Names

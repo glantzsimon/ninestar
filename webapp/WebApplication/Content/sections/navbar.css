@@ -1,7 +1,4 @@
 ﻿/*@images-path: "../../../Images";*/
-.nav-justified li a {
-  white-space: nowrap !important;
-}
 .navbar {
   margin-bottom: 0 !important;
   height: 0;

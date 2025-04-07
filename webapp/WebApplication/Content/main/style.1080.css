@@ -2,4 +2,13 @@
   #bs-navbar-collapse-1 {
     font-size: 0.8em;
   }
+  .nav-justified {
+    display: block !important;
+    text-align: left !important;
+  }
+  .nav-justified > li {
+    display: inline-block !important;
+    float: none !important;
+    width: auto !important;
+  }
 }

@@ -6040,6 +6040,9 @@
   <data name="wind_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\trigrams\en-gb\wind-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="IsEnabledAlchemyLabel" xml:space="preserve">
+    <value>Is Alchemy Enabled</value>
+  </data>
   <data name="lunar_day_10_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>astrology\en-gb\lunardays\lunar-day-10-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

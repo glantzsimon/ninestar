@@ -130,6 +130,15 @@ namespace K9.WebApplication.Controllers
         [Route("calculator/alchemy")]
         public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, EDisplayDataForPeriod displayDataForPeriod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere)
         {
+            if (!My.SystemSettings.IsEnabledAlchemy)
+            {
+                return Json(new
+                {
+                    AlchemisedSummary = "",
+                    AlchemisedDescription = ""
+                }, JsonRequestBehavior.AllowGet);
+            }
+
             var userId = Current.GetUserId(System.Web.HttpContext.Current);
 
             if (ModelState.IsValid)

@@ -15,6 +15,9 @@
 .nav-pills a {
   font-size: 1.2em !important;
 }
+.nav-justified li a {
+  white-space: nowrap !important;
+}
 ul.image-pill {
   margin-bottom: 0;
 }

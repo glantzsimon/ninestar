@@ -11025,6 +11025,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is Alchemy Enabled.
+        /// </summary>
+        public static string IsEnabledAlchemyLabel {
+            get {
+                return ResourceManager.GetString("IsEnabledAlchemyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Display Isometric Houses.
         /// </summary>
         public static string IsometricHouses {
@@ -12160,12 +12169,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;New Moon&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;New Moon {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The New Moon marks the quiet beginning of the lunar cycle—a moment of stillness, potential, and renewal. With the moon completely hidden from view, this is a time of introspection and inward turning, where dreams begin to stir in the fertile darkness. Just as seeds germinate beneath the soil, ideas, desires, and intentions take root in the invisible realms of thought and feeling. This is not a time for outward action, but for clarity and alignment.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    The energy of t [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_1_description {
             get {
@@ -12183,9 +12192,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 10 – Waxing Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 10 – Waxing Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The tenth lunar day is a time to honor your roots and reconnect with your foundation—both familial and spiritual. As the Moon swells with light, it illuminates the threads that bind you to your lineage, heritage, and the values passed down through generations. This is a favorable day for family gatherings, remembering ancestors, and tending to relationships that form your inner support system. Gratitude, humility, and remembrance deepen your connection to the past  [rest of string was truncated]&quot;;.
+        ///    The tenth lunar day is a time to honor your roots and reconnect with your foundation—both familial and spiritual. As the Moon swells with light, it illuminates the threads that bind you to your lineage, heritage, and the values passed down through generations. This is a favorable day for family gatherings, remembering ancestors, and tending to relationships that form your inner support system. Gratitude, humility, and remembrance deepen your connecti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_10_description {
             get {
@@ -12203,9 +12212,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 11 – Waxing Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 11 – Waxing Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The eleventh lunar day carries an immense charge of raw, primal energy. It is a day of strength, drive, and momentum—well-suited for decisive action and courageous undertakings. When harnessed consciously, this surge can be directed toward bold ventures, breakthroughs, or transformative experiences that require willpower and resilience. However, this energy can also become volatile if left unchecked, making it important to remain grounded and intentional in your ac [rest of string was truncated]&quot;;.
+        ///    The eleventh lunar day carries an immense charge of raw, primal energy. It is a day of strength, drive, and momentum—well-suited for decisive action and courageous undertakings. When harnessed consciously, this surge can be directed toward bold ventures, breakthroughs, or transformative experiences that require willpower and resilience. However, this energy can also become volatile if left unchecked, making it important to remain grounded and intenti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_11_description {
             get {
@@ -12223,12 +12232,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 12 – Waxing Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 12 – Waxing Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The twelfth lunar day is imbued with gentle, healing energy and encourages the flowering of compassion, empathy, and selflessness. It is a time to soften the ego and open the heart to others, making it ideal for charitable acts, service-oriented work, and quiet spiritual reflection. Emotional sensitivity is heightened, and many find themselves more naturally inclined toward forgiveness, reconciliation, and emotional generosity.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is a day for nur [rest of string was truncated]&quot;;.
+        ///    This i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_12_description {
             get {
@@ -12246,9 +12255,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 13 – Waxing Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 13 – Waxing Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The thirteenth lunar day carries a deep transformative energy, encouraging release and renewal on both emotional and spiritual levels. It marks a moment in the lunar cycle when we are urged to shed outdated habits, attitudes, or attachments that may be holding us back. This is an ideal day for introspection and reevaluation, especially regarding long-standing beliefs or recurring emotional patterns. The energy of this day invites personal evolution and growth throu [rest of string was truncated]&quot;;.
+        ///    The thirteenth lunar day carries a deep transformative energy, encouraging release and renewal on both emotional and spiritual levels. It marks a moment in the lunar cycle when we are urged to shed outdated habits, attitudes, or attachments that may be holding us back. This is an ideal day for introspection and reevaluation, especially regarding long-standing beliefs or recurring emotional patterns. The energy of this day invites personal evolution a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_13_description {
             get {
@@ -12266,9 +12275,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 14 – Waxing Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 14 – Waxing Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The fourteenth lunar day is charged with clarity and rising momentum, as the Moon nears its fullness. This is a time when intentions set earlier in the cycle begin to crystallize, and the energy available supports decisive action and meaningful progress. You may feel more focused, determined, and capable of taking concrete steps toward your goals. It’s an excellent day for refining your vision, solidifying plans, and following through with commitment and discipline [rest of string was truncated]&quot;;.
+        ///    The fourteenth lunar day is charged with clarity and rising momentum, as the Moon nears its fullness. This is a time when intentions set earlier in the cycle begin to crystallize, and the energy available supports decisive action and meaningful progress. You may feel more focused, determined, and capable of taking concrete steps toward your goals. It’s an excellent day for refining your vision, solidifying plans, and following through with commitment [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_14_description {
             get {
@@ -12286,11 +12295,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 15 – Full Moon&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 15 – Full Moon {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Full Moon marks the peak of the lunar cycle—a time of culmination, illumination, and emotional intensity. Energy is at its highest, and everything feels amplified: our joys, our challenges, our desires. This is a powerful day for celebrating how far you&apos;ve come, expressing gratitude for what has been achieved, and acknowledging the efforts that brought you here. Rituals, creative expression, and heartfelt connection flourish under this bright lunar light.
-        ///&lt;/p&gt;
-        ///&lt;p&gt; [rest of string was truncated]&quot;;.
+        ///    The Full Moon marks the peak of the lunar cycle—a time of culmination, illumination, and emotional intensity. Energy is at its highest, and everything feels amplified: our joys, our challenges, our desires. This is a powerful day for celebrating how far you&apos;ve come, expressing gratitude for what has been achieved, and acknowledging the efforts that brought you here. Rituals, creative expression, and heartfelt connection flourish under this bright lunar li [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_15_description {
             get {
@@ -12308,12 +12315,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 16 – Waning Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 16 – Waning Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The sixteenth lunar day ushers in a gentle descent from the heightened intensity of the Full Moon. It calls for balance, moderation, and grounding. This is a day of quiet integration—when the emotional peaks of the full moon begin to settle, allowing space for reflection and recalibration. It&apos;s an ideal time to examine recent insights, assess your accomplishments, and begin gently releasing what no longer serves you.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Emotionally, this is a day of st [rest of string was truncated]&quot;;.
+        ///    Emotionally, this [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_16_description {
             get {
@@ -12331,9 +12338,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 17 – Waning Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 17 – Waning Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The seventeenth lunar day is one of joy, relaxation, and spontaneous expression. Following the intensity of the Full Moon and the reflective tone of the previous day, this is a moment to lighten up, enjoy yourself, and appreciate the pleasures of life. It is considered an auspicious time for socialising, celebrating, and creative expression—whether through art, music, dance, or heartfelt conversation. The energy is soft yet vibrant, encouraging openness and connect [rest of string was truncated]&quot;;.
+        ///    The seventeenth lunar day is one of joy, relaxation, and spontaneous expression. Following the intensity of the Full Moon and the reflective tone of the previous day, this is a moment to lighten up, enjoy yourself, and appreciate the pleasures of life. It is considered an auspicious time for socialising, celebrating, and creative expression—whether through art, music, dance, or heartfelt conversation. The energy is soft yet vibrant, encouraging openn [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_17_description {
             get {
@@ -12351,12 +12358,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 18 – Waning Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 18 – Waning Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The eighteenth lunar day is a time of deep introspection and quiet inner work. The energy begins to slow, inviting you to retreat from external distractions and tune into your inner world. It is a powerful moment for self-analysis, where unconscious motives and hidden patterns may come to light. By creating space for contemplation, you allow your intuition to guide you toward greater self-awareness and emotional clarity.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Activities such as journalin [rest of string was truncated]&quot;;.
+        ///    Activities su [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_18_description {
             get {
@@ -12374,12 +12381,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 19 – Waning Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 19 – Waning Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The nineteenth lunar day carries intense and sometimes deceptive energy. It is a time when temptations, distractions, and inner conflicts may surface, challenging your emotional and moral equilibrium. This is not a day for initiating new projects or making impulsive decisions. Instead, it&apos;s best to focus on practicing self-discipline, remaining grounded, and avoiding situations that could lead to regret or misunderstanding.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Because this day can test [rest of string was truncated]&quot;;.
+        ///    Because th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_19_description {
             get {
@@ -12397,9 +12404,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 2 – Waxing Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 2 – Waxing Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The second day of the lunar cycle ushers in the first sliver of moonlight—a subtle but powerful sign that energy is beginning to rise. Like the first shoots breaking through the soil, this is a day of gentle momentum and growing clarity. It marks the earliest stage of manifestation, where ideas and intentions planted during the New Moon begin to stir into form. Though progress may still be quiet or unseen, there is a quickening beneath the surface that invites part [rest of string was truncated]&quot;;.
+        ///    The second day of the lunar cycle ushers in the first sliver of moonlight—a subtle but powerful sign that energy is beginning to rise. Like the first shoots breaking through the soil, this is a day of gentle momentum and growing clarity. It marks the earliest stage of manifestation, where ideas and intentions planted during the New Moon begin to stir into form. Though progress may still be quiet or unseen, there is a quickening beneath the surface th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_2_description {
             get {
@@ -12417,12 +12424,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 20 – Waning Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 20 – Waning Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The twentieth lunar day is a powerful turning point, associated with liberation, transformation, and inner strength. It is a time to confront fears, shed outdated beliefs, and rise above limitations that have held you back. The energy of this day supports courage, self-realization, and personal breakthroughs. You may feel a renewed determination to make bold decisions or change direction in your life with clarity and purpose.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is an excellent ti [rest of string was truncated]&quot;;.
+        ///    This is  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_20_description {
             get {
@@ -12440,12 +12447,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 21 – Last Quarter&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 21 – Last Quarter {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The twenty-first lunar day is charged with vitality and momentum, making it ideal for movement, adventure, and breaking free from stagnation. The energy of this day supports physical activity, exploration, and bold action. It invites you to step out of your comfort zone and engage in experiences that challenge your perceptions and expand your horizons. Whether it’s travel, new learning, or creative experimentation, today is about motion and courage.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    S [rest of string was truncated]&quot;;.
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_21_description {
             get {
@@ -12463,12 +12468,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 22 – Waning Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 22 – Waning Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The twenty-second lunar day invites a quiet turning inward to access wisdom and insight. It is a day associated with learning, reflection, and the transmission of knowledge. Engaging in study, philosophical inquiry, or meaningful conversation can yield deep understanding. It’s also an ideal time to seek guidance from mentors or elders, or to serve as a guide for someone else, passing along what you’ve learned from your own journey.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This phase favor [rest of string was truncated]&quot;;.
+        ///    T [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_22_description {
             get {
@@ -12486,12 +12491,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 23 – Waning Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 23 – Waning Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The twenty-third lunar day is a powerful moment for transformation through release. The waning crescent moon gently urges us to shed what no longer serves us—whether old habits, outdated beliefs, or emotional baggage. This is a day to allow for cleansing on every level: physical, emotional, mental, and spiritual. Practices like fasting, journaling, breathwork, or simply spending time alone in nature can support this inner detoxification.
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Although t [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_23_description {
             get {
@@ -12509,12 +12513,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 24 – Waning Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 24 – Waning Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The energy of the twenty-fourth lunar day invites originality and fresh insight. With the Moon in its waning crescent phase, there&apos;s a natural quietness that supports introspective creation. This is a day for creative exploration—whether through writing, painting, music, or simply reimagining how you approach a challenge. It&apos;s not so much about perfecting as it is about allowing inspiration to move through you freely and intuitively.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Ideas that sur [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_24_description {
             get {
@@ -12532,12 +12536,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 25 – Waning Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 25 – Waning Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The twenty-fifth lunar day is one of deep stillness and inward renewal. It’s a time to withdraw from the demands of the outer world and allow your body, mind, and spirit to rest. The Moon is approaching its final stages, and its quiet energy supports reflection, solitude, and reconnection with your inner sanctuary. Avoid overstimulation or busy schedules—this is a day to slow down and nourish yourself from within.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Meditation, gentle movement, or si [rest of string was truncated]&quot;;.
+        ///    Meditation, gentle  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_25_description {
             get {
@@ -12555,9 +12559,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 26 – Waning Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 26 – Waning Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is a day of heightened perception, often associated with deep insight and spiritual awareness. Emotions may run high, and sensitivity to subtle energies is amplified. It’s an ideal time for inner work, meditation, or solitary activities that promote self-reflection and peace. The veil between the conscious and unconscious is thinner now, allowing intuitive insights and symbolic messages to rise to the surface. However, the emotional landscape can be delicate— [rest of string was truncated]&quot;;.
+        ///    This is a day of heightened perception, often associated with deep insight and spiritual awareness. Emotions may run high, and sensitivity to subtle energies is amplified. It’s an ideal time for inner work, meditation, or solitary activities that promote self-reflection and peace. The veil between the conscious and unconscious is thinner now, allowing intuitive insights and symbolic messages to rise to the surface. However, the emotional landscape c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_26_description {
             get {
@@ -12575,10 +12579,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 27 – Waning Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 27 – Waning Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    A beautiful and gentle energy pervades the 27th lunar day, bringing with it a sense of grace, harmony, and quiet inspiration. It’s a day to attune yourself to beauty in all its forms—whether through art, music, poetry, or acts of kindness. The heart is naturally more open now, and emotional healing can take place effortlessly through sincere connection and gratitude. This is an ideal time for reflective practices, prayer, or simply being present with loved ones.
-        /// [rest of string was truncated]&quot;;.
+        ///    A beautiful and gentle energy pervades the 27th lunar day, bringing with it a sense of grace, harmony, and quiet inspiration. It’s a day to attune yourself to beauty in all its forms—whether through art, music, poetry, or acts of kindness. The heart is naturally more open now, and emotional healing can take place effortlessly through sincere connection and gratitude. This is an ideal time for reflective practices, prayer, or simply being present wit [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_27_description {
             get {
@@ -12596,9 +12599,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 28 – Waning Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 28 – Waning Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The 28th lunar day is imbued with a quiet, crystalline clarity—a soft, sacred pause before the cycle concludes. It is a time for gentle reflection and spiritual integration, when the experiences of the past month begin to settle into deeper understanding. If you’ve lived the previous days with awareness, this is the moment where inner wisdom crystallizes, offering perspective on your journey and the seeds you’ve sown. The energy is subtle, luminous, and deeply int [rest of string was truncated]&quot;;.
+        ///    The 28th lunar day is imbued with a quiet, crystalline clarity—a soft, sacred pause before the cycle concludes. It is a time for gentle reflection and spiritual integration, when the experiences of the past month begin to settle into deeper understanding. If you’ve lived the previous days with awareness, this is the moment where inner wisdom crystallizes, offering perspective on your journey and the seeds you’ve sown. The energy is subtle, luminous, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_28_description {
             get {
@@ -12616,9 +12619,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 29 – Dark Moon&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 29 – Dark Moon {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The 29th lunar day, often called the Dark Moon, is one of the most mysterious and potentially intense phases of the lunar cycle. Energetically, it marks the completion of the month’s journey, and many people find themselves feeling drained, vulnerable, or unsettled. Illusions may surface, and emotional shadows can become more prominent. It’s a day best approached with great mindfulness and simplicity—avoid major decisions, emotional confrontations, or anything that pull [rest of string was truncated]&quot;;.
+        ///    The 29th lunar day, often called the Dark Moon, is one of the most mysterious and potentially intense phases of the lunar cycle. Energetically, it marks the completion of the month’s journey, and many people find themselves feeling drained, vulnerable, or unsettled. Illusions may surface, and emotional shadows can become more prominent. It’s a day best approached with great mindfulness and simplicity—avoid major decisions, emotional confrontations, or any [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_29_description {
             get {
@@ -12636,12 +12639,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 3 – Waxing Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 3 – Waxing Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The third lunar day brings a surge of energy, often experienced as assertiveness, drive, or even internal tension. This is a time when the Moon’s light is visibly growing stronger, and with it comes a call to action. Challenges may arise—not necessarily from the outside, but from within—as a natural stirring of ambition, willpower, and desire for progress. The atmosphere is charged, and it favours boldness, movement, and the confrontation of obstacles.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        /// [rest of string was truncated]&quot;;.
+        ///    The third lunar day brings a surge of energy, often experienced as assertiveness, drive, or even internal tension. This is a time when the Moon’s light is visibly growing stronger, and with it comes a call to action. Challenges may arise—not necessarily from the outside, but from within—as a natural stirring of ambition, willpower, and desire for progress. The atmosphere is charged, and it favours boldness, movement, and the confrontation of obstacle [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_3_description {
             get {
@@ -12659,9 +12659,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 30 – Dark Moon&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 30 – Dark Moon {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The 30th lunar day, is a sacred pause at the very end of the lunar cycle—a time of closure, reflection, and renewal. It’s an ideal day for completing unfinished tasks, returning favors, and cleansing both your physical space and emotional landscape. Symbolizing love, forgiveness, and balance, this day offers a chance to release negativity, honor lessons learned, and consciously let go of what no longer serves. It invites you to reflect on the past month with honesty and [rest of string was truncated]&quot;;.
+        ///    The 30th lunar day, is a sacred pause at the very end of the lunar cycle—a time of closure, reflection, and renewal. It’s an ideal day for completing unfinished tasks, returning favors, and cleansing both your physical space and emotional landscape. Symbolizing love, forgiveness, and balance, this day offers a chance to release negativity, honor lessons learned, and consciously let go of what no longer serves. It invites you to reflect on the past month w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_30_description {
             get {
@@ -12679,9 +12679,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 4 – Waxing Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 4 – Waxing Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The fourth lunar day is a quiet yet powerful turning point in the lunar cycle. The energy shifts inward again, inviting reflection and discernment. It is a day of inner dialogue—of listening closely to the voice within and distinguishing between fleeting impulse and deeper wisdom. Often associated with the symbolic image of a tree or crossroads, this day presents a spiritual opportunity to evaluate our direction and values. The decisions made now may quietly shape  [rest of string was truncated]&quot;;.
+        ///    The fourth lunar day is a quiet yet powerful turning point in the lunar cycle. The energy shifts inward again, inviting reflection and discernment. It is a day of inner dialogue—of listening closely to the voice within and distinguishing between fleeting impulse and deeper wisdom. Often associated with the symbolic image of a tree or crossroads, this day presents a spiritual opportunity to evaluate our direction and values. The decisions made now may [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_4_description {
             get {
@@ -12699,12 +12699,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 5 – Waxing Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 5 – Waxing Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The fifth lunar day is infused with the vibrant energy of growth, expansion, and embodiment. Like a young seedling beginning to reach toward the sun, this is a time when intentions begin to take form and feel more tangible. There’s a grounded, physical quality to the day that supports nourishment—both of the body and the spirit. Actions taken now can strengthen foundations and propel long-term efforts forward with renewed momentum.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is a day for [rest of string was truncated]&quot;;.
+        ///    Th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_5_description {
             get {
@@ -12722,9 +12722,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 6 – Waxing Crescent&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 6 – Waxing Crescent {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The sixth lunar day carries a gentle, harmonizing energy that encourages inner stillness and open-hearted communication. It is a time to breathe deeply, speak kindly, and reconnect with emotional equilibrium. The veil between the material and subtle realms is thinner today, making it ideal for meditation, prayer, or simply listening to the whispers of your intuition. Forgiveness flows more easily now—both toward others and yourself—so use this energy to release old [rest of string was truncated]&quot;;.
+        ///    The sixth lunar day carries a gentle, harmonizing energy that encourages inner stillness and open-hearted communication. It is a time to breathe deeply, speak kindly, and reconnect with emotional equilibrium. The veil between the material and subtle realms is thinner today, making it ideal for meditation, prayer, or simply listening to the whispers of your intuition. Forgiveness flows more easily now—both toward others and yourself—so use this energy [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_6_description {
             get {
@@ -12742,12 +12742,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 7 – First Quarter&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 7 – First Quarter {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    As the Moon reaches its First Quarter, tension and momentum begin to build. This day brings a potent surge of mental clarity and focus, making it ideal for decision-making, planning, and intellectual endeavors. It is also a time when words hold exceptional creative and destructive power—what is spoken today has the potential to ripple outward and shape reality. For this reason, it is essential to communicate with intention, mindfulness, and integrity.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    [rest of string was truncated]&quot;;.
+        ///    As the Moon reaches its First Quarter, tension and momentum begin to build. This day brings a potent surge of mental clarity and focus, making it ideal for decision-making, planning, and intellectual endeavors. It is also a time when words hold exceptional creative and destructive power—what is spoken today has the potential to ripple outward and shape reality. For this reason, it is essential to communicate with intention, mindfulness, and integrity.        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_7_description {
             get {
@@ -12765,9 +12762,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 8 – First Quarter&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 8 – First Quarter {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The energy of the eighth lunar day is deeply transformative, offering a sacred opportunity for renewal and inner purification. As the Moon continues its ascent, this is a time to shed outdated beliefs, habits, or emotional patterns that no longer serve your growth. Through reflection and honest self-inquiry, we gain clarity on what must be released in order to evolve. Acts of repentance or forgiveness—toward oneself or others—can have a powerful healing effect today. [rest of string was truncated]&quot;;.
+        ///    The energy of the eighth lunar day is deeply transformative, offering a sacred opportunity for renewal and inner purification. As the Moon continues its ascent, this is a time to shed outdated beliefs, habits, or emotional patterns that no longer serve your growth. Through reflection and honest self-inquiry, we gain clarity on what must be released in order to evolve. Acts of repentance or forgiveness—toward oneself or others—can have a powerful healin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_8_description {
             get {
@@ -12785,11 +12782,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Day 9 – Waxing Gibbous&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Day 9 – Waxing Gibbous {Illumination}&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The ninth lunar day carries a mysterious and often unpredictable energy. It is a time when illusions can surface, distorting perception and clouding judgment. As the Moon continues to wax, inner shadows may be stirred, prompting emotional or psychological tension. It is wise to refrain from launching new ventures or making major decisions today, as unseen influences may be at play. Instead, direct your focus inward and reflect on what is already in motion.
-        ///&lt;/p&gt;
-        ///&lt;p [rest of string was truncated]&quot;;.
+        ///    The ninth lunar day carries a mysterious and often unpredictable energy. It is a time when illusions can surface, distorting perception and clouding judgment. As the Moon continues to wax, inner shadows may be stirred, prompting emotional or psychological tension. It is wise to refrain from launching new ventures or making major decisions today, as unseen influences may be at play. Instead, direct your focus inward and reflect on what is already in mo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lunar_day_9_description {
             get {

@@ -423,3 +423,145 @@
   left: 50%;
   transform: translateX(-50%);
 }
+@media (max-width: 495px) {
+  .energy-cycle-title {
+    display: none !important;
+  }
+  .cycle-title {
+    display: none !important;
+  }
+  .wide.level-up {
+    max-width: 100% !important;
+  }
+  .parent-detail.narrow {
+    margin: 0 !important;
+    max-width: 33px !important;
+  }
+  .parent-detail.narrow img {
+    max-width: 33px !important;
+    height: auto;
+  }
+}
+@media (max-width: 767px) {
+  .cycle-title {
+    display: none !important;
+  }
+  .directions-more-info .status-circle {
+    font-size: 1em;
+  }
+  .directions-more-info .directions-summary {
+    font-size: 1em;
+  }
+  /*Daily Calendar*/
+  .calendar-grid {
+    padding: 7px;
+    font-size: 0.9rem;
+  }
+  .calendar-grid .calendar-header {
+    padding: 7px;
+    margin-bottom: 7px;
+  }
+  .calendar-grid .calendar-day {
+    padding: 3px;
+  }
+  .calendar-grid .calendar-day .date-label {
+    font-size: 0.81rem;
+  }
+  .calendar-grid .calendar-day .custom-content .double-energy-container img {
+    width: 48%;
+    height: auto;
+  }
+  .calendar-grid .calendar-day img {
+    max-width: 36px;
+    padding: 3px;
+    padding-left: 3px;
+  }
+  .form-options .hint {
+    font-size: 0.81em;
+    margin-top: -5px;
+    margin-bottom: 7px;
+  }
+  .global-planner-container .planner-instructions h5 {
+    font-size: 14px !important;
+    margin-bottom: 20px;
+  }
+  .global-planner-container #global-planner-details .panel-body {
+    max-height: 371px;
+    overflow-y: auto;
+  }
+  .global-planner-container .parent-planner {
+    gap: 1rem;
+    padding: 0;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row {
+    padding: 0.8rem;
+    flex-direction: row;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 145px !important;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label .parent-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-right: 11px;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label .parent-dates {
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.extra-narrow img {
+    max-width: 33px;
+    height: auto;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.narrow {
+    margin: 7px;
+    max-width: 33px !important;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.narrow img {
+    max-width: 45px;
+    height: auto;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide {
+    font-size: 0.9rem;
+    flex: 1 1 60% !important;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up {
+    font-size: 15px;
+    max-width: 122px;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div {
+    padding: 3px;
+    align-content: flex-end;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a {
+    padding: 3px;
+    margin-left: 3px;
+    width: 27px;
+    height: 27px;
+  }
+  .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a i {
+    font-size: 18px;
+  }
+  .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block {
+    padding: 0.5rem;
+  }
+  .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-dates {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+}

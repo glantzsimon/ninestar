@@ -420,6 +420,10 @@
     <Compile Include="Migrations\202503211546561_AddTimeZones.designer.cs">
       <DependentUpon>202503211546561_AddTimeZones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504071334226_UpdateSystemSettings.cs" />
+    <Compile Include="Migrations\202504071334226_UpdateSystemSettings.designer.cs">
+      <DependentUpon>202504071334226_UpdateSystemSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\TimeZone.cs" />
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
@@ -586,6 +590,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503211546561_AddTimeZones.resx">
       <DependentUpon>202503211546561_AddTimeZones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504071334226_UpdateSystemSettings.resx">
+      <DependentUpon>202504071334226_UpdateSystemSettings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

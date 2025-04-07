@@ -2,10 +2,6 @@ Add birth time and time zone to MyAccount. - Add UserData model
 
 --
 
-retest api and GPT - in case things have changed
-
---
-
 ChatGPT to create overall summary for each 81 combinations from existing one plus a synergy of the 3 energies
 
 --

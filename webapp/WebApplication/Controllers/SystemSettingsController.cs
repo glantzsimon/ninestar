@@ -18,6 +18,12 @@ namespace K9.WebApplication.Controllers
             RecordBeforeCreate += SystemSettingsController_RecordBeforeCreate;
             RecordBeforeIndex += SystemSettingsController_RecordBeforeIndex;
             RecordBeforeUpdate += SystemSettingsController_RecordBeforeUpdate;
+            RecordUpdated += SystemSettingsController_RecordUpdated;
+        }
+
+        private void SystemSettingsController_RecordUpdated(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
+        {
+            My.DefaultValuesConfiguration.SystemSettings = (SystemSetting)e.Item;
         }
 
         private void SystemSettingsController_RecordBeforeUpdate(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)

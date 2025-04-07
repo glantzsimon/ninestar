@@ -10,6 +10,8 @@ using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Controllers
 {
@@ -28,25 +30,52 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("personal-chart/get/{accountNumber}/" +
-               "{dateOfBirth}/{gender}")]
-        public JsonResult GetPersonalChart(string accountNumber, DateTime dateOfBirth, EGender gender)
+               "{dateOfBirth}/{timeOfBirth}/{birthLocation}/{gender}")]
+        public JsonResult GetPersonalChart(string accountNumber, DateTime dateOfBirth, string timeOfBirth, string birthLocation, EGender gender)
         {
             return Validate(accountNumber, () =>
             {
                 var model = new NineStarKiModel(new PersonModel
                 {
-                    DateOfBirth = dateOfBirth,
-                    Gender = gender
+                    DateOfBirth = dateOfBirth.Add(DateTimeHelper.ParseTime(timeOfBirth)),
+                    Gender = gender,
+                    BirthTimeZoneId = DateTimeHelper.ResolveTimeZone(birthLocation)
                 })
                 {
                     SelectedDate = DateTime.Today
                 };
 
                 var selectedDate = model.SelectedDate;
-                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
+                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate,
+                    ECalculationMethod.Chinese);
                 model.SelectedDate = selectedDate;
 
-                return Json(new { success = true, data = model }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = true, data = new
+                {
+                    GenerationEnergy = model.PersonalChartEnergies.Generation,
+                    model.PersonModel,
+                    model.MainEnergy,
+                    model.CharacterEnergy,
+                    model.SurfaceEnergy,
+                    DayStarEnergy = model.PersonalChartEnergies.Day,
+                    
+                    model.Summary,
+                    model.Overview,
+                    IntellectualQualities = model.MainEnergy.IntellectualQualitiesSummary,
+                    InterpersonalQualities = model.MainEnergy.InterpersonalQualitiesSummary,
+                    EmotionalLandscape = model.MainEnergy.EmotionalLandscapeSummary,
+                    Spirituality = model.MainEnergy.SpiritualitySummary,
+                    Health = model.MainEnergy.HealthSummary,
+                    model.MainEnergy.Illnesses,
+                    Career = model.MainEnergy.CareerSummary,
+                    Finances = model.MainEnergy.FinancesSummary,
+                    model.MainEnergy.Occupations,
+                    model.MainEnergyRelationshipsSummary,
+                    model.StressResponseDetails,
+                    model.StressResponseFromNatalHouseDetails,
+                    model.AdultChildRelationsihpDescription,
+
+                } }, JsonRequestBehavior.AllowGet);
             });
         }
 

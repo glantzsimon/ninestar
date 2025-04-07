@@ -22,12 +22,10 @@ namespace K9.WebApplication.Models
         public string Element => _nineStarKiEnergy.ElementName;
         
         public string Direction => _nineStarKiEnergy.MetaData.GetDirection();
-
-        public string Season => _nineStarKiEnergy.CycleMetaData.Season;
-
+        
         public string SeasonDescription => _nineStarKiEnergy.CycleMetaData.SeasonDescription;
 
-        public string PredictionDetails => _nineStarKiEnergy.EnergyType == ENineStarKiEnergyType.MainEnergy ? _nineStarKiEnergy.CycleMetaData.YearlyDescription : _nineStarKiEnergy.CycleMetaData.MonthlyDescription;
+        public string PredictionDetails => _nineStarKiEnergy.CycleDescription;
 
     }
 }

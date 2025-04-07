@@ -6,7 +6,7 @@ info:
 servers:
   - url: https://9starkiastrology.com
 paths:
-  /api/personal-chart/get/{accountNumber}/{dateOfBirth}/{gender}:
+  /api/personal-chart/get/{accountNumber}/{dateOfBirth}/{birthLocation}/{gender}:
     get:
       operationId: getPersonalChart
       summary: Retrieve information about a person using 9 Star Ki Astrology.
@@ -27,6 +27,20 @@ paths:
             type: string
             format: date
             example: "1985-06-16"
+        - name: timeOfBirth
+          in: path
+          required: true
+          description: Time of birth in HH-mm format.
+          schema:
+            type: string
+            example: "07-00"
+        - name: birthLocation
+          in: path
+          required: true
+          description: The place where the user was born
+          schema:
+            type: string
+            example: "Madrid"
         - name: gender
           in: path
           required: true
@@ -434,15 +448,15 @@ components:
       properties:
         PersonModel:
           $ref: "#/components/schemas/PersonModel"
+        GenerationEnergy:
+          $ref: "#/components/schemas/Energy"
         MainEnergy:
           $ref: "#/components/schemas/Energy"
         CharacterEnergy:
           $ref: "#/components/schemas/Energy"
         SurfaceEnergy:
           $ref: "#/components/schemas/Energy"
-        YearlyCycleEnergy:
-          $ref: "#/components/schemas/Energy"
-        MonthlyCycleEnergy:
+        DayStarEnergy:
           $ref: "#/components/schemas/Energy"
         Summary:
           type: string
@@ -450,16 +464,44 @@ components:
           example: "You have a lot of energy and vitality and are not afraid to take on plenty of hard work and commitments."
         Overview:
           type: string
-          description: A general overview of the person's characteristics.
+          description: A general overview of the Energy's characteristics.
+        EmotionalLandscape:
+          type: string
+          description: A description of this Energy's emotional landscape.
+        IntellectualQualities:
+          type: string
+        InterpersonalQualities:
+          type: string
+        Spirituality:
+          type: string
+          description: A description of this Energy's spiritual life.
         Health:
           type: string
-          description: Health-related insights for this person.
+          description: Health-related insights for this Energy.
+        Illnesses:
+          type: string
+          description: A list of common illnesses associated with this Energy.
+        Career:
+          type: string
+          description: Information about the suitable career options.
+        Finances:
+          type: string
+          description: Information about how this Energy typically manages finances.
         Occupations:
           type: string
           description: Suggested occupations based on the 9 Star Ki system.
-        PersonalDevelopment:
+        MainEnergyRelationshipsSummary:
           type: string
-          description: Advice for personal growth based on the person's energy.
+          description: A description of this Energy's relationships.
+        StressResponseDetails:
+          type: string
+          description: A description of this Energy's stress response.
+        StressResponseFromNatalHouseDetails:
+          type: string
+          description: More information about this Energy's stress response.
+        AdultChildRelationsihpDescription:
+          type: string
+          description: A description of how this Energy's inner child related to their adult nature.
 
     NineStarKiSummaryModel:
       type: object
@@ -568,12 +610,9 @@ components:
           type: string
           description: A detailed description of the Modality
           example: "Dynamic"
-        Direction:
+        DirectionName:
           type: string
           example: "East"
-        Season:
-          type: string
-          example: "Early Spring"
         SeasonDescription:
           type: string
           description: A detailed description of the season
@@ -581,6 +620,10 @@ components:
         CycleDescription:
           type: string
           example: "Early Spring bla bla"
+        HouseName:
+          type: string
+          description: "The name of the house associated with this 'cycle'"
+          example: "6 Metal House"
         Trigram:
           type: string
           description: The name of the Trigram associated with this Energy
@@ -610,9 +653,6 @@ components:
           type: string
           description: The element associated with the energy.
           example: "Tree"
-        Season:
-          type: string
-          example: "Spring"
         SeasonDescription:
           type: string
           description: A detailed description of the qualities of the season associated with this energy.

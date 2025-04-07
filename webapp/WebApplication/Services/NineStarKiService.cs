@@ -8,7 +8,6 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Web.UI;
 
 namespace K9.WebApplication.Services
 {
@@ -16,11 +15,13 @@ namespace K9.WebApplication.Services
     {
         private readonly ISwissEphemerisService _swissEphemerisService;
         private readonly IAITextMergeService _textMergeService;
+        private readonly IAstrologyService _astrologyService;
 
-        public NineStarKiService(INineStarKiBasePackage my, ISwissEphemerisService swissEphemerisService, IAITextMergeService textMergeService) : base(my)
+        public NineStarKiService(INineStarKiBasePackage my, ISwissEphemerisService swissEphemerisService, IAITextMergeService textMergeService, IAstrologyService astrologyService) : base(my)
         {
             _swissEphemerisService = swissEphemerisService;
             _textMergeService = textMergeService;
+            _astrologyService = astrologyService;
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male)
@@ -35,11 +36,6 @@ namespace K9.WebApplication.Services
                 });
 
             }, TimeSpan.FromDays(30));
-        }
-
-        public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, DateTime today)
-        {
-            return CalculateNineStarKiProfile(personModel, false, false, today);
         }
 
         public async Task<NineStarKiModel> GetNineStarKiPersonalChartAlchemy(NineStarKiModel model)
@@ -118,6 +114,11 @@ namespace K9.WebApplication.Services
             return model;
         }
 
+        public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, DateTime today)
+        {
+            return CalculateNineStarKiProfile(personModel, false, false, today);
+        }
+
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
             bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate)
         {
@@ -141,7 +142,7 @@ namespace K9.WebApplication.Services
                 {
                     userTimeZoneId = displayDataForPeriod == EDisplayDataForPeriod.Now ? "" : string.IsNullOrEmpty(userTimeZoneId) ? personModel.BirthTimeZoneId : userTimeZoneId;
 
-                    var moonPhase = _swissEphemerisService.GetMoonPhase(selectedDateTime, userTimeZoneId);
+                    var moonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId);
 
                     var preciseEightyOneYearEnergy =
                         _swissEphemerisService.GetNineStarKiEightyOneYearKi(selectedDateTime, userTimeZoneId);

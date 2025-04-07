@@ -15,7 +15,7 @@ namespace K9.WebApplication.Services
         private static string WritingStyle = $"Maintain an {ElegantTone} tone throughout and keep the writing clear, organized, and free-flowing, but without unnecessary explanation.";
 
         private const string CrossReferenceText =
-            "Where applicable, cross-reference different influences. For example, if the yearly cycle suggests rest but the 9-year cycle suggests activity, mention both. This also applies to different influences from the same chart.";
+            "Where applicable, cross-reference different contradictory influences within the same section, if they arise. For example, within a section there could be an expansive, light influence of 9 fire but also the energy of darkness and stillness of water. In such cases, both influences are felt. This may be felt as fluctuating from one to the other, or feeling contradictory things simultaneously or it may mean that the two opposites blend together and soften each others influence.";
 
         private const string DoNotAnnounceText =
             "Do not preface the output (e.g., 'Here is...'). Just return clean HTML output only.";
@@ -41,19 +41,19 @@ namespace K9.WebApplication.Services
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
         }
 
-        public async Task<string> MergeTextsAsync((string theme, string[] texts)[] groups)
+        public async Task<string> MergeTextsAsync((string theme, string[] texts)[] groups, string extraPrompt = null)
         {
             var prompt = GetPrompt(
-                "Blend the following texts into a clear, well-organized passage using only <h5> and <p> HTML tags.",
+                $"Blend the following texts into a clear, well-organized passage using only <h5> and <p> HTML tags. {extraPrompt}",
                 groups
             );
             return await ProcessRequest(prompt);
         }
 
-        public async Task<string> MergeTextsIntoSummaryAsync((string theme, string[] texts)[] groups)
+        public async Task<string> MergeTextsIntoSummaryAsync((string theme, string[] texts)[] groups, string extraPrompt = null)
         {
             var prompt = GetPrompt(
-                "Blend the following texts into a clear, well-organized summary using only <h5>, <ul>, and <li> HTML tags.",
+                $"Blend the following texts into a clear, well-organized summary using only <h5>, <ul>, and <li> HTML tags. {extraPrompt}",
                 groups
             );
             return await ProcessRequest(prompt);

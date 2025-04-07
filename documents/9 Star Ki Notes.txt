@@ -1,11 +1,10 @@
+Add birth time and time zone to MyAccount. - Add UserData model
+
+--
+
 retest api and GPT - in case things have changed
 
 --
-
-28 days of the moon - teir influence
-
---
-
 
 ChatGPT to create overall summary for each 81 combinations from existing one plus a synergy of the 3 energies
 
@@ -41,9 +40,6 @@ Note about the blending of energies - how each energy must be considered in the 
 
 9 fire doesn't do the most work, it draws its energy from others, like  fire burning. 5 years are most active, fire years are more 'transcending'
 
---
-
-Add birth time and time zone to MyAccount. - Add UserData model
 
 --
 

@@ -52,8 +52,8 @@ namespace K9.WebApplication.Controllers
 
                 return Json(new { success = true, data = new
                 {
-                    GenerationEnergy = model.PersonalChartEnergies.Generation,
                     model.PersonModel,
+                    GenerationEnergy = model.PersonalChartEnergies.Generation,
                     model.MainEnergy,
                     model.CharacterEnergy,
                     model.SurfaceEnergy,

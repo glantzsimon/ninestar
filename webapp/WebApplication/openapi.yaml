@@ -442,6 +442,10 @@ components:
           $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
         MonthlyPrediction:
           $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
+        DailyPrediction:
+          $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
+        NineYearlyPrediction:
+          $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
 
     NineStarKiModel:
       type: object

@@ -75,7 +75,7 @@ namespace K9.SharedLibrary.Extensions
             {
                 return propInfo.GetValue(null, null).ToString();
             }
-            throw new KeyNotFoundException($"The key {key} was not found.");
+            return key;
         }
 
         public static List<PropertyInfo> GetFileSourceProperties(this IObjectBase item)

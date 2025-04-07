@@ -175,13 +175,7 @@ namespace K9.WebApplication.Helpers
                     var dictionary = resourceType ?? typeof(Base.Globalisation.Dictionary);
                     foreach (var item in items)
                     {
-                        try
-                        {
-                            item.Name = dictionary.GetValueFromResource(item.Name);
-                        }
-                        catch (Exception)
-                        {
-                        }
+                        item.Name = dictionary.GetValueFromResource(item.Name);
                     }
                 }
             }

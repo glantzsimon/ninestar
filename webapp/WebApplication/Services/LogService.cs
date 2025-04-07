@@ -20,7 +20,7 @@ namespace K9.WebApplication.Services
 
         private static readonly List<string> hangFireEntries = new List<string>
         {
-            "heartbeat successfully sent",
+            "heartbeat",
             "Removing outdated records",
             "ProcessQueue => Sending 0 emails",
             "Aggregating records in",

@@ -131,10 +131,7 @@
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.PanelWithGlobal(
-                    Model.GlobalCycleEnergies.Epoch.CycleDescriptiveName,
-                    Model.GlobalCycleEnergies.Epoch.CycleDescriptiveName,
-                    Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Epoch).ToString(),
+                @Html.Panel(Model.GlobalCycleEnergies.Epoch.CycleDescriptiveName,
                     Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Epoch).ToString())
             }
 

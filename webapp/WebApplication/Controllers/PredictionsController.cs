@@ -18,12 +18,14 @@ namespace K9.WebApplication.Controllers
     {
         private readonly INineStarKiService _nineStarKiService;
         private readonly ISwissEphemerisService _swissEphemerisService;
+        private readonly IAstrologyService _astrologyService;
 
-        public PredictionsController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService, ISwissEphemerisService swissEphemerisService)
+        public PredictionsController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService, ISwissEphemerisService swissEphemerisService, IAstrologyService astrologyService)
             : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
             _swissEphemerisService = swissEphemerisService;
+            _astrologyService = astrologyService;
         }
 
         [Route("calculator")]
@@ -144,7 +146,7 @@ namespace K9.WebApplication.Controllers
                 personModel.DateOfBirth = personModel.DateOfBirth.Add(personModel.TimeOfBirth);
                 var invertYinEnergies = calculationMethod == ECalculationMethod.Chinese;
                 var model = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false,
-                    selectedDateTime, calculationMethod, true, false, userTimeZoneId, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, 
+                    selectedDateTime, calculationMethod, true, false, userTimeZoneId, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere,
                     invertDailyAndHourlyCycleKiForSouthernHemisphere, displayDataForPeriod);
 
                 var alchemy = await _nineStarKiService.GetNineStarKiPredictionsAlchemy(model);
@@ -180,15 +182,16 @@ namespace K9.WebApplication.Controllers
 
             return PredictionsJsonResult(display, cycle);
         }
-        
+
         [Route("get-daily-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetDailyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
+        public JsonResult GetDailyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi, DateTime? selectedDate = null, string userTimeZoneId = "")
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.DailyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
+            var moonPhase = selectedDate.HasValue ? _astrologyService.GetMoonPhase(selectedDate.Value, userTimeZoneId) : null;
 
-            return PredictionsJsonResult(display, cycle);
+            return PredictionsJsonResult(display, cycle, moonPhase);
         }
 
         [Route("get-monthly-predictions")]
@@ -207,7 +210,7 @@ namespace K9.WebApplication.Controllers
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.YearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
-            
+
             return PredictionsJsonResult(display, cycle);
         }
 

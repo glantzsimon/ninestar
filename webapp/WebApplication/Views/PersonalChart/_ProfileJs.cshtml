@@ -26,8 +26,7 @@
                             $container.find(".panel .panel-two").html(result.data.AlchemisedDescription);
                             $container.fadeIn(100);
 
-                            bootstrapControls().init();
-                            ninestarki().init();
+                            $.fn.initLibraries();
 
                             $.fn.hideSpinner("#profile-alchemy-container");
                         });

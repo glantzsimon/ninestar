@@ -8,6 +8,25 @@
 
 <script type="text/javascript">
 
+
+    function initLibraries() {
+        bootstrapControls({
+            language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
+            dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()",
+            whatsAppNumber: "@(DefaultValuesConfiguration.Instance.WhatsAppSupportNumber)"
+        }).init();
+
+        ninestarki({
+            updatePreferencesIntUrl: '@Url.Action("UpdateUserPreferenceInt")',
+            updatePreferencesBoolUrl: '@Url.Action("UpdateUserPreferenceBool")',
+            defaultEnergyDisplayKey: '@SessionConstants.DefaultEnergyDisplay',
+            defaultPanelViewKey: '@SessionConstants.DefaultPanelView',
+            showDirectionsKey: '@SessionConstants.ShowDirections',
+            personalKiValue: '@((int)EScopeDisplay.PersonalKi)',
+            magicSquareValue: '@((int)EEnergyDisplay.MagicSquare)',
+        }).init();
+    }
+
 	$(function () {
 
 		$.fn.formatBytes = function (bytes, si) {
@@ -179,27 +198,14 @@
             $overlay.fadeOut();
 	    };
 
-		bootstrapControls({
-			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
-            dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()",
-			whatsAppNumber: "@(DefaultValuesConfiguration.Instance.WhatsAppSupportNumber)"
-		}).init();
+	    initLibraries();
+	    $.fn.initLibraries = initLibraries;
 
 	    datasetsHelper({
             datasets: @Html.Raw(this.GetDropdownData().GetAllDataSetsJson())
         }).init();
 
 		buttonBehaviours().init();
-
-        ninestarki({
-            updatePreferencesIntUrl: '@Url.Action("UpdateUserPreferenceInt")',
-            updatePreferencesBoolUrl: '@Url.Action("UpdateUserPreferenceBool")',
-            defaultEnergyDisplayKey: '@SessionConstants.DefaultEnergyDisplay',
-            defaultPanelViewKey: '@SessionConstants.DefaultPanelView',
-            showDirectionsKey: '@SessionConstants.ShowDirections',
-            personalKiValue: '@((int)EScopeDisplay.PersonalKi)',
-            magicSquareValue: '@((int)EEnergyDisplay.MagicSquare)',
-        }).init();
 
 		fadePageIn({
 		    isFirstLoad: @SessionHelper.GetBoolValue("SessionConstants.IsFirstLoad").ToString().ToLower()

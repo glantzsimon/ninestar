@@ -1,4 +1,6 @@
-﻿@using K9.WebApplication.Enums
+﻿@using System.Globalization
+@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
 @model K9.WebApplication.Models.NineStarKiModel
 
 <script language="javascript">
@@ -55,6 +57,8 @@
             var energy = $el.attr("data-energy");
             var type = $el.attr("data-type");
             var url = $el.attr("data-update-url");
+            var selectedDate = $el.attr("data-selected-date");
+            var display = $el.attr("data-display");
             var $container, $parentBlock, $childBlock, $timeSlot, $details, $moonDetails, url;
 
             $container = $el.closest(".global-planner-container");
@@ -79,13 +83,19 @@
 
             clickTimeout = setTimeout(function() {
                 // Display selected child / parent data
-                ajaxcontroller().get(url, {energy}).done(
+                ajaxcontroller().get(url,
+                    {
+                        energy,
+                        display,
+                        userTimeZoneId: '@Model.UserTimeZoneId',
+                        selectedDate
+                    }).done(
                     function(result) {
                         if (result.success) {
                             $details.find(".panel .panel-heading h4 strong").html(result.data.CycleDescriptiveName);
                             $details.find(".panel .panel-body").html(result.data.CycleDescription);
 
-                            if (result.data.MoonPhase.LunarDay > 0) {
+                            if (result.data.MoonPhase) {
                                 $moonDetails.find(".panel .panel-body").html(result.data.MoonPhase.LunarDayDescription);
                                 $moonDetails.fadeIn();
                             } else {
@@ -134,7 +144,8 @@
                             $container.fadeIn(100);
 
                             bindGlobalEvents();
-                            bootstrapControls().init();
+
+                            $.fn.initLibraries();
                             ninestarki().initMagicTooltips();
 
                             var view = $("#PlannerView").val();
@@ -178,8 +189,7 @@
                             $container.find(".panel .panel-two").html(result.data.AlchemisedDescription);
                             $container.fadeIn(100);
 
-                            bootstrapControls().init();
-                            ninestarki().init();
+                            $.fn.initLibraries();
 
                             $.fn.hideSpinner("#profile-alchemy-container");
                         });

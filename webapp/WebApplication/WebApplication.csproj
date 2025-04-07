@@ -1724,6 +1724,7 @@
     <Content Include="Views\PersonalChart\_ProfileAdultChildRelationship.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileSexualityRelationTypeSummary.cshtml" />
     <Content Include="Views\Predictions\_LunarCycle.cshtml" />
+    <Content Include="Views\Astrology\_MoonPhaseLarge.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

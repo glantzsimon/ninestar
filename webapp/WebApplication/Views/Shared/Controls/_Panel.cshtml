@@ -9,6 +9,8 @@
                 ? "image-panel-small" : "";
     var panelBodyClass = hasImage ? "panel-body-image" : "";
 
+    var dualViewClass = Model.IsDualView ? "dual-view" : "";
+
     var displayStyle1 = Model.IsDualView ?
         Model.IsGlobalSwitch ?
             Model.PanelCycleView == EPanelCycleView.PersonalView ? "" : "display: none;" :
@@ -24,7 +26,7 @@
 
 @*Bookmark*@
 <div id="@Model.Id" style="position: relative; top: -180px;"></div>
-<div class="panel panel-default" id="@Model.PanelId">
+<div class="panel panel-default @dual-view" id="@Model.PanelId">
     @if (!string.IsNullOrEmpty(Model.Title))
     {
         <div class="panel-heading clearfix">

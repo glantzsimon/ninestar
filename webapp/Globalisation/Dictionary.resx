@@ -6223,4 +6223,7 @@
   <data name="lunar_day_9_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>astrology\en-gb\lunardays\lunar-day-9-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Receptive" xml:space="preserve">
+    <value>Receptive</value>
+  </data>
 </root>

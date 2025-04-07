@@ -153,7 +153,14 @@ namespace K9.WebApplication.Attributes
                 .Select(value =>
                 {
                     var key = value.GetAttribute<EnumDescriptionAttribute>().Name;
-                    return ResourceType.GetValueFromResource(key);
+                    try
+                    {
+                        return ResourceType.GetValueFromResource(key);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    return key;
                 })
                 .ToArray();
         }

@@ -17010,6 +17010,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Receptive.
+        /// </summary>
+        public static string Receptive {
+            get {
+                return ResourceManager.GetString("Receptive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recipient Email Address.
         /// </summary>
         public static string RecipientEmailAddressLabel {

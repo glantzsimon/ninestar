@@ -30,8 +30,8 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("personal-chart/get/{accountNumber}/" +
-               "{dateOfBirth}/{timeOfBirth}/{birthLocation}/{gender}")]
-        public JsonResult GetPersonalChart(string accountNumber, DateTime dateOfBirth, string timeOfBirth, string birthLocation, EGender gender)
+               "{dateOfBirth}/{gender}/{timeOfBirth}/{birthLocation}")]
+        public JsonResult GetPersonalChart(string accountNumber, DateTime dateOfBirth, EGender gender, string timeOfBirth = "", string birthLocation = "")
         {
             return Validate(accountNumber, () =>
             {
@@ -50,31 +50,70 @@ namespace K9.WebApplication.Controllers
                     ECalculationMethod.Chinese);
                 model.SelectedDate = selectedDate;
 
+                return Json(new
+                {
+                    success = true,
+                    data = new
+                    {
+                        model.PersonModel,
+                        GenerationEnergy = new NineStarKiEnergySummary(model.PersonalChartEnergies.Generation),
+                        SolarEnergy = new NineStarKiEnergySummary(model.MainEnergy),
+                        LunarEnergy = new NineStarKiEnergySummary(model.CharacterEnergy),
+                        SocialExpressionEnergy = new NineStarKiEnergySummary(model.SurfaceEnergy),
+                        DayStarEnergy = new NineStarKiEnergySummary(model.PersonalChartEnergies.Day),
+
+                        model.Summary,
+                        model.Overview,
+                        IntellectualQualities = model.MainEnergy.IntellectualQualitiesSummary,
+                        InterpersonalQualities = model.MainEnergy.InterpersonalQualitiesSummary,
+                        EmotionalLandscape = model.MainEnergy.EmotionalLandscapeSummary,
+                        Spirituality = model.MainEnergy.SpiritualitySummary,
+                        Health = model.MainEnergy.HealthSummary,
+                        model.MainEnergy.Illnesses,
+                        Career = model.MainEnergy.CareerSummary,
+                        Finances = model.MainEnergy.FinancesSummary,
+                        model.MainEnergy.Occupations,
+                        model.MainEnergyRelationshipsSummary,
+                        model.StressResponseDetails,
+                        model.StressResponseFromNatalHouseDetails,
+                        model.AdultChildRelationsihpDescription,
+
+                    }
+                }, JsonRequestBehavior.AllowGet);
+            });
+        }
+
+        [Route("predictions/get/{accountNumber}/" +
+               "{dateOfBirth}/{gender}/{selectedDate}/{timeOfBirth}/{birthLocation}")]
+        public JsonResult GetPredictions(string accountNumber, DateTime dateOfBirth, EGender gender, DateTime selectedDate, string timeOfBirth = "", string birthLocation = "")
+        {
+            return Validate(accountNumber, () =>
+            {
+                var personModel = new PersonModel
+                {
+                    DateOfBirth = dateOfBirth.Add(DateTimeHelper.ParseTime(timeOfBirth)),
+                    Gender = gender,
+                    BirthTimeZoneId = DateTimeHelper.ResolveTimeZone(birthLocation)
+                };
+                var model = new NineStarKiModel(personModel)
+                {
+                    SelectedDate = selectedDate
+                };
+
+                var displayFor = selectedDate.Date == DateTime.Today ? EDisplayDataForPeriod.Now : EDisplayDataForPeriod.SelectedDate;
+
+                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate,
+                    ECalculationMethod.Chinese, true, false, personModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, false, false, displayFor);
+                model.SelectedDate = selectedDate;
+                
                 return Json(new { success = true, data = new
                 {
-                    model.PersonModel,
-                    GenerationEnergy = model.PersonalChartEnergies.Generation,
-                    model.MainEnergy,
-                    model.CharacterEnergy,
-                    model.SurfaceEnergy,
-                    DayStarEnergy = model.PersonalChartEnergies.Day,
-                    
-                    model.Summary,
-                    model.Overview,
-                    IntellectualQualities = model.MainEnergy.IntellectualQualitiesSummary,
-                    InterpersonalQualities = model.MainEnergy.InterpersonalQualitiesSummary,
-                    EmotionalLandscape = model.MainEnergy.EmotionalLandscapeSummary,
-                    Spirituality = model.MainEnergy.SpiritualitySummary,
-                    Health = model.MainEnergy.HealthSummary,
-                    model.MainEnergy.Illnesses,
-                    Career = model.MainEnergy.CareerSummary,
-                    Finances = model.MainEnergy.FinancesSummary,
-                    model.MainEnergy.Occupations,
-                    model.MainEnergyRelationshipsSummary,
-                    model.StressResponseDetails,
-                    model.StressResponseFromNatalHouseDetails,
-                    model.AdultChildRelationsihpDescription,
-
+                    NineYearlyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Generation),
+                    YearlyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Year),
+                    MonthlyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Month),
+                    DailyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Day),
+                    LunarPercentageOfIllumination = model.MoonPhase.IlluminationDisplay,
+                    model.MoonPhase.LunarDayDescription
                 } }, JsonRequestBehavior.AllowGet);
             });
         }
@@ -82,69 +121,36 @@ namespace K9.WebApplication.Controllers
         [Route("compatibility/get/{accountNumber}/" +
                "{firstPersonName}/{firstPersonDateOfBirth}/{firstPersonGender}/" +
                "{secondPersonName}/{secondPersonDateOfBirth}/{secondPersonGender}/" +
-               "{displaySexualChemistry}")]
+               "{displaySexualChemistry}/{firstPersonTimeOfBirth}/{firstPersonBirthLocation}/{secondPersonTimeOfBirth}/{secondPersonBirthLocation}")]
         public JsonResult GetCompatibility(string accountNumber,
             string firstPersonName, DateTime firstPersonDateOfBirth, EGender firstPersonGender,
             string secondPersonName, DateTime secondPersonDateOfBirth, EGender secondPersonGender,
-            bool displaySexualChemistry = false)
+            bool displaySexualChemistry = false, string firstPersonTimeOfBirth = "", string firstPersonBirthLocation = "",
+            string secondPersonTimeOfBirth = "", string secondPersonBirthLocation = "")
         {
             return Validate(accountNumber, () =>
             {
                 var personModel1 = new PersonModel
                 {
                     Name = firstPersonName,
-                    DateOfBirth = firstPersonDateOfBirth,
-                    Gender = firstPersonGender
+                    DateOfBirth = firstPersonDateOfBirth.Add(DateTimeHelper.ParseTime(firstPersonTimeOfBirth)),
+                    Gender = firstPersonGender,
+                    BirthTimeZoneId = DateTimeHelper.ResolveTimeZone(firstPersonBirthLocation)
                 };
                 var personModel2 = new PersonModel
                 {
                     Name = secondPersonName,
-                    DateOfBirth = secondPersonDateOfBirth,
-                    Gender = secondPersonGender
+                    DateOfBirth = secondPersonDateOfBirth.Add(DateTimeHelper.ParseTime(secondPersonTimeOfBirth)),
+                    Gender = secondPersonGender,
+                    BirthTimeZoneId = DateTimeHelper.ResolveTimeZone(secondPersonBirthLocation)
                 };
 
                 var model = _nineStarKiService.CalculateCompatibility(personModel1, personModel2, false);
-
-                foreach (var propertyInfo in model.GetProperties())
+                
+                return Json(new { success = true, data = new
                 {
-                    if (propertyInfo.PropertyType == typeof(string) && propertyInfo.CanWrite)
-                    {
-                        try
-                        {
-                            model.SetProperty(propertyInfo, string.Empty);
-                        }
-                        catch (Exception e)
-                        {
-                        }
-                    }
-                }
 
-                return Json(new { success = true, data = model }, JsonRequestBehavior.AllowGet);
-            });
-        }
-
-        [Route("predictions/get/{accountNumber}/" +
-               "{dateOfBirth}/{gender}/{selectedDate}")]
-        public JsonResult GetPredictions(string accountNumber, DateTime dateOfBirth, EGender gender, DateTime selectedDate)
-        {
-            return Validate(accountNumber, () =>
-            {
-                var model = new NineStarKiModel(new PersonModel
-                {
-                    DateOfBirth = dateOfBirth,
-                    Gender = gender
-                })
-                {
-                    SelectedDate = selectedDate
-                };
-
-                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
-                model.SelectedDate = selectedDate;
-
-                var predictionsViewModel =
-                    new PredictionsViewModel(model, _nineStarKiService.GetNineStarKiSummaryViewModel());
-
-                return Json(new { success = true, data = predictionsViewModel }, JsonRequestBehavior.AllowGet);
+                } }, JsonRequestBehavior.AllowGet);
             });
         }
 

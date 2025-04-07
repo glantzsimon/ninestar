@@ -35,7 +35,7 @@ namespace K9.SharedLibrary.Helpers
 
         public static TimeSpan ParseTime(string time)
         {
-            return TimeSpan.Parse(time.Replace("-", ":"));
+            return string.IsNullOrEmpty(time) ? new TimeSpan() : TimeSpan.Parse(time.Replace("-", ":"));
         }
     }
 }

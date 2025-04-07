@@ -6,7 +6,7 @@ info:
 servers:
   - url: https://9starkiastrology.com
 paths:
-  /api/personal-chart/get/{accountNumber}/{dateOfBirth}/{birthLocation}/{gender}:
+  /api/personal-chart/get/{accountNumber}/{dateOfBirth}/{gender}/{timeOfBirth}/{birthLocation}:
     get:
       operationId: getPersonalChart
       summary: Retrieve information about a person using 9 Star Ki Astrology.
@@ -27,20 +27,6 @@ paths:
             type: string
             format: date
             example: "1985-06-16"
-        - name: timeOfBirth
-          in: path
-          required: true
-          description: Time of birth in HH-mm format.
-          schema:
-            type: string
-            example: "07-00"
-        - name: birthLocation
-          in: path
-          required: true
-          description: The place where the user was born
-          schema:
-            type: string
-            example: "Madrid"
         - name: gender
           in: path
           required: true
@@ -49,6 +35,20 @@ paths:
             type: string
             enum: ["Male", "Female", "Other"]
             example: "Male"
+        - name: timeOfBirth
+          in: path
+          required: false
+          description: Time of birth in HH-mm format.
+          schema:
+            type: string
+            example: "07-00"
+        - name: birthLocation
+          in: path
+          required: false
+          description: The place where the user was born
+          schema:
+            type: string
+            example: "Madrid"
       responses:
         "200":
           description: Successful response with personal chart data.
@@ -69,7 +69,7 @@ paths:
       security:
         - apiKeyAuth: []
 
-  /api/predictions/get/{accountNumber}/{dateOfBirth}/{gender}/{selectedDate}:
+  /api/predictions/get/{accountNumber}/{dateOfBirth}/{gender}/{selectedDate}/{timeOfBirth}/{birthLocation}:
     get:
       operationId: getPredictions
       summary: Retrieve information about a person's 9 star ki monthly and yearly predictions.
@@ -106,6 +106,20 @@ paths:
             type: string
             format: date
             example: "1985-06-16"
+        - name: timeOfBirth
+          in: path
+          required: false
+          description: Time of birth in HH-mm format.
+          schema:
+            type: string
+            example: "07-00"
+        - name: birthLocation
+          in: path
+          required: false
+          description: The place where the user was born
+          schema:
+            type: string
+            example: "Madrid"
 
       responses:
         "200":
@@ -127,7 +141,7 @@ paths:
       security:
         - apiKeyAuth: []
 
-  /api/compatibility/get/{accountNumber}/{firstPersonName}/{firstPersonDateOfBirth}/{firstPersonGender}/{secondPersonName}/{secondPersonDateOfBirth}/{secondPersonGender}/{displaySexualChemistry}:
+  /api/compatibility/get/{accountNumber}/{firstPersonName}/{firstPersonDateOfBirth}/{firstPersonGender}/{secondPersonName}/{secondPersonDateOfBirth}/{secondPersonGender}/{displaySexualChemistry}/{firstPersonTimeOfBirth}/{firstPersonBirthLocation}/{secondPersonTimeOfBirth}/{secondPersonBirthLocation}:
     get:
       operationId: getCompatibility
       summary: Retrieve information about the compatibility of two people using 9 Star Ki Astrology.
@@ -192,6 +206,34 @@ paths:
           description: Whether or not to return information about the sexual chemistry between the first person and the second person
           schema:
             type: boolean
+        - name: firstPersonTimeOfBirth
+          in: path
+          required: false
+          description: Time of birth in HH-mm format.
+          schema:
+            type: string
+            example: "07-00"
+        - name: firstPersonBirthLocation
+          in: path
+          required: false
+          description: The place where the user was born
+          schema:
+            type: string
+            example: "Madrid"
+        - name: secondPersonTimeOfBirth
+          in: path
+          required: false
+          description: Time of birth in HH-mm format.
+          schema:
+            type: string
+            example: "07-00"
+        - name: secondPersonBirthLocation
+          in: path
+          required: false
+          description: The place where the user was born
+          schema:
+            type: string
+            example: "Madrid"
       responses:
         "200":
           description: Successful response with compatibility data.
@@ -328,7 +370,7 @@ components:
         data:
           type: object
           properties:
-            PredictionsSummaryModel:
+            NineStarKiSummaryKbViewModel:
               $ref: "#/components/schemas/NineStarKiSummaryKbViewModel"
 
     IChingResponse:
@@ -436,16 +478,20 @@ components:
     NineStarKiPredictionsSummaryModel:
       type: object
       properties:
-        PersonalChartModel:
-          $ref: "#/components/schemas/NineStarKiSummaryModel"
+        NineYearlyPrediction:
+          $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
         YearlyPrediction:
           $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
         MonthlyPrediction:
           $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
         DailyPrediction:
           $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
-        NineYearlyPrediction:
-          $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
+        LunarPercentageOfIllumination:
+          type: string
+          description: The percentage of the moon illuminated.
+        LunarDayDescription:
+          type: string
+          description: A general overview of the Lunar Day.
 
     NineStarKiModel:
       type: object
@@ -453,15 +499,15 @@ components:
         PersonModel:
           $ref: "#/components/schemas/PersonModel"
         GenerationEnergy:
-          $ref: "#/components/schemas/Energy"
-        MainEnergy:
-          $ref: "#/components/schemas/Energy"
-        CharacterEnergy:
-          $ref: "#/components/schemas/Energy"
-        SurfaceEnergy:
-          $ref: "#/components/schemas/Energy"
+          $ref: "#/components/schemas/EnergySummary"
+        SolarEnergy:
+          $ref: "#/components/schemas/EnergySummary"
+        LunarEnergy:
+          $ref: "#/components/schemas/EnergySummary"
+        SocialExpressionEnergy:
+          $ref: "#/components/schemas/EnergySummary"
         DayStarEnergy:
-          $ref: "#/components/schemas/Energy"
+          $ref: "#/components/schemas/EnergySummary"
         Summary:
           type: string
           description: A textual summary of the person's characteristics.

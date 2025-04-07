@@ -37,14 +37,14 @@ paths:
             example: "Male"
         - name: timeOfBirth
           in: path
-          required: false
+          required: true
           description: Time of birth in HH-mm format.
           schema:
             type: string
             example: "07-00"
         - name: birthLocation
           in: path
-          required: false
+          required: true
           description: The place where the user was born
           schema:
             type: string
@@ -108,14 +108,14 @@ paths:
             example: "1985-06-16"
         - name: timeOfBirth
           in: path
-          required: false
+          required: true
           description: Time of birth in HH-mm format.
           schema:
             type: string
             example: "07-00"
         - name: birthLocation
           in: path
-          required: false
+          required: true
           description: The place where the user was born
           schema:
             type: string
@@ -208,28 +208,28 @@ paths:
             type: boolean
         - name: firstPersonTimeOfBirth
           in: path
-          required: false
+          required: true
           description: Time of birth in HH-mm format.
           schema:
             type: string
             example: "07-00"
         - name: firstPersonBirthLocation
           in: path
-          required: false
+          required: true
           description: The place where the user was born
           schema:
             type: string
             example: "Madrid"
         - name: secondPersonTimeOfBirth
           in: path
-          required: false
+          required: true
           description: Time of birth in HH-mm format.
           schema:
             type: string
             example: "07-00"
         - name: secondPersonBirthLocation
           in: path
-          required: false
+          required: true
           description: The place where the user was born
           schema:
             type: string

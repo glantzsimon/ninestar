@@ -145,11 +145,15 @@ namespace K9.WebApplication.Controllers
                     BirthTimeZoneId = DateTimeHelper.ResolveTimeZone(secondPersonBirthLocation)
                 };
 
-                var model = _nineStarKiService.CalculateCompatibility(personModel1, personModel2, false);
+                var model = _nineStarKiService.CalculateCompatibility(personModel1, personModel2, !displaySexualChemistry, ECalculationMethod.Chinese);
                 
                 return Json(new { success = true, data = new
                 {
-
+                    NineStarKiSummaryModel1 = new NineStarKiSummaryModel(model.NineStarKiModel1),
+                    NineStarKiSummaryModel2 = new NineStarKiSummaryModel(model.NineStarKiModel2),
+                    model.FundamentalEnergiesCompatibility,
+                    SexualChemistryDetails = displaySexualChemistry ? model.SexualChemistryDetails : "",
+                    model.CompatibilityDetails
                 } }, JsonRequestBehavior.AllowGet);
             });
         }

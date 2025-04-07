@@ -5926,6 +5926,186 @@
   <data name="lake_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\trigrams\en-gb\lake-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="lunar_day_10_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-10-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_10_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-10-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_11_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-11-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_11_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-11-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_12_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-12-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_12_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-12-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_13_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-13-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_13_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-13-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_14_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-14-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_14_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-14-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_15_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-15-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_15_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-15-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_16_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-16-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_16_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-16-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_17_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-17-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_17_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-17-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_18_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-18-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_18_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-18-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_19_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-19-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_19_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-19-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_1_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-1-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_1_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-1-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_20_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-20-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_20_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-20-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_21_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-21-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_21_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-21-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_22_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-22-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_22_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-22-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_23_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-23-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_23_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-23-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_24_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-24-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_24_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-24-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_25_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-25-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_25_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-25-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_26_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-26-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_26_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-26-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_27_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-27-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_27_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-27-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_28_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-28-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_28_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-28-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_29_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-29-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_29_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-29-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_2_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-2-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_2_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-2-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_30_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-30-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_30_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-30-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_3_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-3-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_3_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-3-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_4_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-4-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_4_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-4-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_5_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-5-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_5_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-5-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_6_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-6-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_6_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-6-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_7_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-7-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_7_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-7-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_8_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-8-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_8_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-8-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_9_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-9-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lunar_day_9_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\lunardays\titles\lunar-day-9-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="MainEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\general\en-gb\mainenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

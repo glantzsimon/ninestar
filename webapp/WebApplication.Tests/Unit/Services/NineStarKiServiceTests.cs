@@ -32,6 +32,8 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var aiTextMergeService = new Mock<IAITextMergeService>();
 
+            var astrologyService = new Mock<IAstrologyService>();
+
             var nineStarKiBasePackage = new Mock<INineStarKiBasePackage>();
             nineStarKiBasePackage.SetupGet(e => e.DefaultValuesConfiguration).Returns(new DefaultValuesConfiguration
             {
@@ -43,7 +45,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             Trace.Listeners.Add(_listener);
 
             _swissEphemerisService = new SwissEphemerisService(nineStarKiBasePackage.Object, _output);
-            _nineStarKiService = new NineStarKiService(basePackage.Object, _swissEphemerisService, aiTextMergeService.Object);
+            _nineStarKiService = new NineStarKiService(basePackage.Object, _swissEphemerisService, aiTextMergeService.Object, astrologyService.Object);
         }
 
         [Theory]

@@ -10,18 +10,18 @@ namespace K9.WebApplication.Services
 {
     public class AITextMergeService : BaseService, IAITextMergeService
     {
-        private const string ElegantTone = "elegant and refined, yet succinct";
+        private const string ElegantTone = "elegant and refined, yet succinct,";
 
-        private static string WritingStyle = $"Maintain an {ElegantTone} tone throughout and keep the writing clear, organized, and free-flowing, but without unnecessary explanation.";
+        private static string WritingStyle = $"Maintain an {ElegantTone} tone throughout, and keep the writing clear, organized, and free-flowing—but without unnecessary explanation.";
 
         private const string CrossReferenceText =
-            "Where applicable, cross-reference different contradictory influences within the same section, if they arise. For example, within a section there could be an expansive, light influence of 9 fire but also the energy of darkness and stillness of water. In such cases, both influences are felt. This may be felt as fluctuating from one to the other, or feeling contradictory things simultaneously or it may mean that the two opposites blend together and soften each others influence.";
+            "Where applicable, cross-reference different contradictory influences within the same section, if they arise. For example, within a section there could be an expansive, light influence of 9 fire but also the energy of darkness and stillness of water. In such cases, both influences are felt. This may be felt as fluctuating between the two, experiencing contradictory feelings simultaneously, or as the two opposites blending together to soften each other's influence. When addressing this effect, always be as specific as possible, mentioning the influences and their effects with appropriate names and language, as opposed to general statements which may be less clear.";
 
         private const string DoNotAnnounceText =
             "Do not preface the output (e.g., 'Here is...'). Just return clean HTML output only.";
 
         private const string PositiveAndChallengingText =
-            "Within each section, compare positive and challenging aspects where relevant, and add sub-themes if it helps organize the section better.";
+            "Within each section, compare the positive and challenging aspects where relevant, and add sub-themes if it helps organize the section better.";
 
         private const string OrganisationText =
             "Organize the text into one or more thematic groups, each introduced with an appropriate heading.";

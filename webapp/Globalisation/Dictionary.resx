@@ -409,9 +409,6 @@
   <data name="ComingSoon" xml:space="preserve">
     <value>Coming Soon...</value>
   </data>
-  <data name="coreearth_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\coreearth-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="EnergyDescriptionLabel" xml:space="preserve">
     <value>Energy Description</value>
   </data>
@@ -421,14 +418,8 @@
   <data name="ExamplesLabel" xml:space="preserve">
     <value>Examples</value>
   </data>
-  <data name="fire_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="HealthLabel" xml:space="preserve">
     <value>Health</value>
-  </data>
-  <data name="heaven_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Kan" xml:space="preserve">
     <value>K'An</value>
@@ -439,14 +430,8 @@
   <data name="Kun" xml:space="preserve">
     <value>K'Un</value>
   </data>
-  <data name="lake_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\lake-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Li" xml:space="preserve">
     <value>Li</value>
-  </data>
-  <data name="mountain_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mountain-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NineStarKiTitle" xml:space="preserve">
     <value>9 Star Ki</value>
@@ -466,29 +451,17 @@
   <data name="RelationshipsTitle" xml:space="preserve">
     <value>9 Star Ki Relationships</value>
   </data>
-  <data name="soil_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Sun" xml:space="preserve">
     <value>Sun</value>
   </data>
   <data name="Support" xml:space="preserve">
     <value>Support</value>
   </data>
-  <data name="thunder_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="TrigramLabel" xml:space="preserve">
     <value>Trigram Interpretation</value>
   </data>
   <data name="Tui" xml:space="preserve">
     <value>Tui</value>
-  </data>
-  <data name="water_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\wind-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="origins" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\origins.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -508,9 +481,6 @@
   <data name="cycles" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\cycles.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="five_elements" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\five-elements.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="personal_chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\personal-chart.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -519,9 +489,6 @@
   </data>
   <data name="Calculator" xml:space="preserve">
     <value>Calculator</value>
-  </data>
-  <data name="nine_energies" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\nine-energies.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Learn" xml:space="preserve">
     <value>Learn</value>
@@ -562,20 +529,11 @@
   <data name="EarthElement" xml:space="preserve">
     <value>Earth Element</value>
   </data>
-  <data name="earth_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\earth-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="FireElement" xml:space="preserve">
     <value>Fire Element</value>
   </data>
-  <data name="fire_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="MetalElement" xml:space="preserve">
     <value>Metal Element</value>
-  </data>
-  <data name="metal_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\metal-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NineStarKiCalculatorMetaDescription" xml:space="preserve">
     <value>Free 9 Star Ki calculator. Discover your 9 Star Ki personal chart. Our calculator is unique and uses the original and largely forgotten algorithm to determine your energies. Most 9 star ki websites today do not use the original algorithm and are incorrect. Try it now for free!</value>
@@ -610,14 +568,8 @@
   <data name="TreeElement" xml:space="preserve">
     <value>Tree Element</value>
   </data>
-  <data name="tree_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\tree-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="WaterElement" xml:space="preserve">
     <value>Water Element</value>
-  </data>
-  <data name="water_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="AdultPersona" xml:space="preserve">
     <value>Adult Nature</value>
@@ -1087,21 +1039,6 @@
   <data name="CharacterLabel" xml:space="preserve">
     <value>Character</value>
   </data>
-  <data name="character_energies_short_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\character-energies.short-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="dynamic_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\dynamic-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="reflective_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\reflective-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="main_energies_short_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\main-energies.short-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="modalities_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\modalities-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="NineCharacterEnergiesTitle" xml:space="preserve">
     <value>The 9 Lunar Energies</value>
   </data>
@@ -1122,9 +1059,6 @@
   </data>
   <data name="Stable" xml:space="preserve">
     <value>Stable</value>
-  </data>
-  <data name="stable_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\stable-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="CompatibilityKeywords" xml:space="preserve">
     <value>Compatibility Calculator Compatibility Checker Perfect Match Dating Love Romance Friendship Relationships Find The Love Your Life</value>
@@ -1168,26 +1102,17 @@
   <data name="UpgradeMembershipText" xml:space="preserve">
     <value>Upgrade your membership</value>
   </data>
-  <data name="CharacterEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\characterenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="CompatibilityMetaDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\compatibilitymetadescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="LogIntoYourAccountToView" xml:space="preserve">
     <value>This content is available to members only. Please log into your account to view.</value>
   </data>
-  <data name="MainEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mainenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="OverviewLabel" xml:space="preserve">
     <value>Overview</value>
   </data>
   <data name="RelationshipsMetaDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\relationshipsmetadescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="SurfaceEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\surfaceenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="UserData" xml:space="preserve">
     <value>User Data</value>
@@ -1287,9 +1212,6 @@
   </data>
   <data name="CreditsDescriptionUI" xml:space="preserve">
     <value>Each credit give you access to either a complete Chart Reading or Compatibility Reading. You can also buy Credit Packs at a reduced price</value>
-  </data>
-  <data name="five_transformations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\five-transformations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="RelationshipCompatibilityCalculator" xml:space="preserve">
     <value>Relationship Compatibility Calculator</value>
@@ -4393,15 +4315,6 @@
   <data name="ChineseMethod" xml:space="preserve">
     <value>Chinese Method (Ascending Ki for Females)</value>
   </data>
-  <data name="DayStarDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\daystardescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="EpochEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\epochenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="GenerationalEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\generationalenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="InvertCycleEnergiesLabel" xml:space="preserve">
     <value>Use Ascending Ki for Predictions</value>
   </data>
@@ -5917,6 +5830,12 @@
   <data name="Alchemy" xml:space="preserve">
     <value>Alchemy</value>
   </data>
+  <data name="CharacterEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\general\en-gb\characterenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_energies_short_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\general\en-gb\character-energies.short-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="child_adult_same_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\adulttochildrelationship\en-gb\child-adult-same-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -5968,14 +5887,71 @@
   <data name="child_supports_adult_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\adulttochildrelationship\en-gb\titles\child-supports-adult-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="coreearth_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\trigrams\en-gb\coreearth-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DayStarDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\general\en-gb\daystardescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="dynamic_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modalities\en-gb\dynamic-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="earth_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>elements\en-gb\earth-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EpochEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\general\en-gb\epochenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>elements\en-gb\fire-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\trigrams\en-gb\fire-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="five_elements" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>elements\en-gb\five-elements.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="five_transformations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>elements\en-gb\five-transformations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="Generation" xml:space="preserve">
     <value>Generation</value>
+  </data>
+  <data name="GenerationalEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\general\en-gb\generationalenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\trigrams\en-gb\heaven-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\trigrams\en-gb\lake-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MainEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\general\en-gb\mainenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_energies_short_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\general\en-gb\main-energies.short-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="metal_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>elements\en-gb\metal-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="modalities_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modalities\en-gb\modalities-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\trigrams\en-gb\mountain-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="nine_energies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\general\en-gb\nine-energies.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Personality" xml:space="preserve">
     <value>Personality</value>
   </data>
   <data name="ProfileAlchemisedDescription" xml:space="preserve">
     <value>Alchemised Description BETA</value>
+  </data>
+  <data name="reflective_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modalities\en-gb\reflective-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\sexuality\en-gb\sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -6036,5 +6012,29 @@
   </data>
   <data name="sexuality_opposite_opposite_male_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\sexuality\en-gb\summary\sexuality-opposite-opposite-male-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\trigrams\en-gb\soil-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="stable_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modalities\en-gb\stable-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SurfaceEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\general\en-gb\surfaceenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\trigrams\en-gb\thunder-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="tree_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>elements\en-gb\tree-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>elements\en-gb\water-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\trigrams\en-gb\water-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\trigrams\en-gb\wind-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -751,8 +751,7 @@ namespace K9.WebApplication.Services
                 double daysSinceNewMoon = jd - newMoonJD;
 
                 // Lunar day: day one starts at the exact new moon.
-                // Here we simply take the integer part (floor) and add 1.
-                int lunarDay = (int)Math.Floor(daysSinceNewMoon) + 1;
+                int lunarDay = (int)Math.Round(daysSinceNewMoon) + 1;
 
                 return lunarDay;
             }
@@ -763,12 +762,12 @@ namespace K9.WebApplication.Services
         /// </summary>
         private double GetLastNewMoonJulianDate(double jd, SwissEph sweph)
         {
-            // Use an iterative search over a window (e.g., the last 5 days) to find when the phase angle is minimized.
-            // This first pass uses a coarse step.
+            // Extend the search window to 30 days to cover a full synodic month.
             double minPhase = 360.0;
             double minJD = jd;
             double step = 0.01; // step size in days (~14.4 minutes)
-            for (double currentJD = jd; currentJD > jd - 5; currentJD -= step)
+
+            for (double currentJD = jd; currentJD > jd - 30; currentJD -= step)
             {
                 double phaseAngle = GetPhaseAngle(currentJD, sweph);
                 if (phaseAngle < minPhase)

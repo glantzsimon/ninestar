@@ -3,6 +3,7 @@ using K9.WebApplication.Packages;
 using System;
 using System.Collections.Generic;
 using K9.Globalisation;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Services
 {
@@ -20,7 +21,7 @@ namespace K9.WebApplication.Services
             var moonPhase = _swissEphemerisService.GetMoonPhase(selectedDateTime, userTimeZoneId);
 
             moonPhase.LunarDayTitle = GetLunarDayTitle(moonPhase.LunarDay);
-            moonPhase.LunarDayDescription = GetLunarDayDescription(moonPhase.LunarDay);
+            moonPhase.LunarDayDescription = TemplateParser.Parse(GetLunarDayDescription(moonPhase.LunarDay), new { Illumination = $"({moonPhase.IlluminationDisplay})" });
 
             return moonPhase;
         }

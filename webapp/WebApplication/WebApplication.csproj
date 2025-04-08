@@ -378,6 +378,7 @@
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
     <Compile Include="Extensions\NumerologyExtensions.cs" />
     <Compile Include="Models\Astrology\MoonPhase.cs" />
+    <Compile Include="Options\PieChartOptions.cs" />
     <Compile Include="Services\IAITextMergeService.cs" />
     <Compile Include="Services\AITextMergeService.cs" />
     <Compile Include="Services\IAstrologyService.cs" />
@@ -618,6 +619,7 @@
     <Content Include="Content\sections\compatibility.css" />
     <Content Include="Content\sections\cookies.css" />
     <Content Include="Content\sections\footer.css" />
+    <Content Include="Content\sections\graphics.css" />
     <Content Include="Content\sections\iching.css" />
     <Content Include="Content\sections\knowledgebase.css" />
     <Content Include="Content\sections\mailing-lists.css" />
@@ -1374,6 +1376,7 @@
     <Content Include="Content\less\sections\mailing-lists.less" />
     <Content Include="Content\less\sections\numerology.less" />
     <Content Include="Content\less\sections\astrology.less" />
+    <Content Include="Content\less\sections\graphics.less" />
     <None Include="packages.config" />
     <Content Include="Properties\PublishProfiles\.gitattributes" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
@@ -1725,6 +1728,7 @@
     <Content Include="Views\PersonalChart\_ProfileSexualityRelationTypeSummary.cshtml" />
     <Content Include="Views\Predictions\_LunarCycle.cshtml" />
     <Content Include="Views\Astrology\_MoonPhaseLarge.cshtml" />
+    <Content Include="Views\Shared\Charts\_PieChart.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

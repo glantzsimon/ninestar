@@ -1,0 +1,19 @@
+﻿@model K9.WebApplication.Options.PieChartOptions
+
+@{
+    double total = Model.PieChartItems.Sum(x => x.Value);
+    double current = 0;
+    var segments = new List<string>();
+
+    foreach (var item in Model.PieChartItems)
+    {
+        double start = current;
+        double end = current + item.Value;
+        segments.Add($"{item.Color} {start}% {end}%");
+        current = end;
+    }
+
+    var gradient = string.Join(", ", segments);
+}
+
+<div class="pie-chart" style="background: conic-gradient(@gradient);"></div>

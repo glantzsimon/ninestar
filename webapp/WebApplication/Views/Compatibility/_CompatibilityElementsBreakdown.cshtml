@@ -1,3 +1,60 @@
-﻿@model K9.WebApplication.Models.CompatibilityModel
+﻿@using K9.WebApplication.Options
+@model K9.WebApplication.Models.CompatibilityModel
+
+@{
+    var data = Model.CompatibilityDetails.ElementCompatibility.GetTransformationFractions();
+    var pieChartOptions = new PieChartOptions
+    {
+        PieChartItems = new List<PieChartItem>
+{
+new PieChartItem {Color = "#22BB44", Title = Dictionary.SupportiveElements, Value = (int) data.SupportivePercentage},
+new PieChartItem {Color = "#0074E4", Title = Dictionary.SiblingElements, Value = (int) data.SiblingPercentage},
+new PieChartItem {Color = "red", Title = Dictionary.ChallengingElements, Value = (int) data.ChallengingPercentage}
+}
+    };
+}
+
+<div class="compatibility-elements-breakdown">
+
+    @Html.Partial("Charts/_PieChart", pieChartOptions)
+
+    <div class="container main-content clear-both ninestar-header-container margin-top-5 margin-bottom-20">
+        <div class="row margin-bottom-10">
+            <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+                <div class="ninestar-summary-container margin-3">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="legend-dot" style="background-color: green;"></span>
+                                        <strong>@Dictionary.SupportiveElements</strong>
+                                    </td>
+                                    <td>@(data.SupportivePercentage.ToString("0"))%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="legend-dot" style="background-color: red;"></span>
+                                        <strong>@Dictionary.ChallengingElements</strong>
+                                    </td>
+                                    <td>@(data.ChallengingPercentage.ToString("0"))%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="legend-dot" style="background-color: blue;"></span>
+                                        <strong>@Dictionary.SiblingElements</strong>
+                                    </td>
+                                    <td>@(data.SiblingPercentage.ToString("0"))%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
 
 @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.AllOtherElementsCompatibility)

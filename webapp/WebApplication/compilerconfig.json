@@ -21,6 +21,13 @@
     }
   },
   {
+    "inputFile": "Content/less/sections/graphics.less",
+    "outputFile": "Content/sections/graphics.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/sections/numerology.less",
     "outputFile": "Content/sections/numerology.css",
     "options": {

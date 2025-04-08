@@ -2,16 +2,19 @@
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
-using K9.SharedLibrary.Helpers;
-using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Controllers
 {
@@ -105,16 +108,20 @@ namespace K9.WebApplication.Controllers
                 model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate,
                     ECalculationMethod.Chinese, true, false, personModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, false, false, displayFor);
                 model.SelectedDate = selectedDate;
-                
-                return Json(new { success = true, data = new
+
+                return Json(new
                 {
-                    NineYearlyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Generation),
-                    YearlyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Year),
-                    MonthlyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Month),
-                    DailyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Day),
-                    LunarPercentageOfIllumination = model.MoonPhase.IlluminationDisplay,
-                    model.MoonPhase.LunarDayDescription
-                } }, JsonRequestBehavior.AllowGet);
+                    success = true,
+                    data = new
+                    {
+                        NineYearlyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Generation),
+                        YearlyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Year),
+                        MonthlyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Month),
+                        DailyPrediction = new NineStarKiEnergyCycleSummary(model.PersonalHousesOccupiedEnergies.Day),
+                        LunarPercentageOfIllumination = model.MoonPhase.IlluminationDisplay,
+                        model.MoonPhase.LunarDayDescription
+                    }
+                }, JsonRequestBehavior.AllowGet);
             });
         }
 
@@ -146,15 +153,19 @@ namespace K9.WebApplication.Controllers
                 };
 
                 var model = _nineStarKiService.CalculateCompatibility(personModel1, personModel2, !displaySexualChemistry, ECalculationMethod.Chinese);
-                
-                return Json(new { success = true, data = new
+
+                return Json(new
                 {
-                    NineStarKiSummaryModel1 = new NineStarKiSummaryModel(model.NineStarKiModel1),
-                    NineStarKiSummaryModel2 = new NineStarKiSummaryModel(model.NineStarKiModel2),
-                    model.FundamentalEnergiesCompatibility,
-                    SexualChemistryDetails = displaySexualChemistry ? model.SexualChemistryDetails : "",
-                    model.CompatibilityDetails
-                } }, JsonRequestBehavior.AllowGet);
+                    success = true,
+                    data = new
+                    {
+                        NineStarKiSummaryModel1 = new NineStarKiSummaryModel(model.NineStarKiModel1),
+                        NineStarKiSummaryModel2 = new NineStarKiSummaryModel(model.NineStarKiModel2),
+                        model.FundamentalEnergiesCompatibility,
+                        SexualChemistryDetails = displaySexualChemistry ? model.SexualChemistryDetails : "",
+                        model.CompatibilityDetails
+                    }
+                }, JsonRequestBehavior.AllowGet);
             });
         }
 
@@ -215,6 +226,106 @@ namespace K9.WebApplication.Controllers
             }
 
             return Json(new { success = true, data = model }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        [Route("deploy/upload")]
+        public JsonResult UploadFile(HttpPostedFileBase file)
+        {
+            return Validate(null, () =>
+            {
+                try
+                {
+                    if (file == null || file.ContentLength == 0)
+                    {
+                        return Json(new { success = false, error = "No file uploaded" });
+                    }
+
+                    var allowedExtensions = new[] { ".dll", ".pdb", ".cshtml" };
+                    var extension = Path.GetExtension(file.FileName);
+                    if (!allowedExtensions.Contains(extension, StringComparer.OrdinalIgnoreCase))
+                    {
+                        return Json(new { success = false, error = "File type not allowed" });
+                    }
+
+                    string destinationPath;
+
+                    if (extension.Equals(".dll", StringComparison.OrdinalIgnoreCase) ||
+                        extension.Equals(".pdb", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Send to /bin folder
+                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "bin", Path.GetFileName(file.FileName));
+                    }
+                    else if (extension.Equals(".cshtml", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Preserve subfolder for views
+                        var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
+                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "views", relativePath);
+                    }
+                    else
+                    {
+                        return Json(new { success = false, error = "Unsupported file type" });
+                    }
+
+                    // Create necessary directories if they do not exist
+                    var directory = Path.GetDirectoryName(destinationPath);
+                    if (!Directory.Exists(directory))
+                    {
+                        Directory.CreateDirectory(directory);
+                    }
+
+                    // Save the file to the destination
+                    file.SaveAs(destinationPath);
+
+                    return Json(new { success = true, message = "File uploaded successfully" });
+                }
+                catch (Exception e)
+                {
+                    return Json(new { success = false, error = e.Message });  // Simplified for standard error message handling
+                }
+            });
+        }
+
+        [HttpPost]
+        [Route("deploy/run-maintenance")]
+        public JsonResult RunMaintenanceScript()
+        {
+            return Validate(null, () =>
+            {
+                try
+                {
+                    // The script path for the PowerShell deployment script
+                    var scriptPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, My.DefaultValuesConfiguration.VaultDeployScript);
+
+                    var processStartInfo = new ProcessStartInfo
+                    {
+                        FileName = "powershell.exe",
+                        Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true
+                    };
+
+                    using (var process = Process.Start(processStartInfo))
+                    {
+                        process.WaitForExit();
+                        if (process.ExitCode != 0)
+                        {
+                            var error = process.StandardError.ReadToEnd();
+                            throw new Exception($"Error executing script: {error}");
+                        }
+
+                        var output = process.StandardOutput.ReadToEnd();
+                        Console.WriteLine(output);
+                    }
+
+                    return Json(new { success = true, message = "Maintenance script executed successfully." });
+                }
+                catch (Exception ex)
+                {
+                    return Json(new { success = false, error = $"Failed to run maintenance script: {ex.Message}" });
+                }
+            });
         }
 
         private JsonResult Validate(string accountNumber, Func<JsonResult> method)

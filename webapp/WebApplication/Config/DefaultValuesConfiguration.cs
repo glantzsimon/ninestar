@@ -18,6 +18,8 @@ namespace K9.WebApplication.Config
         public string SiteBaseUrl { get; set; }
         public string CompanyAddress { get; set; }
         public string SwephPath { get; set; }
+        public string VaultPath { get; set; }
+        public string VaultDeployScript { get; set; }
         public int EmailQueueMaxBatchSize { get; set; } = 20;
 
         public SystemSetting SystemSettings { get; set; }

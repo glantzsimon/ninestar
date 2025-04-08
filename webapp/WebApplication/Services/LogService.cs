@@ -115,16 +115,18 @@ namespace K9.WebApplication.Services
                 return true;
             }
 
+            var lineLower = line.ToLower();
+
             // Skip if the line contains any of these markers.
-            if (line.Contains(withResultsAs) ||
-                line.Contains(dataTablesDef) ||
-                line.Contains(dataTablesDef2))
+            if (lineLower.Contains(withResultsAs) ||
+                lineLower.Contains(dataTablesDef) ||
+                lineLower.Contains(dataTablesDef2))
             {
                 return true;
             }
 
             // Skip if the line contains any Hangfire-specific entry.
-            if (hangFireEntries.Any(entry => line.Contains(entry)))
+            if (hangFireEntries.Any(entry => lineLower.Contains(entry)))
             {
                 return true;
             }

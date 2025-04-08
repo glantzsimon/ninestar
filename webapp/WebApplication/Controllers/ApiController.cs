@@ -245,6 +245,7 @@ namespace K9.WebApplication.Controllers
                     var extension = Path.GetExtension(file.FileName);
                     if (!allowedExtensions.Contains(extension, StringComparer.OrdinalIgnoreCase))
                     {
+                        My.Logger.Error("File type not allowed");
                         return Json(new { success = false, error = "File type not allowed" });
                     }
 
@@ -267,15 +268,19 @@ namespace K9.WebApplication.Controllers
                         return Json(new { success = false, error = "Unsupported file type" });
                     }
 
+                    My.Logger.Info($"Destination path: {destinationPath}");
+
                     // Create necessary directories if they do not exist
                     var directory = Path.GetDirectoryName(destinationPath);
                     if (!Directory.Exists(directory))
                     {
                         Directory.CreateDirectory(directory);
+                        My.Logger.Info($"Directory path created: {directory}");
                     }
 
                     // Save the file to the destination
                     file.SaveAs(destinationPath);
+                    My.Logger.Info($"File saved to: {destinationPath}");
 
                     return Json(new { success = true, message = "File uploaded successfully" });
                 }

@@ -573,6 +573,104 @@ namespace K9.WebApplication.Models
             return sb.ToString();
         }
 
+        private (double SupportivePercentage, double ChallengingPercentage, double SiblingPercentage)
+            GetTransformationFractions()
+        {
+            // Golden ratio
+            double surfaceFactor = 3;
+            double characterFactor = 5;
+            double mainFactor = 8;
+
+            double supportiveTotal = 0;
+            double challengingTotal = 0;
+            double siblingTotal = 0;
+
+            if (FundamentalElementsAreSupportive)
+            {
+                supportiveTotal += mainFactor * 2;
+            }
+            if (FundamentalEnergiesAreSame || FundamentalEnergiesAreSameEnergy)
+            {
+                siblingTotal += mainFactor * 2;
+            }
+            if (FundamentalEnergiesAreChallenging)
+            {
+                challengingTotal += mainFactor * 2;
+            }
+
+            if (CharacterEnergiesAreSupportive)
+            {
+                supportiveTotal += characterFactor * 2;
+            }
+            if (CharacterEnergiesAreSame || CharacterEnergiesAreSameEnergy)
+            {
+                siblingTotal += characterFactor * 2;
+            }
+            if (CharacterEnergiesAreChallenging)
+            {
+                challengingTotal += characterFactor * 2;
+            }
+
+            if (SurfaceEnergiesAreSupportive)
+            {
+                supportiveTotal += surfaceFactor * 2;
+            }
+            if (SurfaceEnergiesAreSame || SurfaceEnergiesAreSameEnergy)
+            {
+                siblingTotal += surfaceFactor * 2;
+            }
+            if (SurfaceEnergiesAreChallenging)
+            {
+                challengingTotal += surfaceFactor * 2;
+            }
+
+            if (FundamentalEnergy1ToCharacterEnergy2IsSupportive || FundamentalEnergy2ToCharacterEnergy1IsSupportive)
+            {
+                supportiveTotal += characterFactor + mainFactor;
+            }
+            if (FundamentalEnergy1ToSurfaceEnergy2IsSupportive || FundamentalEnergy2ToSurfaceEnergy1IsSupportive)
+            {
+                supportiveTotal += surfaceFactor + mainFactor;
+            }
+            if (CharacterEnergy1ToSurfaceEnergy2IsSupportive || CharacterEnergy2ToSurfaceEnergy1IsSupportive)
+            {
+                supportiveTotal += surfaceFactor + characterFactor;
+            }
+
+            if (FundamentalEnergy1ToCharacterEnergy2IsSame || FundamentalEnergy2ToCharacterEnergy1IsSame)
+            {
+                siblingTotal += mainFactor + characterFactor;
+            }
+            if (FundamentalEnergy1ToSurfaceEnergy2IsSame || FundamentalEnergy2ToSurfaceEnergy1IsSame)
+            {
+                siblingTotal += mainFactor + surfaceFactor;
+            }
+            if (CharacterEnergy1ToSurfaceEnergy2IsSame || CharacterEnergy2ToSurfaceEnergy1IsSame)
+            {
+                siblingTotal += characterFactor + surfaceFactor;
+            }
+
+            if (FundamentalEnergy1ToCharacterEnergy2IsChallenging || FundamentalEnergy2ToCharacterEnergy1IsChallenging)
+            {
+                challengingTotal += mainFactor + characterFactor;
+            }
+            if (FundamentalEnergy1ToSurfaceEnergy2IsChallenging || FundamentalEnergy2ToSurfaceEnergy1IsChallenging)
+            {
+                challengingTotal += mainFactor + surfaceFactor;
+            }
+            if (CharacterEnergy1ToSurfaceEnergy2IsChallenging || CharacterEnergy2ToSurfaceEnergy1IsChallenging)
+            {
+                challengingTotal += characterFactor + surfaceFactor;
+            }
+
+            var total = supportiveTotal + challengingTotal + siblingTotal;
+            var supportivePercentage = (supportiveTotal / total) * 100;
+            var challengingPercentage = (challengingTotal / total) * 100;
+            var siblingPercentage = (siblingTotal / total) * 100;
+
+            return (supportivePercentage, challengingPercentage, siblingPercentage);
+        }
+
         private string GetElementsCompatibility()
         {
             var sb = new StringBuilder();
@@ -585,9 +683,11 @@ namespace K9.WebApplication.Models
             var supportiveItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Supports || e.Item1 == ETransformationType.IsSupported);
             var sameItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Sibling);
 
+            var fractions = GetTransformationFractions();
+
             if (supportiveItems.Any())
             {
-                sbSupport.AppendLine($"<h4>{Globalisation.Dictionary.SupportiveElements} ({Score.SupportiveScoreAsPercentage.ToString("0")}%)</h4>");
+                sbSupport.AppendLine($"<h4>{Globalisation.Dictionary.SupportiveElements} ({fractions.SupportivePercentage.ToString("0")}%)</h4>");
                 foreach (var item in supportiveItems)
                 {
                     sbSupport.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
@@ -596,7 +696,7 @@ namespace K9.WebApplication.Models
 
             if (sameItems.Any())
             {
-                sbSame.AppendLine($"<h4>{Globalisation.Dictionary.SiblingElements} ({Score.SameScoreAsPercentage.ToString("0")}%)</h4>");
+                sbSame.AppendLine($"<h4>{Globalisation.Dictionary.SiblingElements} ({fractions.SiblingPercentage.ToString("0")}%)</h4>");
                 foreach (var item in sameItems)
                 {
                     sbSame.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
@@ -605,7 +705,7 @@ namespace K9.WebApplication.Models
 
             if (challengingItems.Any())
             {
-                sbChallenge.AppendLine($"<h4>{Globalisation.Dictionary.ChallengingElements} ({Score.ChallengingAsPercentage.ToString("0")}%)</h4>");
+                sbChallenge.AppendLine($"<h4>{Globalisation.Dictionary.ChallengingElements} ({fractions.ChallengingPercentage.ToString("0")}%)</h4>");
                 foreach (var item in challengingItems)
                 {
                     sbChallenge.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));

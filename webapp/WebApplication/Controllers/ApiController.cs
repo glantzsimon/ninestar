@@ -12,6 +12,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
@@ -241,7 +242,7 @@ namespace K9.WebApplication.Controllers
                         return Json(new { success = false, error = "No file uploaded" });
                     }
 
-                    var allowedExtensions = new[] { ".dll", ".pdb", ".cshtml" };
+                    var allowedExtensions = new[] { ".dll", ".pdb", ".cshtml", ".less", ".png", ".jpg", ".jpeg" };
                     var extension = Path.GetExtension(file.FileName);
                     if (!allowedExtensions.Contains(extension, StringComparer.OrdinalIgnoreCase))
                     {
@@ -262,6 +263,20 @@ namespace K9.WebApplication.Controllers
                         // Preserve subfolder for views
                         var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
                         destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "views", relativePath);
+                    }
+                    else if (extension.Equals(".less", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Preserve subfolder for less
+                        var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
+                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "less", relativePath);
+                    }
+                    else if (extension.Equals(".png", StringComparison.OrdinalIgnoreCase) || 
+                             extension.Equals(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                             extension.Equals(".jpeg", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Preserve subfolder for images
+                        var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
+                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "images", relativePath);
                     }
                     else
                     {
@@ -299,7 +314,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    // The script path for the PowerShell deployment script
+                    // Build the script path from configuration
                     var scriptPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, My.DefaultValuesConfiguration.VaultDeployScript);
 
                     var processStartInfo = new ProcessStartInfo
@@ -308,20 +323,60 @@ namespace K9.WebApplication.Controllers
                         Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"",
                         UseShellExecute = false,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        CreateNoWindow = true
                     };
 
-                    using (var process = Process.Start(processStartInfo))
+                    var outputBuilder = new StringBuilder();
+                    var errorBuilder = new StringBuilder();
+
+                    using (var process = new Process())
                     {
-                        process.WaitForExit();
-                        if (process.ExitCode != 0)
+                        process.StartInfo = processStartInfo;
+
+                        // Set up asynchronous output event handlers.
+                        process.OutputDataReceived += (sender, args) =>
+                                {
+                                    if (!string.IsNullOrEmpty(args.Data))
+                                    {
+                                        outputBuilder.AppendLine(args.Data);
+                                    }
+                                };
+
+                        process.ErrorDataReceived += (sender, args) =>
                         {
-                            var error = process.StandardError.ReadToEnd();
-                            throw new Exception($"Error executing script: {error}");
+                            if (!string.IsNullOrEmpty(args.Data))
+                            {
+                                errorBuilder.AppendLine(args.Data);
+                            }
+                        };
+
+                        process.Start();
+
+                        // Begin asynchronous reading.
+                        process.BeginOutputReadLine();
+                        process.BeginErrorReadLine();
+
+                        // Wait for the process to exit; use a timeout (e.g., 60 seconds)
+                        const int timeoutMilliseconds = 60000;
+                        if (!process.WaitForExit(timeoutMilliseconds))
+                        {
+                            // If the process doesn't exit in time, kill it and throw an error.
+                            process.Kill();
+                            throw new Exception("Process timed out.");
                         }
 
-                        var output = process.StandardOutput.ReadToEnd();
-                        Console.WriteLine(output);
+                        // Ensure asynchronous output events have flushed.
+                        process.WaitForExit();
+
+                        // If the process returned a non-zero exit code, throw an exception with the error output.
+                        if (process.ExitCode != 0)
+                        {
+                            throw new Exception($"Error executing script: {errorBuilder.ToString()}");
+                        }
+
+                        // Optionally log or output the captured output.
+                        Console.WriteLine(outputBuilder.ToString());
                     }
 
                     return Json(new { success = true, message = "Maintenance script executed successfully." });

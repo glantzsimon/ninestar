@@ -36,7 +36,7 @@ namespace K9.WebApplication.Controllers
                 {
                     var processedModel = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel, model.IsHideSexualChemistry, model.NineStarKiModel1.CalculationMethod);
 
-                    return View("Index", model);
+                    return View("Index", processedModel);
                 }
             }
             return View("Index", model);

@@ -5,6 +5,7 @@ namespace K9.WebApplication.Options
     public class PieChartOptions
     {
         public List<PieChartItem> PieChartItems { get; set; }
+        public bool ShowLegend { get; set; } = true;
     }
 
     public class PieChartItem

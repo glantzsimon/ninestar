@@ -1799,6 +1799,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
     <IncludeSetACLProviderOnDestination>False</IncludeSetACLProviderOnDestination>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production2|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>

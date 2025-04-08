@@ -72,13 +72,18 @@ foreach ($file in $cshtmlFiles) {
 }
 
 # --- Restart Application Pool ---
-Write-Host "`n🔄 Restarting application pool: $appPool"
-try {
-    Import-Module WebAdministration
-    Restart-WebAppPool -Name $appPool
-    Write-Host "✅ App pool '$appPool' restarted successfully."
-} catch {
-    Write-Warning "⚠️ Failed to restart app pool '$appPool': $($_.Exception.Message)"
+# --- Restart Application Pool (only if files were found in vault\bin) ---
+if ($files.Count -gt 0) {
+    Write-Host "`n🔄 Restarting application pool: $appPool"
+    try {
+        Import-Module WebAdministration
+        Restart-WebAppPool -Name $appPool
+        Write-Host "✅ App pool '$appPool' restarted successfully."
+    } catch {
+        Write-Warning "⚠️ Failed to restart app pool '$appPool': $($_.Exception.Message)"
+    }
+} else {
+    Write-Host "`nNo files were found in vault/bin, so the application pool restart was skipped."
 }
 
 Write-Host "`n🎉 Deployment complete.`n"

@@ -242,7 +242,7 @@ namespace K9.WebApplication.Controllers
                         return Json(new { success = false, error = "No file uploaded" });
                     }
 
-                    var allowedExtensions = new[] { ".dll", ".pdb", ".cshtml", ".less", ".png", ".jpg", ".jpeg" };
+                    var allowedExtensions = new[] { ".dll", ".pdb", ".cshtml", ".css", ".png", ".jpg", ".jpeg" };
                     var extension = Path.GetExtension(file.FileName);
                     if (!allowedExtensions.Contains(extension, StringComparer.OrdinalIgnoreCase))
                     {

@@ -1,3 +1,7 @@
+Create Elements breakdown including Zodiac (percentages)
+
+--
+
 Add birth time and time zone to MyAccount. - Add UserData model
 
 --
@@ -7,10 +11,6 @@ ChatGPT to create overall summary for each 81 combinations from existing one plu
 --
 
 ChatGPT to create synergy taking into account sun sign, ascendant and moon
-
---
-
-Create Elements breakdown including Zodiac (percentages)
 
 --
 

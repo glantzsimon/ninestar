@@ -7,7 +7,7 @@ $vaultImagesPath   = "C:\inetpub\vhosts\9starkiastrology.com\vault\images"
 $destBinPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\bin"
 $destViewsPath     = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Views"
 $destCssPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Content"
-$destImagesPath    = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Content\images"
+$destImagesPath    = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Images"
 
 $appPool           = "9starkiastrology.com(domain)(4.0)(pool)"
 

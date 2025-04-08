@@ -264,11 +264,11 @@ namespace K9.WebApplication.Controllers
                         var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
                         destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "views", relativePath);
                     }
-                    else if (extension.Equals(".less", StringComparison.OrdinalIgnoreCase))
+                    else if (extension.Equals(".css", StringComparison.OrdinalIgnoreCase))
                     {
                         // Preserve subfolder for less
                         var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
-                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "less", relativePath);
+                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "css", relativePath);
                     }
                     else if (extension.Equals(".png", StringComparison.OrdinalIgnoreCase) || 
                              extension.Equals(".jpg", StringComparison.OrdinalIgnoreCase) ||

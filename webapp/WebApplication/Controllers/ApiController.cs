@@ -242,7 +242,7 @@ namespace K9.WebApplication.Controllers
                         return Json(new { success = false, error = "No file uploaded" });
                     }
 
-                    var allowedExtensions = new[] { ".dll", ".pdb", ".cshtml", ".css", ".png", ".jpg", ".jpeg" };
+                    var allowedExtensions = new[] { ".dll", ".pdb", ".cshtml", ".css", ".png", ".jpg", ".jpeg", ".js" };
                     var extension = Path.GetExtension(file.FileName);
                     if (!allowedExtensions.Contains(extension, StringComparer.OrdinalIgnoreCase))
                     {
@@ -269,6 +269,12 @@ namespace K9.WebApplication.Controllers
                         // Preserve subfolder for less
                         var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
                         destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "css", relativePath);
+                    }
+                    else if (extension.Equals(".js", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Preserve subfolder for javascript
+                        var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
+                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "scripts", relativePath);
                     }
                     else if (extension.Equals(".png", StringComparison.OrdinalIgnoreCase) || 
                              extension.Equals(".jpg", StringComparison.OrdinalIgnoreCase) ||

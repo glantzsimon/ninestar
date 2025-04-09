@@ -2,11 +2,13 @@
 $vaultBinPath      = "C:\inetpub\vhosts\9starkiastrology.com\vault\bin"
 $vaultViewsPath    = "C:\inetpub\vhosts\9starkiastrology.com\vault\views"
 $vaultCssPath      = "C:\inetpub\vhosts\9starkiastrology.com\vault\css"
+$vaultScriptsPath      = "C:\inetpub\vhosts\9starkiastrology.com\vault\scripts"
 $vaultImagesPath   = "C:\inetpub\vhosts\9starkiastrology.com\vault\images"
 
 $destBinPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\bin"
 $destViewsPath     = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Views"
 $destCssPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Content"
+$destScriptsPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Scripts"
 $destImagesPath    = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Images"
 
 $appPool           = "9starkiastrology.com(domain)(4.0)(pool)"
@@ -95,8 +97,36 @@ foreach ($file in $cssFiles) {
     }
 }
 
+# --- Copy .js Files ---
+$jsFiles = Get-ChildItem -Path "$vaultScriptsPath\*" -Filter *.js -Recurse -Force
+Write-Host "`n🎨 Found $($jsFiles.Count) .js files to copy."
+
+foreach ($file in $jsFiles) {
+    $sourcePath = $file.FullName
+    $relativePath = $file.FullName.Substring($vaultScriptsPath.Length).TrimStart('\')
+    $destPath = Join-Path $destScriptsPath $relativePath
+
+    Write-Host "Copying Scripts: $sourcePath"
+    try {
+        $destFolder = [System.IO.Path]::GetDirectoryName($destPath)
+        if (-not (Test-Path $destFolder)) {
+            New-Item -ItemType Directory -Path $destFolder -Force | Out-Null
+        }
+
+        Copy-Item -Path $sourcePath -Destination $destPath -Force -ErrorAction Stop -Verbose
+        Write-Host "✅ Copied Js $($file.Name) to $destPath"
+
+        if (Test-Path $destPath) {
+            Remove-Item -Path $sourcePath -Force -ErrorAction Stop
+            Write-Host "🗑 Deleted Js $($file.Name) from vault"
+        }
+    } catch {
+        Write-Warning "❌ Failed to copy Js $($file.Name): $($_.Exception.Message)"
+    }
+}
+
 # --- Copy Images ---
-$imageExtensions = @("*.png", "*.jpg", "*.jpeg")
+$imageExtensions = @("*.png", "*.jpg", "*.jpeg", "*.PNG", "*.JPG", "*.JPEG")
 $imageFiles = @()
 foreach ($ext in $imageExtensions) {
     $imageFiles += Get-ChildItem -Path "$vaultImagesPath" -Include $ext -Recurse -File -Force

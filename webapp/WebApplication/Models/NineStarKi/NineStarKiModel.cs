@@ -521,6 +521,7 @@ namespace K9.WebApplication.Models
                 GlobalKi = GlobalCycleEnergies.Hour,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Hour,
                 PersonalChartEnergy = PersonalChartEnergies.Hour,
+                IsSplit = isDualView,
                 SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
                 {
                     GlobalKi = GlobalCycleEnergies.Month,

@@ -2806,6 +2806,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Advanced.
+        /// </summary>
+        public static string Advanced {
+            get {
+                return ResourceManager.GetString("Advanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advanced Calculator.
+        /// </summary>
+        public static string AdvancedCalculator {
+            get {
+                return ResourceManager.GetString("AdvancedCalculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advisor.
         /// </summary>
         public static string Advisor {
@@ -3779,6 +3797,15 @@ namespace K9.Globalisation {
         public static string Calculator {
             get {
                 return ResourceManager.GetString("Calculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculator Type.
+        /// </summary>
+        public static string CalculatorTypeLabel {
+            get {
+                return ResourceManager.GetString("CalculatorTypeLabel", resourceCulture);
             }
         }
         
@@ -18143,6 +18170,24 @@ namespace K9.Globalisation {
         public static string SignUpToNewsLetter {
             get {
                 return ResourceManager.GetString("SignUpToNewsLetter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simple.
+        /// </summary>
+        public static string Simple {
+            get {
+                return ResourceManager.GetString("Simple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simple Calculator.
+        /// </summary>
+        public static string SimpleCalculator {
+            get {
+                return ResourceManager.GetString("SimpleCalculator", resourceCulture);
             }
         }
         

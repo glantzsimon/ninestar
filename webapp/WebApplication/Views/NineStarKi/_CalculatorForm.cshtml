@@ -6,10 +6,25 @@
 @{
     var activeUserMembership = this.GetActiveUserMembership();
     var isUnlimited = activeUserMembership != null && activeUserMembership.IsUnlimited() || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
+    var simpleChecked = Model.CalculatorType == ECalculatorType.Simple ? "checked" : "";
+    var advancedChecked = Model.CalculatorType == ECalculatorType.Advanced ? "checked" : "";
 }
 
 @using (Html.BeginBootstrapForm())
 {
+    <div class="float-right d-flex align-items-center calculator-options">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="@nameof(Model.CalculatorType)" id="simple-calculator" value="@((int)ECalculatorType.Simple)" @simpleChecked>
+            <label class="form-check-label" for="simple-calculator">@Dictionary.SimpleCalculator</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="@nameof(Model.CalculatorType)" id="advanced-calculator" value="@((int)ECalculatorType.Advanced)" @advancedChecked>
+            <label class="form-check-label" for="advanced-calculator">@Dictionary.AdvancedCalculator</label>
+        </div>
+    </div>
+
+    <hr />
+
     <label>@Dictionary.CalculationMethodLabel</label>
     <a target="_blank" href="@Url.Action("CalculationMethods","Home")"><i class="fa fa-question-circle"></i></a>
 
@@ -20,9 +35,9 @@
 
     if (isUnlimited)
     {
-        if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
-        {
-            if (Model.IsPredictionsScreen)
+        <div class="form-options advanced-calculator-options">
+
+            @if (Model.IsPredictionsScreen)
             {
                 <label>@Dictionary.HousesDisplayLabel</label>
                 <a target="_blank" href="@Url.Action("CalculationMethods","Home")"><i class="fa fa-question-circle"></i></a>
@@ -31,12 +46,7 @@
                 {
                     Label= ""
                 })
-            }
-        }
 
-        <div class="form-options">
-            @if (Model.IsPredictionsScreen)
-            {
                 @Html.CheckBoxFor(model => model.InvertDailyAndHourlyCycleKiForSouthernHemisphere)
                 <label>@Dictionary.InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel</label>
                 <p class="hint">@Dictionary.OptionalForSouthernHemisphere</p>
@@ -45,6 +55,7 @@
             @Html.CheckBoxFor(model => model.InvertDailyAndHourlyKiForSouthernHemisphere)
             <label>@Dictionary.InvertDailyAndHourlyKiForSouthernHemisphereLabel</label>
             <p class="hint">@Dictionary.OptionalForSouthernHemisphere</p>
+
         </div>
     }
 

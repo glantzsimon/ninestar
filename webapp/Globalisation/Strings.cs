@@ -32,6 +32,7 @@
             public const string ShowDirectionsLabel = "ShowDirectionsLabel";
             public const string EnergyDisplayLabel = "EnergyDisplayLabel";
             public const string HousesDisplayLabel = "HousesDisplayLabel";
+            public const string CalculatorTypeLabel = "CalculatorTypeLabel";
             public const string CalculationMethodLabel = "CalculationMethodLabel";
             public const string InvertDailyAndHourlyKiForSouthernHemisphereLabel = "InvertDailyAndHourlyKiForSouthernHemisphereLabel";
             public const string InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel = "InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel";
@@ -386,6 +387,9 @@
             public const string TraditionalNineStarKi = "TraditionalNineStarKi";
             public const string ChineseMethod = "ChineseMethod";
             public const string HolographicMethod = "HolographicMethod";
+
+            public const string Advanced = "Advanced";
+            public const string Simple = "Simple";
 
             public const string Spring = "Spring";
             public const string Summer = "Summer";

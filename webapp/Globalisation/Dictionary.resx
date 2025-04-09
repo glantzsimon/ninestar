@@ -6040,6 +6040,15 @@
   <data name="wind_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\trigrams\en-gb\wind-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="AdvancedCalculator" xml:space="preserve">
+    <value>Advanced Calculator</value>
+  </data>
+  <data name="CalculatorTypeLabel" xml:space="preserve">
+    <value>Calculator Type</value>
+  </data>
   <data name="IsEnabledAlchemyLabel" xml:space="preserve">
     <value>Is Alchemy Enabled</value>
   </data>
@@ -6225,6 +6234,12 @@
   </data>
   <data name="Receptive" xml:space="preserve">
     <value>Receptive</value>
+  </data>
+  <data name="Simple" xml:space="preserve">
+    <value>Simple</value>
+  </data>
+  <data name="SimpleCalculator" xml:space="preserve">
+    <value>Simple Calculator</value>
   </data>
   <data name="SolarAndLunarHouses" xml:space="preserve">
     <value>Solar And Lunar Houses</value>

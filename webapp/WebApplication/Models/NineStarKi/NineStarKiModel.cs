@@ -25,6 +25,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculationMethodLabel)]
         public ECalculationMethod CalculationMethod { get; set; }
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculatorTypeLabel)]
+        public ECalculatorType CalculatorType { get; set; }
+
         [UIHint("HousesDisplay")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HousesDisplayLabel)]
         public EHousesDisplay HousesDisplay { get; set; }
@@ -51,7 +54,7 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ShowDirectionsLabel)]
         public bool ShowDirections { get; set; }
-
+        
         [ScriptIgnore]
         public bool IsCycleSwitchActive => EnableCycleSwitch && SelectedDate >= CYCLE_SWITCH_DATE;
 

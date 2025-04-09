@@ -4754,7 +4754,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to * Includes an optional complimentary one-hour consultation!.
+        ///   Looks up a localized string similar to Includes an optional complimentary one-hour consultation!.
         /// </summary>
         public static string ComplimentaryConsultationTitle {
             get {

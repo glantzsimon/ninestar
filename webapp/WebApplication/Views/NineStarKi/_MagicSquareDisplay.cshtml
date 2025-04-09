@@ -44,10 +44,14 @@
 <div class="magic-square-display" style="@magicStyle">
     <div class="ninestar-summary-container margin-3">
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
-        <p class="margin-bottom-2">@houseDetails</p>
         @if (Model.IsDualView)
         {
-            <p class="margin-bottom-2">@houseDetails2</p>
+            <p class="margin-bottom-0">@houseDetails</p>
+            <p class="margin-bottom-10" style="line-height: 1.2em !important;">@houseDetails2</p>
+        }
+        else
+        {
+            <p class="margin-bottom-2">@houseDetails</p>
         }
         @Html.Partial("../NineStarKi/_MagicSquare", Model)
 

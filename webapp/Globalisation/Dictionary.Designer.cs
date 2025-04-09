@@ -9497,7 +9497,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View Global Ki.
+        ///   Looks up a localized string similar to Global Ki.
         /// </summary>
         public static string GlobalView {
             get {
@@ -16207,7 +16207,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View Personal Houses Occupied.
+        ///   Looks up a localized string similar to Personal Houses.
         /// </summary>
         public static string PersonalView {
             get {

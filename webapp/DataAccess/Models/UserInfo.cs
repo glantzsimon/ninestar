@@ -11,7 +11,7 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.UserInfos, PluralName = Strings.Names.UserInfos, Name = Strings.Names.UserInfo)]
     public class UserInfo : ObjectBase
     {
-        public Guid UniqueIdentifier { get; set; } = new Guid();
+        public Guid UniqueIdentifier { get; set; } = Guid.NewGuid();
 
         [UIHint("User")]
         [Required]

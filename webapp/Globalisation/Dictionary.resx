@@ -5534,7 +5534,7 @@
     <value>Child Natal House</value>
   </data>
   <data name="GlobalView" xml:space="preserve">
-    <value>View Global Ki</value>
+    <value>Global Ki</value>
   </data>
   <data name="global_core_earth_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>globalpredictions\day\en-gb\global-core-earth-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -5690,7 +5690,7 @@
     <value>Panel Cycle View</value>
   </data>
   <data name="PersonalView" xml:space="preserve">
-    <value>View Personal Houses Occupied</value>
+    <value>Personal Houses</value>
   </data>
   <data name="child_controlled_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\stressresponse\en-gb\child-controlled-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

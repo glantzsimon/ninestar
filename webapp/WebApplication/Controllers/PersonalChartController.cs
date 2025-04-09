@@ -124,6 +124,7 @@ namespace K9.WebApplication.Controllers
                 BirthTimeZoneId = myAccount.UserInfo.BirthTimeZoneId,
                 Gender = myAccount.User.Gender
             };
+            personModel.DateOfBirth = personModel.DateOfBirth.Add(personModel.TimeOfBirth);
             var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
 
             return View("Index", nineStarKiProfile);

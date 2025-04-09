@@ -13,6 +13,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using K9.Base.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Constants;
 using K9.WebApplication.Enums;
 using K9.WebApplication.ViewModels;
 using WebMatrix.WebData;
@@ -67,38 +68,54 @@ namespace K9.WebApplication.Helpers
             });
         }
 
-        public static MvcHtmlString PanelWithSummary(this HtmlHelper html, string title, string body, string summary, string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
+        public static MvcHtmlString PanelWithSummary(this HtmlHelper html, string title, string body, string summary, string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
         {
-            return html.Partial("Controls/_Panel", new PanelOptions
-            {
-                Id = id,
-                Title = title,
-                Body = summary,
-                Body2 = body,
-                ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
-                ImageSize = imageSize,
-                ImageLayout = imageLayout,
-                IsDualView = true,
-                PanelView = SessionHelper.GetCurrentUserDefaultPanelView()
-            });
+            var panelOptions = PanelOptions.CreatePanelOptionsWithDualView(
+                title,
+                title,
+                summary,
+                body,
+                Dictionary.SummaryView,
+                Dictionary.FullTextView,
+                SessionConstants.DefaultPanelView,
+                (int)EPanelView.SummaryView,
+                (int)EPanelView.FullTextView
+            );
+
+            panelOptions.Value = (int)SessionHelper.GetCurrentUserDefaultPanelView();
+
+            panelOptions.ImageSrc = string.IsNullOrEmpty(imageSrc)
+                ? string.Empty
+                : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc);
+            panelOptions.ImageSize = imageSize;
+            panelOptions.ImageLayout = imageLayout;
+
+            return html.Partial("Controls/_Panel", panelOptions);
         }
 
         public static MvcHtmlString PanelWithGlobal(this HtmlHelper html, string title, string title2, string personalBody, string globalBody, string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
         {
-            return html.Partial("Controls/_Panel", new PanelOptions
-            {
-                Id = id,
-                Title = title,
-                Title2 = title2,
-                Body = personalBody,
-                Body2 = globalBody,
-                ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
-                ImageSize = imageSize,
-                ImageLayout = imageLayout,
-                IsDualView = true,
-                IsGlobalSwitch = true,
-                PanelCycleView = SessionHelper.GetCurrentUserDefaultPanelCycleView()
-            });
+            var panelOptions = PanelOptions.CreatePanelOptionsWithDualView(
+                title,
+                title,
+                personalBody,
+                globalBody,
+                Dictionary.PersonalView,
+                Dictionary.GlobalView,
+                SessionConstants.DefaultPanelCycleView,
+                (int)EPanelCycleView.PersonalView,
+                (int)EPanelCycleView.GlobalView
+            );
+
+            panelOptions.Value = (int)SessionHelper.GetCurrentUserDefaultPanelCycleView();
+
+            panelOptions.ImageSrc = string.IsNullOrEmpty(imageSrc)
+                ? string.Empty
+                : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc);
+            panelOptions.ImageSize = imageSize;
+            panelOptions.ImageLayout = imageLayout;
+
+            return html.Partial("Controls/_Panel", panelOptions);
         }
 
         public static MvcHtmlString ImagePanel(this HtmlHelper html, PanelOptions options)

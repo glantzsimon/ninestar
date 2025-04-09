@@ -9,57 +9,53 @@
                 ? "image-panel-small" : "";
     var panelBodyClass = hasImage ? "panel-body-image" : "";
 
-    var dualViewClass = Model.IsDualView ? "dual-view" : "";
+    var displayNone = "display: none;";
+    var viewClass = Model.IsDualView ? "dual-view" : Model.IsTripleView ? "triple-view" : "";
 
-    var displayStyle1 = Model.IsDualView ?
-        Model.IsGlobalSwitch ?
-            Model.PanelCycleView == EPanelCycleView.PersonalView ? "" : "display: none;" :
-            Model.PanelView == EPanelView.SummaryView ? "" : "display: none;" :
-        "";
+    var displayStyle1 = Model.IsDualView || Model.IsTripleView ? Model.Option1Checked ? "" : displayNone : "";
+    var displayStyle2 = Model.IsDualView || Model.IsTripleView ? Model.Option2Checked ? "" : displayNone : displayNone;
+    var displayStyle3 = Model.IsDualView || Model.IsTripleView ? Model.Option3Checked ? "" : displayNone : displayNone;
 
-    var displayStyle2 = Model.IsDualView ?
-        Model.IsGlobalSwitch ?
-            Model.PanelCycleView == EPanelCycleView.GlobalView ? "" : "display: none;" :
-            Model.PanelView == EPanelView.FullTextView ? "" : "display: none;" :
-        "display: none;";
 }
 
 @*Bookmark*@
 <div id="@Model.Id" style="position: relative; top: -180px;"></div>
-<div class="panel panel-default @dualViewClass" id="@Model.PanelId">
+<div class="panel panel-default @viewClass" data-session-key="@Model.SessionKey" id="@Model.PanelId">
     @if (!string.IsNullOrEmpty(Model.Title))
     {
         <div class="panel-heading clearfix">
-            <h4 class="margin-0 float-left panel-title-one"><strong>@Model.Title</strong></h4>
+            
+            <h4 class="margin-0 float-left panel-title-one" style="@displayStyle2"><strong>@Model.Title</strong></h4>
+            
             @if (Model.IsDualView)
             {
                 <h4 class="margin-0 float-left panel-title-two" style="@displayStyle2"><strong>@Model.Title2</strong></h4>
-                if (Model.IsGlobalSwitch)
-                {
-                    <div class="float-right d-flex align-items-center panel-display-options">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option1Id" value="@((int)EPanelCycleView.PersonalView)" @Model.PersonalViewChecked>
-                            <label class="form-check-label" for="@Model.Option1Id">@Dictionary.PersonalView</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option2Id" value="@((int)EPanelCycleView.GlobalView)" @Model.GlobalViewChecked>
-                            <label class="form-check-label" for="@Model.Option2Id">@Dictionary.GlobalView</label>
-                        </div>
+
+                <div class="float-right d-flex align-items-center panel-display-options">
+                    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option1Id" value="@Model.Option1Value" 
+                               @(Model.Option1CheckedString)>
+                        <label class="form-check-label" for="@Model.Option1Id">@Model.Option1Text</label>
                     </div>
-                }
-                else
-                {
-                    <div class="float-right d-flex align-items-center panel-display-options">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option1Id" value="@((int)EPanelView.SummaryView)" @Model.SummaryChecked>
-                            <label class="form-check-label" for="@Model.Option1Id">@Dictionary.SummaryView</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option2Id" value="@((int)EPanelView.FullTextView)" @Model.FullTextChecked>
-                            <label class="form-check-label" for="@Model.Option2Id">@Dictionary.FullTextView</label>
-                        </div>
+                    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option2Id" value="@Model.Option2Value"
+                               @(Model.Option2CheckedString)>
+                        <label class="form-check-label" for="@Model.Option2Id">@Model.Option2Text</label>
                     </div>
-                }
+
+                    @if (Model.IsTripleView)
+                    {
+                        <h4 class="margin-0 float-left panel-title-three" style="@displayStyle3"><strong>@Model.Title3</strong></h4>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="@Model.UniqueRadioName" id="@Model.Option3Id" value="@Model.Option3Value"
+                                   @(Model.Option3CheckedString)>
+                            <label class="form-check-label" for="@Model.Option3Id">@Model.Option3Text</label>
+                        </div>
+                    }
+                </div>
             }
         </div>
     }
@@ -72,4 +68,5 @@
     }
     <div class="panel-body panel-one @panelBodyClass" style="@displayStyle1">@MvcHtmlString.Create(Model.Body)</div>
     <div class="panel-body panel-two @panelBodyClass" style="@displayStyle2">@MvcHtmlString.Create(Model.Body2)</div>
+    <div class="panel-body panel-three @panelBodyClass" style="@displayStyle3">@MvcHtmlString.Create(Model.Body3)</div>
 </div>

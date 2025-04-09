@@ -2,10 +2,6 @@ Create Elements breakdown including Zodiac (percentages)
 
 --
 
-Add birth time and time zone to MyAccount. - Add UserData model
-
---
-
 ChatGPT to create overall summary for each 81 combinations from existing one plus a synergy of the 3 energies
 
 --

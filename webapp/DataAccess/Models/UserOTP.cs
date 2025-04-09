@@ -11,7 +11,7 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.UserOTPs, PluralName = Strings.Names.UserOTPs, Name = Strings.Names.UserOTP)]
     public class UserOTP : ObjectBase
     {
-        public Guid UniqueIdentifier { get; set; } = new Guid();
+        public Guid UniqueIdentifier { get; set; } = Guid.NewGuid();
 
         [UIHint("User")]
         [Required]
@@ -19,7 +19,7 @@ namespace K9.DataAccessLayer.Models
         public int UserId { get; set; }
 
         public virtual User User { get; set; }
-        
+
         [Required]
         [Range(100000, 999999)] // Ensure it's always 6 digits
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SixDigitCodeLabel)]

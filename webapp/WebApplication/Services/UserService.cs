@@ -73,8 +73,10 @@ namespace K9.WebApplication.Services
 
             var newUserInfo = new UserInfo
             {
-                UserId = userId
+                UserId = userId,
+                UniqueIdentifier = Guid.NewGuid()
             };
+
             _userInfosRepository.Create(newUserInfo);
             return newUserInfo;
         }

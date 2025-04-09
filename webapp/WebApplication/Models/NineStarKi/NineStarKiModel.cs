@@ -434,7 +434,7 @@ namespace K9.WebApplication.Models
                 GlobalKi = GlobalCycleEnergies.Epoch,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Epoch,
                 PersonalChartEnergy = PersonalChartEnergies.Epoch,
-                IsSplit = isDualView,
+                IsDualView = isDualView,
                 SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
                 {
                     GlobalKi = GlobalCycleEnergies.Epoch,
@@ -448,7 +448,7 @@ namespace K9.WebApplication.Models
                 GlobalKi = GlobalCycleEnergies.Generation,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Generation,
                 PersonalChartEnergy = PersonalChartEnergies.Generation,
-                IsSplit = isDualView,
+                IsDualView = isDualView,
                 SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
                 {
                     GlobalKi = GlobalCycleEnergies.Generation,
@@ -462,7 +462,7 @@ namespace K9.WebApplication.Models
                 GlobalKi = GlobalCycleEnergies.Year,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Year,
                 PersonalChartEnergy = PersonalChartEnergies.Year,
-                IsSplit = isDualView,
+                IsDualView = isDualView,
                 SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
                 {
                     GlobalKi = GlobalCycleEnergies.Year,
@@ -476,7 +476,7 @@ namespace K9.WebApplication.Models
                 GlobalKi = GlobalCycleEnergies.Month,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Month,
                 PersonalChartEnergy = PersonalChartEnergies.Month,
-                IsSplit = isDualView,
+                IsDualView = isDualView,
                 SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
                 {
                     GlobalKi = GlobalCycleEnergies.Month,
@@ -521,7 +521,7 @@ namespace K9.WebApplication.Models
                 GlobalKi = GlobalCycleEnergies.Hour,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Hour,
                 PersonalChartEnergy = PersonalChartEnergies.Hour,
-                IsSplit = isDualView,
+                IsDualView = isDualView,
                 SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
                 {
                     GlobalKi = GlobalCycleEnergies.Month,

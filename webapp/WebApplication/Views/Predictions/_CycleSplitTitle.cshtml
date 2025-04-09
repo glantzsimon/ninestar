@@ -2,7 +2,7 @@
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Models
 @using SessionHelper = K9.WebApplication.Helpers.SessionHelper
-@model (NineStarKiEnergy Energy1, NineStarKiEnergy Energy2)
+@model (NineStarKiEnergy Energy1, NineStarKiEnergy Energy2, bool? IsSplit)
 
 @{
     var label = Model.Energy1.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy ? Dictionary.YearlyCycle
@@ -15,16 +15,18 @@
 
     var displayPreference = SessionHelper.GetEnergyDefaultDisplay();
     var graphicalStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "" : "display: none";
+    var house1Text = Model.IsSplit == true ? Model.Energy1.HouseName : $"{Model.Energy1.HouseName} (S)";
+    var house2Text = Model.IsSplit == true ? Model.Energy2.HouseName : $"{Model.Energy2.HouseName} (L)";
 }
 
 <div class="graphical-display" style="@graphicalStyle">
     <div class="ninestar-summary-container margin-3">
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
-        <p class="margin-bottom-2">@Model.Energy1.ElementNameAndNumber @Dictionary.House</p>
+        <p class="margin-bottom-2">@house1Text</p>
         <div class="energy-image-container">
             <img loading="lazy" title="@Model.Energy1.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy1.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy1.Energy.ToString().ToLower()).png" />
         </div>
-        <p class="margin-bottom-2">@Model.Energy2.ElementNameAndNumber @Dictionary.House</p>
+        <p class="margin-bottom-2">@house2Text</p>
         <div class="energy-image-container">
             <img loading="lazy" title="@Model.Energy2.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy2.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy2.Energy.ToString().ToLower()).png" />
         </div>

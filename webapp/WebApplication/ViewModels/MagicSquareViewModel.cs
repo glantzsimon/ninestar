@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Models;
+﻿using K9.Globalisation;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.ViewModels
 {
@@ -8,11 +9,15 @@ namespace K9.WebApplication.ViewModels
         public NineStarKiEnergy PersonalHouseOccupied { get; set; }
         public NineStarKiEnergy PersonalChartEnergy { get; set; }
 
+        public string SolarHouseOccupiedText => $"{PersonalHouseOccupied.HouseName} (S)";
+        public string LunarHouseOccupiedText => $"{PersonalHouseOccupied.HouseName} (L)";
+
         public MagicSquareViewModel SecondMagicSquareViewModel { get; set; }
 
         public bool IsPersonalChart { get; set; }
         public bool IsGlobal { get; set; }
         public bool IsSplit { get; set; }
+        public bool IsDualView { get; set; }
         
         public NineStarKiDirections GetDirections()
         {

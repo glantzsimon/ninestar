@@ -26,12 +26,19 @@
 
     var displayPreference = K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
     var magicStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "display: none;" : "";
+
     var houseDetails = Model.IsPersonalChart ? Model.PersonalHouseOccupied.ElementNameAndNumber :
-        Model.IsGlobal ? $"{Model.GlobalKi.ElementNameAndNumber} {Dictionary.House}" :
-            $"{Model.PersonalHouseOccupied.ElementNameAndNumber} {Dictionary.House}";
-    var houseDetails2 = Model.IsSplit ? Model.IsPersonalChart ? Model.SecondMagicSquareViewModel.PersonalHouseOccupied.ElementNameAndNumber :
-        Model.IsGlobal ? $"{Model.SecondMagicSquareViewModel.GlobalKi.ElementNameAndNumber} {Dictionary.House}" :
-            $"{Model.SecondMagicSquareViewModel.PersonalHouseOccupied.ElementNameAndNumber} {Dictionary.House}" : "";
+        Model.IsGlobal ? Model.GlobalKi.HouseName :
+
+        Model.IsDualView ? Model.SolarHouseOccupiedText : Model.PersonalHouseOccupied.HouseName;
+
+    var houseDetails2 = Model.IsSplit || Model.IsDualView ?
+
+        Model.IsPersonalChart ? Model.SecondMagicSquareViewModel.PersonalHouseOccupied.ElementNameAndNumber :
+        Model.IsGlobal ? Model.SecondMagicSquareViewModel.GlobalKi.HouseName :
+
+        Model.IsDualView ? Model.LunarHouseOccupiedText : Model.SecondMagicSquareViewModel.PersonalHouseOccupied.HouseName
+    : "";
 }
 
 <div class="magic-square-display" style="@magicStyle">
@@ -40,7 +47,7 @@
         <p class="margin-bottom-2">@houseDetails</p>
         @Html.Partial("../NineStarKi/_MagicSquare", Model)
 
-        @if (Model.IsSplit)
+        @if (Model.IsSplit || Model.IsDualView)
         {
             <p class="margin-bottom-2">@houseDetails2</p>
             @Html.Partial("../NineStarKi/_MagicSquare", Model.SecondMagicSquareViewModel)

@@ -235,6 +235,9 @@
   <ItemGroup>
     <Compile Include="Attributes\DiscountAttribute.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="CustomDatasSets\TimeZonesExtended.cs" />
+    <Compile Include="CustomDatasSets\TimeZones.cs" />
+    <Compile Include="CustomDatasSets\Discounts.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\TimeZonesSeeder.cs" />
@@ -424,6 +427,10 @@
     <Compile Include="Migrations\202504071334226_UpdateSystemSettings.designer.cs">
       <DependentUpon>202504071334226_UpdateSystemSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504090323010_TimeZoneExtended.cs" />
+    <Compile Include="Migrations\202504090323010_TimeZoneExtended.designer.cs">
+      <DependentUpon>202504090323010_TimeZoneExtended.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\TimeZone.cs" />
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
@@ -593,6 +600,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504071334226_UpdateSystemSettings.resx">
       <DependentUpon>202504071334226_UpdateSystemSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504090323010_TimeZoneExtended.resx">
+      <DependentUpon>202504090323010_TimeZoneExtended.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

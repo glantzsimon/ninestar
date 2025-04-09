@@ -50,7 +50,10 @@ namespace K9.WebApplication.Helpers
             List<ListItem> dataset = null;
             if (refresh || !_datasets.Collection.ContainsKey(typeof(T)))
             {
-                dataset = GetItemList<T>(nameExpression, valueExpression, includeDeleted, resourceType);
+                // Check for custom data
+                var customDataSet = GetCustomDataset<T>();
+                dataset = customDataSet != null ? customDataSet : GetItemList<T>(nameExpression, valueExpression, includeDeleted, resourceType);
+
                 if (dataset != null)
                 {
                     if (_datasets.Collection.ContainsKey(typeof(T)))
@@ -79,25 +82,36 @@ namespace K9.WebApplication.Helpers
 
             if (refresh || !_datasets.Collection.ContainsKey(enumType))
             {
-                var dictionary = resourceType ??
-                                 (enumType.Namespace.Contains("K9.Base") ? typeof(Base.Globalisation.Dictionary) : typeof(Globalisation.Dictionary));
+                var customDataSet = GetCustomDataset<T>();
 
-                var values = Enum.GetValues(enumType).Cast<T>();
-                dataset = new List<ListItem>(values.Select(e =>
+                if (customDataSet == null)
                 {
-                    var enumValue = e as Enum;
-                    var id = Convert.ToInt32(e);
-                    var descriptionAttribute = enumValue.GetAttribute<EnumDescriptionAttribute>();
-                    var name = enumValue.ToString();
+                    var dictionary = resourceType ??
+                                     (enumType.Namespace.Contains("K9.Base")
+                                         ? typeof(Base.Globalisation.Dictionary)
+                                         : typeof(Globalisation.Dictionary));
 
-                    if (descriptionAttribute != null)
+                    var values = Enum.GetValues(enumType).Cast<T>();
+                    dataset = new List<ListItem>(values.Select(e =>
                     {
-                        descriptionAttribute.ResourceType = dictionary;
-                        name = descriptionAttribute.GetDescription();
-                    }
+                        var enumValue = e as Enum;
+                        var id = Convert.ToInt32(e);
+                        var descriptionAttribute = enumValue.GetAttribute<EnumDescriptionAttribute>();
+                        var name = enumValue.ToString();
 
-                    return new ListItem(id, name);
-                }));
+                        if (descriptionAttribute != null)
+                        {
+                            descriptionAttribute.ResourceType = dictionary;
+                            name = descriptionAttribute.GetDescription();
+                        }
+
+                        return new ListItem(id, name);
+                    }));
+                }
+                else
+                {
+                    dataset = customDataSet;
+                }
 
                 if (!_datasets.Collection.ContainsKey(enumType))
                 {
@@ -109,26 +123,12 @@ namespace K9.WebApplication.Helpers
                     {
                         _datasets.Collection[enumType] = dataset;
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                     }
                 }
             }
             return dataset;
-        }
-
-        public void AddDataSetToCollection<T>(List<ListItem> items)
-        {
-            if (!_datasets.Collection.ContainsKey(typeof(T)))
-            {
-                try
-                {
-                    _datasets.Collection.Add(typeof(T), items);
-                }
-                catch (Exception e)
-                {
-                }
-            }
         }
 
         public SelectList GetSelectList<T>(int? selectedId, bool refresh = false, string nameExpression = "Name",
@@ -140,7 +140,7 @@ namespace K9.WebApplication.Helpers
         public SelectList GetSelectList<T>(string selectedId, bool refresh = false, string nameExpression = "Name",
             string valueExpression = "Name", bool includeDeleted = false, Type resourceType = null) where T : class, IObjectBase
         {
-            return new SelectList(GetDataSet<T>(refresh, nameExpression, valueExpression, includeDeleted, resourceType), string.IsNullOrEmpty(valueExpression) ? "Id" : "Value", "Name", selectedId);
+            return new SelectList(GetDataSet<T>(refresh, nameExpression, valueExpression, includeDeleted, resourceType), string.IsNullOrEmpty(valueExpression) || valueExpression == "Id" ? "Id" : "Value", "Name", selectedId);
         }
 
         public SelectList GetSelectListFromEnum<T>(int selectedId, bool refresh = false, Type resourceType = null)
@@ -157,6 +157,65 @@ namespace K9.WebApplication.Helpers
 
             IRepository<T> repo = new BaseRepository<T>(_db);
             return repo.GetName<T>(selectedId.Value, nameExpression);
+        }
+
+        public List<ListItem> GetCustomDataset<T>(string key = "")
+        {
+            var targetInterface = typeof(ICustomDataSet<>).MakeGenericType(typeof(T));
+            var myAssemblies = AppDomain.CurrentDomain.GetAssemblies()
+                .Where(a => a.FullName.StartsWith("K9.DataAccessLayer") && !a.IsDynamic);
+
+            var implementingType = myAssemblies
+                .SelectMany(a =>
+                {
+                    try
+                    {
+                        return a.GetTypes();
+                    }
+                    catch (ReflectionTypeLoadException)
+                    {
+                        return new Type[0];
+                    }
+                })
+
+                .FirstOrDefault(t =>
+                    targetInterface.IsAssignableFrom(t) &&
+                    !t.IsInterface &&
+                    !t.IsAbstract &&
+                    (string.IsNullOrEmpty(key) || (Activator.CreateInstance(t) as ICustomDataSet<T>)?.Key == key)
+                );
+
+            if (implementingType == null)
+                return null;
+
+            var instance = Activator.CreateInstance(implementingType) as ICustomDataSet<T>;
+            return instance?.GetData(_db);
+        }
+
+        public SelectList GetSelectListFromCustomDataset<T>(string key = "", int? selectedId = null, bool refresh = false, string nameExpression = "Name",
+            string valueExpression = "Name", bool includeDeleted = false, Type resourceType = null)
+        {
+            return new SelectList(GetCustomDataset<T>(key), string.IsNullOrEmpty(valueExpression) || valueExpression == "Id" ? "Id" : "Value", "Name", selectedId);
+        }
+
+        public SelectList GetSelectListFromCustomDataset<T>(string key = "", object selectedId = null, bool refresh = false, string nameExpression = "Name",
+            string valueExpression = "Name", bool includeDeleted = false, Type resourceType = null)
+        {
+            return new SelectList(GetCustomDataset<T>(key), string.IsNullOrEmpty(valueExpression) || valueExpression == "Id" ? "Id" : "Value", "Name", selectedId);
+        }
+
+        private void AddDataSetToCollection<T>(List<ListItem> items)
+        {
+            if (!_datasets.Collection.ContainsKey(typeof(T)))
+            {
+                try
+                {
+                    _datasets.Collection.Add(typeof(T), items);
+                }
+                catch (Exception e)
+                {
+                }
+            }
         }
 
         private List<ListItem> GetItemList<T>(string nameExpression, string valueExpression, bool includeDeleted = false, Type resourceType = null) where T : class, IObjectBase

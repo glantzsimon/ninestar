@@ -200,6 +200,7 @@
     <Compile Include="Models\AssetInfo.cs" />
     <Compile Include="Models\IAuthentication.cs" />
     <Compile Include="Models\ILinkPreviewResult.cs" />
+    <Compile Include="Models\ICustomDataSet.cs" />
     <Compile Include="Models\LinkPreviewResult.cs" />
     <Compile Include="Models\UploadedFile.cs" />
     <Compile Include="Models\FileSource.cs" />

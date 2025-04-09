@@ -19,23 +19,5 @@ namespace K9.DataAccessLayer.Enums
         ThirdDiscount
     }
 
-    public static class EDiscountExtensions
-    {
-        public static List<ListItem> GetDiscountListItems()
-        {
-            var values = new List<EDiscount>
-            {
-                EDiscount.None,
-                EDiscount.FirstDiscount,
-                EDiscount.SecondDiscount,
-                EDiscount.ThirdDiscount
-            };
-            return new List<ListItem>(values.Select(e =>
-            {
-                var discountAttribute = e.GetAttribute<DiscountAttribute>();
-                return new ListItem((int)e, discountAttribute.Description, discountAttribute.DiscountPercent.ToString());
-            }));
-        }
-    }
 
 }

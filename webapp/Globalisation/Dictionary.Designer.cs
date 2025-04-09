@@ -3103,6 +3103,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Astronomical Precision.
+        /// </summary>
+        public static string AstronomicalPrecision {
+            get {
+                return ResourceManager.GetString("AstronomicalPrecision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your exact birth time and location for the highest level of accuracy. In Nine Star Ki, these details are especially important for daily and hourly Ki readings, and for those born near a cusp. Our system offers the most precise calculations available—grounded in astronomical data for deeper, more reliable insights..
+        /// </summary>
+        public static string AstronomicalPrecisionDetails {
+            get {
+                return ResourceManager.GetString("AstronomicalPrecisionDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to at.
         /// </summary>
         public static string At {
@@ -4603,6 +4621,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Explore a detailed breakdown of Yin/Yang, Element and Energy affinities and Modality / Group compatibility. Visual gauges offer an at-a-glance view of multiple compatibility factors, supported by deep analysis of the core energies involved..
+        /// </summary>
+        public static string CompatibilityDescription {
+            get {
+                return ResourceManager.GetString("CompatibilityDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Compatibility Details.
         /// </summary>
         public static string CompatibilityDetails {
@@ -4714,6 +4741,24 @@ namespace K9.Globalisation {
         public static string ComplimentaryConsultationBookedEmail {
             get {
                 return ResourceManager.GetString("ComplimentaryConsultationBookedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose your preferred calculation method—from traditional Macrobiotic to the Chinese system with inversion. Tailor your experience by selecting which Houses appear in predictions, whether to invert daily Ki for the Southern Hemisphere, and how to display key visuals—magic squares or clean, graphical layouts. Fine-tune multiple parameters for a truly personalised and flexible experience..
+        /// </summary>
+        public static string ConfigurationsDescription {
+            get {
+                return ResourceManager.GetString("ConfigurationsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fully Configurable Calculators &amp; Result Sets.
+        /// </summary>
+        public static string ConfigurationTitle {
+            get {
+                return ResourceManager.GetString("ConfigurationTitle", resourceCulture);
             }
         }
         
@@ -6358,6 +6403,24 @@ namespace K9.Globalisation {
         public static string Direction {
             get {
                 return ResourceManager.GetString("Direction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Directionology.
+        /// </summary>
+        public static string Directionology {
+            get {
+                return ResourceManager.GetString("Directionology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discover which directions are auspicious—or best avoided—based on your personal Ki and the current cycle. Use Directionology to plan travel, relocate with purpose, and align your movements with supportive energetic flows for greater harmony and success..
+        /// </summary>
+        public static string DirectionologyDetails {
+            get {
+                return ResourceManager.GetString("DirectionologyDetails", resourceCulture);
             }
         }
         
@@ -9389,11 +9452,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Easily toggle between your own personal Nine Star Ki influences and the broader global energies affecting the collective. View how your individual cycles align—or contrast—with the energetic climate of the world around you. This dual perspective offers powerful insight into timing, relationships, and how to navigate both personal growth and collective change..
+        /// </summary>
+        public static string GlobalKiDescription {
+            get {
+                return ResourceManager.GetString("GlobalKiDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Global Ki.
         /// </summary>
         public static string GlobalKiLabel {
             get {
                 return ResourceManager.GetString("GlobalKiLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch betwen Personal &amp; Global Ki Perspectives.
+        /// </summary>
+        public static string GlobalKiTitle {
+            get {
+                return ResourceManager.GetString("GlobalKiTitle", resourceCulture);
             }
         }
         
@@ -10861,6 +10942,24 @@ namespace K9.Globalisation {
         public static string IntellectualQualities {
             get {
                 return ResourceManager.GetString("IntellectualQualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interactive Calendar.
+        /// </summary>
+        public static string InteractiveCalendar {
+            get {
+                return ResourceManager.GetString("InteractiveCalendar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Easily select dates, zoom in for details or out for the big picture. Includes moon phases and rich descriptions for each lunar day..
+        /// </summary>
+        public static string InteractiveCalendarDescription {
+            get {
+                return ResourceManager.GetString("InteractiveCalendarDescription", resourceCulture);
             }
         }
         
@@ -15764,6 +15863,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Explore predictions across 81-year, 9-year, daily, and hourly cycles for deeper insight into the rhythms shaping your life..
+        /// </summary>
+        public static string OtherCyclesDescription {
+            get {
+                return ResourceManager.GetString("OtherCyclesDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other Cyclic Predictions.
+        /// </summary>
+        public static string OtherCyclesTitle {
+            get {
+                return ResourceManager.GetString("OtherCyclesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Overall Compatibility.
         /// </summary>
         public static string OverallCompatibility {
@@ -15969,6 +16086,15 @@ namespace K9.Globalisation {
         public static string PersonalChartCalculator {
             get {
                 return ResourceManager.GetString("PersonalChartCalculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receive detailed interpretations covering every facet of Nine Star Ki Astrology—from yearly and monthly influences to the 81-year, 9-year, and even daily Ki rhythms. Explore your emotional landscape, relationships, career, health, finances, spirituality and more..
+        /// </summary>
+        public static string PersonalChartDescription {
+            get {
+                return ResourceManager.GetString("PersonalChartDescription", resourceCulture);
             }
         }
         
@@ -22604,7 +22730,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to By upgrading your membership, you will get full access to all features with no cap on the number of times you can use the various features available. 9 Star Ki is a powerful system that can bring you many benefits, from helping you understand yourself and others better, to helping you to plan your life in accordance with the stars and their movements, which brings greater harmony and success.
+        ///   Looks up a localized string similar to By upgrading your membership, you gain unlimited access to every feature with no restrictions.
+        ///Nine Star Ki is a powerful tool for transformation—offering profound insights into your personality, relationships, and life path. By aligning your choices with the natural flow of the stars, you invite greater harmony, clarity, and success into every aspect of your life..
         /// </summary>
         public static string why_upgrade {
             get {

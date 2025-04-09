@@ -6046,8 +6046,41 @@
   <data name="AdvancedCalculator" xml:space="preserve">
     <value>Advanced Calculator</value>
   </data>
+  <data name="AstronomicalPrecision" xml:space="preserve">
+    <value>Astronomical Precision</value>
+  </data>
+  <data name="AstronomicalPrecisionDetails" xml:space="preserve">
+    <value>Enter your exact birth time and location for the highest level of accuracy. In Nine Star Ki, these details are especially important for daily and hourly Ki readings, and for those born near a cusp. Our system offers the most precise calculations available—grounded in astronomical data for deeper, more reliable insights.</value>
+  </data>
   <data name="CalculatorTypeLabel" xml:space="preserve">
     <value>Calculator Type</value>
+  </data>
+  <data name="CompatibilityDescription" xml:space="preserve">
+    <value>Explore a detailed breakdown of Yin/Yang, Element and Energy affinities and Modality / Group compatibility. Visual gauges offer an at-a-glance view of multiple compatibility factors, supported by deep analysis of the core energies involved.</value>
+  </data>
+  <data name="ConfigurationsDescription" xml:space="preserve">
+    <value>Choose your preferred calculation method—from traditional Macrobiotic to the Chinese system with inversion. Tailor your experience by selecting which Houses appear in predictions, whether to invert daily Ki for the Southern Hemisphere, and how to display key visuals—magic squares or clean, graphical layouts. Fine-tune multiple parameters for a truly personalised and flexible experience.</value>
+  </data>
+  <data name="ConfigurationTitle" xml:space="preserve">
+    <value>Fully Configurable Calculators &amp; Result Sets</value>
+  </data>
+  <data name="Directionology" xml:space="preserve">
+    <value>Directionology</value>
+  </data>
+  <data name="DirectionologyDetails" xml:space="preserve">
+    <value>Discover which directions are auspicious—or best avoided—based on your personal Ki and the current cycle. Use Directionology to plan travel, relocate with purpose, and align your movements with supportive energetic flows for greater harmony and success.</value>
+  </data>
+  <data name="GlobalKiDescription" xml:space="preserve">
+    <value>Easily toggle between your own personal Nine Star Ki influences and the broader global energies affecting the collective. View how your individual cycles align—or contrast—with the energetic climate of the world around you. This dual perspective offers powerful insight into timing, relationships, and how to navigate both personal growth and collective change.</value>
+  </data>
+  <data name="GlobalKiTitle" xml:space="preserve">
+    <value>Switch betwen Personal &amp; Global Ki Perspectives</value>
+  </data>
+  <data name="InteractiveCalendar" xml:space="preserve">
+    <value>Interactive Calendar</value>
+  </data>
+  <data name="InteractiveCalendarDescription" xml:space="preserve">
+    <value>Easily select dates, zoom in for details or out for the big picture. Includes moon phases and rich descriptions for each lunar day.</value>
   </data>
   <data name="IsEnabledAlchemyLabel" xml:space="preserve">
     <value>Is Alchemy Enabled</value>
@@ -6231,6 +6264,15 @@
   </data>
   <data name="lunar_day_9_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>astrology\en-gb\lunardays\lunar-day-9-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="OtherCyclesDescription" xml:space="preserve">
+    <value>Explore predictions across 81-year, 9-year, daily, and hourly cycles for deeper insight into the rhythms shaping your life.</value>
+  </data>
+  <data name="OtherCyclesTitle" xml:space="preserve">
+    <value>Other Cyclic Predictions</value>
+  </data>
+  <data name="PersonalChartDescription" xml:space="preserve">
+    <value>Receive detailed interpretations covering every facet of Nine Star Ki Astrology—from yearly and monthly influences to the 81-year, 9-year, and even daily Ki rhythms. Explore your emotional landscape, relationships, career, health, finances, spirituality and more.</value>
   </data>
   <data name="Receptive" xml:space="preserve">
     <value>Receptive</value>

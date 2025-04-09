@@ -8,6 +8,7 @@
     var isUnlimited = activeUserMembership != null && activeUserMembership.IsUnlimited() || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
     var simpleChecked = Model.CalculatorType == ECalculatorType.Simple ? "checked" : "";
     var advancedChecked = Model.CalculatorType == ECalculatorType.Advanced ? "checked" : "";
+    var advancedStyle = Model.CalculatorType == ECalculatorType.Advanced ? "" : "display: none;";
 }
 
 @using (Html.BeginBootstrapForm())
@@ -37,7 +38,7 @@
 
     if (isUnlimited)
     {
-        <div class="form-options advanced-calculator-options">
+        <div class="form-options advanced-calculator-options" style="@advancedStyle">
 
             @if (Model.IsPredictionsScreen)
             {

@@ -33,6 +33,10 @@
                 <div style="padding-top: 1px;">
                     @Html.BootstrapActionLinkButton(buttonText, Model.IsUpgrade && !Model.ActiveUserMembership.MembershipOption.IsFree ? "SwitchStart" : "PurchaseStart", "Membership", new { membershipOptionId = Model.MembershipOption.Id }, iconClass, EButtonClass.Large)
                 </div>
+                if (Model.MembershipOption.IsForever)
+                {
+                    <span>@Dictionary.ComplimentaryConsultationTitle</span>
+                }
             }
             else
             {

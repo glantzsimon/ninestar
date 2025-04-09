@@ -23,7 +23,7 @@
 @Html.Partial("_BetaPopup")
 
 <div class="container main-content why-upgrade-container">
-    <div class="row well">
+    <div class="row well margin-bottom-0">
         <article>
             <div class="col-sm-12 padding-0">
                 <h4 class="margin-top-0">@Dictionary.WhyUpgrade</h4>
@@ -36,58 +36,67 @@
                 <ul>
                     <li>
                         <strong>@Dictionary.PersonalChartReadings</strong>
-                        <em>@Dictionary.PersonalChartDescription</em>
+                        <em>@Html.Raw(Dictionary.PersonalChartDescription)</em>
                     </li>
                     <li>
                         <strong>@Dictionary.CompatibilityReadings</strong>
-                        <em>@Dictionary.CompatibilityDescription</em>
+                        <em>@Html.Raw(Dictionary.CompatibilityDescription)</em>
                     </li>
                     <li>
                         <strong>@Dictionary.YearlyAndMonthlyCycles</strong>
+                        <br />
                     </li>
                     <li>
                         <strong>@Dictionary.OtherCyclesTitle</strong>
-                        <em>@Dictionary.OtherCyclesDescription</em>
+                        <em>@Html.Raw(Dictionary.OtherCyclesDescription)</em>
                     </li>
                     <li>
                         <strong>@Dictionary.GlobalKiTitle</strong>
-                        <em>@Dictionary.GlobalKiDescription</em>
+                        <em>@Html.Raw(Dictionary.GlobalKiDescription)</em>
                     </li>
                     <li>
                         <strong>@Dictionary.Directionology</strong>
-                        <em>@Dictionary.DirectionologyDetails</em>
+                        <em>@Html.Raw(Dictionary.DirectionologyDetails)</em>
                     </li>
                     <li>
                         <strong>@Dictionary.InteractiveCalendar</strong>
-                        <em>@Dictionary.InteractiveCalendarDescription</em>
+                        <em>@Html.Raw(Dictionary.InteractiveCalendarDescription)</em>
                     </li>
                     <li>
                         <strong>@Dictionary.ConfigurationTitle</strong>
-                        <em>@Dictionary.ConfigurationsDescription</em>
+                        <em>@Html.Raw(Dictionary.ConfigurationsDescription)</em>
                     </li>
                     <li>
                         <strong>@Dictionary.AstronomicalPrecision</strong>
-                        <em>@Dictionary.AstronomicalPrecisionDetails</em>
+                        <em>@Html.Raw(Dictionary.AstronomicalPrecisionDetails)</em>
+                        <br />
                     </li>
                     <li>
                         <strong>@Dictionary.NineStarKiBiorhythmsLabel</strong>
+                        <br />
                     </li>
                     <li>
                         <strong>@Dictionary.IChingHexagramGenerator</strong>
+                        <br />
                     </li>
                     <li>
                         <strong>@Dictionary.AccessToKarmicNumerology</strong>
+                        <br />
                     </li>
                     <li>
                         <strong>@Dictionary.AccessToOurGPTMembershipItem</strong>
+                        <br />
                     </li>
                     <li>
                         <strong>@Dictionary.KnowledgeBase</strong>
+                        <br />
                     </li>
                     <li>
                         <strong>@Dictionary.FreeConsultationOfferText</strong>
+                        <br />
                     </li>
                 </ul>
+                <h4 class="text-center">@Dictionary.ChooseYourPlan</h4>
             </div>
         </article>
     </div>
@@ -121,7 +130,7 @@
 
 <article>
     <div class="row">
-        <div class="text-center">
+        <div class="text-center margin-top-20">
             <div class="@containerColumnClass">
                 @foreach (var membershipModel in memberships)
                 {

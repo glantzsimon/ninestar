@@ -3112,7 +3112,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter your exact birth time and location for the highest level of accuracy. In Nine Star Ki, these details are especially important for daily and hourly Ki readings, and for those born near a cusp. Our system offers the most precise calculations available—grounded in astronomical data for deeper, more reliable insights..
+        ///   Looks up a localized string similar to Enter your &lt;strong&gt;exact birth time and location&lt;/strong&gt; for the &lt;strong&gt;highest level of accuracy&lt;/strong&gt;. In Nine Star Ki, these details are especially important for &lt;strong&gt;daily and hourly Ki readings&lt;/strong&gt;, and for those born &lt;strong&gt;near a cusp&lt;/strong&gt;. Our system offers the &lt;strong&gt;most precise calculations available&lt;/strong&gt;—grounded in &lt;strong&gt;astronomical data&lt;/strong&gt; for &lt;strong&gt;deeper, more reliable insights&lt;/strong&gt;..
         /// </summary>
         public static string AstronomicalPrecisionDetails {
             get {
@@ -4451,6 +4451,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose your plan and start exploring the Ki!.
+        /// </summary>
+        public static string ChooseYourPlan {
+            get {
+                return ResourceManager.GetString("ChooseYourPlan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click on a tab below to uncover more information!.
         /// </summary>
         public static string ClickOnATabBelowForMoreInformation {
@@ -4621,7 +4630,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Explore a detailed breakdown of Yin/Yang, Element and Energy affinities and Modality / Group compatibility. Visual gauges offer an at-a-glance view of multiple compatibility factors, supported by deep analysis of the core energies involved..
+        ///   Looks up a localized string similar to Explore a &lt;strong&gt;detailed breakdown of Yin/Yang, Element and Energy affinities&lt;/strong&gt; and &lt;strong&gt;Modality / Group compatibility&lt;/strong&gt;. &lt;strong&gt;Visual gauges&lt;/strong&gt; offer an at-a-glance view of &lt;strong&gt;multiple compatibility factors&lt;/strong&gt;, supported by &lt;strong&gt;deep analysis&lt;/strong&gt; of the &lt;strong&gt;core energies&lt;/strong&gt; involved.&lt;br&gt;&lt;br&gt;.
         /// </summary>
         public static string CompatibilityDescription {
             get {
@@ -4745,7 +4754,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose your preferred calculation method—from traditional Macrobiotic to the Chinese system with inversion. Tailor your experience by selecting which Houses appear in predictions, whether to invert daily Ki for the Southern Hemisphere, and how to display key visuals—magic squares or clean, graphical layouts. Fine-tune multiple parameters for a truly personalised and flexible experience..
+        ///   Looks up a localized string similar to * Includes an optional complimentary one-hour consultation!.
+        /// </summary>
+        public static string ComplimentaryConsultationTitle {
+            get {
+                return ResourceManager.GetString("ComplimentaryConsultationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose your &lt;strong&gt;preferred calculation method&lt;/strong&gt;—from &lt;strong&gt;traditional Macrobiotic&lt;/strong&gt; to the &lt;strong&gt;Chinese system with inversion&lt;/strong&gt;. Tailor your experience by selecting which &lt;strong&gt;Houses appear in predictions&lt;/strong&gt;, whether to &lt;strong&gt;invert daily Ki for the Southern Hemisphere&lt;/strong&gt;, and how to display key visuals—&lt;strong&gt;magic squares&lt;/strong&gt; or clean, &lt;strong&gt;graphical layouts&lt;/strong&gt;. &lt;strong&gt;Fine-tune multiple parameters&lt;/strong&gt; for a truly &lt;strong&gt;personalised and [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ConfigurationsDescription {
             get {
@@ -6416,7 +6434,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discover which directions are auspicious—or best avoided—based on your personal Ki and the current cycle. Use Directionology to plan travel, relocate with purpose, and align your movements with supportive energetic flows for greater harmony and success..
+        ///   Looks up a localized string similar to Discover which &lt;strong&gt;directions are auspicious—or best avoided&lt;/strong&gt;—based on your &lt;strong&gt;personal Ki&lt;/strong&gt; and the &lt;strong&gt;current cycle&lt;/strong&gt;. Use Directionology to &lt;strong&gt;plan travel, relocate with purpose&lt;/strong&gt;, and &lt;strong&gt;align your movements with supportive energetic flows&lt;/strong&gt; for greater harmony and success.&lt;br&gt;&lt;br&gt;.
         /// </summary>
         public static string DirectionologyDetails {
             get {
@@ -9452,7 +9470,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Easily toggle between your own personal Nine Star Ki influences and the broader global energies affecting the collective. View how your individual cycles align—or contrast—with the energetic climate of the world around you. This dual perspective offers powerful insight into timing, relationships, and how to navigate both personal growth and collective change..
+        ///   Looks up a localized string similar to Easily toggle between your own &lt;strong&gt;personal Nine Star Ki influences&lt;/strong&gt; and the &lt;strong&gt;broader global energies&lt;/strong&gt; affecting the collective. View how your &lt;strong&gt;individual cycles align—or contrast—with the energetic climate&lt;/strong&gt; of the world around you. This &lt;strong&gt;dual perspective&lt;/strong&gt; offers powerful insight into &lt;strong&gt;timing, relationships&lt;/strong&gt;, and how to navigate both &lt;strong&gt;personal growth&lt;/strong&gt; and &lt;strong&gt;collective change&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;.
         /// </summary>
         public static string GlobalKiDescription {
             get {
@@ -10955,7 +10973,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Easily select dates, zoom in for details or out for the big picture. Includes moon phases and rich descriptions for each lunar day..
+        ///   Looks up a localized string similar to Easily &lt;strong&gt;select dates&lt;/strong&gt;, &lt;strong&gt;zoom in&lt;/strong&gt; for details or &lt;strong&gt;out for the big picture&lt;/strong&gt;. Includes &lt;strong&gt;moon phases&lt;/strong&gt; and rich &lt;strong&gt;descriptions for each lunar day&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;.
         /// </summary>
         public static string InteractiveCalendarDescription {
             get {
@@ -15863,7 +15881,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Explore predictions across 81-year, 9-year, daily, and hourly cycles for deeper insight into the rhythms shaping your life..
+        ///   Looks up a localized string similar to Explore &lt;strong&gt;predictions&lt;/strong&gt; across &lt;strong&gt;81-year, 9-year, daily&lt;/strong&gt;, and &lt;strong&gt;hourly cycles&lt;/strong&gt; for deeper insight into the &lt;strong&gt;rhythms shaping your life&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;.
         /// </summary>
         public static string OtherCyclesDescription {
             get {
@@ -16090,7 +16108,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Receive detailed interpretations covering every facet of Nine Star Ki Astrology—from yearly and monthly influences to the 81-year, 9-year, and even daily Ki rhythms. Explore your emotional landscape, relationships, career, health, finances, spirituality and more..
+        ///   Looks up a localized string similar to Receive &lt;strong&gt;detailed interpretations&lt;/strong&gt; covering &lt;strong&gt;every facet&lt;/strong&gt; of &lt;strong&gt;Nine Star Ki Astrology&lt;/strong&gt;—from &lt;strong&gt;yearly and monthly influences&lt;/strong&gt; to the &lt;strong&gt;81-year, 9-year&lt;/strong&gt;, and even &lt;strong&gt;daily Ki rhythms&lt;/strong&gt;. Explore your &lt;strong&gt;emotional landscape, relationships, career, health, finances, spirituality&lt;/strong&gt; and more.&lt;br&gt;&lt;br&gt;.
         /// </summary>
         public static string PersonalChartDescription {
             get {
@@ -22667,7 +22685,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to When you upgrade, you will get &lt;strong&gt;unlimited access to&lt;/strong&gt;:.
+        ///   Looks up a localized string similar to When you upgrade, you will get &lt;strong&gt;unlimited access to the following features&lt;/strong&gt;:.
         /// </summary>
         public static string what_you_get {
             get {

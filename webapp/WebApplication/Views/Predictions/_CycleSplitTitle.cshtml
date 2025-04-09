@@ -2,7 +2,7 @@
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Models
 @using SessionHelper = K9.WebApplication.Helpers.SessionHelper
-@model (NineStarKiEnergy Energy1, NineStarKiEnergy Energy2, bool? IsSplit)
+@model (NineStarKiEnergy Energy1, NineStarKiEnergy Energy2, bool IsSplit)
 
 @{
     var label = Model.Energy1.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy ? Dictionary.YearlyCycle
@@ -15,8 +15,8 @@
 
     var displayPreference = SessionHelper.GetEnergyDefaultDisplay();
     var graphicalStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "" : "display: none";
-    var house1Text = Model.IsSplit == true ? Model.Energy1.HouseName : $"{Model.Energy1.HouseName} (S)";
-    var house2Text = Model.IsSplit == true ? Model.Energy2.HouseName : $"{Model.Energy2.HouseName} (L)";
+    var house1Text = Model.IsSplit ? Model.Energy1.HouseName : $"{Model.Energy1.HouseName} (S)";
+    var house2Text = Model.IsSplit ? Model.Energy2.HouseName : $"{Model.Energy2.HouseName} (L)";
 }
 
 <div class="graphical-display" style="@graphicalStyle">

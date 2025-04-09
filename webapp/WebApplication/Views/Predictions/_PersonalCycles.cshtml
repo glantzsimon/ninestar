@@ -72,7 +72,7 @@
                 <a href="#" class="scroll-to-tab" data-tab-id="current-epoch-cycle">
                     @if (isDualView)
                     {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Epoch, lunarHousesOccupiedEnergies.Epoch))
+                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Epoch, lunarHousesOccupiedEnergies.Epoch, false))
                     }
                     else
                     {
@@ -88,7 +88,7 @@
                 <a href="#" class="scroll-to-tab" data-tab-id="current-generation-cycle">
                     @if (isDualView)
                     {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Generation, lunarHousesOccupiedEnergies.Generation))
+                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Generation, lunarHousesOccupiedEnergies.Generation, false))
                     }
                     else
                     {
@@ -104,7 +104,7 @@
                 <a href="#" class="scroll-to-tab" data-tab-id="current-monthly-cycle">
                     @if (isDualView)
                     {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Month, lunarHousesOccupiedEnergies.Month))
+                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Month, lunarHousesOccupiedEnergies.Month, false))
                     }
                     else
                     {
@@ -117,7 +117,7 @@
                 <a href="#" class="scroll-to-tab" data-tab-id="current-yearly-cycle">
                     @if (isDualView)
                     {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Year, lunarHousesOccupiedEnergies.Year))
+                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Year, lunarHousesOccupiedEnergies.Year, false))
                     }
                     else
                     {
@@ -132,7 +132,7 @@
                     {
                         if (isDualView)
                         {
-                            @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Day, lunarHousesOccupiedEnergies.Day))
+                            @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Day, lunarHousesOccupiedEnergies.Day, false))
                         }
                         else
                         {
@@ -151,7 +151,7 @@
             <div class="col-sm-4 col-sm-offset-4 very-small-energy">
                 @if (isDualView)
                 {
-                    @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Hour, lunarHousesOccupiedEnergies.Hour))
+                    @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Hour, lunarHousesOccupiedEnergies.Hour, false))
                 }
                 else
                 {

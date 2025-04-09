@@ -373,3 +373,20 @@ a > .ninestar-summary-container:hover {
   margin-bottom: 0;
   display: block;
 }
+.calculator-options {
+  margin-bottom: -7px;
+}
+.calculator-options .form-check {
+  cursor: pointer;
+}
+.calculator-options .form-check input,
+.calculator-options .form-check label {
+  cursor: pointer;
+}
+.calculator-options label {
+  position: relative;
+  top: -2px;
+  margin-right: 5px;
+  font-size: 0.9em;
+  font-weight: normal;
+}

@@ -164,6 +164,10 @@
         var url = '@Url.Action("GetAlchemy")';
         var selectedDate = $("#SelectedDateTimeString").val();
 
+        if (!selectedDate) {
+            return;
+        }
+
         $.fn.displaySpinner("#profile-alchemy-container");
 
         ajaxcontroller().get(url,

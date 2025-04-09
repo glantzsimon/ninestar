@@ -54,7 +54,7 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ShowDirectionsLabel)]
         public bool ShowDirections { get; set; }
-        
+
         [ScriptIgnore]
         public bool IsCycleSwitchActive => EnableCycleSwitch && SelectedDate >= CYCLE_SWITCH_DATE;
 
@@ -66,6 +66,7 @@ namespace K9.WebApplication.Models
             EnergyDisplay = (EEnergyDisplay)SessionHelper.GetEnergyDefaultDisplay();
             HousesDisplay = SessionHelper.GetCurrentUserHousesDisplay();
             CalculationMethod = (ECalculationMethod)SessionHelper.GetCurrentUserCalculationMethod();
+            CalculatorType = SessionHelper.GetCurrentUserDefaultCalculatorType();
             InvertDailyAndHourlyKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyKiForSouthernHemisphere();
             InvertDailyAndHourlyCycleKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyCycleKiForSouthernHemisphere();
             ShowDirections = SessionHelper.GetShowDirections();

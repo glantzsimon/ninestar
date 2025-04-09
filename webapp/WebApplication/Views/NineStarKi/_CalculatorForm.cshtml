@@ -12,14 +12,16 @@
 
 @using (Html.BeginBootstrapForm())
 {
-    <div class="float-right d-flex align-items-center calculator-options">
+    <label>@Dictionary.CalculatorTypeLabel</label>
+
+    <div class="d-flex align-items-center calculator-options">
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="@nameof(Model.CalculatorType)" id="simple-calculator" value="@((int)ECalculatorType.Simple)" @simpleChecked>
-            <label class="form-check-label" for="simple-calculator">@Dictionary.SimpleCalculator</label>
+            <input type="radio" name="@nameof(Model.CalculatorType)" id="simple-calculator" value="@((int) ECalculatorType.Simple)" @simpleChecked>
+            <label for="simple-calculator">@Dictionary.Simple</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="@nameof(Model.CalculatorType)" id="advanced-calculator" value="@((int)ECalculatorType.Advanced)" @advancedChecked>
-            <label class="form-check-label" for="advanced-calculator">@Dictionary.AdvancedCalculator</label>
+            <input type="radio" name="@nameof(Model.CalculatorType)" id="advanced-calculator" value="@((int) ECalculatorType.Advanced)" @advancedChecked>
+            <label for="advanced-calculator">@Dictionary.Advanced</label>
         </div>
     </div>
 

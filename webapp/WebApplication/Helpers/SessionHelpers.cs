@@ -93,10 +93,10 @@ namespace K9.WebApplication.Helpers
             SetValue(Constants.SessionConstants.DefaultCalculatorType, (int)value);
         }
 
-        public static ECalculationMethod GetCurrentUserDefaultCalculatorType()
+        public static ECalculatorType GetCurrentUserDefaultCalculatorType()
         {
             var intValue = GetIntValue(Constants.SessionConstants.DefaultCalculatorType, (int)ECalculatorType.Advanced);
-            return (ECalculationMethod)intValue;
+            return (ECalculatorType)intValue;
         }
 
         public static void SetCurrentUserPanelCycleView(EPanelCycleView value)

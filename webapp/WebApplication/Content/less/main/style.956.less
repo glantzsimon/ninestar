@@ -2,7 +2,13 @@
 
 @media (max-width:956px) {
     .site-controls-text {
-        display: none !important;
+        display: none;        
+    }
+
+    a[title*="Sign In"] {
+        span.site-controls-text {
+            display: inline-block !important;
+        }
     }
 }
 

@@ -13,7 +13,10 @@
     {
         <p class="bold">@K9.Globalisation.Dictionary.NotRegisteredYet @K9.Globalisation.Dictionary.SignUp @Html.ActionLink(K9.Globalisation.Dictionary.Here.ToLowerInvariant(), "Register", new { returnUrl })</p>
         <hr />
-        @Html.BootstrapEditorFor(model => model.UserName)
+        @Html.BootstrapEditorFor(model => model.UserName, new EditorOptions
+        {
+            Label = K9.Globalisation.Dictionary.UserNameOrEmailAddress
+        })
         @Html.BootstrapEditorFor(model => model.Password)
         <span>@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")</span>
         @Html.BootstrapEditorFor(model => model.RememberMe)

@@ -24,7 +24,7 @@
         <div class="energy-image-container">
             <img loading="lazy" title="@Model.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
         </div>
-        @if (Model.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy || Model.EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy)
+        @if (Model.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy || Model.EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy || Model.EnergyCycleType == ENineStarKiEnergyCycleType.DailyEnergy)
         {
             <p class="text-center" style="font-size: 0.9em;">
                 @Model.CycleDescriptiveName

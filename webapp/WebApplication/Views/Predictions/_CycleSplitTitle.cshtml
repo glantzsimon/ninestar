@@ -1,5 +1,7 @@
 ﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Models
+@using SessionHelper = K9.WebApplication.Helpers.SessionHelper
 @model (NineStarKiEnergy Energy1, NineStarKiEnergy Energy2)
 
 @{
@@ -10,16 +12,21 @@
                     : Model.Energy1.EnergyCycleType == ENineStarKiEnergyCycleType.GenerationalEnergy ? Dictionary.NineYearlyEnergy
                         : Model.Energy1.EnergyCycleType == ENineStarKiEnergyCycleType.EpochEnergy ? Dictionary.EightyOneYearlyEnergy
                             : string.Empty;
+
+    var displayPreference = SessionHelper.GetEnergyDefaultDisplay();
+    var graphicalStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "" : "display: none";
 }
 
-<div class="ninestar-summary-container margin-3">
-    <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
-    <p class="margin-bottom-2">@Model.Energy1.ElementNameAndNumber @Dictionary.House</p>
-    <div class="energy-image-container">
-        <img loading="lazy" title="@Model.Energy1.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy1.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy1.Energy.ToString().ToLower()).png" />
-    </div>
-    <p class="margin-bottom-2">@Model.Energy2.ElementNameAndNumber @Dictionary.House</p>
-    <div class="energy-image-container">
-        <img loading="lazy" title="@Model.Energy2.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy2.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy2.Energy.ToString().ToLower()).png" />
+<div class="graphical-display" style="@graphicalStyle">
+    <div class="ninestar-summary-container margin-3">
+        <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
+        <p class="margin-bottom-2">@Model.Energy1.ElementNameAndNumber @Dictionary.House</p>
+        <div class="energy-image-container">
+            <img loading="lazy" title="@Model.Energy1.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy1.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy1.Energy.ToString().ToLower()).png" />
+        </div>
+        <p class="margin-bottom-2">@Model.Energy2.ElementNameAndNumber @Dictionary.House</p>
+        <div class="energy-image-container">
+            <img loading="lazy" title="@Model.Energy2.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy2.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy2.Energy.ToString().ToLower()).png" />
+        </div>
     </div>
 </div>

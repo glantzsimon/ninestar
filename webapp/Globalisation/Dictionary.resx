@@ -6226,4 +6226,10 @@
   <data name="Receptive" xml:space="preserve">
     <value>Receptive</value>
   </data>
+  <data name="SolarAndLunarHouses" xml:space="preserve">
+    <value>Solar And Lunar Houses</value>
+  </data>
+  <data name="UserNameOrEmailAddress" xml:space="preserve">
+    <value>Username or Email Address</value>
+  </data>
 </root>

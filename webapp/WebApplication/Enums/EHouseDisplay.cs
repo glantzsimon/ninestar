@@ -8,6 +8,8 @@ namespace K9.WebApplication.Enums
         SolarHouse,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.LunarHouses)]
         LunarHouse,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.SolarAndLunarHouses)]
+        SolarAndLunarHouses,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.IsometricHouses)]
         Isometric
     }

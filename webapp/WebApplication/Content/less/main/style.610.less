@@ -39,7 +39,14 @@
     }
 
     .site-controls-text {
-        display: none !important;
+        display: none;        
+    }
+
+    a[title*="Sign In"] {
+        color: blue;
+        span.site-controls-text {
+            display: inline-block !important;
+        }
     }
 
     .page {

@@ -168,6 +168,7 @@
         {
             public const string SolarHouses = "SolarHouses";
             public const string LunarHouses = "LunarHouses";
+            public const string SolarAndLunarHouses = "SolarAndLunarHouses";
             public const string IsometricHouses = "IsometricHouses";
 
             public const string FullTextView = "FullTextView";

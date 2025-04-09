@@ -116,6 +116,7 @@ namespace K9.WebApplication.Models
             PersonalChartEnergies = new NineStarKiEnergiesModel();
             GlobalCycleEnergies = new NineStarKiEnergiesModel();
             PersonalHousesOccupiedEnergies = new NineStarKiEnergiesModel();
+            PersonalHousesOccupiedLunarEnergies = new NineStarKiEnergiesModel();
 
             preciseEmotionalEnergy = PersonModel.Gender.IsYin() && CalculationMethod == ECalculationMethod.Chinese
                 ? preciseEmotionalEnergyForInvertedYear
@@ -237,6 +238,39 @@ namespace K9.WebApplication.Models
 
                 PersonalHousesOccupiedEnergies.Day2Inverted = GetOrAddToCache($"DayTwoInverted_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseInvertedDailyCycleAfternoonEnergy}_{preciseInvertedDailyCycleAfternoonEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
                     () => GetPersonalCycleEnergy(preciseInvertedDailyCycleAfternoonEnergy.Value, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
+            }
+
+            if (HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
+            {
+                PersonalHousesOccupiedLunarEnergies.Epoch = GetOrAddToCache($"Epoch_lh_{SelectedDate}_{personalInfoString}_{preciseEpochCycleEnergy}_{housesDisplay}",
+                () => GetPersonalCycleEnergy(preciseEpochCycleEnergy, ENineStarKiEnergyCycleType.EpochEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
+
+                PersonalHousesOccupiedLunarEnergies.Generation = GetOrAddToCache($"Generation_lh_{SelectedDate}_{preciseGenerationalCycleEnergy}_{housesDisplay}",
+                () => GetPersonalCycleEnergy(preciseGenerationalCycleEnergy, ENineStarKiEnergyCycleType.GenerationalEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
+
+                PersonalHousesOccupiedLunarEnergies.Year = GetOrAddToCache($"Year_lh_{SelectedDate}_{personalInfoString}_{preciseYearlyCycleEnergy}_{HousesDisplay}",
+                () => GetPersonalCycleEnergy(preciseYearlyCycleEnergy, ENineStarKiEnergyCycleType.YearlyCycleEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
+
+                PersonalHousesOccupiedLunarEnergies.Month = GetOrAddToCache($"Month_lh_{SelectedDate}_{personalInfoString}_{preciseMonthlyCycleEnergy}_{HousesDisplay}",
+                () => GetPersonalCycleEnergy(preciseMonthlyCycleEnergy, ENineStarKiEnergyCycleType.MonthlyCycleEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
+
+                PersonalHousesOccupiedLunarEnergies.Day = GetOrAddToCache($"Day_lh_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleMorningEnergy}_{preciseInvertedDailyCycleMorningEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
+                () => GetPersonalCycleEnergy(preciseDailyCycleMorningEnergy, ENineStarKiEnergyCycleType.DailyEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
+
+                PersonalHousesOccupiedLunarEnergies.Day2 = GetOrAddToCache($"DayTwo_lh_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleAfternoonEnergy}_{preciseInvertedDailyCycleAfternoonEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
+                () => GetPersonalCycleEnergy(preciseDailyCycleAfternoonEnergy, ENineStarKiEnergyCycleType.DailyEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
+
+                PersonalHousesOccupiedLunarEnergies.Hour = GetOrAddToCache($"Hour_lh_{SelectedDate:yyyyMMddHHmm}_{personalInfoString}_{preciseHourlyCycleEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
+                () => GetPersonalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
+
+                if (preciseInvertedDailyCycleMorningEnergy.HasValue)
+                {
+                    PersonalHousesOccupiedLunarEnergies.DayInverted = GetOrAddToCache($"DayInverted_lh_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseInvertedDailyCycleMorningEnergy}_{preciseInvertedDailyCycleMorningEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
+                        () => GetPersonalCycleEnergy(preciseInvertedDailyCycleMorningEnergy.Value, ENineStarKiEnergyCycleType.DailyEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
+
+                    PersonalHousesOccupiedLunarEnergies.Day2Inverted = GetOrAddToCache($"DayTwoInverted_lh_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseInvertedDailyCycleAfternoonEnergy}_{preciseInvertedDailyCycleAfternoonEnergy}_{HousesDisplay}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
+                        () => GetPersonalCycleEnergy(preciseInvertedDailyCycleAfternoonEnergy.Value, ENineStarKiEnergyCycleType.DailyEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
+                }
             }
 
             #endregion
@@ -393,41 +427,78 @@ namespace K9.WebApplication.Models
             MagicSquareViewModel Day,
             MagicSquareViewModel Hour) GetCycleMagicSquares()
         {
+            var isDualView = HousesDisplay == EHousesDisplay.SolarAndLunarHouses;
+
             var epoch = new MagicSquareViewModel
             {
                 GlobalKi = GlobalCycleEnergies.Epoch,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Epoch,
-                PersonalChartEnergy = PersonalChartEnergies.Epoch
+                PersonalChartEnergy = PersonalChartEnergies.Epoch,
+                IsSplit = isDualView,
+                SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
+                {
+                    GlobalKi = GlobalCycleEnergies.Epoch,
+                    PersonalHouseOccupied = PersonalHousesOccupiedLunarEnergies.Epoch,
+                    PersonalChartEnergy = PersonalChartEnergies.Epoch
+                } : null
             };
 
             var generation = new MagicSquareViewModel
             {
                 GlobalKi = GlobalCycleEnergies.Generation,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Generation,
-                PersonalChartEnergy = PersonalChartEnergies.Generation
+                PersonalChartEnergy = PersonalChartEnergies.Generation,
+                IsSplit = isDualView,
+                SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
+                {
+                    GlobalKi = GlobalCycleEnergies.Generation,
+                    PersonalHouseOccupied = PersonalHousesOccupiedLunarEnergies.Generation,
+                    PersonalChartEnergy = PersonalChartEnergies.Generation
+                } : null
             };
 
             var year = new MagicSquareViewModel
             {
                 GlobalKi = GlobalCycleEnergies.Year,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Year,
-                PersonalChartEnergy = PersonalChartEnergies.Year
+                PersonalChartEnergy = PersonalChartEnergies.Year,
+                IsSplit = isDualView,
+                SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
+                {
+                    GlobalKi = GlobalCycleEnergies.Year,
+                    PersonalHouseOccupied = PersonalHousesOccupiedLunarEnergies.Year,
+                    PersonalChartEnergy = PersonalChartEnergies.Year
+                } : null
             };
 
             var month = new MagicSquareViewModel
             {
                 GlobalKi = GlobalCycleEnergies.Month,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Month,
-                PersonalChartEnergy = PersonalChartEnergies.Month
+                PersonalChartEnergy = PersonalChartEnergies.Month,
+                IsSplit = isDualView,
+                SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
+                {
+                    GlobalKi = GlobalCycleEnergies.Month,
+                    PersonalHouseOccupied = PersonalHousesOccupiedLunarEnergies.Month,
+                    PersonalChartEnergy = PersonalChartEnergies.Month
+                } : null
             };
 
-            var day = (GlobalCycleEnergies.Day2 == null || GlobalCycleEnergies.Day.EnergyNumber == GlobalCycleEnergies.Day2.EnergyNumber) ?
+            var day = (isDualView || GlobalCycleEnergies.Day2 == null || GlobalCycleEnergies.Day.EnergyNumber == GlobalCycleEnergies.Day2.EnergyNumber) ?
 
                 new MagicSquareViewModel
                 {
                     GlobalKi = GlobalCycleEnergies.Day,
                     PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Day,
-                    PersonalChartEnergy = PersonalChartEnergies.Day
+                    PersonalChartEnergy = PersonalChartEnergies.Day,
+                    IsSplit = isDualView,
+                    SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
+                    {
+                        GlobalKi = GlobalCycleEnergies.Day,
+                        PersonalHouseOccupied = PersonalHousesOccupiedLunarEnergies.Day,
+                        PersonalChartEnergy = PersonalChartEnergies.Day
+                    } : null
                 } :
 
                 new MagicSquareViewModel
@@ -449,7 +520,13 @@ namespace K9.WebApplication.Models
             {
                 GlobalKi = GlobalCycleEnergies.Hour,
                 PersonalHouseOccupied = PersonalHousesOccupiedEnergies.Hour,
-                PersonalChartEnergy = PersonalChartEnergies.Hour
+                PersonalChartEnergy = PersonalChartEnergies.Hour,
+                SecondMagicSquareViewModel = isDualView ? new MagicSquareViewModel
+                {
+                    GlobalKi = GlobalCycleEnergies.Month,
+                    PersonalHouseOccupied = PersonalHousesOccupiedLunarEnergies.Month,
+                    PersonalChartEnergy = PersonalChartEnergies.Month
+                } : null
             };
 
             return (epoch, generation, year, month, day, hour);
@@ -477,7 +554,7 @@ namespace K9.WebApplication.Models
 
         public NineStarKiEnergiesModel PersonalHousesOccupiedEnergies { get; }
 
-        public NineStarKiEnergiesModel PersonalHousesOccupiedIsometricEnergies { get; }
+        public NineStarKiEnergiesModel PersonalHousesOccupiedLunarEnergies { get; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
         public NineStarKiEnergy MainEnergy => PersonalChartEnergies?.Year;
@@ -756,11 +833,11 @@ namespace K9.WebApplication.Models
             return CharacterEnergy.Energy.GetTransformationTypeWithYingYang(MainEnergy.Energy);
         }
 
-        public NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, ENineStarKiEnergyCycleType cycleType)
+        public NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, ENineStarKiEnergyCycleType cycleType, int? energyNumber = null)
         {
             var invertCycle = (CalculationMethod == ECalculationMethod.Chinese && PersonModel.Gender.IsYin()) || IsCycleSwitchActive;
             cycleEnergy = invertCycle ? InvertEnergy(cycleEnergy) : cycleEnergy;
-            var houseOccupied = GetHouseOccupiedByNumber(cycleEnergy, GetCycleHouseEnergyNumber(cycleType));
+            var houseOccupied = GetHouseOccupiedByNumber(cycleEnergy, energyNumber ?? GetCycleHouseEnergyNumber(cycleType));
 
             var energy = (ENineStarKiEnergy)(houseOccupied);
 
@@ -775,7 +852,7 @@ namespace K9.WebApplication.Models
 
         private int GetCycleHouseEnergyNumber(ENineStarKiEnergyCycleType cycleType)
         {
-            if (HousesDisplay == EHousesDisplay.SolarHouse)
+            if (HousesDisplay == EHousesDisplay.SolarHouse || HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
             {
                 return MainEnergy.EnergyNumber;
             }

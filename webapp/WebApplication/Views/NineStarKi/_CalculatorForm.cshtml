@@ -75,15 +75,17 @@
     if (Model.IsPredictionsScreen)
     {
         var selectedDateDisplayStyle = Model.DisplayDataForPeriod == EDisplayDataForPeriod.SelectedDate ? "" : "display: none;";
+        
+        <div class="advanced-calculator-options" style="@advancedStyle">
+            <hr />
 
-        <hr />
+            @Html.BootstrapEditorFor(model => model.DisplayDataForPeriod)
+            @Html.BootstrapEditorFor(model => model.UserTimeZoneId)
 
-        @Html.BootstrapEditorFor(model => model.DisplayDataForPeriod)
-        @Html.BootstrapEditorFor(model => model.UserTimeZoneId)
-
-        <div id="predictions-selected-date-container" style="@selectedDateDisplayStyle">
-            @Html.BootstrapEditorFor(model => model.SelectedDate)
-            @Html.BootstrapEditorFor(model => model.SelectedTime)
+            <div id="predictions-selected-date-container" style="@selectedDateDisplayStyle">
+                @Html.BootstrapEditorFor(model => model.SelectedDate)
+                @Html.BootstrapEditorFor(model => model.SelectedTime)
+            </div>
         </div>
     }
 

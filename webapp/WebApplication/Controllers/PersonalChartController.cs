@@ -115,12 +115,14 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult MyProfile()
         {
-            var myAccount = My.UsersRepository.Find(Current.UserId);
+            var myAccount = My.AccountService.GetAccount(Current.UserId);
             var personModel = new PersonModel
             {
-                Name = myAccount.FullName,
-                DateOfBirth = myAccount.BirthDate,
-                Gender = myAccount.Gender
+                Name = myAccount.User.FullName,
+                DateOfBirth = myAccount.User.BirthDate,
+                TimeOfBirth = myAccount.UserInfo.TimeOfBirth,
+                BirthTimeZoneId = myAccount.UserInfo.BirthTimeZoneId,
+                Gender = myAccount.User.Gender
             };
             var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
 

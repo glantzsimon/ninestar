@@ -15,6 +15,8 @@ namespace K9.WebApplication.ViewModels
 
         public UserMembership Membership { get; set; }
 
+        public UserInfo UserInfo { get; set; }
+
         public List<UserConsultation> Consultations { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.RedeemPromoCode)]

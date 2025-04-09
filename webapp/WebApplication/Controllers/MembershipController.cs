@@ -16,11 +16,13 @@ namespace K9.WebApplication.Controllers
     public class MembershipController : BaseNineStarKiController
     {
         private readonly IPromotionService _promotionService;
+        private readonly IAccountService _accountService;
 
-        public MembershipController(INineStarKiPackage nineStarKiPackage, IPromotionService promotionService)
+        public MembershipController(INineStarKiPackage nineStarKiPackage, IPromotionService promotionService, IAccountService accountService)
             : base(nineStarKiPackage)
         {
             _promotionService = promotionService;
+            _accountService = accountService;
         }
 
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
@@ -109,12 +111,7 @@ namespace K9.WebApplication.Controllers
             var membership = My.MembershipService.GetActiveUserMembership(Current.UserId);
             var consultations = My.UserService.GetPendingConsultations(Current.UserId);
             var user = My.UserService.Find(Current.UserId);
-            return View(new MyAccountViewModel
-            {
-                User = user,
-                Membership = My.MembershipService.GetActiveUserMembership(user?.Id),
-                Consultations = My.UserService.GetPendingConsultations(user.Id)
-            });
+            return View(_accountService.GetAccount(Current.UserId));
         }
 
         [Authorize]

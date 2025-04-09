@@ -206,6 +206,10 @@
             public const string Consultation = "Consultation";
             public const string UserConsultation = "UserConsultation";
             public const string Slots = "Slots";
+            public const string UserOTPs = "UserOTPs";
+            public const string UserOTP = "UserOTP";
+            public const string UserInfos = "UserInfos";
+            public const string UserInfo = "UserInfo";
             public const string SystemSetting = "SystemSetting";
             public const string SystemSettings = "SystemSettings";
             public const string Consultations = "Consultations";

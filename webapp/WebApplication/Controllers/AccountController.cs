@@ -235,6 +235,10 @@ namespace K9.WebApplication.Controllers
                     EmailAddress = user?.EmailAddress,
                     PhoneNumber = user?.PhoneNumber,
                     Gender = user?.Gender ?? EGender.Other
+                },
+                UserInfo = new UserInfo
+                {
+                    User = user
                 }
             });
         }
@@ -331,7 +335,8 @@ namespace K9.WebApplication.Controllers
                     Gender = Methods.GetRandomGender(),
                     BirthDate = DateTime.Today.AddYears(-27)
                 },
-                PromoCode = promoCode
+                PromoCode = promoCode,
+                UserInfo = new UserInfo()
             });
         }
 
@@ -377,6 +382,16 @@ namespace K9.WebApplication.Controllers
                 {
                     var returnUrl = TempData["ReturnUrl"];
                     var user = My.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
+
+                    try
+                    {
+                        model.UserInfo.Id = My.UserService.GetOrCreateUserInfo(user.Id).Id;
+                        My.UserService.UpdateUserInfo(model.UserInfo);
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Error($"AccountrController => Register => Error creating / updating UserInfo: {e.GetFullErrorMessage()}");
+                    }
 
                     if (user.Id > 0)
                     {
@@ -484,13 +499,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult MyAccount()
         {
             var user = My.UsersRepository.Find(u => u.Username == User.Identity.Name).FirstOrDefault();
-            return View(new MyAccountViewModel
-            {
-                User = user,
-                Membership = My.MembershipService.GetActiveUserMembership(user?.Id),
-                AllowMarketingEmails = !user.IsUnsubscribed,
-                Consultations = My.UserService.GetPendingConsultations(user.Id)
-            });
+            return View(My.AccountService.GetAccount(user.Id));
         }
 
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
@@ -498,12 +507,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult ViewAccount(int userId)
         {
             var user = My.UsersRepository.Find(u => u.Id == userId).FirstOrDefault();
-            return View("MyAccount", new MyAccountViewModel
-            {
-                User = user,
-                AllowMarketingEmails = !user.IsUnsubscribed,
-                Membership = My.MembershipService.GetActiveUserMembership(user?.Id)
-            });
+            return View("MyAccount", My.AccountService.GetAccount(userId));
         }
 
         [Authorize]
@@ -546,6 +550,9 @@ namespace K9.WebApplication.Controllers
                     model.User.IsUnsubscribed = !model.AllowMarketingEmails;
                     My.UsersRepository.Update(model.User);
 
+                    // Update UserInfo
+                    My.UserService.UpdateUserInfo(model.UserInfo);
+
                     // Update contact record too
                     var contact = My.ContactService.Find(model.User.EmailAddress);
                     if (contact != null)
@@ -578,13 +585,10 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
-            return View("MyAccount", new MyAccountViewModel
-            {
-                User = model.User,
-                PromoCode = model.PromoCode,
-                Membership = My.MembershipService.GetActiveUserMembership(model.User.Id),
-                Consultations = My.UserService.GetPendingConsultations(model.User.Id)
-            });
+            var account = My.AccountService.GetAccount(model.User.Id);
+            account.PromoCode = model.PromoCode;
+
+            return View("MyAccount", account);
         }
 
         [Authorize]

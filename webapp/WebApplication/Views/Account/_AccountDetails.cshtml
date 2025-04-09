@@ -8,6 +8,7 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.HiddenFor(model => model.User.Id)
+        @Html.HiddenFor(model => model.UserInfo.Id)
         @Html.HiddenFor(model => model.User.Username)
         @Html.HiddenFor(model => model.User.Name)
         @Html.HiddenFor(model => model.User.EmailAddress)
@@ -26,6 +27,8 @@
         </div>
         <div>
             <div class="col-sm-6">@Html.BootstrapDisplayFor(model => model.User.BirthDate)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.TimeOfBirth)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.BirthTimeZoneId)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.Gender)</div>
         </div>
         <div>

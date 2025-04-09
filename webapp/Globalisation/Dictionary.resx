@@ -6292,7 +6292,19 @@
   <data name="SolarAndLunarHouses" xml:space="preserve">
     <value>Solar And Lunar Houses</value>
   </data>
+  <data name="UserInfo" xml:space="preserve">
+    <value>User Info</value>
+  </data>
+  <data name="UserInfos" xml:space="preserve">
+    <value>User Infos</value>
+  </data>
   <data name="UserNameOrEmailAddress" xml:space="preserve">
     <value>Username or Email Address</value>
+  </data>
+  <data name="UserOTP" xml:space="preserve">
+    <value>User OTP</value>
+  </data>
+  <data name="UserOTPs" xml:space="preserve">
+    <value>User OTPs</value>
   </data>
 </root>

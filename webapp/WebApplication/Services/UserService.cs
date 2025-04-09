@@ -8,6 +8,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using UserMembership = K9.DataAccessLayer.Models.UserMembership;
 
 namespace K9.WebApplication.Services
@@ -20,9 +21,10 @@ namespace K9.WebApplication.Services
         private readonly IConsultationService _consultationService;
         private readonly IRepository<UserMembership> _userMembershipsRepository;
         private readonly IRepository<UserOTP> _userOtpRepository;
+        private readonly IRepository<UserInfo> _userInfosRepository;
 
         public UserService(INineStarKiBasePackage my, IRepository<Promotion> promoCodesRepository, IRepository<UserPromotion> userPromoCodeRepository, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, IConsultationService consultationService,
-            IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository)
+            IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<UserInfo> userInfosRepository)
             : base(my)
         {
             _userPromoCodeRepository = userPromoCodeRepository;
@@ -31,6 +33,7 @@ namespace K9.WebApplication.Services
             _consultationService = consultationService;
             _userMembershipsRepository = userMembershipsRepository;
             _userOtpRepository = userOtpRepository;
+            _userInfosRepository = userInfosRepository;
         }
 
         public void UpdateActiveUserEmailAddressIfFromFacebook(Contact contact)
@@ -49,7 +52,7 @@ namespace K9.WebApplication.Services
                 }
             }
         }
-        
+
         public User Find(int id)
         {
             return My.UsersRepository.Find(id);
@@ -58,6 +61,22 @@ namespace K9.WebApplication.Services
         public User Find(string username)
         {
             return My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
+        }
+
+        public UserInfo GetOrCreateUserInfo(int userId)
+        {
+            var userInfo = _userInfosRepository.Find(e => e.UserId == userId).FirstOrDefault();
+            if (userInfo != null)
+            {
+                return userInfo;
+            }
+
+            var newUserInfo = new UserInfo
+            {
+                UserId = userId
+            };
+            _userInfosRepository.Create(newUserInfo);
+            return newUserInfo;
         }
 
         public List<UserConsultation> GetPendingConsultations(int? userId = null)
@@ -91,6 +110,12 @@ namespace K9.WebApplication.Services
             }
 
             return userConsultations.Where(e => !e.Consultation.ScheduledOn.HasValue || e.Consultation.ScheduledOn >= DateTime.Today).ToList();
+        }
+
+        public void UpdateUserInfo(UserInfo userInfo)
+        {
+            _userInfosRepository.GetQuery($"UPDATE {nameof(UserInfo)} SET {nameof(UserInfo.TimeOfBirth)} = '{userInfo.TimeOfBirth.ToString()}', " +
+                                          $"{nameof(UserInfo.BirthTimeZoneId)} = '{userInfo.BirthTimeZoneId.ToString()}' WHERE Id = {userInfo.Id}");
         }
 
         public void DeleteUser(int id)

@@ -9,7 +9,9 @@ namespace K9.WebApplication.Services
         void UpdateActiveUserEmailAddressIfFromFacebook(Contact contact);
         User Find(int id);
         User Find(string username);
+        UserInfo GetOrCreateUserInfo(int userId);
         List<UserConsultation> GetPendingConsultations(int? userId = null);
+        void UpdateUserInfo(UserInfo userInfo);
         void DeleteUser(int id);
         void EnableMarketingEmails(string externalId, bool value = true);
         void EnableMarketingEmails(int id, bool value = true);

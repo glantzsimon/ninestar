@@ -21666,6 +21666,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User Info.
+        /// </summary>
+        public static string UserInfo {
+            get {
+                return ResourceManager.GetString("UserInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Infos.
+        /// </summary>
+        public static string UserInfos {
+            get {
+                return ResourceManager.GetString("UserInfos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Is Unsubscribed.
         /// </summary>
         public static string UserIsUnsubscribed {
@@ -21707,6 +21725,24 @@ namespace K9.Globalisation {
         public static string UserNameOrEmailAddress {
             get {
                 return ResourceManager.GetString("UserNameOrEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User OTP.
+        /// </summary>
+        public static string UserOTP {
+            get {
+                return ResourceManager.GetString("UserOTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User OTPs.
+        /// </summary>
+        public static string UserOTPs {
+            get {
+                return ResourceManager.GetString("UserOTPs", resourceCulture);
             }
         }
         

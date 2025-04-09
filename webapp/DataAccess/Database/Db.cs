@@ -22,5 +22,6 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<MailingListContact> MailingListContacts { get; set; }
 	    public DbSet<SystemSetting> SystemSettings { get; set; }
 	    public DbSet<TimeZone> TimeZones { get; set; }
+	    public DbSet<UserInfo> UserInfos { get; set; }
     }
 }

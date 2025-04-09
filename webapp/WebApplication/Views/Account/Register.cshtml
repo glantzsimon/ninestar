@@ -23,8 +23,13 @@
         @Html.BootstrapEditorFor(model => model.RegisterModel.EmailAddress)
         <div class="row">
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.BirthDate)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.TimeOfBirth)</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.BirthTimeZoneId)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.Gender)</div>
         </div>
+
         @Html.BootstrapEditorFor(model => model.RegisterModel.PhoneNumber)
         @Html.BootstrapEditorFor(model => model.PromoCode)
         <hr />

@@ -2,6 +2,7 @@
 using K9.Base.WebApplication.Enums;
 using K9.Base.WebApplication.Models;
 using K9.DataAccessLayer.Models;
+using K9.WebApplication.ViewModels;
 using System;
 
 namespace K9.WebApplication.Services
@@ -24,9 +25,9 @@ namespace K9.WebApplication.Services
         ActivateAccountResult ActivateAccount(int userId, string token = "");
 		ActivateAccountResult ActivateAccount(string username, string token = "");
 		ActivateAccountResult ActivateAccount(User user, string token = "");
-
         ActivateAccountResult ActivateAccount(int userId);
 
+        MyAccountViewModel GetAccount(int userId);
 		string GetAccountActivationToken(int userId);
         UserOTP CreateAccountActivationOTP(int userId, bool recreate = false);
         UserOTP GetAccountActivationOTP(Guid uniqueIdentifier);

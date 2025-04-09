@@ -431,12 +431,17 @@
     <Compile Include="Migrations\202504090323010_TimeZoneExtended.designer.cs">
       <DependentUpon>202504090323010_TimeZoneExtended.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504091254500_AddUserInfo.cs" />
+    <Compile Include="Migrations\202504091254500_AddUserInfo.designer.cs">
+      <DependentUpon>202504091254500_AddUserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\TimeZone.cs" />
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
     <Compile Include="Models\EmailQueueItem.cs" />
     <Compile Include="Models\MailingListContact.cs" />
     <Compile Include="Models\SystemSetting.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Models\UserOTP.cs" />
     <Compile Include="Models\TimeZoneBase.cs" />
     <Compile Include="Models\Slot.cs" />
@@ -603,6 +608,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504090323010_TimeZoneExtended.resx">
       <DependentUpon>202504090323010_TimeZoneExtended.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504091254500_AddUserInfo.resx">
+      <DependentUpon>202504091254500_AddUserInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

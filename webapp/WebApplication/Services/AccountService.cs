@@ -9,6 +9,7 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Packages;
+using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Linq;
@@ -22,14 +23,17 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserOTP> _otpRepository;
         private readonly IUserService _userService;
         private readonly IContactService _contactService;
+        private readonly IMembershipService _membershipService;
 
         public AccountService(INineStarKiBasePackage package, IRepository<User> userRepository, IOptions<WebsiteConfiguration> config, IMailer mailer, IAuthentication authentication, ILogger logger, IRoles roles, Services.IAccountMailerService accountMailerService, IRepository<UserOTP> otpRepository, IUserService userService,
-            IContactService contactService) : base(package)
+            IContactService contactService,
+            IMembershipService membershipService) : base(package)
         {
             _accountMailerService = accountMailerService;
             _otpRepository = otpRepository;
             _userService = userService;
             _contactService = contactService;
+            _membershipService = membershipService;
         }
 
         public ELoginResult Login(string username, string password, bool isRemember)
@@ -229,7 +233,7 @@ namespace K9.WebApplication.Services
                     });
                     return result;
                 }
-
+                
                 try
                 {
                     _accountMailerService.SendActivationEmailToUser(model, otp.SixDigitCode);
@@ -567,6 +571,19 @@ namespace K9.WebApplication.Services
             }
 
             return result;
+        }
+
+        public MyAccountViewModel GetAccount(int userId)
+        {
+            var user = _userService.Find(userId);
+            return new MyAccountViewModel
+            {
+                User = user,
+                UserInfo = _userService.GetOrCreateUserInfo(userId),
+                Membership = _membershipService.GetActiveUserMembership(userId),
+                AllowMarketingEmails = !user.IsUnsubscribed,
+                Consultations = _userService.GetPendingConsultations(user.Id)
+            };
         }
 
         public void Logout()

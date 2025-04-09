@@ -8,7 +8,7 @@ using K9.Globalisation;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
-    [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.Slots, PluralName = Strings.Names.Slots, Name = Strings.Names.Slot)]
+    [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.UserOTPs, PluralName = Strings.Names.UserOTPs, Name = Strings.Names.UserOTP)]
     public class UserOTP : ObjectBase
     {
         public Guid UniqueIdentifier { get; set; } = new Guid();

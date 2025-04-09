@@ -10,7 +10,7 @@ namespace K9.WebApplication.ViewModels
         public NineStarKiEnergy PersonalChartEnergy { get; set; }
 
         public string SolarHouseOccupiedText => $"{PersonalHouseOccupied.HouseName} (S)";
-        public string LunarHouseOccupiedText => $"{PersonalHouseOccupied.HouseName} (L)";
+        public string LunarHouseOccupiedText => $"{SecondMagicSquareViewModel.PersonalHouseOccupied.HouseName} (L)";
 
         public MagicSquareViewModel SecondMagicSquareViewModel { get; set; }
 

@@ -45,9 +45,13 @@
     <div class="ninestar-summary-container margin-3">
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
         <p class="margin-bottom-2">@houseDetails</p>
+        @if (Model.IsDualView)
+        {
+            <p class="margin-bottom-2">@houseDetails2</p>
+        }
         @Html.Partial("../NineStarKi/_MagicSquare", Model)
 
-        @if (Model.IsSplit || Model.IsDualView)
+        @if (Model.IsSplit)
         {
             <p class="margin-bottom-2">@houseDetails2</p>
             @Html.Partial("../NineStarKi/_MagicSquare", Model.SecondMagicSquareViewModel)

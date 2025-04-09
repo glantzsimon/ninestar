@@ -167,6 +167,12 @@
 .upgrade-container h4 {
   margin-top: 0 !important;
 }
+.why-upgrade-container ul li em {
+  display: block;
+  font-style: normal;
+  font-size: 0.9em;
+  color: #666;
+}
 @media (max-width: 513px) {
   .nav-tabs li {
     width: 100%;

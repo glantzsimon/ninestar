@@ -53,8 +53,14 @@ a > .ninestar-summary-container:hover {
 .energy-image-container img {
   width: 100%;
 }
+.energy-image-container.lunar-house img {
+  width: 81%;
+}
 .small-energy img {
   width: 38%;
+}
+.small-energy .lunar-house img {
+  width: 27%;
 }
 .small-energy div.magic-square {
   width: 68%;
@@ -65,8 +71,14 @@ a > .ninestar-summary-container:hover {
 .small-energy div.magic-square div.cell.active {
   font-size: calc(1.3rem * 1.5);
 }
+.small-energy div.magic-square div.cell.active-lunar {
+  font-size: calc(1.3rem * 1.3);
+}
 .medium-energy img {
   width: 62%;
+}
+.medium-energy .lunar-house img {
+  width: 54%;
 }
 .medium-energy div.magic-square {
   width: 88%;
@@ -77,8 +89,14 @@ a > .ninestar-summary-container:hover {
 .medium-energy div.magic-square div.cell.active {
   font-size: calc(1.6rem * 1.5);
 }
+.medium-energy div.magic-square div.cell.active-lunar {
+  font-size: calc(1.6rem * 1.3);
+}
 .very-small-energy img {
   width: 24%;
+}
+.very-small-energy .lunar-house img {
+  width: 18%;
 }
 .very-small-energy div.magic-square {
   width: 48%;
@@ -88,6 +106,9 @@ a > .ninestar-summary-container:hover {
 }
 .very-small-energy div.magic-square div.cell.active {
   font-size: calc(1rem * 1.5);
+}
+.very-small-energy div.magic-square div.cell.active-lunar {
+  font-size: calc(1rem * 1.3);
 }
 .profile-warning {
   color: #a94442;
@@ -181,14 +202,19 @@ a > .ninestar-summary-container:hover {
   overflow: hidden;
   padding-bottom: 2px;
 }
-.magic-square-container .magic-square .cell.active {
+.magic-square-container .magic-square .cell.active,
+.magic-square-container .magic-square .cell.active-lunar {
   border: 0;
-  font-size: calc(2rem * 1.5);
+  font-size: calc(2rem * 1.54);
   font-weight: bold;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-  transform: scale(1.11);
+  transform: scale(1.22);
   position: relative;
   z-index: 2 !important;
+}
+.magic-square-container .magic-square .cell.active-lunar {
+  font-size: calc(2rem * 1.3);
+  transform: scale(1.11);
 }
 .magic-square-container .magic-square .cell.number-1 {
   background-color: white;

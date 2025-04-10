@@ -69,11 +69,23 @@ a > .ninestar-summary-container {
     img {
         width: 100%;
     }
+
+    &.lunar-house {
+        img {
+            width: 81%;
+        }
+    }
 }
 
 .small-energy {
     img {
         width: 38%;
+    }
+
+    .lunar-house {
+        img {
+            width: 27%;
+        }
     }
 
     div.magic-square {
@@ -85,6 +97,10 @@ a > .ninestar-summary-container {
             &.active {
                 font-size: calc(1.3rem * 1.5);
             }
+
+            &.active-lunar {
+                font-size: calc(1.3rem * 1.3);
+            }
         }
     }
 }
@@ -92,6 +108,12 @@ a > .ninestar-summary-container {
 .medium-energy {
     img {
         width: 62%;
+    }
+
+    .lunar-house {
+        img {
+            width: 54%;
+        }
     }
 
     div.magic-square {
@@ -103,6 +125,10 @@ a > .ninestar-summary-container {
             &.active {
                 font-size: calc(1.6rem * 1.5);
             }
+
+            &.active-lunar {
+                font-size: calc(1.6rem * 1.3);
+            }
         }
     }
 }
@@ -110,6 +136,12 @@ a > .ninestar-summary-container {
 .very-small-energy {
     img {
         width: 24%;
+    }
+
+    .lunar-house {
+        img {
+            width: 18%;
+        }
     }
 
     div.magic-square {
@@ -120,6 +152,10 @@ a > .ninestar-summary-container {
 
             &.active {
                 font-size: calc(1rem * 1.5);
+            }
+
+            &.active-lunar {
+                font-size: calc(1rem * 1.3);
             }
         }
     }
@@ -234,14 +270,19 @@ a > .ninestar-summary-container {
             overflow: hidden;
             padding-bottom: 2px;
 
-            &.active {
+            &.active, &.active-lunar {
                 border: 0;
-                font-size: calc(2rem * 1.5);
+                font-size: calc(2rem * 1.54);
                 font-weight: bold;
                 box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-                transform: scale(1.11);
+                transform: scale(1.22);
                 position: relative;
                 z-index: 2 !important;
+            }
+
+            &.active-lunar {
+                font-size: calc(2rem * 1.3);
+                transform: scale(1.11);
             }
 
             &.number-1 {

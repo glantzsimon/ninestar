@@ -6,8 +6,8 @@
 @if (Model != null)
 {
     <div class="container main-content clear-both">
-        @Html.PanelWithSummary(Model.MainEnergy.EnergyHealthTitle, Model.Health, Model.MainEnergy.HealthSummary, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-        
+        @Html.PanelWithSummary(Model.MainEnergy.EnergyHealthTitle, Model.Health, Model.MainEnergy.HealthSummary, "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
         @Html.Panel(Model.MainEnergy.EnergyIllnessesTitle, Model.MainEnergy.Illnesses, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
         @Html.Panel(Dictionary.StrongOrgans, Html.Partial("_ProfileHealthStrongOrgans").ToString(), "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)

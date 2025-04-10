@@ -11,15 +11,25 @@
     var showDirections = K9.WebApplication.Helpers.SessionHelper.GetShowDirections();
     var directionsStyle = !showDirections ? "display: none;" : "";
 
-    var isActive1 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 4 == Model.PersonalHouseOccupied.EnergyNumber || Model.IsDualView && 4 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber;
-    var isActive2 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 9 == Model.PersonalHouseOccupied.EnergyNumber || Model.IsDualView && 9 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber; ;
-    var isActive3 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 2 == Model.PersonalHouseOccupied.EnergyNumber || Model.IsDualView && 2 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber; ;
-    var isActive4 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 3 == Model.PersonalHouseOccupied.EnergyNumber || Model.IsDualView && 3 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber; ;
-    var isActive5 = Model.IsPersonalChart ? true : Model.IsGlobal ? true : 5 == Model.PersonalHouseOccupied.EnergyNumber || Model.IsDualView && 5 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber; ;
-    var isActive6 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 7 == Model.PersonalHouseOccupied.EnergyNumber || Model.IsDualView && 7 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber; ;
-    var isActive7 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 8 == Model.PersonalHouseOccupied.EnergyNumber || Model.IsDualView && 8 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber; ;
-    var isActive8 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 1 == Model.PersonalHouseOccupied.EnergyNumber || Model.IsDualView && 1 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber; ;
-    var isActive9 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 6 == Model.PersonalHouseOccupied.EnergyNumber || Model.IsDualView && 6 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber; ;
+    var isActive1 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 4 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive2 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 9 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive3 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 2 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive4 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 3 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive5 = Model.IsPersonalChart ? true : Model.IsGlobal ? true : 5 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive6 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 7 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive7 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 8 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive8 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 1 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive9 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : 6 == Model.PersonalHouseOccupied.EnergyNumber;
+
+    var isActiveLunar1 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : Model.IsDualView && 4 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber;
+    var isActiveLunar2 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : Model.IsDualView && 9 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber;
+    var isActiveLunar3 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : Model.IsDualView && 2 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber;
+    var isActiveLunar4 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : Model.IsDualView && 3 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber;
+    var isActiveLunar5 = Model.IsPersonalChart ? true : Model.IsGlobal ? false : Model.IsDualView && 5 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber;
+    var isActiveLunar6 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : Model.IsDualView && 7 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber;
+    var isActiveLunar7 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : Model.IsDualView && 8 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber;
+    var isActiveLunar8 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : Model.IsDualView && 1 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber;
+    var isActiveLunar9 = Model.IsPersonalChart ? false : Model.IsGlobal ? false : Model.IsDualView && 6 == Model.SecondMagicSquareViewModel.PersonalHouseOccupied.EnergyNumber;
 
     var active1Class = isActive1 ? "active " : "";
     var active2Class = isActive2 ? "active " : "";
@@ -30,20 +40,30 @@
     var active7Class = isActive7 ? "active " : "";
     var active8Class = isActive8 ? "active " : "";
     var active9Class = isActive9 ? "active " : "";
+
+    var active1LunarClass = isActiveLunar1 ? "active-lunar " : "";
+    var active2LunarClass = isActiveLunar2 ? "active-lunar " : "";
+    var active3LunarClass = isActiveLunar3 ? "active-lunar " : "";
+    var active4LunarClass = isActiveLunar4 ? "active-lunar " : "";
+    var active5LunarClass = isActiveLunar5 ? "active-lunar " : "";
+    var active6LunarClass = isActiveLunar6 ? "active-lunar " : "";
+    var active7LunarClass = isActiveLunar7 ? "active-lunar " : "";
+    var active8LunarClass = isActiveLunar8 ? "active-lunar " : "";
+    var active9LunarClass = isActiveLunar9 ? "active-lunar " : "";
 }
 
 
 <div class="ninestar-summary-container magic-square-container margin-3">
     <div class="magic-square">
-        <div class="cell @active1Class number-@magicSquareNumbers[3]" data-index="1">@magicSquareNumbers[3]</div>
-        <div class="cell @active2Class number-@magicSquareNumbers[8]" data-index="2">@magicSquareNumbers[8]</div>
-        <div class="cell @active3Class number-@magicSquareNumbers[1]" data-index="3">@magicSquareNumbers[1]</div>
-        <div class="cell @active4Class number-@magicSquareNumbers[2]" data-index="4">@magicSquareNumbers[2]</div>
-        <div class="cell @active5Class number-@Model.GlobalKi.EnergyNumber" data-index="5">@Model.GlobalKi.EnergyNumber</div>
-        <div class="cell @active6Class number-@magicSquareNumbers[6]" data-index="6">@magicSquareNumbers[6]</div>
-        <div class="cell @active7Class number-@magicSquareNumbers[7]" data-index="7">@magicSquareNumbers[7]</div>
-        <div class="cell @active8Class number-@magicSquareNumbers[0]" data-index="8">@magicSquareNumbers[0]</div>
-        <div class="cell @active9Class number-@magicSquareNumbers[5]" data-index="9">@magicSquareNumbers[5]</div>
+        <div class="cell @active1Class @active1LunarClass number-@magicSquareNumbers[3]" data-index="1">@magicSquareNumbers[3]</div>
+        <div class="cell @active2Class @active2LunarClass number-@magicSquareNumbers[8]" data-index="2">@magicSquareNumbers[8]</div>
+        <div class="cell @active3Class @active3LunarClass number-@magicSquareNumbers[1]" data-index="3">@magicSquareNumbers[1]</div>
+        <div class="cell @active4Class @active4LunarClass number-@magicSquareNumbers[2]" data-index="4">@magicSquareNumbers[2]</div>
+        <div class="cell @active5Class @active5LunarClass number-@Model.GlobalKi.EnergyNumber" data-index="5">@Model.GlobalKi.EnergyNumber</div>
+        <div class="cell @active6Class @active6LunarClass number-@magicSquareNumbers[6]" data-index="6">@magicSquareNumbers[6]</div>
+        <div class="cell @active7Class @active7LunarClass number-@magicSquareNumbers[7]" data-index="7">@magicSquareNumbers[7]</div>
+        <div class="cell @active8Class @active8LunarClass number-@magicSquareNumbers[0]" data-index="8">@magicSquareNumbers[0]</div>
+        <div class="cell @active9Class @active9LunarClass number-@magicSquareNumbers[5]" data-index="9">@magicSquareNumbers[5]</div>
 
         @if (Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.EpochEnergy && Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.GenerationalEnergy && !Model.IsGlobal)
         {

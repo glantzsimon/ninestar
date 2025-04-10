@@ -108,7 +108,7 @@ namespace K9.WebApplication.Options
 
         public void ValidateValue()
         {
-            if (IsValueValid())
+            if (!IsValueValid())
             {
                 _value = Option1Value;
             }

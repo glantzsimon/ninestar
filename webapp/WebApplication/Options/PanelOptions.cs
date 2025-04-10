@@ -110,7 +110,7 @@ namespace K9.WebApplication.Options
         {
             if (IsValueValid())
             {
-                Value = Option1Value;
+                _value = Option1Value;
             }
         }
 

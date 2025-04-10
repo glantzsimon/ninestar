@@ -6316,4 +6316,7 @@
   <data name="UserOTPs" xml:space="preserve">
     <value>User OTPs</value>
   </data>
+  <data name="LunarKi" xml:space="preserve">
+    <value>Lunar Ki</value>
+  </data>
 </root>

@@ -27,9 +27,11 @@
         <div class="energy-image-container">
             <img loading="lazy" title="@Model.Energy1.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy1.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy1.Energy.ToString().ToLower()).png" />
         </div>
-        <p class="margin-bottom-2">@house2Text</p>
-        <div class="energy-image-container @secondHouseClass">
-            <img loading="lazy" title="@Model.Energy2.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy2.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy2.Energy.ToString().ToLower()).png" />
+        <div class="lunar-house-container">
+            <p class="margin-bottom-2">@house2Text</p>
+            <div class="energy-image-container @secondHouseClass">
+                <img loading="lazy" title="@Model.Energy2.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy2.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy2.Energy.ToString().ToLower()).png" />
+            </div>
         </div>
     </div>
 </div>

@@ -9,6 +9,7 @@
 
             public const string PersonalHouses = "PersonalHouses";
             public const string GlobalKi = "GlobalKi";
+            public const string LunarKi = "LunarKi";
 
             public const string EightyOneYearView = "EightyOneYearView";
             public const string NineYearView = "NineYearView";

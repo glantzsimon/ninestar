@@ -12975,6 +12975,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lunar Ki.
+        /// </summary>
+        public static string LunarKi {
+            get {
+                return ResourceManager.GetString("LunarKi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lunar Nature.
         /// </summary>
         public static string LunarNature {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using K9.Globalisation;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
@@ -21,6 +22,18 @@ namespace K9.WebApplication.Options
 
     public class PanelOptions
     {
+        public PanelOptions()
+        {
+            Init();
+        }
+
+        public PanelOptions(string title, string body)
+        {
+            Title = title;
+            Body = body;
+            Init();
+        }
+
         public string Id { get; set; }
         public string Title { get; set; }
 
@@ -61,8 +74,20 @@ namespace K9.WebApplication.Options
         public int Option2Value { get; set; }
         public int Option3Value { get; set; }
 
-        public int Value { get; set; }
-        
+        private int _value;
+        public int Value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = value;
+                ValidateValue();
+            }
+        }
+
         public string SessionKey { get; set; }
 
         public bool Option1Checked => Value == Option1Value;
@@ -81,21 +106,21 @@ namespace K9.WebApplication.Options
             ? "background-size: contain"
             : "background-size: cover";
 
-        public PanelOptions()
+        public void ValidateValue()
         {
-            Init();
+            if (IsValueValid())
+            {
+                Value = Option1Value;
+            }
         }
 
-        public PanelOptions(string title, string body)
-        {
-            Title = title;
-            Body = body;
-            Init();
-        }
+        private bool IsValueValid() => IsTripleView ? new int[] { Option1Value, Option2Value, Option3Value }.Contains(Value) :
+            IsDualView ? new int[] { Option1Value, Option2Value }.Contains(Value) :
+            false;
 
         public static PanelOptions CreatePanelOptionsWithDualView(
-            string title, string title2, 
-            string body, string body2, 
+            string title, string title2,
+            string body, string body2,
             string option1Text, string option2Text,
             string sessionKey,
             int value1 = 0, int value2 = 1)
@@ -119,8 +144,8 @@ namespace K9.WebApplication.Options
         }
 
         public static PanelOptions CreatePanelOptionsWithTripleView(
-            string title, string title2, string title3, 
-            string body, string body2, string body3, 
+            string title, string title2, string title3,
+            string body, string body2, string body3,
             string option1Text, string option2Text, string option3Text,
             string sessionKey,
             int value1 = 0, int value2 = 1, int value3 = 2)

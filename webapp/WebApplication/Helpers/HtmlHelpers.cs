@@ -83,7 +83,7 @@ namespace K9.WebApplication.Helpers
             );
 
             panelOptions.Value = (int)SessionHelper.GetCurrentUserDefaultPanelView();
-
+            
             panelOptions.ImageSrc = string.IsNullOrEmpty(imageSrc)
                 ? string.Empty
                 : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc);

@@ -181,7 +181,7 @@ namespace K9.WebApplication.Helpers
             return html.PayWall<NineStarKiModel>(section, null, condition, silent, displayHtml);
         }
 
-        public static IDisposable PayWall<T>(this HtmlHelper html, ESection section, T model, bool silent = false,
+        public static IDisposable PayWall<T>(this HtmlHelper html, ESection section, bool silent = false,
             string displayHtml = "", bool hidePadlock = false)
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;

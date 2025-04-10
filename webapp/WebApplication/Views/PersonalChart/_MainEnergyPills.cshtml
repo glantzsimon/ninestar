@@ -36,7 +36,10 @@
 
         <div class="tab-content">
             <div id="m-essence" class="tab-pane fade in active">
-                @Html.PanelWithSummary(Model.MainEnergy.EnergyEssenceTitle, $"{ Model.MainEnergy.EnergyDescription} <hr/> {Html.Raw(Model.Overview)}", Model.MainEnergy.MainEnergySummary)
+                @using (Html.PayWall(ESection.Profile))
+                {
+                    @Html.PanelWithSummary(Model.MainEnergy.EnergyEssenceTitle, $"{Model.MainEnergy.EnergyDescription} <hr/> {Html.Raw(Model.Overview)}", Model.MainEnergy.MainEnergySummary)
+                }
             </div>
 
             <div id="m-intellectual-qualities" class="tab-pane fade">

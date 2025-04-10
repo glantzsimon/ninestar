@@ -25,9 +25,9 @@
     {
         <div class="panel-heading clearfix">
             
-            <h4 class="margin-0 float-left panel-title-one" style="@displayStyle2"><strong>@Model.Title</strong></h4>
+            <h4 class="margin-0 float-left panel-title-one" style="@displayStyle1"><strong>@Model.Title</strong></h4>
             
-            @if (Model.IsDualView)
+            @if (Model.IsDualView || Model.IsTripleView)
             {
                 <h4 class="margin-0 float-left panel-title-two" style="@displayStyle2"><strong>@Model.Title2</strong></h4>
 

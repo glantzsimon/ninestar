@@ -176,6 +176,7 @@
             public const string SummaryView = "SummaryView";
             public const string GlobalView = "GlobalView";
             public const string PersonalView = "PersonalView";
+            public const string PersonalLunarView = "PersonalLunarView";
 
             public const string RedeemPromoCode = "RedeemPromoCode";
             public const string AllowMarketingEmails = "AllowMarketingEmails";

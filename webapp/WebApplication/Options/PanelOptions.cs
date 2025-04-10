@@ -81,7 +81,10 @@ namespace K9.WebApplication.Options
             ? "background-size: contain"
             : "background-size: cover";
 
-        public PanelOptions() { }
+        public PanelOptions()
+        {
+            Init();
+        }
 
         public PanelOptions(string title, string body)
         {

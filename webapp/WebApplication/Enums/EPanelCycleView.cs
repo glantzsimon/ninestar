@@ -7,6 +7,8 @@ namespace K9.WebApplication.Enums
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.PersonalView)]
         PersonalView,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.GlobalView)]
-        GlobalView
+        GlobalView,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.PersonalLunarView)]
+        PersonalLunarView
     }
 }

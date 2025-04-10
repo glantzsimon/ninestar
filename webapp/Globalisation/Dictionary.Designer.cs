@@ -10455,6 +10455,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Exploring the Houses in Greater Depth&lt;/h5&gt;
+        ///
+        ///&lt;p&gt;
+        ///    One of the most captivating aspects of Nine Star Ki Astrology is the role of the houses, especially in how they interact with the different layers of our being. In traditional Macrobiotic-style Nine Star Ki, the primary focus is often placed on the Solar Houses, particularly within the context of yearly and monthly cycles. Yet it can be equally illuminating to explore the houses occupied by our lunar, or inner-child, energy—and even the subtler dime [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string holograhpic_spirals {
+            get {
+                return ResourceManager.GetString("holograhpic_spirals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Hourly energetic cycles&lt;/h5&gt;
         ///&lt;p&gt;
         ///    In addition to the yearly, monthly, and daily cycles, there are also subtle hourly movements within the 9 Star Ki system. Though far more delicate in their influence, these hourly rhythms gently shape the emotional tone and energy of the day—often affecting our focus, mood, and the way we interact with others moment to moment. Becoming attuned to these subtle shifts can help us better understand the natural ebb and flow of our energy throughout the day and guide us [rest of string was truncated]&quot;;.
@@ -14504,6 +14516,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to More on Predictions.
+        /// </summary>
+        public static string MoreOnCycles {
+            get {
+                return ResourceManager.GetString("MoreOnCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Most Challenging Combinations.
         /// </summary>
         public static string MostChallengingCombinations {
@@ -16176,6 +16197,15 @@ namespace K9.Globalisation {
         public static string Personality {
             get {
                 return ResourceManager.GetString("Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Lunar View.
+        /// </summary>
+        public static string PersonalLunarView {
+            get {
+                return ResourceManager.GetString("PersonalLunarView", resourceCulture);
             }
         }
         

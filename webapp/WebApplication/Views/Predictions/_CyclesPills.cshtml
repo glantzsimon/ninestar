@@ -43,7 +43,7 @@
                 <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/eighty-one-cycle.png');"></div>
             </a>
         </li>
-        
+
         @if (DefaultValuesConfiguration.Instance.SystemSettings.IsEnabledAlchemy)
         {
             <li>
@@ -68,11 +68,24 @@
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.PanelWithGlobal(
-                    Model.PersonalHousesOccupiedEnergies.Day.CycleDescriptiveName,
-                    Model.GlobalCycleEnergies.Day.CycleDescriptiveName,
-                    Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
-                    Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
+                if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
+                {
+                    @Html.PanelWithGlobalAndLunar(
+                        Model.PersonalHousesOccupiedEnergies.Day.CycleDescriptiveName,
+                        Model.PersonalHousesOccupiedLunarEnergies.Day.CycleDescriptiveName,
+                        Model.GlobalCycleEnergies.Day.CycleDescriptiveName,
+                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
+                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Day).ToString(),
+                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
+                }
+                else
+                {
+                    @Html.PanelWithGlobal(
+                                        Model.PersonalHousesOccupiedEnergies.Day.CycleDescriptiveName,
+                                        Model.GlobalCycleEnergies.Day.CycleDescriptiveName,
+                                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
+                                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
+                }
 
                 @Html.Partial("_LunarCycle")
             }
@@ -86,11 +99,24 @@
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.PanelWithGlobal(
-                    Model.PersonalHousesOccupiedEnergies.Month.CycleDescriptiveName,
-                    Model.GlobalCycleEnergies.Month.CycleDescriptiveName,
-                    Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
-                    Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
+                if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
+                {
+                    @Html.PanelWithGlobalAndLunar(
+                        Model.PersonalHousesOccupiedEnergies.Month.CycleDescriptiveName,
+                        Model.PersonalHousesOccupiedLunarEnergies.Month.CycleDescriptiveName,
+                        Model.GlobalCycleEnergies.Month.CycleDescriptiveName,
+                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
+                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Month).ToString(),
+                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
+                }
+                else
+                {
+                    @Html.PanelWithGlobal(
+                                        Model.PersonalHousesOccupiedEnergies.Month.CycleDescriptiveName,
+                                        Model.GlobalCycleEnergies.Month.CycleDescriptiveName,
+                                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
+                                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
+                }
             }
 
             <br />
@@ -102,11 +128,24 @@
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.PanelWithGlobal(
-                    Model.PersonalHousesOccupiedEnergies.Year.CycleDescriptiveName,
-                    Model.GlobalCycleEnergies.Year.CycleDescriptiveName,
-                    Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Year).ToString(),
-                    Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Year).ToString())
+                if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
+                {
+                    @Html.PanelWithGlobalAndLunar(
+                        Model.PersonalHousesOccupiedEnergies.Year.CycleDescriptiveName,
+                        Model.PersonalHousesOccupiedLunarEnergies.Year.CycleDescriptiveName,
+                        Model.GlobalCycleEnergies.Year.CycleDescriptiveName,
+                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Year).ToString(),
+                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Year).ToString(),
+                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Year).ToString())
+                }
+                else
+                {
+                    @Html.PanelWithGlobal(
+                                        Model.PersonalHousesOccupiedEnergies.Year.CycleDescriptiveName,
+                                        Model.GlobalCycleEnergies.Year.CycleDescriptiveName,
+                                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Year).ToString(),
+                                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Year).ToString())
+                }
             }
 
             <br />
@@ -118,11 +157,24 @@
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.PanelWithGlobal(
-                    Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
-                    Model.GlobalCycleEnergies.Generation.CycleDescriptiveName,
-                    Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Generation).ToString(),
-                    Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Generation).ToString())
+                if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
+                {
+                    @Html.PanelWithGlobalAndLunar(
+                        Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
+                        Model.PersonalHousesOccupiedLunarEnergies.Generation.CycleDescriptiveName,
+                        Model.GlobalCycleEnergies.Generation.CycleDescriptiveName,
+                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Generation).ToString(),
+                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Generation).ToString(),
+                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Generation).ToString())
+                }
+                else
+                {
+                    @Html.PanelWithGlobal(
+                                        Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
+                                        Model.GlobalCycleEnergies.Generation.CycleDescriptiveName,
+                                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Generation).ToString(),
+                                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Generation).ToString())
+                }
             }
 
             <br />
@@ -141,7 +193,7 @@
             <br />
             @Html.Partial("_ButtonsFooter")
         </div>
-        
+
         <div id="alchemy" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
@@ -162,7 +214,7 @@
                 </div>
             }
 
-            <hr/>
+            <hr />
             @Html.Partial("_ButtonsFooter")
         </div>
     </div>

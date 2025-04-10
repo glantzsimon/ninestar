@@ -6082,6 +6082,9 @@
   <data name="GlobalKiTitle" xml:space="preserve">
     <value>Switch betwen Personal &amp; Global Ki Perspectives</value>
   </data>
+  <data name="holograhpic_spirals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\holograhpic-spirals.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="InteractiveCalendar" xml:space="preserve">
     <value>Interactive Calendar</value>
   </data>
@@ -6271,6 +6274,9 @@
   <data name="lunar_day_9_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>astrology\en-gb\lunardays\lunar-day-9-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="MoreOnCycles" xml:space="preserve">
+    <value>More on Predictions</value>
+  </data>
   <data name="OtherCyclesDescription" xml:space="preserve">
     <value>Explore &lt;strong&gt;predictions&lt;/strong&gt; across &lt;strong&gt;81-year, 9-year, daily&lt;/strong&gt;, and &lt;strong&gt;hourly cycles&lt;/strong&gt; for deeper insight into the &lt;strong&gt;rhythms shaping your life&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;</value>
   </data>
@@ -6279,6 +6285,9 @@
   </data>
   <data name="PersonalChartDescription" xml:space="preserve">
     <value>Receive &lt;strong&gt;detailed interpretations&lt;/strong&gt; covering &lt;strong&gt;every facet&lt;/strong&gt; of &lt;strong&gt;Nine Star Ki Astrology&lt;/strong&gt;—from &lt;strong&gt;yearly and monthly influences&lt;/strong&gt; to the &lt;strong&gt;81-year, 9-year&lt;/strong&gt;, and even &lt;strong&gt;daily Ki rhythms&lt;/strong&gt;. Explore your &lt;strong&gt;emotional landscape, relationships, career, health, finances, spirituality&lt;/strong&gt; and more.&lt;br&gt;&lt;br&gt;</value>
+  </data>
+  <data name="PersonalLunarView" xml:space="preserve">
+    <value>Personal Lunar View</value>
   </data>
   <data name="Receptive" xml:space="preserve">
     <value>Receptive</value>

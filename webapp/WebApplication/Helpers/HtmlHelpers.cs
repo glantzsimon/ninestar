@@ -181,6 +181,13 @@ namespace K9.WebApplication.Helpers
             return html.PayWall<NineStarKiModel>(section, null, condition, silent, displayHtml);
         }
 
+        public static IDisposable PayWall(this HtmlHelper html, ESection section, NineStarKiModel model)
+        {
+            var baseController = html.ViewContext.Controller as BaseNineStarKiController;
+            var activeUserMembership = baseController?.GetActiveUserMembership();
+            return html.PayWall<NineStarKiModel>(section, null, () => (activeUserMembership != null && activeUserMembership?.IsAuthorisedToViewPaidContent() == true) || SessionHelper.CurrentUserIsAdmin(), false, "", false);
+        }
+
         public static IDisposable PayWall<T>(this HtmlHelper html, ESection section, bool silent = false,
             string displayHtml = "", bool hidePadlock = false)
         {

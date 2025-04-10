@@ -11,7 +11,7 @@
 
     var displayNone = "display: none;";
 
-    var panelViewClass = Model.IsDualView ? "dual-view" : Model.IsTripleView ? "triple-view" : "";
+    var panelViewClass = Model.IsDualView ? "panel-multiple-view dual-view" : Model.IsTripleView ? "panel-multiple-view triple-view" : "";
 
     var displayStyle1 = Model.IsDualView || Model.IsTripleView ? Model.Option1Checked ? "" : displayNone : "";
     var displayStyle2 = Model.IsDualView || Model.IsTripleView ? Model.Option2Checked ? "" : displayNone : displayNone;
@@ -21,7 +21,7 @@
 
 @*Bookmark*@
 <div id="@Model.Id" style="position: relative; top: -180px;"></div>
-<div class="panel panel-default panel-multiple-view @panelViewClass" data-session-key="@Model.SessionKey" id="@Model.PanelId">
+<div class="panel panel-default @panelViewClass" data-session-key="@Model.SessionKey" id="@Model.PanelId">
     @if (!string.IsNullOrEmpty(Model.Title))
     {
         <div class="panel-heading clearfix">

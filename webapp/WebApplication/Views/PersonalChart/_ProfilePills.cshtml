@@ -80,10 +80,8 @@
                 @Html.CollapsiblePanel(Dictionary.MainEnergyLabel, $"{Dictionary.MainEnergyDescription} {Html.Partial("_ClickOnATabBelow").ToString()}")
 
                 <br />
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
-                {
-                    @Html.Partial("_ProfileMainEnergyDetails")
-                }
+                @Html.Partial("_ProfileMainEnergyDetails")
+
                 @Html.Partial("_ButtonsFooter")
             </div>
 

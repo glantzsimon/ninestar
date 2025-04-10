@@ -118,12 +118,31 @@
         };
 
 	    $.fn.scrollToTopOf = function(el, adjustment) {
-	        var offset = $(el).offset();
+	        var $target = $(el);
+	        if (!$target.length) return;
+            
+	        if ($.fn.isVisible($target)) return;
+	        
+	        var offset = $target.offset();
+
+	        // Stop any previous scroll animations on user interaction
+	        function cancelScrollOnUserScroll() {
+	            $("html, body").stop(true); // stop current animations
+	            $(window).off('wheel DOMMouseScroll touchstart', cancelScrollOnUserScroll); // clean up
+	        }
+
+	        // Listen for manual scroll input during animation
+	        $(window).on('wheel DOMMouseScroll touchstart', cancelScrollOnUserScroll);
+
 	        try {
 	            $("html, body").animate({
 	                scrollTop: offset.top + (adjustment || 0)
-	            }, 600, "swing"); // 600ms duration, 'swing' easing for smooth transition
+	            }, 500, function() {
+	                // Remove scroll listeners after animation completes
+	                $(window).off('wheel DOMMouseScroll touchstart', cancelScrollOnUserScroll);
+	            });
 	        } catch (e) {
+	            $(window).off('wheel DOMMouseScroll touchstart', cancelScrollOnUserScroll);
 	        }
 	    };
 
@@ -147,10 +166,10 @@
         }
 
 	    $.fn.isVisible = function(el) {
-	        const rect = el[0].getBoundingClientRect();
+            const rect = el[0].getBoundingClientRect();
 
-	        // Check if the top of the element is within 30px from the bottom of the viewport
-	        return rect.top <= window.innerHeight;
+            // Check if the top of the element is within 30px from the bottom of the viewport
+            return rect.top <= window.innerHeight;
 	    };
 
         $.fn.setDropdownValue = function (inputSelector, value) {

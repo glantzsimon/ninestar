@@ -377,7 +377,9 @@
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\EmailTemplateAlreadySentException.cs" />
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
+    <Compile Include="Extensions\ConfigExtensions.cs" />
     <Compile Include="Extensions\NumerologyExtensions.cs" />
+    <Compile Include="App_Start\RelativeCssRewriteUrlTransform.cs" />
     <Compile Include="Models\Astrology\MoonPhase.cs" />
     <Compile Include="Options\PieChartOptions.cs" />
     <Compile Include="Services\IAITextMergeService.cs" />

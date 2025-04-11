@@ -1,4 +1,5 @@
-﻿using System.Web.Optimization;
+﻿using K9.WebApplication.Extensions;
+using System.Web.Optimization;
 
 namespace K9.WebApplication
 {
@@ -6,22 +7,27 @@ namespace K9.WebApplication
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/lib").Include(
+            var lib = new StyleBundle("~/Content/lib");
+            lib.IncludeWithRewrite(
                 "~/Content/fontawesome/all.css",
-                "~/Content/fontawesome/font-awesome-legacy.css",
-                "~/Content/bootstrap/*.css"));
+                "~/Content/fontawesome/font-awesome-legacy.css");
+            lib.IncludeAllCssWithRewrite("~/Content/bootstrap");
+            lib.IncludeWithRewrite("~/Content/bootstrap-custom");
+            bundles.Add(lib);
 
-            bundles.Add(new StyleBundle("~/Content/sections").Include(
-                "~/Content/main/elements.css",
-                "~/Content/bootstrap-custom/*.css",
-                "~/Content/device/*.css",
-                "~/Content/sections/*.css",
-                "~/Content/controls/*.css"));
+            var sections = new StyleBundle("~/Content/sections");
+            sections.IncludeAllCssWithRewrite("~/Content/sections");
+            bundles.Add(sections);
+
+            var main = new StyleBundle("~/Content/main");
+            main.IncludeWithRewrite("~/Content/main/elements.css");
+            main.IncludeAllCssWithRewrite("~/Content/device");
+            main.IncludeAllCssWithRewrite("~/Content/controls");
+            main.IncludeWithRewrite("~/Content/main/style.css");
+            bundles.Add(main);
             
-            bundles.Add(new StyleBundle("~/Content/style").Include(
-                "~/Content/main/style.css"));
-
-            bundles.Add(new StyleBundle("~/Content/responsive").Include(
+            var responsive = new StyleBundle("~/Content/responsive");
+            responsive.IncludeWithRewrite(
                 "~/Content/main/style.1200.css",
                 "~/Content/main/style.1080.css",
                 "~/Content/main/style.1024.css",
@@ -40,18 +46,27 @@ namespace K9.WebApplication
                 "~/Content/main/style.414.css",
                 "~/Content/main/style.384.css",
                 "~/Content/main/style.375.css",
-                "~/Content/main/style.320.css"));
+                "~/Content/main/style.320.css"
+            );
+            bundles.Add(responsive);
 
+            // JavaScript – wildcards are fine here, no transform needed
             bundles.Add(new ScriptBundle("~/Scripts/js").Include(
                 "~/Scripts/imageSwitcher/*.js",
                 "~/Scripts/template/*.js",
                 "~/Scripts/ajax/*.js",
-                "~/Scripts/k9/*.js"));
+                "~/Scripts/k9/*.js"
+            ));
 
             bundles.Add(new ScriptBundle("~/Scripts/lib").Include(
-                "~/Scripts/library/*.js"));
+                "~/Scripts/library/*.js"
+            ));
 
+#if DEBUG
+            BundleTable.EnableOptimizations = true;
+#else
             BundleTable.EnableOptimizations = false;
+#endif
         }
     }
 }

@@ -119,6 +119,7 @@
             public const string InterpersonalQualitiesLabel = "InterpersonalQualities";
             public const string SpiritualityLabel = "Spirituality";
             public const string ChildLabel = "ChildLabel";
+            public const string ChildStressLabel = "ChildStressLabel";
             public const string OccupationsLabel = "OccupationsLabel";
             public const string EmotionalLandscapeLabel = "EmotionalLandscape";
             public const string FinancesLabel = "Finances";

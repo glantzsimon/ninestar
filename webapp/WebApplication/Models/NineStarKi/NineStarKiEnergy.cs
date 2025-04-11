@@ -610,6 +610,20 @@ namespace K9.WebApplication.Models
                 {ENineStarKiEnergy.Fire, Dictionary.fire_child}
             };
 
+        private static readonly Dictionary<ENineStarKiEnergy, string> _childStressDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.child_energy_water_stress},
+                {ENineStarKiEnergy.Soil, Dictionary.child_energy_soil_stress},
+                {ENineStarKiEnergy.Thunder, Dictionary.child_energy_thunder_stress},
+                {ENineStarKiEnergy.Wind, Dictionary.child_energy_wind_stress},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.child_energy_coreearth_stress},
+                {ENineStarKiEnergy.Heaven, Dictionary.child_energy_heaven_stress},
+                {ENineStarKiEnergy.Lake, Dictionary.child_energy_lake_stress},
+                {ENineStarKiEnergy.Mountain, Dictionary.child_energy_mountain_stress},
+                {ENineStarKiEnergy.Fire, Dictionary.child_energy_fire_stress}
+            };
+
         private static readonly Dictionary<ENineStarKiEnergy, string> _dayStarDescriptions =
             new Dictionary<ENineStarKiEnergy, string>
             {
@@ -1047,7 +1061,11 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildLabel)]
         public string ChildDescription =>
             EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetChildDescription() : string.Empty;
-        
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildStressLabel)]
+        public string ChildStressDescription =>
+            EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetChildStressDescription() : string.Empty;
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
         public string DayStarDescription =>
             EnergyType == ENineStarKiEnergyType.DailyEnergy ? GetDayStarDescription() : string.Empty;
@@ -1461,7 +1479,9 @@ namespace K9.WebApplication.Models
         private string GetSurfaceEnergyDescription() => _surfaceEnergyDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetChildDescription() => _childDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
-        
+
+        private string GetChildStressDescription() => _childStressDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
         private string GetEmotionalEnergyDescription() => _emotionalDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetDayStarDescription() => _dayStarDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;

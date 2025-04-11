@@ -65,6 +65,7 @@ namespace K9.WebApplication.Services
                 {
                     model.PersonalChartEnergies.Year.EmotionalLandscapeSummary,
                     model.StressResponseDetails,
+                    model.CharacterEnergy.ChildStressDescription,
                 }),
                 (Dictionary.Relationships, new[]
                 {

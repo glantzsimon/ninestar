@@ -440,6 +440,15 @@
     <Content Include="Energies\StressResponse\en-gb\child-controls-stress.htm" />
     <Content Include="Energies\StressResponse\en-gb\child-same-element-stress.htm" />
     <Content Include="Energies\StressResponse\en-gb\child-supports-stress.htm" />
+    <Content Include="Energies\StressResponse\en-gb\ChildEnergy\child-energy-coreearth-stress.htm" />
+    <Content Include="Energies\StressResponse\en-gb\ChildEnergy\child-energy-fire-stress.htm" />
+    <Content Include="Energies\StressResponse\en-gb\ChildEnergy\child-energy-heaven-stress.htm" />
+    <Content Include="Energies\StressResponse\en-gb\ChildEnergy\child-energy-lake-stress.htm" />
+    <Content Include="Energies\StressResponse\en-gb\ChildEnergy\child-energy-mountain-stress.htm" />
+    <Content Include="Energies\StressResponse\en-gb\ChildEnergy\child-energy-soil-stress.htm" />
+    <Content Include="Energies\StressResponse\en-gb\ChildEnergy\child-energy-thunder-stress.htm" />
+    <Content Include="Energies\StressResponse\en-gb\ChildEnergy\child-energy-water-stress.htm" />
+    <Content Include="Energies\StressResponse\en-gb\ChildEnergy\child-energy-wind-stress.htm" />
     <Content Include="Energies\StressResponse\en-gb\Houses\child-energy-thunder-house.htm" />
     <Content Include="Energies\StressResponse\en-gb\Houses\child-energy-wind-house.htm" />
     <Content Include="Energies\StressResponse\en-gb\Houses\child-energy-heaven-house.htm" />

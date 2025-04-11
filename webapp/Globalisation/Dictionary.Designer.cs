@@ -4078,12 +4078,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This number reveals our &lt;strong&gt;deeper emotional nature&lt;/strong&gt;—the part of us that is often hidden beneath the surface and only becomes visible to those who know us well. Sometimes called the &lt;em&gt;Lunar Energy&lt;/em&gt; or &lt;em&gt;Inner Child&lt;/em&gt;, this Ki governs how we respond emotionally, especially in close relationships and intimate settings. It is also the Energy most likely to surface when we are under stress or emotionally vulnerable.
-        ///&lt;/p&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Lunar Nature — Our Deeper Emotional Nature &amp; Inner Child
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Because it shapes the way we feel, react, and  [rest of string was truncated]&quot;;.
+        ///    This number reveals our &lt;strong&gt;deeper emotional nature&lt;/strong&gt;—the part of us that is often hidden beneath the surface and only becomes visible to those who know us well. Sometimes called the &lt;em&gt;Lunar Energy&lt;/em&gt; or &lt;em&gt;Inner Child&lt;/em&gt;, this Ki governs how we respond emotionally, especially in close relationships and intimate settings. It is also the Energy most likely to surface when we are under stress or  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CharacterEnergyDescription {
             get {
@@ -4251,6 +4250,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Stress and the 5 Core Earth Child&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When a person with a 5 Core Earth child energy is under stress, it can activate patterns of control, emotional rigidity, or feeling trapped at the center of everyone else’s chaos. This energy often carries early experiences of being expected to hold everything together, even while feeling uncertain inside. In adulthood, stress can bring a sense of pressure to manage too much alone, leading to emotional shutdown, over-responsibility, or a stubborn refusal  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_coreearth_stress {
+            get {
+                return ResourceManager.GetString("child_energy_coreearth_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 9 Fire House at the time of birth&lt;/h5&gt;
         ///&lt;p&gt;
         ///    When the Child Energy was in the 9 Fire House at the time of birth, stress tends to heighten emotional sensitivity and reactivity. These individuals often feel things very deeply and may become easily overwhelmed when under pressure. Their stress response can involve sudden emotional outbursts, dramatic mood swings, or a burning desire to be seen, heard, or validated—especially if they feel misunderstood or dismissed. Fire energy,  [rest of string was truncated]&quot;;.
@@ -4258,6 +4268,20 @@ namespace K9.Globalisation {
         public static string child_energy_fire_house {
             get {
                 return ResourceManager.GetString("child_energy_fire_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Stress and the 9 Fire Child&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Under stress, a person with a 9 Fire child energy may find themselves overwhelmed by intense emotions, reactive patterns, or a fear of being misunderstood. As children, they may have learned to seek validation through visibility—shining brightly to be seen or loved. When stressed, the adult may become overly dramatic, emotionally volatile, or feel exposed and unprotected, as if the light they radiate is too vulnerable to be safely held.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This inn [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_fire_stress {
+            get {
+                return ResourceManager.GetString("child_energy_fire_stress", resourceCulture);
             }
         }
         
@@ -4273,6 +4297,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Stress and the 6 Metal Child&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In times of stress, a person with a 6 Metal child energy may find themselves falling back into patterns of emotional detachment, perfectionism, or harsh self-discipline or criticism. As children, they may have felt the need to be strong, capable, or beyond reproach—often suppressing vulnerability to meet expectations. Under pressure, the adult may become overly rigid, critical, or distant, struggling to access softer emotions or to let go of control.
+        ///&lt;/p&gt;
+        ///&lt;p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_heaven_stress {
+            get {
+                return ResourceManager.GetString("child_energy_heaven_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 7 Metal House at the time of birth&lt;/h5&gt;
         ///&lt;p&gt;
         ///    When the Child Energy was in the 7 Metal House at the time of birth, stress tends to manifest through emotional withdrawal, moodiness, or a retreat into distractions. These individuals often try to maintain a light-hearted, sociable exterior, but under stress, that surface charm may give way to inner sadness, melancholy, or passive resistance. Rather than expressing their discomfort directly, they may become aloof, sarcastic, or e [rest of string was truncated]&quot;;.
@@ -4280,6 +4317,20 @@ namespace K9.Globalisation {
         public static string child_energy_lake_house {
             get {
                 return ResourceManager.GetString("child_energy_lake_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Stress and the 7 Metal Child&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    When a person with a 7 Metal child energy feels stressed, it can trigger old patterns of emotional masking, avoidance, or seeking comfort through distraction and pleasure. In childhood, this energy often learned to charm or entertain as a way to keep things light and avoid deeper emotional discomfort. Under stress, the adult may become overly talkative or withdrawn, using surface-level ease to cover a sense of inner disconnection or sadness.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Th [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_lake_stress {
+            get {
+                return ResourceManager.GetString("child_energy_lake_stress", resourceCulture);
             }
         }
         
@@ -4295,6 +4346,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Stress and the 8 Earth Child&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A person with an 8 Earth child energy may respond to stress by shutting down emotionally, withdrawing into silence, or becoming unyielding in their thinking. This energy often formed in childhood through experiences of solitude, emotional restraint, or needing to be self-reliant at an early age. When overwhelmed, the adult may become guarded, stubborn, or inwardly frozen—seeking stability through control or immobility rather than expression or connection.
+        ///&lt;/p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_mountain_stress {
+            get {
+                return ResourceManager.GetString("child_energy_mountain_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 2 Soil House at the time of birth&lt;/h5&gt;
         ///&lt;p&gt;
         ///    When the Child Energy was in the 2 Soil House at the time of birth, the stress response tends to manifest as worry, overthinking, and emotional heaviness. These individuals often try to stabilise their world by taking care of others or over-managing their environment—but when under pressure, they can become overwhelmed by their own sense of responsibility. Stress may lead them to ruminate, fixate on details, or internalise blame. T [rest of string was truncated]&quot;;.
@@ -4302,6 +4365,20 @@ namespace K9.Globalisation {
         public static string child_energy_soil_house {
             get {
                 return ResourceManager.GetString("child_energy_soil_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Stress and The 2 Soil Inner Child&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Under stress, a person with a 2 Soil inner child energy, may find that patterns associated with this element get reactivated—particularly those tied to over-giving, self-neglect, or a deep need for reassurance. Under pressure, the adult may revert to people-pleasing, emotional dependency, or a quiet internal collapse where they feel unloved or unappreciated despite their efforts.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This emotional pattern also tends to manifest through the So [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_soil_stress {
+            get {
+                return ResourceManager.GetString("child_energy_soil_stress", resourceCulture);
             }
         }
         
@@ -4317,6 +4394,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Stress and The 3 Tree Inner Child&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Under stress, those with a 3 Tree inner child energy may experience a resurgence of early emotional patterns related to frustration, impatience, or feeling unheard. As children, they may have struggled with boundaries, emotional outbursts, or needing to push forward before they were ready. In adult life, stress can reignite these dynamics—leading to irritability, restlessness, or a compulsive need to act, even when stillness or reflection might be more he [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_thunder_stress {
+            get {
+                return ResourceManager.GetString("child_energy_thunder_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 1 Water House at the time of birth&lt;/h5&gt;
         ///&lt;p&gt;
         ///    When the Child Energy was in the 1 Water House at the time of birth, the stress response often reflects the deeper qualities of Water: retreat, stillness, and internalisation. In challenging or overwhelming situations, the person may instinctively withdraw—emotionally, mentally, or even physically. There can be a strong urge to hide, to become invisible, or to avoid confrontation entirely. Rather than reacting with anger or action [rest of string was truncated]&quot;;.
@@ -4328,6 +4416,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Stress and The 1 Water Inner Child&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    A person with a 1 Water child energy, under stress, can find that patterns associated with this element are reactivated—especially those rooted in fear, retreat, or emotional withdrawal. These patterns often reflect early experiences of uncertainty, secrecy, or having to suppress feelings to stay safe. When triggered, the adult may feel overwhelmed, overly cautious, or frozen, as though slipping back into an old version of themselves that had to hide or  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_water_stress {
+            get {
+                return ResourceManager.GetString("child_energy_water_stress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Child Energy was in the 4 Tree House at the time of birth&lt;/h5&gt;
         ///&lt;p&gt;
         ///    When the Child Energy was in the 4 Tree House at the time of birth, stress often triggers feelings of restlessness, emotional instability, and uncertainty. This is a highly sensitive and changeable energy, and when overwhelmed, the person may appear scattered, indecisive, or mentally overstimulated. Their thoughts may race in circles, and they may struggle to settle on a clear course of action. The tendency is to overthink, overtal [rest of string was truncated]&quot;;.
@@ -4335,6 +4434,20 @@ namespace K9.Globalisation {
         public static string child_energy_wind_house {
             get {
                 return ResourceManager.GetString("child_energy_wind_house", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Stress and the 4 Tree Child&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    For someone with a 4 Tree child energy, stress can stir up old patterns of anxiety, overthinking, or emotional entanglement. In childhood, this energy may have learned to adapt by anticipating others&apos; needs, navigating unspoken tensions, or constantly adjusting to maintain harmony. When stressed, these habits can return as nervous energy, indecision, or a tendency to lose one&apos;s center in the swirl of external demands and inner dialogue.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This emo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string child_energy_wind_stress {
+            get {
+                return ResourceManager.GetString("child_energy_wind_stress", resourceCulture);
             }
         }
         
@@ -4438,6 +4551,15 @@ namespace K9.Globalisation {
         public static string ChildNature {
             get {
                 return ResourceManager.GetString("ChildNature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stress &amp; The Inner Child.
+        /// </summary>
+        public static string ChildStressLabel {
+            get {
+                return ResourceManager.GetString("ChildStressLabel", resourceCulture);
             }
         }
         
@@ -6196,8 +6318,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    As well as yearly and monthly cycles or &apos;spirals&apos;, there is also a daily energetic rhythm. The daily Ki affects us on a more immediate and energetic level. The energy or &apos;Ki&apos; of the yearly and monthly cycles is always felt and serves as the overarching influence in our lives. However, the effect of the daily Ki is even more immediate than the monthly influence. It can affect our mood, our energy levels, and also influence the kinds of activities we engage in, as well as when we take rest periods. F [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Daily Prediction - Tracks the movement of Ki over cycles of 9 days
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    As well as yearly and monthly cycles or &apos;spirals&apos;, there is also a daily energetic rhythm. The daily Ki affects us on a more immediate and energetic level. The energy or &apos;Ki&apos; of the yearly and monthly cycles is always felt and serves as the overarching influence in our lives. However, the effect of the daily Ki is even more immediate than the monthly influence. It can affect our mood, our energy levels, and also in [rest of string was truncated]&quot;;.
         /// </summary>
         public static string day_description {
             get {
@@ -6207,10 +6332,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The Day Star — Surface Energy, Subtle Expression
+        ///    Day Star — A Subtle Influence on our Day-to-Day Presence
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Day Star Ki reflects the daily Global Ki present at the exact moment of birth. While it doesn’t shape the deep structure of a person’s life path like the Yearly or Monthly Ki, it does play a meaningful role in how one appears on the surface—particularly in social settings and first impressions. It is similar to the Social Expression energy, but even more subtle and transient in its influence. The Day Star often colo [rest of string was truncated]&quot;;.
+        ///    The Day Star Ki reflects the daily Global Ki present at the exact moment of birth. While it doesn’t shape the deep structure of a person’s life path like the Yearly or Monthly Ki, it does play a meaningful role in how one appears on the surface—particularly in social settings and first impressions. It is similar to the Social Expression energy, but even more subtle and transient in its influence. The Day Star of [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DayStarDescription {
             get {
@@ -7400,8 +7525,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The 81-Year Cycle represents a much broader energetic rhythm, shaping the collective tone of an era. Unlike the more personal influence of yearly or monthly Ki, this cycle moves slowly, influencing entire generations across cultural, political, and spiritual landscapes. It reflects deeper collective themes — what humanity as a whole is exploring, questioning, and becoming. The spirit of the age, from revolutions and renaissances to periods of decline or technological growth, often mirrors the natur [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;The 81-Year Cycle — A Multi-Generational Arc of Collective Evolution&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The 81-Year Cycle represents a much broader energetic rhythm, shaping the collective tone of an era. Unlike the more personal influence of yearly or monthly Ki, this cycle moves slowly, influencing entire generations across cultural, political, and spiritual landscapes. It reflects deeper collective themes — what humanity as a whole is exploring, questioning, and becoming. The spirit of the age, from revolutions and rena [rest of string was truncated]&quot;;.
         /// </summary>
         public static string epoch_description {
             get {
@@ -7420,10 +7546,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The Epoch Ki — The Deep Current Beneath Collective Evolution
+        ///    Epoch Ki — The Deep Current Beneath Collective Evolution
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Epoch Ki represents the dominant energy of the 81-year cycle into which a person is born. It is the slowest and most far-reaching rhythm within the Nine Star Ki system—a vast energetic wave that shapes not just individual lives or single generations, but entire civilizational arcs. This Ki sets the backdrop for the era’s global tone, acting as a kind of cultural atmosphere that permeates thought, technol [rest of string was truncated]&quot;;.
+        ///    The Epoch Ki represents the dominant energy of the 81-year cycle into which a person is born. It is the slowest and most far-reaching rhythm within the Nine Star Ki system—a vast energetic wave that shapes not just individual lives or single generations, but entire civilizational arcs. This Ki sets the backdrop for the era’s global tone, acting as a kind of cultural atmosphere that permeates thought, technology, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EpochEnergyDescription {
             get {
@@ -8742,10 +8868,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The 9-Yearly Cycle — A Deeper Life Theme
+        ///    9-Year Prediction — A deeper rhythm shaping personal growth and transformation
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Beneath the yearly, monthly, daily, and even hourly shifts in energy, there is a deeper rhythm at play: the 9-Yearly Cycle. This overarching cycle defines a long-term energetic theme that influences the tone and direction of nearly a decade of our lives. While the yearly and monthly houses tend to be more immediate in their impact—shaping our moods, events, and circumstances—the 9-Yearly Cycle weaves a broader narrative, colour [rest of string was truncated]&quot;;.
+        ///    Beneath the yearly, monthly, daily, and even hourly shifts in energy, there is a deeper rhythm at play: the 9-Yearly Cycle. This overarching cycle defines a long-term energetic theme that influences the tone and direction of nearly a decade of our lives. While the yearly and monthly houses tend to be more immediate in their impact—shaping our moods, events, and circumstances—the 9-Yearly Cy [rest of string was truncated]&quot;;.
         /// </summary>
         public static string generation_description {
             get {
@@ -13987,11 +14113,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Solar Nature — Our Core Nature &amp; Energetic Foundation
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
         ///    The Solar Energy represents our &lt;strong&gt;core nature&lt;/strong&gt;—the energetic foundation of our adult self. Sometimes referred to as the Main Energy or Principal Ki, it begins to express more fully around the age of 18, after we’ve completed two full nine-year cycles. From that point onward, it becomes the dominant influence in our lives, shaping our worldview, decisions, and identity.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It has a powerful effect on the way we &lt;strong&gt;think, process information, and engage with the world  [rest of string was truncated]&quot;;.
+        ///    It has a powerfu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MainEnergyDescription {
             get {
@@ -14384,10 +14513,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    As well as yearly cycles, there are also smaller, monthly energetic cycles or &apos;spirals&apos;
+        ///    Monthly Prediction — Reflects the emotional tone and interpersonal focus of the month 
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In addition to the yearly cycles that shape the broader flow of our lives, there are also smaller, monthly cycles. The energy, or &apos;Ki&apos;, of the yearly cycle is always present and serves as the overarching influence. However, the effect of the monthly Ki is more immediate and tends to be felt on an emotional level. For example, we might be in the 1 Water house for the year—a time that often bring [rest of string was truncated]&quot;;.
+        ///    In addition to the yearly cycles that shape the broader flow of our lives, there are also smaller, monthly cycles. The energy, or &apos;Ki&apos;, of the yearly cycle is always present and serves as the overarching influence. However, the effect of the monthly Ki is more immediate and tends to be felt on an emotional level. For example, we might be in the 1 Water house for the year—a time that often brings [rest of string was truncated]&quot;;.
         /// </summary>
         public static string month_description {
             get {
@@ -19721,11 +19850,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This Energy describes &lt;strong&gt;how we appear to others&lt;/strong&gt;, especially upon &lt;strong&gt;first impression&lt;/strong&gt;. It shapes the way we present ourselves in social settings—our body language, tone of voice, and overall style of communication. While it may not always reflect our deeper inner world, it plays a strong role in our &lt;strong&gt;social behaviour, public interactions, and the way we navigate everyday life&lt;/strong&gt;.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Social Expression — Our Public Face &amp; Social Behaviours
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Surface Energy also influences our &lt;strong&gt;thinking pattern [rest of string was truncated]&quot;;.
+        ///    This Energy describes &lt;strong&gt;how we appear to others&lt;/strong&gt;, especially upon &lt;strong&gt;first impression&lt;/strong&gt;. It shapes the way we present ourselves in social settings—our body language, tone of voice, and overall style of communication. While it may not always reflect our deeper inner world, it plays a strong role in our &lt;strong&gt;social behaviour, public interactions, and the way we navigate everyday life&lt;/s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SurfaceEnergyDescription {
             get {
@@ -23529,14 +23658,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Our lives pass through each of the houses in nine-year cycles, with each year reflecting one of the nine energies of the 9 Star Ki system.
+        ///    Yearly Prediction — Reveals the major theme and energetic influence of the year
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    While each person has a unique 9 Star Ki birth chart based on their date of birth, we also move through nine-year life cycles that mirror the nine energies of the system. Each year, we find ourselves in a different house, governed by one of these nine energies—each influencing our lives in subtle yet powerful ways.
+        ///    While each person has a unique 9 Star Ki birth chart based on their date of birth, we also move through nine houses -year life cycles that mirror the nine energies of the system. Each year, we find ourselves in a different house, governed by one of these nine energies—each influencing our lives in subtle yet powerful ways.
         ///&lt;/p&gt;
         ///
         ///&lt;h5&gt;
-        ///  [rest of string was truncated]&quot;;.
+        ///    These nine-year cycles are seasonal in nature, e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string year_description {
             get {

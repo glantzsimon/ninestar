@@ -6319,4 +6319,34 @@
   <data name="LunarKi" xml:space="preserve">
     <value>Lunar Ki</value>
   </data>
+  <data name="ChildStressLabel" xml:space="preserve">
+    <value>Stress &amp; The Inner Child</value>
+  </data>
+  <data name="child_energy_coreearth_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\childenergy\child-energy-coreearth-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_fire_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\childenergy\child-energy-fire-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_heaven_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\childenergy\child-energy-heaven-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_lake_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\childenergy\child-energy-lake-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_mountain_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\childenergy\child-energy-mountain-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_soil_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\childenergy\child-energy-soil-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_thunder_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\childenergy\child-energy-thunder-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_water_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\childenergy\child-energy-water-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="child_energy_wind_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\stressresponse\en-gb\childenergy\child-energy-wind-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

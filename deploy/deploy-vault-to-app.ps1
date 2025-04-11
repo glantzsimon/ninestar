@@ -1,10 +1,12 @@
 ﻿# --- CONFIGURATION ---
 $vaultBinPath      = "C:\inetpub\vhosts\9starkiastrology.com\vault\bin"
+$vaultRootPath   = "C:\inetpub\vhosts\9starkiastrology.com\vault"
 $vaultViewsPath    = "C:\inetpub\vhosts\9starkiastrology.com\vault\views"
 $vaultCssPath      = "C:\inetpub\vhosts\9starkiastrology.com\vault\css"
 $vaultScriptsPath      = "C:\inetpub\vhosts\9starkiastrology.com\vault\scripts"
 $vaultImagesPath   = "C:\inetpub\vhosts\9starkiastrology.com\vault\images"
 
+$destRootPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs"
 $destBinPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\bin"
 $destViewsPath     = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Views"
 $destCssPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Content"
@@ -28,6 +30,32 @@ foreach ($file in $files) {
     $destPath = Join-Path $destBinPath $file.Name
 
     Write-Host "Copying binary: $sourcePath"
+    try {
+        Copy-Item -Path $sourcePath -Destination $destPath -Force -ErrorAction Stop -Verbose
+        Write-Host "✅ Copied $($file.Name) to $destPath"
+
+        if (Test-Path $destPath) {
+            Remove-Item -Path $sourcePath -Force -ErrorAction Stop
+            Write-Host "🗑 Deleted $($file.Name) from vault"
+        }
+    } catch {
+        Write-Warning "❌ Failed to copy $($file.Name): $($_.Exception.Message)"
+    }
+}
+
+# --- Copy web.config from vault root ---
+$configFiles = Get-ChildItem -Path "$vaultRootPath\*" -Include *.config -File -Force
+Write-Host "📦 Found $($configFiles.Count) files in '$vaultRootPath' to copy."
+
+if ($files.Count -eq 0) {
+    Write-Warning "⚠️ No config files found."
+}
+
+foreach ($file in $configFiles) {
+    $sourcePath = $file.FullName
+    $destPath = Join-Path $destRootPath $file.Name
+
+    Write-Host "Copying web.config: $sourcePath"
     try {
         Copy-Item -Path $sourcePath -Destination $destPath -Force -ErrorAction Stop -Verbose
         Write-Host "✅ Copied $($file.Name) to $destPath"

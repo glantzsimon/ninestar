@@ -1,4 +1,5 @@
-﻿h5 {
+﻿/*@images-path: "../../../Images";*/
+h5 {
   margin-top: 0;
 }
 .powered-by-stripe {
@@ -8,7 +9,7 @@
   height: auto;
   padding: 11px;
   border-radius: 5px;
-  background-image: url(../../images/shared/powered-by-stripe-cards.png);
+  background-image: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/shared/powered-by-stripe-cards.png');
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;

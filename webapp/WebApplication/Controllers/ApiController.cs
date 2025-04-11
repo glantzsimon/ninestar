@@ -242,7 +242,7 @@ namespace K9.WebApplication.Controllers
                         return Json(new { success = false, error = "No file uploaded" });
                     }
 
-                    var allowedExtensions = new[] { ".dll", ".pdb", ".cshtml", ".css", ".png", ".jpg", ".jpeg", ".js" };
+                    var allowedExtensions = new[] { ".dll", ".pdb", ".cshtml", ".css", ".png", ".jpg", ".jpeg", ".js", ".config" };
                     var extension = Path.GetExtension(file.FileName);
                     if (!allowedExtensions.Contains(extension, StringComparer.OrdinalIgnoreCase))
                     {
@@ -257,6 +257,11 @@ namespace K9.WebApplication.Controllers
                     {
                         // Send to /bin folder
                         destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "bin", Path.GetFileName(file.FileName));
+                    }
+                    else if (extension.Equals(".config", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Send to root folder
+                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, Path.GetFileName(file.FileName));
                     }
                     else if (extension.Equals(".cshtml", StringComparison.OrdinalIgnoreCase))
                     {
@@ -276,7 +281,7 @@ namespace K9.WebApplication.Controllers
                         var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
                         destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "scripts", relativePath);
                     }
-                    else if (extension.Equals(".png", StringComparison.OrdinalIgnoreCase) || 
+                    else if (extension.Equals(".png", StringComparison.OrdinalIgnoreCase) ||
                              extension.Equals(".jpg", StringComparison.OrdinalIgnoreCase) ||
                              extension.Equals(".jpeg", StringComparison.OrdinalIgnoreCase))
                     {

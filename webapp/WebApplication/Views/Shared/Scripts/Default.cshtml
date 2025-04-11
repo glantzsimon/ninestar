@@ -120,29 +120,35 @@
 	    $.fn.scrollToTopOf = function(el, adjustment) {
 	        var $target = $(el);
 	        if (!$target.length) return;
-            
+
 	        if ($.fn.isVisible($target)) return;
-	        
+
 	        var offset = $target.offset();
 
 	        // Stop any previous scroll animations on user interaction
 	        function cancelScrollOnUserScroll() {
 	            $("html, body").stop(true); // stop current animations
-	            $(window).off('wheel DOMMouseScroll touchstart', cancelScrollOnUserScroll); // clean up
+	            $(window).off('wheel DOMMouseScroll', cancelScrollOnUserScroll); // jQuery cleanup
+	            window.removeEventListener('touchstart', cancelScrollOnUserScroll, { passive: false }); // native cleanup
 	        }
 
-	        // Listen for manual scroll input during animation
-	        $(window).on('wheel DOMMouseScroll touchstart', cancelScrollOnUserScroll);
+	        // Bind using jQuery for mouse scroll
+	        $(window).on('wheel DOMMouseScroll', cancelScrollOnUserScroll);
+
+	        // Bind using native for touchstart (to avoid passive warning)
+	        window.addEventListener('touchstart', cancelScrollOnUserScroll, { passive: false });
 
 	        try {
 	            $("html, body").animate({
 	                scrollTop: offset.top + (adjustment || 0)
-	            }, 500, function() {
-	                // Remove scroll listeners after animation completes
-	                $(window).off('wheel DOMMouseScroll touchstart', cancelScrollOnUserScroll);
+	            }, 500, function () {
+	                // Clean up after animation completes
+	                $(window).off('wheel DOMMouseScroll', cancelScrollOnUserScroll);
+	                window.removeEventListener('touchstart', cancelScrollOnUserScroll, { passive: false });
 	            });
 	        } catch (e) {
-	            $(window).off('wheel DOMMouseScroll touchstart', cancelScrollOnUserScroll);
+	            $(window).off('wheel DOMMouseScroll', cancelScrollOnUserScroll);
+	            window.removeEventListener('touchstart', cancelScrollOnUserScroll, { passive: false });
 	        }
 	    };
 

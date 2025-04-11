@@ -12,20 +12,18 @@ namespace K9.WebApplication
                 "~/Content/fontawesome/all.css",
                 "~/Content/fontawesome/font-awesome-legacy.css");
             lib.IncludeAllCssWithRewrite("~/Content/bootstrap");
-            lib.IncludeWithRewrite("~/Content/bootstrap-custom");
             bundles.Add(lib);
-
-            var sections = new StyleBundle("~/Content/sections");
-            sections.IncludeAllCssWithRewrite("~/Content/sections");
-            bundles.Add(sections);
-
-            var main = new StyleBundle("~/Content/main");
-            main.IncludeWithRewrite("~/Content/main/elements.css");
-            main.IncludeAllCssWithRewrite("~/Content/device");
-            main.IncludeAllCssWithRewrite("~/Content/controls");
-            main.IncludeWithRewrite("~/Content/main/style.css");
-            bundles.Add(main);
             
+            var main = new StyleBundle("~/Content/maincss");
+            main.IncludeWithRewrite(
+                "~/Content/main/style.css",
+                "~/Content/main/elements.css");
+            main.IncludeAllCssWithRewrite("~/Content/bootstrap-custom");
+            main.IncludeAllCssWithRewrite("~/Content/device");
+            main.IncludeAllCssWithRewrite("~/Content/sections");
+            main.IncludeAllCssWithRewrite("~/Content/controls");
+            bundles.Add(main);
+
             var responsive = new StyleBundle("~/Content/responsive");
             responsive.IncludeWithRewrite(
                 "~/Content/main/style.1200.css",
@@ -65,7 +63,7 @@ namespace K9.WebApplication
 #if DEBUG
             BundleTable.EnableOptimizations = true;
 #else
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
 #endif
         }
     }

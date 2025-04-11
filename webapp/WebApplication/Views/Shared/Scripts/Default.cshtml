@@ -173,9 +173,7 @@
 
 	    $.fn.isVisible = function(el) {
             const rect = el[0].getBoundingClientRect();
-
-            // Check if the top of the element is within 81px from the bottom of the viewport
-            return rect.top <= (window.innerHeight - 81);
+            return rect.top <= (window.innerHeight - rect.height * 0.36);
 	    };
 
         $.fn.setDropdownValue = function (inputSelector, value) {

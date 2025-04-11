@@ -242,7 +242,11 @@ namespace K9.WebApplication.Controllers
                         return Json(new { success = false, error = "No file uploaded" });
                     }
 
-                    var allowedExtensions = new[] { ".dll", ".pdb", ".cshtml", ".css", ".png", ".jpg", ".jpeg", ".js", ".config" };
+                    var allowedExtensions = new[]
+                    {
+                        ".dll", ".pdb", ".cshtml", ".css", ".png", ".jpg", ".jpeg", ".js", ".config", ".mp4", ".webm"
+                    };
+
                     var extension = Path.GetExtension(file.FileName);
                     if (!allowedExtensions.Contains(extension, StringComparer.OrdinalIgnoreCase))
                     {
@@ -250,69 +254,65 @@ namespace K9.WebApplication.Controllers
                         return Json(new { success = false, error = "File type not allowed" });
                     }
 
+                    string relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
                     string destinationPath;
 
-                    if (extension.Equals(".dll", StringComparison.OrdinalIgnoreCase) ||
-                        extension.Equals(".pdb", StringComparison.OrdinalIgnoreCase))
+                    switch (extension.ToLowerInvariant())
                     {
-                        // Send to /bin folder
-                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "bin", Path.GetFileName(file.FileName));
-                    }
-                    else if (extension.Equals(".config", StringComparison.OrdinalIgnoreCase))
-                    {
-                        // Send to root folder
-                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, Path.GetFileName(file.FileName));
-                    }
-                    else if (extension.Equals(".cshtml", StringComparison.OrdinalIgnoreCase))
-                    {
-                        // Preserve subfolder for views
-                        var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
-                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "views", relativePath);
-                    }
-                    else if (extension.Equals(".css", StringComparison.OrdinalIgnoreCase))
-                    {
-                        // Preserve subfolder for less
-                        var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
-                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "css", relativePath);
-                    }
-                    else if (extension.Equals(".js", StringComparison.OrdinalIgnoreCase))
-                    {
-                        // Preserve subfolder for javascript
-                        var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
-                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "scripts", relativePath);
-                    }
-                    else if (extension.Equals(".png", StringComparison.OrdinalIgnoreCase) ||
-                             extension.Equals(".jpg", StringComparison.OrdinalIgnoreCase) ||
-                             extension.Equals(".jpeg", StringComparison.OrdinalIgnoreCase))
-                    {
-                        // Preserve subfolder for images
-                        var relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
-                        destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "images", relativePath);
-                    }
-                    else
-                    {
-                        return Json(new { success = false, error = "Unsupported file type" });
+                        case ".dll":
+                        case ".pdb":
+                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "bin", Path.GetFileName(file.FileName));
+                            break;
+
+                        case ".config":
+                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, Path.GetFileName(file.FileName));
+                            break;
+
+                        case ".cshtml":
+                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "views", relativePath);
+                            break;
+
+                        case ".css":
+                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "css", relativePath);
+                            break;
+
+                        case ".js":
+                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "scripts", relativePath);
+                            break;
+
+                        case ".png":
+                        case ".jpg":
+                        case ".jpeg":
+                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "images", relativePath);
+                            break;
+
+                        case ".mp4":
+                        case ".webm":
+                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "videos", relativePath);
+                            break;
+
+                        default:
+                            return Json(new { success = false, error = "Unsupported file type" });
                     }
 
                     My.Logger.Info($"Destination path: {destinationPath}");
 
-                    // Create necessary directories if they do not exist
                     var directory = Path.GetDirectoryName(destinationPath);
                     if (!Directory.Exists(directory))
                     {
                         Directory.CreateDirectory(directory);
-                        My.Logger.Info($"Directory path created: {directory}");
+                        My.Logger.Info($"Created directory: {directory}");
                     }
 
-                    // Save the file to the destination
                     file.SaveAs(destinationPath);
                     My.Logger.Info($"File saved to: {destinationPath}");
 
                     return Json(new { success = true, message = "File uploaded successfully" });
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
-                    return Json(new { success = false, error = e.Message });  // Simplified for standard error message handling
+                    My.Logger.Error($"ApiController => UploadFile => Error: {ex.GetFullErrorMessage()}");
+                    return Json(new { success = false, error = ex.Message });
                 }
             });
         }

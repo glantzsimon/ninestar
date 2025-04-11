@@ -1,23 +1,51 @@
 ﻿# --- CONFIGURATION ---
-$vaultBinPath      = "C:\inetpub\vhosts\9starkiastrology.com\vault\bin"
-$vaultRootPath   = "C:\inetpub\vhosts\9starkiastrology.com\vault"
-$vaultViewsPath    = "C:\inetpub\vhosts\9starkiastrology.com\vault\views"
-$vaultCssPath      = "C:\inetpub\vhosts\9starkiastrology.com\vault\css"
-$vaultScriptsPath      = "C:\inetpub\vhosts\9starkiastrology.com\vault\scripts"
-$vaultImagesPath   = "C:\inetpub\vhosts\9starkiastrology.com\vault\images"
+$vaultBinPath        = "C:\inetpub\vhosts\9starkiastrology.com\vault\bin"
+$vaultRootPath       = "C:\inetpub\vhosts\9starkiastrology.com\vault"
+$vaultViewsPath      = "C:\inetpub\vhosts\9starkiastrology.com\vault\views"
+$vaultCssPath        = "C:\inetpub\vhosts\9starkiastrology.com\vault\css"
+$vaultScriptsPath    = "C:\inetpub\vhosts\9starkiastrology.com\vault\scripts"
+$vaultImagesPath     = "C:\inetpub\vhosts\9starkiastrology.com\vault\images"
+$vaultVideosPath     = "C:\inetpub\vhosts\9starkiastrology.com\vault\videos"
 
-$destRootPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs"
-$destBinPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\bin"
-$destViewsPath     = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Views"
-$destCssPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Content"
-$destScriptsPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Scripts"
-$destImagesPath    = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Images"
+$destRootPath        = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs"
+$destBinPath         = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\bin"
+$destViewsPath       = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Views"
+$destCssPath         = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Content"
+$destScriptsPath     = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Scripts"
+$destImagesPath      = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Images"
+$destVideosPath      = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Videos"
 
-$appPool           = "9starkiastrology.com(domain)(4.0)(pool)"
+$appPool             = "9starkiastrology.com(domain)(4.0)(pool)"
 
 Write-Host "`n🛠 Starting deployment from vault to live site...`n"
 
-# --- Copy DLLs & PDBs from vault\bin ---
+function Copy-And-CleanFile {
+    param (
+        [string]$sourcePath,
+        [string]$destPath,
+        [string]$label
+    )
+
+    Write-Host "Copying $label: $sourcePath"
+    try {
+        $destFolder = [System.IO.Path]::GetDirectoryName($destPath)
+        if (-not (Test-Path $destFolder)) {
+            New-Item -ItemType Directory -Path $destFolder -Force | Out-Null
+        }
+
+        Copy-Item -Path $sourcePath -Destination $destPath -Force -ErrorAction Stop -Verbose
+        Write-Host "✅ Copied $label $([System.IO.Path]::GetFileName($sourcePath)) to $destPath"
+
+        if (Test-Path $destPath) {
+            Remove-Item -Path $sourcePath -Force -ErrorAction Stop
+            Write-Host "🗑 Deleted $label $([System.IO.Path]::GetFileName($sourcePath)) from vault"
+        }
+    } catch {
+        Write-Warning "❌ Failed to copy $label $([System.IO.Path]::GetFileName($sourcePath)): $($_.Exception.Message)"
+    }
+}
+
+# --- Copy DLLs & PDBs ---
 $files = Get-ChildItem -Path "$vaultBinPath\*" -Include *.dll,*.pdb -File -Force
 Write-Host "📦 Found $($files.Count) files in '$vaultBinPath' to copy."
 
@@ -28,48 +56,24 @@ if ($files.Count -eq 0) {
 foreach ($file in $files) {
     $sourcePath = $file.FullName
     $destPath = Join-Path $destBinPath $file.Name
-
-    Write-Host "Copying binary: $sourcePath"
-    try {
-        Copy-Item -Path $sourcePath -Destination $destPath -Force -ErrorAction Stop -Verbose
-        Write-Host "✅ Copied $($file.Name) to $destPath"
-
-        if (Test-Path $destPath) {
-            Remove-Item -Path $sourcePath -Force -ErrorAction Stop
-            Write-Host "🗑 Deleted $($file.Name) from vault"
-        }
-    } catch {
-        Write-Warning "❌ Failed to copy $($file.Name): $($_.Exception.Message)"
-    }
+    Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "binary"
 }
 
-# --- Copy web.config from vault root ---
+# --- Copy web.config ---
 $configFiles = Get-ChildItem -Path "$vaultRootPath\*" -Include *.config -File -Force
-Write-Host "📦 Found $($configFiles.Count) files in '$vaultRootPath' to copy."
+Write-Host "📦 Found $($configFiles.Count) config file(s) in '$vaultRootPath' to copy."
 
-if ($files.Count -eq 0) {
+if ($configFiles.Count -eq 0) {
     Write-Warning "⚠️ No config files found."
 }
 
 foreach ($file in $configFiles) {
     $sourcePath = $file.FullName
     $destPath = Join-Path $destRootPath $file.Name
-
-    Write-Host "Copying web.config: $sourcePath"
-    try {
-        Copy-Item -Path $sourcePath -Destination $destPath -Force -ErrorAction Stop -Verbose
-        Write-Host "✅ Copied $($file.Name) to $destPath"
-
-        if (Test-Path $destPath) {
-            Remove-Item -Path $sourcePath -Force -ErrorAction Stop
-            Write-Host "🗑 Deleted $($file.Name) from vault"
-        }
-    } catch {
-        Write-Warning "❌ Failed to copy $($file.Name): $($_.Exception.Message)"
-    }
+    Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "config"
 }
 
-# --- Copy .cshtml Views ---
+# --- Copy Views (.cshtml) ---
 $cshtmlFiles = Get-ChildItem -Path "$vaultViewsPath\*" -Filter *.cshtml -Recurse -Force
 Write-Host "`n📄 Found $($cshtmlFiles.Count) .cshtml files to copy."
 
@@ -77,27 +81,10 @@ foreach ($file in $cshtmlFiles) {
     $sourcePath = $file.FullName
     $relativePath = $file.FullName.Substring($vaultViewsPath.Length).TrimStart('\')
     $destPath = Join-Path $destViewsPath $relativePath
-
-    Write-Host "Copying view: $sourcePath"
-    try {
-        $destFolder = [System.IO.Path]::GetDirectoryName($destPath)
-        if (-not (Test-Path $destFolder)) {
-            New-Item -ItemType Directory -Path $destFolder -Force | Out-Null
-        }
-
-        Copy-Item -Path $sourcePath -Destination $destPath -Force -ErrorAction Stop -Verbose
-        Write-Host "✅ Copied view $($file.Name) to $destPath"
-
-        if (Test-Path $destPath) {
-            Remove-Item -Path $sourcePath -Force -ErrorAction Stop
-            Write-Host "🗑 Deleted view $($file.Name) from vault"
-        }
-    } catch {
-        Write-Warning "❌ Failed to copy view $($file.Name): $($_.Exception.Message)"
-    }
+    Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "view"
 }
 
-# --- Copy .css Files ---
+# --- Copy CSS ---
 $cssFiles = Get-ChildItem -Path "$vaultCssPath\*" -Filter *.css -Recurse -Force
 Write-Host "`n🎨 Found $($cssFiles.Count) .css files to copy."
 
@@ -105,52 +92,18 @@ foreach ($file in $cssFiles) {
     $sourcePath = $file.FullName
     $relativePath = $file.FullName.Substring($vaultCssPath.Length).TrimStart('\')
     $destPath = Join-Path $destCssPath $relativePath
-
-    Write-Host "Copying CSS: $sourcePath"
-    try {
-        $destFolder = [System.IO.Path]::GetDirectoryName($destPath)
-        if (-not (Test-Path $destFolder)) {
-            New-Item -ItemType Directory -Path $destFolder -Force | Out-Null
-        }
-
-        Copy-Item -Path $sourcePath -Destination $destPath -Force -ErrorAction Stop -Verbose
-        Write-Host "✅ Copied CSS $($file.Name) to $destPath"
-
-        if (Test-Path $destPath) {
-            Remove-Item -Path $sourcePath -Force -ErrorAction Stop
-            Write-Host "🗑 Deleted CSS $($file.Name) from vault"
-        }
-    } catch {
-        Write-Warning "❌ Failed to copy CSS $($file.Name): $($_.Exception.Message)"
-    }
+    Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "CSS"
 }
 
-# --- Copy .js Files ---
+# --- Copy JS ---
 $jsFiles = Get-ChildItem -Path "$vaultScriptsPath\*" -Filter *.js -Recurse -Force
-Write-Host "`n🎨 Found $($jsFiles.Count) .js files to copy."
+Write-Host "`n🧠 Found $($jsFiles.Count) .js files to copy."
 
 foreach ($file in $jsFiles) {
     $sourcePath = $file.FullName
     $relativePath = $file.FullName.Substring($vaultScriptsPath.Length).TrimStart('\')
     $destPath = Join-Path $destScriptsPath $relativePath
-
-    Write-Host "Copying Scripts: $sourcePath"
-    try {
-        $destFolder = [System.IO.Path]::GetDirectoryName($destPath)
-        if (-not (Test-Path $destFolder)) {
-            New-Item -ItemType Directory -Path $destFolder -Force | Out-Null
-        }
-
-        Copy-Item -Path $sourcePath -Destination $destPath -Force -ErrorAction Stop -Verbose
-        Write-Host "✅ Copied Js $($file.Name) to $destPath"
-
-        if (Test-Path $destPath) {
-            Remove-Item -Path $sourcePath -Force -ErrorAction Stop
-            Write-Host "🗑 Deleted Js $($file.Name) from vault"
-        }
-    } catch {
-        Write-Warning "❌ Failed to copy Js $($file.Name): $($_.Exception.Message)"
-    }
+    Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "JS"
 }
 
 # --- Copy Images ---
@@ -165,27 +118,25 @@ foreach ($file in $imageFiles) {
     $sourcePath = $file.FullName
     $relativePath = $file.FullName.Substring($vaultImagesPath.Length).TrimStart('\')
     $destPath = Join-Path $destImagesPath $relativePath
-
-    Write-Host "Copying image: $sourcePath"
-    try {
-        $destFolder = [System.IO.Path]::GetDirectoryName($destPath)
-        if (-not (Test-Path $destFolder)) {
-            New-Item -ItemType Directory -Path $destFolder -Force | Out-Null
-        }
-
-        Copy-Item -Path $sourcePath -Destination $destPath -Force -ErrorAction Stop -Verbose
-        Write-Host "✅ Copied image $($file.Name) to $destPath"
-
-        if (Test-Path $destPath) {
-            Remove-Item -Path $sourcePath -Force -ErrorAction Stop
-            Write-Host "🗑 Deleted image $($file.Name) from vault"
-        }
-    } catch {
-        Write-Warning "❌ Failed to copy image $($file.Name): $($_.Exception.Message)"
-    }
+    Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "image"
 }
 
-# --- Restart App Pool if any DLLs were copied ---
+# --- Copy Videos ---
+$videoExtensions = @("*.mp4", "*.webm", "*.MP4", "*.WEBM")
+$videoFiles = @()
+foreach ($ext in $videoExtensions) {
+    $videoFiles += Get-ChildItem -Path "$vaultVideosPath" -Include $ext -Recurse -File -Force
+}
+Write-Host "`n🎥 Found $($videoFiles.Count) video files to copy."
+
+foreach ($file in $videoFiles) {
+    $sourcePath = $file.FullName
+    $relativePath = $file.FullName.Substring($vaultVideosPath.Length).TrimStart('\')
+    $destPath = Join-Path $destVideosPath $relativePath
+    Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "video"
+}
+
+# --- Restart App Pool if DLLs were copied ---
 if ($files.Count -gt 0) {
     Write-Host "`n🔄 Restarting application pool: $appPool"
     try {

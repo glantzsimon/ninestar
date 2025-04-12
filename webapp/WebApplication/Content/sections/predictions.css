@@ -177,7 +177,7 @@
   padding-bottom: 0;
 }
 .global-planner-container .age-details {
-  margin-bottom: 3px !important;
+  margin-bottom: 5px !important;
   font-weight: normal !important;
 }
 .global-planner-container .parent-planner {
@@ -332,6 +332,7 @@
 .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
+  border-radius: 3px;
   transform: scale(1.05);
   transform: translateY(-2px);
   position: relative;
@@ -339,7 +340,7 @@
 }
 .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block.current {
   background-color: #e6e6e6;
-  border: 2px solid #337ab7;
+  outline: 2px solid #337ab7;
   border-radius: 7px;
   position: relative;
   z-index: 1 !important;

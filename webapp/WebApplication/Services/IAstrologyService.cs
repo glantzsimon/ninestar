@@ -5,6 +5,6 @@ namespace K9.WebApplication.Services
 {
     public interface IAstrologyService : IBaseService
     {
-        MoonPhase GetMoonPhase(DateTime selectedDateTime, string userTimeZoneId);
+        MoonPhase GetMoonPhase(DateTime selectedDateTime, string userTimeZoneId, NineStarKiEnergy energy = null);
     }
 }

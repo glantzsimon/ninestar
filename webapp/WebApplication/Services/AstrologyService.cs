@@ -1,9 +1,9 @@
-﻿using K9.WebApplication.Models;
+﻿using K9.Globalisation;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using System;
 using System.Collections.Generic;
-using K9.Globalisation;
-using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Services
 {
@@ -16,12 +16,17 @@ namespace K9.WebApplication.Services
             _swissEphemerisService = swissEphemerisService;
         }
 
-        public MoonPhase GetMoonPhase(DateTime selectedDateTime, string userTimeZoneId)
+        public MoonPhase GetMoonPhase(DateTime selectedDateTime, string userTimeZoneId, NineStarKiEnergy energy = null)
         {
             var moonPhase = _swissEphemerisService.GetMoonPhase(selectedDateTime, userTimeZoneId);
 
             moonPhase.LunarDayTitle = GetLunarDayTitle(moonPhase.LunarDay);
             moonPhase.LunarDayDescription = TemplateParser.Parse(GetLunarDayDescription(moonPhase.LunarDay), new { Illumination = $"({moonPhase.IlluminationDisplay})" });
+
+            if (energy != null)
+            {
+                moonPhase.YinYangComfortDescription = GetYinYangComfortDescription(moonPhase, energy);
+            }
 
             return moonPhase;
         }
@@ -97,9 +102,44 @@ namespace K9.WebApplication.Services
                 {30, Dictionary.lunar_day_30_description}
             };
 
+        private static readonly Dictionary<ENineStarKiYinYangExpansion, string> _lunarFullMoonExpansionDescriptions =
+            new Dictionary<ENineStarKiYinYangExpansion, string>
+            {
+                { ENineStarKiYinYangExpansion.YinExpanding, Dictionary.full_moon_yin_expanding },
+                { ENineStarKiYinYangExpansion.YangContracting, Dictionary.full_moon_yang_conracting},
+                { ENineStarKiYinYangExpansion.Balanced, Dictionary.full_moon_balanced }
+            };
+
+        private static readonly Dictionary<ENineStarKiYinYangExpansion, string> _lunarNewMoonExpansionDescriptions =
+            new Dictionary<ENineStarKiYinYangExpansion, string>
+            {
+                { ENineStarKiYinYangExpansion.YinExpanding, Dictionary.new_moon_yin_expanding },
+                { ENineStarKiYinYangExpansion.YangContracting, Dictionary.new_moon_yang_conracting},
+                { ENineStarKiYinYangExpansion.Balanced, Dictionary.new_moon_balanced }
+            };
+
         private string GetLunarDayTitle(int day) => _lunarDayTitles.TryGetValue(day, out var desc) ? desc : string.Empty;
 
         private string GetLunarDayDescription(int day) => _lunarDayDescriptions.TryGetValue(day, out var desc) ? desc : string.Empty;
+
+        private string GetFullMoonExpansionDescription(ENineStarKiYinYangExpansion expansion) => _lunarFullMoonExpansionDescriptions.TryGetValue(expansion, out var desc) ? desc : string.Empty;
+
+        private string GetNewMoonExpansionDescription(ENineStarKiYinYangExpansion expansion) => _lunarNewMoonExpansionDescriptions.TryGetValue(expansion, out var desc) ? desc : string.Empty;
+
+        private string GetYinYangComfortDescription(MoonPhase moonPhase, NineStarKiEnergy energy)
+        {
+            if (moonPhase.IlluminationPercentage >= 90) // Full moon
+            {
+                return GetFullMoonExpansionDescription(energy.YinYangExpansion);
+            }
+            else if (moonPhase.IlluminationPercentage <= 10) // New moon
+            {
+                return GetNewMoonExpansionDescription(energy.YinYangExpansion);
+            }
+
+            return string.Empty;
+        }
+
 
     }
 

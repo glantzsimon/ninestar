@@ -166,6 +166,12 @@
     <Content Include="Astrology\en-gb\LunarDays\lunar-day-8-title.htm" />
     <Content Include="Astrology\en-gb\LunarDays\lunar-day-9-description.htm" />
     <Content Include="Astrology\en-gb\LunarDays\lunar-day-9-title.htm" />
+    <Content Include="Astrology\en-gb\MoonPhaseYinYang\new-moon-balanced.htm" />
+    <Content Include="Astrology\en-gb\MoonPhaseYinYang\new-moon-yang-conracting.htm" />
+    <Content Include="Astrology\en-gb\MoonPhaseYinYang\full-moon-yang-conracting.htm" />
+    <Content Include="Astrology\en-gb\MoonPhaseYinYang\full-moon-balanced.htm" />
+    <Content Include="Astrology\en-gb\MoonPhaseYinYang\new-moon-yin-expanding.htm" />
+    <Content Include="Astrology\en-gb\MoonPhaseYinYang\full-moon-yin-expanding.htm" />
     <Content Include="Energies\General\en-gb\EpochEnergyDescription.htm" />
     <Content Include="Energies\General\en-gb\GenerationalEnergyDescription.htm" />
     <Content Include="Articles\en-gb\karmic-numerology.htm" />

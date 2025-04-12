@@ -6349,4 +6349,31 @@
   <data name="child_energy_wind_stress" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\stressresponse\en-gb\childenergy\child-energy-wind-stress.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="full_moon_balanced" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\moonphaseyinyang\full-moon-balanced.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="full_moon_yang_conracting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\moonphaseyinyang\full-moon-yang-conracting.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="full_moon_yin_expanding" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\moonphaseyinyang\full-moon-yin-expanding.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="new_moon_balanced" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\moonphaseyinyang\new-moon-balanced.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="new_moon_yang_conracting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\moonphaseyinyang\new-moon-yang-conracting.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="new_moon_yin_expanding" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>astrology\en-gb\moonphaseyinyang\new-moon-yin-expanding.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="YangContracting" xml:space="preserve">
+    <value>Contracting</value>
+  </data>
+  <data name="YinExpanding" xml:space="preserve">
+    <value>Expanding</value>
+  </data>
+  <data name="YinYangBalanced" xml:space="preserve">
+    <value>Balanced</value>
+  </data>
 </root>

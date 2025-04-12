@@ -8708,6 +8708,45 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Balanced Group (5)&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    You may feel heightened energy and sensitivity during this time, with moments of both stimulation and introspection. Overall, you will probably feel reasonably comfortable during this time.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string full_moon_balanced {
+            get {
+                return ResourceManager.GetString("full_moon_balanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Contracting Group (1, 6, 7, 8)&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    You may feel overwhelmed, overstimulated, or irritable under the full moon. Your system, already tending toward contraction, may react to the heightened lunar energy with tension or restlessness.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string full_moon_yang_conracting {
+            get {
+                return ResourceManager.GetString("full_moon_yang_conracting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Expanding Group (2, 3, 4, 9)&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    You may feel more awake, emotionally expressive, and creatively inspired under the bright light of the full moon. This is a time when your inner world is illuminated and your social and romantic energy may feel heightened.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string full_moon_yin_expanding {
+            get {
+                return ResourceManager.GetString("full_moon_yin_expanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Full Moon.
         /// </summary>
         public static string FullMoon {
@@ -15434,6 +15473,45 @@ namespace K9.Globalisation {
         public static string NervousSystem {
             get {
                 return ResourceManager.GetString("NervousSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Balanced Group (5)&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This may be a quiet time of inner reflection and emotional reset, bringing a mix of calm and vulnerability. Overall, you are likely to feel quite comfortable during this phase.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string new_moon_balanced {
+            get {
+                return ResourceManager.GetString("new_moon_balanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Contracting Group (1, 6, 7, 8)&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    You may feel more grounded and balanced during the quiet of the new moon. This can be a time of inner stillness, calm, and gentle renewal, especially if you allow yourself to rest.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string new_moon_yang_conracting {
+            get {
+                return ResourceManager.GetString("new_moon_yang_conracting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Expanding Group (2, 3, 4, 9)&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    You may feel especially introspective, low-energy, or withdrawn. The new moon can amplify emotional vulnerability or fatigue, but it also supports inner reflection, dreaming, and emotional healing.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string new_moon_yin_expanding {
+            get {
+                return ResourceManager.GetString("new_moon_yin_expanding", resourceCulture);
             }
         }
         
@@ -23639,6 +23717,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contracting.
+        /// </summary>
+        public static string YangContracting {
+            get {
+                return ResourceManager.GetString("YangContracting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Changing Yang to Yin.
         /// </summary>
         public static string YangToYin {
@@ -23809,6 +23896,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expanding.
+        /// </summary>
+        public static string YinExpanding {
+            get {
+                return ResourceManager.GetString("YinExpanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Changing Yin to Yang.
         /// </summary>
         public static string YinToYang {
@@ -23827,6 +23923,15 @@ namespace K9.Globalisation {
         public static string yinyang {
             get {
                 return ResourceManager.GetString("yinyang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balanced.
+        /// </summary>
+        public static string YinYangBalanced {
+            get {
+                return ResourceManager.GetString("YinYangBalanced", resourceCulture);
             }
         }
         

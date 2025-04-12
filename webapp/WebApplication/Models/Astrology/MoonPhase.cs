@@ -120,8 +120,10 @@ namespace K9.WebApplication.Models
         public int LunarDay { get; set; }
 
         public string LunarDayTitle { get; set; }
-        
+
         public string LunarDayDescription { get; set; }
+
+        public string YinYangComfortDescription { get; set; }
 
     }
 }

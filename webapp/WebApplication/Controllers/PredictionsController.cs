@@ -194,11 +194,11 @@ namespace K9.WebApplication.Controllers
 
         [Route("get-daily-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetDailyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi, DateTime? selectedDate = null, string userTimeZoneId = "")
+        public JsonResult GetDailyPredictions(ENineStarKiEnergy solarEnergy, ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi, DateTime? selectedDate = null, string userTimeZoneId = "")
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.DailyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
-            var moonPhase = selectedDate.HasValue ? _astrologyService.GetMoonPhase(selectedDate.Value, userTimeZoneId) : null;
+            var moonPhase = selectedDate.HasValue ? _astrologyService.GetMoonPhase(selectedDate.Value, userTimeZoneId, new NineStarKiEnergy(solarEnergy, ENineStarKiEnergyType.MainEnergy)) : null;
 
             return PredictionsJsonResult(display, cycle, moonPhase);
         }

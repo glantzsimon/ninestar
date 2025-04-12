@@ -142,9 +142,7 @@ namespace K9.WebApplication.Services
                 if (includeCycles)
                 {
                     userTimeZoneId = displayDataForPeriod == EDisplayDataForPeriod.Now ? "" : string.IsNullOrEmpty(userTimeZoneId) ? personModel.BirthTimeZoneId : userTimeZoneId;
-
-                    var moonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId);
-
+                    
                     var preciseEightyOneYearEnergy =
                         _swissEphemerisService.GetNineStarKiEightyOneYearKi(selectedDateTime, userTimeZoneId);
                     var preciseNineYearEnergy =
@@ -162,7 +160,7 @@ namespace K9.WebApplication.Services
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
                         preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy,
-                        preciseDailyEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod, moonPhase);
+                        preciseDailyEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod);
                 }
                 else
                 {
@@ -171,6 +169,9 @@ namespace K9.WebApplication.Services
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
                         5, 5, 5, 5, new (int DailyKi, int? InvertedDailyKi)[] { (5, 5), (5, 5) }, 5, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod);
                 }
+
+                var moonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, model.MainEnergy);
+                model.MoonPhase = moonPhase;
 
                 model.Lichun = _swissEphemerisService.GetLichun(DateTime.UtcNow, "");
 

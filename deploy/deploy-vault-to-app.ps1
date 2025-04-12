@@ -26,7 +26,7 @@ function Copy-And-CleanFile {
         [string]$label
     )
 
-    Write-Host "Copying $label: $sourcePath"
+    Write-Host "Copying ${label}: $sourcePath"
     try {
         $destFolder = [System.IO.Path]::GetDirectoryName($destPath)
         if (-not (Test-Path $destFolder)) {

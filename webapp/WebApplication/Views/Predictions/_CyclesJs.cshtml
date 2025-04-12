@@ -88,7 +88,8 @@
                         energy,
                         display,
                         userTimeZoneId: '@Model.UserTimeZoneId',
-                        selectedDate
+                        selectedDate,
+                        solarEnergy: '@(Model.MainEnergy?.Energy)'
                     }).done(
                     function(result) {
                         if (result.success) {

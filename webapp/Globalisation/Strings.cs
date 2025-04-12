@@ -260,7 +260,10 @@
             public const string Free = "Free";
             public const string Complete = "Complete";
             public const string Yin = "Yin";
+            public const string YinExpanding = "YinExpanding";
             public const string Yang = "Yang";
+            public const string Yangcontracting = "YangContracting";
+            public const string YinYangBalanced = "YinYangBalanced";
             public const string North = "North";
             public const string NorthWest = "NorthWest";
             public const string West = "West";

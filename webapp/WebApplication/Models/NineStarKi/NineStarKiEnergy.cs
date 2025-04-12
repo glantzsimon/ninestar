@@ -349,6 +349,16 @@ namespace K9.WebApplication.Models
         Dynamic
     }
 
+    public enum ENineStarKiYinYangExpansion
+    {
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.YinExpanding)]
+        YinExpanding,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Yangcontracting)]
+        YangContracting,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.YinYangBalanced)]
+        Balanced
+    }
+
     public enum ENineStarKiEnergyType
     {
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MainEnergy)]
@@ -397,7 +407,8 @@ namespace K9.WebApplication.Models
             MostChallengingCombinations = new[] { 2, 5, 8, 9 },
             InternalRepresentation = new[] { EBodyPart.Kidneys, EBodyPart.Bladder, EBodyPart.Bones, EBodyPart.NervousSystem, EBodyPart.SexOrgans },
             Physiognomy = new[] { EBodyPart.Ear },
-            PrimaryAttributes = new[] { EPrimaryAttribute.Hardship, EPrimaryAttribute.Danger })]
+            PrimaryAttributes = new[] { EPrimaryAttribute.Hardship, EPrimaryAttribute.Danger },
+            YinYangExpansion = ENineStarKiYinYangExpansion.YangContracting)]
         Water,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Soil, Colour = ENineStarKiColour.Black, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.SouthWest, FamilyMember = ENineStarKiFamilyMember.Mother, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Kun", DescriptiveName = ENineStarKiDescriptiveName.Nurturer, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.WinterToSpring,
@@ -405,7 +416,8 @@ namespace K9.WebApplication.Models
             MostChallengingCombinations = new[] { 1, 3, 4 },
             InternalRepresentation = new[] { EBodyPart.Stomach, EBodyPart.Spleen, EBodyPart.LowerBody, EBodyPart.SoftTissue },
             Physiognomy = new[] { EBodyPart.Abdomen },
-            PrimaryAttributes = new[] { EPrimaryAttribute.Receptive })]
+            PrimaryAttributes = new[] { EPrimaryAttribute.Receptive },
+            YinYangExpansion = ENineStarKiYinYangExpansion.YinExpanding)]
         Soil,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Thunder, Colour = ENineStarKiColour.BrightGreen, Element = ENineStarKiElement.Tree, Direction = ENineStarKiDirection.East, FamilyMember = ENineStarKiFamilyMember.EldestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chen", DescriptiveName = ENineStarKiDescriptiveName.Pioneer, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.EarlySpring,
@@ -413,7 +425,8 @@ namespace K9.WebApplication.Models
             MostChallengingCombinations = new[] { 2, 5, 6, 7, 8 },
             InternalRepresentation = new[] { EBodyPart.Liver, EBodyPart.Feet, EBodyPart.Muscles, EBodyPart.ConnectiveTissue },
             Physiognomy = new[] { EBodyPart.VocalAnatomy },
-            PrimaryAttributes = new[] { EPrimaryAttribute.Rousing })]
+            PrimaryAttributes = new[] { EPrimaryAttribute.Rousing },
+            YinYangExpansion = ENineStarKiYinYangExpansion.YinExpanding)]
         Thunder,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Wind, Colour = ENineStarKiColour.Green, Element = ENineStarKiElement.Tree, Direction = ENineStarKiDirection.SouthEast, FamilyMember = ENineStarKiFamilyMember.EldestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Sun", DescriptiveName = ENineStarKiDescriptiveName.Influencer, Modality = ENineStarKiModality.Reflective, Cycle = ENineStarKiCycle.LateSpring,
@@ -421,7 +434,8 @@ namespace K9.WebApplication.Models
             MostChallengingCombinations = new[] { 2, 5, 6, 7, 8 },
             InternalRepresentation = new[] { EBodyPart.NervousSystem, EBodyPart.Diaphragm, EBodyPart.Gallbladder },
             Physiognomy = new[] { EBodyPart.Legs, EBodyPart.Eyes },
-            PrimaryAttributes = new[] { EPrimaryAttribute.Penetrating })]
+            PrimaryAttributes = new[] { EPrimaryAttribute.Penetrating },
+            YinYangExpansion = ENineStarKiYinYangExpansion.YinExpanding)]
         Wind,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "None", DescriptiveName = ENineStarKiDescriptiveName.Hub, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.Centre,
@@ -429,7 +443,8 @@ namespace K9.WebApplication.Models
             MostChallengingCombinations = new[] { 1, 3, 4 },
             InternalRepresentation = new[] { EBodyPart.Stomach, EBodyPart.Spleen, EBodyPart.Pancreas, EBodyPart.LymphaticSystem },
             Physiognomy = new[] { EBodyPart.Hands, EBodyPart.Abdomen },
-            PrimaryAttributes = new[] { EPrimaryAttribute.Catalyst })]
+            PrimaryAttributes = new[] { EPrimaryAttribute.Catalyst },
+            YinYangExpansion = ENineStarKiYinYangExpansion.Balanced)]
         CoreEarth,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Heaven, Colour = ENineStarKiColour.White, Element = ENineStarKiElement.Metal, Direction = ENineStarKiDirection.NorthWest, FamilyMember = ENineStarKiFamilyMember.Father, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chien", DescriptiveName = ENineStarKiDescriptiveName.Leader, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.EarlyAutumn,
@@ -437,7 +452,8 @@ namespace K9.WebApplication.Models
             MostChallengingCombinations = new[] { 3, 4, 9 },
             InternalRepresentation = new[] { EBodyPart.PinealGland, EBodyPart.Lungs, EBodyPart.LargeIntestine, EBodyPart.Skin },
             Physiognomy = new[] { EBodyPart.Skull, EBodyPart.Head },
-            PrimaryAttributes = new[] { EPrimaryAttribute.Creative })]
+            PrimaryAttributes = new[] { EPrimaryAttribute.Creative },
+            YinYangExpansion = ENineStarKiYinYangExpansion.YangContracting)]
         Heaven,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Lake, Colour = ENineStarKiColour.Red, Element = ENineStarKiElement.Metal, Direction = ENineStarKiDirection.West, FamilyMember = ENineStarKiFamilyMember.YoungestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Tui", DescriptiveName = ENineStarKiDescriptiveName.Advisor, Modality = ENineStarKiModality.Reflective, Cycle = ENineStarKiCycle.LateAutumn,
@@ -445,7 +461,8 @@ namespace K9.WebApplication.Models
             MostChallengingCombinations = new[] { 3, 4, 9 },
             InternalRepresentation = new[] { EBodyPart.SpeechAnatomy, EBodyPart.Lungs, EBodyPart.LargeIntestine, EBodyPart.Skin },
             Physiognomy = new[] { EBodyPart.Mouth, EBodyPart.Lips },
-            PrimaryAttributes = new[] { EPrimaryAttribute.Ease })]
+            PrimaryAttributes = new[] { EPrimaryAttribute.Ease },
+            YinYangExpansion = ENineStarKiYinYangExpansion.YangContracting)]
         Lake,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Mountain, Colour = ENineStarKiColour.White, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.NorthEast, FamilyMember = ENineStarKiFamilyMember.YoungestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Ken", DescriptiveName = ENineStarKiDescriptiveName.Pragmatist, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.AutumnToWinter,
@@ -453,7 +470,8 @@ namespace K9.WebApplication.Models
             MostChallengingCombinations = new[] { 1, 3, 4 },
             InternalRepresentation = new[] { EBodyPart.Back, EBodyPart.Spleen, EBodyPart.Pancreas, EBodyPart.Stomach },
             Physiognomy = new[] { EBodyPart.Hands },
-            PrimaryAttributes = new[] { EPrimaryAttribute.Stillness })]
+            PrimaryAttributes = new[] { EPrimaryAttribute.Stillness },
+            YinYangExpansion = ENineStarKiYinYangExpansion.YangContracting)]
         Mountain,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Fire, Colour = ENineStarKiColour.Purple, Element = ENineStarKiElement.Fire, Direction = ENineStarKiDirection.South, FamilyMember = ENineStarKiFamilyMember.MiddleDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Li", DescriptiveName = ENineStarKiDescriptiveName.Communicator, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.Summer,
@@ -461,7 +479,8 @@ namespace K9.WebApplication.Models
             MostChallengingCombinations = new[] { 1, 6, 7 },
             InternalRepresentation = new[] { EBodyPart.CardiovascularSystem, EBodyPart.Heart, EBodyPart.HeartGovernor, EBodyPart.SmallIntestine, EBodyPart.TripleHeater },
             Physiognomy = new[] { EBodyPart.Eyes },
-            PrimaryAttributes = new[] { EPrimaryAttribute.Clarity })]
+            PrimaryAttributes = new[] { EPrimaryAttribute.Clarity },
+            YinYangExpansion = ENineStarKiYinYangExpansion.YinExpanding)]
         Fire
     }
 
@@ -1260,6 +1279,10 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public ENineStarKiYinYang YinYang => GetYinYang();
+
+        [ScriptIgnore] public ENineStarKiYinYangExpansion YinYangExpansion => MetaData.YinYangExpansion;
+
+        [ScriptIgnore] public string YinYangExpansionDescription => MetaData.GetYinYangExpansionDescription();
 
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]

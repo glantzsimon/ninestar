@@ -19,6 +19,7 @@ namespace K9.WebApplication.Attributes
         public ENineStarKiColour Colour { get; set; }
         public ENineStarKiDirection Direction { get; set; }
         public ENineStarKiYinYang YinYang { get; set; }
+        public ENineStarKiYinYangExpansion YinYangExpansion { get; set; }
         public ENineStarKiDescriptiveName DescriptiveName { get; set; }
         public ENineStarKiModality Modality { get; set; }
         public ENineStarKiCycle Cycle { get; set; }
@@ -96,6 +97,11 @@ namespace K9.WebApplication.Attributes
         public string GetMostChallengingCombinationsString()
         {
             return string.Join(", ", GetMostChallengingCombinations().Select(e => GetNumberAndElementName(e)));
+        }
+
+        public string GetYinYangExpansionDescription()
+        {
+            return GetEnumDescription(YinYangExpansion);
         }
 
         public string GetElement()

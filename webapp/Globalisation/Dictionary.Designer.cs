@@ -3516,6 +3516,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Birth Month Analysis.
+        /// </summary>
+        public static string BirthMonthAnalysis {
+            get {
+                return ResourceManager.GetString("BirthMonthAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Birth Time Zone.
         /// </summary>
         public static string BirthTimeZone {

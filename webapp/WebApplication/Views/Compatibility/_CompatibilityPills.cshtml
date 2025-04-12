@@ -69,6 +69,7 @@
                         SupportiveTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "supportive-transformation"),
                         ChallengingTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "challenging-transformation")
                     }))
+                    @Html.Panel(Dictionary.BirthMonthAnalysis, Html.Partial("_CompatibilityBirthMonth").ToString())
                 }
                 <br />
                 @Html.Partial("_ButtonsFooter")

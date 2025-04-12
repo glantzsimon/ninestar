@@ -14,6 +14,7 @@
   justify-content: center;
   width: 100%;
   text-align: center;
+  padding-right: 3px;
 }
 .moon-phase .moon-wrapper img {
   width: 45px;

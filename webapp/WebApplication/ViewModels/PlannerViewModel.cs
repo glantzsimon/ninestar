@@ -83,7 +83,7 @@ namespace K9.WebApplication.ViewModels
                 default:
                     var startMonthLetter = energy.EnergyStartsOn.ToString("MMM");
                     var finishMonthLetter = energy.EnergyEndsOn.ToString("MMM");
-                    return $"{startMonthLetter}{energy.EnergyStartsOn.Day} - {finishMonthLetter}{energy.EnergyEndsOn.Day}";
+                    return $"{startMonthLetter} {energy.EnergyStartsOn.Day}-{finishMonthLetter} {energy.EnergyEndsOn.Day}";
             }
         }
 

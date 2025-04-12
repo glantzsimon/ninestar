@@ -183,7 +183,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-hourly-predictions")]
-        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy;display", Location = OutputCacheLocation.ServerAndClient)]
         public JsonResult GetHourlyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
@@ -193,18 +193,22 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-daily-predictions")]
-        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "solarEnergy;energy;display;selectedDate;userTimeZoneId", Location = OutputCacheLocation.ServerAndClient)]
         public JsonResult GetDailyPredictions(ENineStarKiEnergy solarEnergy, ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi, DateTime? selectedDate = null, string userTimeZoneId = "")
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.DailyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
             var moonPhase = selectedDate.HasValue ? _astrologyService.GetMoonPhase(selectedDate.Value, userTimeZoneId, true, new NineStarKiEnergy(solarEnergy, ENineStarKiEnergyType.MainEnergy)) : null;
 
-            return PredictionsJsonResult(display, cycle, moonPhase);
+            var moonPhasePartialString = selectedDate.HasValue ? RenderPartialViewToString("~/Views/Astrology/_MoonPhaseLarge.cshtml", moonPhase) : "";
+            var moonPhaseHtml = selectedDate.HasValue ?
+                $"{moonPhasePartialString} {moonPhase.LunarDayDescription} {moonPhase.YinYangComfortDescription}" : "";
+
+            return PredictionsJsonResult(display, cycle, moonPhaseHtml);
         }
 
         [Route("get-monthly-predictions")]
-        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy;display", Location = OutputCacheLocation.ServerAndClient)]
         public JsonResult GetMonthlyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
@@ -214,7 +218,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-yearly-predictions")]
-        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy;display", Location = OutputCacheLocation.ServerAndClient)]
         public JsonResult GetYearlyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
@@ -224,7 +228,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-nine-yearly-predictions")]
-        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy;display", Location = OutputCacheLocation.ServerAndClient)]
         public JsonResult GetNineYearlyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
@@ -234,7 +238,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-eighty-one-yearly-predictions")]
-        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy;display", Location = OutputCacheLocation.ServerAndClient)]
         public JsonResult GetEightyOneYearlyPredictions(ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
@@ -271,13 +275,13 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
-        private JsonResult PredictionsJsonResult(EScopeDisplay display, NineStarKiEnergy cycle, MoonPhase moonPhase = null)
+        private JsonResult PredictionsJsonResult(EScopeDisplay display, NineStarKiEnergy cycle, string moonPhaseHtml = "")
         {
             return Json(new
             {
                 cycle.CycleDescriptiveName,
                 CycleDescription = display == EScopeDisplay.PersonalKi ? cycle.CycleDescription : cycle.GlobalCycleDescription,
-                MoonPhase = moonPhase
+                MoonPhase = moonPhaseHtml
             }, JsonRequestBehavior.AllowGet);
         }
 

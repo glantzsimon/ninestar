@@ -7,6 +7,7 @@
 
 @{
     var activeChild = Model.Energies.FirstOrDefault(e => e.IsActive);
+    var moonPhaseStyle = Model.View == EPlannerView.Month ? "" : "display: none;";
 }
 
 <div class="container main-content clear-both global-planner-container">
@@ -145,8 +146,8 @@
             @Html.Panel(Model.Energy.CycleDescriptiveName, Model.Energy.CycleDescription)
         }
     </div>
-    <div id="global-planner-moon-details" style="display: none;">
-        @if (Model.View == EPlannerView.Month & Model.MoonPhase != null)
+    <div id="global-planner-moon-details" style="@moonPhaseStyle">
+        @if (Model.View == EPlannerView.Month && Model.MoonPhase != null)
         {
             @Html.Panel(Dictionary.LunarCycle, $"{Html.Partial("~/Views/Astrology/_MoonPhaseLarge.cshtml", Model.MoonPhase).ToString()}{Model.MoonPhase.LunarDayDescription} {Model.MoonPhase.YinYangComfortDescription}")
         }

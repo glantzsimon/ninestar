@@ -8,6 +8,7 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Services
 {
@@ -396,12 +397,13 @@ namespace K9.WebApplication.Services
                     SelectedDateTime = selectedDateTime
                 };
 
-                if (view == EPlannerView.Day)
+                if (view == EPlannerView.Month || view == EPlannerView.Day)
                 {
-                    plannerModel.MoonPhase = _astronomyService.GetMoonIlluminationPercentage(selectedDateTime, userTimeZoneId);
+                    plannerModel.MoonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, true,
+                        nineStarKiModel.MainEnergy);
                 }
 
-                var localNow = nineStarKiModel.SelectedDate.Value;
+                var localNow = nineStarKiModel.DisplayDataForPeriod == EDisplayDataForPeriod.Now ? DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, userTimeZoneId) : nineStarKiModel.SelectedDate.Value;
 
                 switch (view)
                 {

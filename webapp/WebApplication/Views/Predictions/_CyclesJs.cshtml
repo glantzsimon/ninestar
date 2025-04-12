@@ -53,6 +53,7 @@
 
         $(".global-planner-item").click(function(e) {
             e.stopPropagation();
+
             var $el = $(this);
             var energy = $el.attr("data-energy");
             var type = $el.attr("data-type");
@@ -82,6 +83,9 @@
             }
 
             clickTimeout = setTimeout(function() {
+                $.fn.displaySpinner($details);
+                $.fn.displaySpinner($moonDetails);
+
                 // Display selected child / parent data
                 ajaxcontroller().get(url,
                     {
@@ -97,12 +101,15 @@
                             $details.find(".panel .panel-body").html(result.data.CycleDescription);
 
                             if (result.data.MoonPhase) {
-                                $moonDetails.find(".panel .panel-body").html(result.data.MoonPhase.LunarDayDescription);
+                                $moonDetails.find(".panel .panel-body").html(result.data.MoonPhase);
                                 $moonDetails.fadeIn();
                             } else {
                                 $moonDetails.hide();
                             }
                         }
+
+                        $.fn.hideSpinner($details);
+                        $.fn.hideSpinner($moonDetails);
                     });
 
                 scrollTimeout = setTimeout(function () {

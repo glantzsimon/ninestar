@@ -1,4 +1,6 @@
 ﻿using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Config;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
@@ -6,8 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
-using K9.SharedLibrary.Helpers;
-using K9.WebApplication.Config;
+using K9.Globalisation;
 
 namespace K9.WebApplication.Models
 {
@@ -21,23 +22,32 @@ namespace K9.WebApplication.Models
         {
             _nineStarKiModel1 = nineStarKiModel1;
             _nineStarKiModel2 = nineStarKiModel2;
-            FundamentalEnergiesTransformationType = nineStarKiModel1.MainEnergy.Energy.GetTransformationType(nineStarKiModel2.MainEnergy.Energy);
+            FundamentalEnergiesTransformationType =
+                nineStarKiModel1.MainEnergy.Energy.GetTransformationType(nineStarKiModel2.MainEnergy.Energy);
 
-            FundamentalEnergy1ToCharacterEnergy2TransformationType = nineStarKiModel1.MainEnergy.Energy.GetTransformationType(nineStarKiModel2.CharacterEnergy.Energy);
+            FundamentalEnergy1ToCharacterEnergy2TransformationType =
+                nineStarKiModel1.MainEnergy.Energy.GetTransformationType(nineStarKiModel2.CharacterEnergy.Energy);
 
-            FundamentalEnergy1ToSurfaceEnergy2TransformationType = nineStarKiModel1.MainEnergy.Energy.GetTransformationType(nineStarKiModel2.SurfaceEnergy.Energy);
+            FundamentalEnergy1ToSurfaceEnergy2TransformationType =
+                nineStarKiModel1.MainEnergy.Energy.GetTransformationType(nineStarKiModel2.SurfaceEnergy.Energy);
 
-            FundamentalEnergy2ToCharacterEnergy1TransformationType = nineStarKiModel2.MainEnergy.Energy.GetTransformationType(nineStarKiModel1.CharacterEnergy.Energy);
+            FundamentalEnergy2ToCharacterEnergy1TransformationType =
+                nineStarKiModel2.MainEnergy.Energy.GetTransformationType(nineStarKiModel1.CharacterEnergy.Energy);
 
-            FundamentalEnergy2ToSurfaceEnergy1TransformationType = nineStarKiModel2.MainEnergy.Energy.GetTransformationType(nineStarKiModel1.SurfaceEnergy.Energy);
+            FundamentalEnergy2ToSurfaceEnergy1TransformationType =
+                nineStarKiModel2.MainEnergy.Energy.GetTransformationType(nineStarKiModel1.SurfaceEnergy.Energy);
 
-            CharacterEnergiesTransformationType = nineStarKiModel1.CharacterEnergy.Energy.GetTransformationType(nineStarKiModel2.CharacterEnergy.Energy);
+            CharacterEnergiesTransformationType =
+                nineStarKiModel1.CharacterEnergy.Energy.GetTransformationType(nineStarKiModel2.CharacterEnergy.Energy);
 
-            CharacterEnergy1ToSurfaceEnergy2TransformationType = nineStarKiModel1.CharacterEnergy.Energy.GetTransformationType(nineStarKiModel2.SurfaceEnergy.Energy);
+            CharacterEnergy1ToSurfaceEnergy2TransformationType =
+                nineStarKiModel1.CharacterEnergy.Energy.GetTransformationType(nineStarKiModel2.SurfaceEnergy.Energy);
 
-            CharacterEnergy2ToSurfaceEnergy1TransformationType = nineStarKiModel2.CharacterEnergy.Energy.GetTransformationType(nineStarKiModel1.SurfaceEnergy.Energy);
+            CharacterEnergy2ToSurfaceEnergy1TransformationType =
+                nineStarKiModel2.CharacterEnergy.Energy.GetTransformationType(nineStarKiModel1.SurfaceEnergy.Energy);
 
-            SurfaceEnergiesTransformationType = nineStarKiModel1.SurfaceEnergy.Energy.GetTransformationType(nineStarKiModel2.SurfaceEnergy.Energy);
+            SurfaceEnergiesTransformationType =
+                nineStarKiModel1.SurfaceEnergy.Energy.GetTransformationType(nineStarKiModel2.SurfaceEnergy.Energy);
 
             Score = score;
 
@@ -45,11 +55,13 @@ namespace K9.WebApplication.Models
 
             CharacterElementsTransformationDetails = GetCharacterElementsTransformationDetails();
 
-            FundamentalElementsCompatibilityDetails = GetElementCompatibilityDetails(_nineStarKiModel1.MainEnergy, _nineStarKiModel2.MainEnergy);
+            FundamentalElementsCompatibilityDetails =
+                GetElementCompatibilityDetails(_nineStarKiModel1.MainEnergy, _nineStarKiModel2.MainEnergy);
 
             FundamentalElementsCompatibilityDetailsTitle = GetFundamentalElementsCompatibilityTitle();
 
-            CharacterElementsCompatibilityDetails = GetElementCompatibilityDetails(_nineStarKiModel1.CharacterEnergy, _nineStarKiModel2.CharacterEnergy);
+            CharacterElementsCompatibilityDetails = GetElementCompatibilityDetails(_nineStarKiModel1.CharacterEnergy,
+                _nineStarKiModel2.CharacterEnergy);
 
             CalculateScore();
 
@@ -60,39 +72,29 @@ namespace K9.WebApplication.Models
 
         public CompatibilityScoreModel Score { get; }
 
-        [ScriptIgnore]
-        public ETransformationType FundamentalEnergiesTransformationType { get; }
+        [ScriptIgnore] public ETransformationType FundamentalEnergiesTransformationType { get; }
 
-        [ScriptIgnore]
-        public ETransformationType FundamentalEnergy1ToCharacterEnergy2TransformationType { get; }
+        [ScriptIgnore] public ETransformationType FundamentalEnergy1ToCharacterEnergy2TransformationType { get; }
 
-        [ScriptIgnore]
-        public ETransformationType FundamentalEnergy1ToSurfaceEnergy2TransformationType { get; }
+        [ScriptIgnore] public ETransformationType FundamentalEnergy1ToSurfaceEnergy2TransformationType { get; }
 
-        [ScriptIgnore]
-        public ETransformationType FundamentalEnergy2ToCharacterEnergy1TransformationType { get; }
+        [ScriptIgnore] public ETransformationType FundamentalEnergy2ToCharacterEnergy1TransformationType { get; }
 
-        [ScriptIgnore]
-        public ETransformationType FundamentalEnergy2ToSurfaceEnergy1TransformationType { get; }
+        [ScriptIgnore] public ETransformationType FundamentalEnergy2ToSurfaceEnergy1TransformationType { get; }
 
-        [ScriptIgnore]
-        public ETransformationType CharacterEnergiesTransformationType { get; }
+        [ScriptIgnore] public ETransformationType CharacterEnergiesTransformationType { get; }
 
-        [ScriptIgnore]
-        public ETransformationType CharacterEnergy1ToSurfaceEnergy2TransformationType { get; }
+        [ScriptIgnore] public ETransformationType CharacterEnergy1ToSurfaceEnergy2TransformationType { get; }
 
-        [ScriptIgnore]
-        public ETransformationType CharacterEnergy2ToSurfaceEnergy1TransformationType { get; }
+        [ScriptIgnore] public ETransformationType CharacterEnergy2ToSurfaceEnergy1TransformationType { get; }
 
-        [ScriptIgnore]
-        public ETransformationType SurfaceEnergiesTransformationType { get; }
+        [ScriptIgnore] public ETransformationType SurfaceEnergiesTransformationType { get; }
 
         public string FundamentalElementsTransformationDetails { get; }
         public string CharacterElementsTransformationDetails { get; }
         public string FundamentalElementsCompatibilityDetails { get; }
 
-        [ScriptIgnore]
-        public string FundamentalElementsCompatibilityDetailsTitle { get; }
+        [ScriptIgnore] public string FundamentalElementsCompatibilityDetailsTitle { get; }
 
         public string CharacterElementsCompatibilityDetails { get; }
 
@@ -108,10 +110,10 @@ namespace K9.WebApplication.Models
         public bool FundamentalEnergiesAreChallenging => IsChallenging(FundamentalEnergiesTransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergiesAreSameEnergy => _nineStarKiModel1.MainEnergy.Energy == _nineStarKiModel2.MainEnergy.Energy;
+        public bool FundamentalEnergiesAreSameEnergy =>
+            _nineStarKiModel1.MainEnergy.Energy == _nineStarKiModel2.MainEnergy.Energy;
 
-        [ScriptIgnore]
-        public bool CharacterEnergiesAreSupportive => IsSupportive(CharacterEnergiesTransformationType);
+        [ScriptIgnore] public bool CharacterEnergiesAreSupportive => IsSupportive(CharacterEnergiesTransformationType);
 
         [ScriptIgnore]
         public bool CharacterEnergiesAreSame => CharacterEnergiesTransformationType == ETransformationType.Sibling;
@@ -120,73 +122,91 @@ namespace K9.WebApplication.Models
         public bool CharacterEnergiesAreChallenging => IsChallenging(CharacterEnergiesTransformationType);
 
         [ScriptIgnore]
-        public bool CharacterEnergiesAreSameEnergy => _nineStarKiModel1.CharacterEnergy.Energy == _nineStarKiModel2.CharacterEnergy.Energy;
+        public bool CharacterEnergiesAreSameEnergy =>
+            _nineStarKiModel1.CharacterEnergy.Energy == _nineStarKiModel2.CharacterEnergy.Energy;
 
-        [ScriptIgnore]
-        public bool SurfaceEnergiesAreSupportive => IsSupportive(SurfaceEnergiesTransformationType);
+        [ScriptIgnore] public bool SurfaceEnergiesAreSupportive => IsSupportive(SurfaceEnergiesTransformationType);
 
         [ScriptIgnore]
         public bool SurfaceEnergiesAreSame => SurfaceEnergiesTransformationType == ETransformationType.Sibling;
 
-        [ScriptIgnore]
-        public bool SurfaceEnergiesAreChallenging => IsChallenging(SurfaceEnergiesTransformationType);
+        [ScriptIgnore] public bool SurfaceEnergiesAreChallenging => IsChallenging(SurfaceEnergiesTransformationType);
 
         [ScriptIgnore]
-        public bool SurfaceEnergiesAreSameEnergy => _nineStarKiModel1.SurfaceEnergy.Energy == _nineStarKiModel2.SurfaceEnergy.Energy;
+        public bool SurfaceEnergiesAreSameEnergy =>
+            _nineStarKiModel1.SurfaceEnergy.Energy == _nineStarKiModel2.SurfaceEnergy.Energy;
 
         [ScriptIgnore]
-        public bool FundamentalEnergy1ToCharacterEnergy2IsSupportive => IsSupportive(FundamentalEnergy1ToCharacterEnergy2TransformationType);
+        public bool FundamentalEnergy1ToCharacterEnergy2IsSupportive =>
+            IsSupportive(FundamentalEnergy1ToCharacterEnergy2TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy2ToCharacterEnergy1IsSupportive => IsSupportive(FundamentalEnergy2ToCharacterEnergy1TransformationType);
+        public bool FundamentalEnergy2ToCharacterEnergy1IsSupportive =>
+            IsSupportive(FundamentalEnergy2ToCharacterEnergy1TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy1ToSurfaceEnergy2IsSupportive => IsSupportive(FundamentalEnergy1ToSurfaceEnergy2TransformationType);
+        public bool FundamentalEnergy1ToSurfaceEnergy2IsSupportive =>
+            IsSupportive(FundamentalEnergy1ToSurfaceEnergy2TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy2ToSurfaceEnergy1IsSupportive => IsSupportive(FundamentalEnergy2ToSurfaceEnergy1TransformationType);
+        public bool FundamentalEnergy2ToSurfaceEnergy1IsSupportive =>
+            IsSupportive(FundamentalEnergy2ToSurfaceEnergy1TransformationType);
 
         [ScriptIgnore]
-        public bool CharacterEnergy1ToSurfaceEnergy2IsSupportive => IsSupportive(CharacterEnergy1ToSurfaceEnergy2TransformationType);
+        public bool CharacterEnergy1ToSurfaceEnergy2IsSupportive =>
+            IsSupportive(CharacterEnergy1ToSurfaceEnergy2TransformationType);
 
         [ScriptIgnore]
-        public bool CharacterEnergy2ToSurfaceEnergy1IsSupportive => IsSupportive(CharacterEnergy2ToSurfaceEnergy1TransformationType);
+        public bool CharacterEnergy2ToSurfaceEnergy1IsSupportive =>
+            IsSupportive(CharacterEnergy2ToSurfaceEnergy1TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy1ToCharacterEnergy2IsSame => IsSame(FundamentalEnergy1ToCharacterEnergy2TransformationType);
+        public bool FundamentalEnergy1ToCharacterEnergy2IsSame =>
+            IsSame(FundamentalEnergy1ToCharacterEnergy2TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy2ToCharacterEnergy1IsSame => IsSame(FundamentalEnergy2ToCharacterEnergy1TransformationType);
+        public bool FundamentalEnergy2ToCharacterEnergy1IsSame =>
+            IsSame(FundamentalEnergy2ToCharacterEnergy1TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy1ToSurfaceEnergy2IsSame => IsSame(FundamentalEnergy1ToSurfaceEnergy2TransformationType);
+        public bool FundamentalEnergy1ToSurfaceEnergy2IsSame =>
+            IsSame(FundamentalEnergy1ToSurfaceEnergy2TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy2ToSurfaceEnergy1IsSame => IsSame(FundamentalEnergy2ToSurfaceEnergy1TransformationType);
+        public bool FundamentalEnergy2ToSurfaceEnergy1IsSame =>
+            IsSame(FundamentalEnergy2ToSurfaceEnergy1TransformationType);
 
         [ScriptIgnore]
-        public bool CharacterEnergy1ToSurfaceEnergy2IsSame => IsSame(CharacterEnergy1ToSurfaceEnergy2TransformationType);
+        public bool CharacterEnergy1ToSurfaceEnergy2IsSame =>
+            IsSame(CharacterEnergy1ToSurfaceEnergy2TransformationType);
 
         [ScriptIgnore]
-        public bool CharacterEnergy2ToSurfaceEnergy1IsSame => IsSame(CharacterEnergy2ToSurfaceEnergy1TransformationType);
+        public bool CharacterEnergy2ToSurfaceEnergy1IsSame =>
+            IsSame(CharacterEnergy2ToSurfaceEnergy1TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy1ToCharacterEnergy2IsChallenging => IsChallenging(FundamentalEnergy1ToCharacterEnergy2TransformationType);
+        public bool FundamentalEnergy1ToCharacterEnergy2IsChallenging =>
+            IsChallenging(FundamentalEnergy1ToCharacterEnergy2TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy2ToCharacterEnergy1IsChallenging => IsChallenging(FundamentalEnergy2ToCharacterEnergy1TransformationType);
+        public bool FundamentalEnergy2ToCharacterEnergy1IsChallenging =>
+            IsChallenging(FundamentalEnergy2ToCharacterEnergy1TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy1ToSurfaceEnergy2IsChallenging => IsChallenging(FundamentalEnergy1ToSurfaceEnergy2TransformationType);
+        public bool FundamentalEnergy1ToSurfaceEnergy2IsChallenging =>
+            IsChallenging(FundamentalEnergy1ToSurfaceEnergy2TransformationType);
 
         [ScriptIgnore]
-        public bool FundamentalEnergy2ToSurfaceEnergy1IsChallenging => IsChallenging(FundamentalEnergy2ToSurfaceEnergy1TransformationType);
+        public bool FundamentalEnergy2ToSurfaceEnergy1IsChallenging =>
+            IsChallenging(FundamentalEnergy2ToSurfaceEnergy1TransformationType);
 
         [ScriptIgnore]
-        public bool CharacterEnergy1ToSurfaceEnergy2IsChallenging => IsChallenging(CharacterEnergy1ToSurfaceEnergy2TransformationType);
+        public bool CharacterEnergy1ToSurfaceEnergy2IsChallenging =>
+            IsChallenging(CharacterEnergy1ToSurfaceEnergy2TransformationType);
 
         [ScriptIgnore]
-        public bool CharacterEnergy2ToSurfaceEnergy1IsChallenging => IsChallenging(CharacterEnergy2ToSurfaceEnergy1TransformationType);
+        public bool CharacterEnergy2ToSurfaceEnergy1IsChallenging =>
+            IsChallenging(CharacterEnergy2ToSurfaceEnergy1TransformationType);
 
         public (double SupportivePercentage, double ChallengingPercentage, double SiblingPercentage)
             GetTransformationFractions()
@@ -204,10 +224,12 @@ namespace K9.WebApplication.Models
             {
                 supportiveTotal += mainFactor * 2;
             }
+
             if (FundamentalEnergiesAreSame || FundamentalEnergiesAreSameEnergy)
             {
                 siblingTotal += mainFactor * 2;
             }
+
             if (FundamentalEnergiesAreChallenging)
             {
                 challengingTotal += mainFactor * 2;
@@ -217,10 +239,12 @@ namespace K9.WebApplication.Models
             {
                 supportiveTotal += characterFactor * 2;
             }
+
             if (CharacterEnergiesAreSame || CharacterEnergiesAreSameEnergy)
             {
                 siblingTotal += characterFactor * 2;
             }
+
             if (CharacterEnergiesAreChallenging)
             {
                 challengingTotal += characterFactor * 2;
@@ -230,10 +254,12 @@ namespace K9.WebApplication.Models
             {
                 supportiveTotal += surfaceFactor * 2;
             }
+
             if (SurfaceEnergiesAreSame || SurfaceEnergiesAreSameEnergy)
             {
                 siblingTotal += surfaceFactor * 2;
             }
+
             if (SurfaceEnergiesAreChallenging)
             {
                 challengingTotal += surfaceFactor * 2;
@@ -243,10 +269,12 @@ namespace K9.WebApplication.Models
             {
                 supportiveTotal += characterFactor + mainFactor;
             }
+
             if (FundamentalEnergy1ToSurfaceEnergy2IsSupportive || FundamentalEnergy2ToSurfaceEnergy1IsSupportive)
             {
                 supportiveTotal += surfaceFactor + mainFactor;
             }
+
             if (CharacterEnergy1ToSurfaceEnergy2IsSupportive || CharacterEnergy2ToSurfaceEnergy1IsSupportive)
             {
                 supportiveTotal += surfaceFactor + characterFactor;
@@ -256,10 +284,12 @@ namespace K9.WebApplication.Models
             {
                 siblingTotal += mainFactor + characterFactor;
             }
+
             if (FundamentalEnergy1ToSurfaceEnergy2IsSame || FundamentalEnergy2ToSurfaceEnergy1IsSame)
             {
                 siblingTotal += mainFactor + surfaceFactor;
             }
+
             if (CharacterEnergy1ToSurfaceEnergy2IsSame || CharacterEnergy2ToSurfaceEnergy1IsSame)
             {
                 siblingTotal += characterFactor + surfaceFactor;
@@ -269,10 +299,12 @@ namespace K9.WebApplication.Models
             {
                 challengingTotal += mainFactor + characterFactor;
             }
+
             if (FundamentalEnergy1ToSurfaceEnergy2IsChallenging || FundamentalEnergy2ToSurfaceEnergy1IsChallenging)
             {
                 challengingTotal += mainFactor + surfaceFactor;
             }
+
             if (CharacterEnergy1ToSurfaceEnergy2IsChallenging || CharacterEnergy2ToSurfaceEnergy1IsChallenging)
             {
                 challengingTotal += characterFactor + surfaceFactor;
@@ -331,6 +363,7 @@ namespace K9.WebApplication.Models
                         case ENineStarKiElement.Earth:
                             return Globalisation.Dictionary.tree_earth;
                     }
+
                     break;
 
                 case ENineStarKiElement.Fire:
@@ -407,15 +440,20 @@ namespace K9.WebApplication.Models
         {
             if (FundamentalElementsAreSupportive)
             {
-                return TemplateParser.Parse(Globalisation.Dictionary.main_element_supportive, new { DefaultValuesConfiguration.Instance.BaseImagesPath });
+                return TemplateParser.Parse(Globalisation.Dictionary.main_element_supportive,
+                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
             }
+
             if (FundamentalEnergiesAreChallenging)
             {
-                return TemplateParser.Parse(Globalisation.Dictionary.main_element_challenging, new { DefaultValuesConfiguration.Instance.BaseImagesPath });
+                return TemplateParser.Parse(Globalisation.Dictionary.main_element_challenging,
+                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
             }
+
             if (FundamentalEnergiesAreSame)
             {
-                return TemplateParser.Parse(Globalisation.Dictionary.main_element_same, new { DefaultValuesConfiguration.Instance.BaseImagesPath });
+                return TemplateParser.Parse(Globalisation.Dictionary.main_element_same,
+                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
             }
 
             return string.Empty;
@@ -427,10 +465,12 @@ namespace K9.WebApplication.Models
             {
                 return Globalisation.Dictionary.character_element_supportive;
             }
+
             if (CharacterEnergiesAreChallenging)
             {
                 return Globalisation.Dictionary.character_element_challenging;
             }
+
             if (CharacterEnergiesAreSame)
             {
                 return Globalisation.Dictionary.character_element_same;
@@ -440,12 +480,15 @@ namespace K9.WebApplication.Models
         }
 
         private Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, string,
-            Tuple<ETransformationType, ETransformationType, PersonModel, PersonModel, bool>> GetTransformationDetailItem(
-            ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2,
-            string type1Name, string type2Name, string verb, ETransformationType comparisonTransformationType1,
-            ETransformationType comparisonTransformationType2, PersonModel person1, PersonModel person2, bool titleOnly)
+                Tuple<ETransformationType, ETransformationType, PersonModel, PersonModel, bool>>
+            GetTransformationDetailItem(
+                ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2,
+                string type1Name, string type2Name, string verb, ETransformationType comparisonTransformationType1,
+                ETransformationType comparisonTransformationType2, PersonModel person1, PersonModel person2,
+                bool titleOnly)
         {
-            return new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, string, Tuple<ETransformationType, ETransformationType, PersonModel, PersonModel, bool>>(
+            return new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, string,
+                Tuple<ETransformationType, ETransformationType, PersonModel, PersonModel, bool>>(
                 transformationType,
                 energy1,
                 energy2,
@@ -503,7 +546,9 @@ namespace K9.WebApplication.Models
             return sb.ToString();
         }
 
-        private string GetSupportiveCompatibilityDetails(ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name, PersonModel person1, PersonModel person2, bool titleOnly = false)
+        private string GetSupportiveCompatibilityDetails(ETransformationType transformationType,
+            NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name, PersonModel person1,
+            PersonModel person2, bool titleOnly = false)
         {
             var sb = new StringBuilder();
 
@@ -523,7 +568,9 @@ namespace K9.WebApplication.Models
             return sb.ToString();
         }
 
-        private string GetSameCompatibilityDetails(ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name, PersonModel person1, PersonModel person2, bool titleOnly = false)
+        private string GetSameCompatibilityDetails(ETransformationType transformationType, NineStarKiEnergy energy1,
+            NineStarKiEnergy energy2, string type1Name, string type2Name, PersonModel person1, PersonModel person2,
+            bool titleOnly = false)
         {
             var sb = new StringBuilder();
 
@@ -543,7 +590,9 @@ namespace K9.WebApplication.Models
             return sb.ToString();
         }
 
-        private string GetChallengingCompatibilityDetails(ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name, PersonModel person1, PersonModel person2, bool titleOnly = false)
+        private string GetChallengingCompatibilityDetails(ETransformationType transformationType,
+            NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name, PersonModel person1,
+            PersonModel person2, bool titleOnly = false)
         {
             var sb = new StringBuilder();
 
@@ -563,7 +612,8 @@ namespace K9.WebApplication.Models
             return sb.ToString();
         }
 
-        private List<Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>> GetAllOtherElements()
+        private List<Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
+            PersonModel>> GetAllOtherElements()
         {
             var items =
                 new List<Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
@@ -679,36 +729,44 @@ namespace K9.WebApplication.Models
             var sbSame = new StringBuilder();
 
             var allOtherElements = GetAllOtherElements();
-            var challengingItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Controls || e.Item1 == ETransformationType.IsControlled);
-            var supportiveItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Supports || e.Item1 == ETransformationType.IsSupported);
+            var challengingItems = allOtherElements.Where(e =>
+                e.Item1 == ETransformationType.Controls || e.Item1 == ETransformationType.IsControlled);
+            var supportiveItems = allOtherElements.Where(e =>
+                e.Item1 == ETransformationType.Supports || e.Item1 == ETransformationType.IsSupported);
             var sameItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Sibling);
 
             var fractions = GetTransformationFractions();
 
             if (supportiveItems.Any())
             {
-                sbSupport.AppendLine($"<h4>{Globalisation.Dictionary.SupportiveElements} ({fractions.SupportivePercentage.ToString("0")}%)</h4>");
+                sbSupport.AppendLine(
+                    $"<h4>{Globalisation.Dictionary.SupportiveElements} ({fractions.SupportivePercentage.ToString("0")}%)</h4>");
                 foreach (var item in supportiveItems)
                 {
-                    sbSupport.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                    sbSupport.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3,
+                        item.Item4, item.Item5, item.Item6, item.Item7));
                 }
             }
 
             if (sameItems.Any())
             {
-                sbSame.AppendLine($"<h4>{Globalisation.Dictionary.SiblingElements} ({fractions.SiblingPercentage.ToString("0")}%)</h4>");
+                sbSame.AppendLine(
+                    $"<h4>{Globalisation.Dictionary.SiblingElements} ({fractions.SiblingPercentage.ToString("0")}%)</h4>");
                 foreach (var item in sameItems)
                 {
-                    sbSame.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                    sbSame.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4,
+                        item.Item5, item.Item6, item.Item7));
                 }
             }
 
             if (challengingItems.Any())
             {
-                sbChallenge.AppendLine($"<h4>{Globalisation.Dictionary.ChallengingElements} ({fractions.ChallengingPercentage.ToString("0")}%)</h4>");
+                sbChallenge.AppendLine(
+                    $"<h4>{Globalisation.Dictionary.ChallengingElements} ({fractions.ChallengingPercentage.ToString("0")}%)</h4>");
                 foreach (var item in challengingItems)
                 {
-                    sbChallenge.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                    sbChallenge.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3,
+                        item.Item4, item.Item5, item.Item6, item.Item7));
                 }
             }
 
@@ -730,7 +788,8 @@ namespace K9.WebApplication.Models
 
         private bool IsSupportive(ETransformationType transformationType)
         {
-            return new List<ETransformationType> { ETransformationType.IsSupported, ETransformationType.Supports }.Contains(transformationType);
+            return new List<ETransformationType> { ETransformationType.IsSupported, ETransformationType.Supports }
+                .Contains(transformationType);
         }
 
         private bool IsSame(ETransformationType transformationType)
@@ -740,7 +799,8 @@ namespace K9.WebApplication.Models
 
         private bool IsChallenging(ETransformationType transformationType)
         {
-            return new List<ETransformationType> { ETransformationType.IsControlled, ETransformationType.Controls }.Contains(transformationType);
+            return new List<ETransformationType> { ETransformationType.IsControlled, ETransformationType.Controls }
+                .Contains(transformationType);
         }
 
         private void CalculateScore()
@@ -755,10 +815,18 @@ namespace K9.WebApplication.Models
                     Score.AddSupportScore(ECompatibilityScore.LowToMedium, 9);
                     Score.AddMutualUnderstandingScore(ECompatibilityScore.ExtremelyHigh, 9);
 
-                    Score.AddComplementarityScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 9);
-                    Score.AddSexualChemistryScore(FundamentalEnergiesAreSameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, 20);
-                    Score.AddSparkScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 20);
-                    Score.AddLearningPotentialScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.VeryLow : ECompatibilityScore.Low, 9);
+                    Score.AddComplementarityScore(
+                        FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low,
+                        9);
+                    Score.AddSexualChemistryScore(
+                        FundamentalEnergiesAreSameEnergy
+                            ? ESexualChemistryScore.NonExistant
+                            : ESexualChemistryScore.Low, 20);
+                    Score.AddSparkScore(
+                        FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low,
+                        20);
+                    Score.AddLearningPotentialScore(
+                        FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.VeryLow : ECompatibilityScore.Low, 9);
                     break;
 
                 case ETransformationType.Supports:
@@ -815,7 +883,8 @@ namespace K9.WebApplication.Models
             }
         }
 
-        private void AddScore(ETransformationType transformationType, bool sameEnergy, int factor = 1, int sparkFactor = 0)
+        private void AddScore(ETransformationType transformationType, bool sameEnergy, int factor = 1,
+            int sparkFactor = 0)
         {
             switch (transformationType)
             {
@@ -827,10 +896,15 @@ namespace K9.WebApplication.Models
                     Score.AddSupportScore(ECompatibilityScore.Medium, factor);
                     Score.AddMutualUnderstandingScore(ECompatibilityScore.ExtremelyHigh, factor);
 
-                    Score.AddComplementarityScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, factor);
-                    Score.AddSexualChemistryScore(sameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, factor + sparkFactor);
-                    Score.AddSparkScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, factor + sparkFactor);
-                    Score.AddLearningPotentialScore(sameEnergy ? ECompatibilityScore.VeryLow : ECompatibilityScore.Low, factor);
+                    Score.AddComplementarityScore(
+                        sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, factor);
+                    Score.AddSexualChemistryScore(
+                        sameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low,
+                        factor + sparkFactor);
+                    Score.AddSparkScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low,
+                        factor + sparkFactor);
+                    Score.AddLearningPotentialScore(sameEnergy ? ECompatibilityScore.VeryLow : ECompatibilityScore.Low,
+                        factor);
                     break;
 
                 case ETransformationType.Supports:
@@ -910,33 +984,36 @@ namespace K9.WebApplication.Models
         private readonly NineStarKiModel _nineStarKiModel1;
         private readonly NineStarKiModel _nineStarKiModel2;
 
-        public GenderCompatibility(NineStarKiModel nineStarKiModel1, NineStarKiModel nineStarKiModel2, CompatibilityScoreModel score)
+        public GenderCompatibility(NineStarKiModel nineStarKiModel1, NineStarKiModel nineStarKiModel2,
+            CompatibilityScoreModel score)
         {
             _nineStarKiModel1 = nineStarKiModel1;
             _nineStarKiModel2 = nineStarKiModel2;
             Score = score;
             IsFundamtenalGenderSame = nineStarKiModel1.MainEnergy.YinYang == nineStarKiModel2.MainEnergy.YinYang;
-            IsCharacterGenderSame = nineStarKiModel1.CharacterEnergy.YinYang == nineStarKiModel2.CharacterEnergy.YinYang;
+            IsCharacterGenderSame =
+                nineStarKiModel1.CharacterEnergy.YinYang == nineStarKiModel2.CharacterEnergy.YinYang;
 
             CalculateScore();
         }
 
         public CompatibilityScoreModel Score { get; }
 
-        [ScriptIgnore]
-        public bool IsFundamtenalGenderSame { get; set; }
+        [ScriptIgnore] public bool IsFundamtenalGenderSame { get; set; }
+
+        [ScriptIgnore] public bool IsCharacterGenderSame { get; set; }
+
+        [ScriptIgnore] public bool IsBothGenderSame => IsFundamtenalGenderSame && IsCharacterGenderSame;
 
         [ScriptIgnore]
-        public bool IsCharacterGenderSame { get; set; }
+        public ENineStarKiYinYang FundamentalGenderSameYinYang => IsFundamtenalGenderSame
+            ? _nineStarKiModel1.MainEnergy.YinYang
+            : ENineStarKiYinYang.Unspecified;
 
         [ScriptIgnore]
-        public bool IsBothGenderSame => IsFundamtenalGenderSame && IsCharacterGenderSame;
-
-        [ScriptIgnore]
-        public ENineStarKiYinYang FundamentalGenderSameYinYang => IsFundamtenalGenderSame ? _nineStarKiModel1.MainEnergy.YinYang : ENineStarKiYinYang.Unspecified;
-
-        [ScriptIgnore]
-        public ENineStarKiYinYang CharacterGenderSameYinYang => IsCharacterGenderSame ? _nineStarKiModel1.CharacterEnergy.YinYang : ENineStarKiYinYang.Unspecified;
+        public ENineStarKiYinYang CharacterGenderSameYinYang => IsCharacterGenderSame
+            ? _nineStarKiModel1.CharacterEnergy.YinYang
+            : ENineStarKiYinYang.Unspecified;
 
         private void CalculateScore()
         {
@@ -985,11 +1062,13 @@ namespace K9.WebApplication.Models
 
     public class ModalityCompatibility
     {
-        public ModalityCompatibility(NineStarKiModel nineStarKiModel1, NineStarKiModel nineStarKiModel2, CompatibilityScoreModel score)
+        public ModalityCompatibility(NineStarKiModel nineStarKiModel1, NineStarKiModel nineStarKiModel2,
+            CompatibilityScoreModel score)
         {
             Score = score;
             IsCharacterModalitySame = nineStarKiModel1.MainEnergy.Modality == nineStarKiModel2.MainEnergy.Modality;
-            IsFundamentalModalitySame = nineStarKiModel1.CharacterEnergy.Modality == nineStarKiModel2.CharacterEnergy.Modality;
+            IsFundamentalModalitySame =
+                nineStarKiModel1.CharacterEnergy.Modality == nineStarKiModel2.CharacterEnergy.Modality;
             IsSurfaceModalitySame = nineStarKiModel1.SurfaceEnergy.Modality == nineStarKiModel2.SurfaceEnergy.Modality;
 
             CalculateScore();
@@ -997,14 +1076,11 @@ namespace K9.WebApplication.Models
 
         public CompatibilityScoreModel Score { get; }
 
-        [ScriptIgnore]
-        public bool IsCharacterModalitySame { get; set; }
+        [ScriptIgnore] public bool IsCharacterModalitySame { get; set; }
 
-        [ScriptIgnore]
-        public bool IsFundamentalModalitySame { get; set; }
+        [ScriptIgnore] public bool IsFundamentalModalitySame { get; set; }
 
-        [ScriptIgnore]
-        public bool IsSurfaceModalitySame { get; set; }
+        [ScriptIgnore] public bool IsSurfaceModalitySame { get; set; }
 
         private void CalculateScore()
         {
@@ -1030,26 +1106,168 @@ namespace K9.WebApplication.Models
         }
     }
 
+    public class BirthMonthCompatibility
+    {
+        public BirthMonthCompatibility(NineStarKiModel nineStarKiModel1, NineStarKiModel nineStarKiModel2,
+            CompatibilityScoreModel score)
+        {
+            Score = score;
+            BornDaysApart = GetBornDaysApart(Math.Abs(nineStarKiModel1.PersonModel.DateOfBirth.DayOfYear -
+                                                      nineStarKiModel2.PersonModel.DateOfBirth.DayOfYear));
+
+            PolarisedPercent = (double)BornDaysApart / halfYearDays * 100;
+            SharedWeaknessPercent = BornDaysApart <= quarterYearDays
+                ? (1.0 - ((double)BornDaysApart / quarterYearDays)) * 100
+                : 0;
+            BalancePointPercent = Math.Max(0, 100 - PolarisedPercent - SharedWeaknessPercent);
+            AwayFromBalancePointPercent = PolarisedPercent + SharedWeaknessPercent;
+
+            CompatibilityDetails = GetCompatibilityReportHtml();
+
+            CalculateScore();
+        }
+
+        private static int halfYearDays = 365 / 2;
+        private static int quarterYearDays = 365 / 4;
+
+        private double PolarisedPercent { get; }
+        private double SharedWeaknessPercent { get; }
+        private double BalancePointPercent { get; }
+        private double AwayFromBalancePointPercent { get; }
+        private int BornDaysApart { get; }
+
+        public CompatibilityScoreModel Score { get; }
+
+        public string CompatibilityDetails { get; }
+
+        private int GetBornDaysApart(int value)
+        {
+            if (value > halfYearDays)
+            {
+                value = 365 - value; // shorter arc around the circle
+            }
+
+            return value;
+        }
+
+        private void CalculateScore()
+        {
+            Score.AddHarmonyScore(CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(BalancePointPercent));
+            Score.AddConflictScore(
+                CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(AwayFromBalancePointPercent));
+            Score.AddMutualUnderstandingScore(
+                CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent));
+            Score.AddComplementarityScore(
+                CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent));
+            Score.AddSexualChemistryScore(CompatibilityExtensions.GetEnumFromPercentage<ESexualChemistryScore>(PolarisedPercent));
+            Score.AddSparkScore(CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent));
+            Score.AddLearningPotentialScore(CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent));
+        }
+
+        public string GetCompatibilityReportHtml()
+        {
+            return $@"
+            <h5>{Dictionary.Polarity}</h5>
+            <p>{GetPolarityParagraph(PolarisedPercent)}</p>
+
+            <h5>{Dictionary.SharedVulnerability}</h5>
+            <p>{GetSamenessParagraph(SharedWeaknessPercent)}</p>
+
+            <h5>{Dictionary.BalanceAndComplementarity}</h5>
+            <p>{GetBalanceParagraph(BalancePointPercent)}</p>
+            ".Trim();
+        }
+
+        private static string GetPolarityParagraph(double percent)
+        {
+            if (percent <= 20)
+                return Dictionary.polarity_very_low;
+            if (percent <= 40)
+                return Dictionary.polarity_low;
+            if (percent <= 60)
+                return Dictionary.polarity_medium;
+            if (percent <= 80)
+                return Dictionary.polarity_high;
+            return Dictionary.polarity_very_high;
+        }
+
+        private static string GetSamenessParagraph(double percent)
+        {
+            if (percent <= 20)
+                return Dictionary.sameness_very_low;
+            if (percent <= 40)
+                return Dictionary.sameness_low;
+            if (percent <= 60)
+                return Dictionary.sameness_medium;
+            if (percent <= 80)
+                return Dictionary.sameness_high;
+            return Dictionary.sameness_very_high;
+        }
+
+        private static string GetBalanceParagraph(double percent)
+        {
+            if (percent <= 20)
+                return Dictionary.harmony_very_low;
+            if (percent <= 40)
+                return Dictionary.harmony_low;
+            if (percent <= 60)
+                return Dictionary.harmony_medium;
+            if (percent <= 80)
+                return Dictionary.harmony_high;
+            return Dictionary.harmony_very_high;
+        }
+    }
+
     public class CompatibilityDetailsModel
     {
         public ElementCompatibility ElementCompatibility { get; }
         public GenderCompatibility GenderCompatibility { get; }
         public ModalityCompatibility ModalityCompatibility { get; }
+        public BirthMonthCompatibility BirthMonthCompatibility { get; }
         public CompatibilityScoreModel Score { get; }
 
         public CompatibilityDetailsModel(CompatibilityModel compatibilityModel)
         {
-            if (compatibilityModel.NineStarKiModel1.MainEnergy == null || compatibilityModel.NineStarKiModel2.MainEnergy == null)
+            if (compatibilityModel.NineStarKiModel1.MainEnergy == null ||
+                compatibilityModel.NineStarKiModel2.MainEnergy == null)
             {
                 return;
             }
 
             Score = new CompatibilityScoreModel();
-            ElementCompatibility = new ElementCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);
-            GenderCompatibility = new GenderCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);
-            ModalityCompatibility = new ModalityCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);
+            ElementCompatibility = new ElementCompatibility(compatibilityModel.NineStarKiModel1,
+                compatibilityModel.NineStarKiModel2, Score);
+            GenderCompatibility = new GenderCompatibility(compatibilityModel.NineStarKiModel1,
+                compatibilityModel.NineStarKiModel2, Score);
+            ModalityCompatibility = new ModalityCompatibility(compatibilityModel.NineStarKiModel1,
+                compatibilityModel.NineStarKiModel2, Score);
+            BirthMonthCompatibility = new BirthMonthCompatibility(compatibilityModel.NineStarKiModel1,
+                compatibilityModel.NineStarKiModel2, Score);
 
             Score.CalculateAverages();
+        }
+    }
+
+    public static class CompatibilityExtensions
+    {
+        public static TEnum GetEnumFromPercentage<TEnum>(double percent) where TEnum : struct, Enum
+        {
+            // Clamp the input between 0 and 100
+            percent = Math.Max(0, Math.Min(100, percent));
+
+            // Get all enum values and sort them to ensure correct order
+            var values = Enum.GetValues(typeof(TEnum)).Cast<TEnum>().ToArray();
+
+            // Assume the first value is a placeholder (e.g., Unspecified), skip it
+            int scoreLevels = values.Length - 1;
+
+            // Calculate the index into the enum (excluding index 0)
+            int index = (int)Math.Round((percent / 100.0) * scoreLevels);
+
+            // Clamp between 1 and scoreLevels to avoid selecting the first (placeholder) value
+            index = Math.Max(1, Math.Min(scoreLevels, index));
+
+            return values[index];
         }
     }
 }

@@ -6319,6 +6319,9 @@
   <data name="LunarKi" xml:space="preserve">
     <value>Lunar Ki</value>
   </data>
+  <data name="BalanceAndComplementarity" xml:space="preserve">
+    <value>Balance and Complementarity</value>
+  </data>
   <data name="balanced_climate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>yinyanggroup\en-gb\balanced-climate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -6361,6 +6364,21 @@
   <data name="full_moon_yin_expanding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>astrology\en-gb\moonphaseyinyang\full-moon-yin-expanding.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="harmony_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\harmony\harmony-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="harmony_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\harmony\harmony-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="harmony_medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\harmony\harmony-medium.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="harmony_very_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\harmony\harmony-very-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="harmony_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\harmony\harmony-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="new_moon_balanced" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>astrology\en-gb\moonphaseyinyang\new-moon-balanced.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -6369,6 +6387,42 @@
   </data>
   <data name="new_moon_yin_expanding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>astrology\en-gb\moonphaseyinyang\new-moon-yin-expanding.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Polarity" xml:space="preserve">
+    <value>Polarity</value>
+  </data>
+  <data name="polarity_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\polarity\polarity-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="polarity_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\polarity\polarity-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="polarity_medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\polarity\polarity-medium.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="polarity_very_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\polarity\polarity-very-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="polarity_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\polarity\polarity-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sameness_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\sameness\sameness-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sameness_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\sameness\sameness-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sameness_medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\sameness\sameness-medium.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sameness_very_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\sameness\sameness-very-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sameness_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>birthmonth\en-gb\sameness\sameness-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SharedVulnerability" xml:space="preserve">
+    <value>Shared Vulnerability</value>
   </data>
   <data name="YangContracting" xml:space="preserve">
     <value>Contracting</value>

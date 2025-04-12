@@ -1733,6 +1733,7 @@
     <Content Include="Views\Astrology\_MoonPhaseLarge.cshtml" />
     <Content Include="Views\Shared\Charts\_PieChart.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TimeZoneExtended.cshtml" />
+    <Content Include="Views\Compatibility\_CompatibilityBirthMonth.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

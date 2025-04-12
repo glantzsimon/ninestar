@@ -3298,6 +3298,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Balance and Complementarity.
+        /// </summary>
+        public static string BalanceAndComplementarity {
+            get {
+                return ResourceManager.GetString("BalanceAndComplementarity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Climate and Dietary Tendencies of the Balanced Group (5 Earth)&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Individuals governed by 5 Earth energy occupy a unique place between the Yin and Yang poles, often embodying qualities of both but not fully aligning with either extreme. Their comfort levels tend to be more influenced by stability and rhythm than by temperature or seasonal energy alone. These individuals usually adapt reasonably well to both warm and cool climates, though sudden or extreme shifts in environment—such as excess [rest of string was truncated]&quot;;.
@@ -9825,6 +9834,51 @@ namespace K9.Globalisation {
         public static string Hardship {
             get {
                 return ResourceManager.GetString("Hardship", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a strong sense of balance and mutual support between you. Your relationship may feel naturally harmonious, with room for difference and synergy..
+        /// </summary>
+        public static string harmony_high {
+            get {
+                return ResourceManager.GetString("harmony_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have a modest level of balance. While some contrasts remain, you may find moments of harmony or complementary dynamics..
+        /// </summary>
+        public static string harmony_low {
+            get {
+                return ResourceManager.GetString("harmony_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a moderate degree of energetic balance between you. This can help smooth over contrasts and allow each partner to both challenge and support the other..
+        /// </summary>
+        public static string harmony_medium {
+            get {
+                return ResourceManager.GetString("harmony_medium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You share a deeply complementary dynamic, where neither sameness nor opposition dominates. This kind of balance can lead to stable, respectful, and sustainable connection..
+        /// </summary>
+        public static string harmony_very_high {
+            get {
+                return ResourceManager.GetString("harmony_very_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is very little balance between you energetically. Your relationship may feel one-sided or highly polarized, unless compensated by other compatibilities..
+        /// </summary>
+        public static string harmony_very_low {
+            get {
+                return ResourceManager.GetString("harmony_very_low", resourceCulture);
             }
         }
         
@@ -16693,6 +16747,60 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Polarity.
+        /// </summary>
+        public static string Polarity {
+            get {
+                return ResourceManager.GetString("Polarity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is strong polarity between you, suggesting distinct temperamental styles and ways of expressing energy. This often brings magnetic attraction, but can also lead to tension if unbalanced..
+        /// </summary>
+        public static string polarity_high {
+            get {
+                return ResourceManager.GetString("polarity_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a subtle contrast between your seasonal temperaments, but not enough to generate serious friction. This creates a mild polarity that may feel like gentle difference or playful contrast..
+        /// </summary>
+        public static string polarity_low {
+            get {
+                return ResourceManager.GetString("polarity_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have a moderate polarity in your birth timing, which can bring attraction, intrigue, and also some differences in how you handle energy and transition through the year..
+        /// </summary>
+        public static string polarity_medium {
+            get {
+                return ResourceManager.GetString("polarity_medium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are born at opposite ends of the seasonal cycle. This can create a powerful dynamic of opposites, where each partner complements what the other lacks — or conflicts if not consciously balanced..
+        /// </summary>
+        public static string polarity_very_high {
+            get {
+                return ResourceManager.GetString("polarity_very_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You and your partner are born very close together in the seasonal cycle, which suggests a strong resonance in temperament and instinct. There may be a feeling of similarity or mirroring, and a shared sense of emotional rhythm..
+        /// </summary>
+        public static string polarity_very_low {
+            get {
+                return ResourceManager.GetString("polarity_very_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Da You (Possession In Great Measure)&lt;/h5&gt;
         ///&lt;p&gt;Da You represents abundance, great resources, and the potential for vast success. It signifies a time when one possesses wealth, influence, or knowledge that can be used to achieve great things.&lt;/p&gt;
         ///&lt;p&gt;However, with great abundance comes great responsibility. This hexagram warns against arrogance or misuse of resources. True wealth is not just material but also found in wisdom, generosity, and ethical conduct.&lt;/p&gt;
@@ -17699,6 +17807,51 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You likely share several constitutional sensitivities based on your similar birth season. This can foster deep empathy, but may also mirror vulnerabilities in health or emotional patterns..
+        /// </summary>
+        public static string sameness_high {
+            get {
+                return ResourceManager.GetString("sameness_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You may share a few subtle sensitivities from the part of the year not experienced in the womb. This can create moments of mutual recognition or fragility..
+        /// </summary>
+        public static string sameness_low {
+            get {
+                return ResourceManager.GetString("sameness_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is moderate similarity in your energetic constitution. Some of your strengths and weaknesses may echo in the other, creating a kind of mutual understanding..
+        /// </summary>
+        public static string sameness_medium {
+            get {
+                return ResourceManager.GetString("sameness_medium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are born very close together, which suggests strong constitutional resonance. This can create a deep sense of being &apos;cut from the same cloth,&apos; but may also expose shared blind spots or weaknesses..
+        /// </summary>
+        public static string sameness_very_high {
+            get {
+                return ResourceManager.GetString("sameness_very_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your birth dates are far enough apart that you likely developed under quite different seasonal influences. This reduces the likelihood of shared vulnerabilities but may also reduce unconscious empathy..
+        /// </summary>
+        public static string sameness_very_low {
+            get {
+                return ResourceManager.GetString("sameness_very_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saved Charts.
         /// </summary>
         public static string SavedCharts {
@@ -18517,6 +18670,15 @@ namespace K9.Globalisation {
         public static string SexualityTitle {
             get {
                 return ResourceManager.GetString("SexualityTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shared Vulnerability.
+        /// </summary>
+        public static string SharedVulnerability {
+            get {
+                return ResourceManager.GetString("SharedVulnerability", resourceCulture);
             }
         }
         

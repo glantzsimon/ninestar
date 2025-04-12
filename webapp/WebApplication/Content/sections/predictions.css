@@ -133,6 +133,7 @@
 .calendar-grid .calendar-day.current {
   background-color: #e6e6e6;
   outline: 2px solid #337ab7;
+  border: none !important;
   border-radius: 3px;
   position: relative;
   z-index: 1 !important;

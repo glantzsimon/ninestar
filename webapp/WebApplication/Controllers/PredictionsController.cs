@@ -198,7 +198,7 @@ namespace K9.WebApplication.Controllers
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.DailyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
-            var moonPhase = selectedDate.HasValue ? _astrologyService.GetMoonPhase(selectedDate.Value, userTimeZoneId, new NineStarKiEnergy(solarEnergy, ENineStarKiEnergyType.MainEnergy)) : null;
+            var moonPhase = selectedDate.HasValue ? _astrologyService.GetMoonPhase(selectedDate.Value, userTimeZoneId, true, new NineStarKiEnergy(solarEnergy, ENineStarKiEnergyType.MainEnergy)) : null;
 
             return PredictionsJsonResult(display, cycle, moonPhase);
         }

@@ -16,9 +16,9 @@ namespace K9.WebApplication.Services
             _astronomyService = astronomyService;
         }
 
-        public MoonPhase GetMoonPhase(DateTime selectedDateTime, string userTimeZoneId, NineStarKiEnergy energy = null)
+        public MoonPhase GetMoonPhase(DateTime selectedDateTime, string userTimeZoneId, bool includeLunarDay = false, NineStarKiEnergy energy = null)
         {
-            var moonPhase = _astronomyService.GetMoonPhase(selectedDateTime, userTimeZoneId);
+            var moonPhase = _astronomyService.GetMoonPhase(selectedDateTime, userTimeZoneId, includeLunarDay);
 
             moonPhase.LunarDayTitle = GetLunarDayTitle(moonPhase.LunarDay);
             moonPhase.LunarDayDescription = TemplateParser.Parse(GetLunarDayDescription(moonPhase.LunarDay), new { Illumination = $"({moonPhase.IlluminationDisplay})" });

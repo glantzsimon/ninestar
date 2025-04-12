@@ -170,7 +170,7 @@ namespace K9.WebApplication.Services
                         5, 5, 5, 5, new (int DailyKi, int? InvertedDailyKi)[] { (5, 5), (5, 5) }, 5, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod);
                 }
 
-                var moonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, model.MainEnergy);
+                var moonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, true, model.MainEnergy);
                 model.MoonPhase = moonPhase;
 
                 model.Lichun = _astronomyService.GetLichun(DateTime.UtcNow, "");
@@ -565,7 +565,7 @@ namespace K9.WebApplication.Services
 
                             var isActive = dailyEnergy.Day.Date == localNow.Date;
 
-                            var moonPhase = _astrologyService.GetMoonPhase(dailyEnergy.Day.Date, userTimeZoneId, nineStarKiModel.MainEnergy);
+                            var moonPhase = _astrologyService.GetMoonPhase(dailyEnergy.Day.Date, userTimeZoneId, false, nineStarKiModel.MainEnergy);
 
                             energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isActive, EPlannerView.Day, moonPhase));
                         }

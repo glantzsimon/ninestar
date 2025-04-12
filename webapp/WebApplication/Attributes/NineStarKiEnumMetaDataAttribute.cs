@@ -99,11 +99,6 @@ namespace K9.WebApplication.Attributes
             return string.Join(", ", GetMostChallengingCombinations().Select(e => GetNumberAndElementName(e)));
         }
 
-        public string GetYinYangExpansionDescription()
-        {
-            return GetEnumDescription(YinYangExpansion);
-        }
-
         public string GetElement()
         {
             return GetEnumDescription(Element);
@@ -179,6 +174,30 @@ namespace K9.WebApplication.Attributes
         public string GetElementDescription()
         {
             return _elementDescriptions.TryGetValue(Element, out var desc) ? desc : string.Empty;
+        }
+
+        private static readonly Dictionary<ENineStarKiYinYangExpansion, string> _yinYangExpansionGroupDescriptions = new Dictionary<ENineStarKiYinYangExpansion, string>
+        {
+            { ENineStarKiYinYangExpansion.YinExpanding, Dictionary.yin_expanding_climate },
+            { ENineStarKiYinYangExpansion.YangContracting, Dictionary.yang_expanding_climate },
+            { ENineStarKiYinYangExpansion.Balanced, Dictionary.balanced_climate }
+        };
+
+        private static readonly Dictionary<ENineStarKiYinYangExpansion, string> _yinYangExpansionGroupTitles = new Dictionary<ENineStarKiYinYangExpansion, string>
+        {
+            { ENineStarKiYinYangExpansion.YinExpanding, Dictionary.YinExpandingGroup },
+            { ENineStarKiYinYangExpansion.YangContracting, Dictionary.YangExpandingGroup},
+            { ENineStarKiYinYangExpansion.Balanced, Dictionary.YinYangBalancedGroup }
+        };
+
+        public string GetYinYangExpansionDescription()
+        {
+            return _yinYangExpansionGroupDescriptions.TryGetValue(YinYangExpansion, out var desc) ? desc : string.Empty;
+        }
+
+        public string GetYinYangExpansionTitle()
+        {
+            return _yinYangExpansionGroupTitles.TryGetValue(YinYangExpansion, out var desc) ? desc : string.Empty;
         }
 
         /// <summary>

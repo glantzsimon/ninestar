@@ -9,16 +9,16 @@ namespace K9.WebApplication.Services
 {
     public class AstrologyService : BaseService, IAstrologyService
     {
-        private readonly ISwissEphemerisService _swissEphemerisService;
+        private readonly IAstronomyService _astronomyService;
 
-        public AstrologyService(INineStarKiBasePackage my, ISwissEphemerisService swissEphemerisService) : base(my)
+        public AstrologyService(INineStarKiBasePackage my, IAstronomyService astronomyService) : base(my)
         {
-            _swissEphemerisService = swissEphemerisService;
+            _astronomyService = astronomyService;
         }
 
         public MoonPhase GetMoonPhase(DateTime selectedDateTime, string userTimeZoneId, NineStarKiEnergy energy = null)
         {
-            var moonPhase = _swissEphemerisService.GetMoonPhase(selectedDateTime, userTimeZoneId);
+            var moonPhase = _astronomyService.GetMoonPhase(selectedDateTime, userTimeZoneId);
 
             moonPhase.LunarDayTitle = GetLunarDayTitle(moonPhase.LunarDay);
             moonPhase.LunarDayDescription = TemplateParser.Parse(GetLunarDayDescription(moonPhase.LunarDay), new { Illumination = $"({moonPhase.IlluminationDisplay})" });

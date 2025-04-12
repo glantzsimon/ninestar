@@ -146,6 +146,13 @@
         }
     </div>
     <div id="global-planner-moon-details" style="display: none;">
-        @Html.Panel(Dictionary.LunarCycle, "")
+        @if (Model.View == EPlannerView.Month & Model.MoonPhase != null)
+        {
+            @Html.Panel(Dictionary.LunarCycle, $"{Html.Partial("~/Views/Astrology/_MoonPhaseLarge.cshtml", Model.MoonPhase).ToString()}{Model.MoonPhase.LunarDayDescription} {Model.MoonPhase.YinYangComfortDescription}")
+        }
+        else
+        {
+            @Html.Panel(Dictionary.LunarCycle, "")
+        }
     </div>
 </div>

@@ -1,0 +1,3 @@
+AstronomyService.cs filter=git-crypt diff=git-crypt
+IAstronomyService.cs filter=git-crypt diff=git-crypt
+.gitattributes !filter !diff

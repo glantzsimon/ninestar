@@ -6319,6 +6319,9 @@
   <data name="LunarKi" xml:space="preserve">
     <value>Lunar Ki</value>
   </data>
+  <data name="balanced_climate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>yinyanggroup\en-gb\balanced-climate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="ChildStressLabel" xml:space="preserve">
     <value>Stress &amp; The Inner Child</value>
   </data>
@@ -6370,10 +6373,25 @@
   <data name="YangContracting" xml:space="preserve">
     <value>Contracting</value>
   </data>
+  <data name="YangExpandingGroup" xml:space="preserve">
+    <value>Contracting Group (1, 6, 7, 8)</value>
+  </data>
+  <data name="yang_expanding_climate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>yinyanggroup\en-gb\yang-expanding-climate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="YinExpanding" xml:space="preserve">
     <value>Expanding</value>
   </data>
+  <data name="YinExpandingGroup" xml:space="preserve">
+    <value>Expanding Group (2, 3, 4, 9)</value>
+  </data>
   <data name="YinYangBalanced" xml:space="preserve">
     <value>Balanced</value>
+  </data>
+  <data name="YinYangBalancedGroup" xml:space="preserve">
+    <value>Balanced Group (5)</value>
+  </data>
+  <data name="yin_expanding_climate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>yinyanggroup\en-gb\yin-expanding-climate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

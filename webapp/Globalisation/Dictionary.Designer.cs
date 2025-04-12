@@ -3298,6 +3298,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Climate and Dietary Tendencies of the Balanced Group (5 Earth)&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Individuals governed by 5 Earth energy occupy a unique place between the Yin and Yang poles, often embodying qualities of both but not fully aligning with either extreme. Their comfort levels tend to be more influenced by stability and rhythm than by temperature or seasonal energy alone. These individuals usually adapt reasonably well to both warm and cool climates, though sudden or extreme shifts in environment—such as excess [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string balanced_climate {
+            get {
+                return ResourceManager.GetString("balanced_climate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html&gt;
         ///&lt;head&gt;
@@ -23717,11 +23728,30 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to By contrast, people in the &apos;contracting&apos; group (1, 6, 7, 8) usually feel more comfortable in cooler climates and during more inward or subdued times of the cycle, such as autumn, winter, new moon, or under low-light conditions. Their preferences tend toward denser, saltier, more solid and warming foods—such as baked dishes, hearty stews, root vegetables, and proteins. Yang types tend to feel more energized and balanced when the external energy is quieter and more inward-focused.
+        ///.
+        /// </summary>
+        public static string yang_expanding_climate {
+            get {
+                return ResourceManager.GetString("yang_expanding_climate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contracting.
         /// </summary>
         public static string YangContracting {
             get {
                 return ResourceManager.GetString("YangContracting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contracting Group (1, 6, 7, 8).
+        /// </summary>
+        public static string YangExpandingGroup {
+            get {
+                return ResourceManager.GetString("YangExpandingGroup", resourceCulture);
             }
         }
         
@@ -23878,6 +23908,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to People belonging to the &apos;expanding&apos; group (2, 3, 4, 9) tend to feel most comfortable in warmer climates and during periods of high energy and light, such as spring and summer or when the energies are more expansive. These individuals often prefer lighter, more fluid and fresh foods—such as fruits, juices, soups, and plant-based dishes. Sweets and foods with high water content are generally more appealing to them. They are often more active, uplifted, and expressive in warm environments or during energetic p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string yin_expanding_climate {
+            get {
+                return ResourceManager.GetString("yin_expanding_climate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yin and Yang.
         /// </summary>
         public static string YinAndYang {
@@ -23901,6 +23940,15 @@ namespace K9.Globalisation {
         public static string YinExpanding {
             get {
                 return ResourceManager.GetString("YinExpanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expanding Group (2, 3, 4, 9).
+        /// </summary>
+        public static string YinExpandingGroup {
+            get {
+                return ResourceManager.GetString("YinExpandingGroup", resourceCulture);
             }
         }
         
@@ -23932,6 +23980,15 @@ namespace K9.Globalisation {
         public static string YinYangBalanced {
             get {
                 return ResourceManager.GetString("YinYangBalanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balanced Group (5).
+        /// </summary>
+        public static string YinYangBalancedGroup {
+            get {
+                return ResourceManager.GetString("YinYangBalancedGroup", resourceCulture);
             }
         }
         

@@ -14,21 +14,21 @@ namespace K9.WebApplication.Services
         private readonly IRoles _roles;
         private readonly IMembershipService _membershipService;
         private readonly IAuthentication _authentication;
-        private readonly ISwissEphemerisService _swissEphemerisService;
+        private readonly IAstronomyService _astronomyService;
 
-        public BiorhythmsService(IRoles roles, IMembershipService membershipService, IAuthentication authentication, ISwissEphemerisService swissEphemerisService)
+        public BiorhythmsService(IRoles roles, IMembershipService membershipService, IAuthentication authentication, IAstronomyService astronomyService)
         {
             _roles = roles;
             _membershipService = membershipService;
             _authentication = authentication;
-            _swissEphemerisService = swissEphemerisService;
+            _astronomyService = astronomyService;
         }
 
         public BioRhythmsModel Calculate(NineStarKiModel nineStarKiModel, DateTime date)
         {
             var nineStarBiorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
             var nineStarKiBiorhythmsFactors = new NineStarKiBiorhythmsFactors(nineStarKiModel);
-            var periodBoundaries = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(date, "");
+            var periodBoundaries = _astronomyService.GetNineStarKiMonthlyPeriodBoundaries(date, "");
 
             nineStarBiorhythmsModel.MonthlyPeriodStartsOn = periodBoundaries.PeriodStartsOn;
             nineStarBiorhythmsModel.MonthlyPeriodEndsOn = periodBoundaries.PeriodEndsOn;
@@ -379,7 +379,7 @@ namespace K9.WebApplication.Services
         private void CalculateCosineRangeValues(BioRhythmResult result, IBiorhythm biorhythm, BioRhythmsModel bioRhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
         {
             var nineStarMonthlyPeriod =
-                _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(bioRhythmsModel.SelectedDate.Value, "");
+                _astronomyService.GetNineStarKiMonthlyPeriodBoundaries(bioRhythmsModel.SelectedDate.Value, "");
             var periodLengthInDays = (int)nineStarMonthlyPeriod.PeriodEndsOn.Subtract(nineStarMonthlyPeriod.PeriodStartsOn).TotalDays;
             var daysSinceBeginningOfPeriod =
                 (int)bioRhythmsModel.SelectedDate.Value.Subtract(nineStarMonthlyPeriod.PeriodStartsOn).TotalDays;

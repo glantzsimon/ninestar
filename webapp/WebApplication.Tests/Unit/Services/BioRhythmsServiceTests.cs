@@ -14,7 +14,7 @@ namespace K9.WebApplication.Tests.Unit.Services
     public class BioRhythmsServiceTests
     {
         private NineStarKiService _nineStarKiService;
-        private SwissEphemerisService _swissEphemerisService;
+        private AstronomyService _astronomyService;
 
         public BioRhythmsServiceTests()
         {
@@ -35,8 +35,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                 SwephPath = @"c:\workspace\sweph\datafiles"
             });
 
-            _swissEphemerisService = new SwissEphemerisService(nineStarKiBasePackage.Object);
-            _nineStarKiService = new NineStarKiService(basePackage.Object, _swissEphemerisService, textMergeService.Object, astrologyService.Object);
+            _astronomyService = new AstronomyService(nineStarKiBasePackage.Object);
+            _nineStarKiService = new NineStarKiService(basePackage.Object, _astronomyService, textMergeService.Object, astrologyService.Object);
         }
 
         //[Theory]
@@ -49,7 +49,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1979, 06, 16, 1979, 08, 02, EGender.Male, ENineStarKiEnergy.Thunder, 47, 14, 73, 5)]
         public void Biorhythms_HappyPath(int birthYear, int birthMonth, int birthDay, int dateYear, int dateMonth, int dateDay, EGender gender, ENineStarKiEnergy expectedEnergy, int expectedDaysElapsedSinceBirth, int expectedDayInterval, double expectedIntellectualValue, double expectedEmotionalValue)
         {
-            var biorhythmsService = new BiorhythmsService(new Mock<IRoles>().Object, new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, _swissEphemerisService);
+            var biorhythmsService = new BiorhythmsService(new Mock<IRoles>().Object, new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, _astronomyService);
 
             var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
@@ -73,7 +73,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1979, 06, 16, 1979, 06, 16, EGender.Male, ENineStarKiEnergy.Thunder, 50, 50.2254)]
         public void NineStarKiBiorhythms_PhysicalEnergy_HappyPath(int birthYear, int birthMonth, int birthDay, int dateYear, int dateMonth, int dateDay, EGender gender, ENineStarKiEnergy expectedEnergy, double expectedBiorhythmValue, double expectedNineStarKiBiorhythmsValue)
         {
-            var biorhythmsService = new BiorhythmsService(new Mock<IRoles>().Object, new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, _swissEphemerisService);
+            var biorhythmsService = new BiorhythmsService(new Mock<IRoles>().Object, new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, _astronomyService);
 
             var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {

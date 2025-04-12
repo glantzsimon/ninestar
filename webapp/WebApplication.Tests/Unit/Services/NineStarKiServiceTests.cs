@@ -19,7 +19,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly ITestOutputHelper _output;
         private readonly TestOutputTraceListener _listener;
         private NineStarKiService _nineStarKiService;
-        private SwissEphemerisService _swissEphemerisService;
+        private AstronomyService _astronomyService;
 
         public NineStarKiServiceTests(ITestOutputHelper output)
         {
@@ -44,8 +44,8 @@ namespace K9.WebApplication.Tests.Unit.Services
             _listener = new TestOutputTraceListener(_output);
             Trace.Listeners.Add(_listener);
 
-            _swissEphemerisService = new SwissEphemerisService(nineStarKiBasePackage.Object, _output);
-            _nineStarKiService = new NineStarKiService(basePackage.Object, _swissEphemerisService, aiTextMergeService.Object, astrologyService.Object);
+            _astronomyService = new AstronomyService(nineStarKiBasePackage.Object, _output);
+            _nineStarKiService = new NineStarKiService(basePackage.Object, _astronomyService, aiTextMergeService.Object, astrologyService.Object);
         }
 
         [Theory]
@@ -180,27 +180,27 @@ namespace K9.WebApplication.Tests.Unit.Services
         public void TestSwissEphemerisService_GetMonthKi()
         {
             var date = new DateTime(1979, 10, 15);
-            var result = _swissEphemerisService.GetNineStarKiMonthlyKi(date, "");
+            var result = _astronomyService.GetNineStarKiMonthlyKi(date, "");
             Assert.Equal(6, result);
 
             date = new DateTime(1979, 11, 15);
-            result = _swissEphemerisService.GetNineStarKiMonthlyKi(date, "");
+            result = _astronomyService.GetNineStarKiMonthlyKi(date, "");
             Assert.Equal(5, result);
 
             date = new DateTime(1979, 12, 15);
-            result = _swissEphemerisService.GetNineStarKiMonthlyKi(date, "");
+            result = _astronomyService.GetNineStarKiMonthlyKi(date, "");
             Assert.Equal(4, result);
 
             date = new DateTime(1980, 1, 26);
-            result = _swissEphemerisService.GetNineStarKiMonthlyKi(date, "");
+            result = _astronomyService.GetNineStarKiMonthlyKi(date, "");
             Assert.Equal(3, result);
 
             date = new DateTime(1980, 2, 3);
-            result = _swissEphemerisService.GetNineStarKiMonthlyKi(date, "");
+            result = _astronomyService.GetNineStarKiMonthlyKi(date, "");
             Assert.Equal(3, result);
 
             date = new DateTime(1980, 2, 5);
-            result = _swissEphemerisService.GetNineStarKiMonthlyKi(date, "");
+            result = _astronomyService.GetNineStarKiMonthlyKi(date, "");
             Assert.Equal(2, result);
         }
 
@@ -482,7 +482,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             ENineStarKiEnergy energy,
             int hour = 0)
         {
-            var nineStarKiYear = _swissEphemerisService.GetNineStarKiYearlyKi(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), "Europe/London");
+            var nineStarKiYear = _astronomyService.GetNineStarKiYearlyKi(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), "Europe/London");
 
             Assert.Equal((int)energy, nineStarKiYear);
         }
@@ -507,7 +507,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             string timeZone = "Europe/London",
             int hour = 0)
         {
-            var nineStarKiMonth = _swissEphemerisService.GetNineStarKiMonthlyKi(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), timeZone);
+            var nineStarKiMonth = _astronomyService.GetNineStarKiMonthlyKi(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), timeZone);
 
             Assert.Equal((int)energy, nineStarKiMonth);
         }
@@ -593,7 +593,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             //    TimeZoneId = timeZone
             //}, false, false, today);
 
-            var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, timeZone);
+            var dayEnergy = _astronomyService.GetNineStarKiDailyKi(today, timeZone);
             Assert.Equal((int)dailyKi, dayEnergy.DailyKi);
 
             //Assert.Equal((int)energy, ninestar.MainEnergy.EnergyNumber);
@@ -626,7 +626,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         {
             var today = new DateTime(todayYear, todayMonth, todayDay, 12, 0, 0);
 
-            var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, "Europe/London");
+            var dayEnergy = _astronomyService.GetNineStarKiDailyKi(today, "Europe/London");
             Assert.Equal((int)dailyKi, dayEnergy.DailyKi);
         }
 
@@ -774,7 +774,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             }
 
             var today = new DateTime(todayYear, todayMonth, todayDay, 12, 0, 0);
-            var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, "Europe/London");
+            var dayEnergy = _astronomyService.GetNineStarKiDailyKi(today, "Europe/London");
 
             Assert.Equal((int)dailyKi, dayEnergy.DailyKi);
         }
@@ -801,7 +801,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             }
 
             var today = new DateTime(todayYear, todayMonth, todayDay, todayHour, 0, 0);
-            var actualHourlyKi = _swissEphemerisService.GetNineStarKiHourlyKi(today, timeZone);
+            var actualHourlyKi = _astronomyService.GetNineStarKiHourlyKi(today, timeZone);
 
             Assert.Equal((int)hourlyKi, actualHourlyKi);
         }
@@ -826,7 +826,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             }
 
             var today = new DateTime(todayYear, todayMonth, todayDay, 0, 0, 0);
-            var actual = _swissEphemerisService.GetNineStarKiNineYearKi(today, "");
+            var actual = _astronomyService.GetNineStarKiNineYearKi(today, "");
 
             Assert.Equal((int)energy, actual);
         }
@@ -848,7 +848,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             }
 
             var today = new DateTime(todayYear, todayMonth, todayDay, 0, 0, 0);
-            var actual = _swissEphemerisService.GetNineStarKiEightyOneYearKi(today, "");
+            var actual = _astronomyService.GetNineStarKiEightyOneYearKi(today, "");
 
             Assert.Equal((int)energy, actual);
         }

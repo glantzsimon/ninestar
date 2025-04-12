@@ -85,7 +85,7 @@ namespace K9.WebApplication
             builder.RegisterType<MailingListService>().As<IMailingListService>().InstancePerLifetimeScope();
             builder.RegisterType<MailerService>().As<IMailerService>().InstancePerLifetimeScope();
             builder.RegisterType<NumerologyService>().As<INumerologyService>().InstancePerLifetimeScope();
-            builder.RegisterType<SwissEphemerisService>().As<ISwissEphemerisService>().InstancePerLifetimeScope();
+            builder.RegisterType<AstronomyService>().As<IAstronomyService>().InstancePerLifetimeScope();
             builder.RegisterType<AITextMergeService>().As<IAITextMergeService>().InstancePerLifetimeScope();
             builder.RegisterType<AstrologyService>().As<IAstrologyService>().InstancePerLifetimeScope();
 

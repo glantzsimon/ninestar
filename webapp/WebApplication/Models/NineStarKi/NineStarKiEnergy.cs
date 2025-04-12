@@ -1284,6 +1284,8 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore] public string YinYangExpansionDescription => MetaData.GetYinYangExpansionDescription();
 
+        [ScriptIgnore] public string YinYangExpansionTitle => MetaData.GetYinYangExpansionTitle();
+
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
         public ENineStarKiElement Element => MetaData.Element;

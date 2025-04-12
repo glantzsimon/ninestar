@@ -400,8 +400,8 @@
     <Compile Include="Models\MailingListViewModel.cs" />
     <Compile Include="Models\MailingListSendResultItem.cs" />
     <Compile Include="Models\CachableBase.cs" />
-    <Compile Include="Services\SwissEphemerisService.cs" />
-    <Compile Include="Services\ISwissEphemerisService.cs" />
+    <Compile Include="Services\AstronomyService.cs" />
+    <Compile Include="Services\IAstronomyService.cs" />
     <Compile Include="Services\NumerologyService.cs" />
     <Compile Include="Services\INumerologyService.cs" />
     <Compile Include="Services\IMailerService.cs" />

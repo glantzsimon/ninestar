@@ -17,14 +17,14 @@ namespace K9.WebApplication.Controllers
     public partial class PredictionsController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
-        private readonly ISwissEphemerisService _swissEphemerisService;
+        private readonly IAstronomyService _astronomyService;
         private readonly IAstrologyService _astrologyService;
 
-        public PredictionsController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService, ISwissEphemerisService swissEphemerisService, IAstrologyService astrologyService)
+        public PredictionsController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService, IAstronomyService astronomyService, IAstrologyService astrologyService)
             : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
-            _swissEphemerisService = swissEphemerisService;
+            _astronomyService = astronomyService;
             _astrologyService = astrologyService;
         }
 

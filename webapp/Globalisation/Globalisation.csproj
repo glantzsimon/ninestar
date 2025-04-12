@@ -665,6 +665,9 @@
     <Content Include="IChing\en-gb\the-cauldron-details.htm" />
     <Content Include="IChing\en-gb\the-clinging-details.htm" />
     <Content Include="IChing\en-gb\the-creative-details.htm" />
+    <Content Include="YinYangGroup\en-gb\yang-expanding-climate.htm" />
+    <Content Include="YinYangGroup\en-gb\balanced-climate.htm" />
+    <Content Include="YinYangGroup\en-gb\yin-expanding-climate.htm" />
     <None Include="IChing\en-gb\the-receptive-details.htm" />
     <Content Include="IChing\en-gb\the-family-details.htm" />
     <Content Include="IChing\en-gb\the-gentle-details.htm" />

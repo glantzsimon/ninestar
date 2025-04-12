@@ -103,7 +103,7 @@
   transform: scale(1.05);
   transform: translateY(-2px);
   position: relative;
-  z-index: 3 !important;
+  z-index: 1 !important;
 }
 .calendar-grid .calendar-day .date-label {
   width: 100%;
@@ -136,7 +136,7 @@
   border: none !important;
   border-radius: 3px;
   position: relative;
-  z-index: 1 !important;
+  z-index: 2 !important;
 }
 .calendar-grid .calendar-day.active {
   background-color: #337ab7;

@@ -399,7 +399,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.metal_tree;
 
                         case ENineStarKiElement.Fire:
-                            return Globalisation.Dictionary.tree_fire;
+                            return Globalisation.Dictionary.fire_metal;
 
                         case ENineStarKiElement.Metal:
                             return Globalisation.Dictionary.metal_metal;
@@ -1047,7 +1047,7 @@ namespace K9.WebApplication.Models
                     Score.AddSparkScore(ECompatibilityScore.VeryLow, 5);
                 }
 
-                if (IsCharacterGenderSame)
+                if (!IsCharacterGenderSame)
                 {
                     Score.AddComplementarityScore(ECompatibilityScore.VeryHigh, 5);
                     Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts, 5);
@@ -1130,8 +1130,8 @@ namespace K9.WebApplication.Models
             CalculateScore();
         }
 
-        private static int halfYearDays = 365 / 2;
-        private static int quarterYearDays = 365 / 4;
+        private static double halfYearDays = 365.24 / 2;
+        private static double quarterYearDays = 365.24 / 4;
 
         private double PolarisedPercent { get; }
         private double SharedWeaknessPercent { get; }
@@ -1155,16 +1155,16 @@ namespace K9.WebApplication.Models
 
         private void CalculateScore()
         {
-            Score.AddHarmonyScore(CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(BalancePointPercent));
+            Score.AddHarmonyScore(CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(BalancePointPercent), 10);
             Score.AddConflictScore(
-                CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(AwayFromBalancePointPercent));
+                CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(AwayFromBalancePointPercent), 10);
             Score.AddMutualUnderstandingScore(
-                CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent));
+                CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent), 10);
             Score.AddComplementarityScore(
-                CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent));
-            Score.AddSexualChemistryScore(CompatibilityExtensions.GetEnumFromPercentage<ESexualChemistryScore>(PolarisedPercent));
-            Score.AddSparkScore(CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent));
-            Score.AddLearningPotentialScore(CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent));
+                CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent), 10);
+            Score.AddSexualChemistryScore(CompatibilityExtensions.GetEnumFromPercentage<ESexualChemistryScore>(PolarisedPercent), 10);
+            Score.AddSparkScore(CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent), 10);
+            Score.AddLearningPotentialScore(CompatibilityExtensions.GetEnumFromPercentage<ECompatibilityScore>(PolarisedPercent), 10);
         }
 
         public string GetCompatibilityReportHtml()

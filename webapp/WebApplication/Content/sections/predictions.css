@@ -238,6 +238,9 @@
   margin-top: 0.25rem;
   font-weight: bold;
 }
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label .parent-age {
+  color: #888888;
+}
 .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail {
   display: flex;
   flex-direction: column;

@@ -403,7 +403,7 @@ namespace K9.WebApplication.Services
                         nineStarKiModel.MainEnergy);
                 }
 
-                var localNow = nineStarKiModel.DisplayDataForPeriod == EDisplayDataForPeriod.Now ? DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, userTimeZoneId) : nineStarKiModel.SelectedDate.Value;
+                var localNow = nineStarKiModel.SelectedDate.Value;
 
                 switch (view)
                 {
@@ -614,6 +614,8 @@ namespace K9.WebApplication.Services
 
                             var presonalHourlyEnergy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.GetPersonalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy) : nineStarKiModel.GetGlobalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy);
 
+                            // For hourly view, always use local Now
+                            localNow = DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, userTimeZoneId);
                             var isActive = localNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
 
                             energies.Add(new PlannerViewModelItem(presonalHourlyEnergy, presonalHourlyEnergy, hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn, isActive, EPlannerView.Day));

@@ -128,11 +128,11 @@ namespace K9.WebApplication.Services
 
         private string GetYinYangComfortDescription(MoonPhase moonPhase, NineStarKiEnergy energy)
         {
-            if (moonPhase.IlluminationPercentage >= 90) // Full moon
+            if (moonPhase.IlluminationPercentage >= 95) // Full moon
             {
                 return GetFullMoonExpansionDescription(energy.YinYangExpansion);
             }
-            else if (moonPhase.IlluminationPercentage <= 10) // New moon
+            else if (moonPhase.IlluminationPercentage <= 5) // New moon
             {
                 return GetNewMoonExpansionDescription(energy.YinYangExpansion);
             }

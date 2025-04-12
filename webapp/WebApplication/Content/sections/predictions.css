@@ -177,7 +177,8 @@
   padding-bottom: 0;
 }
 .global-planner-container .age-details {
-  font-weight: bold;
+  margin-bottom: 3px !important;
+  font-weight: normal !important;
 }
 .global-planner-container .parent-planner {
   display: flex;
@@ -235,6 +236,7 @@
   font-size: 0.9rem;
   color: #888888;
   margin-top: 0.25rem;
+  font-weight: bold;
 }
 .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail {
   display: flex;
@@ -356,13 +358,14 @@
 .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-name {
   font-weight: bold;
   font-size: 1.1rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
   color: #337ab7;
 }
 .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-dates {
   font-size: 0.75rem;
   color: #777;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+  font-weight: bold;
 }
 .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block img {
   height: 100%;

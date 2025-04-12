@@ -74,7 +74,15 @@ namespace K9.WebApplication.ViewModels
 
         public string GetEnergyDatesDetails(PlannerViewModelItem energy)
         {
-            return $"{energy.EnergyStartsOn.ToString("MMM/dd")} {energy.EnergyEndsOn.ToString("MMM/dd")}";
+            switch (View)
+            {
+                case EPlannerView.EightyOneYear:
+                case EPlannerView.NineYear:
+                    return $"{energy.EnergyStartsOn.ToString("M/dd")} {energy.EnergyEndsOn.ToString("M/dd")}";
+                    
+                default:
+                    return $"{energy.EnergyStartsOn.ToString("MMM/dd")} {energy.EnergyEndsOn.ToString("MMM/dd")}";
+            }
         }
 
         public string GetEnergAgeDetails(PlannerViewModelItem energy)
@@ -198,6 +206,16 @@ namespace K9.WebApplication.ViewModels
         {
             var startAge = NineStarKiModel.PersonModel.DateOfBirth.GetAgeInYearsAsOf(PeriodStarsOn);
             var endAge = NineStarKiModel.PersonModel.DateOfBirth.GetAgeInYearsAsOf(PeriodEndsOn);
+
+            if (startAge < 0)
+            {
+                startAge = 0;
+            }
+
+            if (endAge < 0)
+            {
+                return "";
+            }
 
             return ToAgeString(startAge, endAge);
         }

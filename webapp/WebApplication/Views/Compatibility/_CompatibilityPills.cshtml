@@ -58,19 +58,9 @@
             </div>
 
             <div id="indepth" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Compatibility, Model))
-                {
-                    @Html.Panel(Dictionary.FundamentalElementsAnalysis, Html.Partial("_CompatibilityFundamentalElements").ToString())
-                    @Html.Panel(Dictionary.CharacterElementsAnalysis, Html.Partial("_CompatibilityCharacterElements").ToString())
-                    @Html.Panel(Dictionary.AllElementsBreakdown, Html.Partial("_CompatibilityElementsBreakdown").ToString())
-                    @Html.Panel(Dictionary.YinAndYangAnalysis, TemplateParser.Parse(Html.Partial("_CompatibilityYinYang").ToString(), new
-                    {
-                        SameTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "same-transformation"),
-                        SupportiveTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "supportive-transformation"),
-                        ChallengingTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "challenging-transformation")
-                    }))
-                    @Html.Panel(Dictionary.BirthMonthAnalysis, Html.Partial("_CompatibilityBirthMonth").ToString())
-                }
+                <br />
+                @Html.Partial("_InDepthAnalysisPills")
+
                 <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
@@ -100,7 +90,7 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         if (window.location.pathname.endsWith("/calculator/result")) {
-            scrollTo("#overview"); 
+            scrollTo("#overview");
         }
     });
 

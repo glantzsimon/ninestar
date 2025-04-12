@@ -463,17 +463,20 @@ namespace K9.WebApplication.Models
         {
             if (CharacterEnergiesAreSupportive)
             {
-                return Globalisation.Dictionary.character_element_supportive;
+                return TemplateParser.Parse(Globalisation.Dictionary.character_element_supportive,
+                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
             }
 
             if (CharacterEnergiesAreChallenging)
             {
-                return Globalisation.Dictionary.character_element_challenging;
+                return TemplateParser.Parse(Globalisation.Dictionary.character_element_challenging,
+                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
             }
 
             if (CharacterEnergiesAreSame)
             {
-                return Globalisation.Dictionary.character_element_same;
+                return TemplateParser.Parse(Globalisation.Dictionary.character_element_same,
+                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
             }
 
             return string.Empty;
@@ -1167,13 +1170,13 @@ namespace K9.WebApplication.Models
         public string GetCompatibilityReportHtml()
         {
             return $@"
-            <h5>{Dictionary.Polarity}</h5>
+            <h5>{Dictionary.Polarity} {PolarisedPercent.ToString("0")}%</h5>
             <p>{GetPolarityParagraph(PolarisedPercent)}</p>
 
-            <h5>{Dictionary.SharedVulnerability}</h5>
+            <h5>{Dictionary.SharedVulnerability} {SharedWeaknessPercent.ToString("0")}%</h5>
             <p>{GetSamenessParagraph(SharedWeaknessPercent)}</p>
 
-            <h5>{Dictionary.BalanceAndComplementarity}</h5>
+            <h5>{Dictionary.BalanceAndComplementarity} {BalancePointPercent.ToString("0")}%</h5>
             <p>{GetBalanceParagraph(BalancePointPercent)}</p>
             ".Trim();
         }

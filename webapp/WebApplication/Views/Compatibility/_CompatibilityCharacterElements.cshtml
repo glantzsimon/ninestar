@@ -3,13 +3,8 @@
 @using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
 @model K9.WebApplication.Models.CompatibilityModel
 
-@Html.Raw(TemplateParser.Parse(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsTransformationDetails, new
-{
-    SameTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "same-transformation"),
-    SupportiveTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "supportive-transformation"),
-    ChallengingTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "challenging-transformation")
-}))
-
+@Html.Raw(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsTransformationDetails)
+ 
 <p>
     @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsCompatibilityDetails)
 </p>

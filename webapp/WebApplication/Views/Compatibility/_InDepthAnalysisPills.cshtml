@@ -1,0 +1,93 @@
+﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
+@using K9.WebApplication.Options
+@model CompatibilityModel
+
+@if (Model != null)
+{
+    <div class="container main-content clear-both">
+        <div>
+            <ul class="nav nav-pills nav-justified image-pill" data-autoscroll="true">
+                <li class="active">
+                    <a data-toggle="tab" href="#fundamental-compatibility">
+                        @Dictionary.FundamentalElementsAnalysis
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/solar-nature.png")');"></div>
+                    </a>
+                </li>
+
+                <li>
+                    <a data-toggle="tab" href="#character-compatibility">
+                        @Dictionary.CharacterElementsAnalysis
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/lunar-nature.png")');"></div>
+                    </a>
+                </li>
+
+                <li>
+                    <a data-toggle="tab" href="#all-elements-compatibility">
+                        @Dictionary.AllElementsBreakdown
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/five-elements.png');"></div>
+                    </a>
+                </li>
+
+                <li>
+                    <a data-toggle="tab" href="#yin-yang-compatibility">
+                        @Dictionary.YinAndYangAnalysis
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/yinyang.png');"></div>
+                    </a>
+                </li>
+
+                <li>
+                    <a data-toggle="tab" href="#birth-month-compatibility">
+                        @Dictionary.BirthMonthAnalysis
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/moon.png');"></div>
+                    </a>
+                </li>
+
+            </ul>
+            <div class="tab-content">
+                <div id="fundamental-compatibility" class="tab-pane fade in active">
+                    @using (Html.PayWall(ESection.Compatibility, Model))
+                    {
+                        @Html.Panel(Dictionary.FundamentalElementsAnalysis, Html.Partial("_CompatibilityFundamentalElements").ToString())
+                    }
+                </div>
+
+                <div id="character-compatibility" class="tab-pane fade">
+                    @using (Html.PayWall(ESection.Profile, Model))
+                    {
+                        @Html.Panel(Dictionary.CharacterElementsAnalysis, Html.Partial("_CompatibilityCharacterElements").ToString())
+                    }
+                </div>
+
+                <div id="all-elements-compatibility" class="tab-pane fade">
+                    @using (Html.PayWall(ESection.Profile, Model))
+                    {
+                        @Html.Panel(Dictionary.AllElementsBreakdown, Html.Partial("_CompatibilityElementsBreakdown").ToString())
+                    }
+                </div>
+
+                <div id="yin-yang-compatibility" class="tab-pane fade">
+                    @using (Html.PayWall(ESection.Profile, Model))
+                    {
+                        @Html.Panel(Dictionary.YinAndYangAnalysis, K9.SharedLibrary.Helpers.TemplateParser.Parse(Html.Partial("_CompatibilityYinYang").ToString(), new
+                        {
+                            SameTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "same-transformation"),
+                            SupportiveTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "supportive-transformation"),
+                            ChallengingTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "challenging-transformation")
+                        }))
+                    }
+                </div>
+
+                <div id="birth-month-compatibility" class="tab-pane fade">
+                    @using (Html.PayWall(ESection.Profile, Model))
+                    {
+                        @Html.Panel(Dictionary.BirthMonthAnalysis, Html.Partial("_CompatibilityBirthMonth").ToString())
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+}

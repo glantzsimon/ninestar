@@ -1009,6 +1009,7 @@
     <Content Include="Images\ui\daily-cycle.png" />
     <Content Include="Images\ui\daily-planner.png" />
     <Content Include="Images\ui\finances.png" />
+    <Content Include="Images\ui\five-elements.png" />
     <Content Include="Images\ui\hourly-cycle.png" />
     <Content Include="Images\ui\hourly-planner.png" />
     <Content Include="Images\ui\inner-child.png" />
@@ -1107,6 +1108,7 @@
     <Content Include="Images\ui\video.png" />
     <Content Include="Images\ui\warning.png" />
     <Content Include="Images\ui\yearly-planner.png" />
+    <Content Include="Images\ui\yinyang.png" />
     <Content Include="Scripts\ajax\ajaxcontroller.js" />
     <Content Include="Scripts\imageSwitcher\backgroundSwitcher.js" />
     <Content Include="Scripts\imageSwitcher\responsiveslides.js" />
@@ -1734,6 +1736,7 @@
     <Content Include="Views\Shared\Charts\_PieChart.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TimeZoneExtended.cshtml" />
     <Content Include="Views\Compatibility\_CompatibilityBirthMonth.cshtml" />
+    <Content Include="Views\Compatibility\_InDepthAnalysisPills.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -363,6 +363,7 @@
   font-size: 1.1rem;
   margin-bottom: 0;
   color: #337ab7;
+  margin-bottom: -2px;
 }
 .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-dates {
   font-size: 0.75rem;

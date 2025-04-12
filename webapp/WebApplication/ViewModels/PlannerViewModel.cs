@@ -78,7 +78,7 @@ namespace K9.WebApplication.ViewModels
             {
                 case EPlannerView.EightyOneYear:
                 case EPlannerView.NineYear:
-                    return $"{energy.EnergyStartsOn.ToString("MMM/dd")} - {energy.EnergyEndsOn.ToString("MMM/dd")}";
+                    return $"{energy.EnergyStartsOn.ToString("MMM d")} - {energy.EnergyEndsOn.ToString("MMM d")}";
                     
                 default:
                     var startMonthLetter = energy.EnergyStartsOn.ToString("MMM");
@@ -195,8 +195,8 @@ namespace K9.WebApplication.ViewModels
                 case EPlannerView.NineYear:
                 case EPlannerView.Year:
                 case EPlannerView.Month:
-                    var periodStart = PeriodStarsOn.ToString("MMMd-yy");
-                    var periodEnd = PeriodEndsOn.ToString("MMMd-yy");
+                    var periodStart = PeriodStarsOn.ToString("MMM d-yy");
+                    var periodEnd = PeriodEndsOn.ToString("MMM d-yy");
                     return $"{periodStart} - {periodEnd}";
 
                 default:

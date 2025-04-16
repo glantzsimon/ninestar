@@ -21,8 +21,10 @@ using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
+using Microsoft.Owin.Security;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -35,9 +37,10 @@ namespace K9.WebApplication.Controllers
         private readonly IRecaptchaService _recaptchaService;
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
         private readonly IPromotionService _promotionService;
+        private readonly IGoogleService _googleService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(INineStarKiPackage nineStarKiPackage, IFacebookService facebookService, IRepository<Promotion> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<MembershipOption> membershipOptionsRepository, IPromotionService promotionService)
+        public AccountController(INineStarKiPackage nineStarKiPackage, IFacebookService facebookService, IRepository<Promotion> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<MembershipOption> membershipOptionsRepository, IPromotionService promotionService, IGoogleService googleService)
             : base(nineStarKiPackage)
         {
             _facebookService = facebookService;
@@ -45,6 +48,7 @@ namespace K9.WebApplication.Controllers
             _recaptchaService = recaptchaService;
             _membershipOptionsRepository = membershipOptionsRepository;
             _promotionService = promotionService;
+            _googleService = googleService;
             _recaptchaConfig = recaptchaConfig.Value;
         }
 
@@ -166,7 +170,32 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult FacebookCallback(string code)
         {
-            var result = _facebookService.Authenticate(code);
+            return RedirectToAction("ExternalAuthCallback", _facebookService.Authenticate(code));
+        }
+
+        [Route("google/login")]
+        public ActionResult GoogleSignIn()
+        {
+            var props = new AuthenticationProperties
+            {
+                RedirectUri = Url.Action("GoogleSignIn", "Account", null, Request.Url.Scheme)
+            };
+
+            HttpContext.GetOwinContext().Authentication.Challenge(props, "Google");
+
+            return new HttpUnauthorizedResult();
+        }
+
+        [Route("google/login/callback")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public ActionResult GoogleSignInCallback()
+        {
+            return RedirectToAction("ExternalAuthCallback", _googleService.Authenticate());
+        }
+
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public ActionResult ExternalAuthCallback(ServiceResult result)
+        {
             if (result.IsSuccess)
             {
                 var user = result.Data as User;
@@ -180,19 +209,19 @@ namespace K9.WebApplication.Controllers
                     EmailAddress = user.EmailAddress
                 });
 
-                user.Id = My.UsersRepository.Find(e => e.Username == user.Username).FirstOrDefault()?.Id ?? 0;
-
-                if (user.Id > 0)
-                {
-                    My.ContactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
-                    My.MembershipService.CreateFreeMembership(user.Id);
-                }
-
                 if (regResult.IsSuccess)
                 {
+                    user.Id = My.UsersRepository.Find(e => e.Username == user.Username).FirstOrDefault()?.Id ?? 0;
+                    if (user.Id > 0)
+                    {
+                        // Update contact record
+                        My.ContactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
+                    }
+
                     if (isNewUser)
                     {
-                        return RedirectToAction("FacebookPostRegsiter", "Account", new { username = user.Username });
+                        My.MembershipService.CreateFreeMembership(user.Id);
+                        return RedirectToAction("ExternalAuthPostRegsiter", "Account", new { username = user.Username });
                     }
 
                     return RedirectToLastSaved();
@@ -220,10 +249,9 @@ namespace K9.WebApplication.Controllers
 
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         [Authorize]
-        public ActionResult FacebookPostRegsiter(string username)
+        public ActionResult ExternalAuthPostRegsiter(string username)
         {
             var user = My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
-
             return View(new RegisterViewModel
             {
                 RegisterModel = new UserAccount.RegisterModel
@@ -245,30 +273,13 @@ namespace K9.WebApplication.Controllers
 
         [HttpPost]
         [Authorize]
-        public ActionResult FacebookPostRegsiter(RegisterViewModel model)
+        public ActionResult ExternalAuthPostRegsiter(RegisterViewModel model)
         {
             try
             {
                 var user = My.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).First();
-
-                if (!string.IsNullOrEmpty(model.PromoCode))
-                {
-                    if (_promotionService.IsPromotionAlreadyUsed(model.PromoCode, user.Id))
-                    {
-                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
-                        return View(model);
-                    }
-
-                    try
-                    {
-                        _promotionService.UsePromotion(user.Id, model.PromoCode);
-                        My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode);
-                    }
-                    catch (Exception e)
-                    {
-                        ModelState.AddModelError("PromoCode", e.Message);
-                    }
-                }
+                var returnUrl = "";
+                Promotion promotion = null;
 
                 // Update user information
                 user.FirstName = model.RegisterModel.FirstName;
@@ -277,8 +288,78 @@ namespace K9.WebApplication.Controllers
                 user.Gender = model.RegisterModel.Gender;
                 user.EmailAddress = model.RegisterModel.EmailAddress;
                 user.PhoneNumber = model.RegisterModel.PhoneNumber;
+                user.IsUnsubscribed = !model.AllowMarketingEmails;
 
-                My.UsersRepository.Update(user);
+                try
+                {
+                    My.UsersRepository.Update(user);
+                }
+                catch (Exception e)
+                {
+                    Logger.Error($"GoogleSignInPostRegister => Error updating User => {e.GetFullErrorMessage()}");
+                    ModelState.AddModelError("", Dictionary.FriendlyErrorMessage);
+                    return View(model);
+                }
+
+                try
+                {
+                    model.UserInfo.Id = My.UserService.GetOrCreateUserInfo(user.Id).Id;
+                    My.UserService.UpdateUserInfo(model.UserInfo);
+                }
+                catch (Exception e)
+                {
+                    Logger.Error($"AccountrController => Register => Error creating / updating UserInfo: {e.GetFullErrorMessage()}");
+                }
+
+                if (!string.IsNullOrEmpty(model.PromoCode))
+                {
+                    promotion = _promotionService.Find(model.PromoCode);
+                    if (promotion == null)
+                    {
+                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.InvalidPromoCode);
+                        return View(model);
+                    }
+                }
+
+                if (user.Id > 0)
+                {
+                    if (!string.IsNullOrEmpty(model.PromoCode))
+                    {
+                        if (!string.IsNullOrEmpty(model.PromoCode))
+                        {
+                            if (_promotionService.IsPromotionAlreadyUsed(model.PromoCode, user.Id))
+                            {
+                                ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
+                                return View(model);
+                            }
+
+                            try
+                            {
+                                // If this method returns false, then the user needs to pay for their discounted membership
+                                if (!My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode))
+                                {
+                                    _promotionService.UsePromotion(user.Id, model.PromoCode);
+                                    returnUrl = Url.Action("PurchaseStart", "Membership",
+                                        new
+                                        {
+                                            membershipOptionId = promotion.MembershipOptionId,
+                                            promoCode = model.PromoCode
+                                        });
+                                };
+                            }
+                            catch (Exception e)
+                            {
+                                Logger.Error($"AccountController => Register => CreateMembershipFromPromoCode => Error: {e.GetFullErrorMessage()}");
+                                throw new Exception("Error creating membership from promo code");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    Logger.Error("AccountController => GoogleSignInPostRegister => User not found after registration");
+                    throw new Exception("User not found");
+                }
 
                 return RedirectToLastSaved();
             }
@@ -993,7 +1074,7 @@ namespace K9.WebApplication.Controllers
 
         [AllowAnonymous]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult AccountVerified(string userName)
+        public ActionResult AccountVerified()
         {
             return View();
         }

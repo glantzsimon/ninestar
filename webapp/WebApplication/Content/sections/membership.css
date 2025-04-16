@@ -44,7 +44,7 @@
 }
 .membership-footer p.footer-text {
   margin-top: 10px;
-  font-size: 0.9em;
+  font-size: 0.9em !important;
   line-height: 1.1em !important;
   color: #337ab7;
   font-weight: bold;
@@ -54,6 +54,10 @@
   color: gold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   vertical-align: top;
+}
+.membership-footer .btn {
+  margin: 7px;
+  width: auto !important;
 }
 .membership-option {
   width: 200px;
@@ -185,6 +189,48 @@
   font-style: normal;
   font-size: 0.9em;
   color: #666;
+}
+@media (max-width: 1024px) and (max-width: 920px) {
+  .membership-option {
+    width: 180px;
+  }
+  .membership-medal {
+    width: 180px;
+    height: 180px;
+  }
+  .membership-price {
+    top: 36px;
+    font-size: 0.9em;
+  }
+  .membership-element {
+    top: 63px;
+    /*font-size: 0.9em;
+        line-height: 1.4em;*/
+  }
+  .membership-period {
+    top: 122px;
+    /*font-size: 0.8em;
+        line-height: 1.2em;*/
+  }
+}
+@media (min-width: 768px) and (max-width: 920px) {
+  .membership-option {
+    width: 160px;
+  }
+  .membership-medal {
+    width: 160px;
+    height: 160px;
+  }
+  .membership-price {
+    top: 27px;
+    font-size: 0.9em;
+  }
+  .membership-element {
+    top: 54px;
+  }
+  .membership-period {
+    top: 108px;
+  }
 }
 @media (max-width: 513px) {
   .nav-tabs li {

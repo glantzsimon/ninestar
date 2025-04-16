@@ -12,6 +12,7 @@ namespace K9.DataAccessLayer.Models
         public const int AllUsersId = -1000;
         public const int PaidUsersId = -1001;
         public const int FreeUsersId = -1002;
+        public const int SignedUpInLastTwoWeeksId = -1003;
         public const int BaseUsersId = -2000;
 
         [NotMapped]

@@ -25,6 +25,12 @@
 
     thead {
         color: #333;
+
+        > tr:first-child {
+            th {
+                white-space: nowrap !important;
+            }
+        }
     }
 
     tbody tr:hover {
@@ -83,12 +89,12 @@ form .pull-right .btn {
 
     &.table-left-nowrap {
         table {
-            th:first-child, td:first-child {
+            th {
                 white-space: nowrap !important;
             }
 
-            th:not(:first-child), td:not(:first-child) {
-                white-space: normal !important;
+            td {
+                white-space: normal;
                 word-wrap: break-word !important;
                 word-break: break-word !important;
             }

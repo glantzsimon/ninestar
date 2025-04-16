@@ -10,6 +10,7 @@ namespace K9.DataAccessLayer.Database
             base.Seed(db);
 		    EmailTemplatesSeeder.Seed(db);
 		    SystemSettingsSeeder.Seed(db);
+            MembershipOptionsSeeder.Seed(db);
         }
 	}
 }

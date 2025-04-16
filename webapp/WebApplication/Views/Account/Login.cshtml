@@ -22,6 +22,7 @@
         @Html.BootstrapEditorFor(model => model.RememberMe)
         <hr />
         @Html.BootstrapButton(Dictionary.LogInVerb, EButtonType.Submit, "fa-sign-in", EButtonClass.Large)
+        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.SignInWithGoogle, "GoogleSignIn", "Account", new { provider = "Google", returnUrl = "/" }, null)d
         @*@Html.BootstrapActionLinkButton(Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fao fao-facebook", EButtonClass.Large)*@
     }
 }

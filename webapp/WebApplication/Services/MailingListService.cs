@@ -99,6 +99,7 @@ namespace K9.WebApplication.Services
                 GetAllUsersOnFreeMembership(),
                 GetAllUsersOnPaidMembership(),
                 GetAllUsersPerSubscriptionType(MembershipOption.ESubscriptionType.WeeklyPlatinum),
+                GetAllUsersPerSubscriptionType(MembershipOption.ESubscriptionType.MonthlyPlatinum),
                 GetAllUsersPerSubscriptionType(MembershipOption.ESubscriptionType.AnnualPlatinum),
                 GetAllUsersPerSubscriptionType(MembershipOption.ESubscriptionType.LifeTimePlatinum),
                 GetAllUsers()
@@ -167,12 +168,34 @@ namespace K9.WebApplication.Services
             };
         }
 
+        private MailingList GetAllUsersSignedUpInLastTwoWeeks()
+        {
+            var freeMembership =
+                _membershipOptionsRepository.Find(e => e.SubscriptionType == MembershipOption.ESubscriptionType.Free).FirstOrDefault();
+            
+            var paidUserIds = GetAllUsersOnPaidMembership().Users.Select(e => e.Id).ToList();
+
+            var signedUpInLastTwoWeeks = _userMembershipsRepository.Find(
+                e => !paidUserIds.Contains(e.UserId) && e.MembershipOptionId == freeMembership.Id &&
+                     e.StartsOn >= DateTime.Today.AddDays(-14) && DateTime.Today <= e.EndsOn && !e.IsDeactivated).ToList();
+
+            var userIds = signedUpInLastTwoWeeks.Select(e => e.UserId).ToList();
+
+            return new MailingList
+            {
+                Id = MailingList.SignedUpInLastTwoWeeksId,
+                Name = "Users Signed Up in Last Two Weeks",
+                IsSystemStandard = true,
+                Users = My.UsersRepository.Find(e => userIds.Contains(e.Id))
+                    .OrderBy(e => e.FirstName).ThenBy(e => e.LastName).ToList()
+            };
+        }
+
         private MailingList GetAllUsersOnFreeMembership()
         {
             var freeMembership =
                 _membershipOptionsRepository.Find(e => e.SubscriptionType == MembershipOption.ESubscriptionType.Free).FirstOrDefault();
-            var fullMembershipIds = _membershipOptionsRepository.Find(e => e.SubscriptionType > MembershipOption.ESubscriptionType.Free).Select(e => e.Id).ToList();
-
+            
             var paidUserIds = GetAllUsersOnPaidMembership().Users.Select(e => e.Id).ToList();
 
             var freeMemberships = _userMembershipsRepository.Find(

@@ -29,6 +29,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using Microsoft.Owin.Security.Google;
 using HtmlHelpers = K9.Base.WebApplication.Helpers.HtmlHelpers;
 
 [assembly: OwinStartup(typeof(K9.WebApplication.Startup))]
@@ -88,8 +89,16 @@ namespace K9.WebApplication
             builder.RegisterType<AstronomyService>().As<IAstronomyService>().InstancePerLifetimeScope();
             builder.RegisterType<AITextMergeService>().As<IAITextMergeService>().InstancePerLifetimeScope();
             builder.RegisterType<AstrologyService>().As<IAstrologyService>().InstancePerLifetimeScope();
+            builder.RegisterType<GoogleService>().As<IGoogleService>().InstancePerLifetimeScope();
 
             RegisterConfiguration(builder);
+
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = GoogleConfiguration.Instance.ClientId,
+                ClientSecret = GoogleConfiguration.Instance.ClientSecret,
+                CallbackPath = new PathString("/account/google-signin") 
+            });
 
             RegisterStaticTypes();
 
@@ -196,8 +205,8 @@ namespace K9.WebApplication
 
 #if !Integration
 #if DEBUG
-        defaultConfig.Value.BaseImagesPath = "https://localhost/ninestar/Images";
-        defaultConfig.Value.BaseVideosPath = "https://localhost/ninestar/Videos";
+            defaultConfig.Value.BaseImagesPath = "https://localhost/ninestar/Images";
+            defaultConfig.Value.BaseVideosPath = "https://localhost/ninestar/Videos";
 #endif
 #endif
         }

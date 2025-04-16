@@ -10,8 +10,10 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Exceptions;
 using K9.WebApplication.Packages;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.Base.DataAccessLayer.Models;
 using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
@@ -137,7 +139,7 @@ namespace K9.WebApplication.Controllers
 
             var mailingListUserIds = _mailingListUsersRepository.Find(e => e.MailingListId == id).Select(e => e.UserId).ToList();
             var usersToDisplay = string.IsNullOrEmpty(sqlQuery)
-                ? My.UsersRepository.List().OrderBy(e => e.FirstName).ThenBy(e => e.LastName).ToList()
+                ? new List<User>()
                 : My.UsersRepository.GetQuery(sqlQuery);
 
             usersToDisplay.ForEach(e => e.IsSelected = mailingListUserIds.Contains(e.Id));

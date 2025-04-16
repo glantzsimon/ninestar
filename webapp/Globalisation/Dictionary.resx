@@ -6451,4 +6451,10 @@
   <data name="yin_expanding_climate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>yinyanggroup\en-gb\yin-expanding-climate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="MyChart" xml:space="preserve">
+    <value>My Chart</value>
+  </data>
+  <data name="SignInWithGoogle" xml:space="preserve">
+    <value>Sign in with Google</value>
+  </data>
 </root>

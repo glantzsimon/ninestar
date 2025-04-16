@@ -21,6 +21,9 @@
 .bootstraptable thead {
   color: #333;
 }
+.bootstraptable thead > tr:first-child th {
+  white-space: nowrap !important;
+}
 .bootstraptable tbody tr:hover {
   background: #337ab7 !important;
   color: #ffffff !important;
@@ -60,13 +63,11 @@ form .pull-right .btn {
 .table-responsive table tbody tr:first-child td {
   border-top: none;
 }
-.table-responsive.table-left-nowrap table th:first-child,
-.table-responsive.table-left-nowrap table td:first-child {
+.table-responsive.table-left-nowrap table th {
   white-space: nowrap !important;
 }
-.table-responsive.table-left-nowrap table th:not(:first-child),
-.table-responsive.table-left-nowrap table td:not(:first-child) {
-  white-space: normal !important;
+.table-responsive.table-left-nowrap table td {
+  white-space: normal;
   word-wrap: break-word !important;
   word-break: break-word !important;
 }

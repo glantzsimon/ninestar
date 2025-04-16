@@ -3957,11 +3957,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Elements in a
-        ///    &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;
+        ///    Challenging Transformation
         ///&lt;/h5&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-challenging.png&quot; /&gt;
+        ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    When two individuals’ Character Elements form a Challenging Transformation, the relationship often carries a strong charge—marked by natural chemistry, magnetic attraction, and deep intrigue. These dynamics can spark growth and excitement, but they also increase the potential for emotional friction, power struggles, or miscommunication, especially if unconscious pa [rest of string was truncated]&quot;;.
+        ///    When two individuals’ Character Elements form a Challenging Transformation, the relationship often carries a strong charge—marked by natural chemistry, magnetic attraction, and deep intrigue. These dynamics can spark growth and excitement, but they als [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_challenging {
             get {
@@ -3971,11 +3973,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Same Element –
-        ///    &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformationLink}&quot;&gt;Sibling Relationship&lt;/a&gt;
+        ///    Same Element – Sibling Relationship
         ///&lt;/h5&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same.png&quot; /&gt;
+        ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    When both individuals share the same Lunar Element, their Emotional Ki aligns harmoniously, often creating a strong sense of emotional resonance and intuitive understanding. This kind of sibling relationship fosters ease in communication and empathy, allowing each person to feel seen and emotionally supported. Such alignment can be especially beneficial in relationships where the Solar  [rest of string was truncated]&quot;;.
+        ///    When both individuals share the same Lunar Element, their Emotional Ki aligns harmoniously, often creating a strong sense of emotional resonance and intuitive understanding. This kind of sibling relationship fosters ease in communication and empathy, allowing ea [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_same {
             get {
@@ -3985,10 +3989,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt; – Parent–Child Relationship
+        ///    Supportive Transformation – Parent / Child Relationship
         ///&lt;/h5&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-supportive.png&quot; /&gt;
+        ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    When two individuals&apos; Lunar Energies form a Supportive Transformation, one energy naturally nourishes or uplifts the other—much like a parent guiding a child. This dynamic often fosters a strong emotional bond, mutual respect, and a sense of emotional safety. The relationship tends to feel cohesive and aligned, with each person intuitively understanding the other’s ne [rest of string was truncated]&quot;;.
+        ///    When two individuals&apos; Lunar Energies form a Supportive Transformation, one energy naturally nourishes or uplifts the other—much like a parent guiding a child. This dynamic often fosters a strong emotional bond, mutual respect, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_supportive {
             get {
@@ -6976,7 +6983,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both individuals have the Earth element in their charts. Earth typically brings qualities of stability, strength and reliability. It is likely that both people are supportive and caring and may share very similar values and priorities. This could very well result in a close friendship where both people feel understood and that they can count on each other..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Both individuals have the Earth element in their charts. Earth typically brings qualities of stability, strength, and reliability. It is likely that both people are supportive and caring and may share very similar values and priorities. This could very well result in a close friendship where both people feel understood and that they can count on each other.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Their shared love for consistency and meaningful connection can create a safe, nurturing space for mutual growth. While they ma [rest of string was truncated]&quot;;.
         /// </summary>
         public static string earth_earth {
             get {
@@ -6998,7 +7009,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The steady, stable and reliable quality of Earth is extremely beneficial and supportive for Metal elements. Metal people are also quite reliable and steady by nature and may struggle a little with the more impulsive and dynamic Tree and Fire elements. Additionally, Metal people can, at times, be quite sharp in the way they communicate. Earth people are typically far more receptive and less impacted by Metal&apos;s communication style, resulting in good communication and understanding between these elements.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The steady, stable, and reliable nature of Earth provides a deeply supportive foundation for Metal energies. Metal people tend to be structured, pragmatic, and thoughtful, but may find the impulsiveness or unpredictability of Tree and Fire elements somewhat jarring. In contrast, Earth’s calm and grounded presence aligns naturally with Metal’s rhythm, offering reassurance and consistency that helps Metal energies feel understood and supported.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Metal people are often clear and direct  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string earth_metal {
             get {
@@ -7007,7 +7022,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Water people, with their deep, flowing, exploratory nature, can sometimes become undisciplined, chaotic and too thinly spread. Without a container, they can lack direction and purpose. Earth people can be of great importance in helping to provide some structure and support to Water energies. However, too much Earth element can be overly restrictive and rigid, thwarting Water&apos;s natural flexible, exploratory nature..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water people, with their deep, fluid, and exploratory nature, often thrive in emotional and creative realms—but without direction, they can become scattered or overwhelmed by possibilities. Earth people, with their stable, grounded, and supportive energy, can provide much-needed containment for Water, offering a sense of structure and practical foundation. In this way, Earth can help Water clarify its path and manifest its ideas more effectively.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, when Earth becomes too domi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string earth_water {
             get {
@@ -7920,7 +7939,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fire element provides illumination, clarity, warmth and inspiration to Earth elements, supporting them in their endeavours. Earth people are not the most receptive to advice, especially from Tree people (from whom advice may seem like a threat). However, the warm, passionate, inspiring and gently elucidating quality of Fire tends to be much appreciated by those who are Earth element.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Fire provides illumination, clarity, and warmth to Earth—nourishing it much like the sun nourishes the soil. This dynamic makes for a harmonious relationship where Fire can help Earth people feel seen, inspired, and supported in their endeavors. Unlike the disruptive influence of Tree, Fire’s passionate and radiant energy tends to be welcomed by Earth individuals, who often appreciate its ability to gently lift them out of inertia without threatening their need for stability.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Earth  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_earth {
             get {
@@ -8073,7 +8096,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to As both people have Fire element in their charts and probably share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a good potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfortable in each other&apos;s company..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    As both people have the Fire element in their charts, they are likely to share many similar qualities—such as clarity, charisma, emotional sensitivity, and the ability to inspire others. This mutual understanding can create a strong sense of resonance between them, with each person intuitively grasping the emotional rhythms and expressive nature of the other. Their connection is often warm, passionate, and animated, with plenty of lively conversation and shared enthusiasm.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Because t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_fire {
             get {
@@ -8242,7 +8269,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Metal people tend to be pragmatic, critical and clear and generally have a broad perspective and lots of common sense. However, they can also become overly rigid and stuck in one particular point of view. Fire energies, who benefit from the perspective of the midday sun, often have a clearer, more balanced perspective than Metal energies, as well as a warm, dynamic quality to them which is particularly good at gently melting and softening the rigidity of Metal people..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Metal people tend to be pragmatic, critical and clear, often possessing a broad perspective and a strong sense of logic and common sense. However, this clarity can sometimes harden into rigidity, causing them to become entrenched in fixed views or resistant to emotional nuance. Fire energies, by contrast, are expressive, dynamic, and full of warmth. They bring a vibrant, illuminating presence that can soften Metal’s sharper edges and warm their sometimes-cold logic.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    When these two e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_metal {
             get {
@@ -14482,7 +14513,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both people share the Metal element. The presence of Metal typically makes people fairly straightforward and direct in the way communicate and interact with people. These shared qualities are likely to appreciated in one another, leading to greater trust and mutual understanding..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Both people share the Metal element. The presence of Metal typically makes people fairly straightforward and direct in the way they communicate and interact with others. These shared qualities are likely to be appreciated in one another, leading to greater trust and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Metal pairs tend to value clarity, integrity, and precision. Their mutual preference for order and honesty can help avoid misunderstandings and create a strong foundation for collaboration or intima [rest of string was truncated]&quot;;.
         /// </summary>
         public static string metal_metal {
             get {
@@ -14491,7 +14526,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tree people are highly creative, forward-thinking individuals and can be quite pioneering. However, many of their ideas require a great deal of refinement before they are of use. Metal people, with their broad perspective, common sense and critical eye are especially good at seeing the potential pitfalls in the ideas brought forward by Tree people. When this interaction works in a balanced way, the results can be spectacular (one might think of a beautifully pruned tree). However, when exposed to a very str [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Tree people are highly creative, forward-thinking individuals and can be quite pioneering. However, many of their ideas require a great deal of refinement before they are of use. Metal people, with their broad perspective, common sense and critical eye are especially good at seeing the potential pitfalls in the ideas brought forward by Tree people. When this interaction works in a balanced way, the results can be spectacular (one might think of a beautifully pruned tree).
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string metal_tree {
             get {
@@ -14500,7 +14539,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Metal people bring great clarity to the Water element, which can, at times, get a little lost in deep waters and lose direction. Just as a knife cannot cut water, Water people typically do not feel cut by the generally more sharp quality that Metal people express. To the contrary, many Water people find the sharpness and directness extremely helpful and clarifying..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Metal people bring structure, focus, and clarity to the often fluid and meandering nature of Water individuals. While Water energy flows in many directions and can sometimes become lost in emotional or imaginative depths, Metal offers the precision and decisiveness that helps Water regain a sense of orientation and purpose. This relationship can feel like a welcome sharpening of the mind for Water, bringing discernment and insight to their vast inner world.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Interestingly, while Meta [rest of string was truncated]&quot;;.
         /// </summary>
         public static string metal_water {
             get {
@@ -15439,6 +15482,15 @@ namespace K9.Globalisation {
         public static string MutualUnderstanding {
             get {
                 return ResourceManager.GetString("MutualUnderstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Chart.
+        /// </summary>
+        public static string MyChart {
+            get {
+                return ResourceManager.GetString("MyChart", resourceCulture);
             }
         }
         
@@ -18719,6 +18771,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sign in with Google.
+        /// </summary>
+        public static string SignInWithGoogle {
+            get {
+                return ResourceManager.GetString("SignInWithGoogle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign Up.
         /// </summary>
         public static string SignUp {
@@ -21716,7 +21777,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tree people love change and are constantly creating new solutions and ideas, which they pursue with passion. This can be extremely disruptive to Earth people, who tend to dislike change not instigated by others. Earth people can feel pushed by Tree people. One can easily envisage a vigorous young sappling breaking up the Earth in the spring time, as it begins its growth upwards. However, when out of balance, Earth people tend to get a bit stuck and stagnate and so the fresh, enthusiastic input of the Tree e [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Tree people love change and thrive on new ideas, spontaneity, and movement. Their dynamic energy can feel overwhelming to Earth types, who prefer stability, predictability, and gradual transitions. Earth people may feel disrupted or even pressured by the Tree person&apos;s rapid pace and ever-evolving direction. Like a young sapling pushing through the soil in spring, the Tree energy can shake up Earth’s steady ground, often without intending to.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, when Earth becomes stagnant or o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tree_earth {
             get {
@@ -21741,7 +21806,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Tree element nourishes the Fire by providing constant fuel to burn. For example, Tree people are often naturally complimentary and express their appreciation for others. This helps to boost the somewhat delicate confidence of Fire energies, so that they can continue to burn brightly and inspire those around them..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Tree element nourishes Fire, offering the essential fuel that keeps its energy alive and vibrant. Tree individuals, with their spontaneous enthusiasm and generous spirit, often provide the encouragement and affirmation that Fire people need to shine. Their natural habit of expressing appreciation and admiration helps to bolster the sometimes fragile confidence of Fire types, making them feel seen, supported, and emotionally uplifted.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In turn, Fire people feel more radiant and in [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tree_fire {
             get {
@@ -21750,7 +21819,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both people have the Tree element in their charts. The presence of Tree element typically gives people an energetic, optimistic and spontaneous quality. These two are likely to enjoy interesting and dynamic conversation and to support each other&apos;s natural creative and exploratory nature..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Both people have the Tree element in their charts. The presence of Tree typically brings a vibrant, spontaneous, and curious quality to a person’s nature. When two Tree individuals come together, the relationship is often full of lively conversation, mutual encouragement, and a shared love of new ideas and experiences. They tend to thrive on movement, change, and exploration—mentally, emotionally, and physically.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This pairing can feel exciting and expansive, as each person naturally [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tree_tree {
             get {
@@ -22655,7 +22728,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Water element runs deep and loves to explore the emotional world, flowing endlessly from one vantage point to the next. Fire people, on the other hand, are more comfortable with the perspective of the midday sun, where everything is illuminated and in plain view. What can therefore happen, is that Fire people can feel rather &apos;lost&apos; in the world of Water people. They don&apos;t have much common ground and it can result in their flame going out. Water people also typically react to Fire&apos;s clearly defined opini [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The relationship between Water and Fire can be both fascinating and challenging. Water flows in depths, exploring emotion, nuance, and hidden truths, while Fire radiates outward—seeking clarity, illumination, and certainty. Fire people, accustomed to directness and bold expression, may find themselves disoriented by the shifting, subtle world of Water. Meanwhile, Water people can feel judged or stifled by Fire’s strong opinions and clear-cut distinctions, perceiving them as lacking emotional nuance [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_fire {
             get {
@@ -22965,7 +23039,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Water element nourishes the Tree element, helping it to grow; to develop its creativity and natural exploratory and pioneering nature. For example, Water people tend to show a natural fascination in the ideas of Tree people. Also, being flexible, they can keep up with the fast and dynamic pace of Trees, encouraging them and even providing additional ideas and inspiration..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The relationship between Water and Tree is often dynamic and growth-oriented, as Water naturally nourishes Tree. Water types tend to support and encourage the Tree person’s ideas, ambitions, and adventurous spirit, offering emotional depth and intuitive insight that can help Tree types feel seen and inspired. There is often a natural curiosity and admiration that Water feels toward Tree, which fosters enthusiasm and creative exchange.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Tree types, in turn, bring movement, excitement, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_tree {
             get {
@@ -22984,7 +23062,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both people have the Water element in their chart. Water is perhaps the most intuitive and empathetic of the 9 energies and so there is a potential for a deep and intuitive connection between two people who share the Water element..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    When two people both carry the Water element, their connection often runs deep, intuitive, and emotionally resonant. Water is the most sensitive and perceptive of the nine energies—quiet, receptive, and attuned to the unseen currents beneath the surface. As such, this pairing may feel an unspoken bond, a mutual understanding that transcends words. Their shared depth of feeling can allow for profound emotional intimacy and spiritual connection, with each partner instinctively sensing the other&apos;s moo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_water {
             get {

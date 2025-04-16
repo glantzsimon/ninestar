@@ -1,0 +1,38 @@
+﻿@using Dictionary = K9.Base.Globalisation.Dictionary
+@model K9.WebApplication.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = Dictionary.UpdateYourDetails;
+    ViewBag.SubTitle = Dictionary.UpdateYourDetails;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("ExternalAuthPostRegister", "Account"))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.RegisterModel.UserName)
+        <div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.FirstName)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.LastName)</div>
+        </div>
+        <div>
+            <div class="col-sm-6">@Html.BootstrapDisplayFor(model => model.RegisterModel.BirthDate)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.TimeOfBirth)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.BirthTimeZoneId)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.Gender)</div>
+        </div>
+        <div>
+            <div class="col-sm-12">@Html.BootstrapEditorFor(model => model.RegisterModel.PhoneNumber)</div>
+        </div>
+        <div>
+            <div class="col-sm-12">@Html.BootstrapEditorFor(model => model.AllowMarketingEmails)</div>
+        </div>
+        <hr />
+        @Html.BootstrapEditorFor(model => model.PromoCode)
+
+        @Html.BootstrapButton(Dictionary.Submit, EButtonType.Submit, "", EButtonClass.Large)
+        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.Skip, "ProcessSavedResults", "Account", null, "fa-angle-right", EButtonClass.Large)
+    }
+}
+

@@ -9,19 +9,15 @@ namespace K9.DataAccessLayer.Database.Seeds
     {
         public static void Seed(DbContext context)
         {
-            AddOrEditMembershipOption(context, "FreeMembership", "free_membership_description", MembershipOption.ESubscriptionType.Free, 0, 0, 0);
+            AddOrEditMembershipOption(context, "FreeMembership", "free_membership_description", MembershipOption.ESubscriptionType.Free, 0, true);
 
-            //AddMembershipOption(context, "MonthlyStandardMembership", "standard_monthly_membership_description", MembershipOption.ESubscriptionType.MonthlyStandard, 12, 50, 20);
+            AddOrEditMembershipOption(context, "WeeklyPlatinumMembership", "weekly_membership_description", MembershipOption.ESubscriptionType.WeeklyPlatinum, 9, true);
 
-            //AddMembershipOption(context, "YearlyStandardMembership", "standard_annual_membership_description", MembershipOption.ESubscriptionType.AnnualStandard, 79, 50, 20);
+            AddOrEditMembershipOption(context, "MonthlyPlatinumMembership", "monthly_membership_description", MembershipOption.ESubscriptionType.MonthlyPlatinum, 18, true);
 
-            AddOrEditMembershipOption(context, "WeeklyPlatinumMembership", "weekly_membership_description", MembershipOption.ESubscriptionType.WeeklyPlatinum, 14, MembershipOption.Unlimited, MembershipOption.Unlimited);
+            AddOrEditMembershipOption(context, "YearlyPlatinumMembership", "annual_membership_description", MembershipOption.ESubscriptionType.AnnualPlatinum, 54, true);
 
-            AddOrEditMembershipOption(context, "MonthlyPlatinumMembership", "monthly_membership_description", MembershipOption.ESubscriptionType.MonthlyPlatinum, 27, MembershipOption.Unlimited, MembershipOption.Unlimited);
-
-            AddOrEditMembershipOption(context, "YearlyPlatinumMembership", "annual_membership_description", MembershipOption.ESubscriptionType.AnnualPlatinum, 72, MembershipOption.Unlimited, MembershipOption.Unlimited);
-
-            AddOrEditMembershipOption(context, "LifeTimePlatinumMembership", "lifetime_membership_description", MembershipOption.ESubscriptionType.LifeTimePlatinum, 144, MembershipOption.Unlimited, MembershipOption.Unlimited);
+            AddOrEditMembershipOption(context, "LifeTimePlatinumMembership", "lifetime_membership_description", MembershipOption.ESubscriptionType.LifeTimePlatinum, 144, true);
 
             RemoveMembershipOption(context, "MonthlyStandardMembership");
 
@@ -30,10 +26,10 @@ namespace K9.DataAccessLayer.Database.Seeds
             context.SaveChanges();
         }
 
-        private static void AddOrEditMembershipOption(DbContext context, string name, string details, MembershipOption.ESubscriptionType type, double price, int numberOfReadings, int numberOfCompatibility)
+        private static void AddOrEditMembershipOption(DbContext context, string name, string details, MembershipOption.ESubscriptionType type, double price, bool isActive = true)
         {
             var entity = context.Set<MembershipOption>().FirstOrDefault(a => a.Name == name);
-           
+
             if (entity == null)
             {
                 context.Set<MembershipOption>().AddOrUpdate(new MembershipOption
@@ -42,8 +38,9 @@ namespace K9.DataAccessLayer.Database.Seeds
                     SubscriptionDetails = details,
                     SubscriptionType = type,
                     Price = price,
-                    NumberOfProfileReadings = numberOfReadings,
-                    NumberOfCompatibilityReadings = numberOfCompatibility,
+                    IsDeleted = !isActive,
+                    NumberOfCompatibilityReadings = MembershipOption.Unlimited,
+                    NumberOfProfileReadings = MembershipOption.Unlimited,
                     IsSystemStandard = true
                 });
             }
@@ -53,10 +50,9 @@ namespace K9.DataAccessLayer.Database.Seeds
                 entity.SubscriptionDetails = details;
                 entity.SubscriptionType = type;
                 entity.Price = price;
-                entity.NumberOfProfileReadings = numberOfReadings;
-                entity.NumberOfCompatibilityReadings = numberOfCompatibility;
+                entity.IsDeleted = !isActive;
 
-                context.Set<MembershipOption>().AddOrUpdate(entity);
+                context.Entry(entity).State = EntityState.Modified;
             }
         }
 
@@ -66,7 +62,7 @@ namespace K9.DataAccessLayer.Database.Seeds
             if (entity != null)
             {
                 entity.IsDeleted = true;
-                context.Set<MembershipOption>().AddOrUpdate(entity);
+                context.Entry(entity).State = EntityState.Modified;
             }
         }
     }

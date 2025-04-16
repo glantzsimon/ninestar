@@ -29,6 +29,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Google;
 using HtmlHelpers = K9.Base.WebApplication.Helpers.HtmlHelpers;
 
@@ -92,6 +93,13 @@ namespace K9.WebApplication
             builder.RegisterType<GoogleService>().As<IGoogleService>().InstancePerLifetimeScope();
 
             RegisterConfiguration(builder);
+
+            app.SetDefaultSignInAsAuthenticationType("ExternalCookie");
+
+            app.UseCookieAuthentication(new Microsoft.Owin.Security.Cookies.CookieAuthenticationOptions
+            {
+                AuthenticationType = "ExternalCookie"
+            });
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {

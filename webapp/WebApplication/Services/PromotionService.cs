@@ -48,7 +48,12 @@ namespace K9.WebApplication.Services
 
         public Promotion Find(string code)
         {
-            return _promotionsRepository.Find(e => e.Code == code).FirstOrDefault();
+            var promotion = _promotionsRepository.Find(e => e.Code == code).FirstOrDefault();
+            if (promotion.MembershipOptionId > 0)
+            {
+                promotion.MembershipOption = _membershipOptionsRepository.Find(promotion.MembershipOptionId);
+            }
+            return promotion;
         }
 
         public UserPromotion FindForUser(string code, int userId)
@@ -156,7 +161,7 @@ namespace K9.WebApplication.Services
                     model.FirstName,
                     model.EmailAddress,
                     PromoLink = My.UrlHelper.AbsoluteAction("Register", "Account", new { promoCode = code }),
-                    PromoDetails = model.Promotion.Description,
+                    PromoDetails = promotion.MembershipOption.SubscriptionTypeNameLocal,
                     promotion.PriceDescription,
                 });
 
@@ -171,6 +176,7 @@ namespace K9.WebApplication.Services
             catch (Exception ex)
             {
                 My.Logger.Error(ex.GetFullErrorMessage());
+                throw;
             }
         }
 

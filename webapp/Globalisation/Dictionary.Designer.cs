@@ -20084,7 +20084,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Membership Successful.
+        ///   Looks up a localized string similar to Subscription Successful.
         /// </summary>
         public static string SubscriptionSuccessful {
             get {

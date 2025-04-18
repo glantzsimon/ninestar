@@ -989,7 +989,7 @@
     <value>Membership Details</value>
   </data>
   <data name="SubscriptionSuccessful" xml:space="preserve">
-    <value>Membership Successful</value>
+    <value>Subscription Successful</value>
   </data>
   <data name="Upgrade" xml:space="preserve">
     <value>Upgrade</value>

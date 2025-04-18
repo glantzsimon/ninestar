@@ -49,11 +49,11 @@ namespace K9.WebApplication.Controllers
                 promotion = _promotionService.Find(promoCode);
                 var userPromotion = _promotionService.FindForUser(promoCode, Current.UserId);
 
-                if (promotion == null || userPromotion == null)
+                if (promotion == null || (userPromotion == null && !promotion.IsReusable))
                 {
                     ModelState.AddModelError("", Globalisation.Dictionary.InvalidPromoCode);
                 }
-                else if (userPromotion.UsedOn.HasValue)
+                else if (userPromotion != null && userPromotion.UsedOn.HasValue)
                 {
                     ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
                 }

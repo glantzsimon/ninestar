@@ -2944,7 +2944,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I would like to receive occasional email communications about 9 Star Ki, the development of new features and functionality, as well as any promotions that are currently running (&lt;strong&gt;we promise not to spam you&lt;/strong&gt;)..
+        ///   Looks up a localized string similar to I would like to receive occasional email communications about 9 Star Ki, the development of new features and functionality, as well as special offers (we promise not to spam you)..
         /// </summary>
         public static string AllowMarketingEmails {
             get {

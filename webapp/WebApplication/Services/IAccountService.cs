@@ -14,6 +14,7 @@ namespace K9.WebApplication.Services
 		void Logout();
 		ServiceResult Register(UserAccount.RegisterModel model);
         ServiceResult RegisterOrLoginAuth(UserAccount.RegisterModel model);
+        ServiceResult RegisterPersonalInformation(RegisterViewModel model);
         ServiceResult DeleteAccount(int userId);
         
         ServiceResult UpdatePassword(UserAccount.LocalPasswordModel model);

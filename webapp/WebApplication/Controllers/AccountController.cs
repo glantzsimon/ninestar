@@ -567,10 +567,10 @@ namespace K9.WebApplication.Controllers
 
             if (ModelState.IsValid)
             {
-                var promotion = _promotionService.Find(model.PromoCode);
-
+                Promotion promotion = null;
                 if (!string.IsNullOrEmpty(model.PromoCode))
                 {
+                    promotion = _promotionService.Find(model.PromoCode);
                     if (promotion == null)
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.InvalidPromoCode);
@@ -579,54 +579,39 @@ namespace K9.WebApplication.Controllers
                 }
 
                 var returnUrl = TempData["ReturnUrl"];
-                var user = My.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
 
-                try
-                {
-                    model.UserInfo.Id = My.UserService.GetOrCreateUserInfo(user.Id).Id;
-                    My.UserService.UpdateUserInfo(model.UserInfo);
-                }
-                catch (Exception e)
-                {
-                    Logger.Error($"AccountrController => RegisterDetails => Error creating / updating UserInfo: {e.GetFullErrorMessage()}");
-                }
+                My.AccountService.RegisterPersonalInformation(model);
 
-                if (user.Id > 0)
-                {
-                    if (!string.IsNullOrEmpty(model.PromoCode))
-                    {
-                        try
-                        {
-                            // If this method returns false, then the user needs to pay for their discounted membership
-                            if (!My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode))
-                            {
-                                _promotionService.UsePromotion(user.Id, model.PromoCode);
-                                returnUrl = Url.Action("PurchaseStart", "Membership",
-                                    new
-                                    {
-                                        membershipOptionId = promotion.MembershipOptionId,
-                                        promoCode = model.PromoCode
-                                    });
-                            };
-                        }
-                        catch (Exception e)
-                        {
-                            Logger.Error($"AccountController => RegisterDetails => CreateMembershipFromPromoCode => Error: {e.GetFullErrorMessage()}");
-                            throw new Exception("Error creating membership from promo code");
-                        }
-                    }
-                }
-                else
-                {
-                    Logger.Error("AccountController => RegisterDetails => User not found after registration");
-                    return HttpNotFound();
-                }
+                var user = My.UserService.Find(model.RegisterModel.UserName);
 
                 var otp = My.AccountService.GetOTPForUser(user.Id);
                 if (otp == null)
                 {
                     Logger.Error("AccountController => RegisterDetails => UserOTP was null");
                     throw new Exception("UserOTP canot be null");
+                }
+
+                if (!string.IsNullOrEmpty(model.PromoCode))
+                {
+                    try
+                    {
+                        // If this method returns false, then the user needs to pay for their discounted membership
+                        if (!My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode))
+                        {
+                            _promotionService.UsePromotion(user.Id, model.PromoCode);
+                            returnUrl = Url.Action("PurchaseStart", "Membership",
+                                new
+                                {
+                                    membershipOptionId = promotion.MembershipOptionId,
+                                    promoCode = model.PromoCode
+                                });
+                        };
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Error($"AccountController => RegisterDetails => CreateMembershipFromPromoCode => Error: {e.GetFullErrorMessage()}");
+                        throw new Exception("Error creating membership from promo code");
+                    }
                 }
 
                 if (returnUrl != null && !string.IsNullOrEmpty(returnUrl.ToString()))
@@ -636,8 +621,11 @@ namespace K9.WebApplication.Controllers
 
                 return RedirectToAction("AccountCreated", "Account", new { uniqueIdentifier = otp.UniqueIdentifier });
             }
-
-            return View(model);
+            else
+            {
+                Logger.Error("AccountController => RegisterDetails => User not found after registration");
+                return HttpNotFound();
+            }
         }
 
         [Authorize]

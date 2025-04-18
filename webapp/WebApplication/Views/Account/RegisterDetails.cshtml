@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = Dictionary.Registration;
-    ViewBag.SubTitle = Dictionary.Registration;
+    ViewBag.SubTitle = Dictionary.PersonalInformation;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
@@ -42,7 +42,7 @@
         </div>
         <br />
         <div id="recaptcha-buttons-container">
-            @Html.BootstrapButton(Dictionary.Register, EButtonType.Submit, "", EButtonClass.Large)
+            @Html.BootstrapButton(K9.Globalisation.Dictionary.Continue, EButtonType.Submit, "fa fa-chevron-right", EButtonClass.Large)
             @*@Html.BootstrapActionLinkButton(Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fao fa-facebook", EButtonClass.Large)*@
         </div>
     }
@@ -52,28 +52,20 @@
 
 <script language="javascript">
 
-    $("#UserName").change(function() {
+    $("#RegisterModel_UserName").change(function() {
         var username = $(this).val();
         ajaxcontroller().get("@Url.Action("IsUserNameAvailable")", { username }).done(
             function(result) {
                 if (result.success && result.data) {
-                    $.fn.displayValidationWarningFor("UserName", "@Dictionary.UsernameIsUnavailableError");
+                    $.fn.hideValidationWarningFor("RegisterModel_UserName");
                 } else {
-                    $.fn.hideValidationWarningFor("UserName");
+                    $.fn.displayValidationWarningFor("RegisterModel_UserName", "@Dictionary.UsernameIsUnavailableError");
                 }
             });
     });
 
-    $("#EmailAddress").change(function() {
-        var emailAddress = $(this).val();
-        ajaxcontroller().get("@Url.Action("IsEmailAddressAvailable")", { emailAddress }).done(
-            function(result) {
-                if (result.success && result.data) {
-                    $.fn.displayValidationWarningFor("EmailAddress", "@Dictionary.EmailIsUnavailableError");
-                } else {
-                    $.fn.hideValidationWarningFor("EmailAddress");
-                }
-            });
-    });
+    $(function() {
+        $("#RegisterModel_UserName").focus();
+    })
 
 </script>

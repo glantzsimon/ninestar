@@ -234,31 +234,90 @@ namespace K9.WebApplication.Services
                     return result;
                 }
 
-                try
-                {
-                    _accountMailerService.SendActivationEmailToUser(model, otp.SixDigitCode);
-                }
-                catch (Exception e)
-                {
-                    My.Logger.Log(LogLevel.Error, $"AccountService => Register => SendActivationEmail => {e.GetFullErrorMessage()}");
-
-                    TryDeleteUserAccount(model.UserName);
-
-                    result.Errors.Add(new ServiceError
-                    {
-                        FieldName = "",
-                        ErrorMessage = Globalisation.Dictionary.ErrorCreatingUserAccount,
-                        Exception = e,
-                        Data = newUser
-                    });
-                    return result;
-                }
-
                 result.IsSuccess = true;
                 result.Data = otp;
                 return result;
             }
 
+            return result;
+        }
+
+        public ServiceResult RegisterPersonalInformation(RegisterViewModel model)
+        {
+            var result = new ServiceResult();
+            User user = null;
+
+            try
+            {
+                user = My.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).First();
+
+                user.Username = model.RegisterModel.UserName;
+                user.FirstName = model.RegisterModel.FirstName;
+                user.LastName = model.RegisterModel.LastName;
+                user.BirthDate = model.RegisterModel.BirthDate;
+                user.Gender = model.RegisterModel.Gender;
+
+                My.UsersRepository.Update(user);
+            }
+            catch (Exception e)
+            {
+                var errorMessage = $"AccountService => UpdatePersonalInformation => Update User => {e.GetFullErrorMessage()}";
+                My.Logger.Log(LogLevel.Error, errorMessage);
+
+                TryDeleteUserAccount(model.RegisterModel.UserName);
+
+                result.Errors.Add(new ServiceError
+                {
+                    FieldName = "",
+                    ErrorMessage = errorMessage,
+                    Exception = e
+                });
+                return result;
+            }
+
+            try
+            {
+                model.UserInfo.Id = _userService.GetOrCreateUserInfo(user.Id).Id;
+                _userService.UpdateUserInfo(model.UserInfo);
+            }
+            catch (Exception e)
+            {
+                var errorMessage = $"AccountService => UpdatePersonalInformation => Error creating / updating UserInfo: {e.GetFullErrorMessage()}";
+
+                My.Logger.Log(LogLevel.Error, errorMessage);
+
+                TryDeleteUserAccount(model.RegisterModel.UserName);
+
+                result.Errors.Add(new ServiceError
+                {
+                    FieldName = "",
+                    ErrorMessage = errorMessage,
+                    Exception = e
+                });
+                return result;
+            }
+
+            try
+            {
+                var otp = GetOTPForUser(user.Id);
+                _accountMailerService.SendActivationEmailToUser(model.RegisterModel, otp.SixDigitCode);
+            }
+            catch (Exception e)
+            {
+                My.Logger.Log(LogLevel.Error, $"AccountService => UpdatePersonalInformation => SendActivationEmail => {e.GetFullErrorMessage()}");
+
+                TryDeleteUserAccount(model.RegisterModel.UserName);
+
+                result.Errors.Add(new ServiceError
+                {
+                    FieldName = "",
+                    ErrorMessage = Globalisation.Dictionary.ErrorCreatingUserAccount,
+                    Exception = e
+                });
+                return result;
+            }
+
+            result.IsSuccess = true;
             return result;
         }
 

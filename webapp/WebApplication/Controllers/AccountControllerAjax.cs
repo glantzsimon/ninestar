@@ -8,7 +8,7 @@ namespace K9.WebApplication.Controllers
         [Route("account/is-username-available")]
         public JsonResult IsUserNameAvailable(string username)
         {
-            return Json(My.UsersRepository.Exists(u => u.Username == username), JsonRequestBehavior.AllowGet);
+            return Json(!My.UsersRepository.Exists(u => u.Username == username), JsonRequestBehavior.AllowGet);
         }
 
         [Route("account/is-email-available")]

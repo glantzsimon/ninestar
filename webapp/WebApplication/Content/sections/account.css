@@ -39,3 +39,18 @@
   border-color: #3b82f6;
   box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
 }
+#google-signin-button {
+  display: inline-block;
+}
+#credential_picker_container {
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10001 !important;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}

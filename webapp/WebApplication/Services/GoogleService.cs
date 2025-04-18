@@ -1,12 +1,11 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using Google.Apis.Auth;
+using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Packages;
 using System;
-using System.Linq;
-using System.Security.Claims;
-using System.Web;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
@@ -19,78 +18,49 @@ namespace K9.WebApplication.Services
             _googleConfig = googleConfig.Value;
         }
 
-        public ServiceResult Authenticate()
+        public ServiceResult Authenticate(string googleIdToken)
         {
             var result = new ServiceResult();
 
             try
             {
-                var auth = HttpContext.Current.GetOwinContext().Authentication;
-                var googleResult = auth.AuthenticateAsync("ExternalCookie").GetAwaiter().GetResult();
+                var payload = GoogleJsonWebSignature.ValidateAsync(googleIdToken, new GoogleJsonWebSignature.ValidationSettings
+                {
+                    Audience = new[] { _googleConfig.ClientId } // This should match the one in your JS frontend
+                }).GetAwaiter().GetResult();
 
-                if (googleResult?.Identity == null || !googleResult.Identity.IsAuthenticated)
+                if (payload == null)
                 {
                     result.Errors.Add(new ServiceError
                     {
-                        FieldName = "",
-                        ErrorMessage = "User not found"
-                    });
-
-                    return result;
-                }
-
-                var emailClaim = googleResult.Identity.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email);
-                var nameClaim = googleResult.Identity.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name);
-                var firstNameClaim = googleResult.Identity.Claims.FirstOrDefault(c => c.Type == "given_name");
-                var lastNameClaim = googleResult.Identity.Claims.FirstOrDefault(c => c.Type == "family_name");
-
-                string email = emailClaim?.Value;
-                string fullName = nameClaim?.Value;
-                string firstName = firstNameClaim?.Value;
-                string lastName = lastNameClaim?.Value;
-
-                // Fallback if given_name/family_name are missing
-                if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
-                {
-                    if (!string.IsNullOrEmpty(fullName) && fullName.Contains(" "))
-                    {
-                        var parts = fullName.Split(' ');
-                        firstName = parts[0] ?? "";
-                        lastName = string.Join(" ", parts.Skip(1)) ?? "";
-                    }
-                    else
-                    {
-                        firstName = fullName ?? "";
-                        lastName = "";
-                    }
-                }
-
-                if (string.IsNullOrEmpty(email))
-                {
-                    result.Errors.Add(new ServiceError
-                    {
-                        FieldName = "",
-                        ErrorMessage = "Google account did not return an email address."
+                        ErrorMessage = "Invalid Google ID token."
                     });
                     return result;
                 }
 
-                result.Data = new User
+                var user = new User
                 {
-                    EmailAddress = email,
-                    Username = Guid.NewGuid().ToString(), // Or email if you prefer
-                    FirstName = firstName,
-                    LastName = lastName
+                    EmailAddress = payload.Email,
+                    FirstName = payload.GivenName,
+                    LastName = payload.FamilyName,
+                    Username = Guid.NewGuid().ToString()
                 };
 
+                result.Data = user;
                 result.IsSuccess = true;
+            }
+            catch (InvalidJwtException ex)
+            {
+                result.Errors.Add(new ServiceError
+                {
+                    ErrorMessage = $"Token validation failed: {ex.GetFullErrorMessage()}"
+                });
             }
             catch (Exception ex)
             {
                 result.Errors.Add(new ServiceError
                 {
-                    FieldName = "",
-                    ErrorMessage = ex.Message
+                    ErrorMessage = $"Unexpected error: {ex.GetFullErrorMessage()}"
                 });
             }
 

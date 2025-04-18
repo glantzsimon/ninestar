@@ -4,6 +4,6 @@ namespace K9.WebApplication.Services
 {
     public interface IGoogleService : IBaseService
     {
-        ServiceResult Authenticate();
+        ServiceResult Authenticate(string googleIdToken);
     }
 }

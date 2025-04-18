@@ -29,8 +29,6 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.Google;
 using HtmlHelpers = K9.Base.WebApplication.Helpers.HtmlHelpers;
 
 [assembly: OwinStartup(typeof(K9.WebApplication.Startup))]
@@ -93,21 +91,7 @@ namespace K9.WebApplication
             builder.RegisterType<GoogleService>().As<IGoogleService>().InstancePerLifetimeScope();
 
             RegisterConfiguration(builder);
-
-            app.SetDefaultSignInAsAuthenticationType("ExternalCookie");
-
-            app.UseCookieAuthentication(new Microsoft.Owin.Security.Cookies.CookieAuthenticationOptions
-            {
-                AuthenticationType = "ExternalCookie"
-            });
-
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            {
-                ClientId = GoogleConfiguration.Instance.ClientId,
-                ClientSecret = GoogleConfiguration.Instance.ClientSecret,
-                CallbackPath = new PathString("/account/google-signin") 
-            });
-
+            
             RegisterStaticTypes();
 
             var container = builder.Build();
@@ -198,7 +182,10 @@ namespace K9.WebApplication
             var defaultConfig = ConfigHelper.GetConfiguration<DefaultValuesConfiguration>(json);
             builder.Register(c => defaultConfig).SingleInstance();
             DefaultValuesConfiguration.Instance = defaultConfig.Value;
-
+            
+#if DEBUG
+            DefaultValuesConfiguration.Instance.SiteBaseUrl = DefaultValuesConfiguration.Instance.LocalSiteBaseUrl;
+#endif
 
             defaultConfig.Value.BaseEmailTemplateImagesPath = defaultConfig.Value.BaseImagesPath;
             defaultConfig.Value.BaseBaseEmailTemplateVideosPath = defaultConfig.Value.BaseVideosPath;

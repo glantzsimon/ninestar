@@ -173,29 +173,29 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("ExternalAuthCallback", _facebookService.Authenticate(code));
         }
 
-        [Route("google/login")]
-        public ActionResult GoogleSignIn()
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        [Route("google/verify")]
+        public ActionResult GoogleVerify()
         {
-            var props = new AuthenticationProperties
+            var credential = Request["credential"];
+            if (string.IsNullOrEmpty(credential))
             {
-                RedirectUri = Url.Action("GoogleSignIn", "Account", null, Request.Url.Scheme)
-            };
+                return new HttpStatusCodeResult(400, "Missing credential");
+            }
 
-            HttpContext.GetOwinContext().Authentication.Challenge(props, "Google");
+            var result = _googleService.Authenticate(credential);
 
-            return new HttpUnauthorizedResult();
-        }
-
-        [Route("google/login/callback")]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult GoogleSignInCallback()
-        {
-            return RedirectToAction("ExternalAuthCallback", _googleService.Authenticate());
+            TempData["auth-result"] = result;
+            return RedirectToAction("ExternalAuthCallback");
         }
 
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult ExternalAuthCallback(ServiceResult result)
+        public ActionResult ExternalAuthCallback()
         {
+            ServiceResult result = TempData["auth-result"] as ServiceResult;
+            
             if (result.IsSuccess)
             {
                 var user = result.Data as User;
@@ -205,13 +205,13 @@ namespace K9.WebApplication.Controllers
                     UserName = user.Username,
                     FirstName = user.FirstName,
                     LastName = user.LastName,
-                    BirthDate = user.BirthDate,
+                    BirthDate = new DateTime(2000, 1, 1),
                     EmailAddress = user.EmailAddress
                 });
 
                 if (regResult.IsSuccess)
                 {
-                    user.Id = My.UsersRepository.Find(e => e.Username == user.Username).FirstOrDefault()?.Id ?? 0;
+                    user = My.UsersRepository.Find(e => e.Username == user.Username).FirstOrDefault() ?? user;
                     if (user.Id > 0)
                     {
                         // Update contact record
@@ -242,27 +242,27 @@ namespace K9.WebApplication.Controllers
                 {
                     ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
                 }
+
+                Logger.Error($"AccountController => ExternalAuthCallback => Error: {registrationError.ErrorMessage}");
             }
 
-            return View("Login", new UserAccount.LoginModel());
+            return RedirectToAction("Login", new UserAccount.LoginModel());
         }
 
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         [Authorize]
-        public ActionResult ExternalAuthPostRegsiter(string username)
+        public ActionResult ExternalAuthPostRegsiter()
         {
-            var user = My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
+            var user = My.UsersRepository.Find(e => e.Username == WebSecurity.CurrentUserName).First();
             return View(new RegisterViewModel
             {
                 RegisterModel = new UserAccount.RegisterModel
                 {
-                    UserName = username,
-                    BirthDate = user?.BirthDate ?? DateTime.Today.AddYears(-30),
-                    FirstName = user?.FirstName,
-                    LastName = user?.LastName,
-                    EmailAddress = user?.EmailAddress,
-                    PhoneNumber = user?.PhoneNumber,
-                    Gender = user?.Gender ?? EGender.Other
+                    UserName = WebSecurity.CurrentUserName,
+                    BirthDate = DateTime.Today.AddYears(-30),
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    EmailAddress = user.EmailAddress
                 },
                 UserInfo = new UserInfo
                 {

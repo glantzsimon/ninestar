@@ -273,3 +273,7 @@
   margin-left: 1px;
   cursor: pointer;
 }
+.fab {
+  font-family: 'Font Awesome 5 Brands' !important;
+  font-weight: 400 !important;
+}

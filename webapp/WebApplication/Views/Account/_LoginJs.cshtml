@@ -1,0 +1,31 @@
+﻿@using K9.WebApplication.Config
+@using Dictionary = K9.Base.Globalisation.Dictionary
+
+<script>
+    window.onload = function () {
+        google.accounts.id.initialize({
+            client_id: '@GoogleConfiguration.Instance.ClientId',
+            callback: handleGoogleCredentialResponse
+        });
+
+        let googlePromptTimeout = setTimeout(() => {
+            $("#pageSpinner").hide();
+            $("#pageOverlay").hide();
+        }, 7000); // 7 seconds fallback
+
+        $('#google-signin-button').on('click', 'a', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            google.accounts.id.prompt();
+        });
+    };
+
+    function handleGoogleCredentialResponse(response) {
+        const form = $('<form method="post" action="@Url.Action("GoogleVerify")"></form>');
+        form.append(`<input type="hidden" name="credential" value="${response.credential}" />`);
+        form.append(`<input type="hidden" name="__RequestVerificationToken" value="${$('input[name="__RequestVerificationToken"]').val()}" />`);
+        $('body').append(form);
+        form.submit();
+    }
+
+</script>

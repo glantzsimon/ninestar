@@ -23,7 +23,7 @@
 
             <hr />
 
-            <h5 class="margin-top-0">@K9.Globalisation.Dictionary.PleaseEnterPersonalDetails</h5>
+            <h5 class="form-subtitle margin-top-0">@K9.Globalisation.Dictionary.PleaseEnterPersonalDetails</h5>
 
             <div class="row">
                 <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.FirstName)</div>
@@ -39,7 +39,9 @@
                 <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.Gender)</div>
             </div>
 
-            @Html.BootstrapEditorFor(e => e.AllowMarketingEmails)
+            <div class="small-print">
+                @Html.BootstrapEditorFor(e => e.AllowMarketingEmails)
+            </div>
 
             <hr class="margin-top-5" />
 

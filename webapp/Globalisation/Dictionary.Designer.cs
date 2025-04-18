@@ -2944,7 +2944,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I would like to receive email communications (we promise not to spam you).
+        ///   Looks up a localized string similar to I would like to receive occasional email communications about 9 Star Ki, the development of new features and functionality, as well as any promotions that are currently running (&lt;strong&gt;we promise not to spam you&lt;/strong&gt;)..
         /// </summary>
         public static string AllowMarketingEmails {
             get {
@@ -16808,7 +16808,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to In order to create your free birth chart, we will need the following details:.
+        ///   Looks up a localized string similar to To create your free birth chart, we need the following details:.
         /// </summary>
         public static string PleaseEnterPersonalDetails {
             get {

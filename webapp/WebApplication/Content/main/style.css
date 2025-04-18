@@ -143,3 +143,11 @@ li.divider {
 .display-warning {
   font-style: italic;
 }
+.small-print label {
+  font-size: 0.9em;
+  line-height: 1.33em;
+  color: #666;
+}
+h5.form-subtitle {
+  font-size: 1.21em;
+}

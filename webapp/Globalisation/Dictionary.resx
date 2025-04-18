@@ -2543,7 +2543,7 @@
     <value>Our AI 9 Star Ki Astrologer has extensive knowledge about 9 Star Ki and can answer many of your questions and provide guidance.</value>
   </data>
   <data name="AllowMarketingEmails" xml:space="preserve">
-    <value>I would like to receive email communications (we promise not to spam you)</value>
+    <value>I would like to receive occasional email communications about 9 Star Ki, the development of new features and functionality, as well as any promotions that are currently running (we promise not to spam you).</value>
   </data>
   <data name="AreMarketingEmailsAllowedLabel" xml:space="preserve">
     <value>Are Marketing Emails Allowed</value>
@@ -6461,6 +6461,6 @@
     <value>Continue</value>
   </data>
   <data name="PleaseEnterPersonalDetails" xml:space="preserve">
-    <value>In order to create your free birth chart, we will need the following details:</value>
+    <value>To create your free birth chart, we need the following details:</value>
   </data>
 </root>

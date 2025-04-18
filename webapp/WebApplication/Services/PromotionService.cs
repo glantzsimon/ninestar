@@ -103,15 +103,9 @@ namespace K9.WebApplication.Services
         {
             // Check if user already exists with email address
             var user = My.UsersRepository.Find(e => e.EmailAddress == model.EmailAddress).FirstOrDefault();
-            if (user != null)
-            {
-                var errorMessage = $"PromoCodeService => SendRegistrationPromotion => User {user.Id} is already registered";
-                My.Logger.Log(LogLevel.Error, errorMessage);
-                throw new Exception("Cannot use this promo code. The user is already registered on the system");
-            }
-
             var code = model.Promotion.Code;
             var promotion = Find(code);
+            
             if (promotion == null)
             {
                 throw new Exception($"PromoCodeService => SendRegistrationPromotion => Promotion {code} was not found");
@@ -134,16 +128,20 @@ namespace K9.WebApplication.Services
             }
             else
             {
-                userPromotion = new UserPromotion
+                if (user != null)
                 {
-                    PromotionId = promotion.Id,
-                    UserId = user.Id,
-                    SentOn = DateTime.Now,
-                    Name = Guid.NewGuid().ToString()
-                };
-                if (userPromotion.Id == 0)
-                {
+                    userPromotion = new UserPromotion
+                    {
+                        PromotionId = promotion.Id,
+                        UserId = user.Id,
+                        SentOn = DateTime.Now,
+                        Name = Guid.NewGuid().ToString()
+                    };
                     _userPromotionsRepository.Create(userPromotion);
+                }
+                else if (!promotion.IsReusable)
+                {
+                    throw new Exception($"PromoCodeService => SendRegistrationPromotion => Promotion {promotion.Name} ({code}) cannot be sent to email {model.EmailAddress} as the user does not exist on the system yet and the code is not reusable.");
                 }
             }
 

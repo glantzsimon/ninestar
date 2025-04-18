@@ -433,6 +433,10 @@
     <Compile Include="Migrations\202504091254500_AddUserInfo.designer.cs">
       <DependentUpon>202504091254500_AddUserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504181232114_AddReusablePromotion.cs" />
+    <Compile Include="Migrations\202504181232114_AddReusablePromotion.designer.cs">
+      <DependentUpon>202504181232114_AddReusablePromotion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\TimeZone.cs" />
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
@@ -609,6 +613,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504091254500_AddUserInfo.resx">
       <DependentUpon>202504091254500_AddUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504181232114_AddReusablePromotion.resx">
+      <DependentUpon>202504181232114_AddReusablePromotion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

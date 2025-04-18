@@ -6460,6 +6460,9 @@
   <data name="Continue" xml:space="preserve">
     <value>Continue</value>
   </data>
+  <data name="IsReusableLabel" xml:space="preserve">
+    <value>Is Reusable</value>
+  </data>
   <data name="PleaseEnterPersonalDetails" xml:space="preserve">
     <value>To create your free birth chart, we need the following details:</value>
   </data>

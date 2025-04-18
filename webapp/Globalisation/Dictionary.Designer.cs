@@ -11495,6 +11495,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is Reusable.
+        /// </summary>
+        public static string IsReusableLabel {
+            get {
+                return ResourceManager.GetString("IsReusableLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Send Membership Upgrade Reminders to Users.
         /// </summary>
         public static string IsSendMembershipUpgradeRemindersLabel {

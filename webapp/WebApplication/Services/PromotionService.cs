@@ -84,18 +84,19 @@ namespace K9.WebApplication.Services
             var promotion = Find(code);
             var userPromotion = FindForUser(code, userId);
 
-            if (promotion == null || userPromotion == null)
+            if (promotion == null || (userPromotion == null && !promotion.IsReusable))
             {
                 throw new Exception(Dictionary.InvalidPromoCode);
             }
 
-            if (userPromotion.UsedOn.HasValue)
+            if (userPromotion != null)
             {
-                throw new Exception("Promo code has already been used");
-            }
+                if (userPromotion.UsedOn.HasValue)
+                    throw new Exception("Promo code has already been used");
 
-            userPromotion.UsedOn = DateTime.Now;
-            _userPromotionsRepository.Update(userPromotion);
+                userPromotion.UsedOn = DateTime.Now;
+                _userPromotionsRepository.Update(userPromotion);
+            }
         }
 
         public void SendRegistrationPromotion(EmailPromoCodeViewModel model)
@@ -116,7 +117,7 @@ namespace K9.WebApplication.Services
                 throw new Exception($"PromoCodeService => SendRegistrationPromotion => Promotion {code} was not found");
             }
 
-            var userPromotion = FindForUser(code, user.Id);
+            var userPromotion = FindForUser(code, user?.Id ?? 0);
             if (userPromotion != null)
             {
                 if (userPromotion.UsedOn.HasValue)

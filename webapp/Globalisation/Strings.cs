@@ -56,6 +56,7 @@
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
             public const string TotalPriceLabel = "TotalPriceLabel";
+            public const string IsReusableLabel = "IsReusableLabel";
             public const string CreditsTotalAmountLabel = "CreditsTotalAmountLabel";
             public const string StatusLabel = "StatusLabel";
             public const string AmountToDonateLabel = "AmountToDonateLabel";

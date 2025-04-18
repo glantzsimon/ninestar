@@ -26,7 +26,7 @@ namespace K9.DataAccessLayer.Models
         [MinLength(5)]
         [Index(IsUnique = true)]
         public string Code { get; set; }
-        
+
         [UIHint("MembershipOption")]
         [Required]
         [ForeignKey("MembershipOption")]
@@ -66,11 +66,14 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountAmountLabel)]
         public double DiscountFactorAmount => (double)DiscountPercent / 100f;
-        
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsReusableLabel)]
+        public bool IsReusable { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double SpecialPrice { get; set; }
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double FullPrice => MembershipOption?.Price ?? 0;
@@ -83,7 +86,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         public string SubscriptionTypeName => MembershipOption?.SubscriptionTypeNameLocal;
-        
+
         public string PriceDescription => GetPriceDescription();
 
         [NotMapped] public string PromoLink { get; set; }
@@ -112,7 +115,7 @@ namespace K9.DataAccessLayer.Models
                 });
             }
         }
-        
+
         private string GetCode(int max)
         {
             var sb = new StringBuilder();

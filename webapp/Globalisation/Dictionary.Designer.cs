@@ -2944,7 +2944,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I would like to receive email communications.
+        ///   Looks up a localized string similar to I would like to receive email communications (we promise not to spam you).
         /// </summary>
         public static string AllowMarketingEmails {
             get {

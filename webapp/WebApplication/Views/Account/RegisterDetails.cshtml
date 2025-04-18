@@ -7,46 +7,52 @@
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
-@using (Html.BeginForm())
-{
-    using (Html.BeginBootstrapForm())
+<article>
+    @using (Html.BeginForm())
     {
-        @Html.HiddenFor(model => model.RegisterModel.EmailAddress)
-        @Html.HiddenFor(model => model.PromoCode)
+        using (Html.BeginBootstrapForm())
+        {
+            @Html.HiddenFor(model => model.RegisterModel.EmailAddress)
+            @Html.HiddenFor(model => model.RegisterModel.Password)
+            @Html.HiddenFor(model => model.RegisterModel.ConfirmPassword)
+            @Html.HiddenFor(model => model.PromoCode)
 
-        @Html.BootstrapDisplayFor(model => model.RegisterModel.EmailAddress)
+            @Html.BootstrapDisplayFor(model => model.RegisterModel.EmailAddress)
 
-        @Html.BootstrapEditorFor(model => model.RegisterModel.UserName)
+            @Html.BootstrapEditorFor(model => model.RegisterModel.UserName)
 
-        <hr />
+            <hr />
 
-        <h5>@K9.Globalisation.Dictionary.PleaseEnterPersonalDetails</h5>
+            <h5 class="margin-top-0">@K9.Globalisation.Dictionary.PleaseEnterPersonalDetails</h5>
 
-        <div class="row">
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.FirstName)</div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.LastName)</div>
-        </div>
+            <div class="row">
+                <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.FirstName)</div>
+                <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.LastName)</div>
+            </div>
 
-        <div class="row">
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.BirthDate)</div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.TimeOfBirth)</div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.BirthTimeZoneId)</div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.Gender)</div>
-        </div>
+            <div class="row">
+                <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.BirthDate)</div>
+                <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.TimeOfBirth)</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.BirthTimeZoneId)</div>
+                <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.Gender)</div>
+            </div>
 
-        <hr class="margin-top-5" />
+            @Html.BootstrapEditorFor(e => e.AllowMarketingEmails)
 
-        <div id="recaptcha-container">
-        </div>
-        <br />
-        <div id="recaptcha-buttons-container">
-            @Html.BootstrapButton(K9.Globalisation.Dictionary.Continue, EButtonType.Submit, "fa fa-chevron-right", EButtonClass.Large)
-            @*@Html.BootstrapActionLinkButton(Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fao fa-facebook", EButtonClass.Large)*@
-        </div>
+            <hr class="margin-top-5" />
+
+            <div id="recaptcha-container">
+            </div>
+            <br />
+            <div id="recaptcha-buttons-container">
+                @Html.BootstrapButton(K9.Globalisation.Dictionary.Continue, EButtonType.Submit, "fa fa-chevron-right", EButtonClass.Large)
+                @*@Html.BootstrapActionLinkButton(Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fao fa-facebook", EButtonClass.Large)*@
+            </div>
+        }
     }
-}
+</article>
 
 @Html.Partial("_Recaptcha")
 
@@ -57,15 +63,18 @@
         ajaxcontroller().get("@Url.Action("IsUserNameAvailable")", { username }).done(
             function(result) {
                 if (result.success && result.data) {
-                    $.fn.hideValidationWarningFor("RegisterModel_UserName");
+                    $.fn.hideValidationWarningFor("RegisterModel.UserName");
                 } else {
-                    $.fn.displayValidationWarningFor("RegisterModel_UserName", "@Dictionary.UsernameIsUnavailableError");
+                    $.fn.displayValidationWarningFor("RegisterModel.UserName", "@Dictionary.UsernameIsUnavailableError");
                 }
             });
     });
 
     $(function() {
-        $("#RegisterModel_UserName").focus();
+        setTimeout(function() {
+                $("#RegisterModel_UserName").focus();
+            },
+            333);
     })
 
 </script>

@@ -249,13 +249,14 @@ namespace K9.WebApplication.Services
 
             try
             {
-                user = My.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).First();
+                user = My.UsersRepository.Find(e => e.EmailAddress == model.RegisterModel.EmailAddress).First();
 
                 user.Username = model.RegisterModel.UserName;
                 user.FirstName = model.RegisterModel.FirstName;
                 user.LastName = model.RegisterModel.LastName;
                 user.BirthDate = model.RegisterModel.BirthDate;
                 user.Gender = model.RegisterModel.Gender;
+                user.IsUnsubscribed = !model.AllowMarketingEmails;
 
                 My.UsersRepository.Update(user);
             }

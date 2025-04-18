@@ -30,16 +30,23 @@
 
 <script language="javascript">
     
-    $("#EmailAddress").change(function() {
+    $("#RegisterModel_EmailAddress").change(function() {
         var emailAddress = $(this).val();
         ajaxcontroller().get("@Url.Action("IsEmailAddressAvailable")", { emailAddress }).done(
             function(result) {
                 if (result.success && result.data) {
-                    $.fn.displayValidationWarningFor("EmailAddress", "@Dictionary.EmailIsUnavailableError");
+                    $.fn.displayValidationWarningFor("RegisterModel.EmailAddress", "@Dictionary.EmailIsUnavailableError");
                 } else {
-                    $.fn.hideValidationWarningFor("EmailAddress");
+                    $.fn.hideValidationWarningFor("RegisterModel.EmailAddress");
                 }
             });
     });
+
+    $(function () {
+        setTimeout(function () {
+            $("#RegisterModel_EmailAddress").focus();
+        },
+            333);
+    })
 
 </script>

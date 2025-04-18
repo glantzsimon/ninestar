@@ -17,5 +17,8 @@ h5 {
   margin-bottom: 10px;
 }
 .security-info {
-  font-size: 0.8em;
+  font-size: 0.8em !important;
+}
+.security-info p {
+  font-size: 1em !important;
 }

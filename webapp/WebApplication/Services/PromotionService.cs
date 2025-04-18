@@ -89,18 +89,33 @@ namespace K9.WebApplication.Services
             var promotion = Find(code);
             var userPromotion = FindForUser(code, userId);
 
-            if (promotion == null || (userPromotion == null && !promotion.IsReusable))
+            if (promotion == null || userPromotion == null)
             {
-                throw new Exception(Dictionary.InvalidPromoCode);
-            }
+                if (!promotion.IsReusable)
+                {
+                    throw new Exception(Dictionary.InvalidPromoCode);
+                }
 
-            if (userPromotion != null)
-            {
-                if (userPromotion.UsedOn.HasValue)
-                    throw new Exception("Promo code has already been used");
+                if (userPromotion != null)
+                {
+                    if (userPromotion.UsedOn.HasValue)
+                        throw new Exception("Promo code has already been used");
 
-                userPromotion.UsedOn = DateTime.Now;
-                _userPromotionsRepository.Update(userPromotion);
+                    userPromotion.UsedOn = DateTime.Now;
+                    _userPromotionsRepository.Update(userPromotion);
+                }
+                else
+                {
+                    // Promotion is reusable - we need to create the UserPromotion record as it doesn't exist yet
+                    userPromotion = new UserPromotion
+                    {
+                        PromotionId = promotion.Id,
+                        UserId = userId,
+                        SentOn = DateTime.Now,
+                        Name = Guid.NewGuid().ToString()
+                    };
+                    _userPromotionsRepository.Create(userPromotion);
+                }
             }
         }
 

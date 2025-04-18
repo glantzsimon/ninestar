@@ -233,7 +233,7 @@ namespace K9.WebApplication.Services
                     });
                     return result;
                 }
-                
+
                 try
                 {
                     _accountMailerService.SendActivationEmailToUser(model, otp.SixDigitCode);
@@ -670,6 +670,11 @@ namespace K9.WebApplication.Services
         public UserOTP GetAccountActivationOTP(Guid uniqueIdentifier)
         {
             return _otpRepository.Find(e => e.UniqueIdentifier == uniqueIdentifier).FirstOrDefault();
+        }
+
+        public UserOTP GetOTPForUser(int userId)
+        {
+            return _otpRepository.Find(e => e.UserId == userId && !e.VerifiedOn.HasValue).FirstOrDefault();
         }
 
         public string GetPasswordResetLink(UserAccount.PasswordResetRequestModel model, string token)

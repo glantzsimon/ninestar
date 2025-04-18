@@ -9,7 +9,7 @@ namespace K9.WebApplication.ViewModels
         public UserAccount.RegisterModel RegisterModel { get; set; }
 
         public UserInfo UserInfo { get; set; }
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Names.AllowMarketingEmails)]
         public bool AllowMarketingEmails { get; set; }

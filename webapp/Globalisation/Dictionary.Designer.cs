@@ -16799,6 +16799,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to In order to create your free birth chart, we will need the following details:.
+        /// </summary>
+        public static string PleaseEnterPersonalDetails {
+            get {
+                return ResourceManager.GetString("PleaseEnterPersonalDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select a suitable time slot for your {ConsultationDuration} consultation. If none of the slots are suitable, please contact us to arrange a suitable time (see button at the bottom of this page)..
         /// </summary>
         public static string PleaseSelectATimeSlot {

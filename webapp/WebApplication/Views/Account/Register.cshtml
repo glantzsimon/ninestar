@@ -1,5 +1,5 @@
 ﻿@using Dictionary = K9.Base.Globalisation.Dictionary
-@model K9.WebApplication.ViewModels.RegisterViewModel
+@model K9.WebApplication.ViewModels.QuickRegisterViewModel
 
 @{
     ViewBag.Title = Dictionary.Registration;
@@ -11,27 +11,10 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapEditorFor(model => model.RegisterModel.UserName)
-        @Html.BootstrapEditorFor(model => model.RegisterModel.Password)
-        @Html.BootstrapEditorFor(model => model.RegisterModel.ConfirmPassword)
-
-        <hr />
-        <div class="row">
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.FirstName)</div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.LastName)</div>
-        </div>
         @Html.BootstrapEditorFor(model => model.RegisterModel.EmailAddress)
-        <div class="row">
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.BirthDate)</div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.TimeOfBirth)</div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.BirthTimeZoneId)</div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.Gender)</div>
-        </div>
-
-        @Html.BootstrapEditorFor(model => model.RegisterModel.PhoneNumber)
+        @Html.BootstrapEditorFor(model => model.RegisterModel.Password)
         @Html.BootstrapEditorFor(model => model.PromoCode)
+        
         <hr />
         <div id="recaptcha-container">
         </div>
@@ -46,19 +29,7 @@
 @Html.Partial("_Recaptcha")
 
 <script language="javascript">
-
-    $("#UserName").change(function() {
-        var username = $(this).val();
-        ajaxcontroller().get("@Url.Action("IsUserNameAvailable")", { username }).done(
-            function(result) {
-                if (result.success && result.data) {
-                    $.fn.displayValidationWarningFor("UserName", "@Dictionary.UsernameIsUnavailableError");
-                } else {
-                    $.fn.hideValidationWarningFor("UserName");
-                }
-            });
-    });
-
+    
     $("#EmailAddress").change(function() {
         var emailAddress = $(this).val();
         ajaxcontroller().get("@Url.Action("IsEmailAddressAvailable")", { emailAddress }).done(

@@ -6457,4 +6457,7 @@
   <data name="SignInWithGoogle" xml:space="preserve">
     <value>Sign in with Google</value>
   </data>
+  <data name="PleaseEnterPersonalDetails" xml:space="preserve">
+    <value>In order to create your free birth chart, we will need the following details:</value>
+  </data>
 </root>

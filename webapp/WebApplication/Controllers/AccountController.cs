@@ -195,7 +195,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult ExternalAuthCallback()
         {
             ServiceResult result = TempData["auth-result"] as ServiceResult;
-            
+
             if (result.IsSuccess)
             {
                 var user = result.Data as User;
@@ -383,6 +383,7 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Route("register")]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Register(string promoCode = null, string returnUrl = null)
         {
@@ -409,21 +410,17 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
-            return View(new RegisterViewModel
+            return View(new QuickRegisterViewModel
             {
-                RegisterModel = new UserAccount.RegisterModel
-                {
-                    Gender = Methods.GetRandomGender(),
-                    BirthDate = DateTime.Today.AddYears(-27)
-                },
-                PromoCode = promoCode,
-                UserInfo = new UserInfo()
+                RegisterModel = new QuickRegisterModel(),
+                PromoCode = promoCode
             });
         }
 
+        [Route("register")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterViewModel model)
+        public ActionResult Register(QuickRegisterViewModel model)
         {
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
 
@@ -457,67 +454,24 @@ namespace K9.WebApplication.Controllers
                     }
                 }
 
-                var result = My.AccountService.Register(model.RegisterModel);
+                var registerModel = model.RegisterModel.ToRegisterModel();
+                var result = My.AccountService.Register(registerModel);
 
                 if (result.IsSuccess)
                 {
                     var returnUrl = TempData["ReturnUrl"];
-                    var user = My.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
+                    var user = My.UsersRepository.Find(e => e.Username == registerModel.UserName).FirstOrDefault();
 
-                    try
+                    if (user == null)
                     {
-                        model.UserInfo.Id = My.UserService.GetOrCreateUserInfo(user.Id).Id;
-                        My.UserService.UpdateUserInfo(model.UserInfo);
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.Error($"AccountrController => Register => Error creating / updating UserInfo: {e.GetFullErrorMessage()}");
-                    }
-
-                    if (user.Id > 0)
-                    {
-                        if (!string.IsNullOrEmpty(model.PromoCode))
-                        {
-                            try
-                            {
-                                // If this method returns false, then the user needs to pay for their discounted membership
-                                if (!My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode))
-                                {
-                                    _promotionService.UsePromotion(user.Id, model.PromoCode);
-                                    returnUrl = Url.Action("PurchaseStart", "Membership",
-                                        new
-                                        {
-                                            membershipOptionId = promotion.MembershipOptionId,
-                                            promoCode = model.PromoCode
-                                        });
-                                };
-                            }
-                            catch (Exception e)
-                            {
-                                Logger.Error($"AccountController => Register => CreateMembershipFromPromoCode => Error: {e.GetFullErrorMessage()}");
-                                throw new Exception("Error creating membership from promo code");
-                            }
-                        }
+                        Logger.Error("AccountController => Register => User not found after registration");
+                        ModelState.AddModelError("Username", Dictionary.UserNotFoundError);
                     }
                     else
                     {
-                        Logger.Error("AccountController => Register => User not found after registration");
-                        throw new Exception("User not found");
+                        return RedirectToAction("RegisterDetails",
+                            new { userId = user.Id, promocode = model.PromoCode, returnUrl });
                     }
-
-                    var otp = (UserOTP)result.Data;
-                    if (otp == null)
-                    {
-                        Logger.Error("AccountController => Register => UserOTP was null");
-                        throw new Exception("UserOTP canot be null");
-                    }
-
-                    if (returnUrl != null && !string.IsNullOrEmpty(returnUrl.ToString()))
-                    {
-                        return RedirectToAction("AccountCreated", "Account", new { uniqueIdentifier = otp.UniqueIdentifier, returnUrl });
-                    }
-
-                    return RedirectToAction("AccountCreated", "Account", new { uniqueIdentifier = otp.UniqueIdentifier });
                 }
 
                 foreach (var registrationError in result.Errors)
@@ -533,6 +487,154 @@ namespace K9.WebApplication.Controllers
                         ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
                     }
                 }
+            }
+
+            return View(model);
+        }
+
+        [Route("register/details")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public ActionResult RegisterDetails(int userId, string promoCode = null, string returnUrl = null)
+        {
+            ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
+            TempData["ReturnUrl"] = returnUrl;
+
+            if (WebSecurity.IsAuthenticated)
+            {
+                WebSecurity.Logout();
+            }
+
+            if (promoCode != null)
+            {
+                try
+                {
+                    if (_promotionService.Find(promoCode) == null)
+                    {
+                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.InvalidPromoCode);
+                    };
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("PromoCode", e.Message);
+                }
+            }
+
+            var user = My.UsersRepository.Find(userId);
+            if (user == null)
+            {
+                Logger.Error("AccountController => Register => User not found after registration");
+                ModelState.AddModelError("Username", Dictionary.UserNotFoundError);
+            }
+
+            return View(new RegisterViewModel
+            {
+                RegisterModel = new UserAccount.RegisterModel
+                {
+                    EmailAddress = user.EmailAddress,
+                    UserName = "",
+                    FirstName = "",
+                    Gender = Methods.GetRandomGender(),
+                    BirthDate = DateTime.Today.AddYears(-27)
+                },
+                PromoCode = promoCode,
+                UserInfo = new UserInfo()
+            });
+        }
+
+        [Route("register/details")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RegisterDetails(RegisterViewModel model)
+        {
+            ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
+
+            if (!Helpers.Environment.IsDebug)
+            {
+                var encodedResponse = Request.Form[RecaptchaResult.ResponseFormVariable];
+                var isCaptchaValid = _recaptchaService.Validate(encodedResponse);
+
+                if (!isCaptchaValid)
+                {
+                    ModelState.AddModelError("", Globalisation.Dictionary.InvalidRecaptcha);
+                    return View(model);
+                }
+            }
+
+            if (Authentication.IsAuthenticated)
+            {
+                Authentication.Logout();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var promotion = _promotionService.Find(model.PromoCode);
+
+                if (!string.IsNullOrEmpty(model.PromoCode))
+                {
+                    if (promotion == null)
+                    {
+                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.InvalidPromoCode);
+                        return View(model);
+                    }
+                }
+
+                var returnUrl = TempData["ReturnUrl"];
+                var user = My.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
+
+                try
+                {
+                    model.UserInfo.Id = My.UserService.GetOrCreateUserInfo(user.Id).Id;
+                    My.UserService.UpdateUserInfo(model.UserInfo);
+                }
+                catch (Exception e)
+                {
+                    Logger.Error($"AccountrController => RegisterDetails => Error creating / updating UserInfo: {e.GetFullErrorMessage()}");
+                }
+
+                if (user.Id > 0)
+                {
+                    if (!string.IsNullOrEmpty(model.PromoCode))
+                    {
+                        try
+                        {
+                            // If this method returns false, then the user needs to pay for their discounted membership
+                            if (!My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode))
+                            {
+                                _promotionService.UsePromotion(user.Id, model.PromoCode);
+                                returnUrl = Url.Action("PurchaseStart", "Membership",
+                                    new
+                                    {
+                                        membershipOptionId = promotion.MembershipOptionId,
+                                        promoCode = model.PromoCode
+                                    });
+                            };
+                        }
+                        catch (Exception e)
+                        {
+                            Logger.Error($"AccountController => RegisterDetails => CreateMembershipFromPromoCode => Error: {e.GetFullErrorMessage()}");
+                            throw new Exception("Error creating membership from promo code");
+                        }
+                    }
+                }
+                else
+                {
+                    Logger.Error("AccountController => RegisterDetails => User not found after registration");
+                    return HttpNotFound();
+                }
+
+                var otp = My.AccountService.GetOTPForUser(user.Id);
+                if (otp == null)
+                {
+                    Logger.Error("AccountController => RegisterDetails => UserOTP was null");
+                    throw new Exception("UserOTP canot be null");
+                }
+
+                if (returnUrl != null && !string.IsNullOrEmpty(returnUrl.ToString()))
+                {
+                    return RedirectToAction("AccountCreated", "Account", new { uniqueIdentifier = otp.UniqueIdentifier, returnUrl });
+                }
+
+                return RedirectToAction("AccountCreated", "Account", new { uniqueIdentifier = otp.UniqueIdentifier });
             }
 
             return View(model);

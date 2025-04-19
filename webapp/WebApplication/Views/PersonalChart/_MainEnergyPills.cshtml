@@ -36,7 +36,7 @@
 
         <div class="tab-content">
             <div id="m-essence" class="tab-pane fade in active">
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => true))
                 {
                     @Html.PanelWithSummary(Model.MainEnergy.EnergyEssenceTitle, $"{Model.MainEnergy.EnergyDescription} <hr/> {Html.Raw(Model.Overview)}", Model.MainEnergy.MainEnergySummary)
                 }

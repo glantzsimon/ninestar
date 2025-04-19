@@ -691,6 +691,11 @@
     <Content Include="Images\astrology\moon-phases\wax-99.7.png" />
     <Content Include="Images\background\stars.jpg" />
     <Content Include="Images\background\yin-yang.jpg" />
+    <Content Include="Images\emailtemplates\custom\calculator.png" />
+    <Content Include="Images\emailtemplates\custom\calendar.png" />
+    <Content Include="Images\emailtemplates\custom\directions.png" />
+    <Content Include="Images\emailtemplates\custom\houses.png" />
+    <Content Include="Images\emailtemplates\custom\magic-square.png" />
     <Content Include="Images\numerology\daily-planner.png" />
     <Content Include="Images\numerology\Elder.png" />
     <Content Include="Images\numerology\Healer.png" />
@@ -1754,6 +1759,9 @@
     <Content Include="Views\Compatibility\_InDepthAnalysisPills.cshtml" />
     <Content Include="Views\Account\_LoginJs.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\PersonalChart\_MainEnergyDetails.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Percent.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Body.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

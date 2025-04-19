@@ -18,6 +18,7 @@ namespace K9.DataAccessLayer.Models
 
         public ESystemEmailTemplate SystemEmailTemplate { get; set; }
 
+        [UIHint("Body")]
         [Required]
         [AllowHtml]
         [DataType(DataType.MultilineText)]

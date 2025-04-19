@@ -4,18 +4,18 @@
     @if (Model != null && Model.IsProcessed)
     {
         @Html.Partial("ActionLinkButtons/_PersonalProfileWithForm")
-        <span class="margin-right-2 desktop-only"></span>
+        <span class="desktop-only"></span>
         @Html.Partial("ActionLinkButtons/_PredictionsWithForm")
-        <span class="margin-right-1 desktop-only"></span>
+        <span class="desktop-only"></span>
         @Html.Partial("ActionLinkButtons/_NumerologyWithForm")
-        <span class="margin-right-1 desktop-only"></span>
+        <span class="desktop-only"></span>
     }
     else
     {
         @Html.Partial("ActionLinkButtons/_PersonalProfile")
         <span class="desktop-only"></span>
         @Html.Partial("ActionLinkButtons/_Predictions")
-        <span class="margin-right-1 desktop-only"></span>
+        <span class="desktop-only"></span>
         @Html.Partial("ActionLinkButtons/_Numerology")
     }
 

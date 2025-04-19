@@ -1106,7 +1106,7 @@
     <value>articles\en-gb\compatibilitymetadescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="LogIntoYourAccountToView" xml:space="preserve">
-    <value>This content is available to members only. Please log into your account to view.</value>
+    <value>Please log in or create an account to view more.</value>
   </data>
   <data name="OverviewLabel" xml:space="preserve">
     <value>Overview</value>
@@ -6465,5 +6465,17 @@
   </data>
   <data name="PleaseEnterPersonalDetails" xml:space="preserve">
     <value>To create your free birth chart, we need the following details:</value>
+  </data>
+  <data name="DiscountedPriceLabel" xml:space="preserve">
+    <value>Discounted Price</value>
+  </data>
+  <data name="DynamicFields" xml:space="preserve">
+    <value>Dynamic Fields</value>
+  </data>
+  <data name="Images" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Sign In</value>
   </data>
 </root>

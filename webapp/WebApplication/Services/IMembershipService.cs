@@ -31,5 +31,6 @@ namespace K9.WebApplication.Services
         List<UserMembership> GetActiveUserMemberships(int userId, bool includeScheduled = false);
         UserMembership GetActiveUserMembership(int? userId = null);
         UserMembership GetActiveUserMembership(string accountNumber);
+        MembershipOption GetMembershipOption(int id);
     }
 }

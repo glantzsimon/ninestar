@@ -7,6 +7,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Packages;
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace K9.WebApplication.Services
 {
@@ -100,11 +101,9 @@ namespace K9.WebApplication.Services
 
             return Parse(template, recipientFirstName, unsubscribeLink, data);
         }
-        
+
         private string Parse(EmailTemplate emailTemplate, string recipientFirstName, string unsubscribeLink, object data)
         {
-
-
             return Parse(emailTemplate.Subject, emailTemplate.HtmlBody, recipientFirstName, unsubscribeLink, data);
         }
 
@@ -133,6 +132,9 @@ namespace K9.WebApplication.Services
                 FirstName = recipientFirstName
             });
 
+            // Parse any images found in the body
+            body = ExpandInlineImages(body);
+
             return TemplateParser.Parse(Globalisation.Dictionary.BaseEmailTemplate, new
             {
                 FirstName = recipientFirstName,
@@ -149,6 +151,23 @@ namespace K9.WebApplication.Services
                 HeaderImageSrc = $"{My.DefaultValuesConfiguration.BaseEmailTemplateImagesPath}/emailtemplates/email-template-header.jpg",
                 CompanyLogoSrc = $"{My.DefaultValuesConfiguration.BaseEmailTemplateImagesPath}/company/logo-small.png",
             });
+        }
+
+        private static string ExpandInlineImages(string body)
+        {
+            var pattern = @"\{img\s+src=""(?<src>[^""]+)""\s+alt=""(?<alt>[^""]*)""\s*/\}";
+
+            return Regex.Replace(body, pattern, match =>
+            {
+                var src = match.Groups["src"].Value;
+                var alt = match.Groups["alt"].Value;
+
+                return $@"<tr>
+                            <td align=""center"" style=""padding: 20px;"">
+                                <img src=""{src}"" alt=""{alt}"" width=""600"" class=""responsive-img"" style=""display: block; width: 100%; max-width: 600px; height: auto;"">
+                            </td>
+                        </tr>";
+            }, RegexOptions.IgnoreCase);
         }
     }
 }

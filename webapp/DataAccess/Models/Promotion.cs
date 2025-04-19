@@ -50,6 +50,7 @@ namespace K9.DataAccessLayer.Models
 
         private int? discountPercent;
 
+        [UIHint("Percent")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountPercentLabel)]
         public int DiscountPercent
         {
@@ -70,7 +71,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsReusableLabel)]
         public bool IsReusable { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountedPriceLabel)]
         [DataType(DataType.Currency)]
         public double SpecialPrice { get; set; }
         

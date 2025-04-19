@@ -7,6 +7,7 @@ namespace K9.WebApplication.Models
     public class NineStarKiDirection
     {
         public string Name { get; }
+        public string Title { get; }
         public string Description { get; }
         public NineStarKiEnergy Energy { get; }
         public EUnfavourableDirection UnfavourableDirection { get; }
@@ -18,6 +19,7 @@ namespace K9.WebApplication.Models
         {
             UnfavourableDirection = unfavourableDirection;
             Name = unfavourableDirection.GetAttribute<EnumDescriptionAttribute>().Name;
+            Title = unfavourableDirection.GetAttribute<EnumDescriptionAttribute>().GetDescription();
             Description = description;
             Energy = energy;
         }

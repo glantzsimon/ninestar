@@ -20,12 +20,36 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IMailingListService _mailingListService;
         private readonly IMailerService _mailerService;
+        private readonly IPromotionService _promotionService;
 
-        public EmailTemplatesController(IControllerPackage<EmailTemplate> controllerPackage, INineStarKiPackage nineStarKiPackage, IMailingListService mailingListService, IMailerService mailerService)
+        public EmailTemplatesController(IControllerPackage<EmailTemplate> controllerPackage, INineStarKiPackage nineStarKiPackage, IMailingListService mailingListService, IMailerService mailerService, IPromotionService promotionService)
             : base(controllerPackage, nineStarKiPackage)
         {
             _mailingListService = mailingListService;
             _mailerService = mailerService;
+            _promotionService = promotionService;
+
+            RecordBeforeUpdate += EmailTemplatesController_RecordBeforeUpdate;
+        }
+
+        private void EmailTemplatesController_RecordBeforeUpdate(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
+        {
+            var emailTemplate = (EmailTemplate)e.Item;
+            if (emailTemplate.PromotionId.HasValue)
+            {
+                emailTemplate.Promotion = _promotionService.Find(emailTemplate.PromotionId.Value);
+            }
+
+            if (emailTemplate.MembershipOptionId.HasValue)
+            {
+                emailTemplate.MembershipOption =
+                    My.MembershipService.GetMembershipOption(emailTemplate.MembershipOptionId.Value);
+
+                if (emailTemplate.Promotion != null)
+                {
+                    emailTemplate.Promotion.MembershipOption = emailTemplate.MembershipOption;
+                }
+            }
         }
 
         [Route("send-to-user")]

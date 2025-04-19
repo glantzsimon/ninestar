@@ -471,6 +471,11 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public MembershipOption GetMembershipOption(int id)
+        {
+            return _membershipOptionRepository.Find(id);
+        }
+
         private void TerminateExistingMemberships(int userId)
         {
             var userMemberships = GetActiveUserMemberships(userId);

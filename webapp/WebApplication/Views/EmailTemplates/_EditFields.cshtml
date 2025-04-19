@@ -3,38 +3,36 @@
 @using K9.WebApplication.ViewModels
 @model EmailTemplate
 
-@Html.Partial("_DynamicFields", new EmailTemplateDynamicFieldsViewModel())
-
-<hr />
+@Html.HiddenFor(e => e.MembershipOptionId)
 
 @Html.BootstrapEditorFor(model => model.PromotionId)
 
 <div class="row">
     <div class="col-sm-6">
-        @Html.LabelFor(model => model.Promotion.SubscriptionTypeName)
-        <input class="  form-control" culture-info="" id="SubscriptionTypeName" type="text" value="" disabled>
+        @Html.BootstrapDisplayFor(model => model.Promotion.SubscriptionTypeName)
     </div>
     <div class="col-sm-6">
-        @Html.LabelFor(model => model.Promotion.FullPrice)
-        <input class="  form-control" culture-info="" id="FullPrice" type="text" value="" disabled>
+        @Html.BootstrapDisplayFor(model => model.Promotion.FullPrice)
     </div>
 </div>
 
 <div class="row">
     <div class="col-sm-6">
-        @Html.LabelFor(model => model.Promotion.DiscountPercent)
-        <input class="  form-control" culture-info="" id="DiscountPercent" type="text" value="" disabled>
+        @Html.BootstrapDisplayFor(model => model.Promotion.DiscountPercent)
     </div>
     <div class="col-sm-6">
-        @Html.LabelFor(model => model.Promotion.SpecialPrice)
-        <input class="  form-control" culture-info="" id="SpecialPrice" type="text" value="" disabled>
+        @Html.BootstrapDisplayFor(model => model.Promotion.SpecialPrice)
     </div>
 </div>
 
 <hr />
 
+@Html.Partial("_DynamicFields", new EmailTemplateDynamicFieldsViewModel())
+
 @Html.BootstrapEditorFor(model => model.Name)
+
 @Html.BootstrapEditorFor(model => model.Subject)
+
 @Html.BootstrapEditorFor(model => model.HtmlBody)
 
 <script>
@@ -52,11 +50,13 @@
                 function(result) {
                     if (result.data.success) {
                         var promotion = result.data.promotion;
-                        
-                        $("#SubscriptionTypeName").val(promotion.SubscriptionTypeName);
-                        $("#DiscountPercent").val(promotion.DiscountPercent + "%");
-                        $("#FullPrice").val(promotion.FormattedFullPrice);
-                        $("#SpecialPrice").val(promotion.FormattedSpecialPrice);
+
+                        $("#MembershipOptionId").val(promotion.MembershipOptionId);
+
+                        $("div[data-input-id='SubscriptionTypeName'] input").val(promotion.SubscriptionTypeName);
+                        $("div[data-input-id='DiscountPercent'] input").val(promotion.DiscountPercent + "%");
+                        $("div[data-input-id='FullPrice'] input").val(promotion.FormattedFullPrice);
+                        $("div[data-input-id='SpecialPrice'] input").val(promotion.FormattedSpecialPrice);
                     } else {
                         that.changeLoadingState(false);
                         alert(result.errorMessage || errorMessage);

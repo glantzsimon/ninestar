@@ -57,12 +57,7 @@
             </ul>
             <div class="tab-content">
                 <div id="details" class="tab-pane fade in active">
-                    @using (Html.PayWall(ESection.Profile, Model, () => true))
-                    {
-                        @Html.Panel(Model.MainEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.MainEnergy).ToString()} " +
-                                                                  $"{Html.Partial("_ProfileHeaderInfo", Model.MainEnergy).ToString()} " +
-                                                                  $"{Html.Partial("_MainEnergyPills").ToString()}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                    }
+                    @Html.Panel(Model.MainEnergy.EnergyTitle, Html.Partial("_MainEnergyDetails").ToString(), "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 </div>
                 @if (Model.PersonModel.IsSixteenOrOver())
                 {

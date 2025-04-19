@@ -6631,6 +6631,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Discounted Price.
+        /// </summary>
+        public static string DiscountedPriceLabel {
+            get {
+                return ResourceManager.GetString("DiscountedPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discount.
         /// </summary>
         public static string DiscountLabel {
@@ -6952,6 +6961,15 @@ namespace K9.Globalisation {
         public static string dynamic_modality {
             get {
                 return ResourceManager.GetString("dynamic_modality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dynamic Fields.
+        /// </summary>
+        public static string DynamicFields {
+            get {
+                return ResourceManager.GetString("DynamicFields", resourceCulture);
             }
         }
         
@@ -10941,6 +10959,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Images.
+        /// </summary>
+        public static string Images {
+            get {
+                return ResourceManager.GetString("Images", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In any direction, as {Energy} is at the centre.
         /// </summary>
         public static string InAnyDirection {
@@ -12576,7 +12603,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This content is available to members only. Please log into your account to view..
+        ///   Looks up a localized string similar to Please log in or create an account to view more..
         /// </summary>
         public static string LogIntoYourAccountToView {
             get {
@@ -17308,7 +17335,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
         ///&lt;p&gt;You have received a promo code to sign up to 9 Star Ki Astrology. With this promotion, you will get the following {PriceDescription}:&lt;/p&gt;
-        ///&lt;p&gt;{PromoDetails}&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;{PromoDetails}&lt;/strong&gt;&lt;/p&gt;
         ///&lt;p&gt;Click &lt;a href=&quot;{PromoLink}&quot;&gt;here&lt;/a&gt; to sign up and take advantage of this offer now.&lt;/p&gt;.
         /// </summary>
         public static string PromoCodeOfferedEmail {
@@ -18794,6 +18821,15 @@ namespace K9.Globalisation {
         public static string SiblingElements {
             get {
                 return ResourceManager.GetString("SiblingElements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign In.
+        /// </summary>
+        public static string SignIn {
+            get {
+                return ResourceManager.GetString("SignIn", resourceCulture);
             }
         }
         

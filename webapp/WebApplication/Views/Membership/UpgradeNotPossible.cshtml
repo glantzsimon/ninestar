@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = K9.Globalisation.Dictionary.MembershipLabel;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.UpgradeNotPossibleTitle;
+    Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.TitleTag = "text-center";
+}
+
+<div class="margin-bottom-10">
+    @Html.Alert(EAlertType.Fail, K9.Globalisation.Dictionary.UpgradeNotPossible, Html.ActionLink(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account"))
+</div>

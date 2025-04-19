@@ -1764,6 +1764,7 @@
     <Content Include="Views\PersonalChart\_MainEnergyDetails.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Percent.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Body.cshtml" />
+    <Content Include="Views\Membership\UpgradeNotPossible.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

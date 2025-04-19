@@ -22203,6 +22203,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Upgrade Not Possible.
+        /// </summary>
+        public static string UpgradeNotPossibleTitle {
+            get {
+                return ResourceManager.GetString("UpgradeNotPossibleTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upgrade Required.
         /// </summary>
         public static string UpgradeRequired {

@@ -6490,4 +6490,7 @@
   <data name="UpgradeNotPossible" xml:space="preserve">
     <value>It's not possible to upgrade to the selected membership.</value>
   </data>
+  <data name="UpgradeNotPossibleTitle" xml:space="preserve">
+    <value>Upgrade Not Possible</value>
+  </data>
 </root>

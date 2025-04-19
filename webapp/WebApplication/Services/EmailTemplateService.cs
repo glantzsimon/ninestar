@@ -155,7 +155,7 @@ namespace K9.WebApplication.Services
 
         private static string ExpandInlineImages(string body)
         {
-            var pattern = @"\{img\s+src=""(?<src>[^""]+)""\s+alt=""(?<alt>[^""]*)""\s*/\}";
+            var pattern = @"<img\s+[^>]*?src\s*=\s*[""'](?<src>[^""']+)[""'][^>]*?alt\s*=\s*[""'](?<alt>[^""']*)[""'][^>]*?>";
 
             return Regex.Replace(body, pattern, match =>
             {

@@ -70,7 +70,10 @@ namespace K9.WebApplication.Controllers
             }
             catch (UpgradeNotPossibleException)
             {
-                return View("UpgradeNotPossible");
+                var membershipOption = My.MembershipService.GetMembershipOption(membershipOptionId);
+                ModelState.AddModelError("", Globalisation.Dictionary.UpgradeNotPossible);
+                TempData["UpgradeImpossible"] = true;
+                return View(new MembershipModel(Current.UserId, membershipOption));
             }
             catch (Exception e)
             {

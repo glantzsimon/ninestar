@@ -107,7 +107,7 @@ foreach ($file in $jsFiles) {
 }
 
 # --- Copy Images ---
-$imageExtensions = @("*.png", "*.jpg", "*.jpeg", "*.PNG", "*.JPG", "*.JPEG")
+$imageExtensions = @("*.png", "*.jpg", "*.jpeg", "*.gif", "*.PNG", "*.JPG", "*.JPEG", "*.GIF")
 $imageFiles = @()
 foreach ($ext in $imageExtensions) {
     $imageFiles += Get-ChildItem -Path "$vaultImagesPath" -Include $ext -Recurse -File -Force

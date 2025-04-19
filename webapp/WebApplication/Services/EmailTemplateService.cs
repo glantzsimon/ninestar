@@ -163,7 +163,7 @@ namespace K9.WebApplication.Services
                 var alt = match.Groups["alt"].Value;
 
                 return $@"<tr>
-                            <td align=""center"" style=""padding: 20px;"">
+                            <td align=""center"" style=""padding: 20px; padding-top: 0;"">
                                 <img src=""{src}"" alt=""{alt}"" width=""600"" class=""responsive-img"" style=""display: block; width: 100%; max-width: 600px; height: auto;"">
                             </td>
                         </tr>";

@@ -68,6 +68,11 @@ namespace K9.WebApplication.Controllers
             {
                 return View("AlreadySubscribed");
             }
+            catch (UpgradeNotPossibleException)
+            {
+                ModelState.AddModelError("", Globalisation.Dictionary.UpgradeNotPossible);
+                return View(new MembershipModel(Current.UserId, new MembershipOption { Id = membershipOptionId }));
+            }
             catch (Exception e)
             {
                 Logger.Log(LogLevel.Error, e.GetFullErrorMessage);

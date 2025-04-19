@@ -4,7 +4,14 @@
 <div class="text-center">
     @if (Model.AlertType != EAlertType.Unspecified)
     {
-        <img loading="lazy" alt="@Model.AlertType.ToString()" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/@Model.GetAlertImage().ToLower()" />
+        if (Model.AlertType == EAlertType.Fail)
+        {
+            <img loading="lazy" alt="@Model.AlertType.ToString()" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/fail.gif" />
+        }
+        else
+        {
+            <img loading="lazy" alt="@Model.AlertType.ToString()" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/@Model.GetAlertImage().ToLower()" />
+        }
     }
 
     <h3 style="margin-top: 20px !Important;">

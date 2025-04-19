@@ -3866,6 +3866,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, you cannot upgrade to the selected membership. .
         /// </summary>
         public static string CannotSwitchMembershipError {
@@ -8752,7 +8761,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Oops! We encountered a problem processing your request..
+        ///   Looks up a localized string similar to Something went a little sideways….
         /// </summary>
         public static string FriendlyErrorMessage {
             get {
@@ -8761,7 +8770,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please try again and if the problem persists, let us know and we&apos;ll gladly assist you further. .
+        ///   Looks up a localized string similar to The page didn’t quite load as expected, but don’t worry — everything else is still working smoothly..
         /// </summary>
         public static string FriendlyErrorMessageOther {
             get {
@@ -17585,6 +17594,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You&apos;ll be redirected to the homepage in.
+        /// </summary>
+        public static string RedirectMessage {
+            get {
+                return ResourceManager.GetString("RedirectMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reflective.
         /// </summary>
         public static string Reflective {
@@ -18109,6 +18127,15 @@ namespace K9.Globalisation {
         public static string SecondPerson {
             get {
                 return ResourceManager.GetString("SecondPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to seconds.
+        /// </summary>
+        public static string SecondsLower {
+            get {
+                return ResourceManager.GetString("SecondsLower", resourceCulture);
             }
         }
         
@@ -22163,6 +22190,15 @@ namespace K9.Globalisation {
         public static string UpgradeMembershipText {
             get {
                 return ResourceManager.GetString("UpgradeMembershipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It&apos;s not possible to upgrade to the selected membership..
+        /// </summary>
+        public static string UpgradeNotPossible {
+            get {
+                return ResourceManager.GetString("UpgradeNotPossible", resourceCulture);
             }
         }
         

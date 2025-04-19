@@ -64,6 +64,7 @@ namespace K9.WebApplication.Controllers
 
             TempData["ReturnUrl"] = returnUrl;
             TempData["RetrieveLast"] = retrieveLast;
+            TempData.Keep();
             return View(new UserAccount.LoginModel());
         }
 
@@ -93,14 +94,18 @@ namespace K9.WebApplication.Controllers
                 switch (My.AccountService.Login(model.UserName, model.Password, model.RememberMe))
                 {
                     case ELoginResult.Success:
-                        if (TempData["ReturnUrl"] != null)
+                        var returnUrl = TempData["ReturnUrl"]?.ToString();
+                        if (!string.IsNullOrEmpty(returnUrl))
                         {
-                            return Redirect(TempData["ReturnUrl"].ToString());
+                            return Redirect(returnUrl);
                         }
-                        if (TempData["RetrieveLast"] != null)
+                        
+                        var retrieveLast = TempData["RetrieveLast"]?.ToString();
+                        if (!string.IsNullOrEmpty(retrieveLast))
                         {
                             return RedirectToAction("RetrieveLast", "PersonalChart");
                         }
+
                         return RedirectToAction("Index", "Home");
 
                     case ELoginResult.AccountLocked:
@@ -1042,6 +1047,7 @@ namespace K9.WebApplication.Controllers
         {
             TempData["AdditionalError"] = additionalError;
             TempData["ReturnUrl"] = returnUrl;
+            TempData.Keep();
 
             var otp = My.AccountService.GetAccountActivationOTP(uniqueIdentifier);
             if (otp == null)
@@ -1086,6 +1092,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult VerifySixDigitCode(AccountActivationModel model, string returnUrl = null)
         {
             TempData["ReturnUrl"] = returnUrl;
+            TempData.Keep();
 
             if (ModelState.IsValid)
             {

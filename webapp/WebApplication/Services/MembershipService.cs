@@ -180,23 +180,14 @@ namespace K9.WebApplication.Services
 
             if (!string.IsNullOrEmpty(promoCode))
             {
-                try
-                {
-                    promotionModel = _promotionsRepository.Find(e => e.Code == promoCode).FirstOrDefault();
-                    if (promotionModel == null)
-                    {
-                        var errorMessage =
-                            $"MembershipService => GetPurchaseMembershipModel => Invalid Promo Code: {promoCode}";
-                        My.Logger.Error(errorMessage);
-                        throw new Exception(errorMessage);
-                    }
-                }
-                catch (Exception e)
+                promotionModel = _promotionsRepository.Find(e => e.Code == promoCode).FirstOrDefault();
+
+                if (promotionModel == null)
                 {
                     var errorMessage =
-                        $"MembershipService => GetPurchaseMembershipModel => Error: {e.GetFullErrorMessage()}";
+                        $"MembershipService => GetPurchaseMembershipModel => Invalid Promo Code: {promoCode}";
                     My.Logger.Error(errorMessage);
-                    throw;
+                    throw new InvalidPromoCodeException(promoCode);
                 }
             }
 

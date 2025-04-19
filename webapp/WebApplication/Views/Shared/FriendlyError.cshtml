@@ -2,9 +2,41 @@
     ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
+
 @Html.Alert(EAlertType.Fail, K9.Globalisation.Dictionary.FriendlyErrorMessage, K9.Globalisation.Dictionary.FriendlyErrorMessageOther)
+
+<div class="text-center margin-10">
+    <p id="redirectMessage">
+        @Dictionary.RedirectMessage <span id="redirectCountdown">15</span> @Dictionary.SecondsLower.
+        <a href="#" id="cancelRedirect">@Dictionary.Cancel</a>
+    </p>
+</div>
 
 <hr />
 <div class="text-center margin-bottom-10">
     @Html.ActionLink(K9.Base.Globalisation.Dictionary.ContactSupport, "ContactUs", "Support") | @Html.ActionLink(K9.Base.Globalisation.Dictionary.GoBackHome, "Index", "PersonalChart")
 </div>
+
+<script>
+    let secondsRemaining = 15;
+    const countdownEl = document.getElementById("redirectCountdown");
+    const redirectUrl = "@Url.Action("Index", "Home")";
+
+    const interval = setInterval(() => {
+        secondsRemaining--;
+        if (countdownEl) {
+            countdownEl.textContent = secondsRemaining;
+        }
+
+        if (secondsRemaining <= 0) {
+            clearInterval(interval);
+            window.location.href = redirectUrl;
+        }
+    }, 1000);
+
+    document.getElementById("cancelRedirect").addEventListener("click", function (e) {
+        e.preventDefault();
+        clearInterval(interval);
+        document.getElementById("redirectMessage").textContent = "Auto-redirect canceled.";
+    });
+</script>

@@ -384,6 +384,7 @@
     <Compile Include="Enums\ENineStarKiElement.cs" />
     <Compile Include="Enums\ENineStarKiElementEnumMetaDataAttribute.cs" />
     <Compile Include="Enums\EOrgan.cs" />
+    <Compile Include="Exceptions\InvalidPromoCodeException.cs" />
     <Compile Include="Exceptions\UpgradeNotPossibleException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\EmailTemplateAlreadySentException.cs" />
@@ -1028,6 +1029,7 @@
     <Content Include="Images\ui\alchemy.png" />
     <Content Include="Images\ui\daily-cycle.png" />
     <Content Include="Images\ui\daily-planner.png" />
+    <Content Include="Images\ui\fail.gif" />
     <Content Include="Images\ui\finances.png" />
     <Content Include="Images\ui\five-elements.png" />
     <Content Include="Images\ui\hourly-cycle.png" />

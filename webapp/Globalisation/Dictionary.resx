@@ -3434,10 +3434,10 @@
     <value>First Discount</value>
   </data>
   <data name="FriendlyErrorMessage" xml:space="preserve">
-    <value>Oops! We encountered a problem processing your request.</value>
+    <value>Something went a little sideways…</value>
   </data>
   <data name="FriendlyErrorMessageOther" xml:space="preserve">
-    <value>Please try again and if the problem persists, let us know and we'll gladly assist you further. </value>
+    <value>The page didn’t quite load as expected, but don’t worry — everything else is still working smoothly.</value>
   </data>
   <data name="MailingList" xml:space="preserve">
     <value>Mailing List</value>
@@ -6466,6 +6466,9 @@
   <data name="PleaseEnterPersonalDetails" xml:space="preserve">
     <value>To create your free birth chart, we need the following details:</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="DiscountedPriceLabel" xml:space="preserve">
     <value>Discounted Price</value>
   </data>
@@ -6475,7 +6478,16 @@
   <data name="Images" xml:space="preserve">
     <value>Images</value>
   </data>
+  <data name="RedirectMessage" xml:space="preserve">
+    <value>You'll be redirected to the homepage in</value>
+  </data>
+  <data name="SecondsLower" xml:space="preserve">
+    <value>seconds</value>
+  </data>
   <data name="SignIn" xml:space="preserve">
     <value>Sign In</value>
+  </data>
+  <data name="UpgradeNotPossible" xml:space="preserve">
+    <value>It's not possible to upgrade to the selected membership.</value>
   </data>
 </root>

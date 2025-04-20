@@ -23,6 +23,15 @@ namespace K9.WebApplication.Controllers
             : base(controllerPackage, nineStarKiPackage)
         {
             _articlesService = articlesService;
+
+            RecordBeforeUpdate += ArticlesController_RecordBeforeUpdate;
+        }
+
+        private void ArticlesController_RecordBeforeUpdate(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
+        {
+            var article = e.Item as Article;
+            var fullArticle = _articlesService.GetArticle(article.Id);
+            article.Tags = fullArticle.Tags;
         }
 
         [ValidateAntiForgeryToken]

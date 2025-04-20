@@ -2,6 +2,7 @@
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using System.Web.Mvc;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -20,8 +21,11 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.AllTags = _articlesService.GetAllTags();
-            return View(_articlesService.GetArticles());
+            return View(new BlogViewModel
+            {
+                Articles = _articlesService.GetArticles(),
+                Tags = _articlesService.GetAllTags()
+            });
         }
 
         public ActionResult Details(int id)

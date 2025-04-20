@@ -8,6 +8,7 @@ using K9.WebApplication.Services;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using K9.SharedLibrary.Helpers.Html;
 
 namespace K9.WebApplication.Controllers
 {
@@ -32,6 +33,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
+                    HtmlParser.ParseHtml(ref model);
                     _articlesService.CreateArticle(model);
                     return RedirectToAction("Index");
                 }
@@ -53,6 +55,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
+                    HtmlParser.ParseHtml(ref model);
                     _articlesService.SaveArticle(model);
                     return RedirectToAction("Index");
                 }

@@ -49,7 +49,7 @@ namespace K9.WebApplication.Services
         {
             return _tagsRepository.List().OrderBy(e => e.Name).ToList();
         }
-
+        
         public void CreateArticle(Article article)
         {
             _articlesRepository.Create(article);

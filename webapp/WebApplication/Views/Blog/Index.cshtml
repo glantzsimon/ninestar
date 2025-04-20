@@ -1,12 +1,10 @@
 ﻿@using K9.SharedLibrary.Helpers.Html
 @using K9.WebApplication.Options
-@model IEnumerable<Article>
+@model K9.WebApplication.ViewModels.BlogViewModel
 @{
     ViewBag.Title = Dictionary.LatestArticles;
     ViewBag.SubTitle = Dictionary.LatestArticles;
     Layout = "../Shared/_LayoutForm.cshtml";
-
-    var tags = ViewBag.AllTags as List<string>;
 }
 
 @Html.Partial("_BetaPopup")
@@ -22,35 +20,35 @@
                     })
                 </div>
                 <div class="col-sm-6 text-right">
-                    <div id="tagFilters" class="btn-group" style="margin-top: 5px;">
-                        @foreach (var tag in tags)
+                    <div id="tagFilters" class="btn-group">
+                        @foreach (var tag in Model.Tags)
                         {
-                            <button class="btn btn-default btn-sm" onclick="filterByTag('@tag')">#@tag</button>
+                            <button class="btn btn-default btn-sm" onclick="filterByTag('@tag.Name')">#@tag.Name</button>
                         }
                     </div>
                 </div>
             </div>
 
             <div id="blogGrid" class="row">
-                @foreach (var post in Model)
+                @foreach (var article in Model.Articles)
                 {
                     <div class="col-sm-6 col-md-4 blog-card">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <h4><a href="@Url.Action("Details", "Blog", new { id = post.Id })">@post.Title</a></h4>
-                                <p class="text-muted"><small>@post.PublishedOnText</small></p>
-                                <p>@post.Summary</p>
+                                <h4><a href="@Url.Action("Details", "Blog", new { id = article.Id })">@article.Title</a></h4>
+                                <p class="text-muted"><small>@article.PublishedOnText</small></p>
+                                <p>@article.Summary</p>
 
                                 <p>
-                                    @foreach (var tag in post.Tags)
+                                    @foreach (var tag in article.Tags)
                                     {
-                                        <span class="label label-info">#@tag</span>
+                                        <span class="label label-info">#@tag.Name</span>
                                         @:&nbsp;
                                     }
                                 </p>
 
                                 <p>
-                                    <a href="@Url.Action("Details", "Blog", new { id = post.Id })" class="read-more">Read more →</a>
+                                    <a href="@Url.Action("Details", "Blog", new { id = article.Id })" class="read-more">@Dictionary.ReadMore</a>
                                 </p>
                             </div>
                         </div>

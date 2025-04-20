@@ -405,6 +405,7 @@
     <Compile Include="Services\IAstrologyService.cs" />
     <Compile Include="Services\AstrologyService.cs" />
     <Compile Include="Services\ArticlesService.cs" />
+    <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="ViewModels\ArticleDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\MagicSquareViewModel.cs" />
     <Compile Include="ViewModels\NineStarKiDrectionsChartViewModel.cs" />

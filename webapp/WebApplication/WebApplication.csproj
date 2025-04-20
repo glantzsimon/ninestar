@@ -342,6 +342,8 @@
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\NumerologyController.cs" />
     <Compile Include="Controllers\EmailQueueController.cs" />
     <Compile Include="Controllers\MailingListsController.cs" />
@@ -401,6 +403,7 @@
     <Compile Include="Services\IGoogleService.cs" />
     <Compile Include="Services\IAstrologyService.cs" />
     <Compile Include="Services\AstrologyService.cs" />
+    <Compile Include="ViewModels\ArticleDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\MagicSquareViewModel.cs" />
     <Compile Include="ViewModels\NineStarKiDrectionsChartViewModel.cs" />
     <Compile Include="ViewModels\PlannerViewModelItem.cs" />
@@ -1174,6 +1177,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\archive\upload\ArchiveItem\" />
+    <Folder Include="Images\articles\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -1765,6 +1769,15 @@
     <Content Include="Views\Shared\DisplayTemplates\Percent.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Body.cshtml" />
     <Content Include="Views\Membership\UpgradeNotPossible.cshtml" />
+    <Content Include="Views\Articles\_DisplayFields.cshtml" />
+    <Content Include="Views\Articles\_DynamicFields.cshtml" />
+    <Content Include="Views\Articles\_EditFields.cshtml" />
+    <Content Include="Views\Articles\Create.cshtml" />
+    <Content Include="Views\Articles\Delete.cshtml" />
+    <Content Include="Views\Articles\Details.cshtml" />
+    <Content Include="Views\Articles\Edit.cshtml" />
+    <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

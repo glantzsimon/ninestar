@@ -3076,6 +3076,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Article.
+        /// </summary>
+        public static string Article {
+            get {
+                return ResourceManager.GetString("Article", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Articles.
+        /// </summary>
+        public static string Articles {
+            get {
+                return ResourceManager.GetString("Articles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assign Credits.
         /// </summary>
         public static string AssignCredits {
@@ -3596,6 +3614,15 @@ namespace K9.Globalisation {
         public static string Blessings {
             get {
                 return ResourceManager.GetString("Blessings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blog.
+        /// </summary>
+        public static string Blog {
+            get {
+                return ResourceManager.GetString("Blog", resourceCulture);
             }
         }
         
@@ -17429,6 +17456,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Publish.
+        /// </summary>
+        public static string Publish {
+            get {
+                return ResourceManager.GetString("Publish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Published On.
+        /// </summary>
+        public static string PublishedOnLabel {
+            get {
+                return ResourceManager.GetString("PublishedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchased Cancelled.
         /// </summary>
         public static string PurchaseCancelled {
@@ -21726,6 +21771,15 @@ namespace K9.Globalisation {
         public static string TimeZones {
             get {
                 return ResourceManager.GetString("TimeZones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string TitleLabel {
+            get {
+                return ResourceManager.GetString("TitleLabel", resourceCulture);
             }
         }
         

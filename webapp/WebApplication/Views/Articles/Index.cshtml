@@ -1,0 +1,55 @@
+﻿@using K9.Base.WebApplication.Controllers
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Models
+@using EButtonType = K9.SharedLibrary.Models.EButtonType
+@using SessionHelper = K9.WebApplication.Helpers.SessionHelper
+@model EmailTemplate
+
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<EmailTemplate>
+{
+    AllowCreate = true,
+    AllowEdit = true,
+    AllowDelete = SessionHelper.CurrentUserIsAdmin(),
+    VisibleColumns = new List<string>
+    {
+        "Name",
+        "MembershipOptionName",
+        "Discount",
+        "Subject"
+    },
+    CustomButtons = new List<IButton>
+    {
+        new Button
+        {
+            Text = Dictionary.SendToMailingList,
+            Controller = "",
+            Action = "send-to-mailinglist",
+            ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa-envelope"
+
+        },
+
+        new Button
+        {
+            Text = Dictionary.SendToToUser,
+            Controller = "",
+            Action = "send-to-user",
+            ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa-envelope"
+        },
+
+        new Button
+        {
+            Text = Dictionary.Test,
+            Controller = "",
+            Action = "test",
+            ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa-envelope"
+        }
+    }
+})

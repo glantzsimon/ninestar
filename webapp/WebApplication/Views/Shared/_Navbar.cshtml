@@ -47,6 +47,8 @@
                         <li class="@ViewContext.GetActiveClass("ViewAvailableSlots", "Consultation") sub-item"><a href="@Url.Action("ViewAvailableSlots", "Consultation")">@Dictionary.ViewAvailableSlots</a></li>
 
                         <li class="divider"></li>
+                        
+                        <li class="@ViewContext.GetActiveClass("Index", "Articles") sub-item"><a href="@Url.Action("Index", "Articles")">@Dictionary.Articles</a></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("Index", "Donations")">@Dictionary.Donations</a></li>
 
@@ -136,11 +138,11 @@
 
                         <li class="desktop-only @ViewContext.GetActiveClass("Index", "Numerology")"><a href="@Url.Action("Index", "Numerology")"> <span class="">@Dictionary.KarmicNumerology</span></a></li>
 
-                        <li class="desktop-only @ViewContext.GetActiveClass("Index", "Biorhythms")"><a href="@Url.Action("Index", "Biorhythms")"> <span class="">@Dictionary.BiorhythmsLabel</span></a></li>
-
                         <li class="desktop-only @ViewContext.GetActiveClass("GptInfo", "Home")"><a href="@Url.Action("GptInfo", "Home")"> <span class="">@Dictionary.AIAstrologer</span></a></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "KnowledgeBase")"><a href="@Url.Action("Index", "KnowledgeBase")"> @Dictionary.KnowledgeBase</a></li>
+
+                        <li class="desktop-only @ViewContext.GetActiveClass("Index", "Blog")"><a href="@Url.Action("Index", "Blog")"> <span class="">@Dictionary.Blog</span></a></li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div>

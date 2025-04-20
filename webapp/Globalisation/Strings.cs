@@ -69,6 +69,8 @@
             public const string ConsultationDurationLabel = "ConsultationDurationLabel";
             public const string DurationLabel = "Duration";
             public const string DonatedOnLabel = "DonatedOnLabel";
+            public const string PublishedOnLabel = "PublishedOnLabel";
+            public const string TitleLabel = "TitleLabel";
             public const string CompletedOnLabel = "CompletedOnLabel";
             public const string IsProcessedLabel = "IsProcessedLabel";
             public const string ResultLabel = "ResultLabel";
@@ -184,6 +186,8 @@
 
             public const string RedeemPromoCode = "RedeemPromoCode";
             public const string AllowMarketingEmails = "AllowMarketingEmails";
+            public const string Articles = "Articles";
+            public const string Article = "Article";
             public const string UserData = "UserData";
             public const string UserDatas = "UserDatas";
             public const string Contacts = "Contacts";

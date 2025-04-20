@@ -1,0 +1,10 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.ViewModels
+@model Article
+
+@Html.Partial("_DynamicFields", new ArticleDynamicFieldsViewModel())
+
+@Html.BootstrapDisplayFor(model => model.PublishedOn)
+@Html.BootstrapEditorFor(model => model.Title)
+@Html.BootstrapEditorFor(model => model.HtmlBody)

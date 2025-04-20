@@ -6493,4 +6493,22 @@
   <data name="UpgradeNotPossibleTitle" xml:space="preserve">
     <value>Upgrade Not Possible</value>
   </data>
+  <data name="Article" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="Articles" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="PublishedOnLabel" xml:space="preserve">
+    <value>Published On</value>
+  </data>
+  <data name="TitleLabel" xml:space="preserve">
+    <value>Title</value>
+  </data>
 </root>

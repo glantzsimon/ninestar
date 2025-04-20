@@ -437,6 +437,7 @@
     <Compile Include="Migrations\202504181232114_AddReusablePromotion.designer.cs">
       <DependentUpon>202504181232114_AddReusablePromotion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Article.cs" />
     <Compile Include="Models\TimeZone.cs" />
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />

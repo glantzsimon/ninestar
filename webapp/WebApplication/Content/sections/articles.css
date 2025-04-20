@@ -29,6 +29,15 @@
 .blog-card .read-more:hover {
   text-decoration: underline;
 }
+.article-container article .well {
+  background: white !important;
+}
+.article-body img {
+  width: 100% !important;
+  height: auto !important;
+  padding: 20px 0;
+}
 .form-group .tagify.form-control {
   min-height: 36px !important;
+  height: unset !important;
 }

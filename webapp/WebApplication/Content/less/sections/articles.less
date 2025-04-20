@@ -1,6 +1,6 @@
 ﻿@import "../config/colours.less";
 
-.blog-card {       
+.blog-card {
 
     .panel {
         border-radius: 10px !important;
@@ -38,13 +38,30 @@
         &:hover {
             text-decoration: underline;
         }
-    }   
+    }
+}
+
+.article-container {
+    article {
+        .well {
+            background: white !important;
+        }
+    }
+}
+
+.article-body {
+    img {
+        width: 100% !important;
+        height: auto !important;
+        padding: 20px 0;
+    }
 }
 
 .form-group {
     .tagify {
         &.form-control {
-            min-height: 36px !important;            
+            min-height: 36px !important;
+            height: unset !important;
         }
-    }
+    }    
 }

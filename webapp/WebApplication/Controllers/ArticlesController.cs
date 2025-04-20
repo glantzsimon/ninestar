@@ -32,6 +32,7 @@ namespace K9.WebApplication.Controllers
             var article = e.Item as Article;
             var fullArticle = _articlesService.GetArticle(article.Id);
             article.Tags = fullArticle.Tags;
+            article.TagsText = fullArticle.TagsText;
         }
 
         [ValidateAntiForgeryToken]

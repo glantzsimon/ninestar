@@ -29,6 +29,7 @@ namespace K9.WebApplication.Services
             if (article != null)
             {
                 article.Tags = GetTagsForArticle(id);
+                article.TagsText = ConvertTagsToTagsText(article.Tags);
             }
 
             return article;
@@ -49,7 +50,7 @@ namespace K9.WebApplication.Services
         {
             return _tagsRepository.List().OrderBy(e => e.Name).ToList();
         }
-        
+
         public void CreateArticle(Article article)
         {
             _articlesRepository.Create(article);
@@ -106,6 +107,16 @@ namespace K9.WebApplication.Services
                 ArticleId = article.Id,
                 TagId = tag.Id
             }).ToList());
+        }
+
+        private string ConvertTagsToTagsText(IEnumerable<Tag> tags)
+        {
+            var tagValues = tags
+                .Where(t => !string.IsNullOrWhiteSpace(t.Name))
+                .Select(t => new { value = t.Name })
+                .ToList();
+
+            return JsonConvert.SerializeObject(tagValues);
         }
 
     }

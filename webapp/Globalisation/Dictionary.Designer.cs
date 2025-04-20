@@ -3085,11 +3085,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Article Published.
+        /// </summary>
+        public static string ArticlePublished {
+            get {
+                return ResourceManager.GetString("ArticlePublished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The article was published successfully.
+        /// </summary>
+        public static string ArticlePublishedSuccess {
+            get {
+                return ResourceManager.GetString("ArticlePublishedSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Articles.
         /// </summary>
         public static string Articles {
             get {
                 return ResourceManager.GetString("Articles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article Tag.
+        /// </summary>
+        public static string ArticleTag {
+            get {
+                return ResourceManager.GetString("ArticleTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article Tags.
+        /// </summary>
+        public static string ArticleTags {
+            get {
+                return ResourceManager.GetString("ArticleTags", resourceCulture);
             }
         }
         
@@ -12407,6 +12443,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Latest Articles.
+        /// </summary>
+        public static string LatestArticles {
+            get {
+                return ResourceManager.GetString("LatestArticles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Late Summer.
         /// </summary>
         public static string LateSummer {
@@ -20396,6 +20441,33 @@ namespace K9.Globalisation {
         public static string SystemSettings {
             get {
                 return ResourceManager.GetString("SystemSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tag.
+        /// </summary>
+        public static string Tag {
+            get {
+                return ResourceManager.GetString("Tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tags.
+        /// </summary>
+        public static string Tags {
+            get {
+                return ResourceManager.GetString("Tags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tags.
+        /// </summary>
+        public static string TagsLabel {
+            get {
+                return ResourceManager.GetString("TagsLabel", resourceCulture);
             }
         }
         

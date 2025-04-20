@@ -2,7 +2,10 @@
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Packages;
+using K9.WebApplication.Services;
+using System;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
@@ -12,9 +15,73 @@ namespace K9.WebApplication.Controllers
     [RoutePrefix("articles")]
     public class ArticlesController : BaseNineStarKiController<Article>
     {
-        public ArticlesController(IControllerPackage<Article> controllerPackage, INineStarKiPackage nineStarKiPackage)
+        private readonly IArticlesService _articlesService;
+
+        public ArticlesController(IControllerPackage<Article> controllerPackage, INineStarKiPackage nineStarKiPackage, IArticlesService articlesService)
             : base(controllerPackage, nineStarKiPackage)
         {
+            _articlesService = articlesService;
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public new ActionResult Create(Article model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _articlesService.CreateArticle(model);
+                    return RedirectToAction("Index");
+                }
+                catch (Exception e)
+                {
+                    Logger.Error($"Articles => Create => {e.GetFullErrorMessage()}");
+                    ModelState.AddModelError("", e.GetFullErrorMessage());
+                }
+            }
+
+            return View(model);
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public new ActionResult Edit(Article model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _articlesService.SaveArticle(model);
+                    return RedirectToAction("Index");
+                }
+                catch (Exception e)
+                {
+                    Logger.Error($"Articles => Create => {e.GetFullErrorMessage()}");
+                    ModelState.AddModelError("", e.GetFullErrorMessage());
+                }
+            }
+
+            return View(model);
+        }
+
+        public ActionResult Publish(int id)
+        {
+            var article = Repository.Find(id);
+            article.PublishedOn = DateTime.UtcNow;
+            Repository.Update(article);
+
+            return RedirectToAction("PublishSuccess");
+        }
+
+        public ActionResult PublishSuccess()
+        {
+            return View();
+        }
+
+        public JsonResult GetAllTags()
+        {
+            return Json(_articlesService.GetAllTags(), JsonRequestBehavior.AllowGet);
         }
     }
 }

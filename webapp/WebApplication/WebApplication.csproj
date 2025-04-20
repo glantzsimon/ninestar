@@ -400,9 +400,11 @@
     <Compile Include="Services\GoogleService.cs" />
     <Compile Include="Services\IAITextMergeService.cs" />
     <Compile Include="Services\AITextMergeService.cs" />
+    <Compile Include="Services\IArticlesService.cs" />
     <Compile Include="Services\IGoogleService.cs" />
     <Compile Include="Services\IAstrologyService.cs" />
     <Compile Include="Services\AstrologyService.cs" />
+    <Compile Include="Services\ArticlesService.cs" />
     <Compile Include="ViewModels\ArticleDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\MagicSquareViewModel.cs" />
     <Compile Include="ViewModels\NineStarKiDrectionsChartViewModel.cs" />
@@ -661,6 +663,11 @@
     <Content Include="Content\bootstrap\bootstrapValidator.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\about\light-dark.jpg" />
+    <Content Include="Images\articles\calculator.png" />
+    <Content Include="Images\articles\calendar.png" />
+    <Content Include="Images\articles\directions.png" />
+    <Content Include="Images\articles\houses.png" />
+    <Content Include="Images\articles\magic-square.png" />
     <Content Include="Images\astrology\moon-phases\0.png" />
     <Content Include="Images\astrology\moon-phases\100.png" />
     <Content Include="Images\astrology\moon-phases\wane-14.5.png" />
@@ -1177,7 +1184,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\archive\upload\ArchiveItem\" />
-    <Folder Include="Images\articles\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -1778,6 +1784,9 @@
     <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Articles\PublishSuccess.cshtml" />
+    <Content Include="Views\Blog\Details.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Tags.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

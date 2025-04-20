@@ -89,9 +89,10 @@ namespace K9.WebApplication
             builder.RegisterType<AITextMergeService>().As<IAITextMergeService>().InstancePerLifetimeScope();
             builder.RegisterType<AstrologyService>().As<IAstrologyService>().InstancePerLifetimeScope();
             builder.RegisterType<GoogleService>().As<IGoogleService>().InstancePerLifetimeScope();
+            builder.RegisterType<ArticlesService>().As<IArticlesService>().InstancePerLifetimeScope();
 
             RegisterConfiguration(builder);
-            
+
             RegisterStaticTypes();
 
             var container = builder.Build();
@@ -182,7 +183,7 @@ namespace K9.WebApplication
             var defaultConfig = ConfigHelper.GetConfiguration<DefaultValuesConfiguration>(json);
             builder.Register(c => defaultConfig).SingleInstance();
             DefaultValuesConfiguration.Instance = defaultConfig.Value;
-            
+
 #if DEBUG
             DefaultValuesConfiguration.Instance.SiteBaseUrl = DefaultValuesConfiguration.Instance.LocalSiteBaseUrl;
 #endif

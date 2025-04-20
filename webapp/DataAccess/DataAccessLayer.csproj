@@ -437,6 +437,15 @@
     <Compile Include="Migrations\202504181232114_AddReusablePromotion.designer.cs">
       <DependentUpon>202504181232114_AddReusablePromotion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504200823383_AddArticles.cs" />
+    <Compile Include="Migrations\202504200823383_AddArticles.designer.cs">
+      <DependentUpon>202504200823383_AddArticles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504201138220_ExpandTags.cs" />
+    <Compile Include="Migrations\202504201138220_ExpandTags.designer.cs">
+      <DependentUpon>202504201138220_ExpandTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\TimeZone.cs" />
     <Compile Include="Models\MailingList.cs" />
@@ -445,6 +454,7 @@
     <Compile Include="Models\MailingListContact.cs" />
     <Compile Include="Models\SystemSetting.cs" />
     <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Models\ArticleTag.cs" />
     <Compile Include="Models\UserOTP.cs" />
     <Compile Include="Models\TimeZoneBase.cs" />
     <Compile Include="Models\Slot.cs" />
@@ -617,6 +627,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504181232114_AddReusablePromotion.resx">
       <DependentUpon>202504181232114_AddReusablePromotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504200823383_AddArticles.resx">
+      <DependentUpon>202504200823383_AddArticles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504201138220_ExpandTags.resx">
+      <DependentUpon>202504201138220_ExpandTags.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

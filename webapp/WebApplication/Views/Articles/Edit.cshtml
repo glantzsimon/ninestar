@@ -12,8 +12,10 @@
         <hr />
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
         @Html.BootstrapBackToListButton()
-        
-        @Html.BootstrapActionLinkButton(Dictionary.Publish, "Publish", "Articles", new { id = Model.Id })
-        
+
+        if (!Model.IsPublished)
+        {
+            @Html.BootstrapActionLinkButton(Dictionary.Publish, "Publish", "Articles", new { id = Model.Id })
+        }
     }
 }

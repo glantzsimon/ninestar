@@ -71,6 +71,7 @@
             public const string DonatedOnLabel = "DonatedOnLabel";
             public const string PublishedOnLabel = "PublishedOnLabel";
             public const string TitleLabel = "TitleLabel";
+            public const string TagsLabel = "TagsLabel";
             public const string CompletedOnLabel = "CompletedOnLabel";
             public const string IsProcessedLabel = "IsProcessedLabel";
             public const string ResultLabel = "ResultLabel";
@@ -186,6 +187,8 @@
 
             public const string RedeemPromoCode = "RedeemPromoCode";
             public const string AllowMarketingEmails = "AllowMarketingEmails";
+            public const string Tags = "Tags";
+            public const string Tag = "Tag";
             public const string Articles = "Articles";
             public const string Article = "Article";
             public const string UserData = "UserData";
@@ -217,6 +220,8 @@
             public const string Slots = "Slots";
             public const string UserOTPs = "UserOTPs";
             public const string UserOTP = "UserOTP";
+            public const string ArticleTag = "ArticleTag";
+            public const string ArticleTags = "ArticleTags";
             public const string UserInfos = "UserInfos";
             public const string UserInfo = "UserInfo";
             public const string SystemSetting = "SystemSetting";

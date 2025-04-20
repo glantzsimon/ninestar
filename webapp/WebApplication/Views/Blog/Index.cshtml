@@ -1,10 +1,74 @@
 ﻿@using K9.SharedLibrary.Helpers.Html
-@model Article
-    @{
-        ViewBag.Title = Dictionary.Blog;
-        ViewBag.SubTitle = Dictionary.Blog;
-        Layout = "../Shared/_LayoutFormWide.cshtml";
-    }
+@model IEnumerable<Article>
+@{
+    ViewBag.Title = Dictionary.Blog;
+    ViewBag.SubTitle = Dictionary.Blog;
+    Layout = "../Shared/_LayoutFormWide.cshtml";
 
-    @Html.Partial("_BetaPopup")
+    var tags = ViewBag.AllTags as List<string>;
+}
 
+@Html.Partial("_BetaPopup")
+
+<div class="container">
+    <h1 class="text-center">@Dictionary.LatestArticles</h1>
+
+    <div class="row" style="margin-top: 30px; margin-bottom: 20px;">
+        <div class="col-sm-6">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search articles..." />
+        </div>
+        <div class="col-sm-6 text-right">
+            <div id="tagFilters" class="btn-group" style="margin-top: 5px;">
+                @foreach (var tag in tags)
+                {
+                    <button class="btn btn-default btn-sm" onclick="filterByTag('@tag')">#@tag</button>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div id="blogGrid" class="row">
+        @foreach (var post in Model)
+        {
+            <div class="col-sm-6 col-md-4 blog-card">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4><a href="@Url.Action("Details", "Blog", new { id = post.Id })">@post.Title</a></h4>
+                        <p class="text-muted"><small>@post.PublishedOnText</small></p>
+                        <p>@post.Summary</p>
+                        <p>
+                            @foreach (var tag in post.Tags)
+                            {
+                                <span class="label label-info">#@tag</span>
+                                @:&nbsp;
+                            }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    $(function () {
+        function filterByTag(tag) {
+            $('#searchInput').val(tag);
+            filterPosts();
+        }
+
+        $('#searchInput').on('input', filterPosts);
+
+        function filterPosts() {
+            var input = $('#searchInput').val().toLowerCase();
+            $('#blogGrid .blog-card').each(function () {
+                var $post = $(this);
+                var text = $post.text().toLowerCase();
+                $post.toggle(text.indexOf(input) !== -1);
+            });
+        }
+
+        // Expose to global scope if needed
+        window.filterByTag = filterByTag;
+    });
+</script>

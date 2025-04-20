@@ -6496,17 +6496,41 @@
   <data name="Article" xml:space="preserve">
     <value>Article</value>
   </data>
+  <data name="ArticlePublished" xml:space="preserve">
+    <value>Article Published</value>
+  </data>
+  <data name="ArticlePublishedSuccess" xml:space="preserve">
+    <value>The article was published successfully</value>
+  </data>
   <data name="Articles" xml:space="preserve">
     <value>Articles</value>
   </data>
+  <data name="ArticleTag" xml:space="preserve">
+    <value>Article Tag</value>
+  </data>
+  <data name="ArticleTags" xml:space="preserve">
+    <value>Article Tags</value>
+  </data>
   <data name="Blog" xml:space="preserve">
     <value>Blog</value>
+  </data>
+  <data name="LatestArticles" xml:space="preserve">
+    <value>Latest Articles</value>
   </data>
   <data name="Publish" xml:space="preserve">
     <value>Publish</value>
   </data>
   <data name="PublishedOnLabel" xml:space="preserve">
     <value>Published On</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="TagsLabel" xml:space="preserve">
+    <value>Tags</value>
   </data>
   <data name="TitleLabel" xml:space="preserve">
     <value>Title</value>

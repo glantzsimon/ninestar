@@ -5,6 +5,26 @@
 
 @Html.Partial("_DynamicFields", new ArticleDynamicFieldsViewModel())
 
-@Html.BootstrapDisplayFor(model => model.PublishedOn)
+@Html.BootstrapEditorFor(model => model.PublishedOn)
 @Html.BootstrapEditorFor(model => model.Title)
+@Html.BootstrapEditorFor(model => model.TagsText)
+@Html.BootstrapEditorFor(model => model.Summary)
 @Html.BootstrapEditorFor(model => model.HtmlBody)
+
+<script>
+    $(function () {
+        var $input = $('#TagsText');
+        var tagify = new Tagify($input[0], {
+            whitelist: [], // will be loaded via AJAX
+            dropdown: {
+                enabled: 1,
+                position: "auto"
+            }
+        });
+
+        // Load existing tags via jQuery AJAX
+        $.getJSON('@Url.Action("GetAllTags")', function (data) {
+            tagify.settings.whitelist = data;
+        });
+    });
+</script>

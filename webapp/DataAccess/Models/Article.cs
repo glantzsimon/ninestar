@@ -40,6 +40,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("Tags")]
         [NotMapped]
+        [DataType(DataType.MultilineText)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TagsLabel)]
         public string TagsText { get; set; }
 

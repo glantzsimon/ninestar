@@ -6,6 +6,7 @@ using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using System;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
@@ -25,7 +26,7 @@ namespace K9.WebApplication.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public new ActionResult Create(Article model)
+        public override ActionResult Create(Article model)
         {
             if (ModelState.IsValid)
             {
@@ -46,7 +47,7 @@ namespace K9.WebApplication.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public new ActionResult Edit(Article model)
+        public override ActionResult Edit(Article model)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +82,11 @@ namespace K9.WebApplication.Controllers
 
         public JsonResult GetAllTags()
         {
-            return Json(_articlesService.GetAllTags(), JsonRequestBehavior.AllowGet);
+            return Json(_articlesService.GetAllTags().Select(t => new
+            {
+                value = t.Name,
+                slug = t.Slug
+            }), JsonRequestBehavior.AllowGet);
         }
     }
 }

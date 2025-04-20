@@ -14,6 +14,13 @@
     }
   },
   {
+    "inputFile": "Content/less/sections/articles.less",
+    "outputFile": "Content/sections/articles.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/sections/biorhythms.less",
     "outputFile": "Content/sections/biorhythms.css",
     "options": {

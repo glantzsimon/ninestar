@@ -1,0 +1,35 @@
+﻿.blog-card .panel {
+  border-radius: 10px !important;
+  transition: box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blog-card .panel:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.blog-card h4 {
+  margin-top: 0;
+  font-weight: bold;
+}
+.blog-card .label {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+.blog-card .panel-body {
+  padding-bottom: 15px;
+}
+.blog-card .read-more {
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: bold;
+  color: #337ab7;
+}
+.blog-card .read-more:hover {
+  text-decoration: underline;
+}
+.form-group .tagify.form-control {
+  min-height: 36px !important;
+}

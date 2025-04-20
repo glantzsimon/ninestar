@@ -445,6 +445,10 @@
     <Compile Include="Migrations\202504201138220_ExpandTags.designer.cs">
       <DependentUpon>202504201138220_ExpandTags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504201410413_AddSlugs.cs" />
+    <Compile Include="Migrations\202504201410413_AddSlugs.designer.cs">
+      <DependentUpon>202504201410413_AddSlugs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\TimeZone.cs" />
@@ -633,6 +637,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504201138220_ExpandTags.resx">
       <DependentUpon>202504201138220_ExpandTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504201410413_AddSlugs.resx">
+      <DependentUpon>202504201410413_AddSlugs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

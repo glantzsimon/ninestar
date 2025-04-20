@@ -1,0 +1,51 @@
+﻿@import "../config/colours.less";
+
+.blog-card {       
+
+    .panel {
+        border-radius: 10px !important;
+        transition: box-shadow 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    h4 {
+        margin-top: 0;
+        font-weight: bold;
+    }
+
+    .label {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+
+    .panel-body {
+        padding-bottom: 15px;
+    }
+
+    .read-more {
+        margin-top: 10px;
+        display: inline-block;
+        font-weight: bold;
+        color: @primary-blue;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }   
+}
+
+.form-group {
+    .tagify {
+        &.form-control {
+            min-height: 36px !important;            
+        }
+    }
+}

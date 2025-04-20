@@ -14,17 +14,19 @@
 <script>
     $(function () {
         var $input = $('#TagsText');
+
         var tagify = new Tagify($input[0], {
-            whitelist: [], // will be loaded via AJAX
+            whitelist: [], // populated below
             dropdown: {
                 enabled: 1,
                 position: "auto"
             }
         });
 
-        // Load existing tags via jQuery AJAX
+        // Load enriched tag data (value + slug)
         $.getJSON('@Url.Action("GetAllTags")', function (data) {
-            tagify.settings.whitelist = data;
+            tagify.settings.whitelist = data; // each item: { value: "Water Cycle", slug: "water-cycle" }
         });
     });
+
 </script>

@@ -614,6 +614,7 @@
     <Content Include="Content\fonts\fa-regular-400.svg" />
     <Content Include="Content\fonts\fa-solid-900.svg" />
     <Content Include="Content\fontawesome\font-awesome-legacy.css" />
+    <Content Include="Content\sections\articles.css" />
     <Content Include="Content\sections\astrology.css" />
     <Content Include="Content\main\elements.css" />
     <Content Include="Content\main\style-lg.css" />
@@ -1414,6 +1415,7 @@
     <Content Include="Content\less\sections\numerology.less" />
     <Content Include="Content\less\sections\astrology.less" />
     <Content Include="Content\less\sections\graphics.less" />
+    <Content Include="Content\less\sections\articles.less" />
     <None Include="packages.config" />
     <Content Include="Properties\PublishProfiles\.gitattributes" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />

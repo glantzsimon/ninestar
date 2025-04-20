@@ -7,7 +7,7 @@ namespace K9.WebApplication.Services
     {
         Article GetArticle(int id);
         List<Article> GetArticles();
-        List<string> GetAllTags();
+        List<Tag> GetAllTags();
         void SaveArticle(Article article);
         void CreateArticle(Article article);
     }

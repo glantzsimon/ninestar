@@ -3,7 +3,9 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Packages;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace K9.WebApplication.Services
 {
@@ -43,9 +45,9 @@ namespace K9.WebApplication.Services
             return articles;
         }
 
-        public List<string> GetAllTags()
+        public List<Tag> GetAllTags()
         {
-            return _tagsRepository.List().Select(e => e.Name).OrderBy(e => e).ToList();
+            return _tagsRepository.List().OrderBy(e => e.Name).ToList();
         }
 
         public void CreateArticle(Article article)
@@ -71,28 +73,40 @@ namespace K9.WebApplication.Services
 
         private void ProcessTags(Article article)
         {
-            var tagNames = article.TagsText?
-                               .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
-                               .Select(t => t.Trim().ToLowerInvariant())
-                               .Distinct()
-                               .ToList() ?? new List<string>();
+            var tagValues = JsonConvert.DeserializeObject<List<TagValue>>(article.TagsText) ?? new List<TagValue>();
 
-            var existingTags = _tagsRepository.List().Where(t => tagNames.Contains(t.Name)).ToList();
-            var existingTagNames = existingTags.Select(t => t.Name).ToHashSet();
-            var missingTagNames = tagNames.Where(t => !existingTagNames.Contains(t)).ToList();
+            var slugs = tagValues
+                .Select(t => t.Slugify())
+                .Distinct()
+                .ToList();
 
-            _tagsRepository.CreateBatch(missingTagNames.Select(e => new Tag { Name = e }).ToList());
+            var displayValues = tagValues
+                .GroupBy(t => t.Slugify())
+                .ToDictionary(
+                    g => g.Key,
+                    g => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(g.First().Value.ToLower())
+                );
 
-            // Clear old tags
+            var existingTags = _tagsRepository.List().Where(t => slugs.Contains(t.Slug)).ToList();
+            var existingSlugs = existingTags.Select(t => t.Slug).ToHashSet();
+            var missingSlugs = slugs.Where(slug => !existingSlugs.Contains(slug)).ToList();
+
+            _tagsRepository.CreateBatch(missingSlugs.Select(slug => new Tag
+            {
+                Name = displayValues[slug],
+                Slug = slug
+            }).ToList());
+
             _articleTagsRepository.GetQuery($"DELETE FROM {nameof(ArticleTag)} WHERE {nameof(ArticleTag.ArticleId)} = {article.Id}");
 
-            // Add new tags
-            var articleTags = _tagsRepository.List().Where(t => tagNames.Contains(t.Name)).ToList();
-            _articleTagsRepository.CreateBatch(articleTags.Select(e => new ArticleTag
+            var allTags = _tagsRepository.List().Where(t => slugs.Contains(t.Slug)).ToList();
+
+            _articleTagsRepository.CreateBatch(allTags.Select(tag => new ArticleTag
             {
                 ArticleId = article.Id,
-                TagId = e.Id
+                TagId = tag.Id
             }).ToList());
         }
+
     }
 }

@@ -162,12 +162,17 @@ namespace K9.WebApplication.Services
                 var src = match.Groups["src"].Value;
                 var alt = match.Groups["alt"].Value;
 
-                return $@"<tr>
-                            <td align=""center"" style=""padding: 20px; padding-top: 0;"">
+                return $@"
+                    <table role=""presentation"" width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"">
+                        <tr>
+                            <td align=""center"" style=""padding-top: 20px; padding-bottom: 20px;"">
                                 <img src=""{src}"" alt=""{alt}"" width=""600"" class=""responsive-img"" style=""display: block; width: 100%; max-width: 600px; height: auto;"">
                             </td>
-                        </tr>";
+                        </tr>
+                    </table>";
             }, RegexOptions.IgnoreCase);
         }
+
+
     }
 }

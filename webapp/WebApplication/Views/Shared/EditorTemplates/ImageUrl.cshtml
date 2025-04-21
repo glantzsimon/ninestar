@@ -2,7 +2,7 @@
 
 @{
     var isAbsolute = !string.IsNullOrEmpty(Model) && (Model.StartsWith("http"));
-    var src = isAbsolute ? Model : Url.Content("~/" + (Model ?? "").TrimStart('~', '/'));
+    var src = string.IsNullOrEmpty(Model) ? "" : isAbsolute ? Model : Url.Content("~/" + (Model ?? "").TrimStart('~', '/'));
 }
 
 <div>

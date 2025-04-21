@@ -3,13 +3,24 @@
 @using K9.WebApplication.ViewModels
 @model Article
 
-@Html.Partial("_DynamicFields", new ArticleDynamicFieldsViewModel())
-
-@Html.BootstrapEditorFor(model => model.PublishedOn)
-@Html.BootstrapEditorFor(model => model.ImageUrl)
 @Html.BootstrapEditorFor(model => model.Title)
+@Html.BootstrapEditorFor(model => model.PublishedOn)
 @Html.BootstrapEditorFor(model => model.TagsText)
 @Html.BootstrapEditorFor(model => model.Summary)
+
+<hr />
+
+@Html.Partial("_DynamicFields", new ArticleDynamicFieldsViewModel
+{
+    ArticleId = Model.Id
+})
+
+<hr />
+
+@Html.BootstrapEditorFor(model => model.ImageUrl)
+
+<hr />
+
 @Html.BootstrapEditorFor(model => model.HtmlBody)
 
 <script>
@@ -24,9 +35,8 @@
             }
         });
 
-        // Load enriched tag data (value + slug)
         $.getJSON('@Url.Action("GetAllTags")', function (data) {
-            tagify.settings.whitelist = data; // each item: { value: "Water Cycle", slug: "water-cycle" }
+            tagify.settings.whitelist = data;
         });
     });
 

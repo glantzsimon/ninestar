@@ -395,6 +395,7 @@
     <Compile Include="Extensions\NumerologyExtensions.cs" />
     <Compile Include="App_Start\RelativeCssRewriteUrlTransform.cs" />
     <Compile Include="Models\Astrology\MoonPhase.cs" />
+    <Compile Include="Models\DeleteFilesRequest.cs" />
     <Compile Include="Models\QuickRegisterModel.cs" />
     <Compile Include="Options\ImageUploadOptions.cs" />
     <Compile Include="Options\PieChartOptions.cs" />
@@ -1792,6 +1793,7 @@
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Tags.cshtml" />
     <Content Include="Views\Shared\Controls\_ImageUploader.cshtml" />
+    <Content Include="Views\Articles\_ImageOptions.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

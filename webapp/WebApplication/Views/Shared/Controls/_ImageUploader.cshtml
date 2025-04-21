@@ -6,41 +6,65 @@
     var previewId = "imagePreviewContainer_" + Model.IdPrefix;
 }
 
-<div class="form-group">
-    <label for="imageUpload">@Dictionary.UploadImages</label>
-    <input type="file" id="@uploadId" class="form-control" accept="image/*" multiple />
+<div class="custom-uploader">
+    <input type="file" id="@uploadId" class="hidden-file-input" accept="image/*" multiple />
+
+    <button type="button" class="btn btn-default btn-upload-trigger">
+        <i class="glyphicon glyphicon-upload"></i> @Dictionary.UploadImages
+    </button>
+
     <div id="@previewId" class="row margin-top-10"></div>
 </div>
 
 <script>
-    $('#@uploadId').on('change', function () {
-        var files = this.files;
-        if (!files || files.length === 0) return;
+    $(function () {
+        var $realInput = $('#@uploadId');
+        var $preview = $('#@previewId');
 
-        $('#@previewId').empty();
+        // Clicking the dummy button opens the real input
+        $('.btn-upload-trigger').on('click', function () {
+            $realInput.trigger('click');
+        });
 
-        Array.from(files).forEach(function (file) {
-            var formData = new FormData();
-            formData.append('file', file);
+        $realInput.on('change', function () {
+            var files = this.files;
+            if (!files || files.length === 0) return;
 
-            $.ajax({
-                url: '@Model.UploadUrl',
-                type: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function (url) {
-                    var preview = $(
-                        '<div class="col-xs-6 col-sm-4" style="margin-bottom: 15px;">' +
-                        '<img src="' + url + '" class="img-responsive img-thumbnail" style="width: 100%;" />' +
-                        '<input type="text" class="form-control input-sm" readonly value="' + url + '" />' +
-                        '</div>'
-                    );
-                    $('#@previewId').append(preview);
-                },
-                error: function () {
-                    alert('Upload failed for ' + file.name);
-                }
+            $preview.empty();
+
+            Array.from(files).forEach(function (file) {
+                var formData = new FormData();
+                formData.append('file', file);
+
+                $.ajax({
+                    url: '@Model.UploadUrl',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response && response.success) {
+                            var url = response.url;
+
+                            var preview = $(
+                                '<div class="col-xs-6 col-sm-4 image-preview-container">' +
+                                '<img src="' + url + '" class="img-responsive img-thumbnail" style="width: 100%;" />' +
+                                '<input type="text" class="form-control input-sm" readonly value="' + url + '" />' +
+                                '</div>'
+                            );
+
+                            $preview.append(preview);
+
+                            // Optional: broadcast for DynamicFields
+                            document.dispatchEvent(new CustomEvent('imageUploaded', {
+                                detail: { url: url, filename: url.split('/').pop() }
+                            }));
+                        }
+                    },
+                    error: function () {
+                        alert('Upload failed for ' + file.name);
+                    }
+                });
             });
         });
     });

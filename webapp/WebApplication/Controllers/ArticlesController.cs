@@ -12,6 +12,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using K9.WebApplication.Models;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -90,7 +92,7 @@ namespace K9.WebApplication.Controllers
                 var fileName = Path.GetFileNameWithoutExtension(file.FileName);
                 var ext = Path.GetExtension(file.FileName);
                 var safeFileName = Slugify(fileName) + "-" + Guid.NewGuid().ToString("N").Substring(0, 6) + ext;
-                var relativePath = articleId.HasValue ? $"~/Images/articles/{articleId}" : "~/Images/articles";
+                var relativePath = articleId.HasValue && articleId.Value > 0 ? $"~/Images/articles/{articleId}" : "~/Images/articles";
                 var uploadDir = Server.MapPath(relativePath);
                 Directory.CreateDirectory(uploadDir);
                 var path = Path.Combine(uploadDir, safeFileName);
@@ -101,6 +103,43 @@ namespace K9.WebApplication.Controllers
             }
 
             return new HttpStatusCodeResult(400, "No file received.");
+        }
+
+        [HttpPost]
+        public ActionResult DeleteImages(DeleteFilesRequest request)
+        {
+            if (request?.Urls == null || !request.Urls.Any())
+            {
+                return new HttpStatusCodeResult(400, "No URLs provided.");
+            }
+
+            foreach (var url in request.Urls)
+            {
+                try
+                {
+                    // Resolve from virtual to physical path
+                    var relativePath = url.Replace(Request.Url.GetLeftPart(UriPartial.Authority), "");
+                    var fullPath = Server.MapPath(relativePath);
+
+                    if (System.IO.File.Exists(fullPath))
+                    {
+                        System.IO.File.Delete(fullPath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error("DeleteImages => " + ex.Message);
+                }
+            }
+
+            return new HttpStatusCodeResult(200);
+        }
+
+        [HttpGet]
+        public PartialViewResult GetImageOptions(int? articleId = null)
+        {
+            var model = new ArticleDynamicFieldsViewModel { ArticleId = articleId };
+            return PartialView("_ImageOptions", model);
         }
 
         public ActionResult Publish(int id)

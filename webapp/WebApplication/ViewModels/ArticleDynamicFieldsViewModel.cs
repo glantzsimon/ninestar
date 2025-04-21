@@ -9,6 +9,7 @@ namespace K9.WebApplication.ViewModels
 {
     public class ArticleDynamicFieldsViewModel
     {
+        public int? ArticleId { get; set; }
         public ImageInfo[] GlobalImageFields { get; }
         public ImageInfo[] ArticleImageFields { get; }
 

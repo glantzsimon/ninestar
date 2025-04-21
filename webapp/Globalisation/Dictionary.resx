@@ -6517,6 +6517,9 @@
   <data name="Blog" xml:space="preserve">
     <value>Blog</value>
   </data>
+  <data name="DeleteSelected" xml:space="preserve">
+    <value>Delete Selected</value>
+  </data>
   <data name="GlobalImages" xml:space="preserve">
     <value>Global Images</value>
   </data>

@@ -5,10 +5,10 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <div class="form-group">
+        <div class="form-group margin-bottom-0">
             @Html.Partial("../Shared/Controls/_ImageUploader", new ImageUploadOptions
             {
-                UploadUrl = Url.Action("UploadImage")
+                UploadUrl = Url.Action("UploadImage", new { id = Model.ArticleId })
             })
         </div>
     </div>
@@ -18,39 +18,109 @@
         <div class="form-group">
             <label for="imageFields">@Dictionary.Images:</label>
             <select id="imageFields" class="form-control" multiple>
-                <optgroup label="@Dictionary.GlobalImages">
-                    @foreach (var item in Model.GlobalImageFields)
-                    {
-                        <option value="@item.GetHtmlPlaceHolder()">@item.FileName</option>
-                    }
-                </optgroup>
-                @if (Model.ArticleImageFields.Any())
-                {
-                    <optgroup label="@Dictionary.ArticleImages">
-                        @foreach (var item in Model.GlobalImageFields)
-                        {
-                            <option value="@item.GetHtmlPlaceHolder()">@item.FileName</option>
-                        }
-                    </optgroup>
-                }
+                @Html.Partial("_ImageOptions")
             </select>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="form-group margin-bottom-0">
+            <button type="button" id="deleteSelectedImages" class="btn btn-danger">
+                <i class="glyphicon glyphicon-trash"></i> @Dictionary.DeleteSelected
+            </button>
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
 
-    $("#imageFields").on("keydown", function (event) {
-        if (event.ctrlKey && event.key === "c") {
-            let selectedOptions = $(this).find("option:selected").map(function () {
-                return $(this).val();
-            }).get().join("\n");
+    $('#deleteSelectedImages').on('click', function () {
+        const $btn = $(this);
+        const $select = $('#imageFields');
+        const $selected = $select.find('option:selected');
 
-            if (selectedOptions) {
-                navigator.clipboard.writeText(selectedOptions)
+        if ($selected.length === 0) {
+            alert('Please select one or more images to delete.');
+            return;
+        }
+
+        if (!confirm('Are you sure you want to delete the selected image(s)?')) {
+            return;
+        }
+
+        const urlsToDelete = $selected.map(function () {
+            return $(this).data('url');
+        }).get();
+
+        // Disable + show spinner
+        $btn.prop('disabled', true).displaySpinner(true);
+
+        $.ajax({
+            url: '@Url.Action("DeleteImages")',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ urls: urlsToDelete }),
+            success: function () {
+                // Reload image field options
+                $.get('@Url.Action("GetImageOptions")', { articleId: @Model.ArticleId }, function (data) {
+                    $select.html(data);
+                    alert('Selected image(s) deleted.');
+                });
+            },
+            error: function () {
+                alert('Failed to delete one or more images.');
+            },
+            complete: function () {
+                $btn.prop('disabled', false).displaySpinner(false);
+            }
+        });
+    });
+
+
+    $("#imageFields").on("keydown", function (event) {
+        if (event.ctrlKey && event.key.toLowerCase() === "c") {
+            const selectedOptions = $(this).find("option:selected");
+
+            if (selectedOptions.length === 0) {
+                return;
+            }
+
+            let textToCopy;
+
+            if (event.shiftKey) {
+                // Ctrl + Shift + C → copy plain URLs
+                textToCopy = selectedOptions.map(function () {
+                    return $(this).data("url");
+                }).get().join("\n");
+            } else {
+                // Ctrl + C → copy placeholder markup
+                textToCopy = selectedOptions.map(function () {
+                    return $(this).val();
+                }).get().join("\n");
+            }
+
+            if (textToCopy) {
+                navigator.clipboard.writeText(textToCopy)
                     .catch(err => console.error("Failed to copy:", err));
             }
+
+            event.preventDefault(); // optional: prevents browser default copy
         }
+    });
+
+    document.addEventListener('imageUploaded', function (e) {
+        const { url, filename } = e.detail;
+
+        // Create placeholder markup
+        const placeholder = `{img src="${url}" /}`;
+
+        // Inject into #imageFields under ArticleImages optgroup
+        const $optgroup = $('#articleImagesGroup');
+        const $option = $('<option>', {
+            value: placeholder,
+            text: filename
+        });
+
+        $optgroup.append($option);
     });
 
 </script>

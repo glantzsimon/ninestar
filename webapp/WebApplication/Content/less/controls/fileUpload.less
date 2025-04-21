@@ -94,6 +94,37 @@
     }
 }
 
+.custom-uploader {
+    .hidden-file-input {
+        display: none;
+    }
+
+    .btn-upload-trigger {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+}
+
+.image-preview-container {
+    margin: 10px 0;
+    padding-left: 0 !important;
+}
+
+.image-preview {
+    border: 1px solid @border-grey;
+    max-width: 100%;
+    border-radius: 3px;
+
+    // Hide the image if src is missing or empty
+    &[src=""],
+    &:not([src]) {
+        display: none !important;
+    }
+}
+
 @media (max-width:760px) {
     .upload-file-preview div.file-preview-container {
         padding: 0 !important;

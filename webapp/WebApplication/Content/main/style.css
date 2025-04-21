@@ -151,8 +151,3 @@ li.divider {
 h5.form-subtitle {
   font-size: 1.21em;
 }
-.image-preview {
-  border: 1px solid #666;
-  max-width: 100%;
-  border-radius: 7px;
-}

@@ -1,0 +1,20 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Options
+@model K9.WebApplication.ViewModels.ArticleDynamicFieldsViewModel
+
+<optgroup label="@Dictionary.GlobalImages">
+    @foreach (var item in Model.GlobalImageFields)
+    {
+        <option data-url="@item.Src" value="@item.GetHtmlPlaceHolder()">@item.FileName</option>
+    }
+</optgroup>
+@if (Model.ArticleImageFields.Any())
+{
+    <optgroup label="@Dictionary.ArticleImages" id="articleImagesGroup">
+        @foreach (var item in Model.ArticleImageFields)
+        {
+            <option data-url="@item.Src" value="@item.GetHtmlPlaceHolder()">@item.FileName</option>
+        }
+    </optgroup>
+}

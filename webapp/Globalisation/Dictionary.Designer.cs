@@ -3193,6 +3193,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Author.
+        /// </summary>
+        public static string AuthorLabel {
+            get {
+                return ResourceManager.GetString("AuthorLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto Renewal.
         /// </summary>
         public static string AutoRenewLabel {
@@ -17560,6 +17569,15 @@ namespace K9.Globalisation {
         public static string Published {
             get {
                 return ResourceManager.GetString("Published", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Published on {PublishedOnText} by {Author}.
+        /// </summary>
+        public static string PublishedOnBy {
+            get {
+                return ResourceManager.GetString("PublishedOnBy", resourceCulture);
             }
         }
         

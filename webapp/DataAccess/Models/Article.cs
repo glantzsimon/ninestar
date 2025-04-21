@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web.Mvc;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -22,9 +23,16 @@ namespace K9.DataAccessLayer.Models
 
         public string PublishedOnText => PublishedOn.HasValue ? PublishedOn.Value.ToString("MMMM d, yyyy") : "";
 
+        public string PublishedByText =>
+            TemplateParser.Parse(Globalisation.Dictionary.PublishedOnBy, new { PublishedOnText, Author });
+
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TitleLabel)]
         public string Title { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AuthorLabel)]
+        public string Author { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SlugLabel)]
         public string Slug { get; set; }
@@ -32,7 +40,7 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.ImageUrl)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ImageUrlLabel)]
         public string ImageUrl { get; set; }
-        
+
         [Required]
         [DataType(DataType.MultilineText)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SummaryLabel)]

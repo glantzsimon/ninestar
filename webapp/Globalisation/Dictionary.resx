@@ -6514,6 +6514,9 @@
   <data name="ArticleTags" xml:space="preserve">
     <value>Article Tags</value>
   </data>
+  <data name="AuthorLabel" xml:space="preserve">
+    <value>Author</value>
+  </data>
   <data name="Blog" xml:space="preserve">
     <value>Blog</value>
   </data>
@@ -6537,6 +6540,9 @@
   </data>
   <data name="Published" xml:space="preserve">
     <value>Published</value>
+  </data>
+  <data name="PublishedOnBy" xml:space="preserve">
+    <value>Published on {PublishedOnText} by {Author}</value>
   </data>
   <data name="PublishedOnLabel" xml:space="preserve">
     <value>Published On</value>

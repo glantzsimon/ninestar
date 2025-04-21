@@ -31,6 +31,7 @@ namespace K9.WebApplication.Services
             {
                 article.Tags = GetTagsForArticle(id);
                 article.TagsText = ConvertTagsToTagsText(article.Tags);
+                article.Author = GetAuthor(article.CreatedBy);
             }
 
             return article;
@@ -123,6 +124,12 @@ namespace K9.WebApplication.Services
                 .ToList();
 
             return JsonConvert.SerializeObject(tagValues);
+        }
+
+        private string GetAuthor(string username)
+        {
+            var user = My.UsersRepository.Find(username).FirstOrDefault();
+            return user == null ? username : user.FullName;
         }
 
     }

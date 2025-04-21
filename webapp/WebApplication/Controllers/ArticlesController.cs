@@ -51,7 +51,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    HtmlParser.ParseHtml(ref model);
+                    HtmlMarkupHelper.ConvertToHtml(ref model);
                     _articlesService.CreateArticle(model);
                     return RedirectToAction("Index");
                 }
@@ -73,7 +73,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    HtmlParser.ParseHtml(ref model);
+                    HtmlMarkupHelper.ConvertToHtml(ref model);
                     _articlesService.SaveArticle(model);
                     return RedirectToAction("Index");
                 }

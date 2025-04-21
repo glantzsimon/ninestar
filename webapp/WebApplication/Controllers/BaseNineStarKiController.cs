@@ -208,19 +208,19 @@ namespace K9.WebApplication.Controllers
         private void BaseNineStarKiController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {
             var model = e.Item as T;
-            HtmlParser.ParseHtml(ref model);
+            HtmlMarkupHelper.ConvertToHtml(ref model);
         }
 
         private void BaseNineStarKiController_RecordBeforeCreated(object sender, CrudEventArgs e)
         {
             var model = e.Item as T;
-            HtmlParser.ParseHtml(ref model);
+            HtmlMarkupHelper.ConvertToHtml(ref model);
         }
 
         private void BaseNineStarKiController_RecordBeforeUpdate(object sender, CrudEventArgs e)
         {
             var model = e.Item as T;
-            HtmlParser.ParseHtml(ref model);
+            HtmlMarkupHelper.ConvertToCurly(ref model);
         }
     }
 

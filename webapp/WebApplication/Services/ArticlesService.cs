@@ -75,6 +75,9 @@ namespace K9.WebApplication.Services
 
         private void ProcessTags(Article article)
         {
+            if (string.IsNullOrEmpty(article.TagsText))
+                return;
+
             var tagValues = JsonConvert.DeserializeObject<List<TagValue>>(article.TagsText) ?? new List<TagValue>();
 
             var slugs = tagValues

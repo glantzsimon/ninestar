@@ -3,19 +3,19 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.ArticleDynamicFieldsViewModel
 
-@if (Model.GlobalImageFields.Any())
+@if (Model.ArticleImageFields.Any())
 {
-    <div class="image-group-header">@Dictionary.GlobalImages</div>
-    foreach (var item in Model.GlobalImageFields)
+    <div class="image-group-header">@Dictionary.ArticleImages</div>
+    foreach (var item in Model.ArticleImageFields)
     {
         @Html.Partial("_ImageListItem", item)
     }
 }
 
-@if (Model.ArticleImageFields.Any())
+@if (Model.GlobalImageFields.Any())
 {
-    <div class="image-group-header">@Dictionary.ArticleImages</div>
-    foreach (var item in Model.ArticleImageFields)
+    <div class="image-group-header">@Dictionary.GlobalImages</div>
+    foreach (var item in Model.GlobalImageFields)
     {
         @Html.Partial("_ImageListItem", item)
     }

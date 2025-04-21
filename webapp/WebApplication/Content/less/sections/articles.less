@@ -1,7 +1,6 @@
 ﻿@import "../config/colours.less";
 
 .blog-card {
-
     .panel {
         border-radius: 10px !important;
         transition: box-shadow 0.3s ease;
@@ -13,30 +12,43 @@
         &:hover {
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
-    }
 
-    h4 {
-        margin-top: 0;
-        font-weight: bold;
-    }
+        .panel-body {
+            padding-bottom: 15px;
 
-    .label {
-        margin-right: 5px;
-        margin-bottom: 5px;
-        display: inline-block;
-    }
+            .blog-thumbnail {
+                width: 100%;
+                max-height: 180px;
+                object-fit: cover;
+                border-bottom: 1px solid #ddd;
+                border-radius: 4px 4px 0 0;
+                margin-bottom: 20px;
+            }
 
-    .panel-body {
-        padding-bottom: 15px;
-    }
+            h4 {
+                margin-top: 0;
+                font-weight: bold;
+            }
 
-    .read-more {
-        display: inline-block;
-        font-weight: bold;
-        color: @primary-blue;
+            .blog-summary {
+                font-size: 0.9em;
+            }
 
-        &:hover {
-            text-decoration: underline;
+            .label {
+                margin-right: 5px;
+                margin-bottom: 5px;
+                display: inline-block;
+            }
+
+            .read-more {
+                display: inline-block;
+                font-weight: bold;
+                color: @primary-blue;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 }
@@ -57,7 +69,7 @@
         width: 100% !important;
         height: auto !important;
         margin-bottom: 15px;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important;        
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important;
         border-radius: 3px !important;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
@@ -74,9 +86,14 @@
         }
 
         h5:first-of-type {
-            margin-top: 0;
+            margin-top: 10px;
         }
     }
+}
+
+.blog-tag {
+    font-weight: normal !important;
+    text-transform: capitalize;
 }
 
 .form-group {

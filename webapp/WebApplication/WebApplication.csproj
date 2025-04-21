@@ -1800,6 +1800,7 @@
     <Content Include="Views\Articles\_ImageListItems.cshtml" />
     <Content Include="Views\Articles\_ImageListItem.cshtml" />
     <Content Include="Views\Blog\_BlogCard.cshtml" />
+    <Content Include="Views\Blog\_BlogTag.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

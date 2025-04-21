@@ -7,13 +7,25 @@
         <div class="panel-body">
             <h4><a href="@Url.Action("Details", "Blog", new { id = Model.Id })">@Model.Title</a></h4>
             <p class="text-muted"><small>@Model.PublishedOnText</small></p>
-            <p>@Model.Summary</p>
+
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                var isAbsolute = Model.ImageUrl.StartsWith("http", StringComparison.OrdinalIgnoreCase);
+                var src = isAbsolute ? Model.ImageUrl : Url.Content("~/" + Model.ImageUrl.TrimStart('~', '/'));
+
+                <a href="@Url.Action("Details", "Blog", new { id = Model.Id })">
+                    <img src="@src"
+                         alt="@Model.Title"
+                         class="img-responsive img-thumbnail blog-thumbnail" />
+                </a>
+            }
+
+            <p class="blog-summary">@Model.Summary</p>
 
             <p>
                 @foreach (var tag in Model.Tags)
                 {
-                    <span class="label label-info">#@tag.Name</span>
-                    @:&nbsp;
+                    @Html.Partial("_BlogTag", tag)
                 }
             </p>
 
@@ -23,5 +35,3 @@
         </div>
     </div>
 </div>
-
-

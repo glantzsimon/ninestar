@@ -9,24 +9,35 @@
 .blog-card .panel:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
-.blog-card h4 {
+.blog-card .panel .panel-body {
+  padding-bottom: 15px;
+}
+.blog-card .panel .panel-body .blog-thumbnail {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 20px;
+}
+.blog-card .panel .panel-body h4 {
   margin-top: 0;
   font-weight: bold;
 }
-.blog-card .label {
+.blog-card .panel .panel-body .blog-summary {
+  font-size: 0.9em;
+}
+.blog-card .panel .panel-body .label {
   margin-right: 5px;
   margin-bottom: 5px;
   display: inline-block;
 }
-.blog-card .panel-body {
-  padding-bottom: 15px;
-}
-.blog-card .read-more {
+.blog-card .panel .panel-body .read-more {
   display: inline-block;
   font-weight: bold;
   color: #337ab7;
 }
-.blog-card .read-more:hover {
+.blog-card .panel .panel-body .read-more:hover {
   text-decoration: underline;
 }
 .article-container article .well {
@@ -53,7 +64,11 @@
   margin-top: 0;
 }
 .article-container .article-body h5:first-of-type {
-  margin-top: 0;
+  margin-top: 10px;
+}
+.blog-tag {
+  font-weight: normal !important;
+  text-transform: capitalize;
 }
 .form-group .tagify.form-control {
   min-height: 36px !important;

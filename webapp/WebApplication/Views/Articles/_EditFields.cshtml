@@ -4,7 +4,16 @@
 @model Article
 
 @Html.BootstrapEditorFor(model => model.Title)
-@Html.BootstrapEditorFor(model => model.PublishedOn)
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.LastUpdatedOn)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.PublishedOn)
+    </div>
+</div>
+
 @Html.BootstrapEditorFor(model => model.TagsText)
 @Html.BootstrapEditorFor(model => model.Summary)
 

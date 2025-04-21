@@ -4,7 +4,7 @@
 @{
     ViewBag.Title = Dictionary.LatestArticles;
     ViewBag.SubTitle = Dictionary.LatestArticles;
-    Layout = "../Shared/_LayoutForm.cshtml";
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
 }
 
 @Html.Partial("_BetaPopup")
@@ -26,6 +26,12 @@
                             <button class="btn btn-default btn-sm" onclick="filterByTag('@tag.Name')">#@tag.Name</button>
                         }
                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <hr />
                 </div>
             </div>
 

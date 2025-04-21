@@ -10,11 +10,11 @@
         }
         else
         {
-            <img loading="lazy" alt="@Model.AlertType.ToString()" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/@Model.GetAlertImage().ToLower()" />
+            <img class="margin-bottom-20" loading="lazy" alt="@Model.AlertType.ToString()" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/@Model.GetAlertImage().ToLower()" />
         }
     }
 
-    <h2 class="margin-top-0 margin-bottom-20">
+    <h2 class="margin-top-0 margin-bottom-30 alert-message">
         <strong>@MvcHtmlString.Create(@Model.Message)</strong>
     </h2>
 

@@ -17,7 +17,7 @@
                         <small>@Dictionary.Published: @Model.PublishedOnText</small>
                     </p>
 
-                    <div class="text-center">
+                    <div class="text-center blog-post-tags">
                         @foreach (var tag in Model.Tags)
                         {
                             @Html.Partial("_BlogTag", tag)

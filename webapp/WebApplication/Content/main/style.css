@@ -143,6 +143,9 @@ li.divider {
 .display-warning {
   font-style: italic;
 }
+h2.alert-message {
+  font-size: 1.45em;
+}
 .small-print label {
   font-size: 0.9em;
   line-height: 1.33em;

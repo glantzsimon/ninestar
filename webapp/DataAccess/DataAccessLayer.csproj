@@ -457,6 +457,10 @@
     <Compile Include="Migrations\202504211421312_SlugsForAll.designer.cs">
       <DependentUpon>202504211421312_SlugsForAll.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504211456339_ImageUrlNotRequired.cs" />
+    <Compile Include="Migrations\202504211456339_ImageUrlNotRequired.designer.cs">
+      <DependentUpon>202504211456339_ImageUrlNotRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\TimeZone.cs" />
@@ -654,6 +658,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504211421312_SlugsForAll.resx">
       <DependentUpon>202504211421312_SlugsForAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504211456339_ImageUrlNotRequired.resx">
+      <DependentUpon>202504211456339_ImageUrlNotRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

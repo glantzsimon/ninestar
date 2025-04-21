@@ -29,7 +29,6 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SlugLabel)]
         public string Slug { get; set; }
 
-        [Required]
         [DataType(DataType.ImageUrl)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ImageUrlLabel)]
         public string ImageUrl { get; set; }

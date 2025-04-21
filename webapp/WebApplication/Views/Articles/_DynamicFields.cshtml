@@ -8,7 +8,7 @@
         <div class="form-group margin-bottom-0">
             @Html.Partial("../Shared/Controls/_ImageUploader", new ImageUploadOptions
             {
-                UploadUrl = Url.Action("UploadImage", new { id = Model.ArticleId })
+                UploadUrl = Url.Action("UploadImage", new { articleId = Model.ArticleId })
             })
         </div>
     </div>
@@ -17,7 +17,7 @@
     <div class="col-sm-12">
         <div class="form-group">
             <label for="imageFields">@Dictionary.Images:</label>
-            <select id="imageFields" class="form-control" multiple>
+            <select id="imageFields" class="form-control" multiple size="11">
                 @Html.Partial("_ImageOptions")
             </select>
         </div>
@@ -52,7 +52,8 @@
         }).get();
 
         // Disable + show spinner
-        $btn.prop('disabled', true).displaySpinner(true);
+        $btn.prop('disabled', true);
+        $.fn.displaySpinner($btn, true);
 
         $.ajax({
             url: '@Url.Action("DeleteImages")',
@@ -63,18 +64,23 @@
                 // Reload image field options
                 $.get('@Url.Action("GetImageOptions")', { articleId: @Model.ArticleId }, function (data) {
                     $select.html(data);
-                    alert('Selected image(s) deleted.');
                 });
             },
             error: function () {
                 alert('Failed to delete one or more images.');
             },
             complete: function () {
-                $btn.prop('disabled', false).displaySpinner(false);
+                $btn.prop('disabled', false);
+                $.fn.hideSpinner($btn);
             }
         });
     });
 
+    function refreshImageOptions(articleId) {
+        $.get('@Url.Action("GetImageOptions")', { articleId: @Model.ArticleId }, function (data) {
+            $('#imageFields').html(data);
+        });
+    }
 
     $("#imageFields").on("keydown", function (event) {
         if (event.ctrlKey && event.key.toLowerCase() === "c") {
@@ -107,20 +113,8 @@
         }
     });
 
-    document.addEventListener('imageUploaded', function (e) {
-        const { url, filename } = e.detail;
-
-        // Create placeholder markup
-        const placeholder = `{img src="${url}" /}`;
-
-        // Inject into #imageFields under ArticleImages optgroup
-        const $optgroup = $('#articleImagesGroup');
-        const $option = $('<option>', {
-            value: placeholder,
-            text: filename
-        });
-
-        $optgroup.append($option);
+    document.addEventListener('imageUploaded', function () {
+        refreshImageOptions(@Model.ArticleId);
     });
 
 </script>

@@ -13,15 +13,15 @@ namespace K9.WebApplication.ViewModels
         public ImageInfo[] GlobalImageFields { get; }
         public ImageInfo[] ArticleImageFields { get; }
 
-        public ArticleDynamicFieldsViewModel(int? id = null)
+        public ArticleDynamicFieldsViewModel()
         {
             GlobalImageFields = GetEmailTemplateImages();
-            ArticleImageFields = id.HasValue ? GetEmailTemplateImages() : Array.Empty<ImageInfo>();
+            ArticleImageFields = ArticleId.HasValue ? GetEmailTemplateImages() : Array.Empty<ImageInfo>();
         }
 
-        private static ImageInfo[] GetEmailTemplateImages(int? id = null)
+        private ImageInfo[] GetEmailTemplateImages()
         {
-            var virtualFolder = id.HasValue ? $"~/Images/articles/{id}" : "~/Images/articles";
+            var virtualFolder = ArticleId.HasValue ? $"~/Images/articles/{ArticleId}" : "~/Images/articles";
             var physicalPath = HostingEnvironment.MapPath(virtualFolder);
 
             if (Directory.Exists(physicalPath))

@@ -191,6 +191,7 @@ namespace K9.WebApplication
 
             defaultConfig.Value.BaseEmailTemplateImagesPath = defaultConfig.Value.BaseImagesPath;
             defaultConfig.Value.BaseBaseEmailTemplateVideosPath = defaultConfig.Value.BaseVideosPath;
+            defaultConfig.Value.LocalBaseImagesPath = "https://localhost/ninestar/Images";
 
             var apiConfig = ConfigHelper.GetConfiguration<ApiConfiguration>(json);
             builder.Register(c => apiConfig).SingleInstance();

@@ -29,8 +29,8 @@ namespace K9.WebApplication.Services
                 return false;
             }
 
-            var safeRelativePath = relativePath.TrimStart('\\', '/');
-            var storjPath = $"{Bucket}/{BasePath}/{safeRelativePath.Replace("\\", "/")}";
+            var safeRelativePath = relativePath.TrimStart('\\', '/').Replace("\\", "/");
+            var storjPath = $"{Bucket}/{BasePath}/{safeRelativePath}";
 
             var process = new Process
             {
@@ -48,7 +48,7 @@ namespace K9.WebApplication.Services
             process.Start();
             string stdout = process.StandardOutput.ReadToEnd();
             string stderr = process.StandardError.ReadToEnd();
-           
+
             process.WaitForExit(18000); // 10 seconds
             if (!process.HasExited)
             {
@@ -59,13 +59,15 @@ namespace K9.WebApplication.Services
 
             if (process.ExitCode == 0)
             {
-                storjUrl = $"https://link.storjshare.io/raw/{Bucket}/{BasePath}/{relativePath.Replace("\\", "/")}";
+                // ✅ Use configured BaseImagesPath
+                var baseUrl = My.DefaultValuesConfiguration.BaseImagesPath.TrimEnd('/');
+                storjUrl = $"{baseUrl}/{safeRelativePath}";
                 My.Logger.Info($"[SUCCESS] Uploaded to Storj: {storjUrl}");
                 return true;
             }
             else
             {
-                My.Logger.Error(($"Storj upload failed:\n{stderr}"));
+                My.Logger.Error($"Storj upload failed:\n{stderr}");
                 return false;
             }
         }

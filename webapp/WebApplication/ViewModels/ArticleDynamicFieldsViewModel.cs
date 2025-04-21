@@ -40,7 +40,10 @@ namespace K9.WebApplication.ViewModels
                             AltText = Path.GetFileNameWithoutExtension(fileName),
                             Src = articleId.HasValue 
                                 ? $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/articles/{articleId.Value}/{fileName}"
-                                : $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/articles/{fileName}"
+                                : $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/articles/{fileName}",
+                            LocalSrc = articleId.HasValue 
+                                ? $"{DefaultValuesConfiguration.Instance.LocalBaseImagesPath}/articles/{articleId.Value}/{fileName}"
+                                : $"{DefaultValuesConfiguration.Instance.LocalBaseImagesPath}/articles/{fileName}",
                         };
                     })
                     .ToArray();

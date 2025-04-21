@@ -19,82 +19,95 @@
 
 <script>
     $(function () {
-    var $dropZone = $('#imageDropZone');
-    var $realInput = $('#@uploadId');
-    var $preview = $('#@previewId');
+        const $dropZone = $('#imageDropZone');
+        const $realInput = $('#@uploadId');
+        const $preview = $('#@previewId');
+        const $uploadButton = $('.btn-upload-trigger');
 
-    // 👆 Trigger file picker on button click
-    $('.btn-upload-trigger').on('click', function () {
-        $realInput.trigger('click');
-    });
-
-    // 📦 Handle file selection
-    $realInput.on('change', function () {
-        handleFiles(this.files);
-    });
-
-    // 📂 Drag & Drop: drag over styling
-    $dropZone.on('dragover', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $dropZone.addClass('drag-over');
-    });
-
-    // 📂 Drag & Drop: drag leave or drop
-    $dropZone.on('dragleave drop', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $dropZone.removeClass('drag-over');
-    });
-
-    // 📂 Drag & Drop: handle dropped files
-    $dropZone.on('drop', function (e) {
-        var files = e.originalEvent.dataTransfer.files;
-        handleFiles(files);
-    });
-
-    // 🧠 Shared handler for both input and drop
-    function handleFiles(files) {
-        if (!files || files.length === 0) return;
-
-        $preview.empty();
-
-        Array.from(files).forEach(function (file) {
-            var formData = new FormData();
-            formData.append('file', file);
-
-            $.ajax({
-                url: '@Model.UploadUrl',
-                type: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function (response) {
-                    if (response && response.success) {
-                        var url = response.url;
-
-                        var preview = $(
-                            '<div class="col-xs-6 col-sm-4 image-preview-container">' +
-                                '<img src="' + url + '" class="img-responsive img-thumbnail" style="width: 100%;" />' +
-                                '<input type="text" class="form-control input-sm" readonly value="' + url + '" />' +
-                            '</div>'
-                        );
-
-                        $preview.append(preview);
-
-                        document.dispatchEvent(new CustomEvent('imageUploaded', {
-                            detail: { url: url, filename: url.split('/').pop() }
-                        }));
-
-                        $.fn.showToast('Image uploaded.', 'success');
-                    }
-                },
-                error: function () {
-                    $.fn.showToast('Upload failed for ' + file.name, 'error');
-                }
-            });
+        // 👆 Trigger file picker on button click
+        $uploadButton.on('click', function () {
+            $realInput.trigger('click');
         });
-    }
-});
+
+        // 📦 Handle file selection from picker
+        $realInput.on('change', function () {
+            handleFiles(this.files);
+        });
+
+        // 📂 Drag over
+        $dropZone.on('dragover', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $dropZone.addClass('drag-over');
+        });
+
+        // 📂 Drag leave or drop
+        $dropZone.on('dragleave drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $dropZone.removeClass('drag-over');
+        });
+
+        // 📂 Drop files
+        $dropZone.on('drop', function (e) {
+            const files = e.originalEvent.dataTransfer.files;
+            handleFiles(files);
+        });
+
+        // 🧠 Shared handler
+        function handleFiles(files) {
+            if (!files || files.length === 0) return;
+
+            $uploadButton.prop('disabled', true);
+            $.fn.displaySpinner($dropZone, true);
+
+            let pending = files.length;
+
+            Array.from(files).forEach(function (file) {
+                const formData = new FormData();
+                formData.append('file', file);
+
+                $.ajax({
+                    url: '@Model.UploadUrl',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response && response.success) {
+                            const url = response.url;
+
+                            const preview = $(
+                                '<div class="col-xs-6 col-sm-4 image-preview-container">' +
+                                    '<img src="' + url + '" class="img-responsive img-thumbnail" style="width: 100%;" />' +
+                                    '<input type="text" class="form-control input-sm" readonly value="' + url + '" />' +
+                                '</div>'
+                            );
+
+                            $preview.append(preview);
+
+                            document.dispatchEvent(new CustomEvent('imageUploaded', {
+                                detail: { url: url, filename: url.split('/').pop() }
+                            }));
+
+                            $.fn.showToast('Image uploaded.', 'success');
+                        } else {
+                            $.fn.showToast('Unexpected error during upload.', 'error');
+                        }
+                    },
+                    error: function () {
+                        $.fn.showToast('Upload failed for ' + file.name, 'error');
+                    },
+                    complete: function () {
+                        pending--;
+                        if (pending === 0) {
+                            $uploadButton.prop('disabled', false);
+                            $.fn.hideSpinner($dropZone);
+                        }
+                    }
+                });
+            });
+        }
+    });
 
 </script>

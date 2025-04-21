@@ -13,6 +13,8 @@ namespace K9.SharedLibrary.Models
         public ImageFormat Format { get; set; }
 
         public string Src { get; set; }
+        
+        public string LocalSrc { get; set; }
 
         public string FileName { get; set; }
 

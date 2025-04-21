@@ -6520,6 +6520,9 @@
   <data name="Publish" xml:space="preserve">
     <value>Publish</value>
   </data>
+  <data name="Published" xml:space="preserve">
+    <value>Published</value>
+  </data>
   <data name="PublishedOnLabel" xml:space="preserve">
     <value>Published On</value>
   </data>

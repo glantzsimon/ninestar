@@ -33,10 +33,19 @@
   background: white !important;
   padding: 20px 10px !important;
 }
-.article-body img {
+.article-container .text-muted {
+  margin: 10px 0;
+}
+.article-container .article-body img {
   width: 100% !important;
   height: auto !important;
-  padding: 20px 0;
+  margin: 20px 0;
+}
+.article-container .article-body p + img {
+  margin-top: 0;
+}
+.article-container .article-body h5:first-of-type {
+  margin-top: 0;
 }
 .form-group .tagify.form-control {
   min-height: 36px !important;

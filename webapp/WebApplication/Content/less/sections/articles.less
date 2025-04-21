@@ -48,13 +48,25 @@
             padding: 20px 10px !important;
         }
     }
-}
 
-.article-body {
-    img {
-        width: 100% !important;
-        height: auto !important;
-        padding: 20px 0;
+    .text-muted {
+        margin: 10px 0;
+    }
+
+    .article-body {
+        img {
+            width: 100% !important;
+            height: auto !important;
+            margin: 20px 0;
+        }
+
+        p + img {
+            margin-top: 0;
+        }
+
+        h5:first-of-type {
+            margin-top: 0;
+        }
     }
 }
 
@@ -64,5 +76,5 @@
             min-height: 36px !important;
             height: unset !important;
         }
-    }    
+    }
 }

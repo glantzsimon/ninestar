@@ -403,10 +403,12 @@
     <Compile Include="Services\IAITextMergeService.cs" />
     <Compile Include="Services\AITextMergeService.cs" />
     <Compile Include="Services\IArticlesService.cs" />
+    <Compile Include="Services\IMediaManagementService.cs" />
     <Compile Include="Services\IGoogleService.cs" />
     <Compile Include="Services\IAstrologyService.cs" />
     <Compile Include="Services\AstrologyService.cs" />
     <Compile Include="Services\ArticlesService.cs" />
+    <Compile Include="Services\MediaManagementService.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="ViewModels\ArticleDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\MagicSquareViewModel.cs" />

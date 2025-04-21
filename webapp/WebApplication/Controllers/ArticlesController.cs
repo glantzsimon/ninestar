@@ -23,11 +23,13 @@ namespace K9.WebApplication.Controllers
     public class ArticlesController : BaseNineStarKiController<Article>
     {
         private readonly IArticlesService _articlesService;
+        private readonly IMediaManagementService _mediaManagementService;
 
-        public ArticlesController(IControllerPackage<Article> controllerPackage, INineStarKiPackage nineStarKiPackage, IArticlesService articlesService)
+        public ArticlesController(IControllerPackage<Article> controllerPackage, INineStarKiPackage nineStarKiPackage, IArticlesService articlesService, IMediaManagementService mediaManagementService)
             : base(controllerPackage, nineStarKiPackage)
         {
             _articlesService = articlesService;
+            _mediaManagementService = mediaManagementService;
 
             RecordBeforeUpdate += ArticlesController_RecordBeforeUpdate;
         }
@@ -94,12 +96,24 @@ namespace K9.WebApplication.Controllers
                 var safeFileName = Slugify(fileName) + "-" + Guid.NewGuid().ToString("N").Substring(0, 6) + ext;
                 var relativePath = articleId.HasValue && articleId.Value > 0 ? $"~/Images/articles/{articleId}" : "~/Images/articles";
                 var uploadDir = Server.MapPath(relativePath);
+
                 Directory.CreateDirectory(uploadDir);
                 var path = Path.Combine(uploadDir, safeFileName);
                 file.SaveAs(path);
 
                 var url = Url.Content($"{relativePath}/{safeFileName}");
+
+#if DEBUG
                 return Json(new { success = true, url }, JsonRequestBehavior.AllowGet);
+#else
+                var uploadRelativePath = articleId.HasValue ? $"articles/{articleId}/{safeFileName}" : $"articles/{safeFileName}";
+                var absoluteFilePath = Path.Combine(uploadDir, safeFileName);
+                var storjUrl = UploadImageToStorj(absoluteFilePath, uploadRelativePath);
+                
+                return Json(new { success = true, url = string.IsNullOrWhiteSpace(storjUrl) 
+                ? url 
+                : storjUrl }, JsonRequestBehavior.AllowGet);
+#endif
             }
 
             return new HttpStatusCodeResult(400, "No file received.");
@@ -168,6 +182,16 @@ namespace K9.WebApplication.Controllers
         private string Slugify(string input)
         {
             return Regex.Replace(input.ToLower(), @"[^\w\-]", "-").Trim('-');
+        }
+
+        private string UploadImageToStorj(string absoluteFilePath, string relativePath)
+        {
+            if (_mediaManagementService.UploadToStorj(absoluteFilePath, relativePath, out var storjUrl))
+            {
+                return storjUrl;
+            }
+
+            return "";
         }
     }
 }

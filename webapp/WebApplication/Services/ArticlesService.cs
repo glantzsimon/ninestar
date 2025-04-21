@@ -35,9 +35,10 @@ namespace K9.WebApplication.Services
             return article;
         }
 
-        public List<Article> GetArticles()
+        public List<Article> GetArticles(bool publishedOnly = false)
         {
-            var articles = _articlesRepository.List().OrderByDescending(e => e.CreatedOn).ToList();
+            var articles = publishedOnly ? _articlesRepository.Find(e => e.PublishedOn.HasValue) : _articlesRepository.List();
+            articles = articles.OrderByDescending(e => e.CreatedOn).ToList();
             foreach (var article in articles)
             {
                 article.Tags = GetTagsForArticle(article.Id);

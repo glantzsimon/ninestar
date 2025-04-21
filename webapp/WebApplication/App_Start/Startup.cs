@@ -90,6 +90,7 @@ namespace K9.WebApplication
             builder.RegisterType<AstrologyService>().As<IAstrologyService>().InstancePerLifetimeScope();
             builder.RegisterType<GoogleService>().As<IGoogleService>().InstancePerLifetimeScope();
             builder.RegisterType<ArticlesService>().As<IArticlesService>().InstancePerLifetimeScope();
+            builder.RegisterType<MediaManagementService>().As<IMediaManagementService>().InstancePerLifetimeScope();
 
             RegisterConfiguration(builder);
 

@@ -1,12 +1,11 @@
-﻿using K9.WebApplication.Models;
-using K9.WebApplication.Packages;
+﻿using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
-using System.Web.Mvc;
 using K9.WebApplication.ViewModels;
+using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    [RoutePrefix("blog")]
+    [RoutePrefix("latest-articles")]
     public partial class BlogController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
@@ -19,18 +18,28 @@ namespace K9.WebApplication.Controllers
             _articlesService = articlesService;
         }
 
+        [Route("")] 
         public ActionResult Index()
         {
             return View(new BlogViewModel
             {
-                Articles = _articlesService.GetArticles(),
+                Articles = _articlesService.GetArticles(true),
                 Tags = _articlesService.GetAllTags()
             });
         }
 
+        [Route("{id:int}")]
         public ActionResult Details(int id)
         {
-            return View(_articlesService.GetArticle(id));
+            var article = _articlesService.GetArticle(id);
+            if (article != null)
+            {
+                if (article.PublishedOn.HasValue)
+                {
+                    return View(article);
+                }
+            }
+            return HttpNotFound();
         }
 
         public override string GetObjectName()

@@ -6,7 +6,7 @@ namespace K9.WebApplication.Services
     public interface IArticlesService
     {
         Article GetArticle(int id);
-        List<Article> GetArticles();
+        List<Article> GetArticles(bool publishedOnly = false);
         List<Tag> GetAllTags();
         void SaveArticle(Article article);
         void CreateArticle(Article article);

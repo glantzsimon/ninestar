@@ -6529,6 +6529,9 @@
   <data name="LatestArticles" xml:space="preserve">
     <value>Latest Articles</value>
   </data>
+  <data name="PermissionRequired" xml:space="preserve">
+    <value>Permission Required</value>
+  </data>
   <data name="Publish" xml:space="preserve">
     <value>Publish</value>
   </data>

@@ -1,7 +1,22 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @{
-	ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
-	Layout = "~/Views/Shared/_LayoutForm.cshtml";
-	
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+
 }
-@Html.Alert(EAlertType.Unauthorized, K9.Base.Globalisation.Dictionary.UnauthorizedError)
+<div class="well">
+    @Html.Alert(EAlertType.Fail, K9.Globalisation.Dictionary.PermissionRequired)
+
+    <div class="text-center margin-10">
+        <h6>@K9.Base.Globalisation.Dictionary.UnauthorizedError</h6>
+
+        @Html.Partial("_RedirectMessage")
+    </div>
+
+    <hr />
+    <div class="text-center margin-bottom-10">
+        @Html.ActionLink(K9.Base.Globalisation.Dictionary.ContactSupport, "ContactUs", "Support") | @Html.ActionLink(K9.Base.Globalisation.Dictionary.GoBackHome, "Index", "PersonalChart")
+    </div>
+</div>
+
+@Html.Partial("_RedirectJs")

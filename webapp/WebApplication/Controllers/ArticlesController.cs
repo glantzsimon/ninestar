@@ -7,6 +7,7 @@ using K9.SharedLibrary.Helpers.Html;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -109,10 +110,14 @@ namespace K9.WebApplication.Controllers
                 var uploadRelativePath = articleId.HasValue ? $"articles/{articleId}/{safeFileName}" : $"articles/{safeFileName}";
                 var absoluteFilePath = Path.Combine(uploadDir, safeFileName);
                 var storjUrl = UploadImageToStorj(absoluteFilePath, uploadRelativePath);
-                
-                return Json(new { success = true, url = string.IsNullOrWhiteSpace(storjUrl) 
-                ? url 
-                : storjUrl }, JsonRequestBehavior.AllowGet);
+
+                return Json(new
+                {
+                    success = true,
+                    url = string.IsNullOrWhiteSpace(storjUrl)
+                ? url
+                : storjUrl
+                }, JsonRequestBehavior.AllowGet);
 #endif
             }
 
@@ -124,29 +129,44 @@ namespace K9.WebApplication.Controllers
         {
             if (request?.Urls == null || !request.Urls.Any())
             {
-                return new HttpStatusCodeResult(400, "No URLs provided.");
+                return Json(new { success = false, message = "No URLs provided." });
             }
 
-            foreach (var url in request.Urls)
+            var failedDeletes = new List<string>();
+
+            foreach (var relativePath in request.Urls)
             {
                 try
                 {
-                    // Resolve from virtual to physical path
-                    var relativePath = url.Replace(Request.Url.GetLeftPart(UriPartial.Authority), "");
-                    var fullPath = Server.MapPath(relativePath);
+                    var localVirtualPath = $"~/{relativePath.TrimStart('/')}";
+                    var fullPath = Server.MapPath(localVirtualPath);
 
                     if (System.IO.File.Exists(fullPath))
                     {
                         System.IO.File.Delete(fullPath);
                     }
+                    else
+                    {
+                        failedDeletes.Add($"Not found: {relativePath}");
+                    }
                 }
                 catch (Exception ex)
                 {
-                    Logger.Error("DeleteImages => " + ex.Message);
+                    Logger.Error($"DeleteImages => Error deleting {relativePath}: {ex.Message}");
+                    failedDeletes.Add($"Error: {relativePath}");
                 }
             }
 
-            return new HttpStatusCodeResult(200);
+            if (failedDeletes.Any())
+            {
+                return Json(new
+                {
+                    success = false,
+                    message = $"Some files failed to delete: {string.Join(", ", failedDeletes)}"
+                });
+            }
+
+            return Json(new { success = true });
         }
 
         [HttpGet]

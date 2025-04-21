@@ -14,12 +14,12 @@
         }
     }
 
-    <h3 style="margin-top: 20px !Important;">
+    <h2 class="margin-top-0 margin-bottom-20">
         <strong>@MvcHtmlString.Create(@Model.Message)</strong>
-    </h3>
+    </h2>
 
     @if (!string.IsNullOrEmpty(Model.OtherMessage))
     {
         <p>@MvcHtmlString.Create(@Model.OtherMessage)</p>
     }
-</div>
+</div>  

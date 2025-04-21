@@ -22,35 +22,37 @@ namespace K9.WebApplication.ViewModels
 
         private static ImageInfo[] GetEmailTemplateImages(int? articleId = null)
         {
-            var virtualFolder = articleId.HasValue ? $"~/Images/articles/{articleId.Value}" : "~/Images/articles";
+            var virtualFolder = articleId.HasValue
+                ? $"~/Images/articles/{articleId.Value}"
+                : "~/Images/articles";
+
             var physicalPath = HostingEnvironment.MapPath(virtualFolder);
 
-            if (Directory.Exists(physicalPath))
+            if (string.IsNullOrWhiteSpace(physicalPath) || !Directory.Exists(physicalPath))
             {
-                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif", ".webp" };
-
-                return Directory.GetFiles(physicalPath)
-                    .Where(f => allowedExtensions.Contains(Path.GetExtension(f).ToLower()))
-                    .Select(f =>
-                    {
-                        var fileName = Path.GetFileName(f);
-                        return new ImageInfo
-                        {
-                            FileName = fileName,
-                            AltText = Path.GetFileNameWithoutExtension(fileName),
-                            Src = articleId.HasValue 
-                                ? $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/articles/{articleId.Value}/{fileName}"
-                                : $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/articles/{fileName}",
-                            LocalSrc = articleId.HasValue 
-                                ? $"{DefaultValuesConfiguration.Instance.LocalBaseImagesPath}/articles/{articleId.Value}/{fileName}"
-                                : $"{DefaultValuesConfiguration.Instance.LocalBaseImagesPath}/articles/{fileName}",
-                        };
-                    })
-                    .ToArray();
+                return Array.Empty<ImageInfo>();
             }
 
-            return Array.Empty<ImageInfo>();
-        }
+            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif", ".webp" };
 
+            return Directory.GetFiles(physicalPath)
+                .Where(f => allowedExtensions.Contains(Path.GetExtension(f).ToLower()))
+                .Select(f =>
+                {
+                    var fileName = Path.GetFileName(f);
+                    var relative = articleId.HasValue
+                        ? $"/Images/articles/{articleId.Value}/{fileName}"
+                        : $"/Images/articles/{fileName}";
+
+                    return new ImageInfo
+                    {
+                        FileName = fileName,
+                        AltText = Path.GetFileNameWithoutExtension(fileName),
+                        Src = $"{DefaultValuesConfiguration.Instance.BaseImagesPath}{relative.Replace("/Images", "")}", // Storj path
+                        RelativePath = relative // used for Server.MapPath
+                    };
+                })
+                .ToArray();
+        }
     }
 }

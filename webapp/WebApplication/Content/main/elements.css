@@ -32,6 +32,12 @@ h5 {
 h5.dark {
   color: #0a4070 !important;
 }
+h6 {
+  color: #666;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 15px;
+}
 h4 {
   line-height: 1.3em;
 }

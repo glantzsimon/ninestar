@@ -14,7 +14,7 @@ namespace K9.SharedLibrary.Models
 
         public string Src { get; set; }
         
-        public string LocalSrc { get; set; }
+        public string RelativePath { get; set; }
 
         public string FileName { get; set; }
 

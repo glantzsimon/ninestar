@@ -2,10 +2,19 @@
     ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
-@Html.Alert(EAlertType.NotFound, K9.Base.Globalisation.Dictionary.NotFoundTitle)
-<div class="text-center margin-bottom-10">
-    <p>@K9.Base.Globalisation.Dictionary.NotFoundError</p>
+
+<div class="well">
+    @Html.Alert(EAlertType.NotFound, K9.Base.Globalisation.Dictionary.NotFoundTitle)
+    <div class="text-center margin-bottom-10">
+        <p>@K9.Base.Globalisation.Dictionary.NotFoundError</p>
+
+        @Html.Partial("_RedirectMessage")
+    </div>
 
     <hr />
-    @Html.ActionLink(K9.Base.Globalisation.Dictionary.GoBackHome, "Index", "PersonalChart")
+    <div class="text-center margin-bottom-10">
+        @Html.ActionLink(K9.Base.Globalisation.Dictionary.ContactSupport, "ContactUs", "Support") | @Html.ActionLink(K9.Base.Globalisation.Dictionary.GoBackHome, "Index", "PersonalChart")
+    </div>
 </div>
+
+@Html.Partial("_RedirectJs")

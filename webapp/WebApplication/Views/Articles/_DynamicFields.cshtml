@@ -17,6 +17,9 @@
     <div class="col-sm-12">
         <div class="form-group">
             <label for="imageFields">@Dictionary.Images:</label>
+            <small class="text-muted" style="display: block; margin-top: -5px; margin-bottom: 8px;">
+                Ctrl+C to copy image element markup. Ctrl+Shift+C to copy image URL.
+            </small>
             <select id="imageFields" class="form-control" multiple size="11">
                 @Html.Partial("_ImageOptions")
             </select>

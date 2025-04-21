@@ -128,7 +128,7 @@ namespace K9.WebApplication.Services
 
         private string GetAuthor(string username)
         {
-            var user = My.UsersRepository.Find(username).FirstOrDefault();
+            var user = My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
             return user == null ? username : user.FullName;
         }
 

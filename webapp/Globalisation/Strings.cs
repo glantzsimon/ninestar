@@ -71,6 +71,7 @@
             public const string DonatedOnLabel = "DonatedOnLabel";
             public const string PublishedOnLabel = "PublishedOnLabel";
             public const string TitleLabel = "TitleLabel";
+            public const string SlugLabel = "SlugLabel";
             public const string ImageUrlLabel = "ImageUrlLabel";
             public const string TagsLabel = "TagsLabel";
             public const string CompletedOnLabel = "CompletedOnLabel";

@@ -34,13 +34,14 @@
                     <hr />
                 </div>
             </div>
-
-            <div id="blogGrid" class="row">
+            
+            <div id="blogGrid" class="blog-grid">
                 @foreach (var article in Model.Articles)
                 {
                     @Html.Partial("_BlogCard", article)
                 }
             </div>
+
         </div>
     </article>
 </div>

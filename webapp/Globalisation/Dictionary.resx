@@ -6541,6 +6541,9 @@
   <data name="PublishedOnLabel" xml:space="preserve">
     <value>Published On</value>
   </data>
+  <data name="SlugLabel" xml:space="preserve">
+    <value>Slug</value>
+  </data>
   <data name="Tag" xml:space="preserve">
     <value>Tag</value>
   </data>

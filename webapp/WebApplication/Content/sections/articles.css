@@ -1,16 +1,33 @@
-﻿.blog-card .panel {
+﻿.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 22px;
+  margin: 20px;
+  margin-top: 0;
+}
+.blog-card {
+  flex: 1 1 300px;
+  max-width: 360px;
+  display: flex;
+  min-height: 440px;
+}
+.blog-card .panel {
   border-radius: 10px !important;
   transition: box-shadow 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 100%;
 }
 .blog-card .panel:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 .blog-card .panel .panel-body {
   padding-bottom: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .blog-card .panel .panel-body .blog-thumbnail {
   width: 100%;
@@ -26,6 +43,12 @@
 }
 .blog-card .panel .panel-body .blog-summary {
   font-size: 0.9em;
+  flex-grow: 1;
+  margin-bottom: 10px;
+  min-height: 100px;
+}
+.blog-card .panel .panel-body .blog-summary + p {
+  margin-top: auto;
 }
 .blog-card .panel .panel-body .label {
   margin-right: 5px;
@@ -36,6 +59,7 @@
   display: inline-block;
   font-weight: bold;
   color: #337ab7;
+  margin-top: 10px;
 }
 .blog-card .panel .panel-body .read-more:hover {
   text-decoration: underline;

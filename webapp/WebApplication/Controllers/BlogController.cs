@@ -1,7 +1,9 @@
-﻿using K9.WebApplication.Packages;
+﻿using System;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System.Web.Mvc;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Controllers
 {
@@ -18,7 +20,7 @@ namespace K9.WebApplication.Controllers
             _articlesService = articlesService;
         }
 
-        [Route("")] 
+        [Route("")]
         public ActionResult Index()
         {
             return View(new BlogViewModel
@@ -28,18 +30,23 @@ namespace K9.WebApplication.Controllers
             });
         }
 
-        [Route("{id:int}")]
-        public ActionResult Details(int id)
+        [Route("latest-articles/{id:int}/{slug?}")]
+        public ActionResult Details(int id, string slug = null)
         {
             var article = _articlesService.GetArticle(id);
-            if (article != null)
+            if (article == null || !article.PublishedOn.HasValue)
             {
-                if (article.PublishedOn.HasValue)
-                {
-                    return View(article);
-                }
+                return HttpNotFound();
             }
-            return HttpNotFound();
+
+            var correctSlug = article.Title.Slugify();
+            if (!string.Equals(slug, correctSlug, StringComparison.OrdinalIgnoreCase))
+            {
+                // Redirect to canonical URL with slug
+                return RedirectToRoutePermanent("Default", new { controller = "Blog", action = "Details", id, slug = correctSlug });
+            }
+
+            return View(article);
         }
 
         public override string GetObjectName()

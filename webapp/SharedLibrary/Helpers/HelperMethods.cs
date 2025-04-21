@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace K9.SharedLibrary.Helpers
 {
@@ -44,6 +45,17 @@ namespace K9.SharedLibrary.Helpers
         {
             for (var day = from.Date; day.Date <= until.Date; day = day.AddDays(1))
                 yield return day;
+        }
+
+        public static string Slugify(this string value)
+        {
+            if (string.IsNullOrWhiteSpace(value)) return string.Empty;
+
+            var slug = value.ToLowerInvariant().Trim();
+            slug = Regex.Replace(slug, @"[^\w\s-]", "");  // Remove non-word chars
+            slug = Regex.Replace(slug, @"\s+", "-");      // Replace spaces with dashes
+            slug = Regex.Replace(slug, "-+", "-");        // Collapse multiple dashes
+            return slug;
         }
     }
 }

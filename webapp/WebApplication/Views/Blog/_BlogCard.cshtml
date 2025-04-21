@@ -2,10 +2,10 @@
 @using K9.WebApplication.Options
 @model Article
 
-<div class="col-sm-6 col-md-4 blog-card">
+<div class="blog-card">
     <div class="panel panel-default">
         <div class="panel-body">
-            <h4><a href="@Url.Action("Details", "Blog", new { id = Model.Id })">@Model.Title</a></h4>
+            <h4><a href="@Url.Action("Details", "Blog", new { id = Model.Id, slug = Model.Slug })">@Model.Title</a></h4>
             <p class="text-muted"><small>@Model.PublishedOnText</small></p>
 
             @if (!string.IsNullOrEmpty(Model.ImageUrl))
@@ -30,7 +30,7 @@
             </p>
 
             <p class="text-center">
-                <a href="@Url.Action("Details", "Blog", new { id = Model.Id })" class="read-more">@Dictionary.ReadMore</a>
+                <a href="@Url.Action("Details", "Blog", new { id = Model.Id, slug = Model.Slug })" class="read-more">@Dictionary.ReadMore</a>
             </p>
         </div>
     </div>

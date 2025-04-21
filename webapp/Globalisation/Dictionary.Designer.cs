@@ -19113,6 +19113,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Slug.
+        /// </summary>
+        public static string SlugLabel {
+            get {
+                return ResourceManager.GetString("SlugLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Small Intestine.
         /// </summary>
         public static string SmallIntestine {

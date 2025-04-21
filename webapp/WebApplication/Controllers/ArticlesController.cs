@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.ViewModels;
 
@@ -100,7 +101,7 @@ namespace K9.WebApplication.Controllers
 
                 var fileName = Path.GetFileNameWithoutExtension(file.FileName);
                 var ext = Path.GetExtension(file.FileName);
-                var safeFileName = Slugify(fileName) + "-" + Guid.NewGuid().ToString("N").Substring(0, 6) + ext;
+                var safeFileName = fileName.Slugify() + "-" + Guid.NewGuid().ToString("N").Substring(0, 6) + ext;
                 var relativePath = articleId.HasValue && articleId.Value > 0
                     ? $"~/Images/articles/{articleId}"
                     : "~/Images/articles";
@@ -138,9 +139,7 @@ namespace K9.WebApplication.Controllers
                 return Json(new { success = false, message = "Upload failed: " + ex.Message });
             }
         }
-
-
-
+        
         [HttpPost]
         public ActionResult DeleteImages(DeleteFilesRequest request)
         {
@@ -215,12 +214,7 @@ namespace K9.WebApplication.Controllers
                 slug = t.Slug
             }), JsonRequestBehavior.AllowGet);
         }
-
-        private string Slugify(string input)
-        {
-            return Regex.Replace(input.ToLower(), @"[^\w\-]", "-").Trim('-');
-        }
-
+        
         private string UploadImageToStorj(string absoluteFilePath, string relativePath)
         {
             return _mediaManagementService.UploadToStorj(absoluteFilePath, relativePath); // throws if fails

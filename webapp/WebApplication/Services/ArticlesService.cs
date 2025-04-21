@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using K9.SharedLibrary.Helpers;
 using Newtonsoft.Json;
 
 namespace K9.WebApplication.Services
@@ -60,6 +61,7 @@ namespace K9.WebApplication.Services
 
         public void SaveArticle(Article article)
         {
+            article.Slug = article.Title.Slugify();
             _articlesRepository.Update(article);
             ProcessTags(article);
         }
@@ -81,12 +83,12 @@ namespace K9.WebApplication.Services
             var tagValues = JsonConvert.DeserializeObject<List<TagValue>>(article.TagsText) ?? new List<TagValue>();
 
             var slugs = tagValues
-                .Select(t => t.Slugify())
+                .Select(t => t.Value.Slugify())
                 .Distinct()
                 .ToList();
 
             var displayValues = tagValues
-                .GroupBy(t => t.Slugify())
+                .GroupBy(t => t.Value.Slugify())
                 .ToDictionary(
                     g => g.Key,
                     g => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(g.First().Value.ToLower())

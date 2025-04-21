@@ -138,7 +138,7 @@ namespace K9.WebApplication.Controllers
         [HttpGet]
         public PartialViewResult GetImageOptions(int? articleId = null)
         {
-            var model = new ArticleDynamicFieldsViewModel { ArticleId = articleId };
+            var model = new ArticleDynamicFieldsViewModel(articleId);
             return PartialView("_ImageOptions", model);
         }
 

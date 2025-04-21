@@ -10,10 +10,7 @@
 
 <hr />
 
-@Html.Partial("_DynamicFields", new ArticleDynamicFieldsViewModel
-{
-    ArticleId = Model.Id
-})
+@Html.Partial("_DynamicFields", new ArticleDynamicFieldsViewModel(Model.Id))
 
 <hr />
 

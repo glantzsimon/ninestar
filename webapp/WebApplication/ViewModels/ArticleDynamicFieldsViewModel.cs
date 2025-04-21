@@ -13,15 +13,16 @@ namespace K9.WebApplication.ViewModels
         public ImageInfo[] GlobalImageFields { get; }
         public ImageInfo[] ArticleImageFields { get; }
 
-        public ArticleDynamicFieldsViewModel()
+        public ArticleDynamicFieldsViewModel(int? articleId = null)
         {
+            ArticleId = articleId;
             GlobalImageFields = GetEmailTemplateImages();
-            ArticleImageFields = ArticleId.HasValue ? GetEmailTemplateImages() : Array.Empty<ImageInfo>();
+            ArticleImageFields = ArticleId.HasValue && ArticleId.Value > 0 ? GetEmailTemplateImages(ArticleId.Value) : Array.Empty<ImageInfo>();
         }
 
-        private ImageInfo[] GetEmailTemplateImages()
+        private static ImageInfo[] GetEmailTemplateImages(int? articleId = null)
         {
-            var virtualFolder = ArticleId.HasValue ? $"~/Images/articles/{ArticleId}" : "~/Images/articles";
+            var virtualFolder = articleId.HasValue ? $"~/Images/articles/{articleId.Value}" : "~/Images/articles";
             var physicalPath = HostingEnvironment.MapPath(virtualFolder);
 
             if (Directory.Exists(physicalPath))
@@ -37,7 +38,9 @@ namespace K9.WebApplication.ViewModels
                         {
                             FileName = fileName,
                             AltText = Path.GetFileNameWithoutExtension(fileName),
-                            Src = $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/articles/{fileName}"
+                            Src = articleId.HasValue 
+                                ? $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/articles/{articleId.Value}/{fileName}"
+                                : $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/articles/{fileName}"
                         };
                     })
                     .ToArray();

@@ -90,42 +90,55 @@ namespace K9.WebApplication.Controllers
         [HttpPost]
         public ActionResult UploadImage(HttpPostedFileBase file, int? articleId = null)
         {
-            if (file == null || file.ContentLength <= 0)
-            {
-                return new HttpStatusCodeResult(400, "No file received.");
-            }
-
-            var fileName = Path.GetFileNameWithoutExtension(file.FileName);
-            var ext = Path.GetExtension(file.FileName);
-            var safeFileName = Slugify(fileName) + "-" + Guid.NewGuid().ToString("N").Substring(0, 6) + ext;
-            var relativePath = articleId.HasValue && articleId.Value > 0 ? $"~/Images/articles/{articleId}" : "~/Images/articles";
-            var uploadDir = Server.MapPath(relativePath);
-
-            Directory.CreateDirectory(uploadDir);
-            var savedPath = Path.Combine(uploadDir, safeFileName);
-            file.SaveAs(savedPath);
-
-            var fallbackUrl = Url.Content($"{relativePath}/{safeFileName}");
-
-#if DEBUG
-            return Json(new { success = true, url = fallbackUrl }, JsonRequestBehavior.AllowGet);
-#else
             try
             {
-                var uploadRelativePath = articleId.HasValue ? $"articles/{articleId}/{safeFileName}" : $"articles/{safeFileName}";
-                var storjUrl = UploadImageToStorj(savedPath, uploadRelativePath);
+                if (file == null || file.ContentLength == 0)
+                {
+                    Logger.Error("ArticlesController => UploadImage => No file received.");
+                    return Json(new { success = false, message = "No file received." });
+                }
 
-                return Json(new { success = true, url = storjUrl }, JsonRequestBehavior.AllowGet);
+                var fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                var ext = Path.GetExtension(file.FileName);
+                var safeFileName = Slugify(fileName) + "-" + Guid.NewGuid().ToString("N").Substring(0, 6) + ext;
+                var relativePath = articleId.HasValue && articleId.Value > 0
+                    ? $"~/Images/articles/{articleId}"
+                    : "~/Images/articles";
+                var uploadDir = Server.MapPath(relativePath);
+
+                Directory.CreateDirectory(uploadDir);
+                var path = Path.Combine(uploadDir, safeFileName);
+                file.SaveAs(path);
+
+                var url = Url.Content($"{relativePath}/{safeFileName}");
+
+                Logger.Info($"ArticlesController => UploadImage => Successfully uploaded image to server: {url}");
+
+#if DEBUG
+                return Json(new { success = true, url });
+#else
+                Logger.Info($"ArticlesController => UploadImage => Uploading image to Storj");
+
+                var uploadRelativePath = articleId.HasValue ? $"articles/{articleId}/{safeFileName}" : $"articles/{safeFileName}";
+                var absoluteFilePath = Path.Combine(uploadDir, safeFileName);
+
+                Logger.Info($"ArticlesController => UploadImage => UploadImageToStorj => {absoluteFilePath}, {uploadRelativePath}");
+
+                var storjUrl = UploadImageToStorj(absoluteFilePath, uploadRelativePath);
+
+                var finalUrl = string.IsNullOrWhiteSpace(storjUrl) ? url : storjUrl;
+                Logger.Info($"UploadImage => Successfully uploaded: {finalUrl}");
+
+                return Json(new { success = true, url = finalUrl });
+#endif
             }
             catch (Exception ex)
             {
-                Logger.Error("Upload to Storj failed: " + ex.GetFullErrorMessage());
-
-                // still return fallback local path so the UI has *something* to show
-                return Json(new { success = false, url = fallbackUrl, message = ex.Message }, JsonRequestBehavior.AllowGet);
+                Logger.Error("UploadImage => Exception: " + ex.GetFullErrorMessage());
+                return Json(new { success = false, message = "Upload failed: " + ex.Message });
             }
-#endif
         }
+
 
 
         [HttpPost]

@@ -16,54 +16,52 @@
     <input type="file" id="@uploadId" class="hidden-file-input" accept="image/*" multiple />
 </div>
 
-
 <script>
     $(function () {
         const $dropZone = $('#imageDropZone');
-        const $realInput = $('#@uploadId');
-        const $preview = $('#@previewId');
-        const $uploadButton = $('.btn-upload-trigger');
+        const $fileInput = $('#@uploadId');
+        const $previewContainer = $('#@previewId');
+        const $uploadBtn = $('.btn-upload-trigger');
 
-        // 👆 Trigger file picker on button click
-        $uploadButton.on('click', function () {
-            $realInput.trigger('click');
+        // 🔘 Open file dialog
+        $uploadBtn.on('click', function () {
+            $fileInput.trigger('click');
         });
 
-        // 📦 Handle file selection from picker
-        $realInput.on('change', function () {
+        // 📦 Handle file input
+        $fileInput.on('change', function () {
             handleFiles(this.files);
         });
 
-        // 📂 Drag over
+        // 🧲 Drag handling
         $dropZone.on('dragover', function (e) {
             e.preventDefault();
             e.stopPropagation();
             $dropZone.addClass('drag-over');
         });
 
-        // 📂 Drag leave or drop
         $dropZone.on('dragleave drop', function (e) {
             e.preventDefault();
             e.stopPropagation();
             $dropZone.removeClass('drag-over');
         });
 
-        // 📂 Drop files
+        // 📥 Drop files
         $dropZone.on('drop', function (e) {
             const files = e.originalEvent.dataTransfer.files;
             handleFiles(files);
         });
 
-        // 🧠 Shared handler
+        // 🧠 Core upload logic
         function handleFiles(files) {
             if (!files || files.length === 0) return;
 
-            $uploadButton.prop('disabled', true);
+            $uploadBtn.prop('disabled', true);
             $.fn.displaySpinner($dropZone, true);
 
             let pending = files.length;
 
-            Array.from(files).forEach(function (file) {
+            Array.from(files).forEach(file => {
                 const formData = new FormData();
                 formData.append('file', file);
 
@@ -73,39 +71,43 @@
                     data: formData,
                     processData: false,
                     contentType: false,
-                    success: function (response) {
-                        if (response && response.url) {
-                            const url = response.url;
 
-                            const preview = $(
-                                '<div class="col-xs-6 col-sm-4 image-preview-container">' +
-                                '<img src="' + url + '" class="img-responsive img-thumbnail" style="width: 100%;" />' +
-                                '<input type="text" class="form-control input-sm" readonly value="' + url + '" />' +
-                                '</div>'
-                            );
+                    success: function (res) {
+                        console.log("Upload response:", res);
 
-                            $preview.append(preview);
+                        if (res && res.success && res.url) {
+                            const $thumb = $(`
+                            <div class="col-xs-6 col-sm-4 image-preview-container">
+                                <img src="${res.url}" class="img-responsive img-thumbnail" style="width: 100%;" />
+                                <input type="text" class="form-control input-sm" readonly value="${res.url}" />
+                            </div>
+                        `);
+
+                            $previewContainer.append($thumb);
 
                             document.dispatchEvent(new CustomEvent('imageUploaded', {
-                                detail: { url: url, filename: url.split('/').pop() }
+                                detail: {
+                                    url: res.url,
+                                    filename: res.url.split('/').pop()
+                                }
                             }));
 
-                            if (response.success === false && response.message) {
-                                $.fn.showToast("⚠️ " + response.message, 'warning');
-                            } else {
-                                $.fn.showToast('Image uploaded successfully.', 'success');
-                            }
+                            $.fn.showToast('Image uploaded successfully.', 'success');
                         } else {
-                            $.fn.showToast('Unexpected error during upload.', 'error');
+                            console.warn("Upload failed or missing URL:", res);
+                            const msg = res?.message || 'Upload failed or returned no URL.';
+                            $.fn.showToast("⚠️ " + msg, 'error');
                         }
                     },
-                    error: function () {
-                        $.fn.showToast('Upload failed for ' + file.name, 'error');
+
+                    error: function (xhr, status, err) {
+                        console.error("AJAX upload error:", xhr.responseText || err);
+                        $.fn.showToast('Upload failed. See console for details.', 'error');
                     },
+
                     complete: function () {
-                        pending--;
-                        if (pending === 0) {
-                            $uploadButton.prop('disabled', false);
+                        if (--pending === 0) {
+                            $uploadBtn.prop('disabled', false);
                             $.fn.hideSpinner($dropZone);
                         }
                     }
@@ -113,5 +115,4 @@
             });
         }
     });
-
 </script>

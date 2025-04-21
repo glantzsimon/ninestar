@@ -6542,7 +6542,8 @@
     <value>Published</value>
   </data>
   <data name="PublishedOnBy" xml:space="preserve">
-    <value>Published on {PublishedOnText} by {Author}</value>
+    <value>&lt;p&gt;&lt;strong&gt;Published On:&lt;/strong&gt; {PublishedOnText}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Author:&lt;/strong&gt;{Author}&lt;/p&gt;</value>
   </data>
   <data name="PublishedOnLabel" xml:space="preserve">
     <value>Published On</value>

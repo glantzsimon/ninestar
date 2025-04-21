@@ -44,6 +44,8 @@ namespace K9.WebApplication.Services
             foreach (var article in articles)
             {
                 article.Tags = GetTagsForArticle(article.Id);
+                article.TagsText = ConvertTagsToTagsText(article.Tags);
+                article.Author = GetAuthor(article.CreatedBy);
             }
 
             return articles;

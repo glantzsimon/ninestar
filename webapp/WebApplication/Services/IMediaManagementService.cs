@@ -2,6 +2,6 @@
 {
     public interface IMediaManagementService
     {
-        bool UploadToStorj(string localFilePath, string relativePath, out string storjUrl);
+        string UploadToStorj(string localFilePath, string relativePath);
     }
 }

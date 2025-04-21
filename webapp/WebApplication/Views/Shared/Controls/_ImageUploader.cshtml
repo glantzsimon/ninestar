@@ -74,13 +74,13 @@
                     processData: false,
                     contentType: false,
                     success: function (response) {
-                        if (response && response.success) {
+                        if (response && response.url) {
                             const url = response.url;
 
                             const preview = $(
                                 '<div class="col-xs-6 col-sm-4 image-preview-container">' +
-                                    '<img src="' + url + '" class="img-responsive img-thumbnail" style="width: 100%;" />' +
-                                    '<input type="text" class="form-control input-sm" readonly value="' + url + '" />' +
+                                '<img src="' + url + '" class="img-responsive img-thumbnail" style="width: 100%;" />' +
+                                '<input type="text" class="form-control input-sm" readonly value="' + url + '" />' +
                                 '</div>'
                             );
 
@@ -90,7 +90,11 @@
                                 detail: { url: url, filename: url.split('/').pop() }
                             }));
 
-                            $.fn.showToast('Image uploaded.', 'success');
+                            if (response.success === false && response.message) {
+                                $.fn.showToast("⚠️ " + response.message, 'warning');
+                            } else {
+                                $.fn.showToast('Image uploaded successfully.', 'success');
+                            }
                         } else {
                             $.fn.showToast('Unexpected error during upload.', 'error');
                         }

@@ -1,5 +1,7 @@
 ﻿using K9.WebApplication.Packages;
+using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace K9.WebApplication.Services
 {
@@ -13,20 +15,16 @@ namespace K9.WebApplication.Services
         {
         }
 
-        public bool UploadToStorj(string localFilePath, string relativePath, out string storjUrl)
+        public string UploadToStorj(string localFilePath, string relativePath)
         {
-            storjUrl = null;
-
             if (!System.IO.File.Exists(UplinkPath))
             {
-                My.Logger.Error("Uplink.exe not found.");
-                return false;
+                throw new FileNotFoundException("Uplink executable not found.", UplinkPath);
             }
 
             if (!System.IO.File.Exists(localFilePath))
             {
-                My.Logger.Error($"File not found: {localFilePath}");
-                return false;
+                throw new FileNotFoundException("Source image file not found.", localFilePath);
             }
 
             var safeRelativePath = relativePath.TrimStart('\\', '/').Replace("\\", "/");
@@ -46,30 +44,29 @@ namespace K9.WebApplication.Services
             };
 
             process.Start();
+
             string stdout = process.StandardOutput.ReadToEnd();
             string stderr = process.StandardError.ReadToEnd();
 
-            process.WaitForExit(18000); // 10 seconds
+            process.WaitForExit(18000); // 18s timeout
+
             if (!process.HasExited)
             {
                 process.Kill();
-                My.Logger.Error("Storj upload process timed out.");
-                return false;
+                throw new TimeoutException("Storj upload process timed out.");
             }
 
-            if (process.ExitCode == 0)
+            if (process.ExitCode != 0)
             {
-                // ✅ Use configured BaseImagesPath
-                var baseUrl = My.DefaultValuesConfiguration.BaseImagesPath.TrimEnd('/');
-                storjUrl = $"{baseUrl}/{safeRelativePath}";
-                My.Logger.Info($"[SUCCESS] Uploaded to Storj: {storjUrl}");
-                return true;
+                throw new ApplicationException($"Storj upload failed (code {process.ExitCode}). stderr:\n{stderr}");
             }
-            else
-            {
-                My.Logger.Error($"Storj upload failed:\n{stderr}");
-                return false;
-            }
+
+            var baseUrl = My.DefaultValuesConfiguration.BaseImagesPath.TrimEnd('/');
+            var finalUrl = $"{baseUrl}/{safeRelativePath}";
+
+            My.Logger.Info($"[SUCCESS] Uploaded to Storj: {finalUrl}");
+            return finalUrl;
         }
+
     }
 }

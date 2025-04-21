@@ -91,6 +91,11 @@
 
     // 📋 Clipboard support (Ctrl+C / Ctrl+Shift+C)
     $(document).on('keydown', function (e) {
+        const activeEl = document.activeElement;
+        const isInputFocused = $(activeEl).is('input, textarea, [contenteditable="true"]');
+
+        if (isInputFocused) return; // ⛔ Let native copy behavior work inside inputs
+
         if (!selectedImage || !e.ctrlKey || e.key.toLowerCase() !== 'c') return;
 
         const $item = $(selectedImage);
@@ -99,10 +104,16 @@
             : $item.data('placeholder');
 
         if (text) {
-            navigator.clipboard.writeText(text).catch(err => console.error("Clipboard error:", err));
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    $.fn.showTooltip($item, "Copied!");
+                })
+                .catch(err => console.error("Clipboard error:", err));
         }
-    });
 
+        e.preventDefault(); // optional: block browser default copy behavior
+    });
+    
     // 🧹 Delete selected images
     $('#deleteSelectedImages').on('click', function () {
         const $btn = $(this);

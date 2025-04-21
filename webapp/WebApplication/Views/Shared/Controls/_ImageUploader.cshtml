@@ -6,66 +6,95 @@
     var previewId = "imagePreviewContainer_" + Model.IdPrefix;
 }
 
-<div class="custom-uploader">
-    <input type="file" id="@uploadId" class="hidden-file-input" accept="image/*" multiple />
+<div class="custom-uploader drop-zone" id="imageDropZone">
+    <div id="@previewId" class="row margin-top-10"></div>
 
     <button type="button" class="btn btn-default btn-upload-trigger">
         <i class="glyphicon glyphicon-upload"></i> @Dictionary.UploadImages
     </button>
 
-    <div id="@previewId" class="row margin-top-10"></div>
+    <input type="file" id="@uploadId" class="hidden-file-input" accept="image/*" multiple />
 </div>
+
 
 <script>
     $(function () {
-        var $realInput = $('#@uploadId');
-        var $preview = $('#@previewId');
+    var $dropZone = $('#imageDropZone');
+    var $realInput = $('#@uploadId');
+    var $preview = $('#@previewId');
 
-        // Clicking the dummy button opens the real input
-        $('.btn-upload-trigger').on('click', function () {
-            $realInput.trigger('click');
-        });
+    // 👆 Trigger file picker on button click
+    $('.btn-upload-trigger').on('click', function () {
+        $realInput.trigger('click');
+    });
 
-        $realInput.on('change', function () {
-            var files = this.files;
-            if (!files || files.length === 0) return;
+    // 📦 Handle file selection
+    $realInput.on('change', function () {
+        handleFiles(this.files);
+    });
 
-            $preview.empty();
+    // 📂 Drag & Drop: drag over styling
+    $dropZone.on('dragover', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $dropZone.addClass('drag-over');
+    });
 
-            Array.from(files).forEach(function (file) {
-                var formData = new FormData();
-                formData.append('file', file);
+    // 📂 Drag & Drop: drag leave or drop
+    $dropZone.on('dragleave drop', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $dropZone.removeClass('drag-over');
+    });
 
-                $.ajax({
-                    url: '@Model.UploadUrl',
-                    type: 'POST',
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    success: function (response) {
-                        if (response && response.success) {
-                            var url = response.url;
+    // 📂 Drag & Drop: handle dropped files
+    $dropZone.on('drop', function (e) {
+        var files = e.originalEvent.dataTransfer.files;
+        handleFiles(files);
+    });
 
-                            var preview = $(
-                                '<div class="col-xs-6 col-sm-4 image-preview-container">' +
+    // 🧠 Shared handler for both input and drop
+    function handleFiles(files) {
+        if (!files || files.length === 0) return;
+
+        $preview.empty();
+
+        Array.from(files).forEach(function (file) {
+            var formData = new FormData();
+            formData.append('file', file);
+
+            $.ajax({
+                url: '@Model.UploadUrl',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response && response.success) {
+                        var url = response.url;
+
+                        var preview = $(
+                            '<div class="col-xs-6 col-sm-4 image-preview-container">' +
                                 '<img src="' + url + '" class="img-responsive img-thumbnail" style="width: 100%;" />' +
                                 '<input type="text" class="form-control input-sm" readonly value="' + url + '" />' +
-                                '</div>'
-                            );
+                            '</div>'
+                        );
 
-                            $preview.append(preview);
+                        $preview.append(preview);
 
-                            // Optional: broadcast for DynamicFields
-                            document.dispatchEvent(new CustomEvent('imageUploaded', {
-                                detail: { url: url, filename: url.split('/').pop() }
-                            }));
-                        }
-                    },
-                    error: function () {
-                        alert('Upload failed for ' + file.name);
+                        document.dispatchEvent(new CustomEvent('imageUploaded', {
+                            detail: { url: url, filename: url.split('/').pop() }
+                        }));
+
+                        $.fn.showToast('Image uploaded.', 'success');
                     }
-                });
+                },
+                error: function () {
+                    $.fn.showToast('Upload failed for ' + file.name, 'error');
+                }
             });
         });
-    });
+    }
+});
+
 </script>

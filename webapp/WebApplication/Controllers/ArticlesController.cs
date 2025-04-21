@@ -139,7 +139,7 @@ namespace K9.WebApplication.Controllers
         public PartialViewResult GetImageOptions(int? articleId = null)
         {
             var model = new ArticleDynamicFieldsViewModel(articleId);
-            return PartialView("_ImageOptions", model);
+            return PartialView("_ImageListItems", model);
         }
 
         public ActionResult Publish(int id)

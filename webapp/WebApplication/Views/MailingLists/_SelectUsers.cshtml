@@ -36,7 +36,7 @@
                         if (result.success) {
                             $("#users-results-table").html(result.data);
                         } else {
-                            alert(result.data.error);
+                            $.fn.showToast(result.data.error, 'error');
                         }
                         $("#pageSpinner").hide();
                     });

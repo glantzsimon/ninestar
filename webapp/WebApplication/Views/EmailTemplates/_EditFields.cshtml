@@ -59,7 +59,7 @@
                         $("div[data-input-id='SpecialPrice'] input").val(promotion.FormattedSpecialPrice);
                     } else {
                         that.changeLoadingState(false);
-                        alert(result.errorMessage || errorMessage);
+                        $.fn.showToast(result.errorMessage || errorMessage, 'error');
                     }
                 });
         });

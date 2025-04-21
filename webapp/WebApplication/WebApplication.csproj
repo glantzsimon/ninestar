@@ -596,6 +596,7 @@
     <Content Include="Content\controls\fadeIn.css" />
     <Content Include="Content\controls\filesource.css" />
     <Content Include="Content\controls\fileUpload.css" />
+    <Content Include="Content\controls\image-list.css" />
     <Content Include="Content\controls\layout.css" />
     <Content Include="Content\controls\pageSpinner.css" />
     <Content Include="Content\controls\panel.css" />
@@ -1419,6 +1420,7 @@
     <Content Include="Content\less\sections\astrology.less" />
     <Content Include="Content\less\sections\graphics.less" />
     <Content Include="Content\less\sections\articles.less" />
+    <Content Include="Content\less\controls\image-list.less" />
     <None Include="packages.config" />
     <Content Include="Properties\PublishProfiles\.gitattributes" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
@@ -1793,7 +1795,7 @@
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Tags.cshtml" />
     <Content Include="Views\Shared\Controls\_ImageUploader.cshtml" />
-    <Content Include="Views\Articles\_ImageOptions.cshtml" />
+    <Content Include="Views\Articles\_ImageListItems.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

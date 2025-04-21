@@ -11,18 +11,19 @@
                 UploadUrl = Url.Action("UploadImage", new { articleId = Model.ArticleId })
             })
         </div>
+        <br />
     </div>
 </div>
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-            <label for="imageFields">@Dictionary.Images:</label>
+            <label for="imageList">@Dictionary.Images:</label>
             <small class="text-muted" style="display: block; margin-top: -5px; margin-bottom: 8px;">
-                Ctrl+C to copy image element markup. Ctrl+Shift+C to copy image URL.
+                Ctrl+C to copy image element markup. Ctrl+Alt+C to copy image URL.
             </small>
-            <select id="imageFields" class="form-control" multiple size="11">
-                @Html.Partial("_ImageOptions")
-            </select>
+            <div id="imageList" class="image-list">
+                @Html.Partial("_ImageListItems")
+            </div>
         </div>
     </div>
     <div class="col-sm-12">
@@ -36,17 +37,62 @@
 
 <script type="text/javascript">
 
+    let selectedImage = null;
+    let lastSelectedIndex = -1;
+
+    $('#imageList').on('click', '.image-list-item', function (e) {
+        const $item = $(this);
+        const $items = $('#imageList .image-list-item');
+        const index = $items.index(this);
+
+        if (e.shiftKey && lastSelectedIndex !== -1) {
+            // Range selection
+            const [start, end] = [lastSelectedIndex, index].sort((a, b) => a - b);
+            $items.slice(start, end + 1).addClass('selected');
+        } else if (e.ctrlKey || e.metaKey) {
+            // Toggle item
+            $item.toggleClass('selected');
+            lastSelectedIndex = index;
+        } else {
+            // Replace all selection
+            $items.removeClass('selected');
+            $item.addClass('selected');
+            lastSelectedIndex = index;
+        }
+
+        selectedImage = $('#imageList .image-list-item.selected').first().get(0);
+    });
+
+
+    // 📋 Clipboard support (Ctrl+C / Ctrl+Shift+C)
+    $(document).on('keydown', function (e) {
+        if (!selectedImage || !e.ctrlKey || e.key.toLowerCase() !== 'c') return;
+
+        const $item = $(selectedImage);
+        const text = e.altKey
+            ? $item.data('url')
+            : $item.data('placeholder');
+
+        if (text) {
+            navigator.clipboard.writeText(text).catch(err => console.error("Clipboard error:", err));
+        }
+    });
+
+    // 🧹 Delete selected images
     $('#deleteSelectedImages').on('click', function () {
         const $btn = $(this);
-        const $select = $('#imageFields');
-        const $selected = $select.find('option:selected');
+        const $selected = $('#imageList .image-list-item.selected');
+        $('#deleteSelectedImages').text(`Delete Selected (${$selected.length})`);
 
         if ($selected.length === 0) {
-            alert('Please select one or more images to delete.');
+            $.fn.showToast('Please select one or more images to delete.', 'error');
             return;
         }
 
-        if (!confirm('Are you sure you want to delete the selected image(s)?')) {
+        if (!$(this).data('confirmed')) {
+            $.fn.showToast('Click delete again to confirm.', 'info');
+            $(this).data('confirmed', true);
+            setTimeout(() => $(this).removeData('confirmed'), 3000);
             return;
         }
 
@@ -54,7 +100,6 @@
             return $(this).data('url');
         }).get();
 
-        // Disable + show spinner
         $btn.prop('disabled', true);
         $.fn.displaySpinner($btn, true);
 
@@ -64,13 +109,11 @@
             contentType: 'application/json',
             data: JSON.stringify({ urls: urlsToDelete }),
             success: function () {
-                // Reload image field options
-                $.get('@Url.Action("GetImageOptions")', { articleId: @Model.ArticleId }, function (data) {
-                    $select.html(data);
-                });
+                refreshImageOptions(@Model.ArticleId);
+                $.fn.showToast('Image(s) deleted successfully.', 'success');
             },
             error: function () {
-                alert('Failed to delete one or more images.');
+                $.fn.showToast('Failed to delete one or more images.', 'error');
             },
             complete: function () {
                 $btn.prop('disabled', false);
@@ -79,43 +122,14 @@
         });
     });
 
+    // 🔁 Refresh image list partial
     function refreshImageOptions(articleId) {
-        $.get('@Url.Action("GetImageOptions")', { articleId: @Model.ArticleId }, function (data) {
-            $('#imageFields').html(data);
+        $.get('@Url.Action("GetImageOptions")', { articleId: articleId }, function (data) {
+            $('#imageList').html(data);
         });
     }
 
-    $("#imageFields").on("keydown", function (event) {
-        if (event.ctrlKey && event.key.toLowerCase() === "c") {
-            const selectedOptions = $(this).find("option:selected");
-
-            if (selectedOptions.length === 0) {
-                return;
-            }
-
-            let textToCopy;
-
-            if (event.shiftKey) {
-                // Ctrl + Shift + C → copy plain URLs
-                textToCopy = selectedOptions.map(function () {
-                    return $(this).data("url");
-                }).get().join("\n");
-            } else {
-                // Ctrl + C → copy placeholder markup
-                textToCopy = selectedOptions.map(function () {
-                    return $(this).val();
-                }).get().join("\n");
-            }
-
-            if (textToCopy) {
-                navigator.clipboard.writeText(textToCopy)
-                    .catch(err => console.error("Failed to copy:", err));
-            }
-
-            event.preventDefault(); // optional: prevents browser default copy
-        }
-    });
-
+    // 🔁 When image is uploaded, reload the list
     document.addEventListener('imageUploaded', function () {
         refreshImageOptions(@Model.ArticleId);
     });

@@ -315,6 +315,13 @@
     }
   },
   {
+    "inputFile": "Content/less/controls/image-list.less",
+    "outputFile": "Content/controls/image-list.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/controls/carousel.less",
     "outputFile": "Content/controls/carousel.css",
     "options": {

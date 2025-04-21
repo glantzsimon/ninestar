@@ -225,6 +225,20 @@
             $overlay.fadeOut();
 	    };
 
+	    $.fn.showToast = function(message, type = 'info') {
+	        Toastify({
+	            text: message,
+	            duration: 3000,
+	            gravity: "top",
+	            position: "center", // <-- symmetry!
+	            backgroundColor: type === 'success' ? "#4caf50"
+	                : type === 'error'   ? "#f44336"
+	                : "#2196f3",
+	            stopOnFocus: true,
+	            close: true
+	        }).showToast();
+	    }
+
 	    initLibraries();
 	    $.fn.initLibraries = initLibraries;
 

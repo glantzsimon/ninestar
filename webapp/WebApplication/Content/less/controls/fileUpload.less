@@ -99,12 +99,34 @@
         display: none;
     }
 
+    .hidden-file-input:focus + .btn-upload-trigger {
+        outline: 2px dotted #999;
+    }
+
     .btn-upload-trigger {
         display: inline-block;
+        margin-top: 15px;
+        min-width: 180px;
         border-radius: 4px;
-        background-color: #f5f5f5;
-        border: 1px solid #ccc;
+        background-color: #f5f5f5;        
         cursor: pointer;
+
+        &:hover {
+            background-color: #e6e6e6;
+        }
+    }
+
+    &.drop-zone {
+        border: 2px dashed #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        transition: border-color 0.3s ease;
+        text-align: center;
+        position: relative;
+
+        &.drag-over {
+            background-image: repeating-linear-gradient( -45deg, #f9f9f9, #f9f9f9 10px, #f0f0f0 10px, #f0f0f0 20px );
+        }
     }
 }
 
@@ -117,7 +139,6 @@
     border: 1px solid @border-grey;
     max-width: 100%;
     border-radius: 3px;
-
     // Hide the image if src is missing or empty
     &[src=""],
     &:not([src]) {

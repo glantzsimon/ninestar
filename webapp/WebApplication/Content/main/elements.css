@@ -85,7 +85,12 @@ form div.well h3 {
   color: #8a8a8a !important;
 }
 hr {
-  border-color: #d9d9d9;
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d9d9d9, transparent);
+  margin: 20px auto;
+  width: 100%;
+  opacity: 0.9;
 }
 button,
 a.btn {

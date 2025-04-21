@@ -1,0 +1,27 @@
+﻿@using K9.SharedLibrary.Helpers.Html
+@using K9.WebApplication.Options
+@model Article
+
+<div class="col-sm-6 col-md-4 blog-card">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4><a href="@Url.Action("Details", "Blog", new { id = Model.Id })">@Model.Title</a></h4>
+            <p class="text-muted"><small>@Model.PublishedOnText</small></p>
+            <p>@Model.Summary</p>
+
+            <p>
+                @foreach (var tag in Model.Tags)
+                {
+                    <span class="label label-info">#@tag.Name</span>
+                    @:&nbsp;
+                }
+            </p>
+
+            <p>
+                <a href="@Url.Action("Details", "Blog", new { id = Model.Id })" class="read-more">@Dictionary.ReadMore</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+

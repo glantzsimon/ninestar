@@ -23,13 +23,40 @@
   color: #337ab7;
 }
 .image-list .image-list-item {
+  position: relative;
   display: flex;
-  align-items: center;
+  min-height: 54px;
+  max-height: 54px;
   padding: 6px 8px;
   margin-bottom: 4px;
+  overflow: hidden;
   border-radius: 4px;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   transition: background-color 0.2s ease;
+}
+.image-list .image-list-item:hover .image-actions {
+  opacity: 1;
+}
+.image-list .image-list-item .image-actions {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.image-list .image-list-item .image-actions button {
+  padding: 7px;
+  color: #666;
+}
+.image-list .image-list-item .image-actions button i {
+  font-size: 18px;
+}
+.image-list .image-list-item .image-actions button:hover {
+  color: #333;
 }
 .image-list .image-list-item img {
   width: 45px;

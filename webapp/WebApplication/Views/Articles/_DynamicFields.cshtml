@@ -63,6 +63,31 @@
         selectedImage = $('#imageList .image-list-item.selected').first().get(0);
     });
 
+    $('#imageList').on('click', '.copy-url', function (e) {
+        e.stopPropagation();
+        const $item = $(this).closest('.image-list-item');
+        const url = $item.data('url');
+        if (url) {
+            navigator.clipboard.writeText(url)
+                .then(() => {
+                    $.fn.showTooltip($item, "Image URL copied!");
+                })
+                .catch(console.error);
+        }
+    });
+
+    $('#imageList').on('click', '.copy-markup', function (e) {
+        e.stopPropagation();
+        const $item = $(this).closest('.image-list-item');
+        const markup = $item.data('placeholder');
+        if (markup) {
+            navigator.clipboard.writeText(markup)
+                .then(() => {
+                    $.fn.showTooltip($item, "Image markup copied!");
+                })
+                .catch(console.error);
+        }
+    });
 
     // 📋 Clipboard support (Ctrl+C / Ctrl+Shift+C)
     $(document).on('keydown', function (e) {

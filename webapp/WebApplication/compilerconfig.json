@@ -413,6 +413,13 @@
     }
   },
   {
+    "inputFile": "Content/less/controls/tooltips.less",
+    "outputFile": "Content/controls/tooltips.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/controls/validation.less",
     "outputFile": "Content/controls/validation.css",
     "options": {

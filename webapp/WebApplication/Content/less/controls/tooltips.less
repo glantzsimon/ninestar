@@ -1,0 +1,61 @@
+﻿@import "../config/colours.less";
+
+.custom-tooltip {
+    position: absolute;
+    background: @primary-blue;
+    color: #fff;
+    font-size: 12px;
+    padding: 7px 11px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+
+    &.show {
+        opacity: 1;
+        transform: translateY(-12px);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+
+    &.top::after {
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 6px 6px 0 6px;
+        border-color: @primary-blue transparent transparent transparent;
+    }
+
+    &.bottom::after {
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 0 6px 6px 6px;
+        border-color: transparent transparent @primary-blue transparent;
+    }
+
+    &.left::after {
+        top: 50%;
+        right: -6px;
+        transform: translateY(-50%);
+        border-width: 6px 0 6px 6px;
+        border-color: transparent transparent transparent @primary-blue;
+    }
+
+    &.right::after {
+        top: 50%;
+        left: -6px;
+        transform: translateY(-50%);
+        border-width: 6px 6px 6px 0;
+        border-color: transparent @primary-blue transparent transparent;
+    }
+}

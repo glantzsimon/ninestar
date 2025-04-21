@@ -27,21 +27,54 @@
     }
 
     .image-list-item {
+        position: relative;
         display: flex;
-        align-items: center;
+        min-height: 54px;
+        max-height: 54px;
         padding: 6px 8px;
         margin-bottom: 4px;
+        overflow: hidden;
         border-radius: 4px;
+        align-items: center;
+        justify-content: space-between;
+        align-items: center;
         cursor: pointer;
         transition: background-color 0.2s ease;
+
+        &:hover .image-actions {
+            opacity: 1;
+        }
+
+        .image-actions {
+            position: absolute;
+            top: 7px;
+            right: 8px;
+            display: flex;
+            gap: 6px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+
+            button {
+                padding: 7px;
+                color: #666;
+
+                i {
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    color: #333;
+                }
+            }
+        }
 
         img {
             width: 45px;
             height: 45px;
-            object-fit: cover;            
+            object-fit: cover;
             border-radius: 2px;
             margin-right: 10px;
-            border: 1px solid #ddd;            
+            border: 1px solid #ddd;
         }
 
         span {

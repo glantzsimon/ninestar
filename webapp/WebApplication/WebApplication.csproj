@@ -606,6 +606,7 @@
     <Content Include="Content\controls\separator.css" />
     <Content Include="Content\controls\tables.css" />
     <Content Include="Content\controls\testimonial.css" />
+    <Content Include="Content\controls\tooltips.css" />
     <Content Include="Content\controls\validation.css" />
     <Content Include="Content\controls\video.css" />
     <Content Include="Content\device\desktop.css" />
@@ -1421,6 +1422,7 @@
     <Content Include="Content\less\sections\graphics.less" />
     <Content Include="Content\less\sections\articles.less" />
     <Content Include="Content\less\controls\image-list.less" />
+    <Content Include="Content\less\controls\tooltips.less" />
     <None Include="packages.config" />
     <Content Include="Properties\PublishProfiles\.gitattributes" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
@@ -1796,6 +1798,8 @@
     <Content Include="Views\Shared\EditorTemplates\Tags.cshtml" />
     <Content Include="Views\Shared\Controls\_ImageUploader.cshtml" />
     <Content Include="Views\Articles\_ImageListItems.cshtml" />
+    <Content Include="Views\Articles\_ImageListItem.cshtml" />
+    <Content Include="Views\Blog\_BlogCard.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

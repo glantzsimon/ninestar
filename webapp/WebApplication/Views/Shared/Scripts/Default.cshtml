@@ -8,7 +8,6 @@
 
 <script type="text/javascript">
 
-
     function initLibraries() {
         bootstrapControls({
             language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
@@ -237,6 +236,75 @@
 	            stopOnFocus: true,
 	            close: true
 	        }).showToast();
+	    }
+
+        $.fn.showTooltip = function(target, message, duration = 1200, placement = 'top') {
+            const $target = $(target);
+            if (!$target.length) return;
+
+            // Ensure tooltip exists
+            let $tooltip = $('#globalCustomTooltip');
+            if (!$tooltip.length) {
+                $tooltip = $('<div>', { id: 'globalCustomTooltip', class: 'custom-tooltip' }).appendTo('body');
+            }
+
+            // Prepare tooltip for accurate measurement
+            $tooltip
+                .removeClass('top bottom left right show')
+                .addClass(placement)
+                .text(message || 'Copied!')
+                .css({
+                    visibility: 'hidden',
+                    display: 'block'
+                });
+
+            // Measure target and tooltip
+            const offset = $target.offset();
+            const tw = $tooltip.outerWidth();
+            const th = $tooltip.outerHeight();
+            const ew = $target.outerWidth();
+            const eh = $target.outerHeight();
+
+            // Compute position
+            let top = 0, left = 0;
+            switch (placement) {
+            case 'bottom':
+                top = offset.top + eh + 8;
+                left = offset.left + ew / 2 - tw / 2;
+                break;
+            case 'left':
+                top = offset.top + eh / 2 - th / 2;
+                left = offset.left - tw - 8;
+                break;
+            case 'right':
+                top = offset.top + eh / 2 - th / 2;
+                left = offset.left + ew + 8;
+                break;
+            case 'top':
+            default:
+                top = offset.top - th - 8;
+                left = offset.left + ew / 2 - tw / 2;
+                break;
+            }
+
+            // Apply position and show
+            $tooltip.css({
+                top,
+                left,
+                visibility: '',
+                display: ''
+            });
+
+            setTimeout(() => {
+                $tooltip.addClass('show');
+            }, 10);
+
+            // Auto-hide after delay
+            clearTimeout($tooltip.data('timeout'));
+            const timeout = setTimeout(() => {
+                $tooltip.removeClass('show');
+            }, duration);
+            $tooltip.data('timeout', timeout);
 	    }
 
 	    initLibraries();

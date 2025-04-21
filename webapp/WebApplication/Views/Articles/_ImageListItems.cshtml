@@ -8,12 +8,7 @@
     <div class="image-group-header">@Dictionary.GlobalImages</div>
     foreach (var item in Model.GlobalImageFields)
     {
-        <div class="image-list-item" tabindex="0"
-             data-url="@item.Src"
-             data-placeholder="@item.GetHtmlPlaceHolder()">
-            <img src="@item.Src" alt="@item.FileName" />
-            <span>@item.FileName</span>
-        </div>
+        @Html.Partial("_ImageListItem", item)
     }
 }
 
@@ -22,11 +17,6 @@
     <div class="image-group-header">@Dictionary.ArticleImages</div>
     foreach (var item in Model.ArticleImageFields)
     {
-        <div class="image-list-item" tabindex="0"
-             data-url="@item.Src"
-             data-placeholder="@item.GetHtmlPlaceHolder()">
-            <img src="@item.Src" alt="@item.FileName" />
-            <span>@item.FileName</span>
-        </div>
+        @Html.Partial("_ImageListItem", item)
     }
 }

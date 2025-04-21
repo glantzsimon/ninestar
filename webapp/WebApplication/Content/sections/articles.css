@@ -123,6 +123,12 @@
   background-color: #5bc0de;
   color: white;
 }
+.published-info p,
+.published-info small {
+  font-size: 0.9em;
+  padding: 0 !important;
+  margin: 0 !important;
+}
 .form-group .tagify.form-control {
   min-height: 36px !important;
   height: unset !important;

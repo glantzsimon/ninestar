@@ -6,8 +6,10 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <h4><a href="@Url.Action("Details", "Blog", new { id = Model.Id, slug = Model.Slug })">@Model.Title</a></h4>
-            <p class="text-muted"><small>@Model.PublishedByText</small></p>
-            
+            <div class="text-muted published-info margin-bottom-20">
+                <small>@Html.Raw(Model.PublishedByText)</small>
+            </div>
+
             @if (!string.IsNullOrEmpty(Model.ImageUrl))
             {
                 var isAbsolute = Model.ImageUrl.StartsWith("http", StringComparison.OrdinalIgnoreCase);

@@ -13,9 +13,9 @@
                 <div class="col-sm-12">
                     <h1 class="text-center margin-0"><strong>@Model.Title</strong></h1>
 
-                    <p class="text-muted text-center">
-                        <small>@Model.PublishedByText</small>
-                    </p>
+                    <div class="text-muted text-center published-info">
+                        <small>@Html.Raw(Model.PublishedByText)</small>
+                    </div>
 
                     <div class="text-center blog-post-tags">
                         @foreach (var tag in Model.Tags)

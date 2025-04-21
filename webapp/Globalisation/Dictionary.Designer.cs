@@ -17574,7 +17574,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;&lt;strong&gt;Published On:&lt;/strong&gt; {PublishedOnText}&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Author:&lt;/strong&gt;{Author}&lt;/p&gt;.
+        ///&lt;p&gt;&lt;strong&gt;Author: &lt;/strong&gt;{Author}&lt;/p&gt;.
         /// </summary>
         public static string PublishedOnBy {
             get {

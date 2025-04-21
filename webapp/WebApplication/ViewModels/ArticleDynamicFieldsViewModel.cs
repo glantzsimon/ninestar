@@ -9,16 +9,18 @@ namespace K9.WebApplication.ViewModels
 {
     public class ArticleDynamicFieldsViewModel
     {
-        public ImageInfo[] ImageFields { get; }
+        public ImageInfo[] GlobalImageFields { get; }
+        public ImageInfo[] ArticleImageFields { get; }
 
-        public ArticleDynamicFieldsViewModel()
+        public ArticleDynamicFieldsViewModel(int? id = null)
         {
-            ImageFields = GetEmailTemplateImages();
+            GlobalImageFields = GetEmailTemplateImages();
+            ArticleImageFields = id.HasValue ? GetEmailTemplateImages() : Array.Empty<ImageInfo>();
         }
 
-        private static ImageInfo[] GetEmailTemplateImages()
+        private static ImageInfo[] GetEmailTemplateImages(int? id = null)
         {
-            var virtualFolder = "~/Images/articles";
+            var virtualFolder = id.HasValue ? $"~/Images/articles/{id}" : "~/Images/articles";
             var physicalPath = HostingEnvironment.MapPath(virtualFolder);
 
             if (Directory.Exists(physicalPath))

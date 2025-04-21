@@ -3085,6 +3085,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Article Images.
+        /// </summary>
+        public static string ArticleImages {
+            get {
+                return ResourceManager.GetString("ArticleImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Article Published.
         /// </summary>
         public static string ArticlePublished {
@@ -9773,6 +9782,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Global Images.
+        /// </summary>
+        public static string GlobalImages {
+            get {
+                return ResourceManager.GetString("GlobalImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Display Global Ki.
         /// </summary>
         public static string GlobalKi {
@@ -11036,6 +11054,15 @@ namespace K9.Globalisation {
         public static string Images {
             get {
                 return ResourceManager.GetString("Images", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image Url.
+        /// </summary>
+        public static string ImageUrlLabel {
+            get {
+                return ResourceManager.GetString("ImageUrlLabel", resourceCulture);
             }
         }
         
@@ -22352,6 +22379,15 @@ namespace K9.Globalisation {
         public static string UpgradeRequired {
             get {
                 return ResourceManager.GetString("UpgradeRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload Images.
+        /// </summary>
+        public static string UploadImages {
+            get {
+                return ResourceManager.GetString("UploadImages", resourceCulture);
             }
         }
         

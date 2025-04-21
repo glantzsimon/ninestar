@@ -6496,6 +6496,9 @@
   <data name="Article" xml:space="preserve">
     <value>Article</value>
   </data>
+  <data name="ArticleImages" xml:space="preserve">
+    <value>Article Images</value>
+  </data>
   <data name="ArticlePublished" xml:space="preserve">
     <value>Article Published</value>
   </data>
@@ -6513,6 +6516,12 @@
   </data>
   <data name="Blog" xml:space="preserve">
     <value>Blog</value>
+  </data>
+  <data name="GlobalImages" xml:space="preserve">
+    <value>Global Images</value>
+  </data>
+  <data name="ImageUrlLabel" xml:space="preserve">
+    <value>Image Url</value>
   </data>
   <data name="LatestArticles" xml:space="preserve">
     <value>Latest Articles</value>
@@ -6537,5 +6546,8 @@
   </data>
   <data name="TitleLabel" xml:space="preserve">
     <value>Title</value>
+  </data>
+  <data name="UploadImages" xml:space="preserve">
+    <value>Upload Images</value>
   </data>
 </root>

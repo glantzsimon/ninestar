@@ -1,8 +1,15 @@
-﻿@model Object
+﻿@model string
+
 @{
+    var isAbsolute = !string.IsNullOrEmpty(Model) && (Model.StartsWith("http"));
+    var src = isAbsolute ? Model : Url.Content("~/" + (Model ?? "").TrimStart('~', '/'));
 }
-<div class="picture-frame">
-	<div>
-		<img loading="lazy" src="~/@Model"/>
-	</div>
+
+<div>
+    <img class="img-responsive image-preview" loading="lazy" src="@src" />
+
+    @Html.TextBoxFor(model => model, new {
+        @class = "form-control image-url-text",
+        placeholder = "Enter image URL"
+    })
 </div>

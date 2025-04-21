@@ -25,6 +25,11 @@
                     </div>
 
                     <hr />
+                    
+                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <img src="@Model.ImageUrl" alt="@Model.Title" class="featured-image" />
+                    }
 
                     <div class="article-body">
                         @Html.Raw(Model.HtmlBody)

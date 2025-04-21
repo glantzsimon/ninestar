@@ -13,7 +13,8 @@
         bootstrapControls({
             language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
             dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()",
-            whatsAppNumber: "@(DefaultValuesConfiguration.Instance.WhatsAppSupportNumber)"
+            whatsAppNumber: "@(DefaultValuesConfiguration.Instance.WhatsAppSupportNumber)",
+            baseUrl: '@Url.Content("~/")'
         }).init();
 
         ninestarki({

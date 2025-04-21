@@ -396,6 +396,7 @@
     <Compile Include="App_Start\RelativeCssRewriteUrlTransform.cs" />
     <Compile Include="Models\Astrology\MoonPhase.cs" />
     <Compile Include="Models\QuickRegisterModel.cs" />
+    <Compile Include="Options\ImageUploadOptions.cs" />
     <Compile Include="Options\PieChartOptions.cs" />
     <Compile Include="Services\GoogleService.cs" />
     <Compile Include="Services\IAITextMergeService.cs" />
@@ -1790,6 +1791,7 @@
     <Content Include="Views\Articles\PublishSuccess.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Tags.cshtml" />
+    <Content Include="Views\Shared\Controls\_ImageUploader.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

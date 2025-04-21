@@ -1,0 +1,47 @@
+﻿@using K9.WebApplication.Options
+@model ImageUploadOptions
+
+@{
+    var uploadId = "imageUpload_" + Model.IdPrefix;
+    var previewId = "imagePreviewContainer_" + Model.IdPrefix;
+}
+
+<div class="form-group">
+    <label for="imageUpload">@Dictionary.UploadImages</label>
+    <input type="file" id="@uploadId" class="form-control" accept="image/*" multiple />
+    <div id="@previewId" class="row margin-top-10"></div>
+</div>
+
+<script>
+    $('#@uploadId').on('change', function () {
+        var files = this.files;
+        if (!files || files.length === 0) return;
+
+        $('#@previewId').empty();
+
+        Array.from(files).forEach(function (file) {
+            var formData = new FormData();
+            formData.append('file', file);
+
+            $.ajax({
+                url: '@Model.UploadUrl',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (url) {
+                    var preview = $(
+                        '<div class="col-xs-6 col-sm-4" style="margin-bottom: 15px;">' +
+                        '<img src="' + url + '" class="img-responsive img-thumbnail" style="width: 100%;" />' +
+                        '<input type="text" class="form-control input-sm" readonly value="' + url + '" />' +
+                        '</div>'
+                    );
+                    $('#@previewId').append(preview);
+                },
+                error: function () {
+                    alert('Upload failed for ' + file.name);
+                }
+            });
+        });
+    });
+</script>

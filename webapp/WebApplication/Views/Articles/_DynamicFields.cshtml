@@ -1,15 +1,37 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.ArticleDynamicFieldsViewModel
 
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
+            @Html.Partial("../Shared/Controls/_ImageUploader", new ImageUploadOptions
+            {
+                UploadUrl = Url.Action("UploadImage")
+            })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group">
             <label for="imageFields">@Dictionary.Images:</label>
             <select id="imageFields" class="form-control" multiple>
-                @foreach (var item in Model.ImageFields)
+                <optgroup label="@Dictionary.GlobalImages">
+                    @foreach (var item in Model.GlobalImageFields)
+                    {
+                        <option value="@item.GetHtmlPlaceHolder()">@item.FileName</option>
+                    }
+                </optgroup>
+                @if (Model.ArticleImageFields.Any())
                 {
-                    <option value="@item.GetHtmlPlaceHolder()">@item.FileName</option>
+                    <optgroup label="@Dictionary.ArticleImages">
+                        @foreach (var item in Model.GlobalImageFields)
+                        {
+                            <option value="@item.GetHtmlPlaceHolder()">@item.FileName</option>
+                        }
+                    </optgroup>
                 }
             </select>
         </div>
@@ -17,7 +39,7 @@
 </div>
 
 <script type="text/javascript">
-    
+
     $("#imageFields").on("keydown", function (event) {
         if (event.ctrlKey && event.key === "c") {
             let selectedOptions = $(this).find("option:selected").map(function () {

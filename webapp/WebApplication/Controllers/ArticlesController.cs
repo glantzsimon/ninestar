@@ -3,12 +3,15 @@ using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers.Html;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using System;
+using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
+using System.Web;
 using System.Web.Mvc;
-using K9.SharedLibrary.Helpers.Html;
 
 namespace K9.WebApplication.Controllers
 {
@@ -71,12 +74,33 @@ namespace K9.WebApplication.Controllers
                 }
                 catch (Exception e)
                 {
-                    Logger.Error($"Articles => Create => {e.GetFullErrorMessage()}");
+                    Logger.Error($"Articles => Edit => {e.GetFullErrorMessage()}");
                     ModelState.AddModelError("", e.GetFullErrorMessage());
                 }
             }
 
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult UploadImage(HttpPostedFileBase file, int? articleId = null)
+        {
+            if (file != null && file.ContentLength > 0)
+            {
+                var fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                var ext = Path.GetExtension(file.FileName);
+                var safeFileName = Slugify(fileName) + "-" + Guid.NewGuid().ToString("N").Substring(0, 6) + ext;
+                var relativePath = articleId.HasValue ? $"~/Images/articles/{articleId}" : "~/Images/articles";
+                var uploadDir = Server.MapPath(relativePath);
+                Directory.CreateDirectory(uploadDir);
+                var path = Path.Combine(uploadDir, safeFileName);
+                file.SaveAs(path);
+
+                var url = Url.Content($"{relativePath}/{safeFileName}");
+                return Json(new { success = true, url }, JsonRequestBehavior.AllowGet);
+            }
+
+            return new HttpStatusCodeResult(400, "No file received.");
         }
 
         public ActionResult Publish(int id)
@@ -100,6 +124,11 @@ namespace K9.WebApplication.Controllers
                 value = t.Name,
                 slug = t.Slug
             }), JsonRequestBehavior.AllowGet);
+        }
+
+        private string Slugify(string input)
+        {
+            return Regex.Replace(input.ToLower(), @"[^\w\-]", "-").Trim('-');
         }
     }
 }

@@ -25,6 +25,11 @@ namespace K9.DataAccessLayer.Models
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TitleLabel)]
         public string Title { get; set; }
+
+        [Required]
+        [DataType(DataType.ImageUrl)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ImageUrlLabel)]
+        public string ImageUrl { get; set; }
         
         [Required]
         [DataType(DataType.MultilineText)]

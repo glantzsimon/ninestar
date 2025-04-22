@@ -4,6 +4,7 @@ using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System.Web.Mvc;
 using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Controllers
 {
@@ -40,7 +41,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult Details(int id, string slug = null)
         {
             var article = _articlesService.GetArticle(id);
-            if (article == null || !article.PublishedOn.HasValue)
+            if (article == null || (!article.PublishedOn.HasValue && !SessionHelper.CurrentUserIsAdmin()))
             {
                 return HttpNotFound();
             }

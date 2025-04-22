@@ -22,6 +22,9 @@
 
     // Avoid multiple Html.Raw calls
     var title = Html.Raw($"{pageTitle} &raquo; {Dictionary.NineStarKiAstrology}");
+    var pageUrl = ViewBag.PageUrl ?? $"https://{DefaultValuesConfiguration.Instance.SiteBaseUrl}";
+    var pageType = ViewBag.PageType ?? "website";
+    var pageImage = ViewBag.PageImage ?? $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/company/logo.png";
 }
 
 <!DOCTYPE html>
@@ -34,10 +37,12 @@
     <meta name="description" content="@metaDescription">
     <meta name="keywords" content="@keywords">
 
-    <meta property="og:locale" content="@metaLocaleName">
-    <meta property="og:type" content="website">
     <meta property="og:title" content="@title">
     <meta property="og:description" content="@metaDescription">
+    <meta property="og:image" content="@pageImage" />
+    <meta property="og:url" content="@pageUrl" />
+    <meta property="og:type" content="@pageType" />
+    <meta property="og:locale" content="@metaLocaleName">
     <meta property="og:site_name" content="@Dictionary.NineStar">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="@title">
@@ -103,7 +108,7 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <script defer src='@Html.Raw("https://cdn.jsdelivr.net/npm/@yaireo/tagify")'></script>
-    
+
     <script defer src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     @Html.Partial("_GoogleAnalytics")

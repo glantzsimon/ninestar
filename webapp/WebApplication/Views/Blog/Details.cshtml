@@ -1,9 +1,14 @@
-﻿@using K9.SharedLibrary.Helpers.Html
+﻿@using K9.SharedLibrary.Extensions
+@using K9.SharedLibrary.Helpers.Html
 @model Article
 
 @{
-    ViewBag.Title = Model.Title;    
+    ViewBag.Title = Model.Title;
     Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.MetaDescription = Model.Summary;
+    ViewBag.PageUrl = Url.AbsoluteAction("Details", "Blog", new { id = Model.Id, slug = Model.Slug });
+    ViewBag.PageType = "article";
+    ViewBag.PageImage = Model.ImageUrl;
 }
 
 <div class="container main-content article-container">
@@ -25,7 +30,7 @@
                     </div>
 
                     <hr class="margin-bottom-26" style="margin-bottom: 26px;" />
-                    
+
                     @if (!string.IsNullOrEmpty(Model.ImageUrl))
                     {
                         <img src="@Model.ImageUrl" alt="@Model.Title" class="featured-image" />

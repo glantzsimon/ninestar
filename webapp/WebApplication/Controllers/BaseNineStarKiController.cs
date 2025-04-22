@@ -248,7 +248,7 @@ namespace K9.WebApplication.Controllers
         public PartialViewResult GetImageOptions(string typeName, int? id = null)
         {
             var model = GetDynamicFieldsModel(typeName, new object[] { id });
-            return PartialView("~/Views/Shared/Controls/_ImageListItems", model);
+            return PartialView("Controls/_ImageListItems", model);
         }
 
         public override string GetObjectName()

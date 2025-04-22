@@ -75,7 +75,8 @@
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/@($"{CultureInfo.CurrentUICulture.GetLocaleLanguage()}.json")"
             },
-            "order": customOrder || []
+            "order": customOrder || [],
+            "pageLength" : pageLength || 50
         });
     });
 

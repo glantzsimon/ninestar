@@ -29,21 +29,4 @@
 
 @Html.BootstrapEditorFor(model => model.HtmlBody)
 
-<script>
-    $(function () {
-        var $input = $('#TagsText');
-
-        var tagify = new Tagify($input[0], {
-            whitelist: [], // populated below
-            dropdown: {
-                enabled: 1,
-                position: "auto"
-            }
-        });
-
-        $.getJSON('@Url.Action("GetAllTags")', function (data) {
-            tagify.settings.whitelist = data;
-        });
-    });
-
-</script>
+@Html.Partial("_FieldsJs")

@@ -1,0 +1,23 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.ViewModels
+@model Article
+
+<script>
+    $(function () {
+        var $input = $('#TagsText');
+
+        var tagify = new Tagify($input[0], {
+            whitelist: [], // populated below
+            dropdown: {
+                enabled: 1,
+                position: "auto"
+            }
+        });
+
+        $.getJSON('@Url.Action("GetAllTags")', function (data) {
+            tagify.settings.whitelist = data;
+        });
+    });
+
+</script>

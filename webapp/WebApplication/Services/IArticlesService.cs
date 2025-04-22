@@ -10,5 +10,6 @@ namespace K9.WebApplication.Services
         List<Tag> GetAllTags();
         void SaveArticle(Article article);
         void CreateArticle(Article article);
+        void DeleteArtciel(int id);
     }
 }

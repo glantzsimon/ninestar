@@ -1805,6 +1805,7 @@
     <Content Include="Views\Blog\_BlogTag.cshtml" />
     <Content Include="Views\Shared\_RedirectJs.cshtml" />
     <Content Include="Views\Shared\_RedirectMessage.cshtml" />
+    <Content Include="Views\Articles\_FieldsJs.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -34,14 +34,17 @@ namespace K9.WebApplication.Controllers
             _mediaManagementService = mediaManagementService;
 
             RecordBeforeUpdate += ArticlesController_RecordBeforeUpdate;
+            RecordBeforeDelete += ArticlesController_RecordBeforeDelete;
+        }
+
+        private void ArticlesController_RecordBeforeDelete(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
+        {
+            LoadFullArticle(e.Item as Article);
         }
 
         private void ArticlesController_RecordBeforeUpdate(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
         {
-            var article = e.Item as Article;
-            var fullArticle = _articlesService.GetArticle(article.Id);
-            article.Tags = fullArticle.Tags;
-            article.TagsText = fullArticle.TagsText;
+            LoadFullArticle(e.Item as Article);
         }
 
         [ValidateAntiForgeryToken]
@@ -86,6 +89,27 @@ namespace K9.WebApplication.Controllers
             }
 
             return View(model);
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public override ActionResult DeleteConfirmed(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _articlesService.DeleteArtciel(id);
+                    return RedirectToAction("Index");
+                }
+                catch (Exception e)
+                {
+                    Logger.Error($"Articles => Edit => {e.GetFullErrorMessage()}");
+                    ModelState.AddModelError("", e.GetFullErrorMessage());
+                }
+            }
+
+            return View("Delete", _articlesService.GetArticle(id));
         }
 
         [HttpPost]
@@ -218,6 +242,13 @@ namespace K9.WebApplication.Controllers
                 value = t.Name,
                 slug = t.Slug
             }), JsonRequestBehavior.AllowGet);
+        }
+
+        private void LoadFullArticle(Article article)
+        {
+            var fullArticle = _articlesService.GetArticle(article.Id);
+            article.Tags = fullArticle.Tags;
+            article.TagsText = fullArticle.TagsText;
         }
 
         private string UploadImageToStorj(string absoluteFilePath, string relativePath)

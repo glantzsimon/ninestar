@@ -70,6 +70,14 @@ namespace K9.WebApplication.Services
             ProcessTags(article);
         }
 
+        public void DeleteArtciel(int id)
+        {
+            var article = GetArticle(id);
+            var tagsToDelete = _articleTagsRepository.Find(e => e.ArticleId == id);
+            _articleTagsRepository.DeleteBatch(tagsToDelete);
+            _articlesRepository.Delete(id);
+        }
+
         private List<Tag> GetTagsForArticle(int id)
         {
             var tags = _tagsRepository.GetQuery(

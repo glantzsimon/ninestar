@@ -58,6 +58,7 @@ namespace K9.WebApplication.Services
 
         public void CreateArticle(Article article)
         {
+            article.Slug = article.Title.Slugify();
             _articlesRepository.Create(article);
             ProcessTags(article);
         }

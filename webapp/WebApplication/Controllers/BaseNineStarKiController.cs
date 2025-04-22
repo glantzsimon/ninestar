@@ -269,28 +269,43 @@ namespace K9.WebApplication.Controllers
             return stringWriter.ToString();
         }
 
-        private IDynamicFieldsModel GetDynamicFieldsModel(string typeName, object[] constructorArgs = null)
+        private IDynamicFieldsModel GetDynamicFieldsModel(string modelTypeName, object[] constructorArgs = null)
         {
-            // Search all loaded assemblies (or limit to specific ones if needed)
-            var allTypes = AppDomain.CurrentDomain.GetAssemblies()
+            // First, find the Type for the model, e.g., "Article"
+            var modelType = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(assembly =>
                 {
                     try { return assembly.GetTypes(); }
                     catch (ReflectionTypeLoadException ex) { return ex.Types.Where(t => t != null); }
                 })
-                .Where(t => typeof(IDynamicFieldsModel).IsAssignableFrom(t) && !t.IsAbstract && !t.IsInterface);
+                .FirstOrDefault(t => t.Name == modelTypeName || t.FullName == modelTypeName);
 
-            // Match type name (you can match by Name or FullName depending on what you pass)
-            var match = allTypes.FirstOrDefault(t => t.Name == typeName || t.FullName == typeName);
+            if (modelType == null)
+                throw new Exception($"Model type '{modelTypeName}' not found.");
 
-            if (match == null)
-                throw new Exception($"Type '{typeName}' not found or does not implement IDynamicFieldsModel.");
+            // Now, find a class that inherits from DynamicFieldsViewModel<T> with T == modelType
+            var dynamicFieldsType = typeof(DynamicFieldsViewModel<>).MakeGenericType(modelType);
 
-            // Create instance with constructor args (can be null)
-            var instance = Activator.CreateInstance(match, constructorArgs ?? new object[] { }) as IDynamicFieldsModel;
+            var viewModelType = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(assembly =>
+                {
+                    try { return assembly.GetTypes(); }
+                    catch (ReflectionTypeLoadException ex) { return ex.Types.Where(t => t != null); }
+                })
+                .FirstOrDefault(t =>
+                    !t.IsAbstract &&
+                    !t.IsInterface &&
+                    dynamicFieldsType.IsAssignableFrom(t) &&
+                    typeof(IDynamicFieldsModel).IsAssignableFrom(t));
+
+            if (viewModelType == null)
+                throw new Exception($"No DynamicFieldsViewModel<{modelTypeName}> implementation found.");
+
+            // Create an instance
+            var instance = Activator.CreateInstance(viewModelType, constructorArgs ?? new object[] { }) as IDynamicFieldsModel;
 
             if (instance == null)
-                throw new Exception($"Could not instantiate type '{typeName}'.");
+                throw new Exception($"Could not instantiate '{viewModelType.FullName}'.");
 
             return instance;
         }

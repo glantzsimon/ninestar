@@ -165,7 +165,10 @@
 
     // 🔁 Refresh image list partial
     function refreshImageOptions(id) {
-        $.get('@Url.Action("GetImageOptions", "BaseNineStarKi")', { id: id }, function (data) {
+        $.get('@Url.Action("GetImageOptions", "BaseNineStarKi")', {
+                typeName:  "@Model.EntityType.Name",
+                id: id }, 
+            function (data) {
             $('#imageList').html(data);
         });
     }

@@ -36,7 +36,7 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Details", new { id = article.Id, slug = article.Slug });
         }
 
-        [Route("latest-articles/{id:int}/{slug?}", Name = "BlogDetails")]
+        [Route("{id:int}/{slug?}")]
         public ActionResult Details(int id, string slug = null)
         {
             var article = _articlesService.GetArticle(id);

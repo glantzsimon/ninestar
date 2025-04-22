@@ -16,6 +16,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Routing;
 using K9.SharedLibrary.Extensions;
 using SessionHelper = K9.Base.WebApplication.Helpers.SessionHelper;
 
@@ -110,7 +111,7 @@ namespace K9.WebApplication.Controllers
         {
             return new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
         }
-        
+
         public JsonResult UpdateUserPreferenceInt(string key, int value)
         {
             try
@@ -123,7 +124,7 @@ namespace K9.WebApplication.Controllers
             }
             return Json(new { success = true }, JsonRequestBehavior.AllowGet);
         }
-        
+
         public JsonResult UpdateUserPreferenceBool(string key, bool value)
         {
             try

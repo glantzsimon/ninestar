@@ -139,7 +139,7 @@ namespace K9.WebApplication.Controllers
                 return Json(new { success = false, message = "Upload failed: " + ex.Message });
             }
         }
-        
+
         [HttpPost]
         public ActionResult DeleteImages(DeleteFilesRequest request)
         {
@@ -192,6 +192,11 @@ namespace K9.WebApplication.Controllers
             return PartialView("_ImageListItems", model);
         }
 
+        public ActionResult Preview(int id)
+        {
+            return RedirectToAction("Preview", "Blog", new { id });
+        }
+
         public ActionResult Publish(int id)
         {
             var article = Repository.Find(id);
@@ -214,7 +219,7 @@ namespace K9.WebApplication.Controllers
                 slug = t.Slug
             }), JsonRequestBehavior.AllowGet);
         }
-        
+
         private string UploadImageToStorj(string absoluteFilePath, string relativePath)
         {
             return _mediaManagementService.UploadToStorj(absoluteFilePath, relativePath); // throws if fails

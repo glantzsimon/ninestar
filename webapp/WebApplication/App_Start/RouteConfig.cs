@@ -11,12 +11,6 @@ namespace K9.WebApplication
             routes.MapMvcAttributeRoutes();
             routes.LowercaseUrls = true;
 
-            routes.MapRoute(
-                name: "ArticleDetails",
-                url: "latest-articles/{id}/{slug}",
-                defaults: new { controller = "Articles", action = "Details", slug = UrlParameter.Optional }
-            );
-
             routes.MapRoute("Default", "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }

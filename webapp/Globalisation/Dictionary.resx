@@ -6535,6 +6535,9 @@
   <data name="PermissionRequired" xml:space="preserve">
     <value>Permission Required</value>
   </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
   <data name="Publish" xml:space="preserve">
     <value>Publish</value>
   </data>

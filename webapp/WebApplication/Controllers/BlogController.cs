@@ -30,7 +30,13 @@ namespace K9.WebApplication.Controllers
             });
         }
 
-        [Route("latest-articles/{id:int}/{slug?}")]
+        public ActionResult Preview(int id)
+        {
+            var article = _articlesService.GetArticle(id);
+            return RedirectToAction("Details", new { id = article.Id, slug = article.Slug });
+        }
+
+        [Route("latest-articles/{id:int}/{slug?}", Name = "BlogDetails")]
         public ActionResult Details(int id, string slug = null)
         {
             var article = _articlesService.GetArticle(id);

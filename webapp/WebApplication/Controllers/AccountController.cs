@@ -102,7 +102,7 @@ namespace K9.WebApplication.Controllers
                         
                         var retrieveLast = TempData["RetrieveLast"]?.ToString();
                         if (!string.IsNullOrEmpty(retrieveLast))
-                        {
+                        {                            
                             return RedirectToAction("RetrieveLast", "PersonalChart");
                         }
 

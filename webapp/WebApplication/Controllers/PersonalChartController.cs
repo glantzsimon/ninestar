@@ -130,7 +130,7 @@ namespace K9.WebApplication.Controllers
             return View("Index", nineStarKiProfile);
         }
 
-        [Route("retrieve-last")]
+        [Route("retrieve-last", Name = "RetrieveLastPersonalChart")]
         [Authorize]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLast()

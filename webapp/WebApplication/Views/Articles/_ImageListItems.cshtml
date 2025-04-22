@@ -3,12 +3,12 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.ArticleDynamicFieldsViewModel
 
-@if (Model.ArticleImageFields.Any())
+@if (Model.EntityImageFields.Any())
 {
     <div class="image-group-header">@Dictionary.ArticleImages</div>
-    foreach (var item in Model.ArticleImageFields)
+    foreach (var item in Model.EntityImageFields)
     {
-        @Html.Partial("_ImageListItem", item)
+        @Html.Partial("../Shared/Controls/_ImageListItem", item)
     }
 }
 
@@ -17,6 +17,6 @@
     <div class="image-group-header">@Dictionary.GlobalImages</div>
     foreach (var item in Model.GlobalImageFields)
     {
-        @Html.Partial("_ImageListItem", item)
+        @Html.Partial("../Shared/Controls/_ImageListItem", item)
     }
 }

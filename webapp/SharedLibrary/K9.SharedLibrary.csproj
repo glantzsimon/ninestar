@@ -77,6 +77,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Humanizer, Version=2.14.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.Core.2.14.1\lib\netstandard2.0\Humanizer.dll</HintPath>
+    </Reference>
     <Reference Include="K9.Base.Globalisation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.Globalisation.2.0.0.212\lib\net461\K9.Base.Globalisation.dll</HintPath>
     </Reference>
@@ -195,6 +198,7 @@
     <Compile Include="Helpers\ObjectMapper.cs" />
     <Compile Include="Helpers\PostedFileHelper.cs" />
     <Compile Include="Helpers\SqlValidator.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Helpers\TemplateParser.cs" />
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Models\AssetInfo.cs" />

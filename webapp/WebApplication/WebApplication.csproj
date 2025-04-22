@@ -409,6 +409,7 @@
     <Compile Include="Services\AstrologyService.cs" />
     <Compile Include="Services\ArticlesService.cs" />
     <Compile Include="Services\MediaManagementService.cs" />
+    <Compile Include="ViewModels\DynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="ViewModels\ArticleDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\MagicSquareViewModel.cs" />
@@ -1800,12 +1801,12 @@
     <Content Include="Views\Shared\EditorTemplates\Tags.cshtml" />
     <Content Include="Views\Shared\Controls\_ImageUploader.cshtml" />
     <Content Include="Views\Articles\_ImageListItems.cshtml" />
-    <Content Include="Views\Articles\_ImageListItem.cshtml" />
     <Content Include="Views\Blog\_BlogCard.cshtml" />
     <Content Include="Views\Blog\_BlogTag.cshtml" />
     <Content Include="Views\Shared\_RedirectJs.cshtml" />
     <Content Include="Views\Shared\_RedirectMessage.cshtml" />
     <Content Include="Views\Articles\_FieldsJs.cshtml" />
+    <Content Include="Views\Shared\Controls\_ImageListItem.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

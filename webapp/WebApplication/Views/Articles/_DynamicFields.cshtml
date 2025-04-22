@@ -8,7 +8,7 @@
         <div class="form-group margin-bottom-0">
             @Html.Partial("../Shared/Controls/_ImageUploader", new ImageUploadOptions
             {
-                UploadUrl = Url.Action("UploadImage", new { articleId = Model.ArticleId })
+                UploadUrl = Url.Action("UploadImage", new { articleId = Model.EntityId})
             })
         </div>
         <br />
@@ -146,7 +146,7 @@
             data: JSON.stringify({ urls: urlsToDelete }),
             success: function (response) {
                 if (response.success) {
-                    refreshImageOptions(@Model.ArticleId);
+                    refreshImageOptions(@Model.EntityId);
                     $.fn.showToast(response.message || 'Image(s) deleted successfully.', 'success');
                 } else {
                     $.fn.showToast(response.message || 'Failed to delete some images.', 'error');
@@ -172,7 +172,7 @@
 
     // 🔁 When image is uploaded, reload the list
     document.addEventListener('imageUploaded', function () {
-        refreshImageOptions(@Model.ArticleId);
+        refreshImageOptions(@Model.EntityId);
     });
 
 </script>

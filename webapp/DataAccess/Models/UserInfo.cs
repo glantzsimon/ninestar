@@ -27,5 +27,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.BirthTimeZone)]
         public string BirthTimeZoneId { get; set; }
 
+        [DataType(DataType.ImageUrl)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AvatarImageUrlLabel)]
+        public string AvatarImageUrl { get; set; }
+
     }
 }

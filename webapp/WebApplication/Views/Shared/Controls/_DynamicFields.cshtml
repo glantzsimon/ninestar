@@ -1,41 +1,41 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Options
-@model K9.WebApplication.ViewModels.ArticleDynamicFieldsViewModel
+@model K9.WebApplication.ViewModels.IDynamicFieldsModel
 
-<div class="row">
-    <div class="col-sm-12">
-        <div class="form-group margin-bottom-0">
-            @Html.Partial("../Shared/Controls/_ImageUploader", new ImageUploadOptions
-            {
-                UploadUrl = Url.Action("UploadImage", new { articleId = Model.EntityId})
-            })
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group margin-bottom-0">
+                @Html.Partial("../Shared/Controls/_ImageUploader", new ImageUploadOptions
+                {
+                    UploadUrl = Url.Action("UploadImage", "BaseNineStarKi", new { id = Model.EntityId, folderName = Model.FolderName})
+                })
+            </div>
+            <br />
         </div>
-        <br />
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <div class="form-group">
-            <label for="imageList">@Dictionary.Images:</label>
-            <small class="text-muted" style="display: block; margin-top: -5px; margin-bottom: 8px;">
-                Ctrl+C to copy image element markup. Ctrl+Alt+C to copy image URL.
-            </small>
-            <div id="imageList" class="image-list">
-                @Html.Partial("_ImageListItems")
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="imageList">@Dictionary.Images:</label>
+                <small class="text-muted" style="display: block; margin-top: -5px; margin-bottom: 8px;">
+                    Ctrl+C to copy image element markup. Ctrl+Alt+C to copy image URL.
+                </small>
+                <div id="imageList" class="image-list">
+                    @Html.Partial("../Shared/Controls/_ImageListItems")
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group margin-bottom-0">
+                <button type="button" id="deleteSelectedImages" class="btn btn-danger">
+                    <i class="glyphicon glyphicon-trash"></i> @Dictionary.DeleteSelected
+                </button>
             </div>
         </div>
     </div>
-    <div class="col-sm-12">
-        <div class="form-group margin-bottom-0">
-            <button type="button" id="deleteSelectedImages" class="btn btn-danger">
-                <i class="glyphicon glyphicon-trash"></i> @Dictionary.DeleteSelected
-            </button>
-        </div>
-    </div>
-</div>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
     let selectedImage = null;
     let lastSelectedIndex = -1;
@@ -113,7 +113,7 @@
 
         e.preventDefault(); // optional: block browser default copy behavior
     });
-    
+
     // 🧹 Delete selected images
     $('#deleteSelectedImages').on('click', function () {
         const $btn = $(this);
@@ -140,7 +140,7 @@
         $.fn.displaySpinner($selected, true);
 
         $.ajax({
-            url: '@Url.Action("DeleteImages")',
+            url: '@Url.Action("DeleteImages", "BaseNineStarKi")',
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({ urls: urlsToDelete }),
@@ -164,8 +164,8 @@
     });
 
     // 🔁 Refresh image list partial
-    function refreshImageOptions(articleId) {
-        $.get('@Url.Action("GetImageOptions")', { articleId: articleId }, function (data) {
+    function refreshImageOptions(id) {
+        $.get('@Url.Action("GetImageOptions", "BaseNineStarKi")', { id: id }, function (data) {
             $('#imageList').html(data);
         });
     }
@@ -175,4 +175,4 @@
         refreshImageOptions(@Model.EntityId);
     });
 
-</script>
+    </script>

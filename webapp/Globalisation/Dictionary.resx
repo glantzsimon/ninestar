@@ -6569,4 +6569,7 @@
   <data name="UploadImages" xml:space="preserve">
     <value>Upload Images</value>
   </data>
+  <data name="AvatarImageUrlLabel" xml:space="preserve">
+    <value>Avatar</value>
+  </data>
 </root>

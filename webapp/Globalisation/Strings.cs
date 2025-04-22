@@ -74,6 +74,7 @@
             public const string SlugLabel = "SlugLabel";
             public const string AuthorLabel = "AuthorLabel";
             public const string ImageUrlLabel = "ImageUrlLabel";
+            public const string AvatarImageUrlLabel = "AvatarImageUrlLabel";
             public const string TagsLabel = "TagsLabel";
             public const string CompletedOnLabel = "CompletedOnLabel";
             public const string IsProcessedLabel = "IsProcessedLabel";

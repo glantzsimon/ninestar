@@ -111,111 +111,7 @@ namespace K9.WebApplication.Controllers
 
             return View("Delete", _articlesService.GetArticle(id));
         }
-
-        [HttpPost]
-        public ActionResult UploadImage(HttpPostedFileBase file, int? articleId = null)
-        {
-            try
-            {
-                if (file == null || file.ContentLength == 0)
-                {
-                    Logger.Error("ArticlesController => UploadImage => No file received.");
-                    return Json(new { success = false, message = "No file received." });
-                }
-
-                var fileName = Path.GetFileNameWithoutExtension(file.FileName);
-                var ext = Path.GetExtension(file.FileName);
-                var safeFileName = fileName.Slugify() + "-" + Guid.NewGuid().ToString("N").Substring(0, 6) + ext;
-                var relativePath = articleId.HasValue && articleId.Value > 0
-                    ? $"~/Images/articles/{articleId}"
-                    : "~/Images/articles";
-                var uploadDir = Server.MapPath(relativePath);
-
-                Directory.CreateDirectory(uploadDir);
-                var path = Path.Combine(uploadDir, safeFileName);
-                file.SaveAs(path);
-
-                var url = Url.Content($"{relativePath}/{safeFileName}");
-
-                Logger.Info($"ArticlesController => UploadImage => Successfully uploaded image to server: {url}");
-
-#if DEBUG
-                return Json(new { success = true, url });
-#else
-                Logger.Info($"ArticlesController => UploadImage => Uploading image to Storj");
-
-                var uploadRelativePath = articleId.HasValue ? $"articles/{articleId}/{safeFileName}" : $"articles/{safeFileName}";
-                var absoluteFilePath = Path.Combine(uploadDir, safeFileName);
-
-                Logger.Info($"ArticlesController => UploadImage => UploadImageToStorj => {absoluteFilePath}, {uploadRelativePath}");
-
-                var storjUrl = UploadImageToStorj(absoluteFilePath, uploadRelativePath);
-
-                var finalUrl = string.IsNullOrWhiteSpace(storjUrl) ? url : storjUrl;
-                Logger.Info($"UploadImage => Successfully uploaded: {finalUrl}");
-
-                return Json(new { success = true, url = finalUrl });
-#endif
-            }
-            catch (Exception ex)
-            {
-                Logger.Error("UploadImage => Exception: " + ex.GetFullErrorMessage());
-                return Json(new { success = false, message = "Upload failed: " + ex.Message });
-            }
-        }
-
-        [HttpPost]
-        public ActionResult DeleteImages(DeleteFilesRequest request)
-        {
-            if (request?.Urls == null || !request.Urls.Any())
-            {
-                return Json(new { success = false, message = "No URLs provided." });
-            }
-
-            var failedDeletes = new List<string>();
-
-            foreach (var relativePath in request.Urls)
-            {
-                try
-                {
-                    var localVirtualPath = $"~/{relativePath.TrimStart('/')}";
-                    var fullPath = Server.MapPath(localVirtualPath);
-
-                    if (System.IO.File.Exists(fullPath))
-                    {
-                        System.IO.File.Delete(fullPath);
-                    }
-                    else
-                    {
-                        failedDeletes.Add($"Not found: {relativePath}");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Logger.Error($"DeleteImages => Error deleting {relativePath}: {ex.Message}");
-                    failedDeletes.Add($"Error: {relativePath}");
-                }
-            }
-
-            if (failedDeletes.Any())
-            {
-                return Json(new
-                {
-                    success = false,
-                    message = $"Some files failed to delete: {string.Join(", ", failedDeletes)}"
-                });
-            }
-
-            return Json(new { success = true });
-        }
-
-        [HttpGet]
-        public PartialViewResult GetImageOptions(int? articleId = null)
-        {
-            var model = new ArticleDynamicFieldsViewModel(articleId);
-            return PartialView("_ImageListItems", model);
-        }
-
+        
         public ActionResult Preview(int id)
         {
             return RedirectToAction("Preview", "Blog", new { id });
@@ -250,11 +146,6 @@ namespace K9.WebApplication.Controllers
             article.Tags = fullArticle.Tags;
             article.TagsText = fullArticle.TagsText;
         }
-
-        private string UploadImageToStorj(string absoluteFilePath, string relativePath)
-        {
-            return _mediaManagementService.UploadToStorj(absoluteFilePath, relativePath); // throws if fails
-        }
-
+        
     }
 }

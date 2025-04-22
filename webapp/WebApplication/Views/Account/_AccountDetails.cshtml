@@ -1,4 +1,5 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.MyAccountViewModel
 
 @Html.PopupAlert()
@@ -32,7 +33,16 @@
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.Gender)</div>
         </div>
         <div>
-            <div class="col-sm-12">@Html.BootstrapEditorFor(model => model.User.PhoneNumber)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.PhoneNumber)</div>
+            <div class="col-sm-6">
+                <div class="form-group margin-bottom-0">
+                    @Html.Partial("../Shared/Controls/_ImageUploader", new ImageUploadOptions
+                    {
+                        UploadUrl = Url.Action("UploadImage", new { articleId = Model.UserInfo.Id, folderName = "articles"})
+                    })
+                </div>
+                @Html.BootstrapEditorFor(model => model.UserInfo.AvatarImageUrl)
+            </div>
         </div>
         <div class="small-print">
             <div class="col-sm-12">@Html.BootstrapEditorFor(model => model.AllowMarketingEmails)</div>
@@ -70,3 +80,12 @@
         @Html.BootstrapActionLinkButton(Dictionary.MyPersonalProfile, "MyProfile", "PersonalChart", null, "fa fa-yin-yang", EButtonClass.Large)
     }
 }
+
+<script>
+
+    // 🔁 When image is uploaded, reload the list
+    document.addEventListener('imageUploaded', function () {
+        @*refreshImageOptions(@Model.EntityId);*@
+    });
+
+</script>

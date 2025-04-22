@@ -3238,6 +3238,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Avatar.
+        /// </summary>
+        public static string AvatarImageUrlLabel {
+            get {
+                return ResourceManager.GetString("AvatarImageUrlLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Overall, your energy levels are average. You don&apos;t have to be too concerned about overdoing it, but don&apos;t push too hard and make sure you get enough rest.
         ///&lt;/p&gt;

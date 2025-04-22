@@ -461,6 +461,10 @@
     <Compile Include="Migrations\202504211456339_ImageUrlNotRequired.designer.cs">
       <DependentUpon>202504211456339_ImageUrlNotRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504221438073_AddAvatars.cs" />
+    <Compile Include="Migrations\202504221438073_AddAvatars.designer.cs">
+      <DependentUpon>202504221438073_AddAvatars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\TimeZone.cs" />
@@ -661,6 +665,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504211456339_ImageUrlNotRequired.resx">
       <DependentUpon>202504211456339_ImageUrlNotRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504221438073_AddAvatars.resx">
+      <DependentUpon>202504221438073_AddAvatars.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

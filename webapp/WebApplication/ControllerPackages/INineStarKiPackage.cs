@@ -8,5 +8,6 @@ namespace K9.WebApplication.Packages
         IAccountService AccountService { get; set; }
         IUserService UserService { get; set; }
         IContactService ContactService { get; set; }
+        IMediaManagementService MediaManagementService { get; set; }
     }
 }

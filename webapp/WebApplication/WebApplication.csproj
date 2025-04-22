@@ -409,6 +409,7 @@
     <Compile Include="Services\AstrologyService.cs" />
     <Compile Include="Services\ArticlesService.cs" />
     <Compile Include="Services\MediaManagementService.cs" />
+    <Compile Include="ViewModels\IDynamicFieldsModel.cs" />
     <Compile Include="ViewModels\DynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="ViewModels\ArticleDynamicFieldsViewModel.cs" />
@@ -1193,6 +1194,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\archive\upload\ArchiveItem\" />
+    <Folder Include="Images\upload\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -1788,7 +1790,7 @@
     <Content Include="Views\Shared\EditorTemplates\Body.cshtml" />
     <Content Include="Views\Membership\UpgradeNotPossible.cshtml" />
     <Content Include="Views\Articles\_DisplayFields.cshtml" />
-    <Content Include="Views\Articles\_DynamicFields.cshtml" />
+    <Content Include="Views\Shared\Controls\_DynamicFields.cshtml" />
     <Content Include="Views\Articles\_EditFields.cshtml" />
     <Content Include="Views\Articles\Create.cshtml" />
     <Content Include="Views\Articles\Delete.cshtml" />
@@ -1800,7 +1802,7 @@
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Tags.cshtml" />
     <Content Include="Views\Shared\Controls\_ImageUploader.cshtml" />
-    <Content Include="Views\Articles\_ImageListItems.cshtml" />
+    <Content Include="Views\Shared\Controls\_ImageListItems.cshtml" />
     <Content Include="Views\Blog\_BlogCard.cshtml" />
     <Content Include="Views\Blog\_BlogTag.cshtml" />
     <Content Include="Views\Shared\_RedirectJs.cshtml" />

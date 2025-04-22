@@ -1,11 +1,11 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Options
-@model K9.WebApplication.ViewModels.ArticleDynamicFieldsViewModel
+@model K9.WebApplication.ViewModels.IDynamicFieldsModel
 
 @if (Model.EntityImageFields.Any())
 {
-    <div class="image-group-header">@Dictionary.ArticleImages</div>
+    <div class="image-group-header">@Model.EntityPluralName</div>
     foreach (var item in Model.EntityImageFields)
     {
         @Html.Partial("../Shared/Controls/_ImageListItem", item)

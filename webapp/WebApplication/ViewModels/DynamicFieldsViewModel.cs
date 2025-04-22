@@ -8,12 +8,14 @@ using System.Web.Hosting;
 
 namespace K9.WebApplication.ViewModels
 {
-    public class DynamicFieldsViewModel<T> where T : class, IObjectBase
+    public abstract class DynamicFieldsViewModel<T> : IDynamicFieldsModel
+        where T : class, IObjectBase 
     {
         public int? EntityId { get; set; }
         public ImageInfo[] GlobalImageFields { get; }
         public ImageInfo[] EntityImageFields { get; }
         public string EntityName { get; }
+        public Type EntityType { get; }
         public string EntityPluralName { get; }
         public string FolderName { get; }
 
@@ -21,6 +23,7 @@ namespace K9.WebApplication.ViewModels
         {
             EntityId = id;
             EntityName = string.IsNullOrEmpty(entityName) ? typeof(T).Name : entityName;
+            EntityType = typeof(T);
             EntityPluralName = string.IsNullOrEmpty(entityPluralName) ? EntityName.Pluralise() : entityPluralName;
             FolderName = EntityPluralName.ToLower();
             GlobalImageFields = GetImages();

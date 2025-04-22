@@ -11,7 +11,7 @@ namespace K9.WebApplication.Packages
 {
     public class NineStarKiPackage : NineStarKiBasePackage, INineStarKiPackage
     {
-        public NineStarKiPackage(ILogger logger, IDataSetsHelper datasetsHelper, IRoles roles, IFileSourceHelper fileSourceHelper, IAuthentication authentication, IMailer mailer, IMembershipService membershipService, IAccountService accountService, IUserService userService,
+        public NineStarKiPackage(ILogger logger, IDataSetsHelper datasetsHelper, IRoles roles, IFileSourceHelper fileSourceHelper, IAuthentication authentication, IMailer mailer, IMembershipService membershipService, IAccountService accountService, IUserService userService, IMediaManagementService mediaManagementService,
            IContactService contactService, IRepository<User> usersRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<SystemSetting> systemSettingsRepository, IOptions<DefaultValuesConfiguration> defaultValuesConfiguration, IOptions<SmtpConfiguration> smtpConfiguration,
             IOptions<ApiConfiguration> apiConfiguration, IOptions<WebsiteConfiguration> websiteConfiguration, IOptions<GoogleConfiguration> googleConfiguration)
         : base(logger, datasetsHelper, roles, fileSourceHelper, authentication, mailer, usersRepository, rolesRepository, userRolesRepository, contactsRepository, systemSettingsRepository,
@@ -21,12 +21,13 @@ namespace K9.WebApplication.Packages
             AccountService = accountService;
             UserService = userService;
             ContactService = contactService;
+            MediaManagementService = mediaManagementService;
         }
-        
+
         public IMembershipService MembershipService { get; set; }
         public IAccountService AccountService { get; set; }
         public IUserService UserService { get; set; }
         public IContactService ContactService { get; set; }
-        
+        public IMediaManagementService MediaManagementService { get; set; }
     }
 }

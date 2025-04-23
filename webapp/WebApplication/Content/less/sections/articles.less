@@ -176,7 +176,12 @@
     }
 }
 
-
+#commentCounter {
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+    text-align: right;
+}
 
 .comment-section {
     margin-top: 30px;
@@ -188,14 +193,20 @@
         background: #f9f9f9;
         border-radius: 6px;
 
-        .avatar {
+        .avatar, video {
             width: 48px;
             height: 48px;
             border-radius: 50%;
             margin-right: 15px;
             margin-top: 4px;
+            border: 2px solid #fff;
             object-fit: cover;
-            border: 1px solid #ddd;
+            box-shadow: 0 0 0 transparent;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .aura {
+            box-shadow: 0 0 8px 2px rgba(94, 174, 255, 0.6); /* celestial blue glow */
         }
 
         .comment-body {

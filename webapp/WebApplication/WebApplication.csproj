@@ -1052,6 +1052,7 @@
     <Content Include="Images\ui\alchemy.png" />
     <Content Include="Images\ui\daily-cycle.png" />
     <Content Include="Images\ui\daily-planner.png" />
+    <Content Include="Images\ui\default-avatar.png" />
     <Content Include="Images\ui\fail.gif" />
     <Content Include="Images\ui\finances.png" />
     <Content Include="Images\ui\five-elements.png" />
@@ -1110,27 +1111,6 @@
     <Content Include="Images\shared\ninestar-spinner.gif" />
     <Content Include="Images\shared\powered-by-stripe-cards.png" />
     <Content Include="Images\shared\powered-by-stripe.png" />
-    <Content Include="Images\template\1.jpg" />
-    <Content Include="Images\template\2.jpg" />
-    <Content Include="Images\template\3.jpg" />
-    <Content Include="Images\template\4.jpg" />
-    <Content Include="Images\template\5.jpg" />
-    <Content Include="Images\template\arrow.png" />
-    <Content Include="Images\template\close.png" />
-    <Content Include="Images\template\f1.jpg" />
-    <Content Include="Images\template\f2.jpg" />
-    <Content Include="Images\template\f3.jpg" />
-    <Content Include="Images\template\f4.jpg" />
-    <Content Include="Images\template\g1.jpg" />
-    <Content Include="Images\template\g2.jpg" />
-    <Content Include="Images\template\g3.jpg" />
-    <Content Include="Images\template\g4.jpg" />
-    <Content Include="Images\template\g5.jpg" />
-    <Content Include="Images\template\next.png" />
-    <Content Include="Images\template\prev.png" />
-    <Content Include="Images\template\t1.jpg" />
-    <Content Include="Images\template\t2.jpg" />
-    <Content Include="Images\template\t3.jpg" />
     <Content Include="Images\ui\audio.png" />
     <Content Include="Images\ui\document.jpg" />
     <Content Include="Images\ui\fade-out.png" />
@@ -1180,6 +1160,7 @@
     <Content Include="sitemap.xml" />
     <Content Include="Videos\Shared\stars-bg.mp4" />
     <Content Include="Videos\Shared\stars-bg.webm" />
+    <Content Include="Videos\Shared\yin-yang-avatar.mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1814,6 +1795,7 @@
     <Content Include="Views\Shared\Controls\_ImageListItem.cshtml" />
     <Content Include="Views\Blog\_BlogComments.cshtml" />
     <Content Include="Views\Blog\_CommentForm.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Comments.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

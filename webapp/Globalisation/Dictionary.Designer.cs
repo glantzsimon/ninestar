@@ -4864,6 +4864,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
+        ///&lt;p&gt;We have received a donation from {Customer} ({CustomerEmail}) for the following amount:&lt;/p&gt;
+        ///&lt;p&gt;{Amount} {Currency}&lt;/p&gt;
+        ///&lt;p&gt;You can view a summary of donations to date &lt;a href=&quot;{LinkToSummary}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
+        /// </summary>
+        public static string CommentReceivedEmail {
+            get {
+                return ResourceManager.GetString("CommentReceivedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your comment has been submitted for approval. Thank you..
         /// </summary>
         public static string CommentSubmitted {

@@ -474,6 +474,10 @@
     <Compile Include="Migrations\202504231102466_CommentIsRequired.designer.cs">
       <DependentUpon>202504231102466_CommentIsRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504231137528_MaxCommentLength.cs" />
+    <Compile Include="Migrations\202504231137528_MaxCommentLength.designer.cs">
+      <DependentUpon>202504231137528_MaxCommentLength.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ArticleComment.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Article.cs" />
@@ -684,6 +688,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504231102466_CommentIsRequired.resx">
       <DependentUpon>202504231102466_CommentIsRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504231137528_MaxCommentLength.resx">
+      <DependentUpon>202504231137528_MaxCommentLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6596,6 +6596,9 @@
   <data name="Comment" xml:space="preserve">
     <value>Comment</value>
   </data>
+  <data name="CommentReceivedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\toninestar\commentreceivedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="CommentSubmitted" xml:space="preserve">
     <value>Your comment has been submitted for approval. Thank you.</value>
   </data>

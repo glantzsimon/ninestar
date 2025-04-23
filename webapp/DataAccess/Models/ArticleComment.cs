@@ -26,9 +26,11 @@ namespace K9.DataAccessLayer.Models
 
         public virtual User User { get; set; }
 
+        [UIHint("Comments")]
         [Required]
         [DataType(DataType.MultilineText)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.Comment)]
+        [StringLength(500, ErrorMessage = "Comments must be 500 characters or fewer.")]
         public string Comment { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.PostedOn)]
@@ -37,10 +39,13 @@ namespace K9.DataAccessLayer.Models
         public bool IsApproved { get; set; }
 
         [NotMapped]
+        public bool IsByModerator { get; set; }
+
+        [NotMapped]
         public UserInfo UserInfo { get; set; }
 
         public string Username => User.FirstName ?? User.Username;
-        
+
         public string AvatarImageUrl => UserInfo?.AvatarImageUrl;
     }
 }

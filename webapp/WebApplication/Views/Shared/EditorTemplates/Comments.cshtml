@@ -1,0 +1,6 @@
+﻿@model Object
+@{
+    var dictionary = ViewData["viewDataDictionary"] as IDictionary<string, object>;
+    dictionary.Add("maxlength", 500);
+}
+@Html.TextAreaFor(model => model, 7, 20, dictionary)

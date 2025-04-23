@@ -63,6 +63,12 @@ namespace K9.WebApplication.Services
             return My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
         }
 
+        public bool UserIsAdmin(int userId)
+        {
+            var adminRole = My.RolesRepository.Find(e => e.Name == Constants.Constants.Administrator).First();
+            return My.UserRolesRepository.Exists(e => e.UserId == userId && e.RoleId == adminRole.Id);
+        }
+
         public UserInfo GetOrCreateUserInfo(int userId)
         {
             var userInfo = _userInfosRepository.Find(e => e.UserId == userId).FirstOrDefault();

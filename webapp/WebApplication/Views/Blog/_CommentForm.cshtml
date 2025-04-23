@@ -17,6 +17,8 @@
                     Label = ""
                 })
 
+                <small id="commentCounter" class="text-muted pull-right">0 / 500</small>
+
                 @Html.BootstrapButton(K9.Globalisation.Dictionary.PostComment, EButtonType.Submit, "fa-comment")
             }
         }
@@ -37,3 +39,25 @@ else
         <div class="alert alert-success">@K9.Globalisation.Dictionary.CommentSubmitted</div>
     }
 </div>
+
+<script>
+    $(function () {
+        const $textarea = $('textarea[name="Comment"]');
+        const $counter = $('#commentCounter');
+        const maxLength = parseInt($textarea.attr('maxlength')) || 500;
+
+        function updateCounter() {
+            const len = $textarea.val().length;
+            $counter.text(`${len} / ${maxLength}`);
+
+            if (len >= maxLength) {
+                $counter.addClass('text-danger');
+            } else {
+                $counter.removeClass('text-danger');
+            }
+        }
+
+        $textarea.on('input', updateCounter);
+        updateCounter(); // initialize
+    });
+</script>

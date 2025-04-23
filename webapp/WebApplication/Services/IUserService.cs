@@ -11,6 +11,7 @@ namespace K9.WebApplication.Services
         User Find(string username);
         UserInfo GetOrCreateUserInfo(int userId);
         List<UserConsultation> GetPendingConsultations(int? userId = null);
+        bool UserIsAdmin(int userId);
         void UpdateUserInfo(UserInfo userInfo);
         void DeleteUser(int id);
         void EnableMarketingEmails(string externalId, bool value = true);

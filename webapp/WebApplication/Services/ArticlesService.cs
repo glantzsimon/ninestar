@@ -5,7 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Enums;
+using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Helpers;
 using Newtonsoft.Json;
@@ -19,8 +22,10 @@ namespace K9.WebApplication.Services
         private readonly IRepository<ArticleTag> _articleTagsRepository;
         private readonly IRepository<ArticleComment> _articleCommentsRepository;
         private readonly IRepository<UserInfo> _userInfosRepository;
+        private readonly IEmailTemplateService _emailTemplateService;
+        private readonly IUserService _userService;
 
-        public ArticlesService(INineStarKiBasePackage my, IRepository<Article> articlesRepository, IRepository<Tag> tagsRepository, IRepository<ArticleTag> articleTagsRepository, IRepository<ArticleComment> articleCommentsRepository, IRepository<UserInfo> userInfosRepository)
+        public ArticlesService(INineStarKiBasePackage my, IRepository<Article> articlesRepository, IRepository<Tag> tagsRepository, IRepository<ArticleTag> articleTagsRepository, IRepository<ArticleComment> articleCommentsRepository, IRepository<UserInfo> userInfosRepository, IEmailTemplateService emailTemplateService, IUserService userService)
             : base(my)
         {
             _articlesRepository = articlesRepository;
@@ -28,6 +33,8 @@ namespace K9.WebApplication.Services
             _articleTagsRepository = articleTagsRepository;
             _articleCommentsRepository = articleCommentsRepository;
             _userInfosRepository = userInfosRepository;
+            _emailTemplateService = emailTemplateService;
+            _userService = userService;
         }
 
         public Article GetArticle(int id)
@@ -60,12 +67,13 @@ namespace K9.WebApplication.Services
                     comments = comments.Where(c => !c.IsApproved).ToList();
                     break;
             }
-            
+
             foreach (var comment in comments)
             {
                 comment.User = My.UsersRepository.Find(comment.UserId);
                 comment.UserInfo = _userInfosRepository.Find(u => u.UserId == comment.UserId).FirstOrDefault();
                 comment.Article = article;
+                comment.IsByModerator = _userService.UserIsAdmin(comment.UserId);
             }
 
             return comments;
@@ -115,6 +123,8 @@ namespace K9.WebApplication.Services
         public void CreateArticleComment(ArticleComment comment)
         {
             _articleCommentsRepository.Create(comment);
+            var user = My.UsersRepository.Find(comment.UserId);
+            SendEmailToNineStar(comment, user);
         }
 
         private List<Tag> GetTagsForArticle(int id)
@@ -180,6 +190,37 @@ namespace K9.WebApplication.Services
         {
             var user = My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
             return user == null ? username : user.FullName;
+        }
+
+        private void SendEmailToNineStar(ArticleComment comment, User user)
+        {
+            var article = GetArticle(comment.ArticleId);
+            var subject = "A customer has commented on an article";
+            var body = _emailTemplateService.ParseForUser(
+                subject,
+                Dictionary.CommentReceivedEmail,
+                user,
+                new
+                {
+                    Customer = user.FullName,
+                    CustomerEmail = user.EmailAddress,
+                    ArticleName = article.Title,
+                    CommentText = comment.Comment,
+                    LinkToArticle = My.UrlHelper.AbsoluteAction("View", "Blog", new { id = comment.ArticleId }),
+                });
+
+            try
+            {
+                My.Mailer.SendEmail(
+                    subject,
+                    body,
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
 
     }

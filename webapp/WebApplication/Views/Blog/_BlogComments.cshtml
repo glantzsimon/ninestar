@@ -1,12 +1,29 @@
 ﻿@using K9.SharedLibrary.Helpers.Html
+@using K9.WebApplication.Config
 @using K9.WebApplication.Options
 @model Article
 
 <div class="comment-section">
     @foreach (var comment in Model.Comments)
     {
+        var avatarUrl = !string.IsNullOrWhiteSpace(comment.AvatarImageUrl)
+                ? comment.AvatarImageUrl
+                : $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/default-avatar.png";
+
+        var defaultAvatarUrl = $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/default-avatar.png";
+
         <div class="comment">
-            <img src="@comment.AvatarImageUrl" alt="@comment.Username" class="avatar" />
+            @if (comment.IsByModerator)
+            {
+                <video class="aura" autoplay muted loop playsinline preload="none" poster="@defaultAvatarUrl">
+                    <source src="@DefaultValuesConfiguration.Instance.BaseVideosPath/Shared/yin-yang-avatar.mp4" type="video/mp4">
+                </video>
+            }
+            else
+            {
+                <img src="@avatarUrl" alt="@comment.Username" class="avatar aura" />
+            }
+
             <div class="comment-body">
                 <div class="comment-meta">
                     <strong>@comment.Username</strong>

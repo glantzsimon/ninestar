@@ -96,8 +96,10 @@ namespace K9.WebApplication.Services
             }
             else
             {
+                var articleComment = _articleCommentsRepository.Find(articleCommentId);
                 _articleCommentLikesRepository.Create(new ArticleCommentLike
                 {
+                    ArticleId = articleComment.ArticleId,
                     ArticleCommentId = articleCommentId,
                     UserId = Current.UserId,
                     LikedOn = DateTime.UtcNow

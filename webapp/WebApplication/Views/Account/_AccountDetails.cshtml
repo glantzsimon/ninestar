@@ -16,9 +16,7 @@
         @Html.HiddenFor(model => model.User.EmailAddress)
         @Html.HiddenFor(model => model.User.BirthDate)
         @Html.Hidden("User.Password", "th1515n0tmypa55w0rd")
-
-        @Html.HiddenFor(model => model.UserInfo.AvatarImageUrl)
-
+        
         <div class="row">
             <div class="col-sm-12">
                 @Html.BootstrapDisplayFor(model => model.Membership.AccountNumber)
@@ -97,7 +95,7 @@
 
     // 🔁 When image is selected
     document.addEventListener('imageSelected', function (e) {
-        $("#UserInfo_AvatarImageUrl").val(e.detail.src);
+        $("#UserInfo_AvatarImageUrl").val(e.detail.src).trigger("input");
     });
 
 </script>

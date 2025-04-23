@@ -86,9 +86,11 @@ namespace K9.WebApplication.Services
             return comments;
         }
 
-        public int ToggleCommentLike(int articleCommentId)
+        public (int Count, bool ToggleState, String LikeSummary) ToggleCommentLike(int articleCommentId)
         {
+            var articleComment = _articleCommentsRepository.Find(articleCommentId);
             var existing = _articleCommentLikesRepository.Find(e => e.ArticleCommentId == articleCommentId && e.UserId == Current.UserId).FirstOrDefault();
+            var toggleState = false;
 
             if (existing != null)
             {
@@ -96,7 +98,6 @@ namespace K9.WebApplication.Services
             }
             else
             {
-                var articleComment = _articleCommentsRepository.Find(articleCommentId);
                 _articleCommentLikesRepository.Create(new ArticleCommentLike
                 {
                     ArticleId = articleComment.ArticleId,
@@ -104,10 +105,17 @@ namespace K9.WebApplication.Services
                     UserId = Current.UserId,
                     LikedOn = DateTime.UtcNow
                 });
+                
+                toggleState = true;
             }
 
-            return _articleCommentLikesRepository.GetCount(
+            var count = _articleCommentLikesRepository.GetCount(
                 $"WHERE [{nameof(ArticleCommentLike.ArticleCommentId)}] = {articleCommentId}");
+
+            // refresh
+            articleComment = _articleCommentsRepository.Find(articleCommentId);
+
+            return (count, toggleState, articleComment.LikeSummary);
         }
 
         public List<Article> GetArticles(bool publishedOnly = false)

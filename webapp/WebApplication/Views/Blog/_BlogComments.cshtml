@@ -42,7 +42,7 @@
                         <span class="comment-icon btn-delete-comment" data-id="@comment.Id" role="button" title="Delete">
                             <i class="fa fa-trash"></i>
                         </span>
-                        <span class="comment-icon btn-like-comment @(comment.IsLikedByCurrentUser ? "liked" : "")"
+                        <span class="comment-icon btn-like-comment @(comment.IsLikedByCurrentUser ? "liked" : "notliked")"
                               data-comment-id="@comment.Id" role="button" title="Like">
                             <i class="fa fa-heart @(comment.IsLikedByCurrentUser ? "text-danger" : "text-muted")"></i>
                         </span>
@@ -68,20 +68,26 @@
         // ❤️ Like
         $('#commentsContainer').on('click', '.btn-like-comment', function () {
             const $btn = $(this);
+            const $heart = $btn.find("i");
             const commentId = $btn.data('comment-id');
-
-            $btn.find('i')
-                .toggleClass('text-danger text-muted')
-                .addClass('pulse');
-
-            $btn.addClass('liked');
-            setTimeout(() => $btn.removeClass('liked'), 500);
-            $.fn.showToast(commentId);
+                       
             $.post('@Url.Action("ToggleCommentLike", "Blog")', { id: commentId }, function (res) {
                 if (res.success) {
-                    $btn.find('.like-count').text(res.newCount);
-                    $btn.find('i').toggleClass('fa-heart fa-heart-o');
-                    $btn.toggleAttr('data-liked');
+                    $btn.find('.like-summary').text(res.likeSummary);
+
+                    if (res.toggleState) {
+                        $btn.addClass('liked').removeClass("notliked");
+                        $btn.attr('data-liked', 'true');
+                        $heart.removeClass('text-muted').addClass('text-danger');
+                    } else {
+                        $btn.addClass("notliked").removeClass('liked');
+                        $btn.removeAttr('data-liked');
+                        $heart.removeClass('text-danger').addClass('text-muted');
+                    }
+
+                    $heart.addClass('pulse');
+                    setTimeout(() => $heart.removeClass('pulse'), 400);
+                    
                 } else {
                     $.fn.showToast(res.message || "Unable to like comment", "error");
                 }

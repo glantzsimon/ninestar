@@ -105,8 +105,14 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                var newCount = _articlesService.ToggleCommentLike(id);
-                return Json(new { success = true, newCount });
+                var result = _articlesService.ToggleCommentLike(id);
+                return Json(new
+                {
+                    success = true,
+                    newCount = result.Count,
+                    toggleState = result.ToggleState,
+                    likeSummary = result.LikeSummary
+                });
             }
             catch (Exception e)
             {

@@ -191,9 +191,6 @@
     transform: scale(1);
   }
 }
-.comment-section .btn-like-comment.liked i {
-  animation: pulse-like 0.4s ease;
-}
 .comment-section .comment-actions {
   display: flex;
   align-items: center;
@@ -227,8 +224,13 @@
   font-size: 0.85em;
   margin: 0;
 }
+.comment-section .comment-actions .btn-like-comment.notliked i {
+  opacity: 0.3;
+  transition: all 0.2s ease;
+}
 .comment-section .comment-actions .btn-like-comment.liked i {
-  color: #dc3545;
+  opacity: 1 !important;
+  animation: pulse-like 0.4s ease;
 }
 .comment-section .edit-controls {
   margin-top: 10px;

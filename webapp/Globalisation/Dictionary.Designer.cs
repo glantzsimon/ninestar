@@ -3238,6 +3238,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Avatar Images.
+        /// </summary>
+        public static string AvatarImages {
+            get {
+                return ResourceManager.GetString("AvatarImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Avatar.
         /// </summary>
         public static string AvatarImageUrlLabel {
@@ -5362,6 +5371,24 @@ namespace K9.Globalisation {
         public static string CookiesTitle {
             get {
                 return ResourceManager.GetString("CookiesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy image URL.
+        /// </summary>
+        public static string CopyImageUrl {
+            get {
+                return ResourceManager.GetString("CopyImageUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy markup.
+        /// </summary>
+        public static string CopyMarkup {
+            get {
+                return ResourceManager.GetString("CopyMarkup", resourceCulture);
             }
         }
         
@@ -11072,6 +11099,15 @@ namespace K9.Globalisation {
         public static string Illumination {
             get {
                 return ResourceManager.GetString("Illumination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ctrl+C to copy image element markup. Ctrl+Alt+C to copy image URL..
+        /// </summary>
+        public static string ImageCopyInstructions {
+            get {
+                return ResourceManager.GetString("ImageCopyInstructions", resourceCulture);
             }
         }
         
@@ -18384,6 +18420,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Image.
+        /// </summary>
+        public static string SelectImage {
+            get {
+                return ResourceManager.GetString("SelectImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select the membership you wish to assign to the user.
         /// </summary>
         public static string SelectMembershipText {
@@ -22443,6 +22488,15 @@ namespace K9.Globalisation {
         public static string UpgradeRequired {
             get {
                 return ResourceManager.GetString("UpgradeRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload.
+        /// </summary>
+        public static string Upload {
+            get {
+                return ResourceManager.GetString("Upload", resourceCulture);
             }
         }
         

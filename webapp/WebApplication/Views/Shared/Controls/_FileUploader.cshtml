@@ -1,0 +1,160 @@
+﻿@using K9.WebApplication.Options
+@model UploadOptions
+
+@{
+    var uploadId = "fileUpload_" + Model.IdPrefix;
+    var previewId = "filePreviewContainer_" + Model.IdPrefix;
+}
+
+<div class="custom-uploader drop-zone" id="fileDropZone">
+    <div id="@previewId" class="row margin-top-10"></div>
+
+    <button type="button" class="btn btn-default btn-upload-trigger">
+        <i class="glyphicon glyphicon-upload"></i> @Dictionary.Upload
+    </button>
+
+    <input type="file" id="@uploadId" class="hidden-file-input" accept="@Model.Accept" multiple />
+</div>
+
+<script>
+    $(function () {
+        const $dropZone = $('#fileDropZone');
+        const $fileInput = $('#@uploadId');
+        const $previewContainer = $('#@previewId');
+        const $uploadBtn = $('.btn-upload-trigger');
+
+        // 🔘 Open file dialog
+        $uploadBtn.on('click', function () {
+            $fileInput.trigger('click');
+        });
+
+        // 📦 Handle file input
+        $fileInput.on('change', function () {
+            handleFiles(this.files);
+        });
+
+        // 🧲 Drag handling
+        $dropZone.on('dragover', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $dropZone.addClass('drag-over');
+        });
+
+        $dropZone.on('dragleave drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $dropZone.removeClass('drag-over');
+        });
+
+        // 📥 Drop files
+        $dropZone.on('drop', function (e) {
+            const files = e.originalEvent.dataTransfer.files;
+            handleFiles(files);
+        });
+
+        // 🧠 Core upload logic
+        function handleFiles(files) {
+            if (!files || files.length === 0) return;
+
+            $uploadBtn.prop('disabled', true);
+            $.fn.displaySpinner($dropZone, true);
+
+            let pending = files.length;
+
+            Array.from(files).forEach(file => {
+                const formData = new FormData();
+                formData.append('file', file);
+
+                $.ajax({
+                    url: '@Model.UploadUrl',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+
+                    success: function (res) {
+                        console.log("Upload response:", res);
+
+                        if (res && res.success && res.url) {
+                            const fileUrl = res.url;
+                            const fileName = fileUrl.split('/').pop();
+                            const fileExtension = fileName.split('.').pop().toLowerCase();
+
+                            const imageTypes = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'svg'];
+
+                            let $preview;
+
+                            if (imageTypes.includes(fileExtension)) {
+                                $preview = $(`
+                                    <div class="col-xs-6 col-sm-4 file-preview-container">
+                                        <img src="${fileUrl}" class="img-responsive img-thumbnail" style="width: 100%;" />
+                                        <input type="text" class="form-control input-sm" readonly value="${fileUrl}" />
+                                    </div>
+                                `);
+                            } else {
+                                const iconClass = getIconClass(fileExtension);
+
+                                $preview = $(`
+                                    <div class="col-xs-6 col-sm-4 file-preview-container text-center">
+                                        <i class="${iconClass}" style="font-size: 48px; margin-bottom: 10px;"></i>
+                                        <div class="filename">${fileName}</div>
+                                        <input type="text" class="form-control input-sm" readonly value="${fileUrl}" />
+                                    </div>
+                                `);
+                            }
+
+                            $previewContainer.append($preview);
+
+                            document.dispatchEvent(new CustomEvent('fileUploaded', {
+                                detail: {
+                                    url: fileUrl,
+                                    filename: fileName
+                                }
+                            }));
+
+                            $.fn.showToast('File uploaded successfully.', 'success');
+                        } else {
+                            const msg = res?.message || 'Upload failed or returned no URL.';
+                            $.fn.showToast("⚠️ " + msg, 'error');
+                        }
+                    },
+
+                    error: function (xhr, status, err) {
+                        console.error("AJAX upload error:", xhr.responseText || err);
+                        $.fn.showToast('Upload failed. See console for details.', 'error');
+                    },
+
+                    complete: function () {
+                        if (--pending === 0) {
+                            $uploadBtn.prop('disabled', false);
+                            $.fn.hideSpinner($dropZone);
+                        }
+                    }
+                });
+            });
+        }
+
+        function getIconClass(ext) {
+            switch (ext) {
+            case 'pdf': return 'fa fa-file-pdf-o text-danger';
+            case 'doc':
+            case 'docx': return 'fa fa-file-word-o text-primary';
+            case 'xls':
+            case 'xlsx': return 'fa fa-file-excel-o text-success';
+            case 'ppt':
+            case 'pptx': return 'fa fa-file-powerpoint-o text-warning';
+            case 'zip':
+            case 'rar': return 'fa fa-file-archive-o text-muted';
+            case 'mp3':
+            case 'wav': return 'fa fa-file-audio-o text-info';
+            case 'mp4':
+            case 'avi':
+            case 'mov': return 'fa fa-file-video-o text-info';
+            case 'txt':
+            case 'csv': return 'fa fa-file-text-o text-secondary';
+            default: return 'fa fa-file-o text-secondary';
+            }
+        }
+
+    });
+</script>

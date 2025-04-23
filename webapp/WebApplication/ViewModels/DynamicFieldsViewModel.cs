@@ -1,6 +1,8 @@
-﻿using K9.SharedLibrary.Helpers;
+﻿using K9.Globalisation;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Enums;
 using System;
 using System.IO;
 using System.Linq;
@@ -9,28 +11,33 @@ using System.Web.Hosting;
 namespace K9.WebApplication.ViewModels
 {
     public abstract class DynamicFieldsViewModel<T> : IDynamicFieldsModel
-        where T : class, IObjectBase 
+        where T : class, IObjectBase
     {
         public int? EntityId { get; set; }
-        public ImageInfo[] GlobalImageFields { get; }
-        public ImageInfo[] EntityImageFields { get; }
+        public ImageListItemViewModel[] GlobalImageFields { get; }
+        public ImageListItemViewModel[] EntityImageFields { get; }
         public string EntityName { get; }
         public Type EntityType { get; }
         public string EntityPluralName { get; }
         public string FolderName { get; }
 
-        public DynamicFieldsViewModel(int? id = null, string entityName = "", string entityPluralName = "")
+        public string Label { get; set; }
+        public EDynamicFieldsMode Mode { get; set; }
+
+        public DynamicFieldsViewModel(int? id = null, string entityName = "", string entityPluralName = "", string label = "", EDynamicFieldsMode mode = EDynamicFieldsMode.Advanced)
         {
             EntityId = id;
             EntityName = string.IsNullOrEmpty(entityName) ? typeof(T).Name : entityName;
             EntityType = typeof(T);
             EntityPluralName = string.IsNullOrEmpty(entityPluralName) ? EntityName.Pluralise() : entityPluralName;
+            Label = string.IsNullOrEmpty(label) ? Dictionary.Images : label;
+            Mode = mode;
             FolderName = EntityPluralName.ToLower();
             GlobalImageFields = GetImages();
-            EntityImageFields = EntityId.HasValue && EntityId.Value > 0 ? GetImages(EntityId.Value) : Array.Empty<ImageInfo>();
+            EntityImageFields = EntityId.HasValue && EntityId.Value > 0 ? GetImages(EntityId.Value) : Array.Empty<ImageListItemViewModel>();
         }
 
-        private ImageInfo[] GetImages(int? id = null)
+        private ImageListItemViewModel[] GetImages(int? id = null)
         {
             var virtualFolder = id.HasValue
                 ? $"~/Images/{FolderName}/{id.Value}"
@@ -40,7 +47,7 @@ namespace K9.WebApplication.ViewModels
 
             if (string.IsNullOrWhiteSpace(physicalPath) || !Directory.Exists(physicalPath))
             {
-                return Array.Empty<ImageInfo>();
+                return Array.Empty<ImageListItemViewModel>();
             }
 
             var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif", ".webp" };
@@ -54,12 +61,16 @@ namespace K9.WebApplication.ViewModels
                         ? $"/Images/{FolderName}/{id.Value}/{fileName}"
                         : $"/Images/{FolderName}/{fileName}";
 
-                    return new ImageInfo
+                    return new ImageListItemViewModel
                     {
-                        FileName = fileName,
-                        AltText = Path.GetFileNameWithoutExtension(fileName),
-                        Src = $"{DefaultValuesConfiguration.Instance.BaseImagesPath}{relative.Replace("/Images", "")}", // Storj path
-                        RelativePath = relative // used for Server.MapPath
+                        ImageInfo = new ImageInfo
+                        {
+                            FileName = fileName,
+                            AltText = Path.GetFileNameWithoutExtension(fileName),
+                            Src = $"{DefaultValuesConfiguration.Instance.BaseImagesPath}{relative.Replace("/Images", "")}", // Storj path
+                            RelativePath = relative // used for Server.MapPath
+                        },
+                        DynamicFieldsModel = this
                     };
                 })
                 .ToArray();

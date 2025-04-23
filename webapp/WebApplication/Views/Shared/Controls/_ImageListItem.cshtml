@@ -1,22 +1,32 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Options
-@model K9.SharedLibrary.Models.ImageInfo
+@model K9.WebApplication.ViewModels.ImageListItemViewModel
 
 <div class="image-list-item" tabindex="0"
-     data-url="@Model.Src"
-     data-relativepath="@Model.RelativePath"
-     data-placeholder="@Model.GetHtmlPlaceHolder()">
+     data-url="@Model.ImageInfo.Src"
+     data-relativepath="@Model.ImageInfo.RelativePath"
+     data-placeholder="@Model.ImageInfo.GetHtmlPlaceHolder()">
 
-    <img src="@Model.Src" alt="@Model.FileName" />
-    <span>@Model.FileName</span>
+    <img src="@Model.ImageInfo.Src" alt="@Model.ImageInfo.FileName" class="img-responsive" />
+    <span class="filename">@Model.ImageInfo.FileName</span>
 
     <div class="image-actions">
-        <button type="button" class="btn btn-xs btn-link copy-url" title="Copy image URL">
-            <i class="glyphicon glyphicon-link"></i>
-        </button>
-        <button type="button" class="btn btn-xs btn-link copy-markup" title="Copy markup">
-            <i class="glyphicon glyphicon-console"></i>
-        </button>
+        @if (Model.DynamicFieldsModel.Mode == EDynamicFieldsMode.Advanced)
+        {
+            <button type="button" class="btn btn-xs btn-link copy-url" title="@Dictionary.CopyImageUrl">
+                <i class="glyphicon glyphicon-link"></i>
+            </button>
+            <button type="button" class="btn btn-xs btn-link copy-markup" title="@Dictionary.CopyMarkup">
+                <i class="glyphicon glyphicon-console"></i>
+            </button>
+        }
+        else
+        {
+            <button type="button" class="btn btn-xs btn-link select-image" title="@Dictionary.SelectImage">
+                <i class="glyphicon glyphicon-ok"></i>
+            </button>
+        }
     </div>
 </div>

@@ -1,5 +1,6 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Options
+@using K9.WebApplication.ViewModels
 @model K9.WebApplication.ViewModels.MyAccountViewModel
 
 @Html.PopupAlert()
@@ -15,6 +16,8 @@
         @Html.HiddenFor(model => model.User.EmailAddress)
         @Html.HiddenFor(model => model.User.BirthDate)
         @Html.Hidden("User.Password", "th1515n0tmypa55w0rd")
+
+        @Html.HiddenFor(model => model.UserInfo.AvatarImageUrl)
 
         <div>
             <div class="col-sm-12">
@@ -33,17 +36,20 @@
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.Gender)</div>
         </div>
         <div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.PhoneNumber)</div>
-            <div class="col-sm-6">
-                <div class="form-group margin-bottom-0">
-                    @Html.Partial("../Shared/Controls/_ImageUploader", new ImageUploadOptions
-                    {
-                        UploadUrl = Url.Action("UploadImage", new { articleId = Model.UserInfo.Id, folderName = "articles"})
-                    })
-                </div>
-                @Html.BootstrapEditorFor(model => model.UserInfo.AvatarImageUrl)
+            <div class="col-sm-12">
+                @Html.BootstrapEditorFor(model => model.User.PhoneNumber)
+                <hr />
             </div>
         </div>
+        <div>
+            <div class="col-sm-12">
+                <div class="form-group margin-bottom-0">
+                    @Html.Partial("../Shared/Controls/_DynamicFields", new MyAccountDynamicFieldsViewModel(Model.UserInfo.Id))
+                </div>
+                <hr />
+            </div>
+        </div>
+
         <div class="small-print">
             <div class="col-sm-12">@Html.BootstrapEditorFor(model => model.AllowMarketingEmails)</div>
         </div>
@@ -84,7 +90,7 @@
 <script>
 
     // 🔁 When image is uploaded, reload the list
-    document.addEventListener('imageUploaded', function () {
+    document.addEventListener('fileUploaded', function () {
         @*refreshImageOptions(@Model.EntityId);*@
     });
 

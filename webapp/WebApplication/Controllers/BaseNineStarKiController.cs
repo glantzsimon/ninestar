@@ -148,22 +148,41 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        public ActionResult UploadImage(HttpPostedFileBase file, int? id = null, string folderName = "upload")
+        public ActionResult UploadFile(HttpPostedFileBase file, int? id = null, string folderName = "files")
         {
             try
             {
                 if (file == null || file.ContentLength == 0)
                 {
-                    Logger.Error("BaseController => UploadImage => No file received.");
+                    Logger.Error("BaseController => UploadFile => No file received.");
                     return Json(new { success = false, message = "No file received." });
                 }
 
+                if (!file.FileName.IsSupportedFileType())
+                {
+                    return Json(new { success = false, message = "Unsupported file type." });
+                }
+
+                var isImage = file.FileName.IsImage();
+                if (isImage && !file.ContentType.StartsWith("image/", StringComparison.OrdinalIgnoreCase))
+                {
+                    return Json(new { success = false, message = "File is not a valid image." });
+                }
+
+                var maxSizeMb = My.DefaultValuesConfiguration.DefaultFileUploadSizeInMb;
+                if (file.ContentLength > maxSizeMb * 1024 * 1024)
+                {
+                    return Json(new { success = false, message = $"File exceeds the maximum allowed size of {maxSizeMb} MB." });
+                }
+
                 var fileName = Path.GetFileNameWithoutExtension(file.FileName);
-                var ext = Path.GetExtension(file.FileName);
+                var ext = Path.GetExtension(file.FileName).ToLowerInvariant();
                 var safeFileName = fileName.Slugify() + "-" + Guid.NewGuid().ToString("N").Substring(0, 6) + ext;
+                var baseFolder = isImage ? "Images" : "Upload";
+
                 var relativePath = id.HasValue && id.Value > 0
-                    ? $"~/Images/{folderName}/{id}"
-                    : $"~/Images/{folderName}";
+                    ? $"~/{baseFolder}/{folderName}/{id}"
+                    : $"~/{baseFolder}/{folderName}";
                 var uploadDir = Server.MapPath(relativePath);
 
                 Directory.CreateDirectory(uploadDir);
@@ -172,29 +191,34 @@ namespace K9.WebApplication.Controllers
 
                 var url = Url.Content($"{relativePath}/{safeFileName}");
 
-                Logger.Info($"BaseController => UploadImage => Successfully uploaded image to server: {url}");
+                Logger.Info($"BaseController => UploadFile => Successfully uploaded image to server: {url}");
 
 #if DEBUG
-                //return Json(new { success = true, url });
-                //#else
-                Logger.Info($"BaseController => UploadImage => Uploading image to Storj");
+                return Json(new { success = true, url });
+#else
+                if (!isImage)
+                {
+                    return Json(new { success = true, url });
+                }
+                else
+                {
+                    var uploadRelativePath = id.HasValue ? $"{folderName}/{id}/{safeFileName}" : $"{folderName}/{safeFileName}";
+                    var absoluteFilePath = Path.Combine(uploadDir, safeFileName);
 
-                var uploadRelativePath = id.HasValue ? $"{folderName}/{id}/{safeFileName}" : $"{folderName}/{safeFileName}";
-                var absoluteFilePath = Path.Combine(uploadDir, safeFileName);
+                    Logger.Info($"BaseController => UploadFile => Uploading image to Storj => {absoluteFilePath}, {uploadRelativePath}");
 
-                Logger.Info($"BaseControlle => UploadImage => UploadImageToStorj => {absoluteFilePath}, {uploadRelativePath}");
+                    var storjUrl = UploadFileToStorj(absoluteFilePath, uploadRelativePath);
 
-                var storjUrl = UploadImageToStorj(absoluteFilePath, uploadRelativePath);
+                    var finalUrl = string.IsNullOrWhiteSpace(storjUrl) ? url : storjUrl;
+                    Logger.Info($"UploadFile => Successfully uploaded: {finalUrl}");
 
-                var finalUrl = string.IsNullOrWhiteSpace(storjUrl) ? url : storjUrl;
-                Logger.Info($"UploadImage => Successfully uploaded: {finalUrl}");
-
-                return Json(new { success = true, url = finalUrl });
+                    return Json(new { success = true, url = finalUrl });
+                }
 #endif
             }
             catch (Exception ex)
             {
-                Logger.Error("UploadImage => Exception: " + ex.GetFullErrorMessage());
+                Logger.Error("UploadFile => Exception: " + ex.GetFullErrorMessage());
                 return Json(new { success = false, message = "Upload failed: " + ex.Message });
             }
         }
@@ -310,7 +334,7 @@ namespace K9.WebApplication.Controllers
             return instance;
         }
 
-        private string UploadImageToStorj(string absoluteFilePath, string relativePath)
+        private string UploadFileToStorj(string absoluteFilePath, string relativePath)
         {
             return My.MediaManagementService.UploadToStorj(absoluteFilePath, relativePath);
         }

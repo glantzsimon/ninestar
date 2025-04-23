@@ -3,39 +3,41 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.IDynamicFieldsModel
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="form-group margin-bottom-0">
-                @Html.Partial("../Shared/Controls/_ImageUploader", new ImageUploadOptions
-                {
-                    UploadUrl = Url.Action("UploadImage", "BaseNineStarKi", new { id = Model.EntityId, folderName = Model.FolderName})
-                })
-            </div>
-            <br />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="form-group">
-                <label for="imageList">@Dictionary.Images:</label>
-                <small class="text-muted" style="display: block; margin-top: -5px; margin-bottom: 8px;">
-                    Ctrl+C to copy image element markup. Ctrl+Alt+C to copy image URL.
-                </small>
-                <div id="imageList" class="image-list">
-                    @Html.Partial("../Shared/Controls/_ImageListItems")
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12">
-            <div class="form-group margin-bottom-0">
-                <button type="button" id="deleteSelectedImages" class="btn btn-danger">
-                    <i class="glyphicon glyphicon-trash"></i> @Dictionary.DeleteSelected
-                </button>
-            </div>
-        </div>
-    </div>
+<div class="row">
+    <div class="col-sm-12 padding-0 margin-bottom-10">
+        <div class="form-group margin-bottom-0">
+            <label>@Model.Label</label>
 
-    <script type="text/javascript">
+            @Html.Partial("../Shared/Controls/_FileUploader", new UploadOptions
+            {
+                UploadUrl = Url.Action("UploadFile", "BaseNineStarKi", new {id = Model.EntityId, folderName = Model.FolderName})
+            })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 padding-0">
+        <div class="form-group">
+            <div id="imageList" class="image-list">
+                @Html.Partial("../Shared/Controls/_ImageListItems")
+            </div>
+            <small class="text-muted image-list-instructions">
+                @Dictionary.ImageCopyInstructions
+            </small>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group margin-bottom-0">
+            <button type="button" id="deleteSelectedImages" class="btn btn-danger">
+                <i class="glyphicon glyphicon-trash"></i> @Dictionary.DeleteSelected
+            </button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
 
     let selectedImage = null;
     let lastSelectedIndex = -1;
@@ -167,15 +169,15 @@
     function refreshImageOptions(id) {
         $.get('@Url.Action("GetImageOptions", "BaseNineStarKi")', {
                 typeName:  "@Model.EntityType.Name",
-                id: id }, 
+                id: id },
             function (data) {
             $('#imageList').html(data);
         });
     }
 
     // 🔁 When image is uploaded, reload the list
-    document.addEventListener('imageUploaded', function () {
+    document.addEventListener('fileUploaded', function () {
         refreshImageOptions(@Model.EntityId);
     });
 
-    </script>
+</script>

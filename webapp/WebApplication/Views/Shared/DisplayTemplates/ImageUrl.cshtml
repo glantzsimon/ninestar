@@ -1,4 +1,10 @@
-﻿@model Object
+﻿@model string
+
 @{
+    var isAbsolute = !string.IsNullOrEmpty(Model) && (Model.StartsWith("http"));
+    var src = string.IsNullOrEmpty(Model) ? "" : isAbsolute ? Model : Url.Content("~/" + (Model ?? "").TrimStart('~', '/'));
 }
-<img loading="lazy" src="@Model"/>
+
+<div>
+    <img class="img-responsive image-preview" loading="lazy" src="@src" />
+</div>

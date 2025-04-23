@@ -116,8 +116,11 @@ namespace K9.WebApplication.Services
 
         public void UpdateUserInfo(UserInfo userInfo)
         {
-            _userInfosRepository.GetQuery($"UPDATE {nameof(UserInfo)} SET {nameof(UserInfo.TimeOfBirth)} = '{userInfo.TimeOfBirth.ToString()}', " +
-                                          $"{nameof(UserInfo.BirthTimeZoneId)} = '{userInfo.BirthTimeZoneId.ToString()}' WHERE Id = {userInfo.Id}");
+            _userInfosRepository.GetQuery($"UPDATE {nameof(UserInfo)} SET " +
+                                          $"{nameof(UserInfo.TimeOfBirth)} = '{userInfo.TimeOfBirth.ToString()}', " +
+                                          $"{nameof(UserInfo.AvatarImageUrl)} = '{userInfo.AvatarImageUrl}', " +
+                                          $"{nameof(UserInfo.BirthTimeZoneId)} = '{userInfo.BirthTimeZoneId.ToString()}' " +
+                                          $"WHERE Id = {userInfo.Id}");
         }
 
         public void DeleteUser(int id)

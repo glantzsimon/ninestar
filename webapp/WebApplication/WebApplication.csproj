@@ -367,6 +367,7 @@
     <Compile Include="Controllers\UserPromotionsController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
+    <Compile Include="Enums\EDynamicFieldsMode.cs" />
     <Compile Include="Enums\ECalculatorType.cs" />
     <Compile Include="Enums\EHouseDisplay.cs" />
     <Compile Include="Enums\EPanelCycleView.cs" />
@@ -397,7 +398,7 @@
     <Compile Include="Models\Astrology\MoonPhase.cs" />
     <Compile Include="Models\DeleteFilesRequest.cs" />
     <Compile Include="Models\QuickRegisterModel.cs" />
-    <Compile Include="Options\ImageUploadOptions.cs" />
+    <Compile Include="Options\UploadOptions.cs" />
     <Compile Include="Options\PieChartOptions.cs" />
     <Compile Include="Services\GoogleService.cs" />
     <Compile Include="Services\IAITextMergeService.cs" />
@@ -409,10 +410,12 @@
     <Compile Include="Services\AstrologyService.cs" />
     <Compile Include="Services\ArticlesService.cs" />
     <Compile Include="Services\MediaManagementService.cs" />
-    <Compile Include="ViewModels\IDynamicFieldsModel.cs" />
+    <Compile Include="ViewModels\ImageListItemViewModel.cs" />
+    <Compile Include="ViewModels\DynamicFields\MyAccountDynamicFieldsViewModel.cs" />
+    <Compile Include="ViewModels\DynamicFields\IDynamicFieldsModel.cs" />
     <Compile Include="ViewModels\DynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
-    <Compile Include="ViewModels\ArticleDynamicFieldsViewModel.cs" />
+    <Compile Include="ViewModels\DynamicFields\ArticleDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\MagicSquareViewModel.cs" />
     <Compile Include="ViewModels\NineStarKiDrectionsChartViewModel.cs" />
     <Compile Include="ViewModels\PlannerViewModelItem.cs" />
@@ -1801,7 +1804,7 @@
     <Content Include="Views\Articles\PublishSuccess.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Tags.cshtml" />
-    <Content Include="Views\Shared\Controls\_ImageUploader.cshtml" />
+    <Content Include="Views\Shared\Controls\_FileUploader.cshtml" />
     <Content Include="Views\Shared\Controls\_ImageListItems.cshtml" />
     <Content Include="Views\Blog\_BlogCard.cshtml" />
     <Content Include="Views\Blog\_BlogTag.cshtml" />

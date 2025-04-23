@@ -6572,4 +6572,22 @@
   <data name="AvatarImageUrlLabel" xml:space="preserve">
     <value>Avatar</value>
   </data>
+  <data name="ImageCopyInstructions" xml:space="preserve">
+    <value>Ctrl+C to copy image element markup. Ctrl+Alt+C to copy image URL.</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="AvatarImages" xml:space="preserve">
+    <value>Avatar Images</value>
+  </data>
+  <data name="CopyImageUrl" xml:space="preserve">
+    <value>Copy image URL</value>
+  </data>
+  <data name="CopyMarkup" xml:space="preserve">
+    <value>Copy markup</value>
+  </data>
+  <data name="SelectImage" xml:space="preserve">
+    <value>Select Image</value>
+  </data>
 </root>

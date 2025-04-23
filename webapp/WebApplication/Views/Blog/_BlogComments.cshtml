@@ -76,8 +76,8 @@
 
             $btn.addClass('liked');
             setTimeout(() => $btn.removeClass('liked'), 500);
-
-            $.post('@Url.Action("ToggleCommentLike")', { articleCommentId: commentId }, function (res) {
+            $.fn.showToast(commentId);
+            $.post('@Url.Action("ToggleCommentLike", "Blog")', { id: commentId }, function (res) {
                 if (res.success) {
                     $btn.find('.like-count').text(res.newCount);
                     $btn.find('i').toggleClass('fa-heart fa-heart-o');

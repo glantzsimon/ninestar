@@ -92,7 +92,7 @@ namespace K9.WebApplication.Services
 
             if (existing != null)
             {
-                _articleCommentLikesRepository.Delete(articleCommentId);
+                _articleCommentLikesRepository.Delete(existing.Id);
             }
             else
             {

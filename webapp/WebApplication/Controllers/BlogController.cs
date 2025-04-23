@@ -101,10 +101,17 @@ namespace K9.WebApplication.Controllers
         [Route("toggle-like")]
         [HttpPost]
         [Authorize]
-        public JsonResult ToggleCommentLike(int articleCommentId)
+        public JsonResult ToggleCommentLike(int id)
         {
-            var newCount = _articlesService.ToggleCommentLike(articleCommentId);
-            return Json(new { success = true, newCount });
+            try
+            {
+                var newCount = _articlesService.ToggleCommentLike(id);
+                return Json(new { success = true, newCount });
+            }
+            catch (Exception e)
+            {
+                return Json(new { success = false, error = e.GetFullErrorMessage() });
+            }
         }
 
         [Route("delete-comment")]

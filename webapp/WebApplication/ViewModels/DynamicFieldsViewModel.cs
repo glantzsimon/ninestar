@@ -17,16 +17,16 @@ namespace K9.WebApplication.ViewModels
         public ImageListItemViewModel[] GlobalImageFields { get; }
         public ImageListItemViewModel[] EntityImageFields { get; }
         public Type EntityType { get; }
+        public string SelectedImageUrl { get; }
 
         public int? EntityId { get; set; }
         public string EntityName { get; set; }
-        public string SelectedImageUrl { get; set; }
         public string EntityPluralName { get; set; }
         public string FolderName { get; set; }
         public string Label { get; set; }
         public EDynamicFieldsMode Mode { get; set; }
 
-        public DynamicFieldsViewModel(int? id = null, string entityName = "", string entityPluralName = "", string label = "", string selectedImageUrl = "", EDynamicFieldsMode mode = EDynamicFieldsMode.Advanced)
+        public DynamicFieldsViewModel(int? id = null, string selectedImageUrl = "", string entityName = "", string entityPluralName = "", string label = "", EDynamicFieldsMode mode = EDynamicFieldsMode.Advanced)
         {
             EntityId = id;
             EntityName = string.IsNullOrEmpty(entityName) ? typeof(T).Name : entityName;

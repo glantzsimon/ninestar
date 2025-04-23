@@ -6,7 +6,7 @@ namespace K9.WebApplication.ViewModels
 {
     public class MyAccountDynamicFieldsViewModel : DynamicFieldsViewModel<UserInfo>
     {
-        public MyAccountDynamicFieldsViewModel(int? userInfoId) : base(userInfoId)
+        public MyAccountDynamicFieldsViewModel(int? userInfoId, string selectedImageUrl) : base(userInfoId, selectedImageUrl)
         {
             Label = Dictionary.AvatarImages;
             Mode = EDynamicFieldsMode.Simple;

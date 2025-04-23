@@ -50,10 +50,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="form-group margin-bottom-0">
-                    @Html.Partial("../Shared/Controls/_DynamicFields", new MyAccountDynamicFieldsViewModel(Model.UserInfo.Id)
-                    {
-                        SelectedImageUrl = Model.UserInfo.AvatarImageUrl
-                    })
+                    @Html.Partial("../Shared/Controls/_DynamicFields", new MyAccountDynamicFieldsViewModel(Model.UserInfo.Id, Model.UserInfo.AvatarImageUrl)
                 </div>
                 <hr />
             </div>

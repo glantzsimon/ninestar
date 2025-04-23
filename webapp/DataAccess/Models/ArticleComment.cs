@@ -67,7 +67,7 @@ namespace K9.DataAccessLayer.Models
                 if (LikeCount > 0)
                     return $"{LikeCount} like{(LikeCount > 1 ? "s" : "")}";
 
-                return string.Empty;
+                return $"No likes yet";
             }
         }
 

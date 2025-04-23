@@ -6638,6 +6638,9 @@
   <data name="ImageUrlCopied" xml:space="preserve">
     <value>Image URL copied!</value>
   </data>
+  <data name="Likes" xml:space="preserve">
+    <value>Likes</value>
+  </data>
   <data name="LogInToLeaveComment" xml:space="preserve">
     <value>Log in to leave a comment.</value>
   </data>

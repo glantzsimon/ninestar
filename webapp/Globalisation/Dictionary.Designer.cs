@@ -12829,6 +12829,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Likes.
+        /// </summary>
+        public static string Likes {
+            get {
+                return ResourceManager.GetString("Likes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Limitation.
         /// </summary>
         public static string Limitation {

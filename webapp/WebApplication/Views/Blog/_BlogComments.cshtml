@@ -30,33 +30,33 @@
                     <span class="text-muted"> · @comment.PostedOn.ToLocalTime().ToString("g")</span>
                 </div>
                 <p class="comment-text">@comment.Comment</p>
+                
+                <hr class="margin-10" />
+
                 @if (WebSecurity.IsAuthenticated && comment.UserId == Current.UserId)
                 {
                     <div class="comment-actions">
-                        <button class="btn btn-link btn-edit-comment" data-id="@comment.Id">
-                            <i class="fa fa-pencil"></i> Edit
-                        </button>
-                        <button class="btn btn-link text-danger btn-delete-comment" data-id="@comment.Id">
-                            <i class="fa fa-trash"></i> Delete
-                        </button>
+                        <span class="comment-icon btn-edit-comment" data-id="@comment.Id" role="button" title="Edit">
+                            <i class="fa fa-pencil"></i>
+                        </span>
+                        <span class="comment-icon btn-delete-comment" data-id="@comment.Id" role="button" title="Delete">
+                            <i class="fa fa-trash"></i>
+                        </span>
+                        <span class="comment-icon btn-like-comment @(comment.IsLikedByCurrentUser ? "liked" : "")"
+                              data-comment-id="@comment.Id" role="button" title="Like">
+                            <i class="fa fa-heart @(comment.IsLikedByCurrentUser ? "text-danger" : "text-muted")"></i>
+                        </span>
+                        <small class="like-summary text-muted">@comment.LikeSummary</small>
                     </div>
-                }
-                @if (WebSecurity.IsAuthenticated)
-                {
-                    <button class="btn-like-comment btn btn-link"
-                            data-comment-id="@comment.Id"
-                            @(comment.IsLikedByCurrentUser ? "data-liked='true'" : "")>
-                        <i class="fa @(comment.IsLikedByCurrentUser ? "fa-heart" : "fa-heart-o") text-danger"></i>
-                        <span class="like-count">@comment.LikeCount</span>
-                    </button>
-                    <small class="like-summary text-muted">@comment.LikeSummary</small>
                 }
                 else
                 {
-                    <button class="btn btn-link disabled" title="@Dictionary.LogInToLike">
-                        <i class="fa fa-heart-o text-muted"></i>
+                    <div class="comment-actions">
+                        <span class="comment-icon disabled" title="@Dictionary.LogInToLike">
+                            <i class="fa fa-heart text-muted"></i>
+                        </span>
                         <span class="like-count">@comment.LikeCount</span>
-                    </button>
+                    </div>
                 }
             </div>
         </div>
@@ -71,7 +71,7 @@
             const commentId = $btn.data('comment-id');
 
             $btn.find('i')
-                .toggleClass('fa-heart fa-heart-o')
+                .toggleClass('text-danger text-muted')
                 .addClass('pulse');
 
             $btn.addClass('liked');

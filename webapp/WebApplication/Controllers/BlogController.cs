@@ -98,6 +98,7 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("View", new { id = model.ArticleId });
         }
 
+        [Route("toggle-like")]
         [HttpPost]
         [Authorize]
         public JsonResult ToggleCommentLike(int articleCommentId)
@@ -106,6 +107,7 @@ namespace K9.WebApplication.Controllers
             return Json(new { success = true, newCount });
         }
 
+        [Route("delete-comment")]
         [HttpPost]
         [Authorize]
         public JsonResult DeleteComment(int id)
@@ -122,6 +124,7 @@ namespace K9.WebApplication.Controllers
             return Json(new { success = true });
         }
 
+        [Route("edit-comment")]
         [HttpPost]
         [Authorize]
         public JsonResult EditComment(int id, string comment)

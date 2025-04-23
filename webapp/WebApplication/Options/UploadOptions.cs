@@ -11,7 +11,7 @@ namespace K9.WebApplication.Options
         public string IdPrefix { get; set; } = Guid.NewGuid().ToString("N");
         public EFilesSourceFilter Filter { get; set; }
         public string Accept => GetFilterString();
-
+        
         private string GetFilterString()
         {
             switch (Filter)

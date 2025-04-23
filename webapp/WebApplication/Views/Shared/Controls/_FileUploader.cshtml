@@ -4,9 +4,12 @@
 @{
     var uploadId = "fileUpload_" + Model.IdPrefix;
     var previewId = "filePreviewContainer_" + Model.IdPrefix;
+    var uploadLimitReached = Model.MaxUploads > 0 && Model.UploadCount >= Model.MaxUploads;
+    var limitReachedStyle = uploadLimitReached ? "" : "display: none;";
+    var uploadDisabledText = uploadLimitReached ? "disabled" : "";
 }
 
-<div class="custom-uploader drop-zone" id="fileDropZone">
+<div class="custom-uploader drop-zone @uploadDisabledText" id="fileDropZone">
     <div id="@previewId" class="row margin-top-10"></div>
 
     <button type="button" class="btn btn-default btn-upload-trigger">
@@ -17,12 +20,12 @@
 
     @if (Model.MaxUploads > 0)
     {
-        <div class="upload-counter text-muted small" style="margin-top: 5px;">
+        <div class="upload-counter text-muted small margin-top-5">
             <span id="uploadCounter">@Model.UploadCount</span> of @Model.MaxUploads uploaded
         </div>
     }
 
-    <div class="upload-limit-message text-danger small" style="display: none; margin-top: 5px;">
+    <div id="uploadLimitMessage_@Model.IdPrefix" class="upload-limit-message text-danger small margin-top-5" style="@limitReachedStyle">
         @Dictionary.UploadLimitReached
     </div>
 </div>
@@ -33,7 +36,8 @@
         const $fileInput = $('#@uploadId');
         const $previewContainer = $('#@previewId');
         const $uploadBtn = $('.btn-upload-trigger');
-
+        const $uploadLimitMessage = $('#uploadLimitMessage_@Model.IdPrefix');
+        
         const $uploadCounter = $('#uploadCounter');
         let maxUploads = @Model.MaxUploads;
         let currentUploads = @Model.UploadCount;
@@ -72,9 +76,9 @@
             if (!files || files.length === 0) return;
 
             if (currentUploads >= maxUploads) {
+                $uploadLimitMessage.fadeIn();
                 $uploadBtn.prop('disabled', true);
                 $dropZone.addClass('disabled');
-                $('.upload-limit-message').show();
                 return;
             }
 
@@ -145,6 +149,7 @@
                             if (currentUploads >= maxUploads) {
                                 $uploadBtn.prop('disabled', true);
                                 $dropZone.addClass('disabled');
+                                $uploadLimitMessage.fadeIn();
                             }
 
                         } else {
@@ -200,7 +205,7 @@
             if (currentUploads < maxUploads) {
                 $uploadBtn.prop('disabled', false);
                 $dropZone.removeClass('disabled');
-                $('.upload-limit-message').hide();
+                $uploadLimitMessage.fadeOut();
             }
         });
 

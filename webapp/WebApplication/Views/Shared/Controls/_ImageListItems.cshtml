@@ -5,7 +5,7 @@
 
 @if (Model.EntityImageFields.Any())
 {
-    <div class="image-group-header">@Model.EntityPluralName</div>
+    <div class="image-group-header">@Model.Label</div>
     foreach (var item in Model.EntityImageFields)
     {
         @Html.Partial("../Shared/Controls/_ImageListItem", item)
@@ -14,7 +14,7 @@
 
 @if (Model.GlobalImageFields.Any())
 {
-    <div class="image-group-header">@Dictionary.GlobalImages</div>
+    <div class="image-group-header">@Dictionary.Shared</div>
     foreach (var item in Model.GlobalImageFields)
     {
         @Html.Partial("../Shared/Controls/_ImageListItem", item)

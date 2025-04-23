@@ -7,30 +7,33 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Web.Hosting;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.ViewModels
 {
     public abstract class DynamicFieldsViewModel<T> : IDynamicFieldsModel
         where T : class, IObjectBase
     {
-        public int? EntityId { get; set; }
         public ImageListItemViewModel[] GlobalImageFields { get; }
         public ImageListItemViewModel[] EntityImageFields { get; }
-        public string EntityName { get; }
         public Type EntityType { get; }
-        public string EntityPluralName { get; }
-        public string FolderName { get; }
 
+        public int? EntityId { get; set; }
+        public string EntityName { get; set; }
+        public string SelectedImageUrl { get; set; }
+        public string EntityPluralName { get; set; }
+        public string FolderName { get; set; }
         public string Label { get; set; }
         public EDynamicFieldsMode Mode { get; set; }
 
-        public DynamicFieldsViewModel(int? id = null, string entityName = "", string entityPluralName = "", string label = "", EDynamicFieldsMode mode = EDynamicFieldsMode.Advanced)
+        public DynamicFieldsViewModel(int? id = null, string entityName = "", string entityPluralName = "", string label = "", string selectedImageUrl = "", EDynamicFieldsMode mode = EDynamicFieldsMode.Advanced)
         {
             EntityId = id;
             EntityName = string.IsNullOrEmpty(entityName) ? typeof(T).Name : entityName;
             EntityType = typeof(T);
             EntityPluralName = string.IsNullOrEmpty(entityPluralName) ? EntityName.Pluralise() : entityPluralName;
             Label = string.IsNullOrEmpty(label) ? Dictionary.Images : label;
+            SelectedImageUrl = selectedImageUrl;
             Mode = mode;
             FolderName = EntityPluralName.ToLower();
             GlobalImageFields = GetImages();
@@ -61,16 +64,23 @@ namespace K9.WebApplication.ViewModels
                         ? $"/Images/{FolderName}/{id.Value}/{fileName}"
                         : $"/Images/{FolderName}/{fileName}";
 
+                    var imageInfo = new ImageInfo
+                    {
+                        FileName = fileName,
+                        AltText = Path.GetFileNameWithoutExtension(fileName),
+                        Src = $"{DefaultValuesConfiguration.Instance.BaseImagesPath}{relative.Replace("/Images", "")}",
+                        RelativePath = relative // used for Server.MapPath
+                    };
+
                     return new ImageListItemViewModel
                     {
-                        ImageInfo = new ImageInfo
-                        {
-                            FileName = fileName,
-                            AltText = Path.GetFileNameWithoutExtension(fileName),
-                            Src = $"{DefaultValuesConfiguration.Instance.BaseImagesPath}{relative.Replace("/Images", "")}", // Storj path
-                            RelativePath = relative // used for Server.MapPath
-                        },
-                        DynamicFieldsModel = this
+                        ImageInfo = imageInfo,
+                        DynamicFieldsModel = this,
+                        IsSelected = string.Equals(
+                            SelectedImageUrl?.Trim().ToLowerInvariant(),
+                            imageInfo.Src?.Trim().ToLowerInvariant(),
+                            StringComparison.OrdinalIgnoreCase
+                        )
                     };
                 })
                 .ToArray();

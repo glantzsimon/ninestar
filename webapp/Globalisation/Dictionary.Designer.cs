@@ -19042,6 +19042,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shared.
+        /// </summary>
+        public static string Shared {
+            get {
+                return ResourceManager.GetString("Shared", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shared Vulnerability.
         /// </summary>
         public static string SharedVulnerability {

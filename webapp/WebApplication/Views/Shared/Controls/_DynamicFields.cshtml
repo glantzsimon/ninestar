@@ -7,19 +7,19 @@
     <div class="col-sm-12 padding-0 margin-bottom-10">
         <div class="form-group margin-bottom-0">
             <label>@Model.Label</label>
-
             @Html.Partial("../Shared/Controls/_FileUploader", new UploadOptions
             {
-                UploadUrl = Url.Action("UploadFile", "BaseNineStarKi", new {id = Model.EntityId, folderName = Model.FolderName})
+                UploadUrl = Url.Action("UploadFile", "BaseNineStarKi", new { id = Model.EntityId, folderName = Model.FolderName })
             })
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-sm-12 padding-0">
         <div class="form-group">
             <div id="imageList" class="image-list">
-                @Html.Partial("../Shared/Controls/_ImageListItems")
+                @Html.Partial("../Shared/Controls/_ImageListItems", Model)
             </div>
             <small class="text-muted image-list-instructions">
                 @Dictionary.ImageCopyInstructions
@@ -27,6 +27,7 @@
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group margin-bottom-0">
@@ -38,7 +39,6 @@
 </div>
 
 <script type="text/javascript">
-
     let selectedImage = null;
     let lastSelectedIndex = -1;
 
@@ -48,15 +48,12 @@
         const index = $items.index(this);
 
         if (e.shiftKey && lastSelectedIndex !== -1) {
-            // Range selection
             const [start, end] = [lastSelectedIndex, index].sort((a, b) => a - b);
             $items.slice(start, end + 1).addClass('selected');
         } else if (e.ctrlKey || e.metaKey) {
-            // Toggle item
             $item.toggleClass('selected');
             lastSelectedIndex = index;
         } else {
-            // Replace all selection
             $items.removeClass('selected');
             $item.addClass('selected');
             lastSelectedIndex = index;
@@ -70,11 +67,7 @@
         const $item = $(this).closest('.image-list-item');
         const url = $item.data('url');
         if (url) {
-            navigator.clipboard.writeText(url)
-                .then(() => {
-                    $.fn.showTooltip($item, "Image URL copied!");
-                })
-                .catch(console.error);
+            copyToClipboard(url, $item, "Image URL copied!");
         }
     });
 
@@ -83,54 +76,72 @@
         const $item = $(this).closest('.image-list-item');
         const markup = $item.data('placeholder');
         if (markup) {
-            navigator.clipboard.writeText(markup)
-                .then(() => {
-                    $.fn.showTooltip($item, "Image markup copied!");
-                })
-                .catch(console.error);
+            copyToClipboard(markup, $item, "Image markup copied!");
         }
     });
 
-    // 📋 Clipboard support (Ctrl+C / Ctrl+Shift+C)
+    $('#imageList').on('click', '.select-image', function (e) {
+        e.stopPropagation();
+        const $item = $(this).closest('.image-list-item');
+        const imageInfo = {
+            src: $item.data('url'),
+            fileName: $item.find('.filename').text()
+        };
+        document.dispatchEvent(new CustomEvent('imageSelected', { detail: imageInfo }));
+    });
+
+    // Clipboard copy fallback
+    function copyToClipboard(text, $target, successMsg) {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text)
+                .then(() => $.fn.showTooltip($target, successMsg))
+                .catch(err => {
+                    console.error("Clipboard error:", err);
+                    alert("Failed to copy to clipboard.");
+                });
+        } else {
+            // Fallback
+            const $temp = $('<input>');
+            $('body').append($temp);
+            $temp.val(text).select();
+            document.execCommand("copy");
+            $temp.remove();
+            $.fn.showTooltip($target, successMsg);
+        }
+    }
+
+    // Ctrl/Ctrl+Alt Clipboard Support
     $(document).on('keydown', function (e) {
         const activeEl = document.activeElement;
-        const isInputFocused = $(activeEl).is('input, textarea, [contenteditable="true"]');
-
-        if (isInputFocused) return; // ⛔ Let native copy behavior work inside inputs
+        if ($(activeEl).is('input, textarea, [contenteditable="true"]')) return;
 
         if (!selectedImage || !e.ctrlKey || e.key.toLowerCase() !== 'c') return;
 
         const $item = $(selectedImage);
-        const text = e.altKey
-            ? $item.data('url')
-            : $item.data('placeholder');
+        const text = e.altKey ? $item.data('url') : $item.data('placeholder');
 
         if (text) {
-            navigator.clipboard.writeText(text)
-                .then(() => {
-                    $.fn.showTooltip($item, "Copied!");
-                })
-                .catch(err => console.error("Clipboard error:", err));
+            copyToClipboard(text, $item, "Copied!");
         }
 
-        e.preventDefault(); // optional: block browser default copy behavior
+        e.preventDefault();
     });
 
-    // 🧹 Delete selected images
     $('#deleteSelectedImages').on('click', function () {
         const $btn = $(this);
         const $selected = $('#imageList .image-list-item.selected');
-        $('#deleteSelectedImages').text(`Delete Selected (${$selected.length})`);
 
         if ($selected.length === 0) {
             $.fn.showToast('Please select one or more images to delete.', 'error');
             return;
         }
 
-        if (!$(this).data('confirmed')) {
+        $btn.text(`Delete Selected (${$selected.length})`);
+
+        if (!$btn.data('confirmed')) {
             $.fn.showToast('Click delete again to confirm.', 'info');
-            $(this).data('confirmed', true);
-            setTimeout(() => $(this).removeData('confirmed'), 3000);
+            $btn.data('confirmed', true);
+            setTimeout(() => $btn.removeData('confirmed'), 3000);
             return;
         }
 
@@ -165,19 +176,29 @@
         });
     });
 
-    // 🔁 Refresh image list partial
     function refreshImageOptions(id) {
+        // Save currently selected relative paths
+        const selectedPaths = $('#imageList .image-list-item.selected').map(function () {
+            return $(this).data('relativepath');
+        }).get();
+
         $.get('@Url.Action("GetImageOptions", "BaseNineStarKi")', {
-                typeName:  "@Model.EntityType.Name",
-                id: id },
-            function (data) {
+            typeName: "@(Model.EntityType?.Name ?? "")",
+            id: id
+        }, function (data) {
             $('#imageList').html(data);
+
+            // Re-select matching items
+            $('#imageList .image-list-item').each(function () {
+                const $item = $(this);
+                if (selectedPaths.includes($item.data('relativepath'))) {
+                    $item.addClass('selected');
+                }
+            });
         });
     }
 
-    // 🔁 When image is uploaded, reload the list
     document.addEventListener('fileUploaded', function () {
         refreshImageOptions(@Model.EntityId);
     });
-
 </script>

@@ -6,5 +6,6 @@ namespace K9.WebApplication.ViewModels
     {
         public IDynamicFieldsModel DynamicFieldsModel { get; set; }
         public ImageInfo ImageInfo { get; set; }
+        public bool IsSelected { get; set; }
     }
 }

@@ -29,42 +29,39 @@
     .image-list-item {
         position: relative;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         min-height: 54px;
         max-height: 54px;
         padding: 6px 8px;
         margin-bottom: 4px;
         overflow: hidden;
         border-radius: 4px;
-        align-items: center;
-        justify-content: space-between;
-        align-items: center;
         cursor: pointer;
         transition: background-color 0.2s ease;
 
-        &:hover .image-actions {
-            opacity: 1;
+        &:hover {
+            background-color: #e6f7ff;
+            outline: 1px solid #2196f3;
+
+            .image-actions {
+                opacity: 1;
+
+                .advanced,
+                .simple {
+                    opacity: 1;
+                }
+            }
         }
 
-        .image-actions {
-            position: absolute;
-            top: 7px;
-            right: 8px;
-            display: flex;
-            gap: 6px;
-            opacity: 0;
-            transition: opacity 0.2s ease;
+        &:focus {
+            outline: 2px solid #2196f3;
+            background-color: #e6f0ff;
+        }
 
-            button {
-                padding: 7px;
-                color: #666;
-
-                i {
-                    font-size: 18px;
-                }
-
-                &:hover {
-                    color: #333;
-                }
+        &.selected {
+            .simple .select-image .check-icon {
+                color: #2196f3;
             }
         }
 
@@ -77,20 +74,71 @@
             border: 1px solid #ddd;
         }
 
-        span {
+        span.filename {
             flex-grow: 1;
-            line-height: 40px;
+            line-height: 1.4em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        &:hover,
         &.selected {
             background-color: #e6f7ff;
             outline: 1px solid #2196f3;
         }
 
-        &:focus {
-            outline: 2px solid #2196f3;
-            background-color: #e6f0ff;
+        .image-actions {
+            position: absolute;
+            top: 7px;
+            right: 8px;
+            display: flex;
+            gap: 6px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+
+            .advanced,
+            .simple {
+                display: flex;
+                gap: 6px;
+                opacity: 0;
+                transition: opacity 0.2s ease;
+            }
+
+            .simple {
+                opacity: 1 !important;
+
+                .select-image .check-icon {
+                    color: #ccc;
+                    transition: color 0.2s ease;
+                }
+            }
+
+            button {
+                padding: 7px;
+                color: #666;
+                background: transparent;
+                border: none;
+
+                i {
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    color: #333;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
         }
     }
+}
+
+.image-list-instructions {
+    display: inline-block;
+    font-size: 0.8em;
+    margin-top: 7px;
+    margin-bottom: 0 !important;
+    line-height: 1.2em !important;
 }

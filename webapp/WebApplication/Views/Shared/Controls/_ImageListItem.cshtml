@@ -4,7 +4,7 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.ImageListItemViewModel
 
-<div class="image-list-item" tabindex="0"
+<div class="image-list-item" data-selected="@Model.IsSelected.ToString().ToLower()" tabindex="0"
      data-url="@Model.ImageInfo.Src"
      data-relativepath="@Model.ImageInfo.RelativePath"
      data-placeholder="@Model.ImageInfo.GetHtmlPlaceHolder()">
@@ -15,18 +15,23 @@
     <div class="image-actions">
         @if (Model.DynamicFieldsModel.Mode == EDynamicFieldsMode.Advanced)
         {
-            <button type="button" class="btn btn-xs btn-link copy-url" title="@Dictionary.CopyImageUrl">
-                <i class="glyphicon glyphicon-link"></i>
-            </button>
-            <button type="button" class="btn btn-xs btn-link copy-markup" title="@Dictionary.CopyMarkup">
-                <i class="glyphicon glyphicon-console"></i>
-            </button>
+            <div class="advanced">
+                <button type="button" class="btn btn-xs btn-link copy-url" title="@Dictionary.CopyImageUrl">
+                    <i class="glyphicon glyphicon-link"></i>
+                </button>
+                <button type="button" class="btn btn-xs btn-link copy-markup" title="@Dictionary.CopyMarkup">
+                    <i class="glyphicon glyphicon-console"></i>
+                </button>
+            </div>
         }
         else
         {
-            <button type="button" class="btn btn-xs btn-link select-image" title="@Dictionary.SelectImage">
-                <i class="glyphicon glyphicon-ok"></i>
-            </button>
+            <div class="simple always-visible">
+                <button type="button" class="btn btn-xs btn-link select-image" aria-pressed="@(Model.IsSelected.ToString().ToLower())" title="@Dictionary.SelectImage">
+                    <i class="glyphicon @(Model.IsSelected ? "glyphicon-check" : "glyphicon-unchecked") check-icon"></i>
+                </button>
+            </div>
         }
     </div>
+
 </div>

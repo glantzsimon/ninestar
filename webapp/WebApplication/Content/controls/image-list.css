@@ -25,19 +25,53 @@
 .image-list .image-list-item {
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   min-height: 54px;
   max-height: 54px;
   padding: 6px 8px;
   margin-bottom: 4px;
   overflow: hidden;
   border-radius: 4px;
-  justify-content: space-between;
-  align-items: center;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+.image-list .image-list-item:hover {
+  background-color: #e6f7ff;
+  outline: 1px solid #2196f3;
+}
 .image-list .image-list-item:hover .image-actions {
   opacity: 1;
+}
+.image-list .image-list-item:hover .image-actions .advanced,
+.image-list .image-list-item:hover .image-actions .simple {
+  opacity: 1;
+}
+.image-list .image-list-item:focus {
+  outline: 2px solid #2196f3;
+  background-color: #e6f0ff;
+}
+.image-list .image-list-item.selected .simple .select-image .check-icon {
+  color: #2196f3;
+}
+.image-list .image-list-item img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+}
+.image-list .image-list-item span.filename {
+  flex-grow: 1;
+  line-height: 1.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.image-list .image-list-item.selected {
+  background-color: #e6f7ff;
+  outline: 1px solid #2196f3;
 }
 .image-list .image-list-item .image-actions {
   position: absolute;
@@ -48,9 +82,25 @@
   opacity: 0;
   transition: opacity 0.2s ease;
 }
+.image-list .image-list-item .image-actions .advanced,
+.image-list .image-list-item .image-actions .simple {
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.image-list .image-list-item .image-actions .simple {
+  opacity: 1 !important;
+}
+.image-list .image-list-item .image-actions .simple .select-image .check-icon {
+  color: #ccc;
+  transition: color 0.2s ease;
+}
 .image-list .image-list-item .image-actions button {
   padding: 7px;
   color: #666;
+  background: transparent;
+  border: none;
 }
 .image-list .image-list-item .image-actions button i {
   font-size: 18px;
@@ -58,24 +108,13 @@
 .image-list .image-list-item .image-actions button:hover {
   color: #333;
 }
-.image-list .image-list-item img {
-  width: 45px;
-  height: 45px;
-  object-fit: cover;
-  border-radius: 2px;
-  margin-right: 10px;
-  border: 1px solid #ddd;
+.image-list .image-list-item .image-actions button:focus {
+  outline: none;
 }
-.image-list .image-list-item span {
-  flex-grow: 1;
-  line-height: 40px;
-}
-.image-list .image-list-item:hover,
-.image-list .image-list-item.selected {
-  background-color: #e6f7ff;
-  outline: 1px solid #2196f3;
-}
-.image-list .image-list-item:focus {
-  outline: 2px solid #2196f3;
-  background-color: #e6f0ff;
+.image-list-instructions {
+  display: inline-block;
+  font-size: 0.8em;
+  margin-top: 7px;
+  margin-bottom: 0 !important;
+  line-height: 1.2em !important;
 }

@@ -6590,4 +6590,7 @@
   <data name="SelectImage" xml:space="preserve">
     <value>Select Image</value>
   </data>
+  <data name="Shared" xml:space="preserve">
+    <value>Shared</value>
+  </data>
 </root>

@@ -191,6 +191,13 @@
             success: function (response) {
                 if (response.success) {
                     refreshImageOptions(@Model.EntityId);
+
+                    document.dispatchEvent(new CustomEvent('fileDeleted', {
+                        detail: {
+                            count: urlsToDelete.length
+                        }
+                    }));
+
                     $.fn.showToast(response.message || '@Dictionary.ImagesDeletedSuccess', 'success');
                 } else {
                     $.fn.showToast(response.message || '@Dictionary.FailedToDeleteSomeImages', 'error');
@@ -232,4 +239,5 @@
     document.addEventListener('fileUploaded', function () {
         refreshImageOptions(@Model.EntityId);
     });
+
 </script>

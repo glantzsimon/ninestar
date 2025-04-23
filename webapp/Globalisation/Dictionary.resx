@@ -6629,4 +6629,7 @@
   <data name="Shared" xml:space="preserve">
     <value>Shared</value>
   </data>
+  <data name="UploadLimitReached" xml:space="preserve">
+    <value>Upload limit reached.</value>
+  </data>
 </root>

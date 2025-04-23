@@ -14,6 +14,17 @@
     </button>
 
     <input type="file" id="@uploadId" class="hidden-file-input" accept="@Model.Accept" multiple />
+
+    @if (Model.MaxUploads > 0)
+    {
+        <div class="upload-counter text-muted small" style="margin-top: 5px;">
+            <span id="uploadCounter">@Model.UploadCount</span> of @Model.MaxUploads uploaded
+        </div>
+    }
+
+    <div class="upload-limit-message text-danger small" style="display: none; margin-top: 5px;">
+        @Dictionary.UploadLimitReached
+    </div>
 </div>
 
 <script>
@@ -22,6 +33,10 @@
         const $fileInput = $('#@uploadId');
         const $previewContainer = $('#@previewId');
         const $uploadBtn = $('.btn-upload-trigger');
+
+        const $uploadCounter = $('#uploadCounter');
+        let maxUploads = @Model.MaxUploads;
+        let currentUploads = @Model.UploadCount;
 
         // 🔘 Open file dialog
         $uploadBtn.on('click', function () {
@@ -56,15 +71,14 @@
         function handleFiles(files) {
             if (!files || files.length === 0) return;
 
-            const currentCount = @Model.UploadCount;
-            const maxCount = @Model.MaxUploads;
-
-            if (currentCount >= maxCount) {
-                $.fn.showToast(`Upload limit of ${maxCount} reached.`, 'warning');
+            if (currentUploads >= maxUploads) {
+                $uploadBtn.prop('disabled', true);
+                $dropZone.addClass('disabled');
+                $('.upload-limit-message').show();
                 return;
             }
 
-            const filesToAdd = Math.min(files.length, maxCount - currentCount);
+            const filesToAdd = Math.min(files.length, maxUploads - currentUploads);
 
             if (files.length > filesToAdd) {
                 $.fn.showToast(`Only ${filesToAdd} more file(s) allowed.`, 'info');
@@ -87,15 +101,12 @@
                     contentType: false,
 
                     success: function (res) {
-                        console.log("Upload response:", res);
-
                         if (res && res.success && res.url) {
                             const fileUrl = res.url;
                             const fileName = fileUrl.split('/').pop();
                             const fileExtension = fileName.split('.').pop().toLowerCase();
 
                             const imageTypes = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'svg'];
-
                             let $preview;
 
                             if (imageTypes.includes(fileExtension)) {
@@ -107,7 +118,6 @@
                                 `);
                             } else {
                                 const iconClass = getIconClass(fileExtension);
-
                                 $preview = $(`
                                     <div class="col-xs-6 col-sm-4 file-preview-container text-center">
                                         <i class="${iconClass}" style="font-size: 48px; margin-bottom: 10px;"></i>
@@ -127,6 +137,16 @@
                             }));
 
                             $.fn.showToast('File uploaded successfully.', 'success');
+
+                            // ✅ Update the count and check the limit
+                            currentUploads++;
+                            $uploadCounter.text(currentUploads);
+
+                            if (currentUploads >= maxUploads) {
+                                $uploadBtn.prop('disabled', true);
+                                $dropZone.addClass('disabled');
+                            }
+
                         } else {
                             const msg = res?.message || 'Upload failed or returned no URL.';
                             $.fn.showToast("⚠️ " + msg, 'error');
@@ -140,7 +160,9 @@
 
                     complete: function () {
                         if (--pending === 0) {
-                            $uploadBtn.prop('disabled', false);
+                            if (currentUploads < maxUploads) {
+                                $uploadBtn.prop('disabled', false);
+                            }
                             $.fn.hideSpinner($dropZone);
                         }
                     }
@@ -150,25 +172,37 @@
 
         function getIconClass(ext) {
             switch (ext) {
-            case 'pdf': return 'fa fa-file-pdf-o text-danger';
-            case 'doc':
-            case 'docx': return 'fa fa-file-word-o text-primary';
-            case 'xls':
-            case 'xlsx': return 'fa fa-file-excel-o text-success';
-            case 'ppt':
-            case 'pptx': return 'fa fa-file-powerpoint-o text-warning';
-            case 'zip':
-            case 'rar': return 'fa fa-file-archive-o text-muted';
-            case 'mp3':
-            case 'wav': return 'fa fa-file-audio-o text-info';
-            case 'mp4':
-            case 'avi':
-            case 'mov': return 'fa fa-file-video-o text-info';
-            case 'txt':
-            case 'csv': return 'fa fa-file-text-o text-secondary';
-            default: return 'fa fa-file-o text-secondary';
+                case 'pdf': return 'fa fa-file-pdf-o text-danger';
+                case 'doc':
+                case 'docx': return 'fa fa-file-word-o text-primary';
+                case 'xls':
+                case 'xlsx': return 'fa fa-file-excel-o text-success';
+                case 'ppt':
+                case 'pptx': return 'fa fa-file-powerpoint-o text-warning';
+                case 'zip':
+                case 'rar': return 'fa fa-file-archive-o text-muted';
+                case 'mp3':
+                case 'wav': return 'fa fa-file-audio-o text-info';
+                case 'mp4':
+                case 'avi':
+                case 'mov': return 'fa fa-file-video-o text-info';
+                case 'txt':
+                case 'csv': return 'fa fa-file-text-o text-secondary';
+                default: return 'fa fa-file-o text-secondary';
             }
         }
+
+        document.addEventListener('fileDeleted', function (e) {
+            const deleted = e.detail?.count || 1;
+            currentUploads = Math.max(0, currentUploads - deleted);
+            $uploadCounter.text(currentUploads);
+
+            if (currentUploads < maxUploads) {
+                $uploadBtn.prop('disabled', false);
+                $dropZone.removeClass('disabled');
+                $('.upload-limit-message').hide();
+            }
+        });
 
     });
 </script>

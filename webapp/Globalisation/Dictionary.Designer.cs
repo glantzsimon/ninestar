@@ -22627,6 +22627,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Upload limit reached..
+        /// </summary>
+        public static string UploadLimitReached {
+            get {
+                return ResourceManager.GetString("UploadLimitReached", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Urinary Bladder.
         /// </summary>
         public static string UrinaryBladder {

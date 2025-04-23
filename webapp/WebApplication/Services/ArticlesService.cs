@@ -165,6 +165,9 @@ namespace K9.WebApplication.Services
             if (comment == null || comment.UserId != Current.UserId)
                 throw new UnauthorizedAccessException();
 
+            var likes = _articleCommentLikesRepository.Find(e => e.ArticleCommentId == id);
+            _articleCommentLikesRepository.DeleteBatch(likes);
+
             _articleCommentsRepository.Delete(id);
         }
 

@@ -107,11 +107,11 @@
         $('#commentsContainer').on('click', '.btn-delete-comment', function () {
             const id = $(this).data('id');
             const key = `comment-${id}`;
-
+            
             if (deleteConfirmMap[key]) {
                 delete deleteConfirmMap[key]; // clear flag
 
-                $.post('@Url.Action("DeleteComment")', { id }, function (res) {
+                $.post('@Url.Action("DeleteComment", "Blog")', { id }, function (res) {
                     if (res.success) {
                         $(`#comment-${id}`).fadeOut(200, function () { $(this).remove(); });
                         $.fn.showToast("Comment deleted.", "success");

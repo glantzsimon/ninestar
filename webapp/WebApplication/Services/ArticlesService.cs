@@ -72,21 +72,13 @@ namespace K9.WebApplication.Services
 
             foreach (var comment in comments)
             {
-                comment.User = My.UsersRepository.Find(comment.UserId);
-                comment.UserInfo = _userInfosRepository.Find(u => u.UserId == comment.UserId).FirstOrDefault();
-                comment.Article = article;
-                comment.IsByModerator = _userService.UserIsAdmin(comment.UserId);
-                comment.LikeCount =
-                    _articleCommentLikesRepository.GetCount(
-                        $"WHERE [{nameof(ArticleCommentLike.ArticleCommentId)}] = {comment.Id}");
-                comment.IsLikedByCurrentUser = _articleCommentLikesRepository.Exists(e =>
-                    e.ArticleCommentId == comment.Id && e.UserId == Current.UserId);
+                GetFullArticleComment(comment, article);
             }
 
             return comments;
         }
 
-        public (int Count, bool ToggleState, String LikeSummary) ToggleCommentLike(int articleCommentId)
+        public (int Count, bool ToggleState, string LikeSummary) ToggleCommentLike(int articleCommentId)
         {
             var articleComment = _articleCommentsRepository.Find(articleCommentId);
             var existing = _articleCommentLikesRepository.Find(e => e.ArticleCommentId == articleCommentId && e.UserId == Current.UserId).FirstOrDefault();
@@ -105,7 +97,7 @@ namespace K9.WebApplication.Services
                     UserId = Current.UserId,
                     LikedOn = DateTime.UtcNow
                 });
-                
+
                 toggleState = true;
             }
 
@@ -113,7 +105,8 @@ namespace K9.WebApplication.Services
                 $"WHERE [{nameof(ArticleCommentLike.ArticleCommentId)}] = {articleCommentId}");
 
             // refresh
-            articleComment = _articleCommentsRepository.Find(articleCommentId);
+            var article = GetArticle(articleComment.ArticleId);
+            GetFullArticleComment(articleComment, article);
 
             return (count, toggleState, articleComment.LikeSummary);
         }
@@ -193,6 +186,19 @@ namespace K9.WebApplication.Services
                     $"(SELECT {nameof(ArticleTag.TagId)} FROM {nameof(ArticleTag)} WHERE {nameof(ArticleTag.ArticleId)} = {id})")
                 .ToList();
             return tags;
+        }
+
+        private void GetFullArticleComment(ArticleComment comment, Article article)
+        {
+            comment.User = My.UsersRepository.Find(comment.UserId);
+            comment.UserInfo = _userInfosRepository.Find(u => u.UserId == comment.UserId).FirstOrDefault();
+            comment.Article = article;
+            comment.IsByModerator = _userService.UserIsAdmin(comment.UserId);
+            comment.LikeCount =
+                _articleCommentLikesRepository.GetCount(
+                    $"WHERE [{nameof(ArticleCommentLike.ArticleCommentId)}] = {comment.Id}");
+            comment.IsLikedByCurrentUser = _articleCommentLikesRepository.Exists(e =>
+                e.ArticleCommentId == comment.Id && e.UserId == Current.UserId);
         }
 
         private void ProcessTags(Article article)

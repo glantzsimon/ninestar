@@ -73,7 +73,7 @@
                        
             $.post('@Url.Action("ToggleCommentLike", "Blog")', { id: commentId }, function (res) {
                 if (res.success) {
-                    $btn.find('.like-summary').text(res.likeSummary);
+                    $(".comment-actions").find('.like-summary').text(res.likeSummary);
 
                     if (res.toggleState) {
                         $btn.addClass('liked').removeClass("notliked");

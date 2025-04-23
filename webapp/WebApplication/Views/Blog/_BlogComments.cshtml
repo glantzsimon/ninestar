@@ -1,18 +1,19 @@
 ﻿@using K9.SharedLibrary.Helpers.Html
 @using K9.WebApplication.Config
+@using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
 @model Article
 
-<div class="comment-section">
+<div class="comment-section" id="commentsContainer">
     @foreach (var comment in Model.Comments)
     {
         var avatarUrl = !string.IsNullOrWhiteSpace(comment.AvatarImageUrl)
-                ? comment.AvatarImageUrl
-                : $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/default-avatar.png";
+            ? comment.AvatarImageUrl
+            : $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/default-avatar.png";
 
         var defaultAvatarUrl = $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/default-avatar.png";
 
-        <div class="comment">
+        <div class="comment" id="comment-@comment.Id">
             @if (comment.IsByModerator)
             {
                 <video class="aura" autoplay muted loop playsinline preload="none" poster="@defaultAvatarUrl">
@@ -23,14 +24,150 @@
             {
                 <img src="@avatarUrl" alt="@comment.Username" class="avatar aura" />
             }
-
             <div class="comment-body">
                 <div class="comment-meta">
                     <strong>@comment.Username</strong>
-                    <span class="text-muted">· @comment.PostedOn.ToLocalTime().ToString("g")</span>
+                    <span class="text-muted"> · @comment.PostedOn.ToLocalTime().ToString("g")</span>
                 </div>
-                <p>@comment.Comment</p>
+                <p class="comment-text">@comment.Comment</p>
+                @if (WebSecurity.IsAuthenticated && comment.UserId == Current.UserId)
+                {
+                    <div class="comment-actions">
+                        <button class="btn btn-link btn-edit-comment" data-id="@comment.Id">
+                            <i class="fa fa-pencil"></i> Edit
+                        </button>
+                        <button class="btn btn-link text-danger btn-delete-comment" data-id="@comment.Id">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                }
+                @if (WebSecurity.IsAuthenticated)
+                {
+                    <button class="btn-like-comment btn btn-link"
+                            data-comment-id="@comment.Id"
+                            @(comment.IsLikedByCurrentUser ? "data-liked='true'" : "")>
+                        <i class="fa @(comment.IsLikedByCurrentUser ? "fa-heart" : "fa-heart-o") text-danger"></i>
+                        <span class="like-count">@comment.LikeCount</span>
+                    </button>
+                    <small class="like-summary text-muted">@comment.LikeSummary</small>
+                }
+                else
+                {
+                    <button class="btn btn-link disabled" title="@Dictionary.LogInToLike">
+                        <i class="fa fa-heart-o text-muted"></i>
+                        <span class="like-count">@comment.LikeCount</span>
+                    </button>
+                }
             </div>
         </div>
     }
 </div>
+
+<script>
+    $(function () {
+        // ❤️ Like
+        $('#commentsContainer').on('click', '.btn-like-comment', function () {
+            const $btn = $(this);
+            const commentId = $btn.data('comment-id');
+
+            $btn.find('i')
+                .toggleClass('fa-heart fa-heart-o')
+                .addClass('pulse');
+
+            $btn.addClass('liked');
+            setTimeout(() => $btn.removeClass('liked'), 500);
+
+            $.post('@Url.Action("ToggleCommentLike")', { articleCommentId: commentId }, function (res) {
+                if (res.success) {
+                    $btn.find('.like-count').text(res.newCount);
+                    $btn.find('i').toggleClass('fa-heart fa-heart-o');
+                    $btn.toggleAttr('data-liked');
+                } else {
+                    $.fn.showToast(res.message || "Unable to like comment", "error");
+                }
+            });
+        });
+
+        // ✨ Attr toggle helper
+        $.fn.toggleAttr = function (attr) {
+            return this.each(function () {
+                const has = $(this).is(`[${attr}]`);
+                has ? $(this).removeAttr(attr) : $(this).attr(attr, 'true');
+            });
+        };
+
+        // 🗑️ Delete
+        let deleteConfirmMap = {};
+        $('#commentsContainer').on('click', '.btn-delete-comment', function () {
+            const id = $(this).data('id');
+            const key = `comment-${id}`;
+
+            if (deleteConfirmMap[key]) {
+                delete deleteConfirmMap[key]; // clear flag
+
+                $.post('@Url.Action("DeleteComment")', { id }, function (res) {
+                    if (res.success) {
+                        $(`#comment-${id}`).fadeOut(200, function () { $(this).remove(); });
+                        $.fn.showToast("Comment deleted.", "success");
+                    } else {
+                        $.fn.showToast(res.message || "Error deleting comment.", "error");
+                    }
+                });
+            } else {
+                deleteConfirmMap[key] = true;
+
+                $.fn.showToast("Click delete again to confirm.", "warning");
+
+                setTimeout(() => {
+                    delete deleteConfirmMap[key];
+                }, 3000); // auto-expire confirmation after 3 seconds
+            }
+        });
+
+        // ✏️ Edit
+        $('#commentsContainer').on('click', '.btn-edit-comment', function () {
+            const $comment = $(this).closest('.comment');
+            const $text = $comment.find('.comment-text');
+            const original = $text.text();
+            const id = $(this).data('id');
+
+            $text.replaceWith(`
+                <textarea class="form-control comment-edit-box">${original}</textarea>
+                <div class="edit-controls mt-2">
+                    <button class="btn btn-sm btn-primary save-edit" data-id="${id}" data-original="${original}">Save</button>
+                    <button class="btn btn-sm btn-secondary cancel-edit">Cancel</button>
+                </div>
+            `);
+        });
+
+        // ❌ Cancel edit
+        $('#commentsContainer').on('click', '.cancel-edit', function () {
+            const $comment = $(this).closest('.comment');
+            const $editBox = $comment.find('.comment-edit-box');
+            const original = $(this).siblings('.save-edit').data('original');
+            const restored = $('<p class="comment-text"></p>').text(original);
+
+            $comment.find('.edit-controls').remove();
+            $editBox.replaceWith(restored);
+        });
+
+        // 💾 Save edit
+        $('#commentsContainer').on('click', '.save-edit', function () {
+            const $btn = $(this);
+            const id = $btn.data('id');
+            const $comment = $btn.closest('.comment');
+            const content = $comment.find('.comment-edit-box').val();
+
+            $.post('@Url.Action("EditComment")', { id, comment: content }, function (res) {
+                if (res.success) {
+                    const updated = $('<p class="comment-text"></p>').text(content);
+                    $comment.find('.edit-controls').remove();
+                    $comment.find('.comment-edit-box').replaceWith(updated);
+                    $.fn.showToast("Comment updated.", "success");
+                } else {
+                    $.fn.showToast(res.message || "Failed to update comment.", "error");
+                }
+            });
+        });
+    });
+</script>

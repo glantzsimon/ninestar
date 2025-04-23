@@ -98,6 +98,50 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("View", new { id = model.ArticleId });
         }
 
+        [HttpPost]
+        [Authorize]
+        public JsonResult ToggleCommentLike(int articleCommentId)
+        {
+            var newCount = _articlesService.ToggleCommentLike(articleCommentId);
+            return Json(new { success = true, newCount });
+        }
+
+        [HttpPost]
+        [Authorize]
+        public JsonResult DeleteComment(int id)
+        {
+            try
+            {
+                _articlesService.DeleteComment(id);
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                return Json(new { success = false, message = "Not authorized." });
+            }
+
+            return Json(new { success = true });
+        }
+
+        [HttpPost]
+        [Authorize]
+        public JsonResult EditComment(int id, string comment)
+        {
+            if (string.IsNullOrWhiteSpace(comment))
+                return Json(new { success = false, message = "Comment can't be empty." });
+
+            try
+            {
+                _articlesService.EditComment(id, comment);
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                return Json(new { success = false, message = "Not authorized." });
+            }
+
+            return Json(new { success = true });
+        }
+
+
         public override string GetObjectName()
         {
             return string.Empty;

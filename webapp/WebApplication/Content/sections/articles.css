@@ -176,8 +176,32 @@
   margin-bottom: 4px;
   color: #555;
 }
-.comment-section .comment .comment-body p {
+.comment-section .comment .comment-body .comment-text {
   margin: 0;
   font-size: 0.95em;
   color: #333;
+}
+@keyframes pulse-like {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.comment-section .btn-like-comment.liked i {
+  animation: pulse-like 0.4s ease;
+}
+.comment-section .comment-actions {
+  margin-top: 5px;
+  display: flex;
+  gap: 10px;
+}
+.comment-section .edit-controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
 }

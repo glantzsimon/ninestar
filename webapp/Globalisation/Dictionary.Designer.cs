@@ -3094,6 +3094,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Article Comment Like.
+        /// </summary>
+        public static string ArticleCommentLike {
+            get {
+                return ResourceManager.GetString("ArticleCommentLike", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article Comment Likes.
+        /// </summary>
+        public static string ArticleCommentLikes {
+            get {
+                return ResourceManager.GetString("ArticleCommentLikes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Article Comments.
         /// </summary>
         public static string ArticleComments {
@@ -4865,9 +4883,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
-        ///&lt;p&gt;We have received a donation from {Customer} ({CustomerEmail}) for the following amount:&lt;/p&gt;
-        ///&lt;p&gt;{Amount} {Currency}&lt;/p&gt;
-        ///&lt;p&gt;You can view a summary of donations to date &lt;a href=&quot;{LinkToSummary}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
+        ///&lt;p&gt;We have received a new comment from {Customer} ({CustomerEmail}) on the article {ArticleName}:&lt;/p&gt;
+        ///&lt;div style=&quot;background: #f0fff0; border: 1px solid #b0c4de; border-radius: 7px; padding: 11px;&quot;&gt;
+        ///    &lt;p&gt;{CommentText}&lt;/p&gt;
+        ///&lt;/div&gt;
+        ///&lt;p&gt;View the comment here &lt;a href=&quot;{LinkToArticle}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
         /// </summary>
         public static string CommentReceivedEmail {
             get {
@@ -12917,6 +12937,15 @@ namespace K9.Globalisation {
         public static string LogInToLeaveComment {
             get {
                 return ResourceManager.GetString("LogInToLeaveComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log in to like!.
+        /// </summary>
+        public static string LogInToLike {
+            get {
+                return ResourceManager.GetString("LogInToLike", resourceCulture);
             }
         }
         

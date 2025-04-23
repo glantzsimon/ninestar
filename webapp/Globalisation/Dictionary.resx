@@ -6581,6 +6581,12 @@
   <data name="ArticleComment" xml:space="preserve">
     <value>Article Comment</value>
   </data>
+  <data name="ArticleCommentLike" xml:space="preserve">
+    <value>Article Comment Like</value>
+  </data>
+  <data name="ArticleCommentLikes" xml:space="preserve">
+    <value>Article Comment Likes</value>
+  </data>
   <data name="ArticleComments" xml:space="preserve">
     <value>Article Comments</value>
   </data>
@@ -6634,6 +6640,9 @@
   </data>
   <data name="LogInToLeaveComment" xml:space="preserve">
     <value>Log in to leave a comment.</value>
+  </data>
+  <data name="LogInToLike" xml:space="preserve">
+    <value>Log in to like!</value>
   </data>
   <data name="NetworkError" xml:space="preserve">
     <value>A network or server error occurred.</value>

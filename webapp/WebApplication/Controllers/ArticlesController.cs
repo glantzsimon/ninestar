@@ -99,7 +99,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    _articlesService.DeleteArtciel(id);
+                    _articlesService.DeleteArticle(id);
                     return RedirectToAction("Index");
                 }
                 catch (Exception e)

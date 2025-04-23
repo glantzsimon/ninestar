@@ -44,8 +44,32 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public UserInfo UserInfo { get; set; }
 
+        [NotMapped]
+        public int LikeCount { get; set; }
+
+        [NotMapped]
+        public bool IsLikedByCurrentUser { get; set; }
+
         public string Username => User.FirstName ?? User.Username;
 
         public string AvatarImageUrl => UserInfo?.AvatarImageUrl;
+
+        public string LikeSummary
+        {
+            get
+            {
+                if (IsLikedByCurrentUser && LikeCount == 1)
+                    return "You like this";
+
+                if (IsLikedByCurrentUser && LikeCount > 1)
+                    return $"You and {LikeCount - 1} other{(LikeCount > 2 ? "s" : "")}";
+
+                if (LikeCount > 0)
+                    return $"{LikeCount} like{(LikeCount > 1 ? "s" : "")}";
+
+                return string.Empty;
+            }
+        }
+
     }
 }

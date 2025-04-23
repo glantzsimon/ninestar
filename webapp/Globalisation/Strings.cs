@@ -230,6 +230,8 @@
             public const string PostedOn = "PostedOn";
             public const string ArticleComment = "ArticleComment";
             public const string ArticleComments = "ArticleComments";
+            public const string ArticleCommentLike = "ArticleCommentLike";
+            public const string ArticleCommentLikes = "ArticleCommentLikes";
             public const string UserInfos = "UserInfos";
             public const string UserInfo = "UserInfo";
             public const string SystemSetting = "SystemSetting";

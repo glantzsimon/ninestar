@@ -12,7 +12,10 @@ namespace K9.WebApplication.Services
         List<ArticleComment> GetArticleComments(int articleId, ECommentFilter filter = ECommentFilter.ApprovedOnly);
         void SaveArticle(Article article);
         void CreateArticle(Article article);
-        void DeleteArtciel(int id);
+        void DeleteArticle(int id);
         void CreateArticleComment(ArticleComment comment);
+        int ToggleCommentLike(int articleCommentId);
+        void DeleteComment(int id);
+        void EditComment(int id, string comment);
     }
 }

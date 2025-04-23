@@ -1,17 +1,17 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Models;
+using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using K9.Base.DataAccessLayer.Models;
-using K9.DataAccessLayer.Enums;
-using K9.Globalisation;
-using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
-using K9.WebApplication.Helpers;
-using Newtonsoft.Json;
 
 namespace K9.WebApplication.Services
 {
@@ -22,10 +22,11 @@ namespace K9.WebApplication.Services
         private readonly IRepository<ArticleTag> _articleTagsRepository;
         private readonly IRepository<ArticleComment> _articleCommentsRepository;
         private readonly IRepository<UserInfo> _userInfosRepository;
+        private readonly IRepository<ArticleCommentLike> _articleCommentLikesRepository;
         private readonly IEmailTemplateService _emailTemplateService;
         private readonly IUserService _userService;
 
-        public ArticlesService(INineStarKiBasePackage my, IRepository<Article> articlesRepository, IRepository<Tag> tagsRepository, IRepository<ArticleTag> articleTagsRepository, IRepository<ArticleComment> articleCommentsRepository, IRepository<UserInfo> userInfosRepository, IEmailTemplateService emailTemplateService, IUserService userService)
+        public ArticlesService(INineStarKiBasePackage my, IRepository<Article> articlesRepository, IRepository<Tag> tagsRepository, IRepository<ArticleTag> articleTagsRepository, IRepository<ArticleComment> articleCommentsRepository, IRepository<UserInfo> userInfosRepository, IRepository<ArticleCommentLike> articleCommentLikesRepository, IEmailTemplateService emailTemplateService, IUserService userService)
             : base(my)
         {
             _articlesRepository = articlesRepository;
@@ -33,6 +34,7 @@ namespace K9.WebApplication.Services
             _articleTagsRepository = articleTagsRepository;
             _articleCommentsRepository = articleCommentsRepository;
             _userInfosRepository = userInfosRepository;
+            _articleCommentLikesRepository = articleCommentLikesRepository;
             _emailTemplateService = emailTemplateService;
             _userService = userService;
         }
@@ -74,9 +76,36 @@ namespace K9.WebApplication.Services
                 comment.UserInfo = _userInfosRepository.Find(u => u.UserId == comment.UserId).FirstOrDefault();
                 comment.Article = article;
                 comment.IsByModerator = _userService.UserIsAdmin(comment.UserId);
+                comment.LikeCount =
+                    _articleCommentLikesRepository.GetCount(
+                        $"{nameof(ArticleCommentLike.ArticleCommentId)} =  {comment.Id}");
+                comment.IsLikedByCurrentUser = _articleCommentLikesRepository.Exists(e =>
+                    e.ArticleCommentId == comment.Id && e.UserId == Current.UserId);
             }
 
             return comments;
+        }
+
+        public int ToggleCommentLike(int articleCommentId)
+        {
+            var existing = _articleCommentLikesRepository.Find(e => e.ArticleCommentId == articleCommentId && e.UserId == Current.UserId).FirstOrDefault();
+
+            if (existing != null)
+            {
+                _articleCommentLikesRepository.Delete(articleCommentId);
+            }
+            else
+            {
+                _articleCommentLikesRepository.Create(new ArticleCommentLike
+                {
+                    ArticleCommentId = articleCommentId,
+                    UserId = Current.UserId,
+                    LikedOn = DateTime.UtcNow
+                });
+            }
+
+            return _articleCommentLikesRepository.GetCount(
+                $"{nameof(ArticleCommentLike.ArticleCommentId)} = {articleCommentId}");
         }
 
         public List<Article> GetArticles(bool publishedOnly = false)
@@ -112,7 +141,7 @@ namespace K9.WebApplication.Services
             ProcessTags(article);
         }
 
-        public void DeleteArtciel(int id)
+        public void DeleteArticle(int id)
         {
             var article = GetArticle(id);
             var tagsToDelete = _articleTagsRepository.Find(e => e.ArticleId == id);
@@ -125,6 +154,26 @@ namespace K9.WebApplication.Services
             _articleCommentsRepository.Create(comment);
             var user = My.UsersRepository.Find(comment.UserId);
             SendEmailToNineStar(comment, user);
+        }
+
+        public void DeleteComment(int id)
+        {
+            var comment = _articleCommentsRepository.Find(id);
+            if (comment == null || comment.UserId != Current.UserId)
+                throw new UnauthorizedAccessException();
+
+            _articleCommentsRepository.Delete(id);
+        }
+
+        public void EditComment(int id, string comment)
+        {
+            var entity = _articleCommentsRepository.Find(id);
+            if (entity == null || entity.UserId != Current.UserId)
+                throw new UnauthorizedAccessException();
+
+            entity.Comment = comment.Trim();
+            entity.LastUpdatedOn = DateTime.UtcNow;
+            _articleCommentsRepository.Update(entity);
         }
 
         private List<Tag> GetTagsForArticle(int id)

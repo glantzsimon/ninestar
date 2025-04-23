@@ -93,24 +93,16 @@
             right: 8px;
             display: flex;
             gap: 6px;
-            opacity: 0;
-            transition: opacity 0.2s ease;
 
-            .advanced,
-            .simple {
-                display: flex;
-                gap: 6px;
+            .advanced {
                 opacity: 0;
                 transition: opacity 0.2s ease;
             }
 
             .simple {
-                opacity: 1 !important;
-
-                .select-image .check-icon {
-                    color: #ccc;
-                    transition: color 0.2s ease;
-                }
+                display: flex;
+                gap: 6px;
+                opacity: 1; // always visible, no hover needed
             }
 
             button {
@@ -118,9 +110,12 @@
                 color: #666;
                 background: transparent;
                 border: none;
-
+                border-radius: 7px;
+                
                 i {
                     font-size: 18px;
+                    margin-top: 3px;
+                    margin-left: 2px;
                 }
 
                 &:hover {

@@ -67,7 +67,7 @@
         const $item = $(this).closest('.image-list-item');
         const url = $item.data('url');
         if (url) {
-            copyToClipboard(url, $item, "Image URL copied!");
+            copyToClipboard(url, $item, "@Dictionary.ImageUrlCopied");
         }
     });
 
@@ -76,13 +76,38 @@
         const $item = $(this).closest('.image-list-item');
         const markup = $item.data('placeholder');
         if (markup) {
-            copyToClipboard(markup, $item, "Image markup copied!");
+            copyToClipboard(markup, $item, "@Dictionary.ImageMarkupCopied");
         }
     });
 
     $('#imageList').on('click', '.select-image', function (e) {
         e.stopPropagation();
         const $item = $(this).closest('.image-list-item');
+        const $icon = $(this).find('i');
+        const isMulti = e.ctrlKey || e.metaKey;
+        const $items = $('#imageList .image-list-item');
+
+        if (!isMulti) {
+            $items.removeClass('selected');
+            $items.find('.select-image .glyphicon')
+                .removeClass('glyphicon-check')
+                .addClass('glyphicon-unchecked');
+        }
+
+        const isSelected = $item.hasClass('selected');
+        $item.toggleClass('selected');
+
+        // Toggle icon class
+        if (isSelected) {
+            $icon.removeClass('glyphicon-check').addClass('glyphicon-unchecked');
+            $.fn.showTooltip($item, "@Dictionary.SelectionCleared");
+        } else {
+            $icon.removeClass('glyphicon-unchecked').addClass('glyphicon-check');
+            $.fn.showTooltip($item, "@Dictionary.ImageSelected");
+        }
+
+        selectedImage = $('#imageList .image-list-item.selected').first().get(0);
+
         const imageInfo = {
             src: $item.data('url'),
             fileName: $item.find('.filename').text()
@@ -96,8 +121,8 @@
             navigator.clipboard.writeText(text)
                 .then(() => $.fn.showTooltip($target, successMsg))
                 .catch(err => {
-                    console.error("Clipboard error:", err);
-                    alert("Failed to copy to clipboard.");
+                    console.error("@Dictionary.ClipboardError:", err);
+                    $.fn.showToast("@Dictionary.FailedToCopyToClipboard", "error");
                 });
         } else {
             // Fallback
@@ -121,7 +146,7 @@
         const text = e.altKey ? $item.data('url') : $item.data('placeholder');
 
         if (text) {
-            copyToClipboard(text, $item, "Copied!");
+            copyToClipboard(text, $item, "@Dictionary.Copied");
         }
 
         e.preventDefault();
@@ -132,14 +157,14 @@
         const $selected = $('#imageList .image-list-item.selected');
 
         if ($selected.length === 0) {
-            $.fn.showToast('Please select one or more images to delete.', 'error');
+            $.fn.showToast('@Dictionary.PleaseSelectOneOrMoreImages', 'error');
             return;
         }
 
-        $btn.text(`Delete Selected (${$selected.length})`);
+        $btn.text(`@Dictionary.DeleteSelected (${$selected.length})`);
 
         if (!$btn.data('confirmed')) {
-            $.fn.showToast('Click delete again to confirm.', 'info');
+            $.fn.showToast('@Dictionary.DeleteConfirm', 'info');
             $btn.data('confirmed', true);
             setTimeout(() => $btn.removeData('confirmed'), 3000);
             return;
@@ -160,13 +185,13 @@
             success: function (response) {
                 if (response.success) {
                     refreshImageOptions(@Model.EntityId);
-                    $.fn.showToast(response.message || 'Image(s) deleted successfully.', 'success');
+                    $.fn.showToast(response.message || '@Dictionary.ImagesDeletedSuccess', 'success');
                 } else {
-                    $.fn.showToast(response.message || 'Failed to delete some images.', 'error');
+                    $.fn.showToast(response.message || '@Dictionary.FailedToDeleteSomeImages', 'error');
                 }
             },
             error: function (xhr) {
-                $.fn.showToast('A network or server error occurred.', 'error');
+                $.fn.showToast('@Dictionary.NetworkError', 'error');
                 console.error("DeleteImages error:", xhr.responseText);
             },
             complete: function () {

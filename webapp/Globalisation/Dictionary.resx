@@ -6581,14 +6581,50 @@
   <data name="AvatarImages" xml:space="preserve">
     <value>Avatar Images</value>
   </data>
+  <data name="ClipboardError" xml:space="preserve">
+    <value>Clipboard error</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>Copied!</value>
+  </data>
   <data name="CopyImageUrl" xml:space="preserve">
     <value>Copy image URL</value>
   </data>
   <data name="CopyMarkup" xml:space="preserve">
     <value>Copy markup</value>
   </data>
+  <data name="DeleteConfirm" xml:space="preserve">
+    <value>Click delete again to confirm.</value>
+  </data>
+  <data name="FailedToCopyToClipboard" xml:space="preserve">
+    <value>Failed to copy to clipboard.</value>
+  </data>
+  <data name="FailedToDeleteSomeImages" xml:space="preserve">
+    <value>Failed to delete some images.</value>
+  </data>
+  <data name="ImageMarkupCopied" xml:space="preserve">
+    <value>Image markup copied!</value>
+  </data>
+  <data name="ImagesDeletedSuccess" xml:space="preserve">
+    <value>Image(s) deleted successfully.</value>
+  </data>
+  <data name="ImageSelected" xml:space="preserve">
+    <value>Image selected!</value>
+  </data>
+  <data name="ImageUrlCopied" xml:space="preserve">
+    <value>Image URL copied!</value>
+  </data>
+  <data name="NetworkError" xml:space="preserve">
+    <value>A network or server error occurred.</value>
+  </data>
+  <data name="PleaseSelectOneOrMoreImages" xml:space="preserve">
+    <value>Please select one or more images to delete.</value>
+  </data>
   <data name="SelectImage" xml:space="preserve">
     <value>Select Image</value>
+  </data>
+  <data name="SelectionCleared" xml:space="preserve">
+    <value>Selection cleared!</value>
   </data>
   <data name="Shared" xml:space="preserve">
     <value>Shared</value>

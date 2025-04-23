@@ -4744,6 +4744,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clipboard error.
+        /// </summary>
+        public static string ClipboardError {
+            get {
+                return ResourceManager.GetString("ClipboardError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Code.
         /// </summary>
         public static string Code {
@@ -5371,6 +5380,15 @@ namespace K9.Globalisation {
         public static string CookiesTitle {
             get {
                 return ResourceManager.GetString("CookiesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copied!.
+        /// </summary>
+        public static string Copied {
+            get {
+                return ResourceManager.GetString("Copied", resourceCulture);
             }
         }
         
@@ -6577,6 +6595,15 @@ namespace K9.Globalisation {
         public static string DecreaseTitle {
             get {
                 return ResourceManager.GetString("DecreaseTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click delete again to confirm..
+        /// </summary>
+        public static string DeleteConfirm {
+            get {
+                return ResourceManager.GetString("DeleteConfirm", resourceCulture);
             }
         }
         
@@ -7863,6 +7890,24 @@ namespace K9.Globalisation {
         public static string Eyes {
             get {
                 return ResourceManager.GetString("Eyes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to copy to clipboard..
+        /// </summary>
+        public static string FailedToCopyToClipboard {
+            get {
+                return ResourceManager.GetString("FailedToCopyToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to delete some images..
+        /// </summary>
+        public static string FailedToDeleteSomeImages {
+            get {
+                return ResourceManager.GetString("FailedToDeleteSomeImages", resourceCulture);
             }
         }
         
@@ -11112,11 +11157,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image markup copied!.
+        /// </summary>
+        public static string ImageMarkupCopied {
+            get {
+                return ResourceManager.GetString("ImageMarkupCopied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Images.
         /// </summary>
         public static string Images {
             get {
                 return ResourceManager.GetString("Images", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image(s) deleted successfully..
+        /// </summary>
+        public static string ImagesDeletedSuccess {
+            get {
+                return ResourceManager.GetString("ImagesDeletedSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image selected!.
+        /// </summary>
+        public static string ImageSelected {
+            get {
+                return ResourceManager.GetString("ImageSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image URL copied!.
+        /// </summary>
+        public static string ImageUrlCopied {
+            get {
+                return ResourceManager.GetString("ImageUrlCopied", resourceCulture);
             }
         }
         
@@ -15819,6 +15900,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A network or server error occurred..
+        /// </summary>
+        public static string NetworkError {
+            get {
+                return ResourceManager.GetString("NetworkError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Balanced Group (5)&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This may be a quiet time of inner reflection and emotional reset, bringing a mix of calm and vulnerability. Overall, you are likely to feel quite comfortable during this phase.
@@ -17038,6 +17128,15 @@ namespace K9.Globalisation {
         public static string PleaseSelectATimeSlot {
             get {
                 return ResourceManager.GetString("PleaseSelectATimeSlot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select one or more images to delete..
+        /// </summary>
+        public static string PleaseSelectOneOrMoreImages {
+            get {
+                return ResourceManager.GetString("PleaseSelectOneOrMoreImages", resourceCulture);
             }
         }
         
@@ -18425,6 +18524,15 @@ namespace K9.Globalisation {
         public static string SelectImage {
             get {
                 return ResourceManager.GetString("SelectImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selection cleared!.
+        /// </summary>
+        public static string SelectionCleared {
+            get {
+                return ResourceManager.GetString("SelectionCleared", resourceCulture);
             }
         }
         

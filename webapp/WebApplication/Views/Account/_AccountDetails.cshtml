@@ -89,9 +89,10 @@
 
 <script>
 
-    // 🔁 When image is uploaded, reload the list
-    document.addEventListener('fileUploaded', function () {
-        @*refreshImageOptions(@Model.EntityId);*@
+    // 🔁 When image is selected
+    document.addEventListener('imageSelected', function (e) {
+        $.fn.showToast(e.detail.src);
+        $.fn.showToast(e.detail.fileName + " selected");
     });
 
 </script>

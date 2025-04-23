@@ -4,7 +4,7 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.ImageListItemViewModel
 
-<div class="image-list-item" data-selected="@Model.IsSelected.ToString().ToLower()" tabindex="0"
+<div class="image-list-item @(Model.IsSelected ? "selected" : "")" tabindex="0"
      data-url="@Model.ImageInfo.Src"
      data-relativepath="@Model.ImageInfo.RelativePath"
      data-placeholder="@Model.ImageInfo.GetHtmlPlaceHolder()">
@@ -33,5 +33,4 @@
             </div>
         }
     </div>
-
 </div>

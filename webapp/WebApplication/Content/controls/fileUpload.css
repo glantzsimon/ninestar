@@ -107,6 +107,11 @@
 .custom-uploader.drop-zone.drag-over {
   background-image: repeating-linear-gradient(-45deg, #f9f9f9, #f9f9f9 10px, #f0f0f0 10px, #f0f0f0 20px);
 }
+.custom-uploader.drop-zone.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+}
 .file-preview-container {
   margin: 10px 0;
   padding-left: 0 !important;

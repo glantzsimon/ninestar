@@ -1,5 +1,6 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.IDynamicFieldsModel
 
@@ -9,7 +10,9 @@
             <label>@Model.Label</label>
             @Html.Partial("../Shared/Controls/_FileUploader", new UploadOptions
             {
-                UploadUrl = Url.Action("UploadFile", "BaseNineStarKi", new { id = Model.EntityId, folderName = Model.FolderName })
+                UploadUrl = Url.Action("UploadFile", "BaseNineStarKi", new { id = Model.EntityId, folderName = Model.FolderName }),
+                MaxUploads = 3,
+                UploadCount = Model.EntityImageFields.Length
             })
         </div>
     </div>
@@ -21,9 +24,12 @@
             <div id="imageList" class="image-list">
                 @Html.Partial("../Shared/Controls/_ImageListItems", Model)
             </div>
-            <small class="text-muted image-list-instructions">
-                @Dictionary.ImageCopyInstructions
-            </small>
+            @if (Model.Mode == EDynamicFieldsMode.Advanced)
+            {
+                <small class="text-muted image-list-instructions">
+                    @Dictionary.ImageCopyInstructions
+                </small>
+            }
         </div>
     </div>
 </div>

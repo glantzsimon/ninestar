@@ -56,12 +56,26 @@
         function handleFiles(files) {
             if (!files || files.length === 0) return;
 
+            const currentCount = @Model.UploadCount;
+            const maxCount = @Model.MaxUploads;
+
+            if (currentCount >= maxCount) {
+                $.fn.showToast(`Upload limit of ${maxCount} reached.`, 'warning');
+                return;
+            }
+
+            const filesToAdd = Math.min(files.length, maxCount - currentCount);
+
+            if (files.length > filesToAdd) {
+                $.fn.showToast(`Only ${filesToAdd} more file(s) allowed.`, 'info');
+            }
+
             $uploadBtn.prop('disabled', true);
             $.fn.displaySpinner($dropZone, true);
 
-            let pending = files.length;
+            let pending = filesToAdd;
 
-            Array.from(files).forEach(file => {
+            Array.from(files).slice(0, filesToAdd).forEach(file => {
                 const formData = new FormData();
                 formData.append('file', file);
 

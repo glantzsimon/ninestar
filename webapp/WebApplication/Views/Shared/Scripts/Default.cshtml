@@ -229,10 +229,9 @@
 	            text: message,
 	            duration: 3000,
 	            gravity: "top",
-	            position: "center", // <-- symmetry!
-	            backgroundColor: type === 'success' ? "#4caf50"
-	                : type === 'error'   ? "#f44336"
-	                : "#2196f3",
+	            position: "center",
+	            backgroundColor: "transparent", // we override in CSS
+	            className: `toast-custom toast-${type}`,
 	            stopOnFocus: true,
 	            close: true
 	        }).showToast();

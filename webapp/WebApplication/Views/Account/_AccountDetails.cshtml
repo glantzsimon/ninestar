@@ -19,57 +19,66 @@
 
         @Html.HiddenFor(model => model.UserInfo.AvatarImageUrl)
 
-        <div>
+        <div class="row">
             <div class="col-sm-12">
                 @Html.BootstrapDisplayFor(model => model.Membership.AccountNumber)
                 <hr />
             </div>
         </div>
-        <div>
+        <div class="row">
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.FirstName)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.LastName)</div>
         </div>
-        <div>
+        <div class="row">
             <div class="col-sm-6">@Html.BootstrapDisplayFor(model => model.User.BirthDate)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.TimeOfBirth)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.BirthTimeZoneId)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.Gender)</div>
         </div>
-        <div>
+        <div class="row">
             <div class="col-sm-12">
                 @Html.BootstrapEditorFor(model => model.User.PhoneNumber)
                 <hr />
             </div>
         </div>
-        <div>
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.BootstrapDisplayFor(model => model.UserInfo.AvatarImageUrl)
+                <hr />
+            </div>
+        </div>
+        <div class="row">
             <div class="col-sm-12">
                 <div class="form-group margin-bottom-0">
-                    @Html.Partial("../Shared/Controls/_DynamicFields", new MyAccountDynamicFieldsViewModel(Model.UserInfo.Id))
+                    @Html.Partial("../Shared/Controls/_DynamicFields", new MyAccountDynamicFieldsViewModel(Model.UserInfo.Id)
+                    {
+                        SelectedImageUrl = Model.UserInfo.AvatarImageUrl
+                    })
                 </div>
                 <hr />
             </div>
         </div>
 
-        <div class="small-print">
+        <div class="row small-print">
             <div class="col-sm-12">@Html.BootstrapEditorFor(model => model.AllowMarketingEmails)</div>
         </div>
 
-        if (!Model.Membership.IsUnlimited())
-        {
-            <div>
+        <div class="row">
+            @if (!Model.Membership.IsUnlimited())
+            {
                 <div class="col-sm-12">
                     <hr />
                     @Html.BootstrapEditorFor(model => model.PromoCode)
                     <hr />
                 </div>
-            </div>
-        }
-        else
-        {
-            <div class="col-sm-12">
-                <hr class="margin-top-15" />
-            </div>
-        }
+            }
+            else
+            {
+                <div class="col-sm-12">
+                    <hr class="margin-top-15" />
+                </div>
+            }
+        </div>
 
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save", EButtonClass.Large)
         <span class="margin-right-2"></span>
@@ -91,8 +100,7 @@
 
     // 🔁 When image is selected
     document.addEventListener('imageSelected', function (e) {
-        $.fn.showToast(e.detail.src);
-        $.fn.showToast(e.detail.fileName + " selected");
+        $("#UserInfo_AvatarImageUrl").val(e.detail.src);
     });
 
 </script>

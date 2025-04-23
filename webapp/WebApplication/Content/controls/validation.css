@@ -16,3 +16,57 @@
   border-bottom-right-radius: 0px;
   border-color: #a94442;
 }
+.toastify {
+  padding-right: 36px !important;
+}
+.toast-custom {
+  position: relative;
+  /* ⬅️ enables absolute positioning inside */
+  display: block;
+  /* make sure it's not inline */
+  border-radius: 6px;
+  font-size: 0.95em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  color: #333 !important;
+}
+.toast-success {
+  background-color: #d4edda !important;
+  /* Bootstrap alert-success bg */
+  border: 1px solid #c3e6cb;
+  color: #155724 !important;
+}
+.toast-error {
+  background-color: #f8d7da !important;
+  /* Bootstrap alert-danger bg */
+  border: 1px solid #f5c6cb;
+  color: #721c24 !important;
+}
+.toast-warning {
+  background-color: #fff3cd !important;
+  /* Bootstrap alert-warning bg */
+  border: 1px solid #ffeeba;
+  color: #856404 !important;
+}
+.toast-info {
+  background-color: #d1ecf1 !important;
+  /* Bootstrap alert-info bg */
+  border: 1px solid #bee5eb;
+  color: #0c5460 !important;
+}
+.toastify .toast-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 12px;
+  color: #666 !important;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+  display: block;
+  /* ensure it behaves like a block icon */
+  z-index: 2;
+}
+.toastify .toast-close:hover {
+  opacity: 1;
+  color: #333 !important;
+}

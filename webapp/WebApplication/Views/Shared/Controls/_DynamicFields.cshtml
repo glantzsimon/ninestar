@@ -11,7 +11,7 @@
             @Html.Partial("../Shared/Controls/_FileUploader", new UploadOptions
             {
                 UploadUrl = Url.Action("UploadFile", "BaseNineStarKi", new { id = Model.EntityId, folderName = Model.FolderName }),
-                MaxUploads = 3,
+                MaxUploads = Model.MaxUploads,
                 UploadCount = Model.EntityImageFields.Length
             })
         </div>

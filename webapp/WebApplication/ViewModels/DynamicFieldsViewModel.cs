@@ -7,7 +7,6 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Web.Hosting;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.ViewModels
 {
@@ -24,6 +23,7 @@ namespace K9.WebApplication.ViewModels
         public string EntityPluralName { get; set; }
         public string FolderName { get; set; }
         public string Label { get; set; }
+        public int MaxUploads { get; set; }
         public EDynamicFieldsMode Mode { get; set; }
 
         public DynamicFieldsViewModel(int? id = null, string selectedImageUrl = "", string entityName = "", string entityPluralName = "", string label = "", EDynamicFieldsMode mode = EDynamicFieldsMode.Advanced)

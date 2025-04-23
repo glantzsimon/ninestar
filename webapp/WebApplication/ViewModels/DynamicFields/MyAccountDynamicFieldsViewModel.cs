@@ -10,6 +10,7 @@ namespace K9.WebApplication.ViewModels
         {
             Label = Dictionary.AvatarImages;
             Mode = EDynamicFieldsMode.Simple;
+            MaxUploads = 3;
         }
     }
 }

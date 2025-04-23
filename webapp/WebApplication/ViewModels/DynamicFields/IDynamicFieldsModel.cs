@@ -15,6 +15,7 @@ namespace K9.WebApplication.ViewModels
         string EntityPluralName { get; set; }
         string FolderName { get; set; }
         string Label { get; set; }
+        int MaxUploads { get; set; }
         EDynamicFieldsMode Mode { get; set; }
     }
 }

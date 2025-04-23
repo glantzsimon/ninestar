@@ -1,0 +1,39 @@
+﻿@using K9.SharedLibrary.Helpers.Html
+@using K9.WebApplication.Options
+@model ArticleComment
+
+@if (WebSecurity.IsAuthenticated)
+{
+    <div id="comment-form">
+        @using (Html.BeginForm("PostComment", null, FormMethod.Post))
+        {
+            using (Html.BeginBootstrapForm())
+            {
+                @Html.HiddenFor(model => model.ArticleId)
+
+                @Html.BootstrapEditorFor(e => e.Comment, new EditorOptions
+                {
+                    PlaceHolder = Dictionary.WriteComment,
+                    Label = ""
+                })
+
+                @Html.BootstrapButton(K9.Globalisation.Dictionary.PostComment, EButtonType.Submit, "fa-comment")
+            }
+        }
+    </div>
+}
+else
+{
+    <p class="text-muted">@Dictionary.LogInToLeaveComment</p>
+}
+
+<div class="margin-bottom-10">
+    @if (TempData["IsError"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"].ToString()</div>
+    }
+    else if (TempData["IsSuccess"] != null)
+    {
+        <div class="alert alert-success">@K9.Globalisation.Dictionary.CommentSubmitted</div>
+    }
+</div>

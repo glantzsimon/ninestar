@@ -1812,6 +1812,8 @@
     <Content Include="Views\Shared\_RedirectMessage.cshtml" />
     <Content Include="Views\Articles\_FieldsJs.cshtml" />
     <Content Include="Views\Shared\Controls\_ImageListItem.cshtml" />
+    <Content Include="Views\Blog\_BlogComments.cshtml" />
+    <Content Include="Views\Blog\_CommentForm.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

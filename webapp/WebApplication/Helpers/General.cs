@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Web.Mvc;
 using K9.Base.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
 
@@ -61,6 +62,14 @@ namespace K9.WebApplication.Helpers
 
             result = default(TEnum);
             return false;
+        }
+
+        public static string GetErrorMessage(this ModelStateDictionary dictionary)
+        {
+            return dictionary.Values
+                .SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage)
+                .FirstOrDefault();
         }
     }
 }

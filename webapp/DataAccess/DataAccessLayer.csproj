@@ -243,6 +243,7 @@
     <Compile Include="Database\Seeds\EmailTemplatesSeeder.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\ECommentFilter.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
     <Compile Include="Enums\ESystemEmailTemplate.cs" />
     <Compile Include="Enums\EEmailType.cs" />
@@ -465,6 +466,15 @@
     <Compile Include="Migrations\202504221438073_AddAvatars.designer.cs">
       <DependentUpon>202504221438073_AddAvatars.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504231045039_AddComments.cs" />
+    <Compile Include="Migrations\202504231045039_AddComments.designer.cs">
+      <DependentUpon>202504231045039_AddComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504231102466_CommentIsRequired.cs" />
+    <Compile Include="Migrations\202504231102466_CommentIsRequired.designer.cs">
+      <DependentUpon>202504231102466_CommentIsRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArticleComment.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\TimeZone.cs" />
@@ -668,6 +678,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504221438073_AddAvatars.resx">
       <DependentUpon>202504221438073_AddAvatars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504231045039_AddComments.resx">
+      <DependentUpon>202504231045039_AddComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504231102466_CommentIsRequired.resx">
+      <DependentUpon>202504231102466_CommentIsRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

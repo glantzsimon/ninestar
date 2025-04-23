@@ -114,7 +114,7 @@ namespace K9.WebApplication.Controllers
         
         public ActionResult Preview(int id)
         {
-            return RedirectToAction("Preview", "Blog", new { id });
+            return RedirectToAction("View", "Blog", new { id });
         }
 
         public ActionResult Publish(int id)

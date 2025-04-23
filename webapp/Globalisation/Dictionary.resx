@@ -6578,11 +6578,26 @@
   <data name="Upload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="ArticleComment" xml:space="preserve">
+    <value>Article Comment</value>
+  </data>
+  <data name="ArticleComments" xml:space="preserve">
+    <value>Article Comments</value>
+  </data>
   <data name="AvatarImages" xml:space="preserve">
     <value>Avatar Images</value>
   </data>
+  <data name="BackToLatestArticles" xml:space="preserve">
+    <value>Back to Latest Articles</value>
+  </data>
   <data name="ClipboardError" xml:space="preserve">
     <value>Clipboard error</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="CommentSubmitted" xml:space="preserve">
+    <value>Your comment has been submitted for approval. Thank you.</value>
   </data>
   <data name="Copied" xml:space="preserve">
     <value>Copied!</value>
@@ -6614,11 +6629,20 @@
   <data name="ImageUrlCopied" xml:space="preserve">
     <value>Image URL copied!</value>
   </data>
+  <data name="LogInToLeaveComment" xml:space="preserve">
+    <value>Log in to leave a comment.</value>
+  </data>
   <data name="NetworkError" xml:space="preserve">
     <value>A network or server error occurred.</value>
   </data>
   <data name="PleaseSelectOneOrMoreImages" xml:space="preserve">
     <value>Please select one or more images to delete.</value>
+  </data>
+  <data name="PostComment" xml:space="preserve">
+    <value>Post Comment</value>
+  </data>
+  <data name="PostedOn" xml:space="preserve">
+    <value>Posted On</value>
   </data>
   <data name="SelectImage" xml:space="preserve">
     <value>Select Image</value>
@@ -6631,5 +6655,8 @@
   </data>
   <data name="UploadLimitReached" xml:space="preserve">
     <value>Upload limit reached.</value>
+  </data>
+  <data name="WriteComment" xml:space="preserve">
+    <value>Write a comment...</value>
   </data>
 </root>

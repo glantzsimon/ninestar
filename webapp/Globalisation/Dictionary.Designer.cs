@@ -3085,6 +3085,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Article Comment.
+        /// </summary>
+        public static string ArticleComment {
+            get {
+                return ResourceManager.GetString("ArticleComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article Comments.
+        /// </summary>
+        public static string ArticleComments {
+            get {
+                return ResourceManager.GetString("ArticleComments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Article Images.
         /// </summary>
         public static string ArticleImages {
@@ -3375,6 +3393,15 @@ namespace K9.Globalisation {
         public static string Back {
             get {
                 return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back to Latest Articles.
+        /// </summary>
+        public static string BackToLatestArticles {
+            get {
+                return ResourceManager.GetString("BackToLatestArticles", resourceCulture);
             }
         }
         
@@ -4824,6 +4851,24 @@ namespace K9.Globalisation {
         public static string ComingToMeetTitle {
             get {
                 return ResourceManager.GetString("ComingToMeetTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comment.
+        /// </summary>
+        public static string Comment {
+            get {
+                return ResourceManager.GetString("Comment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your comment has been submitted for approval. Thank you..
+        /// </summary>
+        public static string CommentSubmitted {
+            get {
+                return ResourceManager.GetString("CommentSubmitted", resourceCulture);
             }
         }
         
@@ -12855,6 +12900,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log in to leave a comment..
+        /// </summary>
+        public static string LogInToLeaveComment {
+            get {
+                return ResourceManager.GetString("LogInToLeaveComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please log in or create an account to view more..
         /// </summary>
         public static string LogIntoYourAccountToView {
@@ -17230,6 +17284,24 @@ namespace K9.Globalisation {
         public static string PossessionInGreatMeasureTitle {
             get {
                 return ResourceManager.GetString("PossessionInGreatMeasureTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Post Comment.
+        /// </summary>
+        public static string PostComment {
+            get {
+                return ResourceManager.GetString("PostComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posted On.
+        /// </summary>
+        public static string PostedOn {
+            get {
+                return ResourceManager.GetString("PostedOn", resourceCulture);
             }
         }
         
@@ -24488,6 +24560,15 @@ namespace K9.Globalisation {
         public static string WorstDirectionsToTravelIn {
             get {
                 return ResourceManager.GetString("WorstDirectionsToTravelIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write a comment....
+        /// </summary>
+        public static string WriteComment {
+            get {
+                return ResourceManager.GetString("WriteComment", resourceCulture);
             }
         }
         

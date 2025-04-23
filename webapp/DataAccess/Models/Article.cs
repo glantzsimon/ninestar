@@ -63,5 +63,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TagsLabel)]
         public List<Tag> Tags { get; set; }
 
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ArticleComments)]
+        public List<ArticleComment> Comments { get; set; }
+
     }
 }

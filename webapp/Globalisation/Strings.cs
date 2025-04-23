@@ -226,6 +226,10 @@
             public const string UserOTP = "UserOTP";
             public const string ArticleTag = "ArticleTag";
             public const string ArticleTags = "ArticleTags";
+            public const string Comment = "Comment";
+            public const string PostedOn = "PostedOn";
+            public const string ArticleComment = "ArticleComment";
+            public const string ArticleComments = "ArticleComments";
             public const string UserInfos = "UserInfos";
             public const string UserInfo = "UserInfo";
             public const string SystemSetting = "SystemSetting";

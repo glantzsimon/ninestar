@@ -68,6 +68,9 @@
   background: white !important;
   padding: 20px 10px !important;
 }
+.article-container article #comment-form .well {
+  padding: 10px !important;
+}
 .article-container .text-muted {
   margin: 10px 0;
 }
@@ -132,4 +135,36 @@
 .form-group .tagify.form-control {
   min-height: 36px !important;
   height: unset !important;
+}
+.comment-section {
+  margin-top: 30px;
+}
+.comment-section .comment {
+  display: flex;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+.comment-section .comment .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 15px;
+  margin-top: 4px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+.comment-section .comment .comment-body {
+  flex: 1;
+}
+.comment-section .comment .comment-body .comment-meta {
+  font-size: 0.85em;
+  margin-bottom: 4px;
+  color: #555;
+}
+.comment-section .comment .comment-body p {
+  margin: 0;
+  font-size: 0.95em;
+  color: #333;
 }

@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Helpers;
 using Newtonsoft.Json;
 
 namespace K9.WebApplication.Services
@@ -15,13 +17,17 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Article> _articlesRepository;
         private readonly IRepository<Tag> _tagsRepository;
         private readonly IRepository<ArticleTag> _articleTagsRepository;
+        private readonly IRepository<ArticleComment> _articleCommentsRepository;
+        private readonly IRepository<UserInfo> _userInfosRepository;
 
-        public ArticlesService(INineStarKiBasePackage my, IRepository<Article> articlesRepository, IRepository<Tag> tagsRepository, IRepository<ArticleTag> articleTagsRepository)
+        public ArticlesService(INineStarKiBasePackage my, IRepository<Article> articlesRepository, IRepository<Tag> tagsRepository, IRepository<ArticleTag> articleTagsRepository, IRepository<ArticleComment> articleCommentsRepository, IRepository<UserInfo> userInfosRepository)
             : base(my)
         {
             _articlesRepository = articlesRepository;
             _tagsRepository = tagsRepository;
             _articleTagsRepository = articleTagsRepository;
+            _articleCommentsRepository = articleCommentsRepository;
+            _userInfosRepository = userInfosRepository;
         }
 
         public Article GetArticle(int id)
@@ -32,9 +38,37 @@ namespace K9.WebApplication.Services
                 article.Tags = GetTagsForArticle(id);
                 article.TagsText = ConvertTagsToTagsText(article.Tags);
                 article.Author = GetAuthor(article.CreatedBy);
+                article.Comments = SessionHelper.CurrentUserIsAdmin() ? GetArticleComments(id) : GetArticleComments(id, ECommentFilter.ApprovedOnly);
             }
 
             return article;
+        }
+
+        public List<ArticleComment> GetArticleComments(int articleId, ECommentFilter filter = ECommentFilter.All)
+        {
+            var article = _articlesRepository.Find(articleId);
+            if (article == null)
+                return new List<ArticleComment>();
+
+            var comments = _articleCommentsRepository.Find(e => e.ArticleId == articleId);
+            switch (filter)
+            {
+                case ECommentFilter.ApprovedOnly:
+                    comments = comments.Where(c => c.IsApproved).ToList();
+                    break;
+                case ECommentFilter.UnapprovedOnly:
+                    comments = comments.Where(c => !c.IsApproved).ToList();
+                    break;
+            }
+            
+            foreach (var comment in comments)
+            {
+                comment.User = My.UsersRepository.Find(comment.UserId);
+                comment.UserInfo = _userInfosRepository.Find(u => u.UserId == comment.UserId).FirstOrDefault();
+                comment.Article = article;
+            }
+
+            return comments;
         }
 
         public List<Article> GetArticles(bool publishedOnly = false)
@@ -76,6 +110,11 @@ namespace K9.WebApplication.Services
             var tagsToDelete = _articleTagsRepository.Find(e => e.ArticleId == id);
             _articleTagsRepository.DeleteBatch(tagsToDelete);
             _articlesRepository.Delete(id);
+        }
+
+        public void CreateArticleComment(ArticleComment comment)
+        {
+            _articleCommentsRepository.Create(comment);
         }
 
         private List<Tag> GetTagsForArticle(int id)

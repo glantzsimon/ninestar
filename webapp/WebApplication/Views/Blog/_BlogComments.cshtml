@@ -1,0 +1,19 @@
+﻿@using K9.SharedLibrary.Helpers.Html
+@using K9.WebApplication.Options
+@model Article
+
+<div class="comment-section">
+    @foreach (var comment in Model.Comments)
+    {
+        <div class="comment">
+            <img src="@comment.AvatarImageUrl" alt="@comment.Username" class="avatar" />
+            <div class="comment-body">
+                <div class="comment-meta">
+                    <strong>@comment.Username</strong>
+                    <span class="text-muted">· @comment.PostedOn.ToLocalTime().ToString("g")</span>
+                </div>
+                <p>@comment.Comment</p>
+            </div>
+        </div>
+    }
+</div>

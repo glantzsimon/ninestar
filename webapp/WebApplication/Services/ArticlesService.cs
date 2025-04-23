@@ -78,7 +78,7 @@ namespace K9.WebApplication.Services
                 comment.IsByModerator = _userService.UserIsAdmin(comment.UserId);
                 comment.LikeCount =
                     _articleCommentLikesRepository.GetCount(
-                        $"{nameof(ArticleCommentLike.ArticleCommentId)} =  {comment.Id}");
+                        $"WHERE [{nameof(ArticleCommentLike.ArticleCommentId)}] = {comment.Id}");
                 comment.IsLikedByCurrentUser = _articleCommentLikesRepository.Exists(e =>
                     e.ArticleCommentId == comment.Id && e.UserId == Current.UserId);
             }
@@ -105,7 +105,7 @@ namespace K9.WebApplication.Services
             }
 
             return _articleCommentLikesRepository.GetCount(
-                $"{nameof(ArticleCommentLike.ArticleCommentId)} = {articleCommentId}");
+                $"WHERE [{nameof(ArticleCommentLike.ArticleCommentId)}] = {articleCommentId}");
         }
 
         public List<Article> GetArticles(bool publishedOnly = false)

@@ -244,7 +244,7 @@ namespace K9.WebApplication.Controllers
 
                     var allowedExtensions = new[]
                     {
-                        ".dll", ".pdb", ".cshtml", ".css", ".png", ".jpg", ".jpeg", ".gif", ".js", ".config", ".mp4", ".webm"
+                        ".dll", ".pdb", ".cshtml", ".css", ".png", ".jpg", ".jpeg", ".gif", ".js", ".config", ".mp4", ".webm", ".json"
                     };
 
                     var extension = Path.GetExtension(file.FileName);
@@ -262,6 +262,10 @@ namespace K9.WebApplication.Controllers
                         case ".dll":
                         case ".pdb":
                             destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "bin", Path.GetFileName(file.FileName));
+                            break;
+
+                        case ".json":
+                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "config", Path.GetFileName(file.FileName));
                             break;
 
                         case ".config":

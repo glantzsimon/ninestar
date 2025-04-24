@@ -18,7 +18,15 @@ namespace K9.SharedLibrary.Helpers
 			
 			foreach (var propertyInfo in configuration.GetProperties())
 			{
-				configuration.SetProperty(propertyInfo.Name, configSection[propertyInfo.Name]);
+			    try
+			    {
+			        configuration.SetProperty(propertyInfo.Name, configSection[propertyInfo.Name]);
+			    }
+			    catch (Exception e)
+			    {
+			        var typeName = typeof(T).Name;
+			        throw new Exception($"Error udpateing {typeName} configuration class. Make sure the appsettings.json file is up-to-date. Details: {e.GetFullErrorMessage()}");
+			    }
 			}
 
 			return new Options<T>(configuration);

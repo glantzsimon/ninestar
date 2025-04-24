@@ -26,7 +26,7 @@
 }
 else
 {
-    <p class="text-muted"><a href="@Url.Action("Login", "Account")">@Dictionary.SignInTo</a> @Dictionary.LeaveComment</p>
+    <p class="text-muted"><a href="@Url.Action("Login", "Account", new { returnUrl = Url.Action("View", new {id = Model.ArticleId})})">@Dictionary.SignInTo</a> @Dictionary.LeaveComment</p>
 }
 
 <div class="margin-bottom-10">

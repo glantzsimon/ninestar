@@ -2,20 +2,27 @@
 @using K9.WebApplication.Options
 @model ArticleComment
 
+@{
+    var commentWasMade = TempData.Peek("IsSuccess") != null;
+    var focusInputClass = commentWasMade ? "" : "no-focus";
+}
+
 @if (WebSecurity.IsAuthenticated)
 {
     <div id="comment-form">
-        @using (Html.BeginForm("PostComment", null, FormMethod.Post))
+        @using (Html.BeginForm("PostComment", null, FormMethod.Post, new { @class = focusInputClass }))
         {
             using (Html.BeginBootstrapForm())
             {
                 @Html.HiddenFor(model => model.ArticleId)
 
-                @Html.BootstrapEditorFor(e => e.Comment, new EditorOptions
-                {
-                    PlaceHolder = Dictionary.WriteComment,
-                    Label = ""
-                })
+                <div class="blog-comment-container">
+                    @Html.BootstrapEditorFor(e => e.Comment, new EditorOptions
+                    {
+                        PlaceHolder = Dictionary.WriteComment,
+                        Label = ""
+                    })
+                </div>
 
                 <small id="commentCounter" class="text-muted pull-right">0 / 500</small>
 

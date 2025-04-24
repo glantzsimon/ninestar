@@ -233,6 +233,11 @@
                     $item.addClass('selected');
                 }
             });
+
+            const $btn = $(this);
+            const $selected = $('#imageList .image-list-item.selected');
+          
+            $btn.text(`@Dictionary.DeleteSelected`);
         });
     }
 

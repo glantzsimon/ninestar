@@ -12866,6 +12866,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
+        ///&lt;p&gt;We have received a new comment from {Customer} ({CustomerEmail}) on the article {ArticleName}:&lt;/p&gt;
+        ///&lt;p style=&quot;background: #f0fff0; border: 1px solid #b0c4de; border-radius: 7px; padding: 11px;&quot;&gt;
+        ///    {CommentText}
+        ///&lt;/p&gt;
+        ///&lt;p&gt;View the article &lt;a href=&quot;{LinkToArticle}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+        ///&lt;p&gt;Moderate the comment &lt;a href=&quot;{LinkToModerate}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
+        /// </summary>
+        public static string LikeReceivedEmail {
+            get {
+                return ResourceManager.GetString("LikeReceivedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Likes.
         /// </summary>
         public static string Likes {

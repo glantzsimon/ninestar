@@ -125,6 +125,12 @@ namespace K9.WebApplication.Services
                 likeSummary = article.LikeSummary;
             }
 
+            if (toggleState)
+            {
+                var user = _userService.Find(Current.UserId);
+                SendEmailToNineStarAboutLike(article, user);
+            }
+
             return (likeCount, toggleState, likeSummary);
         }
 
@@ -329,6 +335,36 @@ namespace K9.WebApplication.Services
                     ArticleName = article.Title,
                     CommentText = comment.Comment,
                     LinkToArticle = My.UrlHelper.AbsoluteAction("View", "Blog", new { id = comment.ArticleId }),
+                    LinkToModerate = My.UrlHelper.AbsoluteAction("Dashboard", "Blog"),
+                });
+
+            try
+            {
+                My.Mailer.SendEmail(
+                    subject,
+                    body,
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
+        }
+
+        private void SendEmailToNineStarAboutLike(Article article, User user)
+        {
+            var subject = "A customer has like an article or one of its comments";
+            var body = _emailTemplateService.ParseForUser(
+                subject,
+                Dictionary.LikeReceivedEmail,
+                user,
+                new
+                {
+                    Customer = user.FullName,
+                    CustomerEmail = user.EmailAddress,
+                    ArticleName = article.Title,
+                    LinkToArticle = My.UrlHelper.AbsoluteAction("View", "Blog", new { id = article.Id }),
                     LinkToModerate = My.UrlHelper.AbsoluteAction("Dashboard", "Blog"),
                 });
 

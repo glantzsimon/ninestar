@@ -11,46 +11,44 @@
 
 <div class="container main-content">
     <article class="margin-bottom-0">
-        <div class="well padding-left-0 padding-right-0 margin-bottom-0">
-            @{
-                ViewBag.Title = "Moderate Comments";
-                Layout = "~/Views/Shared/_Layout.cshtml";
-            }
+        <div class="well">
+            <div class="moderator-dashboard">
+                <h4>@Dictionary.ModerateComments</h4>
+                <div class="moderator-toolbar">
+                    <button class="btn btn-default btn-sm filter-btn" data-filter="all">@Dictionary.All</button>
+                    <button class="btn btn-success btn-sm filter-btn" data-filter="approved">@Dictionary.Approved</button>
+                    <button class="btn btn-primary btn-sm filter-btn" data-filter="unapproved">@Dictionary.Unapproved</button>
+                    <button class="btn btn-warning btn-sm filter-btn" data-filter="rejected">@Dictionary.Rejected</button>
+                </div>
 
-            <h4>@Dictionary.ModerateComments</h4>
-            <div class="moderator-toolbar">
-                <button class="btn btn-default btn-sm filter-btn" data-filter="all">@Dictionary.All</button>
-                <button class="btn btn-success btn-sm filter-btn" data-filter="approved">@Dictionary.Approved</button>
-                <button class="btn btn-warning btn-sm filter-btn" data-filter="unapproved">@Dictionary.Unapproved</button>
-            </div>
-
-            <div class="moderator-grid">
-                @foreach (var comment in Model.Comments)
-                {
-                    <div class="moderator-card @(comment.IsApproved ? "approved" : "unapproved")" data-comment-id="@comment.Id">
-                        <div class="moderator-header">
-                            <img class="avatar" src="@comment.AvatarImageUrl" />
-                            <div>
-                                <strong>@comment.Username</strong>
-                                <div class="timestamp">@comment.PostedOn.ToLocalTime().ToString("g")</div>
-                                <div class="article-title">On <a href="@Url.Action("Details", "Blog", new { id = comment.ArticleId, slug = comment.Article.Slug })">@comment.Article.Title</a></div>
+                <div class="moderator-grid">
+                    @foreach (var comment in Model.Comments)
+                    {
+                        <div class="moderator-card @(comment.GetApprovedClass())" data-comment-id="@comment.Id" data-status="@comment.GetApprovedClass()">
+                            <div class="moderator-header">
+                                <img class="avatar" src="@comment.AvatarImageUrl" />
+                                <div>
+                                    <strong>@comment.Username</strong>
+                                    <div class="timestamp">@comment.PostedOn.ToLocalTime().ToString("g")</div>
+                                    <div class="article-title">On <a href="@Url.Action("Details", "Blog", new {id = comment.ArticleId, slug = comment.Article.Slug})">@comment.Article.Title</a></div>
+                                </div>
+                            </div>
+                            <div class="moderator-body">
+                                <p class="comment-text">@comment.Comment</p>
+                                <textarea class="edit-box form-control" style="display: none">@comment.Comment</textarea>
+                            </div>
+                            <div class="moderator-footer">
+                                <button class="btn btn-sm btn-primary btn-edit"><i class="fa fa-pencil"></i> @K9.Base.Globalisation.Dictionary.Edit</button>
+                                <button class="btn btn-sm btn-success btn-approve"><i class="fa fa-check-circle"></i> @Dictionary.Approve</button>
+                                <button class="btn btn-sm btn-warning btn-reject"><i class="fa fa-pencil"></i> @Dictionary.Reject</button>
+                                <button class="btn btn-sm btn-danger btn-delete"><i class="fa fa-trash"></i> @K9.Base.Globalisation.Dictionary.Delete</button>
+                                <button class="btn btn-sm btn-secondary btn-cancel" style="display: none"><i class="fa fa-cancel"></i> @Dictionary.Cancel</button>
+                                <button class="btn btn-sm btn-primary btn-save" style="display: none"><i class="fa fa-save"></i> @Dictionary.Save</button>
+                                <div class="like-summary">@comment.LikeSummary</div>
                             </div>
                         </div>
-                        <div class="moderator-body">
-                            <p class="comment-text">@comment.Comment</p>
-                            <textarea class="edit-box form-control" style="display:none">@comment.Comment</textarea>
-                        </div>
-                        <div class="moderator-footer">
-                            <button class="btn btn-sm btn-primary btn-edit">@K9.Base.Globalisation.Dictionary.Edit</button>
-                            <button class="btn btn-sm btn-success btn-approve">@Dictionary.Approve</button>
-                            <button class="btn btn-sm btn-warning btn-reject">@Dictionary.Reject</button>
-                            <button class="btn btn-sm btn-danger btn-delete">@K9.Base.Globalisation.Dictionary.Delete</button>
-                            <button class="btn btn-sm btn-secondary btn-cancel" style="display:none">@Dictionary.Cancel</button>
-                            <button class="btn btn-sm btn-primary btn-save" style="display:none">@Dictionary.Save</button>
-                            <div class="like-summary">@comment.LikeSummary</div>
-                        </div>
-                    </div>
-                }
+                    }
+                </div>
             </div>
         </div>
     </article>
@@ -101,7 +99,7 @@
 
             $.post('@Url.Action("ApproveComment")', { id }, function (res) {
                 if (res.success) {
-                    $card.removeClass('unapproved').addClass('approved');
+                    applyStatus($card, 'approved');
                     $.fn.showToast("Comment approved", "success");
                 } else {
                     $.fn.showToast(res.message || "Approval failed", "error");
@@ -115,7 +113,7 @@
 
             $.post('@Url.Action("RejectComment")', { id }, function (res) {
                 if (res.success) {
-                    $card.removeClass('approved').addClass('unapproved');
+                    applyStatus($card, 'rejected');
                     $.fn.showToast("Comment rejected", "warning");
                 } else {
                     $.fn.showToast(res.message || "Rejection failed", "error");
@@ -155,9 +153,47 @@
             $('.moderator-card').show();
             if (filter === 'approved') {
                 $('.moderator-card.unapproved').hide();
+                $('.moderator-card.rejected').hide();
             } else if (filter === 'unapproved') {
                 $('.moderator-card.approved').hide();
+                $('.moderator-card.rejected').hide();
+            }
+            else if (filter === 'rejected') {
+                $('.moderator-card.approved').hide();
+                $('.moderator-card.unapproved').hide();
             }
         });
+
+        function applyStatus($card, newStatus) {
+            $card.removeClass('approved unapproved rejected')
+                .addClass(newStatus)
+                .attr('data-status', newStatus);
+
+            updateButtonVisibility($card);
+            $.fn.showToast(`Comment marked as ${newStatus}`, "info");
+        }
+
+        function updateButtonVisibility($card) {
+            const status = $card.data('status');
+
+            const $approve = $card.find('.btn-approve');
+            const $reject = $card.find('.btn-reject');
+
+            // Hide both by default
+            $approve.hide();
+            $reject.hide();
+
+            if (status === 'unapproved' || status === 'rejected') {
+                $approve.show();
+            }
+            if (status === 'unapproved' || status === 'approved') {
+                $reject.show();
+            }
+        }
+
+        $('.moderator-card').each(function () {
+            updateButtonVisibility($(this));
+        });
+
     });
 </script>

@@ -39,6 +39,8 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsApproved { get; set; }
 
+        public bool IsRejected { get; set; }
+
         [NotMapped]
         public bool IsByModerator { get; set; }
 
@@ -48,5 +50,19 @@ namespace K9.DataAccessLayer.Models
         public string Username => User.FirstName ?? User.Username;
 
         public string AvatarImageUrl => UserInfo?.AvatarImageUrl;
+
+        public string GetApprovedClass()
+        {
+            if (IsApproved)
+            {
+                return "approved";
+            }
+            else if (IsRejected)
+            {
+                return "rejected";
+            }
+
+            return "unapproved";
+        }
     }
 }

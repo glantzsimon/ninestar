@@ -241,89 +241,109 @@
   gap: 10px;
 }
 .moderator-dashboard {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
+  padding: 10px 0;
 }
-.moderator-dashboard .comment-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  padding: 15px 20px;
-  flex: 1 1 300px;
-  max-width: 500px;
+.moderator-dashboard h4 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #1a3d6d;
+}
+.moderator-dashboard .moderator-toolbar {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+.moderator-dashboard .moderator-toolbar .btn {
+  font-weight: 600;
+  min-width: 100px;
+}
+.moderator-dashboard .moderator-grid {
   display: flex;
   flex-direction: column;
-  position: relative;
+  gap: 20px;
 }
-.moderator-dashboard .comment-card .comment-meta {
-  font-size: 0.85em;
-  color: #666;
-  margin-bottom: 8px;
+.moderator-dashboard .moderator-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.moderator-dashboard .comment-card .comment-meta strong {
+.moderator-dashboard .moderator-card .moderator-header {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.moderator-dashboard .moderator-card .moderator-header .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+.moderator-dashboard .moderator-card .moderator-header strong {
+  font-size: 1.1em;
   color: #333;
 }
-.moderator-dashboard .comment-card .comment-text {
+.moderator-dashboard .moderator-card .moderator-header .timestamp {
+  font-size: 0.85em;
+  color: #888;
+}
+.moderator-dashboard .moderator-card .moderator-header .article-title {
+  font-size: 0.85em;
+  color: #0077cc;
+}
+.moderator-dashboard .moderator-card .moderator-header .article-title a {
+  text-decoration: none;
+  color: inherit;
+}
+.moderator-dashboard .moderator-card .moderator-header .article-title a:hover {
+  text-decoration: underline;
+}
+.moderator-dashboard .moderator-card .moderator-body {
+  margin-bottom: 15px;
+}
+.moderator-dashboard .moderator-card .moderator-body .comment-text {
   font-size: 1em;
   color: #333;
-  margin-bottom: 10px;
+  white-space: pre-wrap;
 }
-.moderator-dashboard .comment-card .edit-area textarea {
+.moderator-dashboard .moderator-card .moderator-body .edit-box {
   width: 100%;
-  height: 100px;
-  font-size: 0.95em;
-  padding: 8px;
+  height: 120px;
+  font-size: 1em;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
   resize: vertical;
-  margin-bottom: 10px;
 }
-.moderator-dashboard .comment-card .moderator-actions {
+.moderator-dashboard .moderator-card .moderator-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
-  margin-top: auto;
+  align-items: center;
 }
-.moderator-dashboard .comment-card .moderator-actions button {
+.moderator-dashboard .moderator-card .moderator-footer .btn {
   font-size: 0.85em;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 6px 14px;
+  font-weight: 500;
+  border-radius: 6px;
 }
-.moderator-dashboard .comment-card .moderator-actions button.btn-approve {
-  background-color: #28a745;
-  color: white;
+.moderator-dashboard .moderator-card .moderator-footer .like-summary {
+  margin-left: auto;
+  font-size: 0.8em;
+  color: #aaa;
 }
-.moderator-dashboard .comment-card .moderator-actions button.btn-approve:hover {
-  background-color: #218838;
+.moderator-dashboard .moderator-card.approved {
+  border-left: 5px solid #28a745;
 }
-.moderator-dashboard .comment-card .moderator-actions button.btn-reject {
-  background-color: #dc3545;
-  color: white;
+.moderator-dashboard .moderator-card.rejected {
+  border-left: 5px solid #ffc107;
 }
-.moderator-dashboard .comment-card .moderator-actions button.btn-reject:hover {
-  background-color: #c82333;
-}
-.moderator-dashboard .comment-card .moderator-actions button.btn-save {
-  background-color: #007bff;
-  color: white;
-}
-.moderator-dashboard .comment-card .moderator-actions button.btn-save:hover {
-  background-color: #0069d9;
-}
-.moderator-dashboard .comment-card .moderator-actions button.btn-cancel {
-  background-color: #6c757d;
-  color: white;
-}
-.moderator-dashboard .comment-card .moderator-actions button.btn-cancel:hover {
-  background-color: #5a6268;
-}
-.moderator-dashboard .comment-card.highlight {
-  border-color: #ffc107;
-  background-color: #fff8e1;
+.moderator-dashboard .moderator-card.unapproved {
+  border-left: 5px solid rgba(94, 174, 255, 0.6);
 }

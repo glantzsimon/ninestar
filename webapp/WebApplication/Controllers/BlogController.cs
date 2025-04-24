@@ -162,7 +162,7 @@ namespace K9.WebApplication.Controllers
         [Route("moderate/dashboard")]
         [Authorize]
         [RequirePermissions(Role = RoleNames.Administrators)]
-        public ActionResult Dashboard(int id)
+        public ActionResult Dashboard()
         {
             return View(_articlesService.GetDashboardViewModel());
         }

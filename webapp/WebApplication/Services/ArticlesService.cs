@@ -72,7 +72,7 @@ namespace K9.WebApplication.Services
                     comments = comments.Where(c => c.IsApproved).ToList();
                     break;
                 case ECommentFilter.UnapprovedOnly:
-                    comments = comments.Where(c => !c.IsApproved).ToList();
+                    comments = comments.Where(c => !c.IsApproved && !c.IsRejected).ToList();
                     break;
             }
 
@@ -205,7 +205,8 @@ namespace K9.WebApplication.Services
             if (entity == null || entity.UserId != Current.UserId)
                 throw new UnauthorizedAccessException();
 
-            entity.IsDeleted = true;
+            entity.IsApproved = false;
+            entity.IsRejected = true;
             _articleCommentsRepository.Update(entity);
         }
 
@@ -216,6 +217,7 @@ namespace K9.WebApplication.Services
                 throw new UnauthorizedAccessException();
 
             entity.IsApproved = true;
+            entity.IsRejected = false;
             _articleCommentsRepository.Update(entity);
         }
 

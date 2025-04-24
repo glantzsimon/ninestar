@@ -182,7 +182,7 @@
     text-align: right;
 }
 
-.likes-section{
+.likes-section {
     margin-top: 0 !important;
 }
 
@@ -301,107 +301,131 @@
 }
 
 .moderator-dashboard {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+    padding: 10px 0;
 
-    .comment-card {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-        padding: 15px 20px;
-        flex: 1 1 300px;
-        max-width: 500px;
+    h4 {
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #1a3d6d;
+    }
+
+    .moderator-toolbar {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 10px;
+
+        .btn {
+            font-weight: 600;
+            min-width: 100px;
+        }
+    }
+
+    .moderator-grid {
         display: flex;
         flex-direction: column;
-        position: relative;
+        gap: 20px;
+    }
 
-        .comment-meta {
-            font-size: 0.85em;
-            color: #666;
-            margin-bottom: 8px;
+    .moderator-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+
+        .moderator-header {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 15px;
+
+            .avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                object-fit: cover;
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            }
 
             strong {
+                font-size: 1.1em;
                 color: #333;
             }
-        }
 
-        .comment-text {
-            font-size: 1em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .edit-area {
-            textarea {
-                width: 100%;
-                height: 100px;
-                font-size: 0.95em;
-                padding: 8px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                resize: vertical;
-                margin-bottom: 10px;
-            }
-        }
-
-        .moderator-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            margin-top: auto;
-
-            button {
+            .timestamp {
                 font-size: 0.85em;
-                padding: 6px 12px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
+                color: #888;
+            }
 
-                &.btn-approve {
-                    background-color: #28a745;
-                    color: white;
+            .article-title {
+                font-size: 0.85em;
+                color: #0077cc;
 
-                    &:hover {
-                        background-color: #218838;
-                    }
-                }
-
-                &.btn-reject {
-                    background-color: #dc3545;
-                    color: white;
+                a {
+                    text-decoration: none;
+                    color: inherit;
 
                     &:hover {
-                        background-color: #c82333;
-                    }
-                }
-
-                &.btn-save {
-                    background-color: #007bff;
-                    color: white;
-
-                    &:hover {
-                        background-color: #0069d9;
-                    }
-                }
-
-                &.btn-cancel {
-                    background-color: #6c757d;
-                    color: white;
-
-                    &:hover {
-                        background-color: #5a6268;
+                        text-decoration: underline;
                     }
                 }
             }
         }
 
-        &.highlight {
-            border-color: #ffc107;
-            background-color: #fff8e1;
+        .moderator-body {
+            margin-bottom: 15px;
+
+            .comment-text {
+                font-size: 1em;
+                color: #333;
+                white-space: pre-wrap;
+            }
+
+            .edit-box {
+                width: 100%;
+                height: 120px;
+                font-size: 1em;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                resize: vertical;
+            }
+        }
+
+        .moderator-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+
+            .btn {
+                font-size: 0.85em;
+                padding: 6px 14px;
+                font-weight: 500;
+                border-radius: 6px;
+            }
+
+            .like-summary {
+                margin-left: auto;
+                font-size: 0.8em;
+                color: #aaa;
+            }
+        }
+
+        &.approved {
+            border-left: 5px solid #28a745;
+        }
+
+
+        &.rejected {
+            border-left: 5px solid #ffc107;
+        }
+
+        &.unapproved {
+            border-left: 5px solid rgba(94, 174, 255, 0.6);
         }
     }
 }

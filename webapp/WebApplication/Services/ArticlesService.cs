@@ -329,7 +329,7 @@ namespace K9.WebApplication.Services
                     ArticleName = article.Title,
                     CommentText = comment.Comment,
                     LinkToArticle = My.UrlHelper.AbsoluteAction("View", "Blog", new { id = comment.ArticleId }),
-                    LinkToModerate = My.UrlHelper.AbsoluteAction("ModerateComment", "Blog", new { id = comment.Id }),
+                    LinkToModerate = My.UrlHelper.AbsoluteAction("Dashboard", "Blog"),
                 });
 
             try

@@ -75,17 +75,19 @@
         function handleFiles(files) {
             if (!files || files.length === 0) return;
 
-            if (currentUploads >= maxUploads) {
+            if (maxUploads > 0 && currentUploads >= maxUploads) {
                 $uploadLimitMessage.fadeIn();
                 $uploadBtn.prop('disabled', true);
                 $dropZone.addClass('disabled');
                 return;
             }
+            
+            const filesToAdd = maxUploads > 0 ? Math.min(files.length, maxUploads - currentUploads) : currentUploads;
 
-            const filesToAdd = Math.min(files.length, maxUploads - currentUploads);
-
-            if (files.length > filesToAdd) {
-                $.fn.showToast(`Only ${filesToAdd} more file(s) allowed.`, 'info');
+            if (maxUploads > 0) {
+                if (files.length > filesToAdd) {
+                    $.fn.showToast(`Only ${filesToAdd} more file(s) allowed.`, 'info');
+                }
             }
 
             $uploadBtn.prop('disabled', true);
@@ -146,7 +148,7 @@
                             currentUploads++;
                             $uploadCounter.text(currentUploads);
 
-                            if (currentUploads >= maxUploads) {
+                            if (maxUploads > 0 && currentUploads >= maxUploads) {
                                 $uploadBtn.prop('disabled', true);
                                 $dropZone.addClass('disabled');
                                 $uploadLimitMessage.fadeIn();
@@ -165,7 +167,7 @@
 
                     complete: function () {
                         if (--pending === 0) {
-                            if (currentUploads < maxUploads) {
+                            if (currentUploads < maxUploads || maxUploads === 0) {
                                 $uploadBtn.prop('disabled', false);
                             }
                             $.fn.hideSpinner($dropZone);
@@ -202,7 +204,7 @@
             currentUploads = Math.max(0, currentUploads - deleted);
             $uploadCounter.text(currentUploads);
 
-            if (currentUploads < maxUploads) {
+            if (currentUploads < maxUploads || maxUploads === 0) {
                 $uploadBtn.prop('disabled', false);
                 $dropZone.removeClass('disabled');
                 $uploadLimitMessage.fadeOut();

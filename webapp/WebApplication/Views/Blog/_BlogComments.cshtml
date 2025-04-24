@@ -43,7 +43,7 @@
                             <i class="fa fa-trash"></i>
                         </span>
                         <span class="comment-icon btn-like-comment @(comment.IsLikedByCurrentUser ? "liked" : "notliked")"
-                              data-comment-id="@comment.Id" role="button" title="Like">
+                              data-article-id="@comment.ArticleId" data-comment-id="@comment.Id" role="button" title="Like">
                             <i class="fa fa-heart @(comment.IsLikedByCurrentUser ? "text-danger" : "text-muted")"></i>
                         </span>
                         <small class="like-summary text-muted">@comment.LikeSummary</small>
@@ -69,11 +69,13 @@
         $('#commentsContainer').on('click', '.btn-like-comment', function () {
             const $btn = $(this);
             const $heart = $btn.find("i");
-            const commentId = $btn.data('comment-id');
+            const articleId = $btn.data('article-id');
+            const articleCommentId = $btn.data('comment-id');
+            const $summary = $btn.closest(".comment-actions").find('.like-summary')
                        
-            $.post('@Url.Action("ToggleCommentLike", "Blog")', { id: commentId }, function (res) {
+            $.post('@Url.Action("ToggleCommentLike", "Blog")', { articleId, articleCommentId }, function (res) {
                 if (res.success) {
-                    $(".comment-actions").find('.like-summary').text(res.likeSummary);
+                    $summary.text(res.likeSummary);
 
                     if (res.toggleState) {
                         $btn.addClass('liked').removeClass("notliked");
@@ -93,15 +95,7 @@
                 }
             });
         });
-
-        // ✨ Attr toggle helper
-        $.fn.toggleAttr = function (attr) {
-            return this.each(function () {
-                const has = $(this).is(`[${attr}]`);
-                has ? $(this).removeAttr(attr) : $(this).attr(attr, 'true');
-            });
-        };
-
+        
         // 🗑️ Delete
         let deleteConfirmMap = {};
         $('#commentsContainer').on('click', '.btn-delete-comment', function () {

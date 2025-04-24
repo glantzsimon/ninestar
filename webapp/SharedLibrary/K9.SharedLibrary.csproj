@@ -204,6 +204,7 @@
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Models\AssetInfo.cs" />
     <Compile Include="Models\IAuthentication.cs" />
+    <Compile Include="Models\ILikeable.cs" />
     <Compile Include="Models\ILinkPreviewResult.cs" />
     <Compile Include="Models\ICustomDataSet.cs" />
     <Compile Include="Models\LinkPreviewResult.cs" />

@@ -1,0 +1,163 @@
+﻿@using K9.SharedLibrary.Helpers.Html
+@using K9.WebApplication.Options
+@model K9.WebApplication.ViewModels.BlogModeratorViewModel
+@{
+    ViewBag.Title = Dictionary.BlogDashboard;
+    ViewBag.SubTitle = Dictionary.BlogDashboard;
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content">
+    <article class="margin-bottom-0">
+        <div class="well padding-left-0 padding-right-0 margin-bottom-0">
+            @{
+                ViewBag.Title = "Moderate Comments";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+            }
+
+            <h4>@Dictionary.ModerateComments</h4>
+            <div class="moderator-toolbar">
+                <button class="btn btn-default btn-sm filter-btn" data-filter="all">@Dictionary.All</button>
+                <button class="btn btn-success btn-sm filter-btn" data-filter="approved">@Dictionary.Approved</button>
+                <button class="btn btn-warning btn-sm filter-btn" data-filter="unapproved">@Dictionary.Unapproved</button>
+            </div>
+
+            <div class="moderator-grid">
+                @foreach (var comment in Model.Comments)
+                {
+                    <div class="moderator-card @(comment.IsApproved ? "approved" : "unapproved")" data-comment-id="@comment.Id">
+                        <div class="moderator-header">
+                            <img class="avatar" src="@comment.AvatarImageUrl" />
+                            <div>
+                                <strong>@comment.Username</strong>
+                                <div class="timestamp">@comment.PostedOn.ToLocalTime().ToString("g")</div>
+                                <div class="article-title">On <a href="@Url.Action("Details", "Blog", new { id = comment.ArticleId, slug = comment.Article.Slug })">@comment.Article.Title</a></div>
+                            </div>
+                        </div>
+                        <div class="moderator-body">
+                            <p class="comment-text">@comment.Comment</p>
+                            <textarea class="edit-box form-control" style="display:none">@comment.Comment</textarea>
+                        </div>
+                        <div class="moderator-footer">
+                            <button class="btn btn-sm btn-primary btn-edit">@K9.Base.Globalisation.Dictionary.Edit</button>
+                            <button class="btn btn-sm btn-success btn-approve">@Dictionary.Approve</button>
+                            <button class="btn btn-sm btn-warning btn-reject">@Dictionary.Reject</button>
+                            <button class="btn btn-sm btn-danger btn-delete">@K9.Base.Globalisation.Dictionary.Delete</button>
+                            <button class="btn btn-sm btn-secondary btn-cancel" style="display:none">@Dictionary.Cancel</button>
+                            <button class="btn btn-sm btn-primary btn-save" style="display:none">@Dictionary.Save</button>
+                            <div class="like-summary">@comment.LikeSummary</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </article>
+</div>
+
+<script>
+    $(function () {
+        const $grid = $('.moderator-grid');
+
+        $grid.on('click', '.btn-edit', function () {
+            const $card = $(this).closest('.moderator-card');
+            $card.find('.comment-text').hide();
+            $card.find('.edit-box').show();
+            $card.find('.btn-edit, .btn-approve, .btn-reject, .btn-delete').hide();
+            $card.find('.btn-save, .btn-cancel').show();
+        });
+
+        $grid.on('click', '.btn-cancel', function () {
+            const $card = $(this).closest('.moderator-card');
+            const original = $card.find('.comment-text').text();
+            $card.find('.edit-box').val(original).hide();
+            $card.find('.comment-text').show();
+            $card.find('.btn-save, .btn-cancel').hide();
+            $card.find('.btn-edit, .btn-approve, .btn-reject, .btn-delete').show();
+        });
+
+        $grid.on('click', '.btn-save', function () {
+            const $card = $(this).closest('.moderator-card');
+            const id = $card.data('comment-id');
+            const newText = $card.find('.edit-box').val();
+
+            $.post('@Url.Action("SaveComment")', { id, comment: newText }, function (res) {
+                if (res.success) {
+                    $card.find('.comment-text').text(newText).show();
+                    $card.find('.edit-box').hide();
+                    $card.find('.btn-save, .btn-cancel').hide();
+                    $card.find('.btn-edit, .btn-approve, .btn-reject, .btn-delete').show();
+                    $.fn.showToast("Comment updated", "success");
+                } else {
+                    $.fn.showToast(res.message || "Update failed", "error");
+                }
+            });
+        });
+
+        $grid.on('click', '.btn-approve', function () {
+            const $card = $(this).closest('.moderator-card');
+            const id = $card.data('comment-id');
+
+            $.post('@Url.Action("ApproveComment")', { id }, function (res) {
+                if (res.success) {
+                    $card.removeClass('unapproved').addClass('approved');
+                    $.fn.showToast("Comment approved", "success");
+                } else {
+                    $.fn.showToast(res.message || "Approval failed", "error");
+                }
+            });
+        });
+
+        $grid.on('click', '.btn-reject', function () {
+            const $card = $(this).closest('.moderator-card');
+            const id = $card.data('comment-id');
+
+            $.post('@Url.Action("RejectComment")', { id }, function (res) {
+                if (res.success) {
+                    $card.removeClass('approved').addClass('unapproved');
+                    $.fn.showToast("Comment rejected", "warning");
+                } else {
+                    $.fn.showToast(res.message || "Rejection failed", "error");
+                }
+            });
+        });
+
+        let confirmMap = {};
+
+        $grid.on('click', '.btn-delete', function () {
+            const $card = $(this).closest('.moderator-card');
+            const id = $card.data('comment-id');
+            const key = `comment-${id}`;
+
+            if (confirmMap[key]) {
+                confirmMap[key] = false;
+                $.post('@Url.Action("DeleteComment")', { id }, function (res) {
+                    if (res.success) {
+                        $card.fadeOut(200, function () { $(this).remove(); });
+                        $.fn.showToast("Comment deleted", "success");
+                    } else {
+                        $.fn.showToast(res.message || "Deletion failed", "error");
+                    }
+                });
+            } else {
+                confirmMap[key] = true;
+                $.fn.showToast("Click delete again to confirm", "warning");
+                setTimeout(() => delete confirmMap[key], 3000);
+            }
+        });
+
+        $('.filter-btn').on('click', function () {
+            const filter = $(this).data('filter');
+            $('.filter-btn').removeClass('active');
+            $(this).addClass('active');
+
+            $('.moderator-card').show();
+            if (filter === 'approved') {
+                $('.moderator-card.unapproved').hide();
+            } else if (filter === 'unapproved') {
+                $('.moderator-card.approved').hide();
+            }
+        });
+    });
+</script>

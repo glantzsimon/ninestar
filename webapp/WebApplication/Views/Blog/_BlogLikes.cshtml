@@ -1,0 +1,61 @@
+﻿@using K9.SharedLibrary.Helpers.Html
+@using K9.WebApplication.Config
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
+@model Article
+
+<div class="comment-section likes-section" id="likesContainer">
+    @if (WebSecurity.IsAuthenticated)
+    {
+        <div class="comment-actions">
+            <span class="comment-icon btn-like-comment @(Model.IsLikedByCurrentUser ? "liked" : "notliked")"
+                  data-article-id="@Model.Id" role="button" title="Like">
+                <i class="fa fa-heart @(Model.IsLikedByCurrentUser ? "text-danger" : "text-muted")"></i>
+            </span>
+            <small class="like-summary text-muted">@Model.LikeSummary</small>
+        </div>
+    }
+    else
+    {
+        <div class="comment-actions">
+            <span class="comment-icon disabled" title="@Dictionary.LogInToLike">
+                <i class="fa fa-heart text-muted"></i>
+            </span>
+            <span class="like-count">@Model.LikeCount</span>
+        </div>
+    }
+</div>
+
+<script>
+    $(function () {
+        // ❤️ Like
+        $('#likesContainer').on('click', '.btn-like-comment', function () {
+            const $btn = $(this);
+            const $heart = $btn.find("i");
+            const articleId = $btn.data('article-id');
+            const $summary = $btn.closest(".comment-actions").find('.like-summary')
+     
+            $.post('@Url.Action("ToggleCommentLike", "Blog")', { articleId }, function (res) {
+                if (res.success) {
+                    $summary.text(res.likeSummary);
+
+                    if (res.toggleState) {
+                        $btn.addClass('liked').removeClass("notliked");
+                        $btn.attr('data-liked', 'true');
+                        $heart.removeClass('text-muted').addClass('text-danger');
+                    } else {
+                        $btn.addClass("notliked").removeClass('liked');
+                        $btn.removeAttr('data-liked');
+                        $heart.removeClass('text-danger').addClass('text-muted');
+                    }
+
+                    $heart.addClass('pulse');
+                    setTimeout(() => $heart.removeClass('pulse'), 400);
+
+                } else {
+                    $.fn.showToast(res.message || "Unable to like comment", "error");
+                }
+            });
+        });
+    });
+</script>

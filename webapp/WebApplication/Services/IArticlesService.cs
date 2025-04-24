@@ -1,6 +1,7 @@
 ﻿using K9.DataAccessLayer.Models;
 using System.Collections.Generic;
 using K9.DataAccessLayer.Enums;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Services
 {
@@ -14,8 +15,11 @@ namespace K9.WebApplication.Services
         void CreateArticle(Article article);
         void DeleteArticle(int id);
         void CreateArticleComment(ArticleComment comment);
-        (int Count, bool ToggleState, string LikeSummary) ToggleCommentLike(int articleCommentId);
+        (int Count, bool ToggleState, string LikeSummary) ToggleLike(int articleId, int? articleCommentId = null);
         void DeleteComment(int id);
         void EditComment(int id, string comment);
+        void RejectComment(int id);
+        void ApproveComment(int id);
+        BlogModeratorViewModel GetDashboardViewModel();
     }
 }

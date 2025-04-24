@@ -410,6 +410,7 @@
     <Compile Include="Services\AstrologyService.cs" />
     <Compile Include="Services\ArticlesService.cs" />
     <Compile Include="Services\MediaManagementService.cs" />
+    <Compile Include="ViewModels\BlogModeratorViewModel.cs" />
     <Compile Include="ViewModels\ImageListItemViewModel.cs" />
     <Compile Include="ViewModels\DynamicFields\MyAccountDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\DynamicFields\IDynamicFieldsModel.cs" />
@@ -1796,6 +1797,8 @@
     <Content Include="Views\Blog\_BlogComments.cshtml" />
     <Content Include="Views\Blog\_CommentForm.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Comments.cshtml" />
+    <Content Include="Views\Blog\_BlogLikes.cshtml" />
+    <Content Include="Views\Blog\Dashboard.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

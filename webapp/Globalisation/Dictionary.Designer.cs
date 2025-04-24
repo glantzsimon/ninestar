@@ -2926,6 +2926,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        public static string All {
+            get {
+                return ResourceManager.GetString("All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Elements.
         /// </summary>
         public static string AllElements {
@@ -3067,6 +3076,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Approve.
+        /// </summary>
+        public static string Approve {
+            get {
+                return ResourceManager.GetString("Approve", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Approved.
+        /// </summary>
+        public static string Approved {
+            get {
+                return ResourceManager.GetString("Approved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are Marketing Emails Allowed.
         /// </summary>
         public static string AreMarketingEmailsAllowedLabel {
@@ -3090,24 +3117,6 @@ namespace K9.Globalisation {
         public static string ArticleComment {
             get {
                 return ResourceManager.GetString("ArticleComment", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Article Comment Like.
-        /// </summary>
-        public static string ArticleCommentLike {
-            get {
-                return ResourceManager.GetString("ArticleCommentLike", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Article Comment Likes.
-        /// </summary>
-        public static string ArticleCommentLikes {
-            get {
-                return ResourceManager.GetString("ArticleCommentLikes", resourceCulture);
             }
         }
         
@@ -3740,6 +3749,15 @@ namespace K9.Globalisation {
         public static string Blog {
             get {
                 return ResourceManager.GetString("Blog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blog Dashboard.
+        /// </summary>
+        public static string BlogDashboard {
+            get {
+                return ResourceManager.GetString("BlogDashboard", resourceCulture);
             }
         }
         
@@ -4884,10 +4902,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
         ///&lt;p&gt;We have received a new comment from {Customer} ({CustomerEmail}) on the article {ArticleName}:&lt;/p&gt;
-        ///&lt;div style=&quot;background: #f0fff0; border: 1px solid #b0c4de; border-radius: 7px; padding: 11px;&quot;&gt;
-        ///    &lt;p&gt;{CommentText}&lt;/p&gt;
-        ///&lt;/div&gt;
-        ///&lt;p&gt;View the comment here &lt;a href=&quot;{LinkToArticle}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
+        ///&lt;p style=&quot;background: #f0fff0; border: 1px solid #b0c4de; border-radius: 7px; padding: 11px;&quot;&gt;
+        ///    {CommentText}
+        ///&lt;/p&gt;
+        ///&lt;p&gt;View the article &lt;a href=&quot;{LinkToArticle}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+        ///&lt;p&gt;Moderate the comment &lt;a href=&quot;{LinkToModerate}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
         /// </summary>
         public static string CommentReceivedEmail {
             get {
@@ -12829,6 +12848,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Like.
+        /// </summary>
+        public static string Like {
+            get {
+                return ResourceManager.GetString("Like", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Likes.
         /// </summary>
         public static string Likes {
@@ -15021,6 +15049,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Moderate Comments.
+        /// </summary>
+        public static string ModerateComments {
+            get {
+                return ResourceManager.GetString("ModerateComments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modesty.
         /// </summary>
         public static string Modesty {
@@ -16310,6 +16347,15 @@ namespace K9.Globalisation {
         public static string NoChargeUntilText {
             get {
                 return ResourceManager.GetString("NoChargeUntilText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No likes yet.
+        /// </summary>
+        public static string NoLikesYet {
+            get {
+                return ResourceManager.GetString("NoLikesYet", resourceCulture);
             }
         }
         
@@ -18072,6 +18118,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reject.
+        /// </summary>
+        public static string Reject {
+            get {
+                return ResourceManager.GetString("Reject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Relationship Compatibility Calculator.
         /// </summary>
         public static string RelationshipCompatibilityCalculator {
@@ -18419,6 +18474,15 @@ namespace K9.Globalisation {
         public static string sameness_very_low {
             get {
                 return ResourceManager.GetString("sameness_very_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
         
@@ -22542,6 +22606,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unapproved.
+        /// </summary>
+        public static string Unapproved {
+            get {
+                return ResourceManager.GetString("Unapproved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unavailable.
         /// </summary>
         public static string Unavailable {
@@ -24915,11 +24988,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You and {LikeCount} {OtherText}.
+        /// </summary>
+        public static string YouAndOthersLikeThis {
+            get {
+                return ResourceManager.GetString("YouAndOthersLikeThis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your subscription was successful. Thank you and a warm welcome!.
         /// </summary>
         public static string YouAreSignedUp {
             get {
                 return ResourceManager.GetString("YouAreSignedUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You like this.
+        /// </summary>
+        public static string YouLikeThis {
+            get {
+                return ResourceManager.GetString("YouLikeThis", resourceCulture);
             }
         }
         

@@ -1,7 +1,8 @@
-﻿using System;
-using K9.Base.DataAccessLayer.Attributes;
+﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Globalisation;
+using K9.SharedLibrary.Models;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,7 +10,7 @@ namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.ArticleComments, PluralName = Strings.Names.ArticleComments, Name = Strings.Names.ArticleComment)]
-    public class ArticleComment : ObjectBase
+    public class ArticleComment : BaseLikeable, ILikeable
     {
 
         [Required]
@@ -44,32 +45,8 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public UserInfo UserInfo { get; set; }
 
-        [NotMapped]
-        public int LikeCount { get; set; }
-
-        [NotMapped]
-        public bool IsLikedByCurrentUser { get; set; }
-
         public string Username => User.FirstName ?? User.Username;
 
         public string AvatarImageUrl => UserInfo?.AvatarImageUrl;
-
-        public string LikeSummary
-        {
-            get
-            {
-                if (IsLikedByCurrentUser && LikeCount == 1)
-                    return "You like this";
-
-                if (IsLikedByCurrentUser && LikeCount > 1)
-                    return $"You and {LikeCount - 1} other{(LikeCount > 2 ? "s" : "")}";
-
-                if (LikeCount > 0)
-                    return $"{LikeCount} like{(LikeCount > 1 ? "s" : "")}";
-
-                return $"No likes yet";
-            }
-        }
-
     }
 }

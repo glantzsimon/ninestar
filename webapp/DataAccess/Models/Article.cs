@@ -1,19 +1,17 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
-using K9.Base.DataAccessLayer.Models;
-using K9.Base.Globalisation;
+using K9.SharedLibrary.Helpers;
+using K9.SharedLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using System.Web.Mvc;
-using K9.SharedLibrary.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Articles, PluralName = Globalisation.Strings.Names.Articles, Name = Globalisation.Strings.Names.Article)]
-    public class Article : ObjectBase
+    public class Article : BaseLikeable, ILikeable
     {
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PublishedOnLabel)]
@@ -66,6 +64,6 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ArticleComments)]
         public List<ArticleComment> Comments { get; set; }
-
+        
     }
 }

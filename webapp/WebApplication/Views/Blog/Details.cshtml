@@ -42,6 +42,10 @@
 
                     <hr />
 
+                    @Html.Partial("_BlogLikes", Model)
+
+                    <hr />
+
                     @Html.Partial("_CommentForm", new ArticleComment { ArticleId = Model.Id })
 
                     @Html.Partial("_BlogComments", Model)

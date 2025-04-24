@@ -482,7 +482,12 @@
     <Compile Include="Migrations\202504231233184_AddCommentLikes.designer.cs">
       <DependentUpon>202504231233184_AddCommentLikes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\ArticleCommentLike.cs" />
+    <Compile Include="Migrations\202504240320320_RefactorLikes.cs" />
+    <Compile Include="Migrations\202504240320320_RefactorLikes.designer.cs">
+      <DependentUpon>202504240320320_RefactorLikes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseLikeable.cs" />
+    <Compile Include="Models\Like.cs" />
     <Compile Include="Models\ArticleComment.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Article.cs" />
@@ -699,6 +704,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504231233184_AddCommentLikes.resx">
       <DependentUpon>202504231233184_AddCommentLikes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504240320320_RefactorLikes.resx">
+      <DependentUpon>202504240320320_RefactorLikes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

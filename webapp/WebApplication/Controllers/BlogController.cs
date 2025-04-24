@@ -3,8 +3,10 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System.Web.Mvc;
+using K9.Base.WebApplication.Filters;
 using K9.DataAccessLayer.Models;
 using K9.Globalisation;
+using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Helpers;
@@ -101,11 +103,11 @@ namespace K9.WebApplication.Controllers
         [Route("toggle-like")]
         [HttpPost]
         [Authorize]
-        public JsonResult ToggleCommentLike(int id)
+        public JsonResult ToggleCommentLike(int articleId, int? articleCommentId = null)
         {
             try
             {
-                var result = _articlesService.ToggleCommentLike(id);
+                var result = _articlesService.ToggleLike(articleId, articleCommentId);
                 return Json(new
                 {
                     success = true,
@@ -157,6 +159,81 @@ namespace K9.WebApplication.Controllers
             return Json(new { success = true });
         }
 
+        [Route("moderate/dashboard")]
+        [Authorize]
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        public ActionResult Dashboard(int id)
+        {
+            return View(_articlesService.GetDashboardViewModel());
+        }
+
+        [HttpPost]
+        [Route("moderate/approve-comment")]
+        [Authorize]
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        public JsonResult ApproveComment(int id)
+        {
+            try
+            {
+                _articlesService.ApproveComment(id);
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        [Route("moderate/reject-comment")]
+        [Authorize]
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        public JsonResult RejectComment(int id)
+        {
+            try
+            {
+                _articlesService.RejectComment(id);
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        [Route("moderate/save-comment")]
+        [Authorize]
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        public JsonResult SaveComment(int id, string comment)
+        {
+            try
+            {
+                _articlesService.EditComment(id, comment);
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        [Route("moderate/delete-comment")]
+        [Authorize]
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        public JsonResult ModerateDeleteComment(int id)
+        {
+            try
+            {
+                _articlesService.DeleteComment(id);
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
 
         public override string GetObjectName()
         {

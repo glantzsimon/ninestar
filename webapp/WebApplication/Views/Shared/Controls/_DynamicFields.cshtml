@@ -215,29 +215,36 @@
     });
 
     function refreshImageOptions(id) {
+        const $imageList = $('#imageList');
+
         // Save currently selected relative paths
-        const selectedPaths = $('#imageList .image-list-item.selected').map(function () {
+        const selectedPaths = $imageList.find('.image-list-item.selected').map(function () {
             return $(this).data('relativepath');
         }).get();
+
+        // 🔄 Show spinner
+        $.fn.displaySpinner($imageList, true);
 
         $.get('@Url.Action("GetImageOptions", "BaseNineStarKi")', {
             typeName: "@(Model.EntityType?.Name ?? "")",
             id: id
         }, function (data) {
-            $('#imageList').html(data);
+            $imageList.html(data);
 
             // Re-select matching items
-            $('#imageList .image-list-item').each(function () {
+            $imageList.find('.image-list-item').each(function () {
                 const $item = $(this);
                 if (selectedPaths.includes($item.data('relativepath'))) {
                     $item.addClass('selected');
                 }
             });
 
-            const $btn = $(this);
-            const $selected = $('#imageList .image-list-item.selected');
-          
-            $btn.text(`@Dictionary.DeleteSelected`);
+            // Optional reset for delete button text
+            $('#deleteSelectedImages').text(`@Dictionary.DeleteSelected`);
+        })
+        .always(function () {
+            // ✅ Hide spinner regardless of success/failure
+            $.fn.hideSpinner($imageList);
         });
     }
 

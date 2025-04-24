@@ -6644,6 +6644,9 @@
   <data name="ImageUrlCopied" xml:space="preserve">
     <value>Image URL copied!</value>
   </data>
+  <data name="LeaveComment" xml:space="preserve">
+    <value>to leave a comment</value>
+  </data>
   <data name="Like" xml:space="preserve">
     <value>Like</value>
   </data>
@@ -6691,6 +6694,9 @@
   </data>
   <data name="Shared" xml:space="preserve">
     <value>Shared</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>Sign in</value>
   </data>
   <data name="Unapproved" xml:space="preserve">
     <value>Unapproved</value>

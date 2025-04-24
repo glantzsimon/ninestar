@@ -12791,6 +12791,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to to leave a comment.
+        /// </summary>
+        public static string LeaveComment {
+            get {
+                return ResourceManager.GetString("LeaveComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Legs.
         /// </summary>
         public static string Legs {
@@ -19395,6 +19404,15 @@ namespace K9.Globalisation {
         public static string SignIn {
             get {
                 return ResourceManager.GetString("SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign in.
+        /// </summary>
+        public static string SignInTo {
+            get {
+                return ResourceManager.GetString("SignInTo", resourceCulture);
             }
         }
         

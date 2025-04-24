@@ -82,7 +82,7 @@
                 return;
             }
             
-            const filesToAdd = maxUploads > 0 ? Math.min(files.length, maxUploads - currentUploads) : currentUploads;
+            const filesToAdd = maxUploads > 0 ? Math.min(files.length, maxUploads - currentUploads) : files.length;
 
             if (maxUploads > 0) {
                 if (files.length > filesToAdd) {

@@ -490,6 +490,10 @@
     <Compile Include="Migrations\202504240613168_IsRejectedToComment.designer.cs">
       <DependentUpon>202504240613168_IsRejectedToComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504250533139_AddComplementaryReadings.cs" />
+    <Compile Include="Migrations\202504250533139_AddComplementaryReadings.designer.cs">
+      <DependentUpon>202504250533139_AddComplementaryReadings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BaseLikeable.cs" />
     <Compile Include="Models\Like.cs" />
     <Compile Include="Models\ArticleComment.cs" />
@@ -714,6 +718,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504240613168_IsRejectedToComment.resx">
       <DependentUpon>202504240613168_IsRejectedToComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504250533139_AddComplementaryReadings.resx">
+      <DependentUpon>202504250533139_AddComplementaryReadings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

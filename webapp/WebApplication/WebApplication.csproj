@@ -1799,6 +1799,7 @@
     <Content Include="Views\Shared\EditorTemplates\Comments.cshtml" />
     <Content Include="Views\Blog\_BlogLikes.cshtml" />
     <Content Include="Views\Blog\Dashboard.cshtml" />
+    <Content Include="Views\Admin\MaintenanceComplete.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

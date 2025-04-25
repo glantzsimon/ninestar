@@ -6662,6 +6662,9 @@
   <data name="LogInToLike" xml:space="preserve">
     <value>Log in to like!</value>
   </data>
+  <data name="MaintenanceComplete" xml:space="preserve">
+    <value>Maintenance Complete</value>
+  </data>
   <data name="ModerateComments" xml:space="preserve">
     <value>Moderate Comments</value>
   </data>
@@ -6670,6 +6673,9 @@
   </data>
   <data name="NoLikesYet" xml:space="preserve">
     <value>No likes yet</value>
+  </data>
+  <data name="NumberOfPredictionsReadingsLabel" xml:space="preserve">
+    <value>Number Of Predictions</value>
   </data>
   <data name="PleaseSelectOneOrMoreImages" xml:space="preserve">
     <value>Please select one or more images to delete.</value>
@@ -6685,6 +6691,9 @@
   </data>
   <data name="Rejected" xml:space="preserve">
     <value>Rejected</value>
+  </data>
+  <data name="RunMaintenance" xml:space="preserve">
+    <value>Run Maintenance Script</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>

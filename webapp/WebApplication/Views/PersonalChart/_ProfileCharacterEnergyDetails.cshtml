@@ -40,28 +40,28 @@
             </ul>
             <div class="tab-content">
                 <div id="c-details" class="tab-pane fade in active">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                     {
                         @Html.PanelWithSummary(Model.CharacterEnergy.EnergyTitle, Model.CharacterEnergy.EnergyDescription, Model.CharacterEnergy.CharacterEnergySummary, "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                     }
                 </div>
 
                 <div id="child" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                     {
                         @Html.Partial("_ProfileChildNature", Model)
                     }
                 </div>
 
                 <div id="adult-child" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                     {
                         @Html.Partial("_ProfileAdultChildRelationship", Model)
                     }
                 </div>
 
                 <div id="stress" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                     {
                         @Html.Partial("_ProfileStressResponse", Model)
                     }

@@ -89,7 +89,7 @@
                 @Html.CollapsiblePanel(Dictionary.CharacterEnergyLabel, $"{Dictionary.CharacterEnergyDescription}", true)
 
                 <br />
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                 {
                     @Html.Panel(Model.CharacterEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.CharacterEnergy).ToString()} {Html.Partial("_ProfileCharacterEnergyDetails").ToString()}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
@@ -99,7 +99,7 @@
             <div id="surface" class="tab-pane fade">
                 @Html.CollapsiblePanel(Dictionary.SurfaceEnergyLabel, Dictionary.SurfaceEnergyDescription, true)
 
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                 {
                     @Html.PanelWithSummary(Model.SurfaceEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.SurfaceEnergy).ToString()}{Model.SurfaceEnergy.EnergyDescription}", $"{Html.Partial("_ProfileHeader", Model.SurfaceEnergy).ToString()}{Model.SurfaceEnergy.SurfaceEnergySummary}", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
@@ -111,7 +111,7 @@
             <div id="daystar" class="tab-pane fade">
                 @Html.CollapsiblePanel(Dictionary.DayStarLabel, Dictionary.DayStarDescription, true)
 
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                 {
                     @Html.Panel(Model.PersonalChartEnergies.Day.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Day).ToString()}{Model.PersonalChartEnergies.Day.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
@@ -123,7 +123,7 @@
             <div id="generation" class="tab-pane fade">
                 @Html.CollapsiblePanel(Dictionary.GenerationalEnergyLabel, Dictionary.GenerationalEnergyDescription, true)
 
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                 {
                     @Html.Panel(Model.PersonalChartEnergies.Generation.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Generation).ToString()}{Model.PersonalChartEnergies.Generation.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
@@ -135,7 +135,7 @@
             <div id="epoch" class="tab-pane fade">
                 @Html.CollapsiblePanel(Dictionary.EpochEnergyLabel, Dictionary.EpochEnergyDescription, true)
 
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                 {
                     @Html.Panel(Model.PersonalChartEnergies.Epoch.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Epoch).ToString()}{Model.PersonalChartEnergies.Epoch.EnergyDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
@@ -145,7 +145,7 @@
             </div>
 
             <div id="alchemy" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                 {
                     <div id="profile-alchemy-container">
                         @Html.PanelWithSummary(Dictionary.ProfileAlchemisedDescription, Dictionary.Loading, Dictionary.Loading)

@@ -18,7 +18,7 @@ namespace K9.DataAccessLayer.Models
     public class MembershipOption : ObjectBase
     {
         public const int Unlimited = int.MaxValue;
-
+        
         public enum ESubscriptionType
         {
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Free)]
@@ -56,20 +56,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
         [DataType(DataType.Currency)]
         public double Price { get; set; }
-
-        [NotMapped]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
-        [DataType(DataType.Currency)]
-        public double PriceIncludingDiscountForRemainingPreviousSubscription { get; set; }
-
-        [Required]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfProfileReadingsLabel)]
-        public int NumberOfProfileReadings { get; set; }
-
-        [Required]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfCompatibilityReadingsLabel)]
-        public int NumberOfCompatibilityReadings { get; set; }
-
+        
         [NotMapped] public Promotion Promotion { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]

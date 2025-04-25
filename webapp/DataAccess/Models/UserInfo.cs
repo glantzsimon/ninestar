@@ -12,7 +12,7 @@ namespace K9.DataAccessLayer.Models
     public class UserInfo : ObjectBase
     {
         public Guid UniqueIdentifier { get; set; } = Guid.NewGuid();
-
+       
         [UIHint("User")]
         [Required]
         [ForeignKey("User")]
@@ -30,6 +30,5 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.ImageUrl)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AvatarImageUrlLabel)]
         public string AvatarImageUrl { get; set; }
-
     }
 }

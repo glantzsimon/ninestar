@@ -1,6 +1,8 @@
 ﻿using HtmlAgilityPack;
 using K9.Base.WebApplication.Filters;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using System;
@@ -15,9 +17,12 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class AdminController : BaseNineStarKiController
     {
-        public AdminController(INineStarKiPackage nineStarKiPackage)
+        private readonly IRepository<UserMembership> _userMembershipsRepository;
+
+        public AdminController(INineStarKiPackage nineStarKiPackage, IRepository<UserMembership> userMembershipsRepository)
             : base(nineStarKiPackage)
         {
+            _userMembershipsRepository = userMembershipsRepository;
         }
 
         [Route("admin/display/all-content-files/{folder}/")]
@@ -78,6 +83,17 @@ namespace K9.WebApplication.Controllers
             return File(fileBytes, "text/plain", fileName);
         }
 
+        public ActionResult RunMaintenance()
+        {
+            AllocateFreeReadingsToAllAccounts();
+            return RedirectToAction("MaintenanceComplete");
+        }
+
+        public ActionResult MaintenanceComplete()
+        {
+            return View();
+        }
+
         private static string ExtractTextFromHtml(string htmlContent)
         {
             if (string.IsNullOrWhiteSpace(htmlContent))
@@ -107,6 +123,14 @@ namespace K9.WebApplication.Controllers
             }
 
             htmlContent.Append("</div");
+        }
+
+        private void AllocateFreeReadingsToAllAccounts()
+        {
+            _userMembershipsRepository.GetQuery($"UPDATE [{nameof(UserMembership)}] " +
+                                                $"SET [{nameof(UserMembership.ComplementaryPersonalChartReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
+                                                $"[{nameof(UserMembership.ComplementaryPredictionsReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
+                                                $"[{nameof(UserMembership.ComplementaryCompatibilityReadingCount)}] = {UserMembership.TotalFreeReadings}");
         }
     }
 }

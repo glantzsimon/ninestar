@@ -117,6 +117,17 @@ namespace K9.WebApplication.Controllers
                     }
 
                     processedModel.IsPredictionsScreen = true;
+
+                    var myAccount = My.AccountService.GetAccount(Current.UserId);
+                    if (myAccount.Membership.MembershipOption.IsFree)
+                    {
+                        if (myAccount.Membership.ComplementaryPredictionsReadingCount > 0)
+                        {
+                            My.MembershipService.UseComplementaryPredictionsReading(Current.UserId);
+                            model.IsComplementary = true;
+                        }
+                    }
+
                     return View("Index", new PredictionsViewModel(
                         processedModel,
                         _nineStarKiService.GetNineStarKiSummaryViewModel()));

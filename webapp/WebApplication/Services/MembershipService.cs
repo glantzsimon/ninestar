@@ -328,27 +328,37 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SetMembershipEndDate(UserMembership membership)
+        public void UseComplementaryPersonalChartReading(int userId)
         {
-            var membershipOption = _membershipOptionRepository.Find(e => e.Id == membership.MembershipOptionId)
-                    .FirstOrDefault();
+            var userMemberhip = GetActiveUserMembership(userId);
+            if (userMemberhip.ComplementaryPersonalChartReadingCount <= 0)
+            {
+                throw new Exception("There are no complementary personal chart readings remaining.");
+            }
+            userMemberhip.ComplementaryPersonalChartReadingCount -= 1;
+            _userMembershipRepository.Update(userMemberhip);
+        }
 
-            if (membershipOption.IsWeekly)
+        public void UseComplementaryPredictionsReading(int userId)
+        {
+            var userMemberhip = GetActiveUserMembership(userId);
+            if (userMemberhip.ComplementaryPredictionsReadingCount <= 0)
             {
-                membership.EndsOn = membership.StartsOn.AddDays(7);
+                throw new Exception("There are no complementary predictions readings remaining.");
             }
-            else if (membershipOption.IsMonthly)
+            userMemberhip.ComplementaryPredictionsReadingCount -= 1;
+            _userMembershipRepository.Update(userMemberhip);
+        }
+
+        public void UseComplementaryCompatibilityReading(int userId)
+        {
+            var userMemberhip = GetActiveUserMembership(userId);
+            if (userMemberhip.ComplementaryCompatibilityReadingCount <= 0)
             {
-                membership.EndsOn = membership.StartsOn.AddMonths(1);
+                throw new Exception("There are no complementary compatibility readings remaining.");
             }
-            else if (membershipOption.IsAnnual)
-            {
-                membership.EndsOn = membership.StartsOn.AddYears(1);
-            }
-            else if (membershipOption.IsForever)
-            {
-                membership.EndsOn = DateTime.MaxValue;
-            }
+            userMemberhip.ComplementaryCompatibilityReadingCount -= 1;
+            _userMembershipRepository.Update(userMemberhip);
         }
 
         public void AssignMembershipToUser(int membershipOptionId, int userId, Promotion promotion = null)
@@ -465,6 +475,29 @@ namespace K9.WebApplication.Services
         public MembershipOption GetMembershipOption(int id)
         {
             return _membershipOptionRepository.Find(id);
+        }
+
+        private void SetMembershipEndDate(UserMembership membership)
+        {
+            var membershipOption = _membershipOptionRepository.Find(e => e.Id == membership.MembershipOptionId)
+                .FirstOrDefault();
+
+            if (membershipOption.IsWeekly)
+            {
+                membership.EndsOn = membership.StartsOn.AddDays(7);
+            }
+            else if (membershipOption.IsMonthly)
+            {
+                membership.EndsOn = membership.StartsOn.AddMonths(1);
+            }
+            else if (membershipOption.IsAnnual)
+            {
+                membership.EndsOn = membership.StartsOn.AddYears(1);
+            }
+            else if (membershipOption.IsForever)
+            {
+                membership.EndsOn = DateTime.MaxValue;
+            }
         }
 
         private void TerminateExistingMemberships(int userId)

@@ -17,8 +17,6 @@ namespace K9.WebApplication.Models
                 {
                     membershipOption.Price = promotion.SpecialPrice;
                 }
-
-                MembershipOption.PriceIncludingDiscountForRemainingPreviousSubscription = MembershipOption.Price - (ActiveUserMembership?.CostOfRemainingActiveSubscription ?? 0);
             }
         }
 

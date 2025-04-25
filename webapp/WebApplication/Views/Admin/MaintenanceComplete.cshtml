@@ -1,0 +1,11 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model UserAccount.ResetPasswordModel
+@{
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.Admin;
+    ViewBag.Subtitle = K9.Globalisation.Dictionary.MaintenanceComplete;
+    Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.TitleTag = "text-center";
+}
+<div class="margin-bottom-10">
+    @Html.Success(K9.Globalisation.Dictionary.MaintenanceComplete)
+</div>

@@ -66,7 +66,7 @@
         <div id="current-daily-cycle" class="tab-pane fade">
             @Html.CollapsiblePanel(Dictionary.DailyPrediction, Dictionary.day_description, true)
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
                 if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
                 {
@@ -97,7 +97,7 @@
         <div id="current-monthly-cycle" class="tab-pane fade in active">
             @Html.CollapsiblePanel(Dictionary.MonthlyPrediction, Dictionary.month_description, true)
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
                 if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
                 {
@@ -126,7 +126,7 @@
         <div id="current-yearly-cycle" class="tab-pane fade">
             @Html.CollapsiblePanel(Dictionary.YearlyPrediction, Dictionary.year_description, true)
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
                 if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
                 {
@@ -155,7 +155,7 @@
         <div id="current-generation-cycle" class="tab-pane fade">
             @Html.CollapsiblePanel(Dictionary.NineYearlyPrediction, Dictionary.generation_description, true)
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
                 if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
                 {
@@ -184,7 +184,7 @@
         <div id="current-epoch-cycle" class="tab-pane fade">
             @Html.CollapsiblePanel($"{Dictionary.EightyOneYearlyPrediction} ({Dictionary.GlobalKiLabel})", $"{Dictionary.epoch_description} {Dictionary.globalki_display_warning}", true)
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
                 @Html.Panel(Model.GlobalCycleEnergies.Epoch.CycleDescriptiveName,
                     Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Epoch).ToString())
@@ -195,7 +195,7 @@
         </div>
 
         <div id="alchemy" class="tab-pane fade">
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
                 <div id="profile-alchemy-container">
                     @Html.PanelWithSummary(Dictionary.ProfileAlchemisedDescription, Dictionary.Loading, Dictionary.Loading)
@@ -207,7 +207,7 @@
         </div>
 
         <div id="global-planner" class="tab-pane fade">
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
                 <div id="global-planner-container">
                     @Html.Partial("Planner/_GlobalPlanner", Model.PlannerViewModel)

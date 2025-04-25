@@ -159,6 +159,7 @@
             public const string DeactivatedLabel = "DeactivatedLabel";
             public const string EmailAddressLabel = "EmailAddressLabel";
             public const string NumberOfProfileReadingsLabel = "NumberOfProfileReadingsLabel";
+            public const string NumberOfPredictionsReadingsLabel = "NumberOfPredictionsReadingsLabel";
             public const string NumberOfCompatibilityReadingsLabel = "NumberOfCompatibilityReadingsLabel";
             public const string NumberOfProfileReadingsLeft = "NumberOfProfileReadingsLeft";
             public const string NumberOfRelationshipCompatibilityReadingsLeft = "NumberOfRelationshipCompatibilityReadingsLeft";

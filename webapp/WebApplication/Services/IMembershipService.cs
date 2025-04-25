@@ -11,7 +11,7 @@ namespace K9.WebApplication.Services
         UserMembershipViewModel GetMembershipViewModel(int? userId = null);
         MembershipModel GetSwitchMembershipModel(int membershipOptionId, int? userId = null);
         MembershipModel GetPurchaseMembershipModel(int membershipOptionId, string promoCode = "");
-        
+
         void CreateFreeMembership(int userId);
         void ScheduleRemindersForUser(int userId);
 
@@ -27,10 +27,13 @@ namespace K9.WebApplication.Services
 
         void CreateComplementaryUserConsultation(int userId,
             EConsultationDuration duration = EConsultationDuration.OneHour);
-        
+
         List<UserMembership> GetActiveUserMemberships(int userId, bool includeScheduled = false);
         UserMembership GetActiveUserMembership(int? userId = null);
         UserMembership GetActiveUserMembership(string accountNumber);
         MembershipOption GetMembershipOption(int id);
+        void UseComplementaryPersonalChartReading(int userId);
+        void UseComplementaryPredictionsReading(int userId);
+        void UseComplementaryCompatibilityReading(int userId);
     }
 }

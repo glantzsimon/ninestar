@@ -2,16 +2,14 @@
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.Base.WebApplication.Extensions;
+using K9.DataAccessLayer.Helpers;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -21,6 +19,8 @@ namespace K9.DataAccessLayer.Models
     [DefaultPermissions(Role = RoleNames.DefaultUsers)]
     public class UserMembership : ObjectBase, IUserData
     {
+        public const int TotalFreeReadings = 3;
+
         [UIHint("User")]
         [Required]
         [ForeignKey("User")]
@@ -59,14 +59,21 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Name")]
         public string MembershipOptionName { get; set; }
+        
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLabel)]
+        public int ComplementaryPersonalChartReadingCount { get; set; } = TotalFreeReadings;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfPredictionsReadingsLabel)]
+        public int ComplementaryPredictionsReadingCount { get; set; } = TotalFreeReadings;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfCompatibilityReadingsLabel)]
+        public int ComplementaryCompatibilityReadingCount { get; set; } = TotalFreeReadings;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsActiveLabel)]
         public bool IsActive => (DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) || MembershipOption?.SubscriptionType == MembershipOption.ESubscriptionType.LifeTimePlatinum) && !IsDeactivated;
 
         public TimeSpan Duration => EndsOn.Subtract(StartsOn);
-
-        public double CostOfRemainingActiveSubscription => GetCostOfRemainingActiveSubscription();
-
+        
         public bool IsAuthorisedToViewPaidContent() =>
             MembershipOption?.SubscriptionType > MembershipOption.ESubscriptionType.Free && IsActive;
 
@@ -75,14 +82,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.AccountNumberLabel)]
         public string AccountNumber => GetAccountNumber();
-
-        private double GetCostOfRemainingActiveSubscription()
-        {
-            var timeRemaining = EndsOn.Subtract(DateTime.Today);
-            var percentageRemaining = (double)timeRemaining.Ticks / (double)Duration.Ticks;
-            return MembershipOption?.Price * percentageRemaining ?? 0;
-        }
-
+        
         private string GetAccountNumber()
         {
             return Name.ToSixDigitCode();

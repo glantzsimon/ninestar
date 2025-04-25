@@ -4901,7 +4901,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
-        ///&lt;p&gt;We have received a new comment from {Customer} ({CustomerEmail}) on the article {ArticleName}:&lt;/p&gt;
+        ///&lt;p&gt;We have received a new comment from {Customer} ({CustomerEmail}) on the article &apos;{ArticleName}&apos;:&lt;/p&gt;
         ///&lt;p style=&quot;background: #f0fff0; border: 1px solid #b0c4de; border-radius: 7px; padding: 11px;&quot;&gt;
         ///    {CommentText}
         ///&lt;/p&gt;
@@ -12867,10 +12867,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
-        ///&lt;p&gt;We have received a new comment from {Customer} ({CustomerEmail}) on the article {ArticleName}:&lt;/p&gt;
-        ///&lt;p style=&quot;background: #f0fff0; border: 1px solid #b0c4de; border-radius: 7px; padding: 11px;&quot;&gt;
-        ///    {CommentText}
-        ///&lt;/p&gt;
+        ///&lt;p&gt;We have received a new &apos;like&apos; from {Customer} ({CustomerEmail}). The article in question is &apos;{ArticleName}&apos;:&lt;/p&gt;
         ///&lt;p&gt;View the article &lt;a href=&quot;{LinkToArticle}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
         ///&lt;p&gt;Moderate the comment &lt;a href=&quot;{LinkToModerate}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
         /// </summary>
@@ -14762,6 +14759,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maintenance Complete.
+        /// </summary>
+        public static string MaintenanceComplete {
+            get {
+                return ResourceManager.GetString("MaintenanceComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nine.
         /// </summary>
         public static string MainTitleLeft {
@@ -16470,6 +16476,15 @@ namespace K9.Globalisation {
         public static string NumberOfCreditsLeft {
             get {
                 return ResourceManager.GetString("NumberOfCreditsLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number Of Predictions.
+        /// </summary>
+        public static string NumberOfPredictionsReadingsLabel {
+            get {
+                return ResourceManager.GetString("NumberOfPredictionsReadingsLabel", resourceCulture);
             }
         }
         
@@ -18462,6 +18477,15 @@ namespace K9.Globalisation {
         public static string Rousing {
             get {
                 return ResourceManager.GetString("Rousing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run Maintenance Script.
+        /// </summary>
+        public static string RunMaintenance {
+            get {
+                return ResourceManager.GetString("RunMaintenance", resourceCulture);
             }
         }
         

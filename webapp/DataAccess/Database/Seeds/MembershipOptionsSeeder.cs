@@ -39,8 +39,6 @@ namespace K9.DataAccessLayer.Database.Seeds
                     SubscriptionType = type,
                     Price = price,
                     IsDeleted = !isActive,
-                    NumberOfCompatibilityReadings = MembershipOption.Unlimited,
-                    NumberOfProfileReadings = MembershipOption.Unlimited,
                     IsSystemStandard = true
                 });
             }
@@ -51,7 +49,7 @@ namespace K9.DataAccessLayer.Database.Seeds
                 entity.SubscriptionType = type;
                 entity.Price = price;
                 entity.IsDeleted = !isActive;
-
+          
                 context.Entry(entity).State = EntityState.Modified;
             }
         }

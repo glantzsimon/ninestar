@@ -9,6 +9,7 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web.Script.Serialization;
 
@@ -57,6 +58,12 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public bool IsCycleSwitchActive => EnableCycleSwitch && SelectedDate >= CYCLE_SWITCH_DATE;
+
+        /// <summary>
+        /// Free accounts get 3 complementary readings of each type. This Flag is true when a complementary reading is used
+        /// </summary>
+        [NotMapped]
+        public bool IsComplementary { get; set; }
 
         #endregion
 
@@ -652,6 +659,8 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public bool IsMyProfile { get; set; } = false;
+
+        public bool IsMyProfileOrComplementary => IsMyProfile || IsComplementary;
 
         [UIHint("Organ")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrongYinOrgans)]

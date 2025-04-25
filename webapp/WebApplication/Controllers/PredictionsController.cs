@@ -113,9 +113,9 @@ namespace K9.WebApplication.Controllers
                     if (Current.UserId > 0)
                     {
                         var user = My.UserService.Find(Current.UserId);
-                        model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth;
+                        var isMyProfile = user.BirthDate == model.PersonModel.DateOfBirth;
 
-                        if (!model.IsMyProfile)
+                        if (!isMyProfile)
                         {
                             var myAccount = My.AccountService.GetAccount(Current.UserId);
                             if (myAccount.Membership.MembershipOption.IsFree)
@@ -123,7 +123,7 @@ namespace K9.WebApplication.Controllers
                                 if (myAccount.Membership.ComplementaryPredictionsReadingCount > 0)
                                 {
                                     My.MembershipService.UseComplementaryPredictionsReading(Current.UserId);
-                                    model.IsComplementary = true;
+                                    processedModel.IsComplementary = true;
                                 }
                             }
                         }

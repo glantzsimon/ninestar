@@ -1,7 +1,14 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model string 
+@using K9.WebApplication.Config
+@model string
 
-@Html.Alert(EAlertType.Locked, Dictionary.UpgradeMembershipFullText)
+<div class="text-center">
+    <img class="margin-bottom-20" loading="lazy" alt="locked" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/locked.png"/>
+
+    <h2 class="margin-top-0 margin-bottom-0 alert-message">
+        <strong>@MvcHtmlString.Create(Dictionary.UpgradeMembershipFullText)</strong>
+    </h2>
+</div>
 
 <br />
 

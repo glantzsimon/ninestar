@@ -22825,7 +22825,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please upgrade your membership to gain full access to this feature and much more..
+        ///   Looks up a localized string similar to Unlock this feature and enjoy full access by upgrading your membership..
         /// </summary>
         public static string UpgradeMembershipFullText {
             get {

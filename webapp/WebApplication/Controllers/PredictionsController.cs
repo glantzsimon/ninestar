@@ -125,6 +125,11 @@ namespace K9.WebApplication.Controllers
                                     My.MembershipService.UseComplementaryPredictionsReading(Current.UserId);
                                     processedModel.IsComplementary = true;
                                 }
+                                else
+                                {
+                                    // Reset session
+                                    SessionHelper.SetCurrentUserDefaultEnergyDisplay(EEnergyDisplay.Graphical);
+                                }
                             }
                         }
                     }

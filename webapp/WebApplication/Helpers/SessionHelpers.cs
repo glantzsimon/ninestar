@@ -121,6 +121,11 @@ namespace K9.WebApplication.Helpers
             return GetIntValue(Constants.SessionConstants.DefaultEnergyDisplay);
         }
 
+        public static void SetCurrentUserDefaultEnergyDisplay(EEnergyDisplay value)
+        {
+            SetValue(Constants.SessionConstants.DefaultEnergyDisplay, (int)value);
+        }
+
         public static void SetCurrentUserHousesDisplay(EHousesDisplay value)
         {
             SetValue(Constants.SessionConstants.UserHousesDisplay, (int)value);

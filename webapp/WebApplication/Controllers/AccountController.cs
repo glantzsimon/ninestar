@@ -448,10 +448,10 @@ namespace K9.WebApplication.Controllers
 
             if (ModelState.IsValid)
             {
-                var promotion = _promotionService.Find(model.PromoCode);
-
                 if (!string.IsNullOrEmpty(model.PromoCode))
                 {
+                    var promotion = _promotionService.Find(model.PromoCode);
+
                     if (promotion == null)
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.InvalidPromoCode);

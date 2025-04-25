@@ -114,19 +114,22 @@ namespace K9.WebApplication.Controllers
                     {
                         var user = My.UserService.Find(Current.UserId);
                         model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth;
+
+                        if (!model.IsMyProfile)
+                        {
+                            var myAccount = My.AccountService.GetAccount(Current.UserId);
+                            if (myAccount.Membership.MembershipOption.IsFree)
+                            {
+                                if (myAccount.Membership.ComplementaryPredictionsReadingCount > 0)
+                                {
+                                    My.MembershipService.UseComplementaryPredictionsReading(Current.UserId);
+                                    model.IsComplementary = true;
+                                }
+                            }
+                        }
                     }
 
                     processedModel.IsPredictionsScreen = true;
-
-                    var myAccount = My.AccountService.GetAccount(Current.UserId);
-                    if (myAccount.Membership.MembershipOption.IsFree)
-                    {
-                        if (myAccount.Membership.ComplementaryPredictionsReadingCount > 0)
-                        {
-                            My.MembershipService.UseComplementaryPredictionsReading(Current.UserId);
-                            model.IsComplementary = true;
-                        }
-                    }
 
                     return View("Index", new PredictionsViewModel(
                         processedModel,

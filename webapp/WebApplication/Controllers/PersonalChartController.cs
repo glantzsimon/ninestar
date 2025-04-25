@@ -60,15 +60,18 @@ namespace K9.WebApplication.Controllers
                     {
                         var user = My.UserService.Find(Current.UserId);
                         model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth && model.PersonModel.TimeOfBirth == user.BirthDate.TimeOfDay && user.Gender == model.PersonModel.Gender;
-                    }
 
-                    var myAccount = My.AccountService.GetAccount(Current.UserId);
-                    if (myAccount.Membership.MembershipOption.IsFree)
-                    {
-                        if (myAccount.Membership.ComplementaryPersonalChartReadingCount > 0)
+                        if (!model.IsMyProfile)
                         {
-                            My.MembershipService.UseComplementaryPersonalChartReading(Current.UserId);
-                            model.IsComplementary = true;
+                            var myAccount = My.AccountService.GetAccount(Current.UserId);
+                            if (myAccount.Membership.MembershipOption.IsFree)
+                            {
+                                if (myAccount.Membership.ComplementaryPersonalChartReadingCount > 0)
+                                {
+                                    My.MembershipService.UseComplementaryPersonalChartReading(Current.UserId);
+                                    model.IsComplementary = true;
+                                }
+                            }
                         }
                     }
                 }

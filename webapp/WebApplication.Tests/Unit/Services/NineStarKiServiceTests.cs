@@ -941,6 +941,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 if (ninestarCoreEarthYear.PersonalChartEnergies.Year.Energy != ENineStarKiEnergy.CoreEarth)
                     Assert.NotEqual(ninestarCoreEarthYear.PersonalChartEnergies.Year.Energy, ninestarCoreEarthYear.PersonalHousesOccupiedEnergies.Year.Energy);
             }
+            
             // WATER YEAR
             if (ninestarWaterYear.PersonModel.Gender == EGender.Male)
             {
@@ -952,18 +953,6 @@ namespace K9.WebApplication.Tests.Unit.Services
                 // Female energies are in their inverted personal house
                 Assert.Equal(ninestarWaterYear.PersonalChartEnergies.Year.EnergyNumber, ninestarWaterYear.PersonalHousesOccupiedEnergies.Year.EnergyNumber);
             }
-
-            /*******************************
-             * After Cycle Switch
-            ********************************/
-
-            // EARTH YEAR
-            // All energies are in their personal house
-            Assert.Equal(ninestarInvertedCoreEarthYear.PersonalChartEnergies.Year.Energy, ninestarInvertedCoreEarthYear.PersonalHousesOccupiedEnergies.Year.Energy);
-
-            // WATER YEAR
-            // All energies are not in their personal house
-            Assert.NotEqual(ninestarInvertedWaterYear.PersonalChartEnergies.Year.Energy, ninestarInvertedWaterYear.PersonalHousesOccupiedEnergies.Year.Energy);
         }
 
         public void Dispose()

@@ -823,7 +823,7 @@ namespace K9.WebApplication.Models
 
         public NineStarKiEnergy GetGlobalCycleEnergy(int cycleEnergy, ENineStarKiEnergyCycleType cycleType)
         {
-            cycleEnergy = IsCycleSwitchActive ? GetOppositeEnergyInMagicSquare(cycleEnergy) : cycleEnergy;
+            cycleEnergy = IsCycleSwitchActive ? InvertEnergy(cycleEnergy) : cycleEnergy;
 
             var energy = (ENineStarKiEnergy)cycleEnergy;
 

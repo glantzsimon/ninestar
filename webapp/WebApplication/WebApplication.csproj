@@ -1761,7 +1761,6 @@
     <Content Include="Views\PersonalChart\_ProfileHeaderInfo.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileJs.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileAdultChildRelationship.cshtml" />
-    <Content Include="Views\PersonalChart\_ProfileSexualityRelationTypeSummary.cshtml" />
     <Content Include="Views\Predictions\_LunarCycle.cshtml" />
     <Content Include="Views\Astrology\_MoonPhaseLarge.cshtml" />
     <Content Include="Views\Shared\Charts\_PieChart.cshtml" />

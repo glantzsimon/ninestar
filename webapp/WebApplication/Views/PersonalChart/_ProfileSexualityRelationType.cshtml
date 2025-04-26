@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Models
+﻿@using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
 @model NineStarKiModel
 
 @if (Model != null)
@@ -10,10 +11,10 @@
 
     <div class="tab-content">
         <div id="straight" class="tab-pane fade padding-top-20">
-            @Html.Raw(Model.SexualityRelationTypeDetailsStraight)
+            @Html.PanelWithSummary("", Model.SexualityRelationTypeDetailsStraight, Model.SexualityRelationTypeSummaryStraight)
         </div>
         <div id="gay" class="tab-pane fade padding-top-20">
-            @Html.Raw(Model.SexualityRelationTypeDetailsGay)
+            @Html.PanelWithSummary("", Model.SexualityRelationTypeDetailsGay, Model.SexualityRelationTypeSummaryGay)
         </div>
     </div>
 }

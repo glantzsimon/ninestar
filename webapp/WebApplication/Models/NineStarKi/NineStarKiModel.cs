@@ -823,7 +823,7 @@ namespace K9.WebApplication.Models
 
         public NineStarKiEnergy GetGlobalCycleEnergy(int cycleEnergy, ENineStarKiEnergyCycleType cycleType)
         {
-            cycleEnergy = IsCycleSwitchActive ? InvertEnergy(cycleEnergy) : cycleEnergy;
+            cycleEnergy = IsCycleSwitchActive ? GetOppositeEnergyInMagicSquare(cycleEnergy) : cycleEnergy;
 
             var energy = (ENineStarKiEnergy)cycleEnergy;
 
@@ -849,8 +849,8 @@ namespace K9.WebApplication.Models
 
         public NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, ENineStarKiEnergyCycleType cycleType, int? energyNumber = null)
         {
-            var invertCycle = (CalculationMethod == ECalculationMethod.Chinese && PersonModel.Gender.IsYin()) || IsCycleSwitchActive;
-            cycleEnergy = invertCycle ? InvertEnergy(cycleEnergy) : cycleEnergy;
+            var invertCycle = (CalculationMethod == ECalculationMethod.Chinese && PersonModel.Gender.IsYin() && !IsCycleSwitchActive) || (CalculationMethod == ECalculationMethod.Traditional && IsCycleSwitchActive) || (CalculationMethod == ECalculationMethod.Chinese && !PersonModel.Gender.IsYin() && IsCycleSwitchActive);
+            cycleEnergy = invertCycle ? GetOppositeEnergyInMagicSquare(cycleEnergy) : cycleEnergy;
             var houseOccupied = GetHouseOccupiedByNumber(cycleEnergy, energyNumber ?? GetCycleHouseEnergyNumber(cycleType));
 
             var energy = (ENineStarKiEnergy)(houseOccupied);

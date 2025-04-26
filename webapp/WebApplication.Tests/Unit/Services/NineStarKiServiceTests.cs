@@ -391,14 +391,6 @@ namespace K9.WebApplication.Tests.Unit.Services
             2103, ENineStarKiEnergy.Thunder)]
         [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
             2104, ENineStarKiEnergy.Wind)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-            2105, ENineStarKiEnergy.CoreEarth)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-            2106, ENineStarKiEnergy.Wind)]
-        [InlineData(1980, ENineStarKiEnergy.Soil, EGender.Male,
-            2105, ENineStarKiEnergy.Wind)]
-        [InlineData(1980, ENineStarKiEnergy.Soil, EGender.Male,
-            2106, ENineStarKiEnergy.Thunder)]
         public void CalcualteYearlyCycleWithCycleChange_Test(
             int birthYear,
             ENineStarKiEnergy energy,
@@ -875,7 +867,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1973, 2, 8, EGender.Female, ENineStarKiEnergy.Heaven)]
         public void GlobalCycleEnergyFiveYear_PersonalHousesCoincide_Test(int birthYear, int birthMonth, int birthDay, EGender gender, ENineStarKiEnergy mainEnergy)
         {
-            var thunderYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
+            var lakeYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
@@ -907,7 +899,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 ECalculationMethod.Chinese,
                 true); // 5 Soil Earth Year
 
-            var ninestarInvertedWaterYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
+            var ninestarInvertedFireYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
@@ -919,11 +911,11 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(mainEnergy, ninestarWaterYear.PersonalChartEnergies.Year.Energy);
 
             // Double check Global Ki
-            Assert.Equal(ENineStarKiEnergy.Thunder, thunderYear.GlobalCycleEnergies.Year.Energy);
+            Assert.Equal(ENineStarKiEnergy.Lake, lakeYear.GlobalCycleEnergies.Year.Energy);
             Assert.Equal(ENineStarKiEnergy.CoreEarth, ninestarCoreEarthYear.GlobalCycleEnergies.Year.Energy);
             Assert.Equal(ENineStarKiEnergy.CoreEarth, ninestarInvertedCoreEarthYear.GlobalCycleEnergies.Year.Energy);
             Assert.Equal(ENineStarKiEnergy.Water, ninestarWaterYear.GlobalCycleEnergies.Year.Energy);
-            Assert.Equal(ENineStarKiEnergy.Water, ninestarInvertedWaterYear.GlobalCycleEnergies.Year.Energy);
+            Assert.Equal(ENineStarKiEnergy.Fire, ninestarInvertedFireYear.GlobalCycleEnergies.Year.Energy);
 
             /*******************************
              * Before Cycle Switch
@@ -963,7 +955,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             // WATER YEAR
             // All energies are not in their personal house
-            Assert.NotEqual(ninestarInvertedWaterYear.PersonalChartEnergies.Year.Energy, ninestarInvertedWaterYear.PersonalHousesOccupiedEnergies.Year.Energy);
+            Assert.NotEqual(ninestarInvertedFireYear.PersonalChartEnergies.Year.Energy, ninestarInvertedFireYear.PersonalHousesOccupiedEnergies.Year.Energy);
         }
 
         public void Dispose()

@@ -48,28 +48,28 @@
             </ul>
             <div class="tab-content">
                 <div id="fundamental-compatibility" class="tab-pane fade in active">
-                    @using (Html.PayWall(ESection.Compatibility, Model))
+                    @using (Html.PayWall(ESection.Compatibility, Model, () => Model?.IsComplementary))
                     {
                         @Html.Panel(Dictionary.FundamentalElementsAnalysis, Html.Partial("_CompatibilityFundamentalElements").ToString())
                     }
                 </div>
 
                 <div id="character-compatibility" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model))
+                    @using (Html.PayWall(ESection.Compatibility, Model, () => Model?.IsComplementary))
                     {
                         @Html.Panel(Dictionary.CharacterElementsAnalysis, Html.Partial("_CompatibilityCharacterElements").ToString())
                     }
                 </div>
 
                 <div id="all-elements-compatibility" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model))
+                    @using (Html.PayWall(ESection.Compatibility, Model, () => Model?.IsComplementary))
                     {
                         @Html.Panel(Dictionary.AllElementsBreakdown, Html.Partial("_CompatibilityElementsBreakdown").ToString())
                     }
                 </div>
 
                 <div id="yin-yang-compatibility" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model))
+                    @using (Html.PayWall(ESection.Compatibility, Model, () => Model?.IsComplementary))
                     {
                         @Html.Panel(Dictionary.YinAndYangAnalysis, K9.SharedLibrary.Helpers.TemplateParser.Parse(Html.Partial("_CompatibilityYinYang").ToString(), new
                         {
@@ -81,7 +81,7 @@
                 </div>
 
                 <div id="birth-month-compatibility" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model))
+                    @using (Html.PayWall(ESection.Compatibility, Model, () => Model?.IsComplementary))
                     {
                         @Html.Panel(Dictionary.BirthMonthAnalysis, Html.Partial("_CompatibilityBirthMonth").ToString())
                     }

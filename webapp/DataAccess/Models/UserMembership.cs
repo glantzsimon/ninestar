@@ -82,6 +82,9 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsUnlimited() => IsActive && MembershipOption.IsUnlimited;
 
+        public bool IsUnlimitedTrial() =>
+            (ComplementaryPredictionsReadingCount + ComplementaryPersonalChartReadingCount) > 0;
+
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.AccountNumberLabel)]
         public string AccountNumber => GetAccountNumber();

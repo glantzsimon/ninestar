@@ -7,7 +7,7 @@
 @{
     var colOffset = Model.IsHideSexualChemistry ? "col-sm-offset-2" : "";
     var membership = this.GetActiveUserMembership();
-    var isUnlimited = (membership?.MembershipOption?.IsUnlimited ?? false) || SessionHelper.CurrentUserIsAdmin();
+    var isUnlimited = (membership?.MembershipOption?.IsUnlimited ?? false) || SessionHelper.CurrentUserIsAdmin() || Model?.IsComplementary == true;
 }
 
 <div class="well">

@@ -49,7 +49,7 @@
             </div>
 
             <div id="strengthsandchallenges" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Compatibility, Model))
+                @using (Html.PayWall(ESection.Compatibility, Model, () => Model?.IsComplementary))
                 {
                     @Html.Panel(Dictionary.StrengthsWeaknesses, Model.FundamentalEnergiesCompatibility)
                 }
@@ -68,7 +68,7 @@
             @if (!Model.IsHideSexualChemistry)
             {
                 <div id="sexuality" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Compatibility, Model))
+                    @using (Html.PayWall(ESection.Compatibility, Model, () => Model?.IsComplementary))
                     {
                         @Html.Panel(Dictionary.SexualChemistryDetails, Model.SexualChemistryDetails)
                     }

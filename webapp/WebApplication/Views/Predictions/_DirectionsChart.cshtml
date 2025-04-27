@@ -9,7 +9,7 @@
 
 @{
     var membership = this.GetActiveUserMembership();
-    var isUnlimited = membership != null && membership.IsUnlimited() || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
+    var isUnlimited = membership != null && membership.IsUnlimited() || Model.IsComplementary || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
     var displayPreference = K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
     var showDirectionsStyle = displayPreference == (int)EEnergyDisplay.MagicSquare && K9.WebApplication.Helpers.SessionHelper.GetShowDirections() ? "" :
     "display: none;";

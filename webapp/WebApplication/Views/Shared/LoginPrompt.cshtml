@@ -1,7 +1,13 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @model string
 
-@Html.Alert(EAlertType.Locked, Dictionary.LogIntoYourAccountToView)
+<div class="text-center">
+    <img class="margin-bottom-20" loading="lazy" alt="locked" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/locked.png" />
+
+    <h2 class="margin-top-0 margin-bottom-0 alert-message">
+        <strong>@MvcHtmlString.Create(Dictionary.LogIntoYourAccountToView)</strong>
+    </h2>
+</div>
 
 <br />
 

@@ -14,7 +14,12 @@
         </div>
     </div>
 
-    <br/>
+    <br />
     @Html.Partial("_CompatibilityGauges")
+
+    @using (Html.PayWall(ESection.Compatibility, Model, () => Model?.IsComplementary))
+    {
+        <span></span>
+    }
 </div>
 

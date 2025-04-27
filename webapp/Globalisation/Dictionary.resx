@@ -1106,7 +1106,7 @@
     <value>articles\en-gb\compatibilitymetadescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="LogIntoYourAccountToView" xml:space="preserve">
-    <value>Please log in or create an account to view more.</value>
+    <value>Please sign in or create an account to view more.</value>
   </data>
   <data name="OverviewLabel" xml:space="preserve">
     <value>Overview</value>

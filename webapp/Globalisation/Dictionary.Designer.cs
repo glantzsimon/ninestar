@@ -13008,7 +13008,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please log in or create an account to view more..
+        ///   Looks up a localized string similar to Please sign in or create an account to view more..
         /// </summary>
         public static string LogIntoYourAccountToView {
             get {

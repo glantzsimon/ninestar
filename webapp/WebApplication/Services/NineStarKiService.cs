@@ -216,7 +216,7 @@ namespace K9.WebApplication.Services
         public CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2,
             bool isHideSexuality, ECalculationMethod calculationMethod = ECalculationMethod.Chinese)
         {
-            var cacheKey = $"CalculateCompatibilityFromModel_{personModel1.DateOfBirth.ToString()}_{personModel1.Name}_{personModel1.Gender}_{personModel2.DateOfBirth.ToString()}_{personModel2.Name}_{personModel2.Gender}_{calculationMethod}";
+            var cacheKey = $"CalculateCompatibilityFromModel_{personModel1.DateOfBirth.ToString()}_{personModel1.TimeOfBirth.ToString()}_{personModel1.BirthTimeZoneId}_{personModel1.Name}_{personModel1.Gender}_{personModel2.DateOfBirth.ToString()}_{personModel2.TimeOfBirth.ToString()}_{personModel2.BirthTimeZoneId}_{personModel2.Name}_{personModel2.Gender}_{calculationMethod}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true, false, null, calculationMethod);

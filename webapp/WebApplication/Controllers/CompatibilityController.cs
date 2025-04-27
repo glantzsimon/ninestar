@@ -47,6 +47,10 @@ namespace K9.WebApplication.Controllers
                                 My.MembershipService.UseComplementaryCompatibilityReading(Current.UserId);
                                 processedModel.IsComplementary = true;
                             }
+                            else
+                            {
+                                processedModel.IsComplementary = false;
+                            }
                         }
                     }
 

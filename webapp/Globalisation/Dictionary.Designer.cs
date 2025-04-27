@@ -16480,6 +16480,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of Karmic Numerology Readings Left.
+        /// </summary>
+        public static string NumberOfKarmicReadingsLeft {
+            get {
+                return ResourceManager.GetString("NumberOfKarmicReadingsLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number Of Predictions.
         /// </summary>
         public static string NumberOfPredictionsReadingsLabel {
@@ -19125,11 +19134,16 @@ namespace K9.Globalisation {
         ///    Both Solar and Lunar Energies Are Yang and Therefore Aligned With Gender
         ///&lt;/h4&gt;
         ///
-        ///&lt;h5&gt;
-        ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    As both the Lunar and Solar Energies are in line with gender, men with this combination tend to feel naturally comfortable with their masculine identity and expression. This often gives rise to confidence in self-presentation and an ease in both platonic and romantic relationships. Th [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;Gifts&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Confidence in masculine identity and natural ease in self-expression.&lt;/li&gt;
+        ///    &lt;li&gt;Strong, steady sexual energy and robust reproductive health.&lt;/li&gt;
+        ///    &lt;li&gt;Comfort in forming platonic and romantic relationships across genders.&lt;/li&gt;
+        ///    &lt;li&gt;Willingness to wait for the right partner, often accompanied by personal growth during periods of celibacy.&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenges&lt;/h5&gt;
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_match_male_summary {
             get {

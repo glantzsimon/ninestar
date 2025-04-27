@@ -163,6 +163,7 @@
             public const string NumberOfCompatibilityReadingsLabel = "NumberOfCompatibilityReadingsLabel";
             public const string NumberOfProfileReadingsLeft = "NumberOfProfileReadingsLeft";
             public const string NumberOfRelationshipCompatibilityReadingsLeft = "NumberOfRelationshipCompatibilityReadingsLeft";
+            public const string NumberOfKarmicReadingsLeft = "NumberOfKarmicReadingsLeft";
             public const string NumberOfCreditsLeft = "NumberOfCreditsLeft";
             public const string UserDataLabel = "UserData";
             public const string PromotionLabel = "PromotionLabel";

@@ -62,7 +62,6 @@ namespace K9.WebApplication.Models
         /// <summary>
         /// Free accounts get 3 complementary readings of each type. This Flag is true when a complementary reading is used
         /// </summary>
-        [NotMapped]
         public bool IsComplementary { get; set; }
 
         #endregion

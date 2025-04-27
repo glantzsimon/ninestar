@@ -130,7 +130,8 @@ namespace K9.WebApplication.Controllers
             _userMembershipsRepository.GetQuery($"UPDATE [{nameof(UserMembership)}] " +
                                                 $"SET [{nameof(UserMembership.ComplementaryPersonalChartReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
                                                 $"[{nameof(UserMembership.ComplementaryPredictionsReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
-                                                $"[{nameof(UserMembership.ComplementaryCompatibilityReadingCount)}] = {UserMembership.TotalFreeReadings}");
+                                                $"[{nameof(UserMembership.ComplementaryCompatibilityReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
+                                                $"[{nameof(UserMembership.ComplementaryKarmicReadingCount)}] = {UserMembership.TotalFreeReadings}");
         }
     }
 }

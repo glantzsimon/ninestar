@@ -69,6 +69,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfCompatibilityReadingsLabel)]
         public int ComplementaryCompatibilityReadingCount { get; set; } = TotalFreeReadings;
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfKarmicReadingsLeft)]
+        public int ComplementaryKarmicReadingCount { get; set; } = TotalFreeReadings;
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsActiveLabel)]
         public bool IsActive => (DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) || MembershipOption?.SubscriptionType == MembershipOption.ESubscriptionType.LifeTimePlatinum) && !IsDeactivated;
 

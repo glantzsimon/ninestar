@@ -554,20 +554,6 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RegisterDetails(RegisterViewModel model)
         {
-            ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
-
-            if (!Helpers.Environment.IsDebug)
-            {
-                var encodedResponse = Request.Form[RecaptchaResult.ResponseFormVariable];
-                var isCaptchaValid = _recaptchaService.Validate(encodedResponse);
-
-                if (!isCaptchaValid)
-                {
-                    ModelState.AddModelError("", Globalisation.Dictionary.InvalidRecaptcha);
-                    return View(model);
-                }
-            }
-
             if (Authentication.IsAuthenticated)
             {
                 Authentication.Logout();

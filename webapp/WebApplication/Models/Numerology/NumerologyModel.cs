@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Web.Script.Serialization;
 
 namespace K9.WebApplication.Models
 {
@@ -60,6 +62,15 @@ namespace K9.WebApplication.Models
         public NumerologyForecast DailyForecast { get; set; }
 
         public bool IsProcessed { get; set; }
+
+        /// <summary>
+        /// Free accounts get 3 complementary readings of each type. This Flag is true when a complementary reading is used
+        /// </summary>
+        [NotMapped]
+        public bool IsComplementary { get; set; }
+
+        [ScriptIgnore]
+        public bool IsMyProfile { get; set; } = false;
 
         public List<DharmaNumerologyCodeModel> DharmaCodesFoundation => DharmaCodes.Where(e => e.Age < 27).ToList();
 

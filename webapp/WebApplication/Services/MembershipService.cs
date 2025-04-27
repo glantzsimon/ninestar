@@ -361,6 +361,17 @@ namespace K9.WebApplication.Services
             _userMembershipRepository.Update(userMemberhip);
         }
 
+        public void UseComplementaryKarmicReading(int userId)
+        {
+            var userMemberhip = GetActiveUserMembership(userId);
+            if (userMemberhip.ComplementaryKarmicReadingCount <= 0)
+            {
+                throw new Exception("There are no complementary karmic numerology readings remaining.");
+            }
+            userMemberhip.ComplementaryKarmicReadingCount -= 1;
+            _userMembershipRepository.Update(userMemberhip);
+        }
+
         public void AssignMembershipToUser(int membershipOptionId, int userId, Promotion promotion = null)
         {
             try
@@ -417,7 +428,11 @@ namespace K9.WebApplication.Services
                     MembershipOptionId = membershipOption.Id,
                     StartsOn = DateTime.Today,
                     EndsOn = DateTime.MaxValue,
-                    IsAutoRenew = true
+                    IsAutoRenew = true,
+                    ComplementaryPredictionsReadingCount = UserMembership.TotalFreeReadings,
+                    ComplementaryPersonalChartReadingCount = UserMembership.TotalFreeReadings,
+                    ComplementaryCompatibilityReadingCount = UserMembership.TotalFreeReadings,
+                    ComplementaryKarmicReadingCount = UserMembership.TotalFreeReadings
                 });
             }
             catch (Exception ex)

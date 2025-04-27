@@ -494,6 +494,10 @@
     <Compile Include="Migrations\202504250533139_AddComplementaryReadings.designer.cs">
       <DependentUpon>202504250533139_AddComplementaryReadings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504270328534_FreeKarmicNumerologyReadings.cs" />
+    <Compile Include="Migrations\202504270328534_FreeKarmicNumerologyReadings.designer.cs">
+      <DependentUpon>202504270328534_FreeKarmicNumerologyReadings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BaseLikeable.cs" />
     <Compile Include="Models\Like.cs" />
     <Compile Include="Models\ArticleComment.cs" />
@@ -721,6 +725,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504250533139_AddComplementaryReadings.resx">
       <DependentUpon>202504250533139_AddComplementaryReadings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504270328534_FreeKarmicNumerologyReadings.resx">
+      <DependentUpon>202504270328534_FreeKarmicNumerologyReadings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

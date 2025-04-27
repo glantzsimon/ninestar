@@ -36,6 +36,20 @@ namespace K9.WebApplication.Controllers
                 {
                     var processedModel = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel, model.IsHideSexualChemistry, model.NineStarKiModel1.CalculationMethod);
 
+                    if (Current.UserId > 0)
+                    {
+                        var user = My.UserService.Find(Current.UserId);
+                        var myAccount = My.AccountService.GetAccount(Current.UserId);
+                        if (myAccount.Membership.MembershipOption.IsFree)
+                        {
+                            if (myAccount.Membership.ComplementaryCompatibilityReadingCount > 0)
+                            {
+                                My.MembershipService.UseComplementaryCompatibilityReading(Current.UserId);
+                                model.IsComplementary = true;
+                            }
+                        }
+                    }
+
                     return View("Index", processedModel);
                 }
             }

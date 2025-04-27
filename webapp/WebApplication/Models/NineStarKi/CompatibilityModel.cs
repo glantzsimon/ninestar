@@ -90,6 +90,11 @@ namespace K9.WebApplication.Models
         [ScriptIgnore]
         public bool IsProcessed { get; set; }
 
+        /// <summary>
+        /// Free accounts get 3 complementary readings of each type. This Flag is true when a complementary reading is used
+        /// </summary>
+        public bool IsComplementary { get; set; }
+
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DoNotDisplaySexualityLabel)]
         public bool IsHideSexualChemistry { get; set; }

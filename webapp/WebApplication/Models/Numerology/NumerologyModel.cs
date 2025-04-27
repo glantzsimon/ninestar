@@ -68,10 +68,7 @@ namespace K9.WebApplication.Models
         /// </summary>
         [NotMapped]
         public bool IsComplementary { get; set; }
-
-        [ScriptIgnore]
-        public bool IsMyProfile { get; set; } = false;
-
+        
         public List<DharmaNumerologyCodeModel> DharmaCodesFoundation => DharmaCodes.Where(e => e.Age < 27).ToList();
 
         public List<DharmaNumerologyCodeModel> DharmaCodesContribution => DharmaCodes.Where(e => e.Age >= 27 && e.Age < 54).ToList();

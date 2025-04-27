@@ -37,24 +37,20 @@ namespace K9.WebApplication.Controllers
             if (model.PersonModel != null)
             {
                 nModel = _numerologyService.Calculate(new NumerologyModel(model.PersonModel));
-                
+
                 if (Current.UserId > 0)
                 {
                     var user = My.UserService.Find(Current.UserId);
-                    nModel.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth && model.PersonModel.TimeOfBirth == user.BirthDate.TimeOfDay && user.Gender == model.PersonModel.Gender;
-
-                    if (!nModel.IsMyProfile)
+                    var myAccount = My.AccountService.GetAccount(Current.UserId);
+                    if (myAccount.Membership.MembershipOption.IsFree)
                     {
-                        var myAccount = My.AccountService.GetAccount(Current.UserId);
-                        if (myAccount.Membership.MembershipOption.IsFree)
+                        if (myAccount.Membership.ComplementaryKarmicReadingCount > 0)
                         {
-                            if (myAccount.Membership.ComplementaryKarmicReadingCount > 0)
-                            {
-                                My.MembershipService.UseComplementaryKarmicReading(Current.UserId);
-                                nModel.IsComplementary = true;
-                            }
+                            My.MembershipService.UseComplementaryKarmicReading(Current.UserId);
+                            nModel.IsComplementary = true;
                         }
                     }
+
                 }
             }
             else
@@ -71,6 +67,20 @@ namespace K9.WebApplication.Controllers
             if (model.PersonModel != null)
             {
                 model = _numerologyService.Calculate(model);
+
+                if (Current.UserId > 0)
+                {
+                    var user = My.UserService.Find(Current.UserId);
+                    var myAccount = My.AccountService.GetAccount(Current.UserId);
+                    if (myAccount.Membership.MembershipOption.IsFree)
+                    {
+                        if (myAccount.Membership.ComplementaryKarmicReadingCount > 0)
+                        {
+                            My.MembershipService.UseComplementaryKarmicReading(Current.UserId);
+                            model.IsComplementary = true;
+                        }
+                    }
+                }
             }
             return View("Index", model);
         }

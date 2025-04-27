@@ -37,7 +37,7 @@
 
             <div class="tab-content">
                 <div id="emergence" class="tab-pane fade padding-top-10 @Model.Emergence.IsActiveCssPaneClass">
-                    @using (Html.PayWall(ESection.Numerology, Model))
+                    @using (Html.PayWall(ESection.Numerology, Model, () => Model?.IsComplementary))
                     {
                         <div class="device-only">
                             @Html.Panel(Model.EmergenceTitle, Html.Partial("_NumerologyCodeDisplay", Model.Emergence).ToString())
@@ -49,7 +49,7 @@
                 </div>
 
                 <div id="actualisation" class="tab-pane fade padding-top-10 @Model.Actualisation.IsActiveCssPaneClass">
-                    @using (Html.PayWall(ESection.Numerology, Model))
+                    @using (Html.PayWall(ESection.Numerology, Model, () => Model?.IsComplementary))
                     {
                         <div class="device-only">
                             @Html.Panel(Model.ActualisationTitle, Html.Partial("_NumerologyCodeDisplay", Model.Actualisation).ToString())

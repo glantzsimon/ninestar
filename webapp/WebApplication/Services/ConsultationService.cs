@@ -85,7 +85,7 @@ namespace K9.WebApplication.Services
             // Starting from tomorrow, user's local time
             var consultation = consultationId.HasValue && consultationId > 0 ? Find(consultationId.Value) : null;
             var slots = consultationId.HasValue && consultationId > 0
-                ? _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek && e.ConsultationDuration == consultation.ConsultationDuration
+                ? _slotRepository.Find(e => e.StartsOn >= DateTime.Today && e.StartsOn <= endOfWeek && e.ConsultationDuration == consultation.ConsultationDuration
                                             && (!e.IsTaken)).ToList()
                 : SessionHelper.CurrentUserIsAdmin()
                     ? _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek).ToList()

@@ -12,8 +12,8 @@ namespace K9.WebApplication.ViewModels
 
         public int? Id => Slot?.Id;
         public string Title => Slot.IsTaken ? UserConsultation?.User.FullName : IsFree ? Dictionary.Available : Dictionary.Unavailable;
-        public DateTime? StartsOn => Slot?.StartsOnLocalTime.Value.DateTime;
-        public DateTime? EndsOn => Slot?.EndsOnLocalTime.Value.DateTime;
+        public DateTimeOffset? StartsOn => Slot?.StartsOnLocalTime;
+        public DateTimeOffset? EndsOn => Slot?.EndsOnLocalTime;
         public bool IsTaken => Slot.IsTaken;
         public bool IsFree => !IsTaken && StartsOn >= DateTime.UtcNow.ToLocalTime();
         public string Name => Slot.IsTaken ? UserConsultation?.User.FullName ?? "" : "";

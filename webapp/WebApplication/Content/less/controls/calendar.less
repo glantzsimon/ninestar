@@ -1,0 +1,206 @@
+﻿@import "../config/colours.less";
+
+@slot-height: 60px;
+@slot-width: 60px;
+@half-slot: (@slot-height / 2);
+@border-color: #ddd;
+@bg-header: #fafafa;
+@bg-body: #fff;
+@free-color: #4caf50;
+@taken-color: #f44336;
+@text-color: #333;
+@font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+@btn-size: 32px;
+@btn-bg: #fff;
+@btn-border: rgba(0,0,0,0.1);
+@btn-shadow: rgba(0,0,0,0.1);
+@btn-hover: rgba(0,0,0,0.15);
+
+#calendar {
+    font-family: @font-family;
+    color: @text-color;
+    background: @bg-body;
+    border: 1px solid @border-color;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+
+    .calendar-header-wrapper {
+        position: relative;
+        padding-top: 45px;
+        background: @bg-header;
+
+        .calendar-nav {
+            position: absolute;
+            top: 6px; // sits flush with the top of the wrapper’s padded area
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            z-index: 10;
+
+            .nav-btn {
+                /* you already have your hover effects etc. here */
+                margin: 0 4px;
+            }
+        }
+
+        .nav-btn {
+            width: @btn-size;
+            height: @btn-size;
+            margin-left: 6px;
+            padding: 0;
+            border: 1px solid @btn-border;
+            background: @btn-bg;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px @btn-shadow;
+            cursor: pointer;
+            transition: background .2s, box-shadow .2s;
+            z-index: 1000;
+
+            .glyphicon {
+                line-height: @btn-size;
+                font-size: 14px;
+                color: #333;
+            }
+
+            &:hover {
+                background: lighten(@btn-bg, 5%);
+                box-shadow: 0 4px 8px @btn-hover;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 2px rgba(100,149,237,0.5);
+            }
+        }
+    }
+
+    .calendar-header {
+        display: flex;
+        background: @bg-header;
+        border-top: 2px solid @border-color;
+        border-bottom: 2px solid @border-color;
+
+        .time-header {
+            width: @slot-width;
+        }
+
+        .day-headers {
+            flex: 1;
+            display: flex;
+
+            .day-header {
+                flex: 1;
+                text-align: center;
+                padding: 12px 0;
+                font-weight: 600;
+                border-left: 1px solid @border-color;
+            }
+
+            .day-date {
+                font-weight: normal;
+                font-size: 0.8em;
+                color: @beautiful-grey;
+            }
+        }
+    }
+
+    .calendar-body {
+        display: flex;
+        flex: 1;
+        position: relative;
+
+        .time-column {
+            width: @slot-width;
+            background: lighten(@bg-body, 2%);
+
+            .time-cell {
+                height: @slot-height;
+                line-height: normal;
+                padding: 4px 8px 0 0;
+                text-align: right;
+                border-top: 1px solid @border-color;
+                color: #666;
+                font-size: 12px;
+            }
+        }
+
+        .day-columns {
+            flex: 1;
+            display: flex;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                // draw a 1px dotted line at 30px, then repeat every 60px
+                background-image: repeating-linear-gradient( to bottom, transparent 0, transparent (@half-slot - 0.5px), rgba(@border-color, 0.4) (@half-slot - 0.5px), transparent (@half-slot + 0.5px), transparent @slot-height );
+                background-size: 100% @slot-height;
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            .day-column {
+                flex: 1;
+                position: relative;
+                border-left: 1px solid @border-color;
+
+                .slot {
+                    height: @slot-height;
+                    border-bottom: 1px solid @border-color;
+                    position: relative;
+                    transition: background .15s;
+
+                    &:hover {
+                        background: fade(@text-color, 5%);
+                    }
+                }
+            }
+        }
+
+        .time-column .time-cell:first-child,
+        .day-column .slot:first-child {
+            border-top: none;
+        }
+
+        .time-column .time-cell:first-child {
+            height: (@slot-height - 1);
+        }
+
+        .selection-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: fade(@free-color, 30%);
+            z-index: 5;
+        }
+    }
+
+    .event-block {
+        position: absolute;
+        left: 4px;
+        right: 4px;
+        border-radius: 4px;
+        padding: 4px 6px;
+        font-size: 12px;
+        line-height: 1.2;
+        color: #fff;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        transition: transform .15s, box-shadow .15s;
+        background: @free-color;
+
+        &.taken {
+            background: @taken-color;
+        }
+
+        &:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+    }
+}

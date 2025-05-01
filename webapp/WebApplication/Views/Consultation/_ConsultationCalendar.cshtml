@@ -1,0 +1,287 @@
+﻿@using System.Globalization
+@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Options
+
+@{
+    var dayIndex = 0;
+}
+
+<div id="calendar">
+    <div class="calendar-header-wrapper">
+        <div class="calendar-nav">
+            <button id="prev-week" class="nav-btn ripple">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </button>
+            <button id="next-week" class="nav-btn ripple">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+        </div>
+
+        <div class="calendar-header">
+            <div class="time-header"></div>
+            <div class="day-headers">
+                @foreach (var day in CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames)
+                {
+                    <div class="day-header">
+                        <div class="day-name">@day</div>
+                        <div class="day-date" data-day-index="@dayIndex"></div>
+                    </div>
+
+                    dayIndex++;
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="calendar-body">
+        <div class="time-column">
+            @for (int hour = 10; hour <= 20; hour++)
+            {
+                <div class="time-cell">@($"{hour:00}:00")</div>
+            }
+        </div>
+
+        <div class="day-columns">
+            @for (int d = 0; d < 7; d++)
+            {
+                <div class="day-column" data-day-index="@d">
+                    @for (int hour = 10; hour < 20; hour++)
+                    {
+                        <div class="slot" data-day="@d" data-hour="@hour"></div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+
+$(function () {
+    const $calendar = $('#calendar'),
+        slotHeight     = 60;
+    let currentWeekStartIso;
+
+    function loadSlots(date) {
+        $.fn.displaySpinner($calendar, true);
+
+        currentWeekStartIso = date;
+        renderHeaderDates(date);
+        $.getJSON('@Url.Action("Calendar")', { date: date })
+            .done(renderSlots);
+    }
+
+    $('#prev-week').on('click', function() {
+        const d = new Date(currentWeekStartIso);
+        d.setDate(d.getDate() - 7);
+        loadSlots(d.toISOString());
+    });
+
+    $('#next-week').on('click', function() {
+        const d = new Date(currentWeekStartIso);
+        d.setDate(d.getDate() + 7);
+        loadSlots(d.toISOString());
+    });
+
+    function renderSlots(slots) {
+        const $body      = $('#calendar .calendar-body'),
+            slotWidth  = 60,
+            totalWidth = $body.width() - slotWidth,
+            colWidth   = totalWidth / 7;
+
+        $body.find('.event-block').remove();
+
+        slots.forEach(s => {
+            const start      = new Date(+s.start.match(/\d+/)[0]),
+                end        = new Date(+s.end.match(/\d+/)[0]),
+                day        = start.getDay(),
+                // get full fractional hours since 10:00
+                minutes    = start.getMinutes(),
+                hoursSince = (start.getHours() - 10) + (minutes / 60),
+                dur        = (end - start) / 3600000,
+
+                leftPx = slotWidth + day * colWidth + 4,
+                topPx  = hoursSince * slotHeight,
+                hPx    = dur * slotHeight,
+                wPx    = colWidth - 8;
+
+            $('<div class="event-block">')
+                .addClass(s.isTaken ? 'taken' : 'available')
+                .attr('data-id', s.id)
+                .css({ left: leftPx, top: topPx, width: wPx, height: hPx })
+                .text(s.title)
+                .appendTo($body);
+        });
+
+        enableDragging();
+
+        $.fn.hideSpinner($("#calendar"));
+    }
+
+    function renderHeaderDates(weekStartIso) {
+        // parse your Monday / weekStart
+        const start = new Date(weekStartIso);
+
+        $('.day-date').each(function() {
+            const idx = parseInt($(this).data('day-index'), 10),
+                d   = new Date(start);
+            d.setDate(start.getDate() + idx);
+
+            // format e.g. “Apr 12”
+            const month = d.toLocaleString('default', { month: 'short' }),
+                day   = d.getDate();
+
+            $(this).text(`${month} ${day}`);
+        });
+    }
+
+    function enableDragging() {
+        const container = document.querySelector('#calendar .calendar-body'),
+              slotH      = slotHeight,
+              halfH      = slotH / 2,
+              slotW      = 60,
+              totalW     = container.clientWidth - slotW,
+              colW       = totalW / 7;
+
+        // remove previous handlers
+        container.querySelectorAll('.event-block.available').forEach(el => {
+            el.onmousedown = null;
+        });
+
+        // attach new drag logic
+        container.querySelectorAll('.event-block.available').forEach(el => {
+            el.style.cursor = 'grab';
+            el.addEventListener('mousedown', function (e) {
+                e.preventDefault();
+                el.style.cursor = 'grabbing';
+
+                const startX   = e.clientX,
+                      startY   = e.clientY,
+                      rect     = el.getBoundingClientRect(),
+                      bodyRect = container.getBoundingClientRect(),
+                      origL    = rect.left - bodyRect.left,
+                      origT    = rect.top  - bodyRect.top;
+
+                function onMouseMove(e) {
+                    let dx   = e.clientX - startX,
+                        dy   = e.clientY - startY,
+                        newL = Math.max(slotW, Math.min(origL + dx, slotW + 7 * colW - rect.width - 4)),
+                        newT = Math.max(0, Math.min(origT + dy, container.clientHeight - rect.height));
+                    el.style.left = newL + 'px';
+                    el.style.top  = newT + 'px';
+                }
+
+                function onMouseUp() {
+                    document.removeEventListener('mousemove', onMouseMove);
+                    document.removeEventListener('mouseup',   onMouseUp);
+                    el.style.cursor = 'grab';
+
+                    // 1) Vertical snap → units of half-hours
+                    const finalT    = parseFloat(el.style.top),
+                        hourUnits = Math.floor(finalT / slotH),
+                        offset    = finalT - hourUnits * slotH,
+                        units     = offset <= slotH * 0.25
+                            ? hourUnits * 2
+                            : offset <= slotH * 0.75
+                            ? hourUnits * 2 + 1
+                            : (hourUnits + 1) * 2;
+
+                    // Apply snapped top
+                    const snappedT = units * halfH;
+                    el.style.top = snappedT + 'px';
+
+                    // 2) Compute dayIndex from left
+                    const finalL   = parseFloat(el.style.left),
+                        relL     = finalL - slotW - 4,           // remove left margin
+                        rawDay   = relL / colW,
+                        dayIndex = Math.min(6, Math.max(0, Math.round(rawDay)));
+
+                    // 3) Derive hour/minute
+                    const startDecimal = 10 + units * 0.5,
+                        hour         = Math.floor(startDecimal),
+                        minute       = (units % 2 === 0 ? 0 : 30);
+
+                    // 4) Send full datetime to server
+                    updateSlot(
+                        el.getAttribute('data-id'),
+                        dayIndex,
+                        hour,
+                        minute
+                    );
+                }
+
+                document.addEventListener('mousemove', onMouseMove);
+                document.addEventListener('mouseup',   onMouseUp);
+            });
+        });
+    }
+
+    function updateSlot(id, dayIndex, hour, minute, duration) {
+        const weekStart = new Date(currentWeekStartIso),
+              slotDate  = new Date(weekStart);
+
+        slotDate.setDate(slotDate.getDate() + (dayIndex - 1));
+        slotDate.setHours(hour, minute, 0, 0);
+
+        $.fn.showToast("dateTime: " + slotDate.toISOString());
+
+        const data = {
+            id: id,
+            startDateTime: slotDate.toISOString()
+        };
+
+        $.ajax({
+            url: '@Url.Action("UpdateSlot")',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data)
+        }).always(function () {
+            loadSlots(currentWeekStartIso);
+        });
+    }
+
+    var isSelecting = false, startCell, $overlay;
+    $('.calendar-body').on('mousedown', '.time-slot.available', function (e) {
+        isSelecting = true;
+        startCell   = $(this);
+        $overlay    = $('<div class="selection-overlay">').appendTo(this);
+    });
+
+    $('.calendar-body').on('mousemove', function (e) {
+        if (!isSelecting) return;
+        var $hover  = $(e.target).closest('.time-slot.available'),
+            startHr = startCell.data('hour'),
+            currHr  = $hover.data('hour'),
+            diff    = currHr - startHr;
+        $overlay.css('height', (diff + 1) * slotHeight);
+    });
+
+    $(document).on('mouseup', function (e) {
+        if (!isSelecting) return;
+        isSelecting = false;
+        var dayIndex = startCell.data('day'),
+            startHr  = startCell.data('hour'),
+            endHr    = startHr + Math.round($overlay.height() / slotHeight);
+
+        $.ajax({
+            url: '/Calendar/CreateSlot',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                dayIndex:  dayIndex,
+                startHour: startHr,
+                duration:  endHr - startHr
+            })
+        }).always(function () {
+            loadSlots(currentWeekStartIso);
+        });
+        $overlay.remove();
+    });
+
+    // initial load (Monday of this week)
+    window.setTimeout(function() {
+        loadSlots(new Date().toISOString());
+    }, 500);
+});
+
+</script>

@@ -6725,6 +6725,9 @@
   <data name="YouLikeThis" xml:space="preserve">
     <value>You like this</value>
   </data>
+  <data name="Available" xml:space="preserve">
+    <value>Available</value>
+  </data>
   <data name="NumberOfKarmicReadingsLeft" xml:space="preserve">
     <value>Number of Karmic Numerology Readings Left</value>
   </data>

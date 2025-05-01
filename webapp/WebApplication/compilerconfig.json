@@ -322,6 +322,13 @@
     }
   },
   {
+    "inputFile": "Content/less/controls/calendar.less",
+    "outputFile": "Content/controls/calendar.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/controls/carousel.less",
     "outputFile": "Content/controls/carousel.css",
     "options": {

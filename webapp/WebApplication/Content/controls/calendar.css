@@ -1,0 +1,161 @@
+﻿#calendar {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+#calendar .calendar-header-wrapper {
+  position: relative;
+  padding-top: 45px;
+  background: #fafafa;
+}
+#calendar .calendar-header-wrapper .calendar-nav {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 10;
+}
+#calendar .calendar-header-wrapper .calendar-nav .nav-btn {
+  /* you already have your hover effects etc. here */
+  margin: 0 4px;
+}
+#calendar .calendar-header-wrapper .nav-btn {
+  width: 32px;
+  height: 32px;
+  margin-left: 6px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  z-index: 1000;
+}
+#calendar .calendar-header-wrapper .nav-btn .glyphicon {
+  line-height: 32px;
+  font-size: 14px;
+  color: #333;
+}
+#calendar .calendar-header-wrapper .nav-btn:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+#calendar .calendar-header-wrapper .nav-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(100, 149, 237, 0.5);
+}
+#calendar .calendar-header {
+  display: flex;
+  background: #fafafa;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+}
+#calendar .calendar-header .time-header {
+  width: 60px;
+}
+#calendar .calendar-header .day-headers {
+  flex: 1;
+  display: flex;
+}
+#calendar .calendar-header .day-headers .day-header {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 600;
+  border-left: 1px solid #ddd;
+}
+#calendar .calendar-header .day-headers .day-date {
+  font-weight: normal;
+  font-size: 0.8em;
+  color: #666;
+}
+#calendar .calendar-body {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+#calendar .calendar-body .time-column {
+  width: 60px;
+  background: #ffffff;
+}
+#calendar .calendar-body .time-column .time-cell {
+  height: 60px;
+  line-height: normal;
+  padding: 4px 8px 0 0;
+  text-align: right;
+  border-top: 1px solid #ddd;
+  color: #666;
+  font-size: 12px;
+}
+#calendar .calendar-body .day-columns {
+  flex: 1;
+  display: flex;
+}
+#calendar .calendar-body .day-columns::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 29.5px, rgba(221, 221, 221, 0.4) 29.5px, transparent 30.5px, transparent 60px);
+  background-size: 100% 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+#calendar .calendar-body .day-columns .day-column {
+  flex: 1;
+  position: relative;
+  border-left: 1px solid #ddd;
+}
+#calendar .calendar-body .day-columns .day-column .slot {
+  height: 60px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  transition: background 0.15s;
+}
+#calendar .calendar-body .day-columns .day-column .slot:hover {
+  background: rgba(51, 51, 51, 0.05);
+}
+#calendar .calendar-body .time-column .time-cell:first-child,
+#calendar .calendar-body .day-column .slot:first-child {
+  border-top: none;
+}
+#calendar .calendar-body .time-column .time-cell:first-child {
+  height: 59px;
+}
+#calendar .calendar-body .selection-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: rgba(76, 175, 80, 0.3);
+  z-index: 5;
+}
+#calendar .event-block {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s, box-shadow 0.15s;
+  background: #4caf50;
+}
+#calendar .event-block.taken {
+  background: #f44336;
+}
+#calendar .event-block:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

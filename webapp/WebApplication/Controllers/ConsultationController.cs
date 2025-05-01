@@ -194,6 +194,37 @@ namespace K9.WebApplication.Controllers
             return View("", _consultationService.GetAvailableSlots());
         }
 
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        [Route("consultation/view-calendar")]
+        public ActionResult ViewCalendar()
+        {
+            return View();
+        }
+
+        [Route("consultation/calendar")]
+        public JsonResult Calendar(DateTime date)
+        {
+            var allBookings = _consultationService.GetAllSlotsAndBookings(date);
+            return Json(allBookings.Select(e => new
+            {
+                id = e.Id,
+                title = e.Title,
+                start = e.StartsOn,
+                end = e.EndsOn,
+                isTaken = e.IsTaken,
+                name = e.Name
+            }), JsonRequestBehavior.AllowGet);
+        }
+
+        [Route("consultation/calendar/update-slot")]
+        public JsonResult UpdateSlot(int id, DateTime startDateTime)
+        {
+            var slot = _slotsRepository.Find(id);
+            slot.StartsOn = startDateTime;
+            _slotsRepository.Update(slot);
+            return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+        }
+
         public override string GetObjectName()
         {
             return string.Empty;

@@ -410,6 +410,7 @@
     <Compile Include="Services\AstrologyService.cs" />
     <Compile Include="Services\ArticlesService.cs" />
     <Compile Include="Services\MediaManagementService.cs" />
+    <Compile Include="ViewModels\ConsultationBookingViewModel.cs" />
     <Compile Include="ViewModels\BlogModeratorViewModel.cs" />
     <Compile Include="ViewModels\ImageListItemViewModel.cs" />
     <Compile Include="ViewModels\DynamicFields\MyAccountDynamicFieldsViewModel.cs" />
@@ -600,6 +601,7 @@
     <Content Include="Content\bootstrap-custom\shared-sm.css" />
     <Content Include="Content\bootstrap-custom\shared-xs.css" />
     <Content Include="Content\bootstrap-custom\shared.css" />
+    <Content Include="Content\controls\calendar.css" />
     <Content Include="Content\controls\carousel.css" />
     <Content Include="Content\controls\fadeIn.css" />
     <Content Include="Content\controls\filesource.css" />
@@ -1413,6 +1415,7 @@
     <Content Include="Content\less\sections\articles.less" />
     <Content Include="Content\less\controls\image-list.less" />
     <Content Include="Content\less\controls\tooltips.less" />
+    <Content Include="Content\less\controls\calendar.less" />
     <None Include="packages.config" />
     <Content Include="Properties\PublishProfiles\.gitattributes" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
@@ -1799,6 +1802,8 @@
     <Content Include="Views\Blog\_BlogLikes.cshtml" />
     <Content Include="Views\Blog\Dashboard.cshtml" />
     <Content Include="Views\Admin\MaintenanceComplete.cshtml" />
+    <Content Include="Views\Consultation\_ConsultationCalendar.cshtml" />
+    <Content Include="Views\Consultation\ViewCalendar.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

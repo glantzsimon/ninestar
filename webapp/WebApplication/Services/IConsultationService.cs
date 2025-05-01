@@ -1,4 +1,6 @@
 ﻿using K9.DataAccessLayer.Models;
+using K9.WebApplication.ViewModels;
+using System;
 using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
@@ -12,5 +14,6 @@ namespace K9.WebApplication.Services
         void SelectSlot(int consultationId, int slotId);
         void CreateFreeSlots();
         List<Slot> GetAvailableSlots();
+        List<ConsultationBookingViewModel> GetAllSlotsAndBookings(DateTime date);
     }
 }

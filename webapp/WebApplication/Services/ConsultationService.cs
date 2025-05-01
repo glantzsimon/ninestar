@@ -7,6 +7,7 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
+using K9.WebApplication.ViewModels;
 using NodaTime;
 using System;
 using System.Collections.Generic;
@@ -72,6 +73,35 @@ namespace K9.WebApplication.Services
                 e.MyTimeZone = myTimeZoneId;
             });
             return slots;
+        }
+
+        public List<ConsultationBookingViewModel> GetAllSlotsAndBookings(DateTime date)
+        {
+            var myTimeZoneId = My.DefaultValuesConfiguration.CurrentTimeZone;
+            var userTimeZoneId = SessionHelper.GetCurrentUserTimeZone();
+            var startOfWeek = date.GetStartOfWeek();
+            var endOfWeek = startOfWeek.AddDays(7);
+
+            // Starting from tomorrow, user's local time
+            var slots = _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek).ToList();
+            slots.ForEach((e) =>
+            {
+                e.UserTimeZone = userTimeZoneId;
+                e.MyTimeZone = myTimeZoneId;
+            });
+
+            return slots.Select(e =>
+            {
+                var consultation = _consultationRepository.Find(c => c.SlotId == e.Id).FirstOrDefault();
+                var item = new ConsultationBookingViewModel
+                {
+                    Slot = e,
+                    Consultation = Find(consultation?.Id ?? 0),
+                    UserConsultation = FindUserConsultation(consultation?.Id ?? 0),
+                };
+                item.Slot.IsTaken = item.UserConsultation != null || item.StartsOn <= DateTime.UtcNow;
+                return item;
+            }).ToList();
         }
 
         public Slot FindSlot(int id)
@@ -208,7 +238,7 @@ namespace K9.WebApplication.Services
                         if (existingSlot.Id != slotId)
                         {
                             existingSlot.IsTaken = false;
-                            _slotRepository.Update(existingSlot);    
+                            _slotRepository.Update(existingSlot);
                         }
                     }
                 }
@@ -226,7 +256,7 @@ namespace K9.WebApplication.Services
                 consultation.ScheduledOn = slot.StartsOn;
                 consultation.SlotId = slot.Id;
                 _consultationRepository.Update(consultation);
-                
+
             }
             catch (Exception e)
             {
@@ -409,6 +439,19 @@ namespace K9.WebApplication.Services
             {
                 My.Logger.Error(ex.GetFullErrorMessage());
             }
+        }
+
+        private UserConsultation FindUserConsultation(int consultationId)
+        {
+            var userConsultation = _userConsultationRepository
+                .Find(e => e.ConsultationId == consultationId).FirstOrDefault();
+
+            if (userConsultation != null)
+            {
+                userConsultation.User = My.UsersRepository.Find(userConsultation.UserId);
+            }
+
+            return userConsultation;
         }
     }
 }

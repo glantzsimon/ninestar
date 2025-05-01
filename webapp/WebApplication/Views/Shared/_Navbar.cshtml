@@ -46,6 +46,8 @@
 
                         <li class="@ViewContext.GetActiveClass("ViewAvailableSlots", "Consultation") sub-item"><a href="@Url.Action("ViewAvailableSlots", "Consultation")">@Dictionary.ViewAvailableSlots</a></li>
 
+                        <li class="@ViewContext.GetActiveClass("ViewCalendar", "Consultation") sub-item"><a href="@Url.Action("ViewCalendar", "Consultation")">@Dictionary.Calendar</a></li>
+
                         <li class="divider"></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Articles") sub-item"><a href="@Url.Action("Index", "Articles")">@Dictionary.Articles</a></li>
@@ -75,7 +77,7 @@
                         <li class="sub-item"><a href="@Url.Action("Index", "Home")hangfire">@Dictionary.JobQueue</a></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Log") sub-item"><a href="@Url.Action("Index", "Log")">@Dictionary.ErrorLog</a></li>
-                        
+
                         <li class="@ViewContext.GetActiveClass("RunMaintenance", "Admin") sub-item"><a href="@Url.Action("RunMaintenance", "Admin")">@Dictionary.RunMaintenance</a></li>
 
                         <li class="@ViewContext.GetActiveClass("Edit", "SystemSettings") sub-item"><a href="@Url.Action("Index", "SystemSettings")">@Dictionary.SystemSettings</a></li>

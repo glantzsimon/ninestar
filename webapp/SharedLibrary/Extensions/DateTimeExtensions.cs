@@ -4,6 +4,12 @@ namespace K9.SharedLibrary.Extensions
 {
     public static class DateTimeExtensions
     {
+        public static DateTime GetStartOfWeek(this DateTime date)
+        {
+            var dt = date.Date;
+            int diff = (7 + (dt.DayOfWeek - DayOfWeek.Monday)) % 7;
+            return dt.AddDays(-diff);
+        }
 
         public static bool IsBetween(this DateTime value, DateTime startDate, DateTime endDate)
         {

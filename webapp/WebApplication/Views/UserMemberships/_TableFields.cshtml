@@ -36,7 +36,7 @@
             @Html.ValueFor(e => item.User.PhoneNumber)
         </div>
         <div class="col-xs-2">
-            @Html.ValueFor(e => item.StartsOn) - @Html.DisplayFor(e => item.EndsOn)
+            @Html.ValueFor(e => item.StartsOn) - @Html.ValueFor(e => item.EndsOn)
         </div>
         <div class="col-xs-2">
             @item.IsActive.ToYesNo()

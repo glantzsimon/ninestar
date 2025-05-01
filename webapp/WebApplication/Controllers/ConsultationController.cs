@@ -107,7 +107,7 @@ namespace K9.WebApplication.Controllers
             {
                 Consultation = consultation,
                 AvailableSlots = freeSlots,
-                Date = DateTime.Today
+                Date = DateTime.Today.GetStartOfWeek()
             });
         }
 

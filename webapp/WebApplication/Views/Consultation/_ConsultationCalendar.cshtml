@@ -5,10 +5,7 @@
 @model K9.WebApplication.ViewModels.ScheduleConsultationViewModel
 
 @{
-    var abbr = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames;
-    var ordered = abbr.Skip(1).Concat(abbr.Take(1)).ToArray();
     var mondayIso = Model.Date.ToUniversalTime().ToString("o");
-
     var isAdmin = SessionHelper.CurrentUserIsAdmin();
     var consultationId = Model.Consultation?.Id ?? 0;
 }
@@ -29,8 +26,12 @@
             <div class="day-headers">
                 @for (int i = 0; i < 7; i++)
                 {
-                    <div class="day-header">
-                        <div class="day-name">@ordered[i]</div>
+                    var date = Model.Date.AddDays(i);
+                    <div class="day-header"
+                         data-day-index="@i"
+                         data-date="@date.ToString("yyyy-MM-dd")">
+
+                        <div class="day-name">@date.ToString("ddd")</div>
                         <div class="day-date" data-day-index="@i"></div>
                     </div>
                 }
@@ -120,7 +121,7 @@ $(function () {
         slots.forEach(s => {
                 const start      = new Date(+s.start.match(/\d+/)[0]),
 
-                    slotDate = new Date(start.getFullYear(), start.getMonth(), start.getDate()),
+                slotDate = new Date(start.getFullYear(), start.getMonth(), start.getDate()),
                 weekBase = new Date(currentWeekStartIso),          // also at midnight
                 oneDay   = 24 * 3600 * 1000,
 
@@ -260,7 +261,7 @@ $(function () {
         const weekStart = new Date(currentWeekStartIso),
               slotDate  = new Date(weekStart);
 
-        slotDate.setDate(slotDate.getDate() + (dayIndex - 1));
+        slotDate.setDate(slotDate.getDate() + dayIndex);
         slotDate.setHours(hour, minute, 0, 0);
 
         const data = {
@@ -374,7 +375,7 @@ $(function () {
 
           const duration = heightPx / slotHeight,       // 1 or 2
                 weekStart = new Date(currentWeekStartIso),
-                dayIndex  = startSlot.data('day') - 1,
+                dayIndex  = startSlot.data('day'),
                 startHr   = startSlot.data('hour'),
                 slotDate  = new Date(weekStart);
 

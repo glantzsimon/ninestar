@@ -202,7 +202,8 @@ namespace K9.WebApplication.Controllers
         [Route("consultation/calendar")]
         public JsonResult Calendar(DateTime date, int? consultationId = null)
         {
-            var allBookings = _consultationService.GetAllSlotsAndBookings(date);
+            var consultation = consultationId.HasValue ? _consultationService.Find(consultationId.Value) : null;
+            var allBookings = _consultationService.GetAllSlotsAndBookings(date, consultationId);
             return Json(allBookings.Select(e => new
             {
                 id = e.Id,

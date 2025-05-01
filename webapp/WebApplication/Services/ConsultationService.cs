@@ -75,7 +75,7 @@ namespace K9.WebApplication.Services
             return slots;
         }
 
-        public List<ConsultationBookingViewModel> GetAllSlotsAndBookings(DateTime date, bool freeOnly = false)
+        public List<ConsultationBookingViewModel> GetAllSlotsAndBookings(DateTime date, int? consultationId = null)
         {
             var myTimeZoneId = My.DefaultValuesConfiguration.CurrentTimeZone;
             var userTimeZoneId = SessionHelper.GetCurrentUserTimeZone();
@@ -83,10 +83,13 @@ namespace K9.WebApplication.Services
             var endOfWeek = startOfWeek.AddDays(7);
 
             // Starting from tomorrow, user's local time
-            var slots = freeOnly 
-                ? _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek && !e.IsTaken).ToList()
-                : _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek).ToList();
-            
+            var consultation = consultationId.HasValue ? Find(consultationId.Value) : null;
+            var slots = consultationId.HasValue
+                ? _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek && !e.IsTaken && e.ConsultationDuration == consultation.ConsultationDuration).ToList()
+                : SessionHelper.CurrentUserIsAdmin()
+                    ? _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek).ToList()
+                    : _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek && !e.IsTaken).ToList();
+
             slots.ForEach((e) =>
             {
                 e.UserTimeZone = userTimeZoneId;
@@ -95,11 +98,11 @@ namespace K9.WebApplication.Services
 
             return slots.Select(e =>
             {
-                var consultation = _consultationRepository.Find(c => c.SlotId == e.Id).FirstOrDefault();
+                var existingConsultation = _consultationRepository.Find(c => c.SlotId == e.Id).FirstOrDefault();
                 var item = new ConsultationBookingViewModel
                 {
                     Slot = e,
-                    Consultation = Find(consultation?.Id ?? 0),
+                    Consultation = Find(existingConsultation?.Id ?? 0),
                     UserConsultation = FindUserConsultation(consultation?.Id ?? 0),
                 };
                 item.Slot.IsTaken = item.UserConsultation != null || item.StartsOn <= DateTime.UtcNow.ToLocalTime();

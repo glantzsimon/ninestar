@@ -6704,6 +6704,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click delete again to confirm..
         /// </summary>
         public static string DeleteConfirm {

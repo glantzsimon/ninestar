@@ -1,13 +1,17 @@
 ﻿#calendar {
+  position: relative;
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   color: #333;
   background: #fff;
-  border: 1px solid #ddd;
+  outline: 1px solid #ddd;
   border-radius: 6px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   user-select: none;
+  -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
 }
 #calendar .calendar-header-wrapper {
   position: relative;
@@ -132,12 +136,19 @@
 #calendar .calendar-body .time-column .time-cell:first-child {
   height: 59px;
 }
+#calendar .calendar-body .day-column .slot:last-child {
+  border-bottom: none;
+}
 #calendar .calendar-body .selection-overlay {
   position: absolute;
   background: rgba(76, 175, 80, 0.3);
   border: 1px dashed #3d8b40;
   pointer-events: none;
   z-index: 5;
+}
+#calendar .calendar-body .selection-overlay.available {
+  background: rgba(76, 175, 80, 0.4);
+  border: 1px dashed #3d8b40;
 }
 #calendar .event-block {
   position: absolute;
@@ -148,9 +159,11 @@
   font-size: 12px;
   line-height: 1.2;
   color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.15s, box-shadow 0.15s;
   background: #4caf50;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
 }
 #calendar .event-block.taken {
   background: #f44336;
@@ -158,4 +171,27 @@
 #calendar .event-block:hover {
   transform: scale(1.03);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.event-menu {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 2000;
+}
+.event-menu li {
+  padding: 7px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.event-menu li:hover {
+  color: white;
+  background: #337ab7;
 }

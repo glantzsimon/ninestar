@@ -13,6 +13,7 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI;
 using K9.Base.WebApplication.Filters;
+using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
@@ -219,23 +220,54 @@ namespace K9.WebApplication.Controllers
         [Route("consultation/calendar/update-slot")]
         public JsonResult UpdateSlot(int id, DateTime startDateTime)
         {
-            var slot = _slotsRepository.Find(id);
-            slot.StartsOn = startDateTime;
-            _slotsRepository.Update(slot);
-            return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                var slot = _slotsRepository.Find(id);
+                slot.StartsOn = startDateTime;
+                _slotsRepository.Update(slot);
+                return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Logger.Error($"ConsultationController => UpdateSlot => {e.GetFullErrorMessage()}");
+                return Json(new { success = false, error = Dictionary.FriendlyErrorMessage }, JsonRequestBehavior.AllowGet);
+            }
         }
 
         [Route("consultation/calendar/create-slot")]
         public JsonResult CreateSlot(DateTime startDateTime, EConsultationDuration duration)
         {
-            var slot = new Slot
+            try
             {
-                StartsOn = startDateTime,
-                ConsultationDuration = duration
-            };
+                var slot = new Slot
+                {
+                    StartsOn = startDateTime,
+                    ConsultationDuration = duration
+                };
 
-            _slotsRepository.Create(slot);
-            return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+                _slotsRepository.Create(slot);
+                return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Logger.Error($"ConsultationController => CreateSlot => {e.GetFullErrorMessage()}");
+                return Json(new { success = false, error = Dictionary.FriendlyErrorMessage }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [Route("consultation/calendar/delete-slot")]
+        public JsonResult DeleteSlot(int id)
+        {
+            try
+            {
+                _slotsRepository.Delete(id);
+                return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Logger.Error($"ConsultationController => DeleteSlot => {e.GetFullErrorMessage()}");
+                return Json(new { success = false, error = Dictionary.FriendlyErrorMessage }, JsonRequestBehavior.AllowGet);
+            }
         }
 
         public override string GetObjectName()

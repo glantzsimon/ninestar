@@ -6731,4 +6731,7 @@
   <data name="NumberOfKarmicReadingsLeft" xml:space="preserve">
     <value>Number of Karmic Numerology Readings Left</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
 </root>

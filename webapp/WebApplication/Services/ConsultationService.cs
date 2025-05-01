@@ -12,6 +12,7 @@ using NodaTime;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using NodaTime.Extensions;
 
 namespace K9.WebApplication.Services
 {
@@ -99,7 +100,7 @@ namespace K9.WebApplication.Services
                     Consultation = Find(consultation?.Id ?? 0),
                     UserConsultation = FindUserConsultation(consultation?.Id ?? 0),
                 };
-                item.Slot.IsTaken = item.UserConsultation != null || item.StartsOn <= DateTime.UtcNow;
+                item.Slot.IsTaken = item.UserConsultation != null || item.StartsOn <= DateTime.UtcNow.ToLocalTime();
                 return item;
             }).ToList();
         }

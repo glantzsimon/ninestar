@@ -134,9 +134,9 @@
 }
 #calendar .calendar-body .selection-overlay {
   position: absolute;
-  left: 0;
-  right: 0;
   background: rgba(76, 175, 80, 0.3);
+  border: 1px dashed #3d8b40;
+  pointer-events: none;
   z-index: 5;
 }
 #calendar .event-block {

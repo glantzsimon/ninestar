@@ -1,9 +1,12 @@
 ﻿@using System.Globalization
 @using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Options
+@model DateTime
 
 @{
-    var dayIndex = 0;
+    var abbr = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames;
+    var ordered = abbr.Skip(1).Concat(abbr.Take(1)).ToArray();
+    var mondayIso = Model.ToUniversalTime().ToString("o");
 }
 
 <div id="calendar">
@@ -20,14 +23,12 @@
         <div class="calendar-header">
             <div class="time-header"></div>
             <div class="day-headers">
-                @foreach (var day in CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames)
+                @for (int i = 0; i < 7; i++)
                 {
                     <div class="day-header">
-                        <div class="day-name">@day</div>
-                        <div class="day-date" data-day-index="@dayIndex"></div>
+                        <div class="day-name">@ordered[i]</div>
+                        <div class="day-date" data-day-index="@i"></div>
                     </div>
-
-                    dayIndex++;
                 }
             </div>
         </div>
@@ -60,15 +61,19 @@
 $(function () {
     const $calendar = $('#calendar'),
         slotHeight     = 60;
-    let currentWeekStartIso;
+    let currentWeekStartIso = '@mondayIso';
 
-    function loadSlots(date) {
+    function loadSlots(monday) {
+        currentWeekStartIso = monday;
+
+        // Update header dates from that Monday
+        renderHeaderDates(currentWeekStartIso);
+
+        // Fetch slots for that exact week
         $.fn.displaySpinner($calendar, true);
-
-        currentWeekStartIso = date;
-        renderHeaderDates(date);
-        $.getJSON('@Url.Action("Calendar")', { date: date })
-            .done(renderSlots);
+        $.getJSON('@Url.Action("Calendar")', { date: currentWeekStartIso })
+            .done(renderSlots)
+            .always(() => $.fn.hideSpinner($calendar));
     }
 
     $('#prev-week').on('click', function() {
@@ -240,47 +245,67 @@ $(function () {
         });
     }
 
-    var isSelecting = false, startCell, $overlay;
-    $('.calendar-body').on('mousedown', '.time-slot.available', function (e) {
-        isSelecting = true;
-        startCell   = $(this);
-        $overlay    = $('<div class="selection-overlay">').appendTo(this);
-    });
+    let isSelecting = false,
+        startSlot,
+        $overlay;
 
-    $('.calendar-body').on('mousemove', function (e) {
-        if (!isSelecting) return;
-        var $hover  = $(e.target).closest('.time-slot.available'),
-            startHr = startCell.data('hour'),
-            currHr  = $hover.data('hour'),
-            diff    = currHr - startHr;
-        $overlay.css('height', (diff + 1) * slotHeight);
-    });
+    $('.calendar-body')
+        .on('mousedown', '.slot', function(e) {
+            e.preventDefault();
+            isSelecting = true;
+            startSlot   = $(this);
 
-    $(document).on('mouseup', function (e) {
+            // position overlay at the top of this slot
+            const pos   = startSlot.position(),
+                width = startSlot.outerWidth() - 8;  // match your inset
+
+            $overlay = $('<div class="selection-overlay">')
+                .appendTo('.calendar-body')
+                .css({
+                    left:  pos.left + 4,
+                    top:   pos.top,
+                    width: width,
+                    height: slotHeight     // start at 1 hour
+                });
+        })
+        .on('mousemove', function(e) {
+            if (!isSelecting) return;
+            const hover     = $(e.target).closest('.slot.available'),
+                diffSlots = hover.data('hour') - startSlot.data('hour') + 1,
+                clamped   = Math.max(1, Math.min(2, diffSlots));
+            $overlay.css('height', clamped * slotHeight);
+        });
+
+    $(document).on('mouseup', function() {
         if (!isSelecting) return;
         isSelecting = false;
-        var dayIndex = startCell.data('day'),
-            startHr  = startCell.data('hour'),
-            endHr    = startHr + Math.round($overlay.height() / slotHeight);
 
+        // calculate duration in hours from overlay height
+        const hours = Math.round($overlay.height() / slotHeight);
+        $overlay.remove();
+
+        // build your startDateTime
+        const weekStart = new Date(currentWeekStartIso),
+            dayIndex  = startSlot.data('day'),
+            startHr   = startSlot.data('hour'),
+            slotDate  = new Date(weekStart);
+        slotDate.setDate(slotDate.getDate() + (dayIndex - 1));
+        slotDate.setHours(startHr, 0, 0, 0);
+
+        // send exactly start + duration (1 or 2)
         $.ajax({
             url: '/Calendar/CreateSlot',
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({
-                dayIndex:  dayIndex,
-                startHour: startHr,
-                duration:  endHr - startHr
+                startDateTime: slotDate.toISOString(),
+                duration:      hours
             })
-        }).always(function () {
-            loadSlots(currentWeekStartIso);
-        });
-        $overlay.remove();
+        }).always(() => loadSlots(currentWeekStartIso));
     });
 
-    // initial load (Monday of this week)
     window.setTimeout(function() {
-        loadSlots(new Date().toISOString());
+        loadSlots(currentWeekStartIso);
     }, 500);
 });
 

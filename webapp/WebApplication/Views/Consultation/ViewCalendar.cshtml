@@ -1,5 +1,6 @@
 ﻿@using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Options
+@model DateTime
 
 @{
     ViewBag.Title = Dictionary.AvailableSlots;
@@ -8,5 +9,5 @@
 }
 
 <div class="container main-content">
-    @Html.Partial("_ConsultationCalendar")
+    @Html.Partial("_ConsultationCalendar", Model)
 </div>

@@ -198,7 +198,7 @@ namespace K9.WebApplication.Controllers
         [Route("consultation/view-calendar")]
         public ActionResult ViewCalendar()
         {
-            return View();
+            return View(DateTime.Today.GetStartOfWeek());
         }
 
         [Route("consultation/calendar")]
@@ -222,6 +222,19 @@ namespace K9.WebApplication.Controllers
             var slot = _slotsRepository.Find(id);
             slot.StartsOn = startDateTime;
             _slotsRepository.Update(slot);
+            return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+        }
+
+        [Route("consultation/calendar/create-slot")]
+        public JsonResult CreateSlot(DateTime startDateTime, EConsultationDuration duration)
+        {
+            var slot = new Slot
+            {
+                StartsOn = startDateTime,
+                ConsultationDuration = duration
+            };
+
+            _slotsRepository.Create(slot);
             return Json(new { success = true }, JsonRequestBehavior.AllowGet);
         }
 

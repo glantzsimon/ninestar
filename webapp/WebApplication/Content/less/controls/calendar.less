@@ -174,9 +174,9 @@
 
         .selection-overlay {
             position: absolute;
-            left: 0;
-            right: 0;
             background: fade(@free-color, 30%);
+            border: 1px dashed darken(@free-color, 10%);
+            pointer-events: none;
             z-index: 5;
         }
     }

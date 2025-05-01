@@ -44,7 +44,7 @@ namespace K9.DataAccessLayer.Models
         #region Local Time 
 
         public string FormattedStartsOnLocalDate => StartsOnLocalTime.HasValue
-            ? StartsOnLocalTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
+            ? StartsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
             : "";
 
         public string FormattedStartsOnLocalDateTime => StartsOnLocalTime.HasValue
@@ -60,7 +60,7 @@ namespace K9.DataAccessLayer.Models
             : "";
 
         public string FormattedEndsOnLocalDate => EndsOnLocalTime.HasValue
-            ? EndsOnLocalTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
+            ? EndsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
             : "";
 
         public string FormattedEndsOnLocalTimeOnly => EndsOnLocalTime.HasValue
@@ -76,7 +76,7 @@ namespace K9.DataAccessLayer.Models
         #region My Time
 
         public string FormattedStartsOnMyDate => StartsOnMyTime.HasValue
-            ? StartsOnMyTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
+            ? StartsOnMyTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
             : "";
 
         public string FormattedStartsOnMyTime => StartsOnMyTime.HasValue
@@ -84,7 +84,7 @@ namespace K9.DataAccessLayer.Models
             : "";
 
         public string FormattedEndsOnMyDate => EndsOnMyTime.HasValue
-            ? EndsOnMyTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
+            ? EndsOnMyTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
             : "";
 
         public string FormattedEndsOnMyTime => EndsOnMyTime.HasValue

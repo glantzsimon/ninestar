@@ -14,6 +14,6 @@ namespace K9.WebApplication.Services
         void SelectSlot(int consultationId, int slotId);
         void CreateFreeSlots();
         List<Slot> GetAvailableSlots();
-        List<ConsultationBookingViewModel> GetAllSlotsAndBookings(DateTime date);
+        List<ConsultationBookingViewModel> GetAllSlotsAndBookings(DateTime date, bool freeOnly = false);
     }
 }

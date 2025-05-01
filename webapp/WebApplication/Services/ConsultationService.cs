@@ -12,7 +12,6 @@ using NodaTime;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NodaTime.Extensions;
 
 namespace K9.WebApplication.Services
 {
@@ -76,7 +75,7 @@ namespace K9.WebApplication.Services
             return slots;
         }
 
-        public List<ConsultationBookingViewModel> GetAllSlotsAndBookings(DateTime date)
+        public List<ConsultationBookingViewModel> GetAllSlotsAndBookings(DateTime date, bool freeOnly = false)
         {
             var myTimeZoneId = My.DefaultValuesConfiguration.CurrentTimeZone;
             var userTimeZoneId = SessionHelper.GetCurrentUserTimeZone();
@@ -84,7 +83,10 @@ namespace K9.WebApplication.Services
             var endOfWeek = startOfWeek.AddDays(7);
 
             // Starting from tomorrow, user's local time
-            var slots = _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek).ToList();
+            var slots = freeOnly 
+                ? _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek && !e.IsTaken).ToList()
+                : _slotRepository.Find(e => e.StartsOn >= startOfWeek && e.StartsOn <= endOfWeek).ToList();
+            
             slots.ForEach((e) =>
             {
                 e.UserTimeZone = userTimeZoneId;

@@ -1,22 +1,19 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.WebApplication.Filters;
 using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
+using K9.Globalisation;
+using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
-using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI;
-using K9.Base.WebApplication.Filters;
-using K9.Globalisation;
-using K9.SharedLibrary.Authentication;
-using K9.WebApplication.Helpers;
-using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
@@ -199,11 +196,11 @@ namespace K9.WebApplication.Controllers
         [Route("consultation/view-calendar")]
         public ActionResult ViewCalendar()
         {
-            return View(DateTime.Today.GetStartOfWeek());
+            return View(new ScheduleConsultationViewModel { Date = DateTime.Today.GetStartOfWeek() });
         }
 
         [Route("consultation/calendar")]
-        public JsonResult Calendar(DateTime date)
+        public JsonResult Calendar(DateTime date, int? consultationId = null)
         {
             var allBookings = _consultationService.GetAllSlotsAndBookings(date);
             return Json(allBookings.Select(e => new
@@ -213,10 +210,12 @@ namespace K9.WebApplication.Controllers
                 start = e.StartsOn,
                 end = e.EndsOn,
                 isTaken = e.IsTaken,
-                name = e.Name
+                name = e.Name,
+                confirmUrl = Url.Action("ConfirmSlot", "Consultation", new { consultationId, slotId = e.Slot.Id })
             }), JsonRequestBehavior.AllowGet);
         }
 
+        [RequirePermissions(Role = RoleNames.Administrators)]
         [Route("consultation/calendar/update-slot")]
         public JsonResult UpdateSlot(int id, DateTime startDateTime)
         {
@@ -234,6 +233,7 @@ namespace K9.WebApplication.Controllers
             }
         }
 
+        [RequirePermissions(Role = RoleNames.Administrators)]
         [Route("consultation/calendar/create-slot")]
         public JsonResult CreateSlot(DateTime startDateTime, EConsultationDuration duration)
         {
@@ -255,6 +255,7 @@ namespace K9.WebApplication.Controllers
             }
         }
 
+        [RequirePermissions(Role = RoleNames.Administrators)]
         [Route("consultation/calendar/delete-slot")]
         public JsonResult DeleteSlot(int id)
         {

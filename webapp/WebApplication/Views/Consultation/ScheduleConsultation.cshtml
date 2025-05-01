@@ -23,6 +23,9 @@
                 </div>
             </div>
             <div class="row">
+                @Html.Partial("_ConsultationCalendar", Model)
+            </div>
+            @*<div class="row">
                 <div class="time-slots">
                     @foreach (var slot in Model.AvailableSlots)
                     {
@@ -40,7 +43,7 @@
                         </div>
                     }
                 </div>
-            </div>
+            </div>*@
         </div>
 
         <hr />

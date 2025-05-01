@@ -1,12 +1,15 @@
 ﻿@using System.Globalization
 @using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Options
-@model DateTime
+@using SessionHelper = K9.WebApplication.Helpers.SessionHelper
+@model K9.WebApplication.ViewModels.ScheduleConsultationViewModel
 
 @{
     var abbr = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames;
     var ordered = abbr.Skip(1).Concat(abbr.Take(1)).ToArray();
-    var mondayIso = Model.ToUniversalTime().ToString("o");
+    var mondayIso = Model.Date.ToUniversalTime().ToString("o");
+
+    var isAdmin = SessionHelper.CurrentUserIsAdmin();
 }
 
 <div id="calendar">
@@ -63,6 +66,7 @@
 <script>
 
 $(function () {
+    const isAdmin = @(isAdmin.ToString().ToLower());
     const $calendar = $('#calendar'),
         slotHeight = 60,
         halfH      = slotHeight / 2,
@@ -72,13 +76,15 @@ $(function () {
         .css({ position: 'absolute' })
         .appendTo($calendar);
 
+    let deleteConfirmMap = {};
+
     let currentWeekStartIso = '@mondayIso';
 
     const $body      = $('#calendar .calendar-body'),
         slotWidth  = 60,
         totalWidth = $body.width() - slotWidth,
         colWidth   = totalWidth / 7;
-    
+
     function loadSlots(monday) {
         currentWeekStartIso = monday;
 
@@ -121,12 +127,20 @@ $(function () {
                 hPx    = dur * slotHeight,
                 wPx    = colWidth - 8;
 
-            $('<div class="event-block">')
+            const $slot = $('<div class="event-block">')
                 .addClass(s.isTaken ? 'taken' : 'available')
                 .attr('data-id', s.id)
                 .css({ left: leftPx, top: topPx, width: wPx, height: hPx })
-                .text(s.title)
-                .appendTo($body);
+                .text(s.title);
+
+            if (isAdmin) {
+                $slot.appendTo($body);
+            } else {
+                $('<a>')
+                    .attr('href', s.confirmUrl)
+                    .append($slot)
+                    .appendTo($body);
+            }
         });
 
         enableDragging();
@@ -363,17 +377,34 @@ $(function () {
         e.stopPropagation();
         const action = $(this).data('action'),
             id     = $menu.data('eventId');
-
-        $menu.hide();
+        const key = `slot-${id}`;
 
         if (action === 'delete') {
-            if (!confirm('Delete this slot?')) return;
-            $.ajax({
-                url: '@Url.Action("DeleteSlot")',
-                method: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({ id: id })
-            }).done(() => loadSlots(currentWeekStartIso));
+            if (deleteConfirmMap[key]) {
+                delete deleteConfirmMap[key]; // clear flag
+
+                $menu.hide();
+
+                $.ajax({
+                    url: '@Url.Action("DeleteSlot")',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ id: id })
+                }).done(() => loadSlots(currentWeekStartIso));
+
+            } else {
+                deleteConfirmMap[key] = true;
+
+                $.fn.showToast("Click delete again to confirm.", "warning");
+
+                setTimeout(() => {
+                        delete deleteConfirmMap[key];
+                        $menu.hide();
+                    },
+                    3000); // auto-expire confirmation after 3 seconds
+            }
+        } else {
+            $menu.hide();
         }
     });
 

@@ -54,6 +54,11 @@ namespace K9.DataAccessLayer.Models
         public string DurationDescription =>
             ConsultationDuration.GetAttribute<EnumDescriptionAttribute>().GetDescription();
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DurationLabel)]
+        public string DurationUIDescription => ConsultationDuration == EConsultationDuration.OneHour
+            ? Dictionary.OneHourHyphenated.ToLower()
+            : Dictionary.TwoHourHyphenated.ToLower();
+
         public string ConsultationDescription => $"{DurationDescription} {Dictionary.Consultation}";
 
         [ForeignKey("Slot")]

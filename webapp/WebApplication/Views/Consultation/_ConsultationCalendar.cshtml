@@ -10,6 +10,7 @@
     var mondayIso = Model.Date.ToUniversalTime().ToString("o");
 
     var isAdmin = SessionHelper.CurrentUserIsAdmin();
+    var consultationId = Model.Consultation?.Id ?? 0;
 }
 
 <div id="calendar">
@@ -59,9 +60,12 @@
     </div>
 </div>
 
-<ul id="event-menu" class="event-menu">
-    <li data-action="delete"><i class="fa fa-trash"></i> @Dictionary.Delete</li>
-</ul>
+@if (isAdmin)
+{
+    <ul id="event-menu" class="event-menu">
+        <li data-action="delete"><i class="fa fa-trash"></i> @Dictionary.Delete</li>
+    </ul>
+}
 
 <script>
 
@@ -92,8 +96,8 @@ $(function () {
         renderHeaderDates(currentWeekStartIso);
 
         // Fetch slots for that exact week
-        $.fn.displaySpinner($calendar, true);
-        $.getJSON('@Url.Action("Calendar")', { date: currentWeekStartIso })
+        $.fn.displaySpinner($calendar);
+        $.getJSON('@Url.Action("Calendar")', { date: currentWeekStartIso, consultationId: @consultationId })
             .done(renderSlots)
             .always(() => $.fn.hideSpinner($calendar));
     }
@@ -114,21 +118,25 @@ $(function () {
         $body.find('.event-block').remove();
 
         slots.forEach(s => {
-            const start      = new Date(+s.start.match(/\d+/)[0]),
+                const start      = new Date(+s.start.match(/\d+/)[0]),
+
+                    slotDate = new Date(start.getFullYear(), start.getMonth(), start.getDate()),
+                weekBase = new Date(currentWeekStartIso),          // also at midnight
+                oneDay   = 24 * 3600 * 1000,
+
                 end        = new Date(+s.end.match(/\d+/)[0]),
-                day        = start.getDay(),
-                // get full fractional hours since 10:00
                 minutes    = start.getMinutes(),
                 hoursSince = (start.getHours() - 10) + (minutes / 60),
                 dur        = (end - start) / 3600000,
+                dayIndex = Math.round((slotDate - weekBase) / oneDay),
 
-                leftPx = slotWidth + day * colWidth + 4,
+                leftPx   = slotWidth + dayIndex * colWidth + 4;
                 topPx  = hoursSince * slotHeight,
                 hPx    = dur * slotHeight,
                 wPx    = colWidth - 8;
 
             const $slot = $('<div class="event-block">')
-                .addClass(s.isTaken ? 'taken' : 'available')
+                .addClass(s.isFree ? 'available' : 'taken')
                 .attr('data-id', s.id)
                 .css({ left: leftPx, top: topPx, width: wPx, height: hPx })
                 .text(s.title);
@@ -143,7 +151,9 @@ $(function () {
             }
         });
 
-        enableDragging();
+        if (isAdmin) {
+            enableDragging();
+        }
 
         $.fn.hideSpinner($("#calendar"));
     }
@@ -276,6 +286,10 @@ $(function () {
     $calendar.on('contextmenu', '.event-block', function(e) {
         e.preventDefault();
 
+        if (!isAdmin) {
+            return;
+        }
+
         // stash which event we clicked
         $menu.data('eventId', $(this).data('id'));
 
@@ -294,6 +308,11 @@ $(function () {
     $body
         .on('mousedown', '.slot', function(e) {
             e.preventDefault();
+
+            if (!isAdmin) {
+                return;
+            }
+
             isSelecting = true;
             startSlot   = $(this);
 
@@ -320,6 +339,10 @@ $(function () {
             })
 
         .on('mousemove', function(e) {
+            if (!isAdmin) {
+                return;
+            }
+
             if (!isSelecting) return;
 
             const bodyOff    = $body.offset(),
@@ -336,6 +359,10 @@ $(function () {
         });
 
         $(document).on('mouseup', function() {
+          if (!isAdmin) {
+            return;
+          }
+
           if (!isSelecting) return;
           isSelecting = false;
 
@@ -375,6 +402,11 @@ $(function () {
 
     $menu.on('click', 'li', function(e) {
         e.stopPropagation();
+
+        if (!isAdmin) {
+            return;
+        }
+
         const action = $(this).data('action'),
             id     = $menu.data('eventId');
         const key = `slot-${id}`;
@@ -407,7 +439,6 @@ $(function () {
             $menu.hide();
         }
     });
-
 });
 
 </script>

@@ -106,7 +106,8 @@ namespace K9.WebApplication.Controllers
             return View(new ScheduleConsultationViewModel
             {
                 Consultation = consultation,
-                AvailableSlots = freeSlots
+                AvailableSlots = freeSlots,
+                Date = DateTime.Today
             });
         }
 
@@ -211,6 +212,7 @@ namespace K9.WebApplication.Controllers
                 start = e.StartsOn,
                 end = e.EndsOn,
                 isTaken = e.IsTaken,
+                isFree = e.IsFree,
                 name = e.Name,
                 confirmUrl = Url.Action("ConfirmSlot", "Consultation", new { consultationId, slotId = e.Slot.Id })
             }), JsonRequestBehavior.AllowGet);

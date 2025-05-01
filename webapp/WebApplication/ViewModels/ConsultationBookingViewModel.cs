@@ -11,10 +11,11 @@ namespace K9.WebApplication.ViewModels
         public Slot Slot { get; set; }
 
         public int? Id => Slot?.Id;
-        public string Title => UserConsultation?.User.FullName ?? Dictionary.Available;
+        public string Title => Slot.IsTaken ? UserConsultation?.User.FullName : Dictionary.Available;
         public DateTime? StartsOn => Slot?.StartsOnLocalTime.Value.DateTime;
         public DateTime? EndsOn => Slot?.EndsOnLocalTime.Value.DateTime;
         public bool IsTaken => Slot.IsTaken;
-        public string Name => UserConsultation?.User.FullName ?? "";
+        public bool IsFree => !IsTaken && StartsOn <= DateTime.UtcNow.ToLocalTime();
+        public string Name => Slot.IsTaken ? UserConsultation?.User.FullName ?? "" : "";
     }
 }

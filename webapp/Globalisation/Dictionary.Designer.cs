@@ -16618,6 +16618,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to One-hour.
+        /// </summary>
+        public static string OneHourHyphenated {
+            get {
+                return ResourceManager.GetString("OneHourHyphenated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to On The Brink Of Extinction.
         /// </summary>
         public static string OnTheBrinkOfExtinctionTitle {
@@ -17339,7 +17348,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a suitable time slot for your {ConsultationDuration} consultation. If none of the slots are suitable, please contact us to arrange a suitable time (see button at the bottom of this page)..
+        ///   Looks up a localized string similar to Select a time slot for your {ConsultationDuration} consultation. If none of the available times work for you, feel free to contact us using the button at the bottom of the page to arrange an alternative..
         /// </summary>
         public static string PleaseSelectATimeSlot {
             get {
@@ -22691,6 +22700,15 @@ namespace K9.Globalisation {
         public static string TwelveYearOutlook {
             get {
                 return ResourceManager.GetString("TwelveYearOutlook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Two-hour.
+        /// </summary>
+        public static string TwoHourHyphenated {
+            get {
+                return ResourceManager.GetString("TwoHourHyphenated", resourceCulture);
             }
         }
         

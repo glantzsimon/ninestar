@@ -19,12 +19,9 @@ namespace K9.WebApplication.Services
 
             var dob = model.PersonModel.DateOfBirth;
             model.Primary = CalculateDominant(dob);
-            
-            model.Emergence = CalculateSubDominant(dob);
-            model.Emergence.
-            
-            model.Actualisation = CalculateGuide(dob);
 
+            model.Emergence = CalculateSubDominant(dob);
+            model.Actualisation = CalculateGuide(dob);
             model.Mastery = CalculateGiftCode(dob);
 
             model.BirthYear = CalculateBirthCode(model.PersonModel);
@@ -59,7 +56,7 @@ namespace K9.WebApplication.Services
             {
                 NumerologyCode = (ENumerologyCode)result,
                 IsActive = IsActive(date, 0, 27),
-                Title =  $"{Globalisation.Dictionary.Emergence} ({Globalisation.Dictionary.EmergenceYears})"
+                Title = $"{Globalisation.Dictionary.Emergence} ({Globalisation.Dictionary.EmergenceYears})"
             };
         }
 
@@ -70,7 +67,7 @@ namespace K9.WebApplication.Services
             {
                 NumerologyCode = (ENumerologyCode)result,
                 IsActive = IsActive(date, 27, 54),
-                Title =  $"{Globalisation.Dictionary.Actualisation} ({Globalisation.Dictionary.ActualisationYears})"
+                Title = $"{Globalisation.Dictionary.Actualisation} ({Globalisation.Dictionary.ActualisationYears})"
             };
         }
 

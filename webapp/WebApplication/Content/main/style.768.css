@@ -8,6 +8,18 @@
   .desktop-only {
     display: none;
   }
+  h1 strong {
+    font-weight: 300 !important;
+  }
+  h4,
+  artcile h4 {
+    font-size: 1.3em !important;
+  }
+  h3,
+  artcile h3,
+  .ninestar-summary-container h3 {
+    font-size: 1.1em !important;
+  }
   .padding-left-20-desktop {
     padding-left: 0 !important;
   }
@@ -50,7 +62,7 @@
     padding: 0;
   }
   .page .page-header {
-    padding-bottom: 11px;
+    padding-bottom: 0;
     padding-top: 33px;
   }
   .page .page-header h1,

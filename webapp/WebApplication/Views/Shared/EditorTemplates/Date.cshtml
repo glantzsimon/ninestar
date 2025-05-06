@@ -21,6 +21,7 @@
 else
 {
     dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Type, "date");
+    dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Value, Model?.ToString("yyyy-MM-dd"));
 
-    @Html.TextBoxFor(model => model, dictionary)
+    @Html.TextBox("", Model?.ToString("yyyy-MM-dd"), dictionary)
 }

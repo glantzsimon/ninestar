@@ -87,8 +87,7 @@
 
             <div id="character" class="tab-pane fade @childActiveClass">
                 @Html.CollapsiblePanel(Dictionary.CharacterEnergyLabel, $"{Dictionary.CharacterEnergyDescription}", true)
-
-                <br />
+                
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                 {
                     @Html.Panel(Model.CharacterEnergy.EnergyTitle, $"{Html.Partial("_ProfileHeader", Model.CharacterEnergy).ToString()} {Html.Partial("_ProfileCharacterEnergyDetails").ToString()}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)

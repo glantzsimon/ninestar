@@ -5,7 +5,7 @@
 
 @if (Model != null)
 {
-    <div class="container main-content clear-both">
+    <div class="main-content clear-both">
         @Html.Panel(Dictionary.StressResponse, $"{Model.StressResponseDetails} {Model.StressResponseFromNatalHouseDetails} {Model.CharacterEnergy.ChildStressDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
     </div>
 }

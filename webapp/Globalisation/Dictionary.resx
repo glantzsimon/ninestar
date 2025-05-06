@@ -2468,7 +2468,7 @@
     <value>general\en-gb\howtoremoveyourdata.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="HowToRemoveYourDataTitle" xml:space="preserve">
-    <value>Instructions For Removing Your Data</value>
+    <value>Removing Your Data</value>
   </data>
   <data name="DidntReceiveCodePrompt" xml:space="preserve">
     <value>Didn't receive a code?</value>
@@ -6739,5 +6739,8 @@
   </data>
   <data name="TwoHourHyphenated" xml:space="preserve">
     <value>Two-hour</value>
+  </data>
+  <data name="SupportUs" xml:space="preserve">
+    <value>Support Us</value>
   </data>
 </root>

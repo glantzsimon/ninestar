@@ -11132,13 +11132,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    &lt;strong&gt;
-        ///        These are the instructions for removing all of your data.
-        ///    &lt;/strong&gt;
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    These are the instructions for removing all of your data.
+        ///&lt;/h4&gt;
         ///
-        ///&lt;h4&gt;Instructions&lt;/h4&gt;
         ///&lt;p&gt;
         ///    To permanently remove all of your data, simply &lt;a href=&quot;{RemoveDataUrl}&quot;&gt;click here&lt;/a&gt;. You will be asked to log into your account, if you do not already have a session open.
         ///&lt;/p&gt;
@@ -11152,7 +11149,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Instructions For Removing Your Data.
+        ///   Looks up a localized string similar to Removing Your Data.
         /// </summary>
         public static string HowToRemoveYourDataTitle {
             get {
@@ -20902,6 +20899,15 @@ namespace K9.Globalisation {
         public static string SupportQueryThankYouEmail {
             get {
                 return ResourceManager.GetString("SupportQueryThankYouEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support Us.
+        /// </summary>
+        public static string SupportUs {
+            get {
+                return ResourceManager.GetString("SupportUs", resourceCulture);
             }
         }
         

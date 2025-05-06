@@ -50,7 +50,6 @@ form .pull-right .btn {
   border-top-right-radius: 9px !important;
   background-color: #f0f8ff;
   background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
-  outline: 1px solid #dddddd;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .table-responsive table {

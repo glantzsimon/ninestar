@@ -98,6 +98,12 @@
 .blog-tag {
   font-weight: normal !important;
   text-transform: capitalize;
+  margin-right: 0.45em;
+  margin-bottom: 0.45em;
+}
+.blog-tag:last-child {
+  margin-right: 0;
+  margin-bottom: 0;
 }
 #tagFilters {
   max-height: 154px;

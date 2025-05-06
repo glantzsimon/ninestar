@@ -67,7 +67,7 @@
   }
   .page .page-header h1,
   .page .page-header h2 {
-    font-size: 28px !important;
+    font-size: 27px !important;
   }
   .page .page-header h1,
   .page .page-header h2,
@@ -76,7 +76,10 @@
   }
   .page h1 {
     text-align: center;
-    color: white;
+    color: #f9f9f9;
+  }
+  .page .article-container h1 {
+    color: #444 !important;
   }
   .page .panel-heading {
     padding: 9px !important;
@@ -150,6 +153,24 @@
   }
   .numerology-card {
     margin: 0;
+  }
+  .articles-searchbox-container .form-group {
+    margin-bottom: 0;
+  }
+  .tags-container {
+    padding-bottom: 0 !important;
+  }
+  #tagFilters {
+    outline: 1px solid #dddddd;
+    border-radius: 3px;
+    -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    padding: 5px;
+  }
+  .blog-grid {
+    margin: 9px;
+    margin-top: 0;
   }
 }
 @media (min-width: 766px) {

@@ -12,7 +12,7 @@
             var $el = $(this);
             var forecastType = $el.attr("data-forecast-type");
             var offset = ($el.attr("data-offset") || 0);
-            var $panel, $container;
+            let $panel, $container;
             var dateOfBirth = new Date('@dateOfBirth');
             var dateOfBirthString = dateOfBirth.toISOString(); // Convert Date object to ISO string
 
@@ -39,7 +39,10 @@
                 function(result) {
                     if (result.success) {
                         // $panel.find(".panel-title-text").html(result.data.Title);
-                        $panel.siblings(".panel").find(".panel-body").html(result.data.Forecast);
+                        let siblings = $panel.siblings(".panel");
+                        siblings.find(".panel-body").html(result.data.Forecast);
+
+                        $.fn.scrollToTopOf(siblings, -133);
                     }
                 });
         });

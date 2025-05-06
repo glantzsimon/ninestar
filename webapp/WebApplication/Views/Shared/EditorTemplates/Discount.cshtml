@@ -3,5 +3,12 @@
 @using K9.DataAccessLayer.Enums
 @using K9.WebApplication.Enums
 @model K9.DataAccessLayer.Enums.EDiscount
-
-@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<EDiscount>(Convert.ToInt32(Model), true))
+@{
+    var selectList = this.GetDropdownData().GetSelectListFromEnum<EDiscount>(Convert.ToInt32(Model), true); 
+}
+<div class="desktop-only">
+    @Html.BootstrapDropdownFor(model => model, selectList)
+</div>
+<div class="device-only">
+    @Html.DropDownListFor(model => model, selectList, new { @class = "form-control" })
+</div>

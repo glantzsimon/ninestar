@@ -2,5 +2,12 @@
 @using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Enums
 @model K9.WebApplication.Models.ENineStarKiEnergyType
-
-@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<K9.WebApplication.Models.ENineStarKiEnergyType>(Convert.ToInt32(Model), true))
+@{
+    var selectList = this.GetDropdownData().GetSelectListFromEnum<K9.WebApplication.Models.ENineStarKiEnergyType>(Convert.ToInt32(Model), true);    
+}
+<div class="desktop-only">
+    @Html.BootstrapDropdownFor(model => model, selectList)
+</div>
+<div class="device-only">
+    @Html.DropDownListFor(model => model, selectList, new { @class = "form-control" })
+</div>

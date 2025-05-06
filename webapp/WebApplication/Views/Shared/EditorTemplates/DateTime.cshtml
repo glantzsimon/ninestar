@@ -6,10 +6,18 @@
     dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Id, linkId);
     var value = Model.HasValue ? Model.Value.ToString("yyyy-MM-dd") : "";
 }
-@Html.TextBox("", value, new { linkId, @class = "hidden-date-field", @readonly = "readonly", tabindex = -1 })
-<div class="input-group date datetime">
-    @Html.TextBox(linkId, Model, dictionary)
-    <span class="input-group-addon">
-        <span class="glyphicon glyphicon-calendar"></span>
-    </span>
+<div class="desktop-only">
+    @Html.TextBox("", value, new { linkId, @class = "hidden-date-field", @readonly = "readonly", tabindex = -1 })
+    <div class="input-group date datetime">
+        @Html.TextBox(linkId, Model, dictionary)
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+</div>
+<div class="device-only">
+    @{
+        dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Type, "datetime-local");
+    }
+    @Html.TextBoxFor(model => model, dictionary)
 </div>

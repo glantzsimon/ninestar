@@ -51,49 +51,4 @@
   #main-menu-container.menu-small {
     height: 50px !important;
   }
-  .mainContent {
-    font-size: 108% !important;
-  }
-  .mainContent p {
-    font-size: 108% !important;
-  }
-  .page {
-    padding: 7px !important;
-  }
-  .page .page-header {
-    padding-bottom: 11px;
-    padding-top: 11px;
-  }
-  .page .page-header h1,
-  .page .page-header h2 {
-    font-size: 28px !important;
-  }
-  .page .page-header h1,
-  .page .page-header h2,
-  .page .page-header h4 {
-    width: 100%;
-  }
-  .page .well {
-    padding: 15px !important;
-  }
-  .page .well-mobile {
-    padding: 0 !important;
-    margin-top: 10px !important;
-  }
-  .page .panel-heading h4 {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-  }
-  .page .panel-body h4 {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  .page .panel-body .table-responsive {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .container-fluid {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
 }

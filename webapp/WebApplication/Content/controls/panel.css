@@ -22,6 +22,7 @@
   font-size: 15px;
   line-height: 1.7;
   padding: 20px;
+  border-radius: 7px;
 }
 .panel .panel-body h5:first-child,
 .panel .panel-body .panel-body h4:first-child {

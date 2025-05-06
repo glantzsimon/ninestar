@@ -1,4 +1,6 @@
 ﻿@using K9.Base.WebApplication.Extensions
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @model int?
 
 @{
@@ -6,10 +8,11 @@
         .OrderBy(e => e.Id);
     var selectList = new SelectList(data, "Id", "Name");
 }
-
-<div class="desktop-only">
+@if (this.GetDeviceType() == EDeviceType.Desktop)
+{
     @Html.BootstrapDropdownFor(model => model, selectList)
-</div>
-<div class="device-only">
+}
+else
+{
     @Html.DropDownListFor(model => model, selectList, new { @class = "form-control" })
-</div>
+}

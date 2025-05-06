@@ -7,7 +7,7 @@
 
 @if (Model != null)
 {
-    <div class="container main-content clear-both">
+    <div class="main-content clear-both">
         <div>
             <ul class="nav nav-pills nav-justified image-pill" data-autoscroll="true">
                 <li class="active">
@@ -62,7 +62,7 @@
                 @if (Model.PersonModel.IsSixteenOrOver())
                 {
                     <div id="relationships" class="tab-pane fade">
-                        @Html.CollapsiblePanel(Dictionary.SexualityTitle, Dictionary.relationships_description)
+                        @Html.CollapsiblePanel(Dictionary.SexualityTitle, Dictionary.relationships_description, true)
 
                         @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
                         {

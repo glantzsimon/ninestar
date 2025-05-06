@@ -1,13 +1,17 @@
 ﻿@using K9.Base.DataAccessLayer.Enums
 @using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @model K9.WebApplication.Enums.EPanelView
 @{
-    var selectList = this.GetDropdownData().GetSelectListFromEnum<K9.WebApplication.Enums.EPanelView>(Convert.ToInt32(Model), true);    
+    var selectList = this.GetDropdownData().GetSelectListFromEnum<K9.WebApplication.Enums.EPanelView>(Convert.ToInt32(Model), true);
 }
-<div class="desktop-only">
+@if (this.GetDeviceType() == EDeviceType.Desktop)
+{
     @Html.BootstrapDropdownFor(model => model, selectList)
-</div>
-<div class="device-only">
+}
+else
+{
     @Html.DropDownListFor(model => model, selectList, new { @class = "form-control" })
-</div>
+}

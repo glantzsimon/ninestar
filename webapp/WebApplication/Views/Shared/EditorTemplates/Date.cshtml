@@ -1,4 +1,6 @@
 ﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @model DateTime?
 @{
     var linkId = Guid.NewGuid().ToString();
@@ -6,7 +8,8 @@
     dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Id, linkId);
     var value = Model.HasValue ? Model.Value.ToString("yyyy-MM-dd") : "";
 }
-<div class="desktop-only">
+@if (this.GetDeviceType() == EDeviceType.Desktop)
+{
     @Html.TextBox("", value, new { linkId, @class = "hidden-date-field", @readonly = "readonly", tabindex = -1 })
     <div class="input-group date dateonly">
         @Html.TextBox(linkId, Model, dictionary)
@@ -14,10 +17,10 @@
             <span class="glyphicon glyphicon-calendar"></span>
         </span>
     </div>
-</div>
-<div class="device-only">
-    @{
-        dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Type, "date");
-    }
+}
+else
+{
+    dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Type, "date");
+
     @Html.TextBoxFor(model => model, dictionary)
-</div>
+}

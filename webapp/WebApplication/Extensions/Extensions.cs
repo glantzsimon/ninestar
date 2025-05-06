@@ -3,6 +3,7 @@ using K9.WebApplication.Controllers;
 using System;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Extensions
 {
@@ -23,6 +24,11 @@ namespace K9.WebApplication.Extensions
             var substring = value.Substring(0, canBeAbbreviated ? length : valueLength);
             var abbrevationSuffix = canBeAbbreviated ? "..." : string.Empty;
             return $"{substring}{abbrevationSuffix}";
+        }
+
+        public static EDeviceType GetDeviceType(this WebViewPage view)
+        {
+            return view.ViewBag.DeviceType as EDeviceType? ?? EDeviceType.Desktop;
         }
 
         public static UserMembership GetActiveUserMembership(this WebViewPage view)

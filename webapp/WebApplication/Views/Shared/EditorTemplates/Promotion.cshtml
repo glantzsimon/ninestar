@@ -1,11 +1,15 @@
 ﻿@using K9.Base.WebApplication.Extensions
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @model int?
 @{
-    var selectList = this.GetDropdownData().GetSelectList<Promotion>(Model, true, "Name");  
+    var selectList = this.GetDropdownData().GetSelectList<Promotion>(Model, true, "Name");
 }
-<div class="desktop-only">
+@if (this.GetDeviceType() == EDeviceType.Desktop)
+{
     @Html.BootstrapDropdownFor(model => model, selectList, false, null, Dictionary.None)
-</div>
-<div class="device-only">
+}
+else
+{
     @Html.DropDownListFor(model => model, selectList, Dictionary.None, new { @class = "form-control" })
-</div>
+}

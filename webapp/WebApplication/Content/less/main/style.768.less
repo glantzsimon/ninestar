@@ -3,6 +3,10 @@
         display: block !important;
     }
 
+    .device-only {
+        display: block !important;
+    }
+
     .desktop-only {
         display: none;
     }
@@ -13,11 +17,7 @@
 
     .panel-margin-top-20 {
         margin-top: 20px;
-    }
-
-    .panel-body .table-responsive {
-        width: auto !important;
-    }
+    }    
 
     form .well div .col-sm-6:first-of-type, .well form div .col-sm-6:first-of-type {
         padding: 0 !important;
@@ -25,42 +25,83 @@
 
     form .well div .col-sm-6:last-of-type, .well form div .col-sm-6:last-of-type {
         padding: 0;
-    }
-
-    .panel-body .nav-pills > li + li {
-        margin-left: 0 !important;
-    }
+    }       
 
     .well {
         margin: 0 !important;
+        padding: 11px;
     }
 
     form .well {
         margin-bottom: 20px !important;
     }
 
-    .well-mobile {
-        padding: 0 !important;
-    }
-
-    .container, container-fluid {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+    .container, .container-fluid {
+        padding-left: 5px !important;
+        padding-right: 5px !important;        
     }
 
     div.inline-form, form {
         width: 100% !important;
     }
 
+    .panel-body .table-responsive {
+        width: auto !important;
+    }
+
+    .panel-body .nav-pills > li + li {
+        margin-left: 0 !important;
+    }
+
     .page {
-        h1 {
-            text-align: center;
+        background: none;
+        margin: 0;
+        padding: 0;
+
+        .page-header {
+            padding-bottom: 11px;
+            padding-top: 33px;
+
+            h1, h2 {
+                font-size: 28px !important;
+            }
+
+            h1, h2, h4 {
+                width: 100%;
+            }
         }
 
-        .panel-heading h4 {
+        h1 {
             text-align: center;
+            color: white;
         }
-    }    
+
+        .panel-heading {
+            padding: 11px !important;
+
+            h4 {
+                text-align: center;
+            }
+        }
+
+        .panel-body {
+            padding: 11px !important;
+
+            h4 {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .table-responsive {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+
+    .form-option.hint, .hint {
+        font-size: 0.8em !important;
+    }
 }
 
 @media (min-width: 766px) {

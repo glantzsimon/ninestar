@@ -36,9 +36,11 @@
 @if (Model != null && Model.IsProcessed)
 {
     <br />
-    <article>
-        @Html.Panel(Dictionary.PersonalChartDetails, Html.Partial("_ProfilePills").ToString())
-    </article>
+    <div class="container main-content margin-bottom-0">
+        <article>
+            @Html.Panel(Dictionary.PersonalChartDetails, Html.Partial("_ProfilePills").ToString())
+        </article>
+    </div>
 }
 else
 {

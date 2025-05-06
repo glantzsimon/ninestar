@@ -5,7 +5,7 @@
 
 @if (Model != null)
 {
-    <div class="container main-content clear-both">
+    <div class="main-content clear-both">
         @Html.PanelWithSummary(Model.MainEnergy.EnergyCareerTitle, Model.Career, Model.MainEnergy.CareerSummary, "", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
         @Html.Panel(Model.MainEnergy.EnergyOccupationsTitle, Model.MainEnergy.Occupations, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)

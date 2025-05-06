@@ -36,7 +36,7 @@
   }
   .well {
     margin: 0 !important;
-    padding: 11px;
+    padding: 9px;
   }
   form .well {
     margin-bottom: 20px !important;
@@ -79,13 +79,13 @@
     color: white;
   }
   .page .panel-heading {
-    padding: 11px !important;
+    padding: 9px !important;
   }
   .page .panel-heading h4 {
     text-align: center;
   }
   .page .panel-body {
-    padding: 11px !important;
+    padding: 9px !important;
   }
   .page .panel-body h4 {
     padding-left: 0 !important;
@@ -147,6 +147,9 @@
     width: 100%;
     white-space: normal;
     word-break: break-word;
+  }
+  .numerology-card {
+    margin: 0;
   }
 }
 @media (min-width: 766px) {

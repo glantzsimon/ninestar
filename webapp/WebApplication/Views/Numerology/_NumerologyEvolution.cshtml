@@ -3,12 +3,12 @@
 @using K9.WebApplication.Config;
 @model K9.WebApplication.Models.NumerologyModel
 
-<div class="ninestar-summmary numerology-container container padding-0 margin-top-0">
+<div class="ninestar-summmary numerology-container padding-0 margin-top-0">
     @Html.Panel("", Dictionary.karmic_evolution)
     <br />
 
     <div class="row padding-0">
-        <div class="col-sm-12">
+        <div class="col-sm-12 padding-0">
             <ul class="nav nav-pills nav-justified image-pill" data-autoscroll="true">
                 <li class="@Model.Emergence.IsActiveCssTabClass">
                     <a data-toggle="tab" href="#emergence">
@@ -39,34 +39,19 @@
                 <div id="emergence" class="tab-pane fade padding-top-10 @Model.Emergence.IsActiveCssPaneClass">
                     @using (Html.PayWall(ESection.Numerology, Model, () => Model?.IsComplementary))
                     {
-                        <div class="device-only">
-                            @Html.Panel(Model.EmergenceTitle, Html.Partial("_NumerologyCodeDisplay", Model.Emergence).ToString())
-                        </div>
-                        <div class="desktop-only">
-                            @Html.Partial("_NumerologyCodeDisplay", Model.Emergence)
-                        </div>
+                        @Html.Partial("_NumerologyCodeDisplay", Model.Emergence)
                     }
                 </div>
 
                 <div id="actualisation" class="tab-pane fade padding-top-10 @Model.Actualisation.IsActiveCssPaneClass">
                     @using (Html.PayWall(ESection.Numerology, Model, () => Model?.IsComplementary))
                     {
-                        <div class="device-only">
-                            @Html.Panel(Model.ActualisationTitle, Html.Partial("_NumerologyCodeDisplay", Model.Actualisation).ToString())
-                        </div>
-                        <div class="desktop-only">
-                            @Html.Partial("_NumerologyCodeDisplay", Model.Actualisation)
-                        </div>
+                        @Html.Partial("_NumerologyCodeDisplay", Model.Actualisation)
                     }
                 </div>
 
                 <div id="mastery" class="tab-pane fade padding-top-10 @Model.Mastery.IsActiveCssPaneClass">
-                    <div class="device-only">
-                        @Html.Panel(Model.MasteryTitle, Html.Partial("_NumerologyCodeDisplay", Model.Mastery).ToString())
-                    </div>
-                    <div class="desktop-only">
-                        @Html.Partial("_NumerologyCodeDisplay", Model.Mastery)
-                    </div>
+                    @Html.Partial("_NumerologyCodeDisplay", Model.Mastery)
                 </div>
             </div>
         </div>

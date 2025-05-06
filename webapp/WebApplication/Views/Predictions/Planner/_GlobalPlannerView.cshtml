@@ -10,7 +10,7 @@
     var moonPhaseStyle = Model.View == EPlannerView.Month ? "" : "display: none;";
 }
 
-<div class="container main-content clear-both global-planner-container">
+<div class="main-content clear-both global-planner-container">
     @Html.HiddenFor(e => e.SelectedDateTimeString)
     @Html.Hidden("PlannerView", (int)Model.View)
     @Html.Hidden("PlannerDisplay", (int)Model.Display)

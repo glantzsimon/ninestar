@@ -21,41 +21,81 @@
     <div class="directions-more-info" style="@showDirectionsStyle">
         <h4><strong>@Dictionary.WorstDirectionsToTravelIn</strong></h4>
         <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>@Dictionary.Direction</th>
-                        <th>@Dictionary.Score</th>
-                        <th>@Dictionary.Guidance</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var score in directionsChartData)
-                    {
+            @if (this.GetDeviceType() == EDeviceType.Desktop)
+            {
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td>@(string.Join(", ", score.Directions.Select(e => e.DirectionName)))</td>
-                            <td>
-                                <div class="directions-summary">
-                                    <!-- Acts as the relative container -->
-                                    <div class="status-circle @score.CssClassName">
-                                        @if (score.Score >= 10)
-                                        {
-                                            <i class="fa fa-exclamation-triangle"></i>
-                                        }
-                                    </div>
-                                    <div class="directions-line-overlay">
-                                        @foreach (var direction in score.Directions)
-                                        {
-                                            <div class="line to-@direction.DisplayDirection"></div>
-                                        }
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="">@score.Guidance</td>
+                            <th>@Dictionary.Direction</th>
+                            <th>@Dictionary.Score</th>
+                            <th>@Dictionary.Guidance</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var score in directionsChartData)
+                        {
+                            <tr>
+                                <td>@(string.Join(", ", score.Directions.Select(e => e.DirectionName)))</td>
+                                <td>
+                                    <div class="directions-summary">
+                                        <!-- Acts as the relative container -->
+                                        <div class="status-circle @score.CssClassName">
+                                            @if (score.Score >= 10)
+                                            {
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            }
+                                        </div>
+                                        <div class="directions-line-overlay">
+                                            @foreach (var direction in score.Directions)
+                                            {
+                                                <div class="line to-@direction.DisplayDirection"></div>
+                                            }
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="">@score.Guidance</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <table class="table directions-chart-table">
+                    <tbody>
+                        @foreach (var score in directionsChartData)
+                        {
+                            <tr>
+                                <th>
+                                    @(string.Join(", ", score.Directions.Select(e => e.DirectionName)))
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="directions-summary">
+                                        <!-- Acts as the relative container -->
+                                        <div class="status-circle @score.CssClassName">
+                                            @if (score.Score >= 10)
+                                            {
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            }
+                                        </div>
+                                        <div class="directions-line-overlay">
+                                            @foreach (var direction in score.Directions)
+                                            {
+                                                <div class="line to-@direction.DisplayDirection"></div>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="guidance-text">
+                                        @score.Guidance
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
         </div>
     </div>
 }

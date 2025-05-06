@@ -1,3 +1,5 @@
+@import "../config/colours.less";
+
 @media (max-width:767px) {
     .mobile-only {
         display: block !important;
@@ -115,6 +117,74 @@
 
     .form-option.hint, .hint {
         font-size: 0.8em !important;
+    }
+
+
+    .energy-summary-container {
+        .row {
+            div.col-sm-4 {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+    }
+
+    .directions-chart-table {
+        th {
+            background: @primary-blue;
+            color: white;
+        }
+
+        border: none !important;
+        outline: 1px solid @border-grey !important;
+    }
+
+    .magic-square-display {
+        position: relative;
+        padding: 11px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .margin-3 {
+            margin: 0 !important
+        }
+
+        .magic-square {
+            margin-top: 5px;
+        }
+
+        .directions-line-overlay {
+            transform: scale(1.03);
+        }
+    }
+
+    .directions-summary {
+        position: relative;
+        max-width: 45%;
+        padding: 22px;
+        margin: 0 22px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .status-circle i {
+            font-size: 2em;
+        }
+
+        .directions-line-overlay {
+            transform: scale(0.81);
+        }
+    }
+
+    .directions-more-info-container {
+        .table-responsive {
+            outline: none;
+        }
+    }
+
+    .guidance-text {
+        width: 100%;
+        white-space: normal;
+        word-break: break-word;
     }
 }
 

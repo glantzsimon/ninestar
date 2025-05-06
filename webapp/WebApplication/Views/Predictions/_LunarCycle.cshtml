@@ -5,7 +5,7 @@
 
 @if (Model != null)
 {
-    <div class="container main-content clear-both">
+    <div class="main-content clear-both">
         @Html.Panel(Dictionary.LunarCycle, $"{Html.Partial("~/Views/Astrology/_MoonPhaseLarge.cshtml", Model.MoonPhase).ToString()}{Model.MoonPhase.LunarDayDescription} {Model.MoonPhase.YinYangComfortDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
     </div>
 }

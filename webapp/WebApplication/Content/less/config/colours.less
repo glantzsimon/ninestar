@@ -1,40 +1,193 @@
-﻿@deep-navy: #000020;
-@almost-black: #020202;
-@medium-blue: #0a4070;
-@charcoal-black: #0f1215;
-@dark-grey: #111111;
-@deep-grey: #151515;
-@gunmetal-grey: #1f1f1f;
-@vibrant-green: #22BB44;
-@steel-blue: #286090;
-@dark-brown: #331a00;
-@medium-dark-grey: #333333;
+﻿// =======================
+// 🔵 BLUES
+// =======================
+
 @primary-blue: #337ab7;
-@dim-grey: #555;
-@deep-grey: #444;
-@beautiful-grey: #666;
-@light-grey: #888888;
-@warm-grey: #8a8a8a;
-@saddle-brown: #8b4513;
-@medium-grey: #999;
+@medium-blue: #0a4070;
+@steel-blue: #286090;
+@electric-blue: #0074E4;
+@blue-highlight: #2196f3;
+@dark-electric-blue: #0056b3;
+@alice-blue: #f0f8ff;
 @pale-sky-blue: #EAF7FD;
-@vibrant-orange: #FF9800;
-@soft-grey: #a5a5a5;
-@neutral-grey: #a7a7a7;
+@blue-focus-light: #e6f0ff;
+@table-gradient-top: #f7fbff;
+@teal-blue: #276e93;
+@teal-blue-dark: #1e5875;
+
+// =======================
+// 🟢 GREENS
+// =======================
+
+@vibrant-green: #22BB44;
+@toast-success-bg: #d4edda;
+@toast-success-border: #c3e6cb;
+@toast-success-text: #155724;
+@transparent-green: rgba(0, 128, 0, 0.2);
+
+// =======================
+// 🔴 REDS
+// =======================
+
+@vibrant-red: #f44336;
 @deep-red: #a94442;
-@silver-grey: #aaa;
+@error-red: #cc0000;
+@toast-error-bg: #f8d7da;
+@toast-error-border: #f5c6cb;
+@toast-error-text: #721c24;
+@transparent-red: rgba(255, 0, 0, 0.2);
+
+// =======================
+// 🟠 ORANGES & YELLOWS
+// =======================
+
+@vibrant-orange: #FF9800;
 @peru-brown: #cd853f;
+@toast-warning-bg: #fff3cd;
+@toast-warning-border: #ffeeba;
+@toast-warning-text: #856404;
+@saddle-brown: #8b4513;
+
+// =======================
+// ⚫ BLACKS & NAVY
+// =======================
+
+@almost-black: #020202;
+@deep-navy: #000020;
+@charcoal-black: #0f1215;
+@dark-brown: #331a00;
+@gunmetal-grey: #1f1f1f;
+
+// =======================
+// ⚙️ GREYS – DARK TO LIGHT
+// =======================
+
+@deep-grey: #444444;
+@dim-grey: #555555;
+@beautiful-grey: #666666;
+@medium-dark-grey: #333333;
+@light-grey: #888888;
+@medium-grey: #999999;
+@soft-grey: #a5a5a5;
+@silver-grey: #aaaaaa;
 @light-silver: #d9d9d9;
 @mist-grey: #e6e6e6;
-@ghost-white: #eeeeee;
-@whisper-white: #f9f9f9;
-@cloud-white: #f6f6f6;
-@almost-white: #fdfdfd;
-@bold-orange: #ff9800;
-@snow-white: #ffffff;
 @border-grey: #dddddd;
-@electric-blue: #0074E4;
+@ghost-white: #eeeeee;
 
-@transparent-red: rgba(255, 0, 0, 0.2);
-@transparent-green: rgba(0, 128, 0, 0.2);
+// =======================
+// ⚪ WHITES & NEAR-WHITES
+// =======================
+
+@cloud-white: #f6f6f6;
+@whisper-white: #f9f9f9;
+@snow-white: #ffffff;
+@almost-white: #fdfdfd; // optional alias if used
+@upload-btn: #f5f5f5;
+
+// =======================
+// 🌫️ SHADOWS & BORDERS (RGBA)
+// =======================
+
+@border-shadow-light: rgba(0, 0, 0, 0.1);
+@shadow-light: rgba(0, 0, 0, 0.1);
+@shadow-hover: rgba(0, 0, 0, 0.15);
+@shadow-colour: rgba(0, 0, 0, 0.5);
+
+// =======================
+// 🔮 SPECIAL / STATUS
+// =======================
+
 @transparent-blue: rgba(0, 0, 255, 0.2);
+@toast-info-bg: #d1ecf1;
+@toast-info-border: #bee5eb;
+@toast-info-text: #0c5460;
+
+// =======================
+// 🎯 Functional Aliases (for CSS variables)
+// =======================
+
+@background-color: @snow-white;
+@panel-footer-color: darken(@snow-white, 15%);
+@surface-color: @ghost-white;
+@text-color: @deep-grey;
+@border-color: @border-grey;
+@hover-white: darken(@snow-white, 5%);
+
+@teal-blue-light: lighten(@teal-blue, 18%);
+@dark-teal-blue: darken(@teal-blue, 18%);
+@dark-teal-blue-alpha: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.72);
+@dark-teal-blue-alpha-dark: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.11);
+
+// =======================
+// 💡 CSS Variables (light mode default)
+// =======================
+
+:root {
+    --primary-blue: @primary-blue;
+    --vibrant-green: @vibrant-green;
+    --vibrant-green-10: lighten(@vibrant-green, 10%);
+    --vibrant-green-30: fade(@vibrant-green, 30%);
+    --vibrant-green-40: fade(@vibrant-green, 40%);
+    --vibrant-red: @vibrant-red;
+    --vibrant-orange: @vibrant-orange;
+    --error-red: @error-red;
+    --snow-white: @snow-white;
+    --charcoal-black: @charcoal-black;
+    --border-grey: @border-grey;
+    --light-grey: @light-grey;
+    --background-color: @background-color;
+    --surface-color: @surface-color;
+    --text-color: @text-color;
+    --hover-text-color: lighten(@text-color, 5%);
+    --border-color: @border-color;
+    --well-color: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
+    --panel-header-top: @table-gradient-top;
+    --panel-header-bottom: @alice-blue;
+    --panel-header-text-color: @deep-grey;
+    --title-color: @medium-blue;
+    --subtitle-color: @primary-blue;
+    --page-background: @snow-white;
+    --page-title-color: @dark-brown;
+    --pills-tab-text-color: @medium-blue;
+    --pills-tab-hover: @snow-white;
+    --pills-tab-active: @snow-white;
+    --pills-tab-active-hover: @snow-white;
+    --pills-tab-background: transparent;
+}
+
+// =======================
+// 🌙 Dark Mode Overrides
+// =======================
+
+.dark-mode {
+    --primary-blue: lighten(@primary-blue, 15%);
+    --vibrant-green: lighten(@vibrant-green, 10%);
+    --vibrant-green-10: lighten(@vibrant-green, 20%);
+    --vibrant-green-30: fade(@vibrant-green, 30%);
+    --vibrant-green-40: fade(@vibrant-green, 40%);
+    --vibrant-red: lighten(@vibrant-red, 15%);
+    --vibrant-orange: lighten(@vibrant-orange, 15%);
+    --error-red: lighten(@error-red, 15%);
+    --snow-white: lighten(@snow-white, 15%);
+    --charcoal-black: lighten(@charcoal-black, 15%);
+    --border-grey: lighten(@border-grey, 15%);
+    --light-grey: lighten(@light-grey, 15%);
+    --background-color: @charcoal-black;
+    --surface-color: @deep-grey;
+    --text-color: @whisper-white;
+    --hover-text-color: lighten(@snow-white, 5%);
+    --border-color: lighten(@border-grey, 15%);
+    --well-color: darken(@teal-blue, 28%);
+    --panel-header-top: darken(@teal-blue, 3%);
+    --panel-header-bottom: darken(@teal-blue, 22%);
+    --panel-header-text-color: @whisper-white;
+    --title-color: darken(@whisper-white, 7%);
+    --subtitle-color: @whisper-white;
+    --page-background: @dark-teal-blue-alpha;
+    --page-title-color: @whisper-white;
+    --pills-tab-text-color: @whisper-white;
+    --pills-tab-hover: linear-gradient(to bottom, @teal-blue-dark 0, @dark-teal-blue-alpha-dark 100%);
+    --pills-tab-active: linear-gradient(to bottom, @teal-blue 0, @dark-teal-blue-alpha-dark 100%);
+    --pills-tab-active-hover: @teal-blue-light;
+}

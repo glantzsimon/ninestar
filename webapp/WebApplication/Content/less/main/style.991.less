@@ -34,11 +34,11 @@
 
     .navbar-default {
         .navbar-toggle {
-            border-color: @snow-white;
+            border-color: var(--snow-white);
             background-color: @deep-navy;
 
             &:hover {
-                background-color: @vibrant-orange;
+                background-color: var(--vibrant-orange);
             }
         }
     }
@@ -93,13 +93,13 @@
                 > li {
                     &:hover {
                         background-color: rgba(0, 0, 0, 0.8);
-                        color: @vibrant-orange !important;
+                        color: var(--vibrant-orange) !important;
                     }
 
                     &:focus > a, &:hover > a {
                         > a {
                             background-color: rgba(0, 0, 0, 0.8);
-                            color: @vibrant-orange !important;
+                            color: var(--vibrant-orange) !important;
                             font-weight: bold !important;
                             -webkit-transition: none;
                             -o-transition: none;
@@ -116,7 +116,7 @@
                     }
 
                     .active > a {
-                        color: @vibrant-orange !important;
+                        color: var(--vibrant-orange) !important;
                         font-weight: 600;
                     }
                 }

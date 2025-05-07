@@ -24,6 +24,12 @@
                         <span class="caret"></span>
                     </a>
                     <ul id="admin-menu-items" class="dropdown-menu nav navbar-nav">
+                        <li class="sub-item"><a class="theme-selector light" href="#">@K9.Globalisation.Dictionary.Light @K9.Globalisation.Dictionary.Theme</a></li>
+
+                        <li class="sub-item"><a class="theme-selector dark" href="#">@K9.Globalisation.Dictionary.Dark @K9.Globalisation.Dictionary.Theme</a></li>
+
+                        <li class="divider"></li>
+
                         <li class="@ViewContext.GetActiveClass("Index", "Contacts") sub-item"><a href="@Url.Action("Index", "Contacts")">@Dictionary.Contacts</a></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@K9.Base.Globalisation.Dictionary.Users</a></li>
@@ -85,6 +91,22 @@
                 </li>
             </ul>
         }
+        else
+        {
+            <ul class="admin-menu ">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        @K9.Globalisation.Dictionary.Theme
+                        <span class="caret"></span>
+                    </a>
+                    <ul id="admin-menu-items" class="dropdown-menu nav navbar-nav">
+                        <li class="sub-item"><a class="theme-selector light" href="#">@K9.Globalisation.Dictionary.Light @K9.Globalisation.Dictionary.Theme</a></li>
+                        <li class="sub-item"><a class="theme-selector dark" href="#">@K9.Globalisation.Dictionary.Dark @K9.Globalisation.Dictionary.Theme</a></li>
+                    </ul>
+                </li>
+            </ul>
+        }
+
         <ul class="site-controls">
             <li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultation")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><i class="fa fa-phone-alt"></i><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>
 

@@ -1,0 +1,105 @@
+@import "../config/colours.less";
+@import "../config/paths.less";
+
+.dark-mode {
+
+    h1, h2, h1 > strong {
+        font-weight: 300 !important;
+        text-shadow: none !important;
+    }
+
+    h3, h4, h5 {
+        text-shadow: none !important;
+    }
+
+    .form-control {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        border-color: var(--border-color);
+        box-shadow: none;
+
+        &::placeholder {
+            color: var(--light-grey);
+            opacity: 0.7;
+        }
+
+        &:focus {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 4px var(--primary-blue);
+        }
+    }
+
+    label {
+        color: var(--text-color);
+    }
+
+    .help-block,
+    .control-label,
+    .form-text {
+        color: var(--light-grey);
+    }
+
+    .input-group-addon {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        border-color: var(--border-color);
+    }
+
+    .dropdown-menu {
+        background-color: var(--background-color);
+        border-color: var(--border-color);
+
+        > li > a {
+            color: var(--text-color);
+            background-color: transparent;
+
+            &:hover,
+            &:focus {
+                background-color: var(--primary-blue);
+                color: var(--snow-white);
+            }
+
+            &:hover:not(:focus) {
+                background: @dark-teal-blue-alpha;
+                background-image: none;
+            }
+        }
+
+        > .active > a {
+            background-color: var(--primary-blue);
+            color: var(--snow-white);
+        }
+
+        > li.divider {
+            background-color: var(--border-color);
+        }
+    }
+
+    .bootstrap-select {
+        .btn-default {
+            background-color: var(--background-color);
+            text-shadow: none;
+            color: var(--text-color);
+        }
+    }
+
+    .well {
+        background-color: var(--well-color);
+        border-color: var(--border-color);
+        color: var(--text-color);
+        background-image: none;
+    }
+
+    .alphaBackground {
+        background: var(--page-background);
+        filter: alpha(opacity=81);
+    }
+}
+
+@media (max-width:767px) {
+    .alphaBackground {
+        background: none !important;
+    }
+}

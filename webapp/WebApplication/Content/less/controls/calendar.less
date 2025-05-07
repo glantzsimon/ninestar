@@ -3,25 +3,28 @@
 @slot-height: 60px;
 @slot-width: 60px;
 @half-slot: (@slot-height / 2);
-@border-color: #ddd;
-@bg-header: #fafafa;
-@bg-body: #fff;
-@free-color: #4caf50;
-@taken-color: #f44336;
-@text-color: #333;
+@border-color: var(--border-grey);
+@bg-header: @whisper-white;
+@bg-body: var(--snow-white);
+@free-color: var(--vibrant-green);
+@free-color10: var(--vibrant-green-10);
+@free-color30: var(--vibrant-green-30);
+@free-color40: var(--vibrant-green-40);
+@taken-color: var(--vibrant-red); 
+@text-color: @medium-dark-grey;
 @font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 @btn-size: 32px;
-@btn-bg: #fff;
-@btn-border: rgba(0,0,0,0.1);
-@btn-shadow: rgba(0,0,0,0.1);
-@btn-hover: rgba(0,0,0,0.15);
+@btn-bg: var(--snow-white);
+@btn-border: @border-shadow-light; 
+@btn-shadow: @shadow-light; 
+@btn-hover: @shadow-hover;
 
 #calendar {
     position: relative;
     font-family: @font-family;
-    color: @text-color;
+    color: var(--text-color);
     background: @bg-body;
-    outline: 1px solid @border-color;
+    outline: 1px solid var(--border-color);
     border-radius: 6px;
     overflow: hidden;
     display: flex;
@@ -66,11 +69,11 @@
             .glyphicon {
                 line-height: @btn-size;
                 font-size: 14px;
-                color: #333;
+                color: var(--text-color);
             }
 
             &:hover {
-                background: lighten(@btn-bg, 5%);
+                background: @hover-white;
                 box-shadow: 0 4px 8px @btn-hover;
             }
 
@@ -84,8 +87,8 @@
     .calendar-header {
         display: flex;
         background: @bg-header;
-        border-top: 2px solid @border-color;
-        border-bottom: 2px solid @border-color;
+        border-top: 2px solid var(--border-color);
+        border-bottom: 2px solid var(--border-color);
 
         .time-header {
             width: @slot-width;
@@ -100,7 +103,7 @@
                 text-align: center;
                 padding: 12px 0;
                 font-weight: 600;
-                border-left: 1px solid @border-color;
+                border-left: 1px solid var(--border-color);
             }
 
             .day-date {
@@ -118,15 +121,15 @@
 
         .time-column {
             width: @slot-width;
-            background: lighten(@bg-body, 2%);
+            background: @bg-body;
 
             .time-cell {
                 height: @slot-height;
                 line-height: normal;
                 padding: 4px 8px 0 0;
                 text-align: right;
-                border-top: 1px solid @border-color;
-                color: #666;
+                border-top: 1px solid var(--border-color);
+                color: @beautiful-grey;
                 font-size: 12px;
             }
         }
@@ -143,7 +146,7 @@
                 right: 0;
                 bottom: 0;
                 // draw a 1px dotted line at 30px, then repeat every 60px
-                background-image: repeating-linear-gradient( to bottom, transparent 0, transparent (@half-slot - 0.5px), rgba(@border-color, 0.4) (@half-slot - 0.5px), transparent (@half-slot + 0.5px), transparent @slot-height );
+                background-image: repeating-linear-gradient( to bottom, transparent 0, transparent (@half-slot - 0.5px), rgba(var(--border-color), 0.4) (@half-slot - 0.5px), transparent (@half-slot + 0.5px), transparent @slot-height );
                 background-size: 100% @slot-height;
                 pointer-events: none;
                 z-index: 0;
@@ -152,16 +155,16 @@
             .day-column {
                 flex: 1;
                 position: relative;
-                border-left: 1px solid @border-color;
+                border-left: 1px solid var(--border-color);
 
                 .slot {
                     height: @slot-height;
-                    border-bottom: 1px solid @border-color;
+                    border-bottom: 1px solid var(--border-color);
                     position: relative;
                     transition: background .15s;
 
                     &:hover {
-                        background: fade(@text-color, 5%);
+                        background: var(--hover-text-color);
                     }
                 }
             }
@@ -182,15 +185,15 @@
 
         .selection-overlay {
             position: absolute;
-            background: fade(@free-color, 30%);
-            border: 1px dashed darken(@free-color, 10%);
+            background: @free-color30;
+            border: 1px dashed @free-color10;
             pointer-events: none;
             z-index: 5;
 
             &.available {
                 // same green as .event-block.available
-                background: fade(@free-color, 40%);
-                border: 1px dashed darken(@free-color, 10%);
+                background: @free-color40;
+                border: 1px dashed @free-color10;
             }
         }
     }
@@ -203,7 +206,7 @@
         padding: 4px 6px;
         font-size: 12px;
         line-height: 1.2;
-        color: #fff;
+        color: var(--snow-white);
         transition: transform .15s, box-shadow .15s;
         background: @free-color;
         -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
@@ -226,8 +229,8 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    background: #fff;
-    border: 1px solid #ccc;
+    background: var(--snow-white);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     display: none;
@@ -243,6 +246,6 @@
 }
 
 .event-menu li:hover {
-    color: white;
-    background: @primary-blue;
+    color: var(--snow-white);
+    background: var(--primary-blue);
 }

@@ -5,7 +5,7 @@
     width: 100%;
     min-height: 40px;
     background-color: @deep-red;
-    color: white;
+    color: var(--snow-white);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     padding: 8px;
@@ -26,36 +26,36 @@
 }
 
 .toast-custom {
-    position: relative; /* ⬅️ enables absolute positioning inside */
-    display: block; /* make sure it's not inline */
-    border-radius: 6px;    
+    position: relative;
+    display: block;
+    border-radius: 6px;
     font-size: 0.95em;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    color: #333 !important;
+    color: @medium-dark-grey !important; // #333
 }
 
 .toast-success {
-    background-color: #d4edda !important; /* Bootstrap alert-success bg */
-    border: 1px solid #c3e6cb;
-    color: #155724 !important;
+    background-color: @toast-success-bg !important; // #d4edda
+    border: 1px solid @toast-success-border; // #c3e6cb
+    color: @toast-success-text !important; // #155724
 }
 
 .toast-error {
-    background-color: #f8d7da !important; /* Bootstrap alert-danger bg */
-    border: 1px solid #f5c6cb;
-    color: #721c24 !important;
+    background-color: @toast-error-bg !important; // #f8d7da
+    border: 1px solid @toast-error-border; // #f5c6cb
+    color: @toast-error-text !important; // #721c24
 }
 
 .toast-warning {
-    background-color: #fff3cd !important; /* Bootstrap alert-warning bg */
-    border: 1px solid #ffeeba;
-    color: #856404 !important;
+    background-color: @toast-warning-bg !important; // #fff3cd
+    border: 1px solid @toast-warning-border; // #ffeeba
+    color: @toast-warning-text !important; // #856404
 }
 
 .toast-info {
-    background-color: #d1ecf1 !important; /* Bootstrap alert-info bg */
-    border: 1px solid #bee5eb;
-    color: #0c5460 !important;
+    background-color: @toast-info-bg !important; // #d1ecf1
+    border: 1px solid @toast-info-border; // #bee5eb
+    color: @toast-info-text !important; // #0c5460
 }
 
 .toastify .toast-close {
@@ -63,15 +63,15 @@
     top: 8px;
     right: 10px;
     font-size: 12px;
-    color: #666 !important;
+    color: @beautiful-grey !important; // #666
     opacity: 0.7;
     transition: opacity 0.2s ease;
     cursor: pointer;
-    display: block; /* ensure it behaves like a block icon */
+    display: block;
     z-index: 2;
 }
 
 .toastify .toast-close:hover {
     opacity: 1;
-    color: #333 !important;
+    color: @medium-dark-grey !important; // #333
 }

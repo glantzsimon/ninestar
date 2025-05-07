@@ -1,12 +1,13 @@
 ﻿@import "../config/colours.less";
 
-@panel-bg: #ffffff;
-@panel-border: #ddd;
-@panel-header-gradient-start: #007bff;
-@panel-header-gradient-end: #0056b3;
-@panel-header-text-color: white;
+@panel-bg: var(--well-color);
+@panel-border: var(--border-grey);
+@panel-header-top: var(--panel-header-top);
+@panel-header-bottom: var(--panel-header-bottom);
+@panel-header-text-color: var(--panel-header-text-color);
 
 .panel {
+    background: @panel-bg;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important;
     border: 1px solid @panel-border;
     border-radius: 8px !important;
@@ -24,6 +25,14 @@
                 margin-bottom: 0;
             }
         }
+
+        h4 {
+            font-size: 1.4em !important;
+        }
+
+        & > h4, h5 {
+            color: @panel-header-text-color;
+        }
     }
 
     .panel-title {
@@ -31,7 +40,7 @@
     }
 
     .panel-body {
-        background-color: @panel-bg;
+        background: @panel-bg;
         font-size: 15px;
         line-height: 1.7;
         padding: 20px;
@@ -40,25 +49,27 @@
         h5:first-child, .panel-body h4:first-child {
             margin-top: 0 !important;
         }
+
+        & > h4 {
+            color: var(--title-color);
+        }
+
+        & > h5 {
+            color: var(--subtitle-color);
+
+            &.dark {
+                color: var(--title-color);
+            }
+        }
     }
 
     .panel-footer {
-        background-color: darken(@panel-bg, 5%);
+        background-color: @panel-footer-color;
         border-top: 1px solid @panel-border;
         padding: 10px;
         text-align: right;
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
-    }
-
-    .panel-heading {
-        h4 {
-            font-size: 1.4em !important;
-        }
-
-        h4, h5 {
-            color: @deep-grey !important;
-        }
     }
 
     .panel-body-image {
@@ -67,14 +78,10 @@
 
     &.panel-default {
         > .panel-heading {
-            /* Subtle pale blue background */
-            background-color: #f0f8ff; // AliceBlue
-            /* Optional gradient for extra depth */
-            background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
-            /* Make sure text is readable */
-            color: #333;
-            /* Tweak spacing and borders as desired */
-            border-bottom: 1px solid #ddd;
+            background-color: @alice-blue;
+            background: linear-gradient(to bottom, @panel-header-top 0%, @panel-header-bottom 100%);
+            color: @medium-dark-grey;
+            border-bottom: 1px solid @panel-border;
         }
 
         &:last-of-type {
@@ -124,17 +131,17 @@
         transition: color 0.3s ease, text-shadow 0.3s ease;
 
         &:hover {
-            color: @primary-blue;
+            color: var(--primary-blue);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
         }
 
         .fa-caret-up, .fa-caret-down {
-            color: @primary-blue;
+            color: var(--primary-blue);
         }
     }
 
     .k9-panel-collapse {
-        position: relative; // needed so that the overlay can be positioned inside
+        position: relative;
         overflow: hidden;
         transition: height 0.1s ease;
     }
@@ -150,13 +157,13 @@
         justify-content: center;
         align-items: flex-end;
         padding-bottom: 1rem;
-        color: #555;
+        color: @dim-grey;
         cursor: pointer;
         opacity: 1;
 
         .k9-readmore-text {
             transition: all 0.35s ease, transform 0.35s ease;
-            color: @primary-blue;            
+            color: var(--primary-blue);
             border-radius: 11px;
             padding-left: 7px;
             padding-right: 7px;

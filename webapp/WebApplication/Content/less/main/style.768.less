@@ -75,7 +75,7 @@
         padding: 0;
 
         .page-header {
-            padding-bottom: 0;
+            padding-bottom: 4px;
             padding-top: 35px;
 
             h1, h2 {
@@ -137,12 +137,12 @@
 
     .directions-chart-table {
         th {
-            background: @primary-blue;
+            background: var(--primary-blue);
             color: white;
         }
 
         border: none !important;
-        outline: 1px solid @border-grey !important;
+        outline: 1px solid var(--border-grey) !important;
     }
 
     .magic-square-display {
@@ -208,7 +208,7 @@
     }
 
     #tagFilters {
-        outline: 1px solid @border-grey;
+        outline: 1px solid var(--border-grey);
         border-radius: 3px;
         -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
         -moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
@@ -220,6 +220,23 @@
         margin: 9px;
         margin-top: 0;
     }
+
+    #account-header ul.admin-menu {
+        margin-left: 0 !important;
+
+        & > li a {
+            padding-left: 7px;
+        }
+    }
+
+    #account-header ul#admin-menu-items {
+        
+        & > li a {
+            padding-left: 21px;
+        }
+    }
+
+
 }
 
 @media (min-width: 766px) {

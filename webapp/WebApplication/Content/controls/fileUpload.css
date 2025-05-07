@@ -1,4 +1,67 @@
-﻿.upload-file-preview {
+﻿:root {
+  --primary-blue: #337ab7;
+  --vibrant-green: #22BB44;
+  --vibrant-green-10: #36da5a;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f44336;
+  --vibrant-orange: #FF9800;
+  --error-red: #cc0000;
+  --snow-white: #ffffff;
+  --charcoal-black: #0f1215;
+  --border-grey: #dddddd;
+  --light-grey: #888888;
+  --background-color: #ffffff;
+  --surface-color: #eeeeee;
+  --text-color: #444444;
+  --hover-text-color: #515151;
+  --border-color: #dddddd;
+  --well-color: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
+  --panel-header-top: #f7fbff;
+  --panel-header-bottom: #f0f8ff;
+  --panel-header-text-color: #444444;
+  --title-color: #0a4070;
+  --subtitle-color: #337ab7;
+  --page-background: #ffffff;
+  --page-title-color: #331a00;
+  --pills-tab-text-color: #0a4070;
+  --pills-tab-hover: #ffffff;
+  --pills-tab-active: #ffffff;
+  --pills-tab-active-hover: #ffffff;
+  --pills-tab-background: transparent;
+}
+.dark-mode {
+  --primary-blue: #63a0d4;
+  --vibrant-green: #36da5a;
+  --vibrant-green-10: #61e27e;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f8877f;
+  --vibrant-orange: #ffb74d;
+  --error-red: #ff1a1a;
+  --snow-white: #ffffff;
+  --charcoal-black: #2f3842;
+  --border-grey: #ffffff;
+  --light-grey: #aeaeae;
+  --background-color: #0f1215;
+  --surface-color: #444444;
+  --text-color: #f9f9f9;
+  --hover-text-color: #ffffff;
+  --border-color: #ffffff;
+  --well-color: #091a22;
+  --panel-header-top: #246587;
+  --panel-header-bottom: #0f2c3a;
+  --panel-header-text-color: #f9f9f9;
+  --title-color: #e7e7e7;
+  --subtitle-color: #f9f9f9;
+  --page-background: rgba(20, 56, 74, 0.72);
+  --page-title-color: #f9f9f9;
+  --pills-tab-text-color: #f9f9f9;
+  --pills-tab-hover: linear-gradient(to bottom, #1e5875 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active: linear-gradient(to bottom, #276e93 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active-hover: #47a0ce;
+}
+.upload-file-preview {
   display: none;
   width: 100%;
   padding: 0 !important;
@@ -42,7 +105,7 @@
   border: 1px solid #d9d9d9;
   border-bottom-left-radius: 3px;
   padding: 10px;
-  background: white;
+  background: #eeeeee;
   text-align: center;
   -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
@@ -62,7 +125,7 @@
 }
 .file-preview-upload {
   top: auto !important;
-  color: #22BB44;
+  color: var(--vibrant-green);
 }
 .doc-info {
   padding-top: 10px;
@@ -83,21 +146,21 @@
   display: none;
 }
 .custom-uploader .hidden-file-input:focus + .btn-upload-trigger {
-  outline: 2px dotted #999;
+  outline: 2px dotted #999999;
 }
 .custom-uploader .btn-upload-trigger {
   display: inline-block;
   margin-top: 15px;
   min-width: 180px;
   border-radius: 4px;
-  background-color: #f5f5f5;
+  background-color: #f6f6f6;
   cursor: pointer;
 }
 .custom-uploader .btn-upload-trigger:hover {
   background-color: #e6e6e6;
 }
 .custom-uploader.drop-zone {
-  border: 2px dashed #ccc;
+  border: 2px dashed var(--light-grey);
   border-radius: 5px;
   padding: 15px;
   transition: border-color 0.3s ease;
@@ -105,7 +168,7 @@
   position: relative;
 }
 .custom-uploader.drop-zone.drag-over {
-  background-image: repeating-linear-gradient(-45deg, #f9f9f9, #f9f9f9 10px, #f0f0f0 10px, #f0f0f0 20px);
+  background-image: repeating-linear-gradient(-45deg, #f9f9f9, #f9f9f9 10px, #eeeeee 10px, #eeeeee 20px);
 }
 .custom-uploader.drop-zone.disabled {
   opacity: 0.6;
@@ -114,12 +177,12 @@
 }
 .custom-uploader .upload-counter {
   font-size: 0.85em;
-  color: #888;
+  color: var(--light-grey);
   margin-top: 4px;
 }
 .custom-uploader .upload-limit-message {
   font-size: 0.85em;
-  color: #c00;
+  color: var(--error-red);
   margin-top: 4px;
   min-height: 18px;
 }
@@ -128,7 +191,7 @@
   padding-left: 0 !important;
 }
 .image-preview {
-  border: 1px solid #dddddd;
+  border: 1px solid var(--border-grey);
   max-width: 100%;
   border-radius: 3px;
 }

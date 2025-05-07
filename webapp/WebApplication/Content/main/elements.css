@@ -1,4 +1,67 @@
-﻿body a,
+﻿:root {
+  --primary-blue: #337ab7;
+  --vibrant-green: #22BB44;
+  --vibrant-green-10: #36da5a;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f44336;
+  --vibrant-orange: #FF9800;
+  --error-red: #cc0000;
+  --snow-white: #ffffff;
+  --charcoal-black: #0f1215;
+  --border-grey: #dddddd;
+  --light-grey: #888888;
+  --background-color: #ffffff;
+  --surface-color: #eeeeee;
+  --text-color: #444444;
+  --hover-text-color: #515151;
+  --border-color: #dddddd;
+  --well-color: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
+  --panel-header-top: #f7fbff;
+  --panel-header-bottom: #f0f8ff;
+  --panel-header-text-color: #444444;
+  --title-color: #0a4070;
+  --subtitle-color: #337ab7;
+  --page-background: #ffffff;
+  --page-title-color: #331a00;
+  --pills-tab-text-color: #0a4070;
+  --pills-tab-hover: #ffffff;
+  --pills-tab-active: #ffffff;
+  --pills-tab-active-hover: #ffffff;
+  --pills-tab-background: transparent;
+}
+.dark-mode {
+  --primary-blue: #63a0d4;
+  --vibrant-green: #36da5a;
+  --vibrant-green-10: #61e27e;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f8877f;
+  --vibrant-orange: #ffb74d;
+  --error-red: #ff1a1a;
+  --snow-white: #ffffff;
+  --charcoal-black: #2f3842;
+  --border-grey: #ffffff;
+  --light-grey: #aeaeae;
+  --background-color: #0f1215;
+  --surface-color: #444444;
+  --text-color: #f9f9f9;
+  --hover-text-color: #ffffff;
+  --border-color: #ffffff;
+  --well-color: #091a22;
+  --panel-header-top: #246587;
+  --panel-header-bottom: #0f2c3a;
+  --panel-header-text-color: #f9f9f9;
+  --title-color: #e7e7e7;
+  --subtitle-color: #f9f9f9;
+  --page-background: rgba(20, 56, 74, 0.72);
+  --page-title-color: #f9f9f9;
+  --pills-tab-text-color: #f9f9f9;
+  --pills-tab-hover: linear-gradient(to bottom, #1e5875 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active: linear-gradient(to bottom, #276e93 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active-hover: #47a0ce;
+}
+body a,
 h4 {
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
@@ -16,24 +79,24 @@ body {
   min-height: 100vh;
 }
 body {
-  background: #ffffff;
-  color: #444;
+  background: var(--snow-white);
+  color: #444444;
 }
 h3,
 h4 {
-  color: #0a4070 !important;
+  color: var(--title-color);
 }
 div.text-center > h3 {
   font-size: 1.2em;
 }
 h5 {
-  color: #337ab7 !important;
+  color: var(--subtitle-color);
 }
 h5.dark {
-  color: #0a4070 !important;
+  color: #0a4070;
 }
 h6 {
-  color: #666;
+  color: #666666;
   font-size: 1.1em;
   font-weight: bold;
   margin: 15px;
@@ -64,10 +127,27 @@ article h5 {
   font-size: 1.2em;
   line-height: 1.5em;
 }
+label {
+  color: var(--text-color);
+}
+input,
+textarea,
+select {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--light-grey);
+  opacity: 0.8;
+}
 p {
   line-height: 1.7em !important;
   margin-bottom: 20px;
   font-size: 15px;
+  color: var(--text-color);
 }
 p:last-child {
   margin-bottom: 0;
@@ -76,13 +156,15 @@ form div.well h3 {
   margin-bottom: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #d9d9d9;
-  line-height: 1.3em;
-  font-size: 1.4em;
+  line-height: 1.2em;
+}
+a[href='#'] p {
+  color: var(--text-color) !important;
 }
 .footer h3,
 .footer h4,
 .footer h5 {
-  color: #8a8a8a !important;
+  color: var(--light-grey) !important;
 }
 hr {
   border: none;
@@ -102,23 +184,18 @@ button a .fa,
 a.btn a .fa {
   margin-right: 2px;
 }
-.well {
-  border-radius: 7px;
-}
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) and (pointer: coarse) {
   input[type="date"],
   input[type="time"],
   input[type="datetime-local"] {
     /* Your iPhone-specific fixes here */
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0.375rem 0.75rem;
-    height: calc(2.25rem + 2px);
-    font-size: 1rem;
-    line-height: 1.5;
-    text-align: left;
-    vertical-align: middle;
+    /*-webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        box-sizing: border-box;
+        line-height: 1.5em !important;
+        text-align: left;
+        padding-left: 0 !important;
+        vertical-align: text-top;*/
   }
 }

@@ -6537,6 +6537,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        public static string Dark {
+            get {
+                return ResourceManager.GetString("Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Darkening of the Light&lt;/h5&gt;
         ///&lt;p&gt;Darkening of the Light signifies a time of difficulty, where truth and clarity are obscured. It represents situations where darkness prevails, requiring patience and inner strength to endure.&lt;/p&gt;
         ///&lt;p&gt;This hexagram advises caution and restraint. Rather than fighting against the darkness, one should conserve energy and wait for the right moment to act. Wisdom lies in knowing when to retreat and when to advance.&lt;/p&gt;
@@ -11133,7 +11142,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    These are the instructions for removing all of your data.
+        ///    Instructions for removing all of your data.
         ///&lt;/h4&gt;
         ///
         ///&lt;p&gt;
@@ -12868,6 +12877,15 @@ namespace K9.Globalisation {
         public static string LifeTimePlatinumMembership {
             get {
                 return ResourceManager.GetString("LifeTimePlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        public static string Light {
+            get {
+                return ResourceManager.GetString("Light", resourceCulture);
             }
         }
         
@@ -21647,6 +21665,15 @@ namespace K9.Globalisation {
         public static string TheMarryingMaidenTitle {
             get {
                 return ResourceManager.GetString("TheMarryingMaidenTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme.
+        /// </summary>
+        public static string Theme {
+            get {
+                return ResourceManager.GetString("Theme", resourceCulture);
             }
         }
         

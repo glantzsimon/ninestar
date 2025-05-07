@@ -1,4 +1,67 @@
-﻿.datatable-container {
+﻿:root {
+  --primary-blue: #337ab7;
+  --vibrant-green: #22BB44;
+  --vibrant-green-10: #36da5a;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f44336;
+  --vibrant-orange: #FF9800;
+  --error-red: #cc0000;
+  --snow-white: #ffffff;
+  --charcoal-black: #0f1215;
+  --border-grey: #dddddd;
+  --light-grey: #888888;
+  --background-color: #ffffff;
+  --surface-color: #eeeeee;
+  --text-color: #444444;
+  --hover-text-color: #515151;
+  --border-color: #dddddd;
+  --well-color: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
+  --panel-header-top: #f7fbff;
+  --panel-header-bottom: #f0f8ff;
+  --panel-header-text-color: #444444;
+  --title-color: #0a4070;
+  --subtitle-color: #337ab7;
+  --page-background: #ffffff;
+  --page-title-color: #331a00;
+  --pills-tab-text-color: #0a4070;
+  --pills-tab-hover: #ffffff;
+  --pills-tab-active: #ffffff;
+  --pills-tab-active-hover: #ffffff;
+  --pills-tab-background: transparent;
+}
+.dark-mode {
+  --primary-blue: #63a0d4;
+  --vibrant-green: #36da5a;
+  --vibrant-green-10: #61e27e;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f8877f;
+  --vibrant-orange: #ffb74d;
+  --error-red: #ff1a1a;
+  --snow-white: #ffffff;
+  --charcoal-black: #2f3842;
+  --border-grey: #ffffff;
+  --light-grey: #aeaeae;
+  --background-color: #0f1215;
+  --surface-color: #444444;
+  --text-color: #f9f9f9;
+  --hover-text-color: #ffffff;
+  --border-color: #ffffff;
+  --well-color: #091a22;
+  --panel-header-top: #246587;
+  --panel-header-bottom: #0f2c3a;
+  --panel-header-text-color: #f9f9f9;
+  --title-color: #e7e7e7;
+  --subtitle-color: #f9f9f9;
+  --page-background: rgba(20, 56, 74, 0.72);
+  --page-title-color: #f9f9f9;
+  --pills-tab-text-color: #f9f9f9;
+  --pills-tab-hover: linear-gradient(to bottom, #1e5875 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active: linear-gradient(to bottom, #276e93 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active-hover: #47a0ce;
+}
+.datatable-container {
   width: 100%;
   overflow: auto;
 }
@@ -19,14 +82,14 @@
   margin-right: 6px;
 }
 .bootstraptable thead {
-  color: #333;
+  color: #333333;
 }
 .bootstraptable thead > tr:first-child th {
   white-space: nowrap !important;
 }
 .bootstraptable tbody tr:hover {
-  background: #337ab7 !important;
-  color: #ffffff !important;
+  background: var(--primary-blue) !important;
+  color: var(--snow-white) !important;
 }
 .bootstraptable td {
   vertical-align: middle !important;
@@ -70,25 +133,19 @@ form .pull-right .btn {
   word-wrap: break-word !important;
   word-break: break-word !important;
 }
-/* Style the search input */
-/* Style the search input */
 .form-control.input-sm[type="search"] {
   border-radius: 25px;
-  /* Makes it round */
   padding: 10px 40px 10px 15px;
-  /* Add space for the icon */
-  border: 1px solid #ccc;
+  border: 1px solid var(--light-grey);
   transition: all 0.3s ease-in-out;
   font-size: 14px;
-  /* Beautiful magnifying glass icon */
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>') no-repeat;
   background-size: 20px;
   background-position: right 12px center;
   background-repeat: no-repeat;
 }
 .form-control.input-sm[type="search"]:focus {
-  border-color: #007bff;
-  /* Highlight on focus */
+  border-color: #0074E4;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   outline: none;
 }

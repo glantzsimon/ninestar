@@ -51,11 +51,11 @@
 }
 
 .well {
-    background-image: -webkit-linear-gradient(top, @whisper-white 0, @almost-white 100%);
-    background-image: -o-linear-gradient(top, @whisper-white 0, @almost-white 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(@whisper-white), to(@almost-white));
-    background-image: linear-gradient(to bottom, @whisper-white 0, @almost-white 100%);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 7px;
+    opacity: 1 !important;
+    background-color: @snow-white;
+    background-image: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
 
     h4:first-of-type {
         font-weight: bold;
@@ -72,8 +72,7 @@
     padding: 30px 30px 10px 30px;
     width: auto;
     max-width: 1180px;
-    border: none;
-    background: @snow-white;
+    border: none;    
 }
 
 .mainContent {
@@ -104,7 +103,7 @@
 }
 
 a.btn {
-    color: @snow-white !important;
+    color: var(--snow-white) !important;
     text-decoration: none !important;
 }
 
@@ -124,7 +123,7 @@ a#toTop {
     transition: all 1.5s ease-out;
 
     &:hover {
-        color: @bold-orange;
+        color: var(--vibrant-orange);
     }
 }
 

@@ -1,4 +1,67 @@
-﻿/*@images-path: "../../../Images";*/
+﻿:root {
+  --primary-blue: #337ab7;
+  --vibrant-green: #22BB44;
+  --vibrant-green-10: #36da5a;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f44336;
+  --vibrant-orange: #FF9800;
+  --error-red: #cc0000;
+  --snow-white: #ffffff;
+  --charcoal-black: #0f1215;
+  --border-grey: #dddddd;
+  --light-grey: #888888;
+  --background-color: #ffffff;
+  --surface-color: #eeeeee;
+  --text-color: #444444;
+  --hover-text-color: #515151;
+  --border-color: #dddddd;
+  --well-color: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
+  --panel-header-top: #f7fbff;
+  --panel-header-bottom: #f0f8ff;
+  --panel-header-text-color: #444444;
+  --title-color: #0a4070;
+  --subtitle-color: #337ab7;
+  --page-background: #ffffff;
+  --page-title-color: #331a00;
+  --pills-tab-text-color: #0a4070;
+  --pills-tab-hover: #ffffff;
+  --pills-tab-active: #ffffff;
+  --pills-tab-active-hover: #ffffff;
+  --pills-tab-background: transparent;
+}
+.dark-mode {
+  --primary-blue: #63a0d4;
+  --vibrant-green: #36da5a;
+  --vibrant-green-10: #61e27e;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f8877f;
+  --vibrant-orange: #ffb74d;
+  --error-red: #ff1a1a;
+  --snow-white: #ffffff;
+  --charcoal-black: #2f3842;
+  --border-grey: #ffffff;
+  --light-grey: #aeaeae;
+  --background-color: #0f1215;
+  --surface-color: #444444;
+  --text-color: #f9f9f9;
+  --hover-text-color: #ffffff;
+  --border-color: #ffffff;
+  --well-color: #091a22;
+  --panel-header-top: #246587;
+  --panel-header-bottom: #0f2c3a;
+  --panel-header-text-color: #f9f9f9;
+  --title-color: #e7e7e7;
+  --subtitle-color: #f9f9f9;
+  --page-background: rgba(20, 56, 74, 0.72);
+  --page-title-color: #f9f9f9;
+  --pills-tab-text-color: #f9f9f9;
+  --pills-tab-hover: linear-gradient(to bottom, #1e5875 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active: linear-gradient(to bottom, #276e93 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active-hover: #47a0ce;
+}
+/*@images-path: "../../../Images";*/
 @font-face {
   font-family: 'candara';
   font-style: normal;
@@ -45,11 +108,11 @@
   width: 30px;
 }
 .well {
-  background-image: -webkit-linear-gradient(top, #f9f9f9 0, #fdfdfd 100%);
-  background-image: -o-linear-gradient(top, #f9f9f9 0, #fdfdfd 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#fdfdfd));
-  background-image: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 7px;
+  opacity: 1 !important;
+  background-color: #ffffff;
+  background-image: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
 }
 .well h4:first-of-type {
   font-weight: bold;
@@ -64,7 +127,6 @@
   width: auto;
   max-width: 1180px;
   border: none;
-  background: #ffffff;
 }
 .mainContent {
   position: relative;
@@ -89,7 +151,7 @@
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
 }
 a.btn {
-  color: #ffffff !important;
+  color: var(--snow-white) !important;
   text-decoration: none !important;
 }
 .row {
@@ -107,7 +169,7 @@ a#toTop {
   transition: all 1.5s ease-out;
 }
 a#toTop:hover {
-  color: #ff9800;
+  color: var(--vibrant-orange);
 }
 .hidden-date-field {
   opacity: 0;
@@ -149,7 +211,7 @@ h2.alert-message {
 .small-print label {
   font-size: 0.9em;
   line-height: 1.33em;
-  color: #666;
+  color: #666666;
 }
 h5.form-subtitle {
   font-size: 1.21em;

@@ -18,7 +18,6 @@
     p {
         text-align: center !important;
         margin-bottom: 10px;
-        color: black !important;
     }
 }
 
@@ -187,7 +186,7 @@ a > .ninestar-summary-container {
         }
 
         &.active {
-            background: @primary-blue;
+            background: var(--primary-blue);
             color: white !important;
 
             h3 {
@@ -252,15 +251,15 @@ a > .ninestar-summary-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        outline: 1px solid @border-grey;
+        outline: 1px solid var(--border-grey);
         box-sizing: border-box;
         -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
         -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
         box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
 
         .cell {
-            border-bottom: 1px solid @border-grey;
-            border-right: 1px solid @border-grey;
+            border-bottom: 1px solid var(--border-grey);
+            border-right: 1px solid var(--border-grey);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -478,7 +477,7 @@ a > .ninestar-summary-container {
     position: absolute;
     width: 333px;
     height: auto;
-    background: @primary-blue;
+    background: var(--primary-blue);
     opacity: 0.9;
     color: #fff;
     padding: 6px 10px;
@@ -530,4 +529,3 @@ a > .ninestar-summary-container {
         font-weight: normal;
     }
 }
-

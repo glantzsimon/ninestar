@@ -48,16 +48,16 @@
             border: 1px solid @light-silver;
             border-bottom-left-radius: 3px;
             padding: 10px;
-            background: white;
+            background: @ghost-white;
             text-align: center;
-            -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
-            -moz-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
-            box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: 1px 1px 5px 0 @shadow-colour;
+            -moz-box-shadow: 1px 1px 5px 0 @shadow-colour;
+            box-shadow: 1px 1px 5px 0 @shadow-colour;
 
             &:hover {
-                -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
-                -moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
-                box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+                -webkit-box-shadow: 3px 3px 5px 0 @shadow-colour;
+                -moz-box-shadow: 3px 3px 5px 0 @shadow-colour;
+                box-shadow: 3px 3px 5px 0 @shadow-colour;
             }
         }
     }
@@ -72,7 +72,7 @@
 
 .file-preview-upload {
     top: auto !important;
-    color: @vibrant-green;
+    color: var(--vibrant-green);
 }
 
 .doc-info {
@@ -100,7 +100,7 @@
     }
 
     .hidden-file-input:focus + .btn-upload-trigger {
-        outline: 2px dotted #999;
+        outline: 2px dotted @medium-grey;
     }
 
     .btn-upload-trigger {
@@ -108,16 +108,16 @@
         margin-top: 15px;
         min-width: 180px;
         border-radius: 4px;
-        background-color: #f5f5f5;
+        background-color: @cloud-white;
         cursor: pointer;
 
         &:hover {
-            background-color: #e6e6e6;
+            background-color: @mist-grey;
         }
     }
 
     &.drop-zone {
-        border: 2px dashed #ccc;
+        border: 2px dashed var(--light-grey);
         border-radius: 5px;
         padding: 15px;
         transition: border-color 0.3s ease;
@@ -125,7 +125,7 @@
         position: relative;
 
         &.drag-over {
-            background-image: repeating-linear-gradient( -45deg, #f9f9f9, #f9f9f9 10px, #f0f0f0 10px, #f0f0f0 20px );
+            background-image: repeating-linear-gradient( -45deg, @whisper-white, @whisper-white 10px, @ghost-white 10px, @ghost-white 20px );
         }
 
         &.disabled {
@@ -137,16 +137,16 @@
 
     .upload-counter {
         font-size: 0.85em;
-        color: #888;
+        color: var(--light-grey);
         margin-top: 4px;
     }
 
     .upload-limit-message {
         font-size: 0.85em;
-        color: #c00;
+        color: var(--error-red);
         margin-top: 4px;
         min-height: 18px;
-    }    
+    }
 }
 
 .file-preview-container {
@@ -155,10 +155,10 @@
 }
 
 .image-preview {
-    border: 1px solid @border-grey;
+    border: 1px solid var(--border-grey);
     max-width: 100%;
     border-radius: 3px;
-    // Hide the image if src is missing or empty
+
     &[src=""],
     &:not([src]) {
         display: none !important;

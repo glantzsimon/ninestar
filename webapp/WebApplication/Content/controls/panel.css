@@ -1,6 +1,70 @@
-﻿.panel {
+﻿:root {
+  --primary-blue: #337ab7;
+  --vibrant-green: #22BB44;
+  --vibrant-green-10: #36da5a;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f44336;
+  --vibrant-orange: #FF9800;
+  --error-red: #cc0000;
+  --snow-white: #ffffff;
+  --charcoal-black: #0f1215;
+  --border-grey: #dddddd;
+  --light-grey: #888888;
+  --background-color: #ffffff;
+  --surface-color: #eeeeee;
+  --text-color: #444444;
+  --hover-text-color: #515151;
+  --border-color: #dddddd;
+  --well-color: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
+  --panel-header-top: #f7fbff;
+  --panel-header-bottom: #f0f8ff;
+  --panel-header-text-color: #444444;
+  --title-color: #0a4070;
+  --subtitle-color: #337ab7;
+  --page-background: #ffffff;
+  --page-title-color: #331a00;
+  --pills-tab-text-color: #0a4070;
+  --pills-tab-hover: #ffffff;
+  --pills-tab-active: #ffffff;
+  --pills-tab-active-hover: #ffffff;
+  --pills-tab-background: transparent;
+}
+.dark-mode {
+  --primary-blue: #63a0d4;
+  --vibrant-green: #36da5a;
+  --vibrant-green-10: #61e27e;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f8877f;
+  --vibrant-orange: #ffb74d;
+  --error-red: #ff1a1a;
+  --snow-white: #ffffff;
+  --charcoal-black: #2f3842;
+  --border-grey: #ffffff;
+  --light-grey: #aeaeae;
+  --background-color: #0f1215;
+  --surface-color: #444444;
+  --text-color: #f9f9f9;
+  --hover-text-color: #ffffff;
+  --border-color: #ffffff;
+  --well-color: #091a22;
+  --panel-header-top: #246587;
+  --panel-header-bottom: #0f2c3a;
+  --panel-header-text-color: #f9f9f9;
+  --title-color: #e7e7e7;
+  --subtitle-color: #f9f9f9;
+  --page-background: rgba(20, 56, 74, 0.72);
+  --page-title-color: #f9f9f9;
+  --pills-tab-text-color: #f9f9f9;
+  --pills-tab-hover: linear-gradient(to bottom, #1e5875 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active: linear-gradient(to bottom, #276e93 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active-hover: #47a0ce;
+}
+.panel {
+  background: var(--well-color);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-grey);
   border-radius: 8px !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -14,11 +78,18 @@
 .panel .panel-heading.clearfix .form-group {
   margin-bottom: 0;
 }
+.panel .panel-heading h4 {
+  font-size: 1.4em !important;
+}
+.panel .panel-heading > h4,
+.panel .panel-heading h5 {
+  color: var(--panel-header-text-color);
+}
 .panel .panel-title {
   font-size: 16px;
 }
 .panel .panel-body {
-  background-color: #ffffff;
+  background: var(--well-color);
   font-size: 15px;
   line-height: 1.7;
   padding: 20px;
@@ -28,33 +99,31 @@
 .panel .panel-body .panel-body h4:first-child {
   margin-top: 0 !important;
 }
+.panel .panel-body > h4 {
+  color: var(--title-color);
+}
+.panel .panel-body > h5 {
+  color: var(--subtitle-color);
+}
+.panel .panel-body > h5.dark {
+  color: var(--title-color);
+}
 .panel .panel-footer {
-  background-color: #f2f2f2;
-  border-top: 1px solid #ddd;
+  background-color: #d9d9d9;
+  border-top: 1px solid var(--border-grey);
   padding: 10px;
   text-align: right;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-.panel .panel-heading h4 {
-  font-size: 1.4em !important;
-}
-.panel .panel-heading h4,
-.panel .panel-heading h5 {
-  color: #444 !important;
-}
 .panel .panel-body-image {
   padding-top: 0;
 }
 .panel.panel-default > .panel-heading {
-  /* Subtle pale blue background */
   background-color: #f0f8ff;
-  /* Optional gradient for extra depth */
-  background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
-  /* Make sure text is readable */
-  color: #333;
-  /* Tweak spacing and borders as desired */
-  border-bottom: 1px solid #ddd;
+  background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
+  color: #333333;
+  border-bottom: 1px solid var(--border-grey);
 }
 .panel.panel-default:last-of-type {
   margin-bottom: 0;
@@ -92,12 +161,12 @@
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 .panel a.collapsible-panel-link:hover {
-  color: #337ab7;
+  color: var(--primary-blue);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 .panel a.collapsible-panel-link .fa-caret-up,
 .panel a.collapsible-panel-link .fa-caret-down {
-  color: #337ab7;
+  color: var(--primary-blue);
 }
 .panel .k9-panel-collapse {
   position: relative;
@@ -115,13 +184,13 @@
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 1rem;
-  color: #555;
+  color: #555555;
   cursor: pointer;
   opacity: 1;
 }
 .panel .k9-readmore-overlay .k9-readmore-text {
   transition: all 0.35s ease, transform 0.35s ease;
-  color: #337ab7;
+  color: var(--primary-blue);
   border-radius: 11px;
   padding-left: 7px;
   padding-right: 7px;

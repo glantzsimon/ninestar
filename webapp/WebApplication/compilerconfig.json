@@ -154,6 +154,13 @@
     }
   },
   {
+    "inputFile": "Content/less/main/dark.less",
+    "outputFile": "Content/main/dark.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/main/style-lg.less",
     "outputFile": "Content/main/style-lg.css",
     "options": {

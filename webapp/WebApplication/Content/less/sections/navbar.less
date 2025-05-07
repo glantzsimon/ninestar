@@ -62,12 +62,12 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
 
     ul {
         &:not(.dropdown-menu) li a {
-            color: @snow-white;
+            color: var(--snow-white);
         }
 
         li {
             a {
-                color: @snow-white;
+                color: var(--snow-white);
                 font-size: 1em;
                 font-weight: 300 !important;
                 margin: 0;
@@ -79,11 +79,11 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
                 text-transform: uppercase;
 
                 &:hover {
-                    color: @vibrant-orange !important;
+                    color: var(--vibrant-orange) !important;
                 }
 
                 &.active {
-                    color: @vibrant-orange !important;
+                    color: var(--vibrant-orange) !important;
                     font-weight: 400;
                 }
             }
@@ -113,16 +113,16 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
 
         &.site-controls {
             right: 0;
-            margin-right: 10px;            
+            margin-right: 10px;
         }
 
         &.site-controls > li:hover a, .main-navbar > li:hover a {
-            color: @bold-orange !important;
+            color: var(--vibrant-orange) !important;
             background: none !important;
         }
 
         &.site-controls > li.active a, .main-navbar > li.active a {
-            color: @bold-orange;
+            color: var(--vibrant-orange);
             font-weight: bold;
             background: none !important;
         }
@@ -141,7 +141,7 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
                     width: 100%;
 
                     &.active > a {
-                        color: @vibrant-orange !important;
+                        color: var(--vibrant-orange) !important;
                         font-weight: 400;
                         background: none;
                     }
@@ -151,11 +151,22 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
 
                         &:hover {
                             font-weight: 600;
-                            color: @dark-grey !important;
+                            color: var(--charcoal-black) !important;
                             transition: none;
                         }
                     }
                 }
+            }
+
+            .theme-selector::before {
+                content: "✓";
+                display: none;
+                margin-right: 6px;
+                color: var(--primary-blue); /* or any accent colour */
+            }
+
+            .theme-selector.active::before {
+                display: inline-block;
             }
         }
 
@@ -281,7 +292,7 @@ ul.main-navbar {
 
         li {
             &.active > a {
-                color: @vibrant-orange !important;
+                color: var(--vibrant-orange) !important;
                 font-weight: 600;
             }
 
@@ -296,7 +307,7 @@ ul.main-navbar {
 
             &:hover a {
                 font-weight: 600;
-                color: @vibrant-orange !important;
+                color: var(--vibrant-orange) !important;
                 -webkit-transition: none;
                 -o-transition: none;
                 transition: none;
@@ -344,7 +355,7 @@ div.small-logo {
 }
 
 .navbar-nav:not(.navbar-login):not(.dropdown-menu) li.active a {
-    color: @bold-orange !important;
+    color: var(--vibrant-orange) !important;
     background: none !important;
 }
 

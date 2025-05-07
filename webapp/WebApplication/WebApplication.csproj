@@ -629,6 +629,7 @@
     <Content Include="Content\fonts\fa-regular-400.svg" />
     <Content Include="Content\fonts\fa-solid-900.svg" />
     <Content Include="Content\fontawesome\font-awesome-legacy.css" />
+    <Content Include="Content\main\dark.css" />
     <Content Include="Content\sections\articles.css" />
     <Content Include="Content\sections\astrology.css" />
     <Content Include="Content\main\elements.css" />
@@ -1416,6 +1417,7 @@
     <Content Include="Content\less\controls\image-list.less" />
     <Content Include="Content\less\controls\tooltips.less" />
     <Content Include="Content\less\controls\calendar.less" />
+    <Content Include="Content\less\main\dark.less" />
     <None Include="packages.config" />
     <Content Include="Properties\PublishProfiles\.gitattributes" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />

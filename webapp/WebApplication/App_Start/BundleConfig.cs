@@ -17,6 +17,7 @@ namespace K9.WebApplication
             var main = new StyleBundle("~/Content/maincss");
             main.IncludeWithRewrite(
                 "~/Content/main/style.css",
+                "~/Content/main/dark.css",
                 "~/Content/main/elements.css");
             main.IncludeAllCssWithRewrite("~/Content/bootstrap-custom");
             main.IncludeAllCssWithRewrite("~/Content/device");

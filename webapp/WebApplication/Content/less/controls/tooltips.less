@@ -2,8 +2,8 @@
 
 .custom-tooltip {
     position: absolute;
-    background: @primary-blue;
-    color: #fff;
+    background: var(--primary-blue);
+    color: var(--snow-white);
     font-size: 12px;
     padding: 7px 11px;
     border-radius: 4px;
@@ -32,7 +32,7 @@
         left: 50%;
         transform: translateX(-50%);
         border-width: 6px 6px 0 6px;
-        border-color: @primary-blue transparent transparent transparent;
+        border-color: var(--primary-blue) transparent transparent transparent;
     }
 
     &.bottom::after {
@@ -40,7 +40,7 @@
         left: 50%;
         transform: translateX(-50%);
         border-width: 0 6px 6px 6px;
-        border-color: transparent transparent @primary-blue transparent;
+        border-color: transparent transparent var(--primary-blue) transparent;
     }
 
     &.left::after {
@@ -48,7 +48,7 @@
         right: -6px;
         transform: translateY(-50%);
         border-width: 6px 0 6px 6px;
-        border-color: transparent transparent transparent @primary-blue;
+        border-color: transparent transparent transparent var(--primary-blue);
     }
 
     &.right::after {
@@ -56,6 +56,6 @@
         left: -6px;
         transform: translateY(-50%);
         border-width: 6px 6px 6px 0;
-        border-color: transparent @primary-blue transparent transparent;
+        border-color: transparent var(--primary-blue) transparent transparent;
     }
 }

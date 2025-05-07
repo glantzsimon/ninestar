@@ -104,9 +104,27 @@
         background-image: none;
     }
 
+    .btn-primary, .btn-lg {
+        color: @snow-white !important;
+    }
+
     .alphaBackground {
         background: var(--page-background);
         filter: alpha(opacity=81);
+    }
+
+    ul li {
+        color: var(--text-color);
+    }
+
+    .nav-pills > li > a:hover, .nav-tabs > li > a:hover {
+        background-color: var(--pills-tab-active-hover);
+    }
+
+    .footer, .footer-copyright {
+        p, a {
+            color: var(--text-color) !important;
+        }
     }
 }
 

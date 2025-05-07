@@ -32,6 +32,12 @@
   --table-background-color: #f0f8ff;
   --table-background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
   --table-border-color: transparent;
+  --nav-pills-button-background: #d9d9d9;
+  --readmore-overlay-background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 22%, #ffffff 81%);
+  --ninestar-summary-container-hover: #ffffff;
+  --body-background: #ffffff;
+  --page-overlay-color: rgba(0, 0, 0, 0.3);
+  --page-fadein-color: #ffffff;
 }
 .dark-mode {
   --primary-blue: #63a0d4;
@@ -67,6 +73,12 @@
   --table-background-color: rgba(20, 56, 74, 0.72);
   --table-background: linear-gradient(to bottom, rgba(20, 56, 74, 0.33) 0%, rgba(20, 56, 74, 0.11) 100%);
   --table-border-color: #f9f9f9;
+  --nav-pills-button-background: #1e5875;
+  --readmore-overlay-background: linear-gradient(to bottom, rgba(20, 56, 74, 0) 22%, #14384a 81%);
+  --ninestar-summary-container-hover: #14384a;
+  --body-background: #14384a;
+  --page-overlay-color: rgba(0, 0, 0, 0.3);
+  --page-fadein-color: #ffffff;
 }
 .testimonial-box {
   display: table;

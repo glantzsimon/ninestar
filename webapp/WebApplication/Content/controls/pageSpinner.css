@@ -32,6 +32,12 @@
   --table-background-color: #f0f8ff;
   --table-background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
   --table-border-color: transparent;
+  --nav-pills-button-background: #d9d9d9;
+  --readmore-overlay-background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 22%, #ffffff 81%);
+  --ninestar-summary-container-hover: #ffffff;
+  --body-background: #ffffff;
+  --page-overlay-color: rgba(0, 0, 0, 0.3);
+  --page-fadein-color: #ffffff;
 }
 .dark-mode {
   --primary-blue: #63a0d4;
@@ -67,6 +73,12 @@
   --table-background-color: rgba(20, 56, 74, 0.72);
   --table-background: linear-gradient(to bottom, rgba(20, 56, 74, 0.33) 0%, rgba(20, 56, 74, 0.11) 100%);
   --table-border-color: #f9f9f9;
+  --nav-pills-button-background: #1e5875;
+  --readmore-overlay-background: linear-gradient(to bottom, rgba(20, 56, 74, 0) 22%, #14384a 81%);
+  --ninestar-summary-container-hover: #14384a;
+  --body-background: #14384a;
+  --page-overlay-color: rgba(0, 0, 0, 0.3);
+  --page-fadein-color: #ffffff;
 }
 #pageSpinner {
   position: fixed;
@@ -92,7 +104,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background: var(--page-overlay-color);
   z-index: 10000;
   cursor: pointer;
 }
@@ -103,7 +115,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background: var(--page-overlay-color);
   z-index: 1000;
   cursor: pointer;
 }
@@ -122,6 +134,10 @@
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   display: none;
+}
+.page-loading-image {
+  width: 111px;
+  height: 111px;
 }
 @-webkit-keyframes spin {
   0% {

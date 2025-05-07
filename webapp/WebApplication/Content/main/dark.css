@@ -32,6 +32,12 @@
   --table-background-color: #f0f8ff;
   --table-background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
   --table-border-color: transparent;
+  --nav-pills-button-background: #d9d9d9;
+  --readmore-overlay-background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 22%, #ffffff 81%);
+  --ninestar-summary-container-hover: #ffffff;
+  --body-background: #ffffff;
+  --page-overlay-color: rgba(0, 0, 0, 0.3);
+  --page-fadein-color: #ffffff;
 }
 .dark-mode {
   --primary-blue: #63a0d4;
@@ -67,6 +73,12 @@
   --table-background-color: rgba(20, 56, 74, 0.72);
   --table-background: linear-gradient(to bottom, rgba(20, 56, 74, 0.33) 0%, rgba(20, 56, 74, 0.11) 100%);
   --table-border-color: #f9f9f9;
+  --nav-pills-button-background: #1e5875;
+  --readmore-overlay-background: linear-gradient(to bottom, rgba(20, 56, 74, 0) 22%, #14384a 81%);
+  --ninestar-summary-container-hover: #14384a;
+  --body-background: #14384a;
+  --page-overlay-color: rgba(0, 0, 0, 0.3);
+  --page-fadein-color: #ffffff;
 }
 /*@images-path: "../../../Images";*/
 .dark-mode h1,
@@ -158,9 +170,26 @@
   color: var(--text-color);
   background-image: none;
 }
+.dark-mode .btn-primary,
+.dark-mode .btn-lg {
+  color: #ffffff !important;
+}
 .dark-mode .alphaBackground {
   background: var(--page-background);
   filter: alpha(opacity=81);
+}
+.dark-mode ul li {
+  color: var(--text-color);
+}
+.dark-mode .nav-pills > li > a:hover,
+.dark-mode .nav-tabs > li > a:hover {
+  background-color: var(--pills-tab-active-hover);
+}
+.dark-mode .footer p,
+.dark-mode .footer-copyright p,
+.dark-mode .footer a,
+.dark-mode .footer-copyright a {
+  color: var(--text-color) !important;
 }
 @media (max-width: 767px) {
   .alphaBackground {

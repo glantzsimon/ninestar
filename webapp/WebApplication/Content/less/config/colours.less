@@ -116,9 +116,11 @@
 
 @teal-blue-light: lighten(@teal-blue, 18%);
 @dark-teal-blue: darken(@teal-blue, 18%);
+@very-dark-teal-blue: darken(@teal-blue, 36%);
 @dark-teal-blue-alpha: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.72);
 @dark-teal-blue-alpha-medium: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.33);
 @dark-teal-blue-alpha-dark: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.11);
+@dark-teal-blue-alpha-zero: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0);
 @primary-blue-light: lighten(@primary-blue, 33%);
 @primary-blue-very-light: lighten(@primary-blue, 45%);
 
@@ -160,6 +162,12 @@
     --table-background-color: @alice-blue;
     --table-background: linear-gradient(to bottom, @table-gradient-top 0%, @alice-blue 100%);
     --table-border-color: transparent;
+    --nav-pills-button-background: @light-silver;
+    --readmore-overlay-background: linear-gradient( to bottom, rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 1) 81% );
+    --ninestar-summary-container-hover: @snow-white;
+    --body-background: @snow-white;
+    --page-overlay-color: rgba(0,0,0,0.3);
+    --page-fadein-color: @snow-white;
 }
 
 // =======================
@@ -200,4 +208,10 @@
     --table-background-color: @dark-teal-blue-alpha;
     --table-background: linear-gradient(to bottom, @dark-teal-blue-alpha-medium 0%, @dark-teal-blue-alpha-dark 100%);
     --table-border-color: @whisper-white;
+    --nav-pills-button-background: @teal-blue-dark;
+    --readmore-overlay-background: linear-gradient( to bottom, @dark-teal-blue-alpha-zero 22%, @dark-teal-blue 81% );
+    --ninestar-summary-container-hover: @dark-teal-blue;
+    --body-background: @dark-teal-blue;
+    --page-overlay-color: rgba(0,0,0,0.3);
+    --page-fadein-color: @snow-white;
 }

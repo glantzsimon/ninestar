@@ -63,8 +63,9 @@ form .pull-right .btn {
     margin-right: 0;
     border-top-left-radius: 9px !important;
     border-top-right-radius: 9px !important;
-    background-color: @alice-blue;
-    background: linear-gradient(to bottom, @table-gradient-top 0%, @alice-blue 100%);
+    border: 1px solid var(--table-border-color);
+    background-color: var(--table-background-color);
+    background: var(--table-background);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
     table {
@@ -74,6 +75,7 @@ form .pull-right .btn {
             th {
                 padding-top: 12px !important;
                 padding-bottom: 12px !important;
+                color: var(--text-color);
             }
         }
 
@@ -81,6 +83,13 @@ form .pull-right .btn {
             tr:first-child {
                 td {
                     border-top: none;
+                    color: var(--text-color);
+                }
+            }
+
+            tr {
+                td {
+                    color: var(--text-color);
                 }
             }
         }

@@ -26,9 +26,12 @@
   --page-title-color: #331a00;
   --pills-tab-text-color: #0a4070;
   --pills-tab-hover: #ffffff;
-  --pills-tab-active: #ffffff;
+  --pills-tab-active: linear-gradient(to bottom, #ffffff 0, #f9f9f9 100%);
   --pills-tab-active-hover: #ffffff;
   --pills-tab-background: transparent;
+  --table-background-color: #f0f8ff;
+  --table-background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
+  --table-border-color: transparent;
 }
 .dark-mode {
   --primary-blue: #63a0d4;
@@ -60,6 +63,10 @@
   --pills-tab-hover: linear-gradient(to bottom, #1e5875 0, rgba(20, 56, 74, 0.11) 100%);
   --pills-tab-active: linear-gradient(to bottom, #276e93 0, rgba(20, 56, 74, 0.11) 100%);
   --pills-tab-active-hover: #47a0ce;
+  --pills-tab-background: rgba(20, 56, 74, 0.11);
+  --table-background-color: rgba(20, 56, 74, 0.72);
+  --table-background: linear-gradient(to bottom, rgba(20, 56, 74, 0.33) 0%, rgba(20, 56, 74, 0.11) 100%);
+  --table-border-color: #f9f9f9;
 }
 .nav-tabs > li > a {
   border-right: 1px solid #eeeeee;
@@ -98,7 +105,7 @@ ul.image-pill li {
   height: 100%;
 }
 ul.image-pill li.active a {
-  background-color: var(--pills-tab-active) !important;
+  background-image: var(--pills-tab-active) !important;
   -webkit-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.3);
   /* Top shadow */
   -moz-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.3);
@@ -130,7 +137,7 @@ ul.image-pill li:not(.active) a:hover {
   z-index: 2;
 }
 ul.image-pill li a {
-  background-color: var(--pill-tab-background) !important;
+  background-color: var(--pills-tab-background) !important;
   font-size: 1.1em !important;
   font-weight: bold;
   color: var(--pills-tab-text-color) !important;

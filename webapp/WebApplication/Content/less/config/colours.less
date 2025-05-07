@@ -117,7 +117,10 @@
 @teal-blue-light: lighten(@teal-blue, 18%);
 @dark-teal-blue: darken(@teal-blue, 18%);
 @dark-teal-blue-alpha: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.72);
+@dark-teal-blue-alpha-medium: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.33);
 @dark-teal-blue-alpha-dark: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.11);
+@primary-blue-light: lighten(@primary-blue, 33%);
+@primary-blue-very-light: lighten(@primary-blue, 45%);
 
 // =======================
 // 💡 CSS Variables (light mode default)
@@ -151,9 +154,12 @@
     --page-title-color: @dark-brown;
     --pills-tab-text-color: @medium-blue;
     --pills-tab-hover: @snow-white;
-    --pills-tab-active: @snow-white;
+    --pills-tab-active: linear-gradient(to bottom, @snow-white 0, @whisper-white 100%);
     --pills-tab-active-hover: @snow-white;
     --pills-tab-background: transparent;
+    --table-background-color: @alice-blue;
+    --table-background: linear-gradient(to bottom, @table-gradient-top 0%, @alice-blue 100%);
+    --table-border-color: transparent;
 }
 
 // =======================
@@ -190,4 +196,8 @@
     --pills-tab-hover: linear-gradient(to bottom, @teal-blue-dark 0, @dark-teal-blue-alpha-dark 100%);
     --pills-tab-active: linear-gradient(to bottom, @teal-blue 0, @dark-teal-blue-alpha-dark 100%);
     --pills-tab-active-hover: @teal-blue-light;
+    --pills-tab-background: @dark-teal-blue-alpha-dark;
+    --table-background-color: @dark-teal-blue-alpha;
+    --table-background: linear-gradient(to bottom, @dark-teal-blue-alpha-medium 0%, @dark-teal-blue-alpha-dark 100%);
+    --table-border-color: @whisper-white;
 }

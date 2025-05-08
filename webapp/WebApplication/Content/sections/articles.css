@@ -149,7 +149,7 @@
   text-decoration: underline;
 }
 .article-container article .well {
-  background: white !important;
+  background: var(--background-color) !important;
   padding: 20px 10px !important;
 }
 .article-container article #comment-form .well {

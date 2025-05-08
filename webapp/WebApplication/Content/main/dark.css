@@ -414,6 +414,71 @@
 .dark-mode #blogGrid img.img-thumbnail {
   padding: 1px;
 }
+.dark-mode table.dataTable {
+  background: var(--well-color);
+  border: 1px solid #f9f9f9;
+}
+.dark-mode table.dataTable thead {
+  background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
+  border: 1px solid #f9f9f9;
+  border-top-left-radius: 7px !important;
+  border-top-right-radius: 7px !important;
+  color: #f9f9f9;
+}
+.dark-mode table.dataTable thead tr:first-child td:first-child {
+  border-top-left-radius: 7px !important;
+}
+.dark-mode table.dataTable thead tr:first-child td:last-child {
+  border-top-right-radius: 7px !important;
+}
+.dark-mode table.dataTable tbody tr.even {
+  background: rgba(20, 56, 74, 0.33);
+}
+.dark-mode table.dataTable tbody tr.odd {
+  background: rgba(20, 56, 74, 0.11);
+}
+.dark-mode table.dataTable tbody tr td {
+  color: #f9f9f9;
+}
+.dark-mode table.dataTable tbody tr:hover {
+  background: var(--pills-tab-hover) !important;
+}
+.dark-mode .article-container article .well {
+  background: var(--well-color) !important;
+}
+.dark-mode .article-container article .comment {
+  background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
+  border: 1px solid #f9f9f9;
+}
+.dark-mode .article-container article .comment .comment-body .comment-meta {
+  color: #aaaaaa;
+}
+.dark-mode .article-container article .comment .comment-body .text-muted {
+  color: #aaaaaa;
+}
+.dark-mode .article-container article .comment .comment-body .like-summary {
+  color: #d9d9d9;
+}
+.dark-mode .article-container article .comment .comment-body p,
+.dark-mode .article-container article .comment .comment-body span {
+  color: #f9f9f9 !important;
+}
+.dark-mode .article-container article .comment .comment-body p i,
+.dark-mode .article-container article .comment .comment-body span i {
+  color: #f9f9f9;
+}
+.dark-mode .article-container article .comment .comment-body p i.fa-heart,
+.dark-mode .article-container article .comment .comment-body span i.fa-heart {
+  color: #f44336;
+}
+.dark-mode .article-container article .comment .comment-body p i.fa-trash,
+.dark-mode .article-container article .comment .comment-body span i.fa-trash {
+  color: #a94442;
+}
+.dark-mode .article-container article .comment .comment-body p i.fa-pencil,
+.dark-mode .article-container article .comment .comment-body span i.fa-pencil {
+  color: #f0f8ff;
+}
 @media (max-width: 767px) {
   .alphaBackground {
     background: none !important;

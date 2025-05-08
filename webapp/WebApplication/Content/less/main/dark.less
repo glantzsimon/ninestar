@@ -443,6 +443,96 @@
             padding: 1px;
         }
     }
+
+    table.dataTable {
+        background: var(--well-color);
+        border: 1px solid @whisper-white;
+
+        thead {
+            background: @panel-header-background;
+            border: 1px solid @whisper-white;
+            border-top-left-radius: 7px !important;
+            border-top-right-radius: 7px !important;
+            color: @whisper-white;
+
+            tr:first-child {
+                td:first-child {
+                    border-top-left-radius: 7px !important;
+                }
+
+                td:last-child {
+                    border-top-right-radius: 7px !important;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                &.even {
+                    background: @dark-teal-blue-alpha-medium;
+                }
+
+                &.odd {
+                    background: @dark-teal-blue-alpha-dark;
+                }
+
+                td {
+                    color: @whisper-white;
+                }
+
+                &:hover {
+                    background: var(--pills-tab-hover) !important;
+                }
+            }
+        }
+    }
+
+    .article-container {
+        article {
+            .well {
+                background: var(--well-color) !important;
+            }
+
+            .comment {
+                background: @panel-header-background;
+                border: 1px solid @whisper-white;
+
+                .comment-body {
+                    .comment-meta {
+                        color: @silver-grey;
+                    }
+
+                    .text-muted {
+                        color: @silver-grey;
+                    }
+
+                    .like-summary {
+                        color: @light-silver;
+                    }
+
+                    p, span {
+                        color: @whisper-white !important;
+
+                        i {
+                            color: @whisper-white;
+
+                            &.fa-heart {
+                                color: @vibrant-red;
+                            }
+
+                            &.fa-trash {
+                                color: @deep-red;
+                            }
+
+                            &.fa-pencil {
+                                color: @alice-blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width:767px) {

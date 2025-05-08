@@ -4,7 +4,8 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        <img loading="lazy" id="iching-image" title="i-ching" alt="i-ching free hexagram generator" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/iching/iching.png" />
+        <img loading="lazy" class="iching-image light" title="i-ching" alt="i-ching free hexagram generator" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/iching/iching.png" />
+        <img loading="lazy" class="iching-image dark" title="i-ching" alt="i-ching free hexagram generator" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/iching/iching-dark.png" />
 
         <hr />
         <div class="desktop-only text-center">

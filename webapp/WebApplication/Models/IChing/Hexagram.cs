@@ -348,7 +348,7 @@ namespace K9.WebApplication.Models
                 Globalisation.Dictionary.TheMarryingMaidenTitle,
                 Globalisation.Dictionary.TheMarryingMaidenSummary,
                 Globalisation.Dictionary.the_marrying_maiden_details) },
-            
+
             { 55, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.Abundance,
                 Globalisation.Dictionary.AbundanceTitle,
                 Globalisation.Dictionary.AbundanceSummary,
@@ -395,7 +395,7 @@ namespace K9.WebApplication.Models
                 Globalisation.Dictionary.after_completion_details) },
 
             { 64, new HexagramInfo(Globalisation.Dictionary.MasteryAndCompletion, Globalisation.Dictionary.BeforeCompletion,
-                Globalisation.Dictionary.BeforeCompletionTitle, 
+                Globalisation.Dictionary.BeforeCompletionTitle,
                 Globalisation.Dictionary.BeforeCompletionSummary,
                 Globalisation.Dictionary.before_completion_details) }
         };
@@ -1228,6 +1228,7 @@ namespace K9.WebApplication.Models
         {
             var html = new StringBuilder();
             html.Append("<div class='hexagram-container'>");
+            html.Append("<div class='hexagram-hex-container'>");
 
             // Iterate in natural top-to-bottom order.
             for (int i = 0; i < 6; i++)
@@ -1235,6 +1236,7 @@ namespace K9.WebApplication.Models
                 html.Append($"<div class='{GetCssClass(Lines[i])}'></div>");
             }
 
+            html.Append("</div>");
             html.Append($"<div class='hexagram-title'>Hexagram {Number}: {Name}</div>");
             html.Append("</div>");
             return html.ToString();

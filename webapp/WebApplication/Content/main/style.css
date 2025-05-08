@@ -258,3 +258,8 @@ h5.form-subtitle {
     opacity: 0;
   }
 }
+.gpt-image {
+  padding: 11px;
+  background: #f9f9f9;
+  border-radius: 7px;
+}

@@ -1,6 +1,6 @@
 ﻿@import "../config/colours.less";
 
-#iching-image {
+.iching-image {
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -12,32 +12,41 @@
     text-align: center;
     margin: 20px;
 
-    .hex-line {
-        width: 120px;
-        height: 10px;
-        margin: 8px auto;
-        background: black;
-        position: relative;
+    .hexagram-hex-container {
+        width: 163px;
+        height: auto;
+        margin: 20px auto;
+        padding: 11px;
+        background: @whisper-white;
+        
+        .hex-line {
+            width: 124px;
+            height: 10px;
+            margin: 9px auto;
+            background: black;
+            position: relative;
 
-        &.changing {
-            background: var(--vibrant-orange);
+            &.changing {
+                background: var(--vibrant-orange);
+            }
         }
-    }    
 
-    .yin::before {
-        content: "";
-        position: absolute;
-        width: 24px;
-        height: 10px;
-        background: white;
-        left: 48px;
+        .yin::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            background: white;
+            left: 52px;
+        }
     }
 
     .hexagram-title {
         margin-top: 14px;
         font-size: 18px;
         font-weight: bold;
-    }   
+        color: var(--text-color);
+    }
 }
 
 .hexagram-card {
@@ -47,20 +56,21 @@
     margin-top: 28px;
     margin-bottom: 0;
     border-radius: 10px;
-    background-color: @whisper-white;
+    background-color: var(--well-color);
     border: 2px solid @mist-grey;
     text-align: center;
+    color: var(--text-color);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 
     .summary {
         font-weight: bold;
-        color: @deep-grey;
+        color: var(--text-color);
         margin: 10px 0;
     }
 
     .description {
         font-size: 14px;
-        color: @beautiful-grey;
+        color: var(--text-color);
         line-height: 1.5;
     }
 }

@@ -724,6 +724,7 @@
     <Content Include="Images\emailtemplates\custom\directions.png" />
     <Content Include="Images\emailtemplates\custom\houses.png" />
     <Content Include="Images\emailtemplates\custom\magic-square.png" />
+    <Content Include="Images\iching\iching-dark.png" />
     <Content Include="Images\ninestar\elements\cycle-five-dark.png" />
     <Content Include="Images\ninestar\elements\cycle-four-dark.png" />
     <Content Include="Images\ninestar\transformations\transformation-challenging-dark.png" />

@@ -86,6 +86,7 @@
 .dark-mode {
   /*Daily Calendar*/
   /* Hourly Planner */
+  /* Numerology */
 }
 .dark-mode h1,
 .dark-mode h2,
@@ -215,6 +216,12 @@
 }
 .dark-mode .panel .panel-body h5.dark {
   color: var(--title-color);
+}
+.dark-mode .iching-image.dark {
+  display: table;
+}
+.dark-mode .iching-image.light {
+  display: none;
 }
 .dark-mode .calendar-grid {
   background-color: var(--background-color);
@@ -364,6 +371,48 @@
 .dark-mode #hourly-slots .time-slot.active {
   background: linear-gradient(to bottom, #276e93 0, #0e2936 100%);
   color: #f9f9f9;
+}
+.dark-mode .numerology-container ul.nav-pills li a p.active {
+  border: 1px solid #eeeeee;
+  background-color: #0e2936;
+}
+.dark-mode .numerology-card {
+  background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
+  border: 1px solid #e6e6e6;
+}
+.dark-mode .numerology-card .summary {
+  color: #f9f9f9;
+}
+.dark-mode .numerology-card .description {
+  color: #f9f9f9;
+}
+.dark-mode .numerology-planner-container {
+  background: #0e2936;
+}
+.dark-mode .numerology-planner-item-container.current {
+  outline: 1px solid #d9d9d9;
+}
+.dark-mode .numerology-planner-item-container.selected {
+  background: var(--pills-tab-active);
+  outline: 1px solid #0074E4;
+}
+.dark-mode .numerology-planner-item-container:hover {
+  background: var(--pills-tab-hover) !important;
+}
+.dark-mode .numerology-planner-item-container:hover.selected {
+  outline: 1px solid #f9f9f9;
+}
+.dark-mode #tagFilters button {
+  background: #14384a;
+  color: #f9f9f9;
+  text-shadow: none;
+}
+.dark-mode #blogGrid .panel-body h4 > a,
+.dark-mode #blogGrid .panel-body p > a {
+  color: #f9f9f9;
+}
+.dark-mode #blogGrid img.img-thumbnail {
+  padding: 1px;
 }
 @media (max-width: 767px) {
   .alphaBackground {

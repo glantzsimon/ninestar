@@ -82,7 +82,7 @@
   --page-overlay-color: rgba(0, 0, 0, 0.3);
   --page-fadein-color: #ffffff;
 }
-#iching-image {
+.iching-image {
   display: table;
   margin-left: auto;
   margin-right: auto;
@@ -93,28 +93,36 @@
   text-align: center;
   margin: 20px;
 }
-.hexagram-container .hex-line {
-  width: 120px;
+.hexagram-container .hexagram-hex-container {
+  width: 163px;
+  height: auto;
+  margin: 20px auto;
+  padding: 11px;
+  background: #f9f9f9;
+}
+.hexagram-container .hexagram-hex-container .hex-line {
+  width: 124px;
   height: 10px;
-  margin: 8px auto;
+  margin: 9px auto;
   background: black;
   position: relative;
 }
-.hexagram-container .hex-line.changing {
+.hexagram-container .hexagram-hex-container .hex-line.changing {
   background: var(--vibrant-orange);
 }
-.hexagram-container .yin::before {
+.hexagram-container .hexagram-hex-container .yin::before {
   content: "";
   position: absolute;
-  width: 24px;
+  width: 20px;
   height: 10px;
   background: white;
-  left: 48px;
+  left: 52px;
 }
 .hexagram-container .hexagram-title {
   margin-top: 14px;
   font-size: 18px;
   font-weight: bold;
+  color: var(--text-color);
 }
 .hexagram-card {
   width: 100%;
@@ -123,18 +131,19 @@
   margin-top: 28px;
   margin-bottom: 0;
   border-radius: 10px;
-  background-color: #f9f9f9;
+  background-color: var(--well-color);
   border: 2px solid #e6e6e6;
   text-align: center;
+  color: var(--text-color);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 .hexagram-card .summary {
   font-weight: bold;
-  color: #444444;
+  color: var(--text-color);
   margin: 10px 0;
 }
 .hexagram-card .description {
   font-size: 14px;
-  color: #666666;
+  color: var(--text-color);
   line-height: 1.5;
 }

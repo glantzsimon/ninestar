@@ -161,6 +161,14 @@
             }
         }
     }
+
+    .iching-image.dark {
+        display: table;
+    }
+
+    .iching-image.light {
+        display: none;
+    }
     /*Daily Calendar*/
     .calendar-grid {
         background-color: var(--background-color);
@@ -368,6 +376,71 @@
                 background: @planner-child-active-background;
                 color: @whisper-white;
             }
+        }
+    }
+    /* Numerology */
+    .numerology-container {
+        ul.nav-pills li a p {
+            &.active {
+                border: 1px solid @ghost-white;
+                background-color: @very-dark-teal-blue;
+            }
+        }
+    }
+
+    .numerology-card {
+        background: @panel-header-background;
+        border: 1px solid @mist-grey;
+
+        .summary {
+            color: @whisper-white;
+        }
+
+        .description {
+            color: @whisper-white;
+        }
+    }
+
+    .numerology-planner-container {
+        background: @very-dark-teal-blue;
+    }
+
+    .numerology-planner-item-container {
+        &.current {
+            outline: 1px solid @light-silver;
+        }
+
+        &.selected {
+            background: var(--pills-tab-active);
+            outline: 1px solid @electric-blue;
+        }
+
+        &:hover {
+            background: var(--pills-tab-hover) !important;
+
+            &.selected {
+                outline: 1px solid @whisper-white;
+            }
+        }
+    }
+
+    #tagFilters {
+        button {
+            background: @dark-teal-blue;
+            color: @whisper-white;
+            text-shadow: none;
+        }
+    }
+
+    #blogGrid {
+        .panel-body {
+            h4 > a, p > a {
+                color: @whisper-white;
+            }
+        }
+
+        img.img-thumbnail {
+            padding: 1px;
         }
     }
 }

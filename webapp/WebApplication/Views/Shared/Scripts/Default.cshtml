@@ -13,6 +13,7 @@
             language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
             dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()",
             whatsAppNumber: "@(DefaultValuesConfiguration.Instance.WhatsAppSupportNumber)",
+            defaultTheme: '@K9.WebApplication.Helpers.SessionHelper.GetDefaultTheme()',
             baseUrl: '@Url.Content("~/")'
         }).init();
 

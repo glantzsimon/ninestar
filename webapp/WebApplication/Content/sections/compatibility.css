@@ -83,7 +83,6 @@
 /*@images-path: "../../../Images";*/
 .gauge-container {
   border-radius: 5px;
-  border-bottom: 1px solid #eeeeee;
   padding: 4px;
   margin-bottom: 10px;
   margin-top: 10px;

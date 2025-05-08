@@ -343,24 +343,26 @@
   color: #f9f9f9;
 }
 .dark-mode #hourly-slots {
-  outline: 1px solid #ddd;
-  background-color: #f9f9f9;
+  outline: none;
+  background-image: linear-gradient(to bottom, #276e93 0, #0e2936 54%);
 }
 .dark-mode #hourly-slots .time-slot {
-  background-color: var(--snow-white);
-  outline: 1px solid #ddd;
+  color: #f9f9f9;
+  background-color: #0e2936;
+  outline: 1px solid #0f1215;
 }
 .dark-mode #hourly-slots .time-slot:hover {
-  background-color: #f9f9f9;
+  background-color: #276e93;
+}
+.dark-mode #hourly-slots .time-slot:hover.active {
+  background-color: var(--pills-tab-active-hover);
 }
 .dark-mode #hourly-slots .time-slot.current {
-  background-color: #e6e6e6;
-  border: 2px solid var(--primary-blue);
-  border-top: 3px solid var(--primary-blue);
-  border-bottom: 3px solid var(--primary-blue);
+  background: linear-gradient(to bottom, #276e93 0, #0e2936 100%);
+  border: 2px solid #f9f9f9;
 }
 .dark-mode #hourly-slots .time-slot.active {
-  background-color: var(--primary-blue) !important;
+  background: linear-gradient(to bottom, #276e93 0, #0e2936 100%);
   color: #f9f9f9;
 }
 @media (max-width: 767px) {

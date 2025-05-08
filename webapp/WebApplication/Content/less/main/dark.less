@@ -342,26 +342,30 @@
     }
     /* Hourly Planner */
     #hourly-slots {
-        outline: 1px solid #ddd;
-        background-color: #f9f9f9;
+        outline: none;
+        background-image: @planner-background;
 
         .time-slot {
-            background-color: var(--snow-white);
-            outline: 1px solid #ddd;
+            color: @whisper-white;
+            background-color: @very-dark-teal-blue;
+            outline: 1px solid @charcoal-black;
 
             &:hover {
-                background-color: @whisper-white;
+                background-color: @teal-blue;
+
+                &.active {
+                    background-color: var(--pills-tab-active-hover);
+                }
             }
 
+
             &.current {
-                background-color: @mist-grey;
-                border: 2px solid var(--primary-blue);
-                border-top: 3px solid var(--primary-blue);
-                border-bottom: 3px solid var(--primary-blue);
+                background: @planner-child-active-background;
+                border: 2px solid @whisper-white;
             }
 
             &.active {
-                background-color: var(--primary-blue) !important;
+                background: @planner-child-active-background;
                 color: @whisper-white;
             }
         }

@@ -137,6 +137,235 @@
             color: var(--text-color) !important;
         }
     }
+
+    .panel {
+        .panel-heading {
+            .panel-title {
+                a {
+                    color: var(---text-color);
+                }
+            }
+        }
+
+        .panel-body {
+            h4 {
+                color: var(--title-color);
+            }
+
+            h5 {
+                color: var(--subtitle-color);
+
+                &.dark {
+                    color: var(--title-color);
+                }
+            }
+        }
+    }
+    /*Daily Calendar*/
+    .calendar-grid {
+        background-color: var(--background-color);
+
+        .calendar-header {
+            color: var(--text-color);
+        }
+
+        .calendar-day {
+            outline: 1px solid @charcoal-black;
+            background: @dark-teal-blue-alpha;
+
+            &:hover {
+                background: @dark-teal-blue-alpha-medium;
+            }
+
+            .date-label {
+                color: var(--text-color);
+            }
+
+            .custom-content {
+                color: var(--text-color);
+
+                .moon-wrapper {
+                    img {
+                        border-radius: 50px;
+                        padding: 0;
+                        margin: 5px;
+
+                        &.new-moon {
+                            box-shadow: 0 0 8px 2px rgba(94, 174, 255, 0.6);
+                        }
+                    }
+                }
+            }
+
+            &.current {
+                background: @planner-child-active-background;
+                outline: 2px solid @whisper-white;
+
+                &.active {
+                    outline: 2px solid @whisper-white;
+                }
+            }
+
+            &.active {
+                background: @planner-child-active-background !important;
+                outline: 1px solid @teal-blue;
+
+                div {
+                    color: @charcoal-black;
+                }
+            }
+        }
+    }
+    // Global Planner
+    .global-planner-container {
+
+        .parent-planner {
+
+            .parent-block {
+                border: 1px solid #ddd;
+                background-image: @planner-background;
+
+                &.active {
+                    background-color: var(--pills-tab-active);
+
+                    .parent-label, .parent-detail, .parent-title, .parent-dates, h4 {
+                        color: var(--snow-white) !important;
+                    }
+                }
+
+                &:hover {
+                    background-color: var(--pills-tab-hover);
+
+                    &.active {
+                        background-color: var(--pills-tab-active-hover);
+                    }
+                }
+
+                .parent-summary-row {
+                    border-bottom: 1px solid @mist-grey;
+
+                    .parent-label {
+
+                        .parent-title {
+                            color: @whisper-white;
+                        }
+
+                        .parent-dates {
+                            color: @whisper-white;
+                        }
+
+                        .parent-age {
+                            color: @mist-grey;
+                        }
+                    }
+
+                    .parent-detail {
+                        h4 {
+                            color: @whisper-white;
+                        }
+
+                        &.narrow {
+                            color: var(--title-color);
+                        }
+
+                        &.wide {
+                            color: var(--title-color);
+
+                            &.level-up {
+
+                                div {
+                                    a {
+                                        outline: 1px solid @teal-blue-light;
+                                        background-color: @dark-teal-blue-alpha;
+
+                                        &:hover {
+                                            background: var(--pills-tab-active-hover);
+
+                                            i {
+                                                color: white;
+                                            }
+                                        }
+
+                                        i {
+                                            color: @whisper-white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .child-row {
+                    background-color: var(--background-color);
+
+                    .child-container {
+
+                        .child-block {
+                            outline: 1px solid @charcoal-black;
+                            background-color: @dark-teal-blue-alpha;
+
+                            &:hover {
+                                background-color: @teal-blue;
+                            }
+
+                            &.current {
+                                background: @planner-child-active-background;
+                                outline: 2px solid @whisper-white;
+
+                                &.active {
+                                    outline: 2px solid @whisper-white;
+                                }
+                            }
+
+                            &.active {
+                                background: @planner-child-active-background !important;
+                                outline: 1px solid @teal-blue;
+
+                                .child-name, .child-dates {
+                                    color: var(--snow-white) !important;
+                                }
+                            }
+
+                            .child-name {
+                                color: @whisper-white;
+                            }
+
+                            .child-dates {
+                                color: @whisper-white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* Hourly Planner */
+    #hourly-slots {
+        outline: 1px solid #ddd;
+        background-color: #f9f9f9;
+
+        .time-slot {
+            background-color: var(--snow-white);
+            outline: 1px solid #ddd;
+
+            &:hover {
+                background-color: @whisper-white;
+            }
+
+            &.current {
+                background-color: @mist-grey;
+                border: 2px solid var(--primary-blue);
+                border-top: 3px solid var(--primary-blue);
+                border-bottom: 3px solid var(--primary-blue);
+            }
+
+            &.active {
+                background-color: var(--primary-blue) !important;
+                color: @whisper-white;
+            }
+        }
+    }
 }
 
 @media (max-width:767px) {

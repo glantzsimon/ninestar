@@ -12,6 +12,7 @@
   --border-grey: #dddddd;
   --light-grey: #888888;
   --background-color: #ffffff;
+  --background-color-hover: #f2f2f2;
   --surface-color: #eeeeee;
   --text-color: #333333;
   --hover-text-color: #404040;
@@ -53,6 +54,7 @@
   --border-grey: #ffffff;
   --light-grey: #aeaeae;
   --background-color: #0f1215;
+  --background-color-hover: #2f3842;
   --surface-color: #444444;
   --text-color: #f9f9f9;
   --hover-text-color: #ffffff;

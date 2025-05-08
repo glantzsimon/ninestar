@@ -116,13 +116,15 @@
 
 @teal-blue-light: lighten(@teal-blue, 18%);
 @dark-teal-blue: darken(@teal-blue, 18%);
-@very-dark-teal-blue: darken(@teal-blue, 36%);
+@very-dark-teal-blue: darken(@teal-blue, 23%);
 @dark-teal-blue-alpha: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.72);
 @dark-teal-blue-alpha-medium: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.33);
 @dark-teal-blue-alpha-dark: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0.11);
 @dark-teal-blue-alpha-zero: rgba(red(@dark-teal-blue), green(@dark-teal-blue), blue(@dark-teal-blue), 0);
 @primary-blue-light: lighten(@primary-blue, 33%);
 @primary-blue-very-light: lighten(@primary-blue, 45%);
+@planner-child-active-background: linear-gradient(to bottom, @teal-blue 0, @very-dark-teal-blue 100%);
+@planner-background: linear-gradient(to bottom, @teal-blue 0, @very-dark-teal-blue 54%);
 
 @panel-header-background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
 
@@ -144,6 +146,7 @@
     --border-grey: @border-grey;
     --light-grey: @light-grey;
     --background-color: @background-color;
+    --background-color-hover: @hover-white;
     --surface-color: @surface-color;
     --text-color: @text-color;
     --hover-text-color: lighten(@text-color, 5%);
@@ -190,6 +193,7 @@
     --border-grey: lighten(@border-grey, 15%);
     --light-grey: lighten(@light-grey, 15%);
     --background-color: @charcoal-black;
+    --background-color-hover: lighten(@charcoal-black, 15%);
     --surface-color: @deep-grey;
     --text-color: @whisper-white;
     --hover-text-color: lighten(@snow-white, 5%);

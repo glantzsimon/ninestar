@@ -12,6 +12,7 @@
   --border-grey: #dddddd;
   --light-grey: #888888;
   --background-color: #ffffff;
+  --background-color-hover: #f2f2f2;
   --surface-color: #eeeeee;
   --text-color: #444444;
   --hover-text-color: #515151;
@@ -53,6 +54,7 @@
   --border-grey: #ffffff;
   --light-grey: #aeaeae;
   --background-color: #0f1215;
+  --background-color-hover: #2f3842;
   --surface-color: #444444;
   --text-color: #f9f9f9;
   --hover-text-color: #ffffff;
@@ -81,6 +83,10 @@
   --page-fadein-color: #ffffff;
 }
 /*@images-path: "../../../Images";*/
+.dark-mode {
+  /*Daily Calendar*/
+  /* Hourly Planner */
+}
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h1 > strong {
@@ -197,6 +203,165 @@
 .dark-mode .footer a,
 .dark-mode .footer-copyright a {
   color: var(--text-color) !important;
+}
+.dark-mode .panel .panel-heading .panel-title a {
+  color: var(---text-color);
+}
+.dark-mode .panel .panel-body h4 {
+  color: var(--title-color);
+}
+.dark-mode .panel .panel-body h5 {
+  color: var(--subtitle-color);
+}
+.dark-mode .panel .panel-body h5.dark {
+  color: var(--title-color);
+}
+.dark-mode .calendar-grid {
+  background-color: var(--background-color);
+}
+.dark-mode .calendar-grid .calendar-header {
+  color: var(--text-color);
+}
+.dark-mode .calendar-grid .calendar-day {
+  outline: 1px solid #0f1215;
+  background: rgba(20, 56, 74, 0.72);
+}
+.dark-mode .calendar-grid .calendar-day:hover {
+  background: rgba(20, 56, 74, 0.33);
+}
+.dark-mode .calendar-grid .calendar-day .date-label {
+  color: var(--text-color);
+}
+.dark-mode .calendar-grid .calendar-day .custom-content {
+  color: var(--text-color);
+}
+.dark-mode .calendar-grid .calendar-day .custom-content .moon-wrapper img {
+  border-radius: 50px;
+  padding: 0;
+  margin: 5px;
+}
+.dark-mode .calendar-grid .calendar-day .custom-content .moon-wrapper img.new-moon {
+  box-shadow: 0 0 8px 2px rgba(94, 174, 255, 0.6);
+}
+.dark-mode .calendar-grid .calendar-day.current {
+  background: linear-gradient(to bottom, #276e93 0, #0e2936 100%);
+  outline: 2px solid #f9f9f9;
+}
+.dark-mode .calendar-grid .calendar-day.current.active {
+  outline: 2px solid #f9f9f9;
+}
+.dark-mode .calendar-grid .calendar-day.active {
+  background: linear-gradient(to bottom, #276e93 0, #0e2936 100%) !important;
+  outline: 1px solid #276e93;
+}
+.dark-mode .calendar-grid .calendar-day.active div {
+  color: #0f1215;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block {
+  border: 1px solid #ddd;
+  background-image: linear-gradient(to bottom, #276e93 0, #0e2936 70%);
+}
+.dark-mode .global-planner-container .parent-planner .parent-block.active {
+  background-color: var(--pills-tab-active);
+}
+.dark-mode .global-planner-container .parent-planner .parent-block.active .parent-label,
+.dark-mode .global-planner-container .parent-planner .parent-block.active .parent-detail,
+.dark-mode .global-planner-container .parent-planner .parent-block.active .parent-title,
+.dark-mode .global-planner-container .parent-planner .parent-block.active .parent-dates,
+.dark-mode .global-planner-container .parent-planner .parent-block.active h4 {
+  color: var(--snow-white) !important;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block:hover {
+  background-color: var(--pills-tab-hover);
+}
+.dark-mode .global-planner-container .parent-planner .parent-block:hover.active {
+  background-color: var(--pills-tab-active-hover);
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row {
+  border-bottom: 1px solid #e6e6e6;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label .parent-title {
+  color: #f9f9f9;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label .parent-dates {
+  color: #f9f9f9;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label .parent-age {
+  color: #e6e6e6;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail h4 {
+  color: #f9f9f9;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.narrow {
+  color: var(--title-color);
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide {
+  color: var(--title-color);
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a {
+  outline: 1px solid #47a0ce;
+  background-color: rgba(20, 56, 74, 0.72);
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a:hover {
+  background: var(--pills-tab-active-hover);
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a:hover i {
+  color: white;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a i {
+  color: #f9f9f9;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .child-row {
+  background-color: var(--background-color);
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block {
+  outline: 1px solid #0f1215;
+  background-color: rgba(20, 56, 74, 0.72);
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block:hover {
+  background-color: #276e93;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block.current {
+  background: linear-gradient(to bottom, #276e93 0, #0e2936 100%);
+  outline: 2px solid #f9f9f9;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block.current.active {
+  outline: 2px solid #f9f9f9;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block.active {
+  background: linear-gradient(to bottom, #276e93 0, #0e2936 100%) !important;
+  outline: 1px solid #276e93;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block.active .child-name,
+.dark-mode .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block.active .child-dates {
+  color: var(--snow-white) !important;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-name {
+  color: #f9f9f9;
+}
+.dark-mode .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-dates {
+  color: #f9f9f9;
+}
+.dark-mode #hourly-slots {
+  outline: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+.dark-mode #hourly-slots .time-slot {
+  background-color: var(--snow-white);
+  outline: 1px solid #ddd;
+}
+.dark-mode #hourly-slots .time-slot:hover {
+  background-color: #f9f9f9;
+}
+.dark-mode #hourly-slots .time-slot.current {
+  background-color: #e6e6e6;
+  border: 2px solid var(--primary-blue);
+  border-top: 3px solid var(--primary-blue);
+  border-bottom: 3px solid var(--primary-blue);
+}
+.dark-mode #hourly-slots .time-slot.active {
+  background-color: var(--primary-blue) !important;
+  color: #f9f9f9;
 }
 @media (max-width: 767px) {
   .alphaBackground {

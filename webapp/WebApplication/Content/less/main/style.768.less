@@ -240,7 +240,7 @@
         display: flex !important;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2px;
+        gap: 1px;
 
         & > li {
             float: none !important;
@@ -258,6 +258,20 @@
 
             & > tbody > tr > td {
                 white-space: normal !important;
+            }
+        }
+    }
+
+    .panel-heading {
+        .panel-display-options {
+            float: left;
+
+            input {
+                margin-left: 0 !important;                
+            }
+
+            label {
+                margin-right: 9px;
             }
         }
     }

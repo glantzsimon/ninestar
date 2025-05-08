@@ -12,6 +12,7 @@
   --border-grey: #dddddd;
   --light-grey: #888888;
   --background-color: #ffffff;
+  --background-color-hover: #f2f2f2;
   --surface-color: #eeeeee;
   --text-color: #444444;
   --hover-text-color: #515151;
@@ -53,6 +54,7 @@
   --border-grey: #ffffff;
   --light-grey: #aeaeae;
   --background-color: #0f1215;
+  --background-color-hover: #2f3842;
   --surface-color: #444444;
   --text-color: #f9f9f9;
   --hover-text-color: #ffffff;
@@ -267,7 +269,7 @@
     display: flex !important;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2px;
+    gap: 1px;
   }
   .nav-pills > li {
     float: none !important;
@@ -280,6 +282,15 @@
   }
   .table-responsive > .table > tbody > tr > td {
     white-space: normal !important;
+  }
+  .panel-heading .panel-display-options {
+    float: left;
+  }
+  .panel-heading .panel-display-options input {
+    margin-left: 0 !important;
+  }
+  .panel-heading .panel-display-options label {
+    margin-right: 9px;
   }
 }
 @media (min-width: 766px) {

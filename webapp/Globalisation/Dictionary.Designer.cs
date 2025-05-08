@@ -4140,10 +4140,11 @@ namespace K9.Globalisation {
         ///    Challenging Transformation
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-challenging.png&quot; /&gt;
+        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block light&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-challenging.png&quot; /&gt;
+        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block dark&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-challenging-dark.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    When two individuals’ Character Elements form a Challenging Transformation, the relationship often carries a strong charge—marked by natural chemistry, magnetic attraction, and deep intrigue. These dynamics can spark growth and excitement, but they als [rest of string was truncated]&quot;;.
+        ///    When two individuals’ Character Elements form [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_challenging {
             get {
@@ -4156,10 +4157,11 @@ namespace K9.Globalisation {
         ///    Same Element – Sibling Relationship
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same.png&quot; /&gt;
+        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block light&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same.png&quot; /&gt;
+        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block dark&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same-dark.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    When both individuals share the same Lunar Element, their Emotional Ki aligns harmoniously, often creating a strong sense of emotional resonance and intuitive understanding. This kind of sibling relationship fosters ease in communication and empathy, allowing ea [rest of string was truncated]&quot;;.
+        ///    When both individuals share the same Lunar Element, their Emotional Ki ali [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_same {
             get {
@@ -4172,10 +4174,11 @@ namespace K9.Globalisation {
         ///    Supportive Transformation – Parent / Child Relationship
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-supportive.png&quot; /&gt;
+        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block light&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-supportive.png&quot; /&gt;
+        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block dark&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-supportive-dark.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    When two individuals&apos; Lunar Energies form a Supportive Transformation, one energy naturally nourishes or uplifts the other—much like a parent guiding a child. This dynamic often fosters a strong emotional bond, mutual respect, [rest of string was truncated]&quot;;.
+        ///    When two individuals&apos;  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_supportive {
             get {
@@ -11514,6 +11517,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Intellectual.
+        /// </summary>
+        public static string Intellectual {
+            get {
+                return ResourceManager.GetString("Intellectual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Your intellectual capacity is currently in a critical period. This means that it is prone to fluctuations. You may have excellent intellectual capacity, only to find that the next moment you are feeling mentally fatigued. It is wise not to take on too much during this period and wait for your energy to stabilise.
         ///&lt;/p&gt;
@@ -11668,6 +11680,15 @@ namespace K9.Globalisation {
         public static string InternalRepresentation {
             get {
                 return ResourceManager.GetString("InternalRepresentation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interpersonal.
+        /// </summary>
+        public static string Interpersonal {
+            get {
+                return ResourceManager.GetString("Interpersonal", resourceCulture);
             }
         }
         
@@ -14597,10 +14618,11 @@ namespace K9.Globalisation {
         ///    Challenging Transformation
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-challenging.png&quot; /&gt;
+        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block light&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-challenging.png&quot; /&gt;
+        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block dark&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-challenging-dark.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    This combination can be &lt;strong&gt;one of the most magnetic&lt;/strong&gt;, often sparking strong &lt;strong&gt;natural chemistry between people with opposing elements&lt;/strong&gt;. It is also the dynamic that tends to bring about the greatest &lt;strong&gt;personal growth&lt;/st [rest of string was truncated]&quot;;.
+        ///    This combination can be &lt;strong&gt;one of the mo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_challenging {
             get {
@@ -14613,10 +14635,11 @@ namespace K9.Globalisation {
         ///    Same Element – Sibling Relationship
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same.png&quot; /&gt;
+        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block light&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same.png&quot; /&gt;
+        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block dark&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same-dark.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    In this combination, both people share the same Solar Element. This often creates a &lt;strong&gt;deep and effortless &quot;sibling-like&quot; bond&lt;/strong&gt;, marked by a &lt;strong&gt;natural sense of understanding and harmony&lt;/strong&gt;. There is strong potential for &lt;strong&gt;compassio [rest of string was truncated]&quot;;.
+        ///    In this combination, both people share the same Solar Element. This often  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_same {
             get {
@@ -14629,10 +14652,11 @@ namespace K9.Globalisation {
         ///    Supportive Transformation – Parent / Child Relationship
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-supportive.png&quot; /&gt;
+        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block light&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-supportive.png&quot; /&gt;
+        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block dark&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-supportive-dark.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    In a Supportive Transformation, one Solar Energy naturally nourishes and sustains the next. At first glance, it may seem like a one-way dynamic, with most of the support flowing from the &apos;parent&apos; to the &apos;child&apos;. However, in pr [rest of string was truncated]&quot;;.
+        ///    In a Supportive Transf [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_supportive {
             get {

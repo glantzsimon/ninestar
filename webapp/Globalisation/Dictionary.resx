@@ -6746,6 +6746,12 @@
   <data name="Dark" xml:space="preserve">
     <value>Dark</value>
   </data>
+  <data name="Intellectual" xml:space="preserve">
+    <value>Intellectual</value>
+  </data>
+  <data name="Interpersonal" xml:space="preserve">
+    <value>Interpersonal</value>
+  </data>
   <data name="KeyLabel" xml:space="preserve">
     <value>Key</value>
   </data>

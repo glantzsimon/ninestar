@@ -165,7 +165,8 @@
   height: 100px;
 }
 .panel-image-container {
-  padding: 15px;
+  padding: 18px;
+  padding-top: 24px;
 }
 .panel-image-container .image-panel {
   margin-bottom: 0;

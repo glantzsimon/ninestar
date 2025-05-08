@@ -117,6 +117,7 @@
 }
 .dark-mode img.dark {
   display: block;
+  margin: 11px auto;
 }
 .dark-mode .form-control {
   background-color: var(--background-color);

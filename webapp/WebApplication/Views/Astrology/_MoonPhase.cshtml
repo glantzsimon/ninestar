@@ -5,7 +5,7 @@
 
 @{
     string imagePath = Url.Content($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/astrology/moon-phases/{Model.GetMoonPhaseImageFile()}");
-    var newMoonClass = Model.IlluminationPercentage < 4 ? "new-moon" : "";
+    var newMoonClass = Model.IlluminationPercentage < 3.5 ? "new-moon" : "";
 }
 
 <div class="moon-phase magic-tooltip-item" data-tooltip-title="@Dictionary.MoonPhase" data-tooltip="@($"{Dictionary.Illumination} {Model.IlluminationDisplay} {Model.GetMoonPhaseName()}")">

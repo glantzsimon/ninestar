@@ -227,7 +227,7 @@
   background: rgba(20, 56, 74, 0.72);
 }
 .dark-mode .calendar-grid .calendar-day:hover {
-  background: rgba(20, 56, 74, 0.33);
+  background: var(--pills-tab-hover);
 }
 .dark-mode .calendar-grid .calendar-day .date-label {
   color: var(--text-color);
@@ -259,7 +259,7 @@
 }
 .dark-mode .global-planner-container .parent-planner .parent-block {
   border: 1px solid #ddd;
-  background-image: linear-gradient(to bottom, #276e93 0, #0e2936 70%);
+  background-image: linear-gradient(to bottom, #276e93 0, #0e2936 54%);
 }
 .dark-mode .global-planner-container .parent-planner .parent-block.active {
   background-color: var(--pills-tab-active);

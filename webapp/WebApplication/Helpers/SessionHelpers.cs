@@ -1,9 +1,11 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
@@ -11,10 +13,18 @@ namespace K9.WebApplication.Helpers
 {
     public static class SessionHelper
     {
+        public static List<UserPreference> UserPreferences
+        {
+            get => HttpContext.Current.Session[Constants.SessionConstants.UserPreferences] as List<UserPreference> ?? new List<UserPreference>();
+            set => HttpContext.Current.Session[Constants.SessionConstants.UserPreferences] = value;
+        }
+
         public static object GetValue(string key, HttpContext httpContext = null)
         {
             httpContext = httpContext == null ? HttpContext.Current : httpContext;
-            return httpContext?.Session?[key];
+
+            var pref = UserPreferences.FirstOrDefault(e => e.Key == key)?.GetValue();
+            return pref ?? httpContext?.Session?[key];
         }
 
         public static string GetStringValue(string key, HttpContext httpContext = null)
@@ -83,25 +93,10 @@ namespace K9.WebApplication.Helpers
             return false;
         }
 
-        public static void SetCurrentUserPanelView(EPanelView value)
-        {
-            SetValue(Constants.SessionConstants.DefaultPanelView, (int)value);
-        }
-
-        public static void SetCurrentUserCalculatorType(ECalculatorType value)
-        {
-            SetValue(Constants.SessionConstants.DefaultCalculatorType, (int)value);
-        }
-
         public static ECalculatorType GetCurrentUserDefaultCalculatorType()
         {
             var intValue = GetIntValue(Constants.SessionConstants.DefaultCalculatorType, (int)ECalculatorType.Advanced);
             return (ECalculatorType)intValue;
-        }
-
-        public static void SetCurrentUserPanelCycleView(EPanelCycleView value)
-        {
-            SetValue(Constants.SessionConstants.DefaultPanelCycleView, (int)value);
         }
 
         public static EPanelView GetCurrentUserDefaultPanelView()
@@ -121,14 +116,16 @@ namespace K9.WebApplication.Helpers
             return GetIntValue(Constants.SessionConstants.DefaultEnergyDisplay);
         }
 
-        public static void SetCurrentUserDefaultEnergyDisplay(EEnergyDisplay value)
+        public static string GetDefaultTheme()
         {
-            SetValue(Constants.SessionConstants.DefaultEnergyDisplay, (int)value);
+            var theme = GetStringValue(Constants.SessionConstants.DefaultTheme);
+            return string.IsNullOrEmpty(theme) ? "dark" : theme;
         }
 
-        public static void SetCurrentUserHousesDisplay(EHousesDisplay value)
+        public static string GetThemeImageSuffix()
         {
-            SetValue(Constants.SessionConstants.UserHousesDisplay, (int)value);
+            var theme = GetDefaultTheme();
+            return string.IsNullOrEmpty(theme) ? "" : $"-{theme.ToLower()}";
         }
 
         public static EHousesDisplay GetCurrentUserHousesDisplay()
@@ -136,29 +133,14 @@ namespace K9.WebApplication.Helpers
             return (EHousesDisplay)GetIntValue(Constants.SessionConstants.UserHousesDisplay);
         }
 
-        public static void SetCurrentUserScopeDisplay(EScopeDisplay value)
-        {
-            SetValue(Constants.SessionConstants.UserScopeDisplay, (int)value);
-        }
-
         public static EScopeDisplay GetCurrentUserScopeDisplay()
         {
             return (EScopeDisplay)GetIntValue(Constants.SessionConstants.UserScopeDisplay);
         }
 
-        public static void SetCurrentUserCalculationMethod(int value)
-        {
-            SetValue(Constants.SessionConstants.UserCalculationMethod, value);
-        }
-
         public static int GetCurrentUserCalculationMethod()
         {
             return GetIntValue(Constants.SessionConstants.UserCalculationMethod);
-        }
-
-        public static void SetCurrentUserUseHolograhpicCycles(bool value)
-        {
-            SetValue(Constants.SessionConstants.UseHolograhpicCycles, value);
         }
 
         public static bool GetCurrentUserUseHolograhpicCycles()
@@ -171,11 +153,6 @@ namespace K9.WebApplication.Helpers
             return GetBoolValue(Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere);
         }
 
-        public static void SetInvertDailyAndHourlyKiForSouthernHemisphere(bool value)
-        {
-            SetValue(Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere, value);
-        }
-
         public static bool GetInvertDailyAndHourlyCycleKiForSouthernHemisphere()
         {
             return GetBoolValue(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
@@ -184,11 +161,6 @@ namespace K9.WebApplication.Helpers
         public static bool GetShowDirections()
         {
             return GetBoolValue(Constants.SessionConstants.ShowDirections);
-        }
-
-        public static void SetInvertDailyAndHourlyCycleKiForSouthernHemisphere(bool value)
-        {
-            SetValue(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere, value);
         }
 
         public static void SetCurrentUserTimeZone(string value)

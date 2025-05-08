@@ -2,8 +2,6 @@
 
 @panel-bg: var(--well-color);
 @panel-border: var(--border-grey);
-@panel-header-top: var(--panel-header-top);
-@panel-header-bottom: var(--panel-header-bottom);
 @panel-header-text-color: var(--panel-header-text-color);
 
 .panel {
@@ -79,7 +77,7 @@
     &.panel-default {
         > .panel-heading {
             background-color: @alice-blue;
-            background: linear-gradient(to bottom, @panel-header-top 0%, @panel-header-bottom 100%);
+            background: @panel-header-background;
             color: @medium-dark-grey;
             border-bottom: 1px solid @panel-border;
         }

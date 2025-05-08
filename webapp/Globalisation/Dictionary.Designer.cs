@@ -12064,6 +12064,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Key.
+        /// </summary>
+        public static string KeyLabel {
+            get {
+                return ResourceManager.GetString("KeyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Personal Chart Relationship Compatibility Yearly and Monthly Predictions Biorhythms Free I Ching Hexagram Generator Nine Energies Feng Shui Love Dating Nine Star Ki Bio-Rhythms.
         /// </summary>
         public static string Keywords {
@@ -23111,6 +23120,24 @@ namespace K9.Globalisation {
         public static string UserOTPs {
             get {
                 return ResourceManager.GetString("UserOTPs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Preference.
+        /// </summary>
+        public static string UserPreference {
+            get {
+                return ResourceManager.GetString("UserPreference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Preferences.
+        /// </summary>
+        public static string UserPreferences {
+            get {
+                return ResourceManager.GetString("UserPreferences", resourceCulture);
             }
         }
         

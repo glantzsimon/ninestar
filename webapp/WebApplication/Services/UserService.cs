@@ -7,6 +7,7 @@ using K9.WebApplication.Packages;
 using NLog;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 using UserMembership = K9.DataAccessLayer.Models.UserMembership;
@@ -22,9 +23,11 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserMembership> _userMembershipsRepository;
         private readonly IRepository<UserOTP> _userOtpRepository;
         private readonly IRepository<UserInfo> _userInfosRepository;
+        private readonly IRepository<UserPreference> _userPreferencesRepository;
 
         public UserService(INineStarKiBasePackage my, IRepository<Promotion> promoCodesRepository, IRepository<UserPromotion> userPromoCodeRepository, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, IConsultationService consultationService,
-            IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<UserInfo> userInfosRepository)
+            IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<UserInfo> userInfosRepository,
+            IRepository<UserPreference> userPreferencesRepository)
             : base(my)
         {
             _userPromoCodeRepository = userPromoCodeRepository;
@@ -34,6 +37,7 @@ namespace K9.WebApplication.Services
             _userMembershipsRepository = userMembershipsRepository;
             _userOtpRepository = userOtpRepository;
             _userInfosRepository = userInfosRepository;
+            _userPreferencesRepository = userPreferencesRepository;
         }
 
         public void UpdateActiveUserEmailAddressIfFromFacebook(Contact contact)
@@ -236,6 +240,102 @@ namespace K9.WebApplication.Services
                     throw;
                 }
             }
+        }
+
+        public void UpdateUserPreference(int userId, string key, object value)
+        {
+            if (userId <= 0)
+                throw new ArgumentException("User ID must be greater than 0.", nameof(userId));
+
+            if (string.IsNullOrWhiteSpace(key))
+                throw new ArgumentException("Preference key cannot be null or whitespace.", nameof(key));
+
+            var valueType = value.GetType().FullName;
+            string valueAsString = Convert.ToString(value, CultureInfo.InvariantCulture); // general format
+
+            var existing = _userPreferencesRepository.Find(e => e.UserId == userId && e.Key == key).FirstOrDefault();
+            if (existing != null)
+            {
+                existing.ValueType = valueType;
+                existing.Value = valueAsString;
+                _userPreferencesRepository.Update(existing);
+            }
+            else
+            {
+                _userPreferencesRepository.Create(new UserPreference
+                {
+                    UserId = userId,
+                    Key = key,
+                    Value = valueAsString,
+                    ValueType = valueType
+                });
+            }
+
+            SessionHelper.SetValue(key, value);
+
+            InitUserPreferences(userId);
+        }
+
+        public T GetUserPreference<T>(int userId, string key, T defaultValue = default)
+        {
+            if (userId <= 0)
+                throw new ArgumentException("User ID must be greater than 0.", nameof(userId));
+
+            if (string.IsNullOrWhiteSpace(key))
+                throw new ArgumentException("Preference key cannot be null or whitespace.", nameof(key));
+
+            var pref = _userPreferencesRepository
+                .Find(e => e.UserId == userId && e.Key == key)
+                .FirstOrDefault();
+
+            if (pref == null || string.IsNullOrEmpty(pref.Value))
+                return defaultValue;
+
+            try
+            {
+                var targetType = typeof(T);
+
+                if (targetType == typeof(string))
+                    return (T)(object)pref.Value;
+
+                if (targetType.IsEnum)
+                    return (T)Enum.Parse(targetType, pref.Value, ignoreCase: true);
+
+                return (T)Convert.ChangeType(pref.Value, targetType, CultureInfo.InvariantCulture);
+            }
+            catch
+            {
+                return defaultValue;
+            }
+        }
+
+        public void InitUserPreferences(string username)
+        {
+            var user = Find(username);
+            if (user == null)
+            {
+                throw new ArgumentException($"User with username '{username}' not found.", nameof(username));
+            }
+
+            InitUserPreferences(user.Id);
+        }
+
+        public void InitUserPreferences(int userId)
+        {
+            var user = Find(userId);
+            if (user == null)
+            {
+                throw new ArgumentException($"User with ID '{userId}' not found.", nameof(userId));
+            }
+
+            SessionHelper.UserPreferences = _userPreferencesRepository
+                .Find(e => e.UserId == user.Id)
+                .ToList();
+        }
+
+        public void ClearUserPreferences()
+        {
+            SessionHelper.UserPreferences = new List<UserPreference>();
         }
 
         private void EnableMarketingEmailForUser(bool value, User user)

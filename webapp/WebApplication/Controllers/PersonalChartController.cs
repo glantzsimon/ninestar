@@ -38,7 +38,8 @@ namespace K9.WebApplication.Controllers
             if (ModelState.IsValid)
             {
                 // Set user calculation method preference cookie
-                SessionHelper.SetCurrentUserCalculationMethod((int)model.CalculationMethod);
+                UpdateUserPreferenceInt(Constants.SessionConstants.UserCalculationMethod,
+                    (int)model.CalculationMethod);
 
                 if (model.PersonModel != null)
                 {

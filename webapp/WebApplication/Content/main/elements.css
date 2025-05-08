@@ -180,6 +180,12 @@ form div.well h3 {
 a[href='#'] p {
   color: var(--text-color) !important;
 }
+img.light {
+  display: block;
+}
+img.dark {
+  display: none;
+}
 .footer h3,
 .footer h4,
 .footer h5 {

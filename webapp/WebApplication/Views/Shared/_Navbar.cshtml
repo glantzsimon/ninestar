@@ -12,6 +12,10 @@
     var membership = isAuthenticated ? this.GetActiveUserMembership() : null;
     var deviceType = new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
     var whatsAppLink = (deviceType == EDeviceType.Desktop ? "https://web.whatsapp.com/send?phone=" : "https://wa.me/") + DefaultValuesConfiguration.Instance.WhatsAppSupportNumber;
+
+    var defaultTheme = SessionHelper.GetDefaultTheme();
+    var lightThemeSelectedClass = defaultTheme == "dark" ? "" : "active";
+    var darkThemeSelectedClass = defaultTheme == "dark" ? "active" : "";
 }
 <div id="account-header">
     <div id="account-controls">
@@ -24,9 +28,9 @@
                         <span class="caret"></span>
                     </a>
                     <ul id="admin-menu-items" class="dropdown-menu nav navbar-nav">
-                        <li class="sub-item"><a class="theme-selector light" href="#">@K9.Globalisation.Dictionary.Light @K9.Globalisation.Dictionary.Theme</a></li>
+                        <li class="sub-item"><a class="theme-selector light @lightThemeSelectedClass" href="#">@K9.Globalisation.Dictionary.Light @K9.Globalisation.Dictionary.Theme</a></li>
 
-                        <li class="sub-item"><a class="theme-selector dark" href="#">@K9.Globalisation.Dictionary.Dark @K9.Globalisation.Dictionary.Theme</a></li>
+                        <li class="sub-item"><a class="theme-selector dark @darkThemeSelectedClass" href="#">@K9.Globalisation.Dictionary.Dark @K9.Globalisation.Dictionary.Theme</a></li>
 
                         <li class="divider"></li>
 

@@ -121,6 +121,27 @@ namespace K9.WebApplication.Controllers
             try
             {
                 SessionHelper.SetValue(key, value);
+                if (Current.UserId > 0)
+                {
+                    My.UserService.UpdateUserPreference(Current.UserId, key, value);
+                }
+            }
+            catch (Exception e)
+            {
+                return Json(new { success = false, error = e.GetFullErrorMessage() }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult UpdateUserPreferenceString(string key, string value)
+        {
+            try
+            {
+                SessionHelper.SetValue(key, value);
+                if (Current.UserId > 0)
+                {
+                    My.UserService.UpdateUserPreference(Current.UserId, key, value);
+                }
             }
             catch (Exception e)
             {
@@ -134,6 +155,10 @@ namespace K9.WebApplication.Controllers
             try
             {
                 SessionHelper.SetValue(key, value);
+                if (Current.UserId > 0)
+                {
+                    My.UserService.UpdateUserPreference(Current.UserId, key, value);
+                }
             }
             catch (Exception e)
             {

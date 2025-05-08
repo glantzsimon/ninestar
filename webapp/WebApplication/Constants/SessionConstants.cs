@@ -50,6 +50,8 @@
         public const string DefaultPanelView = "DefaultPanelView";
         public const string DefaultPanelCycleView = "DefaultPanelCycleView";
         public const string DefaultCalculatorType = "DefaultCalculatorType";
+        public const string UserPreferences = "UserPreferences";
+        public const string DefaultTheme = "DefaultTheme";
         public const string InvertDailyAndHourlyKiForSouthernHemisphere = "InvertDailyAndHourlyKiForSouthernHemisphere";
         public const string InvertDailyAndHourlyCycleKiForSouthernHemisphere = "InvertDailyAndHourlyCycleKiForSouthernHemisphere";
         public const string DefaultEnergyDisplay = "DefaultEnergyDisplay";

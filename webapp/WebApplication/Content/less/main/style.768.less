@@ -89,7 +89,7 @@
 
         h1 {
             text-align: center;
-            color: @whisper-white;            
+            color: @whisper-white;
         }
 
         .article-container {
@@ -230,13 +230,37 @@
     }
 
     #account-header ul#admin-menu-items {
-        
+
         & > li a {
             padding-left: 21px;
         }
     }
 
+    .nav-pills {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
 
+        & > li {
+            float: none !important;
+            flex: 1 0 auto;
+            max-width: 172px;
+            min-width: 154px;
+        }
+    }
+
+    .table-responsive {
+        & > .table {
+            & > thead {
+                background: @panel-header-background;
+            }
+
+            & > tbody > tr > td {
+                white-space: normal !important;
+            }
+        }
+    }
 }
 
 @media (min-width: 766px) {

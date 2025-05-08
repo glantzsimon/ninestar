@@ -135,10 +135,6 @@
   animation: spin 2s linear infinite;
   display: none;
 }
-.page-loading-image {
-  width: 111px;
-  height: 111px;
-}
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);

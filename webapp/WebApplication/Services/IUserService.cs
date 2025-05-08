@@ -17,5 +17,10 @@ namespace K9.WebApplication.Services
         void EnableMarketingEmails(string externalId, bool value = true);
         void EnableMarketingEmails(int id, bool value = true);
         bool AreMarketingEmailsAllowedForUser(int id);
+        void UpdateUserPreference(int userId, string key, object value);
+        T GetUserPreference<T>(int userId, string key, T defaultValue = default);
+        void InitUserPreferences(string username);
+        void InitUserPreferences(int userId);
+        void ClearUserPreferences();
     }
 }

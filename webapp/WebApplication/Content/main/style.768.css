@@ -263,6 +263,24 @@
   #account-header ul#admin-menu-items > li a {
     padding-left: 21px;
   }
+  .nav-pills {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+  }
+  .nav-pills > li {
+    float: none !important;
+    flex: 1 0 auto;
+    max-width: 172px;
+    min-width: 154px;
+  }
+  .table-responsive > .table > thead {
+    background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
+  }
+  .table-responsive > .table > tbody > tr > td {
+    white-space: normal !important;
+  }
 }
 @media (min-width: 766px) {
   .device-only {

@@ -56,6 +56,7 @@
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
             public const string TotalPriceLabel = "TotalPriceLabel";
+            public const string KeyLabel = "KeyLabel";
             public const string DiscountedPriceLabel = "DiscountedPriceLabel";
             public const string IsReusableLabel = "IsReusableLabel";
             public const string CreditsTotalAmountLabel = "CreditsTotalAmountLabel";
@@ -223,6 +224,8 @@
             public const string Slot = "Slot";
             public const string Consultation = "Consultation";
             public const string UserConsultation = "UserConsultation";
+            public const string UserPreference = "UserPreference";
+            public const string UserPreferences = "UserPreferences";
             public const string Slots = "Slots";
             public const string UserOTPs = "UserOTPs";
             public const string UserOTP = "UserOTP";

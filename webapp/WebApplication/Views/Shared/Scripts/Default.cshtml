@@ -19,10 +19,13 @@
         ninestarki({
             updatePreferencesIntUrl: '@Url.Action("UpdateUserPreferenceInt")',
             updatePreferencesBoolUrl: '@Url.Action("UpdateUserPreferenceBool")',
+            updatePreferencesStringUrl: '@Url.Action("UpdateUserPreferenceString")',
             defaultEnergyDisplayKey: '@SessionConstants.DefaultEnergyDisplay',
             defaultPanelViewKey: '@SessionConstants.DefaultPanelView',
             showDirectionsKey: '@SessionConstants.ShowDirections',
             defaultCalculatorTypeKey: '@SessionConstants.DefaultCalculatorType',
+            defaultThemeKey: '@SessionConstants.DefaultTheme',
+            defaultTheme: '@K9.WebApplication.Helpers.SessionHelper.GetDefaultTheme()',
             personalKiValue: '@((int)EScopeDisplay.PersonalKi)',
             lunarKiValue: '@((int)EPanelCycleView.PersonalLunarView)',
             globalKiValue: '@((int)EScopeDisplay.GlobalKi)',

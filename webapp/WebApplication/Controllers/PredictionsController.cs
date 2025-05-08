@@ -80,11 +80,18 @@ namespace K9.WebApplication.Controllers
                     var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
 
                     // Set user calculation method preference cookie
-                    SessionHelper.SetCurrentUserCalculationMethod((int)model.CalculationMethod);
-                    SessionHelper.SetCurrentUserHousesDisplay(model.HousesDisplay);
-                    SessionHelper.SetInvertDailyAndHourlyKiForSouthernHemisphere(model.InvertDailyAndHourlyKiForSouthernHemisphere);
-                    SessionHelper.SetInvertDailyAndHourlyCycleKiForSouthernHemisphere(model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
+                    UpdateUserPreferenceInt(Constants.SessionConstants.UserCalculationMethod,
+                        (int) model.CalculationMethod);
 
+                    UpdateUserPreferenceInt(Constants.SessionConstants.UserHousesDisplay,
+                        (int) model.HousesDisplay);
+
+                    UpdateUserPreferenceBool(Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere,
+                        model.InvertDailyAndHourlyKiForSouthernHemisphere);
+
+                    UpdateUserPreferenceBool(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
+                        model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
+                    
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
 
@@ -128,7 +135,7 @@ namespace K9.WebApplication.Controllers
                                 else
                                 {
                                     // Reset session
-                                    SessionHelper.SetCurrentUserDefaultEnergyDisplay(EEnergyDisplay.Graphical);
+                                    SessionHelper.SetValue(Constants.SessionConstants.DefaultEnergyDisplay, (int)EEnergyDisplay.Graphical);
                                 }
                             }
                         }

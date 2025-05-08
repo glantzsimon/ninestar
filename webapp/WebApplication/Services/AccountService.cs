@@ -40,6 +40,7 @@ namespace K9.WebApplication.Services
         {
             if (My.Authentication.Login(username, password, isRemember))
             {
+                _userService.InitUserPreferences(username);
                 return ELoginResult.Success;
             }
             if (My.Authentication.IsAccountLockedOut(username, 10, TimeSpan.FromDays(1)))
@@ -649,6 +650,7 @@ namespace K9.WebApplication.Services
         public void Logout()
         {
             My.Authentication.Logout();
+            _userService.ClearUserPreferences();
         }
 
         public string GetAccountActivationToken(int userId)

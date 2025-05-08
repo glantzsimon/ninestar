@@ -101,10 +101,22 @@
   color: #f9f9f9;
 }
 .dark-mode a {
-  color: #abcbe8 !important;
+  color: #abcbe8;
 }
 .dark-mode a:hover {
-  color: #dbe9f5 !important;
+  color: #dbe9f5;
+}
+.dark-mode label {
+  color: var(--text-color);
+}
+.dark-mode ul li {
+  color: var(--text-color);
+}
+.dark-mode img.light {
+  display: none;
+}
+.dark-mode img.dark {
+  display: block;
 }
 .dark-mode .form-control {
   background-color: var(--background-color);
@@ -121,9 +133,6 @@
   color: var(--text-color);
   border-color: var(--primary-blue);
   box-shadow: 0 0 4px var(--primary-blue);
-}
-.dark-mode label {
-  color: var(--text-color);
 }
 .dark-mode .help-block,
 .dark-mode .control-label,
@@ -177,9 +186,6 @@
 .dark-mode .alphaBackground {
   background: var(--page-background);
   filter: alpha(opacity=81);
-}
-.dark-mode ul li {
-  color: var(--text-color);
 }
 .dark-mode .nav-pills > li > a:hover,
 .dark-mode .nav-tabs > li > a:hover {

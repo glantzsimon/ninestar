@@ -498,6 +498,10 @@
     <Compile Include="Migrations\202504270328534_FreeKarmicNumerologyReadings.designer.cs">
       <DependentUpon>202504270328534_FreeKarmicNumerologyReadings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505080800152_AddUserPreferences.cs" />
+    <Compile Include="Migrations\202505080800152_AddUserPreferences.designer.cs">
+      <DependentUpon>202505080800152_AddUserPreferences.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BaseLikeable.cs" />
     <Compile Include="Models\Like.cs" />
     <Compile Include="Models\ArticleComment.cs" />
@@ -509,6 +513,7 @@
     <Compile Include="Models\EmailQueueItem.cs" />
     <Compile Include="Models\MailingListContact.cs" />
     <Compile Include="Models\SystemSetting.cs" />
+    <Compile Include="Models\UserPreference.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Models\ArticleTag.cs" />
     <Compile Include="Models\UserOTP.cs" />
@@ -728,6 +733,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504270328534_FreeKarmicNumerologyReadings.resx">
       <DependentUpon>202504270328534_FreeKarmicNumerologyReadings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505080800152_AddUserPreferences.resx">
+      <DependentUpon>202505080800152_AddUserPreferences.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

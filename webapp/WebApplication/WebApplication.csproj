@@ -724,6 +724,11 @@
     <Content Include="Images\emailtemplates\custom\directions.png" />
     <Content Include="Images\emailtemplates\custom\houses.png" />
     <Content Include="Images\emailtemplates\custom\magic-square.png" />
+    <Content Include="Images\ninestar\elements\cycle-five-dark.png" />
+    <Content Include="Images\ninestar\elements\cycle-four-dark.png" />
+    <Content Include="Images\ninestar\transformations\transformation-challenging-dark.png" />
+    <Content Include="Images\ninestar\transformations\transformation-same-dark.png" />
+    <Content Include="Images\ninestar\transformations\transformation-supportive-dark.png" />
     <Content Include="Images\numerology\daily-planner.png" />
     <Content Include="Images\numerology\Elder.png" />
     <Content Include="Images\numerology\Healer.png" />

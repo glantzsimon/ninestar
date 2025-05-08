@@ -28,5 +28,6 @@ namespace K9.DataAccessLayer.Database
         public DbSet<ArticleTag> ArticleTags { get; set; }
         public DbSet<ArticleComment> ArticleComments { get; set; }
         public DbSet<Like> ArticleCommentLikes { get; set; }
+        public DbSet<UserPreference> UserPreferences { get; set; }
     }
 }

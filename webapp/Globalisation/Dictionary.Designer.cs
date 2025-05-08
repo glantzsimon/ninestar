@@ -3669,6 +3669,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Birth Month.
+        /// </summary>
+        public static string BirthMonth {
+            get {
+                return ResourceManager.GetString("BirthMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Birth Month Analysis.
         /// </summary>
         public static string BirthMonthAnalysis {
@@ -9343,6 +9352,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gifts &amp; Trials.
+        /// </summary>
+        public static string GiftsTrials {
+            get {
+                return ResourceManager.GetString("GiftsTrials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Glandular System.
         /// </summary>
         public static string GlandularSystem {
@@ -13745,6 +13763,15 @@ namespace K9.Globalisation {
         public static string LunarCycle {
             get {
                 return ResourceManager.GetString("LunarCycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lunar Elements.
+        /// </summary>
+        public static string LunarElements {
+            get {
+                return ResourceManager.GetString("LunarElements", resourceCulture);
             }
         }
         
@@ -20306,6 +20333,15 @@ namespace K9.Globalisation {
         public static string SolarAndLunarHouses {
             get {
                 return ResourceManager.GetString("SolarAndLunarHouses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solar Elements.
+        /// </summary>
+        public static string SolarElements {
+            get {
+                return ResourceManager.GetString("SolarElements", resourceCulture);
             }
         }
         

@@ -679,7 +679,7 @@
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrapValidator.css" />
     <Content Include="Global.asax" />
-    <Content Include="Images\about\light-dark.jpg" />
+    <Content Include="Images\about\light-dark.png" />
     <Content Include="Images\articles\calculator.png" />
     <Content Include="Images\articles\calendar.png" />
     <Content Include="Images\articles\directions.png" />

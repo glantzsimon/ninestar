@@ -6743,8 +6743,14 @@
   <data name="SupportUs" xml:space="preserve">
     <value>Support Us</value>
   </data>
+  <data name="BirthMonth" xml:space="preserve">
+    <value>Birth Month</value>
+  </data>
   <data name="Dark" xml:space="preserve">
     <value>Dark</value>
+  </data>
+  <data name="GiftsTrials" xml:space="preserve">
+    <value>Gifts &amp; Trials</value>
   </data>
   <data name="Intellectual" xml:space="preserve">
     <value>Intellectual</value>
@@ -6757,6 +6763,12 @@
   </data>
   <data name="Light" xml:space="preserve">
     <value>Light</value>
+  </data>
+  <data name="LunarElements" xml:space="preserve">
+    <value>Lunar Elements</value>
+  </data>
+  <data name="SolarElements" xml:space="preserve">
+    <value>Solar Elements</value>
   </data>
   <data name="Theme" xml:space="preserve">
     <value>Theme</value>

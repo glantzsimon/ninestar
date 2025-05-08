@@ -3,22 +3,32 @@
 @using K9.WebApplication.Models
 @model List<NineStarKiEnergy>
 
+@{
+    var index = 0;
+}
+
 <div class="cycles-summary">
     @if (Model != null && Model.Any())
     {
         foreach (var energy in Model)
         {
             var bookmark = $"{energy.EnergyName.ToLower()}-month";
+            var displayAdjustClass = index > 0 ? "margin-top-20" : "";
+
             <div class="cycle-summary">
                 <div class="bookmark" id="@bookmark"></div>
 
-                @Html.Partial("../Predictions/_CycleHeader", energy)
-                
+                <div class="@displayAdjustClass">
+                    @Html.Partial("../Predictions/_CycleHeader", energy)
+                </div>
+
                 @Html.Panel(energy.CycleDescriptiveName,
                     @Html.PayWallContent(ESection.KnowledgeBase,
                         $"monthly-cycles-{energy.EnergyName}",
                         energy.CycleDescription, false, MembershipOption.ESubscriptionType.Free).ToString())
             </div>
+
+            index++;
         }
     }
 </div>

@@ -1058,6 +1058,7 @@
     <Content Include="Images\ninestar\organs\spleenpancreas.png" />
     <Content Include="Images\ninestar\organs\stomach.png" />
     <Content Include="Images\ninestar\organs\urinarybladder.png" />
+    <Content Include="Images\shared\powered-by-stripe-cards-dark.png" />
     <Content Include="Images\ui\adult-child-relationship.png" />
     <Content Include="Images\ui\alchemy.png" />
     <Content Include="Images\ui\daily-cycle.png" />

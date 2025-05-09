@@ -449,7 +449,7 @@
         border-spacing: 0 !important;
         overflow: hidden;
         background: var(--well-color);
-               
+
         thead {
             background: @panel-header-background;
             border: none;
@@ -482,6 +482,32 @@
 
                 &:hover {
                     background: @dark-teal-blue !important;
+                }
+            }
+        }
+    }
+
+    .dataTables_paginate {
+        ul.pagination {
+            a {
+                background: @panel-header-background;
+                color: @whisper-white;
+            }
+
+            li {
+                transition: all 0.5s ease;
+
+                &.active {
+                    a {
+                        border-top-color: @border-grey;
+                        border-bottom-color: @border-grey;
+                    }
+                }
+
+                &:not(.disabled) {
+                    a:hover {
+                        background: @dark-teal-blue;
+                    }
                 }
             }
         }
@@ -536,6 +562,161 @@
                 color: @vibrant-red;
             }
         }
+    }
+
+    #calendar {
+        color: var(--text-color);
+        background: var(--well-color);
+        outline: 1px solid var(--border-color);
+
+        .calendar-header-wrapper {
+            background: @panel-header-background;
+
+            .nav-btn {
+                border: 1px solid @teal-blue;
+                background: @teal-blue-dark;
+
+                .glyphicon {
+                    color: var(--text-color);
+                }
+
+                &:hover {
+                    background: @teal-blue-light;
+                    border: 1px solid @teal-blue-dark;
+                }
+            }
+        }
+
+        .calendar-header {
+            background: @panel-header-background;
+            border-top: 2px solid @silver-grey;
+            border-bottom: 2px solid @silver-grey;
+
+            .day-headers {
+                .day-header {
+                    border-left: 1px solid var(--border-color);
+                }
+
+                .day-date {
+                    color: @whisper-white;
+                }
+            }
+        }
+
+        .calendar-body {
+            .time-column {
+                background: @dark-teal-blue-alpha-dark;
+
+                .time-cell {
+                    border-top: 1px solid @silver-grey;
+                    color: @whisper-white;
+                }
+            }
+
+            .day-columns {
+                .day-column {
+                    border-left: 1px solid @silver-grey;
+
+                    .slot {
+                        border-bottom: 1px solid @silver-grey;
+
+                        &:hover {
+                            background: @dark-teal-blue;
+                        }
+                    }
+                }
+            }
+        }
+
+        .event-block {
+            color: var(--snow-white);
+        }
+    }
+
+    .event-menu {
+        background: @teal-blue-dark;
+        border: 1px solid var(--border-color);
+    }
+
+    .event-menu li:hover {
+        color: var(--snow-white);
+        background: var(--primary-blue);
+    }
+
+    .moderator-dashboard {
+        h4 {
+            color: @whisper-white;
+        }
+
+        .moderator-card {
+            background: @panel-header-background;
+
+            .moderator-header {
+                div {
+                    color: @whisper-white;
+
+                    &.timestamp {
+                        color: @silver-grey;
+                    }
+
+                    strong {
+                        color: @whisper-white;
+                    }
+                }
+            }
+
+            .moderator-body {
+                .comment-text {
+                    color: @whisper-white;
+                }
+            }
+
+            .moderator-footer {
+                .like-summary {
+                    color: @silver-grey;
+                }
+            }
+        }
+    }
+
+    .alert-danger {
+        background: @deep-red;
+    }
+
+    #account-header {
+        ul.admin-menu ul.dropdown-menu {
+            li {
+                a:hover {
+                    border: 1px solid @border-grey;
+                    background: @dark-teal-blue-alpha !important;
+                    text-shadow: none !important;
+                    color: @snow-white !important;
+                }
+            }
+        }
+    }
+
+    .testimonial-box {
+        background: @teal-blue;
+        color: @whisper-white;
+
+        p.testimonial-text {
+            color: @whisper-white;
+        }
+    }
+
+    .sr-input.sr-card-element {
+        background: @charcoal-black;
+        border: 1px solid @whisper-white;
+        border-radius: 4px;
+    }
+
+    div.security-info {
+        background: @teal-blue-dark !important;
+    }
+
+    .powered-by-stripe {
+        background-image: url('@{images-path}/shared/powered-by-stripe-cards-dark.png');
     }
 }
 

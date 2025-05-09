@@ -79,7 +79,7 @@
                 </div>
 
                 <hr />
-                <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+                <div class="col-sm-offset-1 col-sm-10 col-xs-12">
                     <div class="powered-by-stripe">
                         &nbsp;
                     </div>
@@ -95,6 +95,8 @@
     function initPayments() {
         Payments.init({
             paymentIntentUrl: "@Url.Action("GetPaymentIntent", "Payments")",
+            defaultTheme: '@K9.WebApplication.Helpers.SessionHelper.GetDefaultTheme()',
+            meow: "meow",
             successUrl: "@Model.SuccessUrl",
             failureUrl: "@Model.FailureUrl",
             processPaymentUrl: "@Url.Action("ProcessPayment", "Payments")",

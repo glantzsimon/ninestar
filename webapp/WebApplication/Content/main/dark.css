@@ -446,6 +446,20 @@
 .dark-mode table.dataTable tbody tr:hover {
   background: #14384a !important;
 }
+.dark-mode .dataTables_paginate ul.pagination a {
+  background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
+  color: #f9f9f9;
+}
+.dark-mode .dataTables_paginate ul.pagination li {
+  transition: all 0.5s ease;
+}
+.dark-mode .dataTables_paginate ul.pagination li.active a {
+  border-top-color: #dddddd;
+  border-bottom-color: #dddddd;
+}
+.dark-mode .dataTables_paginate ul.pagination li:not(.disabled) a:hover {
+  background: #14384a;
+}
 .dark-mode .article-container article .well {
   background: var(--well-color) !important;
 }
@@ -484,6 +498,111 @@
 }
 .dark-mode .article-container article .fa-heart {
   color: #f44336;
+}
+.dark-mode #calendar {
+  color: var(--text-color);
+  background: var(--well-color);
+  outline: 1px solid var(--border-color);
+}
+.dark-mode #calendar .calendar-header-wrapper {
+  background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
+}
+.dark-mode #calendar .calendar-header-wrapper .nav-btn {
+  border: 1px solid #276e93;
+  background: #1e5875;
+}
+.dark-mode #calendar .calendar-header-wrapper .nav-btn .glyphicon {
+  color: var(--text-color);
+}
+.dark-mode #calendar .calendar-header-wrapper .nav-btn:hover {
+  background: #47a0ce;
+  border: 1px solid #1e5875;
+}
+.dark-mode #calendar .calendar-header {
+  background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
+  border-top: 2px solid #aaaaaa;
+  border-bottom: 2px solid #aaaaaa;
+}
+.dark-mode #calendar .calendar-header .day-headers .day-header {
+  border-left: 1px solid var(--border-color);
+}
+.dark-mode #calendar .calendar-header .day-headers .day-date {
+  color: #f9f9f9;
+}
+.dark-mode #calendar .calendar-body .time-column {
+  background: rgba(20, 56, 74, 0.11);
+}
+.dark-mode #calendar .calendar-body .time-column .time-cell {
+  border-top: 1px solid #aaaaaa;
+  color: #f9f9f9;
+}
+.dark-mode #calendar .calendar-body .day-columns .day-column {
+  border-left: 1px solid #aaaaaa;
+}
+.dark-mode #calendar .calendar-body .day-columns .day-column .slot {
+  border-bottom: 1px solid #aaaaaa;
+}
+.dark-mode #calendar .calendar-body .day-columns .day-column .slot:hover {
+  background: #14384a;
+}
+.dark-mode #calendar .event-block {
+  color: var(--snow-white);
+}
+.dark-mode .event-menu {
+  background: #1e5875;
+  border: 1px solid var(--border-color);
+}
+.dark-mode .event-menu li:hover {
+  color: var(--snow-white);
+  background: var(--primary-blue);
+}
+.dark-mode .moderator-dashboard h4 {
+  color: #f9f9f9;
+}
+.dark-mode .moderator-dashboard .moderator-card {
+  background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
+}
+.dark-mode .moderator-dashboard .moderator-card .moderator-header div {
+  color: #f9f9f9;
+}
+.dark-mode .moderator-dashboard .moderator-card .moderator-header div.timestamp {
+  color: #aaaaaa;
+}
+.dark-mode .moderator-dashboard .moderator-card .moderator-header div strong {
+  color: #f9f9f9;
+}
+.dark-mode .moderator-dashboard .moderator-card .moderator-body .comment-text {
+  color: #f9f9f9;
+}
+.dark-mode .moderator-dashboard .moderator-card .moderator-footer .like-summary {
+  color: #aaaaaa;
+}
+.dark-mode .alert-danger {
+  background: #a94442;
+}
+.dark-mode #account-header ul.admin-menu ul.dropdown-menu li a:hover {
+  border: 1px solid #dddddd;
+  background: rgba(20, 56, 74, 0.72) !important;
+  text-shadow: none !important;
+  color: #ffffff !important;
+}
+.dark-mode .testimonial-box {
+  background: #276e93;
+  color: #f9f9f9;
+}
+.dark-mode .testimonial-box p.testimonial-text {
+  color: #f9f9f9;
+}
+.dark-mode .sr-input.sr-card-element {
+  background: #0f1215;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+}
+.dark-mode div.security-info {
+  background: #1e5875 !important;
+}
+.dark-mode .powered-by-stripe {
+  background-image: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/shared/powered-by-stripe-cards-dark.png');
 }
 @media (max-width: 767px) {
   .alphaBackground {

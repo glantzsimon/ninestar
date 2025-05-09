@@ -86,7 +86,7 @@
   position: relative;
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   color: var(--text-color);
-  background: var(--snow-white);
+  background: var(--background-color);
   outline: 1px solid var(--border-color);
   border-radius: 6px;
   overflow: hidden;
@@ -172,7 +172,7 @@
 }
 #calendar .calendar-body .time-column {
   width: 60px;
-  background: var(--snow-white);
+  background: var(--background-color);
 }
 #calendar .calendar-body .time-column .time-cell {
   height: 60px;

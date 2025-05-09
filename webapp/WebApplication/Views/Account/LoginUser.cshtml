@@ -2,7 +2,7 @@
 @model UserAccount.LoginModel
 @{
     ViewBag.Title = Dictionary.LogIn;
-    ViewBag.SubTitle = Dictionary.LogIn;
+    ViewBag.SubTitle = $"{Dictionary.LogIn} {Dictionary.User}";
     Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
 }
 
@@ -11,7 +11,7 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.BootstrapEditorFor(model => model.UserName)
-        @Html.BootstrapEditorFor(model => model.Password)
+        @Html.Hidden("Password", "th1515n0tmypa55w0rd")
         <hr />
         @Html.BootstrapButton(Dictionary.LogInVerb, EButtonType.Submit, "fa-sign-in", EButtonClass.Large)
     }

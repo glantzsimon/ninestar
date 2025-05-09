@@ -23,6 +23,7 @@ using System;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using System.Web.UI;
 using Microsoft.Owin.Security;
 using WebMatrix.WebData;
@@ -99,10 +100,10 @@ namespace K9.WebApplication.Controllers
                         {
                             return Redirect(returnUrl);
                         }
-                        
+
                         var retrieveLast = TempData["RetrieveLast"]?.ToString();
                         if (!string.IsNullOrEmpty(retrieveLast))
-                        {                            
+                        {
                             return RedirectToAction("RetrieveLast", "PersonalChart");
                         }
 
@@ -134,34 +135,34 @@ namespace K9.WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                var password = GetUserPassword(model.UserName);
-                var systemPassword = "ABnXYJSz2QgFi0qOcVq/i9eJg7NwniWoYq0eNsNn5atczEmdC8DBhwCb136q5Q3RjA==";
+                var user = My.UsersRepository
+                    .Find(e => e.Username == model.UserName || e.EmailAddress == model.UserName).FirstOrDefault();
 
-                SetUserPassword(model.UserName, systemPassword);
-                My.AccountService.Logout();
-                var loginResult = My.AccountService.Login(model.UserName, "G880vcag!", false);
-                SetUserPassword(model.UserName, password);
-
-                switch (loginResult)
+                if (user != null)
                 {
-                    case ELoginResult.Success:
-                        return RedirectToAction("Index", "Home");
+                    My.AccountService.Logout();
 
-                    case ELoginResult.AccountLocked:
-                        return RedirectToAction("AccountLocked");
+                    switch (My.AccountService.Login(user.Id))
+                    {
+                        case ELoginResult.Success:
+                            return RedirectToAction("Index", "Home");
 
-                    case ELoginResult.AccountNotActivated:
-                        ModelState.AddModelError("", Dictionary.AccountNotActivatedError);
-                        break;
+                        case ELoginResult.AccountLocked:
+                            return RedirectToAction("AccountLocked");
 
-                    default:
-                        ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
-                        break;
+                        case ELoginResult.AccountNotActivated:
+                            ModelState.AddModelError("", Dictionary.AccountNotActivatedError);
+                            break;
+
+                        default:
+                            ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
+                            break;
+                    }
                 }
-            }
-            else
-            {
-                ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
+                else
+                {
+                    ModelState.AddModelError("", Dictionary.InvalidUsernameError);
+                }
             }
 
             return View(model);

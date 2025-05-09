@@ -212,18 +212,3 @@ button a .fa,
 a.btn a .fa {
   margin-right: 2px;
 }
-@media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) and (pointer: coarse) {
-  input[type="date"],
-  input[type="time"],
-  input[type="datetime-local"] {
-    /* Your iPhone-specific fixes here */
-    /*-webkit-appearance: none;
-        appearance: none;
-        width: 100%;
-        box-sizing: border-box;
-        line-height: 1.5em !important;
-        text-align: left;
-        padding-left: 0 !important;
-        vertical-align: text-top;*/
-  }
-}

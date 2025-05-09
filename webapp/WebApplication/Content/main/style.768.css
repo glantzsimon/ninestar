@@ -125,11 +125,6 @@
   form .well {
     margin-bottom: 20px !important;
   }
-  .container,
-  .container-fluid {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-  }
   div.inline-form,
   form {
     width: 100% !important;
@@ -140,10 +135,20 @@
   .panel-body .nav-pills > li + li {
     margin-left: 0 !important;
   }
+  .container,
+  .container-fluid {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   .page {
     background: none;
     margin: 0;
     padding: 0;
+  }
+  .page > .container,
+  .page > .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   .page .page-header {
     padding-bottom: 4px;

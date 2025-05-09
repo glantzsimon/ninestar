@@ -52,11 +52,6 @@
         margin-bottom: 20px !important;
     }
 
-    .container, .container-fluid {
-        padding-left: 5px !important;
-        padding-right: 5px !important;
-    }
-
     div.inline-form, form {
         width: 100% !important;
     }
@@ -69,10 +64,20 @@
         margin-left: 0 !important;
     }
 
+    .container, .container-fluid {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
     .page {
         background: none;
         margin: 0;
         padding: 0;
+
+        & > .container, & > .container-fluid {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
 
         .page-header {
             padding-bottom: 4px;
@@ -267,7 +272,7 @@
             float: left;
 
             input {
-                margin-left: 0 !important;                
+                margin-left: 0 !important;
             }
 
             label {

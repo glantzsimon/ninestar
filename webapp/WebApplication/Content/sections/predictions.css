@@ -598,7 +598,7 @@
     font-size: 1.1rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-right: 11px;
+    margin-right: 5px;
   }
   .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label .parent-dates {
     font-size: 0.8rem;
@@ -648,11 +648,11 @@
     padding: 0.5rem;
   }
   .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-name {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 0.25rem;
   }
   .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-dates {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     margin-bottom: 0.5rem;
   }
   .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .custom-content .moon-phase .moon-wrapper img {

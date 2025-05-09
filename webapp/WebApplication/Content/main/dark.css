@@ -604,6 +604,62 @@
 .dark-mode .powered-by-stripe {
   background-image: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/shared/powered-by-stripe-cards-dark.png');
 }
+.dark-mode .why-upgrade-container ul li em {
+  color: #bbb;
+}
+.dark-mode .membership-option-container {
+  background: var(---background-color);
+}
+.dark-mode .membership-option-container .membership-option-title {
+  background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
+}
+.dark-mode .membership-option-container .membership-option {
+  background: rgba(20, 56, 74, 0.11);
+}
+.dark-mode .membership-option-container .membership-option .membership-footer {
+  background: rgba(20, 56, 74, 0.72);
+}
+.dark-mode .membership-option-container .membership-option .membership-footer .membership-valid-until-container {
+  color: #aaaaaa;
+}
+.dark-mode img[alt="selected"] {
+  filter: invert(100%) !important;
+}
+.dark-mode .custom-uploader .btn-upload-trigger {
+  background: #276e93;
+  border-color: #f9f9f9;
+  color: #f9f9f9;
+  font-weight: normal;
+  text-shadow: none;
+}
+.dark-mode .custom-uploader .btn-upload-trigger:hover {
+  background: #14384a;
+}
+.dark-mode #imageList .image-group-header {
+  background: rgba(71, 160, 206, 0.72);
+  border: #aaaaaa;
+  color: #f9f9f9;
+}
+.dark-mode #imageList .image-list-item:hover {
+  background: rgba(20, 56, 74, 0.72);
+}
+.dark-mode #imageList .image-list-item.selected {
+  background: rgba(71, 160, 206, 0.4);
+}
+.dark-mode #imageList .image-actions i {
+  color: #f9f9f9;
+}
+.dark-mode .nav-tabs li a {
+  color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+}
+.dark-mode .nav-tabs li.active a {
+  color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+}
+.dark-mode .display-warning {
+  color: #f9f9f9;
+}
 @media (max-width: 767px) {
   .alphaBackground {
     background: none !important;

@@ -9,7 +9,7 @@
     var ordered = abbr.Skip(1).Concat(abbr.Take(1)).ToArray();
     var mondayIso = Model.Date.ToUniversalTime().ToString("o");
 
-    var isAdmin = SessionHelper.CurrentUserIsAdmin();
+    var isAdmin = SessionHelper.CurrentUserIsAdmin() && !Model.IsByPassAdmin;
     var consultationId = Model.Consultation?.Id ?? 0;
 }
 

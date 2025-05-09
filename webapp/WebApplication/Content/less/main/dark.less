@@ -718,6 +718,95 @@
     .powered-by-stripe {
         background-image: url('@{images-path}/shared/powered-by-stripe-cards-dark.png');
     }
+
+    .why-upgrade-container {
+        ul li em {
+            color: #bbb;
+        }
+    }
+
+    .membership-option-container {
+        background: var(---background-color);
+
+        .membership-option-title {
+            background: @panel-header-background;
+        }
+
+        .membership-option {
+            background: @dark-teal-blue-alpha-dark;
+
+            .membership-footer {
+                background: @dark-teal-blue-alpha;
+
+                .membership-valid-until-container {
+                    color: @silver-grey;
+                }
+            }
+        }
+    }
+
+    img[alt="selected"] {
+        filter: invert(100%) !important;
+    }
+
+    .custom-uploader {
+        .btn-upload-trigger {
+            background: @teal-blue;
+            border-color: @whisper-white;
+            color: @whisper-white;
+            font-weight: normal;
+            text-shadow: none;
+
+            &:hover {
+                background: @dark-teal-blue;
+            }
+        }
+    }
+
+    #imageList {
+        .image-group-header {
+            background: @teal-blue-alpha;
+            border: @silver-grey;
+            color: @whisper-white;
+        }
+
+        .image-list-item {
+            &:hover {
+                background: @dark-teal-blue-alpha;
+            }
+
+            &.selected {
+                background: @teal-blue-alpha-40;
+            }
+        }
+
+        .image-actions {
+            i {
+                color: @whisper-white;
+            }
+        }
+    }
+
+    .nav-tabs {
+        li {
+
+            a {
+                color: @whisper-white;
+                border: 1px solid @whisper-white;
+            }
+
+            &.active {
+                a {
+                    color: @whisper-white;
+                    border: 1px solid @whisper-white;
+                }
+            }
+        }
+    }
+
+    .display-warning {
+        color: @whisper-white;
+    }
 }
 
 @media (max-width:767px) {

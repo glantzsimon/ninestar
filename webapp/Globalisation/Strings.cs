@@ -486,7 +486,7 @@
             public const string SoilGenerationCycle = "soil_generation_cycle";
             public const string ThunderGenerationCycle = "thunder_generation_cycle";
             public const string WindGenerationCycle = "wind_generation_cycle";
-            public const string CoreEarthGenerationCycle = "coreearth_generation_cycle";
+            public const string CoreEarthGenerationCycle = "core_earth_generation_cycle";
             public const string HeavenGenerationCycle = "heaven_generation_cycle";
             public const string LakeGenerationCycle = "lake_generation_cycle";
             public const string MountainGenerationCycle = "mountain_generation_cycle";

@@ -10,5 +10,6 @@ namespace K9.WebApplication.ViewModels
         public Consultation Consultation { get; set; }
         public List<Slot> AvailableSlots { get; set; }
         public Slot SelectedSlot { get; set; }
+        public bool IsByPassAdmin { get; set; }
     }
 }

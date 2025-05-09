@@ -672,6 +672,9 @@
 .dark-mode .display-warning {
   color: #f9f9f9;
 }
+.dark-mode .dataTables_processing {
+  color: #f9f9f9;
+}
 @media (max-width: 767px) {
   .alphaBackground {
     background: none !important;

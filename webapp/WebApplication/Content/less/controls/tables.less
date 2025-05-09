@@ -58,7 +58,7 @@ form .pull-right .btn {
     }
 }
 
-.table-responsive {
+.table-responsive, .dataTable {
     margin-left: 0;
     margin-right: 0;
     border-top-left-radius: 9px !important;
@@ -72,6 +72,8 @@ form .pull-right .btn {
         margin-bottom: 0 !important;
 
         thead {
+            background: @panel-header-background;
+
             th {
                 padding-top: 12px !important;
                 padding-bottom: 12px !important;
@@ -88,6 +90,8 @@ form .pull-right .btn {
             }
 
             tr {
+                transition: all 0.5s ease;
+
                 td {
                     color: var(--text-color);
                 }

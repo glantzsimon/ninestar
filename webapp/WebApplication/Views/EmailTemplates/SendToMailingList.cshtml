@@ -2,7 +2,7 @@
 @model K9.WebApplication.ViewModels.SendEmailTemplateViewModel
 @{
     ViewBag.Title = Dictionary.MailingLists;
-    ViewBag.SubTitle = Dictionary.SendToToUser;
+    ViewBag.SubTitle = Dictionary.SendToMailingList;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))

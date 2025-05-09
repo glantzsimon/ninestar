@@ -305,7 +305,7 @@
 }
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) and (pointer: coarse) {
   .page .page-header {
-    padding-top: 42px !important;
+    padding-top: 44px !important;
     padding-bottom: 7px !important;
   }
   input[type="date"],

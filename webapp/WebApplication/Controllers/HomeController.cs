@@ -12,7 +12,7 @@ namespace K9.WebApplication.Controllers
         {
         }
 
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.Server)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader="User-Agent", Location = OutputCacheLocation.Server)]
         public ActionResult Index()
         {
             return View(new NineStarKiModel());

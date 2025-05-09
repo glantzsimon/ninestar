@@ -24,7 +24,7 @@ namespace K9.WebApplication.Controllers
             _nineStarKiService = nineStarKiService;
         }
 
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader="User-Agent", Location = OutputCacheLocation.ServerAndClient)]
         [Route("free-calculator")]
         public ActionResult Index()
         {

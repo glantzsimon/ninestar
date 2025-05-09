@@ -23,7 +23,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("calculator")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader="User-Agent", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
             return View(new NumerologyModel());

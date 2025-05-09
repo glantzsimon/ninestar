@@ -1,9 +1,5 @@
 ﻿using K9.DataAccessLaye.Attributes;
 using K9.Globalisation;
-using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Models;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace K9.DataAccessLayer.Enums
 {
@@ -16,7 +12,9 @@ namespace K9.DataAccessLayer.Enums
         [Discount(DiscountPercent = 30, ResourceType = typeof(Dictionary), Name = Strings.Names.SecondDiscount)]
         SecondDiscount,
         [Discount(DiscountPercent = 50, ResourceType = typeof(Dictionary), Name = Strings.Names.ThirdDiscount)]
-        ThirdDiscount
+        ThirdDiscount,
+        [Discount(DiscountPercent = 75, ResourceType = typeof(Dictionary), Name = Strings.Names.FourthDiscount)]
+        FourthDiscount
     }
 
 

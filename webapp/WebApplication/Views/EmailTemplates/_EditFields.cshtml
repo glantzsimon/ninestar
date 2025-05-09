@@ -25,11 +25,17 @@
     </div>
 </div>
 
+@Html.BootstrapEditorFor(model => model.Name)
+
 <hr />
 
 @Html.Partial("_DynamicFields", new EmailTemplateDynamicFieldsViewModel())
 
-@Html.BootstrapEditorFor(model => model.Name)
+<hr />
+
+@Html.Partial("../Shared/Controls/_DynamicFields", new EmailTemplatesDynamicFieldsViewModel(Model.Id))
+
+<hr />
 
 @Html.BootstrapEditorFor(model => model.Subject)
 

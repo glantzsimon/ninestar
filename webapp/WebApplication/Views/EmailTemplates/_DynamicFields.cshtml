@@ -3,24 +3,13 @@
 @model K9.WebApplication.ViewModels.EmailTemplateDynamicFieldsViewModel
 
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         <div class="form-group">
             <label for="dynamicFields">@Dictionary.DynamicFields:</label>
             <select id="dynamicFields" class="form-control" multiple>
                 @foreach (var item in Model.DynamicFields)
                 {
                     <option value="@item">{{@item}}</option>
-                }
-            </select>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label for="imageFields">@Dictionary.Images:</label>
-            <select id="imageFields" class="form-control" multiple>
-                @foreach (var item in Model.ImageFields)
-                {
-                    <option value="@item.GetHtmlPlaceHolder()">@item.FileName</option>
                 }
             </select>
         </div>
@@ -33,19 +22,6 @@
         if (event.ctrlKey && event.key === "c") {
             let selectedOptions = $(this).find("option:selected").map(function () {
                 return $(this).text();
-            }).get().join("\n");
-
-            if (selectedOptions) {
-                navigator.clipboard.writeText(selectedOptions)
-                    .catch(err => console.error("Failed to copy:", err));
-            }
-        }
-    });
-
-    $("#imageFields").on("keydown", function (event) {
-        if (event.ctrlKey && event.key === "c") {
-            let selectedOptions = $(this).find("option:selected").map(function () {
-                return $(this).val();
             }).get().join("\n");
 
             if (selectedOptions) {

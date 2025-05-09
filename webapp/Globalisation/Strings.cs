@@ -389,6 +389,7 @@
             public const string FirstDiscount = "FirstDiscount";
             public const string SecondDiscount = "SecondDiscount";
             public const string ThirdDiscount = "ThirdDiscount";
+            public const string FourthDiscount = "FourthDiscount";
             public const string None = "None";
 
             public const string FiveYelloKilling = "FiveYelloKilling";

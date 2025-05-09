@@ -19,7 +19,8 @@ namespace K9.DataAccessLayer.Database
                 EDiscount.None,
                 EDiscount.FirstDiscount,
                 EDiscount.SecondDiscount,
-                EDiscount.ThirdDiscount
+                EDiscount.ThirdDiscount,
+                EDiscount.FourthDiscount
             };
             return new List<ListItem>(values.Select(e =>
             {

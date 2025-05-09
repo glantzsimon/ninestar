@@ -412,6 +412,7 @@
     <Compile Include="Services\MediaManagementService.cs" />
     <Compile Include="ViewModels\ConsultationBookingViewModel.cs" />
     <Compile Include="ViewModels\BlogModeratorViewModel.cs" />
+    <Compile Include="ViewModels\DynamicFields\EmailTemplateDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\ImageListItemViewModel.cs" />
     <Compile Include="ViewModels\DynamicFields\MyAccountDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\DynamicFields\IDynamicFieldsModel.cs" />

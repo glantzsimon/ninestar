@@ -68,6 +68,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.DiscountPercentLabel)]
         public string DiscountPercentText => $"{DiscountPercent}%";
+        
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.DiscountPercentLabel)]
+        public string DiscountPercentHtmlText => $"{DiscountPercent}&#37;";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountAmountLabel)]
         public double DiscountFactorAmount => (double)DiscountPercent / 100f;

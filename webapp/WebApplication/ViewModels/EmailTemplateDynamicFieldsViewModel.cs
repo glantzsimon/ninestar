@@ -16,6 +16,7 @@ namespace K9.WebApplication.ViewModels
                 nameof(User.FirstName),
                 nameof(Promotion.DiscountPercent),
                 nameof(Promotion.DiscountPercentText),
+                nameof(Promotion.DiscountPercentHtmlText),
                 nameof(Promotion.FormattedFullPrice),
                 nameof(Promotion.FormattedSpecialPrice),
                 nameof(Promotion.MembershipName),

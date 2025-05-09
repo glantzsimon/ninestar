@@ -384,6 +384,7 @@ namespace K9.WebApplication.Services
                 user.FirstName,
                 promotion.DiscountPercent,
                 promotion.DiscountPercentText,
+                promotion.DiscountPercentHtmlText,
                 promotion.FormattedFullPrice,
                 promotion.FormattedSpecialPrice,
                 promotion.MembershipName,

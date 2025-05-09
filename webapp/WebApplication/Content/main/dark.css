@@ -665,12 +665,15 @@
   color: #f9f9f9;
   border: 1px solid #f9f9f9;
 }
+.dark-mode .nav-tabs li a:focus {
+  background: #47a0ce;
+}
 .dark-mode .nav-tabs li.active a {
   color: #f9f9f9;
   border: 1px solid #f9f9f9;
 }
-.dark-mode .display-warning {
-  color: #f9f9f9;
+.dark-mode .nav-tabs li.active a:focus {
+  background: #47a0ce;
 }
 .dark-mode .dataTables_processing {
   color: #f9f9f9;

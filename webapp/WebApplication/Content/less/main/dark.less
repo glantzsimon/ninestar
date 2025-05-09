@@ -816,19 +816,23 @@
             a {
                 color: @whisper-white;
                 border: 1px solid @whisper-white;
+
+                &:focus {
+                    background: @teal-blue-light;
+                }
             }
 
             &.active {
                 a {
                     color: @whisper-white;
                     border: 1px solid @whisper-white;
+
+                    &:focus {
+                        background: @teal-blue-light;
+                    }
                 }
             }
         }
-    }
-
-    .display-warning {
-        color: @whisper-white;
     }
 
     .dataTables_processing {

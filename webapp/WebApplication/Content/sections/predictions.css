@@ -330,14 +330,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 50px;
 }
 .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.extra-narrow {
   flex: 0 0 72px;
   margin-right: 22px;
 }
 .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.extra-narrow img {
-  height: 100%;
   object-fit: cover;
   border-radius: 0.25rem;
   max-width: 90px;
@@ -596,7 +594,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 145px !important;
+    min-width: 133px !important;
   }
   .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label .parent-title {
     font-size: 1.2rem;
@@ -616,15 +614,15 @@
     width: 100%;
   }
   .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.extra-narrow img {
-    max-width: 33px;
+    max-width: 31px;
     height: auto;
   }
   .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.narrow {
     margin: 7px;
-    max-width: 33px !important;
+    max-width: 31px !important;
   }
   .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.narrow img {
-    max-width: 45px;
+    max-width: 36px;
     height: auto;
   }
   .global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide {
@@ -658,5 +656,11 @@
   .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-dates {
     font-size: 0.75rem;
     margin-bottom: 0.5rem;
+  }
+  .global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .custom-content .moon-phase .moon-wrapper img {
+    width: 22px;
+  }
+  .global-planner-container .parent-planner .parent-block .global-planner-item .custom-content .moon-phase .moon-wrapper img {
+    width: 22px;
   }
 }

@@ -290,14 +290,13 @@
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
-                    min-width: 50px;
+                    
 
                     &.extra-narrow {
                         flex: 0 0 72px;
                         margin-right: 22px;
 
                         img {
-                            height: 100%;
                             object-fit: cover;
                             border-radius: 0.25rem;
                             max-width: 90px;
@@ -634,7 +633,7 @@
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
-                        min-width: 145px !important;
+                        min-width: 133px !important;
 
                         .parent-title {
                             font-size: 1.2rem;
@@ -658,17 +657,17 @@
 
                         &.extra-narrow {
                             img {
-                                max-width: 33px;
+                                max-width: 31px;
                                 height: auto;
                             }
                         }
 
                         &.narrow {
                             margin: 7px;
-                            max-width: 33px !important;
+                            max-width: 31px !important;
 
                             img {
-                                max-width: 45px;
+                                max-width: 36px;
                                 height: auto;
                             }
                         }
@@ -714,6 +713,28 @@
                             .child-dates {
                                 font-size: 0.75rem;
                                 margin-bottom: 0.5rem;
+                            }
+
+                            .custom-content {
+                                .moon-phase {
+                                    .moon-wrapper {
+                                        img {
+                                            width: 22px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .global-planner-item {
+                    .custom-content {
+                        .moon-phase {
+                            .moon-wrapper {
+                                img {
+                                    width: 22px;
+                                }
                             }
                         }
                     }

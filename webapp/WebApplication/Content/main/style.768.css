@@ -150,6 +150,9 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  .page .page-header-mobile {
+    padding-top: 35px;
+  }
   .page .page-header {
     padding-bottom: 4px;
     padding-top: 35px;
@@ -307,6 +310,9 @@
   .page .page-header {
     padding-top: 44px !important;
     padding-bottom: 7px !important;
+  }
+  .page .page-header-mobile {
+    padding-top: 35px !important;
   }
   input[type="date"],
   input[type="time"],

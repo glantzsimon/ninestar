@@ -514,9 +514,32 @@
     }
 
     .article-container {
+
         article {
             .well {
                 background: var(--well-color) !important;
+            }
+
+            h1 {
+                color: @whisper-white;
+
+                strong {
+                    color: @whisper-white;
+                }
+            }
+
+            .comment-section {
+                .comment-actions {
+                    .like-summary {
+                        color: @light-silver;
+                    }
+                }
+            }
+
+            .comment-form {
+                #commentCounter.text-muted {
+                    color: @silver-grey;
+                }
             }
 
             .comment {

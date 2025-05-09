@@ -463,6 +463,18 @@
 .dark-mode .article-container article .well {
   background: var(--well-color) !important;
 }
+.dark-mode .article-container article h1 {
+  color: #f9f9f9;
+}
+.dark-mode .article-container article h1 strong {
+  color: #f9f9f9;
+}
+.dark-mode .article-container article .comment-section .comment-actions .like-summary {
+  color: #d9d9d9;
+}
+.dark-mode .article-container article .comment-form #commentCounter.text-muted {
+  color: #aaaaaa;
+}
 .dark-mode .article-container article .comment {
   background: linear-gradient(to bottom, var(--panel-header-top) 0%, var(--panel-header-bottom) 100%);
   border: 1px solid #f9f9f9;

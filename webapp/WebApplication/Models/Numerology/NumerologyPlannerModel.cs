@@ -20,10 +20,15 @@ namespace K9.WebApplication.Models
 
         public bool IsCurrent => DateTime.Now.IsBetween(StartDate, EndDate) || DateTime.Today == StartDate && DateTime.Today == EndDate;
 
+        public string DatesString =>
+            StartDate.Year == EndDate.Year
+                ? $"{StartDate.ToString("dd MMM")} - {EndDate.ToString("dd MMM yyyy")}"
+                : $"{StartDate.ToString("dd MMM yy")} - {EndDate.ToString("dd MMM yy")}";
+
         public string Title => $"{StartDate.Year - EndDate.Year}";
 
         public string IsCurrentCssClass => IsCurrent ? "current" : "";
-        
+
         public string IsSelectedCssClass => IsCurrent ? "selected" : "";
 
         private DateTime GetMonth()
@@ -32,7 +37,7 @@ namespace K9.WebApplication.Models
             var endDateDayCount = EndDate.Day;
             var nextMonth = StartDate.AddMonths(1);
             var isMiddleMonth = EndDate.Month > nextMonth.Month;
-            
+
             return isMiddleMonth ? nextMonth : startDateDayCount > endDateDayCount ? StartDate : EndDate;
         }
     }

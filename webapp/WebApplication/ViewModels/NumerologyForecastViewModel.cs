@@ -35,7 +35,7 @@ namespace K9.WebApplication.ViewModels
             {
                 case EForecastType.Yearly:
                 case EForecastType.Monthly:
-                    return $"{model.StartDate.ToShortDateFormatString()} - {model.EndDate.ToShortDateFormatString()}";
+                    return model.DatesString;
                 
                 default:
                     return "";

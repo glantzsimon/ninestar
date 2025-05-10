@@ -25,6 +25,7 @@
 
     h3, artcile h3, .ninestar-summary-container h3 {
         font-size: 1.1em !important;
+        line-height: 1.2em;
     }
 
     .padding-left-20-desktop {
@@ -286,18 +287,36 @@
     }
 
     .numerology-planner-container {
-        padding: 3px !important;
+        padding: 9px !important;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: break-word;
 
         #yearly-forecast-container, #monthly-forecast-container, #daily-forecast-container {
-            .padding-5 {
-                padding-left: 2px;
-                padding-right: 2px;
-            }
+            white-space: nowrap;
+            overflow-x: auto;
+            display: flex;
+            flex-wrap: wrap;
 
             .numerology-planner-item-container {
+                padding-left: 2px !important;
+                padding-right: 2px !important;
+
                 h5 {
                     font-size: 1.03em;
                 }
+
+                img {
+                    max-width: 81%;
+                    height: auto;
+                    display: block;
+                }
+            }
+
+            > [class^="col-"],
+            > [class*=" col-"] {
+                box-sizing: border-box;
+                float: none;
             }
         }
     }    

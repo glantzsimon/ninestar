@@ -103,6 +103,7 @@
   artcile h3,
   .ninestar-summary-container h3 {
     font-size: 1.1em !important;
+    line-height: 1.2em;
   }
   .padding-left-20-desktop {
     padding-left: 0 !important;
@@ -301,18 +302,45 @@
     margin-right: 9px;
   }
   .numerology-planner-container {
-    padding: 3px !important;
+    padding: 9px !important;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
-  .numerology-planner-container #yearly-forecast-container .padding-5,
-  .numerology-planner-container #monthly-forecast-container .padding-5,
-  .numerology-planner-container #daily-forecast-container .padding-5 {
-    padding-left: 2px;
-    padding-right: 2px;
+  .numerology-planner-container #yearly-forecast-container,
+  .numerology-planner-container #monthly-forecast-container,
+  .numerology-planner-container #daily-forecast-container {
+    white-space: nowrap;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .numerology-planner-container #yearly-forecast-container .numerology-planner-item-container,
+  .numerology-planner-container #monthly-forecast-container .numerology-planner-item-container,
+  .numerology-planner-container #daily-forecast-container .numerology-planner-item-container {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
   }
   .numerology-planner-container #yearly-forecast-container .numerology-planner-item-container h5,
   .numerology-planner-container #monthly-forecast-container .numerology-planner-item-container h5,
   .numerology-planner-container #daily-forecast-container .numerology-planner-item-container h5 {
     font-size: 1.03em;
+  }
+  .numerology-planner-container #yearly-forecast-container .numerology-planner-item-container img,
+  .numerology-planner-container #monthly-forecast-container .numerology-planner-item-container img,
+  .numerology-planner-container #daily-forecast-container .numerology-planner-item-container img {
+    max-width: 81%;
+    height: auto;
+    display: block;
+  }
+  .numerology-planner-container #yearly-forecast-container > [class^="col-"],
+  .numerology-planner-container #monthly-forecast-container > [class^="col-"],
+  .numerology-planner-container #daily-forecast-container > [class^="col-"],
+  .numerology-planner-container #yearly-forecast-container > [class*=" col-"],
+  .numerology-planner-container #monthly-forecast-container > [class*=" col-"],
+  .numerology-planner-container #daily-forecast-container > [class*=" col-"] {
+    box-sizing: border-box;
+    float: none;
   }
 }
 @media (min-width: 766px) {

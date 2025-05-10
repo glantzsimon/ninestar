@@ -391,6 +391,7 @@
 }
 .dark-mode .numerology-planner-item-container.current {
   outline: 1px solid #d9d9d9;
+  background: #14384a;
 }
 .dark-mode .numerology-planner-item-container.selected {
   background: var(--pills-tab-active);

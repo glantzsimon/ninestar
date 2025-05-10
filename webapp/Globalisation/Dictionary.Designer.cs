@@ -6504,6 +6504,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daily Influences.
+        /// </summary>
+        public static string DailyInfluences {
+            get {
+                return ResourceManager.GetString("DailyInfluences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daily Ki Inverted.
         /// </summary>
         public static string DailyInvertedEnergyLabel {

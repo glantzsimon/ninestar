@@ -6779,4 +6779,7 @@
   <data name="UserPreferences" xml:space="preserve">
     <value>User Preferences</value>
   </data>
+  <data name="DailyInfluences" xml:space="preserve">
+    <value>Daily Influences</value>
+  </data>
 </root>

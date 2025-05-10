@@ -300,6 +300,9 @@
   .panel-heading .panel-display-options label {
     margin-right: 9px;
   }
+  .numerology-planner-container {
+    padding: 3px !important;
+  }
   .numerology-planner-container #yearly-forecast-container .padding-5,
   .numerology-planner-container #monthly-forecast-container .padding-5,
   .numerology-planner-container #daily-forecast-container .padding-5 {
@@ -309,7 +312,7 @@
   .numerology-planner-container #yearly-forecast-container .numerology-planner-item-container h5,
   .numerology-planner-container #monthly-forecast-container .numerology-planner-item-container h5,
   .numerology-planner-container #daily-forecast-container .numerology-planner-item-container h5 {
-    font-size: 1.1em;
+    font-size: 1.03em;
   }
 }
 @media (min-width: 766px) {

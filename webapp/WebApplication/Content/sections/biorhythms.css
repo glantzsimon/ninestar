@@ -107,3 +107,11 @@
 .biorhythms-summary-container .panel .panel-body p:nth-last-child(2) {
   margin-bottom: 0 !important;
 }
+.highcharts-container,
+.highcharts-tooltip,
+.biorhythms-tooltip {
+  font-family: Candara, sans-serif !important;
+}
+.biorhythms-tooltip p {
+  font-size: 1em;
+}

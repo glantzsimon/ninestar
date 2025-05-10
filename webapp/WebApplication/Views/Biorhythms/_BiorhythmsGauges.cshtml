@@ -3,6 +3,10 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.Models.BioRhythmsModel
 
+@{
+    var alpha = K9.WebApplication.Helpers.SessionHelper.IsDarkTheme() ? 0.54 : 0.33;
+}
+
 @using (Html.PayWall(ESection.Biorhythms, Model))
 {
     <div class="mobile-only">
@@ -15,7 +19,7 @@
                         MaxValue = 100,
                         Value = (int) biorhythm.Value,
                         Title = biorhythm.BioRhythm.Name,
-                        BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
+                        TitleBackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, {alpha})",
                         StrokeColor = $"rgb({biorhythm.BioRhythm.Color})",
                         Units = $"{biorhythm.GetBiorhythmTrendHtmlString()}",
                     })
@@ -32,7 +36,7 @@
                     MaxValue = 100,
                     Value = (int) average.Value,
                     Title = average.BioRhythm.Name,
-                    BackgroundColor = $"rgb({average.BioRhythm.Color}, 0.33)",
+                    TitleBackgroundColor = $"rgb({average.BioRhythm.Color}, {alpha})",
                     StrokeColor = $"rgb({average.BioRhythm.Color})",
                     Units = $"{average.GetBiorhythmTrendHtmlString()}",
                 })
@@ -50,7 +54,7 @@
                         MaxValue = 100,
                         Value = (int) biorhythm.Value,
                         Title = biorhythm.BioRhythm.Name,
-                        BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
+                        TitleBackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, {alpha})",
                         StrokeColor = $"rgb({biorhythm.BioRhythm.Color})",
                         Units = $"{biorhythm.GetBiorhythmTrendHtmlString()}",
                     })

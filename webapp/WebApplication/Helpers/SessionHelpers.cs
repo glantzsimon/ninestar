@@ -122,6 +122,11 @@ namespace K9.WebApplication.Helpers
             return string.IsNullOrEmpty(theme) ? "dark" : theme;
         }
 
+        public static bool IsDarkTheme()
+        {
+            return GetDefaultTheme() == "dark";
+        }
+
         public static string GetThemeImageSuffix()
         {
             var theme = GetDefaultTheme();

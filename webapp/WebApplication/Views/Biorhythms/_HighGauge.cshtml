@@ -3,10 +3,12 @@
 
 @{
     var id = @Guid.NewGuid().ToString();
+    var backgroundColor = K9.WebApplication.Helpers.SessionHelper.IsDarkTheme() ? "rgba(208, 232, 241, 0.03)" : "#fff";
 }
 
 <div class="gauge-container">
     <canvas id="@id" data-type="radial-gauge"
+            data-color-plate="@backgroundColor"
             data-value="@Model.Value"
             data-max="@Model.MaxValue"
             data-width="200"
@@ -14,7 +16,7 @@
             data-bar-width="20"
             data-bar-shadow="1"
             data-color-bar-progress="@Model.StrokeColor"
-            data-color-bar="@Model.BackgroundColor"
+            data-color-bar="@Model.TitleBackgroundColor"
             data-border-shadow-width="0"
             data-border-inner-width="0"
             data-border-outer-width="0"
@@ -41,6 +43,13 @@
             data-font-title-size="26"
             data-font-color="@Model.StrokeColor"
             data-font-title-weight="bold"
+            
+            @if (K9.WebApplication.Helpers.SessionHelper.IsDarkTheme())
+            {
+                @:data-color-major-ticks="#e0e0e0"
+                @:data-color-minor-ticks="#e0e0e0"
+                @:data-color-numbers="#e0e0e0"
+            }
     ></canvas>
 </div>
 

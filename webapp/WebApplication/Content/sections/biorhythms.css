@@ -114,4 +114,6 @@
 }
 .biorhythms-tooltip p {
   font-size: 1em;
+  line-height: 1em;
+  margin-bottom: 0 !important;
 }

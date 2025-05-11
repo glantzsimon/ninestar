@@ -36,6 +36,14 @@ namespace K9.WebApplication.Controllers
             });
         }
 
+        [Route("latest-articles/{id:int}/{slug?}")]
+        public ActionResult Redirection(int id, string slug = null)
+        {
+            var article = _articlesService.GetArticle(id);
+            TempData.Keep();
+            return RedirectToAction("Details", new { id = article.Id, slug = article.Slug });
+        }
+
         public ActionResult View(int id)
         {
             var article = _articlesService.GetArticle(id);

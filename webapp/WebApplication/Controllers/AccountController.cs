@@ -252,7 +252,7 @@ namespace K9.WebApplication.Controllers
                 Logger.Error($"AccountController => ExternalAuthCallback => Error: {registrationError.ErrorMessage}");
             }
 
-            return RedirectToAction("Login", new UserAccount.LoginModel());
+            return View("Login", new UserAccount.LoginModel());
         }
 
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]

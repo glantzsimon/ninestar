@@ -535,6 +535,17 @@ namespace K9.WebApplication.Services
         private void SendEmailToNineStar(string customerName, string customerEmailAddress, UserMembership userMembership)
         {
             var user = My.UsersRepository.Find(userMembership.UserId);
+            var userPromotions = _promotionService.ListForUser(userMembership.UserId)
+                .Where(e => !e.UsedOn.HasValue)
+                .Select(e => e.PromotionId)
+                .ToList();
+            var promotion = _promotionsRepository.Find(e =>
+                    userPromotions.Contains(e.Id) && e.MembershipOptionId == userMembership.MembershipOptionId)
+                .FirstOrDefault();
+            if (promotion != null)
+            {
+                promotion.MembershipOption = userMembership.MembershipOption;
+            }
             var title = "We have received a new subscription!";
             var body = _emailTemplateService.ParseForUser(
                 title,
@@ -545,7 +556,7 @@ namespace K9.WebApplication.Services
                     Customer = customerName,
                     CustomerEmail = customerEmailAddress,
                     SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                    TotalPrice = userMembership.MembershipOption.FormattedPrice,
+                    TotalPrice = promotion != null ? promotion.FormattedSpecialPrice : userMembership.MembershipOption.FormattedPrice,
                     LinkToSummary = My.UrlHelper.AbsoluteAction("Index", "UserMemberships"),
                 });
 

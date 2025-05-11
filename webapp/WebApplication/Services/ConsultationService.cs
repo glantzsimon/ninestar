@@ -299,7 +299,7 @@ namespace K9.WebApplication.Services
 
         private void SendEmailToNineStarAboutComplimentary(Consultation consultation, User user)
         {
-            var title = "A complimentary consultation has been booked!";
+            var title = "A complimentary consultation has been created!";
             var body = _emailTemplateService.ParseForUser(
                 title,
                 Dictionary.ComplimentaryConsultationBookedEmail,

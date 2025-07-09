@@ -15,9 +15,9 @@ namespace K9.DataAccessLayer.Database.Seeds
 
             AddOrEditMembershipOption(context, "MonthlyPlatinumMembership", "monthly_membership_description", MembershipOption.ESubscriptionType.MonthlyPlatinum, 18, true);
 
-            AddOrEditMembershipOption(context, "YearlyPlatinumMembership", "annual_membership_description", MembershipOption.ESubscriptionType.AnnualPlatinum, 54, true);
+            AddOrEditMembershipOption(context, "YearlyPlatinumMembership", "annual_membership_description", MembershipOption.ESubscriptionType.AnnualPlatinum, 45, true);
 
-            AddOrEditMembershipOption(context, "LifeTimePlatinumMembership", "lifetime_membership_description", MembershipOption.ESubscriptionType.LifeTimePlatinum, 144, true);
+            AddOrEditMembershipOption(context, "LifeTimePlatinumMembership", "lifetime_membership_description", MembershipOption.ESubscriptionType.LifeTimePlatinum, 111, true);
 
             RemoveMembershipOption(context, "MonthlyStandardMembership");
 

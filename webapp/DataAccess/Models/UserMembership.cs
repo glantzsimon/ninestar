@@ -19,7 +19,7 @@ namespace K9.DataAccessLayer.Models
     [DefaultPermissions(Role = RoleNames.DefaultUsers)]
     public class UserMembership : ObjectBase, IUserData
     {
-        public const int TotalFreeReadings = 7;
+        public const int TotalFreeReadings = 2;
 
         [UIHint("User")]
         [Required]

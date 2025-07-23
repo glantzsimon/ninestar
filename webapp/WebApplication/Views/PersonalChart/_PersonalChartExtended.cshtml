@@ -38,12 +38,6 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-4 medium-energy">
-        <a href="#" class="scroll-to-tab" data-tab-id="character">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
-            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Emotional)
-        </a>
-    </div>
     <div class="col-sm-4 @childClass">
         <div class="adult-profile">
             <a href="#" class="scroll-to-tab" data-tab-id="fundamental">
@@ -51,6 +45,12 @@
                 @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Main)
             </a>
         </div>
+    </div>
+    <div class="col-sm-4 medium-energy">
+        <a href="#" class="scroll-to-tab" data-tab-id="character">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Emotional)
+        </a>
     </div>
     <div class="col-sm-4 small-energy">
         <a href="#" class="scroll-to-tab" data-tab-id="surface">

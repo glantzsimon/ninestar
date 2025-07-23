@@ -10,22 +10,26 @@
     <div class="text-center">
         <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
     </div>
-    <div class="col-sm-4 margin-bottom-15 @childClass">
-        <div class="adult-profile">
-            <a href="#" class="scroll-to-tab" data-tab-id="fundamental">
-                @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
+</div>
+<div class="personal-chart-container">
+    <div class="row">
+        <div class="col-sm-4 margin-bottom-15 @childClass">
+            <div class="adult-profile">
+                <a href="#" class="scroll-to-tab" data-tab-id="fundamental">
+                    @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-4 margin-bottom-15 medium-energy">
+            <a href="#" class="scroll-to-tab" data-tab-id="character">
+                @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
             </a>
         </div>
-    </div>
-    <div class="col-sm-4 margin-bottom-15 medium-energy">
-        <a href="#" class="scroll-to-tab" data-tab-id="character">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
-        </a>
-    </div>
-    <div class="col-sm-4 margin-bottom-15 small-energy">
-        <a href="#" class="scroll-to-tab" data-tab-id="surface">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
-        </a>
+        <div class="col-sm-4 margin-bottom-15 small-energy">
+            <a href="#" class="scroll-to-tab" data-tab-id="surface">
+                @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
+            </a>
+        </div>
     </div>
 </div>
 @if (Model.IsShowSummary)

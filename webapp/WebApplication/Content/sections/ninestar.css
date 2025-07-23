@@ -499,3 +499,10 @@ a > .ninestar-summary-container:hover {
   font-size: 0.9em;
   font-weight: normal;
 }
+.personal-chart-container {
+  padding: 11px;
+  margin: 7px 0;
+  border-radius: 33px;
+  border: 1px solid #47a0ce;
+  background: rgba(20, 56, 74, 0.72);
+}

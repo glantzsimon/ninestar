@@ -1311,7 +1311,7 @@ namespace K9.WebApplication.Models
         public string AdultEnergyLabel => Dictionary.MainEnergyLabel;
 
         [ScriptIgnore]
-        public string CharacteEnergyLabel => Dictionary.CharacterEnergyLabel;
+        public string CharacteEnergyLabel => Dictionary.LunarNature;
 
         [ScriptIgnore]
         public string SurfaceEnergyLabel => Dictionary.SurfaceEnergyLabel;

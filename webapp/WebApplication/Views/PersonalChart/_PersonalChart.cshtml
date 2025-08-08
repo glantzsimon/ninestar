@@ -2,41 +2,14 @@
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
-@{
-    var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
-}
-
 <div class="row">
     <div class="text-center">
         <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
     </div>
 </div>
-<div class="personal-chart-container">
-    <div class="row">
-        <div class="col-sm-4 margin-bottom-15 @childClass">
-            <div class="adult-profile">
-                <a href="#" class="scroll-to-tab" data-tab-id="fundamental">
-                    @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 margin-bottom-15 medium-energy">
-            <a href="#" class="scroll-to-tab" data-tab-id="character">
-                @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
-            </a>
-        </div>
-        <div class="col-sm-4 margin-bottom-15 small-energy">
-            <a href="#" class="scroll-to-tab" data-tab-id="surface">
-                @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
-            </a>
-        </div>
+<div class="row">
+    <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+
+        @Html.Panel(Dictionary.CoreEnergies, Html.Partial("_CoreEnergies").ToString())
     </div>
 </div>
-@if (Model.IsShowSummary)
-{
-    <div class="row">
-        <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
-            @Html.Panel(Dictionary.SummaryLabel, Model.Summary)
-        </div>
-    </div>
-}

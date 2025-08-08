@@ -1,0 +1,39 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
+    var magicSquaresModel = Model.GetPersonalChartMagicSquares();
+}
+
+<div class="row">
+    <div class="col-sm-4 @childClass">
+        <div class="adult-profile">
+            <a href="#" class="scroll-to-tab" data-tab-id="fundamental">
+                @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
+                @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Main)
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-4 medium-energy">
+        <a href="#" class="scroll-to-tab" data-tab-id="character">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Emotional)
+        </a>
+    </div>
+    <div class="col-sm-4 small-energy">
+        <a href="#" class="scroll-to-tab" data-tab-id="surface">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Surface)
+        </a>
+    </div>
+</div>
+@if (Model.IsShowSummary)
+{
+    <div class="row">
+        <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+            @Html.Panel(Dictionary.SummaryLabel, Model.Summary)
+        </div>
+    </div>
+}

@@ -3,11 +3,6 @@
 @using K9.WebApplication.ViewModels
 @model K9.WebApplication.Models.NineStarKiModel
 
-@{
-    var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
-    var magicSquaresModel = Model.GetPersonalChartMagicSquares();
-}
-
 <div class="text-center">
     <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
 </div>
@@ -21,59 +16,13 @@
     </div>
 </div>
 
-<div class="personal-chart-container">
-    <div class="row">
-        <div class="col-sm-4 @childClass">
-            <div class="adult-profile">
-                <a href="#" class="scroll-to-tab" data-tab-id="fundamental">
-                    @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
-                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Main)
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 medium-energy">
-            <a href="#" class="scroll-to-tab" data-tab-id="character">
-                @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
-                @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Emotional)
-            </a>
-        </div>
-        <div class="col-sm-4 small-energy">
-            <a href="#" class="scroll-to-tab" data-tab-id="surface">
-                @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
-                @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Surface)
-            </a>
-        </div>
+<div class="row">
+    <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+        @Html.Panel(Dictionary.CoreEnergies, Html.Partial("_CoreEnergies").ToString())
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        <a href="#" class="scroll-to-tab" data-tab-id="epoch">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Epoch)
-            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Epoch)
-        </a>
+    <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+        @Html.Panel(Dictionary.ExtendedProfile, Html.Partial("_AdditionalEnergies").ToString())
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        <a href="#" class="scroll-to-tab" data-tab-id="generation">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Generation)
-            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Generation)
-        </a>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-4 col-sm-offset-4 small-energy">
-        <a href="#" class="scroll-to-tab" data-tab-id="daystar">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Day)
-            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.DayStar)
-        </a>
-    </div>
-</div>
-@if (Model.IsShowSummary)
-{
-    <div class="row">
-        <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
-            @Html.Panel(Dictionary.SummaryLabel, Model.Summary)
-        </div>
-    </div>
-}

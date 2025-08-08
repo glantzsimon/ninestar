@@ -1,8 +1,8 @@
 ﻿using K9.Globalisation;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
 using K9.WebApplication.Enums;
+using K9.WebApplication.Services;
 using System;
 using System.IO;
 using System.Linq;
@@ -68,7 +68,7 @@ namespace K9.WebApplication.ViewModels
                     {
                         FileName = fileName,
                         AltText = Path.GetFileNameWithoutExtension(fileName),
-                        Src = $"{DefaultValuesConfiguration.Instance.BaseImagesPath}{relative.Replace("/Images", "")}",
+                        Src = $"{MediaService.BaseImagesPath}{relative.Replace("/Images", "")}",
                         RelativePath = relative // used for Server.MapPath
                     };
 

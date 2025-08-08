@@ -6782,4 +6782,10 @@
   <data name="DailyInfluences" xml:space="preserve">
     <value>Daily Influences</value>
   </data>
+  <data name="CoreEnergies" xml:space="preserve">
+    <value>Core Energies</value>
+  </data>
+  <data name="ExtendedProfile" xml:space="preserve">
+    <value>Extended Profile</value>
+  </data>
 </root>

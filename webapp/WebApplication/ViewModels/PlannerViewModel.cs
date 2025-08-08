@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Services;
 
 namespace K9.WebApplication.ViewModels
 {
@@ -41,7 +42,7 @@ namespace K9.WebApplication.ViewModels
 
         public EPlannerView NextViewUp => GetNextViewUp();
 
-        public string ImgSrc => $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Energy.EnergyUIName}.png";
+        public string ImgSrc => $"{MediaService.BaseImagesPath}/ninestar/energies/{Energy.EnergyUIName}.png";
 
         public string ImgAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {Energy.EnergyTitle}";
 

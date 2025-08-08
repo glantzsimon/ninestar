@@ -5133,7 +5133,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
-        ///&lt;p&gt;A new complimentary consultation has been booked.&lt;/p&gt;
+        ///&lt;p&gt;A new complimentary consultation has been created, but not yet booked.&lt;/p&gt;
         ///&lt;p&gt;&lt;strong&gt;Customer&lt;/strong&gt;: {ContactName}&lt;/p&gt;
         ///&lt;p&gt;&lt;strong&gt;Email Address&lt;/strong&gt;: {CustomerEmail}&lt;/p&gt;
         ///&lt;p&gt;&lt;strong&gt;Phone Number&lt;/strong&gt;: {PhoneNumber}&lt;/p&gt;
@@ -6115,6 +6115,15 @@ namespace K9.Globalisation {
         public static string coreearth_trigram {
             get {
                 return ResourceManager.GetString("coreearth_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Core Energies.
+        /// </summary>
+        public static string CoreEnergies {
+            get {
+                return ResourceManager.GetString("CoreEnergies", resourceCulture);
             }
         }
         
@@ -8007,6 +8016,15 @@ namespace K9.Globalisation {
         public static string Excellent {
             get {
                 return ResourceManager.GetString("Excellent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extended Profile.
+        /// </summary>
+        public static string ExtendedProfile {
+            get {
+                return ResourceManager.GetString("ExtendedProfile", resourceCulture);
             }
         }
         

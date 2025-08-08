@@ -16,22 +16,14 @@ namespace K9.WebApplication.Services
         private static DateTime _lastCheck = DateTime.MinValue;
         private static readonly TimeSpan CheckInterval = TimeSpan.FromMinutes(5);
 
-        public static string BaseMediaPath { get; set; }
-        public static string BaseImagesPath => $"{BaseMediaPath}/Images";
-        public static string BaseVideosPath => $"{BaseMediaPath}/Videos";
-
-        public string GetBaseMediaPath()
-        {
-            return _storjAvailable
-                ? My.DefaultValuesConfiguration.HostedMediaBasePath
-                : My.DefaultValuesConfiguration.LocalMediaBasePath;
-        }
+        public static string BaseImagesPath { get; set; }
+        public static string BaseVideosPath { get; set; }
 
         public async Task CheckImageServiceHealthAsync()
         {
             if (DateTime.UtcNow - _lastCheck < CheckInterval) return;
 
-            var testUrl = $"{My.DefaultValuesConfiguration.HostedMediaBasePath.TrimEnd('/')}/Images/company/logo.png";
+            var testUrl = $"{My.DefaultValuesConfiguration.HostedImagesBasePath.TrimEnd('/')}/company/logo.png";
             try
             {
                 using (var client = new HttpClient { Timeout = TimeSpan.FromSeconds(3) })
@@ -48,10 +40,25 @@ namespace K9.WebApplication.Services
             _lastCheck = DateTime.UtcNow;
         }
 
+        private string GetBaseImagesPath()
+        {
+            return _storjAvailable
+                ? My.DefaultValuesConfiguration.HostedImagesBasePath
+                : $"{My.DefaultValuesConfiguration.LocalMediaBasePath.TrimEnd('/')}/Images";
+        }
+
+        private string GetBaseVideosPath()
+        {
+            return _storjAvailable
+                ? My.DefaultValuesConfiguration.HostedVideosBasePath
+                : $"{My.DefaultValuesConfiguration.LocalMediaBasePath.TrimEnd('/')}/Videos";
+        }
+
         public void ScheduledHealthCheck()
         {
             CheckImageServiceHealthAsync().GetAwaiter().GetResult();
-            BaseMediaPath = GetBaseMediaPath();
+            BaseImagesPath = GetBaseImagesPath();
+            BaseVideosPath = GetBaseVideosPath();
         }
     }
 }

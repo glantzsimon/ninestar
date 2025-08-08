@@ -4,6 +4,7 @@ using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Config;
 using K9.WebApplication.Enums;
+using K9.WebApplication.Services;
 
 namespace K9.WebApplication.ViewModels
 {
@@ -45,7 +46,7 @@ namespace K9.WebApplication.ViewModels
 
         public string EnergyStartsOnDateTimeString => GetEnergyStartsOnString();
 
-        public string ImageSrc => $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Energy.EnergyUIName}.png";
+        public string ImageSrc => $"{MediaService.BaseImagesPath}/ninestar/energies/{Energy.EnergyUIName}.png";
 
         public string ImageAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {Energy.EnergyTitle}";
 
@@ -53,7 +54,7 @@ namespace K9.WebApplication.ViewModels
 
         public string SecondEnergyName => SecondEnergy.EnergyName;
 
-        public string SecondImageSrc => $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{SecondEnergy.EnergyUIName}.png";
+        public string SecondImageSrc => $"{MediaService.BaseImagesPath}/ninestar/energies/{SecondEnergy.EnergyUIName}.png";
 
         public string SecondImageAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {SecondEnergy.EnergyTitle}";
 

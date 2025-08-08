@@ -1816,6 +1816,8 @@
     <Content Include="Views\Admin\MaintenanceComplete.cshtml" />
     <Content Include="Views\Consultation\_ConsultationCalendar.cshtml" />
     <Content Include="Views\Consultation\ViewCalendar.cshtml" />
+    <Content Include="Views\PersonalChart\_CoreEnergies.cshtml" />
+    <Content Include="Views\PersonalChart\_AdditionalEnergies.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

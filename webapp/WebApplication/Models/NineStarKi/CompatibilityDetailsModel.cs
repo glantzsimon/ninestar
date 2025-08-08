@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
 using K9.Globalisation;
+using K9.WebApplication.Services;
 
 namespace K9.WebApplication.Models
 {
@@ -441,19 +442,19 @@ namespace K9.WebApplication.Models
             if (FundamentalElementsAreSupportive)
             {
                 return TemplateParser.Parse(Globalisation.Dictionary.main_element_supportive,
-                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
+                    new { MediaService.BaseImagesPath });
             }
 
             if (FundamentalEnergiesAreChallenging)
             {
                 return TemplateParser.Parse(Globalisation.Dictionary.main_element_challenging,
-                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
+                    new { MediaService.BaseImagesPath });
             }
 
             if (FundamentalEnergiesAreSame)
             {
                 return TemplateParser.Parse(Globalisation.Dictionary.main_element_same,
-                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
+                    new { MediaService.BaseImagesPath });
             }
 
             return string.Empty;
@@ -464,19 +465,19 @@ namespace K9.WebApplication.Models
             if (CharacterEnergiesAreSupportive)
             {
                 return TemplateParser.Parse(Globalisation.Dictionary.character_element_supportive,
-                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
+                    new { MediaService.BaseImagesPath });
             }
 
             if (CharacterEnergiesAreChallenging)
             {
                 return TemplateParser.Parse(Globalisation.Dictionary.character_element_challenging,
-                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
+                    new { MediaService.BaseImagesPath });
             }
 
             if (CharacterEnergiesAreSame)
             {
                 return TemplateParser.Parse(Globalisation.Dictionary.character_element_same,
-                    new { DefaultValuesConfiguration.Instance.BaseImagesPath });
+                    new { MediaService.BaseImagesPath });
             }
 
             return string.Empty;

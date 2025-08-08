@@ -1,0 +1,96 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
+@using K9.WebApplication.ViewModels
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var membership = this.GetActiveUserMembership();
+    var isUnlimited = membership != null && membership.IsUnlimited() || Model.IsComplementary || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
+    var magicStyle = Model.EnergyDisplay == EEnergyDisplay.Graphical ? "display: none;" : "";
+    var globalStyle = Model.ScopeDisplay == EScopeDisplay.PersonalKi ? "display: none;" : "";
+    var personalStyle = Model.ScopeDisplay == EScopeDisplay.PersonalKi ? "" : "display: none;";
+    var showDirectionsStyle = Model.EnergyDisplay == EEnergyDisplay.MagicSquare && K9.WebApplication.Helpers.SessionHelper.GetShowDirections() ? "" :
+    "display: none;";
+    var magicSquaresModel = Model.GetCycleMagicSquares();
+    var globalMagicSquaresModel = Model.GetGlobalCycleMagicSquares();
+    var housesOccupiedEnergies = Model.PersonalHousesOccupiedEnergies;
+    var lunarHousesOccupiedEnergies = Model.PersonalHousesOccupiedLunarEnergies;
+    var globalHouses = Model.GlobalCycleEnergies;
+    var isDualView = Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses;
+}
+
+@if (isUnlimited)
+{
+    <div class="personal-cycles-container" style="@personalStyle">
+        <div class="row">
+            <div class="col-sm-4 medium-energy">
+                <a href="#" class="scroll-to-tab" data-tab-id="current-generation-cycle">
+                    @if (isDualView)
+                    {
+                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Generation, lunarHousesOccupiedEnergies.Generation, false))
+                    }
+                    else
+                    {
+                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Generation)
+                    }
+
+                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Generation)
+                </a>
+            </div>
+            <div class="col-sm-4 small-energy">
+                <a href="#" class="scroll-to-tab" data-tab-id="current-epoch-cycle">
+                    @if (isDualView)
+                    {
+                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Epoch, lunarHousesOccupiedEnergies.Epoch, false))
+                    }
+                    else
+                    {
+                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Epoch)
+                    }
+
+                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Epoch)
+                </a>
+            </div>
+            <div class="col-sm-4 very-small-energy">
+                <a href="#" class="scroll-to-tab" data-tab-id="current-hourly-cycle">
+                    @if (isDualView)
+                    {
+                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Hour, lunarHousesOccupiedEnergies.Hour, false))
+                    }
+                    else
+                    {
+                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Hour)
+                    }
+
+                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Hour)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="global-cycles-container" style="@globalStyle">
+        <div class="row">
+            <div class="col-sm-4 medium-energy">
+                <a href="#" class="scroll-to-tab" data-tab-id="current-generation-cycle">
+                    @Html.Partial("_CycleTitle", globalHouses.Generation)
+                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Generation)
+                </a>
+            </div>
+            <div class="col-sm-4 small-energy">
+                <a href="#" class="scroll-to-tab" data-tab-id="current-epoch-cycle">
+                    @Html.Partial("_CycleTitle", globalHouses.Epoch)
+                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Epoch)
+                </a>
+            </div>
+            <div class="col-sm-4 very-small-energy">
+                @Html.Partial("_CycleTitle", globalHouses.Hour)
+                @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+                {
+                    GlobalKi = Model.GlobalCycleEnergies.Hour,
+                    PersonalHouseOccupied = globalHouses.Hour,
+                    IsGlobal = true
+                })
+            </div>
+        </div>
+    </div>
+}

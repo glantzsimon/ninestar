@@ -6785,7 +6785,13 @@
   <data name="CoreEnergies" xml:space="preserve">
     <value>Core Energies</value>
   </data>
+  <data name="ExtendedCycles" xml:space="preserve">
+    <value>Additional Cycles</value>
+  </data>
   <data name="ExtendedProfile" xml:space="preserve">
     <value>Extended Profile</value>
+  </data>
+  <data name="PrimaryCycles" xml:space="preserve">
+    <value>Primary Cycles</value>
   </data>
 </root>

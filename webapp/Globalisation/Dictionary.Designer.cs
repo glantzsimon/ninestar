@@ -8020,6 +8020,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Additional Cycles.
+        /// </summary>
+        public static string ExtendedCycles {
+            get {
+                return ResourceManager.GetString("ExtendedCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extended Profile.
         /// </summary>
         public static string ExtendedProfile {
@@ -17798,6 +17807,15 @@ namespace K9.Globalisation {
         public static string PrimaryBlueprint {
             get {
                 return ResourceManager.GetString("PrimaryBlueprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primary Cycles.
+        /// </summary>
+        public static string PrimaryCycles {
+            get {
+                return ResourceManager.GetString("PrimaryCycles", resourceCulture);
             }
         }
         

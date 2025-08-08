@@ -1818,6 +1818,8 @@
     <Content Include="Views\Consultation\ViewCalendar.cshtml" />
     <Content Include="Views\PersonalChart\_CoreEnergies.cshtml" />
     <Content Include="Views\PersonalChart\_AdditionalEnergies.cshtml" />
+    <Content Include="Views\Predictions\_CoreCycles.cshtml" />
+    <Content Include="Views\Predictions\_AdditionalCycles.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

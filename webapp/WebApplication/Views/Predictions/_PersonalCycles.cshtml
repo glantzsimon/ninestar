@@ -1,26 +1,15 @@
-﻿@using K9.Base.WebApplication.Extensions
-@using K9.SharedLibrary.Extensions
+﻿@using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
-@using K9.WebApplication.ViewModels
-@using SessionConstants = K9.WebApplication.Constants.SessionConstants
 @model K9.WebApplication.Models.NineStarKiModel
 
 @{
     var membership = this.GetActiveUserMembership();
     var isUnlimited = membership != null && membership.IsUnlimited() || Model.IsComplementary || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
     var magicStyle = Model.EnergyDisplay == EEnergyDisplay.Graphical ? "display: none;" : "";
-    var globalStyle = Model.ScopeDisplay == EScopeDisplay.PersonalKi ? "display: none;" : "";
-    var personalStyle = Model.ScopeDisplay == EScopeDisplay.PersonalKi ? "" : "display: none;";
     var showDirectionsStyle = Model.EnergyDisplay == EEnergyDisplay.MagicSquare && K9.WebApplication.Helpers.SessionHelper.GetShowDirections() ? "" :
     "display: none;";
-    var magicSquaresModel = Model.GetCycleMagicSquares();
-    var globalMagicSquaresModel = Model.GetGlobalCycleMagicSquares();
-    var housesOccupiedEnergies = Model.PersonalHousesOccupiedEnergies;
-    var lunarHousesOccupiedEnergies = Model.PersonalHousesOccupiedLunarEnergies;
-    var globalHouses = Model.GlobalCycleEnergies;
-    var isDualView = Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses;
 }
 
 <div class="text-center">
@@ -64,200 +53,29 @@
     </div>
 }
 
-@if (isUnlimited)
-{
-    <div id="personal-cycles-container" style="@personalStyle">
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-                <a href="#" class="scroll-to-tab" data-tab-id="current-epoch-cycle">
-                    @if (isDualView)
-                    {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Epoch, lunarHousesOccupiedEnergies.Epoch, false))
-                    }
-                    else
-                    {
-                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Epoch)
-                    }
-
-                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Epoch)
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-                <a href="#" class="scroll-to-tab" data-tab-id="current-generation-cycle">
-                    @if (isDualView)
-                    {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Generation, lunarHousesOccupiedEnergies.Generation, false))
-                    }
-                    else
-                    {
-                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Generation)
-                    }
-
-                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Generation)
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 medium-energy">
-                <a href="#" class="scroll-to-tab" data-tab-id="current-monthly-cycle">
-                    @if (isDualView)
-                    {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Month, lunarHousesOccupiedEnergies.Month, false))
-                    }
-                    else
-                    {
-                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Month)
-                    }
-                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Month)
-                </a>
-            </div>
-            <div class="col-sm-4">
-                <a href="#" class="scroll-to-tab" data-tab-id="current-yearly-cycle">
-                    @if (isDualView)
-                    {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Year, lunarHousesOccupiedEnergies.Year, false))
-                    }
-                    else
-                    {
-                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Year)
-                    }
-                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Year)
-                </a>
-            </div>
-            <div class="col-sm-4 small-energy">
-                <a href="#" class="scroll-to-tab" data-tab-id="current-daily-cycle">
-                    @if (isDualView || housesOccupiedEnergies.Day.EnergyNumber == housesOccupiedEnergies.Day2.EnergyNumber)
-                    {
-                        if (isDualView)
-                        {
-                            @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Day, lunarHousesOccupiedEnergies.Day, false))
-                        }
-                        else
-                        {
-                            @Html.Partial("_CycleTitle", housesOccupiedEnergies.Day)
-                        }
-                    }
-                    else
-                    {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Day, housesOccupiedEnergies.Day2, true))
-                    }
-                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Day)
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-                @if (isDualView)
-                {
-                    @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Hour, lunarHousesOccupiedEnergies.Hour, false))
-                }
-                else
-                {
-                    @Html.Partial("_CycleTitle", housesOccupiedEnergies.Hour)
-                }
-                @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
-                {
-                    GlobalKi = Model.GlobalCycleEnergies.Hour,
-                    PersonalHouseOccupied = housesOccupiedEnergies.Hour
-                })
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 padding-0">
-                <div class="directions-more-info-container">
-                    @Html.Partial("_DirectionsChart")
-                </div>
-            </div>
+<div class="row">
+    <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+        @Html.Panel(Dictionary.PrimaryCycles, Html.Partial("_CoreCycles").ToString())
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+        @Html.Panel(Dictionary.ExtendedCycles, Html.Partial("_AdditionalCycles").ToString())
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 padding-0">
+        <div class="directions-more-info-container">
+            @Html.Partial("_DirectionsChart")
         </div>
     </div>
+</div>
 
-    <div id="global-cycles-container" style="@globalStyle">
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-                <a href="#" class="scroll-to-tab" data-tab-id="current-epoch-cycle">
-                    @Html.Partial("_CycleTitle", globalHouses.Epoch)
-                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Epoch)
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-                <a href="#" class="scroll-to-tab" data-tab-id="current-generation-cycle">
-                    @Html.Partial("_CycleTitle", globalHouses.Generation)
-                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Generation)
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 medium-energy">
-                <a href="#" class="scroll-to-tab" data-tab-id="current-monthly-cycle">
-                    @Html.Partial("_CycleTitle", globalHouses.Month)
-                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Month)
-                </a>
-            </div>
-            <div class="col-sm-4">
-                <a href="#" class="scroll-to-tab" data-tab-id="current-yearly-cycle">
-                    @Html.Partial("_CycleTitle", globalHouses.Year)
-                    @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Year)
-                </a>
-            </div>
-            <div class="col-sm-4 small-energy">
-                <a href="#" class="scroll-to-tab" data-tab-id="current-daily-cycle">
-                    @if (housesOccupiedEnergies.Day.EnergyNumber == housesOccupiedEnergies.Day2.EnergyNumber)
-                    {
-                        @Html.Partial("_CycleTitle", globalHouses.Day)
-                        @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Day)
-                    }
-                    else
-                    {
-                        @Html.Partial("_CycleSplitTitle", (globalHouses.Day, globalHouses.Day2))
-                        @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Day)
-                    }
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-                @Html.Partial("_CycleTitle", globalHouses.Hour)
-                @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
-                {
-                    GlobalKi = Model.GlobalCycleEnergies.Hour,
-                    PersonalHouseOccupied = globalHouses.Hour,
-                    IsGlobal = true
-                })
-            </div>
-        </div>
+<hr />
+<div class="row margin-margin-0">
+    <div class="col-sm-12 padding-0">
+        <article class="margin-bottom-0">
+            @Html.CollapsiblePanel(Dictionary.MoreOnCycles, Dictionary.holograhpic_spirals)
+        </article>
     </div>
-    <hr />
-    <div class="row margin-margin-0">
-        <div class="col-sm-12 padding-0">
-            <article class="margin-bottom-0">
-                @Html.CollapsiblePanel(Dictionary.MoreOnCycles, Dictionary.holograhpic_spirals)
-            </article>
-        </div>
-    </div>
-
-}
-else
-{
-    <div class="row">
-        <div class="col-sm-4 medium-energy">
-            <a href="#" class="scroll-to-tab" data-tab-id="current-monthly-cycle">
-                @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <a href="#" class="scroll-to-tab" data-tab-id="current-yearly-cycle">
-                @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
-            </a>
-        </div>
-        <div class="col-sm-4 small-energy">
-            <a href="#" class="scroll-to-tab" data-tab-id="current-daily-cycle">
-                @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
-            </a>
-        </div>
-    </div>
-}
+</div>

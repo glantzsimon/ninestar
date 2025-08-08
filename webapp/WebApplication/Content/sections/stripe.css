@@ -1,4 +1,88 @@
-﻿/*@images-path: "../../../Images";*/
+﻿:root {
+  --primary-blue: #337ab7;
+  --vibrant-green: #22BB44;
+  --vibrant-green-10: #36da5a;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f44336;
+  --vibrant-orange: #FF9800;
+  --error-red: #cc0000;
+  --snow-white: #ffffff;
+  --charcoal-black: #0f1215;
+  --border-grey: #dddddd;
+  --light-grey: #888888;
+  --background-color: #ffffff;
+  --background-color-hover: #f2f2f2;
+  --surface-color: #eeeeee;
+  --text-color: #444444;
+  --hover-text-color: #515151;
+  --border-color: #dddddd;
+  --well-color: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
+  --panel-header-top: #f7fbff;
+  --panel-header-bottom: #f0f8ff;
+  --panel-header-text-color: #444444;
+  --title-color: #0a4070;
+  --subtitle-color: #337ab7;
+  --page-background: #ffffff;
+  --page-title-color: #331a00;
+  --pills-tab-text-color: #0a4070;
+  --pills-tab-hover: #ffffff;
+  --pills-tab-active: linear-gradient(to bottom, #ffffff 0, #f9f9f9 100%);
+  --pills-tab-active-hover: #ffffff;
+  --pills-tab-background: transparent;
+  --table-background-color: #f0f8ff;
+  --table-background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
+  --table-border-color: transparent;
+  --nav-pills-button-background: #d9d9d9;
+  --readmore-overlay-background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 22%, #ffffff 81%);
+  --ninestar-summary-container-hover: #ffffff;
+  --body-background: #ffffff;
+  --page-overlay-color: rgba(0, 0, 0, 0.3);
+  --page-fadein-color: #ffffff;
+}
+.dark-mode {
+  --primary-blue: #63a0d4;
+  --vibrant-green: #36da5a;
+  --vibrant-green-10: #61e27e;
+  --vibrant-green-30: rgba(34, 187, 68, 0.3);
+  --vibrant-green-40: rgba(34, 187, 68, 0.4);
+  --vibrant-red: #f8877f;
+  --vibrant-orange: #ffb74d;
+  --error-red: #ff1a1a;
+  --snow-white: #ffffff;
+  --charcoal-black: #2f3842;
+  --border-grey: #ffffff;
+  --light-grey: #aeaeae;
+  --background-color: #0f1215;
+  --background-color-hover: #2f3842;
+  --surface-color: #444444;
+  --text-color: #f9f9f9;
+  --hover-text-color: #ffffff;
+  --border-color: #ffffff;
+  --well-color: #091a22;
+  --panel-header-top: #246587;
+  --panel-header-bottom: #0f2c3a;
+  --panel-header-text-color: #f9f9f9;
+  --title-color: #e7e7e7;
+  --subtitle-color: #f9f9f9;
+  --page-background: rgba(20, 56, 74, 0.72);
+  --page-title-color: #f9f9f9;
+  --pills-tab-text-color: #f9f9f9;
+  --pills-tab-hover: linear-gradient(to bottom, #1e5875 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active: linear-gradient(to bottom, #276e93 0, rgba(20, 56, 74, 0.11) 100%);
+  --pills-tab-active-hover: #47a0ce;
+  --pills-tab-background: rgba(20, 56, 74, 0.11);
+  --table-background-color: rgba(20, 56, 74, 0.72);
+  --table-background: linear-gradient(to bottom, rgba(20, 56, 74, 0.33) 0%, rgba(20, 56, 74, 0.11) 100%);
+  --table-border-color: #f9f9f9;
+  --nav-pills-button-background: #1e5875;
+  --readmore-overlay-background: linear-gradient(to bottom, rgba(20, 56, 74, 0) 22%, #14384a 81%);
+  --ninestar-summary-container-hover: #14384a;
+  --body-background: #14384a;
+  --page-overlay-color: rgba(0, 0, 0, 0.3);
+  --page-fadein-color: #ffffff;
+}
+/*@images-path: "../../../Images";*/
 h5 {
   margin-top: 0;
 }
@@ -21,4 +105,20 @@ h5 {
 }
 .security-info p {
   font-size: 1em !important;
+  margin-top: 22px;
+}
+.secure-note {
+  padding: 10px 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  border: 1px solid var(--table-border-color);
+  border-radius: 4px;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.05);
+  line-height: 1.4;
+}
+.secure-note i {
+  margin-right: 6px;
+  color: var(--text-color);
 }

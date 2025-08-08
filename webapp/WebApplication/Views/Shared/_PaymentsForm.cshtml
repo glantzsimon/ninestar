@@ -1,4 +1,5 @@
-﻿@model K9.WebApplication.Options.PaymentsOptions
+﻿@using System.Globalization
+@model K9.WebApplication.Options.PaymentsOptions
 
 <script src="https://js.stripe.com/v3/"></script>
 
@@ -25,13 +26,13 @@
                     }
                     else
                     {
-                        <div class="col-sm-6 padding-0">
+                        <div class="col-sm-7 padding-0">
                             <div>@Html.LabelFor(e => e.Description)</div>
                             @Html.ValueFor(e => e.Description)
                         </div>
-                        <div class="col-sm-6 padding-0">
+                        <div class="col-sm-5 padding-0">
                             <div>@Html.LabelFor(e => e.Amount)</div>
-                            @Html.ValueFor(e => e.Amount)
+                            @Model.Amount.ToString("C", CultureInfo.GetCultureInfo("en-US"))
                         </div>
                     }
                 </div>
@@ -40,7 +41,7 @@
                     <hr />
 
                     @*<div id="payment-request-button" data-description="G Pay button">
-                    </div>*@
+        </div>*@
 
                     <hr id="enter-payment-details-separator" style="display: none;" />
 
@@ -56,14 +57,17 @@
                     </div>
                     <div class="sr-field-error" id="card-errors" role="alert"></div>
 
+                    <div class="secure-note">
+                        <i class="fa fa-lock"></i> Your payment is secured with 256-bit SSL encryption.
+                    </div>
+
                     <hr />
                     @Html.BootstrapActionLinkButton(Dictionary.Back, Model.BackUrlAction, Model.BackUrlController, null, "fa-chevron-left", EButtonClass.Large)
                     <button class="btn btn-info btn-lg payment-button" id="submit">
                         <div class="spinner hidden" id="spinner"></div>
-                        <i class="fa fa-money-bill-alt"></i>
+                        <i class="fa fa-credit-card"></i>
                         <span id="button-text">@Dictionary.PayNow</span><span id="order-amount"></span>
                     </button>
-
                 </div>
             </form>
 
@@ -76,13 +80,6 @@
                 <hr />
                 <div>
                     @Html.Partial("_StripeFooter")
-                </div>
-
-                <hr />
-                <div class="col-sm-offset-1 col-sm-10 col-xs-12">
-                    <div class="powered-by-stripe">
-                        &nbsp;
-                    </div>
                 </div>
             </div>
 

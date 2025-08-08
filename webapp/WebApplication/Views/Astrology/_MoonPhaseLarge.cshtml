@@ -4,7 +4,7 @@
 @model K9.WebApplication.Models.MoonPhase
 
 @{
-    string imagePath = Url.Content($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/astrology/moon-phases/{Model.GetMoonPhaseImageFile()}");
+    string imagePath = Url.Content($"{MediaService.BaseImagesPath}/astrology/moon-phases/{Model.GetMoonPhaseImageFile()}");
 }
 
 <div class="moon-phase">

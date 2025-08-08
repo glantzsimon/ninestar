@@ -24,7 +24,7 @@
     var title = Html.Raw($"{pageTitle} &raquo; {Dictionary.NineStarKiAstrology}");
     var pageUrl = ViewBag.PageUrl ?? $"https://{DefaultValuesConfiguration.Instance.SiteBaseUrl}";
     var pageType = ViewBag.PageType ?? "website";
-    var pageImage = ViewBag.PageImage ?? $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/company/logo.png";
+    var pageImage = ViewBag.PageImage ?? $"{MediaService.BaseImagesPath}/company/logo.png";
 }
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@
     <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="/">
-    <link rel="shortcut icon" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="@MediaService.BaseImagesPath/icons/favicon.ico" type="image/x-icon">
 
     @* 🔥 Optimize DNS prefetching to reduce latency *@
     @foreach (var domain in new[] { "cdn.bootcss.com", "cdnjs.cloudflare.com", "fonts.googleapis.com", "ajax.googleapis.com",
@@ -118,7 +118,7 @@
 <body>
     @* 🔥 Load Spinner Only When Needed *@
     <div id="pageFadeInOverlay">
-        <img loading="lazy" class="page-loading-image cropped" alt="@Dictionary.NineStarKiAstrologyFreeCalculator" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/shared/ninestar-spinner.gif" />
+        <img loading="lazy" class="page-loading-image cropped" alt="@Dictionary.NineStarKiAstrologyFreeCalculator" src="@MediaService.BaseImagesPath/shared/ninestar-spinner.gif" />
     </div>
     <div id="pageSpinner"></div>
     <div id="pageOverlay"></div>

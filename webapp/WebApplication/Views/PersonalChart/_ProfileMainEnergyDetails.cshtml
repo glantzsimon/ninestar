@@ -13,7 +13,7 @@
                 <li class="active">
                     <a data-toggle="tab" href="#details">
                         @Model.MainEnergy.DescriptiveTitle
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Model.MainEnergy.EnergyLowerCase}.png")');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{MediaService.BaseImagesPath}/ninestar/energies/{Model.MainEnergy.EnergyLowerCase}.png")');"></div>
                     </a>
                 </li>
                 @if (Model.PersonModel.IsSixteenOrOver())
@@ -21,7 +21,7 @@
                     <li>
                         <a data-toggle="tab" href="#relationships">
                             @Dictionary.Relationships
-                            <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/relationships.png');"></div>
+                            <div class="img-rounded image-pill" style="background-image: url('@MediaService.BaseImagesPath/ui/relationships.png');"></div>
                         </a>
                     </li>
                 }
@@ -29,28 +29,28 @@
                 <li>
                     <a data-toggle="tab" href="#career">
                         @Dictionary.Career
-                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/career.png');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@MediaService.BaseImagesPath/ui/career.png');"></div>
                     </a>
                 </li>
 
                 <li>
                     <a data-toggle="tab" href="#finances">
                         @Dictionary.Finances
-                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/finances.png');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@MediaService.BaseImagesPath/ui/finances.png');"></div>
                     </a>
                 </li>
 
                 <li>
                     <a data-toggle="tab" href="#health">
                         @Dictionary.Health
-                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/health.png');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@MediaService.BaseImagesPath/ui/health.png');"></div>
                     </a>
                 </li>
 
                 <li>
                     <a data-toggle="tab" href="#spirituality">
                         @Dictionary.Spirituality
-                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/spirituality.png');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@MediaService.BaseImagesPath/ui/spirituality.png');"></div>
                     </a>
                 </li>
 

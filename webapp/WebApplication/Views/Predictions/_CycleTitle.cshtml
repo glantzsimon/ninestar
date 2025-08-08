@@ -22,7 +22,7 @@
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
         <p class="margin-bottom-2">@Model.ElementNameAndNumber @Dictionary.House</p>
         <div class="energy-image-container">
-            <img loading="lazy" title="@Model.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
+            <img loading="lazy" title="@Model.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.SeasonDescription" class="auto-size center-block" src="@MediaService.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
         </div>
         @if (Model.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy || Model.EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy || Model.EnergyCycleType == ENineStarKiEnergyCycleType.DailyEnergy)
         {

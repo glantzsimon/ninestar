@@ -25,7 +25,7 @@
                 <a class="numerology-planner-item" data-forecast-type="@Model.Forecast.ForecastType" data-offset="@code.Offset">
                     <div class="numerology-planner-item-container @code.IsSelectedCssClass @code.IsCurrentCssClass">
                         <h5 class="margin-top-0 margin-bottom-5">@Model.GetTitle(code)</h5>
-                        <img class="small" src="@(DefaultValuesConfiguration.Instance.BaseImagesPath)/numerology/@($"{details.Name}.png")" />
+                        <img class="small" src="@(MediaService.BaseImagesPath)/numerology/@($"{details.Name}.png")" />
                         @if (!string.IsNullOrEmpty(footer))
                         {
                             <p class="numerology-planner-footer">@footer</p>

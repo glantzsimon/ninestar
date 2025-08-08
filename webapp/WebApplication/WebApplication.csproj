@@ -404,6 +404,8 @@
     <Compile Include="Services\IAITextMergeService.cs" />
     <Compile Include="Services\AITextMergeService.cs" />
     <Compile Include="Services\IArticlesService.cs" />
+    <Compile Include="Services\MediaService.cs" />
+    <Compile Include="Services\IMediaService.cs" />
     <Compile Include="Services\IMediaManagementService.cs" />
     <Compile Include="Services\IGoogleService.cs" />
     <Compile Include="Services\IAstrologyService.cs" />

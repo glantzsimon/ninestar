@@ -9,15 +9,15 @@
     {
         var avatarUrl = !string.IsNullOrWhiteSpace(comment.AvatarImageUrl)
             ? comment.AvatarImageUrl
-            : $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/default-avatar.png";
+            : $"{MediaService.BaseImagesPath}/ui/default-avatar.png";
 
-        var defaultAvatarUrl = $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ui/default-avatar.png";
+        var defaultAvatarUrl = $"{MediaService.BaseImagesPath}/ui/default-avatar.png";
 
         <div class="comment" id="comment-@comment.Id">
             @if (comment.IsByModerator)
             {
                 <video class="aura" autoplay muted loop playsinline preload="none" poster="@defaultAvatarUrl">
-                    <source src="@DefaultValuesConfiguration.Instance.BaseVideosPath/Shared/yin-yang-avatar.mp4" type="video/mp4">
+                    <source src="@MediaService.BaseVideosPath/Shared/yin-yang-avatar.mp4" type="video/mp4">
                 </video>
             }
             else

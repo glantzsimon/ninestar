@@ -12,7 +12,7 @@
             @foreach (var energy in Model.ModalityEnergies)
             {
                 <div class="col-sm-4 modality-energy-container">
-                    @Html.ImagePanel(energy.ElementNameAndNumber, $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{energy.Energy.ToString().ToLower()}.png", EPanelImageSize.Small, EPanelImageLayout.Contain)
+                    @Html.ImagePanel(energy.ElementNameAndNumber, $"{MediaService.BaseImagesPath}/ninestar/energies/{energy.Energy.ToString().ToLower()}.png", EPanelImageSize.Small, EPanelImageLayout.Contain)
                 </div>
             }
         </div>

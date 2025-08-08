@@ -5,7 +5,7 @@
 
 <div class="numerology-card">
     <h4>@Model.Title</h4>
-    <img src="@(DefaultValuesConfiguration.Instance.BaseImagesPath)/numerology/@($"{Model.Name}.png")"/>
+    <img src="@(MediaService.BaseImagesPath)/numerology/@($"{Model.Name}.png")"/>
     @Html.Panel(Model.FullName, Html.Partial("_NumerologyCodeDetails", Model).ToString())
 
     @if (Model.ShowDates)

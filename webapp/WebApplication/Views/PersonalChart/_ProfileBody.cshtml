@@ -16,7 +16,7 @@
                     @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.ChildDescription, Model.ElementNameAndNumber), Model.ChildDescription, true)
                 }
 
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Trigram, Model.ElementNameAndNumber), Model.TrigramDescription, true, "", Model.TrigramUIName, $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/trigrams/trigram-{Model.EnergyLowerCase}-square.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Trigram, Model.ElementNameAndNumber), Model.TrigramDescription, true, "", Model.TrigramUIName, $"{MediaService.BaseImagesPath}/ninestar/trigrams/trigram-{Model.EnergyLowerCase}-square.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
             </div>
         </article>
     </div>

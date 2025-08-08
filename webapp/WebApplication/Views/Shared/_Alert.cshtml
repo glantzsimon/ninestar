@@ -6,11 +6,11 @@
     {
         if (Model.AlertType == EAlertType.Fail)
         {
-            <img loading="lazy" alt="@Model.AlertType.ToString()" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/fail.gif" />
+            <img loading="lazy" alt="@Model.AlertType.ToString()" src="@MediaService.BaseImagesPath/ui/fail.gif" />
         }
         else
         {
-            <img class="margin-bottom-20" loading="lazy" alt="@Model.AlertType.ToString()" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/@Model.GetAlertImage().ToLower()" />
+            <img class="margin-bottom-20" loading="lazy" alt="@Model.AlertType.ToString()" src="@MediaService.BaseImagesPath/ui/@Model.GetAlertImage().ToLower()" />
         }
     }
 

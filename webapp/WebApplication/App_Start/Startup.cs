@@ -91,6 +91,7 @@ namespace K9.WebApplication
             builder.RegisterType<GoogleService>().As<IGoogleService>().InstancePerLifetimeScope();
             builder.RegisterType<ArticlesService>().As<IArticlesService>().InstancePerLifetimeScope();
             builder.RegisterType<MediaManagementService>().As<IMediaManagementService>().InstancePerLifetimeScope();
+            builder.RegisterType<MediaService>().As<IMediaService>().SingleInstance();
 
             RegisterConfiguration(builder);
 
@@ -121,6 +122,18 @@ namespace K9.WebApplication
 
             RecurringJob.AddOrUpdate("CleanupOldJobs", () =>
                 CleanupOldJobs(), Cron.Daily);
+
+            RecurringJob.AddOrUpdate<IMediaService>(
+                "CheckStorjHealth",
+                service => service.ScheduledHealthCheck(),
+                Cron.MinuteInterval(11));
+
+            // Set Media paths
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var mediaService = scope.Resolve<IMediaService>();
+                mediaService.ScheduledHealthCheck(); // Run immediately
+            }
 
             // Set SystemSettings
             using (var scope = container.BeginLifetimeScope())

@@ -9,6 +9,6 @@
 @Html.Panel(Model.Title,
     Html.Partial("_ModalityBody").ToString(),
     Model.ModalityName.ToLower(),
-    $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/modalities/{Model.ModalityName.ToLower()}.png",
+    $"{MediaService.BaseImagesPath}/ninestar/modalities/{Model.ModalityName.ToLower()}.png",
     EPanelImageSize.Default,
     EPanelImageLayout.Contain)

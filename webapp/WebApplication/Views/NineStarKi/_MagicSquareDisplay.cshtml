@@ -44,7 +44,7 @@
 <div class="magic-square-display" style="@magicStyle">
     <div class="ninestar-summary-container margin-3">
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
-        @if (Model.IsDualView)
+        @if (Model.IsDualView && !Model.IsGlobal)
         {
             <p class="margin-bottom-0">@houseDetails</p>
             <p class="margin-bottom-10" style="line-height: 1.2em !important;">@houseDetails2</p>

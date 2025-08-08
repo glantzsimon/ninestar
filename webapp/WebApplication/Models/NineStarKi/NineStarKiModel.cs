@@ -296,6 +296,7 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LichunLabel)]
         public DateTime? Lichun { get; set; }
 
+        [UIHint("Date")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
 

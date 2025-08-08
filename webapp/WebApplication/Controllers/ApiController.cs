@@ -277,7 +277,7 @@ namespace K9.WebApplication.Controllers
                             }
                             else
                             {
-                                destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, Path.GetFileName(file.FileName));
+                                destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, fileName);
                             }
                             break;
 

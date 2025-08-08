@@ -269,7 +269,14 @@ namespace K9.WebApplication.Controllers
                             break;
 
                         case ".config":
-                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, Path.GetFileName(file.FileName));
+                            if (relativePath.StartsWith("Views\\", StringComparison.OrdinalIgnoreCase))
+                            {
+                                destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "views", relativePath.Substring("Views\\".Length));
+                            }
+                            else
+                            {
+                                destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, relativePath);
+                            }
                             break;
 
                         case ".cshtml":

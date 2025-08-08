@@ -59,18 +59,33 @@ foreach ($file in $files) {
     Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "binary"
 }
 
-# --- Copy web.config ---
+# --- Copy web.config from root ---
 $configFiles = Get-ChildItem -Path "$vaultRootPath\*" -Include *.config -File -Force
 Write-Host "📦 Found $($configFiles.Count) config file(s) in '$vaultRootPath' to copy."
 
 if ($configFiles.Count -eq 0) {
-    Write-Warning "⚠️ No config files found."
+    Write-Warning "⚠️ No config files found in vault root."
 }
 
 foreach ($file in $configFiles) {
     $sourcePath = $file.FullName
     $destPath = Join-Path $destRootPath $file.Name
     Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "config"
+}
+
+# --- Copy web.config inside Views folder ---
+$viewConfigFiles = Get-ChildItem -Path "$vaultViewsPath" -Include *.config -Recurse -File -Force
+Write-Host "📦 Found $($viewConfigFiles.Count) config file(s) in '$vaultViewsPath' to copy."
+
+if ($viewConfigFiles.Count -eq 0) {
+    Write-Warning "⚠️ No config files found in views folder."
+}
+
+foreach ($file in $viewConfigFiles) {
+    $sourcePath = $file.FullName
+    $relativePath = $file.FullName.Substring($vaultViewsPath.Length).TrimStart('\')
+    $destPath = Join-Path $destViewsPath $relativePath
+    Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "view config"
 }
 
 # --- Copy Views (.cshtml) ---

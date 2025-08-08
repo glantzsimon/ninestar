@@ -6,6 +6,7 @@ $vaultCssPath        = "C:\inetpub\vhosts\9starkiastrology.com\vault\css"
 $vaultScriptsPath    = "C:\inetpub\vhosts\9starkiastrology.com\vault\scripts"
 $vaultImagesPath     = "C:\inetpub\vhosts\9starkiastrology.com\vault\images"
 $vaultVideosPath     = "C:\inetpub\vhosts\9starkiastrology.com\vault\videos"
+$vaultConfigPath     = "C:\inetpub\vhosts\9starkiastrology.com\vault\config"
 
 $destRootPath        = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs"
 $destBinPath         = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\bin"
@@ -14,6 +15,7 @@ $destCssPath         = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Content"
 $destScriptsPath     = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Scripts"
 $destImagesPath      = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Images"
 $destVideosPath      = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Videos"
+$destConfigPath      = "C:\inetpub\vhosts\9starkiastrology.com\httpdocs\Config"
 
 $appPool             = "9starkiastrology.com(domain)(4.0)(pool)"
 
@@ -59,27 +61,23 @@ foreach ($file in $files) {
     Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "binary"
 }
 
-# --- Copy web.config from root ---
+# --- Copy web.config (.config) ---
 $configFiles = Get-ChildItem -Path "$vaultRootPath\*" -Include *.config -File -Force
-Write-Host "📦 Found $($configFiles.Count) config file(s) in '$vaultRootPath' to copy."
+Write-Host "📦 Found $($configFiles.Count) .config file(s) in '$vaultRootPath' to copy."
 
 if ($configFiles.Count -eq 0) {
-    Write-Warning "⚠️ No config files found in vault root."
+    Write-Warning "⚠️ No .config files found."
 }
 
 foreach ($file in $configFiles) {
     $sourcePath = $file.FullName
-    $destPath = Join-Path $destRootPath $file.Name
+    $destPath   = Join-Path $destRootPath $file.Name
     Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "config"
 }
 
-# --- Copy web.config inside Views folder ---
+# --- Copy web.config files inside Views ---
 $viewConfigFiles = Get-ChildItem -Path "$vaultViewsPath" -Include *.config -Recurse -File -Force
 Write-Host "📦 Found $($viewConfigFiles.Count) config file(s) in '$vaultViewsPath' to copy."
-
-if ($viewConfigFiles.Count -eq 0) {
-    Write-Warning "⚠️ No config files found in views folder."
-}
 
 foreach ($file in $viewConfigFiles) {
     $sourcePath = $file.FullName
@@ -88,14 +86,29 @@ foreach ($file in $viewConfigFiles) {
     Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "view config"
 }
 
+# --- Copy JSON config files (.json) ---
+$jsonFiles = Get-ChildItem -Path "$vaultConfigPath\*" -Filter *.json -Recurse -File -Force
+Write-Host "📦 Found $($jsonFiles.Count) .json config file(s) in '$vaultConfigPath' to copy."
+
+if ($jsonFiles.Count -eq 0) {
+    Write-Warning "⚠️ No .json config files found."
+}
+
+foreach ($file in $jsonFiles) {
+    $sourcePath   = $file.FullName
+    $relativePath = $file.FullName.Substring($vaultConfigPath.Length).TrimStart('\')
+    $destPath     = Join-Path $destConfigPath $relativePath
+    Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "json config"
+}
+
 # --- Copy Views (.cshtml) ---
 $cshtmlFiles = Get-ChildItem -Path "$vaultViewsPath\*" -Filter *.cshtml -Recurse -Force
 Write-Host "`n📄 Found $($cshtmlFiles.Count) .cshtml files to copy."
 
 foreach ($file in $cshtmlFiles) {
-    $sourcePath = $file.FullName
+    $sourcePath   = $file.FullName
     $relativePath = $file.FullName.Substring($vaultViewsPath.Length).TrimStart('\')
-    $destPath = Join-Path $destViewsPath $relativePath
+    $destPath     = Join-Path $destViewsPath $relativePath
     Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "view"
 }
 
@@ -104,9 +117,9 @@ $cssFiles = Get-ChildItem -Path "$vaultCssPath\*" -Filter *.css -Recurse -Force
 Write-Host "`n🎨 Found $($cssFiles.Count) .css files to copy."
 
 foreach ($file in $cssFiles) {
-    $sourcePath = $file.FullName
+    $sourcePath   = $file.FullName
     $relativePath = $file.FullName.Substring($vaultCssPath.Length).TrimStart('\')
-    $destPath = Join-Path $destCssPath $relativePath
+    $destPath     = Join-Path $destCssPath $relativePath
     Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "CSS"
 }
 
@@ -115,14 +128,14 @@ $jsFiles = Get-ChildItem -Path "$vaultScriptsPath\*" -Filter *.js -Recurse -Forc
 Write-Host "`n🧠 Found $($jsFiles.Count) .js files to copy."
 
 foreach ($file in $jsFiles) {
-    $sourcePath = $file.FullName
+    $sourcePath   = $file.FullName
     $relativePath = $file.FullName.Substring($vaultScriptsPath.Length).TrimStart('\')
-    $destPath = Join-Path $destScriptsPath $relativePath
+    $destPath     = Join-Path $destScriptsPath $relativePath
     Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "JS"
 }
 
 # --- Copy Images ---
-$imageExtensions = @("*.png", "*.jpg", "*.jpeg", "*.gif", "*.PNG", "*.JPG", "*.JPEG", "*.GIF")
+$imageExtensions = @("*.png","*.jpg","*.jpeg","*.gif","*.PNG","*.JPG","*.JPEG","*.GIF")
 $imageFiles = @()
 foreach ($ext in $imageExtensions) {
     $imageFiles += Get-ChildItem -Path "$vaultImagesPath" -Include $ext -Recurse -File -Force
@@ -130,14 +143,14 @@ foreach ($ext in $imageExtensions) {
 Write-Host "`n🖼 Found $($imageFiles.Count) image files to copy."
 
 foreach ($file in $imageFiles) {
-    $sourcePath = $file.FullName
+    $sourcePath   = $file.FullName
     $relativePath = $file.FullName.Substring($vaultImagesPath.Length).TrimStart('\')
-    $destPath = Join-Path $destImagesPath $relativePath
+    $destPath     = Join-Path $destImagesPath $relativePath
     Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "image"
 }
 
 # --- Copy Videos ---
-$videoExtensions = @("*.mp4", "*.webm", "*.MP4", "*.WEBM")
+$videoExtensions = @("*.mp4","*.webm","*.MP4","*.WEBM")
 $videoFiles = @()
 foreach ($ext in $videoExtensions) {
     $videoFiles += Get-ChildItem -Path "$vaultVideosPath" -Include $ext -Recurse -File -Force
@@ -145,9 +158,9 @@ foreach ($ext in $videoExtensions) {
 Write-Host "`n🎥 Found $($videoFiles.Count) video files to copy."
 
 foreach ($file in $videoFiles) {
-    $sourcePath = $file.FullName
+    $sourcePath   = $file.FullName
     $relativePath = $file.FullName.Substring($vaultVideosPath.Length).TrimStart('\')
-    $destPath = Join-Path $destVideosPath $relativePath
+    $destPath     = Join-Path $destVideosPath $relativePath
     Copy-And-CleanFile -sourcePath $sourcePath -destPath $destPath -label "video"
 }
 

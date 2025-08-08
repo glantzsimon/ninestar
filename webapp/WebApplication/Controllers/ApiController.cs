@@ -257,25 +257,27 @@ namespace K9.WebApplication.Controllers
                     string relativePath = file.FileName.Replace("/", "\\").TrimStart('\\');
                     string destinationPath;
 
+                    var fileName = Path.GetFileName(file.FileName);
+
                     switch (extension.ToLowerInvariant())
                     {
                         case ".dll":
                         case ".pdb":
-                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "bin", Path.GetFileName(file.FileName));
+                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "bin", fileName);
                             break;
 
                         case ".json":
-                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "config", Path.GetFileName(file.FileName));
+                            destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "config", fileName);
                             break;
 
                         case ".config":
-                            if (relativePath.StartsWith("Views\\", StringComparison.OrdinalIgnoreCase))
+                            if (file.FileName.Equals("views.config", StringComparison.OrdinalIgnoreCase))
                             {
-                                destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "views", relativePath);
+                                destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "views", "web.config");
                             }
                             else
                             {
-                                destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, relativePath);
+                                destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, Path.GetFileName(file.FileName));
                             }
                             break;
 

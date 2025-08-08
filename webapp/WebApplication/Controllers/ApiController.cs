@@ -271,7 +271,7 @@ namespace K9.WebApplication.Controllers
                         case ".config":
                             if (relativePath.StartsWith("Views\\", StringComparison.OrdinalIgnoreCase))
                             {
-                                destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "views", relativePath.Substring("Views\\".Length));
+                                destinationPath = Path.Combine(My.DefaultValuesConfiguration.VaultPath, "views", relativePath);
                             }
                             else
                             {

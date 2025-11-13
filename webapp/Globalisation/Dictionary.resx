@@ -6794,4 +6794,10 @@
   <data name="PrimaryCycles" xml:space="preserve">
     <value>Primary Cycles</value>
   </data>
+  <data name="SolarHouse" xml:space="preserve">
+    <value>Solar House</value>
+  </data>
+  <data name="LunarHouse" xml:space="preserve">
+    <value>Lunar House</value>
+  </data>
 </root>

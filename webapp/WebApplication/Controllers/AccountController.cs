@@ -107,7 +107,7 @@ namespace K9.WebApplication.Controllers
                             return RedirectToAction("RetrieveLast", "PersonalChart");
                         }
 
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("MyProfile", "PersonalChart");
 
                     case ELoginResult.AccountLocked:
                         return RedirectToAction("AccountLocked");

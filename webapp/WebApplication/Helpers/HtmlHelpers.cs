@@ -118,16 +118,16 @@ namespace K9.WebApplication.Helpers
             return html.Partial("Controls/_Panel", panelOptions);
         }
 
-        public static MvcHtmlString PanelWithGlobalAndLunar(this HtmlHelper html, string solarTitle, string lunarTitle, string globalTitle, string solarBody, string lunarBody, string globalBody, string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
+        public static MvcHtmlString PanelWithGlobalAndLunar(this HtmlHelper html, string adultTitle, string lunarTitle, string globalTitle, string adultBody, string lunarBody, string globalBody, string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
         {
             var panelOptions = PanelOptions.CreatePanelOptionsWithTripleView(
-                solarTitle,
+                adultTitle,
                 lunarTitle,
                 globalTitle,
-                solarBody,
+                adultBody,
                 lunarBody,
                 globalBody,
-                Dictionary.SolarHouses,
+                Dictionary.SolarHouse,
                 Dictionary.LunarHouses,
                 Dictionary.GlobalKi,
                 SessionConstants.DefaultPanelCycleView,

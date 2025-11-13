@@ -1,0 +1,67 @@
+﻿@using K9.WebApplication.Extensions
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    ViewBag.Title = Dictionary.MyChart;
+    ViewBag.SubTitle = Dictionary.MyChart;
+
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content margin-bottom-0">
+    <div class="col-sm-6 padding-0 mobile">
+        @if (Model != null && Model.IsProcessed)
+        {
+            @Html.Partial("_ProfileOverview")
+        }
+        else
+        {
+            <article>
+                <div class="margin-bottom-20">
+                    @Html.Panel("9 Star Ki Personal Chart", Dictionary.personal_chart, "chart")
+                </div>
+            </article>
+        }
+    </div>
+    <div class="col-sm-6 padding-left-20-desktop padding-right-0 mobile panel-margin-top-20">
+        @if (Model != null && Model.IsProcessed)
+        {
+            <div class="energy-summary-container">
+                @Html.Panel(Dictionary.HousesYouCurrentlyOccupy, Html.Partial("../Predictions/_PersonalCycles", Model).ToString())
+            </div>
+        }
+        else
+        {
+            <article>
+                @Html.Panel(Dictionary.YearlyCycles, Dictionary.year_description, "yearly-cycles")
+            </article>
+        }
+    </div>
+</div>
+
+@if (Model != null && Model.IsProcessed)
+{
+    <br />
+    <div class="container main-content margin-bottom-0">
+        <div class="col-sm-12 padding-0">
+            <article>
+                @Html.Panel(Dictionary.PersonalChartDetails, Html.Partial("_ProfilePills").ToString())
+            </article>
+        </div>
+        <div class="col-sm-12 padding-0 panel-margin-top-20">
+            <article>
+                @Html.Panel(Dictionary.PredictionsDetails, Html.Partial("../Predictions/_CyclesPills", Model).ToString())
+            </article>
+        </div>
+    </div>
+}
+else
+{
+    <hr class="margin-top-0" />
+    @Html.Partial("_ButtonsFooter")
+}
+
+@Html.Partial("../Predictions/_CyclesJs", Model)

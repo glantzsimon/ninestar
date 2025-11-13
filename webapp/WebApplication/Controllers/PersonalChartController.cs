@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -24,7 +26,7 @@ namespace K9.WebApplication.Controllers
             _nineStarKiService = nineStarKiService;
         }
 
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader="User-Agent", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader = "User-Agent", Location = OutputCacheLocation.ServerAndClient)]
         [Route("free-calculator")]
         public ActionResult Index()
         {
@@ -138,10 +140,35 @@ namespace K9.WebApplication.Controllers
                 BirthTimeZoneId = myAccount.UserInfo.BirthTimeZoneId,
                 Gender = myAccount.User.Gender
             };
-            personModel.DateOfBirth = personModel.DateOfBirth.Add(personModel.TimeOfBirth);
-            var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
 
-            return View("Index", nineStarKiProfile);
+            var localNow = string.IsNullOrEmpty(personModel.BirthTimeZoneId)
+                ? DateTime.UtcNow
+                : DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, personModel.BirthTimeZoneId);
+
+            var nineStarKiModel = new NineStarKiModel(personModel)
+            {
+                IsPredictionsScreen = true,
+                DisplayDataForPeriod = EDisplayDataForPeriod.Now
+            };
+
+            var model = new PredictionsViewModel(nineStarKiModel, _nineStarKiService.GetNineStarKiSummaryViewModel());
+
+            personModel.DateOfBirth = personModel.DateOfBirth.Add(personModel.TimeOfBirth);
+            var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true,
+                            localNow, nineStarKiModel.CalculationMethod, true, true, nineStarKiModel.UserTimeZoneId, nineStarKiModel.HousesDisplay, false,
+                        false, EDisplayDataForPeriod.Now);
+
+            var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth, personModel.BirthTimeZoneId, personModel.TimeOfBirth, personModel.Gender, nineStarKiProfile.SelectedDate.Value, nineStarKiProfile.UserTimeZoneId, nineStarKiProfile.CalculationMethod, nineStarKiProfile.DisplayDataForPeriod, nineStarKiProfile.HousesDisplay, nineStarKiProfile.InvertDailyAndHourlyKiForSouthernHemisphere, nineStarKiProfile.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
+                EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiProfile);
+
+            plannerData.UpdateParentUrl = Url.Action("GetYearlyPredictions", "Predictions");
+            plannerData.UpdateChildUrl = Url.Action("GetMonthlyPredictions", "Predictions");
+
+            nineStarKiProfile.PlannerViewModel = plannerData;
+
+            ViewBag.IsMyChart = true;
+
+            return View(nineStarKiProfile);
         }
 
         [Route("retrieve-last", Name = "RetrieveLastPersonalChart")]

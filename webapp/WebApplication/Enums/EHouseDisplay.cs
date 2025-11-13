@@ -4,9 +4,9 @@ namespace K9.WebApplication.Enums
 {
     public enum EHousesDisplay
     {
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.SolarHouses)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.SolarHouse)]
         SolarHouse,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.LunarHouses)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.LunarHouse)]
         LunarHouse,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.SolarAndLunarHouses)]
         SolarAndLunarHouses,

@@ -48,7 +48,7 @@ namespace K9.WebApplication.Models
         [UIHint("EnergyDisplay")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDisplayLabel)]
         public EEnergyDisplay EnergyDisplay { get; set; }
-
+        
         [UIHint("ScopeDisplay")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DisplayLabel)]
         public EScopeDisplay ScopeDisplay { get; set; }
@@ -583,9 +583,15 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MonthlyEnergyLabel)]
         public NineStarKiEnergy MonthlyCycleEnergy => PersonalHousesOccupiedEnergies?.Month;
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MonthlyEnergyLabel)]
+        public NineStarKiEnergy DailyCycleEnergy => PersonalHousesOccupiedEnergies?.Day;
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
         public string Summary => GetSummary();
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
+        public string CycleSummary => $"{YearlyCycleEnergy.CycleDescription}{MonthlyCycleEnergy.CycleDescription}{DailyCycleEnergy.CycleDescription}";
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OverviewLabel)]
         public string Overview => MainEnergy?.OverviewDescription;
 

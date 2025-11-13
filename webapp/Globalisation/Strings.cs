@@ -181,8 +181,8 @@
 
         public static class Names
         {
-            public const string SolarHouses = "SolarHouses";
-            public const string LunarHouses = "LunarHouses";
+            public const string SolarHouse = "SolarHouse";
+            public const string LunarHouse = "LunarHouse";
             public const string SolarAndLunarHouses = "SolarAndLunarHouses";
             public const string IsometricHouses = "IsometricHouses";
 

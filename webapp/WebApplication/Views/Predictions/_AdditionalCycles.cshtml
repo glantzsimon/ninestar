@@ -27,11 +27,11 @@
                 <a href="#" class="scroll-to-tab" data-tab-id="current-generation-cycle">
                     @if (isDualView)
                     {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Generation, lunarHousesOccupiedEnergies.Generation, false))
+                        @Html.Partial("../Predictions/_CycleSplitTitle", (housesOccupiedEnergies.Generation, lunarHousesOccupiedEnergies.Generation, false))
                     }
                     else
                     {
-                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Generation)
+                        @Html.Partial("../Predictions/_CycleTitle", housesOccupiedEnergies.Generation)
                     }
 
                     @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Generation)
@@ -41,11 +41,11 @@
                 <a href="#" class="scroll-to-tab" data-tab-id="current-epoch-cycle">
                     @if (isDualView)
                     {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Epoch, lunarHousesOccupiedEnergies.Epoch, false))
+                        @Html.Partial("../Predictions/_CycleSplitTitle", (housesOccupiedEnergies.Epoch, lunarHousesOccupiedEnergies.Epoch, false))
                     }
                     else
                     {
-                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Epoch)
+                        @Html.Partial("../Predictions/_CycleTitle", housesOccupiedEnergies.Epoch)
                     }
 
                     @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Epoch)
@@ -55,11 +55,11 @@
                 <a href="#" class="scroll-to-tab" data-tab-id="current-hourly-cycle">
                     @if (isDualView)
                     {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Hour, lunarHousesOccupiedEnergies.Hour, false))
+                        @Html.Partial("../Predictions/_CycleSplitTitle", (housesOccupiedEnergies.Hour, lunarHousesOccupiedEnergies.Hour, false))
                     }
                     else
                     {
-                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Hour)
+                        @Html.Partial("../Predictions/_CycleTitle", housesOccupiedEnergies.Hour)
                     }
 
                     @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Hour)
@@ -72,18 +72,18 @@
         <div class="row">
             <div class="col-sm-4 medium-energy">
                 <a href="#" class="scroll-to-tab" data-tab-id="current-generation-cycle">
-                    @Html.Partial("_CycleTitle", globalHouses.Generation)
+                    @Html.Partial("../Predictions/_CycleTitle", globalHouses.Generation)
                     @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Generation)
                 </a>
             </div>
             <div class="col-sm-4 small-energy">
                 <a href="#" class="scroll-to-tab" data-tab-id="current-epoch-cycle">
-                    @Html.Partial("_CycleTitle", globalHouses.Epoch)
+                    @Html.Partial("../Predictions/_CycleTitle", globalHouses.Epoch)
                     @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Epoch)
                 </a>
             </div>
             <div class="col-sm-4 very-small-energy">
-                @Html.Partial("_CycleTitle", globalHouses.Hour)
+                @Html.Partial("../Predictions/_CycleTitle", globalHouses.Hour)
                 @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
                 {
                     GlobalKi = Model.GlobalCycleEnergies.Hour,

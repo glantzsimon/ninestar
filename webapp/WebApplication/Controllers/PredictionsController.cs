@@ -219,12 +219,12 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-daily-predictions")]
-        [OutputCache(Duration = 2592000, VaryByParam = "solarEnergy;energy;display;selectedDate;userTimeZoneId", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetDailyPredictions(ENineStarKiEnergy solarEnergy, ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi, DateTime? selectedDate = null, string userTimeZoneId = "")
+        [OutputCache(Duration = 2592000, VaryByParam = "adultEnergy;energy;display;selectedDate;userTimeZoneId", Location = OutputCacheLocation.ServerAndClient)]
+        public JsonResult GetDailyPredictions(ENineStarKiEnergy adultEnergy, ENineStarKiEnergy energy, EScopeDisplay display = EScopeDisplay.PersonalKi, DateTime? selectedDate = null, string userTimeZoneId = "")
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.DailyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
-            var moonPhase = selectedDate.HasValue ? _astrologyService.GetMoonPhase(selectedDate.Value, userTimeZoneId, true, new NineStarKiEnergy(solarEnergy, ENineStarKiEnergyType.MainEnergy)) : null;
+            var moonPhase = selectedDate.HasValue ? _astrologyService.GetMoonPhase(selectedDate.Value, userTimeZoneId, true, new NineStarKiEnergy(adultEnergy, ENineStarKiEnergyType.MainEnergy)) : null;
 
             var moonPhasePartialString = selectedDate.HasValue ? RenderPartialViewToString("~/Views/Astrology/_MoonPhaseLarge.cshtml", moonPhase) : "";
             var moonPhaseHtml = selectedDate.HasValue ?
@@ -278,12 +278,14 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult MyCycles()
         {
-            var myAccount = My.UsersRepository.Find(Current.UserId);
+            var myAccount = My.AccountService.GetAccount(Current.UserId);
             return View(_nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
-                Name = myAccount.FullName,
-                DateOfBirth = myAccount.BirthDate,
-                Gender = myAccount.Gender
+                Name = myAccount.User.FullName,
+                DateOfBirth = myAccount.User.BirthDate,
+                Gender = myAccount.User.Gender,
+                TimeOfBirth = myAccount.UserInfo.TimeOfBirth,
+                BirthTimeZoneId = myAccount.UserInfo.BirthTimeZoneId
             }, false, true));
         }
 

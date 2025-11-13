@@ -6,6 +6,9 @@
 @using K9.WebApplication.Models
 @model NineStarKiModel
 
+@{
+    var isMyChart = ViewBag.IsMyChart ?? false;
+}
 
 <div class="ninestar-summmary padding-0 cycles-tabs-container">
     <ul class="nav nav-pills nav-justified image-pill" data-autoscroll="true">
@@ -64,7 +67,7 @@
 
     <div class="tab-content">
         <div id="current-daily-cycle" class="tab-pane fade">
-            @Html.CollapsiblePanel(Dictionary.DailyPrediction, Dictionary.day_description, true)
+            @Html.CollapsiblePanel(Dictionary.DailyPrediction, Dictionary.day_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
@@ -74,20 +77,20 @@
                         Model.PersonalHousesOccupiedEnergies.Day.CycleDescriptiveName,
                         Model.PersonalHousesOccupiedLunarEnergies.Day.CycleDescriptiveName,
                         Model.GlobalCycleEnergies.Day.CycleDescriptiveName,
-                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
-                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Day).ToString(),
-                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Day).ToString(),
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
                 }
                 else
                 {
                     @Html.PanelWithGlobal(
                                         Model.PersonalHousesOccupiedEnergies.Day.CycleDescriptiveName,
                                         Model.GlobalCycleEnergies.Day.CycleDescriptiveName,
-                                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
-                                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
+                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
+                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
                 }
 
-                @Html.Partial("_LunarCycle")
+                @Html.Partial("../Predictions/_LunarCycle")
             }
 
             <br />
@@ -95,7 +98,7 @@
         </div>
 
         <div id="current-monthly-cycle" class="tab-pane fade in active">
-            @Html.CollapsiblePanel(Dictionary.MonthlyPrediction, Dictionary.month_description, true)
+            @Html.CollapsiblePanel(Dictionary.MonthlyPrediction, Dictionary.month_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
@@ -105,17 +108,17 @@
                         Model.PersonalHousesOccupiedEnergies.Month.CycleDescriptiveName,
                         Model.PersonalHousesOccupiedLunarEnergies.Month.CycleDescriptiveName,
                         Model.GlobalCycleEnergies.Month.CycleDescriptiveName,
-                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
-                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Month).ToString(),
-                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Month).ToString(),
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
                 }
                 else
                 {
                     @Html.PanelWithGlobal(
                                         Model.PersonalHousesOccupiedEnergies.Month.CycleDescriptiveName,
                                         Model.GlobalCycleEnergies.Month.CycleDescriptiveName,
-                                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
-                                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
+                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
+                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
                 }
             }
 
@@ -124,7 +127,7 @@
         </div>
 
         <div id="current-yearly-cycle" class="tab-pane fade">
-            @Html.CollapsiblePanel(Dictionary.YearlyPrediction, Dictionary.year_description, true)
+            @Html.CollapsiblePanel(Dictionary.YearlyPrediction, Dictionary.year_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
@@ -134,17 +137,17 @@
                         Model.PersonalHousesOccupiedEnergies.Year.CycleDescriptiveName,
                         Model.PersonalHousesOccupiedLunarEnergies.Year.CycleDescriptiveName,
                         Model.GlobalCycleEnergies.Year.CycleDescriptiveName,
-                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Year).ToString(),
-                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Year).ToString(),
-                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Year).ToString())
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Year).ToString(),
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Year).ToString(),
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Year).ToString())
                 }
                 else
                 {
                     @Html.PanelWithGlobal(
                                         Model.PersonalHousesOccupiedEnergies.Year.CycleDescriptiveName,
                                         Model.GlobalCycleEnergies.Year.CycleDescriptiveName,
-                                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Year).ToString(),
-                                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Year).ToString())
+                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Year).ToString(),
+                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Year).ToString())
                 }
             }
 
@@ -153,7 +156,7 @@
         </div>
 
         <div id="current-generation-cycle" class="tab-pane fade">
-            @Html.CollapsiblePanel(Dictionary.NineYearlyPrediction, Dictionary.generation_description, true)
+            @Html.CollapsiblePanel(Dictionary.NineYearlyPrediction, Dictionary.generation_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
@@ -163,17 +166,17 @@
                         Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
                         Model.PersonalHousesOccupiedLunarEnergies.Generation.CycleDescriptiveName,
                         Model.GlobalCycleEnergies.Generation.CycleDescriptiveName,
-                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Generation).ToString(),
-                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Generation).ToString(),
-                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Generation).ToString())
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Generation).ToString(),
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Generation).ToString(),
+                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Generation).ToString())
                 }
                 else
                 {
                     @Html.PanelWithGlobal(
                                         Model.PersonalHousesOccupiedEnergies.Generation.CycleDescriptiveName,
                                         Model.GlobalCycleEnergies.Generation.CycleDescriptiveName,
-                                        Html.Partial("_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Generation).ToString(),
-                                        Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Generation).ToString())
+                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Generation).ToString(),
+                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Generation).ToString())
                 }
             }
 
@@ -182,12 +185,12 @@
         </div>
 
         <div id="current-epoch-cycle" class="tab-pane fade">
-            @Html.CollapsiblePanel($"{Dictionary.EightyOneYearlyPrediction} ({Dictionary.GlobalKiLabel})", $"{Dictionary.epoch_description} {Dictionary.globalki_display_warning}", true)
+            @Html.CollapsiblePanel($"{Dictionary.EightyOneYearlyPrediction} ({Dictionary.GlobalKiLabel})", $"{Dictionary.epoch_description} {Dictionary.globalki_display_warning}")
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
                 @Html.Panel(Model.GlobalCycleEnergies.Epoch.CycleDescriptiveName,
-                    Html.Partial("_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Epoch).ToString())
+                    Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Epoch).ToString())
             }
 
             <br />
@@ -210,7 +213,7 @@
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
                 <div id="global-planner-container">
-                    @Html.Partial("Planner/_GlobalPlanner", Model.PlannerViewModel)
+                    @Html.Partial("../Predictions/Planner/_GlobalPlanner", Model.PlannerViewModel)
                 </div>
             }
 

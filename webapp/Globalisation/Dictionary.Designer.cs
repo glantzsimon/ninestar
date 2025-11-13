@@ -13812,6 +13812,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lunar House.
+        /// </summary>
+        public static string LunarHouse {
+            get {
+                return ResourceManager.GetString("LunarHouse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Display Lunar Houses.
         /// </summary>
         public static string LunarHouses {
@@ -20387,6 +20396,15 @@ namespace K9.Globalisation {
         public static string SolarElements {
             get {
                 return ResourceManager.GetString("SolarElements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solar House.
+        /// </summary>
+        public static string SolarHouse {
+            get {
+                return ResourceManager.GetString("SolarHouse", resourceCulture);
             }
         }
         

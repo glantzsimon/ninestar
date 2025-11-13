@@ -1,5 +1,6 @@
 ﻿@using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
 @{
@@ -16,6 +17,7 @@
     var lunarHousesOccupiedEnergies = Model.PersonalHousesOccupiedLunarEnergies;
     var globalHouses = Model.GlobalCycleEnergies;
     var isDualView = Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses;
+    var isMyChart = ViewBag.IsMyChart ?? false;
 }
 
 @if (isUnlimited)
@@ -26,11 +28,11 @@
                 <a href="#" class="scroll-to-tab" data-tab-id="current-yearly-cycle">
                     @if (isDualView)
                     {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Year, lunarHousesOccupiedEnergies.Year, false))
+                        @Html.Partial("../Predictions/_CycleSplitTitle", (housesOccupiedEnergies.Year, lunarHousesOccupiedEnergies.Year, false))
                     }
                     else
                     {
-                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Year)
+                        @Html.Partial("../Predictions/_CycleTitle", housesOccupiedEnergies.Year)
                     }
                     @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Year)
                 </a>
@@ -39,11 +41,11 @@
                 <a href="#" class="scroll-to-tab" data-tab-id="current-monthly-cycle">
                     @if (isDualView)
                     {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Month, lunarHousesOccupiedEnergies.Month, false))
+                        @Html.Partial("../Predictions/_CycleSplitTitle", (housesOccupiedEnergies.Month, lunarHousesOccupiedEnergies.Month, false))
                     }
                     else
                     {
-                        @Html.Partial("_CycleTitle", housesOccupiedEnergies.Month)
+                        @Html.Partial("../Predictions/_CycleTitle", housesOccupiedEnergies.Month)
                     }
                     @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Month)
                 </a>
@@ -54,16 +56,16 @@
                     {
                         if (isDualView)
                         {
-                            @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Day, lunarHousesOccupiedEnergies.Day, false))
+                            @Html.Partial("../Predictions/_CycleSplitTitle", (housesOccupiedEnergies.Day, lunarHousesOccupiedEnergies.Day, false))
                         }
                         else
                         {
-                            @Html.Partial("_CycleTitle", housesOccupiedEnergies.Day)
+                            @Html.Partial("../Predictions/_CycleTitle", housesOccupiedEnergies.Day)
                         }
                     }
                     else
                     {
-                        @Html.Partial("_CycleSplitTitle", (housesOccupiedEnergies.Day, housesOccupiedEnergies.Day2, true))
+                        @Html.Partial("../Predictions/_CycleSplitTitle", (housesOccupiedEnergies.Day, housesOccupiedEnergies.Day2, true))
                     }
                     @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Day)
                 </a>
@@ -75,13 +77,13 @@
         <div class="row">
             <div class="col-sm-4">
                 <a href="#" class="scroll-to-tab" data-tab-id="current-yearly-cycle">
-                    @Html.Partial("_CycleTitle", globalHouses.Year)
+                    @Html.Partial("../Predictions/_CycleTitle", globalHouses.Year)
                     @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Year)
                 </a>
             </div>
             <div class="col-sm-4 medium-energy">
                 <a href="#" class="scroll-to-tab" data-tab-id="current-monthly-cycle">
-                    @Html.Partial("_CycleTitle", globalHouses.Month)
+                    @Html.Partial("../Predictions/_CycleTitle", globalHouses.Month)
                     @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Month)
                 </a>
             </div>
@@ -89,18 +91,27 @@
                 <a href="#" class="scroll-to-tab" data-tab-id="current-daily-cycle">
                     @if (housesOccupiedEnergies.Day.EnergyNumber == housesOccupiedEnergies.Day2.EnergyNumber)
                     {
-                        @Html.Partial("_CycleTitle", globalHouses.Day)
+                        @Html.Partial("../Predictions/_CycleTitle", globalHouses.Day)
                         @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Day)
                     }
                     else
                     {
-                        @Html.Partial("_CycleSplitTitle", (globalHouses.Day, globalHouses.Day2))
+                        @Html.Partial("../Predictions/_CycleSplitTitle", (globalHouses.Day, globalHouses.Day2))
                         @Html.Partial("../NineStarKi/_MagicSquareDisplay", globalMagicSquaresModel.Day)
                     }
                 </a>
             </div>
         </div>
     </div>
+
+    @*if (isMyChart)
+    {
+        <div class="row">
+            <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+                @Html.Panel(Dictionary.SummaryLabel, Model.CycleSummary)
+            </div>
+        </div>
+    }*@
 }
 else
 {
@@ -108,17 +119,17 @@ else
         <div class="row">
             <div class="col-sm-4">
                 <a href="#" class="scroll-to-tab" data-tab-id="current-yearly-cycle">
-                    @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
+                    @Html.Partial("../Predictions/_CycleTitle", Model.YearlyCycleEnergy)
                 </a>
             </div>
             <div class="col-sm-4 medium-energy">
                 <a href="#" class="scroll-to-tab" data-tab-id="current-monthly-cycle">
-                    @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
+                    @Html.Partial("../Predictions/_CycleTitle", Model.MonthlyCycleEnergy)
                 </a>
             </div>
             <div class="col-sm-4 small-energy">
                 <a href="#" class="scroll-to-tab" data-tab-id="current-daily-cycle">
-                    @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
+                    @Html.Partial("../Predictions/_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
                 </a>
             </div>
         </div>

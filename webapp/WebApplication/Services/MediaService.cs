@@ -2,6 +2,7 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace K9.WebApplication.Services
 {
@@ -10,8 +11,12 @@ namespace K9.WebApplication.Services
         public MediaService(INineStarKiBasePackage my)
             : base(my)
         {
+            _mediaBasePath = (HttpContext.Current?.Request?.IsLocal == true
+                            ? My.DefaultValuesConfiguration.LiveMediaBasePath
+                            : My.DefaultValuesConfiguration.LocalMediaBasePath).TrimEnd('/');
         }
 
+        private static string _mediaBasePath;
         private static bool _storjAvailable = true;
         private static DateTime _lastCheck = DateTime.MinValue;
         private static readonly TimeSpan CheckInterval = TimeSpan.FromMinutes(5);
@@ -44,14 +49,14 @@ namespace K9.WebApplication.Services
         {
             return _storjAvailable
                 ? My.DefaultValuesConfiguration.HostedImagesBasePath
-                : $"{My.DefaultValuesConfiguration.LocalMediaBasePath.TrimEnd('/')}/Images";
+                : $"{_mediaBasePath}/Images";
         }
 
         private string GetBaseVideosPath()
         {
             return _storjAvailable
                 ? My.DefaultValuesConfiguration.HostedVideosBasePath
-                : $"{My.DefaultValuesConfiguration.LocalMediaBasePath.TrimEnd('/')}/Videos";
+                : $"{_mediaBasePath}/Videos";
         }
 
         public void ScheduledHealthCheck()

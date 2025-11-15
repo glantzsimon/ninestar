@@ -26,7 +26,8 @@ namespace K9.WebApplication.Services
             "Aggregating records in",
             "recurring job(s) processed by scheduler",
             "Hangfire",
-            "ProcessQueue => Sending"
+            "ProcessQueue => Sending",
+            "Autofac.Builder"
         };
 
         // Compiled regex to normalize multiple spaces into one.
@@ -126,7 +127,7 @@ namespace K9.WebApplication.Services
             }
 
             // Skip if the line contains any Hangfire-specific entry.
-            if (hangFireEntries.Any(entry => lineLower.Contains(entry)))
+            if (hangFireEntries.Any(entry => lineLower.Contains(entry.ToLower())))
             {
                 return true;
             }

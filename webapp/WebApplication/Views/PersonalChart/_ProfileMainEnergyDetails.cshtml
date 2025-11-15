@@ -64,7 +64,7 @@
                     <div id="relationships" class="tab-pane fade">
                         @Html.CollapsiblePanel(Dictionary.SexualityTitle, Dictionary.relationships_description, true)
 
-                        @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
+                        @using (Html.PayWall(ESection.Profile, Model))
                         {
                             @Html.Partial("_ProfileRelationships", Model)
                         }
@@ -72,28 +72,28 @@
                 }
 
                 <div id="career" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
+                    @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileCareer", Model)
                     }
                 </div>
 
                 <div id="finances" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
+                    @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileFinances", Model)
                     }
                 </div>
 
                 <div id="health" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
+                    @using (Html.PayWall(ESection.Profile))
                     {
                         @Html.Partial("_ProfileHealth", Model)
                     }
                 </div>
 
                 <div id="spirituality" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
+                    @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileSpirituality", Model)
                     }

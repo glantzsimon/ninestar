@@ -8,7 +8,7 @@
     var panelTitle = Model.IsMyProfile ? Dictionary.MyPersonalProfile : Dictionary.PersonalChartOverview;
 
     var membership = this.GetActiveUserMembership();
-    var isUnlimited = membership != null && membership.IsUnlimited() || Model.IsComplementary || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
+    var isUnlimited = membership != null && membership.IsUnlimited() || Model.IsMyProfileOrComplementary || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
 }
 
 <div class="energy-summary-container">

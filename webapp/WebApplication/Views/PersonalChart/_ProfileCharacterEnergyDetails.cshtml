@@ -47,21 +47,21 @@
                 </div>
 
                 <div id="child" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
+                    @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileChildNature", Model)
                     }
                 </div>
 
                 <div id="adult-child" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
+                    @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileAdultChildRelationship", Model)
                     }
                 </div>
 
                 <div id="stress" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
+                    @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileStressResponse", Model)
                     }

@@ -16,7 +16,7 @@ namespace K9.DataAccessLayer.Database
                 .OrderBy(e => e.DisplayOrder).ToList();
             return new List<ListItem>(values.Select(e =>
             {
-                return new ListItem(e.Id, e.DisplayName, e.TimeZoneId);
+                return new ListItem(e.Id, e.FriendlyName, e.TimeZoneId);
             })).Distinct().ToList();
         }
     }

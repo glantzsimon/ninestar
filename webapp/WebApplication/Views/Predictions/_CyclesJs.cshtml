@@ -125,46 +125,52 @@
 
         $.fn.displaySpinner("#global-planner-container");
 
-        ajaxcontroller().getHtml(url,
-            {
-                dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
-                birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
-                timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
-                gender: '@Model.PersonModel.Gender',
-                selectedDateTime: selectedDate,
-                displayDataForPeriod: '@Model.DisplayDataForPeriod',
-                userTimeZoneId: '@Model.UserTimeZoneId',
-                calculationMethod: '@Model.CalculationMethod.ToString()',
-                housesDisplay: '@Model.HousesDisplay.ToString()',
-                invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
-                invertDailyAndHourlyCycleKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()',
-                view: view,
-                display: display,
-                navigationDirection: navigationDirection
-            }).done(
-            function(result) {
-                if (result.success) {
-                    let $container = $("#global-planner-container");
-                    $container.fadeOut(200,
-                        function() {
-                            $container.html(result.data);
-                            $container.fadeIn(100);
+        let dob = '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")';
 
-                            bindGlobalEvents();
+        if (dob) {
+                ajaxcontroller().getHtml(url,
+                    {
+                        dateOfBirth: dob,
+                        birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
+                        timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
+                        gender: '@Model.PersonModel.Gender',
+                        selectedDateTime: selectedDate,
+                        displayDataForPeriod: '@Model.DisplayDataForPeriod',
+                        userTimeZoneId: '@Model.UserTimeZoneId',
+                        calculationMethod: '@Model.CalculationMethod.ToString()',
+                        housesDisplay: '@Model.HousesDisplay.ToString()',
+                        invertDailyAndHourlyKiForSouthernHemisphere:
+                            '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
+                        invertDailyAndHourlyCycleKiForSouthernHemisphere:
+                            '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()',
+                    view: view,
+                    display: display,
+                    navigationDirection: navigationDirection
+                }).done(
+                function(result) {
+                    if (result.success) {
+                        let $container = $("#global-planner-container");
+                        $container.fadeOut(200,
+                            function() {
+                                $container.html(result.data);
+                                $container.fadeIn(100);
 
-                            $.fn.initLibraries();
-                            ninestarki().initMagicTooltips();
+                                bindGlobalEvents();
 
-                            var view = $("#PlannerView").val();
-                            $("#View").val(view).selectpicker("refresh");
+                                $.fn.initLibraries();
+                                ninestarki().initMagicTooltips();
 
-                            var display = $("#PlannerDisplay").val();
-                            $("#Display").val(display).selectpicker("refresh");
-                        });
-                } else {
-                    $.fn.hideSpinner("#global-planner-container");
-                }
-            });
+                                var view = $("#PlannerView").val();
+                                $("#View").val(view).selectpicker("refresh");
+
+                                var display = $("#PlannerDisplay").val();
+                                $("#Display").val(display).selectpicker("refresh");
+                            });
+                    } else {
+                        $.fn.hideSpinner("#global-planner-container");
+                    }
+                });
+            }
     }
 
     function initAlchemy() {

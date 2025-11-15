@@ -69,7 +69,7 @@
         <div id="current-daily-cycle" class="tab-pane fade">
             @Html.CollapsiblePanel(Dictionary.DailyPrediction, Dictionary.day_description)
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
+            @using (Html.PayWall(ESection.Predictions, Model))
             {
                 if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
                 {
@@ -100,7 +100,7 @@
         <div id="current-monthly-cycle" class="tab-pane fade in active">
             @Html.CollapsiblePanel(Dictionary.MonthlyPrediction, Dictionary.month_description)
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
+            @using (Html.PayWall(ESection.Predictions, Model))
             {
                 if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
                 {
@@ -158,7 +158,7 @@
         <div id="current-generation-cycle" class="tab-pane fade">
             @Html.CollapsiblePanel(Dictionary.NineYearlyPrediction, Dictionary.generation_description)
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
+            @using (Html.PayWall(ESection.Predictions, Model))
             {
                 if (Model.HousesDisplay == EHousesDisplay.SolarAndLunarHouses)
                 {
@@ -187,7 +187,7 @@
         <div id="current-epoch-cycle" class="tab-pane fade">
             @Html.CollapsiblePanel($"{Dictionary.EightyOneYearlyPrediction} ({Dictionary.GlobalKiLabel})", $"{Dictionary.epoch_description} {Dictionary.globalki_display_warning}")
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
+            @using (Html.PayWall(ESection.Predictions, Model))
             {
                 @Html.Panel(Model.GlobalCycleEnergies.Epoch.CycleDescriptiveName,
                     Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Epoch).ToString())
@@ -210,7 +210,7 @@
         </div>
 
         <div id="global-planner" class="tab-pane fade">
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
+            @using (Html.PayWall(ESection.Predictions, Model))
             {
                 <div id="global-planner-container">
                     @Html.Partial("../Predictions/Planner/_GlobalPlanner", Model.PlannerViewModel)

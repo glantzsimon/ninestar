@@ -682,6 +682,12 @@
 .dark-mode .biorhythms-tooltip p {
   color: #f9f9f9;
 }
+.dark-mode .verification-container {
+  background: #276e93 !important;
+}
+.dark-mode .verification-container .well {
+  background: #276e93;
+}
 @media (max-width: 767px) {
   .alphaBackground {
     background: none !important;

@@ -52,14 +52,14 @@
             </div>
 
             <div id="m-interpersonal-qualities" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
+                @using (Html.PayWall(ESection.Profile, Model))
                 {
                     @Html.PanelWithSummary(Model.MainEnergy.EnergyInterpersonalQualitiesTitle, Model.MainEnergy.InterpersonalQualities, Model.MainEnergy.InterpersonalQualitiesSummary)
                 }
             </div>
 
             <div id="m-emotional-landscape" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfileOrComplementary))
+                @using (Html.PayWall(ESection.Profile, Model))
                 {
                     @Html.PanelWithSummary(Model.MainEnergy.EnergyEmotionalLandscapeTitle, Model.MainEnergy.EmotionalLandscape, Model.MainEnergy.EmotionalLandscapeSummary)
                 }

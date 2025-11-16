@@ -49,7 +49,7 @@ namespace K9.WebApplication.Services
         public Promotion Find(string code)
         {
             var promotion = _promotionsRepository.Find(e => e.Code == code).FirstOrDefault();
-            if (promotion.MembershipOptionId > 0)
+            if (promotion != null && promotion.MembershipOptionId > 0)
             {
                 promotion.MembershipOption = _membershipOptionsRepository.Find(promotion.MembershipOptionId);
             }

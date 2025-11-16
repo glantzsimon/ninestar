@@ -82,14 +82,14 @@
   --page-overlay-color: rgba(0, 0, 0, 0.3);
   --page-fadein-color: #ffffff;
 }
-/*@images-path: "../../../Images";*/
+/*@images-path: "https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images";*/
 @font-face {
   font-family: 'candara';
   font-style: normal;
   src: url('../fonts/candara.ttf') format('truetype');
 }
 .background-stars {
-  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/background/yin-yang.jpg') no-repeat;
+  background: url('../../Images/background/yin-yang.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }

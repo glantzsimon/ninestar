@@ -82,7 +82,7 @@
   --page-overlay-color: rgba(0, 0, 0, 0.3);
   --page-fadein-color: #ffffff;
 }
-/*@images-path: "../../../Images";*/
+/*@images-path: "https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images";*/
 .sql-container {
   margin-bottom: 50px;
   background: white;

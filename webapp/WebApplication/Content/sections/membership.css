@@ -82,7 +82,7 @@
   --page-overlay-color: rgba(0, 0, 0, 0.3);
   --page-fadein-color: #ffffff;
 }
-/*@images-path: "../../../Images";*/
+/*@images-path: "https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images";*/
 .membership-option-container {
   display: table;
   margin: 0 auto;
@@ -202,13 +202,13 @@
   font-size: 0.7em !important;
 }
 .platinum {
-  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/membership-medal.png') no-repeat 0 0;
+  background: url('../../Images/membership/membership-medal.png') no-repeat 0 0;
 }
 .free {
-  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/membership-medal-green.png') no-repeat 0 0;
+  background: url('../../Images/membership/membership-medal-green.png') no-repeat 0 0;
 }
 .standard {
-  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/membership-medal.png') no-repeat 0 0;
+  background: url('../../Images/membership/membership-medal.png') no-repeat 0 0;
 }
 .membership-selected {
   border: 2px solid var(--vibrant-green);

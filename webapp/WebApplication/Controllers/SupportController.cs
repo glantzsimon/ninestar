@@ -41,6 +41,7 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult _ContactUs()
         {
+            ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
             return PartialView();
         }
 
@@ -50,6 +51,7 @@ namespace K9.WebApplication.Controllers
         {
             if (!Helpers.Environment.IsDebug)
             {
+                ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
                 var encodedResponse = Request.Form[RecaptchaResult.ResponseFormVariable];
                 var isCaptchaValid = _recaptchaService.Validate(encodedResponse);
 

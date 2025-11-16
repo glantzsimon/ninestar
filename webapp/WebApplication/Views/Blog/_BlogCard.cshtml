@@ -15,7 +15,7 @@
                 var isAbsolute = Model.ImageUrl.StartsWith("http", StringComparison.OrdinalIgnoreCase);
                 var src = isAbsolute ? Model.ImageUrl : Url.Content("~/" + Model.ImageUrl.TrimStart('~', '/'));
 
-                <a href="@Url.Action("Details", "Blog", new { id = Model.Id })">
+                <a href="@Url.Action("Details", "Blog", new { id = Model.Id, slug = Model.Slug })">
                     <img src="@src"
                          alt="@Model.Title"
                          class="img-responsive img-thumbnail blog-thumbnail" />

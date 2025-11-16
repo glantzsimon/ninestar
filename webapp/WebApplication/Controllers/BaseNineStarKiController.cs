@@ -218,28 +218,29 @@ namespace K9.WebApplication.Controllers
 
                 Logger.Info($"BaseController => UploadFile => Successfully uploaded image to server: {url}");
 
-#if DEBUG
+
                 return Json(new { success = true, url });
-#else
-                if (!isImage)
-                {
-                    return Json(new { success = true, url });
-                }
-                else
-                {
-                    var uploadRelativePath = id.HasValue ? $"{folderName}/{id}/{safeFileName}" : $"{folderName}/{safeFileName}";
-                    var absoluteFilePath = Path.Combine(uploadDir, safeFileName);
 
-                    Logger.Info($"BaseController => UploadFile => Uploading image to Storj => {absoluteFilePath}, {uploadRelativePath}");
+                //Storj
+                //if (!isImage)
+                //{
+                //    return Json(new { success = true, url });
+                //}
+                //else
+                //{
+                //    var uploadRelativePath = id.HasValue ? $"{folderName}/{id}/{safeFileName}" : $"{folderName}/{safeFileName}";
+                //    var absoluteFilePath = Path.Combine(uploadDir, safeFileName);
 
-                    var storjUrl = UploadFileToStorj(absoluteFilePath, uploadRelativePath);
+                //    Logger.Info($"BaseController => UploadFile => Uploading image to Storj => {absoluteFilePath}, {uploadRelativePath}");
 
-                    var finalUrl = string.IsNullOrWhiteSpace(storjUrl) ? url : storjUrl;
-                    Logger.Info($"UploadFile => Successfully uploaded: {finalUrl}");
+                //    var storjUrl = UploadFileToStorj(absoluteFilePath, uploadRelativePath);
 
-                    return Json(new { success = true, url = finalUrl });
-                }
-#endif
+                //    var finalUrl = string.IsNullOrWhiteSpace(storjUrl) ? url : storjUrl;
+                //    Logger.Info($"UploadFile => Successfully uploaded: {finalUrl}");
+
+                //    return Json(new { success = true, url = finalUrl });
+                //}
+
             }
             catch (Exception ex)
             {

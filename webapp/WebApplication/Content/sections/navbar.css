@@ -82,7 +82,7 @@
   --page-overlay-color: rgba(0, 0, 0, 0.3);
   --page-fadein-color: #ffffff;
 }
-/*@images-path: "../../../Images";*/
+/*@images-path: "https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images";*/
 .navbar {
   margin-bottom: 0 !important;
   height: 0;
@@ -356,13 +356,13 @@ ul.main-navbar li.open a {
 div.main-logo {
   height: 174px;
   width: 174px;
-  background-image: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/company/logo-notext.png');
+  background-image: url('../../Images/company/logo-notext.png');
   background-repeat: no-repeat;
 }
 div.small-logo {
   height: 88px;
   width: 88px;
-  background-image: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/company/logo-small.png');
+  background-image: url('../../Images/company/logo-small.png');
   background-repeat: no-repeat;
 }
 .nav > li > a:hover,

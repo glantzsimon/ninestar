@@ -82,7 +82,7 @@
   --page-overlay-color: rgba(0, 0, 0, 0.3);
   --page-fadein-color: #ffffff;
 }
-/*@images-path: "../../../Images";*/
+/*@images-path: "https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images";*/
 .dark-mode {
   /*Daily Calendar*/
   /* Hourly Planner */
@@ -615,7 +615,7 @@
   background: #1e5875 !important;
 }
 .dark-mode .powered-by-stripe {
-  background-image: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/shared/powered-by-stripe-cards-dark.png');
+  background-image: url('../../Images/shared/powered-by-stripe-cards-dark.png');
 }
 .dark-mode .why-upgrade-container ul li em {
   color: #bbb;

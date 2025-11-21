@@ -185,8 +185,8 @@ namespace K9.WebApplication.Controllers
                     My.Mailer.SendEmail(
                         title,
                         body,
-                        My.WebsiteConfiguration.SupportEmailAddress,
-                        My.WebsiteConfiguration.CompanyName);
+                        contact.EmailAddress,
+                        contact.Name);
                 }
                 catch (Exception ex)
                 {

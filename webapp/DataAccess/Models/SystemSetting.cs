@@ -15,7 +15,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsPausedEmailJobQueueLabel)]
         public bool IsPausedEmailJobQueue { get; set; }
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsPausedEmailJobQueueLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsEnabledAlchemyLabel)]
         public bool IsEnabledAlchemy { get; set; }
     }
 }

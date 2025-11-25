@@ -15,8 +15,8 @@
 
     var displayPreference = SessionHelper.GetEnergyDefaultDisplay();
     var graphicalStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "" : "display: none";
-    var house1Text = Model.IsSplit ? Model.Energy1.HouseName : $"{Model.Energy1.HouseName} (S)";
-    var house2Text = Model.IsSplit ? Model.Energy2.HouseName : $"{Model.Energy2.HouseName} (L)";
+    var house1Text = Model.IsSplit ? Model.Energy1.HouseName : $"{Model.Energy1.HouseName} (Pri)";
+    var house2Text = Model.IsSplit ? Model.Energy2.HouseName : $"{Model.Energy2.HouseName} (Sec)";
     var secondHouseClass = Model.IsSplit ? "" : "lunar-house";
 }
 

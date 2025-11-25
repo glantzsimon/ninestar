@@ -89,6 +89,7 @@
             public const string GenderLabel = "GenderLabel";
             public const string DateOfBirthLabel = "DateOfBirthLabel";
             public const string TimeOfBirthLabel = "TimeOfBirthLabel";
+            public const string TimeOfBirthKnownLabel = "TimeOfBirthKnownLabel";
             public const string MainEnergyLabel = "MainEnergyLabel";
             public const string EpochEnergyLabel = "EpochEnergyLabel";
             public const string YearlyEnergyLabel = "YearlyEnergyLabel";
@@ -182,9 +183,15 @@
         public static class Names
         {
             public const string SolarHouse = "SolarHouse";
+            public const string SolarHouses = "SolarHouses";
             public const string LunarHouse = "LunarHouse";
+            public const string LunarHouses = "LunarHouses";
             public const string SolarAndLunarHouses = "SolarAndLunarHouses";
             public const string IsometricHouses = "IsometricHouses";
+            public const string DisplayPrimaryHouses = "DisplayPrimaryHouses";
+            public const string DisplaySecondaryHouses = "DisplaySecondaryHouses";
+            public const string DisplayPrimaryAndSecondaryHouses = "DisplayPrimaryAndSecondaryHouses";
+            public const string DisplayIsometricHouses = "DisplayIsometricHouses";
 
             public const string FullTextView = "FullTextView";
             public const string SummaryView = "SummaryView";

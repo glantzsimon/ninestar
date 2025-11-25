@@ -3887,10 +3887,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;When Both Solar and Lunar Energies Are Yang&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;When Both Core and Character Energies Are Yang&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In relationships where both individuals carry Yang energy—whether through their Solar or Lunar positions—the dynamic is often active, outwardly expressive, and at times, confrontational. Yang meets Yang with a certain familiarity: both are driven, assertive, and oriented toward action. This can lead to mutual understanding and shared momentum, especially when the elemental relationship is based on a
-        ///    &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformat [rest of string was truncated]&quot;;.
+        ///    In relationships where both individuals carry Yang energy—whether through their Core or Character Energy positions—the dynamic is often active, outwardly expressive, and at times, confrontational. Yang meets Yang with a certain familiarity: both are driven, assertive, and oriented toward action. This can lead to mutual understanding and shared momentum, especially when the elemental relationship is based on a
+        ///    &lt;a target=&quot;_blank&quot; href=&quot;{Sa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string both_gender_same_yang {
             get {
@@ -3899,14 +3899,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;When Both Solar and Lunar Energies Are Yin&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;When Both Core and Character Energies Are Yin&lt;/h5&gt;
         ///&lt;p&gt;
         ///    A pairing of two Yin energies creates a gentle, introspective dynamic. Both individuals may be sensitive, receptive, and more inwardly focused—qualities that can foster deep understanding, especially when their elements are in a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformation}&quot;&gt;Supportive Transformation&lt;/a&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, in the absence of Yang&apos; [rest of string was truncated]&quot;;.
+        ///    However, in the absence of Ya [rest of string was truncated]&quot;;.
         /// </summary>
         public static string both_gender_same_yin {
             get {
@@ -4170,7 +4170,7 @@ namespace K9.Globalisation {
         ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block dark&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same-dark.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    When both individuals share the same Lunar Element, their Emotional Ki ali [rest of string was truncated]&quot;;.
+        ///    When both individuals share the same Character Element, their Emotional Ki [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_same {
             get {
@@ -4197,7 +4197,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Please note that the &apos;Emotional Ki&apos; or &apos;Lunar Ki&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Solar Ki&apos; or &apos;Fundamental Adult Nature&apos;, as well as the &apos;Social Expression&apos;. However, it does give a useful overview of their deeper character. The Emotional Ki also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed.
+        ///    Please note that the &apos;Emotional Ki&apos; or &apos;Character Energy Ki&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Core Energy Ki&apos; or &apos;Fundamental Adult Nature&apos;, as well as the &apos;Social Expression&apos;. However, it does give a useful overview of their deeper character. The Emotional Ki also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed.
         ///&lt;/p&gt;.
         /// </summary>
         public static string character_energies_short_description {
@@ -4208,13 +4208,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Lunar Energies – Yin and Yang Balance
+        ///    Character Energies – Yin and Yang Balance
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    When one person&apos;s Lunar Energy is Yin and the other&apos;s is Yang, a natural polarity is created—one that often leads to heightened chemistry, emotional complementarity, and dynamic attraction. This interplay of opposites tends to bring balance, with each person offering qualities the other may lack, fostering growth and fascination.
+        ///    When one person&apos;s Character Energy is Yin and the other&apos;s is Yang, a natural polarity is created—one that often leads to heightened chemistry, emotional complementarity, and dynamic attraction. This interplay of opposites tends to bring balance, with each person offering qualities the other may lack, fostering growth and fascination.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    On an emotional level, this pairing can feel deeply enriching, as Yin brings receptivity and sensit [rest of string was truncated]&quot;;.
+        ///    On an emotional level, this pairing can feel deeply enriching, as Yin brings receptivity an [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_gender_opposite {
             get {
@@ -4223,12 +4223,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Lunar Energies – Both Yang&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Character Energies – Both Yang&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    When both individuals express Yang Lunar Energy, the relationship often leans toward action, engagement, and directness. While this can create a sense of shared drive and emotional clarity, it may lack the natural polarity that fuels romantic magnetism. Without the softening, receptive presence of Yin, the connection may feel overly familiar or energetically flat—more like camaraderie than chemistry.
+        ///    When both individuals express Yang Character Energy, the relationship often leans toward action, engagement, and directness. While this can create a sense of shared drive and emotional clarity, it may lack the natural polarity that fuels romantic magnetism. Without the softening, receptive presence of Yin, the connection may feel overly familiar or energetically flat—more like camaraderie than chemistry.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, this combination of [rest of string was truncated]&quot;;.
+        ///    In romantic relationships, this combin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_gender_same_yang {
             get {
@@ -4237,12 +4237,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Lunar Energies – Both Yin&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Character Energies – Both Yin&lt;/h5&gt;
         ///&lt;p&gt;
         ///    When both individuals embody Yin Lunar / Character Energy, the relationship often feels gentle, intuitive, and emotionally attuned. There’s a potential for deep mutual understanding, as both partners are likely to be sensitive, reflective, and attuned to subtle emotional undercurrents.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, in romantic relationships, this pairing can lack the spark and dynamic tension that a Yin–Yang combination naturally brings. Without the activating force o [rest of string was truncated]&quot;;.
+        ///    However, in romantic relationships, this pairing can lack the spark and dynamic tension that a Yin–Yang combination naturally brings. Without the activating for [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_gender_same_yin {
             get {
@@ -4251,12 +4251,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Lunar Energies – Different Groups&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Character Energies – Different Groups&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    When two individuals possess Lunar Energies belonging to different modalities or groups, their emotional expressions and responses naturally complement each other. This diversity can enrich the relationship by introducing varied perspectives and fostering a dynamic interplay of emotions. Such complementarity often leads to a deeper emotional connection, as each partner brings unique strengths that balance the other&apos;s tendencies.
+        ///    When two individuals possess Character Energies belonging to different modalities or groups, their emotional expressions and responses naturally complement each other. This diversity can enrich the relationship by introducing varied perspectives and fostering a dynamic interplay of emotions. Such complementarity often leads to a deeper emotional connection, as each partner brings unique strengths that balance the other&apos;s tendencies.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, t [rest of string was truncated]&quot;;.
+        ///    Ho [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_modality_different {
             get {
@@ -4265,12 +4265,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Lunar Energies – Same Group&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Character Energies – Same Group&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    When both individuals have Lunar Energies from the same Group, there is often a natural ease in emotional understanding. Their inner worlds resonate with a shared rhythm, leading to empathy, emotional safety, and the sense of being understood without needing to explain. This can create a comforting and harmonious emotional connection, especially in day-to-day interactions.
+        ///    When both individuals have Character Energies from the same Group, there is often a natural ease in emotional understanding. Their inner worlds resonate with a shared rhythm, leading to empathy, emotional safety, and the sense of being understood without needing to explain. This can create a comforting and harmonious emotional connection, especially in day-to-day interactions.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, this emotional sameness may come with a trade-off—less tension,  [rest of string was truncated]&quot;;.
+        ///    However, this emotional sameness may come with a trade-off—less t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_modality_same {
             get {
@@ -4279,7 +4279,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lunar Elements.
+        ///   Looks up a localized string similar to Character Elements.
         /// </summary>
         public static string CharacterElements {
             get {
@@ -4288,7 +4288,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lunar Elements Analysis.
+        ///   Looks up a localized string similar to Character Elements Analysis.
         /// </summary>
         public static string CharacterElementsAnalysis {
             get {
@@ -4297,7 +4297,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lunar Energies Compatibility.
+        ///   Looks up a localized string similar to Character Energies Compatibility.
         /// </summary>
         public static string CharacterEnergiesCompatibility {
             get {
@@ -4307,10 +4307,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Lunar Nature — Our Deeper Emotional Nature &amp; Inner Child
+        ///    Character Nature — Our Deeper Emotional Nature &amp; Inner Child
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This number reveals our &lt;strong&gt;deeper emotional nature&lt;/strong&gt;—the part of us that is often hidden beneath the surface and only becomes visible to those who know us well. Sometimes called the &lt;em&gt;Lunar Energy&lt;/em&gt; or &lt;em&gt;Inner Child&lt;/em&gt;, this Ki governs how we respond emotionally, especially in close relationships and intimate settings. It is also the Energy most likely to surface when we are under stress or  [rest of string was truncated]&quot;;.
+        ///    This number reveals our &lt;strong&gt;deeper emotional nature&lt;/strong&gt;—the part of us that is often hidden beneath the surface and only becomes visible to those who know us well. Sometimes called the &lt;em&gt;Character Energy&lt;/em&gt; or &lt;em&gt;Inner Child&lt;/em&gt;, this Ki governs how we respond emotionally, especially in close relationships and intimate settings. It is also the Energy most likely to surface when we are under st [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CharacterEnergyDescription {
             get {
@@ -4319,7 +4319,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lunar Nature / Inner Child.
+        ///   Looks up a localized string similar to Character Nature / Inner Child.
         /// </summary>
         public static string CharacterEnergyLabel {
             get {
@@ -4328,7 +4328,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lunar Nature / Inner Child.
+        ///   Looks up a localized string similar to Character Nature / Inner Child.
         /// </summary>
         public static string CharacterEnergyShortLabel {
             get {
@@ -6428,10 +6428,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    &lt;strong&gt;9 Star Ki astrology is based on the universal cycles of light and dark&lt;/strong&gt;, and the countless transformations that take place between them. These spiralling cosmic rhythms underlie all of life—from the pulse of a human heart to the motion of planets and galaxies. We’re most familiar with the solar day, the lunar month, and the four seasons—but there are many other cycles that subtly shape our experiences, most of which modern life has forgotten.
+        ///    &lt;strong&gt;9 Star Ki astrology is based on the universal cycles of light and dark&lt;/strong&gt;, and the countless transformations that take place between them. These spiralling cosmic rhythms underlie all of life—from the pulse of a human heart to the motion of planets and galaxies. We’re most familiar with the solar year, the lunar month, and the four seasons—but there are many other cycles that subtly shape our experiences, most of which modern life has forgotten.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    &lt;strong&gt;Ancient cultures [rest of string was truncated]&quot;;.
+        ///    &lt;strong&gt;Ancient culture [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cycles_description {
             get {
@@ -7031,11 +7031,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Display Isometric Houses.
+        /// </summary>
+        public static string DisplayIsometricHouses {
+            get {
+                return ResourceManager.GetString("DisplayIsometricHouses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Display.
         /// </summary>
         public static string DisplayLabel {
             get {
                 return ResourceManager.GetString("DisplayLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Primary &amp; Secondary Houses.
+        /// </summary>
+        public static string DisplayPrimaryAndSecondaryHouses {
+            get {
+                return ResourceManager.GetString("DisplayPrimaryAndSecondaryHouses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Primary Houses (Default).
+        /// </summary>
+        public static string DisplayPrimaryHouses {
+            get {
+                return ResourceManager.GetString("DisplayPrimaryHouses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Secondary Houses.
+        /// </summary>
+        public static string DisplaySecondaryHouses {
+            get {
+                return ResourceManager.GetString("DisplaySecondaryHouses", resourceCulture);
             }
         }
         
@@ -9203,7 +9239,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solar Elements.
+        ///   Looks up a localized string similar to Core Elements.
         /// </summary>
         public static string FundamentalElements {
             get {
@@ -9212,7 +9248,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solar Elements Analysis.
+        ///   Looks up a localized string similar to Core Elements Analysis.
         /// </summary>
         public static string FundamentalElementsAnalysis {
             get {
@@ -9221,7 +9257,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solar Energies Compatibility.
+        ///   Looks up a localized string similar to Core Energies Compatibility.
         /// </summary>
         public static string FundamentalEnergiesCompatibility {
             get {
@@ -11124,7 +11160,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;h5&gt;Exploring the Houses in Greater Depth&lt;/h5&gt;
         ///
         ///&lt;p&gt;
-        ///    One of the most captivating aspects of Nine Star Ki Astrology is the role of the houses, especially in how they interact with the different layers of our being. In traditional Macrobiotic-style Nine Star Ki, the primary focus is often placed on the Solar Houses, particularly within the context of yearly and monthly cycles. Yet it can be equally illuminating to explore the houses occupied by our lunar, or inner-child, energy—and even the subtler dime [rest of string was truncated]&quot;;.
+        ///    One of the most captivating aspects of Nine Star Ki Astrology is the role of the houses, especially in how they interact with the different layers of our being. In traditional Macrobiotic-style Nine Star Ki, the primary focus is often placed on the Primary Houses, particularly within the context of yearly and monthly cycles. Yet it can be equally illuminating to explore the houses occupied by our lunar, or inner-child, energy—and even the subtler di [rest of string was truncated]&quot;;.
         /// </summary>
         public static string holograhpic_spirals {
             get {
@@ -13803,7 +13839,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lunar Elements.
+        ///   Looks up a localized string similar to Character Elements.
         /// </summary>
         public static string LunarElements {
             get {
@@ -13812,7 +13848,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lunar House.
+        ///   Looks up a localized string similar to Secondary House.
         /// </summary>
         public static string LunarHouse {
             get {
@@ -13821,7 +13857,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Display Lunar Houses.
+        ///   Looks up a localized string similar to Display Secondary Houses.
         /// </summary>
         public static string LunarHouses {
             get {
@@ -13830,7 +13866,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lunar Ki.
+        ///   Looks up a localized string similar to Character Energy Ki.
         /// </summary>
         public static string LunarKi {
             get {
@@ -13839,7 +13875,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lunar Nature.
+        ///   Looks up a localized string similar to Character.
         /// </summary>
         public static string LunarNature {
             get {
@@ -13935,8 +13971,8 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Strengths&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both individuals share the same Solar Energy: Water. Of all the Nine Star Ki energies, Water is the most intuitive, empathetic, and emotionally sensitive. This shared frequency can give rise to a profound, almost unspoken understanding between the two—an emotional attunement that runs deep beneath the surface.
-        /// [rest of string was truncated]&quot;;.
+        ///    Both individuals share the same Core Energy: Water. Of all the Nine Star Ki energies, Water is the most intuitive, empathetic, and emotionally sensitive. This shared frequency can give rise to a profound, almost unspoken understanding between the two—an emotional attunement that runs deep beneath the surface.
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_11 {
             get {
@@ -13946,13 +13982,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is a potentially challenging combination, as the Solar Energies are in a
+        ///    This is a potentially challenging combination, as the Core Energies are in a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;, with {Person2} exerting influence or control over {Person1}. However, this dynamic also carries the potential for strong chemistry and significant personal growth.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} are engaged in a Challenging Transformation, where {Person2} naturally challenges  [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are engaged in a Challenging Transformation, where {Person2} naturally challenges o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_12 {
             get {
@@ -13998,13 +14034,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This pairing can be quite complex, as the Solar Energies are in a
+        ///    This pairing can be quite complex, as the Core Energies are in a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;, with {Person2} exerting control or dominance over {Person1}. At the same time, it carries strong potential for chemistry, growth, and deep transformation—if handled with awareness.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, where {Person2} naturally challenges or  [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, where {Person2} naturally challenges or e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_15 {
             get {
@@ -14014,13 +14050,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is a potentially harmonious and complementary pairing, as the Solar Energies are in a
+        ///    This is a potentially harmonious and complementary pairing, as the Core Energies are in a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt;, with {Person2} energetically supporting {Person1}. There is room for meaningful growth, steady emotional rapport, and a moderate level of chemistry. Conflict is less likely in this combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Strengths&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} share a Supportive Transformation, with {P [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} share a Supportive Transformation, with {Pe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_16 {
             get {
@@ -14030,13 +14066,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is a potentially harmonious and uplifting combination, as the Solar Energies are in a
+        ///    This is a potentially harmonious and uplifting combination, as the Core Energies are in a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt;, with {Person2} energetically supporting {Person1}. There is strong potential for emotional chemistry, mutual growth, and lasting balance. Conflict is notably less likely in this pairing.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Strengths&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} are connected through a Supportive Transformation [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are connected through a Supportive Transformation, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_17 {
             get {
@@ -14046,13 +14082,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is a potentially very challenging combination. The Solar Energies are in a
+        ///    This is a potentially very challenging combination. The Core Energies are in a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;, with {Person2} energetically exerting control or pressure over {Person1}. While there is potential for meaningful chemistry and personal growth, the risk of frustration, emotional distance, and conflict is significantly heightened in this pairing.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Perso [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_18 {
             get {
@@ -14062,13 +14098,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is a potentially very challenging combination. The Solar Energies are in a
+        ///    This is a potentially very challenging combination. The Core Energies are in a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;, with {Person1} energetically controlling or challenging {Person2}. While there is strong potential for chemistry and mutual growth, this pairing is prone to emotional tension, power struggles, and misunderstandings if not consciously managed.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} a [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} ar [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_19 {
             get {
@@ -14083,10 +14119,10 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Strengths&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both individuals share the same Solar Energy: Soil. This creates a strong foundation of mutual understanding, emotional safety, and shared values. Both are likely to be stable, supportive, and dependable—offering one another a sense of comfort and predictability that feels deeply nourishing.
+        ///    Both individuals share the same Core Energy: Soil. This creates a strong foundation of mutual understanding, emotional safety, and shared values. Both are likely to be stable, supportive, and dependable—offering one another a sense of comfort and predictability that feels deeply nourishing.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///   [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_22 {
             get {
@@ -14096,13 +14132,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is a potentially challenging combination, as the Solar Energies are in a
+        ///    This is a potentially challenging combination, as the Core Energies are in a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;, with {Person2} exerting pressure or dominance over {Person1}. While there is potential for meaningful chemistry and personal growth, conflict and frustration are likely obstacles that must be addressed with care.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} are in a Challenging Transformati [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformatio [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_23 {
             get {
@@ -14112,13 +14148,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is a potentially challenging combination, as the Solar Energies are in a
+        ///    This is a potentially challenging combination, as the Core Energies are in a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;, with {Person2} in the controlling or overriding energetic position. While there is potential for strong chemistry and mutual growth, navigating this relationship will require care, patience, and emotional awareness.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} are in a Challenging Transform [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transforma [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_24 {
             get {
@@ -14133,7 +14169,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Strengths&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both individuals share the same Solar Element: Earth. This creates a strong sense of shared values, emotional stability, and practical sensibility. Each person is likely to be dependable, grounded, and nurturing—offering one another a feeling of safety an [rest of string was truncated]&quot;;.
+        ///    Both individuals share the same Core Element: Earth. This creates a strong sense of shared values, emotional stability, and practical sensibility. Each person is likely to be dependable, grounded, and nurturing—offering one another a feeling of safety and [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_25 {
             get {
@@ -14180,7 +14216,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Strengths&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both individuals share the same Solar Element: Earth. This creates a solid foundation of shared values, reliability, and emotional stability. Each person is likely to be grounded, dependable, and nurturing—making this a relationship rooted in trust, consistency, and mutual r [rest of string was truncated]&quot;;.
+        ///    Both individuals share the same Core Element: Earth. This creates a solid foundation of shared values, reliability, and emotional stability. Each person is likely to be grounded, dependable, and nurturing—making this a relationship rooted in trust, consistency, and mutual re [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_28 {
             get {
@@ -14211,7 +14247,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Strengths&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both individuals share the same Solar Energy: Thunder. This immediately creates a sense of recognition and resonance—Thunder energies often feel that only another Thunder can truly keep pace with their dynamic rhythm and fast-moving mind. While other types may find Thunder overwhelming, this pair [rest of string was truncated]&quot;;.
+        ///    Both individuals share the same Core Energy: Thunder. This immediately creates a sense of recognition and resonance—Thunder energies often feel that only another Thunder can truly keep pace with their dynamic rhythm and fast-moving mind. While other types may find Thunder overwhelming, this pairi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_33 {
             get {
@@ -14321,7 +14357,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Strengths&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both individuals share the same Solar Energy: Wind. This creates a natural resonance between them. Wind energies tend to be articulate, receptive, and emotionally perceptive—qualities that make for deeply enjoyable and balanced conversation. They not only enjoy speaking but also excel at listening,  [rest of string was truncated]&quot;;.
+        ///    Both individuals share the same Core Energy: Wind. This creates a natural resonance between them. Wind energies tend to be articulate, receptive, and emotionally perceptive—qualities that make for deeply enjoyable and balanced conversation. They not only enjoy speaking but also excel at listening, m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_44 {
             get {
@@ -14470,7 +14506,7 @@ namespace K9.Globalisation {
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt;, with {Person1} nourishing and encouraging {Person2}. This kind of dynamic often fosters mutual respect, emotional safety, and long-term harmony.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Both individuals share the same Solar Element—E [rest of string was truncated]&quot;;.
+        ///    Both individuals share the same Core Element—Ea [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_58 {
             get {
@@ -14637,10 +14673,10 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Solar Energy &quot;Mountain&quot;. Both people are stable, steady and reliable who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
+        ///    Both people share the same Core Energy &quot;Mountain&quot;. Both people are stable, steady and reliable who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    There is a pot [rest of string was truncated]&quot;;.
+        ///    There is a pote [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_88 {
             get {
@@ -14711,7 +14747,7 @@ namespace K9.Globalisation {
         ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block dark&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same-dark.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    In this combination, both people share the same Solar Element. This often  [rest of string was truncated]&quot;;.
+        ///    In this combination, both people share the same Core Element. This often c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_same {
             get {
@@ -14738,10 +14774,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The Solar Energy description alone only describes one aspect of the chart.
+        ///    The Core Energy description alone only describes one aspect of the chart.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Please note that the &apos;Solar Energy&apos; alone does not give a very granular description of a person. The &apos;Emotional Ki&apos;, as well as the &apos;Mirror Ki&apos; play a significant role in shaping a person&apos;s character traits. However, the Solar Energy does give a very useful overview. Also, of the three components of a personal chart, the Solar Energy has the most significant influence on a person&apos;s nature and is especially  [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Core Energy&apos; alone does not give a very granular description of a person. The &apos;Emotional Ki&apos;, as well as the &apos;Mirror Ki&apos; play a significant role in shaping a person&apos;s character traits. However, the Core Energy does give a very useful overview. Also, of the three components of a personal chart, the Core Energy has the most significant influence on a person&apos;s nature and is especially usef [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_energies_short_description {
             get {
@@ -14751,12 +14787,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Solar Energies – Yin / Yang
+        ///    Core Energies – Yin / Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Solar Energies in this combination consist of one Yin and one Yang Energy. This often brings a sense of &lt;strong&gt;natural complementarity&lt;/strong&gt; and can support a &lt;strong&gt;harmonious and balanced dynamic&lt;/strong&gt;. However, this pairing can also carry a &lt;strong&gt;slightly increased risk of misunderstanding&lt;/strong&gt;, particularly if the elements are in a
+        ///    The Core Energies in this combination consist of one Yin and one Yang Energy. This often brings a sense of &lt;strong&gt;natural complementarity&lt;/strong&gt; and can support a &lt;strong&gt;harmonious and balanced dynamic&lt;/strong&gt;. However, this pairing can also carry a &lt;strong&gt;slightly increased risk of misunderstanding&lt;/strong&gt;, particularly if the elements are in a
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;.
-        ///&lt;/p&gt;        /// [rest of string was truncated]&quot;;.
+        ///&lt;/p&gt;
+        ///.
         /// </summary>
         public static string main_gender_opposite {
             get {
@@ -14766,13 +14803,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Solar Energies – Both Yang
+        ///    Core Energies – Both Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This combination often leads to a &lt;strong&gt;strong sense of mutual understanding&lt;/strong&gt;, as both people operate with a similar level of energy and directness. However, it can also bring a &lt;strong&gt;slightly higher risk of conflict&lt;/strong&gt;, as two Yang energies may occasionally clash or compete.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In some cases, a Yang/Yang dynamic may lack the sense of mystery or contrast needed to sustain long-term chemistry, and the initial spark can begin [rest of string was truncated]&quot;;.
+        ///    In some cases, a Yang/Yang dynamic may lack the sense of mystery or contrast needed to sustain long-term chemistry, and the initial spark can begin  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_gender_same_yang {
             get {
@@ -14782,13 +14819,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Solar Energies – Both Yin
+        ///    Core Energies – Both Yin
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This combination often brings a &lt;strong&gt;deep sense of mutual understanding&lt;/strong&gt;, as both individuals tend to be sensitive, intuitive, and receptive. However, it can also carry a &lt;strong&gt;slightly higher risk of stagnation&lt;/strong&gt; or &lt;strong&gt;unspoken resentments&lt;/strong&gt;, especially if communication isn&apos;t actively maintained.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In some Yin/Yin relationships, the connection may gradually fade if neither person takes initiative to keep thin [rest of string was truncated]&quot;;.
+        ///    In some Yin/Yin relationships, the connection may gradually fade if neither person takes initiative to keep thing [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_gender_same_yin {
             get {
@@ -14798,7 +14835,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Solar Energies – Different Group
+        ///    Core Energies – Different Group
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This combination usually brings a &lt;strong&gt;greater sense of complementarity&lt;/strong&gt;, as each person brings something different to the relationship. However, it can also carry a &lt;strong&gt;slightly higher risk of misunderstanding&lt;/strong&gt;, especially if their approaches to life or communication styles are very different.
@@ -14813,7 +14850,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Solar Energies – Same Group
+        ///    Core Energies – Same Group
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This combination tends to foster &lt;strong&gt;greater mutual understanding&lt;/strong&gt;, as both people operate from a similar energetic framework. However, it can also bring a &lt;strong&gt;the risk of friction&lt;/strong&gt;, as their similarities may occasionally lead to clashes or competition.
@@ -14827,7 +14864,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solar Nature.
+        ///   Looks up a localized string similar to Core Nature.
         /// </summary>
         public static string MainChildLabel {
             get {
@@ -14836,7 +14873,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solar Nature.
+        ///   Looks up a localized string similar to Core Nature.
         /// </summary>
         public static string MainEnergy {
             get {
@@ -14846,13 +14883,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Solar Nature — Our Core Nature &amp; Energetic Foundation
+        ///    Core Nature — Our Essential Constitution &amp; Energetic Foundation
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Solar Energy represents our &lt;strong&gt;core nature&lt;/strong&gt;—the energetic foundation of our adult self. Sometimes referred to as the Main Energy or Principal Ki, it begins to express more fully around the age of 18, after we’ve completed two full nine-year cycles. From that point onward, it becomes the dominant influence in our lives, shaping our worldview, decisions, and identity.
+        ///    The Core Energy represents our &lt;strong&gt;core nature&lt;/strong&gt;—the energetic foundation of our adult self. Sometimes referred to as the Main Energy or Principal Ki, it begins to express more fully around the age of 18, after we’ve completed two full nine-year cycles. From that point onward, it becomes the dominant influence in our lives, shaping our worldview, decisions, and identity.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It has a powerfu [rest of string was truncated]&quot;;.
+        ///    It has  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MainEnergyDescription {
             get {
@@ -14861,7 +14898,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solar Nature.
+        ///   Looks up a localized string similar to Core Nature.
         /// </summary>
         public static string MainEnergyLabel {
             get {
@@ -14870,7 +14907,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solar Nature.
+        ///   Looks up a localized string similar to Core Nature.
         /// </summary>
         public static string MainEnergyShortLabel {
             get {
@@ -16330,7 +16367,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 9 Lunar Energies.
+        ///   Looks up a localized string similar to The 9 Character Energies.
         /// </summary>
         public static string NineCharacterEnergiesTitle {
             get {
@@ -16348,7 +16385,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 9 Solar Energies.
+        ///   Looks up a localized string similar to The 9 Core Energies.
         /// </summary>
         public static string NineMainEnergiesTitle {
             get {
@@ -17101,10 +17138,10 @@ namespace K9.Globalisation {
         ///    The main part of the 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9. For example: &lt;strong&gt;&quot;3.1.7&quot;&lt;/strong&gt;. 
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    First Number - Solar Energy
+        ///    First Number - Core Energy
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The first number is &lt;strong&gt;determined by the year we were born&lt;/strong&gt; and corresponds to our &lt;strong&gt;fundamental nature&lt;/strong&gt;; the lens through which we view the world and the way we make sense of reality. It is also the Energy &lt;strong&gt;that holds the strongest influence as we reach adulthood&lt;/strong [rest of string was truncated]&quot;;.
+        ///    The first number is &lt;strong&gt;determined by the year we were born&lt;/strong&gt; and corresponds to our &lt;strong&gt;fundamental nature&lt;/strong&gt;; the lens through which we view the world and the way we make sense of reality. It is also the Energy &lt;strong&gt;that holds the strongest influence as we reach adulthood&lt;/strong&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string personal_chart {
             get {
@@ -19114,7 +19151,7 @@ namespace K9.Globalisation {
         ///    More Like Family
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is &lt;strong&gt;highly unlikely that strong sexual chemistry&lt;/strong&gt; will develop between these two individuals. If attraction does arise, it may be &lt;strong&gt;brief or situational&lt;/strong&gt;. Most of the energetic dynamics—both Solar and Lunar—are closely aligned, which tends to result in &lt;strong&gt;minimal magnetism&lt;/strong&gt;. However, this kind of alignment can foster a &lt;strong&gt;deep sense of familiarity and mutual understanding&lt;/strong&gt;, making it &lt;strong&gt;especially well [rest of string was truncated]&quot;;.
+        ///    It is &lt;strong&gt;highly unlikely that strong sexual chemistry&lt;/strong&gt; will develop between these two individuals. If attraction does arise, it may be &lt;strong&gt;brief or situational&lt;/strong&gt;. Most of the energetic dynamics—both Core and Character—are closely aligned, which tends to result in &lt;strong&gt;minimal magnetism&lt;/strong&gt;. However, this kind of alignment can foster a &lt;strong&gt;deep sense of familiarity and mutual understanding&lt;/strong&gt;, making it &lt;strong&gt;especially w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_nonexistant {
             get {
@@ -19127,7 +19164,7 @@ namespace K9.Globalisation {
         ///    Off the Charts
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The &lt;strong&gt;sexual chemistry between these two individuals may be exceptionally intense&lt;/strong&gt;. The energetic dynamics at play—both in their Solar and Lunar Energies—are in strong contrast to one another, creating a &lt;strong&gt;powerful magnetic pull&lt;/strong&gt;. This can lead to a &lt;strong&gt;deeply passionate and exhilarating connection&lt;/strong&gt;, though it may also prove to be &lt;strong&gt;volatile or overwhelming&lt;/strong&gt; if not balanced with emotional maturity and clear commu [rest of string was truncated]&quot;;.
+        ///    The &lt;strong&gt;sexual chemistry between these two individuals may be exceptionally intense&lt;/strong&gt;. The energetic dynamics at play—both in their Core and Character Energies—are in strong contrast to one another, creating a &lt;strong&gt;powerful magnetic pull&lt;/strong&gt;. This can lead to a &lt;strong&gt;deeply passionate and exhilarating connection&lt;/strong&gt;, though it may also prove to be &lt;strong&gt;volatile or overwhelming&lt;/strong&gt; if not balanced with emotional maturity and clear co [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_off_the_charts {
             get {
@@ -19155,7 +19192,7 @@ namespace K9.Globalisation {
         ///    Very Low
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is &lt;strong&gt;unlikely that there will be significant sexual chemistry&lt;/strong&gt; between these two individuals, or if there is, &lt;strong&gt;it may fade fairly quickly&lt;/strong&gt;. This combination tends to be &lt;strong&gt;harmonious and stable&lt;/strong&gt;, as many of the energetic aspects—both Solar and Lunar—are closely aligned. However, this alignment also reduces magnetism, making &lt;strong&gt;deep friendship or companionship&lt;/strong&gt; a more natural outcome. That said, every connection is  [rest of string was truncated]&quot;;.
+        ///    It is &lt;strong&gt;unlikely that there will be significant sexual chemistry&lt;/strong&gt; between these two individuals, or if there is, &lt;strong&gt;it may fade fairly quickly&lt;/strong&gt;. This combination tends to be &lt;strong&gt;harmonious and stable&lt;/strong&gt;, as many of the energetic aspects—both Core and Character—are closely aligned. However, this alignment also reduces magnetism, making &lt;strong&gt;deep friendship or companionship&lt;/strong&gt; a more natural outcome. That said, every connection  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_verylow {
             get {
@@ -19234,14 +19271,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies are Yin and therefore in line with gender
+        ///    Both Core and Character Energies are Yin and therefore in line with gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;
         ///    A confident and integrated expression of femininity and sexuality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Women with this configuration tend to be confident in their gender identity and at ease with their sexual expression. There is rarely any internal conflict regarding self-expression, and they generally relate well to both men and women. Their inner and outer energies are aligned, giving rise to a strong sense of self and clar [rest of string was truncated]&quot;;.
+        ///    Women with this configuration tend to be confident in their gender identity and at ease with their sexual expression. There is rarely any internal conflict regarding self-expression, and they generally relate well to both men and women. Their inner and outer energies are aligned, giving rise to a strong sense of self and c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_match_female {
             get {
@@ -19251,7 +19288,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies are Yin and therefore in line with gender
+        ///    Both Core and Character Energies are Yin and therefore in line with gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
@@ -19260,7 +19297,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Inner and outer energies are aligned, leading to a strong sense of self.&lt;/li&gt;
         ///    &lt;li&gt;Comfortable with intimacy, celibacy, or unconventional expressions of sexuality.&lt;/li&gt;
         ///    &lt;li&gt;Generally at ease in relationships with both genders; often admired for poise and presence.&lt;/li&gt;
-        ///    &lt;li&gt;Strong sexual vitality and [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Strong sexual vitality  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_match_female_summary {
             get {
@@ -19270,14 +19307,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies Are Yang and Therefore Aligned With Gender
+        ///    Both Core and Character Energies Are Yang and Therefore Aligned With Gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;
         ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    As both the Lunar and Solar Energies are in line with gender, men with this combination tend to feel naturally comfortable with their masculine identity and expression. This often gives rise to confidence in self-presentation and an ease in both platonic and romantic relationships. Th [rest of string was truncated]&quot;;.
+        ///    As both the Character and Core Energies are in line with gender, men with this combination tend to feel naturally comfortable with their masculine identity and expression. This often gives rise to confidence in self-presentation and an ease in both platonic and romantic relationshi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_match_male {
             get {
@@ -19287,7 +19324,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies Are Yang and Therefore Aligned With Gender
+        ///    Both Core and Character Energies Are Yang and Therefore Aligned With Gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
@@ -19298,8 +19335,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Willingness to wait for the right partner, often accompanied by personal growth during periods of celibacy.&lt;/li&gt;
         ///&lt;/ul&gt;
         ///
-        ///&lt;h5&gt;Challenges&lt;/h5&gt;
-        ///&lt; [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;Challenges&lt;/h5&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_match_male_summary {
             get {
@@ -19309,14 +19345,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Solar Energy is Yin and in line with gender. Emotional Ki is Yang and opposite to gender
+        ///    Core Energy is Yin and in line with gender. Emotional Ki is Yang and opposite to gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;
         ///    A well-balanced combination with insight into both genders
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This combination creates a natural inner balance between feminine and masculine qualities. The Solar Energy is in line with gender, providing women with this configuration a grounded and confident connection to their femininity. At the same time, the Emotional Ki—being opposite to gender—gives them a lived understan [rest of string was truncated]&quot;;.
+        ///    This combination creates a natural inner balance between feminine and masculine qualities. The Core Energy is in line with gender, providing women with this configuration a grounded and confident connection to their femininity. At the same time, the Emotional Ki—being opposite to gender—gives them a lived understandi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_female {
             get {
@@ -19326,7 +19362,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Solar Energy is Yin and in line with gender. Emotional Ki is Yang and opposite to gender
+        ///    Core Energy is Yin and in line with gender. Emotional Ki is Yang and opposite to gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
@@ -19334,7 +19370,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Balanced and integrated blend of feminine and masculine qualities.&lt;/li&gt;
         ///    &lt;li&gt;Deep understanding and empathy for {PotentialMatesText}, often forming strong platonic bonds.&lt;/li&gt;
         ///    &lt;li&gt;Natural counsellors or confidants—able to relate with ease across gender lines.&lt;/li&gt;
-        ///    &lt;li&gt;Self-assured outward presence with intuitive insight into others’ needs and motivations.&lt;/ [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Self-assured outward presence with intuitive insight into others’ needs and motivations.&lt;/l [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_female_summary {
             get {
@@ -19344,14 +19380,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Solar Energy is Yang and in line with gender. Emotional Ki is Yin and opposite to gender
+        ///    Core Energy is Yang and in line with gender. Emotional Ki is Yin and opposite to gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;
         ///    A naturally balanced and empathetic combination
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This configuration tends to create a sense of balance between self-awareness and relational sensitivity. Men with this combination often have a healthy sense of self rooted in their masculine identity (via the Solar Energy), while also embodying a deep emotional understanding of {PotentialMatesText} due to the opposing Yin qua [rest of string was truncated]&quot;;.
+        ///    This configuration tends to create a sense of balance between self-awareness and relational sensitivity. Men with this combination often have a healthy sense of self rooted in their masculine identity (via the Core Energy), while also embodying a deep emotional understanding of {PotentialMatesText} due to the opposing Yin quali [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_male {
             get {
@@ -19361,7 +19397,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Solar Energy is Yang and in line with gender. Emotional Ki is Yin and opposite to gender
+        ///    Core Energy is Yang and in line with gender. Emotional Ki is Yin and opposite to gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
@@ -19372,7 +19408,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Balanced blend of inner strength and emotional sensitivity.&lt;/li&gt;
         ///&lt;/ul&gt;
         ///
-        ///&lt;h5&gt;Challen [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;Challeng [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_male_summary {
             get {
@@ -19382,14 +19418,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Solar Energy is Yang and opposite to gender. Emotional Ki is Yin and in line with gender
+        ///    Core Energy is Yang and opposite to gender. Emotional Ki is Yin and in line with gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;
         ///    These women may feel confident in youth, but experience deeper insecurity later on
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In childhood and adolescence, the Emotional Ki is dominant and, in this configuration, is in line with gender. This tends to make women with this combination feel confident in their femininity early in life. They often relate easily and playfully with {SexualPartnersText}, and may express the [rest of string was truncated]&quot;;.
+        ///    In childhood and adolescence, the Emotional Ki is dominant and, in this configuration, is in line with gender. This tends to make women with this combination feel confident in their femininity early in life. They often relate easily and playfully with {SexualPartnersText}, and may express them [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_female {
             get {
@@ -19399,7 +19435,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Solar Energy is Yang and opposite to gender. Emotional Ki is Yin and in line with gender
+        ///    Core Energy is Yang and opposite to gender. Emotional Ki is Yin and in line with gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
@@ -19412,7 +19448,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;I [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;In [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_female_summary {
             get {
@@ -19422,14 +19458,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Solar Energy is Yin and opposite to gender. Emotional Ki is Yang and in line with gender
+        ///    Core Energy is Yin and opposite to gender. Emotional Ki is Yang and in line with gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;
         ///    Confidence in youth, followed by inner conflict in adulthood
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During adolescence, the Emotional Ki is the dominant influence, and in this case, it aligns with gender. This often results in boys with this combination expressing themselves with confidence and ease in social and romantic situations. They may be charismatic, self-assured, and comfortable around {SexualPartnersTe [rest of string was truncated]&quot;;.
+        ///    During adolescence, the Emotional Ki is the dominant influence, and in this case, it aligns with gender. This often results in boys with this combination expressing themselves with confidence and ease in social and romantic situations. They may be charismatic, self-assured, and comfortable around {SexualPartnersTex [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_male {
             get {
@@ -19439,7 +19475,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Solar Energy is Yin and opposite to gender. Emotional Ki is Yang and in line with gender
+        ///    Core Energy is Yin and opposite to gender. Emotional Ki is Yang and in line with gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
@@ -19452,7 +19488,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h5&gt;Challenges&lt;/h5&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;May exper [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;May experi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_male_summary {
             get {
@@ -19462,14 +19498,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies are Yang and therefore opposite to gender
+        ///    Both Core and Character Energies are Yang and therefore opposite to gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;
         ///    A challenging combination for women in environments with strong feminine ideals
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This configuration can be particularly difficult for women whose culture, family, or upbringing expects them to embody traditional traits of femininity—gentleness, sensuality, and emotional softness. These women may feel inwardly misaligned with such expectations, leading to a subtle or overt sense of inner conf [rest of string was truncated]&quot;;.
+        ///    This configuration can be particularly difficult for women whose culture, family, or upbringing expects them to embody traditional traits of femininity—gentleness, sensuality, and emotional softness. These women may feel inwardly misaligned with such expectations, leading to a subtle or overt sense of inner c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_opposite_female {
             get {
@@ -19479,7 +19515,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies are Yang and therefore opposite to gender
+        ///    Both Core and Character Energies are Yang and therefore opposite to gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
@@ -19491,7 +19527,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Motivated by challenges and capable of powerful personal growth.&lt;/li&gt;
         ///&lt;/ul&gt;
         ///
-        ///&lt;h5&gt; [rest of string was truncated]&quot;;.
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_opposite_female_summary {
             get {
@@ -19501,14 +19537,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies are Yin and therefore opposite to gender
+        ///    Both Core and Character Energies are Yin and therefore opposite to gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;
         ///    A challenging configuration for men—especially in masculine cultures
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This configuration presents one of the more challenging dynamics, particularly for men who are raised in environments that prize traditional masculinity or “alpha male” archetypes. With both Solar and Emotional Ki being Yin and therefore opposite to gender, there is a sense of internal misalignment that can manifest as a su [rest of string was truncated]&quot;;.
+        ///    This configuration presents one of the more challenging dynamics, particularly for men who are raised in environments that prize traditional masculinity or “alpha male” archetypes. With both Core and Character Energy Ki being Yin and therefore opposite to gender, there is a sense of internal misalignment that can manifes [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_opposite_male {
             get {
@@ -19518,7 +19554,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Solar and Lunar Energies are Yin and therefore opposite to gender
+        ///    Both Core and Character Energies are Yin and therefore opposite to gender
         ///&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Gifts&lt;/h5&gt;
@@ -19527,7 +19563,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Magnetic presence and natural charm—often admired by peers.&lt;/li&gt;
         ///    &lt;li&gt;Great capacity for inner transformation and personal growth.&lt;/li&gt;
         ///    &lt;li&gt;Can develop extraordinary wisdom and leadership through lived experience.&lt;/li&gt;
-        ///    &lt;li&gt;Strong intuitive and creative potential when energy is channelled construct [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Strong intuitive and creative potential when energy is channelled constr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_opposite_male_summary {
             get {
@@ -20382,7 +20418,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solar And Lunar Houses.
+        ///   Looks up a localized string similar to Primary And Secondary Houses.
         /// </summary>
         public static string SolarAndLunarHouses {
             get {
@@ -20391,7 +20427,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solar Elements.
+        ///   Looks up a localized string similar to Core Elements.
         /// </summary>
         public static string SolarElements {
             get {
@@ -20400,7 +20436,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solar House.
+        ///   Looks up a localized string similar to Primary House.
         /// </summary>
         public static string SolarHouse {
             get {
@@ -20409,7 +20445,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Display Solar Houses.
+        ///   Looks up a localized string similar to Display Primary Houses.
         /// </summary>
         public static string SolarHouses {
             get {
@@ -22536,6 +22572,15 @@ namespace K9.Globalisation {
         public static string thunder_year {
             get {
                 return ResourceManager.GetString("thunder_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I know the time of birth.
+        /// </summary>
+        public static string TimeOfBirthKnownLabel {
+            get {
+                return ResourceManager.GetString("TimeOfBirthKnownLabel", resourceCulture);
             }
         }
         

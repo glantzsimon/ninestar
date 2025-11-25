@@ -9,6 +9,7 @@
     var simpleChecked = Model.CalculatorType == ECalculatorType.Simple ? "checked" : "";
     var advancedChecked = Model.CalculatorType == ECalculatorType.Advanced ? "checked" : "";
     var advancedStyle = Model.CalculatorType == ECalculatorType.Advanced ? "" : "display: none;";
+    var birthTimeStyle = Model.PersonModel.TimeOfBirthKnown ? "" : "display: none;";
 }
 
 @using (Html.BeginBootstrapForm())
@@ -27,30 +28,32 @@
                 <label for="advanced-calculator">@Dictionary.Advanced</label>
             </div>
         </div>
-
-        <hr />
     }
-
-    <label>@Dictionary.CalculationMethodLabel</label>
-    <a target="_blank" href="@Url.Action("CalculationMethods","Home")"><i class="fa fa-question-circle"></i></a>
-
-    @Html.BootstrapEditorFor(model => model.CalculationMethod, new EditorOptions
-        {
-            Label = ""
-        })
 
     if (isUnlimited)
     {
+
         <div class="form-options advanced-calculator-options" style="@advancedStyle">
+            <hr />
+
+            <label>@Dictionary.CalculationMethodLabel</label>
+            <a target="_blank" href="@Url.Action("CalculationMethods", "Home")"><i class="fa fa-question-circle"></i></a>
+
+            @Html.BootstrapEditorFor(model => model.CalculationMethod, new EditorOptions
+            {
+                Label = ""
+            })
+
+            <hr />
 
             @if (Model.IsPredictionsScreen)
             {
                 <label>@Dictionary.HousesDisplayLabel</label>
-                <a target="_blank" href="@Url.Action("CalculationMethods","Home")"><i class="fa fa-question-circle"></i></a>
+                <a target="_blank" href="@Url.Action("CalculationMethods", "Home")"><i class="fa fa-question-circle"></i></a>
 
                 @Html.BootstrapEditorFor(model => model.HousesDisplay, new EditorOptions
                 {
-                    Label= ""
+                    Label = ""
                 })
 
                 @Html.CheckBoxFor(model => model.InvertDailyAndHourlyCycleKiForSouthernHemisphere)
@@ -68,14 +71,20 @@
     <hr />
 
     @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
-    @Html.BootstrapEditorFor(model => model.PersonModel.TimeOfBirth)
-    @Html.BootstrapEditorFor(model => model.PersonModel.BirthTimeZoneId)
+
+    @Html.BootstrapEditorFor(model => model.PersonModel.TimeOfBirthKnown)
+
+    <div id="birth-time-container" style="@birthTimeStyle">
+        @Html.BootstrapEditorFor(model => model.PersonModel.TimeOfBirth)
+        @Html.BootstrapEditorFor(model => model.PersonModel.BirthTimeZoneId)
+    </div>
+
     @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
 
     if (Model.IsPredictionsScreen)
     {
         var selectedDateDisplayStyle = Model.DisplayDataForPeriod == EDisplayDataForPeriod.SelectedDate ? "" : "display: none;";
-        
+
         <div class="advanced-calculator-options" style="@advancedStyle">
             <hr />
 
@@ -93,28 +102,3 @@
     @Html.BootstrapButton(Dictionary.Calculate, EButtonType.Submit, "", EButtonClass.Large)
 }
 
-<script>
-    $(document).ready(function () {
-        $('#CalculationMethod').on('change', function () {
-            let value = $(this).val();
-            let $genderFormGroup = $("div[data-input-id='Gender']");
-
-            if (value != '0') {
-                $genderFormGroup.fadeOut();
-            } else {
-                $genderFormGroup.fadeIn();
-            }
-        });
-
-        $('#DisplayDataForPeriod').on('change', function () {
-            let value = $(this).val();
-            let $container = $("#predictions-selected-date-container");
-
-            if (value == '0') {
-                $container.fadeOut();
-            } else {
-                $container.fadeIn();
-            }
-        });
-    });
-</script>

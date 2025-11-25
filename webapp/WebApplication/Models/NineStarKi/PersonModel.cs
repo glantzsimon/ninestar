@@ -21,6 +21,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TimeOfBirthLabel)]
         public TimeSpan TimeOfBirth { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TimeOfBirthKnownLabel)]
+        public bool TimeOfBirthKnown { get; set; }
+
         [UIHint("TimeZone")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.BirthTimeZone)]
         public string BirthTimeZoneId { get; set; }

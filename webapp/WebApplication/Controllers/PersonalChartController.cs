@@ -43,6 +43,10 @@ namespace K9.WebApplication.Controllers
                 UpdateUserPreferenceInt(Constants.SessionConstants.UserCalculationMethod,
                     (int)model.CalculationMethod);
 
+                UpdateUserPreferenceBool(Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere, model.InvertDailyAndHourlyKiForSouthernHemisphere);
+
+                UpdateUserPreferenceBool(Constants.SessionConstants.BirthTimeIsKnown, model.TimeOfBirthKnown);
+
                 if (model.PersonModel != null)
                 {
                     model.SelectedDate = model.SelectedDate ?? model.GetLocalNow();

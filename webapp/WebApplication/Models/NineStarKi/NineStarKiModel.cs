@@ -64,6 +64,9 @@ namespace K9.WebApplication.Models
         /// </summary>
         public bool IsComplementary { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TimeOfBirthKnownLabel)]
+        public bool TimeOfBirthKnown { get; set; }
+
         #endregion
 
         private void Init()
@@ -73,6 +76,7 @@ namespace K9.WebApplication.Models
             HousesDisplay = SessionHelper.GetCurrentUserHousesDisplay();
             CalculationMethod = (ECalculationMethod)SessionHelper.GetCurrentUserCalculationMethod();
             CalculatorType = SessionHelper.GetCurrentUserDefaultCalculatorType();
+            TimeOfBirthKnown = SessionHelper.GetBirthTimeIsKnown();
             InvertDailyAndHourlyKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyKiForSouthernHemisphere();
             InvertDailyAndHourlyCycleKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyCycleKiForSouthernHemisphere();
             ShowDirections = SessionHelper.GetShowDirections();

@@ -82,12 +82,11 @@ namespace K9.WebApplication.Controllers
                     // Set user calculation method preference cookie
                     UpdateUserPreferenceInt(Constants.SessionConstants.UserCalculationMethod,
                         (int) model.CalculationMethod);
+                    
+                    UpdateUserPreferenceBool(Constants.SessionConstants.BirthTimeIsKnown, model.TimeOfBirthKnown);
 
                     UpdateUserPreferenceInt(Constants.SessionConstants.UserHousesDisplay,
                         (int) model.HousesDisplay);
-
-                    UpdateUserPreferenceBool(Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere,
-                        model.InvertDailyAndHourlyKiForSouthernHemisphere);
 
                     UpdateUserPreferenceBool(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
                         model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);

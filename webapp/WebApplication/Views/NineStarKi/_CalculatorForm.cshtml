@@ -9,7 +9,7 @@
     var simpleChecked = Model.CalculatorType == ECalculatorType.Simple ? "checked" : "";
     var advancedChecked = Model.CalculatorType == ECalculatorType.Advanced ? "checked" : "";
     var advancedStyle = Model.CalculatorType == ECalculatorType.Advanced ? "" : "display: none;";
-    var birthTimeStyle = Model.PersonModel.TimeOfBirthKnown ? "" : "display: none;";
+    var birthTimeStyle = Model.TimeOfBirthKnown ? "" : "display: none;";
 }
 
 @using (Html.BeginBootstrapForm())
@@ -55,9 +55,10 @@
                 {
                     Label = ""
                 })
+
+                <hr />
             }
 
-            <hr />
             <label>@Dictionary.SouthernHemisphereOptions</label>
             <a target="_blank" href="@Url.Action("SouthernHemisphere", "Home")"><i class="fa fa-question-circle"></i></a>
             <br />
@@ -79,7 +80,7 @@
 
     @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
 
-    @Html.BootstrapEditorFor(model => model.PersonModel.TimeOfBirthKnown)
+    @Html.BootstrapEditorFor(model => model.TimeOfBirthKnown)
 
     <div id="birth-time-container" style="@birthTimeStyle">
         @Html.BootstrapEditorFor(model => model.PersonModel.TimeOfBirth)

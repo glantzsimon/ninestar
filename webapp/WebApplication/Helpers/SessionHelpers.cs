@@ -99,6 +99,11 @@ namespace K9.WebApplication.Helpers
             return (ECalculatorType)intValue;
         }
 
+        public static bool GetBirthTimeIsKnown()
+        {
+            return GetBoolValue(Constants.SessionConstants.BirthTimeIsKnown);
+        }
+
         public static EPanelView GetCurrentUserDefaultPanelView()
         {
             var intValue = GetIntValue(Constants.SessionConstants.DefaultPanelView, (int)EPanelView.SummaryView);

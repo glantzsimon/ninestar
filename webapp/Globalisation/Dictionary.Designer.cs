@@ -14864,7 +14864,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Core Nature.
+        ///   Looks up a localized string similar to Constitution.
         /// </summary>
         public static string MainChildLabel {
             get {
@@ -14873,7 +14873,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Core Nature.
+        ///   Looks up a localized string similar to Constitution.
         /// </summary>
         public static string MainEnergy {
             get {
@@ -14898,7 +14898,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Core Nature.
+        ///   Looks up a localized string similar to Constitution.
         /// </summary>
         public static string MainEnergyLabel {
             get {
@@ -14907,7 +14907,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Core Nature.
+        ///   Looks up a localized string similar to Constitution.
         /// </summary>
         public static string MainEnergyShortLabel {
             get {
@@ -20485,7 +20485,7 @@ namespace K9.Globalisation {
         ///    Inversion of the daily and hourly Ki for the Southern Hemisphere
         ///&lt;/h5&gt;
         ///
-        ///&lt;p&gt;Traditionally, 9 Star Ki and Feng Shui practitioners use the same ascending and descending ki for both hemispheres. However, at 9starkiastrology.com we believe that, whether the daily or hourly Ki ascends or descends, depends on seasonal contraction and expansion of energies, which is hemisphere specific. However, in order to respect those who disagree with this position, we give you the option. If y [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Traditionally, 9 Star Ki and Feng Shui practitioners used the same ascending and descending daily and hourly Ki for both hemispheres. However, at 9starkiastrology.com we believe that whether the daily or hourly Ki ascends or descends depends on the seasonal contraction and expansion of energies, which is hemisphere specific. You can observe how energy expands as we move towards the summer solstice an [rest of string was truncated]&quot;;.
         /// </summary>
         public static string southern_hemisphere_dailyki_inversion {
             get {

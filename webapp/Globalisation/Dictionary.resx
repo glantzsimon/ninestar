@@ -266,7 +266,7 @@
     <value>Lake</value>
   </data>
   <data name="MainEnergyLabel" xml:space="preserve">
-    <value>Core Nature</value>
+    <value>Constitution</value>
   </data>
   <data name="Male" xml:space="preserve">
     <value>Male</value>
@@ -371,7 +371,7 @@
     <value>Youngest Son</value>
   </data>
   <data name="MainEnergy" xml:space="preserve">
-    <value>Core Nature</value>
+    <value>Constitution</value>
   </data>
   <data name="Trigram" xml:space="preserve">
     <value>Trigram</value>
@@ -581,10 +581,10 @@
     <value>Social Expression</value>
   </data>
   <data name="MainChildLabel" xml:space="preserve">
-    <value>Core Nature</value>
+    <value>Constitution</value>
   </data>
   <data name="MainEnergyShortLabel" xml:space="preserve">
-    <value>Core Nature</value>
+    <value>Constitution</value>
   </data>
   <data name="MoreDetails" xml:space="preserve">
     <value>More Details</value>

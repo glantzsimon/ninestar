@@ -500,9 +500,9 @@ components:
           $ref: "#/components/schemas/PersonModel"
         GenerationEnergy:
           $ref: "#/components/schemas/EnergySummary"
-        SolarEnergy:
+        CoreEnergy:
           $ref: "#/components/schemas/EnergySummary"
-        LunarEnergy:
+        CharacterEnergy:
           $ref: "#/components/schemas/EnergySummary"
         SocialExpressionEnergy:
           $ref: "#/components/schemas/EnergySummary"

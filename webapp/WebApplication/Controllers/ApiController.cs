@@ -61,8 +61,8 @@ namespace K9.WebApplication.Controllers
                     {
                         model.PersonModel,
                         GenerationEnergy = new NineStarKiEnergySummary(model.PersonalChartEnergies.Generation),
-                        SolarEnergy = new NineStarKiEnergySummary(model.MainEnergy),
-                        LunarEnergy = new NineStarKiEnergySummary(model.CharacterEnergy),
+                        CoreEnergy = new NineStarKiEnergySummary(model.MainEnergy),
+                        CharacterEnergy = new NineStarKiEnergySummary(model.CharacterEnergy),
                         SocialExpressionEnergy = new NineStarKiEnergySummary(model.SurfaceEnergy),
                         DayStarEnergy = new NineStarKiEnergySummary(model.PersonalChartEnergies.Day),
 

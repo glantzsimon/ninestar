@@ -55,16 +55,23 @@
                 {
                     Label = ""
                 })
-
-                @Html.CheckBoxFor(model => model.InvertDailyAndHourlyCycleKiForSouthernHemisphere)
-                <label>@Dictionary.InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel</label>
-                <p class="hint">@Dictionary.OptionalForSouthernHemisphere</p>
             }
 
-            @Html.CheckBoxFor(model => model.InvertDailyAndHourlyKiForSouthernHemisphere)
-            <label>@Dictionary.InvertDailyAndHourlyKiForSouthernHemisphereLabel</label>
-            <p class="hint">@Dictionary.OptionalForSouthernHemisphere</p>
+            <hr />
+            <label>@Dictionary.SouthernHemisphereOptions</label>
+            <a target="_blank" href="@Url.Action("SouthernHemisphere", "Home")"><i class="fa fa-question-circle"></i></a>
+            <br />
 
+            @if (Model.IsPredictionsScreen)
+            {
+                @Html.CheckBoxFor(model => model.InvertDailyAndHourlyCycleKiForSouthernHemisphere)
+                <label>@Dictionary.InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel</label>
+            }
+            else
+            {
+                @Html.CheckBoxFor(model => model.InvertDailyAndHourlyKiForSouthernHemisphere)
+                <label>@Dictionary.InvertDailyAndHourlyKiForSouthernHemisphereLabel</label>
+            }
         </div>
     }
 

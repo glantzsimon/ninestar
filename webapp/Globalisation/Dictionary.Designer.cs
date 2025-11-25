@@ -11924,7 +11924,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invert Daily Ki for Predictions.
+        ///   Looks up a localized string similar to Invert Daily Ki.
         /// </summary>
         public static string InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel {
             get {
@@ -11933,7 +11933,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invert Daily Ki for Personal Charts.
+        ///   Looks up a localized string similar to Invert Daily Ki.
         /// </summary>
         public static string InvertDailyAndHourlyKiForSouthernHemisphereLabel {
             get {
@@ -20477,6 +20477,37 @@ namespace K9.Globalisation {
         public static string SouthEast {
             get {
                 return ResourceManager.GetString("SouthEast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;margin-top-0&quot;&gt;
+        ///    Inversion of the daily and hourly Ki for the Southern Hemisphere
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;p&gt;Traditionally, 9 Star Ki and Feng Shui practitioners use the same ascending and descending ki for both hemispheres. However, at 9starkiastrology.com we believe that, whether the daily or hourly Ki ascends or descends, depends on seasonal contraction and expansion of energies, which is hemisphere specific. However, in order to respect those who disagree with this position, we give you the option. If y [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string southern_hemisphere_dailyki_inversion {
+            get {
+                return ResourceManager.GetString("southern_hemisphere_dailyki_inversion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Southern Hemisphere Daily Ki.
+        /// </summary>
+        public static string SouthernHemisphereInversionOfDailyKi {
+            get {
+                return ResourceManager.GetString("SouthernHemisphereInversionOfDailyKi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options for Southern Hemisphere Only.
+        /// </summary>
+        public static string SouthernHemisphereOptions {
+            get {
+                return ResourceManager.GetString("SouthernHemisphereOptions", resourceCulture);
             }
         }
         

@@ -60,6 +60,13 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("southern-hemisphere")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
+        public ActionResult SouthernHemisphere()
+        {
+            return View();
+        }
+
         public override string GetObjectName()
         {
             return string.Empty;

@@ -4769,10 +4769,10 @@
     <value>predictions\hour\en-gb\heaven-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel" xml:space="preserve">
-    <value>Invert Daily Ki for Predictions</value>
+    <value>Invert Daily Ki</value>
   </data>
   <data name="InvertDailyAndHourlyKiForSouthernHemisphereLabel" xml:space="preserve">
-    <value>Invert Daily Ki for Personal Charts</value>
+    <value>Invert Daily Ki</value>
   </data>
   <data name="lake_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\hour\en-gb\lake-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -6811,6 +6811,15 @@
   </data>
   <data name="DisplaySecondaryHouses" xml:space="preserve">
     <value>Display Secondary Houses</value>
+  </data>
+  <data name="SouthernHemisphereInversionOfDailyKi" xml:space="preserve">
+    <value>Southern Hemisphere Daily Ki</value>
+  </data>
+  <data name="SouthernHemisphereOptions" xml:space="preserve">
+    <value>Options for Southern Hemisphere Only</value>
+  </data>
+  <data name="southern_hemisphere_dailyki_inversion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\southern-hemisphere-dailyki-inversion.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="TimeOfBirthKnownLabel" xml:space="preserve">
     <value>I know the time of birth</value>

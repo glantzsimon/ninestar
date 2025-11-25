@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Articles\en-gb\AdultChildRelationship.htm" />
+    <Content Include="Articles\en-gb\southern-hemisphere-dailyki-inversion.htm" />
     <Content Include="Articles\en-gb\globalki-display-warning.htm" />
     <Content Include="Articles\en-gb\calculation-methods.htm" />
     <Content Include="Articles\en-gb\holograhpic-spirals.htm" />

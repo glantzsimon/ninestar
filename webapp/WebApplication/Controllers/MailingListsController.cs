@@ -80,10 +80,11 @@ namespace K9.WebApplication.Controllers
 
             try
             {
+
+
                 var mailingList = GetMailingList(id, sqlQuery);
                 return PartialView("_SelectUsersTable", new MailingListViewModel
                 {
-                    SqlQuery = sqlQuery,
                     MailingList = mailingList
                 });
             }
@@ -137,10 +138,16 @@ namespace K9.WebApplication.Controllers
                 throw new NotFoundException();
             }
 
+            if (!string.IsNullOrEmpty(sqlQuery))
+            {
+                mailingList.SqlQuery = sqlQuery;
+                Repository.Update(mailingList);
+            }
+
             var mailingListUserIds = _mailingListUsersRepository.Find(e => e.MailingListId == id).Select(e => e.UserId).ToList();
-            var usersToDisplay = string.IsNullOrEmpty(sqlQuery)
+            var usersToDisplay = string.IsNullOrEmpty(mailingList.SqlQuery)
                 ? new List<User>()
-                : My.UsersRepository.GetQuery(sqlQuery);
+                : My.UsersRepository.GetQuery(mailingList.SqlQuery);
 
             usersToDisplay.ForEach(e => e.IsSelected = mailingListUserIds.Contains(e.Id));
             mailingList.Users = usersToDisplay;

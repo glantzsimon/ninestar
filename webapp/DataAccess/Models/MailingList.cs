@@ -22,5 +22,8 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Base.Globalisation.Dictionary), Name = Base.Globalisation.Strings.Labels.DescriptionLabel)]
         [StringLength(128)]
         public string Details { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SqlQueryLabel)]
+        public string SqlQuery { get; set; }
     }
 }

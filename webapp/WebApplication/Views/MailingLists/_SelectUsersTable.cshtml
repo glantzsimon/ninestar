@@ -5,6 +5,7 @@
 {
     <div class="row table-row">
         <div class="col-xs-1">
+            @Html.CheckBox("SelectAll", false, new { id = "selectAllUsers" })
         </div>
         <div class="col-xs-6">
             <strong>@Html.LabelFor(e => Model.MailingList.Users[0].FullName)</strong>
@@ -22,7 +23,10 @@
 
         <div class="row table-row data-row">
             <div class="col-xs-1">
-                @Html.CheckBoxFor(e => Model.MailingList.Users[i].IsSelected)
+                @Html.CheckBoxFor(
+                    m => m.MailingList.Users[i].IsSelected,
+                    new { @class = "user-select-checkbox" }
+                    )
             </div>
             <div class="col-xs-6">
                 @Html.ValueFor(e => Model.MailingList.Users[i].FullName)
@@ -33,3 +37,22 @@
         </div>
     }
 }
+
+<script>
+
+    $(document).ready(function () {
+        // When "Select all" is toggled
+        $('#selectAllUsers').on('change', function () {
+            var isChecked = $(this).is(':checked');
+            $('.user-select-checkbox').prop('checked', isChecked);
+        });
+
+        // Keep "Select all" in sync when user ticks/unticks individual rows
+        $('.user-select-checkbox').on('change', function () {
+            var total = $('.user-select-checkbox').length;
+            var checked = $('.user-select-checkbox:checked').length;
+            $('#selectAllUsers').prop('checked', total > 0 && total === checked);
+        });
+    });
+
+</script>

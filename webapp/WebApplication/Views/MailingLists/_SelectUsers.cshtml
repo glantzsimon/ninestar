@@ -5,7 +5,7 @@
 {
     <div class="sql-container">
         <label for="sqlQuery" class="form-label">Enter SQL Query:</label>
-        <textarea id="sqlQuery" class="form-control sql-textarea" placeholder="SELECT * FROM [User];"></textarea>
+        <textarea id="sqlQuery" class="form-control sql-textarea" placeholder="SELECT * FROM [User];">@Model.MailingList.SqlQuery</textarea>
 
         <button id="run-query-button" type="button" class="btn btn-primary">Run Query</button>
     </div>
@@ -13,7 +13,7 @@
     <hr />
 
     <div id="users-results-table">
-        @Html.Action("SelectUsersTable", new { id = Model.MailingList.Id, sqlQuery = Model.SqlQuery })
+        @Html.Action("SelectUsersTable", new { id = Model.MailingList.Id, sqlQuery = Model.MailingList.SqlQuery })
     </div>
 }
 

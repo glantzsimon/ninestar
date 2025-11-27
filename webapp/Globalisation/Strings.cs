@@ -178,6 +178,8 @@
             public const string IsSendMembershipUpgradeRemindersLabel = "IsSendMembershipUpgradeRemindersLabel";
             public const string IsPausedEmailJobQueueLabel = "IsPausedEmailJobQueueLabel";
             public const string IsEnabledAlchemyLabel = "IsEnabledAlchemyLabel";
+            
+            public const string SqlQueryLabel = "SqlQueryLabel";
         }
 
         public static class Names

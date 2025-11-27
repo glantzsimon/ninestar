@@ -129,7 +129,7 @@ a > .ninestar-summary-container:hover {
   filter: grayscale(100%);
 }
 .energy-image-container {
-  width: 160px;
+  width: 100%;
   display: table;
   margin: auto;
 }

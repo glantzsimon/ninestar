@@ -6824,4 +6824,7 @@
   <data name="TimeOfBirthKnownLabel" xml:space="preserve">
     <value>I know the time of birth</value>
   </data>
+  <data name="SqlQueryLabel" xml:space="preserve">
+    <value>SQL Query</value>
+  </data>
 </root>

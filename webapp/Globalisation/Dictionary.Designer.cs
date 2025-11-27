@@ -14883,13 +14883,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Core Nature — Our Essential Constitution &amp; Energetic Foundation
+        ///    Constitution — Our Core Energy &amp; Energetic Foundation
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Core Energy represents our &lt;strong&gt;core nature&lt;/strong&gt;—the energetic foundation of our adult self. Sometimes referred to as the Main Energy or Principal Ki, it begins to express more fully around the age of 18, after we’ve completed two full nine-year cycles. From that point onward, it becomes the dominant influence in our lives, shaping our worldview, decisions, and identity.
+        ///    The Core Energy represents our &lt;strong&gt;constitution&lt;/strong&gt;—the energetic foundation of our adult self. Sometimes referred to as the Main Energy or Principal Ki, it begins to express more fully around the age of 18, after we’ve completed two full nine-year cycles. From that point onward, it becomes the dominant influence in our lives, shaping our worldview, decisions, and identity.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It has  [rest of string was truncated]&quot;;.
+        ///    It has a powerfu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MainEnergyDescription {
             get {
@@ -20752,6 +20752,15 @@ namespace K9.Globalisation {
         public static string Sprouting {
             get {
                 return ResourceManager.GetString("Sprouting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQL Query.
+        /// </summary>
+        public static string SqlQueryLabel {
+            get {
+                return ResourceManager.GetString("SqlQueryLabel", resourceCulture);
             }
         }
         

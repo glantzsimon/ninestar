@@ -25161,6 +25161,30 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate a printable 9 Star Ki Astrology report for the following person:
+        ///
+        ///- Name
+        ///- Gender
+        ///- Birthdate
+        ///- Main Energy
+        ///- Character Energy
+        ///- Social Energy
+        ///- Day Star
+        ///- Yearly Energy 
+        ///
+        ///Note: &apos;Yearly Energy&apos; = current year (as of Feb 5th) if today &lt;= June 30th OR upcoming year (as of next Feb 5th)  if &gt;= July 1st
+        ///
+        ///Note: {Year} is a placeholder for the year of &apos;Yearly Energy&apos;
+        ///
+        ///Please return the report as clean HTML suitable for generating a PDF. Use &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt; for section headers and &lt;table&gt;  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string yearly_report {
+            get {
+                return ResourceManager.GetString("yearly_report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yearly &amp; Monthly Predictions.
         /// </summary>
         public static string YearlyAndMonthlyCycles {

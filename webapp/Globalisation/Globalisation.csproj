@@ -500,6 +500,7 @@
     <Content Include="GlobalPredictions\Hour\en-gb\global-thunder-hour-cycle.htm" />
     <Content Include="GlobalPredictions\Hour\en-gb\global-water-hour-cycle.htm" />
     <Content Include="GlobalPredictions\Hour\en-gb\global-wind-hour-cycle.htm" />
+    <Content Include="OpenAi\en-gb\Requests\yearly-report.txt" />
     <Content Include="Numerology\en-gb\articles\daily-karmic-influences.htm" />
     <Content Include="Numerology\en-gb\articles\twelve-month-outlook.htm" />
     <Content Include="Numerology\en-gb\articles\twelve-year-outlook.htm" />

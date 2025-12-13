@@ -1,0 +1,47 @@
+﻿Generate a printable 9 Star Ki Astrology report using the data points provided below.
+
+Please return the report as clean HTML suitable for generating a PDF. Use <h1>, <h2>, <h3> for section headers and <table> for data. Make it elegant but simple – no JavaScript, images, or CSS classes. Inline styling is okay but keep it minimal.
+
+---
+
+##SECTIONS##
+
+Include the following sections in the report (data points will be provided below see ##DATA##):
+
+1. Cover title (e.g. "Your 9 Star Ki Annual Energy Guide – 2026 Edition")
+2. Personal Chart Summary (as a table) 
+3. Yearly Forecast – {Year}:
+   - Theme
+   - Best for
+   - Watch out for
+   - Health
+   - Ideal and Inauspicious travel directions
+4. Month-by-Month Table – {Year}:
+   - Monthly Energy
+   - Theme
+   - Good For
+   - Caution
+   - Ideal and Inauspicious travel directions
+5. 9-Year Cycle Table (Current Year - Current Year + 9)
+
+##DATA##
+
+2. Personal Chart Summary:
+Name: {FullName}
+Gender: {Gender}
+Date of Birth: {DateOfBirth}
+Constitution: {MainEnergy}
+Character: {CharacterEnergy}
+Social Expression: {SurfaceEnergy}
+Day Star: {DayStar}
+Yearly Energy: {YearlyKi} ({YearStartsOn} - {YearEndsOn})
+
+-
+
+3. Yearly Forecast
+
+---
+
+Ensure the HTML is complete and clean, using proper semantic structure.
+
+Do not include any Markdown or triple backticks. Only return HTML.

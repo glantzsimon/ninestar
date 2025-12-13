@@ -9,14 +9,13 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web.Script.Serialization;
 
 namespace K9.WebApplication.Models
 {
 
-    public class NineStarKiModel : CachableBase
+    public class NineStarKiModel : CachableBase, IValidatableObject
     {
         #region Options and Flags
 
@@ -315,8 +314,6 @@ namespace K9.WebApplication.Models
         public EDisplayDataForPeriod DisplayDataForPeriod { get; set; }
 
         [UIHint("TimeZone")]
-        [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary),
-            ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UserTimeZone)]
         public string UserTimeZoneId { get; set; }
 
@@ -1515,5 +1512,12 @@ namespace K9.WebApplication.Models
             }, TimeSpan.FromDays(30));
         }
 
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (DisplayDataForPeriod == EDisplayDataForPeriod.SelectedDate && string.IsNullOrEmpty(UserTimeZoneId))
+            {
+                yield return new ValidationResult(Base.Globalisation.Strings.ErrorMessages.FieldIsRequired, new[] { "UserTimeZoneId" });
+            }
+        }
     }
 }

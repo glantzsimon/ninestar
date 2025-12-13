@@ -15,13 +15,13 @@ namespace K9.WebApplication.Services
     public class NineStarKiService : BaseService, INineStarKiService
     {
         private readonly IAstronomyService _astronomyService;
-        private readonly IAITextMergeService _textMergeService;
+        private readonly IAIService AIService;
         private readonly IAstrologyService _astrologyService;
 
-        public NineStarKiService(INineStarKiBasePackage my, IAstronomyService astronomyService, IAITextMergeService textMergeService, IAstrologyService astrologyService) : base(my)
+        public NineStarKiService(INineStarKiBasePackage my, IAstronomyService astronomyService, IAIService aiService, IAstrologyService astrologyService) : base(my)
         {
             _astronomyService = astronomyService;
-            _textMergeService = textMergeService;
+            AIService = aiService;
             _astrologyService = astrologyService;
         }
 
@@ -80,8 +80,8 @@ namespace K9.WebApplication.Services
                 })
             };
 
-            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge);
-            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge);
+            model.AlchemisedSummary = await AIService.MergeTextsIntoSummaryAsync(textToMerge);
+            model.AlchemisedDescription = await AIService.MergeTextsAsync(textToMerge);
             model.AIMergedProfileTextIsSet = true;
 
             return model;
@@ -109,8 +109,8 @@ namespace K9.WebApplication.Services
                 })
             };
 
-            model.AlchemisedSummary = await _textMergeService.MergeTextsIntoSummaryAsync(textToMerge);
-            model.AlchemisedDescription = await _textMergeService.MergeTextsAsync(textToMerge);
+            model.AlchemisedSummary = await AIService.MergeTextsIntoSummaryAsync(textToMerge);
+            model.AlchemisedDescription = await AIService.MergeTextsAsync(textToMerge);
             model.AIMergedProfileTextIsSet = true;
 
             return model;

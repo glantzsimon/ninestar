@@ -5,10 +5,15 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System;
+using K9.Base.WebApplication.Extensions;
+using K9.Globalisation;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Services
 {
-    public class AITextMergeService : BaseService, IAITextMergeService
+    public class AIService : BaseService, IAIService
     {
         private const string ElegantTone = "elegant and refined, yet succinct,";
 
@@ -31,7 +36,7 @@ namespace K9.WebApplication.Services
         private readonly string _model;
         private readonly string _endpoint;
 
-        public AITextMergeService(INineStarKiBasePackage my) : base(my)
+        public AIService(INineStarKiBasePackage my) : base(my)
         {
             _httpClient = new HttpClient();
             _apiKey = My.ApiConfiguration.OpenAIApiKey;
@@ -39,6 +44,13 @@ namespace K9.WebApplication.Services
             _endpoint = My.ApiConfiguration.OpenApiEndpoint;
 
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
+        }
+
+        public async Task<string> GetYearlyReport(DateTime dateOfBirth, int year)
+        {
+            var prompt =
+                "Blend the following texts into a clear, well-organized passage using only <h5> and <p> HTML tags.";
+            return await ProcessRequest(prompt);
         }
 
         public async Task<string> MergeTextsAsync((string theme, string[] texts)[] groups, string extraPrompt = null)
@@ -57,6 +69,25 @@ namespace K9.WebApplication.Services
                 groups
             );
             return await ProcessRequest(prompt);
+        }
+
+        private static string GetYearlyReportPrompt(NineStarKiModel model)
+        {
+            var person = model.PersonModel;
+            var yearPlannerData = model.GetYearlyPlanner();
+
+            return TemplateParser.Parse(Dictionary.yearly_report, new
+            {
+                Year = yearPlannerData,
+                person.Name,
+                person.Gender,
+                DateOfBirth = person.DateOfBirth.ToLocalDateString(),
+                MainEnergy = model.MainEnergy.EnergyNameNumberAndElement,
+                CharacterEnergy = model.CharacterEnergy.EnergyNameNumberAndElement,
+                SurfaceEnergy = model.SurfaceEnergy.EnergyNameNumberAndElement,
+                DayStar = model.PersonalChartEnergies.Day.EnergyNameNumberAndElement,
+                YearlyKi = model.PersonalHousesOccupiedEnergies.Year.CycleDescriptiveName
+            });
         }
 
         private static string GetPrompt(string intro, (string theme, string[] texts)[] groups)

@@ -30,7 +30,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             var basePackage = new Mock<INineStarKiBasePackage>();
             basePackage.SetupGet(e => e.Authentication).Returns(mockAuthentication.Object);
 
-            var aiTextMergeService = new Mock<IAITextMergeService>();
+            var aiTextMergeService = new Mock<IAIService>();
 
             var astrologyService = new Mock<IAstrologyService>();
 

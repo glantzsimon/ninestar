@@ -67,6 +67,8 @@ namespace K9.WebApplication.Controllers
                 return RedirectToRoutePermanent("Default", new { controller = "Blog", action = "Details", id, slug = correctSlug });
             }
 
+            UpdateViewCount(id);
+
             return View(article);
         }
 
@@ -246,6 +248,18 @@ namespace K9.WebApplication.Controllers
         public override string GetObjectName()
         {
             return string.Empty;
+        }
+
+        private void UpdateViewCount(int id)
+        {
+            try
+            {
+                _articlesService.CreateArticleComment(comment);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e.GetFullErrorMessage());
+            }
         }
     }
 }

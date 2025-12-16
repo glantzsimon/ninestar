@@ -188,6 +188,7 @@
     <Content Include="BirthMonth\en-gb\Sameness\sameness-medium.htm" />
     <Content Include="BirthMonth\en-gb\Sameness\sameness-very-high.htm" />
     <Content Include="BirthMonth\en-gb\Sameness\sameness-very-low.htm" />
+    <Content Include="EmailTemplates\en-gb\ToNineStar\ArticleViewedEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToNineStar\LikeReceivedEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToNineStar\CommentReceivedEmail.htm" />
     <Content Include="Energies\General\en-gb\EpochEnergyDescription.htm" />

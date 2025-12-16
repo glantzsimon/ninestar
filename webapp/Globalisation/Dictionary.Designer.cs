@@ -3184,6 +3184,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
+        ///&lt;p&gt;We have received a new &apos;like&apos; from {Customer} ({CustomerEmail}). The article in question is &apos;{ArticleName}&apos;:&lt;/p&gt;
+        ///&lt;p&gt;View the article &lt;a href=&quot;{LinkToArticle}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+        ///&lt;p&gt;Moderate the comment &lt;a href=&quot;{LinkToModerate}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
+        /// </summary>
+        public static string ArticleViewedEmail {
+            get {
+                return ResourceManager.GetString("ArticleViewedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assign Credits.
         /// </summary>
         public static string AssignCredits {
@@ -23467,6 +23479,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Viewed On.
+        /// </summary>
+        public static string ViewedOn {
+            get {
+                return ResourceManager.GetString("ViewedOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View.
         /// </summary>
         public static string ViewLabel {
@@ -25161,22 +25182,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generate a printable 9 Star Ki Astrology report for the following person:
+        ///   Looks up a localized string similar to Generate a printable 9 Star Ki Astrology report using the data points provided below.
         ///
-        ///- Name
-        ///- Gender
-        ///- Birthdate
-        ///- Main Energy
-        ///- Character Energy
-        ///- Social Energy
-        ///- Day Star
-        ///- Yearly Energy 
+        ///Please return the report as clean HTML suitable for generating a PDF. Use &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt; for section headers and &lt;table&gt; for data. Make it elegant but simple – no JavaScript, images, or CSS classes. Inline styling is okay but keep it minimal.
         ///
-        ///Note: &apos;Yearly Energy&apos; = current year (as of Feb 5th) if today &lt;= June 30th OR upcoming year (as of next Feb 5th)  if &gt;= July 1st
+        ///---
         ///
-        ///Note: {Year} is a placeholder for the year of &apos;Yearly Energy&apos;
+        ///##SECTIONS##
         ///
-        ///Please return the report as clean HTML suitable for generating a PDF. Use &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt; for section headers and &lt;table&gt;  [rest of string was truncated]&quot;;.
+        ///Include the following sections in the report (data points will be provided below see ##DATA##):
+        ///
+        ///1. Cover title (e.g. &quot;Your 9 Star Ki Annual Energy Gu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string yearly_report {
             get {

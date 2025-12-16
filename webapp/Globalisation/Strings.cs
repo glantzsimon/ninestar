@@ -242,8 +242,11 @@
             public const string ArticleTags = "ArticleTags";
             public const string Comment = "Comment";
             public const string PostedOn = "PostedOn";
+            public const string ViewedOn = "ViewedOn";
             public const string ArticleComment = "ArticleComment";
             public const string ArticleComments = "ArticleComments";
+            public const string ArticleView = "ArticleView";
+            public const string ArticleViews = "ArticleViews";
             public const string Like = "Like";
             public const string Likes = "Likes";
             public const string UserInfos = "UserInfos";

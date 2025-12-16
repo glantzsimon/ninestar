@@ -22,18 +22,20 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Tag> _tagsRepository;
         private readonly IRepository<ArticleTag> _articleTagsRepository;
         private readonly IRepository<ArticleComment> _articleCommentsRepository;
+        private readonly IRepository<ArticleView> _articleViewsRepository;
         private readonly IRepository<UserInfo> _userInfosRepository;
         private readonly IRepository<Like> _likesRepository;
         private readonly IEmailTemplateService _emailTemplateService;
         private readonly IUserService _userService;
 
-        public ArticlesService(INineStarKiBasePackage my, IRepository<Article> articlesRepository, IRepository<Tag> tagsRepository, IRepository<ArticleTag> articleTagsRepository, IRepository<ArticleComment> articleCommentsRepository, IRepository<UserInfo> userInfosRepository, IRepository<Like> likesRepository, IEmailTemplateService emailTemplateService, IUserService userService)
+        public ArticlesService(INineStarKiBasePackage my, IRepository<Article> articlesRepository, IRepository<Tag> tagsRepository, IRepository<ArticleTag> articleTagsRepository, IRepository<ArticleComment> articleCommentsRepository, IRepository<ArticleView> articleViewsRepository, IRepository<UserInfo> userInfosRepository, IRepository<Like> likesRepository, IEmailTemplateService emailTemplateService, IUserService userService)
             : base(my)
         {
             _articlesRepository = articlesRepository;
             _tagsRepository = tagsRepository;
             _articleTagsRepository = articleTagsRepository;
             _articleCommentsRepository = articleCommentsRepository;
+            _articleViewsRepository = articleViewsRepository;
             _userInfosRepository = userInfosRepository;
             _likesRepository = likesRepository;
             _emailTemplateService = emailTemplateService;
@@ -52,6 +54,9 @@ namespace K9.WebApplication.Services
                 article.LikeCount =
                     _likesRepository.GetCount(
                         $"WHERE [{nameof(Like.ArticleId)}] = {id} AND [{nameof(Like.ArticleCommentId)}] IS NULL");
+                article.ViewCount =
+                    _articleViewsRepository.GetCount(
+                        $"WHERE [{nameof(Like.ArticleId)}] = {id}");
                 article.IsLikedByCurrentUser = _likesRepository.Exists(e =>
                     e.ArticleId == id && e.UserId == Current.UserId);
             }
@@ -180,6 +185,22 @@ namespace K9.WebApplication.Services
             _articleCommentsRepository.Create(comment);
             var user = My.UsersRepository.Find(comment.UserId);
             SendEmailToNineStar(comment, user);
+        }
+
+        public void CreateArticleView(int id)
+        {
+            var article = GetArticle(id);
+            if (article != null)
+            {
+
+                _articleViewsRepository.Create(new ArticleView
+                {
+                    ArticleId = id,
+                    UserId = Current.UserId,
+                    ViewedOn = DateTime.UtcNow
+                });
+                SendEmailToNineStarAboutView(article);
+            }
         }
 
         public void DeleteComment(int id)
@@ -366,6 +387,36 @@ namespace K9.WebApplication.Services
                     ArticleName = article.Title,
                     LinkToArticle = My.UrlHelper.AbsoluteAction("View", "Blog", new { id = article.Id }),
                     LinkToModerate = My.UrlHelper.AbsoluteAction("Dashboard", "Blog"),
+                });
+
+            try
+            {
+                My.Mailer.SendEmail(
+                    subject,
+                    body,
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
+        }
+
+        private void SendEmailToNineStarAboutView(Article article)
+        {
+            var subject = "A customer has viewed an article";
+            var body = _emailTemplateService.Parse(
+                subject,
+                Dictionary.ArticleViewedEmail,
+                "Anonymous",
+                My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = "" }),
+                new
+                {
+                    Customer = "Anonymous",
+                    CustomerEmail = My.WebsiteConfiguration.SupportEmailAddress,
+                    ArticleName = article.Title,
+                    LinkToArticle = My.UrlHelper.AbsoluteAction("View", "Blog", new { id = article.Id })
                 });
 
             try

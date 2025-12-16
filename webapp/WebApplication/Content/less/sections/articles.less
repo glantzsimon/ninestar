@@ -256,7 +256,7 @@
         gap: 12px;
         margin-top: 5px;
 
-        .comment-icon {
+        .comment-icon, view-icon {
             cursor: pointer;
             display: inline-flex;
             align-items: center;
@@ -276,6 +276,14 @@
             &.disabled {
                 cursor: not-allowed;
                 opacity: 0.5;
+            }
+        }
+
+        .view-icon {
+            cursor: default !important;
+
+            &:hover i {
+                transform: none !important;
             }
         }
 

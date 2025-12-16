@@ -102,12 +102,7 @@ namespace K9.WebApplication.Services
             return Parse(template, recipientFirstName, unsubscribeLink, data);
         }
 
-        private string Parse(EmailTemplate emailTemplate, string recipientFirstName, string unsubscribeLink, object data)
-        {
-            return Parse(emailTemplate.Subject, emailTemplate.HtmlBody, recipientFirstName, unsubscribeLink, data);
-        }
-
-        private string Parse(string title, string body, string recipientFirstName, string unsubscribeLink, object data)
+        public string Parse(string title, string body, string recipientFirstName, string unsubscribeLink, object data)
         {
             if (string.IsNullOrEmpty(title))
             {
@@ -141,7 +136,7 @@ namespace K9.WebApplication.Services
                 Title = title,
                 Body = body,
                 PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy",
-                "Home"),
+                    "Home"),
                 TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
                 UnsubscribeLink = unsubscribeLink,
                 DateTime.Now.Year,
@@ -151,6 +146,11 @@ namespace K9.WebApplication.Services
                 HeaderImageSrc = $"{My.DefaultValuesConfiguration.BaseEmailTemplateImagesPath}/emailtemplates/email-template-header.jpg",
                 CompanyLogoSrc = $"{My.DefaultValuesConfiguration.BaseEmailTemplateImagesPath}/company/logo-small.png",
             });
+        }
+
+        private string Parse(EmailTemplate emailTemplate, string recipientFirstName, string unsubscribeLink, object data)
+        {
+            return Parse(emailTemplate.Subject, emailTemplate.HtmlBody, recipientFirstName, unsubscribeLink, data);
         }
 
         private static string ExpandInlineImages(string body)

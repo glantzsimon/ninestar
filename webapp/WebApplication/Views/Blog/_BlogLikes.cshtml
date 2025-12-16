@@ -5,25 +5,28 @@
 @model Article
 
 <div class="comment-section likes-section" id="likesContainer">
-    @if (WebSecurity.IsAuthenticated)
-    {
-        <div class="comment-actions">
+
+    <div class="comment-actions">
+        @if (WebSecurity.IsAuthenticated)
+        {
             <span class="comment-icon btn-like-comment @(Model.IsLikedByCurrentUser ? "liked" : "notliked")"
                   data-article-id="@Model.Id" role="button" title="Like">
                 <i class="fa fa-heart @(Model.IsLikedByCurrentUser ? "text-danger" : "text-muted")"></i>
             </span>
             <small class="like-summary text-muted">@Model.LikeSummary</small>
-        </div>
-    }
-    else
-    {
-        <div class="comment-actions">
+        }
+        else
+        {
             <span class="comment-icon disabled" title="@Dictionary.LogInToLike">
                 <i class="fa fa-heart text-muted"></i>
             </span>
             <span class="like-count text-muted">@Model.LikeCount</span>
-        </div>
-    }
+        }
+        <span class="view-icon">
+            <i class="fa fa-eye text-muted"></i>
+        </span>
+        <span class="like-count text-muted">@Model.ViewCount</span>
+    </div>
 </div>
 
 <script>
@@ -34,7 +37,7 @@
             const $heart = $btn.find("i");
             const articleId = $btn.data('article-id');
             const $summary = $btn.closest(".comment-actions").find('.like-summary')
-     
+
             $.post('@Url.Action("ToggleCommentLike", "Blog")', { articleId }, function (res) {
                 if (res.success) {
                     $summary.text(res.likeSummary);

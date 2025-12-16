@@ -12,6 +12,9 @@ namespace K9.DataAccessLayer.Models
         public int LikeCount { get; set; }
 
         [NotMapped]
+        public int ViewCount { get; set; }
+
+        [NotMapped]
         public bool IsLikedByCurrentUser { get; set; }
 
         public string LikeSummary

@@ -290,24 +290,34 @@
   gap: 12px;
   margin-top: 5px;
 }
-.comment-section .comment-actions .comment-icon {
+.comment-section .comment-actions .comment-icon,
+.comment-section .comment-actions view-icon {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: #666666;
 }
-.comment-section .comment-actions .comment-icon i {
+.comment-section .comment-actions .comment-icon i,
+.comment-section .comment-actions view-icon i {
   margin: 0 !important;
   font-size: 1.1em;
   transition: transform 0.2s ease;
 }
-.comment-section .comment-actions .comment-icon:hover i {
+.comment-section .comment-actions .comment-icon:hover i,
+.comment-section .comment-actions view-icon:hover i {
   transform: scale(1.15);
 }
-.comment-section .comment-actions .comment-icon.disabled {
+.comment-section .comment-actions .comment-icon.disabled,
+.comment-section .comment-actions view-icon.disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+.comment-section .comment-actions .view-icon {
+  cursor: default !important;
+}
+.comment-section .comment-actions .view-icon:hover i {
+  transform: none !important;
 }
 .comment-section .comment-actions .like-count {
   font-size: 0.95em;

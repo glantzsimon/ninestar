@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Extensions;
 
 namespace K9.WebApplication.Services
 {
@@ -144,15 +145,17 @@ namespace K9.WebApplication.Services
                 {
                     userTimeZoneId = displayDataForPeriod == EDisplayDataForPeriod.Now ? "" : string.IsNullOrEmpty(userTimeZoneId) ? personModel.BirthTimeZoneId : userTimeZoneId;
 
-                    var preciseEightyOneYearEnergy =
+                    var preciseEightyOneYearCycleEnergy =
                         _astronomyService.GetNineStarKiEightyOneYearKi(selectedDateTime, userTimeZoneId);
-                    var preciseNineYearEnergy =
+                    var preciseNineYearCycleEnergy =
                         _astronomyService.GetNineStarKiNineYearKi(selectedDateTime, userTimeZoneId);
-                    var preciseYearEnergy =
+                    var preciseYearCycleEnergy =
                         _astronomyService.GetNineStarKiYearlyKi(selectedDateTime, userTimeZoneId);
-                    var preciseMonthEnergy =
+                    var preciseMonthCycleEnergy =
                         _astronomyService.GetNineStarKiMonthlyKi(selectedDateTime, userTimeZoneId);
-                    var preciseDailyEnergies =
+                    var preciseMonthCycleEnergyForInvertedYear =
+                        _astronomyService.GetNineStarKiMonthlyKi(selectedDateTime, userTimeZoneId, true);
+                    var preciseDailyCycleEnergies =
                         _astronomyService.GetNineStarKiDailyKis(selectedDateTime, userTimeZoneId);
                     var preciseHourlyCycleEnergy =
                         _astronomyService.GetNineStarKiHourlyKi(selectedDateTime, userTimeZoneId);
@@ -160,15 +163,15 @@ namespace K9.WebApplication.Services
                     model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy,
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
-                        preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy,
-                        preciseDailyEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod);
+                        preciseEightyOneYearCycleEnergy, preciseNineYearCycleEnergy, preciseYearCycleEnergy, preciseMonthCycleEnergy, preciseMonthCycleEnergyForInvertedYear,
+                        preciseDailyCycleEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod);
                 }
                 else
                 {
                     model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy,
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
-                        5, 5, 5, 5, new (int DailyKi, int? InvertedDailyKi)[] { (5, 5), (5, 5) }, 5, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod);
+                        5, 5, 5, 5, 5, new (int DailyKi, int? InvertedDailyKi)[] { (5, 5), (5, 5) }, 5, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod);
                 }
 
                 var moonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, true, model.MainEnergy);
@@ -664,17 +667,41 @@ namespace K9.WebApplication.Services
                             selectedDateTime = yearlyPeriod.PeriodStartsOn;
                         }
 
-                        var monthlyPeriodsForYear =
-                            _astronomyService.GetNineStarKiMonthlyPeriods(yearlyPeriod.PeriodStartsOn.AddDays(3), userTimeZoneId);
+                        var periodsStart = yearlyPeriod.PeriodStartsOn.AddDays(3);
+
+                        var needsInvertedMonthlyPeriods =
+                            display == EScopeDisplay.PersonalKi &&
+                            nineStarKiModel.CalculationMethod == ECalculationMethod.Chinese &&
+                            nineStarKiModel.PersonModel.Gender.IsYin();
+
+                        var monthlyPeriodsForYear = _astronomyService.GetNineStarKiMonthlyPeriods(
+                            periodsStart,
+                            userTimeZoneId,
+                            invert: needsInvertedMonthlyPeriods
+                        );
 
                         foreach (var monthlyPeriod in monthlyPeriodsForYear)
                         {
-                            var energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, ENineStarKiEnergyCycleType.MonthlyCycleEnergy) : nineStarKiModel.GetGlobalCycleEnergy(monthlyPeriod.MonthlyKi, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
+                            var energy = display == EScopeDisplay.PersonalKi
+                                ? nineStarKiModel.GetPersonalCycleEnergy(
+                                    monthlyPeriod.MonthlyKi,
+                                    ENineStarKiEnergyCycleType.MonthlyCycleEnergy
+                                )
+                                : nineStarKiModel.GetGlobalCycleEnergy(
+                                    monthlyPeriod.MonthlyKi,
+                                    ENineStarKiEnergyCycleType.MonthlyCycleEnergy
+                                );
 
-                            var isActive =
-                                localNow.Date.IsBetween(monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn);
+                            var isActive = localNow.Date.IsBetween(monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn);
 
-                            energies.Add(new PlannerViewModelItem(energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isActive, EPlannerView.Month));
+                            energies.Add(new PlannerViewModelItem(
+                                energy,
+                                energy,
+                                monthlyPeriod.PeriodStartsOn,
+                                monthlyPeriod.PeriodEndsOn,
+                                isActive,
+                                EPlannerView.Month
+                            ));
                         }
 
                         if (navigationDirection != EPlannerNavigationDirection.None)

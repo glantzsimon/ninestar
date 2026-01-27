@@ -254,7 +254,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                _articlesService.CreateArticleComment(comment);
+                _articlesService.CreateArticleView(id);
             }
             catch (Exception e)
             {

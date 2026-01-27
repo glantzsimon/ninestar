@@ -15,6 +15,7 @@ namespace K9.WebApplication.Services
         void CreateArticle(Article article);
         void DeleteArticle(int id);
         void CreateArticleComment(ArticleComment comment);
+        void CreateArticleView(int id);
         (int Count, bool ToggleState, string LikeSummary) ToggleLike(int articleId, int? articleCommentId = null);
         void DeleteComment(int id);
         void EditComment(int id, string comment);

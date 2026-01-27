@@ -109,7 +109,7 @@ namespace K9.WebApplication.Models
 
         public NineStarKiModel(PersonModel personModel, int precisePersonEpochEnergy, int precisePersonGenerationalEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseEmotionalEnergyForInvertedYear, int precisePersonalDayStarEnergy, int precisePersonalHourlyEnergy,
 
-            int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, (int DailyKi, int? InvertedDailyKi)[] preciseDailyCycleEnergies, int preciseHourlyCycleEnergy, DateTime? selectedDate = null,
+            int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseMonthlyCycleEnergyInverted, (int DailyKi, int? InvertedDailyKi)[] preciseDailyCycleEnergies, int preciseHourlyCycleEnergy, DateTime? selectedDate = null,
 
             ECalculationMethod calculationMethod = ECalculationMethod.Chinese, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string userTimeZoneId = "", EDisplayDataForPeriod displayDataForPeiod = EDisplayDataForPeriod.Now, MoonPhase moonPhase = null)
         {
@@ -142,6 +142,10 @@ namespace K9.WebApplication.Models
             precisePersonalHourlyEnergy = InvertDailyAndHourlyKiForSouthernHemisphere
                 ? GetOppositeEnergyInMagicSquare(precisePersonalHourlyEnergy)
                 : precisePersonalHourlyEnergy;
+
+            preciseMonthlyCycleEnergy = PersonModel.Gender.IsYin() && CalculationMethod == ECalculationMethod.Chinese
+                ? preciseMonthlyCycleEnergyInverted
+                : preciseMonthlyCycleEnergy;
 
             var preciseDailyCycleMorningEnergy = preciseDailyCycleEnergies[0].DailyKi;
             var preciseDailyCycleAfternoonEnergy = preciseDailyCycleEnergies[1].DailyKi;

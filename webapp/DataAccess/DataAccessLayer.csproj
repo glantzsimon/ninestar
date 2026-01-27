@@ -502,6 +502,10 @@
     <Compile Include="Migrations\202511270542544_MailingList_SqlQuery.designer.cs">
       <DependentUpon>202511270542544_MailingList_SqlQuery.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202512161533220_AddViewCount.cs" />
+    <Compile Include="Migrations\202512161533220_AddViewCount.designer.cs">
+      <DependentUpon>202512161533220_AddViewCount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ArticleView.cs" />
     <Compile Include="Models\BaseLikeable.cs" />
     <Compile Include="Models\Like.cs" />
@@ -740,6 +744,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202511270542544_MailingList_SqlQuery.resx">
       <DependentUpon>202511270542544_MailingList_SqlQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512161533220_AddViewCount.resx">
+      <DependentUpon>202512161533220_AddViewCount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

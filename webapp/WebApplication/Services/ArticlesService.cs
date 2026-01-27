@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using K9.SharedLibrary.Authentication;
 using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Services
@@ -196,7 +197,7 @@ namespace K9.WebApplication.Services
                 _articleViewsRepository.Create(new ArticleView
                 {
                     ArticleId = id,
-                    UserId = Current.UserId,
+                    UserId = Current.UserId > 0 ? Current.UserId : 1,
                     ViewedOn = DateTime.UtcNow
                 });
                 SendEmailToNineStarAboutView(article);

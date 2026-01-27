@@ -1,0 +1,18 @@
+﻿@using K9.WebApplication.Helpers
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+@RenderSection("printLayout")
+
+@section headerscripts {
+    @RenderSection("headerscripts", false)
+}
+@section scripts {
+    <script type="text/javascript">
+        $(window).on("load",
+            function () {
+                bootstrapControls().selectFirstFormInput();
+            });
+    </script>
+    @RenderSection("scripts", false)
+}

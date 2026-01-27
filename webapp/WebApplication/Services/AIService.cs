@@ -82,7 +82,7 @@ namespace K9.WebApplication.Services
                 Year = year,
                 YearPlusNine = year + 9,
 
-                personModel.Name,
+                FullName = personModel.Name,
                 personModel.Gender,
                 DateOfBirth = personModel.DateOfBirth.ToLocalDateString(),
                 MainEnergy = nineStarKiModel.MainEnergy.EnergyNameNumberAndElement,
@@ -96,6 +96,7 @@ namespace K9.WebApplication.Services
                 model.YearlyPlannerModel.PeriodEndsOn,
                 YearlyEnergy = model.NineStarKiModel.PersonalHousesOccupiedEnergies.Year.EnergyNameNumberAndElement,
                 YearlyTheme = model.NineStarKiModel.PersonalHousesOccupiedEnergies.Year.CycleDescription,
+                YearlyDirectionsData = model.NineStarKiModel.GetDrectionsChartViewModel().ToJson(),
 
                 PlannerDataJson = model.YearlyPlannerModel.ToJson()
             });

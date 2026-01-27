@@ -6836,4 +6836,7 @@
   <data name="ViewedOn" xml:space="preserve">
     <value>Viewed On</value>
   </data>
+  <data name="YearlyReport" xml:space="preserve">
+    <value>Yearly Report</value>
+  </data>
 </root>

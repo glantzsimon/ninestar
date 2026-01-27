@@ -723,6 +723,7 @@
     <Content Include="Images\astrology\moon-phases\wax-95.png" />
     <Content Include="Images\astrology\moon-phases\wax-98.png" />
     <Content Include="Images\astrology\moon-phases\wax-99.7.png" />
+    <Content Include="Images\background\bg-trans.png" />
     <Content Include="Images\background\stars.jpg" />
     <Content Include="Images\background\yin-yang.jpg" />
     <Content Include="Images\emailtemplates\custom\calculator.png" />
@@ -1825,6 +1826,9 @@
     <Content Include="Views\Predictions\_AdditionalCycles.cshtml" />
     <Content Include="Views\PersonalChart\MyProfile.cshtml" />
     <Content Include="Views\Home\SouthernHemisphere.cshtml" />
+    <Content Include="Views\Shared\_LayoutPrint.cshtml" />
+    <Content Include="Views\Shared\_LayoutPrintMaster.cshtml" />
+    <Content Include="Views\Predictions\YearlyReport.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

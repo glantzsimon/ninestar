@@ -329,7 +329,7 @@ namespace K9.WebApplication.Controllers
                 YearlyPlannerModel = plannerData
             });
 
-            return Content(report, "text/html");
+            return View(report);
         }
 
         private JsonResult PredictionsJsonResult(EScopeDisplay display, NineStarKiEnergy cycle, string moonPhaseHtml = "")

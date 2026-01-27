@@ -3185,9 +3185,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
-        ///&lt;p&gt;We have received a new &apos;like&apos; from {Customer} ({CustomerEmail}). The article in question is &apos;{ArticleName}&apos;:&lt;/p&gt;
-        ///&lt;p&gt;View the article &lt;a href=&quot;{LinkToArticle}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-        ///&lt;p&gt;Moderate the comment &lt;a href=&quot;{LinkToModerate}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
+        ///&lt;p&gt;Someone just viewed an article on the Blog page. The article in question is &apos;{ArticleName}&apos;:&lt;/p&gt;
+        ///&lt;p&gt;View the article &lt;a href=&quot;{LinkToArticle}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
         /// </summary>
         public static string ArticleViewedEmail {
             get {
@@ -25182,17 +25181,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generate a printable 9 Star Ki Astrology report using the data points provided below.
+        ///   Looks up a localized string similar to ##OVERVIEW##
         ///
-        ///Please return the report as clean HTML suitable for generating a PDF. Use &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt; for section headers and &lt;table&gt; for data. Make it elegant but simple – no JavaScript, images, or CSS classes. Inline styling is okay but keep it minimal.
+        ///Generate a printable 9 Star Ki Astrology report using the data points provided below.
         ///
-        ///---
+        ///Please return the report as clean HTML suitable for generating a PDF. Use &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt; for section headers and &lt;table&gt; for data. 
         ///
-        ///##SECTIONS##
+        ///Make it elegant but simple. The use of appropriate icons and color is recommended, but always stylish.
         ///
-        ///Include the following sections in the report (data points will be provided below see ##DATA##):
+        ///Ensure the HTML is complete and clean, using proper semantic structure.
         ///
-        ///1. Cover title (e.g. &quot;Your 9 Star Ki Annual Energy Gu [rest of string was truncated]&quot;;.
+        ///Do not include any Markdown or triple backticks. Only return HTML.
+        ///
+        ///Important Informati [rest of string was truncated]&quot;;.
         /// </summary>
         public static string yearly_report {
             get {
@@ -25278,6 +25279,15 @@ namespace K9.Globalisation {
         public static string YearlyPrediction {
             get {
                 return ResourceManager.GetString("YearlyPrediction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Report.
+        /// </summary>
+        public static string YearlyReport {
+            get {
+                return ResourceManager.GetString("YearlyReport", resourceCulture);
             }
         }
         

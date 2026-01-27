@@ -2,15 +2,15 @@
 
 Generate a printable 9 Star Ki Astrology report using the data points provided below.
 
-Please return the report as clean HTML suitable for generating a PDF. Use <h1>, <h2>, <h3> for section headers and <table> for data. 
+Please return the report as clean HTML that can be inserted into an existing page (with HTML). 
 
-Make it elegant but simple – no JavaScript, images, or CSS classes. 
+Use <h4>, <h5> for section headers and <table> for data. 
 
-Inline styling is okay but keep it minimal.
+Make it elegant but simple. The use of appropriate icons and color is recommended, but always stylish.
 
-Ensure the HTML is complete and clean, using proper semantic structure.
+Ensure the HTML is clean, using proper semantic structure.
 
-Do not include any Markdown or triple backticks. Only return HTML.
+Do not include any markdown or triple backticks. Only return HTML.
 
 Important Information: this is based on 9 Star Ki Astrology. In this system, the yearly and monthly boundaries are not the same as our standard calendar. For the purpose of this report, the beginning of the year will be early february until the same time the following year (minus one day).
 
@@ -31,7 +31,7 @@ Include the following sections in the report (data points will be provided below
    - Health
    - Ideal and Inauspicious travel directions
 
-4. Month-by-Month Planner For Year – {Year}:
+4. Month-by-Month Planner For Year – {Year}. For each month in the period, provide:
    - Monthly Energy / House & Theme
    - Good For
    - Caution with
@@ -50,7 +50,7 @@ Date of Birth: {DateOfBirth}
 Constitution: {MainEnergy}
 Character: {CharacterEnergy}
 Social Expression: {SurfaceEnergy}
-Generational Ki: {GenerationalEnergy}
+Generational Ki: {GenerationalKi}
 Day Star: {DayStar}
 
 ---
@@ -61,6 +61,7 @@ Year Stars On: {PeriodStartsOn}
 Year Ends On: {PeriodEndsOn}
 Yearly Energy : {YearlyEnergy}
 Yearly Theme : {YearlyTheme}
+Yearly Travel Directions Information: {YearlyDirectionsData}
 
 ---
 

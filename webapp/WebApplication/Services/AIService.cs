@@ -1,14 +1,16 @@
-﻿using K9.WebApplication.Packages;
+﻿using K9.Base.WebApplication.Extensions;
+using K9.Globalisation;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Packages;
+using K9.WebApplication.ViewModels;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ServiceStack.Text;
+using StackExchange.Profiling.Internal;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using K9.Base.WebApplication.Extensions;
-using K9.Globalisation;
-using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Services
@@ -46,11 +48,9 @@ namespace K9.WebApplication.Services
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
         }
 
-        public async Task<string> GetYearlyReport(DateTime dateOfBirth, int year)
+        public async Task<string> GetYearlyReport(YearlyReportViewModel model)
         {
-            var prompt =
-                "Blend the following texts into a clear, well-organized passage using only <h5> and <p> HTML tags.";
-            return await ProcessRequest(prompt);
+            return await ProcessRequest(GetYearlyReportPrompt(model));
         }
 
         public async Task<string> MergeTextsAsync((string theme, string[] texts)[] groups, string extraPrompt = null)
@@ -71,23 +71,64 @@ namespace K9.WebApplication.Services
             return await ProcessRequest(prompt);
         }
 
-        private static string GetYearlyReportPrompt(NineStarKiModel model)
+        public string GetYearlyReportPrompt(YearlyReportViewModel model)
         {
-            var person = model.PersonModel;
-            var yearPlannerData = model.GetYearlyPlanner();
+            var nineStarKiModel = model.NineStarKiModel;
+            var personModel = nineStarKiModel.PersonModel;
+            var year = nineStarKiModel.SelectedDate.Value.Year;
 
             return TemplateParser.Parse(Dictionary.yearly_report, new
             {
-                Year = yearPlannerData,
-                person.Name,
-                person.Gender,
-                DateOfBirth = person.DateOfBirth.ToLocalDateString(),
-                MainEnergy = model.MainEnergy.EnergyNameNumberAndElement,
-                CharacterEnergy = model.CharacterEnergy.EnergyNameNumberAndElement,
-                SurfaceEnergy = model.SurfaceEnergy.EnergyNameNumberAndElement,
-                DayStar = model.PersonalChartEnergies.Day.EnergyNameNumberAndElement,
-                YearlyKi = model.PersonalHousesOccupiedEnergies.Year.CycleDescriptiveName
+                Year = year,
+                YearPlusNine = year + 9,
+
+                personModel.Name,
+                personModel.Gender,
+                DateOfBirth = personModel.DateOfBirth.ToLocalDateString(),
+                MainEnergy = nineStarKiModel.MainEnergy.EnergyNameNumberAndElement,
+                CharacterEnergy = nineStarKiModel.CharacterEnergy.EnergyNameNumberAndElement,
+                SurfaceEnergy = nineStarKiModel.SurfaceEnergy.EnergyNameNumberAndElement,
+                GenerationalKi = nineStarKiModel.PersonalChartEnergies.Generation.EnergyNameNumberAndElement,
+                DayStar = nineStarKiModel.PersonalChartEnergies.Day.EnergyNameNumberAndElement,
+                PersonalData = GetPersonalData(personModel, nineStarKiModel).ToJson(),
+
+                model.YearlyPlannerModel.PeriodStarsOn,
+                model.YearlyPlannerModel.PeriodEndsOn,
+                YearlyEnergy = model.NineStarKiModel.PersonalHousesOccupiedEnergies.Year.EnergyNameNumberAndElement,
+                YearlyTheme = model.NineStarKiModel.PersonalHousesOccupiedEnergies.Year.CycleDescription,
+
+                PlannerDataJson = model.YearlyPlannerModel.ToJson()
             });
+        }
+
+        private static object GetPersonalData(PersonModel personModel, NineStarKiModel nineStarKiModel)
+        {
+            return new
+            {
+                personModel,
+                GenerationEnergy = new NineStarKiEnergySummary(nineStarKiModel.PersonalChartEnergies.Generation),
+                CoreEnergy = new NineStarKiEnergySummary(nineStarKiModel.MainEnergy),
+                CharacterEnergy = new NineStarKiEnergySummary(nineStarKiModel.CharacterEnergy),
+                SocialExpressionEnergy = new NineStarKiEnergySummary(nineStarKiModel.SurfaceEnergy),
+                DayStarEnergy = new NineStarKiEnergySummary(nineStarKiModel.PersonalChartEnergies.Day),
+
+                nineStarKiModel.Summary,
+                nineStarKiModel.Overview,
+                IntellectualQualities = nineStarKiModel.MainEnergy.IntellectualQualitiesSummary,
+                InterpersonalQualities = nineStarKiModel.MainEnergy.InterpersonalQualitiesSummary,
+                EmotionalLandscape = nineStarKiModel.MainEnergy.EmotionalLandscapeSummary,
+                Spirituality = nineStarKiModel.MainEnergy.SpiritualitySummary,
+                Health = nineStarKiModel.MainEnergy.HealthSummary,
+                nineStarKiModel.MainEnergy.Illnesses,
+                Career = nineStarKiModel.MainEnergy.CareerSummary,
+                Finances = nineStarKiModel.MainEnergy.FinancesSummary,
+                nineStarKiModel.MainEnergy.Occupations,
+                nineStarKiModel.MainEnergyRelationshipsSummary,
+                nineStarKiModel.StressResponseDetails,
+                nineStarKiModel.StressResponseFromNatalHouseDetails,
+                nineStarKiModel.AdultChildRelationsihpDescription,
+
+            };
         }
 
         private static string GetPrompt(string intro, (string theme, string[] texts)[] groups)

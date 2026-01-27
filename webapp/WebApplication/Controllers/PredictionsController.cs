@@ -19,17 +19,19 @@ namespace K9.WebApplication.Controllers
         private readonly INineStarKiService _nineStarKiService;
         private readonly IAstronomyService _astronomyService;
         private readonly IAstrologyService _astrologyService;
+        private readonly IAIService _aiService;
 
-        public PredictionsController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService, IAstronomyService astronomyService, IAstrologyService astrologyService)
+        public PredictionsController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService, IAstronomyService astronomyService, IAstrologyService astrologyService, IAIService aiService)
             : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
             _astronomyService = astronomyService;
             _astrologyService = astrologyService;
+            _aiService = aiService;
         }
 
         [Route("calculator")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader="User-Agent", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader = "User-Agent", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
@@ -81,16 +83,16 @@ namespace K9.WebApplication.Controllers
 
                     // Set user calculation method preference cookie
                     UpdateUserPreferenceInt(Constants.SessionConstants.UserCalculationMethod,
-                        (int) model.CalculationMethod);
-                    
+                        (int)model.CalculationMethod);
+
                     UpdateUserPreferenceBool(Constants.SessionConstants.BirthTimeIsKnown, model.TimeOfBirthKnown);
 
                     UpdateUserPreferenceInt(Constants.SessionConstants.UserHousesDisplay,
-                        (int) model.HousesDisplay);
+                        (int)model.HousesDisplay);
 
                     UpdateUserPreferenceBool(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
                         model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
-                    
+
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
 
@@ -300,6 +302,34 @@ namespace K9.WebApplication.Controllers
             }
             var model = _nineStarKiService.CalculateNineStarKiProfile(lastPredictions.DateOfBirth, lastPredictions.Gender);
             return View("Index", model);
+        }
+
+        [Route("yearly-report")]
+        [Authorize]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public async Task<ActionResult> YearlyReport()
+        {
+            var myAccount = My.AccountService.GetAccount(Current.UserId);
+            var personModel = new PersonModel
+            {
+                Name = myAccount.User.FullName,
+                DateOfBirth = myAccount.User.BirthDate,
+                Gender = myAccount.User.Gender,
+                TimeOfBirth = myAccount.UserInfo.TimeOfBirth,
+                BirthTimeZoneId = myAccount.UserInfo.BirthTimeZoneId
+            };
+            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
+
+            var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth, personModel.BirthTimeZoneId, personModel.TimeOfBirth, personModel.Gender, nineStarKiModel.SelectedDate.Value, nineStarKiModel.UserTimeZoneId, nineStarKiModel.CalculationMethod, nineStarKiModel.DisplayDataForPeriod, nineStarKiModel.HousesDisplay, nineStarKiModel.InvertDailyAndHourlyKiForSouthernHemisphere, nineStarKiModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
+                EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiModel);
+
+            var report = await _aiService.GetYearlyReport(new YearlyReportViewModel
+            {
+                NineStarKiModel = nineStarKiModel,
+                YearlyPlannerModel = plannerData
+            });
+
+            return Content(report, "text/html");
         }
 
         private JsonResult PredictionsJsonResult(EScopeDisplay display, NineStarKiEnergy cycle, string moonPhaseHtml = "")

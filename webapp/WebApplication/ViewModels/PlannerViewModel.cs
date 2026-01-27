@@ -1,57 +1,84 @@
 ﻿using K9.Globalisation;
-using K9.WebApplication.Config;
+using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
+using K9.WebApplication.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using K9.SharedLibrary.Extensions;
-using K9.WebApplication.Services;
+using System.Runtime.Serialization;
 
 namespace K9.WebApplication.ViewModels
 {
     public class PlannerViewModel
     {
+        [IgnoreDataMember]
         [UIHint("PlannerView")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ViewLabel)]
         public EPlannerView View { get; set; }
 
+        [IgnoreDataMember]
         [UIHint("ScopeDisplay")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DisplayLabel)]
         public EScopeDisplay Display { get; set; }
 
+        [IgnoreDataMember]
         public EHousesDisplay HousesDisplay { get; set; }
 
+        [IgnoreDataMember]
         public NineStarKiModel NineStarKiModel { get; set; }
+
+        [IgnoreDataMember]
         public NineStarKiEnergy Energy { get; set; }
+
+        [IgnoreDataMember]
         public NineStarKiEnergy SecondEnergy { get; set; }
+
+        [IgnoreDataMember]
         public DateTime Lichun { get; set; }
+
         public DateTime SelectedDateTime { get; set; }
         public DateTime PeriodStarsOn { get; set; }
         public DateTime PeriodEndsOn { get; set; }
         public List<PlannerViewModelItem> Energies { get; set; }
+        
+        [IgnoreDataMember]
         public string UpdateParentUrl { get; set; }
+        
+        [IgnoreDataMember]
         public string UpdateChildUrl { get; set; }
+
+        [IgnoreDataMember]
         public MoonPhase MoonPhase { get; set; }
 
+        [IgnoreDataMember]
         public string SelectedDateTimeString => SelectedDateTime.ToAjaxDateTimeString();
 
+        [IgnoreDataMember]
         public string PeriodStartsOnDateTimeString => GetPeriodStartsOnString();
 
+        [IgnoreDataMember]
         public string EnergyName => Energy.EnergyName;
 
+        [IgnoreDataMember]
         public EPlannerView NextViewUp => GetNextViewUp();
 
+        [IgnoreDataMember]
         public string ImgSrc => $"{MediaService.BaseImagesPath}/ninestar/energies/{Energy.EnergyUIName}.png";
 
+        [IgnoreDataMember]
         public string ImgAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {Energy.EnergyTitle}";
 
+        [IgnoreDataMember]
         public string PeriodDatesTitle => GetPeriodDatesTitle();
 
+        [IgnoreDataMember]
         public string PeriodDatesDetails => GetPeriodDatesDetails();
 
+        [IgnoreDataMember]
         public string PeriodAgesDetails => GetPeriodAgeDetails();
 
+        [IgnoreDataMember]
         public EPlannerView ChildView => GetChildView();
         
         public string GetEnergyTitle(PlannerViewModelItem energy)

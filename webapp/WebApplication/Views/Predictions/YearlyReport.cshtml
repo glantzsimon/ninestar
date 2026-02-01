@@ -1,15 +1,8 @@
-﻿@model string
-@using K9.WebApplication.Enums
-@using K9.WebApplication.Extensions
-@using K9.WebApplication.Helpers
-@using K9.WebApplication.Models
-@using K9.WebApplication.ViewModels
-
-@{
+﻿@{
     ViewBag.Title = Dictionary.YearlyReport;
     ViewBag.SubTitle = Dictionary.YearlyReport;
     
     Layout = "../Shared/_LayoutPrint.cshtml";
 }
 
-@Html.Raw(Model)
+@Html.Raw(ViewBag.Report)

@@ -329,7 +329,37 @@ namespace K9.WebApplication.Controllers
                 YearlyPlannerModel = plannerData
             });
 
-            return View(report);
+            ViewBag.Report = report;
+
+            return View();
+        }
+
+        [Route("yearly-report/prompt")]
+        [Authorize]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public ActionResult YearlyReportPrompt()
+        {
+            var myAccount = My.AccountService.GetAccount(Current.UserId);
+            var personModel = new PersonModel
+            {
+                Name = myAccount.User.FullName,
+                DateOfBirth = myAccount.User.BirthDate,
+                Gender = myAccount.User.Gender,
+                TimeOfBirth = myAccount.UserInfo.TimeOfBirth,
+                BirthTimeZoneId = myAccount.UserInfo.BirthTimeZoneId
+            };
+            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
+
+            var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth, personModel.BirthTimeZoneId, personModel.TimeOfBirth, personModel.Gender, nineStarKiModel.SelectedDate.Value, nineStarKiModel.UserTimeZoneId, nineStarKiModel.CalculationMethod, nineStarKiModel.DisplayDataForPeriod, nineStarKiModel.HousesDisplay, nineStarKiModel.InvertDailyAndHourlyKiForSouthernHemisphere, nineStarKiModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
+                EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiModel);
+
+            var report = _aiService.GetYearlyReportPrompt(new YearlyReportViewModel
+            {
+                NineStarKiModel = nineStarKiModel,
+                YearlyPlannerModel = plannerData
+            });
+
+            return Content(report, "text/plain");
         }
 
         private JsonResult PredictionsJsonResult(EScopeDisplay display, NineStarKiEnergy cycle, string moonPhaseHtml = "")

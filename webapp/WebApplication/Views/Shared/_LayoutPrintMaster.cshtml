@@ -1,7 +1,100 @@
 ﻿@using K9.WebApplication.Helpers
+
+@using System.Globalization
+@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Config
+@using StackExchange.Profiling
+@using StackExchange.Profiling.Mvc
+
 @{
-    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    // Cache CultureInfo lookup
+    var culture = CultureInfo.CurrentUICulture;
+    var localeName = culture.GetLocaleName().ToLower();
+    var metaLocaleName = culture.GetMetaLocaleName();
+    var languageName = culture.TwoLetterISOLanguageName.ToLower();
+
+    // Cache ViewBag lookups to minimize dynamic access cost
+    var viewBagTitle = ViewBag.Title as string ?? string.Empty;
+    var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
+    var metaDescription = Html.Raw(ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain);
+
+    // Optimize string manipulation
+    var mainTitle = viewBagTitle.Replace(Dictionary.NineStarKiTitle, string.Empty).Trim();
+    var pageTitle = string.IsNullOrEmpty(mainTitle) ? Dictionary.NineStar : mainTitle;
+
+    // Avoid multiple Html.Raw calls
+    var title = Html.Raw($"{pageTitle} &raquo; {Dictionary.NineStarKiAstrology}");
+    var pageUrl = ViewBag.PageUrl ?? $"https://{DefaultValuesConfiguration.Instance.SiteBaseUrl}";
+    var pageType = ViewBag.PageType ?? "website";
+    var pageImage = ViewBag.PageImage ?? $"{MediaService.BaseImagesPath}/company/logo.png";
 }
+
+<!DOCTYPE html>
+<html lang="@languageName">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@title</title>
+    <meta name="description" content="@metaDescription">
+    <meta name="keywords" content="@keywords">
+
+    <meta property="og:title" content="@title">
+    <meta property="og:description" content="@metaDescription">
+    <meta property="og:image" content="@pageImage" />
+    <meta property="og:url" content="@pageUrl" />
+    <meta property="og:type" content="@pageType" />
+    <meta property="og:locale" content="@metaLocaleName">
+    <meta property="og:site_name" content="@Dictionary.NineStar">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="@title">
+    <meta name="twitter:description" content="@metaDescription">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="/">
+    <link rel="shortcut icon" href="@MediaService.BaseImagesPath/icons/favicon.ico" type="image/x-icon">
+
+    @* 🔥 Optimize DNS prefetching to reduce latency *@
+    @foreach (var domain in new[] { "cdn.bootcss.com", "cdnjs.cloudflare.com", "fonts.googleapis.com", "ajax.googleapis.com",
+"ajax.aspnetcdn.com", "maxcdn.bootstrapcdn.com", "cdn.datatables.net", "unpkg.com",
+"code.highcharts.com", "cdn.rawgit.com" })
+    {
+        <link rel="dns-prefetch" href="//@domain">
+    }
+
+    @* 🔥 Google Fonts Optimization *@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant+Unicase:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lancelot&family=Petrona:ital,wght@0,100..900;1,100..900&family=Quattrocento:wght@400;700&family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
+
+    @* 🔥 All CSS files included *@
+    @Styles.Render("~/Content/lib")
+    @Styles.Render("~/Content/maincss")
+    @Styles.Render("~/Content/responsive")
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs/jszip-3.1.3/pdfmake-0.1.27/dt-1.10.15/b-1.3.1/b-colvis-1.3.1/b-html5-1.3.1/b-print-1.3.1/cr-1.3.3/r-2.1.1/se-1.2.2/datatables.min.css" />
+
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="https://code.highcharts.com/highcharts.js"></script>
+    <script defer src="https://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.2/all/gauge.min.js"></script>
+
+    @Html.Partial("_GlobalJs")
+    @Html.Partial("Scripts/JsonLD")
+</head>
+
+<body>
+    @RenderSection("headerscripts", false)
+    @RenderBody()
+    
+    @* 🔥 Load scripts at the end for better performance *@
+    @Scripts.Render("~/Scripts/js")
+    @Scripts.Render("~/Scripts/lib")
+    @Html.Partial("Scripts/Default")
+    @RenderSection("scripts", false)
+</body>
+</html>
+
+
 @RenderSection("printLayout")
 
 @section headerscripts {

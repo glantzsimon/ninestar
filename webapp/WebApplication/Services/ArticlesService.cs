@@ -200,7 +200,7 @@ namespace K9.WebApplication.Services
                     UserId = Current.UserId > 0 ? Current.UserId : 1,
                     ViewedOn = DateTime.UtcNow
                 });
-                SendEmailToNineStarAboutView(article);
+                // SendEmailToNineStarAboutView(article);
             }
         }
 

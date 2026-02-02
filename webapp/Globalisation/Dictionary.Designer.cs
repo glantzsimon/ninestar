@@ -3184,6 +3184,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Article Unpublished.
+        /// </summary>
+        public static string ArticleUnpublished {
+            get {
+                return ResourceManager.GetString("ArticleUnpublished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The article was unpublished successfully.
+        /// </summary>
+        public static string ArticleUnpublishedSuccess {
+            get {
+                return ResourceManager.GetString("ArticleUnpublishedSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
         ///&lt;p&gt;Someone just viewed an article on the Blog page. The article in question is &apos;{ArticleName}&apos;:&lt;/p&gt;
         ///&lt;p&gt;View the article &lt;a href=&quot;{LinkToArticle}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
@@ -23064,6 +23082,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unpublish.
+        /// </summary>
+        public static string Unpublish {
+            get {
+                return ResourceManager.GetString("Unpublish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unscheduled.
         /// </summary>
         public static string Unscheduled {
@@ -25185,15 +25212,17 @@ namespace K9.Globalisation {
         ///
         ///Generate a printable 9 Star Ki Astrology report using the data points provided below.
         ///
-        ///Please return the report as clean HTML suitable for generating a PDF. Use &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt; for section headers and &lt;table&gt; for data. 
+        ///Please return the report as clean HTML that can be inserted into an existing page (with HTML). 
+        ///
+        ///Use &lt;h4&gt;, &lt;h5&gt; for section headers and &lt;table&gt; for data. 
         ///
         ///Make it elegant but simple. The use of appropriate icons and color is recommended, but always stylish.
         ///
-        ///Ensure the HTML is complete and clean, using proper semantic structure.
+        ///Ensure the HTML is clean, using proper semantic structure.
         ///
-        ///Do not include any Markdown or triple backticks. Only return HTML.
+        ///Do not include any markdown or triple backticks. Only return HTML.
         ///
-        ///Important Informati [rest of string was truncated]&quot;;.
+        ///Important [rest of string was truncated]&quot;;.
         /// </summary>
         public static string yearly_report {
             get {

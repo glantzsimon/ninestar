@@ -1829,6 +1829,7 @@
     <Content Include="Views\Shared\_LayoutPrint.cshtml" />
     <Content Include="Views\Shared\_LayoutPrintMaster.cshtml" />
     <Content Include="Views\Predictions\YearlyReport.cshtml" />
+    <Content Include="Views\Articles\UnpublishSuccess.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

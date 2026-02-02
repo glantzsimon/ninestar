@@ -7,13 +7,12 @@ using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
+using K9.WebApplication.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using K9.SharedLibrary.Authentication;
-using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Services
 {

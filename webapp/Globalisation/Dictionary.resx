@@ -6836,6 +6836,15 @@
   <data name="ViewedOn" xml:space="preserve">
     <value>Viewed On</value>
   </data>
+  <data name="ArticleUnpublished" xml:space="preserve">
+    <value>Article Unpublished</value>
+  </data>
+  <data name="ArticleUnpublishedSuccess" xml:space="preserve">
+    <value>The article was unpublished successfully</value>
+  </data>
+  <data name="Unpublish" xml:space="preserve">
+    <value>Unpublish</value>
+  </data>
   <data name="YearlyReport" xml:space="preserve">
     <value>Yearly Report</value>
   </data>

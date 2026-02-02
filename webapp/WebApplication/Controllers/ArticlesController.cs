@@ -126,7 +126,21 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("PublishSuccess");
         }
 
+        public ActionResult Unpublish(int id)
+        {
+            var article = Repository.Find(id);
+            article.PublishedOn = null;
+            Repository.Update(article);
+
+            return RedirectToAction("UnpublishSuccess");
+        }
+
         public ActionResult PublishSuccess()
+        {
+            return View();
+        }
+
+        public ActionResult UnpublishSuccess()
         {
             return View();
         }

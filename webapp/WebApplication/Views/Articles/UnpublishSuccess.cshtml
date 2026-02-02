@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = K9.Globalisation.Dictionary.Articles;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.ArticleUnpublished;
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+    ViewBag.TitleTag = "text-center";
+}
+<div class="margin-bottom-10 text-center">
+    @Html.Success(K9.Globalisation.Dictionary.ArticleUnpublishedSuccess)
+
+    <hr />
+
+    @Html.BootstrapBackToListButton()
+</div>

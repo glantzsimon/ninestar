@@ -38,7 +38,7 @@ namespace K9.WebApplication.ViewModels
         public DateTime Lichun { get; set; }
 
         public DateTime SelectedDateTime { get; set; }
-        public DateTime PeriodStarsOn { get; set; }
+        public DateTime PeriodStartsOn { get; set; }
         public DateTime PeriodEndsOn { get; set; }
         public List<PlannerViewModelItem> Energies { get; set; }
         
@@ -154,10 +154,10 @@ namespace K9.WebApplication.ViewModels
                 case EPlannerView.Year:
                 case EPlannerView.Month:
                     // To account for time zone differences, add two days (so you don't get the previous period
-                    return PeriodStarsOn.AddDays(2).ToAjaxDateTimeString();
+                    return PeriodStartsOn.AddDays(2).ToAjaxDateTimeString();
 
                 default:
-                    return PeriodStarsOn.ToAjaxDateTimeString();
+                    return PeriodStartsOn.ToAjaxDateTimeString();
             }
         }
 
@@ -189,26 +189,26 @@ namespace K9.WebApplication.ViewModels
                 case EPlannerView.EightyOneYear:
                 case EPlannerView.NineYear:
                 case EPlannerView.Year:
-                    var periodStart = PeriodStarsOn.Year.ToString();
+                    var periodStart = PeriodStartsOn.Year.ToString();
                     var periodEnd = PeriodEndsOn.Year.ToString();
                     return $"{periodStart} - {periodEnd}";
 
                 case EPlannerView.Month:
-                    if (PeriodStarsOn.Year == PeriodEndsOn.Year)
+                    if (PeriodStartsOn.Year == PeriodEndsOn.Year)
                     {
-                        periodStart = PeriodStarsOn.ToString("MMM");
+                        periodStart = PeriodStartsOn.ToString("MMM");
                         periodEnd = PeriodEndsOn.ToString("MMM");
-                        return $"{periodStart} - {periodEnd} {PeriodStarsOn.Year}";
+                        return $"{periodStart} - {periodEnd} {PeriodStartsOn.Year}";
                     }
                     else
                     {
-                        periodStart = PeriodStarsOn.ToString("MMM yyyy");
+                        periodStart = PeriodStartsOn.ToString("MMM yyyy");
                         periodEnd = PeriodEndsOn.ToString("MMM yyyy");
                         return $"{periodStart} - {periodEnd}";
                     }
 
                 case EPlannerView.Day:
-                    return PeriodStarsOn.ToString("ddd MMM dd yyyy");
+                    return PeriodStartsOn.ToString("ddd MMM dd yyyy");
 
                 default:
                     return string.Empty;
@@ -223,7 +223,7 @@ namespace K9.WebApplication.ViewModels
                 case EPlannerView.NineYear:
                 case EPlannerView.Year:
                 case EPlannerView.Month:
-                    var periodStart = PeriodStarsOn.ToString("MMM d-yy");
+                    var periodStart = PeriodStartsOn.ToString("MMM d-yy");
                     var periodEnd = PeriodEndsOn.ToString("MMM d-yy");
                     return $"{periodStart} - {periodEnd}";
 
@@ -234,7 +234,7 @@ namespace K9.WebApplication.ViewModels
 
         private string GetPeriodAgeDetails()
         {
-            var startAge = NineStarKiModel.PersonModel.DateOfBirth.GetAgeInYearsAsOf(PeriodStarsOn);
+            var startAge = NineStarKiModel.PersonModel.DateOfBirth.GetAgeInYearsAsOf(PeriodStartsOn);
             var endAge = NineStarKiModel.PersonModel.DateOfBirth.GetAgeInYearsAsOf(PeriodEndsOn);
 
             if (startAge < 0)

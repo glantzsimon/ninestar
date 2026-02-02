@@ -15,7 +15,7 @@ namespace K9.WebApplication.ViewModels
         }
 
         public PlannerViewModelItem(NineStarKiEnergy energy, NineStarKiEnergy secondEnergy, DateTime energyStartsOn, DateTime energyEndsOn,
-            bool isActive, EPlannerView childView, MoonPhase moonPhase = null)
+            bool isActive, EPlannerView childView, MoonPhase moonPhase = null, MagicSquareViewModel magicSquare = null)
         {
             Energy = energy;
             EnergySummary = new NineStarKiEnergySummary(energy);
@@ -25,6 +25,7 @@ namespace K9.WebApplication.ViewModels
             IsActive = isActive;
             ChildView = childView;
             MoonPhase = moonPhase;
+            MagicSquare = magicSquare;
         }
 
         public NineStarKiEnergySummary EnergySummary { get; set; }
@@ -38,6 +39,8 @@ namespace K9.WebApplication.ViewModels
         public DateTime EnergyStartsOn { get; set; }
 
         public DateTime EnergyEndsOn { get; set; }
+
+        public MagicSquareViewModel MagicSquare { get; set; }
 
         [IgnoreDataMember]
         public bool IsActive { get; set; }

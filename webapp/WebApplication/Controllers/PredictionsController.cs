@@ -318,7 +318,8 @@ namespace K9.WebApplication.Controllers
                 TimeOfBirth = myAccount.UserInfo.TimeOfBirth,
                 BirthTimeZoneId = myAccount.UserInfo.BirthTimeZoneId
             };
-            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
+            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false, DateTime.UtcNow, ECalculationMethod.Chinese, true, true,
+                personModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, false, false, EDisplayDataForPeriod.Now);
 
             var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth, personModel.BirthTimeZoneId, personModel.TimeOfBirth, personModel.Gender, nineStarKiModel.SelectedDate.Value, nineStarKiModel.UserTimeZoneId, nineStarKiModel.CalculationMethod, nineStarKiModel.DisplayDataForPeriod, nineStarKiModel.HousesDisplay, nineStarKiModel.InvertDailyAndHourlyKiForSouthernHemisphere, nineStarKiModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
                 EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiModel);
@@ -343,14 +344,19 @@ namespace K9.WebApplication.Controllers
             var personModel = new PersonModel
             {
                 Name = myAccount.User.FullName,
-                DateOfBirth = myAccount.User.BirthDate,
+                DateOfBirth = myAccount.User.BirthDate.Add(myAccount.UserInfo.TimeOfBirth),
                 Gender = myAccount.User.Gender,
                 TimeOfBirth = myAccount.UserInfo.TimeOfBirth,
                 BirthTimeZoneId = myAccount.UserInfo.BirthTimeZoneId
             };
-            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
 
-            var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth, personModel.BirthTimeZoneId, personModel.TimeOfBirth, personModel.Gender, nineStarKiModel.SelectedDate.Value, nineStarKiModel.UserTimeZoneId, nineStarKiModel.CalculationMethod, nineStarKiModel.DisplayDataForPeriod, nineStarKiModel.HousesDisplay, nineStarKiModel.InvertDailyAndHourlyKiForSouthernHemisphere, nineStarKiModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
+            var now = new DateTime(DateTime.UtcNow.Year, 2, 5);
+            var lichun = _astronomyService.GetLichun(now, personModel.BirthTimeZoneId);
+
+            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false, lichun, ECalculationMethod.Chinese, true, true,
+                personModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, false, false, EDisplayDataForPeriod.Now);
+
+            var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth.Date, personModel.BirthTimeZoneId, personModel.TimeOfBirth, personModel.Gender, now, nineStarKiModel.UserTimeZoneId, nineStarKiModel.CalculationMethod, nineStarKiModel.DisplayDataForPeriod, nineStarKiModel.HousesDisplay, nineStarKiModel.InvertDailyAndHourlyKiForSouthernHemisphere, nineStarKiModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
                 EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiModel);
 
             var report = _aiService.GetYearlyReportPrompt(new YearlyReportViewModel

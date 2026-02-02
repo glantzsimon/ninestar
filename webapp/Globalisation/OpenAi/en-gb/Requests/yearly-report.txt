@@ -1,10 +1,10 @@
 ﻿##OVERVIEW##
 
-Generate a printable 9 Star Ki Astrology report using the data points provided below.
+Generate a printable 9 Star Ki Astrology report according to the structure in ##SECTIONS##, using the data points provided under ##DATA##.
 
-Please return the report as clean HTML that can be inserted into an existing page (with HTML). 
+Please return the report as HTML that can be inserted into an existing page (with HTML).
 
-Use <h4>, <h5> for section headers and <table> for data. 
+Use <h4> section headers and <table> for data. 
 
 Make it elegant but simple. The use of appropriate icons and color is recommended, but always stylish.
 
@@ -12,26 +12,46 @@ Ensure the HTML is clean, using proper semantic structure.
 
 Do not include any markdown or triple backticks. Only return HTML.
 
+The data will contain information pertaining to the 9 Energies, using numbers 1 to 9 to represent each energy, as well as the 5 elements. You can fetch the images for each of the 9 energies here: '{BaseImagesPath}/ninestar/energies/{energy}.png' - where '{energy}' will be the name fo the energy, as in the following:
+
+1 water (e.g. '{BaseImagesPath}/ninestar/energies/water.png'), 
+2 soil, 
+3 thunder, 
+4 wind, 
+5 coreearth,
+6 heaven,
+7 lake,
+8 mountain,
+9 fire
+
+For images regarding the elements, use '{BaseImagesPath}/ninestar/elements/{element}.png':
+
+water element - '{BaseImagesPath}/ninestar/elements/water.png',
+earth,
+tree,
+metal,
+fire
+
 Important Information: this is based on 9 Star Ki Astrology. In this system, the yearly and monthly boundaries are not the same as our standard calendar. For the purpose of this report, the beginning of the year will be early february until the same time the following year (minus one day).
 
 ---
 
 ##SECTIONS##
 
-Include the following sections in the report (data points will be provided below see ##DATA##):
+Include the following sections in the report. Ddata points will be provided below see ##DATA##. Longer text should be condensed for this report.
 
 1. Cover title (e.g. "Your 9 Star Ki Annual Energy Guide – {Year} Edition")
 
-2. Personal Chart Summary (information about the person, as a table) 
+2. Personal Chart Summary (information about the person, as a table - See 2. Personal Chart Summary Data below).
 
-3. Yearly Forecast – {Year}:
-   - Yearly Energy / House & Theme
+3. Yearly Forecast – {Year}. (See 3. Yearly Forecast Data below). Include the following in a table (succint and easy to read):
+   - Yearly Energy / House & Theme 
    - Good For
    - Caution with
    - Health
    - Ideal and Inauspicious travel directions
 
-4. Month-by-Month Planner For Year – {Year}. For each month in the period, provide:
+4. Month-by-Month Planner For Year – {Year}. For each month in the period, provide the following in a table (succint and easy to read - see 4. Month-by-Month Planner For Year Data below):
    - Monthly Energy / House & Theme
    - Good For
    - Caution with
@@ -55,7 +75,7 @@ Day Star: {DayStar}
 
 ---
 
-3. Yearly Forecase Data:
+3. Yearly Forecast Data:
 
 Year Stars On: {PeriodStartsOn}
 Year Ends On: {PeriodEndsOn}
@@ -65,7 +85,7 @@ Yearly Travel Directions Information: {YearlyDirectionsData}
 
 ---
 
-4. Month-by-Month Planner For Year Data: 
+4. Month-by-Month Planner For Year Data:
 
 {PlannerDataJson}
 

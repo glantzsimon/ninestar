@@ -92,13 +92,15 @@ namespace K9.WebApplication.Services
                 DayStar = nineStarKiModel.PersonalChartEnergies.Day.EnergyNameNumberAndElement,
                 PersonalData = GetPersonalData(personModel, nineStarKiModel).ToJson(),
 
-                model.YearlyPlannerModel.PeriodStarsOn,
+                model.YearlyPlannerModel.PeriodStartsOn,
                 model.YearlyPlannerModel.PeriodEndsOn,
                 YearlyEnergy = model.NineStarKiModel.PersonalHousesOccupiedEnergies.Year.EnergyNameNumberAndElement,
                 YearlyTheme = model.NineStarKiModel.PersonalHousesOccupiedEnergies.Year.CycleDescription,
-                YearlyDirectionsData = model.NineStarKiModel.GetDrectionsChartViewModel().ToJson(),
+                YearlyDirectionsData = model.NineStarKiModel.GetCycleMagicSquares().Year.ToJson(),
 
-                PlannerDataJson = model.YearlyPlannerModel.ToJson()
+                PlannerDataJson = model.YearlyPlannerModel.ToJson(),
+
+                My.DefaultValuesConfiguration.BaseImagesPath
             });
         }
 
@@ -156,13 +158,12 @@ namespace K9.WebApplication.Services
 
         private async Task<string> ProcessRequest(string prompt)
         {
+            // Responses API request body
             var requestBody = new
             {
                 model = _model,
-                messages = new[]
-                {
-                    new { role = "user", content = prompt }
-                }
+                input = prompt
+                // You can also send "input" as an array of role/content objects if you want conversation state.
             };
 
             var json = JsonConvert.SerializeObject(requestBody);
@@ -174,7 +175,40 @@ namespace K9.WebApplication.Services
             var responseString = await response.Content.ReadAsStringAsync();
             var parsed = JObject.Parse(responseString);
 
-            return StripMarkdownCodeFencing(parsed["choices"]?[0]?["message"]?["content"]?.ToString()?.Trim() ?? "[No response]");
+            // Prefer SDK-style convenience field if present
+            var outputText = parsed["output_text"]?.ToString();
+
+            // Otherwise, extract text from output[] messages
+            if (string.IsNullOrWhiteSpace(outputText))
+            {
+                var outputArray = parsed["output"] as JArray;
+                if (outputArray != null)
+                {
+                    // Look for items with content blocks that include text
+                    foreach (var item in outputArray)
+                    {
+                        var contentArray = item["content"] as JArray;
+                        if (contentArray == null) continue;
+
+                        foreach (var c in contentArray)
+                        {
+                            // Typical shape: { "type": "output_text", "text": "..." }
+                            var text = c["text"]?.ToString();
+                            if (!string.IsNullOrWhiteSpace(text))
+                            {
+                                outputText = text;
+                                break;
+                            }
+                        }
+
+                        if (!string.IsNullOrWhiteSpace(outputText))
+                            break;
+                    }
+                }
+            }
+
+            outputText = (outputText ?? "[No response]").Trim();
+            return StripMarkdownCodeFencing(outputText);
         }
 
         private static string StripMarkdownCodeFencing(string input)

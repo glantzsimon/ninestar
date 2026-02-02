@@ -26,6 +26,7 @@ namespace K9.WebApplication.ViewModels
             ChildView = childView;
             MoonPhase = moonPhase;
             MagicSquare = magicSquare;
+            Directions = magicSquare?.GetDirections();
         }
 
         public NineStarKiEnergySummary EnergySummary { get; set; }
@@ -40,7 +41,10 @@ namespace K9.WebApplication.ViewModels
 
         public DateTime EnergyEndsOn { get; set; }
 
+        [IgnoreDataMember]
         public MagicSquareViewModel MagicSquare { get; set; }
+
+        public NineStarKiDirections Directions { get; set; }
 
         [IgnoreDataMember]
         public bool IsActive { get; set; }

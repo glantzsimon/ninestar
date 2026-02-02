@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Attributes;
+﻿using System.Runtime.Serialization;
+using K9.Base.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Enums;
 
@@ -8,11 +9,19 @@ namespace K9.WebApplication.Models
     {
         public string Name { get; }
         public string Title { get; }
+
+        [IgnoreDataMember]
         public string Description { get; }
+        
+        [IgnoreDataMember]
         public NineStarKiEnergy Energy { get; }
+        
         public EUnfavourableDirection UnfavourableDirection { get; }
         public ENineStarKiDirection Direction => Energy.Direction;
+        
+        [IgnoreDataMember]
         public int Score => GetScore();
+
         public string GetDirectionName() => Direction.GetAttribute<EnumDescriptionAttribute>().Name.ToProperCase();
 
         public NineStarKiDirection(EUnfavourableDirection unfavourableDirection, string description, NineStarKiEnergy energy)

@@ -15,5 +15,8 @@
         public string OpenRouterApiKey { get; set; }
         public string OpenRouterModel { get; set; }
         public string OpenRouterEndpoint { get; set; }
+
+        public string PredictionsReportsVectorId { get; set; }
+        public string YearlyReportAnchor { get; set; }
     }
 }

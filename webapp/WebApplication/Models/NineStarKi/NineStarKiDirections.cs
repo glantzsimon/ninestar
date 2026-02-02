@@ -1,14 +1,16 @@
 ﻿using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Enums;
 using System.Collections.Generic;
 using System.Linq;
-using K9.WebApplication.Enums;
+using System.Runtime.Serialization;
 
 namespace K9.WebApplication.Models
 {
     public class NineStarKiDirections
     {
+        [IgnoreDataMember]
         public NineStarKiEnergy PersonalChartEnergy { get; }
 
         private static readonly Dictionary<int, ENineStarKiDirection> _Directions = new Dictionary<int, ENineStarKiDirection>
@@ -24,9 +26,16 @@ namespace K9.WebApplication.Models
             { 9, ENineStarKiDirection.South },
         };
 
+        [IgnoreDataMember]
         public NineStarKiDirection FiveYelloKilling { get; }
+
+        [IgnoreDataMember]
         public NineStarKiDirection DarkSwordKilling { get; }
+
+        [IgnoreDataMember]
         public NineStarKiDirection SelfLifeKilling { get; }
+
+        [IgnoreDataMember]
         public NineStarKiDirection TargetKilling { get; }
 
         public string FiveYellowKillingDescription

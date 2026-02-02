@@ -1,6 +1,8 @@
-﻿using K9.Base.WebApplication.Extensions;
+﻿using System;
+using K9.Base.WebApplication.Extensions;
 using K9.Globalisation;
 using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using Newtonsoft.Json;
@@ -11,7 +13,6 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Services
 {
@@ -50,7 +51,7 @@ namespace K9.WebApplication.Services
 
         public async Task<string> GetYearlyReport(YearlyReportViewModel model)
         {
-            return await ProcessRequest(GetYearlyReportPrompt(model));
+            return await ProcessRequestWithTemplateAsync(GetYearlyReportPrompt(model), My.ApiConfiguration.PredictionsReportsVectorId, My.ApiConfiguration.YearlyReportAnchor);
         }
 
         public async Task<string> MergeTextsAsync((string theme, string[] texts)[] groups, string extraPrompt = null)
@@ -96,7 +97,7 @@ namespace K9.WebApplication.Services
                 model.YearlyPlannerModel.PeriodEndsOn,
                 YearlyEnergy = model.NineStarKiModel.PersonalHousesOccupiedEnergies.Year.EnergyNameNumberAndElement,
                 YearlyTheme = model.NineStarKiModel.PersonalHousesOccupiedEnergies.Year.CycleDescription,
-                YearlyDirectionsData = model.NineStarKiModel.GetCycleMagicSquares().Year.ToJson(),
+                YearlyDirectionsData = model.NineStarKiModel.GetCycleMagicSquares().Year.GetDirections().ToJson(),
 
                 PlannerDataJson = model.YearlyPlannerModel.ToJson(),
 
@@ -154,6 +155,112 @@ namespace K9.WebApplication.Services
         {
             var joinedText = string.Join("\n\n", group.texts);
             return $"Theme {number}: {group.theme}\n\n{joinedText}\n";
+        }
+
+        private async Task<string> ProcessRequestWithTemplateAsync(string prompt, string vectorStoreId, string anchor)
+        {
+            if (string.IsNullOrWhiteSpace(prompt))
+                throw new ArgumentException("Prompt is required.", nameof(prompt));
+
+            if (string.IsNullOrWhiteSpace(vectorStoreId))
+                throw new ArgumentException("Vector store id is required.", nameof(vectorStoreId));
+
+            // Instruction block: tells the model how to use the PDFs.
+            // Keep this short and firm - it reduces variance.
+            var instruction =
+                $"Use the exemplar whose title begins ‘{anchor}’ from the attached vector store as a stylistic and structural exemplar only. " +
+                "Match headings, colors, structure, ordering, tone, pacing, and formatting discipline. " +
+                "Do not quote or copy wording from the PDFs. Produce original text. " +
+                "If a stylistic decision is ambiguous, resolve it in favour of the exemplar.\n\n" +
+                prompt;
+
+            // Responses API request body
+            var requestBody = new
+            {
+                model = _model,
+                input = instruction,
+                tools = new object[]
+                {
+            new
+            {
+                type = "file_search",
+                vector_store_ids = new[] { vectorStoreId },
+                // optional tuning:
+                max_num_results = 5
+            }
+                },
+
+                // Optional: include tool results for debugging (you can remove once stable)
+                include = new[] { "file_search_call.results" }
+            };
+
+            var json = JsonConvert.SerializeObject(requestBody);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = await _httpClient.PostAsync(_endpoint, httpContent).ConfigureAwait(false);
+            response.EnsureSuccessStatusCode();
+
+            string responseString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            JObject parsed = JObject.Parse(responseString);
+
+            string text = ExtractResponsesText(parsed);
+
+            text = (text ?? "[No response]").Trim();
+            return StripMarkdownCodeFencing(text);
+        }
+
+        private static string ExtractResponsesText(JObject parsed)
+        {
+            // Some responses include a convenience field "output_text"
+            var outputTextToken = parsed["output_text"];
+            if (outputTextToken != null)
+            {
+                var outputText = outputTextToken.ToString();
+                if (!string.IsNullOrWhiteSpace(outputText))
+                    return outputText;
+            }
+
+            // Canonical: parse parsed["output"] array, find assistant message content blocks with type "output_text"
+            var outputArray = parsed["output"] as JArray;
+            if (outputArray == null)
+                return null;
+
+            for (int i = 0; i < outputArray.Count; i++)
+            {
+                var item = outputArray[i] as JObject;
+                if (item == null) continue;
+
+                var type = item["type"] != null ? item["type"].ToString() : null;
+                if (!string.Equals(type, "message", StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                var role = item["role"] != null ? item["role"].ToString() : null;
+                if (!string.Equals(role, "assistant", StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                var contentArray = item["content"] as JArray;
+                if (contentArray == null) continue;
+
+                for (int j = 0; j < contentArray.Count; j++)
+                {
+                    var part = contentArray[j] as JObject;
+                    if (part == null) continue;
+
+                    var partType = part["type"] != null ? part["type"].ToString() : null;
+                    if (string.Equals(partType, "output_text", StringComparison.OrdinalIgnoreCase))
+                    {
+                        var textToken = part["text"];
+                        if (textToken != null)
+                        {
+                            var text = textToken.ToString();
+                            if (!string.IsNullOrWhiteSpace(text))
+                                return text;
+                        }
+                    }
+                }
+            }
+
+            return null;
         }
 
         private async Task<string> ProcessRequest(string prompt)

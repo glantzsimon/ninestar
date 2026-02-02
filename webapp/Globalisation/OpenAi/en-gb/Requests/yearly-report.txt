@@ -14,23 +14,26 @@ Do not include any markdown or triple backticks. Only return HTML.
 
 The data will contain information pertaining to the 9 Energies, using numbers 1 to 9 to represent each energy, as well as the 5 elements. You can fetch the images for each of the 9 energies here: '{BaseImagesPath}/ninestar/energies/{energy}.png' - where '{energy}' will be the name fo the energy, as in the following:
 
-1 water (e.g. '{BaseImagesPath}/ninestar/energies/water.png'), 
-2 soil, 
-3 thunder, 
-4 wind, 
-5 coreearth,
-6 heaven,
-7 lake,
-8 mountain,
-9 fire
+Energy icon mapping:
+1 water -> {BaseImagesPath}/ninestar/energies/water.png
+2 soil -> {BaseImagesPath}/ninestar/energies/soil.png
+3 thunder -> {BaseImagesPath}/ninestar/energies/thunder.png
+4 wind -> {BaseImagesPath}/ninestar/energies/wind.png
+5 coreearth -> {BaseImagesPath}/ninestar/energies/coreearth.png
+6 heaven -> {BaseImagesPath}/ninestar/energies/heaven.png
+7 lake -> {BaseImagesPath}/ninestar/energies/lake.png
+8 mountain -> {BaseImagesPath}/ninestar/energies/mountain.png
+9 fire -> {BaseImagesPath}/ninestar/energies/fire.png
+
 
 For images regarding the elements, use '{BaseImagesPath}/ninestar/elements/{element}.png':
 
-water element - '{BaseImagesPath}/ninestar/elements/water.png',
-earth,
-tree,
-metal,
-fire
+Element icon mapping:
+water -> {BaseImagesPath}/ninestar/elements/water.png
+earth -> {BaseImagesPath}/ninestar/elements/earth.png
+tree -> {BaseImagesPath}/ninestar/elements/tree.png
+metal -> {BaseImagesPath}/ninestar/elements/metal.png
+fire -> {BaseImagesPath}/ninestar/elements/fire.png
 
 Important Information: this is based on 9 Star Ki Astrology. In this system, the yearly and monthly boundaries are not the same as our standard calendar. For the purpose of this report, the beginning of the year will be early february until the same time the following year (minus one day).
 
@@ -39,6 +42,11 @@ Important Information: this is based on 9 Star Ki Astrology. In this system, the
 ##SECTIONS##
 
 Include the following sections in the report. Ddata points will be provided below see ##DATA##. Longer text should be condensed for this report.
+
+For each section:
+- Wrap the entire section in: <div style="page-break-inside: avoid; margin-bottom: 18px;"></div>
+- Start with an <h4>.
+- Follow with either a table or a small group of <p> tags.
 
 1. Cover title (e.g. "Your 9 Star Ki Annual Energy Guide – {Year} Edition")
 

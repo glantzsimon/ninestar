@@ -46,6 +46,7 @@ namespace K9.WebApplication.Services
             _model = My.ApiConfiguration.OpenApiModel;
             _endpoint = My.ApiConfiguration.OpenApiEndpoint;
 
+            _httpClient.Timeout = TimeSpan.FromMinutes(5);
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
         }
 

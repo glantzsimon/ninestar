@@ -312,6 +312,9 @@
     <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.217\lib\net461\WebMatrix.WebData.dll</HintPath>
     </Reference>
+    <Reference Include="WkHtmlToPdf, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WkHtmlToPdf.1.0.2\lib\netstandard2.0\WkHtmlToPdf.dll</HintPath>
+    </Reference>
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
     </Reference>
@@ -397,6 +400,8 @@
     <Compile Include="Extensions\ConfigExtensions.cs" />
     <Compile Include="Extensions\NumerologyExtensions.cs" />
     <Compile Include="App_Start\RelativeCssRewriteUrlTransform.cs" />
+    <Compile Include="Services\IPdfService.cs" />
+    <Compile Include="Services\PdfService.cs" />
     <Compile Include="Models\Astrology\MoonPhase.cs" />
     <Compile Include="Models\DeleteFilesRequest.cs" />
     <Compile Include="Models\QuickRegisterModel.cs" />

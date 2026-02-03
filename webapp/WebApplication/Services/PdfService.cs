@@ -58,7 +58,23 @@ namespace K9.WebApplication.Services
 
                 using (var p = new Process { StartInfo = psi })
                 {
-                    p.Start();
+                    try
+                    {
+                        p.Start();
+                    }
+                    catch (System.ComponentModel.Win32Exception ex)
+                    {
+                        throw new Exception(
+                            "wkhtmltopdf failed to start." + Environment.NewLine +
+                            "Exe: " + psi.FileName + Environment.NewLine +
+                            "WorkingDir: " + psi.WorkingDirectory + Environment.NewLine +
+                            "Args: " + psi.Arguments + Environment.NewLine +
+                            "Identity: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name + Environment.NewLine +
+                            "NativeErrorCode: " + ex.NativeErrorCode + Environment.NewLine +
+                            "Message: " + ex.Message,
+                            ex);
+                    }
+
 
                     // Read streams to avoid deadlocks in edge cases
                     var stderr = p.StandardError.ReadToEnd();
@@ -115,7 +131,23 @@ namespace K9.WebApplication.Services
 
                 using (var p = new Process { StartInfo = psi })
                 {
-                    p.Start();
+                    try
+                    {
+                        p.Start();
+                    }
+                    catch (System.ComponentModel.Win32Exception ex)
+                    {
+                        throw new Exception(
+                            "wkhtmltopdf failed to start." + Environment.NewLine +
+                            "Exe: " + psi.FileName + Environment.NewLine +
+                            "WorkingDir: " + psi.WorkingDirectory + Environment.NewLine +
+                            "Args: " + psi.Arguments + Environment.NewLine +
+                            "Identity: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name + Environment.NewLine +
+                            "NativeErrorCode: " + ex.NativeErrorCode + Environment.NewLine +
+                            "Message: " + ex.Message,
+                            ex);
+                    }
+
                     var stderr = p.StandardError.ReadToEnd();
                     var stdout = p.StandardOutput.ReadToEnd();
                     p.WaitForExit();

@@ -1,0 +1,8 @@
+# Node / Puppeteer
+node_modules/
+.cache/
+.local-chromium/
+.npm/
+*.log
+*.tmp
+*.pdf

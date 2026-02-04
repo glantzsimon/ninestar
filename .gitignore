@@ -10,12 +10,3 @@ logs
 upload
 publish
 vault
-
-# Node / Puppeteer
-Scripts/node/node_modules/
-Scripts/node/.cache/
-Scripts/node/.local-chromium/
-Scripts/node/.npm/
-Scripts/node/*.log
-Scripts/node/*.tmp
-Scripts/node/*.pdf

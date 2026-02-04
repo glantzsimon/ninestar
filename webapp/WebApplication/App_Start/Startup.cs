@@ -93,6 +93,7 @@ namespace K9.WebApplication
             builder.RegisterType<MediaManagementService>().As<IMediaManagementService>().InstancePerLifetimeScope();
             builder.RegisterType<MediaService>().As<IMediaService>().SingleInstance();
             builder.RegisterType<PdfService>().As<IPdfService>().SingleInstance();
+            builder.RegisterType<ReportsService>().As<IReportsService>().SingleInstance();
 
             RegisterConfiguration(builder);
 

@@ -10,7 +10,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Controllers
 {
@@ -22,8 +21,9 @@ namespace K9.WebApplication.Controllers
         private readonly IAstrologyService _astrologyService;
         private readonly IAIService _aiService;
         private readonly IPdfService _pdfService;
+        private readonly IReportsService _reportsService;
 
-        public PredictionsController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService, IAstronomyService astronomyService, IAstrologyService astrologyService, IAIService aiService, IPdfService pdfService)
+        public PredictionsController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService, IAstronomyService astronomyService, IAstrologyService astrologyService, IAIService aiService, IPdfService pdfService, IReportsService reportsService)
             : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
@@ -31,6 +31,7 @@ namespace K9.WebApplication.Controllers
             _astrologyService = astrologyService;
             _aiService = aiService;
             _pdfService = pdfService;
+            _reportsService = reportsService;
         }
 
         [Route("calculator")]
@@ -305,86 +306,6 @@ namespace K9.WebApplication.Controllers
             }
             var model = _nineStarKiService.CalculateNineStarKiProfile(lastPredictions.DateOfBirth, lastPredictions.Gender);
             return View("Index", model);
-        }
-
-        [Route("yearly-report")]
-        [Authorize]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public async Task<ActionResult> YearlyReport()
-        {
-            var myAccount = My.AccountService.GetAccount(Current.UserId);
-            var personModel = new PersonModel
-            {
-                Name = myAccount.User.FullName,
-                DateOfBirth = myAccount.User.BirthDate.Add(myAccount.UserInfo.TimeOfBirth),
-                Gender = myAccount.User.Gender,
-                TimeOfBirth = myAccount.UserInfo.TimeOfBirth,
-                BirthTimeZoneId = myAccount.UserInfo.BirthTimeZoneId
-            };
-
-            var now = new DateTime(DateTime.UtcNow.Year, 2, 5);
-            var lichun = _astronomyService.GetLichun(now, personModel.BirthTimeZoneId);
-
-            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false, now, ECalculationMethod.Chinese, true, true,
-                personModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, false, false, EDisplayDataForPeriod.SelectedDate);
-
-            var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth.Date, personModel.BirthTimeZoneId, personModel.TimeOfBirth, personModel.Gender, now, nineStarKiModel.UserTimeZoneId, nineStarKiModel.CalculationMethod, nineStarKiModel.DisplayDataForPeriod, nineStarKiModel.HousesDisplay, nineStarKiModel.InvertDailyAndHourlyKiForSouthernHemisphere, nineStarKiModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
-                EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiModel);
-
-            var report = await _aiService.GetYearlyReport(new YearlyReportViewModel
-            {
-                NineStarKiModel = nineStarKiModel,
-                YearlyPlannerModel = plannerData
-            });
-
-            ViewBag.Report = report;
-
-            return View();
-        }
-
-        [Route("yearly-report/pdf")]
-        [Authorize]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult YearlyReportPdf()
-        {
-            var baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
-            var url = My.UrlHelper.AbsoluteAction("YearlyReport", "Predictions");
-            var pdfBytes = _pdfService.UrlToPdf(url);
-
-            return File(pdfBytes, "application/pdf", "9-star-ki-yearly-report.pdf");
-        }
-
-        [Route("yearly-report/prompt")]
-        [Authorize]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult YearlyReportPrompt()
-        {
-            var myAccount = My.AccountService.GetAccount(Current.UserId);
-            var personModel = new PersonModel
-            {
-                Name = myAccount.User.FullName,
-                DateOfBirth = myAccount.User.BirthDate.Add(myAccount.UserInfo.TimeOfBirth),
-                Gender = myAccount.User.Gender,
-                TimeOfBirth = myAccount.UserInfo.TimeOfBirth,
-                BirthTimeZoneId = myAccount.UserInfo.BirthTimeZoneId
-            };
-
-            var now = new DateTime(DateTime.UtcNow.Year, 2, 5);
-            var lichun = _astronomyService.GetLichun(now, personModel.BirthTimeZoneId);
-
-            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false, now, ECalculationMethod.Chinese, true, true,
-                personModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, false, false, EDisplayDataForPeriod.SelectedDate);
-
-            var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth.Date, personModel.BirthTimeZoneId, personModel.TimeOfBirth, personModel.Gender, now, nineStarKiModel.UserTimeZoneId, nineStarKiModel.CalculationMethod, nineStarKiModel.DisplayDataForPeriod, nineStarKiModel.HousesDisplay, nineStarKiModel.InvertDailyAndHourlyKiForSouthernHemisphere, nineStarKiModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
-                EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiModel);
-
-            var report = _aiService.GetYearlyReportPrompt(new YearlyReportViewModel
-            {
-                NineStarKiModel = nineStarKiModel,
-                YearlyPlannerModel = plannerData
-            });
-
-            return Content(report, "text/plain");
         }
 
         private JsonResult PredictionsJsonResult(EScopeDisplay display, NineStarKiEnergy cycle, string moonPhaseHtml = "")

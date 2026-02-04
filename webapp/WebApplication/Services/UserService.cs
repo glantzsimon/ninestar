@@ -67,6 +67,12 @@ namespace K9.WebApplication.Services
             return My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
         }
 
+        public User Find(Guid id)
+        {
+            var info = _userInfosRepository.Find(e => e.UniqueIdentifier == id).FirstOrDefault();
+            return My.UsersRepository.Find(info?.UserId ?? 0);
+        }
+
         public bool UserIsAdmin(int userId)
         {
             var adminRole = My.RolesRepository.Find(e => e.Name == Constants.Constants.Administrator).First();

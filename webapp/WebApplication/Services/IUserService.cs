@@ -1,5 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Models;
+using System;
 using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
@@ -7,6 +8,7 @@ namespace K9.WebApplication.Services
     public interface IUserService : IBaseService
     {
         void UpdateActiveUserEmailAddressIfFromFacebook(Contact contact);
+        User Find(Guid id);
         User Find(int id);
         User Find(string username);
         UserInfo GetOrCreateUserInfo(int userId);

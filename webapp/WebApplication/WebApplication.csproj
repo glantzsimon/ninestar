@@ -367,6 +367,7 @@
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\MembershipOptionsController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SystemSettingsController.cs" />
     <Compile Include="Controllers\UserConsultationsController.cs" />
     <Compile Include="Controllers\UserPromotionsController.cs" />
@@ -419,6 +420,8 @@
     <Compile Include="Services\AstrologyService.cs" />
     <Compile Include="Services\ArticlesService.cs" />
     <Compile Include="Services\MediaManagementService.cs" />
+    <Compile Include="Services\IReportsService.cs" />
+    <Compile Include="Services\ReportsService.cs" />
     <Compile Include="ViewModels\ConsultationBookingViewModel.cs" />
     <Compile Include="ViewModels\BlogModeratorViewModel.cs" />
     <Compile Include="ViewModels\DynamicFields\EmailTemplateDynamicFieldsViewModel.cs" />
@@ -1176,6 +1179,7 @@
     <Content Include="Scripts\library\move-top.js" />
     <Content Include="Scripts\library\SmoothScroll.min.js" />
     <Content Include="Scripts\library\vticker-min.js" />
+    <Content Include="Scripts\node\htmlToPdf.js" />
     <Content Include="Scripts\template\scroller.js" />
     <Content Include="openapi.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

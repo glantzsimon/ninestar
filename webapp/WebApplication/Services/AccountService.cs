@@ -634,6 +634,12 @@ namespace K9.WebApplication.Services
             return result;
         }
 
+        public MyAccountViewModel GetAccount(Guid userId)
+        {
+            var user = _userService.Find(userId);
+            return GetAccount(user.Id);
+        }
+
         public MyAccountViewModel GetAccount(int userId)
         {
             var user = _userService.Find(userId);

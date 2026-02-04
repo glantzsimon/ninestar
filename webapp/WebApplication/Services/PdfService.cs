@@ -1,7 +1,9 @@
 ﻿using K9.WebApplication.Packages;
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Security.Principal;
 using System.Text;
 
 namespace K9.WebApplication.Services
@@ -49,6 +51,7 @@ namespace K9.WebApplication.Services
                 var psi = new ProcessStartInfo
                 {
                     FileName = My.DefaultValuesConfiguration.WkHtmlToPdfExePath,
+                    WorkingDirectory = Path.GetDirectoryName(My.DefaultValuesConfiguration.WkHtmlToPdfExePath),
                     Arguments = args,
                     UseShellExecute = false,
                     CreateNoWindow = true,
@@ -106,22 +109,30 @@ namespace K9.WebApplication.Services
 
         public byte[] UrlToPdf(string url)
         {
-            var tempDir = Path.Combine(Path.GetTempPath(), "wkhtmltopdf");
+            // Folder for temp PDFs
+            var tempDir = Path.Combine(Path.GetTempPath(), "html2pdf");
             Directory.CreateDirectory(tempDir);
 
             var pdfPath = Path.Combine(tempDir, Guid.NewGuid().ToString("N") + ".pdf");
+            var scriptPath = System.Web.Hosting.HostingEnvironment.MapPath(
+                "~/Scripts/node/htmlToPdf.js"
+            );
+
+            if (string.IsNullOrEmpty(scriptPath) || !File.Exists(scriptPath))
+            {
+                throw new FileNotFoundException("htmlToPdf.js not found", scriptPath);
+            }
 
             try
             {
-                var args =
-                    "--quiet " +
-                    "--print-media-type " +
-                    "--margin-top 12mm --margin-bottom 12mm --margin-left 12mm --margin-right 12mm " +
-                    $"\"{url}\" \"{pdfPath}\"";
+                // Args: "<script>" "<url>" "<outputPdf>"
+                // Use quotes to protect spaces
+                var args = $"\"{scriptPath}\" \"{url}\" \"{pdfPath}\"";
 
                 var psi = new ProcessStartInfo
                 {
-                    FileName = My.DefaultValuesConfiguration.WkHtmlToPdfExePath,
+                    FileName = "node",
+                    WorkingDirectory = Path.GetDirectoryName(scriptPath) ?? Environment.CurrentDirectory,
                     Arguments = args,
                     UseShellExecute = false,
                     CreateNoWindow = true,
@@ -135,26 +146,35 @@ namespace K9.WebApplication.Services
                     {
                         p.Start();
                     }
-                    catch (System.ComponentModel.Win32Exception ex)
+                    catch (Win32Exception ex)
                     {
                         throw new Exception(
-                            "wkhtmltopdf failed to start." + Environment.NewLine +
+                            "Node/Puppeteer PDF process failed to start." + Environment.NewLine +
                             "Exe: " + psi.FileName + Environment.NewLine +
                             "WorkingDir: " + psi.WorkingDirectory + Environment.NewLine +
                             "Args: " + psi.Arguments + Environment.NewLine +
-                            "Identity: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name + Environment.NewLine +
+                            "Identity: " + WindowsIdentity.GetCurrent().Name + Environment.NewLine +
                             "NativeErrorCode: " + ex.NativeErrorCode + Environment.NewLine +
                             "Message: " + ex.Message,
                             ex);
                     }
 
-                    var stderr = p.StandardError.ReadToEnd();
                     var stdout = p.StandardOutput.ReadToEnd();
+                    var stderr = p.StandardError.ReadToEnd();
                     p.WaitForExit();
 
                     if (p.ExitCode != 0)
-                        throw new Exception("wkhtmltopdf failed. " + stderr + " " + stdout);
+                    {
+                        throw new Exception(
+                            "Node/Puppeteer PDF process failed." + Environment.NewLine +
+                            "ExitCode: " + p.ExitCode + Environment.NewLine +
+                            "STDERR: " + stderr + Environment.NewLine +
+                            "STDOUT: " + stdout);
+                    }
                 }
+
+                if (!File.Exists(pdfPath))
+                    throw new Exception("Node/Puppeteer reported success but the PDF file was not created: " + pdfPath);
 
                 return File.ReadAllBytes(pdfPath);
             }

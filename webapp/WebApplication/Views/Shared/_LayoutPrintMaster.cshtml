@@ -27,11 +27,13 @@
     var pageUrl = ViewBag.PageUrl ?? $"https://{DefaultValuesConfiguration.Instance.SiteBaseUrl}";
     var pageType = ViewBag.PageType ?? "website";
     var pageImage = ViewBag.PageImage ?? $"{MediaService.BaseImagesPath}/company/logo.png";
+    var baseUrl = $"{Request.Url.GetLeftPart(UriPartial.Authority)}/";
 }
 
 <!DOCTYPE html>
 <html lang="@languageName">
 <head>
+    <base href="@baseUrl">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -55,9 +57,12 @@
     <link rel="shortcut icon" href="@MediaService.BaseImagesPath/icons/favicon.ico" type="image/x-icon">
 
     @* 🔥 Optimize DNS prefetching to reduce latency *@
-    @foreach (var domain in new[] { "cdn.bootcss.com", "cdnjs.cloudflare.com", "fonts.googleapis.com", "ajax.googleapis.com",
+    @foreach (var domain in new[]
+    {
+"cdn.bootcss.com", "cdnjs.cloudflare.com", "fonts.googleapis.com", "ajax.googleapis.com",
 "ajax.aspnetcdn.com", "maxcdn.bootstrapcdn.com", "cdn.datatables.net", "unpkg.com",
-"code.highcharts.com", "cdn.rawgit.com" })
+"code.highcharts.com", "cdn.rawgit.com"
+})
     {
         <link rel="dns-prefetch" href="//@domain">
     }
@@ -83,14 +88,14 @@
 </head>
 
 <body>
-    @RenderSection("headerscripts", false)
-    @RenderBody()
-    
-    @* 🔥 Load scripts at the end for better performance *@
-    @Scripts.Render("~/Scripts/js")
-    @Scripts.Render("~/Scripts/lib")
-    @Html.Partial("Scripts/Default")
-    @RenderSection("scripts", false)
+@RenderSection("headerscripts", false)
+@RenderBody()
+
+@* 🔥 Load scripts at the end for better performance *@
+@Scripts.Render("~/Scripts/js")
+@Scripts.Render("~/Scripts/lib")
+@Html.Partial("Scripts/Default")
+@RenderSection("scripts", false)
 </body>
 </html>
 

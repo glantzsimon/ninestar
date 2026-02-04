@@ -29,6 +29,7 @@ namespace K9.WebApplication.Services
         ActivateAccountResult ActivateAccount(int userId);
 
         MyAccountViewModel GetAccount(int userId);
+        MyAccountViewModel GetAccount(Guid userId);
 		string GetAccountActivationToken(int userId);
         UserOTP CreateAccountActivationOTP(int userId, bool recreate = false);
         UserOTP GetAccountActivationOTP(Guid uniqueIdentifier);

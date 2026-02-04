@@ -354,6 +354,32 @@ namespace K9.WebApplication.Helpers
             return new TagCloser(html, Tags.Div);
         }
 
+        public static string RenderViewToString(this ControllerContext controllerContext, string viewName)
+        {
+            if (controllerContext == null) throw new ArgumentNullException(nameof(controllerContext));
+            if (string.IsNullOrWhiteSpace(viewName)) throw new ArgumentException("View name is required.", nameof(viewName));
+            
+            using (var sw = new StringWriter())
+            {
+                // Find the view (not partial). If you want a partial, use FindPartialView.
+                var viewResult = ViewEngines.Engines.FindView(controllerContext, viewName, null);
+
+                if (viewResult.View == null)
+                    throw new InvalidOperationException("View not found: " + viewName);
+
+                var viewContext = new ViewContext(
+                    controllerContext,
+                    viewResult.View,
+                    controllerContext.Controller.ViewData,
+                    controllerContext.Controller.TempData,
+                    sw
+                );
+
+                viewResult.View.Render(viewContext, sw);
+                return sw.ToString();
+            }
+        }
+
         private static string GetSectionCode(ESection section)
         {
             return section.GetAttribute<EnumDescriptionAttribute>().CultureCode;

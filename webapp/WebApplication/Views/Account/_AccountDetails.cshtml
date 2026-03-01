@@ -23,6 +23,12 @@
                 <hr />
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h4>@Dictionary.PersonalDetails</h4>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.FirstName)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.LastName)</div>
@@ -41,8 +47,14 @@
                 <hr />
             </div>
         </div>
+
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
+                <h4>@Dictionary.CalculationPreferences</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
                 <label>@Dictionary.CalculationMethodLabel</label>
                 <a target="_blank" href="@Url.Action("CalculationMethods", "Home")"><i class="fa fa-question-circle"></i></a>
 
@@ -51,9 +63,11 @@
                     Label = ""
                 })
             </div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.CalculatorType)</div>
         </div>
         <div class="row">
+            <div class="col-sm-6">
+                @Html.BootstrapEditorFor(model => model.UserInfo.CalculatorType)
+            </div>
             <div class="col-sm-6">
                 <label>@Dictionary.HousesDisplayLabel</label>
                 <a target="_blank" href="@Url.Action("CalculationMethods", "Home")"><i class="fa fa-question-circle"></i></a>
@@ -63,7 +77,9 @@
                     Label = ""
                 })
             </div>
-            <div class="col-sm-6">
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
                 <label>@Dictionary.SouthernHemisphereOptions</label>
                 <a target="_blank" href="@Url.Action("SouthernHemisphere", "Home")"><i class="fa fa-question-circle"></i></a>
                 <br />

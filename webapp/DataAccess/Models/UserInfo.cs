@@ -34,11 +34,11 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("CalculationMethod")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculationMethodLabel)]
-        public ECalculationMethod CalculationMethod { get; set; }
+        public ECalculationMethod CalculationMethod { get; set; } = ECalculationMethod.Chinese;
 
         [UIHint("CalculatorType")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculatorTypeLabel)]
-        public ECalculatorType CalculatorType { get; set; }
+        public ECalculatorType CalculatorType { get; set; } = ECalculatorType.Simple;
 
         [UIHint("HousesDisplay")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HousesDisplayLabel)]

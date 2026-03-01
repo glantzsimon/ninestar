@@ -6854,4 +6854,10 @@
   <data name="YearlyReportTitle" xml:space="preserve">
     <value>9 Star Ki Yearly Guide – {Year} Edition</value>
   </data>
+  <data name="CalculationPreferences" xml:space="preserve">
+    <value>Calculation Preferences</value>
+  </data>
+  <data name="PersonalDetails" xml:space="preserve">
+    <value>Personal Details</value>
+  </data>
 </root>

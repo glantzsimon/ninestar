@@ -1838,7 +1838,7 @@
     <Content Include="Views\Reports\_CoreEnergies.cshtml" />
     <Content Include="Views\Reports\_PersonalDetails.cshtml" />
     <Content Include="Views\Reports\_YearlyForecast.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\CalculationType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CalculatorType.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

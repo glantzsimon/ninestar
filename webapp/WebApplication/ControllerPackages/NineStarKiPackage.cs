@@ -12,9 +12,9 @@ namespace K9.WebApplication.Packages
     public class NineStarKiPackage : NineStarKiBasePackage, INineStarKiPackage
     {
         public NineStarKiPackage(ILogger logger, IDataSetsHelper datasetsHelper, IRoles roles, IFileSourceHelper fileSourceHelper, IAuthentication authentication, IMailer mailer, IMembershipService membershipService, IAccountService accountService, IUserService userService, IMediaManagementService mediaManagementService,
-           IContactService contactService, IRepository<User> usersRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<SystemSetting> systemSettingsRepository, IOptions<DefaultValuesConfiguration> defaultValuesConfiguration, IOptions<SmtpConfiguration> smtpConfiguration,
+           IContactService contactService, IRepository<User> usersRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<SystemSetting> systemSettingsRepository, IOptions<DefaultValuesConfiguration> defaultValuesConfiguration, IOptions<SmtpConfiguration> smtpConfiguration, IRepository<UserInfo> userInfosRepository,
             IOptions<ApiConfiguration> apiConfiguration, IOptions<WebsiteConfiguration> websiteConfiguration, IOptions<GoogleConfiguration> googleConfiguration)
-        : base(logger, datasetsHelper, roles, fileSourceHelper, authentication, mailer, usersRepository, rolesRepository, userRolesRepository, contactsRepository, systemSettingsRepository,
+        : base(logger, datasetsHelper, roles, fileSourceHelper, authentication, mailer, usersRepository, userInfosRepository, rolesRepository, userRolesRepository, contactsRepository, systemSettingsRepository,
             defaultValuesConfiguration, smtpConfiguration, apiConfiguration, websiteConfiguration, googleConfiguration)
         {
             MembershipService = membershipService;

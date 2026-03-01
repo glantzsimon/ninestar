@@ -4048,6 +4048,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Calculation Preferences.
+        /// </summary>
+        public static string CalculationPreferences {
+            get {
+                return ResourceManager.GetString("CalculationPreferences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Calculator.
         /// </summary>
         public static string Calculator {
@@ -17238,6 +17247,15 @@ namespace K9.Globalisation {
         public static string PersonalCycles {
             get {
                 return ResourceManager.GetString("PersonalCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Details.
+        /// </summary>
+        public static string PersonalDetails {
+            get {
+                return ResourceManager.GetString("PersonalDetails", resourceCulture);
             }
         }
         

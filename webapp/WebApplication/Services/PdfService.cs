@@ -1,10 +1,10 @@
 ﻿using K9.WebApplication.Packages;
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Security.Principal;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace K9.WebApplication.Services
 {
@@ -107,80 +107,24 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public byte[] UrlToPdf(string url)
+        public async Task<byte[]> UrlToPdf(string url)
         {
-            // Folder for temp PDFs
-            var tempDir = Path.Combine(Path.GetTempPath(), "html2pdf");
-            Directory.CreateDirectory(tempDir);
-
-            var pdfPath = Path.Combine(tempDir, Guid.NewGuid().ToString("N") + ".pdf");
-            var scriptPath = System.Web.Hosting.HostingEnvironment.MapPath(
-                "~/Scripts/node/htmlToPdf.js"
-            );
-
-            if (string.IsNullOrEmpty(scriptPath) || !File.Exists(scriptPath))
+            using (var client = new HttpClient())
             {
-                throw new FileNotFoundException("htmlToPdf.js not found", scriptPath);
-            }
+                client.Timeout = TimeSpan.FromMinutes(5);
+                var response = await client.GetAsync(url).ConfigureAwait(false);
+                var html = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-            try
-            {
-                // Args: "<script>" "<url>" "<outputPdf>"
-                // Use quotes to protect spaces
-                var args = $"\"{scriptPath}\" \"{url}\" \"{pdfPath}\"";
-
-                var psi = new ProcessStartInfo
+                if (!response.IsSuccessStatusCode)
                 {
-                    FileName = "node",
-                    WorkingDirectory = Path.GetDirectoryName(scriptPath) ?? Environment.CurrentDirectory,
-                    Arguments = args,
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    RedirectStandardError = true,
-                    RedirectStandardOutput = true
-                };
-
-                using (var p = new Process { StartInfo = psi })
-                {
-                    try
-                    {
-                        p.Start();
-                    }
-                    catch (Win32Exception ex)
-                    {
-                        throw new Exception(
-                            "Node/Puppeteer PDF process failed to start." + Environment.NewLine +
-                            "Exe: " + psi.FileName + Environment.NewLine +
-                            "WorkingDir: " + psi.WorkingDirectory + Environment.NewLine +
-                            "Args: " + psi.Arguments + Environment.NewLine +
-                            "Identity: " + WindowsIdentity.GetCurrent().Name + Environment.NewLine +
-                            "NativeErrorCode: " + ex.NativeErrorCode + Environment.NewLine +
-                            "Message: " + ex.Message,
-                            ex);
-                    }
-
-                    var stdout = p.StandardOutput.ReadToEnd();
-                    var stderr = p.StandardError.ReadToEnd();
-                    p.WaitForExit();
-
-                    if (p.ExitCode != 0)
-                    {
-                        throw new Exception(
-                            "Node/Puppeteer PDF process failed." + Environment.NewLine +
-                            "ExitCode: " + p.ExitCode + Environment.NewLine +
-                            "STDERR: " + stderr + Environment.NewLine +
-                            "STDOUT: " + stdout);
-                    }
+                    throw new Exception(
+                        "HTML endpoint failed.\n" +
+                        "Status: " + (int)response.StatusCode + "\n" +
+                        html
+                    );
                 }
 
-                if (!File.Exists(pdfPath))
-                    throw new Exception("Node/Puppeteer reported success but the PDF file was not created: " + pdfPath);
-
-                return File.ReadAllBytes(pdfPath);
-            }
-            finally
-            {
-                try { if (File.Exists(pdfPath)) File.Delete(pdfPath); } catch { }
+                return HtmlToPdf(html);
             }
         }
 

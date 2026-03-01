@@ -23,6 +23,7 @@ namespace K9.WebApplication.Packages
         IRepository<Contact> ContactsRepository { get; }
         IRepository<Role> RolesRepository { get; }
         IRepository<UserRole> UserRolesRepository { get; }
+        IRepository<UserInfo> UserInfosRepository { get; }
 
         DefaultValuesConfiguration DefaultValuesConfiguration { get; }
         SmtpConfiguration SmtpConfiguration { get; }

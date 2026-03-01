@@ -239,8 +239,11 @@
     <Compile Include="Database\Seeds\EmailTemplatesSeeder.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\ECalculationsMethod.cs" />
+    <Compile Include="Enums\ECalculatorType.cs" />
     <Compile Include="Enums\ECommentFilter.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
+    <Compile Include="Enums\EHouseDisplay.cs" />
     <Compile Include="Enums\ESystemEmailTemplate.cs" />
     <Compile Include="Enums\EEmailType.cs" />
     <Compile Include="Enums\EDiscount.cs" />
@@ -506,6 +509,14 @@
     <Compile Include="Migrations\202512161533220_AddViewCount.designer.cs">
       <DependentUpon>202512161533220_AddViewCount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202603010436059_CalculatorUserInfo.cs" />
+    <Compile Include="Migrations\202603010436059_CalculatorUserInfo.designer.cs">
+      <DependentUpon>202603010436059_CalculatorUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202603010454392_CalculatorUserInfo2.cs" />
+    <Compile Include="Migrations\202603010454392_CalculatorUserInfo2.designer.cs">
+      <DependentUpon>202603010454392_CalculatorUserInfo2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ArticleView.cs" />
     <Compile Include="Models\BaseLikeable.cs" />
     <Compile Include="Models\Like.cs" />
@@ -747,6 +758,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512161533220_AddViewCount.resx">
       <DependentUpon>202512161533220_AddViewCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202603010436059_CalculatorUserInfo.resx">
+      <DependentUpon>202603010436059_CalculatorUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202603010454392_CalculatorUserInfo2.resx">
+      <DependentUpon>202603010454392_CalculatorUserInfo2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,6 +8,7 @@ using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -33,21 +34,21 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("yearly-report")]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public async Task<ActionResult> YearlyReport(Guid userId)
+        [OutputCache(Duration = 604800, VaryByParam = "userId", Location = OutputCacheLocation.ServerAndClient)]
+        public async Task<ActionResult> YearlyReport(Guid? userId = null)
         {
-            var report = await _reportsService.GetYearlyReport(userId);
-            ViewBag.Report = report;
-            return View();
+            var report = _reportsService.GetYearlyReport(userId);
+            return View(report);
         }
 
         [Route("yearly-report/pdf")]
         [Authorize]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult YearlyReportPdf()
+        public async Task<ActionResult> YearlyReportPdf()
         {
             var account = My.AccountService.GetAccount(Current.UserId);
-            var pdfBytes = _pdfService.UrlToPdf(My.UrlHelper.AbsoluteAction("YearlyReport", "Reports", new { userId = account.UserInfo.UniqueIdentifier }));
+            var url = My.UrlHelper.AbsoluteAction("YearlyReport", "Reports", new { userId = account.UserInfo.UniqueIdentifier });
+            var pdfBytes = await _pdfService.UrlToPdf(url);
             return File(pdfBytes, "application/pdf", $"9 Star Ki Yearly Report.pdf");
         }
 
@@ -55,10 +56,11 @@ namespace K9.WebApplication.Controllers
         [Route("yearly-report/prompt")]
         [Authorize]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public async Task<ActionResult> YearlyReportPrompt()
+        public ActionResult YearlyReportPrompt()
         {
-            var report = await _reportsService.GetYearlyReport(Current.UserId);
-            return Content(report, "text/plain");
+            var report = _reportsService.GetYearlyReport(Current.UserId);
+            var prompt = _aiService.GetYearlyReportPrompt(report);
+            return Content(prompt, "text/plain");
         }
 
         public override string GetObjectName()

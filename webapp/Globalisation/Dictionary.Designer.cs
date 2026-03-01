@@ -25210,19 +25210,17 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to ##OVERVIEW##
         ///
-        ///Generate a printable 9 Star Ki Astrology report using the data points provided below.
+        ///Generate a printable 9 Star Ki Astrology report according to the structure in ##SECTIONS##, using the data points provided under ##DATA##.
         ///
-        ///Please return the report as clean HTML that can be inserted into an existing page (with HTML). 
+        ///Please return the report as HTML that can be inserted into an existing page (with HTML).
         ///
-        ///Use &lt;h4&gt;, &lt;h5&gt; for section headers and &lt;table&gt; for data. 
+        ///Use &lt;h4&gt; section headers and &lt;table&gt; for data. 
         ///
         ///Make it elegant but simple. The use of appropriate icons and color is recommended, but always stylish.
         ///
         ///Ensure the HTML is clean, using proper semantic structure.
         ///
-        ///Do not include any markdown or triple backticks. Only return HTML.
-        ///
-        ///Important [rest of string was truncated]&quot;;.
+        ///Do not include any markdown or triple backt [rest of string was truncated]&quot;;.
         /// </summary>
         public static string yearly_report {
             get {
@@ -25285,6 +25283,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yearly Forecast.
+        /// </summary>
+        public static string YearlyForecast {
+            get {
+                return ResourceManager.GetString("YearlyForecast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yearly Planner.
         /// </summary>
         public static string YearlyPlanner {
@@ -25317,6 +25324,15 @@ namespace K9.Globalisation {
         public static string YearlyReport {
             get {
                 return ResourceManager.GetString("YearlyReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Yearly Guide – {Year} Edition.
+        /// </summary>
+        public static string YearlyReportTitle {
+            get {
+                return ResourceManager.GetString("YearlyReportTitle", resourceCulture);
             }
         }
         

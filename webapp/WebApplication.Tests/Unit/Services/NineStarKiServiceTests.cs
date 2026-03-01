@@ -1,4 +1,5 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Enums;

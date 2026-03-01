@@ -1,0 +1,29 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@using Dictionary = K9.Base.Globalisation.Dictionary
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var personModel = Model.PersonModel;
+}
+
+<div class="ninestar-summary-container padding-left-30 padding-right-30">
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><strong>@Dictionary.NameLabel</strong></td>
+                    <td>@personModel.Name</td>
+                </tr>
+                <tr>
+                    <td><strong>@Dictionary.GenderLabel</strong></td>
+                    <td>@personModel.GenderName</td>
+                </tr>
+                <tr>
+                    <td><strong>@Dictionary.BirthDateLabel</strong></td>
+                    <td>@personModel.DateOfBirth.ToShortDateString()</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

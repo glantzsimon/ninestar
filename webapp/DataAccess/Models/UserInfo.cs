@@ -1,5 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -30,5 +31,19 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.ImageUrl)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AvatarImageUrlLabel)]
         public string AvatarImageUrl { get; set; }
+
+        [UIHint("CalculationMethod")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculationMethodLabel)]
+        public ECalculationMethod CalculationMethod { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculatorTypeLabel)]
+        public ECalculatorType CalculatorType { get; set; }
+
+        [UIHint("HousesDisplay")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HousesDisplayLabel)]
+        public EHousesDisplay HousesDisplay { get; set; }
+        
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertDailyAndHourlyKiForSouthernHemisphereLabel)]
+        public bool InvertDailyAndHourlyKiForSouthernHemisphere { get; set; }
     }
 }

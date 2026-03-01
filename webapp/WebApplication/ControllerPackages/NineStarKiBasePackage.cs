@@ -1,11 +1,11 @@
-﻿using System.Linq;
-using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using NLog;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Packages
@@ -14,7 +14,7 @@ namespace K9.WebApplication.Packages
     {
         private readonly IRepository<SystemSetting> _systemSettingsRepository;
 
-        public NineStarKiBasePackage(ILogger logger, IDataSetsHelper datasetsHelper, IRoles roles, IFileSourceHelper fileSourceHelper, IAuthentication authentication, IMailer mailer, IRepository<User> usersRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<SystemSetting> systemSettingsRepository, IOptions<DefaultValuesConfiguration> defaultValuesConfiguration, IOptions<SmtpConfiguration> smtpConfiguration,
+        public NineStarKiBasePackage(ILogger logger, IDataSetsHelper datasetsHelper, IRoles roles, IFileSourceHelper fileSourceHelper, IAuthentication authentication, IMailer mailer, IRepository<User> usersRepository, IRepository<UserInfo> userInfosRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<SystemSetting> systemSettingsRepository, IOptions<DefaultValuesConfiguration> defaultValuesConfiguration, IOptions<SmtpConfiguration> smtpConfiguration,
             IOptions<ApiConfiguration> apiConfiguration, IOptions<WebsiteConfiguration> websiteConfiguration, IOptions<GoogleConfiguration> googleConfiguration)
         {
             _systemSettingsRepository = systemSettingsRepository;
@@ -28,6 +28,7 @@ namespace K9.WebApplication.Packages
             UsersRepository = usersRepository;
             RolesRepository = rolesRepository;
             UserRolesRepository = userRolesRepository;
+            UserInfosRepository = userInfosRepository;
             ContactsRepository = contactsRepository;
 
             DefaultValuesConfiguration = defaultValuesConfiguration.Value;
@@ -53,6 +54,7 @@ namespace K9.WebApplication.Packages
         public IRepository<Contact> ContactsRepository { get; }
         public IRepository<Role> RolesRepository { get; }
         public IRepository<UserRole> UserRolesRepository { get; }
+        public IRepository<UserInfo> UserInfosRepository { get; }
 
         public DefaultValuesConfiguration DefaultValuesConfiguration { get; }
         public SmtpConfiguration SmtpConfiguration { get; }

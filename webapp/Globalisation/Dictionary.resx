@@ -6848,4 +6848,10 @@
   <data name="YearlyReport" xml:space="preserve">
     <value>Yearly Report</value>
   </data>
+  <data name="YearlyForecast" xml:space="preserve">
+    <value>Yearly Forecast</value>
+  </data>
+  <data name="YearlyReportTitle" xml:space="preserve">
+    <value>9 Star Ki Yearly Guide – {Year} Edition</value>
+  </data>
 </root>

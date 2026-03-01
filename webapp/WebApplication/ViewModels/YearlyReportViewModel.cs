@@ -6,5 +6,7 @@ namespace K9.WebApplication.ViewModels
     {
         public NineStarKiModel NineStarKiModel { get; set; }
         public PlannerViewModel YearlyPlannerModel { get; set; }
+
+        public string PeriodDateString => $"{YearlyPlannerModel.PeriodStartsOn.ToShortDateString()} - {YearlyPlannerModel.PeriodEndsOn.ToShortDateString()}";
     }
 }

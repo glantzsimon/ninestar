@@ -1,11 +1,11 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using K9.WebApplication.ViewModels;
+using System;
 
 namespace K9.WebApplication.Services
 {
     public interface IReportsService : IBaseService
     {
-        Task<string> GetYearlyReport(Guid userId);
-        Task<string> GetYearlyReport(int userId);
+        YearlyReportViewModel GetYearlyReport(Guid? userId);
+        YearlyReportViewModel GetYearlyReport(int userId);
     }
 }

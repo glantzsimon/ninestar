@@ -2,10 +2,10 @@
 @using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
-@model K9.WebApplication.Enums.ECalculationMethod?
+@model K9.DataAccessLayer.Enums.ECalculationMethod?
 
 @{
-    var selectList = this.GetDropdownData().GetSelectListFromEnum<K9.WebApplication.Enums.ECalculationMethod>(Convert.ToInt32(Model), true);
+    var selectList = this.GetDropdownData().GetSelectListFromEnum<K9.DataAccessLayer.Enums.ECalculationMethod>(Convert.ToInt32(Model), true);
 }
 
 @if (this.GetDeviceType() == EDeviceType.Desktop)

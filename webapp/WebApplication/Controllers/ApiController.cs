@@ -16,6 +16,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Controllers
 {

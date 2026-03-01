@@ -1,11 +1,12 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using System;
-using System.Threading.Tasks;
 
 namespace K9.WebApplication.Services
 {
@@ -40,19 +41,21 @@ namespace K9.WebApplication.Services
             _aiService = aiService;
         }
 
-        public async Task<string> GetYearlyReport(int userId)
+        public YearlyReportViewModel GetYearlyReport(int userId)
         {
             var myAccount = _accountService.GetAccount(userId);
-            return await GetYearlyReport(myAccount);
+            return GetYearlyReport(myAccount);
         }
 
-        public async Task<string> GetYearlyReport(Guid userId)
+        public YearlyReportViewModel GetYearlyReport(Guid? userId = null)
         {
-            var myAccount = _accountService.GetAccount(userId);
-            return await GetYearlyReport(myAccount);
+            var myAccount = userId.HasValue
+                ? _accountService.GetAccount(userId.Value)
+                : _accountService.GetAccount(Current.UserId); ;
+            return GetYearlyReport(myAccount);
         }
 
-        private async Task<string> GetYearlyReport(MyAccountViewModel myAccount)
+        private YearlyReportViewModel GetYearlyReport(MyAccountViewModel myAccount)
         {
             var personModel = new PersonModel
             {
@@ -77,13 +80,17 @@ namespace K9.WebApplication.Services
                 nineStarKiModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
                 EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiModel);
 
-            var report = await _aiService.GetYearlyReport(new YearlyReportViewModel
+            //var report = await _aiService.GetYearlyReport(new YearlyReportViewModel
+            //{
+            //    NineStarKiModel = nineStarKiModel,
+            //    YearlyPlannerModel = plannerData
+            //});
+
+            return new YearlyReportViewModel
             {
                 NineStarKiModel = nineStarKiModel,
                 YearlyPlannerModel = plannerData
-            });
-
-            return report;
+            };
         }
     }
 }

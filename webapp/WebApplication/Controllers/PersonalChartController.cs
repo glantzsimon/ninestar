@@ -1,17 +1,18 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Enums;
+using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
 using System;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
-using K9.SharedLibrary.Helpers;
-using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {

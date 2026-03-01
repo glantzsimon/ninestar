@@ -93,6 +93,11 @@ namespace K9.WebApplication.Services
                 UniqueIdentifier = Guid.NewGuid()
             };
 
+            if (userId == 0)
+            {
+                return newUserInfo;
+            }
+
             _userInfosRepository.Create(newUserInfo);
             return newUserInfo;
         }

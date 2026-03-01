@@ -374,14 +374,11 @@
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
     <Compile Include="Enums\EDynamicFieldsMode.cs" />
-    <Compile Include="Enums\ECalculatorType.cs" />
-    <Compile Include="Enums\EHouseDisplay.cs" />
     <Compile Include="Enums\EPanelCycleView.cs" />
     <Compile Include="Enums\EPanelView.cs" />
     <Compile Include="Enums\EUnfavourableDirection.cs" />
     <Compile Include="Enums\EPrimaryAttribute.cs" />
     <Compile Include="Enums\EDisplayDataForPeriod.cs" />
-    <Compile Include="Enums\ECalculationsMethod.cs" />
     <Compile Include="Enums\ENumerologyCode.cs" />
     <Compile Include="Enums\EForecastType.cs" />
     <Compile Include="Enums\EEnergyDisplay.cs" />
@@ -1179,7 +1176,6 @@
     <Content Include="Scripts\library\move-top.js" />
     <Content Include="Scripts\library\SmoothScroll.min.js" />
     <Content Include="Scripts\library\vticker-min.js" />
-    <Content Include="Scripts\node\htmlToPdf.js" />
     <Content Include="Scripts\template\scroller.js" />
     <Content Include="openapi.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1837,8 +1833,11 @@
     <Content Include="Views\Home\SouthernHemisphere.cshtml" />
     <Content Include="Views\Shared\_LayoutPrint.cshtml" />
     <Content Include="Views\Shared\_LayoutPrintMaster.cshtml" />
-    <Content Include="Views\Predictions\YearlyReport.cshtml" />
+    <Content Include="Views\Reports\YearlyReport.cshtml" />
     <Content Include="Views\Articles\UnpublishSuccess.cshtml" />
+    <Content Include="Views\Reports\_CoreEnergies.cshtml" />
+    <Content Include="Views\Reports\_PersonalDetails.cshtml" />
+    <Content Include="Views\Reports\_YearlyForecast.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

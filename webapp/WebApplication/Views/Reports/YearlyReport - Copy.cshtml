@@ -1,0 +1,25 @@
+﻿@using K9.WebApplication.Helpers
+
+@model K9.WebApplication.ViewModels.YearlyReportViewModel
+@{
+    ViewBag.Title = Dictionary.YearlyReport;
+    ViewBag.SubTitle = Dictionary.YearlyReport;
+
+    Layout = "../Shared/_LayoutPrint.cshtml";
+
+    var title = @K9.SharedLibrary.Helpers.TemplateParser.Parse(Dictionary.YearlyReportTitle, new
+    {
+        Year = Model.NineStarKiModel.SelectedDate.Value.Year
+    });
+}
+
+<div class="container main-content margin-bottom-0">
+    <div class="col-sm-12 padding-0 mobile">
+        <div>
+            @Html.Panel(title, )
+        </div>
+        <div class="energy-summary-container">
+            @Html.Panel(Dictionary.CoreEnergies, Html.Partial("../PersonalChart/_CoreEnergies", Model.NineStarKiModel).ToString())
+        </div>
+    </div>
+</div>

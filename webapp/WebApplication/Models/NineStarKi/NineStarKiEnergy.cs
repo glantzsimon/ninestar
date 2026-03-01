@@ -1023,6 +1023,8 @@ namespace K9.WebApplication.Models
         #region Personal Chart
 
         public string EnergyEssenceTitle => $"{ElementNameAndNumber} {Dictionary.Essence}";
+        
+        public string CharacterEssenceTitle => $"{ElementNameAndNumber} {Dictionary.CharacterLabel} {Dictionary.Essence}";
 
         public string EnergyIntellectualQualitiesTitle => $"{ElementNameAndNumber} {Dictionary.IntellectualQualities}";
 

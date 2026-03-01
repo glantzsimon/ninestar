@@ -1,0 +1,23 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
+@using Dictionary = K9.Base.Globalisation.Dictionary
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var personModel = Model.PersonModel;
+}
+
+<div class="energy-summary-container margin-bottom-20">
+    @Html.Panel(
+        Model.PersonalHousesOccupiedEnergies.Year.CycleDescriptiveName,
+        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Year).ToString())
+</div>
+
+<div class="energy-summary-container margin-bottom-20">
+    @Html.Panel(Model.MainEnergy.EnergyEssenceTitle, Model.MainEnergy.MainEnergySummary)
+</div>
+
+<div class="energy-summary-container margin-bottom-20">
+    @Html.Panel(Model.CharacterEnergy.CharacterEssenceTitle, Model.CharacterEnergy.CharacterEnergySummary, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+</div>

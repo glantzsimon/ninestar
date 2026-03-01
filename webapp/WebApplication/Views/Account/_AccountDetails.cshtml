@@ -16,7 +16,7 @@
         @Html.HiddenFor(model => model.User.EmailAddress)
         @Html.HiddenFor(model => model.User.BirthDate)
         @Html.Hidden("User.Password", "th1515n0tmypa55w0rd")
-        
+
         <div class="row">
             <div class="col-sm-12">
                 @Html.BootstrapDisplayFor(model => model.Membership.AccountNumber)
@@ -38,6 +38,38 @@
         <div class="row">
             <div class="col-sm-12">
                 @Html.BootstrapEditorFor(model => model.User.PhoneNumber)
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label>@Dictionary.CalculationMethodLabel</label>
+                <a target="_blank" href="@Url.Action("CalculationMethods", "Home")"><i class="fa fa-question-circle"></i></a>
+
+                @Html.BootstrapEditorFor(model => model.UserInfo.CalculationMethod, new EditorOptions
+                {
+                    Label = ""
+                })
+            </div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.UserInfo.CalculatorType)</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label>@Dictionary.CalculationMethodLabel</label>
+                <a target="_blank" href="@Url.Action("CalculationMethods", "Home")"><i class="fa fa-question-circle"></i></a>
+
+                @Html.BootstrapEditorFor(model => model.UserInfo.HousesDisplay, new EditorOptions
+                {
+                    Label = ""
+                })
+            </div>
+            <div class="col-sm-6">
+                <label>@Dictionary.SouthernHemisphereOptions</label>
+                <a target="_blank" href="@Url.Action("SouthernHemisphere", "Home")"><i class="fa fa-question-circle"></i></a>
+                <br />
+                @Html.CheckBoxFor(model => model.UserInfo.InvertDailyAndHourlyKiForSouthernHemisphere)
+                <label>@Dictionary.InvertDailyAndHourlyKiForSouthernHemisphereLabel</label>
+
                 <hr />
             </div>
         </div>

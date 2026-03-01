@@ -42,6 +42,7 @@ namespace K9.WebApplication.Controllers
 
             SetBetaWarningSessionVariable();
             SetSessionRoles(Current.UserId);
+            SetCurrentUserPreferences(Current.UserId);
 
             ViewBag.DeviceType = GetDeviceType();
         }
@@ -170,6 +171,11 @@ namespace K9.WebApplication.Controllers
         public void SetSessionRoles(int userId)
         {
             Helpers.SessionHelper.SetCurrentUserRoles(My.RolesRepository, My.UserRolesRepository, userId);
+        }
+
+        public void SetCurrentUserPreferences(int userId)
+        {
+            Helpers.SessionHelper.SetCurrentUserPreferences(My.UserInfosRepository, userId);
         }
 
         [HttpPost]

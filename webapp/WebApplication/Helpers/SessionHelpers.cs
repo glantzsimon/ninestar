@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Helpers
 {
@@ -450,6 +451,17 @@ namespace K9.WebApplication.Helpers
             SetValue(Constants.Constants.Administrator, isAdmin);
             SetValue(Constants.Constants.PowerUser, isPower);
             SetValue(Constants.Constants.ClientUser, isClient);
+        }
+
+        public static void SetCurrentUserPreferences(IRepository<UserInfo> userInfosRepository, int userId)
+        {
+            var userInfo = userInfosRepository.Find(e => e.UserId == userId).FirstOrDefault();
+          
+            SetValue(Constants.SessionConstants.UserCalculationMethod, userInfo.CalculationMethod);
+            SetValue(Constants.SessionConstants.DefaultCalculatorType, userInfo.CalculatorType);
+            SetValue(Constants.SessionConstants.UserHousesDisplay, userInfo.HousesDisplay);
+            SetValue(Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere, userInfo.InvertDailyAndHourlyKiForSouthernHemisphere);
+            SetValue(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere, userInfo.InvertDailyAndHourlyKiForSouthernHemisphere);
         }
 
         public static bool CurrentUserIsAdmin() => GetBooleanValue(Constants.Constants.Administrator);

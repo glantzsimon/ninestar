@@ -36,6 +36,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculationMethodLabel)]
         public ECalculationMethod CalculationMethod { get; set; }
 
+        [UIHint("CalculatorType")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculatorTypeLabel)]
         public ECalculatorType CalculatorType { get; set; }
 

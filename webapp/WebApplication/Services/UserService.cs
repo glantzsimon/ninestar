@@ -142,10 +142,10 @@ namespace K9.WebApplication.Services
                                           $"{nameof(UserInfo.TimeOfBirth)} = '{userInfo.TimeOfBirth.ToString()}', " +
                                           $"{nameof(UserInfo.AvatarImageUrl)} = '{userInfo.AvatarImageUrl}', " +
                                           $"{nameof(UserInfo.BirthTimeZoneId)} = '{userInfo.BirthTimeZoneId.ToString()}' " +
-                                          $"{nameof(UserInfo.CalculationMethod)} = '{userInfo.CalculationMethod.ToString()}' " +
-                                          $"{nameof(UserInfo.CalculatorType)} = '{userInfo.CalculatorType.ToString()}' " +
-                                          $"{nameof(UserInfo.HousesDisplay)} = '{userInfo.HousesDisplay.ToString()}' " +
-                                          $"{nameof(UserInfo.InvertDailyAndHourlyKiForSouthernHemisphere)} = '{userInfo.InvertDailyAndHourlyKiForSouthernHemisphere.ToString()}' " +
+                                          $"{nameof(UserInfo.CalculationMethod)} = {(int)userInfo.CalculationMethod} " +
+                                          $"{nameof(UserInfo.CalculatorType)} = {(int)userInfo.CalculatorType} " +
+                                          $"{nameof(UserInfo.HousesDisplay)} = {(int)userInfo.HousesDisplay} " +
+                                          $"{nameof(UserInfo.InvertDailyAndHourlyKiForSouthernHemisphere)} = {userInfo.InvertDailyAndHourlyKiForSouthernHemisphere} " +
 
                                           $"WHERE Id = {userInfo.Id}");
         }

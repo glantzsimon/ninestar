@@ -4,9 +4,9 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum ECalculatorType
     {
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.TraditionalNineStarKi)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Simple)]
         Simple,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ChineseMethod)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Advanced)]
         Advanced
     }
 }

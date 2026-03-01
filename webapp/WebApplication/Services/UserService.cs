@@ -138,9 +138,15 @@ namespace K9.WebApplication.Services
         public void UpdateUserInfo(UserInfo userInfo)
         {
             _userInfosRepository.GetQuery($"UPDATE {nameof(UserInfo)} SET " +
+                                          
                                           $"{nameof(UserInfo.TimeOfBirth)} = '{userInfo.TimeOfBirth.ToString()}', " +
                                           $"{nameof(UserInfo.AvatarImageUrl)} = '{userInfo.AvatarImageUrl}', " +
                                           $"{nameof(UserInfo.BirthTimeZoneId)} = '{userInfo.BirthTimeZoneId.ToString()}' " +
+                                          $"{nameof(UserInfo.CalculationMethod)} = '{userInfo.CalculationMethod.ToString()}' " +
+                                          $"{nameof(UserInfo.CalculatorType)} = '{userInfo.CalculatorType.ToString()}' " +
+                                          $"{nameof(UserInfo.HousesDisplay)} = '{userInfo.HousesDisplay.ToString()}' " +
+                                          $"{nameof(UserInfo.InvertDailyAndHourlyKiForSouthernHemisphere)} = '{userInfo.InvertDailyAndHourlyKiForSouthernHemisphere.ToString()}' " +
+
                                           $"WHERE Id = {userInfo.Id}");
         }
 

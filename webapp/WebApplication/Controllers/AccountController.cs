@@ -733,6 +733,9 @@ namespace K9.WebApplication.Controllers
                     // Update UserInfo
                     My.UserService.UpdateUserInfo(model.UserInfo);
 
+                    // Update preferences for the session
+                    SetCurrentUserPreferences(model.User.Id);
+
                     // Update contact record too
                     var contact = My.ContactService.Find(model.User.EmailAddress);
                     if (contact != null)

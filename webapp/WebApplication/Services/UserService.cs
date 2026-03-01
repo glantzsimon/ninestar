@@ -138,14 +138,14 @@ namespace K9.WebApplication.Services
         public void UpdateUserInfo(UserInfo userInfo)
         {
             _userInfosRepository.GetQuery($"UPDATE {nameof(UserInfo)} SET " +
-                                          
+
                                           $"{nameof(UserInfo.TimeOfBirth)} = '{userInfo.TimeOfBirth.ToString()}', " +
                                           $"{nameof(UserInfo.AvatarImageUrl)} = '{userInfo.AvatarImageUrl}', " +
-                                          $"{nameof(UserInfo.BirthTimeZoneId)} = '{userInfo.BirthTimeZoneId.ToString()}' " +
-                                          $"{nameof(UserInfo.CalculationMethod)} = {(int)userInfo.CalculationMethod} " +
-                                          $"{nameof(UserInfo.CalculatorType)} = {(int)userInfo.CalculatorType} " +
-                                          $"{nameof(UserInfo.HousesDisplay)} = {(int)userInfo.HousesDisplay} " +
-                                          $"{nameof(UserInfo.InvertDailyAndHourlyKiForSouthernHemisphere)} = {userInfo.InvertDailyAndHourlyKiForSouthernHemisphere} " +
+                                          $"{nameof(UserInfo.BirthTimeZoneId)} = '{userInfo.BirthTimeZoneId.ToString()}', " +
+                                          $"{nameof(UserInfo.CalculationMethod)} = {(int)userInfo.CalculationMethod}, " +
+                                          $"{nameof(UserInfo.CalculatorType)} = {(int)userInfo.CalculatorType}, " +
+                                          $"{nameof(UserInfo.HousesDisplay)} = {(int)userInfo.HousesDisplay}, " +
+                                          $"{nameof(UserInfo.InvertDailyAndHourlyKiForSouthernHemisphere)} = {(userInfo.InvertDailyAndHourlyKiForSouthernHemisphere ? 1 : 0)} " +
 
                                           $"WHERE Id = {userInfo.Id}");
         }

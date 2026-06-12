@@ -456,12 +456,17 @@ namespace K9.WebApplication.Helpers
         public static void SetCurrentUserPreferences(IRepository<UserInfo> userInfosRepository, int userId)
         {
             var userInfo = userInfosRepository.Find(e => e.UserId == userId).FirstOrDefault();
-          
-            SetValue(Constants.SessionConstants.UserCalculationMethod, userInfo.CalculationMethod);
-            SetValue(Constants.SessionConstants.DefaultCalculatorType, userInfo.CalculatorType);
-            SetValue(Constants.SessionConstants.UserHousesDisplay, userInfo.HousesDisplay);
-            SetValue(Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere, userInfo.InvertDailyAndHourlyKiForSouthernHemisphere);
-            SetValue(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere, userInfo.InvertDailyAndHourlyKiForSouthernHemisphere);
+
+            if (userInfo != null)
+            {
+                SetValue(Constants.SessionConstants.UserCalculationMethod, userInfo.CalculationMethod);
+                SetValue(Constants.SessionConstants.DefaultCalculatorType, userInfo.CalculatorType);
+                SetValue(Constants.SessionConstants.UserHousesDisplay, userInfo.HousesDisplay);
+                SetValue(Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere,
+                    userInfo.InvertDailyAndHourlyKiForSouthernHemisphere);
+                SetValue(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
+                    userInfo.InvertDailyAndHourlyKiForSouthernHemisphere);
+            }
         }
 
         public static bool CurrentUserIsAdmin() => GetBooleanValue(Constants.Constants.Administrator);

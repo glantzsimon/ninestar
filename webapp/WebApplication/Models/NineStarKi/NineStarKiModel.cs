@@ -174,7 +174,7 @@ namespace K9.WebApplication.Models
                 : preciseHourlyCycleEnergy;
 
             var personalInfoString =
-                $"{PersonModel.DateOfBirth}_{PersonModel.TimeOfBirth}_{PersonModel.BirthTimeZoneId}_{PersonModel.Gender}";
+                $"{PersonModel.DateOfBirth}_{PersonModel.TimeOfBirth}_{PersonModel.BirthTimeZoneId}_{PersonModel.Gender}_{calculationMethod}_{CalculatorType}";
 
 
             #region Personal Chart
@@ -231,7 +231,7 @@ namespace K9.WebApplication.Models
             PersonalHousesOccupiedEnergies.Epoch = GetOrAddToCache($"Epoch_h_{SelectedDate}_{personalInfoString}_{preciseEpochCycleEnergy}_{housesDisplay}",
                 () => GetPersonalCycleEnergy(preciseEpochCycleEnergy, ENineStarKiEnergyCycleType.EpochEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Generation = GetOrAddToCache($"Generation_h_{SelectedDate}_{preciseGenerationalCycleEnergy}_{housesDisplay}",
+            PersonalHousesOccupiedEnergies.Generation = GetOrAddToCache($"Generation_h_{SelectedDate}_{personalInfoString}_{preciseGenerationalCycleEnergy}_{housesDisplay}",
                 () => GetPersonalCycleEnergy(preciseGenerationalCycleEnergy, ENineStarKiEnergyCycleType.GenerationalEnergy), TimeSpan.FromDays(30));
 
             PersonalHousesOccupiedEnergies.Year = GetOrAddToCache($"Year_h_{SelectedDate}_{personalInfoString}_{preciseYearlyCycleEnergy}_{HousesDisplay}",
@@ -263,7 +263,7 @@ namespace K9.WebApplication.Models
                 PersonalHousesOccupiedLunarEnergies.Epoch = GetOrAddToCache($"Epoch_lh_{SelectedDate}_{personalInfoString}_{preciseEpochCycleEnergy}_{housesDisplay}",
                 () => GetPersonalCycleEnergy(preciseEpochCycleEnergy, ENineStarKiEnergyCycleType.EpochEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
 
-                PersonalHousesOccupiedLunarEnergies.Generation = GetOrAddToCache($"Generation_lh_{SelectedDate}_{preciseGenerationalCycleEnergy}_{housesDisplay}",
+                PersonalHousesOccupiedLunarEnergies.Generation = GetOrAddToCache($"Generation_lh_{SelectedDate}_{personalInfoString}_{preciseGenerationalCycleEnergy}_{housesDisplay}",
                 () => GetPersonalCycleEnergy(preciseGenerationalCycleEnergy, ENineStarKiEnergyCycleType.GenerationalEnergy, PersonalChartEnergies.Month.EnergyNumber), TimeSpan.FromDays(30));
 
                 PersonalHousesOccupiedLunarEnergies.Year = GetOrAddToCache($"Year_lh_{SelectedDate}_{personalInfoString}_{preciseYearlyCycleEnergy}_{HousesDisplay}",

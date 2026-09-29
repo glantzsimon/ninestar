@@ -124,9 +124,9 @@ namespace K9.WebApplication.Services
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
-            bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate)
+            bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, ECalculatorType calculatorType = ECalculatorType.Simple, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate)
         {
-            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{includeCycles}_{housesDisplay}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}_{invertDailyAndHourlyCycleKiForSouthernHemisphere}_{displayDataForPeriod}_{userTimeZoneId}";
+            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{calculatorType}_{includeCycles}_{housesDisplay}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}_{invertDailyAndHourlyCycleKiForSouthernHemisphere}_{displayDataForPeriod}_{userTimeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 var selectedDateTime = displayDataForPeriod == EDisplayDataForPeriod.Now || today == null
@@ -218,9 +218,9 @@ namespace K9.WebApplication.Services
         }
 
         public CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2,
-            bool isHideSexuality, ECalculationMethod calculationMethod = ECalculationMethod.Chinese)
+            bool isHideSexuality, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, ECalculatorType calculatorType = ECalculatorType.Simple)
         {
-            var cacheKey = $"CalculateCompatibilityFromModel_{personModel1.DateOfBirth.ToString()}_{personModel1.TimeOfBirth.ToString()}_{personModel1.BirthTimeZoneId}_{personModel1.Name}_{personModel1.Gender}_{personModel2.DateOfBirth.ToString()}_{personModel2.TimeOfBirth.ToString()}_{personModel2.BirthTimeZoneId}_{personModel2.Name}_{personModel2.Gender}_{calculationMethod}";
+            var cacheKey = $"CalculateCompatibilityFromModel_{personModel1.DateOfBirth.ToString()}_{personModel1.TimeOfBirth.ToString()}_{personModel1.BirthTimeZoneId}_{personModel1.Name}_{personModel1.Gender}_{personModel2.DateOfBirth.ToString()}_{personModel2.TimeOfBirth.ToString()}_{personModel2.BirthTimeZoneId}_{personModel2.Name}_{personModel2.Gender}_{calculationMethod}_{calculatorType}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true, false, null, calculationMethod);
@@ -362,6 +362,7 @@ namespace K9.WebApplication.Services
                 DateTime selectedDateTime,
                 string userTimeZoneId,
                 ECalculationMethod calculationMethod,
+                ECalculatorType calculatorType,
                 EDisplayDataForPeriod displayDataForPeriod,
                 EHousesDisplay housesDisplay,
                 bool invertDailyAndHourlyKiForSouthernHemisphere,
@@ -372,7 +373,7 @@ namespace K9.WebApplication.Services
                 NineStarKiModel nineStarKiModel = null)
         {
             return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{timeOfBirth.ToString()}_" +
-                                   $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_{displayDataForPeriod}" +
+                                   $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_{calculatorType}_{displayDataForPeriod}" +
                                    $"{userTimeZoneId}_{housesDisplay}_" +
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
                                    $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}_" +
@@ -388,7 +389,7 @@ namespace K9.WebApplication.Services
                     BirthTimeZoneId = birthTimeZoneId,
                     TimeOfBirth = timeOfBirth,
                     Gender = gender
-                }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                     housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
 
                 var plannerModel = new PlannerViewModel
@@ -465,7 +466,7 @@ namespace K9.WebApplication.Services
                                 BirthTimeZoneId = birthTimeZoneId,
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
-                            }, false, false, eightyOneYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, true, false, userTimeZoneId,
+                            }, false, false, eightyOneYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, calculatorType, true, false, userTimeZoneId,
                                                   housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate);
                         }
 
@@ -523,7 +524,7 @@ namespace K9.WebApplication.Services
                                 BirthTimeZoneId = birthTimeZoneId,
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
-                            }, false, false, nineYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, true, false, userTimeZoneId,
+                            }, false, false, nineYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, calculatorType, true, false, userTimeZoneId,
                                 housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate);
                         }
 
@@ -602,7 +603,7 @@ namespace K9.WebApplication.Services
                                 BirthTimeZoneId = birthTimeZoneId,
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
-                            }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                            }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                                 housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
                                 EDisplayDataForPeriod.SelectedDate);
                         }
@@ -657,7 +658,7 @@ namespace K9.WebApplication.Services
                                 BirthTimeZoneId = birthTimeZoneId,
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
-                            }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                            }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                                 housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
                                 EDisplayDataForPeriod.SelectedDate);
                         }
@@ -745,7 +746,7 @@ namespace K9.WebApplication.Services
                                 BirthTimeZoneId = birthTimeZoneId,
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
-                            }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                            }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                                 housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
                                 EDisplayDataForPeriod.SelectedDate);
                         }

@@ -70,12 +70,12 @@ namespace K9.WebApplication.Services
             var lichun = _astronomyService.GetLichun(now, personModel.BirthTimeZoneId);
 
             var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false, now,
-                ECalculationMethod.Chinese, true, true,
+                myAccount.UserInfo.CalculationMethod, myAccount.UserInfo.CalculatorType, true, true,
                 personModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, false, false, EDisplayDataForPeriod.SelectedDate);
 
             var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth.Date, personModel.BirthTimeZoneId,
                 personModel.TimeOfBirth, personModel.Gender, now, nineStarKiModel.UserTimeZoneId,
-                nineStarKiModel.CalculationMethod, nineStarKiModel.DisplayDataForPeriod, nineStarKiModel.HousesDisplay,
+                nineStarKiModel.CalculationMethod, nineStarKiModel.CalculatorType, nineStarKiModel.DisplayDataForPeriod, nineStarKiModel.HousesDisplay,
                 nineStarKiModel.InvertDailyAndHourlyKiForSouthernHemisphere,
                 nineStarKiModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
                 EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiModel);

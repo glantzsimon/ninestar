@@ -94,6 +94,14 @@ namespace K9.WebApplication.Controllers
         {
             return Validate(accountNumber, () =>
             {
+                var membership = GetMembership(accountNumber);
+                if (membership == null)
+                {
+                    return InvalidAccountNumberResult();
+                }
+
+                var userInfo = GetUserInfo(accountNumber);
+
                 var personModel = new PersonModel
                 {
                     DateOfBirth = dateOfBirth.Add(DateTimeHelper.ParseTime(timeOfBirth)),
@@ -108,7 +116,7 @@ namespace K9.WebApplication.Controllers
                 var displayFor = selectedDate.Date == DateTime.Today ? EDisplayDataForPeriod.Now : EDisplayDataForPeriod.SelectedDate;
 
                 model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate,
-                    ECalculationMethod.Chinese, true, false, personModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, false, false, displayFor);
+                    userInfo.CalculationMethod, userInfo.CalculatorType, true, false, personModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, false, false, displayFor);
                 model.SelectedDate = selectedDate;
 
                 return Json(new
@@ -139,6 +147,14 @@ namespace K9.WebApplication.Controllers
         {
             return Validate(accountNumber, () =>
             {
+                var membership = GetMembership(accountNumber);
+                if (membership == null)
+                {
+                    return InvalidAccountNumberResult();
+                }
+
+                var userInfo = GetUserInfo(accountNumber);
+
                 var personModel1 = new PersonModel
                 {
                     Name = firstPersonName,
@@ -154,7 +170,8 @@ namespace K9.WebApplication.Controllers
                     BirthTimeZoneId = DateTimeHelper.ResolveTimeZone(secondPersonBirthLocation)
                 };
 
-                var model = _nineStarKiService.CalculateCompatibility(personModel1, personModel2, !displaySexualChemistry, ECalculationMethod.Chinese);
+
+                var model = _nineStarKiService.CalculateCompatibility(personModel1, personModel2, !displaySexualChemistry, userInfo.CalculationMethod, userInfo.CalculatorType);
 
                 return Json(new
                 {
@@ -487,6 +504,12 @@ namespace K9.WebApplication.Controllers
         private UserMembership GetMembership(string accountNumber)
         {
             return My.MembershipService.GetActiveUserMembership(accountNumber);
+        }
+
+        private UserInfo GetUserInfo(string accountNumber)
+        {
+            var activeUserMembership = My.MembershipService.GetActiveUserMembership(accountNumber);
+            return My.UserService.GetOrCreateUserInfo(activeUserMembership.UserId);
         }
     }
 }

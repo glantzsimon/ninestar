@@ -16,8 +16,19 @@ namespace K9.WebApplication.Helpers
     {
         public static List<UserPreference> UserPreferences
         {
-            get => HttpContext.Current.Session[Constants.SessionConstants.UserPreferences] as List<UserPreference> ?? new List<UserPreference>();
-            set => HttpContext.Current.Session[Constants.SessionConstants.UserPreferences] = value;
+            get
+            {
+                var session = HttpContext.Current?.Session;
+                return session?[Constants.SessionConstants.UserPreferences]
+                           as List<UserPreference>
+                       ?? new List<UserPreference>();
+            }
+            set
+            {
+                var session = HttpContext.Current?.Session;
+                if (session != null)
+                    session[Constants.SessionConstants.UserPreferences] = value;
+            }
         }
 
         public static object GetValue(string key, HttpContext httpContext = null)

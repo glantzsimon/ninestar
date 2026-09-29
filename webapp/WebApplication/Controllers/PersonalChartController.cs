@@ -59,7 +59,7 @@ namespace K9.WebApplication.Controllers
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
 
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        model.SelectedDate, model.CalculationMethod, false, false, model.PersonModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, model.InvertDailyAndHourlyKiForSouthernHemisphere);
+                        model.SelectedDate, model.CalculationMethod, model.CalculatorType, false, false, model.PersonModel.BirthTimeZoneId, EHousesDisplay.SolarHouse, model.InvertDailyAndHourlyKiForSouthernHemisphere);
 
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
                     model.ActiveCycleTabId = activeTabId;
@@ -89,7 +89,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("free-calculator/alchemy")]
-        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, ECalculationMethod calculationMethod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere)
+        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, ECalculationMethod calculationMethod, ECalculatorType calculatorType, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere)
         {
             if (!My.SystemSettings.IsEnabledAlchemy)
             {
@@ -118,7 +118,7 @@ namespace K9.WebApplication.Controllers
                 var invertYinEnergies = calculationMethod == ECalculationMethod.Chinese;
 
                 var model = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false,
-                    null, calculationMethod, false, false, personModel.BirthTimeZoneId, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere);
+                    null, calculationMethod, calculatorType, false, false, personModel.BirthTimeZoneId, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere);
 
                 var alchemy = await _nineStarKiService.GetNineStarKiPersonalChartAlchemy(model);
                 return Json(new
@@ -160,10 +160,10 @@ namespace K9.WebApplication.Controllers
 
             personModel.DateOfBirth = personModel.DateOfBirth.Add(personModel.TimeOfBirth);
             var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true,
-                            localNow, nineStarKiModel.CalculationMethod, true, true, nineStarKiModel.UserTimeZoneId, nineStarKiModel.HousesDisplay, false,
+                            localNow, nineStarKiModel.CalculationMethod, nineStarKiModel.CalculatorType, true, true, nineStarKiModel.UserTimeZoneId, nineStarKiModel.HousesDisplay, false,
                         false, EDisplayDataForPeriod.Now);
 
-            var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth, personModel.BirthTimeZoneId, personModel.TimeOfBirth, personModel.Gender, nineStarKiProfile.SelectedDate.Value, nineStarKiProfile.UserTimeZoneId, nineStarKiProfile.CalculationMethod, nineStarKiProfile.DisplayDataForPeriod, nineStarKiProfile.HousesDisplay, nineStarKiProfile.InvertDailyAndHourlyKiForSouthernHemisphere, nineStarKiProfile.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
+            var plannerData = _nineStarKiService.GetPlannerData(personModel.DateOfBirth, personModel.BirthTimeZoneId, personModel.TimeOfBirth, personModel.Gender, nineStarKiProfile.SelectedDate.Value, nineStarKiProfile.UserTimeZoneId, nineStarKiProfile.CalculationMethod, nineStarKiProfile.CalculatorType, nineStarKiProfile.DisplayDataForPeriod, nineStarKiProfile.HousesDisplay, nineStarKiProfile.InvertDailyAndHourlyKiForSouthernHemisphere, nineStarKiProfile.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
                 EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiProfile);
 
             plannerData.UpdateParentUrl = Url.Action("GetYearlyPredictions", "Predictions");

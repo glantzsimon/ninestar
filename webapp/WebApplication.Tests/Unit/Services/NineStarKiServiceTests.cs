@@ -302,7 +302,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [Theory]
         [InlineData(1979, 6, 16, 2011, 2, 14, EGender.Male, ENineStarKiEnergy.Water, ENineStarKiEnergy.Fire)] // Thunder man lake year
         [InlineData(1979, 6, 16, 2011, 12, 14, EGender.Male, ENineStarKiEnergy.Water, ENineStarKiEnergy.Water, true)] // Thunder man / lake year
-        [InlineData(1979, 6, 16, 2011, 12, 14, EGender.Female, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Fire)]
+        [InlineData(1979, 6, 16, 2011, 12, 14, EGender.Female, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Thunder)]
         public void LifeCycle_Test(int birthYear, int birthMonth, int birthDay, int year, int month, int day, EGender gender, ENineStarKiEnergy yearlyCycleEnergy, ENineStarKiEnergy monthlyCycleEnergy, bool isDebug = false)
         {
             if (isDebug)
@@ -312,7 +312,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
-            }, false, false, new DateTime(year, month, day), ECalculationMethod.Chinese,
+            }, false, false, new DateTime(year, month, day), ECalculationMethod.Chinese, ECalculatorType.Simple,
                 true);
 
             Assert.Equal(ENineStarKiEnergy.Lake, ninestar.GlobalCycleEnergies.Year.Energy);
@@ -370,6 +370,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 false,
                 new DateTime(todayYear, todayMonth, 15),
                 ECalculationMethod.Chinese,
+                ECalculatorType.Simple,
                 true);
 
             Assert.Equal(mainEnergy, ninestar.MainEnergy.Energy);
@@ -423,6 +424,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 false,
                 new DateTime(todayYear, 2, 5),
                 ECalculationMethod.Chinese,
+                ECalculatorType.Simple,
                 true);
 
             Assert.Equal(energy, ninestar.MainEnergy.Energy);
@@ -458,6 +460,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 false,
                 new DateTime(todayYear, monthNumber, 15),
                 ECalculationMethod.Chinese,
+                ECalculatorType.Simple,
                 true);
 
             Assert.Equal(energy, ninestar.MainEnergy.Energy);
@@ -882,6 +885,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 Gender = gender
             }, false, false, new DateTime(2105, 2, 7),
                 ECalculationMethod.Chinese,
+                ECalculatorType.Simple,
                 true);
 
             var ninestarCoreEarthYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
@@ -890,6 +894,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 Gender = gender
             }, false, false, new DateTime(2103, 2, 7),
                 ECalculationMethod.Chinese,
+                ECalculatorType.Simple,
                 true); // 5 Soil Earth Year
 
             var ninestarWaterYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
@@ -898,6 +903,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 Gender = gender
             }, false, false, new DateTime(2098, 2, 7),
                 ECalculationMethod.Chinese,
+                ECalculatorType.Simple,
                 true);
 
             var ninestarInvertedCoreEarthYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
@@ -906,6 +912,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 Gender = gender
             }, false, false, new DateTime(2107, 2, 7),
                 ECalculationMethod.Chinese,
+                ECalculatorType.Simple,
                 true); // 5 Soil Earth Year
 
             var ninestarInvertedWaterYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
@@ -914,6 +921,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 Gender = gender
             }, false, false, new DateTime(2112, 2, 7),
                 ECalculationMethod.Chinese,
+                ECalculatorType.Simple,
                 true); // 5 Soil Earth Year
 
             // Double check main energy

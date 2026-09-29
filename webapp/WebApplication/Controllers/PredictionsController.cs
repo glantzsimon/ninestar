@@ -102,7 +102,7 @@ namespace K9.WebApplication.Controllers
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
 
                     var processedModel = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        model.SelectedDate, model.CalculationMethod, true, true, model.UserTimeZoneId, model.HousesDisplay, model.InvertDailyAndHourlyKiForSouthernHemisphere,
+                        model.SelectedDate, model.CalculationMethod, model.CalculatorType, true, true, model.UserTimeZoneId, model.HousesDisplay, model.InvertDailyAndHourlyKiForSouthernHemisphere,
                         model.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
                         model.DisplayDataForPeriod);
 
@@ -116,7 +116,7 @@ namespace K9.WebApplication.Controllers
                     processedModel.InvertDailyAndHourlyKiForSouthernHemisphere = model.InvertDailyAndHourlyKiForSouthernHemisphere;
                     processedModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere = model.InvertDailyAndHourlyCycleKiForSouthernHemisphere;
 
-                    var plannerData = _nineStarKiService.GetPlannerData(model.PersonModel.DateOfBirth, model.PersonModel.BirthTimeZoneId, model.PersonModel.TimeOfBirth, model.PersonModel.Gender, model.SelectedDate.Value, model.UserTimeZoneId, model.CalculationMethod, model.DisplayDataForPeriod, model.HousesDisplay, model.InvertDailyAndHourlyKiForSouthernHemisphere, model.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
+                    var plannerData = _nineStarKiService.GetPlannerData(model.PersonModel.DateOfBirth, model.PersonModel.BirthTimeZoneId, model.PersonModel.TimeOfBirth, model.PersonModel.Gender, model.SelectedDate.Value, model.UserTimeZoneId, model.CalculationMethod, model.CalculatorType, model.DisplayDataForPeriod, model.HousesDisplay, model.InvertDailyAndHourlyKiForSouthernHemisphere, model.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
                         EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, processedModel);
 
                     UpdatePlannerUrls(plannerData);
@@ -160,7 +160,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("calculator/alchemy")]
-        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, EDisplayDataForPeriod displayDataForPeriod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere)
+        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, ECalculatorType calculatorType, EDisplayDataForPeriod displayDataForPeriod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere)
         {
             if (!My.SystemSettings.IsEnabledAlchemy)
             {
@@ -187,7 +187,7 @@ namespace K9.WebApplication.Controllers
                 personModel.DateOfBirth = personModel.DateOfBirth.Add(personModel.TimeOfBirth);
                 var invertYinEnergies = calculationMethod == ECalculationMethod.Chinese;
                 var model = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, false,
-                    selectedDateTime, calculationMethod, true, false, userTimeZoneId, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere,
+                    selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere,
                     invertDailyAndHourlyCycleKiForSouthernHemisphere, displayDataForPeriod);
 
                 var alchemy = await _nineStarKiService.GetNineStarKiPredictionsAlchemy(model);
@@ -203,10 +203,10 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-planner")]
-        public ActionResult GetPlanner(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, EDisplayDataForPeriod displayDataForPeriod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere, EPlannerView view, EScopeDisplay display, EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None)
+        public ActionResult GetPlanner(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, ECalculatorType calculatorType, EDisplayDataForPeriod displayDataForPeriod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere, EPlannerView view, EScopeDisplay display, EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None)
         {
             var plannerData = _nineStarKiService.GetPlannerData(dateOfBirth, birthTimeZoneId, timeOfBirth, gender,
-                selectedDateTime, userTimeZoneId, calculationMethod, displayDataForPeriod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere,
+                selectedDateTime, userTimeZoneId, calculationMethod, calculatorType, displayDataForPeriod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere,
                 invertDailyAndHourlyCycleKiForSouthernHemisphere, view, display, navigationDirection);
 
             UpdatePlannerUrls(plannerData);

@@ -5,6 +5,7 @@ using K9.WebApplication.Services;
 using System;
 using System.Web.Mvc;
 using System.Web.UI;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Controllers
 {
@@ -34,7 +35,7 @@ namespace K9.WebApplication.Controllers
             {
                 if (model.NineStarKiModel1?.PersonModel != null && model.NineStarKiModel2?.PersonModel != null)
                 {
-                    var processedModel = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel, model.IsHideSexualChemistry, model.NineStarKiModel1.CalculationMethod, model.NineStarKiModel1.CalculatorType);
+                    var processedModel = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel, model.IsHideSexualChemistry, model.NineStarKiModel1.CalculationMethod, ECalculatorType.Advanced);
 
                     if (Current.UserId > 0)
                     {

@@ -6,6 +6,7 @@ using K9.WebApplication.Helpers;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Script.Serialization;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Models
 {
@@ -26,7 +27,7 @@ namespace K9.WebApplication.Models
                 DateOfBirth = dateOfBirth2,
                 Gender = Methods.GetRandomGender()
             };
-            
+
             NineStarKiModel1 = new NineStarKiModel(personModel1);
             NineStarKiModel2 = new NineStarKiModel(personModel2);
         }
@@ -39,7 +40,7 @@ namespace K9.WebApplication.Models
             NineStarKiSummaryModel2 = new NineStarKiSummaryModel(nineStarKiModel2);
 
             CompatibilityDetails = new CompatibilityDetailsModel(this);
-            
+
             FundamentalEnergiesCompatibility = TemplateParser.Parse(GetFundamentalEnergiesCompatibilityDetails(), new
             {
                 Person1 = FirstFundamentalEnergyPersonName,
@@ -55,7 +56,7 @@ namespace K9.WebApplication.Models
                 Gender1PronounProper = FirstFundamentalEnergyGenderPronoun.ToProperCase(),
                 Gender2PronounProper = SecondFundamentalEnergyGenderPronoun.ToProperCase()
             });
-            
+
             SexualChemistryDetails = TemplateParser.Parse(GetSexualChemistryDescription(), new
             {
                 Person1 = FirstPersonNameWithArticle,
@@ -80,11 +81,11 @@ namespace K9.WebApplication.Models
         public NineStarKiModel NineStarKiModel2 { get; }
 
         public NineStarKiSummaryModel NineStarKiSummaryModel1 { get; }
-        
+
         public NineStarKiSummaryModel NineStarKiSummaryModel2 { get; }
-        
+
         public string FundamentalEnergiesCompatibility { get; }
-        
+
         public string SexualChemistryDetails { get; }
 
         [ScriptIgnore]
@@ -95,10 +96,12 @@ namespace K9.WebApplication.Models
         /// </summary>
         public bool IsComplementary { get; set; }
 
+        public ECalculationMethod CalculationMethod { get; set; }
+
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DoNotDisplaySexualityLabel)]
         public bool IsHideSexualChemistry { get; set; }
-        
+
         public CompatibilityDetailsModel CompatibilityDetails { get; set; }
 
         [ScriptIgnore]
@@ -106,7 +109,7 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public string SecondPersonName => NineStarKiModel2.PersonModel.Name ?? Globalisation.Dictionary.SecondPerson;
-        
+
         [ScriptIgnore]
         public string FirstPersonNameWithArticle => NineStarKiModel1.PersonModel.Name ?? $"the {Globalisation.Dictionary.FirstPerson.ToLower()}";
 
@@ -172,7 +175,7 @@ namespace K9.WebApplication.Models
         public string SecondCharacterEnergyPersonName => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
             ? SecondPersonNameWithArticle
             : FirstPersonNameWithArticle;
-        
+
         private string GetSexualChemistryDescription()
         {
             switch (CompatibilityDetails.Score.SexualChemistryScore)
@@ -214,7 +217,7 @@ namespace K9.WebApplication.Models
 
             return string.Empty;
         }
-        
+
         private string GetFundamentalEnergiesCompatibilityDetails()
         {
             switch (NineStarKiModel1.MainEnergy.Energy)
@@ -511,5 +514,5 @@ namespace K9.WebApplication.Models
 
             return Globalisation.Dictionary.ComingSoon;
         }
-       }
+    }
 }

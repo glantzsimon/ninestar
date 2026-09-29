@@ -35,7 +35,7 @@ namespace K9.WebApplication.Controllers
             {
                 if (model.NineStarKiModel1?.PersonModel != null && model.NineStarKiModel2?.PersonModel != null)
                 {
-                    var processedModel = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel, model.IsHideSexualChemistry, model.NineStarKiModel1.CalculationMethod, ECalculatorType.Advanced);
+                    var processedModel = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel, model.IsHideSexualChemistry, model.CalculationMethod, ECalculatorType.Advanced);
 
                     if (Current.UserId > 0)
                     {

@@ -96,6 +96,7 @@ namespace K9.WebApplication.Models
         /// </summary>
         public bool IsComplementary { get; set; }
 
+        [UIHint("CalculationMethod")]
         public ECalculationMethod CalculationMethod { get; set; }
 
         [ScriptIgnore]

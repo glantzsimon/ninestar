@@ -223,8 +223,8 @@ namespace K9.WebApplication.Services
             var cacheKey = $"CalculateCompatibilityFromModel_{personModel1.DateOfBirth.ToString()}_{personModel1.TimeOfBirth.ToString()}_{personModel1.BirthTimeZoneId}_{personModel1.Name}_{personModel1.Gender}_{personModel2.DateOfBirth.ToString()}_{personModel2.TimeOfBirth.ToString()}_{personModel2.BirthTimeZoneId}_{personModel2.Name}_{personModel2.Gender}_{calculationMethod}_{calculatorType}";
             return GetOrAddToCache(cacheKey, () =>
             {
-                var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true, false, null, calculationMethod);
-                var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true, false, null, calculationMethod);
+                var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true, false, null, calculationMethod, calculatorType);
+                var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true, false, null, calculationMethod, calculatorType);
 
                 var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
                 {

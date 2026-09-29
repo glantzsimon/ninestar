@@ -22,9 +22,14 @@ namespace K9.WebApplication.Models
 
         public static DateTime CYCLE_SWITCH_DATE = new DateTime(2105, 2, 4);
 
+        private ECalculationMethod _calculatorMethod;
         [UIHint("CalculationMethod")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculationMethodLabel)]
-        public ECalculationMethod CalculationMethod { get; set; }
+        public ECalculationMethod CalculationMethod
+        {
+            get { return CalculatorType == ECalculatorType.Simple ? ECalculationMethod.Chinese : _calculatorMethod; }
+            set { _calculatorMethod = value; }
+        }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculatorTypeLabel)]
         public ECalculatorType CalculatorType { get; set; }

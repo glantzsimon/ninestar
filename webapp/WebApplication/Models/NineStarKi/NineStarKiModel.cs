@@ -125,6 +125,7 @@ namespace K9.WebApplication.Models
             SelectedDate = selectedDate ?? DateTime.UtcNow;
             SelectedLocaDateTime = DateTimeHelper.ConvertToLocaleDateTime(SelectedDate.Value, UserTimeZoneId);
             CalculationMethod = calculationMethod;
+            CalculatorType = IsCompatibility ? CalculatorType = ECalculatorType.Advanced : CalculatorType;
             HousesDisplay = housesDisplay;
             InvertDailyAndHourlyKiForSouthernHemisphere = invertDailyAndHourlyKiForSouthernHemisphere;
             InvertDailyAndHourlyCycleKiForSouthernHemisphere = invertDailyAndHourlyCycleKiForSouthernHemisphere;

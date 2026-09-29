@@ -121,6 +121,7 @@ namespace K9.WebApplication.Models
         {
             Init();
 
+            IsCompatibility = isCompatibility;
             UserTimeZoneId = string.IsNullOrEmpty(userTimeZoneId) ? Current.UserTimeZoneId : userTimeZoneId;
             SelectedDate = selectedDate ?? DateTime.UtcNow;
             SelectedLocaDateTime = DateTimeHelper.ConvertToLocaleDateTime(SelectedDate.Value, UserTimeZoneId);

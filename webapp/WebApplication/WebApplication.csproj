@@ -406,6 +406,9 @@
     <Compile Include="Options\UploadOptions.cs" />
     <Compile Include="Options\PieChartOptions.cs" />
     <Compile Include="Services\GoogleService.cs" />
+    <Compile Include="Models\CalendarEntry.cs" />
+    <Compile Include="Services\IGoogleCalendarService.cs" />
+    <Compile Include="Services\GoogleCalendarService.cs" />
     <Compile Include="Services\IAIService.cs" />
     <Compile Include="Services\AIService.cs" />
     <Compile Include="Services\IArticlesService.cs" />

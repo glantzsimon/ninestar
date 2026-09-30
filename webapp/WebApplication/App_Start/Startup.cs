@@ -70,6 +70,7 @@ namespace K9.WebApplication
             builder.RegisterType<DonationService>().As<IDonationService>().InstancePerLifetimeScope();
             builder.RegisterType<ConsultationService>().As<IConsultationService>().InstancePerLifetimeScope();
             builder.RegisterType<NineStarKiService>().As<INineStarKiService>().InstancePerLifetimeScope();
+            builder.RegisterType<GoogleCalendarService>().As<IGoogleCalendarService>().InstancePerLifetimeScope();
             builder.RegisterType<Services.AccountMailerService>().As<Services.IAccountMailerService>().InstancePerLifetimeScope();
             builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerLifetimeScope();
             builder.RegisterType<ContactService>().As<IContactService>().InstancePerLifetimeScope();

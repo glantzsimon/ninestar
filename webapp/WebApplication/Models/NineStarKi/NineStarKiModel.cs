@@ -117,7 +117,7 @@ namespace K9.WebApplication.Models
 
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseMonthlyCycleEnergyInverted, (int DailyKi, int? InvertedDailyKi)[] preciseDailyCycleEnergies, int preciseHourlyCycleEnergy, DateTime? selectedDate = null,
 
-            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string userTimeZoneId = "", EDisplayDataForPeriod displayDataForPeiod = EDisplayDataForPeriod.Now, MoonPhase moonPhase = null, bool isCompatibility = false)
+            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string userTimeZoneId = "", EDisplayDataForPeriod displayDataForPeiod = EDisplayDataForPeriod.Now, MoonPhase moonPhase = null, bool isCompatibility = false, ECalculatorType? calculatorType = null)
         {
             Init();
 
@@ -126,7 +126,7 @@ namespace K9.WebApplication.Models
             SelectedDate = selectedDate ?? DateTime.UtcNow;
             SelectedLocaDateTime = DateTimeHelper.ConvertToLocaleDateTime(SelectedDate.Value, UserTimeZoneId);
             CalculationMethod = calculationMethod;
-            CalculatorType = IsCompatibility ? CalculatorType = ECalculatorType.Advanced : CalculatorType;
+            CalculatorType = IsCompatibility ? ECalculatorType.Advanced : calculatorType ?? CalculatorType;
             HousesDisplay = housesDisplay;
             InvertDailyAndHourlyKiForSouthernHemisphere = invertDailyAndHourlyKiForSouthernHemisphere;
             InvertDailyAndHourlyCycleKiForSouthernHemisphere = invertDailyAndHourlyCycleKiForSouthernHemisphere;

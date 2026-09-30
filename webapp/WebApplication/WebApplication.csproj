@@ -398,6 +398,8 @@
     <Compile Include="Extensions\ConfigExtensions.cs" />
     <Compile Include="Extensions\NumerologyExtensions.cs" />
     <Compile Include="App_Start\RelativeCssRewriteUrlTransform.cs" />
+    <Compile Include="Services\GoogleCalendarService.cs" />
+    <Compile Include="Services\IGoogleCalendarService.cs" />
     <Compile Include="Services\IPdfService.cs" />
     <Compile Include="Services\PdfService.cs" />
     <Compile Include="Models\Astrology\MoonPhase.cs" />

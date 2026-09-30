@@ -76,6 +76,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 1 Water Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;Water repeats across the year and month, deepening the invitation to rest, listen inward and let ideas develop beneath the surface. A quieter emotional pace can make subtle insights easier to notice, especially when you leave room around your commitments. Today’s Water influence draws this quiet monthly current further inward, making unhurried reflection especially fitting. Keep today spacious enough for journaling, study or quiet reflectio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_1_1 {
+            get {
+                return ResourceManager.GetString("_1_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 1 Water Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;Water repeats across the year and month, deepening the invitation to rest, listen inward and let ideas develop beneath the surface. A quieter emotional pace can make subtle insights easier to notice, especially when you leave room around your commitments. Today’s Soil influence gives the month’s inward current a practical anchor through simple care, preparation and familiar routines. Choose one small act of preparation that supports your lon [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_1_2 {
+            get {
+                return ResourceManager.GetString("_1_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 1 Water Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;Water repeats across the year and month, deepening the invitation to rest, listen inward and let ideas develop beneath the surface. A quieter emotional pace can make subtle insights easier to notice, especially when you leave room around your commitments. Today’s Thunder influence brings a brief opening for movement within the quieter month, helping loosen inertia without demanding a lasting change of pace. Use the available lift for one  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_1_3 {
+            get {
+                return ResourceManager.GetString("_1_1_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 1 Water Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;Water repeats across the year and month, deepening the invitation to rest, listen inward and let ideas develop beneath the surface. A quieter emotional pace can make subtle insights easier to notice, especially when you leave room around your commitments. Today’s Wind influence makes gentle expression more accessible within the inward month, offering a bridge between private reflection and thoughtful conversation. Try a thoughtful conversati [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_1_4 {
+            get {
+                return ResourceManager.GetString("_1_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 1 Water Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;Water repeats across the year and month, deepening the invitation to rest, listen inward and let ideas develop beneath the surface. A quieter emotional pace can make subtle insights easier to notice, especially when you leave room around your commitments. Today’s Core Earth influence may bring several inner concerns into focus at once; reduce competing demands rather than forcing the month’s questions into a quick answer. Let one unres [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_1_5 {
+            get {
+                return ResourceManager.GetString("_1_1_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 1 Water Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;Water repeats across the year and month, deepening the invitation to rest, listen inward and let ideas develop beneath the surface. A quieter emotional pace can make subtle insights easier to notice, especially when you leave room around your commitments. Today’s Heaven influence can help organise the month’s private reflections into clearer priorities, while a considerate tone keeps clarity from feeling harsh. Organise what you have learn [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_1_6 {
+            get {
+                return ResourceManager.GetString("_1_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 1 Water Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;Water repeats across the year and month, deepening the invitation to rest, listen inward and let ideas develop beneath the surface. A quieter emotional pace can make subtle insights easier to notice, especially when you leave room around your commitments. Today’s Lake influence brings a softer, more sociable note to the quiet month, making gentle companionship or beauty a welcome source of relief. Choose company, music or beauty that restore [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_1_7 {
+            get {
+                return ResourceManager.GetString("_1_1_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 1 Water Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;Water repeats across the year and month, deepening the invitation to rest, listen inward and let ideas develop beneath the surface. A quieter emotional pace can make subtle insights easier to notice, especially when you leave room around your commitments. Today’s Mountain influence adds a more contained stillness to the inward month, favouring quiet focus while calling for care around excessive withdrawal. Give yourself a period of undis [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_1_8 {
+            get {
+                return ResourceManager.GetString("_1_1_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 1 Water Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;Water repeats across the year and month, deepening the invitation to rest, listen inward and let ideas develop beneath the surface. A quieter emotional pace can make subtle insights easier to notice, especially when you leave room around your commitments. Today’s Fire influence brings a brief shaft of light into the inward month, making connection or expression more inviting without ending its quieter rhythm. Share a thought, enjoy a warm en [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_1_9 {
+            get {
+                return ResourceManager.GetString("_1_1_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        Emotional Turbulence and Challenges Ahead – Avoid Overextending
@@ -87,6 +177,96 @@ namespace K9.Globalisation {
         public static string _1_2 {
             get {
                 return ResourceManager.GetString("_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 2 Soil Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;Within the inwardness of a Water year, a Soil month gives reflection a gentle practical purpose. Preparing your surroundings, gathering resources and tending familiar relationships can help you feel supported without demanding a sudden return to outward momentum. Today’s Water influence brings the month’s practical preparation back to inward listening; give yourself room to sense what genuinely needs tending. Keep today spacious enough for j [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_2_1 {
+            get {
+                return ResourceManager.GetString("_1_2_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 2 Soil Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;Within the inwardness of a Water year, a Soil month gives reflection a gentle practical purpose. Preparing your surroundings, gathering resources and tending familiar relationships can help you feel supported without demanding a sudden return to outward momentum. Today’s Soil influence reinforces the month’s patient groundwork, favouring small acts of care and a steady, manageable rhythm. Choose one small act of preparation that supports your [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_2_2 {
+            get {
+                return ResourceManager.GetString("_1_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 2 Soil Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;Within the inwardness of a Water year, a Soil month gives reflection a gentle practical purpose. Preparing your surroundings, gathering resources and tending familiar relationships can help you feel supported without demanding a sudden return to outward momentum. Today’s Thunder influence can turn the month’s preparations into a useful first step, provided enthusiasm does not outrun what is ready. Use the available lift for one lingering t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_2_3 {
+            get {
+                return ResourceManager.GetString("_1_2_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 2 Soil Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;Within the inwardness of a Water year, a Soil month gives reflection a gentle practical purpose. Preparing your surroundings, gathering resources and tending familiar relationships can help you feel supported without demanding a sudden return to outward momentum. Today’s Wind influence helps the month’s developing plans through thoughtful exchange, gentle collaboration and willingness to refine the details. Try a thoughtful conversation or a  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_2_4 {
+            get {
+                return ResourceManager.GetString("_1_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 2 Soil Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;Within the inwardness of a Water year, a Soil month gives reflection a gentle practical purpose. Preparing your surroundings, gathering resources and tending familiar relationships can help you feel supported without demanding a sudden return to outward momentum. Today’s Core Earth influence may draw several responsibilities into the month’s quieter preparation; simplify and identify what truly deserves attention. Let one unresolved que [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_2_5 {
+            get {
+                return ResourceManager.GetString("_1_2_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 2 Soil Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;Within the inwardness of a Water year, a Soil month gives reflection a gentle practical purpose. Preparing your surroundings, gathering resources and tending familiar relationships can help you feel supported without demanding a sudden return to outward momentum. Today’s Heaven influence helps bring clearer order to the month’s groundwork, making a modest plan or useful boundary easier to define. Organise what you have learned and define a  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_2_6 {
+            get {
+                return ResourceManager.GetString("_1_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 2 Soil Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;Within the inwardness of a Water year, a Soil month gives reflection a gentle practical purpose. Preparing your surroundings, gathering resources and tending familiar relationships can help you feel supported without demanding a sudden return to outward momentum. Today’s Lake influence softens the month’s seriousness through enjoyment and familiar connection, reminding you that preparation can include pleasure. Choose company, music or beauty [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_2_7 {
+            get {
+                return ResourceManager.GetString("_1_2_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 2 Soil Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;Within the inwardness of a Water year, a Soil month gives reflection a gentle practical purpose. Preparing your surroundings, gathering resources and tending familiar relationships can help you feel supported without demanding a sudden return to outward momentum. Today’s Mountain influence slows the month’s emerging intentions, making a pause for review more fitting than pushing for visible progress. Give yourself a period of undisturbed  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_2_8 {
+            get {
+                return ResourceManager.GetString("_1_2_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 2 Soil Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;Within the inwardness of a Water year, a Soil month gives reflection a gentle practical purpose. Preparing your surroundings, gathering resources and tending familiar relationships can help you feel supported without demanding a sudden return to outward momentum. Today’s Fire influence brightens the month’s quieter preparation, offering a moment to share an idea or reconnect without rushing its development. Share a thought, enjoy a warm encou [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_2_9 {
+            get {
+                return ResourceManager.GetString("_1_2_9", resourceCulture);
             }
         }
         
@@ -106,6 +286,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 3 Thunder Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome stirring of movement within the quieter landscape of a Water year. Use the lift to address a lingering task or explore an idea in a modest way, while allowing the year’s deeper process of renewal to continue. Today’s Water influence tempers the month’s enthusiasm with a quieter need to reflect, helping you consider the direction behind your activity. Keep today spacious enough for journaling, study or quie [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_3_1 {
+            get {
+                return ResourceManager.GetString("_1_3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 3 Thunder Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome stirring of movement within the quieter landscape of a Water year. Use the lift to address a lingering task or explore an idea in a modest way, while allowing the year’s deeper process of renewal to continue. Today’s Soil influence grounds the month’s quickening momentum in practical care; attend to a neglected detail before reaching for another new beginning. Choose one small act of preparation that suppor [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_3_2 {
+            get {
+                return ResourceManager.GetString("_1_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 3 Thunder Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome stirring of movement within the quieter landscape of a Water year. Use the lift to address a lingering task or explore an idea in a modest way, while allowing the year’s deeper process of renewal to continue. Today’s Thunder influence adds a further burst of initiative to an already active month, making a clear focus particularly valuable. Use the available lift for one lingering task, then leave room to [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_3_3 {
+            get {
+                return ResourceManager.GetString("_1_3_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 3 Thunder Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome stirring of movement within the quieter landscape of a Water year. Use the lift to address a lingering task or explore an idea in a modest way, while allowing the year’s deeper process of renewal to continue. Today’s Wind influence helps the month’s fresh initiatives develop through tact, collaboration and gentler follow-through. Try a thoughtful conversation or a little private creative work that gives voi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_3_4 {
+            get {
+                return ResourceManager.GetString("_1_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 3 Thunder Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome stirring of movement within the quieter landscape of a Water year. Use the lift to address a lingering task or explore an idea in a modest way, while allowing the year’s deeper process of renewal to continue. Today’s Core Earth influence brings a centring pause within the active month; reconsider competing impulses before deciding where to put your effort. Let one unresolved question have your attenti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_3_5 {
+            get {
+                return ResourceManager.GetString("_1_3_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 3 Thunder Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome stirring of movement within the quieter landscape of a Water year. Use the lift to address a lingering task or explore an idea in a modest way, while allowing the year’s deeper process of renewal to continue. Today’s Heaven influence gives the month’s lively ideas a more precise direction, helping distinguish a useful next step from mere urgency. Organise what you have learned and define a modest next ste [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_3_6 {
+            get {
+                return ResourceManager.GetString("_1_3_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 3 Thunder Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome stirring of movement within the quieter landscape of a Water year. Use the lift to address a lingering task or explore an idea in a modest way, while allowing the year’s deeper process of renewal to continue. Today’s Lake influence invites enjoyment within the month’s momentum, making shared creativity or a relaxed conversation a useful release of pressure. Choose company, music or beauty that restores you, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_3_7 {
+            get {
+                return ResourceManager.GetString("_1_3_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 3 Thunder Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome stirring of movement within the quieter landscape of a Water year. Use the lift to address a lingering task or explore an idea in a modest way, while allowing the year’s deeper process of renewal to continue. Today’s Mountain influence introduces stillness into an energetic month; a deliberate pause can reveal where impatience is obscuring your direction. Give yourself a period of undisturbed reflection [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_3_8 {
+            get {
+                return ResourceManager.GetString("_1_3_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 3 Thunder Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome stirring of movement within the quieter landscape of a Water year. Use the lift to address a lingering task or explore an idea in a modest way, while allowing the year’s deeper process of renewal to continue. Today’s Fire influence makes the month’s fresh ideas more expressive and visible, while asking you to temper excitement with care in communication. Share a thought, enjoy a warm encounter or express so [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_3_9 {
+            get {
+                return ResourceManager.GetString("_1_3_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time for Decisions, Financial Settlements, and Travel Considerations  
@@ -117,6 +387,96 @@ namespace K9.Globalisation {
         public static string _1_4 {
             get {
                 return ResourceManager.GetString("_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 4 Wind Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a softer channel for conversation, creativity and connection within a reflective Water year. Sharing what you have been quietly considering may feel easier now; steady, flexible progress suits this combination better than spreading yourself across many new commitments. Today’s Water influence turns the month’s outward exchange toward quiet listening, making space to absorb what you have been learning or sharing. Keep today [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_4_1 {
+            get {
+                return ResourceManager.GetString("_1_4_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 4 Wind Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a softer channel for conversation, creativity and connection within a reflective Water year. Sharing what you have been quietly considering may feel easier now; steady, flexible progress suits this combination better than spreading yourself across many new commitments. Today’s Soil influence brings practical consistency to the month’s growth, favouring the small acts that keep relationships and projects well supported. Choo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_4_2 {
+            get {
+                return ResourceManager.GetString("_1_4_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 4 Wind Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a softer channel for conversation, creativity and connection within a reflective Water year. Sharing what you have been quietly considering may feel easier now; steady, flexible progress suits this combination better than spreading yourself across many new commitments. Today’s Thunder influence gives the month’s ongoing development a fresh push; channel it into something already worth nurturing. Use the available lift fo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_4_3 {
+            get {
+                return ResourceManager.GetString("_1_4_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 4 Wind Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a softer channel for conversation, creativity and connection within a reflective Water year. Sharing what you have been quietly considering may feel easier now; steady, flexible progress suits this combination better than spreading yourself across many new commitments. Today’s Wind influence reinforces the month’s flexible, communicative quality, with gentle collaboration favoured over scattered engagement. Try a thoughtful [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_4_4 {
+            get {
+                return ResourceManager.GetString("_1_4_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 4 Wind Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a softer channel for conversation, creativity and connection within a reflective Water year. Sharing what you have been quietly considering may feel easier now; steady, flexible progress suits this combination better than spreading yourself across many new commitments. Today’s Core Earth influence asks you to centre yourself amid the month’s many connections, clarifying which demands belong with you. Let one unresolve [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_4_5 {
+            get {
+                return ResourceManager.GetString("_1_4_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 4 Wind Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a softer channel for conversation, creativity and connection within a reflective Water year. Sharing what you have been quietly considering may feel easier now; steady, flexible progress suits this combination better than spreading yourself across many new commitments. Today’s Heaven influence brings definition to the month’s flowing possibilities, helping you edit a plan or make a clear, considerate commitment. Organise  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_4_6 {
+            get {
+                return ResourceManager.GetString("_1_4_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 4 Wind Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a softer channel for conversation, creativity and connection within a reflective Water year. Sharing what you have been quietly considering may feel easier now; steady, flexible progress suits this combination better than spreading yourself across many new commitments. Today’s Lake influence lends pleasure and warmth to the month’s relationships, favouring sincere enjoyment and unforced creative exchange. Choose company, mu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_4_7 {
+            get {
+                return ResourceManager.GetString("_1_4_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 4 Wind Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a softer channel for conversation, creativity and connection within a reflective Water year. Sharing what you have been quietly considering may feel easier now; steady, flexible progress suits this combination better than spreading yourself across many new commitments. Today’s Mountain influence creates a quieter space within the communicative month; step back to reflect without shutting others out completely. Give your [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_4_8 {
+            get {
+                return ResourceManager.GetString("_1_4_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 4 Wind Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a softer channel for conversation, creativity and connection within a reflective Water year. Sharing what you have been quietly considering may feel easier now; steady, flexible progress suits this combination better than spreading yourself across many new commitments. Today’s Fire influence brings the month’s ideas and connections into brighter focus, making thoughtful sharing easier while increasing emotional sensitivity. [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_4_9 {
+            get {
+                return ResourceManager.GetString("_1_4_9", resourceCulture);
             }
         }
         
@@ -136,6 +496,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 5 Core Earth Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month can bring unresolved questions to the surface during an already sensitive Water year. Rather than forcing a conclusion, simplify your commitments and let reflection reveal which concerns genuinely need your attention. Today’s Water influence deepens the month’s inner reassessment, favouring private reflection and a lighter load of external demands. Keep today spacious enough for journaling, study or quiet reflection; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_5_1 {
+            get {
+                return ResourceManager.GetString("_1_5_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 5 Core Earth Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month can bring unresolved questions to the surface during an already sensitive Water year. Rather than forcing a conclusion, simplify your commitments and let reflection reveal which concerns genuinely need your attention. Today’s Soil influence offers a dependable practical rhythm within the month’s shifting concerns, helping you find steadiness through simple care. Choose one small act of preparation that supports your l [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_5_2 {
+            get {
+                return ResourceManager.GetString("_1_5_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 5 Core Earth Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month can bring unresolved questions to the surface during an already sensitive Water year. Rather than forcing a conclusion, simplify your commitments and let reflection reveal which concerns genuinely need your attention. Today’s Thunder influence brings a burst of initiative into the month’s uncertainty; a small, contained action can be useful without resolving every larger question. Use the available lift for one lin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_5_3 {
+            get {
+                return ResourceManager.GetString("_1_5_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 5 Core Earth Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month can bring unresolved questions to the surface during an already sensitive Water year. Rather than forcing a conclusion, simplify your commitments and let reflection reveal which concerns genuinely need your attention. Today’s Wind influence offers a gentler way to explore the month’s uncertainties through conversation, flexibility and openness to another perspective. Try a thoughtful conversation or a little private c [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_5_4 {
+            get {
+                return ResourceManager.GetString("_1_5_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 5 Core Earth Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month can bring unresolved questions to the surface during an already sensitive Water year. Rather than forcing a conclusion, simplify your commitments and let reflection reveal which concerns genuinely need your attention. Today’s Core Earth influence repeats the month’s centring theme; reduce the number of things demanding an answer and listen for your own priorities. Let one unresolved question have your attention  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_5_5 {
+            get {
+                return ResourceManager.GetString("_1_5_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 5 Core Earth Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month can bring unresolved questions to the surface during an already sensitive Water year. Rather than forcing a conclusion, simplify your commitments and let reflection reveal which concerns genuinely need your attention. Today’s Heaven influence can help sort the month’s competing concerns into clearer boundaries, while allowing decisions to remain open to reflection. Organise what you have learned and define a modest  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_5_6 {
+            get {
+                return ResourceManager.GetString("_1_5_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 5 Core Earth Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month can bring unresolved questions to the surface during an already sensitive Water year. Rather than forcing a conclusion, simplify your commitments and let reflection reveal which concerns genuinely need your attention. Today’s Lake influence brings welcome softness to the month’s intensity, making restorative company or simple enjoyment a useful source of perspective. Choose company, music or beauty that restores you,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_5_7 {
+            get {
+                return ResourceManager.GetString("_1_5_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 5 Core Earth Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month can bring unresolved questions to the surface during an already sensitive Water year. Rather than forcing a conclusion, simplify your commitments and let reflection reveal which concerns genuinely need your attention. Today’s Mountain influence adds a pause within the month’s inner changes; reflect patiently, while avoiding the temptation to shut down around uncertainty. Give yourself a period of undisturbed refle [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_5_8 {
+            get {
+                return ResourceManager.GetString("_1_5_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 5 Core Earth Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month can bring unresolved questions to the surface during an already sensitive Water year. Rather than forcing a conclusion, simplify your commitments and let reflection reveal which concerns genuinely need your attention. Today’s Fire influence illuminates the month’s unresolved feelings or questions, making expression possible without requiring an immediate conclusion. Share a thought, enjoy a warm encounter or express s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_5_9 {
+            get {
+                return ResourceManager.GetString("_1_5_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Fortunate Cycle – Financial Shifts and Unexpected Gains  
@@ -147,6 +597,96 @@ namespace K9.Globalisation {
         public static string _1_6 {
             get {
                 return ResourceManager.GetString("_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 6 Heaven Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings definition and useful structure to the inwardness of a Water year. Sorting priorities or giving shape to your research can reduce uncertainty, provided that greater clarity does not become pressure to move faster than you feel ready to. Today’s Water influence softens the month’s decisive focus, offering space to listen inward before responding to responsibilities. Keep today spacious enough for journaling, study or q [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_6_1 {
+            get {
+                return ResourceManager.GetString("_1_6_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 6 Heaven Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings definition and useful structure to the inwardness of a Water year. Sorting priorities or giving shape to your research can reduce uncertainty, provided that greater clarity does not become pressure to move faster than you feel ready to. Today’s Soil influence gives the month’s sense of purpose a caring, practical expression, reminding you to support the people and routines behind the plans. Choose one small act of prep [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_6_2 {
+            get {
+                return ResourceManager.GetString("_1_6_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 6 Heaven Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings definition and useful structure to the inwardness of a Water year. Sorting priorities or giving shape to your research can reduce uncertainty, provided that greater clarity does not become pressure to move faster than you feel ready to. Today’s Thunder influence adds spontaneity to the month’s structure; let a fresh idea serve your priorities rather than upset them through impatience. Use the available lift for one  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_6_3 {
+            get {
+                return ResourceManager.GetString("_1_6_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 6 Heaven Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings definition and useful structure to the inwardness of a Water year. Sorting priorities or giving shape to your research can reduce uncertainty, provided that greater clarity does not become pressure to move faster than you feel ready to. Today’s Wind influence lends tact and flexibility to the month’s more direct communication, helping clarity remain responsive to others. Try a thoughtful conversation or a little privat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_6_4 {
+            get {
+                return ResourceManager.GetString("_1_6_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 6 Heaven Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings definition and useful structure to the inwardness of a Water year. Sorting priorities or giving shape to your research can reduce uncertainty, provided that greater clarity does not become pressure to move faster than you feel ready to. Today’s Core Earth influence asks for centring within the month’s responsibilities; distinguish your real obligations from demands you have simply absorbed. Let one unresolved que [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_6_5 {
+            get {
+                return ResourceManager.GetString("_1_6_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 6 Heaven Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings definition and useful structure to the inwardness of a Water year. Sorting priorities or giving shape to your research can reduce uncertainty, provided that greater clarity does not become pressure to move faster than you feel ready to. Today’s Heaven influence reinforces the month’s orderly, purposeful quality, making warmth and willingness to listen especially valuable companions to conviction. Organise what you ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_6_6 {
+            get {
+                return ResourceManager.GetString("_1_6_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 6 Heaven Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings definition and useful structure to the inwardness of a Water year. Sorting priorities or giving shape to your research can reduce uncertainty, provided that greater clarity does not become pressure to move faster than you feel ready to. Today’s Lake influence relaxes the month’s formality, opening room for appreciation, humour and connection beyond getting things done. Choose company, music or beauty that restores you, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_6_7 {
+            get {
+                return ResourceManager.GetString("_1_6_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 6 Heaven Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings definition and useful structure to the inwardness of a Water year. Sorting priorities or giving shape to your research can reduce uncertainty, provided that greater clarity does not become pressure to move faster than you feel ready to. Today’s Mountain influence pauses the month’s drive for clarity, inviting careful review while asking you not to become fixed in a single viewpoint. Give yourself a period of undist [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_6_8 {
+            get {
+                return ResourceManager.GetString("_1_6_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 6 Heaven Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings definition and useful structure to the inwardness of a Water year. Sorting priorities or giving shape to your research can reduce uncertainty, provided that greater clarity does not become pressure to move faster than you feel ready to. Today’s Fire influence adds expression and visibility to the month’s focus; share your direction warmly and remain attentive to how your words are received. Share a thought, enjoy a war [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_6_9 {
+            get {
+                return ResourceManager.GetString("_1_6_9", resourceCulture);
             }
         }
         
@@ -166,6 +706,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 7 Lake Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth, beauty and companionship within a quieter Water year. Gentle enjoyment can relieve the sense of withdrawal; favour nourishing company and simple pleasures that leave space for the deeper reflection still unfolding. Today’s Water influence brings a quieter depth to the month’s sociability, making meaningful solitude or an intimate conversation more nourishing than a busy schedule. Keep today spacious enough for jou [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_7_1 {
+            get {
+                return ResourceManager.GetString("_1_7_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 7 Lake Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth, beauty and companionship within a quieter Water year. Gentle enjoyment can relieve the sense of withdrawal; favour nourishing company and simple pleasures that leave space for the deeper reflection still unfolding. Today’s Soil influence grounds the month’s enjoyment in everyday care, helping pleasure remain connected to what supports you. Choose one small act of preparation that supports your longer renewal, such  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_7_2 {
+            get {
+                return ResourceManager.GetString("_1_7_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 7 Lake Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth, beauty and companionship within a quieter Water year. Gentle enjoyment can relieve the sense of withdrawal; favour nourishing company and simple pleasures that leave space for the deeper reflection still unfolding. Today’s Thunder influence adds lively movement to the month’s relaxed atmosphere, favouring a creative task or playful activity with a clear limit. Use the available lift for one lingering task, then  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_7_3 {
+            get {
+                return ResourceManager.GetString("_1_7_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 7 Lake Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth, beauty and companionship within a quieter Water year. Gentle enjoyment can relieve the sense of withdrawal; favour nourishing company and simple pleasures that leave space for the deeper reflection still unfolding. Today’s Wind influence extends the month’s openness into gentle collaboration and thoughtful exchange, with sincerity keeping connections substantial. Try a thoughtful conversation or a little private cr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_7_4 {
+            get {
+                return ResourceManager.GetString("_1_7_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 7 Lake Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth, beauty and companionship within a quieter Water year. Gentle enjoyment can relieve the sense of withdrawal; favour nourishing company and simple pleasures that leave space for the deeper reflection still unfolding. Today’s Core Earth influence draws attention beneath the month’s pleasant surface; make room for an unresolved feeling instead of covering it with more activity. Let one unresolved question have yo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_7_5 {
+            get {
+                return ResourceManager.GetString("_1_7_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 7 Lake Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth, beauty and companionship within a quieter Water year. Gentle enjoyment can relieve the sense of withdrawal; favour nourishing company and simple pleasures that leave space for the deeper reflection still unfolding. Today’s Heaven influence helps set clear limits within the month’s invitations and pleasures, making it easier to choose what genuinely matters. Organise what you have learned and define a modest next  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_7_6 {
+            get {
+                return ResourceManager.GetString("_1_7_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 7 Lake Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth, beauty and companionship within a quieter Water year. Gentle enjoyment can relieve the sense of withdrawal; favour nourishing company and simple pleasures that leave space for the deeper reflection still unfolding. Today’s Lake influence reinforces the month’s ease and enjoyment, inviting gratitude and heartfelt connection alongside moderation. Choose company, music or beauty that restores you, keeping the encounte [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_7_7 {
+            get {
+                return ResourceManager.GetString("_1_7_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 7 Lake Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth, beauty and companionship within a quieter Water year. Gentle enjoyment can relieve the sense of withdrawal; favour nourishing company and simple pleasures that leave space for the deeper reflection still unfolding. Today’s Mountain influence draws the month’s sociability into a quieter pause, allowing appreciation to become more inward without closing the door to others. Give yourself a period of undisturbed re [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_7_8 {
+            get {
+                return ResourceManager.GetString("_1_7_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 7 Lake Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth, beauty and companionship within a quieter Water year. Gentle enjoyment can relieve the sense of withdrawal; favour nourishing company and simple pleasures that leave space for the deeper reflection still unfolding. Today’s Fire influence brightens the month’s social warmth, favouring honest expression while calling for care around attention, sensitivity and overextension. Share a thought, enjoy a warm encounter or  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_7_9 {
+            get {
+                return ResourceManager.GetString("_1_7_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        Nurture Emotions, Embrace Short-Term Connections, and Initiate Acts of Service  
@@ -181,6 +811,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 8 Mountain Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month reinforces the inward pull of a Water year, with a more solid, contained quality of stillness. This can support honest reflection, though a little gentle movement and contact with trusted people can keep solitude from becoming isolation. Today’s Water influence deepens the month’s inward pull, making quiet reflection fitting while asking you to preserve a gentle connection to everyday life. Keep today spacious enough for [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_8_1 {
+            get {
+                return ResourceManager.GetString("_1_8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 8 Mountain Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month reinforces the inward pull of a Water year, with a more solid, contained quality of stillness. This can support honest reflection, though a little gentle movement and contact with trusted people can keep solitude from becoming isolation. Today’s Soil influence gives the month’s retreat a practical outlet, offering steadiness through small tasks and familiar care. Choose one small act of preparation that supports your long [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_8_2 {
+            get {
+                return ResourceManager.GetString("_1_8_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 8 Mountain Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month reinforces the inward pull of a Water year, with a more solid, contained quality of stillness. This can support honest reflection, though a little gentle movement and contact with trusted people can keep solitude from becoming isolation. Today’s Thunder influence brings movement into the month’s contained stillness, offering a brief chance to loosen inertia through a manageable action. Use the available lift for one li [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_8_3 {
+            get {
+                return ResourceManager.GetString("_1_8_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 8 Mountain Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month reinforces the inward pull of a Water year, with a more solid, contained quality of stillness. This can support honest reflection, though a little gentle movement and contact with trusted people can keep solitude from becoming isolation. Today’s Wind influence opens a softer channel for communication within the withdrawn month; a thoughtful exchange can help loosen fixed perspectives. Try a thoughtful conversation or a li [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_8_4 {
+            get {
+                return ResourceManager.GetString("_1_8_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 8 Mountain Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month reinforces the inward pull of a Water year, with a more solid, contained quality of stillness. This can support honest reflection, though a little gentle movement and contact with trusted people can keep solitude from becoming isolation. Today’s Core Earth influence may bring unresolved concerns into the month’s stillness; find your centre before deciding that something must change immediately. Let one unresolved qu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_8_5 {
+            get {
+                return ResourceManager.GetString("_1_8_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 8 Mountain Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month reinforces the inward pull of a Water year, with a more solid, contained quality of stillness. This can support honest reflection, though a little gentle movement and contact with trusted people can keep solitude from becoming isolation. Today’s Heaven influence can help clarify the month’s reflections, provided firmer thinking remains open to feedback rather than becoming rigid. Organise what you have learned and defin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_8_6 {
+            get {
+                return ResourceManager.GetString("_1_8_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 8 Mountain Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month reinforces the inward pull of a Water year, with a more solid, contained quality of stillness. This can support honest reflection, though a little gentle movement and contact with trusted people can keep solitude from becoming isolation. Today’s Lake influence lightens the month’s retreat through gentle enjoyment and trusted companionship, offering an unforced way to reconnect. Choose company, music or beauty that restore [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_8_7 {
+            get {
+                return ResourceManager.GetString("_1_8_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 8 Mountain Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month reinforces the inward pull of a Water year, with a more solid, contained quality of stillness. This can support honest reflection, though a little gentle movement and contact with trusted people can keep solitude from becoming isolation. Today’s Mountain influence concentrates the month’s stillness, favouring reflection while making small movement and clear communication especially useful. Give yourself a period of un [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_8_8 {
+            get {
+                return ResourceManager.GetString("_1_8_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 8 Mountain Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month reinforces the inward pull of a Water year, with a more solid, contained quality of stillness. This can support honest reflection, though a little gentle movement and contact with trusted people can keep solitude from becoming isolation. Today’s Fire influence brings a brief warmth and brightness into the withdrawn month, helping you express something or reconnect at a pace that feels comfortable. Share a thought, enjoy a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_8_9 {
+            get {
+                return ResourceManager.GetString("_1_8_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        Strong Mental Conviction but Limited Action – Ideal for Collaborative Efforts  
@@ -192,6 +912,96 @@ namespace K9.Globalisation {
         public static string _1_9 {
             get {
                 return ResourceManager.GetString("_1_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 9 Fire Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a relative reprieve from the quietness of a Water year, opening space for expression, warmth and clearer insight. Enjoy this brighter interval without expecting its outward energy to replace the year’s ongoing need for reflection and renewal. Today’s Water influence offers a quiet counterpoint to the month’s brightness, helping you absorb insight rather than remain constantly expressive. Keep today spacious enough for jou [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_9_1 {
+            get {
+                return ResourceManager.GetString("_1_9_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 9 Fire Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a relative reprieve from the quietness of a Water year, opening space for expression, warmth and clearer insight. Enjoy this brighter interval without expecting its outward energy to replace the year’s ongoing need for reflection and renewal. Today’s Soil influence grounds the month’s visibility in simple, practical care, giving expression a steadier foundation. Choose one small act of preparation that supports your longer [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_9_2 {
+            get {
+                return ResourceManager.GetString("_1_9_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 9 Fire Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a relative reprieve from the quietness of a Water year, opening space for expression, warmth and clearer insight. Enjoy this brighter interval without expecting its outward energy to replace the year’s ongoing need for reflection and renewal. Today’s Thunder influence adds a quick burst of initiative to the expressive month; direct it deliberately so that enthusiasm does not become reactivity. Use the available lift for [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_9_3 {
+            get {
+                return ResourceManager.GetString("_1_9_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 9 Fire Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a relative reprieve from the quietness of a Water year, opening space for expression, warmth and clearer insight. Enjoy this brighter interval without expecting its outward energy to replace the year’s ongoing need for reflection and renewal. Today’s Wind influence brings tact and flexibility to the month’s stronger expression, helping a message become a thoughtful conversation. Try a thoughtful conversation or a little pr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_9_4 {
+            get {
+                return ResourceManager.GetString("_1_9_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 9 Fire Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a relative reprieve from the quietness of a Water year, opening space for expression, warmth and clearer insight. Enjoy this brighter interval without expecting its outward energy to replace the year’s ongoing need for reflection and renewal. Today’s Core Earth influence asks you to centre yourself within the month’s intensity, allowing strong feelings to settle before turning them into a decision. Let one unresolved [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_9_5 {
+            get {
+                return ResourceManager.GetString("_1_9_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 9 Fire Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a relative reprieve from the quietness of a Water year, opening space for expression, warmth and clearer insight. Enjoy this brighter interval without expecting its outward energy to replace the year’s ongoing need for reflection and renewal. Today’s Heaven influence brings precision to the month’s brightness, helping you refine what you want to say without making it overly forceful. Organise what you have learned and de [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_9_6 {
+            get {
+                return ResourceManager.GetString("_1_9_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 9 Fire Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a relative reprieve from the quietness of a Water year, opening space for expression, warmth and clearer insight. Enjoy this brighter interval without expecting its outward energy to replace the year’s ongoing need for reflection and renewal. Today’s Lake influence softens the month’s expressive intensity with humour and relaxed connection, allowing enjoyment without a need to perform. Choose company, music or beauty that  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_9_7 {
+            get {
+                return ResourceManager.GetString("_1_9_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 9 Fire Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a relative reprieve from the quietness of a Water year, opening space for expression, warmth and clearer insight. Enjoy this brighter interval without expecting its outward energy to replace the year’s ongoing need for reflection and renewal. Today’s Mountain influence introduces a contained pause into the bright month, making space to integrate what has been seen or felt. Give yourself a period of undisturbed reflecti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_9_8 {
+            get {
+                return ResourceManager.GetString("_1_9_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;1 Water Year · 9 Fire Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a relative reprieve from the quietness of a Water year, opening space for expression, warmth and clearer insight. Enjoy this brighter interval without expecting its outward energy to replace the year’s ongoing need for reflection and renewal. Today’s Fire influence heightens the month’s brightness and emotional intensity, favouring authentic expression with pauses for grounding and rest. Share a thought, enjoy a warm encou [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _1_9_9 {
+            get {
+                return ResourceManager.GetString("_1_9_9", resourceCulture);
             }
         }
         
@@ -313,6 +1123,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 1 Water Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month slows the already patient rhythm of a Soil year, bringing preparation back into the realm of reflection. Let plans mature quietly and give yourself space to distinguish what you truly want from what you feel obliged to do. Today’s Water influence draws this quiet monthly current further inward, making unhurried reflection especially fitting. Reflect on the foundations you are building and let today clarify a need before adding  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_1_1 {
+            get {
+                return ResourceManager.GetString("_2_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 1 Water Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month slows the already patient rhythm of a Soil year, bringing preparation back into the realm of reflection. Let plans mature quietly and give yourself space to distinguish what you truly want from what you feel obliged to do. Today’s Soil influence gives the month’s inward current a practical anchor through simple care, preparation and familiar routines. Tend one practical detail that makes future growth easier; quiet consistency i [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_1_2 {
+            get {
+                return ResourceManager.GetString("_2_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 1 Water Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month slows the already patient rhythm of a Soil year, bringing preparation back into the realm of reflection. Let plans mature quietly and give yourself space to distinguish what you truly want from what you feel obliged to do. Today’s Thunder influence brings a brief opening for movement within the quieter month, helping loosen inertia without demanding a lasting change of pace. Try one manageable step from your preparations, giv [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_1_3 {
+            get {
+                return ResourceManager.GetString("_2_1_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 1 Water Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month slows the already patient rhythm of a Soil year, bringing preparation back into the realm of reflection. Let plans mature quietly and give yourself space to distinguish what you truly want from what you feel obliged to do. Today’s Wind influence makes gentle expression more accessible within the inward month, offering a bridge between private reflection and thoughtful conversation. Discuss a developing idea with someone thoughtf [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_1_4 {
+            get {
+                return ResourceManager.GetString("_2_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 1 Water Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month slows the already patient rhythm of a Soil year, bringing preparation back into the realm of reflection. Let plans mature quietly and give yourself space to distinguish what you truly want from what you feel obliged to do. Today’s Core Earth influence may bring several inner concerns into focus at once; reduce competing demands rather than forcing the month’s questions into a quick answer. Simplify your responsibilities an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_1_5 {
+            get {
+                return ResourceManager.GetString("_2_1_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 1 Water Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month slows the already patient rhythm of a Soil year, bringing preparation back into the realm of reflection. Let plans mature quietly and give yourself space to distinguish what you truly want from what you feel obliged to do. Today’s Heaven influence can help organise the month’s private reflections into clearer priorities, while a considerate tone keeps clarity from feeling harsh. Set one useful boundary or organise a practical  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_1_6 {
+            get {
+                return ResourceManager.GetString("_2_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 1 Water Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month slows the already patient rhythm of a Soil year, bringing preparation back into the realm of reflection. Let plans mature quietly and give yourself space to distinguish what you truly want from what you feel obliged to do. Today’s Lake influence brings a softer, more sociable note to the quiet month, making gentle companionship or beauty a welcome source of relief. Make room for a simple shared pleasure alongside your preparatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_1_7 {
+            get {
+                return ResourceManager.GetString("_2_1_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 1 Water Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month slows the already patient rhythm of a Soil year, bringing preparation back into the realm of reflection. Let plans mature quietly and give yourself space to distinguish what you truly want from what you feel obliged to do. Today’s Mountain influence adds a more contained stillness to the inward month, favouring quiet focus while calling for care around excessive withdrawal. Review a plan patiently and keep one familiar routi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_1_8 {
+            get {
+                return ResourceManager.GetString("_2_1_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 1 Water Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month slows the already patient rhythm of a Soil year, bringing preparation back into the realm of reflection. Let plans mature quietly and give yourself space to distinguish what you truly want from what you feel obliged to do. Today’s Fire influence brings a brief shaft of light into the inward month, making connection or expression more inviting without ending its quieter rhythm. Give a developing idea a little expression without m [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_1_9 {
+            get {
+                return ResourceManager.GetString("_2_1_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Period of Tests and Concerns – Thoughtful Decisions Required  
@@ -324,6 +1224,96 @@ namespace K9.Globalisation {
         public static string _2_2 {
             get {
                 return ResourceManager.GetString("_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 2 Soil Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;Soil across both year and month emphasises patient preparation, everyday care and the foundations of future growth. Small, consistent efforts can be more satisfying now than visible results; stay connected to supportive people while you tend what is taking shape. Today’s Water influence brings the month’s practical preparation back to inward listening; give yourself room to sense what genuinely needs tending. Reflect on the foundations you ar [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_2_1 {
+            get {
+                return ResourceManager.GetString("_2_2_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 2 Soil Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;Soil across both year and month emphasises patient preparation, everyday care and the foundations of future growth. Small, consistent efforts can be more satisfying now than visible results; stay connected to supportive people while you tend what is taking shape. Today’s Soil influence reinforces the month’s patient groundwork, favouring small acts of care and a steady, manageable rhythm. Tend one practical detail that makes future growth easi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_2_2 {
+            get {
+                return ResourceManager.GetString("_2_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 2 Soil Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;Soil across both year and month emphasises patient preparation, everyday care and the foundations of future growth. Small, consistent efforts can be more satisfying now than visible results; stay connected to supportive people while you tend what is taking shape. Today’s Thunder influence can turn the month’s preparations into a useful first step, provided enthusiasm does not outrun what is ready. Try one manageable step from your preparati [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_2_3 {
+            get {
+                return ResourceManager.GetString("_2_2_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 2 Soil Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;Soil across both year and month emphasises patient preparation, everyday care and the foundations of future growth. Small, consistent efforts can be more satisfying now than visible results; stay connected to supportive people while you tend what is taking shape. Today’s Wind influence helps the month’s developing plans through thoughtful exchange, gentle collaboration and willingness to refine the details. Discuss a developing idea with someo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_2_4 {
+            get {
+                return ResourceManager.GetString("_2_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 2 Soil Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;Soil across both year and month emphasises patient preparation, everyday care and the foundations of future growth. Small, consistent efforts can be more satisfying now than visible results; stay connected to supportive people while you tend what is taking shape. Today’s Core Earth influence may draw several responsibilities into the month’s quieter preparation; simplify and identify what truly deserves attention. Simplify your responsib [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_2_5 {
+            get {
+                return ResourceManager.GetString("_2_2_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 2 Soil Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;Soil across both year and month emphasises patient preparation, everyday care and the foundations of future growth. Small, consistent efforts can be more satisfying now than visible results; stay connected to supportive people while you tend what is taking shape. Today’s Heaven influence helps bring clearer order to the month’s groundwork, making a modest plan or useful boundary easier to define. Set one useful boundary or organise a practic [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_2_6 {
+            get {
+                return ResourceManager.GetString("_2_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 2 Soil Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;Soil across both year and month emphasises patient preparation, everyday care and the foundations of future growth. Small, consistent efforts can be more satisfying now than visible results; stay connected to supportive people while you tend what is taking shape. Today’s Lake influence softens the month’s seriousness through enjoyment and familiar connection, reminding you that preparation can include pleasure. Make room for a simple shared pl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_2_7 {
+            get {
+                return ResourceManager.GetString("_2_2_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 2 Soil Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;Soil across both year and month emphasises patient preparation, everyday care and the foundations of future growth. Small, consistent efforts can be more satisfying now than visible results; stay connected to supportive people while you tend what is taking shape. Today’s Mountain influence slows the month’s emerging intentions, making a pause for review more fitting than pushing for visible progress. Review a plan patiently and keep one fa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_2_8 {
+            get {
+                return ResourceManager.GetString("_2_2_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 2 Soil Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;Soil across both year and month emphasises patient preparation, everyday care and the foundations of future growth. Small, consistent efforts can be more satisfying now than visible results; stay connected to supportive people while you tend what is taking shape. Today’s Fire influence brightens the month’s quieter preparation, offering a moment to share an idea or reconnect without rushing its development. Give a developing idea a little expr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_2_9 {
+            get {
+                return ResourceManager.GetString("_2_2_9", resourceCulture);
             }
         }
         
@@ -343,6 +1333,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 3 Thunder Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month stirs the patient groundwork of a Soil year into more immediate movement. There may be enough enthusiasm to try a first step, but keep it manageable and connected to the foundations you are still building. Today’s Water influence tempers the month’s enthusiasm with a quieter need to reflect, helping you consider the direction behind your activity. Reflect on the foundations you are building and let today clarify a need befo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_3_1 {
+            get {
+                return ResourceManager.GetString("_2_3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 3 Thunder Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month stirs the patient groundwork of a Soil year into more immediate movement. There may be enough enthusiasm to try a first step, but keep it manageable and connected to the foundations you are still building. Today’s Soil influence grounds the month’s quickening momentum in practical care; attend to a neglected detail before reaching for another new beginning. Tend one practical detail that makes future growth easier; quiet con [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_3_2 {
+            get {
+                return ResourceManager.GetString("_2_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 3 Thunder Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month stirs the patient groundwork of a Soil year into more immediate movement. There may be enough enthusiasm to try a first step, but keep it manageable and connected to the foundations you are still building. Today’s Thunder influence adds a further burst of initiative to an already active month, making a clear focus particularly valuable. Try one manageable step from your preparations, giving the outcome room to inform your [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_3_3 {
+            get {
+                return ResourceManager.GetString("_2_3_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 3 Thunder Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month stirs the patient groundwork of a Soil year into more immediate movement. There may be enough enthusiasm to try a first step, but keep it manageable and connected to the foundations you are still building. Today’s Wind influence helps the month’s fresh initiatives develop through tact, collaboration and gentler follow-through. Discuss a developing idea with someone thoughtful and use their response to refine your groundwork. [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_3_4 {
+            get {
+                return ResourceManager.GetString("_2_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 3 Thunder Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month stirs the patient groundwork of a Soil year into more immediate movement. There may be enough enthusiasm to try a first step, but keep it manageable and connected to the foundations you are still building. Today’s Core Earth influence brings a centring pause within the active month; reconsider competing impulses before deciding where to put your effort. Simplify your responsibilities and return to the basic support you [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_3_5 {
+            get {
+                return ResourceManager.GetString("_2_3_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 3 Thunder Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month stirs the patient groundwork of a Soil year into more immediate movement. There may be enough enthusiasm to try a first step, but keep it manageable and connected to the foundations you are still building. Today’s Heaven influence gives the month’s lively ideas a more precise direction, helping distinguish a useful next step from mere urgency. Set one useful boundary or organise a practical plan that respects the year’s pa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_3_6 {
+            get {
+                return ResourceManager.GetString("_2_3_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 3 Thunder Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month stirs the patient groundwork of a Soil year into more immediate movement. There may be enough enthusiasm to try a first step, but keep it manageable and connected to the foundations you are still building. Today’s Lake influence invites enjoyment within the month’s momentum, making shared creativity or a relaxed conversation a useful release of pressure. Make room for a simple shared pleasure alongside your preparations, all [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_3_7 {
+            get {
+                return ResourceManager.GetString("_2_3_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 3 Thunder Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month stirs the patient groundwork of a Soil year into more immediate movement. There may be enough enthusiasm to try a first step, but keep it manageable and connected to the foundations you are still building. Today’s Mountain influence introduces stillness into an energetic month; a deliberate pause can reveal where impatience is obscuring your direction. Review a plan patiently and keep one familiar routine going, even if  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_3_8 {
+            get {
+                return ResourceManager.GetString("_2_3_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 3 Thunder Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month stirs the patient groundwork of a Soil year into more immediate movement. There may be enough enthusiasm to try a first step, but keep it manageable and connected to the foundations you are still building. Today’s Fire influence makes the month’s fresh ideas more expressive and visible, while asking you to temper excitement with care in communication. Give a developing idea a little expression without making promises beyond  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_3_9 {
+            get {
+                return ResourceManager.GetString("_2_3_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        Financial Decisions, Resolution of Conflicts, and Stability in Family or Business  
@@ -354,6 +1434,96 @@ namespace K9.Globalisation {
         public static string _2_4 {
             get {
                 return ResourceManager.GetString("_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 4 Wind Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings conversation and gentle expansion to a year focused on preparation. Feedback, collaboration and thoughtful exchange can help your plans develop organically, while consistency keeps the month’s possibilities from distracting you from essential groundwork. Today’s Water influence turns the month’s outward exchange toward quiet listening, making space to absorb what you have been learning or sharing. Reflect on the foundation [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_4_1 {
+            get {
+                return ResourceManager.GetString("_2_4_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 4 Wind Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings conversation and gentle expansion to a year focused on preparation. Feedback, collaboration and thoughtful exchange can help your plans develop organically, while consistency keeps the month’s possibilities from distracting you from essential groundwork. Today’s Soil influence brings practical consistency to the month’s growth, favouring the small acts that keep relationships and projects well supported. Tend one practical  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_4_2 {
+            get {
+                return ResourceManager.GetString("_2_4_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 4 Wind Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings conversation and gentle expansion to a year focused on preparation. Feedback, collaboration and thoughtful exchange can help your plans develop organically, while consistency keeps the month’s possibilities from distracting you from essential groundwork. Today’s Thunder influence gives the month’s ongoing development a fresh push; channel it into something already worth nurturing. Try one manageable step from your prepar [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_4_3 {
+            get {
+                return ResourceManager.GetString("_2_4_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 4 Wind Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings conversation and gentle expansion to a year focused on preparation. Feedback, collaboration and thoughtful exchange can help your plans develop organically, while consistency keeps the month’s possibilities from distracting you from essential groundwork. Today’s Wind influence reinforces the month’s flexible, communicative quality, with gentle collaboration favoured over scattered engagement. Discuss a developing idea with  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_4_4 {
+            get {
+                return ResourceManager.GetString("_2_4_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 4 Wind Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings conversation and gentle expansion to a year focused on preparation. Feedback, collaboration and thoughtful exchange can help your plans develop organically, while consistency keeps the month’s possibilities from distracting you from essential groundwork. Today’s Core Earth influence asks you to centre yourself amid the month’s many connections, clarifying which demands belong with you. Simplify your responsibilities a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_4_5 {
+            get {
+                return ResourceManager.GetString("_2_4_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 4 Wind Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings conversation and gentle expansion to a year focused on preparation. Feedback, collaboration and thoughtful exchange can help your plans develop organically, while consistency keeps the month’s possibilities from distracting you from essential groundwork. Today’s Heaven influence brings definition to the month’s flowing possibilities, helping you edit a plan or make a clear, considerate commitment. Set one useful boundary  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_4_6 {
+            get {
+                return ResourceManager.GetString("_2_4_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 4 Wind Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings conversation and gentle expansion to a year focused on preparation. Feedback, collaboration and thoughtful exchange can help your plans develop organically, while consistency keeps the month’s possibilities from distracting you from essential groundwork. Today’s Lake influence lends pleasure and warmth to the month’s relationships, favouring sincere enjoyment and unforced creative exchange. Make room for a simple shared ple [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_4_7 {
+            get {
+                return ResourceManager.GetString("_2_4_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 4 Wind Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings conversation and gentle expansion to a year focused on preparation. Feedback, collaboration and thoughtful exchange can help your plans develop organically, while consistency keeps the month’s possibilities from distracting you from essential groundwork. Today’s Mountain influence creates a quieter space within the communicative month; step back to reflect without shutting others out completely. Review a plan patiently  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_4_8 {
+            get {
+                return ResourceManager.GetString("_2_4_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 4 Wind Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings conversation and gentle expansion to a year focused on preparation. Feedback, collaboration and thoughtful exchange can help your plans develop organically, while consistency keeps the month’s possibilities from distracting you from essential groundwork. Today’s Fire influence brings the month’s ideas and connections into brighter focus, making thoughtful sharing easier while increasing emotional sensitivity. Give a develop [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_4_9 {
+            get {
+                return ResourceManager.GetString("_2_4_9", resourceCulture);
             }
         }
         
@@ -373,6 +1543,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 5 Core Earth Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month may bring competing concerns into a Soil year’s slow work of preparation. Use the pause to reconsider priorities and boundaries; doing fewer things with care can help you find your footing amid uncertainty. Today’s Water influence deepens the month’s inner reassessment, favouring private reflection and a lighter load of external demands. Reflect on the foundations you are building and let today clarify a need before a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_5_1 {
+            get {
+                return ResourceManager.GetString("_2_5_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 5 Core Earth Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month may bring competing concerns into a Soil year’s slow work of preparation. Use the pause to reconsider priorities and boundaries; doing fewer things with care can help you find your footing amid uncertainty. Today’s Soil influence offers a dependable practical rhythm within the month’s shifting concerns, helping you find steadiness through simple care. Tend one practical detail that makes future growth easier; quiet con [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_5_2 {
+            get {
+                return ResourceManager.GetString("_2_5_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 5 Core Earth Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month may bring competing concerns into a Soil year’s slow work of preparation. Use the pause to reconsider priorities and boundaries; doing fewer things with care can help you find your footing amid uncertainty. Today’s Thunder influence brings a burst of initiative into the month’s uncertainty; a small, contained action can be useful without resolving every larger question. Try one manageable step from your preparations [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_5_3 {
+            get {
+                return ResourceManager.GetString("_2_5_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 5 Core Earth Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month may bring competing concerns into a Soil year’s slow work of preparation. Use the pause to reconsider priorities and boundaries; doing fewer things with care can help you find your footing amid uncertainty. Today’s Wind influence offers a gentler way to explore the month’s uncertainties through conversation, flexibility and openness to another perspective. Discuss a developing idea with someone thoughtful and use their [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_5_4 {
+            get {
+                return ResourceManager.GetString("_2_5_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 5 Core Earth Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month may bring competing concerns into a Soil year’s slow work of preparation. Use the pause to reconsider priorities and boundaries; doing fewer things with care can help you find your footing amid uncertainty. Today’s Core Earth influence repeats the month’s centring theme; reduce the number of things demanding an answer and listen for your own priorities. Simplify your responsibilities and return to the basic suppo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_5_5 {
+            get {
+                return ResourceManager.GetString("_2_5_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 5 Core Earth Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month may bring competing concerns into a Soil year’s slow work of preparation. Use the pause to reconsider priorities and boundaries; doing fewer things with care can help you find your footing amid uncertainty. Today’s Heaven influence can help sort the month’s competing concerns into clearer boundaries, while allowing decisions to remain open to reflection. Set one useful boundary or organise a practical plan that respe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_5_6 {
+            get {
+                return ResourceManager.GetString("_2_5_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 5 Core Earth Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month may bring competing concerns into a Soil year’s slow work of preparation. Use the pause to reconsider priorities and boundaries; doing fewer things with care can help you find your footing amid uncertainty. Today’s Lake influence brings welcome softness to the month’s intensity, making restorative company or simple enjoyment a useful source of perspective. Make room for a simple shared pleasure alongside your preparati [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_5_7 {
+            get {
+                return ResourceManager.GetString("_2_5_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 5 Core Earth Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month may bring competing concerns into a Soil year’s slow work of preparation. Use the pause to reconsider priorities and boundaries; doing fewer things with care can help you find your footing amid uncertainty. Today’s Mountain influence adds a pause within the month’s inner changes; reflect patiently, while avoiding the temptation to shut down around uncertainty. Review a plan patiently and keep one familiar routine g [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_5_8 {
+            get {
+                return ResourceManager.GetString("_2_5_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 5 Core Earth Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month may bring competing concerns into a Soil year’s slow work of preparation. Use the pause to reconsider priorities and boundaries; doing fewer things with care can help you find your footing amid uncertainty. Today’s Fire influence illuminates the month’s unresolved feelings or questions, making expression possible without requiring an immediate conclusion. Give a developing idea a little expression without making promis [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_5_9 {
+            get {
+                return ResourceManager.GetString("_2_5_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Prosperous Period – Ideal for Financial Gains, Investments, and New Opportunities  
@@ -384,6 +1644,96 @@ namespace K9.Globalisation {
         public static string _2_6 {
             get {
                 return ResourceManager.GetString("_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 6 Heaven Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month helps bring order and clearer priorities to a Soil year. Practical planning and well-defined responsibilities can strengthen your foundations, provided you allow patience and kindness to temper the urge to make everything perfect. Today’s Water influence softens the month’s decisive focus, offering space to listen inward before responding to responsibilities. Reflect on the foundations you are building and let today clarify a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_6_1 {
+            get {
+                return ResourceManager.GetString("_2_6_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 6 Heaven Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month helps bring order and clearer priorities to a Soil year. Practical planning and well-defined responsibilities can strengthen your foundations, provided you allow patience and kindness to temper the urge to make everything perfect. Today’s Soil influence gives the month’s sense of purpose a caring, practical expression, reminding you to support the people and routines behind the plans. Tend one practical detail that makes futur [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_6_2 {
+            get {
+                return ResourceManager.GetString("_2_6_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 6 Heaven Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month helps bring order and clearer priorities to a Soil year. Practical planning and well-defined responsibilities can strengthen your foundations, provided you allow patience and kindness to temper the urge to make everything perfect. Today’s Thunder influence adds spontaneity to the month’s structure; let a fresh idea serve your priorities rather than upset them through impatience. Try one manageable step from your preparation [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_6_3 {
+            get {
+                return ResourceManager.GetString("_2_6_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 6 Heaven Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month helps bring order and clearer priorities to a Soil year. Practical planning and well-defined responsibilities can strengthen your foundations, provided you allow patience and kindness to temper the urge to make everything perfect. Today’s Wind influence lends tact and flexibility to the month’s more direct communication, helping clarity remain responsive to others. Discuss a developing idea with someone thoughtful and use thei [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_6_4 {
+            get {
+                return ResourceManager.GetString("_2_6_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 6 Heaven Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month helps bring order and clearer priorities to a Soil year. Practical planning and well-defined responsibilities can strengthen your foundations, provided you allow patience and kindness to temper the urge to make everything perfect. Today’s Core Earth influence asks for centring within the month’s responsibilities; distinguish your real obligations from demands you have simply absorbed. Simplify your responsibilities and r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_6_5 {
+            get {
+                return ResourceManager.GetString("_2_6_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 6 Heaven Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month helps bring order and clearer priorities to a Soil year. Practical planning and well-defined responsibilities can strengthen your foundations, provided you allow patience and kindness to temper the urge to make everything perfect. Today’s Heaven influence reinforces the month’s orderly, purposeful quality, making warmth and willingness to listen especially valuable companions to conviction. Set one useful boundary or organis [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_6_6 {
+            get {
+                return ResourceManager.GetString("_2_6_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 6 Heaven Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month helps bring order and clearer priorities to a Soil year. Practical planning and well-defined responsibilities can strengthen your foundations, provided you allow patience and kindness to temper the urge to make everything perfect. Today’s Lake influence relaxes the month’s formality, opening room for appreciation, humour and connection beyond getting things done. Make room for a simple shared pleasure alongside your preparatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_6_7 {
+            get {
+                return ResourceManager.GetString("_2_6_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 6 Heaven Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month helps bring order and clearer priorities to a Soil year. Practical planning and well-defined responsibilities can strengthen your foundations, provided you allow patience and kindness to temper the urge to make everything perfect. Today’s Mountain influence pauses the month’s drive for clarity, inviting careful review while asking you not to become fixed in a single viewpoint. Review a plan patiently and keep one familiar  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_6_8 {
+            get {
+                return ResourceManager.GetString("_2_6_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 6 Heaven Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month helps bring order and clearer priorities to a Soil year. Practical planning and well-defined responsibilities can strengthen your foundations, provided you allow patience and kindness to temper the urge to make everything perfect. Today’s Fire influence adds expression and visibility to the month’s focus; share your direction warmly and remain attentive to how your words are received. Give a developing idea a little expression [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_6_9 {
+            get {
+                return ResourceManager.GetString("_2_6_9", resourceCulture);
             }
         }
         
@@ -403,6 +1753,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 7 Lake Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month lightens the earnestness of a Soil year through pleasure and familiar connection. Enjoying what already supports you can restore motivation for the quiet work ahead; keep appreciation and practical care alongside any invitations to relax. Today’s Water influence brings a quieter depth to the month’s sociability, making meaningful solitude or an intimate conversation more nourishing than a busy schedule. Reflect on the foundations [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_7_1 {
+            get {
+                return ResourceManager.GetString("_2_7_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 7 Lake Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month lightens the earnestness of a Soil year through pleasure and familiar connection. Enjoying what already supports you can restore motivation for the quiet work ahead; keep appreciation and practical care alongside any invitations to relax. Today’s Soil influence grounds the month’s enjoyment in everyday care, helping pleasure remain connected to what supports you. Tend one practical detail that makes future growth easier; quiet con [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_7_2 {
+            get {
+                return ResourceManager.GetString("_2_7_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 7 Lake Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month lightens the earnestness of a Soil year through pleasure and familiar connection. Enjoying what already supports you can restore motivation for the quiet work ahead; keep appreciation and practical care alongside any invitations to relax. Today’s Thunder influence adds lively movement to the month’s relaxed atmosphere, favouring a creative task or playful activity with a clear limit. Try one manageable step from your preparatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_7_3 {
+            get {
+                return ResourceManager.GetString("_2_7_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 7 Lake Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month lightens the earnestness of a Soil year through pleasure and familiar connection. Enjoying what already supports you can restore motivation for the quiet work ahead; keep appreciation and practical care alongside any invitations to relax. Today’s Wind influence extends the month’s openness into gentle collaboration and thoughtful exchange, with sincerity keeping connections substantial. Discuss a developing idea with someone thoug [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_7_4 {
+            get {
+                return ResourceManager.GetString("_2_7_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 7 Lake Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month lightens the earnestness of a Soil year through pleasure and familiar connection. Enjoying what already supports you can restore motivation for the quiet work ahead; keep appreciation and practical care alongside any invitations to relax. Today’s Core Earth influence draws attention beneath the month’s pleasant surface; make room for an unresolved feeling instead of covering it with more activity. Simplify your responsibilit [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_7_5 {
+            get {
+                return ResourceManager.GetString("_2_7_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 7 Lake Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month lightens the earnestness of a Soil year through pleasure and familiar connection. Enjoying what already supports you can restore motivation for the quiet work ahead; keep appreciation and practical care alongside any invitations to relax. Today’s Heaven influence helps set clear limits within the month’s invitations and pleasures, making it easier to choose what genuinely matters. Set one useful boundary or organise a practical  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_7_6 {
+            get {
+                return ResourceManager.GetString("_2_7_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 7 Lake Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month lightens the earnestness of a Soil year through pleasure and familiar connection. Enjoying what already supports you can restore motivation for the quiet work ahead; keep appreciation and practical care alongside any invitations to relax. Today’s Lake influence reinforces the month’s ease and enjoyment, inviting gratitude and heartfelt connection alongside moderation. Make room for a simple shared pleasure alongside your preparati [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_7_7 {
+            get {
+                return ResourceManager.GetString("_2_7_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 7 Lake Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month lightens the earnestness of a Soil year through pleasure and familiar connection. Enjoying what already supports you can restore motivation for the quiet work ahead; keep appreciation and practical care alongside any invitations to relax. Today’s Mountain influence draws the month’s sociability into a quieter pause, allowing appreciation to become more inward without closing the door to others. Review a plan patiently and keep [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_7_8 {
+            get {
+                return ResourceManager.GetString("_2_7_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 7 Lake Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month lightens the earnestness of a Soil year through pleasure and familiar connection. Enjoying what already supports you can restore motivation for the quiet work ahead; keep appreciation and practical care alongside any invitations to relax. Today’s Fire influence brightens the month’s social warmth, favouring honest expression while calling for care around attention, sensitivity and overextension. Give a developing idea a little exp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_7_9 {
+            get {
+                return ResourceManager.GetString("_2_7_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Strong Start for Creativity and Action – Caution Against Overextension  
@@ -418,6 +1858,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 8 Mountain Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month makes a Soil year feel more contained, drawing attention to what needs settling before progress can resume. Reflect on your foundations, but keep small routines and gentle contact with others alive so that preparation does not become indefinite withdrawal. Today’s Water influence deepens the month’s inward pull, making quiet reflection fitting while asking you to preserve a gentle connection to everyday life. Reflect on t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_8_1 {
+            get {
+                return ResourceManager.GetString("_2_8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 8 Mountain Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month makes a Soil year feel more contained, drawing attention to what needs settling before progress can resume. Reflect on your foundations, but keep small routines and gentle contact with others alive so that preparation does not become indefinite withdrawal. Today’s Soil influence gives the month’s retreat a practical outlet, offering steadiness through small tasks and familiar care. Tend one practical detail that makes futu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_8_2 {
+            get {
+                return ResourceManager.GetString("_2_8_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 8 Mountain Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month makes a Soil year feel more contained, drawing attention to what needs settling before progress can resume. Reflect on your foundations, but keep small routines and gentle contact with others alive so that preparation does not become indefinite withdrawal. Today’s Thunder influence brings movement into the month’s contained stillness, offering a brief chance to loosen inertia through a manageable action. Try one managea [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_8_3 {
+            get {
+                return ResourceManager.GetString("_2_8_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 8 Mountain Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month makes a Soil year feel more contained, drawing attention to what needs settling before progress can resume. Reflect on your foundations, but keep small routines and gentle contact with others alive so that preparation does not become indefinite withdrawal. Today’s Wind influence opens a softer channel for communication within the withdrawn month; a thoughtful exchange can help loosen fixed perspectives. Discuss a developin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_8_4 {
+            get {
+                return ResourceManager.GetString("_2_8_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 8 Mountain Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month makes a Soil year feel more contained, drawing attention to what needs settling before progress can resume. Reflect on your foundations, but keep small routines and gentle contact with others alive so that preparation does not become indefinite withdrawal. Today’s Core Earth influence may bring unresolved concerns into the month’s stillness; find your centre before deciding that something must change immediately. Sim [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_8_5 {
+            get {
+                return ResourceManager.GetString("_2_8_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 8 Mountain Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month makes a Soil year feel more contained, drawing attention to what needs settling before progress can resume. Reflect on your foundations, but keep small routines and gentle contact with others alive so that preparation does not become indefinite withdrawal. Today’s Heaven influence can help clarify the month’s reflections, provided firmer thinking remains open to feedback rather than becoming rigid. Set one useful boundar [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_8_6 {
+            get {
+                return ResourceManager.GetString("_2_8_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 8 Mountain Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month makes a Soil year feel more contained, drawing attention to what needs settling before progress can resume. Reflect on your foundations, but keep small routines and gentle contact with others alive so that preparation does not become indefinite withdrawal. Today’s Lake influence lightens the month’s retreat through gentle enjoyment and trusted companionship, offering an unforced way to reconnect. Make room for a simple sha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_8_7 {
+            get {
+                return ResourceManager.GetString("_2_8_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 8 Mountain Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month makes a Soil year feel more contained, drawing attention to what needs settling before progress can resume. Reflect on your foundations, but keep small routines and gentle contact with others alive so that preparation does not become indefinite withdrawal. Today’s Mountain influence concentrates the month’s stillness, favouring reflection while making small movement and clear communication especially useful. Review a p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_8_8 {
+            get {
+                return ResourceManager.GetString("_2_8_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 8 Mountain Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month makes a Soil year feel more contained, drawing attention to what needs settling before progress can resume. Reflect on your foundations, but keep small routines and gentle contact with others alive so that preparation does not become indefinite withdrawal. Today’s Fire influence brings a brief warmth and brightness into the withdrawn month, helping you express something or reconnect at a pace that feels comfortable. Give a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_8_9 {
+            get {
+                return ResourceManager.GetString("_2_8_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Challenging Period – Tensions in Relationships and Emotional Clarity  
@@ -429,6 +1959,96 @@ namespace K9.Globalisation {
         public static string _2_9 {
             get {
                 return ResourceManager.GetString("_2_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 9 Fire Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings visibility and emotional brightness to a Soil year’s quieter groundwork. Share a developing idea or reconnect with others, while remembering that the longer task is still to nurture foundations rather than rush toward a finished result. Today’s Water influence offers a quiet counterpoint to the month’s brightness, helping you absorb insight rather than remain constantly expressive. Reflect on the foundations you are buildi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_9_1 {
+            get {
+                return ResourceManager.GetString("_2_9_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 9 Fire Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings visibility and emotional brightness to a Soil year’s quieter groundwork. Share a developing idea or reconnect with others, while remembering that the longer task is still to nurture foundations rather than rush toward a finished result. Today’s Soil influence grounds the month’s visibility in simple, practical care, giving expression a steadier foundation. Tend one practical detail that makes future growth easier; quiet con [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_9_2 {
+            get {
+                return ResourceManager.GetString("_2_9_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 9 Fire Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings visibility and emotional brightness to a Soil year’s quieter groundwork. Share a developing idea or reconnect with others, while remembering that the longer task is still to nurture foundations rather than rush toward a finished result. Today’s Thunder influence adds a quick burst of initiative to the expressive month; direct it deliberately so that enthusiasm does not become reactivity. Try one manageable step from your [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_9_3 {
+            get {
+                return ResourceManager.GetString("_2_9_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 9 Fire Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings visibility and emotional brightness to a Soil year’s quieter groundwork. Share a developing idea or reconnect with others, while remembering that the longer task is still to nurture foundations rather than rush toward a finished result. Today’s Wind influence brings tact and flexibility to the month’s stronger expression, helping a message become a thoughtful conversation. Discuss a developing idea with someone thoughtful a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_9_4 {
+            get {
+                return ResourceManager.GetString("_2_9_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 9 Fire Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings visibility and emotional brightness to a Soil year’s quieter groundwork. Share a developing idea or reconnect with others, while remembering that the longer task is still to nurture foundations rather than rush toward a finished result. Today’s Core Earth influence asks you to centre yourself within the month’s intensity, allowing strong feelings to settle before turning them into a decision. Simplify your responsibil [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_9_5 {
+            get {
+                return ResourceManager.GetString("_2_9_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 9 Fire Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings visibility and emotional brightness to a Soil year’s quieter groundwork. Share a developing idea or reconnect with others, while remembering that the longer task is still to nurture foundations rather than rush toward a finished result. Today’s Heaven influence brings precision to the month’s brightness, helping you refine what you want to say without making it overly forceful. Set one useful boundary or organise a practi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_9_6 {
+            get {
+                return ResourceManager.GetString("_2_9_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 9 Fire Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings visibility and emotional brightness to a Soil year’s quieter groundwork. Share a developing idea or reconnect with others, while remembering that the longer task is still to nurture foundations rather than rush toward a finished result. Today’s Lake influence softens the month’s expressive intensity with humour and relaxed connection, allowing enjoyment without a need to perform. Make room for a simple shared pleasure along [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_9_7 {
+            get {
+                return ResourceManager.GetString("_2_9_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 9 Fire Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings visibility and emotional brightness to a Soil year’s quieter groundwork. Share a developing idea or reconnect with others, while remembering that the longer task is still to nurture foundations rather than rush toward a finished result. Today’s Mountain influence introduces a contained pause into the bright month, making space to integrate what has been seen or felt. Review a plan patiently and keep one familiar routine [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_9_8 {
+            get {
+                return ResourceManager.GetString("_2_9_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;2 Soil Year · 9 Fire Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings visibility and emotional brightness to a Soil year’s quieter groundwork. Share a developing idea or reconnect with others, while remembering that the longer task is still to nurture foundations rather than rush toward a finished result. Today’s Fire influence heightens the month’s brightness and emotional intensity, favouring authentic expression with pauses for grounding and rest. Give a developing idea a little expression [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _2_9_9 {
+            get {
+                return ResourceManager.GetString("_2_9_9", resourceCulture);
             }
         }
         
@@ -620,6 +2240,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 1 Water Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month introduces a reflective interval into a year of beginnings and forward movement. Reduced outward appetite can help you review the direction of your momentum; give inspiration time to deepen before adding more activity. Today’s Water influence draws this quiet monthly current further inward, making unhurried reflection especially fitting. Pause to listen beneath your enthusiasm; an hour of reflection may help you choose where [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_1_1 {
+            get {
+                return ResourceManager.GetString("_3_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 1 Water Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month introduces a reflective interval into a year of beginnings and forward movement. Reduced outward appetite can help you review the direction of your momentum; give inspiration time to deepen before adding more activity. Today’s Soil influence gives the month’s inward current a practical anchor through simple care, preparation and familiar routines. Complete a small piece of groundwork that supports the new direction you are al [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_1_2 {
+            get {
+                return ResourceManager.GetString("_3_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 1 Water Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month introduces a reflective interval into a year of beginnings and forward movement. Reduced outward appetite can help you review the direction of your momentum; give inspiration time to deepen before adding more activity. Today’s Thunder influence brings a brief opening for movement within the quieter month, helping loosen inertia without demanding a lasting change of pace. Pick one worthwhile task and give it focused effort, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_1_3 {
+            get {
+                return ResourceManager.GetString("_3_1_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 1 Water Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month introduces a reflective interval into a year of beginnings and forward movement. Reduced outward appetite can help you review the direction of your momentum; give inspiration time to deepen before adding more activity. Today’s Wind influence makes gentle expression more accessible within the inward month, offering a bridge between private reflection and thoughtful conversation. Bring another person into a developing idea and  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_1_4 {
+            get {
+                return ResourceManager.GetString("_3_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 1 Water Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month introduces a reflective interval into a year of beginnings and forward movement. Reduced outward appetite can help you review the direction of your momentum; give inspiration time to deepen before adding more activity. Today’s Core Earth influence may bring several inner concerns into focus at once; reduce competing demands rather than forcing the month’s questions into a quick answer. Review what you have started and r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_1_5 {
+            get {
+                return ResourceManager.GetString("_3_1_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 1 Water Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month introduces a reflective interval into a year of beginnings and forward movement. Reduced outward appetite can help you review the direction of your momentum; give inspiration time to deepen before adding more activity. Today’s Heaven influence can help organise the month’s private reflections into clearer priorities, while a considerate tone keeps clarity from feeling harsh. Give a fresh initiative a clear plan, with enough [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_1_6 {
+            get {
+                return ResourceManager.GetString("_3_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 1 Water Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month introduces a reflective interval into a year of beginnings and forward movement. Reduced outward appetite can help you review the direction of your momentum; give inspiration time to deepen before adding more activity. Today’s Lake influence brings a softer, more sociable note to the quiet month, making gentle companionship or beauty a welcome source of relief. Enjoy a creative or social break that refreshes your enthusiasm w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_1_7 {
+            get {
+                return ResourceManager.GetString("_3_1_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 1 Water Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month introduces a reflective interval into a year of beginnings and forward movement. Reduced outward appetite can help you review the direction of your momentum; give inspiration time to deepen before adding more activity. Today’s Mountain influence adds a more contained stillness to the inward month, favouring quiet focus while calling for care around excessive withdrawal. Step back from the urge to push through everything;  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_1_8 {
+            get {
+                return ResourceManager.GetString("_3_1_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 1 Water Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month introduces a reflective interval into a year of beginnings and forward movement. Reduced outward appetite can help you review the direction of your momentum; give inspiration time to deepen before adding more activity. Today’s Fire influence brings a brief shaft of light into the inward month, making connection or expression more inviting without ending its quieter rhythm. Express one idea clearly and warmly, allowing others  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_1_9 {
+            get {
+                return ResourceManager.GetString("_3_1_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        Financial Reevaluation – Reinvestments, Settling Debts, and Taking Risks  
@@ -631,6 +2341,96 @@ namespace K9.Globalisation {
         public static string _3_2 {
             get {
                 return ResourceManager.GetString("_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 2 Soil Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings patient groundwork to the quickening pace of a Thunder year. Attend to details, resources and everyday support so that enthusiasm has something dependable to grow from, even if the slower rhythm initially feels frustrating. Today’s Water influence brings the month’s practical preparation back to inward listening; give yourself room to sense what genuinely needs tending. Pause to listen beneath your enthusiasm; an hour o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_2_1 {
+            get {
+                return ResourceManager.GetString("_3_2_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 2 Soil Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings patient groundwork to the quickening pace of a Thunder year. Attend to details, resources and everyday support so that enthusiasm has something dependable to grow from, even if the slower rhythm initially feels frustrating. Today’s Soil influence reinforces the month’s patient groundwork, favouring small acts of care and a steady, manageable rhythm. Complete a small piece of groundwork that supports the new direction you [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_2_2 {
+            get {
+                return ResourceManager.GetString("_3_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 2 Soil Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings patient groundwork to the quickening pace of a Thunder year. Attend to details, resources and everyday support so that enthusiasm has something dependable to grow from, even if the slower rhythm initially feels frustrating. Today’s Thunder influence can turn the month’s preparations into a useful first step, provided enthusiasm does not outrun what is ready. Pick one worthwhile task and give it focused effort, leaving [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_2_3 {
+            get {
+                return ResourceManager.GetString("_3_2_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 2 Soil Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings patient groundwork to the quickening pace of a Thunder year. Attend to details, resources and everyday support so that enthusiasm has something dependable to grow from, even if the slower rhythm initially feels frustrating. Today’s Wind influence helps the month’s developing plans through thoughtful exchange, gentle collaboration and willingness to refine the details. Bring another person into a developing idea and let t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_2_4 {
+            get {
+                return ResourceManager.GetString("_3_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 2 Soil Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings patient groundwork to the quickening pace of a Thunder year. Attend to details, resources and everyday support so that enthusiasm has something dependable to grow from, even if the slower rhythm initially feels frustrating. Today’s Core Earth influence may draw several responsibilities into the month’s quieter preparation; simplify and identify what truly deserves attention. Review what you have started and release [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_2_5 {
+            get {
+                return ResourceManager.GetString("_3_2_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 2 Soil Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings patient groundwork to the quickening pace of a Thunder year. Attend to details, resources and everyday support so that enthusiasm has something dependable to grow from, even if the slower rhythm initially feels frustrating. Today’s Heaven influence helps bring clearer order to the month’s groundwork, making a modest plan or useful boundary easier to define. Give a fresh initiative a clear plan, with enough flexibility  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_2_6 {
+            get {
+                return ResourceManager.GetString("_3_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 2 Soil Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings patient groundwork to the quickening pace of a Thunder year. Attend to details, resources and everyday support so that enthusiasm has something dependable to grow from, even if the slower rhythm initially feels frustrating. Today’s Lake influence softens the month’s seriousness through enjoyment and familiar connection, reminding you that preparation can include pleasure. Enjoy a creative or social break that refreshes y [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_2_7 {
+            get {
+                return ResourceManager.GetString("_3_2_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 2 Soil Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings patient groundwork to the quickening pace of a Thunder year. Attend to details, resources and everyday support so that enthusiasm has something dependable to grow from, even if the slower rhythm initially feels frustrating. Today’s Mountain influence slows the month’s emerging intentions, making a pause for review more fitting than pushing for visible progress. Step back from the urge to push through everything; use  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_2_8 {
+            get {
+                return ResourceManager.GetString("_3_2_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 2 Soil Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings patient groundwork to the quickening pace of a Thunder year. Attend to details, resources and everyday support so that enthusiasm has something dependable to grow from, even if the slower rhythm initially feels frustrating. Today’s Fire influence brightens the month’s quieter preparation, offering a moment to share an idea or reconnect without rushing its development. Express one idea clearly and warmly, allowing others  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_2_9 {
+            get {
+                return ResourceManager.GetString("_3_2_9", resourceCulture);
             }
         }
         
@@ -650,6 +2450,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 3 Thunder Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;Thunder across year and month concentrates the impulse to act, create and begin. The opportunity is to turn inspiration into tangible movement; choose a clear direction and allow enough patience for details, other people and unfinished work. Today’s Water influence tempers the month’s enthusiasm with a quieter need to reflect, helping you consider the direction behind your activity. Pause to listen beneath your enthusiasm; an hour of re [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_3_1 {
+            get {
+                return ResourceManager.GetString("_3_3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 3 Thunder Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;Thunder across year and month concentrates the impulse to act, create and begin. The opportunity is to turn inspiration into tangible movement; choose a clear direction and allow enough patience for details, other people and unfinished work. Today’s Soil influence grounds the month’s quickening momentum in practical care; attend to a neglected detail before reaching for another new beginning. Complete a small piece of groundwork that sup [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_3_2 {
+            get {
+                return ResourceManager.GetString("_3_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 3 Thunder Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;Thunder across year and month concentrates the impulse to act, create and begin. The opportunity is to turn inspiration into tangible movement; choose a clear direction and allow enough patience for details, other people and unfinished work. Today’s Thunder influence adds a further burst of initiative to an already active month, making a clear focus particularly valuable. Pick one worthwhile task and give it focused effort, leaving sp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_3_3 {
+            get {
+                return ResourceManager.GetString("_3_3_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 3 Thunder Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;Thunder across year and month concentrates the impulse to act, create and begin. The opportunity is to turn inspiration into tangible movement; choose a clear direction and allow enough patience for details, other people and unfinished work. Today’s Wind influence helps the month’s fresh initiatives develop through tact, collaboration and gentler follow-through. Bring another person into a developing idea and let thoughtful exchange turn [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_3_4 {
+            get {
+                return ResourceManager.GetString("_3_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 3 Thunder Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;Thunder across year and month concentrates the impulse to act, create and begin. The opportunity is to turn inspiration into tangible movement; choose a clear direction and allow enough patience for details, other people and unfinished work. Today’s Core Earth influence brings a centring pause within the active month; reconsider competing impulses before deciding where to put your effort. Review what you have started and release an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_3_5 {
+            get {
+                return ResourceManager.GetString("_3_3_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 3 Thunder Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;Thunder across year and month concentrates the impulse to act, create and begin. The opportunity is to turn inspiration into tangible movement; choose a clear direction and allow enough patience for details, other people and unfinished work. Today’s Heaven influence gives the month’s lively ideas a more precise direction, helping distinguish a useful next step from mere urgency. Give a fresh initiative a clear plan, with enough flexibi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_3_6 {
+            get {
+                return ResourceManager.GetString("_3_3_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 3 Thunder Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;Thunder across year and month concentrates the impulse to act, create and begin. The opportunity is to turn inspiration into tangible movement; choose a clear direction and allow enough patience for details, other people and unfinished work. Today’s Lake influence invites enjoyment within the month’s momentum, making shared creativity or a relaxed conversation a useful release of pressure. Enjoy a creative or social break that refreshes  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_3_7 {
+            get {
+                return ResourceManager.GetString("_3_3_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 3 Thunder Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;Thunder across year and month concentrates the impulse to act, create and begin. The opportunity is to turn inspiration into tangible movement; choose a clear direction and allow enough patience for details, other people and unfinished work. Today’s Mountain influence introduces stillness into an energetic month; a deliberate pause can reveal where impatience is obscuring your direction. Step back from the urge to push through everyt [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_3_8 {
+            get {
+                return ResourceManager.GetString("_3_3_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 3 Thunder Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;Thunder across year and month concentrates the impulse to act, create and begin. The opportunity is to turn inspiration into tangible movement; choose a clear direction and allow enough patience for details, other people and unfinished work. Today’s Fire influence makes the month’s fresh ideas more expressive and visible, while asking you to temper excitement with care in communication. Express one idea clearly and warmly, allowing other [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_3_9 {
+            get {
+                return ResourceManager.GetString("_3_3_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        Reaping What You Sow – A Hectic but Grounding Period  
@@ -661,6 +2551,96 @@ namespace K9.Globalisation {
         public static string _3_4 {
             get {
                 return ResourceManager.GetString("_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 4 Wind Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month helps the fresh beginnings of a Thunder year become more sustained and collaborative. Follow through on what has already stirred into life, using conversation and flexibility to develop it rather than chasing every new possibility. Today’s Water influence turns the month’s outward exchange toward quiet listening, making space to absorb what you have been learning or sharing. Pause to listen beneath your enthusiasm; an hour of  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_4_1 {
+            get {
+                return ResourceManager.GetString("_3_4_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 4 Wind Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month helps the fresh beginnings of a Thunder year become more sustained and collaborative. Follow through on what has already stirred into life, using conversation and flexibility to develop it rather than chasing every new possibility. Today’s Soil influence brings practical consistency to the month’s growth, favouring the small acts that keep relationships and projects well supported. Complete a small piece of groundwork that supp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_4_2 {
+            get {
+                return ResourceManager.GetString("_3_4_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 4 Wind Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month helps the fresh beginnings of a Thunder year become more sustained and collaborative. Follow through on what has already stirred into life, using conversation and flexibility to develop it rather than chasing every new possibility. Today’s Thunder influence gives the month’s ongoing development a fresh push; channel it into something already worth nurturing. Pick one worthwhile task and give it focused effort, leaving space  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_4_3 {
+            get {
+                return ResourceManager.GetString("_3_4_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 4 Wind Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month helps the fresh beginnings of a Thunder year become more sustained and collaborative. Follow through on what has already stirred into life, using conversation and flexibility to develop it rather than chasing every new possibility. Today’s Wind influence reinforces the month’s flexible, communicative quality, with gentle collaboration favoured over scattered engagement. Bring another person into a developing idea and let though [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_4_4 {
+            get {
+                return ResourceManager.GetString("_3_4_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 4 Wind Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month helps the fresh beginnings of a Thunder year become more sustained and collaborative. Follow through on what has already stirred into life, using conversation and flexibility to develop it rather than chasing every new possibility. Today’s Core Earth influence asks you to centre yourself amid the month’s many connections, clarifying which demands belong with you. Review what you have started and release an unnecessary dem [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_4_5 {
+            get {
+                return ResourceManager.GetString("_3_4_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 4 Wind Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month helps the fresh beginnings of a Thunder year become more sustained and collaborative. Follow through on what has already stirred into life, using conversation and flexibility to develop it rather than chasing every new possibility. Today’s Heaven influence brings definition to the month’s flowing possibilities, helping you edit a plan or make a clear, considerate commitment. Give a fresh initiative a clear plan, with enough f [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_4_6 {
+            get {
+                return ResourceManager.GetString("_3_4_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 4 Wind Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month helps the fresh beginnings of a Thunder year become more sustained and collaborative. Follow through on what has already stirred into life, using conversation and flexibility to develop it rather than chasing every new possibility. Today’s Lake influence lends pleasure and warmth to the month’s relationships, favouring sincere enjoyment and unforced creative exchange. Enjoy a creative or social break that refreshes your enthusi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_4_7 {
+            get {
+                return ResourceManager.GetString("_3_4_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 4 Wind Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month helps the fresh beginnings of a Thunder year become more sustained and collaborative. Follow through on what has already stirred into life, using conversation and flexibility to develop it rather than chasing every new possibility. Today’s Mountain influence creates a quieter space within the communicative month; step back to reflect without shutting others out completely. Step back from the urge to push through everything; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_4_8 {
+            get {
+                return ResourceManager.GetString("_3_4_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 4 Wind Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month helps the fresh beginnings of a Thunder year become more sustained and collaborative. Follow through on what has already stirred into life, using conversation and flexibility to develop it rather than chasing every new possibility. Today’s Fire influence brings the month’s ideas and connections into brighter focus, making thoughtful sharing easier while increasing emotional sensitivity. Express one idea clearly and warmly, allo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_4_9 {
+            get {
+                return ResourceManager.GetString("_3_4_9", resourceCulture);
             }
         }
         
@@ -680,6 +2660,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 5 Core Earth Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month interrupts the momentum of a Thunder year with a need to reconsider what is central. If enthusiasm meets uncertainty, use the tension to clarify priorities rather than multiplying initiatives or forcing a quick decision. Today’s Water influence deepens the month’s inner reassessment, favouring private reflection and a lighter load of external demands. Pause to listen beneath your enthusiasm; an hour of reflection m [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_5_1 {
+            get {
+                return ResourceManager.GetString("_3_5_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 5 Core Earth Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month interrupts the momentum of a Thunder year with a need to reconsider what is central. If enthusiasm meets uncertainty, use the tension to clarify priorities rather than multiplying initiatives or forcing a quick decision. Today’s Soil influence offers a dependable practical rhythm within the month’s shifting concerns, helping you find steadiness through simple care. Complete a small piece of groundwork that supports  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_5_2 {
+            get {
+                return ResourceManager.GetString("_3_5_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 5 Core Earth Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month interrupts the momentum of a Thunder year with a need to reconsider what is central. If enthusiasm meets uncertainty, use the tension to clarify priorities rather than multiplying initiatives or forcing a quick decision. Today’s Thunder influence brings a burst of initiative into the month’s uncertainty; a small, contained action can be useful without resolving every larger question. Pick one worthwhile task and  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_5_3 {
+            get {
+                return ResourceManager.GetString("_3_5_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 5 Core Earth Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month interrupts the momentum of a Thunder year with a need to reconsider what is central. If enthusiasm meets uncertainty, use the tension to clarify priorities rather than multiplying initiatives or forcing a quick decision. Today’s Wind influence offers a gentler way to explore the month’s uncertainties through conversation, flexibility and openness to another perspective. Bring another person into a developing idea an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_5_4 {
+            get {
+                return ResourceManager.GetString("_3_5_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 5 Core Earth Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month interrupts the momentum of a Thunder year with a need to reconsider what is central. If enthusiasm meets uncertainty, use the tension to clarify priorities rather than multiplying initiatives or forcing a quick decision. Today’s Core Earth influence repeats the month’s centring theme; reduce the number of things demanding an answer and listen for your own priorities. Review what you have started and release an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_5_5 {
+            get {
+                return ResourceManager.GetString("_3_5_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 5 Core Earth Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month interrupts the momentum of a Thunder year with a need to reconsider what is central. If enthusiasm meets uncertainty, use the tension to clarify priorities rather than multiplying initiatives or forcing a quick decision. Today’s Heaven influence can help sort the month’s competing concerns into clearer boundaries, while allowing decisions to remain open to reflection. Give a fresh initiative a clear plan, with eno [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_5_6 {
+            get {
+                return ResourceManager.GetString("_3_5_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 5 Core Earth Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month interrupts the momentum of a Thunder year with a need to reconsider what is central. If enthusiasm meets uncertainty, use the tension to clarify priorities rather than multiplying initiatives or forcing a quick decision. Today’s Lake influence brings welcome softness to the month’s intensity, making restorative company or simple enjoyment a useful source of perspective. Enjoy a creative or social break that refreshe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_5_7 {
+            get {
+                return ResourceManager.GetString("_3_5_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 5 Core Earth Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month interrupts the momentum of a Thunder year with a need to reconsider what is central. If enthusiasm meets uncertainty, use the tension to clarify priorities rather than multiplying initiatives or forcing a quick decision. Today’s Mountain influence adds a pause within the month’s inner changes; reflect patiently, while avoiding the temptation to shut down around uncertainty. Step back from the urge to push throug [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_5_8 {
+            get {
+                return ResourceManager.GetString("_3_5_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 5 Core Earth Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month interrupts the momentum of a Thunder year with a need to reconsider what is central. If enthusiasm meets uncertainty, use the tension to clarify priorities rather than multiplying initiatives or forcing a quick decision. Today’s Fire influence illuminates the month’s unresolved feelings or questions, making expression possible without requiring an immediate conclusion. Express one idea clearly and warmly, allowing o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_5_9 {
+            get {
+                return ResourceManager.GetString("_3_5_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        An Emotionally Intense Period – Potential Loss, Disappointment, and Nervous Strain  
@@ -691,6 +2761,96 @@ namespace K9.Globalisation {
         public static string _3_6 {
             get {
                 return ResourceManager.GetString("_3_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 6 Heaven Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives a Thunder year’s lively momentum a more disciplined shape. Focus, boundaries and careful decisions can make new beginnings more workable; balance the urge to push ahead with respect for both structure and creative freedom. Today’s Water influence softens the month’s decisive focus, offering space to listen inward before responding to responsibilities. Pause to listen beneath your enthusiasm; an hour of reflection may [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_6_1 {
+            get {
+                return ResourceManager.GetString("_3_6_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 6 Heaven Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives a Thunder year’s lively momentum a more disciplined shape. Focus, boundaries and careful decisions can make new beginnings more workable; balance the urge to push ahead with respect for both structure and creative freedom. Today’s Soil influence gives the month’s sense of purpose a caring, practical expression, reminding you to support the people and routines behind the plans. Complete a small piece of groundwork that [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_6_2 {
+            get {
+                return ResourceManager.GetString("_3_6_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 6 Heaven Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives a Thunder year’s lively momentum a more disciplined shape. Focus, boundaries and careful decisions can make new beginnings more workable; balance the urge to push ahead with respect for both structure and creative freedom. Today’s Thunder influence adds spontaneity to the month’s structure; let a fresh idea serve your priorities rather than upset them through impatience. Pick one worthwhile task and give it focused [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_6_3 {
+            get {
+                return ResourceManager.GetString("_3_6_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 6 Heaven Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives a Thunder year’s lively momentum a more disciplined shape. Focus, boundaries and careful decisions can make new beginnings more workable; balance the urge to push ahead with respect for both structure and creative freedom. Today’s Wind influence lends tact and flexibility to the month’s more direct communication, helping clarity remain responsive to others. Bring another person into a developing idea and let thoughtfu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_6_4 {
+            get {
+                return ResourceManager.GetString("_3_6_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 6 Heaven Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives a Thunder year’s lively momentum a more disciplined shape. Focus, boundaries and careful decisions can make new beginnings more workable; balance the urge to push ahead with respect for both structure and creative freedom. Today’s Core Earth influence asks for centring within the month’s responsibilities; distinguish your real obligations from demands you have simply absorbed. Review what you have started and re [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_6_5 {
+            get {
+                return ResourceManager.GetString("_3_6_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 6 Heaven Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives a Thunder year’s lively momentum a more disciplined shape. Focus, boundaries and careful decisions can make new beginnings more workable; balance the urge to push ahead with respect for both structure and creative freedom. Today’s Heaven influence reinforces the month’s orderly, purposeful quality, making warmth and willingness to listen especially valuable companions to conviction. Give a fresh initiative a clear p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_6_6 {
+            get {
+                return ResourceManager.GetString("_3_6_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 6 Heaven Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives a Thunder year’s lively momentum a more disciplined shape. Focus, boundaries and careful decisions can make new beginnings more workable; balance the urge to push ahead with respect for both structure and creative freedom. Today’s Lake influence relaxes the month’s formality, opening room for appreciation, humour and connection beyond getting things done. Enjoy a creative or social break that refreshes your enthusiasm [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_6_7 {
+            get {
+                return ResourceManager.GetString("_3_6_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 6 Heaven Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives a Thunder year’s lively momentum a more disciplined shape. Focus, boundaries and careful decisions can make new beginnings more workable; balance the urge to push ahead with respect for both structure and creative freedom. Today’s Mountain influence pauses the month’s drive for clarity, inviting careful review while asking you not to become fixed in a single viewpoint. Step back from the urge to push through every [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_6_8 {
+            get {
+                return ResourceManager.GetString("_3_6_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 6 Heaven Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives a Thunder year’s lively momentum a more disciplined shape. Focus, boundaries and careful decisions can make new beginnings more workable; balance the urge to push ahead with respect for both structure and creative freedom. Today’s Fire influence adds expression and visibility to the month’s focus; share your direction warmly and remain attentive to how your words are received. Express one idea clearly and warmly, allo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_6_9 {
+            get {
+                return ResourceManager.GetString("_3_6_9", resourceCulture);
             }
         }
         
@@ -710,6 +2870,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 7 Lake Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens the drive of a Thunder year with enjoyment and connection. Sharing the pleasure of what you are creating can refresh your enthusiasm, while keeping one meaningful priority in view prevents sociability from dispersing your momentum. Today’s Water influence brings a quieter depth to the month’s sociability, making meaningful solitude or an intimate conversation more nourishing than a busy schedule. Pause to listen beneat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_7_1 {
+            get {
+                return ResourceManager.GetString("_3_7_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 7 Lake Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens the drive of a Thunder year with enjoyment and connection. Sharing the pleasure of what you are creating can refresh your enthusiasm, while keeping one meaningful priority in view prevents sociability from dispersing your momentum. Today’s Soil influence grounds the month’s enjoyment in everyday care, helping pleasure remain connected to what supports you. Complete a small piece of groundwork that supports the new direc [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_7_2 {
+            get {
+                return ResourceManager.GetString("_3_7_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 7 Lake Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens the drive of a Thunder year with enjoyment and connection. Sharing the pleasure of what you are creating can refresh your enthusiasm, while keeping one meaningful priority in view prevents sociability from dispersing your momentum. Today’s Thunder influence adds lively movement to the month’s relaxed atmosphere, favouring a creative task or playful activity with a clear limit. Pick one worthwhile task and give it foc [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_7_3 {
+            get {
+                return ResourceManager.GetString("_3_7_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 7 Lake Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens the drive of a Thunder year with enjoyment and connection. Sharing the pleasure of what you are creating can refresh your enthusiasm, while keeping one meaningful priority in view prevents sociability from dispersing your momentum. Today’s Wind influence extends the month’s openness into gentle collaboration and thoughtful exchange, with sincerity keeping connections substantial. Bring another person into a developing i [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_7_4 {
+            get {
+                return ResourceManager.GetString("_3_7_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 7 Lake Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens the drive of a Thunder year with enjoyment and connection. Sharing the pleasure of what you are creating can refresh your enthusiasm, while keeping one meaningful priority in view prevents sociability from dispersing your momentum. Today’s Core Earth influence draws attention beneath the month’s pleasant surface; make room for an unresolved feeling instead of covering it with more activity. Review what you have st [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_7_5 {
+            get {
+                return ResourceManager.GetString("_3_7_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 7 Lake Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens the drive of a Thunder year with enjoyment and connection. Sharing the pleasure of what you are creating can refresh your enthusiasm, while keeping one meaningful priority in view prevents sociability from dispersing your momentum. Today’s Heaven influence helps set clear limits within the month’s invitations and pleasures, making it easier to choose what genuinely matters. Give a fresh initiative a clear plan, with e [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_7_6 {
+            get {
+                return ResourceManager.GetString("_3_7_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 7 Lake Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens the drive of a Thunder year with enjoyment and connection. Sharing the pleasure of what you are creating can refresh your enthusiasm, while keeping one meaningful priority in view prevents sociability from dispersing your momentum. Today’s Lake influence reinforces the month’s ease and enjoyment, inviting gratitude and heartfelt connection alongside moderation. Enjoy a creative or social break that refreshes your enthus [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_7_7 {
+            get {
+                return ResourceManager.GetString("_3_7_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 7 Lake Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens the drive of a Thunder year with enjoyment and connection. Sharing the pleasure of what you are creating can refresh your enthusiasm, while keeping one meaningful priority in view prevents sociability from dispersing your momentum. Today’s Mountain influence draws the month’s sociability into a quieter pause, allowing appreciation to become more inward without closing the door to others. Step back from the urge to p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_7_8 {
+            get {
+                return ResourceManager.GetString("_3_7_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 7 Lake Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens the drive of a Thunder year with enjoyment and connection. Sharing the pleasure of what you are creating can refresh your enthusiasm, while keeping one meaningful priority in view prevents sociability from dispersing your momentum. Today’s Fire influence brightens the month’s social warmth, favouring honest expression while calling for care around attention, sensitivity and overextension. Express one idea clearly and wa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_7_9 {
+            get {
+                return ResourceManager.GetString("_3_7_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time for Expansion – New Connections, Fresh Opportunities, and Refining Relationships  
@@ -725,6 +2975,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 8 Mountain Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month creates a pause within a Thunder year’s appetite for movement. The contrast may feel frustrating, but a deliberate review can help you recognise where action is useful and where impatience is doing the driving. Today’s Water influence deepens the month’s inward pull, making quiet reflection fitting while asking you to preserve a gentle connection to everyday life. Pause to listen beneath your enthusiasm; an hour of ref [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_8_1 {
+            get {
+                return ResourceManager.GetString("_3_8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 8 Mountain Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month creates a pause within a Thunder year’s appetite for movement. The contrast may feel frustrating, but a deliberate review can help you recognise where action is useful and where impatience is doing the driving. Today’s Soil influence gives the month’s retreat a practical outlet, offering steadiness through small tasks and familiar care. Complete a small piece of groundwork that supports the new direction you are already [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_8_2 {
+            get {
+                return ResourceManager.GetString("_3_8_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 8 Mountain Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month creates a pause within a Thunder year’s appetite for movement. The contrast may feel frustrating, but a deliberate review can help you recognise where action is useful and where impatience is doing the driving. Today’s Thunder influence brings movement into the month’s contained stillness, offering a brief chance to loosen inertia through a manageable action. Pick one worthwhile task and give it focused effort, leavi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_8_3 {
+            get {
+                return ResourceManager.GetString("_3_8_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 8 Mountain Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month creates a pause within a Thunder year’s appetite for movement. The contrast may feel frustrating, but a deliberate review can help you recognise where action is useful and where impatience is doing the driving. Today’s Wind influence opens a softer channel for communication within the withdrawn month; a thoughtful exchange can help loosen fixed perspectives. Bring another person into a developing idea and let thoughtful [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_8_4 {
+            get {
+                return ResourceManager.GetString("_3_8_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 8 Mountain Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month creates a pause within a Thunder year’s appetite for movement. The contrast may feel frustrating, but a deliberate review can help you recognise where action is useful and where impatience is doing the driving. Today’s Core Earth influence may bring unresolved concerns into the month’s stillness; find your centre before deciding that something must change immediately. Review what you have started and release an un [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_8_5 {
+            get {
+                return ResourceManager.GetString("_3_8_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 8 Mountain Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month creates a pause within a Thunder year’s appetite for movement. The contrast may feel frustrating, but a deliberate review can help you recognise where action is useful and where impatience is doing the driving. Today’s Heaven influence can help clarify the month’s reflections, provided firmer thinking remains open to feedback rather than becoming rigid. Give a fresh initiative a clear plan, with enough flexibility to  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_8_6 {
+            get {
+                return ResourceManager.GetString("_3_8_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 8 Mountain Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month creates a pause within a Thunder year’s appetite for movement. The contrast may feel frustrating, but a deliberate review can help you recognise where action is useful and where impatience is doing the driving. Today’s Lake influence lightens the month’s retreat through gentle enjoyment and trusted companionship, offering an unforced way to reconnect. Enjoy a creative or social break that refreshes your enthusiasm witho [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_8_7 {
+            get {
+                return ResourceManager.GetString("_3_8_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 8 Mountain Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month creates a pause within a Thunder year’s appetite for movement. The contrast may feel frustrating, but a deliberate review can help you recognise where action is useful and where impatience is doing the driving. Today’s Mountain influence concentrates the month’s stillness, favouring reflection while making small movement and clear communication especially useful. Step back from the urge to push through everything; u [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_8_8 {
+            get {
+                return ResourceManager.GetString("_3_8_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 8 Mountain Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month creates a pause within a Thunder year’s appetite for movement. The contrast may feel frustrating, but a deliberate review can help you recognise where action is useful and where impatience is doing the driving. Today’s Fire influence brings a brief warmth and brightness into the withdrawn month, helping you express something or reconnect at a pace that feels comfortable. Express one idea clearly and warmly, allowing oth [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_8_9 {
+            get {
+                return ResourceManager.GetString("_3_8_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Period of Decisions, Creativity, and Caution in the Latter Half  
@@ -736,6 +3076,96 @@ namespace K9.Globalisation {
         public static string _3_9 {
             get {
                 return ResourceManager.GetString("_3_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 9 Fire Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Thunder year’s creative momentum more visible and expressive. There is room to share ideas and engage others, though enthusiasm and intensity together call for a measured pace and care in how you communicate. Today’s Water influence offers a quiet counterpoint to the month’s brightness, helping you absorb insight rather than remain constantly expressive. Pause to listen beneath your enthusiasm; an hour of reflection ma [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_9_1 {
+            get {
+                return ResourceManager.GetString("_3_9_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 9 Fire Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Thunder year’s creative momentum more visible and expressive. There is room to share ideas and engage others, though enthusiasm and intensity together call for a measured pace and care in how you communicate. Today’s Soil influence grounds the month’s visibility in simple, practical care, giving expression a steadier foundation. Complete a small piece of groundwork that supports the new direction you are already pursuin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_9_2 {
+            get {
+                return ResourceManager.GetString("_3_9_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 9 Fire Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Thunder year’s creative momentum more visible and expressive. There is room to share ideas and engage others, though enthusiasm and intensity together call for a measured pace and care in how you communicate. Today’s Thunder influence adds a quick burst of initiative to the expressive month; direct it deliberately so that enthusiasm does not become reactivity. Pick one worthwhile task and give it focused effort, leav [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_9_3 {
+            get {
+                return ResourceManager.GetString("_3_9_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 9 Fire Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Thunder year’s creative momentum more visible and expressive. There is room to share ideas and engage others, though enthusiasm and intensity together call for a measured pace and care in how you communicate. Today’s Wind influence brings tact and flexibility to the month’s stronger expression, helping a message become a thoughtful conversation. Bring another person into a developing idea and let thoughtful exchange tur [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_9_4 {
+            get {
+                return ResourceManager.GetString("_3_9_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 9 Fire Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Thunder year’s creative momentum more visible and expressive. There is room to share ideas and engage others, though enthusiasm and intensity together call for a measured pace and care in how you communicate. Today’s Core Earth influence asks you to centre yourself within the month’s intensity, allowing strong feelings to settle before turning them into a decision. Review what you have started and release an unnec [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_9_5 {
+            get {
+                return ResourceManager.GetString("_3_9_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 9 Fire Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Thunder year’s creative momentum more visible and expressive. There is room to share ideas and engage others, though enthusiasm and intensity together call for a measured pace and care in how you communicate. Today’s Heaven influence brings precision to the month’s brightness, helping you refine what you want to say without making it overly forceful. Give a fresh initiative a clear plan, with enough flexibility to lea [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_9_6 {
+            get {
+                return ResourceManager.GetString("_3_9_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 9 Fire Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Thunder year’s creative momentum more visible and expressive. There is room to share ideas and engage others, though enthusiasm and intensity together call for a measured pace and care in how you communicate. Today’s Lake influence softens the month’s expressive intensity with humour and relaxed connection, allowing enjoyment without a need to perform. Enjoy a creative or social break that refreshes your enthusiasm with [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_9_7 {
+            get {
+                return ResourceManager.GetString("_3_9_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 9 Fire Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Thunder year’s creative momentum more visible and expressive. There is room to share ideas and engage others, though enthusiasm and intensity together call for a measured pace and care in how you communicate. Today’s Mountain influence introduces a contained pause into the bright month, making space to integrate what has been seen or felt. Step back from the urge to push through everything; use quiet review to disti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_9_8 {
+            get {
+                return ResourceManager.GetString("_3_9_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;3 Thunder Year · 9 Fire Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Thunder year’s creative momentum more visible and expressive. There is room to share ideas and engage others, though enthusiasm and intensity together call for a measured pace and care in how you communicate. Today’s Fire influence heightens the month’s brightness and emotional intensity, favouring authentic expression with pauses for grounding and rest. Express one idea clearly and warmly, allowing others space to resp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _3_9_9 {
+            get {
+                return ResourceManager.GetString("_3_9_9", resourceCulture);
             }
         }
         
@@ -856,6 +3286,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 1 Water Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month turns the outward growth of a Wind year toward inward listening. Let a quieter interval nourish your direction through study, reflection or private creative work, so that ongoing projects can resume with greater depth. Today’s Water influence draws this quiet monthly current further inward, making unhurried reflection especially fitting. Leave room for quiet integration so that your ongoing growth stays connected to a direction [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_1_1 {
+            get {
+                return ResourceManager.GetString("_4_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 1 Water Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month turns the outward growth of a Wind year toward inward listening. Let a quieter interval nourish your direction through study, reflection or private creative work, so that ongoing projects can resume with greater depth. Today’s Soil influence gives the month’s inward current a practical anchor through simple care, preparation and familiar routines. Follow through on a small promise or practical detail that helps an existing relat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_1_2 {
+            get {
+                return ResourceManager.GetString("_4_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 1 Water Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month turns the outward growth of a Wind year toward inward listening. Let a quieter interval nourish your direction through study, reflection or private creative work, so that ongoing projects can resume with greater depth. Today’s Thunder influence brings a brief opening for movement within the quieter month, helping loosen inertia without demanding a lasting change of pace. Move one established project forward rather than replac [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_1_3 {
+            get {
+                return ResourceManager.GetString("_4_1_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 1 Water Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month turns the outward growth of a Wind year toward inward listening. Let a quieter interval nourish your direction through study, reflection or private creative work, so that ongoing projects can resume with greater depth. Today’s Wind influence makes gentle expression more accessible within the inward month, offering a bridge between private reflection and thoughtful conversation. Nurture one meaningful exchange, giving your attent [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_1_4 {
+            get {
+                return ResourceManager.GetString("_4_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 1 Water Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month turns the outward growth of a Wind year toward inward listening. Let a quieter interval nourish your direction through study, reflection or private creative work, so that ongoing projects can resume with greater depth. Today’s Core Earth influence may bring several inner concerns into focus at once; reduce competing demands rather than forcing the month’s questions into a quick answer. Return to your central commitments an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_1_5 {
+            get {
+                return ResourceManager.GetString("_4_1_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 1 Water Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month turns the outward growth of a Wind year toward inward listening. Let a quieter interval nourish your direction through study, reflection or private creative work, so that ongoing projects can resume with greater depth. Today’s Heaven influence can help organise the month’s private reflections into clearer priorities, while a considerate tone keeps clarity from feeling harsh. Refine a plan or clarify a commitment so that your g [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_1_6 {
+            get {
+                return ResourceManager.GetString("_4_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 1 Water Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month turns the outward growth of a Wind year toward inward listening. Let a quieter interval nourish your direction through study, reflection or private creative work, so that ongoing projects can resume with greater depth. Today’s Lake influence brings a softer, more sociable note to the quiet month, making gentle companionship or beauty a welcome source of relief. Enjoy a conversation or creative collaboration that deepens a connec [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_1_7 {
+            get {
+                return ResourceManager.GetString("_4_1_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 1 Water Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month turns the outward growth of a Wind year toward inward listening. Let a quieter interval nourish your direction through study, reflection or private creative work, so that ongoing projects can resume with greater depth. Today’s Mountain influence adds a more contained stillness to the inward month, favouring quiet focus while calling for care around excessive withdrawal. Review what you are growing and communicate your need f [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_1_8 {
+            get {
+                return ResourceManager.GetString("_4_1_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 1 Water Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month turns the outward growth of a Wind year toward inward listening. Let a quieter interval nourish your direction through study, reflection or private creative work, so that ongoing projects can resume with greater depth. Today’s Fire influence brings a brief shaft of light into the inward month, making connection or expression more inviting without ending its quieter rhythm. Share something you have been developing, keeping your m [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_1_9 {
+            get {
+                return ResourceManager.GetString("_4_1_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        New Beginnings in Family, Community, and Institutional Matters – A Time for Stability and Growth  
@@ -867,6 +3387,96 @@ namespace K9.Globalisation {
         public static string _4_2 {
             get {
                 return ResourceManager.GetString("_4_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 2 Soil Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives the expanding possibilities of a Wind year a practical foundation. Caring for routines, resources and relationships can steady your progress; patient follow-through may serve you better than seeking another new direction. Today’s Water influence brings the month’s practical preparation back to inward listening; give yourself room to sense what genuinely needs tending. Leave room for quiet integration so that your ongoing gr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_2_1 {
+            get {
+                return ResourceManager.GetString("_4_2_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 2 Soil Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives the expanding possibilities of a Wind year a practical foundation. Caring for routines, resources and relationships can steady your progress; patient follow-through may serve you better than seeking another new direction. Today’s Soil influence reinforces the month’s patient groundwork, favouring small acts of care and a steady, manageable rhythm. Follow through on a small promise or practical detail that helps an existing r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_2_2 {
+            get {
+                return ResourceManager.GetString("_4_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 2 Soil Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives the expanding possibilities of a Wind year a practical foundation. Caring for routines, resources and relationships can steady your progress; patient follow-through may serve you better than seeking another new direction. Today’s Thunder influence can turn the month’s preparations into a useful first step, provided enthusiasm does not outrun what is ready. Move one established project forward rather than replacing it simp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_2_3 {
+            get {
+                return ResourceManager.GetString("_4_2_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 2 Soil Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives the expanding possibilities of a Wind year a practical foundation. Caring for routines, resources and relationships can steady your progress; patient follow-through may serve you better than seeking another new direction. Today’s Wind influence helps the month’s developing plans through thoughtful exchange, gentle collaboration and willingness to refine the details. Nurture one meaningful exchange, giving your attention full [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_2_4 {
+            get {
+                return ResourceManager.GetString("_4_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 2 Soil Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives the expanding possibilities of a Wind year a practical foundation. Caring for routines, resources and relationships can steady your progress; patient follow-through may serve you better than seeking another new direction. Today’s Core Earth influence may draw several responsibilities into the month’s quieter preparation; simplify and identify what truly deserves attention. Return to your central commitments and make sp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_2_5 {
+            get {
+                return ResourceManager.GetString("_4_2_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 2 Soil Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives the expanding possibilities of a Wind year a practical foundation. Caring for routines, resources and relationships can steady your progress; patient follow-through may serve you better than seeking another new direction. Today’s Heaven influence helps bring clearer order to the month’s groundwork, making a modest plan or useful boundary easier to define. Refine a plan or clarify a commitment so that your growth has a depe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_2_6 {
+            get {
+                return ResourceManager.GetString("_4_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 2 Soil Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives the expanding possibilities of a Wind year a practical foundation. Caring for routines, resources and relationships can steady your progress; patient follow-through may serve you better than seeking another new direction. Today’s Lake influence softens the month’s seriousness through enjoyment and familiar connection, reminding you that preparation can include pleasure. Enjoy a conversation or creative collaboration that dee [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_2_7 {
+            get {
+                return ResourceManager.GetString("_4_2_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 2 Soil Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives the expanding possibilities of a Wind year a practical foundation. Caring for routines, resources and relationships can steady your progress; patient follow-through may serve you better than seeking another new direction. Today’s Mountain influence slows the month’s emerging intentions, making a pause for review more fitting than pushing for visible progress. Review what you are growing and communicate your need for spac [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_2_8 {
+            get {
+                return ResourceManager.GetString("_4_2_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 2 Soil Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives the expanding possibilities of a Wind year a practical foundation. Caring for routines, resources and relationships can steady your progress; patient follow-through may serve you better than seeking another new direction. Today’s Fire influence brightens the month’s quieter preparation, offering a moment to share an idea or reconnect without rushing its development. Share something you have been developing, keeping your mess [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_2_9 {
+            get {
+                return ResourceManager.GetString("_4_2_9", resourceCulture);
             }
         }
         
@@ -886,6 +3496,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 3 Thunder Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a sharper burst of initiative to a Wind year’s ongoing growth. Use renewed enthusiasm to move an existing project forward, while checking that a fresh impulse is helping your direction rather than replacing it unnecessarily. Today’s Water influence tempers the month’s enthusiasm with a quieter need to reflect, helping you consider the direction behind your activity. Leave room for quiet integration so that your ongoing [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_3_1 {
+            get {
+                return ResourceManager.GetString("_4_3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 3 Thunder Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a sharper burst of initiative to a Wind year’s ongoing growth. Use renewed enthusiasm to move an existing project forward, while checking that a fresh impulse is helping your direction rather than replacing it unnecessarily. Today’s Soil influence grounds the month’s quickening momentum in practical care; attend to a neglected detail before reaching for another new beginning. Follow through on a small promise or practic [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_3_2 {
+            get {
+                return ResourceManager.GetString("_4_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 3 Thunder Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a sharper burst of initiative to a Wind year’s ongoing growth. Use renewed enthusiasm to move an existing project forward, while checking that a fresh impulse is helping your direction rather than replacing it unnecessarily. Today’s Thunder influence adds a further burst of initiative to an already active month, making a clear focus particularly valuable. Move one established project forward rather than replacing it  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_3_3 {
+            get {
+                return ResourceManager.GetString("_4_3_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 3 Thunder Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a sharper burst of initiative to a Wind year’s ongoing growth. Use renewed enthusiasm to move an existing project forward, while checking that a fresh impulse is helping your direction rather than replacing it unnecessarily. Today’s Wind influence helps the month’s fresh initiatives develop through tact, collaboration and gentler follow-through. Nurture one meaningful exchange, giving your attention fully instead of try [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_3_4 {
+            get {
+                return ResourceManager.GetString("_4_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 3 Thunder Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a sharper burst of initiative to a Wind year’s ongoing growth. Use renewed enthusiasm to move an existing project forward, while checking that a fresh impulse is helping your direction rather than replacing it unnecessarily. Today’s Core Earth influence brings a centring pause within the active month; reconsider competing impulses before deciding where to put your effort. Return to your central commitments and mak [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_3_5 {
+            get {
+                return ResourceManager.GetString("_4_3_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 3 Thunder Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a sharper burst of initiative to a Wind year’s ongoing growth. Use renewed enthusiasm to move an existing project forward, while checking that a fresh impulse is helping your direction rather than replacing it unnecessarily. Today’s Heaven influence gives the month’s lively ideas a more precise direction, helping distinguish a useful next step from mere urgency. Refine a plan or clarify a commitment so that your growt [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_3_6 {
+            get {
+                return ResourceManager.GetString("_4_3_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 3 Thunder Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a sharper burst of initiative to a Wind year’s ongoing growth. Use renewed enthusiasm to move an existing project forward, while checking that a fresh impulse is helping your direction rather than replacing it unnecessarily. Today’s Lake influence invites enjoyment within the month’s momentum, making shared creativity or a relaxed conversation a useful release of pressure. Enjoy a conversation or creative collaboration  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_3_7 {
+            get {
+                return ResourceManager.GetString("_4_3_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 3 Thunder Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a sharper burst of initiative to a Wind year’s ongoing growth. Use renewed enthusiasm to move an existing project forward, while checking that a fresh impulse is helping your direction rather than replacing it unnecessarily. Today’s Mountain influence introduces stillness into an energetic month; a deliberate pause can reveal where impatience is obscuring your direction. Review what you are growing and communicate y [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_3_8 {
+            get {
+                return ResourceManager.GetString("_4_3_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 3 Thunder Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a sharper burst of initiative to a Wind year’s ongoing growth. Use renewed enthusiasm to move an existing project forward, while checking that a fresh impulse is helping your direction rather than replacing it unnecessarily. Today’s Fire influence makes the month’s fresh ideas more expressive and visible, while asking you to temper excitement with care in communication. Share something you have been developing, keeping  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_3_9 {
+            get {
+                return ResourceManager.GetString("_4_3_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Period of Financial Fluctuations – Gain Early, Reflect Later  
@@ -897,6 +3597,96 @@ namespace K9.Globalisation {
         public static string _4_4 {
             get {
                 return ResourceManager.GetString("_4_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 4 Wind Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;Wind across the year and month favours communication, collaboration and organic development. The challenge is to remain rooted while opportunities multiply; nurture a few meaningful connections and let flexibility serve continuity. Today’s Water influence turns the month’s outward exchange toward quiet listening, making space to absorb what you have been learning or sharing. Leave room for quiet integration so that your ongoing growth stays c [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_4_1 {
+            get {
+                return ResourceManager.GetString("_4_4_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 4 Wind Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;Wind across the year and month favours communication, collaboration and organic development. The challenge is to remain rooted while opportunities multiply; nurture a few meaningful connections and let flexibility serve continuity. Today’s Soil influence brings practical consistency to the month’s growth, favouring the small acts that keep relationships and projects well supported. Follow through on a small promise or practical detail that hel [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_4_2 {
+            get {
+                return ResourceManager.GetString("_4_4_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 4 Wind Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;Wind across the year and month favours communication, collaboration and organic development. The challenge is to remain rooted while opportunities multiply; nurture a few meaningful connections and let flexibility serve continuity. Today’s Thunder influence gives the month’s ongoing development a fresh push; channel it into something already worth nurturing. Move one established project forward rather than replacing it simply because a fres [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_4_3 {
+            get {
+                return ResourceManager.GetString("_4_4_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 4 Wind Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;Wind across the year and month favours communication, collaboration and organic development. The challenge is to remain rooted while opportunities multiply; nurture a few meaningful connections and let flexibility serve continuity. Today’s Wind influence reinforces the month’s flexible, communicative quality, with gentle collaboration favoured over scattered engagement. Nurture one meaningful exchange, giving your attention fully instead of tr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_4_4 {
+            get {
+                return ResourceManager.GetString("_4_4_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 4 Wind Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;Wind across the year and month favours communication, collaboration and organic development. The challenge is to remain rooted while opportunities multiply; nurture a few meaningful connections and let flexibility serve continuity. Today’s Core Earth influence asks you to centre yourself amid the month’s many connections, clarifying which demands belong with you. Return to your central commitments and make space to notice which connectio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_4_5 {
+            get {
+                return ResourceManager.GetString("_4_4_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 4 Wind Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;Wind across the year and month favours communication, collaboration and organic development. The challenge is to remain rooted while opportunities multiply; nurture a few meaningful connections and let flexibility serve continuity. Today’s Heaven influence brings definition to the month’s flowing possibilities, helping you edit a plan or make a clear, considerate commitment. Refine a plan or clarify a commitment so that your growth has a dep [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_4_6 {
+            get {
+                return ResourceManager.GetString("_4_4_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 4 Wind Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;Wind across the year and month favours communication, collaboration and organic development. The challenge is to remain rooted while opportunities multiply; nurture a few meaningful connections and let flexibility serve continuity. Today’s Lake influence lends pleasure and warmth to the month’s relationships, favouring sincere enjoyment and unforced creative exchange. Enjoy a conversation or creative collaboration that deepens a connection alr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_4_7 {
+            get {
+                return ResourceManager.GetString("_4_4_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 4 Wind Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;Wind across the year and month favours communication, collaboration and organic development. The challenge is to remain rooted while opportunities multiply; nurture a few meaningful connections and let flexibility serve continuity. Today’s Mountain influence creates a quieter space within the communicative month; step back to reflect without shutting others out completely. Review what you are growing and communicate your need for space gen [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_4_8 {
+            get {
+                return ResourceManager.GetString("_4_4_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 4 Wind Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;Wind across the year and month favours communication, collaboration and organic development. The challenge is to remain rooted while opportunities multiply; nurture a few meaningful connections and let flexibility serve continuity. Today’s Fire influence brings the month’s ideas and connections into brighter focus, making thoughtful sharing easier while increasing emotional sensitivity. Share something you have been developing, keeping your me [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_4_9 {
+            get {
+                return ResourceManager.GetString("_4_4_9", resourceCulture);
             }
         }
         
@@ -916,6 +3706,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 5 Core Earth Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings a period of reassessment within a year of growth and connection. If possibilities pull you in different directions, return to your values and give yourself space to decide which relationships and projects deserve continued attention. Today’s Water influence deepens the month’s inner reassessment, favouring private reflection and a lighter load of external demands. Leave room for quiet integration so that your o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_5_1 {
+            get {
+                return ResourceManager.GetString("_4_5_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 5 Core Earth Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings a period of reassessment within a year of growth and connection. If possibilities pull you in different directions, return to your values and give yourself space to decide which relationships and projects deserve continued attention. Today’s Soil influence offers a dependable practical rhythm within the month’s shifting concerns, helping you find steadiness through simple care. Follow through on a small promise  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_5_2 {
+            get {
+                return ResourceManager.GetString("_4_5_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 5 Core Earth Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings a period of reassessment within a year of growth and connection. If possibilities pull you in different directions, return to your values and give yourself space to decide which relationships and projects deserve continued attention. Today’s Thunder influence brings a burst of initiative into the month’s uncertainty; a small, contained action can be useful without resolving every larger question. Move one est [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_5_3 {
+            get {
+                return ResourceManager.GetString("_4_5_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 5 Core Earth Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings a period of reassessment within a year of growth and connection. If possibilities pull you in different directions, return to your values and give yourself space to decide which relationships and projects deserve continued attention. Today’s Wind influence offers a gentler way to explore the month’s uncertainties through conversation, flexibility and openness to another perspective. Nurture one meaningful exchan [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_5_4 {
+            get {
+                return ResourceManager.GetString("_4_5_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 5 Core Earth Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings a period of reassessment within a year of growth and connection. If possibilities pull you in different directions, return to your values and give yourself space to decide which relationships and projects deserve continued attention. Today’s Core Earth influence repeats the month’s centring theme; reduce the number of things demanding an answer and listen for your own priorities. Return to your central com [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_5_5 {
+            get {
+                return ResourceManager.GetString("_4_5_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 5 Core Earth Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings a period of reassessment within a year of growth and connection. If possibilities pull you in different directions, return to your values and give yourself space to decide which relationships and projects deserve continued attention. Today’s Heaven influence can help sort the month’s competing concerns into clearer boundaries, while allowing decisions to remain open to reflection. Refine a plan or clarify a co [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_5_6 {
+            get {
+                return ResourceManager.GetString("_4_5_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 5 Core Earth Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings a period of reassessment within a year of growth and connection. If possibilities pull you in different directions, return to your values and give yourself space to decide which relationships and projects deserve continued attention. Today’s Lake influence brings welcome softness to the month’s intensity, making restorative company or simple enjoyment a useful source of perspective. Enjoy a conversation or creat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_5_7 {
+            get {
+                return ResourceManager.GetString("_4_5_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 5 Core Earth Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings a period of reassessment within a year of growth and connection. If possibilities pull you in different directions, return to your values and give yourself space to decide which relationships and projects deserve continued attention. Today’s Mountain influence adds a pause within the month’s inner changes; reflect patiently, while avoiding the temptation to shut down around uncertainty. Review what you are g [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_5_8 {
+            get {
+                return ResourceManager.GetString("_4_5_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 5 Core Earth Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings a period of reassessment within a year of growth and connection. If possibilities pull you in different directions, return to your values and give yourself space to decide which relationships and projects deserve continued attention. Today’s Fire influence illuminates the month’s unresolved feelings or questions, making expression possible without requiring an immediate conclusion. Share something you have been  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_5_9 {
+            get {
+                return ResourceManager.GetString("_4_5_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time of Rapid Expansion – New Ideas, Bold Beginnings, and Caution in Action  
@@ -927,6 +3807,96 @@ namespace K9.Globalisation {
         public static string _4_6 {
             get {
                 return ResourceManager.GetString("_4_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 6 Heaven Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings precision and useful limits to a Wind year’s expansive movement. Editing plans and clarifying commitments can strengthen progress, as long as structure leaves room for tact, collaboration and new information. Today’s Water influence softens the month’s decisive focus, offering space to listen inward before responding to responsibilities. Leave room for quiet integration so that your ongoing growth stays connected to a  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_6_1 {
+            get {
+                return ResourceManager.GetString("_4_6_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 6 Heaven Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings precision and useful limits to a Wind year’s expansive movement. Editing plans and clarifying commitments can strengthen progress, as long as structure leaves room for tact, collaboration and new information. Today’s Soil influence gives the month’s sense of purpose a caring, practical expression, reminding you to support the people and routines behind the plans. Follow through on a small promise or practical detail tha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_6_2 {
+            get {
+                return ResourceManager.GetString("_4_6_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 6 Heaven Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings precision and useful limits to a Wind year’s expansive movement. Editing plans and clarifying commitments can strengthen progress, as long as structure leaves room for tact, collaboration and new information. Today’s Thunder influence adds spontaneity to the month’s structure; let a fresh idea serve your priorities rather than upset them through impatience. Move one established project forward rather than replacing i [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_6_3 {
+            get {
+                return ResourceManager.GetString("_4_6_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 6 Heaven Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings precision and useful limits to a Wind year’s expansive movement. Editing plans and clarifying commitments can strengthen progress, as long as structure leaves room for tact, collaboration and new information. Today’s Wind influence lends tact and flexibility to the month’s more direct communication, helping clarity remain responsive to others. Nurture one meaningful exchange, giving your attention fully instead of tryin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_6_4 {
+            get {
+                return ResourceManager.GetString("_4_6_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 6 Heaven Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings precision and useful limits to a Wind year’s expansive movement. Editing plans and clarifying commitments can strengthen progress, as long as structure leaves room for tact, collaboration and new information. Today’s Core Earth influence asks for centring within the month’s responsibilities; distinguish your real obligations from demands you have simply absorbed. Return to your central commitments and make space t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_6_5 {
+            get {
+                return ResourceManager.GetString("_4_6_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 6 Heaven Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings precision and useful limits to a Wind year’s expansive movement. Editing plans and clarifying commitments can strengthen progress, as long as structure leaves room for tact, collaboration and new information. Today’s Heaven influence reinforces the month’s orderly, purposeful quality, making warmth and willingness to listen especially valuable companions to conviction. Refine a plan or clarify a commitment so that you [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_6_6 {
+            get {
+                return ResourceManager.GetString("_4_6_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 6 Heaven Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings precision and useful limits to a Wind year’s expansive movement. Editing plans and clarifying commitments can strengthen progress, as long as structure leaves room for tact, collaboration and new information. Today’s Lake influence relaxes the month’s formality, opening room for appreciation, humour and connection beyond getting things done. Enjoy a conversation or creative collaboration that deepens a connection alread [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_6_7 {
+            get {
+                return ResourceManager.GetString("_4_6_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 6 Heaven Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings precision and useful limits to a Wind year’s expansive movement. Editing plans and clarifying commitments can strengthen progress, as long as structure leaves room for tact, collaboration and new information. Today’s Mountain influence pauses the month’s drive for clarity, inviting careful review while asking you not to become fixed in a single viewpoint. Review what you are growing and communicate your need for spa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_6_8 {
+            get {
+                return ResourceManager.GetString("_4_6_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 6 Heaven Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings precision and useful limits to a Wind year’s expansive movement. Editing plans and clarifying commitments can strengthen progress, as long as structure leaves room for tact, collaboration and new information. Today’s Fire influence adds expression and visibility to the month’s focus; share your direction warmly and remain attentive to how your words are received. Share something you have been developing, keeping your me [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_6_9 {
+            get {
+                return ResourceManager.GetString("_4_6_9", resourceCulture);
             }
         }
         
@@ -946,6 +3916,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 7 Lake Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and enjoyment to a Wind year’s relational growth. Creative exchange and warm company can deepen what is developing; let genuine connection matter more than being everywhere or pleasing everyone. Today’s Water influence brings a quieter depth to the month’s sociability, making meaningful solitude or an intimate conversation more nourishing than a busy schedule. Leave room for quiet integration so that your ongoing grow [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_7_1 {
+            get {
+                return ResourceManager.GetString("_4_7_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 7 Lake Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and enjoyment to a Wind year’s relational growth. Creative exchange and warm company can deepen what is developing; let genuine connection matter more than being everywhere or pleasing everyone. Today’s Soil influence grounds the month’s enjoyment in everyday care, helping pleasure remain connected to what supports you. Follow through on a small promise or practical detail that helps an existing relationship or project [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_7_2 {
+            get {
+                return ResourceManager.GetString("_4_7_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 7 Lake Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and enjoyment to a Wind year’s relational growth. Creative exchange and warm company can deepen what is developing; let genuine connection matter more than being everywhere or pleasing everyone. Today’s Thunder influence adds lively movement to the month’s relaxed atmosphere, favouring a creative task or playful activity with a clear limit. Move one established project forward rather than replacing it simply because [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_7_3 {
+            get {
+                return ResourceManager.GetString("_4_7_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 7 Lake Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and enjoyment to a Wind year’s relational growth. Creative exchange and warm company can deepen what is developing; let genuine connection matter more than being everywhere or pleasing everyone. Today’s Wind influence extends the month’s openness into gentle collaboration and thoughtful exchange, with sincerity keeping connections substantial. Nurture one meaningful exchange, giving your attention fully instead of tryi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_7_4 {
+            get {
+                return ResourceManager.GetString("_4_7_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 7 Lake Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and enjoyment to a Wind year’s relational growth. Creative exchange and warm company can deepen what is developing; let genuine connection matter more than being everywhere or pleasing everyone. Today’s Core Earth influence draws attention beneath the month’s pleasant surface; make room for an unresolved feeling instead of covering it with more activity. Return to your central commitments and make space to notice [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_7_5 {
+            get {
+                return ResourceManager.GetString("_4_7_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 7 Lake Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and enjoyment to a Wind year’s relational growth. Creative exchange and warm company can deepen what is developing; let genuine connection matter more than being everywhere or pleasing everyone. Today’s Heaven influence helps set clear limits within the month’s invitations and pleasures, making it easier to choose what genuinely matters. Refine a plan or clarify a commitment so that your growth has a dependable shape [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_7_6 {
+            get {
+                return ResourceManager.GetString("_4_7_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 7 Lake Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and enjoyment to a Wind year’s relational growth. Creative exchange and warm company can deepen what is developing; let genuine connection matter more than being everywhere or pleasing everyone. Today’s Lake influence reinforces the month’s ease and enjoyment, inviting gratitude and heartfelt connection alongside moderation. Enjoy a conversation or creative collaboration that deepens a connection already worth nurturin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_7_7 {
+            get {
+                return ResourceManager.GetString("_4_7_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 7 Lake Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and enjoyment to a Wind year’s relational growth. Creative exchange and warm company can deepen what is developing; let genuine connection matter more than being everywhere or pleasing everyone. Today’s Mountain influence draws the month’s sociability into a quieter pause, allowing appreciation to become more inward without closing the door to others. Review what you are growing and communicate your need for space  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_7_8 {
+            get {
+                return ResourceManager.GetString("_4_7_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 7 Lake Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and enjoyment to a Wind year’s relational growth. Creative exchange and warm company can deepen what is developing; let genuine connection matter more than being everywhere or pleasing everyone. Today’s Fire influence brightens the month’s social warmth, favouring honest expression while calling for care around attention, sensitivity and overextension. Share something you have been developing, keeping your message root [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_7_9 {
+            get {
+                return ResourceManager.GetString("_4_7_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Cycle of Shifting Energy – From Overconfidence to Reflection and Expression  
@@ -961,6 +4021,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 8 Mountain Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month asks for stillness within a Wind year’s more fluid, communicative rhythm. Allow space to review what you have been growing, while maintaining a few gentle connections so that a useful pause does not become a complete retreat. Today’s Water influence deepens the month’s inward pull, making quiet reflection fitting while asking you to preserve a gentle connection to everyday life. Leave room for quiet integration so that yo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_8_1 {
+            get {
+                return ResourceManager.GetString("_4_8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 8 Mountain Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month asks for stillness within a Wind year’s more fluid, communicative rhythm. Allow space to review what you have been growing, while maintaining a few gentle connections so that a useful pause does not become a complete retreat. Today’s Soil influence gives the month’s retreat a practical outlet, offering steadiness through small tasks and familiar care. Follow through on a small promise or practical detail that helps an exis [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_8_2 {
+            get {
+                return ResourceManager.GetString("_4_8_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 8 Mountain Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month asks for stillness within a Wind year’s more fluid, communicative rhythm. Allow space to review what you have been growing, while maintaining a few gentle connections so that a useful pause does not become a complete retreat. Today’s Thunder influence brings movement into the month’s contained stillness, offering a brief chance to loosen inertia through a manageable action. Move one established project forward rather th [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_8_3 {
+            get {
+                return ResourceManager.GetString("_4_8_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 8 Mountain Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month asks for stillness within a Wind year’s more fluid, communicative rhythm. Allow space to review what you have been growing, while maintaining a few gentle connections so that a useful pause does not become a complete retreat. Today’s Wind influence opens a softer channel for communication within the withdrawn month; a thoughtful exchange can help loosen fixed perspectives. Nurture one meaningful exchange, giving your atten [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_8_4 {
+            get {
+                return ResourceManager.GetString("_4_8_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 8 Mountain Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month asks for stillness within a Wind year’s more fluid, communicative rhythm. Allow space to review what you have been growing, while maintaining a few gentle connections so that a useful pause does not become a complete retreat. Today’s Core Earth influence may bring unresolved concerns into the month’s stillness; find your centre before deciding that something must change immediately. Return to your central commitments [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_8_5 {
+            get {
+                return ResourceManager.GetString("_4_8_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 8 Mountain Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month asks for stillness within a Wind year’s more fluid, communicative rhythm. Allow space to review what you have been growing, while maintaining a few gentle connections so that a useful pause does not become a complete retreat. Today’s Heaven influence can help clarify the month’s reflections, provided firmer thinking remains open to feedback rather than becoming rigid. Refine a plan or clarify a commitment so that your gr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_8_6 {
+            get {
+                return ResourceManager.GetString("_4_8_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 8 Mountain Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month asks for stillness within a Wind year’s more fluid, communicative rhythm. Allow space to review what you have been growing, while maintaining a few gentle connections so that a useful pause does not become a complete retreat. Today’s Lake influence lightens the month’s retreat through gentle enjoyment and trusted companionship, offering an unforced way to reconnect. Enjoy a conversation or creative collaboration that deepe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_8_7 {
+            get {
+                return ResourceManager.GetString("_4_8_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 8 Mountain Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month asks for stillness within a Wind year’s more fluid, communicative rhythm. Allow space to review what you have been growing, while maintaining a few gentle connections so that a useful pause does not become a complete retreat. Today’s Mountain influence concentrates the month’s stillness, favouring reflection while making small movement and clear communication especially useful. Review what you are growing and communica [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_8_8 {
+            get {
+                return ResourceManager.GetString("_4_8_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 8 Mountain Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month asks for stillness within a Wind year’s more fluid, communicative rhythm. Allow space to review what you have been growing, while maintaining a few gentle connections so that a useful pause does not become a complete retreat. Today’s Fire influence brings a brief warmth and brightness into the withdrawn month, helping you express something or reconnect at a pace that feels comfortable. Share something you have been develop [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_8_9 {
+            get {
+                return ResourceManager.GetString("_4_8_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time for Settlements, Hard Work, and Mindful Effort – Proceed with Caution  
@@ -972,6 +4122,96 @@ namespace K9.Globalisation {
         public static string _4_9 {
             get {
                 return ResourceManager.GetString("_4_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 9 Fire Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings the growth of a Wind year into brighter view. Sharing your work or expressing what matters can feel more natural, provided you stay anchored in the relationships and steady effort that support your wider direction. Today’s Water influence offers a quiet counterpoint to the month’s brightness, helping you absorb insight rather than remain constantly expressive. Leave room for quiet integration so that your ongoing growth st [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_9_1 {
+            get {
+                return ResourceManager.GetString("_4_9_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 9 Fire Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings the growth of a Wind year into brighter view. Sharing your work or expressing what matters can feel more natural, provided you stay anchored in the relationships and steady effort that support your wider direction. Today’s Soil influence grounds the month’s visibility in simple, practical care, giving expression a steadier foundation. Follow through on a small promise or practical detail that helps an existing relationship  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_9_2 {
+            get {
+                return ResourceManager.GetString("_4_9_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 9 Fire Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings the growth of a Wind year into brighter view. Sharing your work or expressing what matters can feel more natural, provided you stay anchored in the relationships and steady effort that support your wider direction. Today’s Thunder influence adds a quick burst of initiative to the expressive month; direct it deliberately so that enthusiasm does not become reactivity. Move one established project forward rather than replac [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_9_3 {
+            get {
+                return ResourceManager.GetString("_4_9_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 9 Fire Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings the growth of a Wind year into brighter view. Sharing your work or expressing what matters can feel more natural, provided you stay anchored in the relationships and steady effort that support your wider direction. Today’s Wind influence brings tact and flexibility to the month’s stronger expression, helping a message become a thoughtful conversation. Nurture one meaningful exchange, giving your attention fully instead of t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_9_4 {
+            get {
+                return ResourceManager.GetString("_4_9_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 9 Fire Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings the growth of a Wind year into brighter view. Sharing your work or expressing what matters can feel more natural, provided you stay anchored in the relationships and steady effort that support your wider direction. Today’s Core Earth influence asks you to centre yourself within the month’s intensity, allowing strong feelings to settle before turning them into a decision. Return to your central commitments and make spa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_9_5 {
+            get {
+                return ResourceManager.GetString("_4_9_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 9 Fire Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings the growth of a Wind year into brighter view. Sharing your work or expressing what matters can feel more natural, provided you stay anchored in the relationships and steady effort that support your wider direction. Today’s Heaven influence brings precision to the month’s brightness, helping you refine what you want to say without making it overly forceful. Refine a plan or clarify a commitment so that your growth has a de [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_9_6 {
+            get {
+                return ResourceManager.GetString("_4_9_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 9 Fire Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings the growth of a Wind year into brighter view. Sharing your work or expressing what matters can feel more natural, provided you stay anchored in the relationships and steady effort that support your wider direction. Today’s Lake influence softens the month’s expressive intensity with humour and relaxed connection, allowing enjoyment without a need to perform. Enjoy a conversation or creative collaboration that deepens a conn [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_9_7 {
+            get {
+                return ResourceManager.GetString("_4_9_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 9 Fire Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings the growth of a Wind year into brighter view. Sharing your work or expressing what matters can feel more natural, provided you stay anchored in the relationships and steady effort that support your wider direction. Today’s Mountain influence introduces a contained pause into the bright month, making space to integrate what has been seen or felt. Review what you are growing and communicate your need for space gently, pre [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_9_8 {
+            get {
+                return ResourceManager.GetString("_4_9_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;4 Wind Year · 9 Fire Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings the growth of a Wind year into brighter view. Sharing your work or expressing what matters can feel more natural, provided you stay anchored in the relationships and steady effort that support your wider direction. Today’s Fire influence heightens the month’s brightness and emotional intensity, favouring authentic expression with pauses for grounding and rest. Share something you have been developing, keeping your message r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _4_9_9 {
+            get {
+                return ResourceManager.GetString("_4_9_9", resourceCulture);
             }
         }
         
@@ -1094,6 +4334,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 1 Water Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the inward questioning of a Core Earth year. This is a useful interval for quiet observation and emotional honesty; give uncertainty space to clarify without treating every passing feeling as a demand for immediate change. Today’s Water influence draws this quiet monthly current further inward, making unhurried reflection especially fitting. Give an emerging feeling room to be understood before interpreting it as  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_1_1 {
+            get {
+                return ResourceManager.GetString("_5_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 1 Water Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the inward questioning of a Core Earth year. This is a useful interval for quiet observation and emotional honesty; give uncertainty space to clarify without treating every passing feeling as a demand for immediate change. Today’s Soil influence gives the month’s inward current a practical anchor through simple care, preparation and familiar routines. Choose a simple routine or act of care that helps you feel stead [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_1_2 {
+            get {
+                return ResourceManager.GetString("_5_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 1 Water Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the inward questioning of a Core Earth year. This is a useful interval for quiet observation and emotional honesty; give uncertainty space to clarify without treating every passing feeling as a demand for immediate change. Today’s Thunder influence brings a brief opening for movement within the quieter month, helping loosen inertia without demanding a lasting change of pace. Use a burst of initiative for a conta [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_1_3 {
+            get {
+                return ResourceManager.GetString("_5_1_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 1 Water Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the inward questioning of a Core Earth year. This is a useful interval for quiet observation and emotional honesty; give uncertainty space to clarify without treating every passing feeling as a demand for immediate change. Today’s Wind influence makes gentle expression more accessible within the inward month, offering a bridge between private reflection and thoughtful conversation. Explore a question with a trusted [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_1_4 {
+            get {
+                return ResourceManager.GetString("_5_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 1 Water Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the inward questioning of a Core Earth year. This is a useful interval for quiet observation and emotional honesty; give uncertainty space to clarify without treating every passing feeling as a demand for immediate change. Today’s Core Earth influence may bring several inner concerns into focus at once; reduce competing demands rather than forcing the month’s questions into a quick answer. Protect a little qu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_1_5 {
+            get {
+                return ResourceManager.GetString("_5_1_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 1 Water Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the inward questioning of a Core Earth year. This is a useful interval for quiet observation and emotional honesty; give uncertainty space to clarify without treating every passing feeling as a demand for immediate change. Today’s Heaven influence can help organise the month’s private reflections into clearer priorities, while a considerate tone keeps clarity from feeling harsh. Clarify a boundary or organise an  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_1_6 {
+            get {
+                return ResourceManager.GetString("_5_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 1 Water Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the inward questioning of a Core Earth year. This is a useful interval for quiet observation and emotional honesty; give uncertainty space to clarify without treating every passing feeling as a demand for immediate change. Today’s Lake influence brings a softer, more sociable note to the quiet month, making gentle companionship or beauty a welcome source of relief. Let a nourishing pleasure restore perspective, whi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_1_7 {
+            get {
+                return ResourceManager.GetString("_5_1_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 1 Water Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the inward questioning of a Core Earth year. This is a useful interval for quiet observation and emotional honesty; give uncertainty space to clarify without treating every passing feeling as a demand for immediate change. Today’s Mountain influence adds a more contained stillness to the inward month, favouring quiet focus while calling for care around excessive withdrawal. Reflect without closing yourself off; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_1_8 {
+            get {
+                return ResourceManager.GetString("_5_1_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 1 Water Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the inward questioning of a Core Earth year. This is a useful interval for quiet observation and emotional honesty; give uncertainty space to clarify without treating every passing feeling as a demand for immediate change. Today’s Fire influence brings a brief shaft of light into the inward month, making connection or expression more inviting without ending its quieter rhythm. Put an insight into words and allow it [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_1_9 {
+            get {
+                return ResourceManager.GetString("_5_1_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Cycle of Shifting Energy – From Creativity to Introspection, Avoid Overextension  
@@ -1105,6 +4435,96 @@ namespace K9.Globalisation {
         public static string _5_2 {
             get {
                 return ResourceManager.GetString("_5_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 2 Soil Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month offers simple, dependable care within the unsettled landscape of a Core Earth year. Practical routines and familiar support can help you regain perspective, allowing deeper changes to unfold without adding unnecessary pressure. Today’s Water influence brings the month’s practical preparation back to inward listening; give yourself room to sense what genuinely needs tending. Give an emerging feeling room to be understood bef [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_2_1 {
+            get {
+                return ResourceManager.GetString("_5_2_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 2 Soil Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month offers simple, dependable care within the unsettled landscape of a Core Earth year. Practical routines and familiar support can help you regain perspective, allowing deeper changes to unfold without adding unnecessary pressure. Today’s Soil influence reinforces the month’s patient groundwork, favouring small acts of care and a steady, manageable rhythm. Choose a simple routine or act of care that helps you feel steady while  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_2_2 {
+            get {
+                return ResourceManager.GetString("_5_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 2 Soil Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month offers simple, dependable care within the unsettled landscape of a Core Earth year. Practical routines and familiar support can help you regain perspective, allowing deeper changes to unfold without adding unnecessary pressure. Today’s Thunder influence can turn the month’s preparations into a useful first step, provided enthusiasm does not outrun what is ready. Use a burst of initiative for a contained task, leaving sign [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_2_3 {
+            get {
+                return ResourceManager.GetString("_5_2_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 2 Soil Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month offers simple, dependable care within the unsettled landscape of a Core Earth year. Practical routines and familiar support can help you regain perspective, allowing deeper changes to unfold without adding unnecessary pressure. Today’s Wind influence helps the month’s developing plans through thoughtful exchange, gentle collaboration and willingness to refine the details. Explore a question with a trusted person, while remem [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_2_4 {
+            get {
+                return ResourceManager.GetString("_5_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 2 Soil Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month offers simple, dependable care within the unsettled landscape of a Core Earth year. Practical routines and familiar support can help you regain perspective, allowing deeper changes to unfold without adding unnecessary pressure. Today’s Core Earth influence may draw several responsibilities into the month’s quieter preparation; simplify and identify what truly deserves attention. Protect a little quiet space and reduce  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_2_5 {
+            get {
+                return ResourceManager.GetString("_5_2_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 2 Soil Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month offers simple, dependable care within the unsettled landscape of a Core Earth year. Practical routines and familiar support can help you regain perspective, allowing deeper changes to unfold without adding unnecessary pressure. Today’s Heaven influence helps bring clearer order to the month’s groundwork, making a modest plan or useful boundary easier to define. Clarify a boundary or organise an immediate responsibility wit [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_2_6 {
+            get {
+                return ResourceManager.GetString("_5_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 2 Soil Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month offers simple, dependable care within the unsettled landscape of a Core Earth year. Practical routines and familiar support can help you regain perspective, allowing deeper changes to unfold without adding unnecessary pressure. Today’s Lake influence softens the month’s seriousness through enjoyment and familiar connection, reminding you that preparation can include pleasure. Let a nourishing pleasure restore perspective, wh [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_2_7 {
+            get {
+                return ResourceManager.GetString("_5_2_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 2 Soil Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month offers simple, dependable care within the unsettled landscape of a Core Earth year. Practical routines and familiar support can help you regain perspective, allowing deeper changes to unfold without adding unnecessary pressure. Today’s Mountain influence slows the month’s emerging intentions, making a pause for review more fitting than pushing for visible progress. Reflect without closing yourself off; a small practical  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_2_8 {
+            get {
+                return ResourceManager.GetString("_5_2_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 2 Soil Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month offers simple, dependable care within the unsettled landscape of a Core Earth year. Practical routines and familiar support can help you regain perspective, allowing deeper changes to unfold without adding unnecessary pressure. Today’s Fire influence brightens the month’s quieter preparation, offering a moment to share an idea or reconnect without rushing its development. Put an insight into words and allow it to settle befo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_2_9 {
+            get {
+                return ResourceManager.GetString("_5_2_9", resourceCulture);
             }
         }
         
@@ -1124,6 +4544,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 3 Thunder Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month introduces movement and fresh ideas into a Core Earth year of reassessment. The lift can help with a manageable task or experiment, but allow the year’s larger questions to settle before turning enthusiasm into a major commitment. Today’s Water influence tempers the month’s enthusiasm with a quieter need to reflect, helping you consider the direction behind your activity. Give an emerging feeling room to be understood [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_3_1 {
+            get {
+                return ResourceManager.GetString("_5_3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 3 Thunder Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month introduces movement and fresh ideas into a Core Earth year of reassessment. The lift can help with a manageable task or experiment, but allow the year’s larger questions to settle before turning enthusiasm into a major commitment. Today’s Soil influence grounds the month’s quickening momentum in practical care; attend to a neglected detail before reaching for another new beginning. Choose a simple routine or act of car [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_3_2 {
+            get {
+                return ResourceManager.GetString("_5_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 3 Thunder Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month introduces movement and fresh ideas into a Core Earth year of reassessment. The lift can help with a manageable task or experiment, but allow the year’s larger questions to settle before turning enthusiasm into a major commitment. Today’s Thunder influence adds a further burst of initiative to an already active month, making a clear focus particularly valuable. Use a burst of initiative for a contained task, leaving [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_3_3 {
+            get {
+                return ResourceManager.GetString("_5_3_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 3 Thunder Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month introduces movement and fresh ideas into a Core Earth year of reassessment. The lift can help with a manageable task or experiment, but allow the year’s larger questions to settle before turning enthusiasm into a major commitment. Today’s Wind influence helps the month’s fresh initiatives develop through tact, collaboration and gentler follow-through. Explore a question with a trusted person, while remembering that the [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_3_4 {
+            get {
+                return ResourceManager.GetString("_5_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 3 Thunder Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month introduces movement and fresh ideas into a Core Earth year of reassessment. The lift can help with a manageable task or experiment, but allow the year’s larger questions to settle before turning enthusiasm into a major commitment. Today’s Core Earth influence brings a centring pause within the active month; reconsider competing impulses before deciding where to put your effort. Protect a little quiet space and re [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_3_5 {
+            get {
+                return ResourceManager.GetString("_5_3_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 3 Thunder Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month introduces movement and fresh ideas into a Core Earth year of reassessment. The lift can help with a manageable task or experiment, but allow the year’s larger questions to settle before turning enthusiasm into a major commitment. Today’s Heaven influence gives the month’s lively ideas a more precise direction, helping distinguish a useful next step from mere urgency. Clarify a boundary or organise an immediate respo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_3_6 {
+            get {
+                return ResourceManager.GetString("_5_3_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 3 Thunder Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month introduces movement and fresh ideas into a Core Earth year of reassessment. The lift can help with a manageable task or experiment, but allow the year’s larger questions to settle before turning enthusiasm into a major commitment. Today’s Lake influence invites enjoyment within the month’s momentum, making shared creativity or a relaxed conversation a useful release of pressure. Let a nourishing pleasure restore perspe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_3_7 {
+            get {
+                return ResourceManager.GetString("_5_3_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 3 Thunder Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month introduces movement and fresh ideas into a Core Earth year of reassessment. The lift can help with a manageable task or experiment, but allow the year’s larger questions to settle before turning enthusiasm into a major commitment. Today’s Mountain influence introduces stillness into an energetic month; a deliberate pause can reveal where impatience is obscuring your direction. Reflect without closing yourself off;  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_3_8 {
+            get {
+                return ResourceManager.GetString("_5_3_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 3 Thunder Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month introduces movement and fresh ideas into a Core Earth year of reassessment. The lift can help with a manageable task or experiment, but allow the year’s larger questions to settle before turning enthusiasm into a major commitment. Today’s Fire influence makes the month’s fresh ideas more expressive and visible, while asking you to temper excitement with care in communication. Put an insight into words and allow it to s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_3_9 {
+            get {
+                return ResourceManager.GetString("_5_3_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        Emotional Indulgence and Spiritual Shifts – A Time of Reflection and Change  
@@ -1135,6 +4645,96 @@ namespace K9.Globalisation {
         public static string _5_4 {
             get {
                 return ResourceManager.GetString("_5_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 4 Wind Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings gentler communication and flexibility to a Core Earth year’s shifting concerns. Thoughtful exchange may help you understand what is changing, while clear boundaries keep other people’s needs from scattering your attention. Today’s Water influence turns the month’s outward exchange toward quiet listening, making space to absorb what you have been learning or sharing. Give an emerging feeling room to be understood befo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_4_1 {
+            get {
+                return ResourceManager.GetString("_5_4_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 4 Wind Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings gentler communication and flexibility to a Core Earth year’s shifting concerns. Thoughtful exchange may help you understand what is changing, while clear boundaries keep other people’s needs from scattering your attention. Today’s Soil influence brings practical consistency to the month’s growth, favouring the small acts that keep relationships and projects well supported. Choose a simple routine or act of care that h [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_4_2 {
+            get {
+                return ResourceManager.GetString("_5_4_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 4 Wind Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings gentler communication and flexibility to a Core Earth year’s shifting concerns. Thoughtful exchange may help you understand what is changing, while clear boundaries keep other people’s needs from scattering your attention. Today’s Thunder influence gives the month’s ongoing development a fresh push; channel it into something already worth nurturing. Use a burst of initiative for a contained task, leaving significan [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_4_3 {
+            get {
+                return ResourceManager.GetString("_5_4_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 4 Wind Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings gentler communication and flexibility to a Core Earth year’s shifting concerns. Thoughtful exchange may help you understand what is changing, while clear boundaries keep other people’s needs from scattering your attention. Today’s Wind influence reinforces the month’s flexible, communicative quality, with gentle collaboration favoured over scattered engagement. Explore a question with a trusted person, while rememberi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_4_4 {
+            get {
+                return ResourceManager.GetString("_5_4_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 4 Wind Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings gentler communication and flexibility to a Core Earth year’s shifting concerns. Thoughtful exchange may help you understand what is changing, while clear boundaries keep other people’s needs from scattering your attention. Today’s Core Earth influence asks you to centre yourself amid the month’s many connections, clarifying which demands belong with you. Protect a little quiet space and reduce competing obligati [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_4_5 {
+            get {
+                return ResourceManager.GetString("_5_4_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 4 Wind Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings gentler communication and flexibility to a Core Earth year’s shifting concerns. Thoughtful exchange may help you understand what is changing, while clear boundaries keep other people’s needs from scattering your attention. Today’s Heaven influence brings definition to the month’s flowing possibilities, helping you edit a plan or make a clear, considerate commitment. Clarify a boundary or organise an immediate respon [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_4_6 {
+            get {
+                return ResourceManager.GetString("_5_4_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 4 Wind Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings gentler communication and flexibility to a Core Earth year’s shifting concerns. Thoughtful exchange may help you understand what is changing, while clear boundaries keep other people’s needs from scattering your attention. Today’s Lake influence lends pleasure and warmth to the month’s relationships, favouring sincere enjoyment and unforced creative exchange. Let a nourishing pleasure restore perspective, while keepin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_4_7 {
+            get {
+                return ResourceManager.GetString("_5_4_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 4 Wind Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings gentler communication and flexibility to a Core Earth year’s shifting concerns. Thoughtful exchange may help you understand what is changing, while clear boundaries keep other people’s needs from scattering your attention. Today’s Mountain influence creates a quieter space within the communicative month; step back to reflect without shutting others out completely. Reflect without closing yourself off; a small prac [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_4_8 {
+            get {
+                return ResourceManager.GetString("_5_4_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 4 Wind Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings gentler communication and flexibility to a Core Earth year’s shifting concerns. Thoughtful exchange may help you understand what is changing, while clear boundaries keep other people’s needs from scattering your attention. Today’s Fire influence brings the month’s ideas and connections into brighter focus, making thoughtful sharing easier while increasing emotional sensitivity. Put an insight into words and allow it t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_4_9 {
+            get {
+                return ResourceManager.GetString("_5_4_9", resourceCulture);
             }
         }
         
@@ -1154,6 +4754,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 5 Core Earth Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;Core Earth across year and month intensifies the invitation to return to your centre as priorities and feelings shift. Simplify what you can, maintain boundaries and let repeated themes become material for reflection rather than reasons to rush. Today’s Water influence deepens the month’s inner reassessment, favouring private reflection and a lighter load of external demands. Give an emerging feeling room to be understood before i [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_5_1 {
+            get {
+                return ResourceManager.GetString("_5_5_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 5 Core Earth Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;Core Earth across year and month intensifies the invitation to return to your centre as priorities and feelings shift. Simplify what you can, maintain boundaries and let repeated themes become material for reflection rather than reasons to rush. Today’s Soil influence offers a dependable practical rhythm within the month’s shifting concerns, helping you find steadiness through simple care. Choose a simple routine or act of care tha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_5_2 {
+            get {
+                return ResourceManager.GetString("_5_5_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 5 Core Earth Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;Core Earth across year and month intensifies the invitation to return to your centre as priorities and feelings shift. Simplify what you can, maintain boundaries and let repeated themes become material for reflection rather than reasons to rush. Today’s Thunder influence brings a burst of initiative into the month’s uncertainty; a small, contained action can be useful without resolving every larger question. Use a burst of initi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_5_3 {
+            get {
+                return ResourceManager.GetString("_5_5_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 5 Core Earth Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;Core Earth across year and month intensifies the invitation to return to your centre as priorities and feelings shift. Simplify what you can, maintain boundaries and let repeated themes become material for reflection rather than reasons to rush. Today’s Wind influence offers a gentler way to explore the month’s uncertainties through conversation, flexibility and openness to another perspective. Explore a question with a trusted per [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_5_4 {
+            get {
+                return ResourceManager.GetString("_5_5_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 5 Core Earth Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;Core Earth across year and month intensifies the invitation to return to your centre as priorities and feelings shift. Simplify what you can, maintain boundaries and let repeated themes become material for reflection rather than reasons to rush. Today’s Core Earth influence repeats the month’s centring theme; reduce the number of things demanding an answer and listen for your own priorities. Protect a little quiet space and r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_5_5 {
+            get {
+                return ResourceManager.GetString("_5_5_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 5 Core Earth Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;Core Earth across year and month intensifies the invitation to return to your centre as priorities and feelings shift. Simplify what you can, maintain boundaries and let repeated themes become material for reflection rather than reasons to rush. Today’s Heaven influence can help sort the month’s competing concerns into clearer boundaries, while allowing decisions to remain open to reflection. Clarify a boundary or organise an imm [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_5_6 {
+            get {
+                return ResourceManager.GetString("_5_5_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 5 Core Earth Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;Core Earth across year and month intensifies the invitation to return to your centre as priorities and feelings shift. Simplify what you can, maintain boundaries and let repeated themes become material for reflection rather than reasons to rush. Today’s Lake influence brings welcome softness to the month’s intensity, making restorative company or simple enjoyment a useful source of perspective. Let a nourishing pleasure restore per [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_5_7 {
+            get {
+                return ResourceManager.GetString("_5_5_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 5 Core Earth Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;Core Earth across year and month intensifies the invitation to return to your centre as priorities and feelings shift. Simplify what you can, maintain boundaries and let repeated themes become material for reflection rather than reasons to rush. Today’s Mountain influence adds a pause within the month’s inner changes; reflect patiently, while avoiding the temptation to shut down around uncertainty. Reflect without closing yours [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_5_8 {
+            get {
+                return ResourceManager.GetString("_5_5_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 5 Core Earth Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;Core Earth across year and month intensifies the invitation to return to your centre as priorities and feelings shift. Simplify what you can, maintain boundaries and let repeated themes become material for reflection rather than reasons to rush. Today’s Fire influence illuminates the month’s unresolved feelings or questions, making expression possible without requiring an immediate conclusion. Put an insight into words and allow it [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_5_9 {
+            get {
+                return ResourceManager.GetString("_5_5_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Period of Introversion and Gradual Progress – Avoid Procrastination, Embrace Natural Flow  
@@ -1165,6 +4855,96 @@ namespace K9.Globalisation {
         public static string _5_6 {
             get {
                 return ResourceManager.GetString("_5_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 6 Heaven Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month offers structure and clearer judgment within a Core Earth year of recalibration. Use it to organise responsibilities and define boundaries, while leaving room to revise conclusions as your deeper priorities become clearer. Today’s Water influence softens the month’s decisive focus, offering space to listen inward before responding to responsibilities. Give an emerging feeling room to be understood before interpreting it [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_6_1 {
+            get {
+                return ResourceManager.GetString("_5_6_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 6 Heaven Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month offers structure and clearer judgment within a Core Earth year of recalibration. Use it to organise responsibilities and define boundaries, while leaving room to revise conclusions as your deeper priorities become clearer. Today’s Soil influence gives the month’s sense of purpose a caring, practical expression, reminding you to support the people and routines behind the plans. Choose a simple routine or act of care that  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_6_2 {
+            get {
+                return ResourceManager.GetString("_5_6_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 6 Heaven Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month offers structure and clearer judgment within a Core Earth year of recalibration. Use it to organise responsibilities and define boundaries, while leaving room to revise conclusions as your deeper priorities become clearer. Today’s Thunder influence adds spontaneity to the month’s structure; let a fresh idea serve your priorities rather than upset them through impatience. Use a burst of initiative for a contained task, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_6_3 {
+            get {
+                return ResourceManager.GetString("_5_6_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 6 Heaven Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month offers structure and clearer judgment within a Core Earth year of recalibration. Use it to organise responsibilities and define boundaries, while leaving room to revise conclusions as your deeper priorities become clearer. Today’s Wind influence lends tact and flexibility to the month’s more direct communication, helping clarity remain responsive to others. Explore a question with a trusted person, while remembering that [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_6_4 {
+            get {
+                return ResourceManager.GetString("_5_6_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 6 Heaven Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month offers structure and clearer judgment within a Core Earth year of recalibration. Use it to organise responsibilities and define boundaries, while leaving room to revise conclusions as your deeper priorities become clearer. Today’s Core Earth influence asks for centring within the month’s responsibilities; distinguish your real obligations from demands you have simply absorbed. Protect a little quiet space and reduc [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_6_5 {
+            get {
+                return ResourceManager.GetString("_5_6_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 6 Heaven Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month offers structure and clearer judgment within a Core Earth year of recalibration. Use it to organise responsibilities and define boundaries, while leaving room to revise conclusions as your deeper priorities become clearer. Today’s Heaven influence reinforces the month’s orderly, purposeful quality, making warmth and willingness to listen especially valuable companions to conviction. Clarify a boundary or organise an im [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_6_6 {
+            get {
+                return ResourceManager.GetString("_5_6_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 6 Heaven Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month offers structure and clearer judgment within a Core Earth year of recalibration. Use it to organise responsibilities and define boundaries, while leaving room to revise conclusions as your deeper priorities become clearer. Today’s Lake influence relaxes the month’s formality, opening room for appreciation, humour and connection beyond getting things done. Let a nourishing pleasure restore perspective, while keeping room  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_6_7 {
+            get {
+                return ResourceManager.GetString("_5_6_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 6 Heaven Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month offers structure and clearer judgment within a Core Earth year of recalibration. Use it to organise responsibilities and define boundaries, while leaving room to revise conclusions as your deeper priorities become clearer. Today’s Mountain influence pauses the month’s drive for clarity, inviting careful review while asking you not to become fixed in a single viewpoint. Reflect without closing yourself off; a small pr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_6_8 {
+            get {
+                return ResourceManager.GetString("_5_6_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 6 Heaven Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month offers structure and clearer judgment within a Core Earth year of recalibration. Use it to organise responsibilities and define boundaries, while leaving room to revise conclusions as your deeper priorities become clearer. Today’s Fire influence adds expression and visibility to the month’s focus; share your direction warmly and remain attentive to how your words are received. Put an insight into words and allow it to se [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_6_9 {
+            get {
+                return ResourceManager.GetString("_5_6_9", resourceCulture);
             }
         }
         
@@ -1184,6 +4964,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 7 Lake Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings relief through warmth and enjoyment during a Core Earth year. Restorative company and simple beauty can soften the intensity, provided they support rather than distract from the reflection and boundaries you need. Today’s Water influence brings a quieter depth to the month’s sociability, making meaningful solitude or an intimate conversation more nourishing than a busy schedule. Give an emerging feeling room to be un [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_7_1 {
+            get {
+                return ResourceManager.GetString("_5_7_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 7 Lake Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings relief through warmth and enjoyment during a Core Earth year. Restorative company and simple beauty can soften the intensity, provided they support rather than distract from the reflection and boundaries you need. Today’s Soil influence grounds the month’s enjoyment in everyday care, helping pleasure remain connected to what supports you. Choose a simple routine or act of care that helps you feel steady while larger q [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_7_2 {
+            get {
+                return ResourceManager.GetString("_5_7_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 7 Lake Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings relief through warmth and enjoyment during a Core Earth year. Restorative company and simple beauty can soften the intensity, provided they support rather than distract from the reflection and boundaries you need. Today’s Thunder influence adds lively movement to the month’s relaxed atmosphere, favouring a creative task or playful activity with a clear limit. Use a burst of initiative for a contained task, leaving  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_7_3 {
+            get {
+                return ResourceManager.GetString("_5_7_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 7 Lake Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings relief through warmth and enjoyment during a Core Earth year. Restorative company and simple beauty can soften the intensity, provided they support rather than distract from the reflection and boundaries you need. Today’s Wind influence extends the month’s openness into gentle collaboration and thoughtful exchange, with sincerity keeping connections substantial. Explore a question with a trusted person, while remember [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_7_4 {
+            get {
+                return ResourceManager.GetString("_5_7_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 7 Lake Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings relief through warmth and enjoyment during a Core Earth year. Restorative company and simple beauty can soften the intensity, provided they support rather than distract from the reflection and boundaries you need. Today’s Core Earth influence draws attention beneath the month’s pleasant surface; make room for an unresolved feeling instead of covering it with more activity. Protect a little quiet space and reduce [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_7_5 {
+            get {
+                return ResourceManager.GetString("_5_7_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 7 Lake Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings relief through warmth and enjoyment during a Core Earth year. Restorative company and simple beauty can soften the intensity, provided they support rather than distract from the reflection and boundaries you need. Today’s Heaven influence helps set clear limits within the month’s invitations and pleasures, making it easier to choose what genuinely matters. Clarify a boundary or organise an immediate responsibility w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_7_6 {
+            get {
+                return ResourceManager.GetString("_5_7_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 7 Lake Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings relief through warmth and enjoyment during a Core Earth year. Restorative company and simple beauty can soften the intensity, provided they support rather than distract from the reflection and boundaries you need. Today’s Lake influence reinforces the month’s ease and enjoyment, inviting gratitude and heartfelt connection alongside moderation. Let a nourishing pleasure restore perspective, while keeping room for the h [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_7_7 {
+            get {
+                return ResourceManager.GetString("_5_7_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 7 Lake Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings relief through warmth and enjoyment during a Core Earth year. Restorative company and simple beauty can soften the intensity, provided they support rather than distract from the reflection and boundaries you need. Today’s Mountain influence draws the month’s sociability into a quieter pause, allowing appreciation to become more inward without closing the door to others. Reflect without closing yourself off; a smal [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_7_8 {
+            get {
+                return ResourceManager.GetString("_5_7_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 7 Lake Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings relief through warmth and enjoyment during a Core Earth year. Restorative company and simple beauty can soften the intensity, provided they support rather than distract from the reflection and boundaries you need. Today’s Fire influence brightens the month’s social warmth, favouring honest expression while calling for care around attention, sensitivity and overextension. Put an insight into words and allow it to settl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_7_9 {
+            get {
+                return ResourceManager.GetString("_5_7_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time for Careful Decisions – Reflection, Inner Stability, and Nervous System Balance  
@@ -1199,6 +5069,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 8 Mountain Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month adds stillness and withdrawal to a Core Earth year’s inner reorganisation. Give yourself room to reflect without hardening around a single answer; trusted companionship and simple routines can keep the pause supportive. Today’s Water influence deepens the month’s inward pull, making quiet reflection fitting while asking you to preserve a gentle connection to everyday life. Give an emerging feeling room to be underst [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_8_1 {
+            get {
+                return ResourceManager.GetString("_5_8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 8 Mountain Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month adds stillness and withdrawal to a Core Earth year’s inner reorganisation. Give yourself room to reflect without hardening around a single answer; trusted companionship and simple routines can keep the pause supportive. Today’s Soil influence gives the month’s retreat a practical outlet, offering steadiness through small tasks and familiar care. Choose a simple routine or act of care that helps you feel steady while  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_8_2 {
+            get {
+                return ResourceManager.GetString("_5_8_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 8 Mountain Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month adds stillness and withdrawal to a Core Earth year’s inner reorganisation. Give yourself room to reflect without hardening around a single answer; trusted companionship and simple routines can keep the pause supportive. Today’s Thunder influence brings movement into the month’s contained stillness, offering a brief chance to loosen inertia through a manageable action. Use a burst of initiative for a contained task [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_8_3 {
+            get {
+                return ResourceManager.GetString("_5_8_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 8 Mountain Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month adds stillness and withdrawal to a Core Earth year’s inner reorganisation. Give yourself room to reflect without hardening around a single answer; trusted companionship and simple routines can keep the pause supportive. Today’s Wind influence opens a softer channel for communication within the withdrawn month; a thoughtful exchange can help loosen fixed perspectives. Explore a question with a trusted person, while re [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_8_4 {
+            get {
+                return ResourceManager.GetString("_5_8_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 8 Mountain Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month adds stillness and withdrawal to a Core Earth year’s inner reorganisation. Give yourself room to reflect without hardening around a single answer; trusted companionship and simple routines can keep the pause supportive. Today’s Core Earth influence may bring unresolved concerns into the month’s stillness; find your centre before deciding that something must change immediately. Protect a little quiet space and r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_8_5 {
+            get {
+                return ResourceManager.GetString("_5_8_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 8 Mountain Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month adds stillness and withdrawal to a Core Earth year’s inner reorganisation. Give yourself room to reflect without hardening around a single answer; trusted companionship and simple routines can keep the pause supportive. Today’s Heaven influence can help clarify the month’s reflections, provided firmer thinking remains open to feedback rather than becoming rigid. Clarify a boundary or organise an immediate responsib [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_8_6 {
+            get {
+                return ResourceManager.GetString("_5_8_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 8 Mountain Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month adds stillness and withdrawal to a Core Earth year’s inner reorganisation. Give yourself room to reflect without hardening around a single answer; trusted companionship and simple routines can keep the pause supportive. Today’s Lake influence lightens the month’s retreat through gentle enjoyment and trusted companionship, offering an unforced way to reconnect. Let a nourishing pleasure restore perspective, while keep [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_8_7 {
+            get {
+                return ResourceManager.GetString("_5_8_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 8 Mountain Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month adds stillness and withdrawal to a Core Earth year’s inner reorganisation. Give yourself room to reflect without hardening around a single answer; trusted companionship and simple routines can keep the pause supportive. Today’s Mountain influence concentrates the month’s stillness, favouring reflection while making small movement and clear communication especially useful. Reflect without closing yourself off; a s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_8_8 {
+            get {
+                return ResourceManager.GetString("_5_8_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 8 Mountain Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month adds stillness and withdrawal to a Core Earth year’s inner reorganisation. Give yourself room to reflect without hardening around a single answer; trusted companionship and simple routines can keep the pause supportive. Today’s Fire influence brings a brief warmth and brightness into the withdrawn month, helping you express something or reconnect at a pace that feels comfortable. Put an insight into words and allow i [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_8_9 {
+            get {
+                return ResourceManager.GetString("_5_8_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Fresh Start – New Ventures, Bold Steps, and Mindful Action  
@@ -1210,6 +5170,96 @@ namespace K9.Globalisation {
         public static string _5_9 {
             get {
                 return ResourceManager.GetString("_5_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 9 Fire Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month illuminates questions that may have felt unclear during a Core Earth year. Expression and insight can be welcome, but heightened visibility is best met with grounding and time to consider what you actually want to commit to. Today’s Water influence offers a quiet counterpoint to the month’s brightness, helping you absorb insight rather than remain constantly expressive. Give an emerging feeling room to be understood before  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_9_1 {
+            get {
+                return ResourceManager.GetString("_5_9_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 9 Fire Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month illuminates questions that may have felt unclear during a Core Earth year. Expression and insight can be welcome, but heightened visibility is best met with grounding and time to consider what you actually want to commit to. Today’s Soil influence grounds the month’s visibility in simple, practical care, giving expression a steadier foundation. Choose a simple routine or act of care that helps you feel steady while larger qu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_9_2 {
+            get {
+                return ResourceManager.GetString("_5_9_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 9 Fire Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month illuminates questions that may have felt unclear during a Core Earth year. Expression and insight can be welcome, but heightened visibility is best met with grounding and time to consider what you actually want to commit to. Today’s Thunder influence adds a quick burst of initiative to the expressive month; direct it deliberately so that enthusiasm does not become reactivity. Use a burst of initiative for a contained task [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_9_3 {
+            get {
+                return ResourceManager.GetString("_5_9_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 9 Fire Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month illuminates questions that may have felt unclear during a Core Earth year. Expression and insight can be welcome, but heightened visibility is best met with grounding and time to consider what you actually want to commit to. Today’s Wind influence brings tact and flexibility to the month’s stronger expression, helping a message become a thoughtful conversation. Explore a question with a trusted person, while remembering that [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_9_4 {
+            get {
+                return ResourceManager.GetString("_5_9_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 9 Fire Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month illuminates questions that may have felt unclear during a Core Earth year. Expression and insight can be welcome, but heightened visibility is best met with grounding and time to consider what you actually want to commit to. Today’s Core Earth influence asks you to centre yourself within the month’s intensity, allowing strong feelings to settle before turning them into a decision. Protect a little quiet space and reduc [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_9_5 {
+            get {
+                return ResourceManager.GetString("_5_9_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 9 Fire Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month illuminates questions that may have felt unclear during a Core Earth year. Expression and insight can be welcome, but heightened visibility is best met with grounding and time to consider what you actually want to commit to. Today’s Heaven influence brings precision to the month’s brightness, helping you refine what you want to say without making it overly forceful. Clarify a boundary or organise an immediate responsibilit [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_9_6 {
+            get {
+                return ResourceManager.GetString("_5_9_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 9 Fire Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month illuminates questions that may have felt unclear during a Core Earth year. Expression and insight can be welcome, but heightened visibility is best met with grounding and time to consider what you actually want to commit to. Today’s Lake influence softens the month’s expressive intensity with humour and relaxed connection, allowing enjoyment without a need to perform. Let a nourishing pleasure restore perspective, while keep [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_9_7 {
+            get {
+                return ResourceManager.GetString("_5_9_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 9 Fire Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month illuminates questions that may have felt unclear during a Core Earth year. Expression and insight can be welcome, but heightened visibility is best met with grounding and time to consider what you actually want to commit to. Today’s Mountain influence introduces a contained pause into the bright month, making space to integrate what has been seen or felt. Reflect without closing yourself off; a small practical routine or [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_9_8 {
+            get {
+                return ResourceManager.GetString("_5_9_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;5 Core Earth Year · 9 Fire Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month illuminates questions that may have felt unclear during a Core Earth year. Expression and insight can be welcome, but heightened visibility is best met with grounding and time to consider what you actually want to commit to. Today’s Fire influence heightens the month’s brightness and emotional intensity, favouring authentic expression with pauses for grounding and rest. Put an insight into words and allow it to settle before [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _5_9_9 {
+            get {
+                return ResourceManager.GetString("_5_9_9", resourceCulture);
             }
         }
         
@@ -1371,6 +5421,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 1 Water Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month softens the purposeful momentum of a Heaven year with a need for quiet and inward listening. Step back from constant responsibility where possible, using reflection to reconnect your decisions with what matters beneath achievement. Today’s Water influence draws this quiet monthly current further inward, making unhurried reflection especially fitting. Step back from a responsibility where possible and listen to the values bene [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_1_1 {
+            get {
+                return ResourceManager.GetString("_6_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 1 Water Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month softens the purposeful momentum of a Heaven year with a need for quiet and inward listening. Step back from constant responsibility where possible, using reflection to reconnect your decisions with what matters beneath achievement. Today’s Soil influence gives the month’s inward current a practical anchor through simple care, preparation and familiar routines. Support the practical detail or person behind a larger responsibili [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_1_2 {
+            get {
+                return ResourceManager.GetString("_6_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 1 Water Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month softens the purposeful momentum of a Heaven year with a need for quiet and inward listening. Step back from constant responsibility where possible, using reflection to reconnect your decisions with what matters beneath achievement. Today’s Thunder influence brings a brief opening for movement within the quieter month, helping loosen inertia without demanding a lasting change of pace. Channel a fresh impulse into a clear pri [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_1_3 {
+            get {
+                return ResourceManager.GetString("_6_1_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 1 Water Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month softens the purposeful momentum of a Heaven year with a need for quiet and inward listening. Step back from constant responsibility where possible, using reflection to reconnect your decisions with what matters beneath achievement. Today’s Wind influence makes gentle expression more accessible within the inward month, offering a bridge between private reflection and thoughtful conversation. Invite another perspective into a pl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_1_4 {
+            get {
+                return ResourceManager.GetString("_6_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 1 Water Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month softens the purposeful momentum of a Heaven year with a need for quiet and inward listening. Step back from constant responsibility where possible, using reflection to reconnect your decisions with what matters beneath achievement. Today’s Core Earth influence may bring several inner concerns into focus at once; reduce competing demands rather than forcing the month’s questions into a quick answer. Identify what is genui [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_1_5 {
+            get {
+                return ResourceManager.GetString("_6_1_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 1 Water Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month softens the purposeful momentum of a Heaven year with a need for quiet and inward listening. Step back from constant responsibility where possible, using reflection to reconnect your decisions with what matters beneath achievement. Today’s Heaven influence can help organise the month’s private reflections into clearer priorities, while a considerate tone keeps clarity from feeling harsh. Complete or refine one important task [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_1_6 {
+            get {
+                return ResourceManager.GetString("_6_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 1 Water Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month softens the purposeful momentum of a Heaven year with a need for quiet and inward listening. Step back from constant responsibility where possible, using reflection to reconnect your decisions with what matters beneath achievement. Today’s Lake influence brings a softer, more sociable note to the quiet month, making gentle companionship or beauty a welcome source of relief. Acknowledge progress and enjoy a moment of connection [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_1_7 {
+            get {
+                return ResourceManager.GetString("_6_1_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 1 Water Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month softens the purposeful momentum of a Heaven year with a need for quiet and inward listening. Step back from constant responsibility where possible, using reflection to reconnect your decisions with what matters beneath achievement. Today’s Mountain influence adds a more contained stillness to the inward month, favouring quiet focus while calling for care around excessive withdrawal. Review a commitment carefully and stay o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_1_8 {
+            get {
+                return ResourceManager.GetString("_6_1_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 1 Water Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month softens the purposeful momentum of a Heaven year with a need for quiet and inward listening. Step back from constant responsibility where possible, using reflection to reconnect your decisions with what matters beneath achievement. Today’s Fire influence brings a brief shaft of light into the inward month, making connection or expression more inviting without ending its quieter rhythm. Share your direction with warmth, allowin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_1_9 {
+            get {
+                return ResourceManager.GetString("_6_1_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Prime Time for Business Ventures and Financial Growth  
@@ -1382,6 +5522,96 @@ namespace K9.Globalisation {
         public static string _6_2 {
             get {
                 return ResourceManager.GetString("_6_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 2 Soil Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month grounds a Heaven year’s authority in patient care and practical detail. Support the foundations behind your responsibilities, allowing steady preparation and consideration for others to balance a stronger drive for results. Today’s Water influence brings the month’s practical preparation back to inward listening; give yourself room to sense what genuinely needs tending. Step back from a responsibility where possible and listen  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_2_1 {
+            get {
+                return ResourceManager.GetString("_6_2_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 2 Soil Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month grounds a Heaven year’s authority in patient care and practical detail. Support the foundations behind your responsibilities, allowing steady preparation and consideration for others to balance a stronger drive for results. Today’s Soil influence reinforces the month’s patient groundwork, favouring small acts of care and a steady, manageable rhythm. Support the practical detail or person behind a larger responsibility, bringing  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_2_2 {
+            get {
+                return ResourceManager.GetString("_6_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 2 Soil Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month grounds a Heaven year’s authority in patient care and practical detail. Support the foundations behind your responsibilities, allowing steady preparation and consideration for others to balance a stronger drive for results. Today’s Thunder influence can turn the month’s preparations into a useful first step, provided enthusiasm does not outrun what is ready. Channel a fresh impulse into a clear priority, taking time to consid [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_2_3 {
+            get {
+                return ResourceManager.GetString("_6_2_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 2 Soil Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month grounds a Heaven year’s authority in patient care and practical detail. Support the foundations behind your responsibilities, allowing steady preparation and consideration for others to balance a stronger drive for results. Today’s Wind influence helps the month’s developing plans through thoughtful exchange, gentle collaboration and willingness to refine the details. Invite another perspective into a plan and let flexibility st [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_2_4 {
+            get {
+                return ResourceManager.GetString("_6_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 2 Soil Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month grounds a Heaven year’s authority in patient care and practical detail. Support the foundations behind your responsibilities, allowing steady preparation and consideration for others to balance a stronger drive for results. Today’s Core Earth influence may draw several responsibilities into the month’s quieter preparation; simplify and identify what truly deserves attention. Identify what is genuinely yours to carry and gi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_2_5 {
+            get {
+                return ResourceManager.GetString("_6_2_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 2 Soil Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month grounds a Heaven year’s authority in patient care and practical detail. Support the foundations behind your responsibilities, allowing steady preparation and consideration for others to balance a stronger drive for results. Today’s Heaven influence helps bring clearer order to the month’s groundwork, making a modest plan or useful boundary easier to define. Complete or refine one important task, keeping your standards humane a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_2_6 {
+            get {
+                return ResourceManager.GetString("_6_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 2 Soil Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month grounds a Heaven year’s authority in patient care and practical detail. Support the foundations behind your responsibilities, allowing steady preparation and consideration for others to balance a stronger drive for results. Today’s Lake influence softens the month’s seriousness through enjoyment and familiar connection, reminding you that preparation can include pleasure. Acknowledge progress and enjoy a moment of connection tha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_2_7 {
+            get {
+                return ResourceManager.GetString("_6_2_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 2 Soil Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month grounds a Heaven year’s authority in patient care and practical detail. Support the foundations behind your responsibilities, allowing steady preparation and consideration for others to balance a stronger drive for results. Today’s Mountain influence slows the month’s emerging intentions, making a pause for review more fitting than pushing for visible progress. Review a commitment carefully and stay open to feedback, letting [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_2_8 {
+            get {
+                return ResourceManager.GetString("_6_2_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 2 Soil Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month grounds a Heaven year’s authority in patient care and practical detail. Support the foundations behind your responsibilities, allowing steady preparation and consideration for others to balance a stronger drive for results. Today’s Fire influence brightens the month’s quieter preparation, offering a moment to share an idea or reconnect without rushing its development. Share your direction with warmth, allowing confidence to make [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_2_9 {
+            get {
+                return ResourceManager.GetString("_6_2_9", resourceCulture);
             }
         }
         
@@ -1401,6 +5631,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 3 Thunder Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings fresh initiative to the focused direction of a Heaven year. New ideas can energise established work, provided you give them a clear purpose and avoid making speed or certainty the measure of success. Today’s Water influence tempers the month’s enthusiasm with a quieter need to reflect, helping you consider the direction behind your activity. Step back from a responsibility where possible and listen to the values be [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_3_1 {
+            get {
+                return ResourceManager.GetString("_6_3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 3 Thunder Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings fresh initiative to the focused direction of a Heaven year. New ideas can energise established work, provided you give them a clear purpose and avoid making speed or certainty the measure of success. Today’s Soil influence grounds the month’s quickening momentum in practical care; attend to a neglected detail before reaching for another new beginning. Support the practical detail or person behind a larger responsibi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_3_2 {
+            get {
+                return ResourceManager.GetString("_6_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 3 Thunder Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings fresh initiative to the focused direction of a Heaven year. New ideas can energise established work, provided you give them a clear purpose and avoid making speed or certainty the measure of success. Today’s Thunder influence adds a further burst of initiative to an already active month, making a clear focus particularly valuable. Channel a fresh impulse into a clear priority, taking time to consider its conseque [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_3_3 {
+            get {
+                return ResourceManager.GetString("_6_3_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 3 Thunder Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings fresh initiative to the focused direction of a Heaven year. New ideas can energise established work, provided you give them a clear purpose and avoid making speed or certainty the measure of success. Today’s Wind influence helps the month’s fresh initiatives develop through tact, collaboration and gentler follow-through. Invite another perspective into a plan and let flexibility strengthen, rather than weaken, your  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_3_4 {
+            get {
+                return ResourceManager.GetString("_6_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 3 Thunder Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings fresh initiative to the focused direction of a Heaven year. New ideas can energise established work, provided you give them a clear purpose and avoid making speed or certainty the measure of success. Today’s Core Earth influence brings a centring pause within the active month; reconsider competing impulses before deciding where to put your effort. Identify what is genuinely yours to carry and give yourself per [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_3_5 {
+            get {
+                return ResourceManager.GetString("_6_3_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 3 Thunder Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings fresh initiative to the focused direction of a Heaven year. New ideas can energise established work, provided you give them a clear purpose and avoid making speed or certainty the measure of success. Today’s Heaven influence gives the month’s lively ideas a more precise direction, helping distinguish a useful next step from mere urgency. Complete or refine one important task, keeping your standards humane and your [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_3_6 {
+            get {
+                return ResourceManager.GetString("_6_3_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 3 Thunder Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings fresh initiative to the focused direction of a Heaven year. New ideas can energise established work, provided you give them a clear purpose and avoid making speed or certainty the measure of success. Today’s Lake influence invites enjoyment within the month’s momentum, making shared creativity or a relaxed conversation a useful release of pressure. Acknowledge progress and enjoy a moment of connection that is not or [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_3_7 {
+            get {
+                return ResourceManager.GetString("_6_3_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 3 Thunder Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings fresh initiative to the focused direction of a Heaven year. New ideas can energise established work, provided you give them a clear purpose and avoid making speed or certainty the measure of success. Today’s Mountain influence introduces stillness into an energetic month; a deliberate pause can reveal where impatience is obscuring your direction. Review a commitment carefully and stay open to feedback, letting r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_3_8 {
+            get {
+                return ResourceManager.GetString("_6_3_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 3 Thunder Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings fresh initiative to the focused direction of a Heaven year. New ideas can energise established work, provided you give them a clear purpose and avoid making speed or certainty the measure of success. Today’s Fire influence makes the month’s fresh ideas more expressive and visible, while asking you to temper excitement with care in communication. Share your direction with warmth, allowing confidence to make room for  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_3_9 {
+            get {
+                return ResourceManager.GetString("_6_3_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Rest Period with Subtle Drive – Reflection, Planning, and Gradual Action  
@@ -1412,6 +5732,96 @@ namespace K9.Globalisation {
         public static string _6_4 {
             get {
                 return ResourceManager.GetString("_6_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 4 Wind Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings flexibility and more nuanced communication to a Heaven year’s clear direction. Collaboration can strengthen your work when you leave room for different perspectives, letting responsiveness soften any tendency toward rigid control. Today’s Water influence turns the month’s outward exchange toward quiet listening, making space to absorb what you have been learning or sharing. Step back from a responsibility where possible  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_4_1 {
+            get {
+                return ResourceManager.GetString("_6_4_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 4 Wind Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings flexibility and more nuanced communication to a Heaven year’s clear direction. Collaboration can strengthen your work when you leave room for different perspectives, letting responsiveness soften any tendency toward rigid control. Today’s Soil influence brings practical consistency to the month’s growth, favouring the small acts that keep relationships and projects well supported. Support the practical detail or person be [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_4_2 {
+            get {
+                return ResourceManager.GetString("_6_4_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 4 Wind Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings flexibility and more nuanced communication to a Heaven year’s clear direction. Collaboration can strengthen your work when you leave room for different perspectives, letting responsiveness soften any tendency toward rigid control. Today’s Thunder influence gives the month’s ongoing development a fresh push; channel it into something already worth nurturing. Channel a fresh impulse into a clear priority, taking time to  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_4_3 {
+            get {
+                return ResourceManager.GetString("_6_4_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 4 Wind Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings flexibility and more nuanced communication to a Heaven year’s clear direction. Collaboration can strengthen your work when you leave room for different perspectives, letting responsiveness soften any tendency toward rigid control. Today’s Wind influence reinforces the month’s flexible, communicative quality, with gentle collaboration favoured over scattered engagement. Invite another perspective into a plan and let flexib [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_4_4 {
+            get {
+                return ResourceManager.GetString("_6_4_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 4 Wind Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings flexibility and more nuanced communication to a Heaven year’s clear direction. Collaboration can strengthen your work when you leave room for different perspectives, letting responsiveness soften any tendency toward rigid control. Today’s Core Earth influence asks you to centre yourself amid the month’s many connections, clarifying which demands belong with you. Identify what is genuinely yours to carry and give you [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_4_5 {
+            get {
+                return ResourceManager.GetString("_6_4_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 4 Wind Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings flexibility and more nuanced communication to a Heaven year’s clear direction. Collaboration can strengthen your work when you leave room for different perspectives, letting responsiveness soften any tendency toward rigid control. Today’s Heaven influence brings definition to the month’s flowing possibilities, helping you edit a plan or make a clear, considerate commitment. Complete or refine one important task, keeping [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_4_6 {
+            get {
+                return ResourceManager.GetString("_6_4_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 4 Wind Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings flexibility and more nuanced communication to a Heaven year’s clear direction. Collaboration can strengthen your work when you leave room for different perspectives, letting responsiveness soften any tendency toward rigid control. Today’s Lake influence lends pleasure and warmth to the month’s relationships, favouring sincere enjoyment and unforced creative exchange. Acknowledge progress and enjoy a moment of connection t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_4_7 {
+            get {
+                return ResourceManager.GetString("_6_4_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 4 Wind Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings flexibility and more nuanced communication to a Heaven year’s clear direction. Collaboration can strengthen your work when you leave room for different perspectives, letting responsiveness soften any tendency toward rigid control. Today’s Mountain influence creates a quieter space within the communicative month; step back to reflect without shutting others out completely. Review a commitment carefully and stay open to [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_4_8 {
+            get {
+                return ResourceManager.GetString("_6_4_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 4 Wind Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings flexibility and more nuanced communication to a Heaven year’s clear direction. Collaboration can strengthen your work when you leave room for different perspectives, letting responsiveness soften any tendency toward rigid control. Today’s Fire influence brings the month’s ideas and connections into brighter focus, making thoughtful sharing easier while increasing emotional sensitivity. Share your direction with warmth, al [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_4_9 {
+            get {
+                return ResourceManager.GetString("_6_4_9", resourceCulture);
             }
         }
         
@@ -1431,6 +5841,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 5 Core Earth Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks you to review responsibilities during a Heaven year of focus and achievement. If demands compete, return to your priorities and boundaries rather than assuming that greater effort will resolve every uncertainty. Today’s Water influence deepens the month’s inner reassessment, favouring private reflection and a lighter load of external demands. Step back from a responsibility where possible and listen to the valu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_5_1 {
+            get {
+                return ResourceManager.GetString("_6_5_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 5 Core Earth Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks you to review responsibilities during a Heaven year of focus and achievement. If demands compete, return to your priorities and boundaries rather than assuming that greater effort will resolve every uncertainty. Today’s Soil influence offers a dependable practical rhythm within the month’s shifting concerns, helping you find steadiness through simple care. Support the practical detail or person behind a larger r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_5_2 {
+            get {
+                return ResourceManager.GetString("_6_5_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 5 Core Earth Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks you to review responsibilities during a Heaven year of focus and achievement. If demands compete, return to your priorities and boundaries rather than assuming that greater effort will resolve every uncertainty. Today’s Thunder influence brings a burst of initiative into the month’s uncertainty; a small, contained action can be useful without resolving every larger question. Channel a fresh impulse into a cle [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_5_3 {
+            get {
+                return ResourceManager.GetString("_6_5_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 5 Core Earth Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks you to review responsibilities during a Heaven year of focus and achievement. If demands compete, return to your priorities and boundaries rather than assuming that greater effort will resolve every uncertainty. Today’s Wind influence offers a gentler way to explore the month’s uncertainties through conversation, flexibility and openness to another perspective. Invite another perspective into a plan and let flex [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_5_4 {
+            get {
+                return ResourceManager.GetString("_6_5_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 5 Core Earth Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks you to review responsibilities during a Heaven year of focus and achievement. If demands compete, return to your priorities and boundaries rather than assuming that greater effort will resolve every uncertainty. Today’s Core Earth influence repeats the month’s centring theme; reduce the number of things demanding an answer and listen for your own priorities. Identify what is genuinely yours to carry and gi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_5_5 {
+            get {
+                return ResourceManager.GetString("_6_5_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 5 Core Earth Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks you to review responsibilities during a Heaven year of focus and achievement. If demands compete, return to your priorities and boundaries rather than assuming that greater effort will resolve every uncertainty. Today’s Heaven influence can help sort the month’s competing concerns into clearer boundaries, while allowing decisions to remain open to reflection. Complete or refine one important task, keeping your [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_5_6 {
+            get {
+                return ResourceManager.GetString("_6_5_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 5 Core Earth Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks you to review responsibilities during a Heaven year of focus and achievement. If demands compete, return to your priorities and boundaries rather than assuming that greater effort will resolve every uncertainty. Today’s Lake influence brings welcome softness to the month’s intensity, making restorative company or simple enjoyment a useful source of perspective. Acknowledge progress and enjoy a moment of connecti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_5_7 {
+            get {
+                return ResourceManager.GetString("_6_5_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 5 Core Earth Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks you to review responsibilities during a Heaven year of focus and achievement. If demands compete, return to your priorities and boundaries rather than assuming that greater effort will resolve every uncertainty. Today’s Mountain influence adds a pause within the month’s inner changes; reflect patiently, while avoiding the temptation to shut down around uncertainty. Review a commitment carefully and stay open [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_5_8 {
+            get {
+                return ResourceManager.GetString("_6_5_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 5 Core Earth Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks you to review responsibilities during a Heaven year of focus and achievement. If demands compete, return to your priorities and boundaries rather than assuming that greater effort will resolve every uncertainty. Today’s Fire influence illuminates the month’s unresolved feelings or questions, making expression possible without requiring an immediate conclusion. Share your direction with warmth, allowing confidenc [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_5_9 {
+            get {
+                return ResourceManager.GetString("_6_5_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Highly Emotional Period – Passion, Challenges in Associations, and the Need for Reflection  
@@ -1442,6 +5942,96 @@ namespace K9.Globalisation {
         public static string _6_6 {
             get {
                 return ResourceManager.GetString("_6_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 6 Heaven Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;Heaven across year and month emphasises order, responsibility and decisive focus. This can support careful completion and clear boundaries, while kindness, flexibility and willingness to listen prevent conviction from becoming rigidity. Today’s Water influence softens the month’s decisive focus, offering space to listen inward before responding to responsibilities. Step back from a responsibility where possible and listen to the values be [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_6_1 {
+            get {
+                return ResourceManager.GetString("_6_6_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 6 Heaven Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;Heaven across year and month emphasises order, responsibility and decisive focus. This can support careful completion and clear boundaries, while kindness, flexibility and willingness to listen prevent conviction from becoming rigidity. Today’s Soil influence gives the month’s sense of purpose a caring, practical expression, reminding you to support the people and routines behind the plans. Support the practical detail or person behind a l [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_6_2 {
+            get {
+                return ResourceManager.GetString("_6_6_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 6 Heaven Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;Heaven across year and month emphasises order, responsibility and decisive focus. This can support careful completion and clear boundaries, while kindness, flexibility and willingness to listen prevent conviction from becoming rigidity. Today’s Thunder influence adds spontaneity to the month’s structure; let a fresh idea serve your priorities rather than upset them through impatience. Channel a fresh impulse into a clear priority, takin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_6_3 {
+            get {
+                return ResourceManager.GetString("_6_6_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 6 Heaven Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;Heaven across year and month emphasises order, responsibility and decisive focus. This can support careful completion and clear boundaries, while kindness, flexibility and willingness to listen prevent conviction from becoming rigidity. Today’s Wind influence lends tact and flexibility to the month’s more direct communication, helping clarity remain responsive to others. Invite another perspective into a plan and let flexibility strengthen [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_6_4 {
+            get {
+                return ResourceManager.GetString("_6_6_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 6 Heaven Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;Heaven across year and month emphasises order, responsibility and decisive focus. This can support careful completion and clear boundaries, while kindness, flexibility and willingness to listen prevent conviction from becoming rigidity. Today’s Core Earth influence asks for centring within the month’s responsibilities; distinguish your real obligations from demands you have simply absorbed. Identify what is genuinely yours to carry a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_6_5 {
+            get {
+                return ResourceManager.GetString("_6_6_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 6 Heaven Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;Heaven across year and month emphasises order, responsibility and decisive focus. This can support careful completion and clear boundaries, while kindness, flexibility and willingness to listen prevent conviction from becoming rigidity. Today’s Heaven influence reinforces the month’s orderly, purposeful quality, making warmth and willingness to listen especially valuable companions to conviction. Complete or refine one important task, ke [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_6_6 {
+            get {
+                return ResourceManager.GetString("_6_6_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 6 Heaven Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;Heaven across year and month emphasises order, responsibility and decisive focus. This can support careful completion and clear boundaries, while kindness, flexibility and willingness to listen prevent conviction from becoming rigidity. Today’s Lake influence relaxes the month’s formality, opening room for appreciation, humour and connection beyond getting things done. Acknowledge progress and enjoy a moment of connection that is not organ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_6_7 {
+            get {
+                return ResourceManager.GetString("_6_6_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 6 Heaven Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;Heaven across year and month emphasises order, responsibility and decisive focus. This can support careful completion and clear boundaries, while kindness, flexibility and willingness to listen prevent conviction from becoming rigidity. Today’s Mountain influence pauses the month’s drive for clarity, inviting careful review while asking you not to become fixed in a single viewpoint. Review a commitment carefully and stay open to feedba [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_6_8 {
+            get {
+                return ResourceManager.GetString("_6_6_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 6 Heaven Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;Heaven across year and month emphasises order, responsibility and decisive focus. This can support careful completion and clear boundaries, while kindness, flexibility and willingness to listen prevent conviction from becoming rigidity. Today’s Fire influence adds expression and visibility to the month’s focus; share your direction warmly and remain attentive to how your words are received. Share your direction with warmth, allowing confid [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_6_9 {
+            get {
+                return ResourceManager.GetString("_6_6_9", resourceCulture);
             }
         }
         
@@ -1461,6 +6051,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 7 Lake Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and human warmth to a Heaven year’s purposeful effort. Make room to appreciate progress and enjoy connection, allowing pleasure and sincere conversation to soften an overly demanding relationship with responsibility. Today’s Water influence brings a quieter depth to the month’s sociability, making meaningful solitude or an intimate conversation more nourishing than a busy schedule. Step back from a responsibility wh [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_7_1 {
+            get {
+                return ResourceManager.GetString("_6_7_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 7 Lake Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and human warmth to a Heaven year’s purposeful effort. Make room to appreciate progress and enjoy connection, allowing pleasure and sincere conversation to soften an overly demanding relationship with responsibility. Today’s Soil influence grounds the month’s enjoyment in everyday care, helping pleasure remain connected to what supports you. Support the practical detail or person behind a larger responsibility, bring [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_7_2 {
+            get {
+                return ResourceManager.GetString("_6_7_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 7 Lake Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and human warmth to a Heaven year’s purposeful effort. Make room to appreciate progress and enjoy connection, allowing pleasure and sincere conversation to soften an overly demanding relationship with responsibility. Today’s Thunder influence adds lively movement to the month’s relaxed atmosphere, favouring a creative task or playful activity with a clear limit. Channel a fresh impulse into a clear priority, takin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_7_3 {
+            get {
+                return ResourceManager.GetString("_6_7_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 7 Lake Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and human warmth to a Heaven year’s purposeful effort. Make room to appreciate progress and enjoy connection, allowing pleasure and sincere conversation to soften an overly demanding relationship with responsibility. Today’s Wind influence extends the month’s openness into gentle collaboration and thoughtful exchange, with sincerity keeping connections substantial. Invite another perspective into a plan and let flexi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_7_4 {
+            get {
+                return ResourceManager.GetString("_6_7_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 7 Lake Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and human warmth to a Heaven year’s purposeful effort. Make room to appreciate progress and enjoy connection, allowing pleasure and sincere conversation to soften an overly demanding relationship with responsibility. Today’s Core Earth influence draws attention beneath the month’s pleasant surface; make room for an unresolved feeling instead of covering it with more activity. Identify what is genuinely yours to [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_7_5 {
+            get {
+                return ResourceManager.GetString("_6_7_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 7 Lake Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and human warmth to a Heaven year’s purposeful effort. Make room to appreciate progress and enjoy connection, allowing pleasure and sincere conversation to soften an overly demanding relationship with responsibility. Today’s Heaven influence helps set clear limits within the month’s invitations and pleasures, making it easier to choose what genuinely matters. Complete or refine one important task, keeping your stan [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_7_6 {
+            get {
+                return ResourceManager.GetString("_6_7_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 7 Lake Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and human warmth to a Heaven year’s purposeful effort. Make room to appreciate progress and enjoy connection, allowing pleasure and sincere conversation to soften an overly demanding relationship with responsibility. Today’s Lake influence reinforces the month’s ease and enjoyment, inviting gratitude and heartfelt connection alongside moderation. Acknowledge progress and enjoy a moment of connection that is not organ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_7_7 {
+            get {
+                return ResourceManager.GetString("_6_7_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 7 Lake Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and human warmth to a Heaven year’s purposeful effort. Make room to appreciate progress and enjoy connection, allowing pleasure and sincere conversation to soften an overly demanding relationship with responsibility. Today’s Mountain influence draws the month’s sociability into a quieter pause, allowing appreciation to become more inward without closing the door to others. Review a commitment carefully and stay o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_7_8 {
+            get {
+                return ResourceManager.GetString("_6_7_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 7 Lake Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month brings ease and human warmth to a Heaven year’s purposeful effort. Make room to appreciate progress and enjoy connection, allowing pleasure and sincere conversation to soften an overly demanding relationship with responsibility. Today’s Fire influence brightens the month’s social warmth, favouring honest expression while calling for care around attention, sensitivity and overextension. Share your direction with warmth, allowing  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_7_9 {
+            get {
+                return ResourceManager.GetString("_6_7_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time of Frustration and Activity – Embrace Communication and Lead with Inspiration  
@@ -1476,6 +6156,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 8 Mountain Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month introduces a contained, reflective interval into a Heaven year’s strong direction. Step back to review your commitments and approach, keeping thoughtfulness distinct from stubbornness and leaving room for trusted feedback. Today’s Water influence deepens the month’s inward pull, making quiet reflection fitting while asking you to preserve a gentle connection to everyday life. Step back from a responsibility where possib [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_8_1 {
+            get {
+                return ResourceManager.GetString("_6_8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 8 Mountain Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month introduces a contained, reflective interval into a Heaven year’s strong direction. Step back to review your commitments and approach, keeping thoughtfulness distinct from stubbornness and leaving room for trusted feedback. Today’s Soil influence gives the month’s retreat a practical outlet, offering steadiness through small tasks and familiar care. Support the practical detail or person behind a larger responsibility, br [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_8_2 {
+            get {
+                return ResourceManager.GetString("_6_8_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 8 Mountain Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month introduces a contained, reflective interval into a Heaven year’s strong direction. Step back to review your commitments and approach, keeping thoughtfulness distinct from stubbornness and leaving room for trusted feedback. Today’s Thunder influence brings movement into the month’s contained stillness, offering a brief chance to loosen inertia through a manageable action. Channel a fresh impulse into a clear priority,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_8_3 {
+            get {
+                return ResourceManager.GetString("_6_8_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 8 Mountain Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month introduces a contained, reflective interval into a Heaven year’s strong direction. Step back to review your commitments and approach, keeping thoughtfulness distinct from stubbornness and leaving room for trusted feedback. Today’s Wind influence opens a softer channel for communication within the withdrawn month; a thoughtful exchange can help loosen fixed perspectives. Invite another perspective into a plan and let flex [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_8_4 {
+            get {
+                return ResourceManager.GetString("_6_8_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 8 Mountain Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month introduces a contained, reflective interval into a Heaven year’s strong direction. Step back to review your commitments and approach, keeping thoughtfulness distinct from stubbornness and leaving room for trusted feedback. Today’s Core Earth influence may bring unresolved concerns into the month’s stillness; find your centre before deciding that something must change immediately. Identify what is genuinely yours to [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_8_5 {
+            get {
+                return ResourceManager.GetString("_6_8_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 8 Mountain Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month introduces a contained, reflective interval into a Heaven year’s strong direction. Step back to review your commitments and approach, keeping thoughtfulness distinct from stubbornness and leaving room for trusted feedback. Today’s Heaven influence can help clarify the month’s reflections, provided firmer thinking remains open to feedback rather than becoming rigid. Complete or refine one important task, keeping your st [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_8_6 {
+            get {
+                return ResourceManager.GetString("_6_8_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 8 Mountain Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month introduces a contained, reflective interval into a Heaven year’s strong direction. Step back to review your commitments and approach, keeping thoughtfulness distinct from stubbornness and leaving room for trusted feedback. Today’s Lake influence lightens the month’s retreat through gentle enjoyment and trusted companionship, offering an unforced way to reconnect. Acknowledge progress and enjoy a moment of connection that [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_8_7 {
+            get {
+                return ResourceManager.GetString("_6_8_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 8 Mountain Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month introduces a contained, reflective interval into a Heaven year’s strong direction. Step back to review your commitments and approach, keeping thoughtfulness distinct from stubbornness and leaving room for trusted feedback. Today’s Mountain influence concentrates the month’s stillness, favouring reflection while making small movement and clear communication especially useful. Review a commitment carefully and stay ope [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_8_8 {
+            get {
+                return ResourceManager.GetString("_6_8_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 8 Mountain Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month introduces a contained, reflective interval into a Heaven year’s strong direction. Step back to review your commitments and approach, keeping thoughtfulness distinct from stubbornness and leaving room for trusted feedback. Today’s Fire influence brings a brief warmth and brightness into the withdrawn month, helping you express something or reconnect at a pace that feels comfortable. Share your direction with warmth, allo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_8_9 {
+            get {
+                return ResourceManager.GetString("_6_8_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Phase of Disappointment – Overextension and Emotional Strain in Family Decisions  
@@ -1487,6 +6257,96 @@ namespace K9.Globalisation {
         public static string _6_9 {
             get {
                 return ResourceManager.GetString("_6_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 9 Fire Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month adds expression and visibility to a Heaven year of purposeful work. Share what is becoming clear, while balancing confidence with warmth so that a stronger public presence remains connected to considerate leadership. Today’s Water influence offers a quiet counterpoint to the month’s brightness, helping you absorb insight rather than remain constantly expressive. Step back from a responsibility where possible and listen to the v [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_9_1 {
+            get {
+                return ResourceManager.GetString("_6_9_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 9 Fire Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month adds expression and visibility to a Heaven year of purposeful work. Share what is becoming clear, while balancing confidence with warmth so that a stronger public presence remains connected to considerate leadership. Today’s Soil influence grounds the month’s visibility in simple, practical care, giving expression a steadier foundation. Support the practical detail or person behind a larger responsibility, bringing care into the [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_9_2 {
+            get {
+                return ResourceManager.GetString("_6_9_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 9 Fire Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month adds expression and visibility to a Heaven year of purposeful work. Share what is becoming clear, while balancing confidence with warmth so that a stronger public presence remains connected to considerate leadership. Today’s Thunder influence adds a quick burst of initiative to the expressive month; direct it deliberately so that enthusiasm does not become reactivity. Channel a fresh impulse into a clear priority, taking time [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_9_3 {
+            get {
+                return ResourceManager.GetString("_6_9_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 9 Fire Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month adds expression and visibility to a Heaven year of purposeful work. Share what is becoming clear, while balancing confidence with warmth so that a stronger public presence remains connected to considerate leadership. Today’s Wind influence brings tact and flexibility to the month’s stronger expression, helping a message become a thoughtful conversation. Invite another perspective into a plan and let flexibility strengthen, rathe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_9_4 {
+            get {
+                return ResourceManager.GetString("_6_9_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 9 Fire Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month adds expression and visibility to a Heaven year of purposeful work. Share what is becoming clear, while balancing confidence with warmth so that a stronger public presence remains connected to considerate leadership. Today’s Core Earth influence asks you to centre yourself within the month’s intensity, allowing strong feelings to settle before turning them into a decision. Identify what is genuinely yours to carry and give [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_9_5 {
+            get {
+                return ResourceManager.GetString("_6_9_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 9 Fire Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month adds expression and visibility to a Heaven year of purposeful work. Share what is becoming clear, while balancing confidence with warmth so that a stronger public presence remains connected to considerate leadership. Today’s Heaven influence brings precision to the month’s brightness, helping you refine what you want to say without making it overly forceful. Complete or refine one important task, keeping your standards humane  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_9_6 {
+            get {
+                return ResourceManager.GetString("_6_9_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 9 Fire Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month adds expression and visibility to a Heaven year of purposeful work. Share what is becoming clear, while balancing confidence with warmth so that a stronger public presence remains connected to considerate leadership. Today’s Lake influence softens the month’s expressive intensity with humour and relaxed connection, allowing enjoyment without a need to perform. Acknowledge progress and enjoy a moment of connection that is not org [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_9_7 {
+            get {
+                return ResourceManager.GetString("_6_9_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 9 Fire Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month adds expression and visibility to a Heaven year of purposeful work. Share what is becoming clear, while balancing confidence with warmth so that a stronger public presence remains connected to considerate leadership. Today’s Mountain influence introduces a contained pause into the bright month, making space to integrate what has been seen or felt. Review a commitment carefully and stay open to feedback, letting reflection de [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_9_8 {
+            get {
+                return ResourceManager.GetString("_6_9_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;6 Heaven Year · 9 Fire Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month adds expression and visibility to a Heaven year of purposeful work. Share what is becoming clear, while balancing confidence with warmth so that a stronger public presence remains connected to considerate leadership. Today’s Fire influence heightens the month’s brightness and emotional intensity, favouring authentic expression with pauses for grounding and rest. Share your direction with warmth, allowing confidence to make room  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _6_9_9 {
+            get {
+                return ResourceManager.GetString("_6_9_9", resourceCulture);
             }
         }
         
@@ -1657,6 +6517,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 1 Water Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month brings depth and quieter reflection to a Lake year’s enjoyment and sociability. Allow pleasure to become more restorative through solitude, meaningful conversation or quiet appreciation, rather than expecting yourself to remain outwardly engaged. Today’s Water influence draws this quiet monthly current further inward, making unhurried reflection especially fitting. Let enjoyment become quieter and more reflective today, perhaps [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_1_1 {
+            get {
+                return ResourceManager.GetString("_7_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 1 Water Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month brings depth and quieter reflection to a Lake year’s enjoyment and sociability. Allow pleasure to become more restorative through solitude, meaningful conversation or quiet appreciation, rather than expecting yourself to remain outwardly engaged. Today’s Soil influence gives the month’s inward current a practical anchor through simple care, preparation and familiar routines. Attend to a practical detail that supports the ease yo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_1_2 {
+            get {
+                return ResourceManager.GetString("_7_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 1 Water Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month brings depth and quieter reflection to a Lake year’s enjoyment and sociability. Allow pleasure to become more restorative through solitude, meaningful conversation or quiet appreciation, rather than expecting yourself to remain outwardly engaged. Today’s Thunder influence brings a brief opening for movement within the quieter month, helping loosen inertia without demanding a lasting change of pace. Choose a playful activity o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_1_3 {
+            get {
+                return ResourceManager.GetString("_7_1_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 1 Water Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month brings depth and quieter reflection to a Lake year’s enjoyment and sociability. Allow pleasure to become more restorative through solitude, meaningful conversation or quiet appreciation, rather than expecting yourself to remain outwardly engaged. Today’s Wind influence makes gentle expression more accessible within the inward month, offering a bridge between private reflection and thoughtful conversation. Deepen a pleasant conne [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_1_4 {
+            get {
+                return ResourceManager.GetString("_7_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 1 Water Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month brings depth and quieter reflection to a Lake year’s enjoyment and sociability. Allow pleasure to become more restorative through solitude, meaningful conversation or quiet appreciation, rather than expecting yourself to remain outwardly engaged. Today’s Core Earth influence may bring several inner concerns into focus at once; reduce competing demands rather than forcing the month’s questions into a quick answer. Make room [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_1_5 {
+            get {
+                return ResourceManager.GetString("_7_1_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 1 Water Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month brings depth and quieter reflection to a Lake year’s enjoyment and sociability. Allow pleasure to become more restorative through solitude, meaningful conversation or quiet appreciation, rather than expecting yourself to remain outwardly engaged. Today’s Heaven influence can help organise the month’s private reflections into clearer priorities, while a considerate tone keeps clarity from feeling harsh. Set a clear limit around [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_1_6 {
+            get {
+                return ResourceManager.GetString("_7_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 1 Water Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month brings depth and quieter reflection to a Lake year’s enjoyment and sociability. Allow pleasure to become more restorative through solitude, meaningful conversation or quiet appreciation, rather than expecting yourself to remain outwardly engaged. Today’s Lake influence brings a softer, more sociable note to the quiet month, making gentle companionship or beauty a welcome source of relief. Savour something simple with gratitude a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_1_7 {
+            get {
+                return ResourceManager.GetString("_7_1_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 1 Water Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month brings depth and quieter reflection to a Lake year’s enjoyment and sociability. Allow pleasure to become more restorative through solitude, meaningful conversation or quiet appreciation, rather than expecting yourself to remain outwardly engaged. Today’s Mountain influence adds a more contained stillness to the inward month, favouring quiet focus while calling for care around excessive withdrawal. Take a reflective pause and [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_1_8 {
+            get {
+                return ResourceManager.GetString("_7_1_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 1 Water Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month brings depth and quieter reflection to a Lake year’s enjoyment and sociability. Allow pleasure to become more restorative through solitude, meaningful conversation or quiet appreciation, rather than expecting yourself to remain outwardly engaged. Today’s Fire influence brings a brief shaft of light into the inward month, making connection or expression more inviting without ending its quieter rhythm. Enjoy warm expression or cre [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_1_9 {
+            get {
+                return ResourceManager.GetString("_7_1_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Strong Spiritual Period – Wisdom, Reflection, and Rest  
@@ -1668,6 +6618,96 @@ namespace K9.Globalisation {
         public static string _7_2 {
             get {
                 return ResourceManager.GetString("_7_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 2 Soil Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings practical care to a Lake year’s atmosphere of ease. Tending your home, routines and close relationships can make enjoyment more sustainable, while helping you appreciate what supports the life you are savouring. Today’s Water influence brings the month’s practical preparation back to inward listening; give yourself room to sense what genuinely needs tending. Let enjoyment become quieter and more reflective today, perhaps t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_2_1 {
+            get {
+                return ResourceManager.GetString("_7_2_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 2 Soil Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings practical care to a Lake year’s atmosphere of ease. Tending your home, routines and close relationships can make enjoyment more sustainable, while helping you appreciate what supports the life you are savouring. Today’s Soil influence reinforces the month’s patient groundwork, favouring small acts of care and a steady, manageable rhythm. Attend to a practical detail that supports the ease you are enjoying, so that pleasure  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_2_2 {
+            get {
+                return ResourceManager.GetString("_7_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 2 Soil Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings practical care to a Lake year’s atmosphere of ease. Tending your home, routines and close relationships can make enjoyment more sustainable, while helping you appreciate what supports the life you are savouring. Today’s Thunder influence can turn the month’s preparations into a useful first step, provided enthusiasm does not outrun what is ready. Choose a playful activity or small creative task that refreshes you without [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_2_3 {
+            get {
+                return ResourceManager.GetString("_7_2_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 2 Soil Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings practical care to a Lake year’s atmosphere of ease. Tending your home, routines and close relationships can make enjoyment more sustainable, while helping you appreciate what supports the life you are savouring. Today’s Wind influence helps the month’s developing plans through thoughtful exchange, gentle collaboration and willingness to refine the details. Deepen a pleasant connection through sincerity and attentive exchang [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_2_4 {
+            get {
+                return ResourceManager.GetString("_7_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 2 Soil Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings practical care to a Lake year’s atmosphere of ease. Tending your home, routines and close relationships can make enjoyment more sustainable, while helping you appreciate what supports the life you are savouring. Today’s Core Earth influence may draw several responsibilities into the month’s quieter preparation; simplify and identify what truly deserves attention. Make room for a feeling beneath the surface, allowing h [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_2_5 {
+            get {
+                return ResourceManager.GetString("_7_2_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 2 Soil Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings practical care to a Lake year’s atmosphere of ease. Tending your home, routines and close relationships can make enjoyment more sustainable, while helping you appreciate what supports the life you are savouring. Today’s Heaven influence helps bring clearer order to the month’s groundwork, making a modest plan or useful boundary easier to define. Set a clear limit around an invitation, expense or commitment so that your en [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_2_6 {
+            get {
+                return ResourceManager.GetString("_7_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 2 Soil Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings practical care to a Lake year’s atmosphere of ease. Tending your home, routines and close relationships can make enjoyment more sustainable, while helping you appreciate what supports the life you are savouring. Today’s Lake influence softens the month’s seriousness through enjoyment and familiar connection, reminding you that preparation can include pleasure. Savour something simple with gratitude and moderation; genuine n [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_2_7 {
+            get {
+                return ResourceManager.GetString("_7_2_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 2 Soil Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings practical care to a Lake year’s atmosphere of ease. Tending your home, routines and close relationships can make enjoyment more sustainable, while helping you appreciate what supports the life you are savouring. Today’s Mountain influence slows the month’s emerging intentions, making a pause for review more fitting than pushing for visible progress. Take a reflective pause and appreciate what you have, keeping a gentle  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_2_8 {
+            get {
+                return ResourceManager.GetString("_7_2_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 2 Soil Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings practical care to a Lake year’s atmosphere of ease. Tending your home, routines and close relationships can make enjoyment more sustainable, while helping you appreciate what supports the life you are savouring. Today’s Fire influence brightens the month’s quieter preparation, offering a moment to share an idea or reconnect without rushing its development. Enjoy warm expression or creative company, leaving room to notice yo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_2_9 {
+            get {
+                return ResourceManager.GetString("_7_2_9", resourceCulture);
             }
         }
         
@@ -1687,6 +6727,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 3 Thunder Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a lively impulse to the enjoyment of a Lake year. Creative activity or a small new adventure can refresh your sense of possibility; stay discerning so that enthusiasm and pleasure do not lead to scattered commitments. Today’s Water influence tempers the month’s enthusiasm with a quieter need to reflect, helping you consider the direction behind your activity. Let enjoyment become quieter and more reflective today, perh [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_3_1 {
+            get {
+                return ResourceManager.GetString("_7_3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 3 Thunder Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a lively impulse to the enjoyment of a Lake year. Creative activity or a small new adventure can refresh your sense of possibility; stay discerning so that enthusiasm and pleasure do not lead to scattered commitments. Today’s Soil influence grounds the month’s quickening momentum in practical care; attend to a neglected detail before reaching for another new beginning. Attend to a practical detail that supports the ease [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_3_2 {
+            get {
+                return ResourceManager.GetString("_7_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 3 Thunder Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a lively impulse to the enjoyment of a Lake year. Creative activity or a small new adventure can refresh your sense of possibility; stay discerning so that enthusiasm and pleasure do not lead to scattered commitments. Today’s Thunder influence adds a further burst of initiative to an already active month, making a clear focus particularly valuable. Choose a playful activity or small creative task that refreshes you w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_3_3 {
+            get {
+                return ResourceManager.GetString("_7_3_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 3 Thunder Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a lively impulse to the enjoyment of a Lake year. Creative activity or a small new adventure can refresh your sense of possibility; stay discerning so that enthusiasm and pleasure do not lead to scattered commitments. Today’s Wind influence helps the month’s fresh initiatives develop through tact, collaboration and gentler follow-through. Deepen a pleasant connection through sincerity and attentive exchange rather than  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_3_4 {
+            get {
+                return ResourceManager.GetString("_7_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 3 Thunder Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a lively impulse to the enjoyment of a Lake year. Creative activity or a small new adventure can refresh your sense of possibility; stay discerning so that enthusiasm and pleasure do not lead to scattered commitments. Today’s Core Earth influence brings a centring pause within the active month; reconsider competing impulses before deciding where to put your effort. Make room for a feeling beneath the surface, allo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_3_5 {
+            get {
+                return ResourceManager.GetString("_7_3_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 3 Thunder Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a lively impulse to the enjoyment of a Lake year. Creative activity or a small new adventure can refresh your sense of possibility; stay discerning so that enthusiasm and pleasure do not lead to scattered commitments. Today’s Heaven influence gives the month’s lively ideas a more precise direction, helping distinguish a useful next step from mere urgency. Set a clear limit around an invitation, expense or commitment s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_3_6 {
+            get {
+                return ResourceManager.GetString("_7_3_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 3 Thunder Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a lively impulse to the enjoyment of a Lake year. Creative activity or a small new adventure can refresh your sense of possibility; stay discerning so that enthusiasm and pleasure do not lead to scattered commitments. Today’s Lake influence invites enjoyment within the month’s momentum, making shared creativity or a relaxed conversation a useful release of pressure. Savour something simple with gratitude and moderation; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_3_7 {
+            get {
+                return ResourceManager.GetString("_7_3_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 3 Thunder Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a lively impulse to the enjoyment of a Lake year. Creative activity or a small new adventure can refresh your sense of possibility; stay discerning so that enthusiasm and pleasure do not lead to scattered commitments. Today’s Mountain influence introduces stillness into an energetic month; a deliberate pause can reveal where impatience is obscuring your direction. Take a reflective pause and appreciate what you have [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_3_8 {
+            get {
+                return ResourceManager.GetString("_7_3_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 3 Thunder Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds a lively impulse to the enjoyment of a Lake year. Creative activity or a small new adventure can refresh your sense of possibility; stay discerning so that enthusiasm and pleasure do not lead to scattered commitments. Today’s Fire influence makes the month’s fresh ideas more expressive and visible, while asking you to temper excitement with care in communication. Enjoy warm expression or creative company, leaving room t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_3_9 {
+            get {
+                return ResourceManager.GetString("_7_3_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Period of Emotional Turmoil – Guarding Words and Navigating Relationships  
@@ -1698,6 +6828,96 @@ namespace K9.Globalisation {
         public static string _7_4 {
             get {
                 return ResourceManager.GetString("_7_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 4 Wind Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings creative exchange and relational growth to a Lake year. Enjoy the flow of conversation and collaboration, keeping sincerity and continuity at the heart of connections that might otherwise remain only pleasant encounters. Today’s Water influence turns the month’s outward exchange toward quiet listening, making space to absorb what you have been learning or sharing. Let enjoyment become quieter and more reflective today, per [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_4_1 {
+            get {
+                return ResourceManager.GetString("_7_4_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 4 Wind Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings creative exchange and relational growth to a Lake year. Enjoy the flow of conversation and collaboration, keeping sincerity and continuity at the heart of connections that might otherwise remain only pleasant encounters. Today’s Soil influence brings practical consistency to the month’s growth, favouring the small acts that keep relationships and projects well supported. Attend to a practical detail that supports the ease y [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_4_2 {
+            get {
+                return ResourceManager.GetString("_7_4_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 4 Wind Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings creative exchange and relational growth to a Lake year. Enjoy the flow of conversation and collaboration, keeping sincerity and continuity at the heart of connections that might otherwise remain only pleasant encounters. Today’s Thunder influence gives the month’s ongoing development a fresh push; channel it into something already worth nurturing. Choose a playful activity or small creative task that refreshes you withou [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_4_3 {
+            get {
+                return ResourceManager.GetString("_7_4_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 4 Wind Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings creative exchange and relational growth to a Lake year. Enjoy the flow of conversation and collaboration, keeping sincerity and continuity at the heart of connections that might otherwise remain only pleasant encounters. Today’s Wind influence reinforces the month’s flexible, communicative quality, with gentle collaboration favoured over scattered engagement. Deepen a pleasant connection through sincerity and attentive exch [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_4_4 {
+            get {
+                return ResourceManager.GetString("_7_4_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 4 Wind Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings creative exchange and relational growth to a Lake year. Enjoy the flow of conversation and collaboration, keeping sincerity and continuity at the heart of connections that might otherwise remain only pleasant encounters. Today’s Core Earth influence asks you to centre yourself amid the month’s many connections, clarifying which demands belong with you. Make room for a feeling beneath the surface, allowing honest refle [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_4_5 {
+            get {
+                return ResourceManager.GetString("_7_4_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 4 Wind Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings creative exchange and relational growth to a Lake year. Enjoy the flow of conversation and collaboration, keeping sincerity and continuity at the heart of connections that might otherwise remain only pleasant encounters. Today’s Heaven influence brings definition to the month’s flowing possibilities, helping you edit a plan or make a clear, considerate commitment. Set a clear limit around an invitation, expense or commitm [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_4_6 {
+            get {
+                return ResourceManager.GetString("_7_4_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 4 Wind Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings creative exchange and relational growth to a Lake year. Enjoy the flow of conversation and collaboration, keeping sincerity and continuity at the heart of connections that might otherwise remain only pleasant encounters. Today’s Lake influence lends pleasure and warmth to the month’s relationships, favouring sincere enjoyment and unforced creative exchange. Savour something simple with gratitude and moderation; genuine nour [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_4_7 {
+            get {
+                return ResourceManager.GetString("_7_4_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 4 Wind Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings creative exchange and relational growth to a Lake year. Enjoy the flow of conversation and collaboration, keeping sincerity and continuity at the heart of connections that might otherwise remain only pleasant encounters. Today’s Mountain influence creates a quieter space within the communicative month; step back to reflect without shutting others out completely. Take a reflective pause and appreciate what you have, keep [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_4_8 {
+            get {
+                return ResourceManager.GetString("_7_4_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 4 Wind Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month brings creative exchange and relational growth to a Lake year. Enjoy the flow of conversation and collaboration, keeping sincerity and continuity at the heart of connections that might otherwise remain only pleasant encounters. Today’s Fire influence brings the month’s ideas and connections into brighter focus, making thoughtful sharing easier while increasing emotional sensitivity. Enjoy warm expression or creative company, leavi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_4_9 {
+            get {
+                return ResourceManager.GetString("_7_4_9", resourceCulture);
             }
         }
         
@@ -1717,6 +6937,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 5 Core Earth Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings deeper questions into a Lake year’s more relaxed rhythm. If old concerns interrupt the ease, make room to reflect and reset boundaries rather than using distraction to preserve a carefree surface. Today’s Water influence deepens the month’s inner reassessment, favouring private reflection and a lighter load of external demands. Let enjoyment become quieter and more reflective today, perhaps through music, solit [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_5_1 {
+            get {
+                return ResourceManager.GetString("_7_5_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 5 Core Earth Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings deeper questions into a Lake year’s more relaxed rhythm. If old concerns interrupt the ease, make room to reflect and reset boundaries rather than using distraction to preserve a carefree surface. Today’s Soil influence offers a dependable practical rhythm within the month’s shifting concerns, helping you find steadiness through simple care. Attend to a practical detail that supports the ease you are enjoying, s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_5_2 {
+            get {
+                return ResourceManager.GetString("_7_5_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 5 Core Earth Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings deeper questions into a Lake year’s more relaxed rhythm. If old concerns interrupt the ease, make room to reflect and reset boundaries rather than using distraction to preserve a carefree surface. Today’s Thunder influence brings a burst of initiative into the month’s uncertainty; a small, contained action can be useful without resolving every larger question. Choose a playful activity or small creative task  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_5_3 {
+            get {
+                return ResourceManager.GetString("_7_5_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 5 Core Earth Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings deeper questions into a Lake year’s more relaxed rhythm. If old concerns interrupt the ease, make room to reflect and reset boundaries rather than using distraction to preserve a carefree surface. Today’s Wind influence offers a gentler way to explore the month’s uncertainties through conversation, flexibility and openness to another perspective. Deepen a pleasant connection through sincerity and attentive excha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_5_4 {
+            get {
+                return ResourceManager.GetString("_7_5_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 5 Core Earth Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings deeper questions into a Lake year’s more relaxed rhythm. If old concerns interrupt the ease, make room to reflect and reset boundaries rather than using distraction to preserve a carefree surface. Today’s Core Earth influence repeats the month’s centring theme; reduce the number of things demanding an answer and listen for your own priorities. Make room for a feeling beneath the surface, allowing honest re [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_5_5 {
+            get {
+                return ResourceManager.GetString("_7_5_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 5 Core Earth Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings deeper questions into a Lake year’s more relaxed rhythm. If old concerns interrupt the ease, make room to reflect and reset boundaries rather than using distraction to preserve a carefree surface. Today’s Heaven influence can help sort the month’s competing concerns into clearer boundaries, while allowing decisions to remain open to reflection. Set a clear limit around an invitation, expense or commitment so t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_5_6 {
+            get {
+                return ResourceManager.GetString("_7_5_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 5 Core Earth Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings deeper questions into a Lake year’s more relaxed rhythm. If old concerns interrupt the ease, make room to reflect and reset boundaries rather than using distraction to preserve a carefree surface. Today’s Lake influence brings welcome softness to the month’s intensity, making restorative company or simple enjoyment a useful source of perspective. Savour something simple with gratitude and moderation; genuine nou [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_5_7 {
+            get {
+                return ResourceManager.GetString("_7_5_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 5 Core Earth Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings deeper questions into a Lake year’s more relaxed rhythm. If old concerns interrupt the ease, make room to reflect and reset boundaries rather than using distraction to preserve a carefree surface. Today’s Mountain influence adds a pause within the month’s inner changes; reflect patiently, while avoiding the temptation to shut down around uncertainty. Take a reflective pause and appreciate what you have, keep [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_5_8 {
+            get {
+                return ResourceManager.GetString("_7_5_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 5 Core Earth Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings deeper questions into a Lake year’s more relaxed rhythm. If old concerns interrupt the ease, make room to reflect and reset boundaries rather than using distraction to preserve a carefree surface. Today’s Fire influence illuminates the month’s unresolved feelings or questions, making expression possible without requiring an immediate conclusion. Enjoy warm expression or creative company, leaving room to notice y [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_5_9 {
+            get {
+                return ResourceManager.GetString("_7_5_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time for Detail Work and Collaboration – Staying Mindful of Overwhelm  
@@ -1728,6 +7038,96 @@ namespace K9.Globalisation {
         public static string _7_6 {
             get {
                 return ResourceManager.GetString("_7_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 6 Heaven Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer structure to a Lake year’s pleasures and opportunities. Reviewing commitments and setting limits can help you enjoy what is genuinely nourishing without losing sight of practical responsibilities. Today’s Water influence softens the month’s decisive focus, offering space to listen inward before responding to responsibilities. Let enjoyment become quieter and more reflective today, perhaps through music, solitude [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_6_1 {
+            get {
+                return ResourceManager.GetString("_7_6_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 6 Heaven Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer structure to a Lake year’s pleasures and opportunities. Reviewing commitments and setting limits can help you enjoy what is genuinely nourishing without losing sight of practical responsibilities. Today’s Soil influence gives the month’s sense of purpose a caring, practical expression, reminding you to support the people and routines behind the plans. Attend to a practical detail that supports the ease you are en [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_6_2 {
+            get {
+                return ResourceManager.GetString("_7_6_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 6 Heaven Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer structure to a Lake year’s pleasures and opportunities. Reviewing commitments and setting limits can help you enjoy what is genuinely nourishing without losing sight of practical responsibilities. Today’s Thunder influence adds spontaneity to the month’s structure; let a fresh idea serve your priorities rather than upset them through impatience. Choose a playful activity or small creative task that refreshes y [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_6_3 {
+            get {
+                return ResourceManager.GetString("_7_6_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 6 Heaven Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer structure to a Lake year’s pleasures and opportunities. Reviewing commitments and setting limits can help you enjoy what is genuinely nourishing without losing sight of practical responsibilities. Today’s Wind influence lends tact and flexibility to the month’s more direct communication, helping clarity remain responsive to others. Deepen a pleasant connection through sincerity and attentive exchange rather than  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_6_4 {
+            get {
+                return ResourceManager.GetString("_7_6_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 6 Heaven Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer structure to a Lake year’s pleasures and opportunities. Reviewing commitments and setting limits can help you enjoy what is genuinely nourishing without losing sight of practical responsibilities. Today’s Core Earth influence asks for centring within the month’s responsibilities; distinguish your real obligations from demands you have simply absorbed. Make room for a feeling beneath the surface, allowing ho [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_6_5 {
+            get {
+                return ResourceManager.GetString("_7_6_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 6 Heaven Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer structure to a Lake year’s pleasures and opportunities. Reviewing commitments and setting limits can help you enjoy what is genuinely nourishing without losing sight of practical responsibilities. Today’s Heaven influence reinforces the month’s orderly, purposeful quality, making warmth and willingness to listen especially valuable companions to conviction. Set a clear limit around an invitation, expense or com [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_6_6 {
+            get {
+                return ResourceManager.GetString("_7_6_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 6 Heaven Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer structure to a Lake year’s pleasures and opportunities. Reviewing commitments and setting limits can help you enjoy what is genuinely nourishing without losing sight of practical responsibilities. Today’s Lake influence relaxes the month’s formality, opening room for appreciation, humour and connection beyond getting things done. Savour something simple with gratitude and moderation; genuine nourishment can be mo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_6_7 {
+            get {
+                return ResourceManager.GetString("_7_6_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 6 Heaven Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer structure to a Lake year’s pleasures and opportunities. Reviewing commitments and setting limits can help you enjoy what is genuinely nourishing without losing sight of practical responsibilities. Today’s Mountain influence pauses the month’s drive for clarity, inviting careful review while asking you not to become fixed in a single viewpoint. Take a reflective pause and appreciate what you have, keeping a ge [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_6_8 {
+            get {
+                return ResourceManager.GetString("_7_6_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 6 Heaven Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer structure to a Lake year’s pleasures and opportunities. Reviewing commitments and setting limits can help you enjoy what is genuinely nourishing without losing sight of practical responsibilities. Today’s Fire influence adds expression and visibility to the month’s focus; share your direction warmly and remain attentive to how your words are received. Enjoy warm expression or creative company, leaving room to not [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_6_9 {
+            get {
+                return ResourceManager.GetString("_7_6_9", resourceCulture);
             }
         }
         
@@ -1747,6 +7147,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 7 Lake Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;Lake across year and month emphasises appreciation, beauty and heartfelt enjoyment. Let ease deepen into gratitude and genuine connection, while maintaining enough honesty and moderation to avoid slipping into distraction or overindulgence. Today’s Water influence brings a quieter depth to the month’s sociability, making meaningful solitude or an intimate conversation more nourishing than a busy schedule. Let enjoyment become quieter and more [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_7_1 {
+            get {
+                return ResourceManager.GetString("_7_7_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 7 Lake Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;Lake across year and month emphasises appreciation, beauty and heartfelt enjoyment. Let ease deepen into gratitude and genuine connection, while maintaining enough honesty and moderation to avoid slipping into distraction or overindulgence. Today’s Soil influence grounds the month’s enjoyment in everyday care, helping pleasure remain connected to what supports you. Attend to a practical detail that supports the ease you are enjoying, so that p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_7_2 {
+            get {
+                return ResourceManager.GetString("_7_7_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 7 Lake Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;Lake across year and month emphasises appreciation, beauty and heartfelt enjoyment. Let ease deepen into gratitude and genuine connection, while maintaining enough honesty and moderation to avoid slipping into distraction or overindulgence. Today’s Thunder influence adds lively movement to the month’s relaxed atmosphere, favouring a creative task or playful activity with a clear limit. Choose a playful activity or small creative task that r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_7_3 {
+            get {
+                return ResourceManager.GetString("_7_7_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 7 Lake Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;Lake across year and month emphasises appreciation, beauty and heartfelt enjoyment. Let ease deepen into gratitude and genuine connection, while maintaining enough honesty and moderation to avoid slipping into distraction or overindulgence. Today’s Wind influence extends the month’s openness into gentle collaboration and thoughtful exchange, with sincerity keeping connections substantial. Deepen a pleasant connection through sincerity and atte [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_7_4 {
+            get {
+                return ResourceManager.GetString("_7_7_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 7 Lake Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;Lake across year and month emphasises appreciation, beauty and heartfelt enjoyment. Let ease deepen into gratitude and genuine connection, while maintaining enough honesty and moderation to avoid slipping into distraction or overindulgence. Today’s Core Earth influence draws attention beneath the month’s pleasant surface; make room for an unresolved feeling instead of covering it with more activity. Make room for a feeling beneath the su [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_7_5 {
+            get {
+                return ResourceManager.GetString("_7_7_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 7 Lake Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;Lake across year and month emphasises appreciation, beauty and heartfelt enjoyment. Let ease deepen into gratitude and genuine connection, while maintaining enough honesty and moderation to avoid slipping into distraction or overindulgence. Today’s Heaven influence helps set clear limits within the month’s invitations and pleasures, making it easier to choose what genuinely matters. Set a clear limit around an invitation, expense or commitme [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_7_6 {
+            get {
+                return ResourceManager.GetString("_7_7_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 7 Lake Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;Lake across year and month emphasises appreciation, beauty and heartfelt enjoyment. Let ease deepen into gratitude and genuine connection, while maintaining enough honesty and moderation to avoid slipping into distraction or overindulgence. Today’s Lake influence reinforces the month’s ease and enjoyment, inviting gratitude and heartfelt connection alongside moderation. Savour something simple with gratitude and moderation; genuine nourishment [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_7_7 {
+            get {
+                return ResourceManager.GetString("_7_7_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 7 Lake Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;Lake across year and month emphasises appreciation, beauty and heartfelt enjoyment. Let ease deepen into gratitude and genuine connection, while maintaining enough honesty and moderation to avoid slipping into distraction or overindulgence. Today’s Mountain influence draws the month’s sociability into a quieter pause, allowing appreciation to become more inward without closing the door to others. Take a reflective pause and appreciate what [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_7_8 {
+            get {
+                return ResourceManager.GetString("_7_7_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 7 Lake Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;Lake across year and month emphasises appreciation, beauty and heartfelt enjoyment. Let ease deepen into gratitude and genuine connection, while maintaining enough honesty and moderation to avoid slipping into distraction or overindulgence. Today’s Fire influence brightens the month’s social warmth, favouring honest expression while calling for care around attention, sensitivity and overextension. Enjoy warm expression or creative company, lea [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_7_9 {
+            get {
+                return ResourceManager.GetString("_7_7_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Test Phase – Family Challenges and Financial Caution  
@@ -1762,6 +7252,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 8 Mountain Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month draws the sociability of a Lake year into a quieter, more reflective space. Let enjoyment become simpler and more inward for a while, keeping gentle contact with loved ones as you consider what is ready to be released. Today’s Water influence deepens the month’s inward pull, making quiet reflection fitting while asking you to preserve a gentle connection to everyday life. Let enjoyment become quieter and more reflective t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_8_1 {
+            get {
+                return ResourceManager.GetString("_7_8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 8 Mountain Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month draws the sociability of a Lake year into a quieter, more reflective space. Let enjoyment become simpler and more inward for a while, keeping gentle contact with loved ones as you consider what is ready to be released. Today’s Soil influence gives the month’s retreat a practical outlet, offering steadiness through small tasks and familiar care. Attend to a practical detail that supports the ease you are enjoying, so that p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_8_2 {
+            get {
+                return ResourceManager.GetString("_7_8_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 8 Mountain Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month draws the sociability of a Lake year into a quieter, more reflective space. Let enjoyment become simpler and more inward for a while, keeping gentle contact with loved ones as you consider what is ready to be released. Today’s Thunder influence brings movement into the month’s contained stillness, offering a brief chance to loosen inertia through a manageable action. Choose a playful activity or small creative task that [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_8_3 {
+            get {
+                return ResourceManager.GetString("_7_8_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 8 Mountain Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month draws the sociability of a Lake year into a quieter, more reflective space. Let enjoyment become simpler and more inward for a while, keeping gentle contact with loved ones as you consider what is ready to be released. Today’s Wind influence opens a softer channel for communication within the withdrawn month; a thoughtful exchange can help loosen fixed perspectives. Deepen a pleasant connection through sincerity and attent [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_8_4 {
+            get {
+                return ResourceManager.GetString("_7_8_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 8 Mountain Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month draws the sociability of a Lake year into a quieter, more reflective space. Let enjoyment become simpler and more inward for a while, keeping gentle contact with loved ones as you consider what is ready to be released. Today’s Core Earth influence may bring unresolved concerns into the month’s stillness; find your centre before deciding that something must change immediately. Make room for a feeling beneath the surfa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_8_5 {
+            get {
+                return ResourceManager.GetString("_7_8_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 8 Mountain Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month draws the sociability of a Lake year into a quieter, more reflective space. Let enjoyment become simpler and more inward for a while, keeping gentle contact with loved ones as you consider what is ready to be released. Today’s Heaven influence can help clarify the month’s reflections, provided firmer thinking remains open to feedback rather than becoming rigid. Set a clear limit around an invitation, expense or commitmen [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_8_6 {
+            get {
+                return ResourceManager.GetString("_7_8_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 8 Mountain Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month draws the sociability of a Lake year into a quieter, more reflective space. Let enjoyment become simpler and more inward for a while, keeping gentle contact with loved ones as you consider what is ready to be released. Today’s Lake influence lightens the month’s retreat through gentle enjoyment and trusted companionship, offering an unforced way to reconnect. Savour something simple with gratitude and moderation; genuine n [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_8_7 {
+            get {
+                return ResourceManager.GetString("_7_8_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 8 Mountain Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month draws the sociability of a Lake year into a quieter, more reflective space. Let enjoyment become simpler and more inward for a while, keeping gentle contact with loved ones as you consider what is ready to be released. Today’s Mountain influence concentrates the month’s stillness, favouring reflection while making small movement and clear communication especially useful. Take a reflective pause and appreciate what you  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_8_8 {
+            get {
+                return ResourceManager.GetString("_7_8_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 8 Mountain Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month draws the sociability of a Lake year into a quieter, more reflective space. Let enjoyment become simpler and more inward for a while, keeping gentle contact with loved ones as you consider what is ready to be released. Today’s Fire influence brings a brief warmth and brightness into the withdrawn month, helping you express something or reconnect at a pace that feels comfortable. Enjoy warm expression or creative company, l [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_8_9 {
+            get {
+                return ResourceManager.GetString("_7_8_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Period of Spiritual and Mental Conflict – Embrace Calm and Observe Change  
@@ -1773,6 +7353,96 @@ namespace K9.Globalisation {
         public static string _7_9 {
             get {
                 return ResourceManager.GetString("_7_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 9 Fire Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Lake year’s sociability brighter and more expressive. Warm encounters and creative sharing can feel especially inviting, though emotional sensitivity and the desire for attention benefit from sincerity and a measured pace. Today’s Water influence offers a quiet counterpoint to the month’s brightness, helping you absorb insight rather than remain constantly expressive. Let enjoyment become quieter and more reflective today [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_9_1 {
+            get {
+                return ResourceManager.GetString("_7_9_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 9 Fire Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Lake year’s sociability brighter and more expressive. Warm encounters and creative sharing can feel especially inviting, though emotional sensitivity and the desire for attention benefit from sincerity and a measured pace. Today’s Soil influence grounds the month’s visibility in simple, practical care, giving expression a steadier foundation. Attend to a practical detail that supports the ease you are enjoying, so that ple [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_9_2 {
+            get {
+                return ResourceManager.GetString("_7_9_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 9 Fire Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Lake year’s sociability brighter and more expressive. Warm encounters and creative sharing can feel especially inviting, though emotional sensitivity and the desire for attention benefit from sincerity and a measured pace. Today’s Thunder influence adds a quick burst of initiative to the expressive month; direct it deliberately so that enthusiasm does not become reactivity. Choose a playful activity or small creative ta [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_9_3 {
+            get {
+                return ResourceManager.GetString("_7_9_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 9 Fire Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Lake year’s sociability brighter and more expressive. Warm encounters and creative sharing can feel especially inviting, though emotional sensitivity and the desire for attention benefit from sincerity and a measured pace. Today’s Wind influence brings tact and flexibility to the month’s stronger expression, helping a message become a thoughtful conversation. Deepen a pleasant connection through sincerity and attentive exc [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_9_4 {
+            get {
+                return ResourceManager.GetString("_7_9_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 9 Fire Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Lake year’s sociability brighter and more expressive. Warm encounters and creative sharing can feel especially inviting, though emotional sensitivity and the desire for attention benefit from sincerity and a measured pace. Today’s Core Earth influence asks you to centre yourself within the month’s intensity, allowing strong feelings to settle before turning them into a decision. Make room for a feeling beneath the su [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_9_5 {
+            get {
+                return ResourceManager.GetString("_7_9_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 9 Fire Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Lake year’s sociability brighter and more expressive. Warm encounters and creative sharing can feel especially inviting, though emotional sensitivity and the desire for attention benefit from sincerity and a measured pace. Today’s Heaven influence brings precision to the month’s brightness, helping you refine what you want to say without making it overly forceful. Set a clear limit around an invitation, expense or commit [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_9_6 {
+            get {
+                return ResourceManager.GetString("_7_9_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 9 Fire Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Lake year’s sociability brighter and more expressive. Warm encounters and creative sharing can feel especially inviting, though emotional sensitivity and the desire for attention benefit from sincerity and a measured pace. Today’s Lake influence softens the month’s expressive intensity with humour and relaxed connection, allowing enjoyment without a need to perform. Savour something simple with gratitude and moderation; ge [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_9_7 {
+            get {
+                return ResourceManager.GetString("_7_9_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 9 Fire Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Lake year’s sociability brighter and more expressive. Warm encounters and creative sharing can feel especially inviting, though emotional sensitivity and the desire for attention benefit from sincerity and a measured pace. Today’s Mountain influence introduces a contained pause into the bright month, making space to integrate what has been seen or felt. Take a reflective pause and appreciate what you have, keeping a ge [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_9_8 {
+            get {
+                return ResourceManager.GetString("_7_9_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;7 Lake Year · 9 Fire Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month makes a Lake year’s sociability brighter and more expressive. Warm encounters and creative sharing can feel especially inviting, though emotional sensitivity and the desire for attention benefit from sincerity and a measured pace. Today’s Fire influence heightens the month’s brightness and emotional intensity, favouring authentic expression with pauses for grounding and rest. Enjoy warm expression or creative company, leaving room [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _7_9_9 {
+            get {
+                return ResourceManager.GetString("_7_9_9", resourceCulture);
             }
         }
         
@@ -1947,6 +7617,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 1 Water Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the retreat of a Mountain year, softening its contained stillness into reflection and inner listening. Give yourself permission for quiet, while maintaining simple routines and a few trusted connections that help you remain open. Today’s Water influence draws this quiet monthly current further inward, making unhurried reflection especially fitting. Allow quiet reflection, while keeping a familiar routine or gentle c [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_1_1 {
+            get {
+                return ResourceManager.GetString("_8_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 1 Water Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the retreat of a Mountain year, softening its contained stillness into reflection and inner listening. Give yourself permission for quiet, while maintaining simple routines and a few trusted connections that help you remain open. Today’s Soil influence gives the month’s inward current a practical anchor through simple care, preparation and familiar routines. Choose one small task that brings care and movement into th [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_1_2 {
+            get {
+                return ResourceManager.GetString("_8_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 1 Water Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the retreat of a Mountain year, softening its contained stillness into reflection and inner listening. Give yourself permission for quiet, while maintaining simple routines and a few trusted connections that help you remain open. Today’s Thunder influence brings a brief opening for movement within the quieter month, helping loosen inertia without demanding a lasting change of pace. Use the moment of movement to ad [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_1_3 {
+            get {
+                return ResourceManager.GetString("_8_1_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 1 Water Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the retreat of a Mountain year, softening its contained stillness into reflection and inner listening. Give yourself permission for quiet, while maintaining simple routines and a few trusted connections that help you remain open. Today’s Wind influence makes gentle expression more accessible within the inward month, offering a bridge between private reflection and thoughtful conversation. Share a little of what you h [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_1_4 {
+            get {
+                return ResourceManager.GetString("_8_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 1 Water Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the retreat of a Mountain year, softening its contained stillness into reflection and inner listening. Give yourself permission for quiet, while maintaining simple routines and a few trusted connections that help you remain open. Today’s Core Earth influence may bring several inner concerns into focus at once; reduce competing demands rather than forcing the month’s questions into a quick answer. Notice what fe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_1_5 {
+            get {
+                return ResourceManager.GetString("_8_1_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 1 Water Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the retreat of a Mountain year, softening its contained stillness into reflection and inner listening. Give yourself permission for quiet, while maintaining simple routines and a few trusted connections that help you remain open. Today’s Heaven influence can help organise the month’s private reflections into clearer priorities, while a considerate tone keeps clarity from feeling harsh. Clarify a practical concern,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_1_6 {
+            get {
+                return ResourceManager.GetString("_8_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 1 Water Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the retreat of a Mountain year, softening its contained stillness into reflection and inner listening. Give yourself permission for quiet, while maintaining simple routines and a few trusted connections that help you remain open. Today’s Lake influence brings a softer, more sociable note to the quiet month, making gentle companionship or beauty a welcome source of relief. Enjoy a modest moment of company or beauty th [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_1_7 {
+            get {
+                return ResourceManager.GetString("_8_1_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 1 Water Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the retreat of a Mountain year, softening its contained stillness into reflection and inner listening. Give yourself permission for quiet, while maintaining simple routines and a few trusted connections that help you remain open. Today’s Mountain influence adds a more contained stillness to the inward month, favouring quiet focus while calling for care around excessive withdrawal. Keep the pause meaningful throug [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_1_8 {
+            get {
+                return ResourceManager.GetString("_8_1_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 1 Water Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month deepens the retreat of a Mountain year, softening its contained stillness into reflection and inner listening. Give yourself permission for quiet, while maintaining simple routines and a few trusted connections that help you remain open. Today’s Fire influence brings a brief shaft of light into the inward month, making connection or expression more inviting without ending its quieter rhythm. Let a warm encounter or creative  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_1_9 {
+            get {
+                return ResourceManager.GetString("_8_1_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time of Completion: Resist the Urge to Begin Something New Prematurely; Focus on Tying Up Loose Ends
@@ -1958,6 +7718,96 @@ namespace K9.Globalisation {
         public static string _8_2 {
             get {
                 return ResourceManager.GetString("_8_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 2 Soil Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives a Mountain year’s stillness a gentle practical outlet. Caring for familiar tasks and laying modest foundations can help quiet reflection feel purposeful without demanding a dramatic change in pace. Today’s Water influence brings the month’s practical preparation back to inward listening; give yourself room to sense what genuinely needs tending. Allow quiet reflection, while keeping a familiar routine or gentle contact t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_2_1 {
+            get {
+                return ResourceManager.GetString("_8_2_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 2 Soil Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives a Mountain year’s stillness a gentle practical outlet. Caring for familiar tasks and laying modest foundations can help quiet reflection feel purposeful without demanding a dramatic change in pace. Today’s Soil influence reinforces the month’s patient groundwork, favouring small acts of care and a steady, manageable rhythm. Choose one small task that brings care and movement into the year’s slower rhythm, without forcing [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_2_2 {
+            get {
+                return ResourceManager.GetString("_8_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 2 Soil Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives a Mountain year’s stillness a gentle practical outlet. Caring for familiar tasks and laying modest foundations can help quiet reflection feel purposeful without demanding a dramatic change in pace. Today’s Thunder influence can turn the month’s preparations into a useful first step, provided enthusiasm does not outrun what is ready. Use the moment of movement to address one manageable task, then allow the larger proce [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_2_3 {
+            get {
+                return ResourceManager.GetString("_8_2_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 2 Soil Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives a Mountain year’s stillness a gentle practical outlet. Caring for familiar tasks and laying modest foundations can help quiet reflection feel purposeful without demanding a dramatic change in pace. Today’s Wind influence helps the month’s developing plans through thoughtful exchange, gentle collaboration and willingness to refine the details. Share a little of what you have been reflecting on, letting a gentle exchange s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_2_4 {
+            get {
+                return ResourceManager.GetString("_8_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 2 Soil Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives a Mountain year’s stillness a gentle practical outlet. Caring for familiar tasks and laying modest foundations can help quiet reflection feel purposeful without demanding a dramatic change in pace. Today’s Core Earth influence may draw several responsibilities into the month’s quieter preparation; simplify and identify what truly deserves attention. Notice what feels unresolved and give yourself time to understand  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_2_5 {
+            get {
+                return ResourceManager.GetString("_8_2_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 2 Soil Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives a Mountain year’s stillness a gentle practical outlet. Caring for familiar tasks and laying modest foundations can help quiet reflection feel purposeful without demanding a dramatic change in pace. Today’s Heaven influence helps bring clearer order to the month’s groundwork, making a modest plan or useful boundary easier to define. Clarify a practical concern, while allowing another perspective to soften any conclusion [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_2_6 {
+            get {
+                return ResourceManager.GetString("_8_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 2 Soil Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives a Mountain year’s stillness a gentle practical outlet. Caring for familiar tasks and laying modest foundations can help quiet reflection feel purposeful without demanding a dramatic change in pace. Today’s Lake influence softens the month’s seriousness through enjoyment and familiar connection, reminding you that preparation can include pleasure. Enjoy a modest moment of company or beauty that helps you emerge gently fro [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_2_7 {
+            get {
+                return ResourceManager.GetString("_8_2_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 2 Soil Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives a Mountain year’s stillness a gentle practical outlet. Caring for familiar tasks and laying modest foundations can help quiet reflection feel purposeful without demanding a dramatic change in pace. Today’s Mountain influence slows the month’s emerging intentions, making a pause for review more fitting than pushing for visible progress. Keep the pause meaningful through reflection, a little movement and a clear gestur [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_2_8 {
+            get {
+                return ResourceManager.GetString("_8_2_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 2 Soil Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month gives a Mountain year’s stillness a gentle practical outlet. Caring for familiar tasks and laying modest foundations can help quiet reflection feel purposeful without demanding a dramatic change in pace. Today’s Fire influence brightens the month’s quieter preparation, offering a moment to share an idea or reconnect without rushing its development. Let a warm encounter or creative expression brighten today, without requiring y [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_2_9 {
+            get {
+                return ResourceManager.GetString("_8_2_9", resourceCulture);
             }
         }
         
@@ -1977,6 +7827,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 3 Thunder Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome surge of movement within a Mountain year’s slower rhythm. Use it to loosen inertia through a manageable task or creative step, while allowing deeper changes to unfold without forcing a sudden breakthrough. Today’s Water influence tempers the month’s enthusiasm with a quieter need to reflect, helping you consider the direction behind your activity. Allow quiet reflection, while keeping a familiar routine [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_3_1 {
+            get {
+                return ResourceManager.GetString("_8_3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 3 Thunder Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome surge of movement within a Mountain year’s slower rhythm. Use it to loosen inertia through a manageable task or creative step, while allowing deeper changes to unfold without forcing a sudden breakthrough. Today’s Soil influence grounds the month’s quickening momentum in practical care; attend to a neglected detail before reaching for another new beginning. Choose one small task that brings care and move [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_3_2 {
+            get {
+                return ResourceManager.GetString("_8_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 3 Thunder Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome surge of movement within a Mountain year’s slower rhythm. Use it to loosen inertia through a manageable task or creative step, while allowing deeper changes to unfold without forcing a sudden breakthrough. Today’s Thunder influence adds a further burst of initiative to an already active month, making a clear focus particularly valuable. Use the moment of movement to address one manageable task, then a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_3_3 {
+            get {
+                return ResourceManager.GetString("_8_3_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 3 Thunder Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome surge of movement within a Mountain year’s slower rhythm. Use it to loosen inertia through a manageable task or creative step, while allowing deeper changes to unfold without forcing a sudden breakthrough. Today’s Wind influence helps the month’s fresh initiatives develop through tact, collaboration and gentler follow-through. Share a little of what you have been reflecting on, letting a gentle exchange  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_3_4 {
+            get {
+                return ResourceManager.GetString("_8_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 3 Thunder Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome surge of movement within a Mountain year’s slower rhythm. Use it to loosen inertia through a manageable task or creative step, while allowing deeper changes to unfold without forcing a sudden breakthrough. Today’s Core Earth influence brings a centring pause within the active month; reconsider competing impulses before deciding where to put your effort. Notice what feels unresolved and give yoursel [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_3_5 {
+            get {
+                return ResourceManager.GetString("_8_3_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 3 Thunder Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome surge of movement within a Mountain year’s slower rhythm. Use it to loosen inertia through a manageable task or creative step, while allowing deeper changes to unfold without forcing a sudden breakthrough. Today’s Heaven influence gives the month’s lively ideas a more precise direction, helping distinguish a useful next step from mere urgency. Clarify a practical concern, while allowing another perspec [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_3_6 {
+            get {
+                return ResourceManager.GetString("_8_3_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 3 Thunder Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome surge of movement within a Mountain year’s slower rhythm. Use it to loosen inertia through a manageable task or creative step, while allowing deeper changes to unfold without forcing a sudden breakthrough. Today’s Lake influence invites enjoyment within the month’s momentum, making shared creativity or a relaxed conversation a useful release of pressure. Enjoy a modest moment of company or beauty that he [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_3_7 {
+            get {
+                return ResourceManager.GetString("_8_3_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 3 Thunder Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome surge of movement within a Mountain year’s slower rhythm. Use it to loosen inertia through a manageable task or creative step, while allowing deeper changes to unfold without forcing a sudden breakthrough. Today’s Mountain influence introduces stillness into an energetic month; a deliberate pause can reveal where impatience is obscuring your direction. Keep the pause meaningful through reflection, a  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_3_8 {
+            get {
+                return ResourceManager.GetString("_8_3_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 3 Thunder Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month brings a welcome surge of movement within a Mountain year’s slower rhythm. Use it to loosen inertia through a manageable task or creative step, while allowing deeper changes to unfold without forcing a sudden breakthrough. Today’s Fire influence makes the month’s fresh ideas more expressive and visible, while asking you to temper excitement with care in communication. Let a warm encounter or creative expression brighten  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_3_9 {
+            get {
+                return ResourceManager.GetString("_8_3_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Lazy Period with a Tendency Toward Becoming Argumentative: Take Action Early, Seek New Associations, and Brace for a Sad Ending
@@ -1988,6 +7928,96 @@ namespace K9.Globalisation {
         public static string _8_4 {
             get {
                 return ResourceManager.GetString("_8_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 4 Wind Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a gentler path to conversation within a Mountain year of retreat. Flexible exchange and quiet collaboration can soften withdrawal, especially when you share a little of what you have been considering rather than keeping everything inside. Today’s Water influence turns the month’s outward exchange toward quiet listening, making space to absorb what you have been learning or sharing. Allow quiet reflection, while keeping  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_4_1 {
+            get {
+                return ResourceManager.GetString("_8_4_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 4 Wind Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a gentler path to conversation within a Mountain year of retreat. Flexible exchange and quiet collaboration can soften withdrawal, especially when you share a little of what you have been considering rather than keeping everything inside. Today’s Soil influence brings practical consistency to the month’s growth, favouring the small acts that keep relationships and projects well supported. Choose one small task that bring [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_4_2 {
+            get {
+                return ResourceManager.GetString("_8_4_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 4 Wind Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a gentler path to conversation within a Mountain year of retreat. Flexible exchange and quiet collaboration can soften withdrawal, especially when you share a little of what you have been considering rather than keeping everything inside. Today’s Thunder influence gives the month’s ongoing development a fresh push; channel it into something already worth nurturing. Use the moment of movement to address one manageable  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_4_3 {
+            get {
+                return ResourceManager.GetString("_8_4_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 4 Wind Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a gentler path to conversation within a Mountain year of retreat. Flexible exchange and quiet collaboration can soften withdrawal, especially when you share a little of what you have been considering rather than keeping everything inside. Today’s Wind influence reinforces the month’s flexible, communicative quality, with gentle collaboration favoured over scattered engagement. Share a little of what you have been reflect [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_4_4 {
+            get {
+                return ResourceManager.GetString("_8_4_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 4 Wind Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a gentler path to conversation within a Mountain year of retreat. Flexible exchange and quiet collaboration can soften withdrawal, especially when you share a little of what you have been considering rather than keeping everything inside. Today’s Core Earth influence asks you to centre yourself amid the month’s many connections, clarifying which demands belong with you. Notice what feels unresolved and give yoursel [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_4_5 {
+            get {
+                return ResourceManager.GetString("_8_4_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 4 Wind Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a gentler path to conversation within a Mountain year of retreat. Flexible exchange and quiet collaboration can soften withdrawal, especially when you share a little of what you have been considering rather than keeping everything inside. Today’s Heaven influence brings definition to the month’s flowing possibilities, helping you edit a plan or make a clear, considerate commitment. Clarify a practical concern, while al [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_4_6 {
+            get {
+                return ResourceManager.GetString("_8_4_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 4 Wind Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a gentler path to conversation within a Mountain year of retreat. Flexible exchange and quiet collaboration can soften withdrawal, especially when you share a little of what you have been considering rather than keeping everything inside. Today’s Lake influence lends pleasure and warmth to the month’s relationships, favouring sincere enjoyment and unforced creative exchange. Enjoy a modest moment of company or beauty tha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_4_7 {
+            get {
+                return ResourceManager.GetString("_8_4_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 4 Wind Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a gentler path to conversation within a Mountain year of retreat. Flexible exchange and quiet collaboration can soften withdrawal, especially when you share a little of what you have been considering rather than keeping everything inside. Today’s Mountain influence creates a quieter space within the communicative month; step back to reflect without shutting others out completely. Keep the pause meaningful through ref [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_4_8 {
+            get {
+                return ResourceManager.GetString("_8_4_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 4 Wind Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month opens a gentler path to conversation within a Mountain year of retreat. Flexible exchange and quiet collaboration can soften withdrawal, especially when you share a little of what you have been considering rather than keeping everything inside. Today’s Fire influence brings the month’s ideas and connections into brighter focus, making thoughtful sharing easier while increasing emotional sensitivity. Let a warm encounter or cre [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_4_9 {
+            get {
+                return ResourceManager.GetString("_8_4_9", resourceCulture);
             }
         }
         
@@ -2007,6 +8037,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 5 Core Earth Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings shifting questions into a Mountain year’s contained stillness. The combination calls for patience and grounding; allow a change of perspective without making an impulsive decision simply to escape feeling stuck. Today’s Water influence deepens the month’s inner reassessment, favouring private reflection and a lighter load of external demands. Allow quiet reflection, while keeping a familiar routine or gentl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_5_1 {
+            get {
+                return ResourceManager.GetString("_8_5_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 5 Core Earth Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings shifting questions into a Mountain year’s contained stillness. The combination calls for patience and grounding; allow a change of perspective without making an impulsive decision simply to escape feeling stuck. Today’s Soil influence offers a dependable practical rhythm within the month’s shifting concerns, helping you find steadiness through simple care. Choose one small task that brings care and movement  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_5_2 {
+            get {
+                return ResourceManager.GetString("_8_5_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 5 Core Earth Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings shifting questions into a Mountain year’s contained stillness. The combination calls for patience and grounding; allow a change of perspective without making an impulsive decision simply to escape feeling stuck. Today’s Thunder influence brings a burst of initiative into the month’s uncertainty; a small, contained action can be useful without resolving every larger question. Use the moment of movement to  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_5_3 {
+            get {
+                return ResourceManager.GetString("_8_5_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 5 Core Earth Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings shifting questions into a Mountain year’s contained stillness. The combination calls for patience and grounding; allow a change of perspective without making an impulsive decision simply to escape feeling stuck. Today’s Wind influence offers a gentler way to explore the month’s uncertainties through conversation, flexibility and openness to another perspective. Share a little of what you have been reflecting [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_5_4 {
+            get {
+                return ResourceManager.GetString("_8_5_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 5 Core Earth Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings shifting questions into a Mountain year’s contained stillness. The combination calls for patience and grounding; allow a change of perspective without making an impulsive decision simply to escape feeling stuck. Today’s Core Earth influence repeats the month’s centring theme; reduce the number of things demanding an answer and listen for your own priorities. Notice what feels unresolved and give yourse [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_5_5 {
+            get {
+                return ResourceManager.GetString("_8_5_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 5 Core Earth Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings shifting questions into a Mountain year’s contained stillness. The combination calls for patience and grounding; allow a change of perspective without making an impulsive decision simply to escape feeling stuck. Today’s Heaven influence can help sort the month’s competing concerns into clearer boundaries, while allowing decisions to remain open to reflection. Clarify a practical concern, while allowing ano [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_5_6 {
+            get {
+                return ResourceManager.GetString("_8_5_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 5 Core Earth Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings shifting questions into a Mountain year’s contained stillness. The combination calls for patience and grounding; allow a change of perspective without making an impulsive decision simply to escape feeling stuck. Today’s Lake influence brings welcome softness to the month’s intensity, making restorative company or simple enjoyment a useful source of perspective. Enjoy a modest moment of company or beauty that [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_5_7 {
+            get {
+                return ResourceManager.GetString("_8_5_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 5 Core Earth Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings shifting questions into a Mountain year’s contained stillness. The combination calls for patience and grounding; allow a change of perspective without making an impulsive decision simply to escape feeling stuck. Today’s Mountain influence adds a pause within the month’s inner changes; reflect patiently, while avoiding the temptation to shut down around uncertainty. Keep the pause meaningful through refle [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_5_8 {
+            get {
+                return ResourceManager.GetString("_8_5_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 5 Core Earth Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month brings shifting questions into a Mountain year’s contained stillness. The combination calls for patience and grounding; allow a change of perspective without making an impulsive decision simply to escape feeling stuck. Today’s Fire influence illuminates the month’s unresolved feelings or questions, making expression possible without requiring an immediate conclusion. Let a warm encounter or creative expression brig [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_5_9 {
+            get {
+                return ResourceManager.GetString("_8_5_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Period of Being Accident-Prone: Prioritize Personal Safety and Avoid Drastic Changes
@@ -2018,6 +8138,96 @@ namespace K9.Globalisation {
         public static string _8_6 {
             get {
                 return ResourceManager.GetString("_8_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 6 Heaven Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings clarity and structure to a Mountain year’s reflective pause. Reviewing commitments can be productive, provided that firmer conclusions do not close off the listening and flexibility that deeper reflection requires. Today’s Water influence softens the month’s decisive focus, offering space to listen inward before responding to responsibilities. Allow quiet reflection, while keeping a familiar routine or gentle conta [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_6_1 {
+            get {
+                return ResourceManager.GetString("_8_6_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 6 Heaven Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings clarity and structure to a Mountain year’s reflective pause. Reviewing commitments can be productive, provided that firmer conclusions do not close off the listening and flexibility that deeper reflection requires. Today’s Soil influence gives the month’s sense of purpose a caring, practical expression, reminding you to support the people and routines behind the plans. Choose one small task that brings care and move [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_6_2 {
+            get {
+                return ResourceManager.GetString("_8_6_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 6 Heaven Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings clarity and structure to a Mountain year’s reflective pause. Reviewing commitments can be productive, provided that firmer conclusions do not close off the listening and flexibility that deeper reflection requires. Today’s Thunder influence adds spontaneity to the month’s structure; let a fresh idea serve your priorities rather than upset them through impatience. Use the moment of movement to address one manageab [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_6_3 {
+            get {
+                return ResourceManager.GetString("_8_6_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 6 Heaven Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings clarity and structure to a Mountain year’s reflective pause. Reviewing commitments can be productive, provided that firmer conclusions do not close off the listening and flexibility that deeper reflection requires. Today’s Wind influence lends tact and flexibility to the month’s more direct communication, helping clarity remain responsive to others. Share a little of what you have been reflecting on, letting a gentl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_6_4 {
+            get {
+                return ResourceManager.GetString("_8_6_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 6 Heaven Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings clarity and structure to a Mountain year’s reflective pause. Reviewing commitments can be productive, provided that firmer conclusions do not close off the listening and flexibility that deeper reflection requires. Today’s Core Earth influence asks for centring within the month’s responsibilities; distinguish your real obligations from demands you have simply absorbed. Notice what feels unresolved and give you [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_6_5 {
+            get {
+                return ResourceManager.GetString("_8_6_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 6 Heaven Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings clarity and structure to a Mountain year’s reflective pause. Reviewing commitments can be productive, provided that firmer conclusions do not close off the listening and flexibility that deeper reflection requires. Today’s Heaven influence reinforces the month’s orderly, purposeful quality, making warmth and willingness to listen especially valuable companions to conviction. Clarify a practical concern, while allo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_6_6 {
+            get {
+                return ResourceManager.GetString("_8_6_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 6 Heaven Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings clarity and structure to a Mountain year’s reflective pause. Reviewing commitments can be productive, provided that firmer conclusions do not close off the listening and flexibility that deeper reflection requires. Today’s Lake influence relaxes the month’s formality, opening room for appreciation, humour and connection beyond getting things done. Enjoy a modest moment of company or beauty that helps you emerge gent [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_6_7 {
+            get {
+                return ResourceManager.GetString("_8_6_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 6 Heaven Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings clarity and structure to a Mountain year’s reflective pause. Reviewing commitments can be productive, provided that firmer conclusions do not close off the listening and flexibility that deeper reflection requires. Today’s Mountain influence pauses the month’s drive for clarity, inviting careful review while asking you not to become fixed in a single viewpoint. Keep the pause meaningful through reflection, a lit [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_6_8 {
+            get {
+                return ResourceManager.GetString("_8_6_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 6 Heaven Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month brings clarity and structure to a Mountain year’s reflective pause. Reviewing commitments can be productive, provided that firmer conclusions do not close off the listening and flexibility that deeper reflection requires. Today’s Fire influence adds expression and visibility to the month’s focus; share your direction warmly and remain attentive to how your words are received. Let a warm encounter or creative expression bri [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_6_9 {
+            get {
+                return ResourceManager.GetString("_8_6_9", resourceCulture);
             }
         }
         
@@ -2037,6 +8247,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 7 Lake Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth and lightness within a Mountain year’s more withdrawn atmosphere. Gentle pleasure and trusted company can help you emerge from your cave in small ways, without asking you to abandon the quiet you still need. Today’s Water influence brings a quieter depth to the month’s sociability, making meaningful solitude or an intimate conversation more nourishing than a busy schedule. Allow quiet reflection, while keeping a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_7_1 {
+            get {
+                return ResourceManager.GetString("_8_7_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 7 Lake Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth and lightness within a Mountain year’s more withdrawn atmosphere. Gentle pleasure and trusted company can help you emerge from your cave in small ways, without asking you to abandon the quiet you still need. Today’s Soil influence grounds the month’s enjoyment in everyday care, helping pleasure remain connected to what supports you. Choose one small task that brings care and movement into the year’s slower rhythm [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_7_2 {
+            get {
+                return ResourceManager.GetString("_8_7_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 7 Lake Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth and lightness within a Mountain year’s more withdrawn atmosphere. Gentle pleasure and trusted company can help you emerge from your cave in small ways, without asking you to abandon the quiet you still need. Today’s Thunder influence adds lively movement to the month’s relaxed atmosphere, favouring a creative task or playful activity with a clear limit. Use the moment of movement to address one manageable task [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_7_3 {
+            get {
+                return ResourceManager.GetString("_8_7_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 7 Lake Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth and lightness within a Mountain year’s more withdrawn atmosphere. Gentle pleasure and trusted company can help you emerge from your cave in small ways, without asking you to abandon the quiet you still need. Today’s Wind influence extends the month’s openness into gentle collaboration and thoughtful exchange, with sincerity keeping connections substantial. Share a little of what you have been reflecting on, letti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_7_4 {
+            get {
+                return ResourceManager.GetString("_8_7_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 7 Lake Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth and lightness within a Mountain year’s more withdrawn atmosphere. Gentle pleasure and trusted company can help you emerge from your cave in small ways, without asking you to abandon the quiet you still need. Today’s Core Earth influence draws attention beneath the month’s pleasant surface; make room for an unresolved feeling instead of covering it with more activity. Notice what feels unresolved and give yo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_7_5 {
+            get {
+                return ResourceManager.GetString("_8_7_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 7 Lake Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth and lightness within a Mountain year’s more withdrawn atmosphere. Gentle pleasure and trusted company can help you emerge from your cave in small ways, without asking you to abandon the quiet you still need. Today’s Heaven influence helps set clear limits within the month’s invitations and pleasures, making it easier to choose what genuinely matters. Clarify a practical concern, while allowing another perspecti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_7_6 {
+            get {
+                return ResourceManager.GetString("_8_7_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 7 Lake Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth and lightness within a Mountain year’s more withdrawn atmosphere. Gentle pleasure and trusted company can help you emerge from your cave in small ways, without asking you to abandon the quiet you still need. Today’s Lake influence reinforces the month’s ease and enjoyment, inviting gratitude and heartfelt connection alongside moderation. Enjoy a modest moment of company or beauty that helps you emerge gently from [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_7_7 {
+            get {
+                return ResourceManager.GetString("_8_7_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 7 Lake Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth and lightness within a Mountain year’s more withdrawn atmosphere. Gentle pleasure and trusted company can help you emerge from your cave in small ways, without asking you to abandon the quiet you still need. Today’s Mountain influence draws the month’s sociability into a quieter pause, allowing appreciation to become more inward without closing the door to others. Keep the pause meaningful through reflection, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_7_8 {
+            get {
+                return ResourceManager.GetString("_8_7_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 7 Lake Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month offers warmth and lightness within a Mountain year’s more withdrawn atmosphere. Gentle pleasure and trusted company can help you emerge from your cave in small ways, without asking you to abandon the quiet you still need. Today’s Fire influence brightens the month’s social warmth, favouring honest expression while calling for care around attention, sensitivity and overextension. Let a warm encounter or creative expression brig [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_7_9 {
+            get {
+                return ResourceManager.GetString("_8_7_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        The First Half May Be Challenging Unless Focused on the Spiritual: Decisions Made Early Will Bear Fruit by the End of the Cycle
@@ -2052,6 +8352,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 8 Mountain Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;Mountain across year and month concentrates stillness, reflection and the desire for solitude. Honour the pause, while making small efforts to move, communicate and remain receptive so that rest does not harden into isolation or resistance. Today’s Water influence deepens the month’s inward pull, making quiet reflection fitting while asking you to preserve a gentle connection to everyday life. Allow quiet reflection, while keeping a f [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_8_1 {
+            get {
+                return ResourceManager.GetString("_8_8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 8 Mountain Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;Mountain across year and month concentrates stillness, reflection and the desire for solitude. Honour the pause, while making small efforts to move, communicate and remain receptive so that rest does not harden into isolation or resistance. Today’s Soil influence gives the month’s retreat a practical outlet, offering steadiness through small tasks and familiar care. Choose one small task that brings care and movement into the year’s sl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_8_2 {
+            get {
+                return ResourceManager.GetString("_8_8_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 8 Mountain Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;Mountain across year and month concentrates stillness, reflection and the desire for solitude. Honour the pause, while making small efforts to move, communicate and remain receptive so that rest does not harden into isolation or resistance. Today’s Thunder influence brings movement into the month’s contained stillness, offering a brief chance to loosen inertia through a manageable action. Use the moment of movement to address one ma [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_8_3 {
+            get {
+                return ResourceManager.GetString("_8_8_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 8 Mountain Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;Mountain across year and month concentrates stillness, reflection and the desire for solitude. Honour the pause, while making small efforts to move, communicate and remain receptive so that rest does not harden into isolation or resistance. Today’s Wind influence opens a softer channel for communication within the withdrawn month; a thoughtful exchange can help loosen fixed perspectives. Share a little of what you have been reflecting  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_8_4 {
+            get {
+                return ResourceManager.GetString("_8_8_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 8 Mountain Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;Mountain across year and month concentrates stillness, reflection and the desire for solitude. Honour the pause, while making small efforts to move, communicate and remain receptive so that rest does not harden into isolation or resistance. Today’s Core Earth influence may bring unresolved concerns into the month’s stillness; find your centre before deciding that something must change immediately. Notice what feels unresolved and [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_8_5 {
+            get {
+                return ResourceManager.GetString("_8_8_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 8 Mountain Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;Mountain across year and month concentrates stillness, reflection and the desire for solitude. Honour the pause, while making small efforts to move, communicate and remain receptive so that rest does not harden into isolation or resistance. Today’s Heaven influence can help clarify the month’s reflections, provided firmer thinking remains open to feedback rather than becoming rigid. Clarify a practical concern, while allowing another [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_8_6 {
+            get {
+                return ResourceManager.GetString("_8_8_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 8 Mountain Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;Mountain across year and month concentrates stillness, reflection and the desire for solitude. Honour the pause, while making small efforts to move, communicate and remain receptive so that rest does not harden into isolation or resistance. Today’s Lake influence lightens the month’s retreat through gentle enjoyment and trusted companionship, offering an unforced way to reconnect. Enjoy a modest moment of company or beauty that helps y [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_8_7 {
+            get {
+                return ResourceManager.GetString("_8_8_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 8 Mountain Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;Mountain across year and month concentrates stillness, reflection and the desire for solitude. Honour the pause, while making small efforts to move, communicate and remain receptive so that rest does not harden into isolation or resistance. Today’s Mountain influence concentrates the month’s stillness, favouring reflection while making small movement and clear communication especially useful. Keep the pause meaningful through refle [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_8_8 {
+            get {
+                return ResourceManager.GetString("_8_8_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 8 Mountain Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;Mountain across year and month concentrates stillness, reflection and the desire for solitude. Honour the pause, while making small efforts to move, communicate and remain receptive so that rest does not harden into isolation or resistance. Today’s Fire influence brings a brief warmth and brightness into the withdrawn month, helping you express something or reconnect at a pace that feels comfortable. Let a warm encounter or creative ex [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_8_9 {
+            get {
+                return ResourceManager.GetString("_8_8_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Good Period: Unsettled in the First Half, Financial Gains in the Second Half
@@ -2063,6 +8453,96 @@ namespace K9.Globalisation {
         public static string _8_9 {
             get {
                 return ResourceManager.GetString("_8_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 9 Fire Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a brighter, more expressive interval to a Mountain year. Connection and clearer insight can relieve withdrawal, while a measured pace lets you enjoy the light without expecting the year’s slower process to disappear. Today’s Water influence offers a quiet counterpoint to the month’s brightness, helping you absorb insight rather than remain constantly expressive. Allow quiet reflection, while keeping a familiar routine  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_9_1 {
+            get {
+                return ResourceManager.GetString("_8_9_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 9 Fire Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a brighter, more expressive interval to a Mountain year. Connection and clearer insight can relieve withdrawal, while a measured pace lets you enjoy the light without expecting the year’s slower process to disappear. Today’s Soil influence grounds the month’s visibility in simple, practical care, giving expression a steadier foundation. Choose one small task that brings care and movement into the year’s slower rhythm, w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_9_2 {
+            get {
+                return ResourceManager.GetString("_8_9_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 9 Fire Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a brighter, more expressive interval to a Mountain year. Connection and clearer insight can relieve withdrawal, while a measured pace lets you enjoy the light without expecting the year’s slower process to disappear. Today’s Thunder influence adds a quick burst of initiative to the expressive month; direct it deliberately so that enthusiasm does not become reactivity. Use the moment of movement to address one managea [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_9_3 {
+            get {
+                return ResourceManager.GetString("_8_9_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 9 Fire Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a brighter, more expressive interval to a Mountain year. Connection and clearer insight can relieve withdrawal, while a measured pace lets you enjoy the light without expecting the year’s slower process to disappear. Today’s Wind influence brings tact and flexibility to the month’s stronger expression, helping a message become a thoughtful conversation. Share a little of what you have been reflecting on, letting a gentl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_9_4 {
+            get {
+                return ResourceManager.GetString("_8_9_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 9 Fire Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a brighter, more expressive interval to a Mountain year. Connection and clearer insight can relieve withdrawal, while a measured pace lets you enjoy the light without expecting the year’s slower process to disappear. Today’s Core Earth influence asks you to centre yourself within the month’s intensity, allowing strong feelings to settle before turning them into a decision. Notice what feels unresolved and give you [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_9_5 {
+            get {
+                return ResourceManager.GetString("_8_9_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 9 Fire Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a brighter, more expressive interval to a Mountain year. Connection and clearer insight can relieve withdrawal, while a measured pace lets you enjoy the light without expecting the year’s slower process to disappear. Today’s Heaven influence brings precision to the month’s brightness, helping you refine what you want to say without making it overly forceful. Clarify a practical concern, while allowing another perspect [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_9_6 {
+            get {
+                return ResourceManager.GetString("_8_9_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 9 Fire Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a brighter, more expressive interval to a Mountain year. Connection and clearer insight can relieve withdrawal, while a measured pace lets you enjoy the light without expecting the year’s slower process to disappear. Today’s Lake influence softens the month’s expressive intensity with humour and relaxed connection, allowing enjoyment without a need to perform. Enjoy a modest moment of company or beauty that helps you em [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_9_7 {
+            get {
+                return ResourceManager.GetString("_8_9_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 9 Fire Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a brighter, more expressive interval to a Mountain year. Connection and clearer insight can relieve withdrawal, while a measured pace lets you enjoy the light without expecting the year’s slower process to disappear. Today’s Mountain influence introduces a contained pause into the bright month, making space to integrate what has been seen or felt. Keep the pause meaningful through reflection, a little movement and a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_9_8 {
+            get {
+                return ResourceManager.GetString("_8_9_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;8 Mountain Year · 9 Fire Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Fire month brings a brighter, more expressive interval to a Mountain year. Connection and clearer insight can relieve withdrawal, while a measured pace lets you enjoy the light without expecting the year’s slower process to disappear. Today’s Fire influence heightens the month’s brightness and emotional intensity, favouring authentic expression with pauses for grounding and rest. Let a warm encounter or creative expression brighten today [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _8_9_9 {
+            get {
+                return ResourceManager.GetString("_8_9_9", resourceCulture);
             }
         }
         
@@ -2247,6 +8727,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 1 Water Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month creates a reflective shelter within a Fire year’s visibility and intensity. Step away from constant expression when you can, using quiet listening to deepen the insights that a more outward year has brought into view. Today’s Water influence draws this quiet monthly current further inward, making unhurried reflection especially fitting. Take a quiet interval to absorb what the year has revealed, allowing reflection to restore d [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_1_1 {
+            get {
+                return ResourceManager.GetString("_9_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 1 Water Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month creates a reflective shelter within a Fire year’s visibility and intensity. Step away from constant expression when you can, using quiet listening to deepen the insights that a more outward year has brought into view. Today’s Soil influence gives the month’s inward current a practical anchor through simple care, preparation and familiar routines. Give attention to a grounding routine or close relationship that supports your more [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_1_2 {
+            get {
+                return ResourceManager.GetString("_9_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 1 Water Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month creates a reflective shelter within a Fire year’s visibility and intensity. Step away from constant expression when you can, using quiet listening to deepen the insights that a more outward year has brought into view. Today’s Thunder influence brings a brief opening for movement within the quieter month, helping loosen inertia without demanding a lasting change of pace. Choose one constructive action and pause before speaking [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_1_3 {
+            get {
+                return ResourceManager.GetString("_9_1_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 1 Water Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month creates a reflective shelter within a Fire year’s visibility and intensity. Step away from constant expression when you can, using quiet listening to deepen the insights that a more outward year has brought into view. Today’s Wind influence makes gentle expression more accessible within the inward month, offering a bridge between private reflection and thoughtful conversation. Turn a strong insight into a thoughtful exchange, ma [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_1_4 {
+            get {
+                return ResourceManager.GetString("_9_1_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 1 Water Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month creates a reflective shelter within a Fire year’s visibility and intensity. Step away from constant expression when you can, using quiet listening to deepen the insights that a more outward year has brought into view. Today’s Core Earth influence may bring several inner concerns into focus at once; reduce competing demands rather than forcing the month’s questions into a quick answer. Return to your centre before respondin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_1_5 {
+            get {
+                return ResourceManager.GetString("_9_1_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 1 Water Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month creates a reflective shelter within a Fire year’s visibility and intensity. Step away from constant expression when you can, using quiet listening to deepen the insights that a more outward year has brought into view. Today’s Heaven influence can help organise the month’s private reflections into clearer priorities, while a considerate tone keeps clarity from feeling harsh. Refine what you want to communicate and share it with [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_1_6 {
+            get {
+                return ResourceManager.GetString("_9_1_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 1 Water Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month creates a reflective shelter within a Fire year’s visibility and intensity. Step away from constant expression when you can, using quiet listening to deepen the insights that a more outward year has brought into view. Today’s Lake influence brings a softer, more sociable note to the quiet month, making gentle companionship or beauty a welcome source of relief. Enjoy connection without performing, letting humour and simple pleasu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_1_7 {
+            get {
+                return ResourceManager.GetString("_9_1_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 1 Water Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month creates a reflective shelter within a Fire year’s visibility and intensity. Step away from constant expression when you can, using quiet listening to deepen the insights that a more outward year has brought into view. Today’s Mountain influence adds a more contained stillness to the inward month, favouring quiet focus while calling for care around excessive withdrawal. Make space to integrate what has surfaced and communicat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_1_8 {
+            get {
+                return ResourceManager.GetString("_9_1_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 1 Water Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Water month creates a reflective shelter within a Fire year’s visibility and intensity. Step away from constant expression when you can, using quiet listening to deepen the insights that a more outward year has brought into view. Today’s Fire influence brings a brief shaft of light into the inward month, making connection or expression more inviting without ending its quieter rhythm. Express what matters authentically, with enough breathing [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_1_9 {
+            get {
+                return ResourceManager.GetString("_9_1_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time to Devote to Social Activities: A Feminine, Passive Time—Beware of Procrastination
@@ -2258,6 +8828,96 @@ namespace K9.Globalisation {
         public static string _9_2 {
             get {
                 return ResourceManager.GetString("_9_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 2 Soil Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings grounding and practical care to a Fire year’s brightness. Supporting routines, close relationships and quieter responsibilities can sustain expression, especially when the wish to be seen begins to outpace your capacity. Today’s Water influence brings the month’s practical preparation back to inward listening; give yourself room to sense what genuinely needs tending. Take a quiet interval to absorb what the year has reveal [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_2_1 {
+            get {
+                return ResourceManager.GetString("_9_2_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 2 Soil Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings grounding and practical care to a Fire year’s brightness. Supporting routines, close relationships and quieter responsibilities can sustain expression, especially when the wish to be seen begins to outpace your capacity. Today’s Soil influence reinforces the month’s patient groundwork, favouring small acts of care and a steady, manageable rhythm. Give attention to a grounding routine or close relationship that supports your [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_2_2 {
+            get {
+                return ResourceManager.GetString("_9_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 2 Soil Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings grounding and practical care to a Fire year’s brightness. Supporting routines, close relationships and quieter responsibilities can sustain expression, especially when the wish to be seen begins to outpace your capacity. Today’s Thunder influence can turn the month’s preparations into a useful first step, provided enthusiasm does not outrun what is ready. Choose one constructive action and pause before speaking impulsive [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_2_3 {
+            get {
+                return ResourceManager.GetString("_9_2_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 2 Soil Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings grounding and practical care to a Fire year’s brightness. Supporting routines, close relationships and quieter responsibilities can sustain expression, especially when the wish to be seen begins to outpace your capacity. Today’s Wind influence helps the month’s developing plans through thoughtful exchange, gentle collaboration and willingness to refine the details. Turn a strong insight into a thoughtful exchange, making ro [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_2_4 {
+            get {
+                return ResourceManager.GetString("_9_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 2 Soil Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings grounding and practical care to a Fire year’s brightness. Supporting routines, close relationships and quieter responsibilities can sustain expression, especially when the wish to be seen begins to outpace your capacity. Today’s Core Earth influence may draw several responsibilities into the month’s quieter preparation; simplify and identify what truly deserves attention. Return to your centre before responding to att [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_2_5 {
+            get {
+                return ResourceManager.GetString("_9_2_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 2 Soil Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings grounding and practical care to a Fire year’s brightness. Supporting routines, close relationships and quieter responsibilities can sustain expression, especially when the wish to be seen begins to outpace your capacity. Today’s Heaven influence helps bring clearer order to the month’s groundwork, making a modest plan or useful boundary easier to define. Refine what you want to communicate and share it with precision, war [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_2_6 {
+            get {
+                return ResourceManager.GetString("_9_2_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 2 Soil Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings grounding and practical care to a Fire year’s brightness. Supporting routines, close relationships and quieter responsibilities can sustain expression, especially when the wish to be seen begins to outpace your capacity. Today’s Lake influence softens the month’s seriousness through enjoyment and familiar connection, reminding you that preparation can include pleasure. Enjoy connection without performing, letting humour and [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_2_7 {
+            get {
+                return ResourceManager.GetString("_9_2_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 2 Soil Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings grounding and practical care to a Fire year’s brightness. Supporting routines, close relationships and quieter responsibilities can sustain expression, especially when the wish to be seen begins to outpace your capacity. Today’s Mountain influence slows the month’s emerging intentions, making a pause for review more fitting than pushing for visible progress. Make space to integrate what has surfaced and communicate your [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_2_8 {
+            get {
+                return ResourceManager.GetString("_9_2_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 2 Soil Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Soil month brings grounding and practical care to a Fire year’s brightness. Supporting routines, close relationships and quieter responsibilities can sustain expression, especially when the wish to be seen begins to outpace your capacity. Today’s Fire influence brightens the month’s quieter preparation, offering a moment to share an idea or reconnect without rushing its development. Express what matters authentically, with enough breathing s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_2_9 {
+            get {
+                return ResourceManager.GetString("_9_2_9", resourceCulture);
             }
         }
         
@@ -2277,6 +8937,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 3 Thunder Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds lively initiative to a Fire year’s expressive atmosphere. Ideas may ask to be shared quickly, but choose where to direct the enthusiasm and give yourself time to consider the impact of your words and actions. Today’s Water influence tempers the month’s enthusiasm with a quieter need to reflect, helping you consider the direction behind your activity. Take a quiet interval to absorb what the year has revealed, allowing  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_3_1 {
+            get {
+                return ResourceManager.GetString("_9_3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 3 Thunder Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds lively initiative to a Fire year’s expressive atmosphere. Ideas may ask to be shared quickly, but choose where to direct the enthusiasm and give yourself time to consider the impact of your words and actions. Today’s Soil influence grounds the month’s quickening momentum in practical care; attend to a neglected detail before reaching for another new beginning. Give attention to a grounding routine or close relationship  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_3_2 {
+            get {
+                return ResourceManager.GetString("_9_3_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 3 Thunder Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds lively initiative to a Fire year’s expressive atmosphere. Ideas may ask to be shared quickly, but choose where to direct the enthusiasm and give yourself time to consider the impact of your words and actions. Today’s Thunder influence adds a further burst of initiative to an already active month, making a clear focus particularly valuable. Choose one constructive action and pause before speaking impulsively, giving y [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_3_3 {
+            get {
+                return ResourceManager.GetString("_9_3_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 3 Thunder Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds lively initiative to a Fire year’s expressive atmosphere. Ideas may ask to be shared quickly, but choose where to direct the enthusiasm and give yourself time to consider the impact of your words and actions. Today’s Wind influence helps the month’s fresh initiatives develop through tact, collaboration and gentler follow-through. Turn a strong insight into a thoughtful exchange, making room for nuance and another person [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_3_4 {
+            get {
+                return ResourceManager.GetString("_9_3_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 3 Thunder Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds lively initiative to a Fire year’s expressive atmosphere. Ideas may ask to be shared quickly, but choose where to direct the enthusiasm and give yourself time to consider the impact of your words and actions. Today’s Core Earth influence brings a centring pause within the active month; reconsider competing impulses before deciding where to put your effort. Return to your centre before responding to attention or st [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_3_5 {
+            get {
+                return ResourceManager.GetString("_9_3_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 3 Thunder Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds lively initiative to a Fire year’s expressive atmosphere. Ideas may ask to be shared quickly, but choose where to direct the enthusiasm and give yourself time to consider the impact of your words and actions. Today’s Heaven influence gives the month’s lively ideas a more precise direction, helping distinguish a useful next step from mere urgency. Refine what you want to communicate and share it with precision, warmth  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_3_6 {
+            get {
+                return ResourceManager.GetString("_9_3_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 3 Thunder Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds lively initiative to a Fire year’s expressive atmosphere. Ideas may ask to be shared quickly, but choose where to direct the enthusiasm and give yourself time to consider the impact of your words and actions. Today’s Lake influence invites enjoyment within the month’s momentum, making shared creativity or a relaxed conversation a useful release of pressure. Enjoy connection without performing, letting humour and simple  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_3_7 {
+            get {
+                return ResourceManager.GetString("_9_3_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 3 Thunder Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds lively initiative to a Fire year’s expressive atmosphere. Ideas may ask to be shared quickly, but choose where to direct the enthusiasm and give yourself time to consider the impact of your words and actions. Today’s Mountain influence introduces stillness into an energetic month; a deliberate pause can reveal where impatience is obscuring your direction. Make space to integrate what has surfaced and communicate you [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_3_8 {
+            get {
+                return ResourceManager.GetString("_9_3_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 3 Thunder Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Thunder month adds lively initiative to a Fire year’s expressive atmosphere. Ideas may ask to be shared quickly, but choose where to direct the enthusiasm and give yourself time to consider the impact of your words and actions. Today’s Fire influence makes the month’s fresh ideas more expressive and visible, while asking you to temper excitement with care in communication. Express what matters authentically, with enough breathing space th [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_3_9 {
+            get {
+                return ResourceManager.GetString("_9_3_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time for Strict Attention to Detail: Focus on Routine and Avoid Anything Unusual or Difficult
@@ -2288,6 +9038,96 @@ namespace K9.Globalisation {
         public static string _9_4 {
             get {
                 return ResourceManager.GetString("_9_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 4 Wind Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month lends flexibility and tact to a Fire year’s more visible expression. Thoughtful conversation and creative collaboration can help insight become something others can engage with, while steady follow-through prevents scattered attention. Today’s Water influence turns the month’s outward exchange toward quiet listening, making space to absorb what you have been learning or sharing. Take a quiet interval to absorb what the year has r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_4_1 {
+            get {
+                return ResourceManager.GetString("_9_4_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 4 Wind Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month lends flexibility and tact to a Fire year’s more visible expression. Thoughtful conversation and creative collaboration can help insight become something others can engage with, while steady follow-through prevents scattered attention. Today’s Soil influence brings practical consistency to the month’s growth, favouring the small acts that keep relationships and projects well supported. Give attention to a grounding routine or clos [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_4_2 {
+            get {
+                return ResourceManager.GetString("_9_4_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 4 Wind Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month lends flexibility and tact to a Fire year’s more visible expression. Thoughtful conversation and creative collaboration can help insight become something others can engage with, while steady follow-through prevents scattered attention. Today’s Thunder influence gives the month’s ongoing development a fresh push; channel it into something already worth nurturing. Choose one constructive action and pause before speaking impulsive [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_4_3 {
+            get {
+                return ResourceManager.GetString("_9_4_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 4 Wind Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month lends flexibility and tact to a Fire year’s more visible expression. Thoughtful conversation and creative collaboration can help insight become something others can engage with, while steady follow-through prevents scattered attention. Today’s Wind influence reinforces the month’s flexible, communicative quality, with gentle collaboration favoured over scattered engagement. Turn a strong insight into a thoughtful exchange, making  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_4_4 {
+            get {
+                return ResourceManager.GetString("_9_4_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 4 Wind Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month lends flexibility and tact to a Fire year’s more visible expression. Thoughtful conversation and creative collaboration can help insight become something others can engage with, while steady follow-through prevents scattered attention. Today’s Core Earth influence asks you to centre yourself amid the month’s many connections, clarifying which demands belong with you. Return to your centre before responding to attention or st [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_4_5 {
+            get {
+                return ResourceManager.GetString("_9_4_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 4 Wind Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month lends flexibility and tact to a Fire year’s more visible expression. Thoughtful conversation and creative collaboration can help insight become something others can engage with, while steady follow-through prevents scattered attention. Today’s Heaven influence brings definition to the month’s flowing possibilities, helping you edit a plan or make a clear, considerate commitment. Refine what you want to communicate and share it w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_4_6 {
+            get {
+                return ResourceManager.GetString("_9_4_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 4 Wind Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month lends flexibility and tact to a Fire year’s more visible expression. Thoughtful conversation and creative collaboration can help insight become something others can engage with, while steady follow-through prevents scattered attention. Today’s Lake influence lends pleasure and warmth to the month’s relationships, favouring sincere enjoyment and unforced creative exchange. Enjoy connection without performing, letting humour and sim [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_4_7 {
+            get {
+                return ResourceManager.GetString("_9_4_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 4 Wind Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month lends flexibility and tact to a Fire year’s more visible expression. Thoughtful conversation and creative collaboration can help insight become something others can engage with, while steady follow-through prevents scattered attention. Today’s Mountain influence creates a quieter space within the communicative month; step back to reflect without shutting others out completely. Make space to integrate what has surfaced and comm [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_4_8 {
+            get {
+                return ResourceManager.GetString("_9_4_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 4 Wind Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Wind month lends flexibility and tact to a Fire year’s more visible expression. Thoughtful conversation and creative collaboration can help insight become something others can engage with, while steady follow-through prevents scattered attention. Today’s Fire influence brings the month’s ideas and connections into brighter focus, making thoughtful sharing easier while increasing emotional sensitivity. Express what matters authentically, with [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_4_9 {
+            get {
+                return ResourceManager.GetString("_9_4_9", resourceCulture);
             }
         }
         
@@ -2307,6 +9147,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 5 Core Earth Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks for centring amid a Fire year’s visibility and revelation. If heightened attention stirs uncertainty or old emotions, simplify your demands and let insight settle before making a significant commitment. Today’s Water influence deepens the month’s inner reassessment, favouring private reflection and a lighter load of external demands. Take a quiet interval to absorb what the year has revealed, allowing reflection  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_5_1 {
+            get {
+                return ResourceManager.GetString("_9_5_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 5 Core Earth Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks for centring amid a Fire year’s visibility and revelation. If heightened attention stirs uncertainty or old emotions, simplify your demands and let insight settle before making a significant commitment. Today’s Soil influence offers a dependable practical rhythm within the month’s shifting concerns, helping you find steadiness through simple care. Give attention to a grounding routine or close relationship that su [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_5_2 {
+            get {
+                return ResourceManager.GetString("_9_5_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 5 Core Earth Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks for centring amid a Fire year’s visibility and revelation. If heightened attention stirs uncertainty or old emotions, simplify your demands and let insight settle before making a significant commitment. Today’s Thunder influence brings a burst of initiative into the month’s uncertainty; a small, contained action can be useful without resolving every larger question. Choose one constructive action and pause befo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_5_3 {
+            get {
+                return ResourceManager.GetString("_9_5_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 5 Core Earth Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks for centring amid a Fire year’s visibility and revelation. If heightened attention stirs uncertainty or old emotions, simplify your demands and let insight settle before making a significant commitment. Today’s Wind influence offers a gentler way to explore the month’s uncertainties through conversation, flexibility and openness to another perspective. Turn a strong insight into a thoughtful exchange, making room  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_5_4 {
+            get {
+                return ResourceManager.GetString("_9_5_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 5 Core Earth Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks for centring amid a Fire year’s visibility and revelation. If heightened attention stirs uncertainty or old emotions, simplify your demands and let insight settle before making a significant commitment. Today’s Core Earth influence repeats the month’s centring theme; reduce the number of things demanding an answer and listen for your own priorities. Return to your centre before responding to attention or str [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_5_5 {
+            get {
+                return ResourceManager.GetString("_9_5_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 5 Core Earth Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks for centring amid a Fire year’s visibility and revelation. If heightened attention stirs uncertainty or old emotions, simplify your demands and let insight settle before making a significant commitment. Today’s Heaven influence can help sort the month’s competing concerns into clearer boundaries, while allowing decisions to remain open to reflection. Refine what you want to communicate and share it with precisio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_5_6 {
+            get {
+                return ResourceManager.GetString("_9_5_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 5 Core Earth Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks for centring amid a Fire year’s visibility and revelation. If heightened attention stirs uncertainty or old emotions, simplify your demands and let insight settle before making a significant commitment. Today’s Lake influence brings welcome softness to the month’s intensity, making restorative company or simple enjoyment a useful source of perspective. Enjoy connection without performing, letting humour and simple [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_5_7 {
+            get {
+                return ResourceManager.GetString("_9_5_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 5 Core Earth Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks for centring amid a Fire year’s visibility and revelation. If heightened attention stirs uncertainty or old emotions, simplify your demands and let insight settle before making a significant commitment. Today’s Mountain influence adds a pause within the month’s inner changes; reflect patiently, while avoiding the temptation to shut down around uncertainty. Make space to integrate what has surfaced and communic [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_5_8 {
+            get {
+                return ResourceManager.GetString("_9_5_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 5 Core Earth Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Core Earth month asks for centring amid a Fire year’s visibility and revelation. If heightened attention stirs uncertainty or old emotions, simplify your demands and let insight settle before making a significant commitment. Today’s Fire influence illuminates the month’s unresolved feelings or questions, making expression possible without requiring an immediate conclusion. Express what matters authentically, with enough breathing space [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_5_9 {
+            get {
+                return ResourceManager.GetString("_9_5_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Positive Time for Family: Decisions Regarding Family, Fertility, Union, and Conception
@@ -2318,6 +9248,96 @@ namespace K9.Globalisation {
         public static string _9_6 {
             get {
                 return ResourceManager.GetString("_9_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 6 Heaven Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer form and discipline to a Fire year’s expressive energy. Use it to refine your message and responsibilities, allowing precision and confidence to remain balanced by warmth and openness to feedback. Today’s Water influence softens the month’s decisive focus, offering space to listen inward before responding to responsibilities. Take a quiet interval to absorb what the year has revealed, allowing reflection to rest [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_6_1 {
+            get {
+                return ResourceManager.GetString("_9_6_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 6 Heaven Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer form and discipline to a Fire year’s expressive energy. Use it to refine your message and responsibilities, allowing precision and confidence to remain balanced by warmth and openness to feedback. Today’s Soil influence gives the month’s sense of purpose a caring, practical expression, reminding you to support the people and routines behind the plans. Give attention to a grounding routine or close relationship th [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_6_2 {
+            get {
+                return ResourceManager.GetString("_9_6_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 6 Heaven Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer form and discipline to a Fire year’s expressive energy. Use it to refine your message and responsibilities, allowing precision and confidence to remain balanced by warmth and openness to feedback. Today’s Thunder influence adds spontaneity to the month’s structure; let a fresh idea serve your priorities rather than upset them through impatience. Choose one constructive action and pause before speaking impulsiv [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_6_3 {
+            get {
+                return ResourceManager.GetString("_9_6_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 6 Heaven Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer form and discipline to a Fire year’s expressive energy. Use it to refine your message and responsibilities, allowing precision and confidence to remain balanced by warmth and openness to feedback. Today’s Wind influence lends tact and flexibility to the month’s more direct communication, helping clarity remain responsive to others. Turn a strong insight into a thoughtful exchange, making room for nuance and anoth [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_6_4 {
+            get {
+                return ResourceManager.GetString("_9_6_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 6 Heaven Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer form and discipline to a Fire year’s expressive energy. Use it to refine your message and responsibilities, allowing precision and confidence to remain balanced by warmth and openness to feedback. Today’s Core Earth influence asks for centring within the month’s responsibilities; distinguish your real obligations from demands you have simply absorbed. Return to your centre before responding to attention or  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_6_5 {
+            get {
+                return ResourceManager.GetString("_9_6_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 6 Heaven Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer form and discipline to a Fire year’s expressive energy. Use it to refine your message and responsibilities, allowing precision and confidence to remain balanced by warmth and openness to feedback. Today’s Heaven influence reinforces the month’s orderly, purposeful quality, making warmth and willingness to listen especially valuable companions to conviction. Refine what you want to communicate and share it with  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_6_6 {
+            get {
+                return ResourceManager.GetString("_9_6_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 6 Heaven Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer form and discipline to a Fire year’s expressive energy. Use it to refine your message and responsibilities, allowing precision and confidence to remain balanced by warmth and openness to feedback. Today’s Lake influence relaxes the month’s formality, opening room for appreciation, humour and connection beyond getting things done. Enjoy connection without performing, letting humour and simple pleasure soften the p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_6_7 {
+            get {
+                return ResourceManager.GetString("_9_6_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 6 Heaven Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer form and discipline to a Fire year’s expressive energy. Use it to refine your message and responsibilities, allowing precision and confidence to remain balanced by warmth and openness to feedback. Today’s Mountain influence pauses the month’s drive for clarity, inviting careful review while asking you not to become fixed in a single viewpoint. Make space to integrate what has surfaced and communicate your nee [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_6_8 {
+            get {
+                return ResourceManager.GetString("_9_6_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 6 Heaven Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Heaven month gives clearer form and discipline to a Fire year’s expressive energy. Use it to refine your message and responsibilities, allowing precision and confidence to remain balanced by warmth and openness to feedback. Today’s Fire influence adds expression and visibility to the month’s focus; share your direction warmly and remain attentive to how your words are received. Express what matters authentically, with enough breathing spac [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_6_9 {
+            get {
+                return ResourceManager.GetString("_9_6_9", resourceCulture);
             }
         }
         
@@ -2337,6 +9357,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 7 Lake Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens a Fire year’s intensity with pleasure, humour and more relaxed connection. Enjoy being with others without turning every encounter into a performance, and let appreciation restore a more natural relationship with expression. Today’s Water influence brings a quieter depth to the month’s sociability, making meaningful solitude or an intimate conversation more nourishing than a busy schedule. Take a quiet interval to absorb  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_7_1 {
+            get {
+                return ResourceManager.GetString("_9_7_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 7 Lake Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens a Fire year’s intensity with pleasure, humour and more relaxed connection. Enjoy being with others without turning every encounter into a performance, and let appreciation restore a more natural relationship with expression. Today’s Soil influence grounds the month’s enjoyment in everyday care, helping pleasure remain connected to what supports you. Give attention to a grounding routine or close relationship that supports  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_7_2 {
+            get {
+                return ResourceManager.GetString("_9_7_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 7 Lake Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens a Fire year’s intensity with pleasure, humour and more relaxed connection. Enjoy being with others without turning every encounter into a performance, and let appreciation restore a more natural relationship with expression. Today’s Thunder influence adds lively movement to the month’s relaxed atmosphere, favouring a creative task or playful activity with a clear limit. Choose one constructive action and pause before sp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_7_3 {
+            get {
+                return ResourceManager.GetString("_9_7_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 7 Lake Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens a Fire year’s intensity with pleasure, humour and more relaxed connection. Enjoy being with others without turning every encounter into a performance, and let appreciation restore a more natural relationship with expression. Today’s Wind influence extends the month’s openness into gentle collaboration and thoughtful exchange, with sincerity keeping connections substantial. Turn a strong insight into a thoughtful exchange,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_7_4 {
+            get {
+                return ResourceManager.GetString("_9_7_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 7 Lake Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens a Fire year’s intensity with pleasure, humour and more relaxed connection. Enjoy being with others without turning every encounter into a performance, and let appreciation restore a more natural relationship with expression. Today’s Core Earth influence draws attention beneath the month’s pleasant surface; make room for an unresolved feeling instead of covering it with more activity. Return to your centre before resp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_7_5 {
+            get {
+                return ResourceManager.GetString("_9_7_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 7 Lake Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens a Fire year’s intensity with pleasure, humour and more relaxed connection. Enjoy being with others without turning every encounter into a performance, and let appreciation restore a more natural relationship with expression. Today’s Heaven influence helps set clear limits within the month’s invitations and pleasures, making it easier to choose what genuinely matters. Refine what you want to communicate and share it with  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_7_6 {
+            get {
+                return ResourceManager.GetString("_9_7_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 7 Lake Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens a Fire year’s intensity with pleasure, humour and more relaxed connection. Enjoy being with others without turning every encounter into a performance, and let appreciation restore a more natural relationship with expression. Today’s Lake influence reinforces the month’s ease and enjoyment, inviting gratitude and heartfelt connection alongside moderation. Enjoy connection without performing, letting humour and simple pleasu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_7_7 {
+            get {
+                return ResourceManager.GetString("_9_7_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 7 Lake Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens a Fire year’s intensity with pleasure, humour and more relaxed connection. Enjoy being with others without turning every encounter into a performance, and let appreciation restore a more natural relationship with expression. Today’s Mountain influence draws the month’s sociability into a quieter pause, allowing appreciation to become more inward without closing the door to others. Make space to integrate what has surfa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_7_8 {
+            get {
+                return ResourceManager.GetString("_9_7_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 7 Lake Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Lake month softens a Fire year’s intensity with pleasure, humour and more relaxed connection. Enjoy being with others without turning every encounter into a performance, and let appreciation restore a more natural relationship with expression. Today’s Fire influence brightens the month’s social warmth, favouring honest expression while calling for care around attention, sensitivity and overextension. Express what matters authentically, with  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_7_9 {
+            get {
+                return ResourceManager.GetString("_9_7_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Very Positive Time for Buying, Selling, and Profitable Investments: Reaping the Rewards of Past Efforts
@@ -2352,6 +9462,96 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 8 Mountain Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month brings a quieter, consolidating interval to a Fire year. Retreat can help you integrate what has been revealed, while clear and gentle communication allows those close to you to understand your need for space. Today’s Water influence deepens the month’s inward pull, making quiet reflection fitting while asking you to preserve a gentle connection to everyday life. Take a quiet interval to absorb what the year has revealed, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_8_1 {
+            get {
+                return ResourceManager.GetString("_9_8_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 8 Mountain Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month brings a quieter, consolidating interval to a Fire year. Retreat can help you integrate what has been revealed, while clear and gentle communication allows those close to you to understand your need for space. Today’s Soil influence gives the month’s retreat a practical outlet, offering steadiness through small tasks and familiar care. Give attention to a grounding routine or close relationship that supports your more visi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_8_2 {
+            get {
+                return ResourceManager.GetString("_9_8_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 8 Mountain Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month brings a quieter, consolidating interval to a Fire year. Retreat can help you integrate what has been revealed, while clear and gentle communication allows those close to you to understand your need for space. Today’s Thunder influence brings movement into the month’s contained stillness, offering a brief chance to loosen inertia through a manageable action. Choose one constructive action and pause before speaking impul [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_8_3 {
+            get {
+                return ResourceManager.GetString("_9_8_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 8 Mountain Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month brings a quieter, consolidating interval to a Fire year. Retreat can help you integrate what has been revealed, while clear and gentle communication allows those close to you to understand your need for space. Today’s Wind influence opens a softer channel for communication within the withdrawn month; a thoughtful exchange can help loosen fixed perspectives. Turn a strong insight into a thoughtful exchange, making room for  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_8_4 {
+            get {
+                return ResourceManager.GetString("_9_8_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 8 Mountain Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month brings a quieter, consolidating interval to a Fire year. Retreat can help you integrate what has been revealed, while clear and gentle communication allows those close to you to understand your need for space. Today’s Core Earth influence may bring unresolved concerns into the month’s stillness; find your centre before deciding that something must change immediately. Return to your centre before responding to attenti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_8_5 {
+            get {
+                return ResourceManager.GetString("_9_8_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 8 Mountain Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month brings a quieter, consolidating interval to a Fire year. Retreat can help you integrate what has been revealed, while clear and gentle communication allows those close to you to understand your need for space. Today’s Heaven influence can help clarify the month’s reflections, provided firmer thinking remains open to feedback rather than becoming rigid. Refine what you want to communicate and share it with precision, warm [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_8_6 {
+            get {
+                return ResourceManager.GetString("_9_8_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 8 Mountain Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month brings a quieter, consolidating interval to a Fire year. Retreat can help you integrate what has been revealed, while clear and gentle communication allows those close to you to understand your need for space. Today’s Lake influence lightens the month’s retreat through gentle enjoyment and trusted companionship, offering an unforced way to reconnect. Enjoy connection without performing, letting humour and simple pleasure s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_8_7 {
+            get {
+                return ResourceManager.GetString("_9_8_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 8 Mountain Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month brings a quieter, consolidating interval to a Fire year. Retreat can help you integrate what has been revealed, while clear and gentle communication allows those close to you to understand your need for space. Today’s Mountain influence concentrates the month’s stillness, favouring reflection while making small movement and clear communication especially useful. Make space to integrate what has surfaced and communicate [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_8_8 {
+            get {
+                return ResourceManager.GetString("_9_8_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 8 Mountain Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;A Mountain month brings a quieter, consolidating interval to a Fire year. Retreat can help you integrate what has been revealed, while clear and gentle communication allows those close to you to understand your need for space. Today’s Fire influence brings a brief warmth and brightness into the withdrawn month, helping you express something or reconnect at a pace that feels comfortable. Express what matters authentically, with enough breat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_8_9 {
+            get {
+                return ResourceManager.GetString("_9_8_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
         ///        A Time of Completion: Stay in Control and Seek Spiritual Fulfillment
@@ -2363,6 +9563,96 @@ namespace K9.Globalisation {
         public static string _9_9 {
             get {
                 return ResourceManager.GetString("_9_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 9 Fire Month · 1 Water Day&lt;/h5&gt;
+        ///&lt;p&gt;Fire across year and month concentrates visibility, expression and emotional intensity. There is room for creativity and meaningful connection, but pacing, authenticity and moments of quiet help brightness remain sustainable rather than becoming pressure to perform. Today’s Water influence offers a quiet counterpoint to the month’s brightness, helping you absorb insight rather than remain constantly expressive. Take a quiet interval to absorb [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_9_1 {
+            get {
+                return ResourceManager.GetString("_9_9_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 9 Fire Month · 2 Soil Day&lt;/h5&gt;
+        ///&lt;p&gt;Fire across year and month concentrates visibility, expression and emotional intensity. There is room for creativity and meaningful connection, but pacing, authenticity and moments of quiet help brightness remain sustainable rather than becoming pressure to perform. Today’s Soil influence grounds the month’s visibility in simple, practical care, giving expression a steadier foundation. Give attention to a grounding routine or close relationshi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_9_2 {
+            get {
+                return ResourceManager.GetString("_9_9_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 9 Fire Month · 3 Thunder Day&lt;/h5&gt;
+        ///&lt;p&gt;Fire across year and month concentrates visibility, expression and emotional intensity. There is room for creativity and meaningful connection, but pacing, authenticity and moments of quiet help brightness remain sustainable rather than becoming pressure to perform. Today’s Thunder influence adds a quick burst of initiative to the expressive month; direct it deliberately so that enthusiasm does not become reactivity. Choose one constructive [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_9_3 {
+            get {
+                return ResourceManager.GetString("_9_9_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 9 Fire Month · 4 Wind Day&lt;/h5&gt;
+        ///&lt;p&gt;Fire across year and month concentrates visibility, expression and emotional intensity. There is room for creativity and meaningful connection, but pacing, authenticity and moments of quiet help brightness remain sustainable rather than becoming pressure to perform. Today’s Wind influence brings tact and flexibility to the month’s stronger expression, helping a message become a thoughtful conversation. Turn a strong insight into a thoughtful e [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_9_4 {
+            get {
+                return ResourceManager.GetString("_9_9_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 9 Fire Month · 5 Core Earth Day&lt;/h5&gt;
+        ///&lt;p&gt;Fire across year and month concentrates visibility, expression and emotional intensity. There is room for creativity and meaningful connection, but pacing, authenticity and moments of quiet help brightness remain sustainable rather than becoming pressure to perform. Today’s Core Earth influence asks you to centre yourself within the month’s intensity, allowing strong feelings to settle before turning them into a decision. Return to your  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_9_5 {
+            get {
+                return ResourceManager.GetString("_9_9_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 9 Fire Month · 6 Heaven Day&lt;/h5&gt;
+        ///&lt;p&gt;Fire across year and month concentrates visibility, expression and emotional intensity. There is room for creativity and meaningful connection, but pacing, authenticity and moments of quiet help brightness remain sustainable rather than becoming pressure to perform. Today’s Heaven influence brings precision to the month’s brightness, helping you refine what you want to say without making it overly forceful. Refine what you want to communicat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_9_6 {
+            get {
+                return ResourceManager.GetString("_9_9_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 9 Fire Month · 7 Lake Day&lt;/h5&gt;
+        ///&lt;p&gt;Fire across year and month concentrates visibility, expression and emotional intensity. There is room for creativity and meaningful connection, but pacing, authenticity and moments of quiet help brightness remain sustainable rather than becoming pressure to perform. Today’s Lake influence softens the month’s expressive intensity with humour and relaxed connection, allowing enjoyment without a need to perform. Enjoy connection without performin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_9_7 {
+            get {
+                return ResourceManager.GetString("_9_9_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 9 Fire Month · 8 Mountain Day&lt;/h5&gt;
+        ///&lt;p&gt;Fire across year and month concentrates visibility, expression and emotional intensity. There is room for creativity and meaningful connection, but pacing, authenticity and moments of quiet help brightness remain sustainable rather than becoming pressure to perform. Today’s Mountain influence introduces a contained pause into the bright month, making space to integrate what has been seen or felt. Make space to integrate what has surfaced a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_9_8 {
+            get {
+                return ResourceManager.GetString("_9_9_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;9 Fire Year · 9 Fire Month · 9 Fire Day&lt;/h5&gt;
+        ///&lt;p&gt;Fire across year and month concentrates visibility, expression and emotional intensity. There is room for creativity and meaningful connection, but pacing, authenticity and moments of quiet help brightness remain sustainable rather than becoming pressure to perform. Today’s Fire influence heightens the month’s brightness and emotional intensity, favouring authentic expression with pauses for grounding and rest. Express what matters authentical [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _9_9_9 {
+            get {
+                return ResourceManager.GetString("_9_9_9", resourceCulture);
             }
         }
         

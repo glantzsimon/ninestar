@@ -6860,4 +6860,2191 @@
   <data name="PersonalDetails" xml:space="preserve">
     <value>Personal Details</value>
   </data>
+  <data name="_1_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\water-month\1-1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\water-month\1-1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\water-month\1-1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\water-month\1-1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\water-month\1-1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\water-month\1-1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\water-month\1-1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\water-month\1-1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_1_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\water-month\1-1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\soil-month\1-2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\soil-month\1-2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\soil-month\1-2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\soil-month\1-2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\soil-month\1-2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_2_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\soil-month\1-2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_2_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\soil-month\1-2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\soil-month\1-2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_2_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\soil-month\1-2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\thunder-month\1-3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\thunder-month\1-3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_3_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\thunder-month\1-3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_3_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\thunder-month\1-3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_3_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\thunder-month\1-3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_3_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\thunder-month\1-3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_3_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\thunder-month\1-3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\thunder-month\1-3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_3_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\thunder-month\1-3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\wind-month\1-4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\wind-month\1-4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\wind-month\1-4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_4_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\wind-month\1-4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_4_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\wind-month\1-4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_4_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\wind-month\1-4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_4_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\wind-month\1-4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\wind-month\1-4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_4_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\wind-month\1-4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\core-earth-month\1-5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\core-earth-month\1-5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\core-earth-month\1-5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\core-earth-month\1-5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_5_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\core-earth-month\1-5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_5_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\core-earth-month\1-5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_5_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\core-earth-month\1-5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\core-earth-month\1-5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_5_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\core-earth-month\1-5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_6_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\heaven-month\1-6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_6_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\heaven-month\1-6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_6_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\heaven-month\1-6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_6_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\heaven-month\1-6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_6_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\heaven-month\1-6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_6_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\heaven-month\1-6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_6_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\heaven-month\1-6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\heaven-month\1-6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_6_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\heaven-month\1-6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_7_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\lake-month\1-7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_7_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\lake-month\1-7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_7_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\lake-month\1-7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_7_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\lake-month\1-7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_7_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\lake-month\1-7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_7_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\lake-month\1-7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_7_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\lake-month\1-7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\lake-month\1-7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_7_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\lake-month\1-7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_8_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\mountain-month\1-8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_8_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\mountain-month\1-8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_8_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\mountain-month\1-8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_8_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\mountain-month\1-8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_8_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\mountain-month\1-8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_8_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\mountain-month\1-8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_8_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\mountain-month\1-8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_8_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\mountain-month\1-8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_8_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\mountain-month\1-8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_9_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\fire-month\1-9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_9_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\fire-month\1-9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_9_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\fire-month\1-9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_9_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\fire-month\1-9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_9_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\fire-month\1-9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_9_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\fire-month\1-9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_9_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\fire-month\1-9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_9_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\fire-month\1-9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_1_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\water-year\fire-month\1-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\water-month\2-1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\water-month\2-1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\water-month\2-1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\water-month\2-1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\water-month\2-1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\water-month\2-1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\water-month\2-1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\water-month\2-1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_1_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\water-month\2-1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\soil-month\2-2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\soil-month\2-2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\soil-month\2-2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\soil-month\2-2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\soil-month\2-2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_2_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\soil-month\2-2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_2_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\soil-month\2-2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\soil-month\2-2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_2_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\soil-month\2-2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\thunder-month\2-3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\thunder-month\2-3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_3_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\thunder-month\2-3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_3_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\thunder-month\2-3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_3_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\thunder-month\2-3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_3_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\thunder-month\2-3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_3_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\thunder-month\2-3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\thunder-month\2-3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_3_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\thunder-month\2-3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\wind-month\2-4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\wind-month\2-4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\wind-month\2-4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_4_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\wind-month\2-4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_4_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\wind-month\2-4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_4_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\wind-month\2-4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_4_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\wind-month\2-4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\wind-month\2-4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_4_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\wind-month\2-4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\core-earth-month\2-5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\core-earth-month\2-5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\core-earth-month\2-5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\core-earth-month\2-5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_5_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\core-earth-month\2-5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_5_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\core-earth-month\2-5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_5_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\core-earth-month\2-5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\core-earth-month\2-5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_5_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\core-earth-month\2-5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_6_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\heaven-month\2-6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_6_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\heaven-month\2-6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_6_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\heaven-month\2-6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_6_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\heaven-month\2-6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_6_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\heaven-month\2-6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_6_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\heaven-month\2-6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_6_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\heaven-month\2-6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\heaven-month\2-6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_6_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\heaven-month\2-6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_7_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\lake-month\2-7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_7_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\lake-month\2-7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_7_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\lake-month\2-7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_7_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\lake-month\2-7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_7_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\lake-month\2-7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_7_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\lake-month\2-7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_7_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\lake-month\2-7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\lake-month\2-7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_7_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\lake-month\2-7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_8_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\mountain-month\2-8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_8_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\mountain-month\2-8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_8_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\mountain-month\2-8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_8_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\mountain-month\2-8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_8_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\mountain-month\2-8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_8_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\mountain-month\2-8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_8_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\mountain-month\2-8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_8_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\mountain-month\2-8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_8_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\mountain-month\2-8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_9_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\fire-month\2-9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_9_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\fire-month\2-9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_9_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\fire-month\2-9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_9_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\fire-month\2-9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_9_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\fire-month\2-9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_9_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\fire-month\2-9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_9_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\fire-month\2-9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_9_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\fire-month\2-9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_2_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\soil-year\fire-month\2-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\water-month\3-1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\water-month\3-1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\water-month\3-1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\water-month\3-1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\water-month\3-1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\water-month\3-1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\water-month\3-1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\water-month\3-1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_1_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\water-month\3-1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\soil-month\3-2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\soil-month\3-2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\soil-month\3-2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\soil-month\3-2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\soil-month\3-2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_2_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\soil-month\3-2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_2_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\soil-month\3-2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\soil-month\3-2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_2_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\soil-month\3-2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\thunder-month\3-3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\thunder-month\3-3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_3_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\thunder-month\3-3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_3_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\thunder-month\3-3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_3_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\thunder-month\3-3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_3_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\thunder-month\3-3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_3_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\thunder-month\3-3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\thunder-month\3-3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_3_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\thunder-month\3-3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\wind-month\3-4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\wind-month\3-4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\wind-month\3-4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_4_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\wind-month\3-4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_4_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\wind-month\3-4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_4_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\wind-month\3-4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_4_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\wind-month\3-4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\wind-month\3-4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_4_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\wind-month\3-4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\core-earth-month\3-5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\core-earth-month\3-5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\core-earth-month\3-5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\core-earth-month\3-5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_5_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\core-earth-month\3-5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_5_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\core-earth-month\3-5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_5_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\core-earth-month\3-5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\core-earth-month\3-5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_5_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\core-earth-month\3-5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_6_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\heaven-month\3-6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_6_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\heaven-month\3-6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_6_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\heaven-month\3-6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_6_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\heaven-month\3-6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_6_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\heaven-month\3-6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_6_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\heaven-month\3-6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_6_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\heaven-month\3-6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\heaven-month\3-6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_6_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\heaven-month\3-6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_7_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\lake-month\3-7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_7_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\lake-month\3-7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_7_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\lake-month\3-7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_7_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\lake-month\3-7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_7_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\lake-month\3-7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_7_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\lake-month\3-7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_7_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\lake-month\3-7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\lake-month\3-7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_7_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\lake-month\3-7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_8_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\mountain-month\3-8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_8_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\mountain-month\3-8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_8_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\mountain-month\3-8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_8_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\mountain-month\3-8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_8_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\mountain-month\3-8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_8_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\mountain-month\3-8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_8_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\mountain-month\3-8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_8_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\mountain-month\3-8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_8_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\mountain-month\3-8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_9_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\fire-month\3-9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_9_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\fire-month\3-9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_9_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\fire-month\3-9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_9_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\fire-month\3-9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_9_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\fire-month\3-9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_9_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\fire-month\3-9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_9_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\fire-month\3-9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_9_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\fire-month\3-9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_3_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\thunder-year\fire-month\3-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\water-month\4-1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\water-month\4-1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\water-month\4-1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\water-month\4-1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\water-month\4-1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\water-month\4-1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\water-month\4-1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\water-month\4-1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_1_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\water-month\4-1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\soil-month\4-2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\soil-month\4-2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\soil-month\4-2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\soil-month\4-2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\soil-month\4-2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_2_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\soil-month\4-2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_2_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\soil-month\4-2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\soil-month\4-2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_2_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\soil-month\4-2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\thunder-month\4-3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\thunder-month\4-3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_3_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\thunder-month\4-3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_3_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\thunder-month\4-3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_3_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\thunder-month\4-3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_3_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\thunder-month\4-3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_3_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\thunder-month\4-3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\thunder-month\4-3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_3_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\thunder-month\4-3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\wind-month\4-4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\wind-month\4-4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\wind-month\4-4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_4_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\wind-month\4-4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_4_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\wind-month\4-4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_4_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\wind-month\4-4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_4_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\wind-month\4-4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\wind-month\4-4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_4_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\wind-month\4-4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\core-earth-month\4-5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\core-earth-month\4-5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\core-earth-month\4-5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\core-earth-month\4-5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_5_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\core-earth-month\4-5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_5_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\core-earth-month\4-5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_5_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\core-earth-month\4-5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\core-earth-month\4-5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_5_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\core-earth-month\4-5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_6_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\heaven-month\4-6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_6_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\heaven-month\4-6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_6_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\heaven-month\4-6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_6_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\heaven-month\4-6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_6_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\heaven-month\4-6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_6_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\heaven-month\4-6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_6_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\heaven-month\4-6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\heaven-month\4-6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_6_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\heaven-month\4-6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_7_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\lake-month\4-7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_7_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\lake-month\4-7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_7_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\lake-month\4-7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_7_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\lake-month\4-7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_7_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\lake-month\4-7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_7_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\lake-month\4-7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_7_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\lake-month\4-7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\lake-month\4-7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_7_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\lake-month\4-7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_8_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\mountain-month\4-8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_8_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\mountain-month\4-8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_8_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\mountain-month\4-8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_8_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\mountain-month\4-8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_8_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\mountain-month\4-8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_8_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\mountain-month\4-8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_8_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\mountain-month\4-8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_8_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\mountain-month\4-8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_8_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\mountain-month\4-8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_9_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\fire-month\4-9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_9_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\fire-month\4-9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_9_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\fire-month\4-9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_9_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\fire-month\4-9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_9_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\fire-month\4-9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_9_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\fire-month\4-9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_9_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\fire-month\4-9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_9_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\fire-month\4-9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_4_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\wind-year\fire-month\4-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\water-month\5-1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\water-month\5-1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\water-month\5-1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\water-month\5-1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\water-month\5-1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\water-month\5-1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\water-month\5-1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\water-month\5-1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_1_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\water-month\5-1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\soil-month\5-2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\soil-month\5-2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\soil-month\5-2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\soil-month\5-2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\soil-month\5-2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_2_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\soil-month\5-2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_2_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\soil-month\5-2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\soil-month\5-2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_2_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\soil-month\5-2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\thunder-month\5-3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\thunder-month\5-3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_3_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\thunder-month\5-3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_3_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\thunder-month\5-3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_3_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\thunder-month\5-3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_3_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\thunder-month\5-3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_3_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\thunder-month\5-3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\thunder-month\5-3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_3_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\thunder-month\5-3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\wind-month\5-4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\wind-month\5-4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\wind-month\5-4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_4_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\wind-month\5-4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_4_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\wind-month\5-4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_4_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\wind-month\5-4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_4_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\wind-month\5-4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\wind-month\5-4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_4_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\wind-month\5-4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\core-earth-month\5-5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\core-earth-month\5-5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\core-earth-month\5-5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\core-earth-month\5-5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_5_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\core-earth-month\5-5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_5_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\core-earth-month\5-5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_5_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\core-earth-month\5-5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\core-earth-month\5-5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_5_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\core-earth-month\5-5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_6_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\heaven-month\5-6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_6_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\heaven-month\5-6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_6_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\heaven-month\5-6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_6_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\heaven-month\5-6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_6_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\heaven-month\5-6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_6_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\heaven-month\5-6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_6_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\heaven-month\5-6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\heaven-month\5-6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_6_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\heaven-month\5-6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_7_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\lake-month\5-7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_7_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\lake-month\5-7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_7_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\lake-month\5-7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_7_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\lake-month\5-7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_7_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\lake-month\5-7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_7_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\lake-month\5-7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_7_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\lake-month\5-7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\lake-month\5-7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_7_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\lake-month\5-7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_8_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\mountain-month\5-8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_8_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\mountain-month\5-8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_8_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\mountain-month\5-8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_8_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\mountain-month\5-8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_8_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\mountain-month\5-8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_8_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\mountain-month\5-8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_8_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\mountain-month\5-8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_8_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\mountain-month\5-8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_8_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\mountain-month\5-8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_9_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\fire-month\5-9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_9_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\fire-month\5-9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_9_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\fire-month\5-9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_9_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\fire-month\5-9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_9_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\fire-month\5-9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_9_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\fire-month\5-9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_9_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\fire-month\5-9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_9_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\fire-month\5-9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_5_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\core-earth-year\fire-month\5-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\water-month\6-1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\water-month\6-1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\water-month\6-1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\water-month\6-1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\water-month\6-1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\water-month\6-1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\water-month\6-1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\water-month\6-1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_1_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\water-month\6-1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\soil-month\6-2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\soil-month\6-2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\soil-month\6-2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\soil-month\6-2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\soil-month\6-2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_2_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\soil-month\6-2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_2_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\soil-month\6-2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\soil-month\6-2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_2_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\soil-month\6-2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\thunder-month\6-3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\thunder-month\6-3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_3_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\thunder-month\6-3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_3_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\thunder-month\6-3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_3_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\thunder-month\6-3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_3_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\thunder-month\6-3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_3_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\thunder-month\6-3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\thunder-month\6-3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_3_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\thunder-month\6-3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\wind-month\6-4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\wind-month\6-4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\wind-month\6-4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_4_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\wind-month\6-4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_4_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\wind-month\6-4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_4_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\wind-month\6-4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_4_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\wind-month\6-4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\wind-month\6-4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_4_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\wind-month\6-4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\core-earth-month\6-5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\core-earth-month\6-5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\core-earth-month\6-5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\core-earth-month\6-5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_5_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\core-earth-month\6-5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_5_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\core-earth-month\6-5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_5_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\core-earth-month\6-5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\core-earth-month\6-5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_5_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\core-earth-month\6-5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_6_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\heaven-month\6-6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_6_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\heaven-month\6-6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_6_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\heaven-month\6-6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_6_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\heaven-month\6-6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_6_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\heaven-month\6-6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_6_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\heaven-month\6-6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_6_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\heaven-month\6-6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\heaven-month\6-6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_6_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\heaven-month\6-6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_7_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\lake-month\6-7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_7_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\lake-month\6-7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_7_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\lake-month\6-7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_7_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\lake-month\6-7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_7_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\lake-month\6-7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_7_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\lake-month\6-7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_7_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\lake-month\6-7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\lake-month\6-7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_7_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\lake-month\6-7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_8_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\mountain-month\6-8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_8_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\mountain-month\6-8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_8_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\mountain-month\6-8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_8_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\mountain-month\6-8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_8_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\mountain-month\6-8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_8_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\mountain-month\6-8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_8_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\mountain-month\6-8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_8_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\mountain-month\6-8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_8_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\mountain-month\6-8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_9_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\fire-month\6-9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_9_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\fire-month\6-9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_9_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\fire-month\6-9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_9_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\fire-month\6-9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_9_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\fire-month\6-9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_9_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\fire-month\6-9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_9_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\fire-month\6-9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_9_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\fire-month\6-9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_6_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\heaven-year\fire-month\6-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\water-month\7-1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\water-month\7-1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\water-month\7-1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\water-month\7-1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\water-month\7-1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\water-month\7-1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\water-month\7-1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\water-month\7-1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_1_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\water-month\7-1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\soil-month\7-2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\soil-month\7-2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\soil-month\7-2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\soil-month\7-2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\soil-month\7-2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_2_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\soil-month\7-2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_2_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\soil-month\7-2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\soil-month\7-2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_2_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\soil-month\7-2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\thunder-month\7-3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\thunder-month\7-3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_3_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\thunder-month\7-3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_3_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\thunder-month\7-3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_3_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\thunder-month\7-3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_3_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\thunder-month\7-3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_3_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\thunder-month\7-3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\thunder-month\7-3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_3_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\thunder-month\7-3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\wind-month\7-4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\wind-month\7-4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\wind-month\7-4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_4_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\wind-month\7-4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_4_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\wind-month\7-4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_4_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\wind-month\7-4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_4_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\wind-month\7-4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\wind-month\7-4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_4_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\wind-month\7-4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\core-earth-month\7-5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\core-earth-month\7-5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\core-earth-month\7-5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\core-earth-month\7-5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_5_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\core-earth-month\7-5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_5_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\core-earth-month\7-5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_5_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\core-earth-month\7-5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\core-earth-month\7-5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_5_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\core-earth-month\7-5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_6_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\heaven-month\7-6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_6_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\heaven-month\7-6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_6_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\heaven-month\7-6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_6_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\heaven-month\7-6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_6_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\heaven-month\7-6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_6_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\heaven-month\7-6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_6_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\heaven-month\7-6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\heaven-month\7-6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_6_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\heaven-month\7-6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_7_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\lake-month\7-7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_7_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\lake-month\7-7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_7_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\lake-month\7-7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_7_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\lake-month\7-7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_7_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\lake-month\7-7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_7_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\lake-month\7-7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_7_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\lake-month\7-7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\lake-month\7-7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_7_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\lake-month\7-7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_8_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\mountain-month\7-8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_8_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\mountain-month\7-8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_8_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\mountain-month\7-8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_8_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\mountain-month\7-8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_8_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\mountain-month\7-8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_8_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\mountain-month\7-8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_8_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\mountain-month\7-8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_8_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\mountain-month\7-8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_8_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\mountain-month\7-8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_9_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\fire-month\7-9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_9_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\fire-month\7-9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_9_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\fire-month\7-9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_9_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\fire-month\7-9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_9_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\fire-month\7-9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_9_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\fire-month\7-9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_9_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\fire-month\7-9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_9_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\fire-month\7-9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_7_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\lake-year\fire-month\7-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\water-month\8-1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\water-month\8-1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\water-month\8-1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\water-month\8-1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\water-month\8-1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\water-month\8-1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\water-month\8-1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\water-month\8-1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_1_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\water-month\8-1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\soil-month\8-2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\soil-month\8-2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\soil-month\8-2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\soil-month\8-2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\soil-month\8-2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_2_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\soil-month\8-2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_2_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\soil-month\8-2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\soil-month\8-2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_2_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\soil-month\8-2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\thunder-month\8-3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\thunder-month\8-3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_3_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\thunder-month\8-3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_3_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\thunder-month\8-3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_3_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\thunder-month\8-3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_3_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\thunder-month\8-3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_3_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\thunder-month\8-3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\thunder-month\8-3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_3_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\thunder-month\8-3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\wind-month\8-4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\wind-month\8-4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\wind-month\8-4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_4_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\wind-month\8-4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_4_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\wind-month\8-4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_4_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\wind-month\8-4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_4_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\wind-month\8-4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\wind-month\8-4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_4_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\wind-month\8-4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\core-earth-month\8-5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\core-earth-month\8-5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\core-earth-month\8-5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\core-earth-month\8-5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_5_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\core-earth-month\8-5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_5_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\core-earth-month\8-5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_5_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\core-earth-month\8-5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\core-earth-month\8-5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_5_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\core-earth-month\8-5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_6_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\heaven-month\8-6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_6_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\heaven-month\8-6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_6_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\heaven-month\8-6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_6_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\heaven-month\8-6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_6_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\heaven-month\8-6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_6_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\heaven-month\8-6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_6_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\heaven-month\8-6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\heaven-month\8-6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_6_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\heaven-month\8-6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_7_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\lake-month\8-7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_7_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\lake-month\8-7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_7_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\lake-month\8-7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_7_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\lake-month\8-7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_7_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\lake-month\8-7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_7_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\lake-month\8-7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_7_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\lake-month\8-7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\lake-month\8-7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_7_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\lake-month\8-7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_8_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\mountain-month\8-8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_8_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\mountain-month\8-8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_8_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\mountain-month\8-8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_8_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\mountain-month\8-8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_8_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\mountain-month\8-8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_8_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\mountain-month\8-8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_8_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\mountain-month\8-8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_8_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\mountain-month\8-8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_8_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\mountain-month\8-8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_9_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\fire-month\8-9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_9_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\fire-month\8-9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_9_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\fire-month\8-9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_9_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\fire-month\8-9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_9_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\fire-month\8-9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_9_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\fire-month\8-9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_9_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\fire-month\8-9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_9_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\fire-month\8-9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_8_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\mountain-year\fire-month\8-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\water-month\9-1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\water-month\9-1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\water-month\9-1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\water-month\9-1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\water-month\9-1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\water-month\9-1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\water-month\9-1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\water-month\9-1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_1_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\water-month\9-1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\soil-month\9-2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\soil-month\9-2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\soil-month\9-2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\soil-month\9-2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\soil-month\9-2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_2_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\soil-month\9-2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_2_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\soil-month\9-2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\soil-month\9-2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_2_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\soil-month\9-2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\thunder-month\9-3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\thunder-month\9-3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_3_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\thunder-month\9-3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_3_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\thunder-month\9-3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_3_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\thunder-month\9-3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_3_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\thunder-month\9-3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_3_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\thunder-month\9-3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\thunder-month\9-3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_3_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\thunder-month\9-3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\wind-month\9-4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\wind-month\9-4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\wind-month\9-4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_4_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\wind-month\9-4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_4_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\wind-month\9-4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_4_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\wind-month\9-4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_4_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\wind-month\9-4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\wind-month\9-4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_4_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\wind-month\9-4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\core-earth-month\9-5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\core-earth-month\9-5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\core-earth-month\9-5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\core-earth-month\9-5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_5_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\core-earth-month\9-5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_5_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\core-earth-month\9-5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_5_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\core-earth-month\9-5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\core-earth-month\9-5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_5_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\core-earth-month\9-5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_6_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\heaven-month\9-6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_6_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\heaven-month\9-6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_6_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\heaven-month\9-6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_6_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\heaven-month\9-6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_6_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\heaven-month\9-6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_6_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\heaven-month\9-6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_6_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\heaven-month\9-6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\heaven-month\9-6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_6_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\heaven-month\9-6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_7_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\lake-month\9-7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_7_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\lake-month\9-7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_7_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\lake-month\9-7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_7_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\lake-month\9-7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_7_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\lake-month\9-7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_7_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\lake-month\9-7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_7_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\lake-month\9-7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\lake-month\9-7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_7_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\lake-month\9-7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_8_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\mountain-month\9-8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_8_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\mountain-month\9-8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_8_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\mountain-month\9-8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_8_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\mountain-month\9-8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_8_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\mountain-month\9-8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_8_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\mountain-month\9-8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_8_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\mountain-month\9-8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_8_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\mountain-month\9-8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_8_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\mountain-month\9-8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_9_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\fire-month\9-9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_9_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\fire-month\9-9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_9_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\fire-month\9-9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_9_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\fire-month\9-9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_9_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\fire-month\9-9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_9_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\fire-month\9-9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_9_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\fire-month\9-9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_9_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\fire-month\9-9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_9_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\combined\en-gb\fire-year\fire-month\9-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

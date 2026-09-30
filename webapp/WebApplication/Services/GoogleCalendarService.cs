@@ -6,7 +6,6 @@ using K9.WebApplication.Packages;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -135,21 +134,16 @@ namespace K9.WebApplication.Services
             var key = $"{year}-{month}-{day}";
             if (descriptions.TryGetValue(key, out var description))
                 return description;
-            var resourceName = $"K9.Globalisation.Predictions.Combined.{key}.htm";
-            using (var stream = typeof(K9.Globalisation.Dictionary).Assembly.GetManifestResourceStream(resourceName))
-            {
-                if (stream == null)
-                    throw new InvalidOperationException($"Combined prediction resource not found: {resourceName}");
-                using (var reader = new StreamReader(stream, Encoding.UTF8))
-                {
-                    var document = new HtmlDocument();
-                    document.LoadHtml(reader.ReadToEnd());
-                    var paragraphs = document.DocumentNode.SelectNodes("//p");
-                    if (paragraphs == null)
-                        throw new InvalidOperationException($"Combined prediction has no paragraphs: {resourceName}");
-                    description = string.Join("\n\n", paragraphs.Select(p => HtmlEntity.DeEntitize(p.InnerText).Trim()));
-                }
-            }
+            var resourceKey = string.Format(CultureInfo.InvariantCulture, "_{0}_{1}_{2}", year, month, day);
+            var html = K9.Globalisation.Dictionary.ResourceManager.GetString(resourceKey, K9.Globalisation.Dictionary.Culture);
+            if (string.IsNullOrWhiteSpace(html))
+                throw new InvalidOperationException($"Combined prediction resource not found: {resourceKey}");
+            var document = new HtmlDocument();
+            document.LoadHtml(html);
+            var paragraphs = document.DocumentNode.SelectNodes("//p");
+            if (paragraphs == null)
+                throw new InvalidOperationException($"Combined prediction has no paragraphs: {resourceKey}");
+            description = string.Join("\n\n", paragraphs.Select(p => HtmlEntity.DeEntitize(p.InnerText).Trim()));
             descriptions.Add(key, description);
             return description;
         }

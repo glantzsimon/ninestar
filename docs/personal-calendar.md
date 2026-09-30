@@ -19,7 +19,7 @@ One all-day, transparent event is produced per date. The title is `9Star · 7.1.
 
 Any date range is supported. A January-to-December export still uses the existing Nine Star Ki calculation for year and month boundaries. No February boundary is hardcoded here. For a Nine Star Ki year export, supply the dates determined by the existing astronomy service.
 
-The existing 729 English descriptions are embedded in `K9.Globalisation` with explicit resource names, so deployment does not depend on source folders being present. Calendar text uses CRLF, RFC 5545 text escaping and UTF-8-aware 75-octet line folding. Event IDs remain stable for a member/date; the subscription URL should remain stable as well. Return ICS as UTF-8 with `text/calendar; charset=utf-8` when the controller is added.
+The existing 729 combined descriptions are loaded through `K9.Globalisation.Dictionary.ResourceManager`, using your `Dictionary.resx` keys such as `_1_2_3` and the existing culture selection. No separate embedding rule or resource collection is added. Calendar text uses CRLF, RFC 5545 text escaping and UTF-8-aware 75-octet line folding. Event IDs remain stable for a member/date; the subscription URL should remain stable as well. Return ICS as UTF-8 with `text/calendar; charset=utf-8` when the controller is added.
 
 This change implements data generation and ICS serialization. A public subscription endpoint, revocable unguessable member token, entitlement checks and My Account buttons are subsequent work. The future endpoint must authorize access; the `userId` service parameter is not an access credential. OAuth-based Google Calendar writes are not implemented.
 

@@ -82,11 +82,6 @@
     <CodeAnalysisRuleSet>Globalisation.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Predictions\Combined\en-gb\**\*.htm">
-      <LogicalName>K9.Globalisation.Predictions.Combined.%(Filename)%(Extension)</LogicalName>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>

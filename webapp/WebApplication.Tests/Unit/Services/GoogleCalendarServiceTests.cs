@@ -112,15 +112,15 @@ namespace K9.WebApplication.Tests.Unit.Services
         [Fact]
         public void All729CombinedDescriptionsArePackaged()
         {
-            var assembly = typeof(K9.Globalisation.Dictionary).Assembly;
             for (var year = 1; year <= 9; year++)
                 for (var month = 1; month <= 9; month++)
                     for (var day = 1; day <= 9; day++)
                     {
                         var name = string.Format(CultureInfo.InvariantCulture,
-                            "K9.Globalisation.Predictions.Combined.{0}-{1}-{2}.htm", year, month, day);
-                        using (var stream = assembly.GetManifestResourceStream(name))
-                            Assert.NotNull(stream);
+                            "_{0}_{1}_{2}", year, month, day);
+                        var html = K9.Globalisation.Dictionary.ResourceManager.GetString(name, K9.Globalisation.Dictionary.Culture);
+                        Assert.False(string.IsNullOrWhiteSpace(html));
+                        Assert.Contains("<p>", html);
                     }
         }
     }

@@ -10,5 +10,9 @@ namespace K9.WebApplication.Services
         List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate);
         string ConvertToICalendar(int userId, List<CalendarEntry> entries);
         string GenerateCalendar(int userId, DateTime startDate, DateTime endDate);
+        DateTime GetCalendarToday(int userId);
+        string GetOrCreateSubscriptionToken(int userId);
+        int? GetUserIdFromSubscriptionToken(string token);
+        void RevokeSubscription(int userId);
     }
 }

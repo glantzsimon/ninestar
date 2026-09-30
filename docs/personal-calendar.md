@@ -19,15 +19,19 @@ One all-day, transparent event is produced per date. The title is `9Star · 7.1.
 
 Any date range is supported. A January-to-December export still uses the existing Nine Star Ki calculation for year and month boundaries. No February boundary is hardcoded here. For a Nine Star Ki year export, supply the dates determined by the existing astronomy service.
 
-The existing 729 combined descriptions are loaded through `K9.Globalisation.Dictionary.ResourceManager`, using your `Dictionary.resx` keys such as `_1_2_3` and the existing culture selection. No separate embedding rule or resource collection is added. Calendar text uses CRLF, RFC 5545 text escaping and UTF-8-aware 75-octet line folding. Event IDs remain stable for a member/date; the subscription URL should remain stable as well. Return ICS as UTF-8 with `text/calendar; charset=utf-8` when the controller is added.
+The existing 729 combined descriptions are loaded through `K9.Globalisation.Dictionary.ResourceManager`, using your `Dictionary.resx` keys such as `_1_2_3` and the existing culture selection. No separate embedding rule or resource collection is added. Calendar text uses CRLF, RFC 5545 text escaping and UTF-8-aware 75-octet line folding. Event IDs remain stable for a member/date; the subscription URL should remain stable as well. The feed returns UTF-8 `text/calendar` content.
 
-This change implements data generation and ICS serialization. A public subscription endpoint, revocable unguessable member token, entitlement checks and My Account buttons are subsequent work. The future endpoint must authorize access; the `userId` service parameter is not an access credential. OAuth-based Google Calendar writes are not implemented.
+My Personal Chart now has a calendar panel beneath the current houses. It provides a Gregorian month grid using the existing trigram images, month navigation, Today, selected-day combined text, help and a full-browser-window view. The expanded view closes with its button or Escape and keeps keyboard focus inside it. All labels, messages, help and weekday names come from the Globalisation resource file; existing matching entries are reused. Date and month formatting use the request culture. Year and nine-year navigation remain future work.
+
+`PersonalCalendarController` provides authenticated month data and anti-forgery-protected subscription/revocation POST actions. The anonymous feed requires a valid private token and checks the existing paid predictions access (or administrator status) on every request. UI access uses the existing predictions paywall. Tokens are protected by ASP.NET MachineKey and stored in existing UserPreference records, so no database migration is required. The copied URL remains stable until revoked; disabling it makes the previous URL unusable. A new URL needs a new subscription in Google Calendar. The feed covers one local month behind today through twelve months ahead and reads saved calculation preferences each time. The subscriber's UI language is saved when the link is obtained. OAuth-based Google Calendar writes are not implemented.
+
+Deployment: use a stable ASP.NET machine key across app restarts and any web-farm instances, as for forms authentication. Changing that key invalidates existing subscription links. The feed URL must be reachable from the internet; a localhost URL cannot be subscribed to by Google. Add the URL from Google Calendar on a computer via Other calendars > + > From URL. Do not log or share private subscription URLs.
 
 The chart model now accepts an optional explicit calculator type. `NineStarKiService` passes its existing argument through before houses are calculated, allowing a calendar request to use the member's saved mode. Direct constructor callers that omit the argument retain existing behavior.
 
 ## Validation
 
-`GoogleCalendarServiceTests` covers leap-day end dates, personal event IDs, event ordering, text escaping, Unicode folding, invalid input, timezone conversion, calculator mode and packaging all 729 descriptions. Run the test project on Windows with the existing solution dependencies restored. The implementation environment has no .NET Framework compiler or test runner; these C# tests have not been executed there. AstronomyService is encrypted in the repository and this change does not modify it.
+`GoogleCalendarServiceTests` covers leap-day end dates, personal event IDs, event ordering, text escaping, Unicode folding, invalid input, timezone conversion, calculator mode and all 729 existing description resources. Further tests cover token stability, user binding, tampering, revocation, malformed tokens, feed access checks and the rolling date window. Run the test project on Windows with the existing solution dependencies restored. The implementation environment has no .NET Framework compiler or test runner; these C# tests have not been executed there. AstronomyService is encrypted in the repository and this change does not modify it.
 
 ## Review locally
 
@@ -37,3 +41,15 @@ git checkout -b feature/personal-calendar-entries origin/feature/personal-calend
 ```
 
 Open the existing solution in Visual Studio, restore packages, build and run `GoogleCalendarServiceTests`. Merge the review pull request after checking it; then switch to `master` and pull to obtain the merged change.
+
+
+## UI checks on Windows
+
+1. Sign in with paid predictions access and open My Personal Chart. Confirm the panel sits below the current houses, and today's date is selected in the saved timezone.
+2. Compare a selected day's houses and combined description with the existing predictions calculator, including a split morning/afternoon day and dates near February and monthly solar-term changes.
+3. Navigate across December/January, inspect February in a leap year, and use Today to return.
+4. Expand and close on desktop and mobile. Check that the expanded calendar fills the browser window, Escape closes it, focus returns and the rest of the page does not scroll behind it.
+5. Open help, copy the link, check the manual-copy input if the browser denies clipboard access, and subscribe from Google Calendar on a computer. Opening the copied URL without login should return ICS rather than a login page.
+6. Disable the link and confirm it returns 404. Copy again and confirm a different link is produced. Confirm unpaid users cannot access month data, create a subscription or fetch a paid feed.
+
+JavaScript syntax, resource-key uniqueness and all new resource references, project XML and unique file registrations were checked locally. The Playwright harness could not run because this environment has no browser executable; visual behaviour and actual Google refresh still need local/live verification. No .NET Framework build or C# test execution was possible here.

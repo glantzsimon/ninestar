@@ -8,11 +8,16 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Security.Cryptography;
+using System.Web;
+using System.Web.Security;
 
 namespace K9.WebApplication.Services
 {
     public class GoogleCalendarService : BaseService, IGoogleCalendarService
     {
+        private const string SubscriptionPreferenceKey = "PersonalCalendarSubscriptionToken";
+        private const string SubscriptionPurpose = "NineStarKi.PersonalCalendar.v1";
         private readonly INineStarKiService _nineStarKiService;
         private readonly IUserService _userService;
 
@@ -74,7 +79,7 @@ namespace K9.WebApplication.Services
                 var afternoon = houses.Day2?.EnergyNumber;
                 var description = GetDescription(year, month, day, descriptions);
                 if (afternoon.HasValue && afternoon.Value != day)
-                    description += $"\n\nAfternoon ({year}.{month}.{afternoon.Value}): " + GetDescription(year, month, afternoon.Value, descriptions);
+                    description += $"\n\n{K9.Globalisation.Dictionary.AfternoonEnergyLabel} ({year}.{month}.{afternoon.Value}): " + GetDescription(year, month, afternoon.Value, descriptions);
 
                 entries.Add(new CalendarEntry
                 {
@@ -93,6 +98,61 @@ namespace K9.WebApplication.Services
         public string GenerateCalendar(int userId, DateTime startDate, DateTime endDate)
         {
             return ConvertToICalendar(userId, GetCalendarEntries(userId, startDate, endDate));
+        }
+
+        public DateTime GetCalendarToday(int userId)
+        {
+            ValidateUserId(userId);
+            var info = My.UserInfosRepository.Find(e => e.UserId == userId).FirstOrDefault();
+            var zone = _userService.GetUserPreference(userId, SessionConstants.UserTimeZone, info?.BirthTimeZoneId);
+            if (string.IsNullOrWhiteSpace(zone))
+                throw new InvalidOperationException("A calendar timezone must be saved before generating a calendar.");
+            return DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, zone).Date;
+        }
+
+        public string GetOrCreateSubscriptionToken(int userId)
+        {
+            ValidateUserId(userId);
+            if (_userService.Find(userId) == null)
+                throw new ArgumentException("User not found.", nameof(userId));
+            var token = _userService.GetUserPreference<string>(userId, SubscriptionPreferenceKey);
+            if (GetUserIdFromSubscriptionToken(token) == userId)
+                return token;
+
+            // Store the complete protected token so the member always receives the same URL.
+            var payload = userId.ToString(CultureInfo.InvariantCulture) + "|" + Guid.NewGuid().ToString("N");
+            token = HttpServerUtility.UrlTokenEncode(MachineKey.Protect(Encoding.UTF8.GetBytes(payload), SubscriptionPurpose));
+            _userService.UpdateUserPreference(userId, SubscriptionPreferenceKey, token);
+            return token;
+        }
+
+        public int? GetUserIdFromSubscriptionToken(string token)
+        {
+            if (string.IsNullOrWhiteSpace(token) || token.Length > 1024)
+                return null;
+            try
+            {
+                var bytes = HttpServerUtility.UrlTokenDecode(token);
+                if (bytes == null)
+                    return null;
+                var payload = MachineKey.Unprotect(bytes, SubscriptionPurpose);
+                if (payload == null)
+                    return null;
+                var parts = Encoding.UTF8.GetString(payload).Split('|');
+                if (parts.Length != 2 || !int.TryParse(parts[0], NumberStyles.None, CultureInfo.InvariantCulture, out var userId) || userId <= 0)
+                    return null;
+                var saved = _userService.GetUserPreference<string>(userId, SubscriptionPreferenceKey);
+                return string.Equals(token, saved, StringComparison.Ordinal) && _userService.Find(userId) != null ? (int?)userId : null;
+            }
+            catch (CryptographicException) { return null; }
+            catch (FormatException) { return null; }
+            catch (ArgumentException) { return null; }
+        }
+
+        public void RevokeSubscription(int userId)
+        {
+            ValidateUserId(userId);
+            _userService.UpdateUserPreference(userId, SubscriptionPreferenceKey, string.Empty);
         }
 
         public string ConvertToICalendar(int userId, List<CalendarEntry> entries)

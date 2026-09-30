@@ -494,6 +494,7 @@
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\PersonalChartController.cs" />
+    <Compile Include="Controllers\PersonalCalendarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1833,6 +1834,10 @@
     <Content Include="Views\Predictions\_CoreCycles.cshtml" />
     <Content Include="Views\Predictions\_AdditionalCycles.cshtml" />
     <Content Include="Views\PersonalChart\MyProfile.cshtml" />
+    <Content Include="Views\PersonalChart\_PersonalCalendar.cshtml" />
+    <Content Include="Scripts\personal-calendar.js" />
+    <Content Include="Content\controls\personal-calendar.css" />
+    <Content Include="Content\less\controls\personal-calendar.less" />
     <Content Include="Views\Home\SouthernHemisphere.cshtml" />
     <Content Include="Views\Shared\_LayoutPrint.cshtml" />
     <Content Include="Views\Shared\_LayoutPrintMaster.cshtml" />

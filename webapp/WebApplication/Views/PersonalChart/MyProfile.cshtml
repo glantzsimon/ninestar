@@ -1,5 +1,6 @@
 ﻿@using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.Enums
 @model K9.WebApplication.Models.NineStarKiModel
 
 @{
@@ -31,6 +32,12 @@
         {
             <div class="energy-summary-container">
                 @Html.Panel(Dictionary.HousesYouCurrentlyOccupy, Html.Partial("../Predictions/_PersonalCycles", Model).ToString())
+            </div>
+            <div class="panel-margin-top-20">
+                @using (Html.PayWall(ESection.Predictions, Model))
+                {
+                    @Html.Panel(Dictionary.ResourceManager.GetString("PersonalCalendar", Dictionary.Culture), Html.Partial("_PersonalCalendar").ToString())
+                }
             </div>
         }
         else

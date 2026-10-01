@@ -2,6 +2,10 @@ using K9.WebApplication.Models;
 using K9.DataAccessLayer.Enums;
 using K9.Base.DataAccessLayer.Enums;
 using K9.SharedLibrary.Helpers;
+using K9.SharedLibrary.Models;
+using K9.DataAccessLayer.Models;
+using K9.WebApplication.Constants;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.Controllers;
@@ -10,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Web.Mvc;
 using Xunit;
@@ -158,16 +163,57 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Throws<ArgumentException>(() => service.GetCalendarEntries(1, new DateTime(2026, 2, 1), new DateTime(2026, 1, 1)));
         }
 
-        [Fact]
-        public void SelectedInstantRetainsCalendarDateAcrossTimezoneOffsets()
+        [Theory]
+        [InlineData("Europe/London", 10, 1)]
+        [InlineData("America/New_York", 10, 1)]
+        [InlineData("Pacific/Auckland", 10, 1)]
+        [InlineData("Europe/London", 3, 29)]
+        [InlineData("Europe/London", 10, 25)]
+        public void CalendarPassesLocalDateBirthTimeAndSavedOptionsToPrimaryCycles(string timeZoneId, int month, int day)
         {
-            var date = new DateTime(2026, 3, 29, 0, 0, 0, DateTimeKind.Unspecified);
-            foreach (var timeZoneId in new[] { "Europe/London", "America/New_York", "Pacific/Auckland" })
+            var date = new DateTime(2026, month, day);
+            var birthDate = new DateTime(1979, 6, 16);
+            var birthTime = new TimeSpan(8, 15, 0);
+            var info = new UserInfo
             {
-                var instant = DateTimeHelper.ConvertToUT(date, timeZoneId);
-                Assert.Equal(DateTimeKind.Utc, instant.Kind);
-                Assert.Equal(date, DateTimeHelper.ConvertToLocaleDateTime(instant, timeZoneId));
-            }
+                UserId = 42, TimeOfBirth = birthTime, BirthTimeZoneId = "Europe/London",
+                CalculationMethod = ECalculationMethod.Traditional,
+                CalculatorType = ECalculatorType.Advanced, HousesDisplay = EHousesDisplay.SolarHouse
+            };
+            var repository = new Mock<IRepository<UserInfo>>();
+            repository.Setup(e => e.Find(It.IsAny<Expression<Func<UserInfo, bool>>>()))
+                .Returns(new List<UserInfo> { info });
+            var package = new Mock<INineStarKiBasePackage>();
+            package.SetupGet(e => e.UserInfosRepository).Returns(repository.Object);
+            var users = new Mock<IUserService>();
+            users.Setup(e => e.Find(42)).Returns(new K9.Base.DataAccessLayer.Models.User
+            {
+                Id = 42, BirthDate = birthDate, Gender = EGender.Male
+            });
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.UserTimeZone, info.BirthTimeZoneId)).Returns(timeZoneId);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.UserCalculationMethod, info.CalculationMethod)).Returns(info.CalculationMethod);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.DefaultCalculatorType, info.CalculatorType)).Returns(info.CalculatorType);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.UserHousesDisplay, info.HousesDisplay)).Returns(info.HousesDisplay);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere, false)).Returns(true);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere, false)).Returns(true);
+            var profiles = new Mock<INineStarKiService>(MockBehavior.Strict);
+            profiles.Setup(e => e.CalculateNineStarKiProfile(
+                    It.Is<PersonModel>(p => p.DateOfBirth == birthDate.Add(birthTime) &&
+                        p.DateOfBirth.Kind == DateTimeKind.Unspecified && p.TimeOfBirth == birthTime &&
+                        p.BirthTimeZoneId == info.BirthTimeZoneId && p.Gender == EGender.Male),
+                    false, false, It.Is<DateTime?>(d => d.HasValue && d.Value == date && d.Value.Kind == DateTimeKind.Unspecified),
+                    ECalculationMethod.Traditional, ECalculatorType.Advanced, true, false,
+                    timeZoneId, EHousesDisplay.SolarHouse, true, true, EDisplayDataForPeriod.SelectedDate))
+                .Returns(new NineStarKiModel(new PersonModel { DateOfBirth = birthDate, Gender = EGender.Male },
+                    5, 5, 3, 1, 1, 5, 5, 5, 5, 1, 1, 1,
+                    new (int DailyKi, int? InvertedDailyKi)[] { (1, null), (1, null) }, 5,
+                    selectedDate: date, userTimeZoneId: timeZoneId, calculatorType: ECalculatorType.Advanced));
+            var calendar = new GoogleCalendarService(package.Object, profiles.Object, users.Object);
+
+            var entry = Assert.Single(calendar.GetCalendarEntries(42, date, date.AddDays(1)));
+
+            Assert.Equal(date, entry.Date);
+            profiles.VerifyAll();
         }
 
         [Fact]

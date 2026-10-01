@@ -1,6 +1,7 @@
 using HtmlAgilityPack;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Constants;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using System;
@@ -64,14 +65,16 @@ namespace K9.WebApplication.Services
 
             for (var date = startDate; date < endDate; date = date.AddDays(1))
             {
-                // Sample the start of the local day; the model expects a UTC selected instant.
+                // Match Primary Cycles: supply the local selected date and its timezone
+                // together. Converting midnight to UTC here can move the calculation
+                // into the previous calendar date.
                 var localDate = DateTime.SpecifyKind(date, DateTimeKind.Unspecified);
-                var selectedDate = DateTimeHelper.ConvertToUT(localDate, timeZoneId);
-                var model = _nineStarKiService.CalculateNineStarKiProfile(person, today: selectedDate,
+                var model = _nineStarKiService.CalculateNineStarKiProfile(person, today: localDate,
                     calculationMethod: calculationMethod, calculatorType: calculatorType, includeCycles: true,
                     userTimeZoneId: timeZoneId, housesDisplay: housesDisplay,
                     invertDailyAndHourlyKiForSouthernHemisphere: invertNatal,
-                    invertDailyAndHourlyCycleKiForSouthernHemisphere: invertCycles);
+                    invertDailyAndHourlyCycleKiForSouthernHemisphere: invertCycles,
+                    displayDataForPeriod: EDisplayDataForPeriod.SelectedDate);
                 var houses = model.PersonalHousesOccupiedEnergies;
                 var year = houses.Year.EnergyNumber;
                 var month = houses.Month.EnergyNumber;

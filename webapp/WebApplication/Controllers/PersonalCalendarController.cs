@@ -70,7 +70,7 @@ namespace K9.WebApplication.Controllers
                             K9.Globalisation.Dictionary.Day + ": " + GetEnergyName(e.DayHouse)
                         }),
                         EnergyName = GetEnergyName(e.DayHouse),
-                        ImageUrl = Url.Content("~/Images/ninestar/trigrams/trigram-" + EnergyImages[e.DayHouse - 1] + "-square.png")
+                        ImageUrl = MediaService.BaseImagesPath + "/ninestar/energies/" + EnergyImages[e.DayHouse - 1] + ".png"
                     })
                 }, JsonRequestBehavior.AllowGet);
             }

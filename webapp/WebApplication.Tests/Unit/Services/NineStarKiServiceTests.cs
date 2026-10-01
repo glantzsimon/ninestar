@@ -50,6 +50,30 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
+        [InlineData(0)]
+        [InlineData(12)]
+        public void OctoberFirst2026PersonalSolarHousesMatchPrimaryCycles(int selectedHour)
+        {
+            var person = new PersonModel
+            {
+                DateOfBirth = new DateTime(1979, 6, 16, 8, 0, 0),
+                TimeOfBirth = new TimeSpan(8, 0, 0),
+                BirthTimeZoneId = "Europe/London",
+                Gender = EGender.Male
+            };
+
+            var profile = _nineStarKiService.CalculateNineStarKiProfile(person,
+                today: new DateTime(2026, 10, 1, selectedHour, 0, 0),
+                calculationMethod: ECalculationMethod.Traditional, calculatorType: ECalculatorType.Advanced,
+                includeCycles: true, userTimeZoneId: "Europe/London", housesDisplay: EHousesDisplay.SolarHouse,
+                displayDataForPeriod: EDisplayDataForPeriod.SelectedDate);
+
+            Assert.Equal(7, profile.PersonalHousesOccupiedEnergies.Year.EnergyNumber);
+            Assert.Equal(7, profile.PersonalHousesOccupiedEnergies.Month.EnergyNumber);
+            Assert.Equal(7, profile.PersonalHousesOccupiedEnergies.Day.EnergyNumber);
+        }
+
+        [Theory]
         [InlineData(1979, 6, 16, EGender.Male, ENineStarKiEnergy.Thunder, ETransformationType.Supports)]
         [InlineData(1985, 9, 07, EGender.Male, ENineStarKiEnergy.Lake, ETransformationType.Supports)]
         [InlineData(1976, 5, 01, EGender.Female, ENineStarKiEnergy.Mountain, ETransformationType.Controls)]

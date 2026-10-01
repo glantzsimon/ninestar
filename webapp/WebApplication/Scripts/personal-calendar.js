@@ -8,9 +8,19 @@
         var $grid = $calendar.find('.personal-calendar-grid'),
             $status = $calendar.find('.personal-calendar-status'),
             $copy = $calendar.find('.calendar-copy'),
-            $link = $calendar.find('#personal-calendar-link'),
+            $link = $calendar.find('input[name="CalendarLink"]'),
             currentYear, currentMonth, today, entries = [], request, requestVersion = 0,
             selectedDate, subscriptionBusy = false, $placeholder, previousFocus;
+
+        $calendar.find('.calendar-help').attr({
+            'data-toggle': 'collapse', 'data-target': '#personal-calendar-help',
+            'aria-controls': 'personal-calendar-help', 'aria-expanded': 'false',
+            'aria-label': $calendar.attr('data-help'), title: $calendar.attr('data-help')
+        });
+        $calendar.find('.calendar-expand').attr('aria-expanded', 'false');
+        $calendar.find('.calendar-previous').attr({ 'aria-label': $calendar.attr('data-previous'), title: $calendar.attr('data-previous') });
+        $calendar.find('.calendar-next').attr({ 'aria-label': $calendar.attr('data-next'), title: $calendar.attr('data-next') });
+        var dayTemplate = $calendar.find('#personal-calendar-day-template')[0];
 
         function status(message) { $status.text(message || ''); }
         function select(entry) {
@@ -43,7 +53,8 @@
                     for (var i = 0; i < data.Offset; i++) $('<div class="personal-calendar-empty" aria-hidden="true">').appendTo($grid);
                     entries.forEach(function (entry) {
                         var numbers = entry.YearHouse + '.' + entry.MonthHouse + '.' + entry.DayHouse;
-                        var $day = $('<button type="button" class="personal-calendar-day" aria-pressed="false">')
+                        var $day = $(dayTemplate.content).find('button').first().clone().empty()
+                            .removeAttr('id').attr('aria-pressed', 'false')
                             .attr('data-date', entry.Date).attr('aria-label', entry.DateLabel + ' · ' + entry.Houses)
                             .attr('title', entry.EnergyName).toggleClass('is-today', entry.Date === today);
                         $('<span>').text(entry.Day).appendTo($day);
@@ -88,8 +99,9 @@
             }
             $calendar.toggleClass('is-expanded', value);
             $('body').toggleClass('personal-calendar-open', value);
-            $calendar.find('.calendar-expand').attr('aria-expanded', value ? 'true' : 'false')
-                .find('span').text($calendar.attr(value ? 'data-close' : 'data-expand'));
+            var $expand = $calendar.find('.calendar-expand').attr('aria-expanded', value ? 'true' : 'false'),
+                $icon = $expand.find('i').first().detach();
+            $expand.empty().append($icon).append(document.createTextNode(' ' + $calendar.attr(value ? 'data-close' : 'data-expand')));
             $calendar.find('.calendar-expand i').toggleClass('fa-expand', !value).toggleClass('fa-compress', value);
             if (value) $calendar.find('.calendar-expand').focus();
             else if (previousFocus) previousFocus.focus();
@@ -128,7 +140,7 @@
             $copy.prop('disabled', true);
             post($calendar.attr('data-subscription-url')).done(function (data) {
                 $link.val(data.Url);
-                $calendar.find('.calendar-link-container, .calendar-disable').show();
+                $calendar.find('.calendar-link-container, .calendar-disable-container').show();
                 copyLink();
             }).fail(function () { status($calendar.attr('data-error')); })
                 .always(function () { subscriptionBusy = false; $copy.prop('disabled', false); });
@@ -139,7 +151,7 @@
             $calendar.find('.calendar-copy, .calendar-disable').prop('disabled', true);
             post($calendar.attr('data-revoke-url')).done(function () {
                 $link.val('');
-                $calendar.find('.calendar-link-container, .calendar-disable').hide();
+                $calendar.find('.calendar-link-container, .calendar-disable-container').hide();
                 status($calendar.attr('data-revoked'));
             }).fail(function () { status($calendar.attr('data-error')); })
                 .always(function () {
@@ -151,3 +163,4 @@
         loadMonth();
     });
 })(jQuery);
+

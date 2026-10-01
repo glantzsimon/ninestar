@@ -407,6 +407,7 @@
     <Compile Include="Options\PieChartOptions.cs" />
     <Compile Include="Services\GoogleService.cs" />
     <Compile Include="Models\CalendarEntry.cs" />
+    <Compile Include="ViewModels\PersonalCalendarViewModel.cs" />
     <Compile Include="Services\IGoogleCalendarService.cs" />
     <Compile Include="Services\GoogleCalendarService.cs" />
     <Compile Include="Services\IAIService.cs" />
@@ -1974,3 +1975,4 @@
   <Target Name="AfterBuild">
   </Target> -->
 </Project>
+

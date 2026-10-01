@@ -36,7 +36,7 @@
             <div class="panel-margin-top-20">
                 @using (Html.PayWall(ESection.Predictions, Model))
                 {
-                    @Html.Panel(Dictionary.ResourceManager.GetString("PersonalCalendar", Dictionary.Culture), Html.Partial("_PersonalCalendar").ToString())
+                    @Html.Panel(Dictionary.PersonalCalendar, Html.Partial("_PersonalCalendar").ToString())
                 }
             </div>
         }

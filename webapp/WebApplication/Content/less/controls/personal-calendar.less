@@ -1,6 +1,6 @@
 #personal-calendar {
     color: var(--text-color);
-    background: var(--background-color);
+    background: transparent;
 
     .personal-calendar-actions, .personal-calendar-toolbar {
         display: flex;
@@ -39,6 +39,7 @@
     .calendar-link-container p { margin-top: 8px; }
 
     &.is-expanded {
+        background: var(--background-color);
         position: fixed;
         inset: 0;
         width: 100%;

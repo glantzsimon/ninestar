@@ -1,48 +1,40 @@
-@using System.Globalization
+@using K9.Base.WebApplication.Enums
+@using K9.Base.WebApplication.Helpers
 @using K9.Globalisation
-@{
-    Func<string, string> text = key => Dictionary.ResourceManager.GetString(key, Dictionary.Culture);
-}
-
+@model K9.WebApplication.ViewModels.PersonalCalendarViewModel
 <link rel="stylesheet" href="@Url.Content("~/Content/controls/personal-calendar.css")" />
 <div id="personal-calendar" data-month-url="@Url.Action("Month", "PersonalCalendar")"
      data-subscription-url="@Url.Action("Subscription", "PersonalCalendar")"
      data-revoke-url="@Url.Action("Revoke", "PersonalCalendar")"
-     data-loading="@Dictionary.Loading" data-error="@Dictionary.NetworkError" data-unavailable="@text("PersonalCalendarUnavailable")"
-     data-title="@text("PersonalCalendar")"
+     data-loading="@Dictionary.Loading" data-error="@Dictionary.NetworkError" data-unavailable="@Dictionary.PersonalCalendarUnavailable"
+     data-title="@Dictionary.PersonalCalendar" data-help="@Dictionary.CalendarHelp"
+     data-previous="@Dictionary.PreviousMonth" data-next="@Dictionary.NextMonth"
      data-copied="@Dictionary.Copied" data-copy-error="@Dictionary.FailedToCopyToClipboard"
-     data-expand="@text("ExpandCalendar")" data-close="@text("CloseCalendar")"
-     data-revoked="@text("CalendarLinkDisabled")">
-    @Html.AntiForgeryToken()
+     data-expand="@Dictionary.ExpandCalendar" data-close="@Dictionary.CloseCalendar"
+     data-revoked="@Dictionary.CalendarLinkDisabled">
     <div class="personal-calendar-actions">
-        <strong class="personal-calendar-expanded-title">@text("PersonalCalendar")</strong>
-        <button type="button" class="btn btn-link calendar-help" data-toggle="collapse" data-target="#personal-calendar-help"
-                aria-controls="personal-calendar-help" aria-expanded="false" title="@text("CalendarHelp")" aria-label="@text("CalendarHelp")">
-            <i class="fa fa-question-circle" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="btn btn-default calendar-expand" aria-expanded="false">
-            <i class="fa fa-expand" aria-hidden="true"></i> <span>@text("ExpandCalendar")</span>
-        </button>
+        <strong class="personal-calendar-expanded-title">@Dictionary.PersonalCalendar</strong>
+        @Html.BootstrapButton("", "btn-link calendar-help", EButtonType.Button, "fa-question-circle")
+        @Html.BootstrapButton(Dictionary.ExpandCalendar, "btn-default calendar-expand", EButtonType.Button, "fa-expand")
     </div>
     <div id="personal-calendar-help" class="collapse">
-        <p>@text("PersonalCalendarHelp")</p>
-        <p>@text("CalendarSubscriptionHelp")</p>
+        <p>@Dictionary.PersonalCalendarHelp</p>
+        <p>@Dictionary.CalendarSubscriptionHelp</p>
     </div>
     <div class="personal-calendar-toolbar">
-        <button type="button" class="btn btn-default calendar-previous" title="@text("PreviousMonth")" aria-label="@text("PreviousMonth")">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        </button>
+        @Html.BootstrapButton("", "btn-default calendar-previous", EButtonType.Button, "fa-chevron-left")
         <strong class="personal-calendar-month" aria-live="polite"></strong>
-        <button type="button" class="btn btn-default calendar-next" title="@text("NextMonth")" aria-label="@text("NextMonth")">
-            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="btn btn-default calendar-today">@text("Today")</button>
+        @Html.BootstrapButton("", "btn-default calendar-next", EButtonType.Button, "fa-chevron-right")
+        @Html.BootstrapButton(Dictionary.Today, "btn-default calendar-today", EButtonType.Button)
     </div>
+    <template id="personal-calendar-day-template">
+        @Html.BootstrapButton("", "personal-calendar-day", EButtonType.Button)
+    </template>
     <div class="personal-calendar-content">
         <div class="personal-calendar-grid">
-            @foreach (var day in new[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" })
+            @foreach (var day in new[] { Dictionary.Monday, Dictionary.Tuesday, Dictionary.Wednesday, Dictionary.Thursday, Dictionary.Friday, Dictionary.Saturday, Dictionary.Sunday })
             {
-                <div class="personal-calendar-weekday" title="@text(day)">@text(day).Substring(0, Math.Min(3, text(day).Length))</div>
+                <div class="personal-calendar-weekday" title="@day">@day.Substring(0, Math.Min(3, day.Length))</div>
             }
         </div>
         <div class="personal-calendar-detail" aria-live="polite">
@@ -53,13 +45,16 @@
     </div>
     <p class="personal-calendar-status" role="status" aria-live="polite">@Dictionary.Loading</p>
     <div class="personal-calendar-subscription">
-        <button type="button" class="btn btn-primary calendar-copy">@text("CopyCalendarLink")</button>
-        <button type="button" class="btn btn-link calendar-disable" style="display: none;">@text("DisableCalendarLink")</button>
-        <div class="calendar-link-container" style="display: none;">
-            <label for="personal-calendar-link">@text("CalendarLink")</label>
-            <input id="personal-calendar-link" class="form-control" type="text" readonly autocomplete="off" />
-            <p>@text("CalendarSubscriptionHelp")</p>
-        </div>
+        @using (Html.BeginBootstrapForm())
+        {
+            @Html.BootstrapButton(Dictionary.CopyCalendarLink, "btn-primary calendar-copy", EButtonType.Button, "fa-copy")
+            <span class="calendar-disable-container" style="display: none;">@Html.BootstrapButton(Dictionary.DisableCalendarLink, "btn-link calendar-disable", EButtonType.Button)</span>
+            <div class="calendar-link-container" style="display: none;">
+                @Html.BootstrapDisplayFor(e => e.CalendarLink)
+                <p>@Dictionary.CalendarSubscriptionHelp</p>
+            </div>
+        }
     </div>
 </div>
 <script src="@Url.Content("~/Scripts/personal-calendar.js")"></script>
+

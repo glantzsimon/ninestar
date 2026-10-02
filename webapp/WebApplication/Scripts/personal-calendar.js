@@ -17,6 +17,12 @@
             'aria-controls': 'personal-calendar-help', 'aria-expanded': 'false',
             'aria-label': $calendar.attr('data-help'), title: $calendar.attr('data-help')
         });
+        $copy.attr({ 'aria-label': $calendar.attr('data-copy'), title: $calendar.attr('data-copy') })
+            .contents().filter(function () { return this.nodeType === 3; })
+            .wrapAll('<span class="calendar-copy-label"></span>');
+        $calendar.find('.calendar-disable').attr({
+            'aria-label': $calendar.attr('data-disable'), title: $calendar.attr('data-disable')
+        });
         updateExpandButton(false);
         $calendar.find('.calendar-previous').attr({ 'aria-label': $calendar.attr('data-previous'), title: $calendar.attr('data-previous') });
         $calendar.find('.calendar-next').attr({ 'aria-label': $calendar.attr('data-next'), title: $calendar.attr('data-next') });

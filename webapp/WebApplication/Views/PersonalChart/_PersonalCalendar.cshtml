@@ -9,6 +9,7 @@
      data-loading="@Dictionary.Loading" data-error="@Dictionary.NetworkError" data-unavailable="@Dictionary.PersonalCalendarUnavailable"
      data-title="@Dictionary.PersonalCalendar" data-help="@Dictionary.CalendarHelp"
      data-previous="@Dictionary.PreviousMonth" data-next="@Dictionary.NextMonth"
+     data-copy="@Dictionary.CopyCalendarLink" data-disable="@Dictionary.DisableCalendarLink"
      data-copied="@Dictionary.Copied" data-copy-error="@Dictionary.FailedToCopyToClipboard"
      data-expand="@Dictionary.ExpandCalendar" data-close="@Dictionary.CloseCalendar"
      data-revoked="@Dictionary.CalendarLinkDisabled">
@@ -21,8 +22,10 @@
             @Html.BootstrapButton(Dictionary.Today, "btn-default calendar-today", EButtonType.Button)
         </div>
         <div class="personal-calendar-actions">
+            @Html.BootstrapButton(Dictionary.CopyCalendarLink, "btn-primary calendar-copy", EButtonType.Button, "fa-copy")
             @Html.BootstrapButton(Dictionary.ExpandCalendar, "btn-default calendar-expand", EButtonType.Button, "fa-expand")
             @Html.BootstrapButton("", "btn-link calendar-help", EButtonType.Button, "fa-question-circle")
+            <span class="calendar-disable-container" style="display: none;">@Html.BootstrapButton("", "btn-link calendar-disable", EButtonType.Button, "fa-unlink")</span>
         </div>
     </div>
     <div id="personal-calendar-help" class="collapse">
@@ -46,14 +49,10 @@
         </div>
     </div>
     <p class="personal-calendar-status" role="status" aria-live="polite">@Dictionary.Loading</p>
-    <div class="personal-calendar-subscription">
-        @Html.AntiForgeryToken()
-        @Html.BootstrapButton(Dictionary.CopyCalendarLink, "btn-primary calendar-copy", EButtonType.Button, "fa-copy")
-        <span class="calendar-disable-container" style="display: none;">@Html.BootstrapButton(Dictionary.DisableCalendarLink, "btn-link calendar-disable", EButtonType.Button)</span>
-        <div class="calendar-link-container" style="display: none;">
-            @Html.BootstrapDisplayFor(e => e.CalendarLink)
-            <p>@Dictionary.CalendarSubscriptionHelp</p>
-        </div>
+    @Html.AntiForgeryToken()
+    <div class="calendar-link-container" style="display: none;">
+        @Html.BootstrapDisplayFor(e => e.CalendarLink)
+        <p>@Dictionary.CalendarSubscriptionHelp</p>
     </div>
 </div>
 <script src="@Url.Content("~/Scripts/personal-calendar.js")"></script>

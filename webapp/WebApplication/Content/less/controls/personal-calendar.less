@@ -3,21 +3,22 @@
     background: transparent;
     container-type: inline-size;
     display: flow-root;
-    --calendar-footer-space: 20px; // Matches the containing panel-body padding.
 
     .personal-calendar-toolbar {
         display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
         margin-bottom: 12px;
     }
     .personal-calendar-navigation, .personal-calendar-actions { display: flex; align-items: center; gap: 8px; }
-    .personal-calendar-navigation { flex: 1; min-width: 0; }
-    .personal-calendar-actions { flex-shrink: 0; margin-left: auto; }
+    .personal-calendar-navigation { flex: 0 1 auto; min-width: 0; }
+    .personal-calendar-actions { flex-shrink: 0; margin-left: auto; padding-left: 16px; border-left: 1px solid var(--border-color); }
     .personal-calendar-expanded-title { display: none; margin-bottom: 12px; }
     .personal-calendar-toolbar button { flex-shrink: 0; }
-    .calendar-expand { white-space: nowrap; }
-    .personal-calendar-month { flex: 1; min-width: 0; text-align: center; }
+    .calendar-expand, .calendar-copy { white-space: nowrap; }
+    .personal-calendar-month { flex: 0 1 auto; min-width: 0; text-align: left; }
     .personal-calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
     .personal-calendar-weekday { text-align: center; font-size: 0.85em; padding: 6px 0; }
     .personal-calendar-day {
@@ -44,7 +45,6 @@
     .calendar-selected-description p:last-child { margin-bottom: 0; }
     .personal-calendar-status { margin: 12px 0; }
     .personal-calendar-status:empty { display: none; }
-    .personal-calendar-subscription { margin: 0; padding-top: var(--calendar-footer-space); }
     .calendar-link-container { margin-top: 12px; }
     .calendar-link-container p { margin-top: 8px; }
     .calendar-link-container p:last-child { margin-bottom: 0; }
@@ -60,7 +60,6 @@
         z-index: 120000;
         overflow-y: auto;
         padding: 24px;
-        --calendar-footer-space: 24px;
         .personal-calendar-expanded-title { display: block; }
         .personal-calendar-content { display: grid; grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr); gap: 24px; }
         .personal-calendar-detail { margin-top: 0; padding-top: 0; border-top: 0; }
@@ -71,19 +70,20 @@
 }
 body.personal-calendar-open { overflow: hidden; }
 @container (max-width: 560px) {
-    #personal-calendar .calendar-expand-label { display: none; }
-    #personal-calendar .personal-calendar-toolbar { gap: 4px; }
+    #personal-calendar .calendar-expand-label, #personal-calendar .calendar-copy-label { display: none; }
+    #personal-calendar .personal-calendar-actions { padding-left: 8px; }
+    #personal-calendar .personal-calendar-toolbar { gap: 8px; }
     #personal-calendar .personal-calendar-navigation, #personal-calendar .personal-calendar-actions { gap: 4px; }
     #personal-calendar .personal-calendar-toolbar button { padding-left: 8px; padding-right: 8px; }
 }
 @media (max-width: 767px) {
-    #personal-calendar .calendar-expand-label { display: none; }
-    #personal-calendar .personal-calendar-toolbar { gap: 4px; }
+    #personal-calendar .calendar-expand-label, #personal-calendar .calendar-copy-label { display: none; }
+    #personal-calendar .personal-calendar-actions { padding-left: 8px; }
+    #personal-calendar .personal-calendar-toolbar { gap: 8px; }
     #personal-calendar .personal-calendar-navigation, #personal-calendar .personal-calendar-actions { gap: 4px; }
     #personal-calendar .personal-calendar-toolbar button { padding-left: 8px; padding-right: 8px; }
     #personal-calendar.is-expanded {
         padding: 12px;
-        --calendar-footer-space: 12px;
         .personal-calendar-content { display: block; }
         .personal-calendar-detail { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); }
         .personal-calendar-day { min-height: 75px; }

@@ -216,41 +216,61 @@ namespace K9.WebApplication.Tests.Unit.Services
             users.Setup(e => e.GetUserPreference(42, SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere, false)).Returns(true);
             var profiles = new Mock<INineStarKiService>(MockBehavior.Strict);
             var expected = new List<CalendarEntry>();
-            // Deliberately return rows outside the requested range and out of order.
-            // Each batch has its own year/month houses and a split daily energy.
-            for (var offset = 0; offset < numberOfDays; offset += 20)
+            // Synthetic years contain two months, keeping cross-year batching small.
+            for (var yearOffset = 0; yearOffset < numberOfDays; yearOffset += 40)
             {
-                var batchStart = date.AddDays(offset);
-                var batchEnd = batchStart.AddDays(20);
+                var yearStart = date.AddDays(yearOffset);
                 var model = new NineStarKiModel(new PersonModel { DateOfBirth = birthDate, Gender = EGender.Male },
-                    5, 5, 3, 1, 1, 5, 5, 5, 5, 1 + offset / 20, 1, 1,
+                    5, 5, 3, 1, 1, 5, 5, 5, 5, 1 + yearOffset / 40, 1, 1,
                     new (int DailyKi, int? InvertedDailyKi)[] { (3, null), (9, null) }, 5,
-                    selectedDate: batchStart, userTimeZoneId: timeZoneId, calculatorType: ECalculatorType.Advanced);
+                    selectedDate: yearStart, userTimeZoneId: timeZoneId, calculatorType: ECalculatorType.Advanced);
                 var houses = model.PersonalHousesOccupiedEnergies;
-                var rows = Enumerable.Range(-1, 21).Select(index => new PlannerViewModelItem
+                var months = new List<PlannerViewModelItem>();
+                for (var offset = yearOffset; offset < yearOffset + 40; offset += 20)
                 {
-                    EnergyStartsOn = batchStart.AddDays(index),
-                    Energy = houses.Day,
-                    SecondEnergy = houses.Day2
-                }).Reverse().ToList();
+                    var batchStart = date.AddDays(offset);
+                    var batchEnd = batchStart.AddDays(20);
+                    var monthEnergy = model.GetPersonalCycleEnergy(1 + offset / 20, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
+                    months.Add(new PlannerViewModelItem
+                    {
+                        EnergyStartsOn = batchStart.AddDays(-3), EnergyEndsOn = batchEnd.AddDays(-1),
+                        Energy = monthEnergy
+                    });
+                    if (offset >= numberOfDays)
+                        continue;
+                    // Include out-of-range and unsorted rows to verify trimming.
+                    var rows = Enumerable.Range(-1, 21).Select(index => new PlannerViewModelItem
+                    {
+                        EnergyStartsOn = batchStart.AddDays(index),
+                        Energy = houses.Day, SecondEnergy = houses.Day2
+                    }).Reverse().ToList();
+                    profiles.Setup(e => e.GetPlannerData(
+                            It.Is<DateTime>(d => d == birthDate && d.Kind == DateTimeKind.Unspecified),
+                            info.BirthTimeZoneId, birthTime, EGender.Male,
+                            It.Is<DateTime>(d => d == batchStart && d.Kind == DateTimeKind.Unspecified),
+                            timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
+                            EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
+                            EPlannerView.Month, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, model))
+                        .Returns(new PlannerViewModel
+                        {
+                            NineStarKiModel = model, Energy = houses.Month, Energies = rows
+                        });
+                    for (var expectedDate = batchStart; expectedDate < batchEnd && expectedDate < date.AddDays(numberOfDays); expectedDate = expectedDate.AddDays(1))
+                        expected.Add(new CalendarEntry
+                        {
+                            Date = expectedDate, YearHouse = houses.Year.EnergyNumber,
+                            MonthHouse = monthEnergy.EnergyNumber, DayHouse = houses.Day.EnergyNumber,
+                            AfternoonDayHouse = houses.Day2.EnergyNumber == houses.Day.EnergyNumber ? (int?)null : houses.Day2.EnergyNumber
+                        });
+                }
                 profiles.Setup(e => e.GetPlannerData(
                         It.Is<DateTime>(d => d == birthDate && d.Kind == DateTimeKind.Unspecified),
                         info.BirthTimeZoneId, birthTime, EGender.Male,
-                        It.Is<DateTime>(d => d == batchStart && d.Kind == DateTimeKind.Unspecified),
+                        It.Is<DateTime>(d => d == yearStart && d.Kind == DateTimeKind.Unspecified),
                         timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
                         EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
-                        EPlannerView.Month, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null))
-                    .Returns(new PlannerViewModel
-                    {
-                        NineStarKiModel = model, Energy = houses.Month, Energies = rows
-                    });
-                for (var expectedDate = batchStart; expectedDate < batchEnd && expectedDate < date.AddDays(numberOfDays); expectedDate = expectedDate.AddDays(1))
-                    expected.Add(new CalendarEntry
-                    {
-                        Date = expectedDate, YearHouse = houses.Year.EnergyNumber,
-                        MonthHouse = houses.Month.EnergyNumber, DayHouse = houses.Day.EnergyNumber,
-                        AfternoonDayHouse = houses.Day2.EnergyNumber == houses.Day.EnergyNumber ? (int?)null : houses.Day2.EnergyNumber
-                    });
+                        EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null))
+                    .Returns(new PlannerViewModel { NineStarKiModel = model, Energy = houses.Year, Energies = months });
             }
             var calendar = new GoogleCalendarService(package.Object, profiles.Object, users.Object);
 
@@ -270,8 +290,14 @@ namespace K9.WebApplication.Tests.Unit.Services
                 It.IsAny<DateTime>(), info.BirthTimeZoneId, birthTime, EGender.Male,
                 It.IsAny<DateTime>(), timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
                 EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
-                EPlannerView.Month, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null),
+                EPlannerView.Month, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, It.IsAny<NineStarKiModel>()),
                 Times.Exactly((numberOfDays + 19) / 20));
+            profiles.Verify(e => e.GetPlannerData(
+                It.IsAny<DateTime>(), info.BirthTimeZoneId, birthTime, EGender.Male,
+                It.IsAny<DateTime>(), timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
+                EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
+                EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null),
+                Times.Exactly((numberOfDays + 39) / 40));
             profiles.VerifyAll();
         }
 

@@ -377,7 +377,7 @@ namespace K9.WebApplication.Services
                                    $"{userTimeZoneId}_{housesDisplay}_" +
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
                                    $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}_" +
-                                   $"{display}_{navigationDirection}", () =>
+                                   $"{display}_{navigationDirection}_{nineStarKiModel?.SelectedDate:yyyyMMddHHmm}", () =>
             {
                 var energies = new List<PlannerViewModelItem>();
                 var lichun = _astronomyService.GetLichun(selectedDateTime, userTimeZoneId);

@@ -66,48 +66,71 @@ namespace K9.WebApplication.Services
             while (date < endDate)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                // Reuse the planner's solar-month batch instead of calculating a full
-                // profile for every date. GetPlannerData adds the birth time itself.
-                var planner = _nineStarKiService.GetPlannerData(
+                // Fetch the year once, then reuse its profile for every month's daily rows.
+                // GetPlannerData adds the birth time itself.
+                var yearlyPlanner = _nineStarKiService.GetPlannerData(
                     DateTime.SpecifyKind(user.BirthDate.Date, DateTimeKind.Unspecified),
                     info.BirthTimeZoneId, info.TimeOfBirth, user.Gender, date, timeZoneId,
                     calculationMethod, calculatorType, EDisplayDataForPeriod.SelectedDate,
                     housesDisplay, invertNatal, invertCycles,
-                    EPlannerView.Month, EScopeDisplay.PersonalKi);
+                    EPlannerView.Year, EScopeDisplay.PersonalKi);
                 cancellationToken.ThrowIfCancellationRequested();
-                var year = planner.NineStarKiModel.PersonalHousesOccupiedEnergies.Year.EnergyNumber;
-                var month = planner.Energy.EnergyNumber;
-                var days = planner.Energies
-                    .Where(e => e.EnergyStartsOn.Date >= date && e.EnergyStartsOn.Date < endDate)
+                var year = yearlyPlanner.Energy.EnergyNumber;
+                var batchStart = date;
+                var batchEnd = date < NineStarKiModel.CYCLE_SWITCH_DATE && endDate > NineStarKiModel.CYCLE_SWITCH_DATE
+                    ? NineStarKiModel.CYCLE_SWITCH_DATE : endDate;
+                var months = yearlyPlanner.Energies
+                    .Where(e => e.EnergyEndsOn.Date >= date && e.EnergyStartsOn.Date < batchEnd)
                     .OrderBy(e => e.EnergyStartsOn)
                     .ToList();
-                if (days.Count == 0)
-                    throw new InvalidOperationException("The planner returned no dates for the requested calendar period.");
-
-                foreach (var item in days)
+                foreach (var monthPeriod in months)
                 {
+                    if (date >= batchEnd)
+                        break;
                     cancellationToken.ThrowIfCancellationRequested();
-                    var localDate = DateTime.SpecifyKind(item.EnergyStartsOn.Date, DateTimeKind.Unspecified);
-                    if (localDate != date)
-                        throw new InvalidOperationException("The planner returned a non-contiguous calendar period.");
-                    var day = item.Energy.EnergyNumber;
-                    var afternoon = item.SecondEnergy?.EnergyNumber;
-                    var description = GetDescription(year, month, day, descriptions);
-                    if (afternoon.HasValue && afternoon.Value != day)
-                        description += $"\n\n{K9.Globalisation.Dictionary.AfternoonEnergyLabel} ({year}.{month}.{afternoon.Value}): " + GetDescription(year, month, afternoon.Value, descriptions);
-
-                    entries.Add(new CalendarEntry
+                    // Select safely inside this solar period, matching the planner's
+                    // existing boundary convention rather than Gregorian AddMonths.
+                    var monthlyPlanner = _nineStarKiService.GetPlannerData(
+                        DateTime.SpecifyKind(user.BirthDate.Date, DateTimeKind.Unspecified),
+                        info.BirthTimeZoneId, info.TimeOfBirth, user.Gender,
+                        DateTime.SpecifyKind(monthPeriod.EnergyStartsOn.AddDays(3), DateTimeKind.Unspecified),
+                        timeZoneId, calculationMethod, calculatorType, EDisplayDataForPeriod.SelectedDate,
+                        housesDisplay, invertNatal, invertCycles,
+                        EPlannerView.Month, EScopeDisplay.PersonalKi,
+                        nineStarKiModel: yearlyPlanner.NineStarKiModel);
+                    cancellationToken.ThrowIfCancellationRequested();
+                    var month = monthPeriod.Energy.EnergyNumber;
+                    var days = monthlyPlanner.Energies
+                        .Where(e => e.EnergyStartsOn.Date >= date && e.EnergyStartsOn.Date < batchEnd)
+                        .OrderBy(e => e.EnergyStartsOn)
+                        .ToList();
+                    foreach (var item in days)
                     {
-                        Date = localDate,
-                        YearHouse = year,
-                        MonthHouse = month,
-                        DayHouse = day,
-                        AfternoonDayHouse = afternoon.HasValue && afternoon.Value != day ? afternoon : null,
-                        Summary = $"9Star · {year}.{month}.{day}",
-                        Description = description
-                    });
-                    date = localDate.AddDays(1);
+                        cancellationToken.ThrowIfCancellationRequested();
+                        var localDate = DateTime.SpecifyKind(item.EnergyStartsOn.Date, DateTimeKind.Unspecified);
+                        if (localDate != date)
+                            throw new InvalidOperationException("The planner returned a non-contiguous calendar period.");
+                        var day = item.Energy.EnergyNumber;
+                        var afternoon = item.SecondEnergy?.EnergyNumber;
+                        var description = GetDescription(year, month, day, descriptions);
+                        if (afternoon.HasValue && afternoon.Value != day)
+                            description += $"\n\n{K9.Globalisation.Dictionary.AfternoonEnergyLabel} ({year}.{month}.{afternoon.Value}): " + GetDescription(year, month, afternoon.Value, descriptions);
+
+                        entries.Add(new CalendarEntry
+                        {
+                            Date = localDate,
+                            YearHouse = year,
+                            MonthHouse = month,
+                            DayHouse = day,
+                            AfternoonDayHouse = afternoon.HasValue && afternoon.Value != day ? afternoon : null,
+                            Summary = $"9Star · {year}.{month}.{day}",
+                            Description = description
+                        });
+                        date = localDate.AddDays(1);
+                    }
                 }
+                if (date == batchStart)
+                    throw new InvalidOperationException("The planner returned no dates for the requested calendar period.");
             }
             return entries;
         }

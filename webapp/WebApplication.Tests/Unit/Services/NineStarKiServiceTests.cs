@@ -56,10 +56,12 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData("Europe/London", 2026, 10)]
-        [InlineData("Europe/London", 2027, 2)]
-        [InlineData("Pacific/Auckland", 2028, 2)]
-        public void CalendarUsingRealPlannerCoversSolarBoundariesAndLeapMonth(string timeZoneId, int year, int month)
+        [InlineData("Europe/London", 2026, 10, 1)]
+        [InlineData("Europe/London", 2026, 10, 12)]
+        [InlineData("Europe/London", 2027, 2, 1)]
+        [InlineData("Pacific/Auckland", 2028, 2, 1)]
+        [InlineData("Europe/London", 2105, 2, 1)]
+        public void CalendarUsingRealPlannerCoversSolarBoundariesAndLeapMonth(string timeZoneId, int year, int month, int numberOfMonths)
         {
             var info = new UserInfo
             {
@@ -84,9 +86,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             var calendar = new GoogleCalendarService(package.Object, _nineStarKiService, users.Object);
             var start = new DateTime(year, month, 1);
 
-            var entries = calendar.GetCalendarEntries(42, start, start.AddMonths(1));
+            var end = start.AddMonths(numberOfMonths);
+            var entries = calendar.GetCalendarEntries(42, start, end);
 
-            Assert.Equal(DateTime.DaysInMonth(year, month), entries.Count);
+            Assert.Equal((end - start).Days, entries.Count);
             Assert.Equal(Enumerable.Range(0, entries.Count).Select(offset => start.AddDays(offset)),
                 entries.Select(e => e.Date));
             Assert.True(entries.Select(e => e.MonthHouse).Distinct().Count() > 1);

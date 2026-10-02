@@ -14,12 +14,16 @@
      data-revoked="@Dictionary.CalendarLinkDisabled">
     <strong class="personal-calendar-expanded-title">@Dictionary.PersonalCalendar</strong>
     <div class="personal-calendar-toolbar">
-        @Html.BootstrapButton("", "btn-default calendar-previous", EButtonType.Button, "fa-chevron-left")
-        <strong class="personal-calendar-month" aria-live="polite"></strong>
-        @Html.BootstrapButton("", "btn-default calendar-next", EButtonType.Button, "fa-chevron-right")
-        @Html.BootstrapButton(Dictionary.Today, "btn-default calendar-today", EButtonType.Button)
-        @Html.BootstrapButton(Dictionary.ExpandCalendar, "btn-default calendar-expand", EButtonType.Button, "fa-expand")
-        @Html.BootstrapButton("", "btn-link calendar-help", EButtonType.Button, "fa-question-circle")
+        <div class="personal-calendar-navigation">
+            @Html.BootstrapButton("", "btn-default calendar-previous", EButtonType.Button, "fa-chevron-left")
+            <strong class="personal-calendar-month" aria-live="polite"></strong>
+            @Html.BootstrapButton("", "btn-default calendar-next", EButtonType.Button, "fa-chevron-right")
+            @Html.BootstrapButton(Dictionary.Today, "btn-default calendar-today", EButtonType.Button)
+        </div>
+        <div class="personal-calendar-actions">
+            @Html.BootstrapButton(Dictionary.ExpandCalendar, "btn-default calendar-expand", EButtonType.Button, "fa-expand")
+            @Html.BootstrapButton("", "btn-link calendar-help", EButtonType.Button, "fa-question-circle")
+        </div>
     </div>
     <div id="personal-calendar-help" class="collapse">
         <p>@Dictionary.PersonalCalendarHelp</p>
@@ -43,16 +47,13 @@
     </div>
     <p class="personal-calendar-status" role="status" aria-live="polite">@Dictionary.Loading</p>
     <div class="personal-calendar-subscription">
-        @using (Html.BeginBootstrapForm())
-        {
-            @Html.BootstrapButton(Dictionary.CopyCalendarLink, "btn-primary calendar-copy", EButtonType.Button, "fa-copy")
-            <span class="calendar-disable-container" style="display: none;">@Html.BootstrapButton(Dictionary.DisableCalendarLink, "btn-link calendar-disable", EButtonType.Button)</span>
-            <div class="calendar-link-container" style="display: none;">
-                @Html.BootstrapDisplayFor(e => e.CalendarLink)
-                <p>@Dictionary.CalendarSubscriptionHelp</p>
-            </div>
-        }
+        @Html.AntiForgeryToken()
+        @Html.BootstrapButton(Dictionary.CopyCalendarLink, "btn-primary calendar-copy", EButtonType.Button, "fa-copy")
+        <span class="calendar-disable-container" style="display: none;">@Html.BootstrapButton(Dictionary.DisableCalendarLink, "btn-link calendar-disable", EButtonType.Button)</span>
+        <div class="calendar-link-container" style="display: none;">
+            @Html.BootstrapDisplayFor(e => e.CalendarLink)
+            <p>@Dictionary.CalendarSubscriptionHelp</p>
+        </div>
     </div>
 </div>
 <script src="@Url.Content("~/Scripts/personal-calendar.js")"></script>
-

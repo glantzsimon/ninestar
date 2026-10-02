@@ -16,6 +16,7 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading;
 using System.Web.Mvc;
 using Xunit;
 
@@ -27,6 +28,21 @@ namespace K9.WebApplication.Tests.Unit.Services
         {
             return new GoogleCalendarService(new Mock<INineStarKiBasePackage>().Object,
                 new Mock<INineStarKiService>().Object, new Mock<IUserService>().Object);
+        }
+
+        [Fact]
+        public void CancelledMonthDoesNotReadUsersOrCalculateProfiles()
+        {
+            var users = new Mock<IUserService>(MockBehavior.Strict);
+            var profiles = new Mock<INineStarKiService>(MockBehavior.Strict);
+            var service = new GoogleCalendarService(new Mock<INineStarKiBasePackage>().Object,
+                profiles.Object, users.Object);
+            using (var cancellation = new CancellationTokenSource())
+            {
+                cancellation.Cancel();
+                Assert.Throws<OperationCanceledException>(() => service.GetCalendarEntries(42,
+                    new DateTime(2027, 3, 1), new DateTime(2027, 4, 1), cancellation.Token));
+            }
         }
 
         [Fact]

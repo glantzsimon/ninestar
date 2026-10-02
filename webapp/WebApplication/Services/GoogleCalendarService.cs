@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Security;
@@ -31,6 +32,12 @@ namespace K9.WebApplication.Services
 
         public List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate)
         {
+            return GetCalendarEntries(userId, startDate, endDate, CancellationToken.None);
+        }
+
+        public List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
             ValidateUserId(userId);
             if (startDate.TimeOfDay != TimeSpan.Zero || endDate.TimeOfDay != TimeSpan.Zero)
                 throw new ArgumentException("Supply calendar dates without a time component.");
@@ -65,6 +72,7 @@ namespace K9.WebApplication.Services
 
             for (var date = startDate; date < endDate; date = date.AddDays(1))
             {
+                cancellationToken.ThrowIfCancellationRequested();
                 // Match Primary Cycles: supply the local selected date and its timezone
                 // together. Converting midnight to UTC here can move the calculation
                 // into the previous calendar date.
@@ -75,6 +83,7 @@ namespace K9.WebApplication.Services
                     invertDailyAndHourlyKiForSouthernHemisphere: invertNatal,
                     invertDailyAndHourlyCycleKiForSouthernHemisphere: invertCycles,
                     displayDataForPeriod: EDisplayDataForPeriod.SelectedDate);
+                cancellationToken.ThrowIfCancellationRequested();
                 var houses = model.PersonalHousesOccupiedEnergies;
                 var year = houses.Year.EnergyNumber;
                 var month = houses.Month.EnergyNumber;

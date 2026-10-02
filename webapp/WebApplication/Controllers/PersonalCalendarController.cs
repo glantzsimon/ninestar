@@ -44,7 +44,7 @@ namespace K9.WebApplication.Controllers
             {
                 var today = _calendarService.GetCalendarToday(userId);
                 var start = new DateTime(year ?? today.Year, month ?? today.Month, 1);
-                var entries = _calendarService.GetCalendarEntries(userId, start, start.AddMonths(1));
+                var entries = _calendarService.GetCalendarEntries(userId, start, start.AddMonths(1), GetClientDisconnectedToken());
                 return Json(new
                 {
                     Year = start.Year,
@@ -74,9 +74,27 @@ namespace K9.WebApplication.Controllers
                     })
                 }, JsonRequestBehavior.AllowGet);
             }
+            catch (OperationCanceledException)
+            {
+                // The superseded browser request no longer needs a response.
+                return new EmptyResult();
+            }
             catch (InvalidOperationException)
             {
                 return new HttpStatusCodeResult(409);
+            }
+        }
+
+        private CancellationToken GetClientDisconnectedToken()
+        {
+            try
+            {
+                return Response?.ClientDisconnectedToken ?? CancellationToken.None;
+            }
+            catch (PlatformNotSupportedException)
+            {
+                // Non-IIS hosts may not expose disconnect notification.
+                return CancellationToken.None;
             }
         }
 

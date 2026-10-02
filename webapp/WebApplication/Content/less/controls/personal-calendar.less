@@ -1,16 +1,18 @@
 #personal-calendar {
     color: var(--text-color);
     background: transparent;
+    container-type: inline-size;
 
-    .personal-calendar-actions, .personal-calendar-toolbar {
+    .personal-calendar-toolbar {
         display: flex;
         align-items: center;
         gap: 8px;
         margin-bottom: 12px;
     }
-    .personal-calendar-actions { justify-content: flex-end; }
-    .personal-calendar-expanded-title { display: none; margin-right: auto; }
-    .personal-calendar-month { flex: 1; text-align: center; }
+    .personal-calendar-expanded-title { display: none; margin-bottom: 12px; }
+    .personal-calendar-toolbar > button { flex-shrink: 0; }
+    .calendar-expand { white-space: nowrap; }
+    .personal-calendar-month { flex: 1; min-width: 0; text-align: center; }
     .personal-calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
     .personal-calendar-weekday { text-align: center; font-size: 0.85em; padding: 6px 0; }
     .personal-calendar-day {
@@ -30,11 +32,11 @@
         &.is-selected, &:focus { outline: 2px solid var(--primary-blue); outline-offset: -2px; }
         &:hover { background: var(--background-color-hover); }
     }
-    .personal-calendar-detail { margin-top: 16px; }
+    .personal-calendar-detail { border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 16px; }
     .calendar-selected-houses { font-weight: bold; }
     .calendar-selected-description p { margin-bottom: 12px; }
     .personal-calendar-status { margin: 12px 0; }
-    .personal-calendar-subscription { border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px; }
+    .personal-calendar-subscription { margin-top: 12px; }
     .calendar-link-container { margin-top: 12px; }
     .calendar-link-container p { margin-top: 8px; }
 
@@ -58,7 +60,13 @@
     }
 }
 body.personal-calendar-open { overflow: hidden; }
+@container (max-width: 560px) {
+    #personal-calendar .calendar-expand-label { display: none; }
+    #personal-calendar .personal-calendar-toolbar { gap: 4px; }
+}
 @media (max-width: 767px) {
+    #personal-calendar .calendar-expand-label { display: none; }
+    #personal-calendar .personal-calendar-toolbar { gap: 4px; }
     #personal-calendar.is-expanded {
         padding: 12px;
         .personal-calendar-content { display: block; }

@@ -12,20 +12,18 @@
      data-copied="@Dictionary.Copied" data-copy-error="@Dictionary.FailedToCopyToClipboard"
      data-expand="@Dictionary.ExpandCalendar" data-close="@Dictionary.CloseCalendar"
      data-revoked="@Dictionary.CalendarLinkDisabled">
-    <div class="personal-calendar-actions">
-        <strong class="personal-calendar-expanded-title">@Dictionary.PersonalCalendar</strong>
-        @Html.BootstrapButton("", "btn-link calendar-help", EButtonType.Button, "fa-question-circle")
-        @Html.BootstrapButton(Dictionary.ExpandCalendar, "btn-default calendar-expand", EButtonType.Button, "fa-expand")
-    </div>
-    <div id="personal-calendar-help" class="collapse">
-        <p>@Dictionary.PersonalCalendarHelp</p>
-        <p>@Dictionary.CalendarSubscriptionHelp</p>
-    </div>
+    <strong class="personal-calendar-expanded-title">@Dictionary.PersonalCalendar</strong>
     <div class="personal-calendar-toolbar">
         @Html.BootstrapButton("", "btn-default calendar-previous", EButtonType.Button, "fa-chevron-left")
         <strong class="personal-calendar-month" aria-live="polite"></strong>
         @Html.BootstrapButton("", "btn-default calendar-next", EButtonType.Button, "fa-chevron-right")
         @Html.BootstrapButton(Dictionary.Today, "btn-default calendar-today", EButtonType.Button)
+        @Html.BootstrapButton(Dictionary.ExpandCalendar, "btn-default calendar-expand", EButtonType.Button, "fa-expand")
+        @Html.BootstrapButton("", "btn-link calendar-help", EButtonType.Button, "fa-question-circle")
+    </div>
+    <div id="personal-calendar-help" class="collapse">
+        <p>@Dictionary.PersonalCalendarHelp</p>
+        <p>@Dictionary.CalendarSubscriptionHelp</p>
     </div>
     <template id="personal-calendar-day-template">
         @Html.BootstrapButton("", "personal-calendar-day", EButtonType.Button)

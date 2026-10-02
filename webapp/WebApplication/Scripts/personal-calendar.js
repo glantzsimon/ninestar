@@ -17,7 +17,7 @@
             'aria-controls': 'personal-calendar-help', 'aria-expanded': 'false',
             'aria-label': $calendar.attr('data-help'), title: $calendar.attr('data-help')
         });
-        $calendar.find('.calendar-expand').attr('aria-expanded', 'false');
+        updateExpandButton(false);
         $calendar.find('.calendar-previous').attr({ 'aria-label': $calendar.attr('data-previous'), title: $calendar.attr('data-previous') });
         $calendar.find('.calendar-next').attr({ 'aria-label': $calendar.attr('data-next'), title: $calendar.attr('data-next') });
         var dayTemplate = $calendar.find('#personal-calendar-day-template')[0];
@@ -86,6 +86,16 @@
         $calendar.find('.calendar-next').on('click', function () { navigate(1); });
         $calendar.find('.calendar-today').on('click', function () { selectedDate = null; loadMonth(); });
 
+        function updateExpandButton(value) {
+            var label = $calendar.attr(value ? 'data-close' : 'data-expand'),
+                $expand = $calendar.find('.calendar-expand').attr({
+                    'aria-expanded': value ? 'true' : 'false', 'aria-label': label, title: label
+                }),
+                $icon = $expand.find('i').first().detach();
+            $icon.toggleClass('fa-expand', !value).toggleClass('fa-compress', value);
+            $expand.empty().append($icon).append($('<span class="calendar-expand-label">').text(' ' + label));
+        }
+
         function expand(value) {
             if (value) {
                 previousFocus = document.activeElement;
@@ -99,10 +109,7 @@
             }
             $calendar.toggleClass('is-expanded', value);
             $('body').toggleClass('personal-calendar-open', value);
-            var $expand = $calendar.find('.calendar-expand').attr('aria-expanded', value ? 'true' : 'false'),
-                $icon = $expand.find('i').first().detach();
-            $expand.empty().append($icon).append(document.createTextNode(' ' + $calendar.attr(value ? 'data-close' : 'data-expand')));
-            $calendar.find('.calendar-expand i').toggleClass('fa-expand', !value).toggleClass('fa-compress', value);
+            updateExpandButton(value);
             if (value) $calendar.find('.calendar-expand').focus();
             else if (previousFocus) previousFocus.focus();
         }

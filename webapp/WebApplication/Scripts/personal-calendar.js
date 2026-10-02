@@ -65,7 +65,7 @@
                     .removeAttr('id').attr('aria-pressed', 'false')
                     .attr('data-date', entry.Date).attr('aria-label', entry.DateLabel + ' · ' + entry.Houses)
                     .attr('title', entry.EnergyName).toggleClass('is-today', entry.Date === data.Today);
-                $('<span>').text(entry.Day).appendTo($day);
+                $('<span class="calendar-day-date">').text(entry.Day).appendTo($day);
                 $('<img>').attr({ src: entry.ImageUrl, alt: entry.EnergyName }).appendTo($day);
                 $('<span class="calendar-day-numbers">').text(numbers).appendTo($day);
                 $day.on('click', function (e) {
@@ -132,8 +132,13 @@
                     }
                 },
                 error: function (xhr, result) {
-                    if (result !== 'abort' && version === requestVersion)
+                    if (result !== 'abort' && version === requestVersion) {
                         status($calendar.attr(xhr.status === 409 ? 'data-unavailable' : 'data-error'));
+                        if (window.console && window.console.error)
+                            window.console.error('Personal calendar month request failed.', {
+                                status: xhr.status, result: result, year: year, month: month
+                            });
+                    }
                 },
                 complete: function () {
                     if (version !== requestVersion) return;

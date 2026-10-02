@@ -29,14 +29,18 @@
     }
     .calendar-expand, .calendar-copy { white-space: nowrap; }
     .personal-calendar-month { flex: 0 1 auto; min-width: 0; text-align: left; }
-    .personal-calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
+    .personal-calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); align-content: start; gap: 3px; }
     .personal-calendar-weekday { text-align: center; font-size: 0.85em; padding: 6px 0; }
     .personal-calendar-day {
         display: flex;
         flex-direction: column;
         align-items: center;
         min-width: 0;
-        padding: 5px 2px;
+        width: 100%;
+        min-height: 0;
+        aspect-ratio: 1 / 1;
+        box-sizing: border-box;
+        padding: 0;
         border: 1px solid var(--border-color);
         border-radius: 4px;
         color: var(--text-color);
@@ -44,8 +48,9 @@
         cursor: pointer;
         position: relative;
         transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
-        img { width: 34px; max-width: 90%; height: auto; }
-        .calendar-day-numbers { font-size: 0.7em; white-space: nowrap; }
+        .calendar-day-date { position: absolute; top: 4px; left: 5px; font-size: 0.75em; line-height: 1; }
+        img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 34px; max-width: 55%; max-height: 55%; height: auto; object-fit: contain; }
+        .calendar-day-numbers { position: absolute; bottom: 4px; left: 0; right: 0; text-align: center; font-size: 0.7em; line-height: 1; white-space: nowrap; }
         // Reuse the predictions calendar's hover/current/active visual hierarchy.
         &:hover:not(:disabled), &:focus-visible:not(:disabled) {
             background: var(--background-color-hover);
@@ -93,7 +98,6 @@
         .personal-calendar-expanded-title { display: block; }
         .personal-calendar-content { display: grid; grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr); gap: 24px; }
         .personal-calendar-detail { margin-top: 0; padding-top: 0; border-top: 0; }
-        .personal-calendar-day { min-height: 90px; justify-content: space-between; }
         .personal-calendar-day img { width: 48px; }
         .personal-calendar-day .calendar-day-numbers { font-size: 0.9em; }
     }
@@ -116,6 +120,5 @@ body.personal-calendar-open { overflow: hidden; }
         padding: 12px;
         .personal-calendar-content { display: block; }
         .personal-calendar-detail { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); }
-        .personal-calendar-day { min-height: 75px; }
     }
 }

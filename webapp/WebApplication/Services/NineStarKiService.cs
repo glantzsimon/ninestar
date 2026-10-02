@@ -10,6 +10,7 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace K9.WebApplication.Services
@@ -372,15 +373,36 @@ namespace K9.WebApplication.Services
                 EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None,
                 NineStarKiModel nineStarKiModel = null, bool includeMoonPhases = true)
         {
-            return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{birthTimeZoneId}_{timeOfBirth.ToString()}_" +
+#if DEBUG
+            var plannerTimer = Stopwatch.StartNew();
+            var stageTimer = Stopwatch.StartNew();
+            var traceId = Guid.NewGuid().ToString("N").Substring(0, 8);
+            var traceContext = $"GetPlannerData [{traceId}] {view} {selectedDateTime:yyyy-MM-dd}";
+            var cacheMiss = false;
+            Action<string> tracePlanner = stage =>
+            {
+                Debug.WriteLine($"{traceContext}: {stage}; stage {stageTimer.ElapsedMilliseconds} ms, total {plannerTimer.ElapsedMilliseconds} ms.");
+                stageTimer.Restart();
+            };
+            tracePlanner("starting");
+#endif
+            var result = GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{birthTimeZoneId}_{timeOfBirth.ToString()}_" +
                                    $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_{calculatorType}_{displayDataForPeriod}" +
                                    $"{userTimeZoneId}_{housesDisplay}_" +
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
                                    $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}_" +
                                    $"{display}_{navigationDirection}_{nineStarKiModel?.SelectedDate:yyyyMMddHHmm}_{includeMoonPhases}", () =>
             {
+#if DEBUG
+                cacheMiss = true;
+                tracePlanner("cache miss; GetLichun starting");
+#endif
                 var energies = new List<PlannerViewModelItem>();
                 var lichun = _astronomyService.GetLichun(selectedDateTime, userTimeZoneId);
+#if DEBUG
+                tracePlanner("GetLichun completed; profile resolution starting");
+                var reusedProfile = nineStarKiModel != null;
+#endif
                 // Add time of birth
                 dateOfBirth = dateOfBirth.Add(timeOfBirth);
                 nineStarKiModel = nineStarKiModel ?? CalculateNineStarKiProfile(new PersonModel
@@ -391,6 +413,9 @@ namespace K9.WebApplication.Services
                     Gender = gender
                 }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                     housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+#if DEBUG
+                tracePlanner(reusedProfile ? "supplied profile reused" : "CalculateNineStarKiProfile completed");
+#endif
 
                 var plannerModel = new PlannerViewModel
                 {
@@ -409,6 +434,9 @@ namespace K9.WebApplication.Services
                 }
 
                 var localNow = nineStarKiModel.SelectedDate.Value;
+#if DEBUG
+                tracePlanner("model setup and optional parent moon phase completed; period lookup starting");
+#endif
 
                 switch (view)
                 {
@@ -557,8 +585,16 @@ namespace K9.WebApplication.Services
                             selectedDateTime = selectedMonthPeriod.PeriodStartsOn;
                         }
 
+#if DEBUG
+                        tracePlanner("Month boundaries and navigation completed; daily astronomy batch starting");
+#endif
+
                         var dailyPeriods =
                             _astronomyService.GetNineStarKiDailyEnergiesForMonth(selectedMonthPeriod.PeriodStartsOn.AddDays(3), userTimeZoneId);
+
+#if DEBUG
+                        tracePlanner("GetNineStarKiDailyEnergiesForMonth completed; daily row construction starting");
+#endif
 
                         foreach (var dailyEnergy in dailyPeriods)
                         {
@@ -596,6 +632,10 @@ namespace K9.WebApplication.Services
                                 GlobalKi = globalEnergy
                             }));
                         }
+
+#if DEBUG
+                        tracePlanner("daily rows completed (includes optional row moon phases); navigation profile starting");
+#endif
 
                         if (navigationDirection != EPlannerNavigationDirection.None)
                         {
@@ -695,6 +735,10 @@ namespace K9.WebApplication.Services
                             selectedDateTime = yearlyPeriod.PeriodStartsOn;
                         }
 
+#if DEBUG
+                        tracePlanner("Year boundaries and navigation completed; monthly astronomy batch starting");
+#endif
+
                         var periodsStart = yearlyPeriod.PeriodStartsOn.AddDays(3);
 
                         var needsInvertedMonthlyPeriods =
@@ -707,6 +751,10 @@ namespace K9.WebApplication.Services
                             userTimeZoneId,
                             invert: needsInvertedMonthlyPeriods
                         );
+
+#if DEBUG
+                        tracePlanner("GetNineStarKiMonthlyPeriods completed; monthly row construction starting");
+#endif
 
                         foreach (var monthlyPeriod in monthlyPeriodsForYear)
                         {
@@ -740,6 +788,10 @@ namespace K9.WebApplication.Services
                             ));
                         }
 
+#if DEBUG
+                        tracePlanner("monthly rows completed; navigation profile starting");
+#endif
+
                         if (navigationDirection != EPlannerNavigationDirection.None)
                         {
                             nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
@@ -764,9 +816,17 @@ namespace K9.WebApplication.Services
                 // Update selected time (in case of navigation)
                 plannerModel.SelectedDateTime = selectedDateTime;
 
+#if DEBUG
+                tracePlanner("planner assembly completed");
+#endif
+
                 return plannerModel;
 
             }, TimeSpan.FromDays(30));
+#if DEBUG
+            tracePlanner(cacheMiss ? "cache miss completed" : "cache hit completed");
+#endif
+            return result;
         }
 
         private NineStarKiEnergy GetInvertedEnergy(NineStarKiEnergy energy)

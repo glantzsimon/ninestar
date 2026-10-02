@@ -35,22 +35,26 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Month(int? year = null, int? month = null)
         {
+#if DEBUG
             var timer = Stopwatch.StartNew();
+#endif
+#if DEBUG
             Debug.WriteLine("Personal calendar Month: action entered.");
+#endif
             var userId = Current.UserId;
             if (!CanAccess(userId))
                 return new HttpStatusCodeResult(403);
-            Debug.WriteLine($"Personal calendar Month: access check completed at {timer.ElapsedMilliseconds} ms.");
             if (!ModelState.IsValid || year.HasValue != month.HasValue ||
                 (year.HasValue && (year < 1900 || year > 2100 || month < 1 || month > 12)))
                 return new HttpStatusCodeResult(400);
             try
             {
                 var today = _calendarService.GetCalendarToday(userId);
-                Debug.WriteLine($"Personal calendar Month: local today resolved at {timer.ElapsedMilliseconds} ms.");
                 var start = new DateTime(year ?? today.Year, month ?? today.Month, 1);
                 var entries = _calendarService.GetCalendarEntries(userId, start, start.AddMonths(1), GetClientDisconnectedToken());
+#if DEBUG
                 Debug.WriteLine($"Personal calendar Month: calendar entries returned at {timer.ElapsedMilliseconds} ms.");
+#endif
                 return Json(new
                 {
                     Year = start.Year,
@@ -82,6 +86,9 @@ namespace K9.WebApplication.Controllers
             }
             catch (OperationCanceledException)
             {
+#if DEBUG
+                Debug.WriteLine($"Personal calendar Month: cancelled at {timer.ElapsedMilliseconds} ms.");
+#endif
                 // The superseded browser request no longer needs a response.
                 return new EmptyResult();
             }

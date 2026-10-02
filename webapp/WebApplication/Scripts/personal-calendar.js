@@ -10,7 +10,8 @@
             $content = $calendar.find('.personal-calendar-content'),
             $copy = $calendar.find('.calendar-copy'),
             $link = $calendar.find('input[name="CalendarLink"]'),
-            currentYear, currentMonth, today, entries = [], request, requestVersion = 0,
+            currentYear, currentMonth, targetYear, targetMonth, navigationTimer,
+            today, entries = [], request, requestVersion = 0,
             selectedDate, subscriptionBusy = false, $placeholder, previousFocus;
 
         $calendar.find('.calendar-help').attr({
@@ -78,26 +79,39 @@
             $grid.append($cells);
             currentYear = data.Year;
             currentMonth = data.Month;
+            targetYear = currentYear;
+            targetMonth = currentMonth;
             today = data.Today;
             entries = data.Entries;
             $calendar.find('.personal-calendar-month').text(data.Title);
             var chosen = entries.filter(function (e) { return e.Date === selectedDate; })[0] ||
                 entries.filter(function (e) { return e.Date === today; })[0] || entries[0];
             if (chosen) select(chosen);
-            $calendar.find('.calendar-previous').prop('disabled', currentYear === 1900 && currentMonth === 1);
-            $calendar.find('.calendar-next').prop('disabled', currentYear === 2100 && currentMonth === 12);
+            updateNavigation();
             status('');
         }
 
-        function loadMonth(year, month) {
+        function updateNavigation() {
+            $calendar.find('.calendar-previous').prop('disabled', targetYear === 1900 && targetMonth === 1);
+            $calendar.find('.calendar-next').prop('disabled', targetYear === 2100 && targetMonth === 12);
+        }
+
+        function loadMonth(year, month, delay) {
             var version = ++requestVersion;
+            clearTimeout(navigationTimer);
             if (request) request.abort();
+            request = null;
+            targetYear = year;
+            targetMonth = month;
+            updateNavigation();
             $calendar.attr('aria-busy', 'true');
             status('');
             // Stop the previous fade-out before showing the panel spinner again.
             $content.find('.partialSpinner, .partialOverlay').stop(true, true);
             $.fn.displaySpinner($content);
-            request = $.ajax({
+            navigationTimer = setTimeout(function () {
+                if (version !== requestVersion) return;
+                request = $.ajax({
                 url: $calendar.attr('data-month-url'),
                 type: 'GET',
                 dataType: 'json',
@@ -121,19 +135,28 @@
                     if (result !== 'abort' && version === requestVersion)
                         status($calendar.attr(xhr.status === 409 ? 'data-unavailable' : 'data-error'));
                 },
-                complete: function () { finishLoading(version); }
-            });
+                complete: function () {
+                    if (version !== requestVersion) return;
+                    request = null;
+                    finishLoading(version);
+                }
+                });
+            }, delay || 0);
         }
 
         function navigate(delta) {
-            if (!currentYear) return;
-            var date = new Date(currentYear, currentMonth - 1 + delta, 1);
+            if (!targetYear) return;
+            // Count clicks against the requested month, even while it is loading.
+            var date = new Date(targetYear, targetMonth - 1 + delta, 1);
             if (date.getFullYear() < 1900 || date.getFullYear() > 2100) return;
-            loadMonth(date.getFullYear(), date.getMonth() + 1);
+            loadMonth(date.getFullYear(), date.getMonth() + 1, 150);
         }
         $calendar.find('.calendar-previous').on('click', function (e) { e.preventDefault(); e.stopPropagation(); navigate(-1); });
         $calendar.find('.calendar-next').on('click', function (e) { e.preventDefault(); e.stopPropagation(); navigate(1); });
-        $calendar.find('.calendar-today').on('click', function (e) { e.preventDefault(); e.stopPropagation(); selectedDate = null; loadMonth(); });
+        $calendar.find('.calendar-today').on('click', function (e) { e.preventDefault(); e.stopPropagation(); selectedDate = null;
+            var parts = today ? today.split('-') : [];
+            loadMonth(parts.length ? Number(parts[0]) : undefined, parts.length ? Number(parts[1]) : undefined);
+         });
 
         function updateExpandButton(value) {
             var label = $calendar.attr(value ? 'data-close' : 'data-expand'),

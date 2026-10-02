@@ -7,6 +7,7 @@ using K9.WebApplication.Packages;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -44,6 +45,8 @@ namespace K9.WebApplication.Services
             if (endDate < startDate)
                 throw new ArgumentException("End date must be on or after start date.", nameof(endDate));
 
+            var timer = Stopwatch.StartNew();
+            Debug.WriteLine("Personal calendar: loading user and preferences.");
             var user = _userService.Find(userId);
             if (user == null)
                 throw new ArgumentException("User not found.", nameof(userId));
@@ -62,18 +65,22 @@ namespace K9.WebApplication.Services
             var descriptions = new Dictionary<string, string>();
             var entries = new List<CalendarEntry>();
 
+            Debug.WriteLine($"Personal calendar: user and preferences loaded at {timer.ElapsedMilliseconds} ms.");
             var date = DateTime.SpecifyKind(startDate, DateTimeKind.Unspecified);
             while (date < endDate)
             {
                 cancellationToken.ThrowIfCancellationRequested();
                 // Fetch the year once, then reuse its profile for every month's daily rows.
                 // GetPlannerData adds the birth time itself.
+                var phaseStarted = timer.ElapsedMilliseconds;
+                Debug.WriteLine($"Personal calendar: Year planner starting for {date:yyyy-MM-dd}.");
                 var yearlyPlanner = _nineStarKiService.GetPlannerData(
                     DateTime.SpecifyKind(user.BirthDate.Date, DateTimeKind.Unspecified),
                     info.BirthTimeZoneId, info.TimeOfBirth, user.Gender, date, timeZoneId,
                     calculationMethod, calculatorType, EDisplayDataForPeriod.SelectedDate,
                     housesDisplay, invertNatal, invertCycles,
-                    EPlannerView.Year, EScopeDisplay.PersonalKi);
+                    EPlannerView.Year, EScopeDisplay.PersonalKi, includeMoonPhases: false);
+                Debug.WriteLine($"Personal calendar: Year planner completed in {timer.ElapsedMilliseconds - phaseStarted} ms.");
                 cancellationToken.ThrowIfCancellationRequested();
                 var year = yearlyPlanner.Energy.EnergyNumber;
                 var batchStart = date;
@@ -90,6 +97,8 @@ namespace K9.WebApplication.Services
                     cancellationToken.ThrowIfCancellationRequested();
                     // Select safely inside this solar period, matching the planner's
                     // existing boundary convention rather than Gregorian AddMonths.
+                    phaseStarted = timer.ElapsedMilliseconds;
+                    Debug.WriteLine($"Personal calendar: Month planner starting for period {monthPeriod.EnergyStartsOn:yyyy-MM-dd}.");
                     var monthlyPlanner = _nineStarKiService.GetPlannerData(
                         DateTime.SpecifyKind(user.BirthDate.Date, DateTimeKind.Unspecified),
                         info.BirthTimeZoneId, info.TimeOfBirth, user.Gender,
@@ -97,13 +106,15 @@ namespace K9.WebApplication.Services
                         timeZoneId, calculationMethod, calculatorType, EDisplayDataForPeriod.SelectedDate,
                         housesDisplay, invertNatal, invertCycles,
                         EPlannerView.Month, EScopeDisplay.PersonalKi,
-                        nineStarKiModel: yearlyPlanner.NineStarKiModel);
+                        nineStarKiModel: yearlyPlanner.NineStarKiModel, includeMoonPhases: false);
+                    Debug.WriteLine($"Personal calendar: Month planner completed in {timer.ElapsedMilliseconds - phaseStarted} ms.");
                     cancellationToken.ThrowIfCancellationRequested();
                     var month = monthPeriod.Energy.EnergyNumber;
                     var days = monthlyPlanner.Energies
                         .Where(e => e.EnergyStartsOn.Date >= date && e.EnergyStartsOn.Date < batchEnd)
                         .OrderBy(e => e.EnergyStartsOn)
                         .ToList();
+                    phaseStarted = timer.ElapsedMilliseconds;
                     foreach (var item in days)
                     {
                         cancellationToken.ThrowIfCancellationRequested();
@@ -128,10 +139,12 @@ namespace K9.WebApplication.Services
                         });
                         date = localDate.AddDays(1);
                     }
+                    Debug.WriteLine($"Personal calendar: mapped {days.Count} days/descriptions in {timer.ElapsedMilliseconds - phaseStarted} ms.");
                 }
                 if (date == batchStart)
                     throw new InvalidOperationException("The planner returned no dates for the requested calendar period.");
             }
+            Debug.WriteLine($"Personal calendar: entries completed in {timer.ElapsedMilliseconds} ms.");
             return entries;
         }
 

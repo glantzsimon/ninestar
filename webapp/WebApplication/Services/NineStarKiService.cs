@@ -370,14 +370,14 @@ namespace K9.WebApplication.Services
                 EPlannerView view = EPlannerView.Year,
                 EScopeDisplay display = EScopeDisplay.PersonalKi,
                 EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None,
-                NineStarKiModel nineStarKiModel = null)
+                NineStarKiModel nineStarKiModel = null, bool includeMoonPhases = true)
         {
             return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{birthTimeZoneId}_{timeOfBirth.ToString()}_" +
                                    $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_{calculatorType}_{displayDataForPeriod}" +
                                    $"{userTimeZoneId}_{housesDisplay}_" +
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
                                    $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}_" +
-                                   $"{display}_{navigationDirection}_{nineStarKiModel?.SelectedDate:yyyyMMddHHmm}", () =>
+                                   $"{display}_{navigationDirection}_{nineStarKiModel?.SelectedDate:yyyyMMddHHmm}_{includeMoonPhases}", () =>
             {
                 var energies = new List<PlannerViewModelItem>();
                 var lichun = _astronomyService.GetLichun(selectedDateTime, userTimeZoneId);
@@ -402,7 +402,7 @@ namespace K9.WebApplication.Services
                     SelectedDateTime = selectedDateTime
                 };
 
-                if (view == EPlannerView.Month || view == EPlannerView.Day)
+                if (includeMoonPhases && (view == EPlannerView.Month || view == EPlannerView.Day))
                 {
                     plannerModel.MoonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, true,
                         nineStarKiModel.MainEnergy);
@@ -585,7 +585,9 @@ namespace K9.WebApplication.Services
 
                             var isActive = dailyEnergy.Day.Date == localNow.Date;
 
-                            var moonPhase = _astrologyService.GetMoonPhase(dailyEnergy.Day.Date, userTimeZoneId, false, nineStarKiModel.MainEnergy);
+                            var moonPhase = includeMoonPhases
+                                ? _astrologyService.GetMoonPhase(dailyEnergy.Day.Date, userTimeZoneId, false, nineStarKiModel.MainEnergy)
+                                : null;
 
                             energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isActive, EPlannerView.Day, moonPhase, new MagicSquareViewModel
                             {

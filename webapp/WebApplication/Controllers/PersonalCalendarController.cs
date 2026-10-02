@@ -3,6 +3,7 @@ using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using System;
 using System.Globalization;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -34,17 +35,22 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Month(int? year = null, int? month = null)
         {
+            var timer = Stopwatch.StartNew();
+            Debug.WriteLine("Personal calendar Month: action entered.");
             var userId = Current.UserId;
             if (!CanAccess(userId))
                 return new HttpStatusCodeResult(403);
+            Debug.WriteLine($"Personal calendar Month: access check completed at {timer.ElapsedMilliseconds} ms.");
             if (!ModelState.IsValid || year.HasValue != month.HasValue ||
                 (year.HasValue && (year < 1900 || year > 2100 || month < 1 || month > 12)))
                 return new HttpStatusCodeResult(400);
             try
             {
                 var today = _calendarService.GetCalendarToday(userId);
+                Debug.WriteLine($"Personal calendar Month: local today resolved at {timer.ElapsedMilliseconds} ms.");
                 var start = new DateTime(year ?? today.Year, month ?? today.Month, 1);
                 var entries = _calendarService.GetCalendarEntries(userId, start, start.AddMonths(1), GetClientDisconnectedToken());
+                Debug.WriteLine($"Personal calendar Month: calendar entries returned at {timer.ElapsedMilliseconds} ms.");
                 return Json(new
                 {
                     Year = start.Year,

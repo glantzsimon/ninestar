@@ -27,6 +27,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly TestOutputTraceListener _listener;
         private NineStarKiService _nineStarKiService;
         private AstronomyService _astronomyService;
+        private Mock<IAstrologyService> _astrologyService;
 
         public NineStarKiServiceTests(ITestOutputHelper output)
         {
@@ -39,7 +40,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var aiTextMergeService = new Mock<IAIService>();
 
-            var astrologyService = new Mock<IAstrologyService>();
+            _astrologyService = new Mock<IAstrologyService>();
 
             var nineStarKiBasePackage = new Mock<INineStarKiBasePackage>();
             nineStarKiBasePackage.SetupGet(e => e.DefaultValuesConfiguration).Returns(new DefaultValuesConfiguration
@@ -52,7 +53,48 @@ namespace K9.WebApplication.Tests.Unit.Services
             Trace.Listeners.Add(_listener);
 
             _astronomyService = new AstronomyService(nineStarKiBasePackage.Object, _output);
-            _nineStarKiService = new NineStarKiService(basePackage.Object, _astronomyService, aiTextMergeService.Object, astrologyService.Object);
+            _nineStarKiService = new NineStarKiService(basePackage.Object, _astronomyService, aiTextMergeService.Object, _astrologyService.Object);
+        }
+
+        [Fact]
+        public void CalendarPlannerCanSkipMoonPhasesWithoutChangingDefaultPlannerBehaviour()
+        {
+            var date = new DateTime(2026, 11, 15);
+            var person = new PersonModel
+            {
+                DateOfBirth = new DateTime(1979, 6, 16, 8, 0, 0),
+                TimeOfBirth = new TimeSpan(8, 0, 0), BirthTimeZoneId = "Europe/London", Gender = EGender.Male
+            };
+            var profile = _nineStarKiService.CalculateNineStarKiProfile(person, today: date,
+                calculationMethod: ECalculationMethod.Traditional, calculatorType: ECalculatorType.Advanced,
+                includeCycles: true, userTimeZoneId: "Europe/London");
+            var moonPhaseCalls = 0;
+            _astrologyService.Setup(e => e.GetMoonPhase(It.IsAny<DateTime>(), "Europe/London",
+                It.IsAny<bool>(), It.IsAny<NineStarKiEnergy>()))
+                .Callback(() => moonPhaseCalls++)
+                .Returns(new MoonPhase(50, true));
+
+            var calendarPlanner = _nineStarKiService.GetPlannerData(person.DateOfBirth.Date, person.BirthTimeZoneId,
+                person.TimeOfBirth, person.Gender, date, "Europe/London", ECalculationMethod.Traditional,
+                ECalculatorType.Advanced, EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse,
+                false, false, EPlannerView.Month, nineStarKiModel: profile, includeMoonPhases: false);
+
+            Assert.Null(calendarPlanner.MoonPhase);
+            Assert.All(calendarPlanner.Energies, e => Assert.Null(e.MoonPhase));
+            Assert.Equal(0, moonPhaseCalls);
+
+            var normalPlanner = _nineStarKiService.GetPlannerData(person.DateOfBirth.Date, person.BirthTimeZoneId,
+                person.TimeOfBirth, person.Gender, date, "Europe/London", ECalculationMethod.Traditional,
+                ECalculatorType.Advanced, EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse,
+                false, false, EPlannerView.Month, nineStarKiModel: profile);
+
+            Assert.Equal(normalPlanner.Energies.Count + 1, moonPhaseCalls);
+            Assert.NotNull(normalPlanner.MoonPhase);
+            Assert.All(normalPlanner.Energies, e => Assert.NotNull(e.MoonPhase));
+            Assert.Equal(calendarPlanner.Energies.Select(e => e.Energy.EnergyNumber),
+                normalPlanner.Energies.Select(e => e.Energy.EnergyNumber));
+            Assert.Equal(calendarPlanner.Energies.Select(e => e.SecondEnergy.EnergyNumber),
+                normalPlanner.Energies.Select(e => e.SecondEnergy.EnergyNumber));
         }
 
         [Theory]

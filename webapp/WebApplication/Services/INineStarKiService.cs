@@ -51,6 +51,6 @@ namespace K9.WebApplication.Services
                 EPlannerView view = EPlannerView.Year,
                 EScopeDisplay display = EScopeDisplay.PersonalKi,
                 EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None,
-                NineStarKiModel nineStarKiModel = null);
+                NineStarKiModel nineStarKiModel = null, bool includeMoonPhases = true);
     }
 }

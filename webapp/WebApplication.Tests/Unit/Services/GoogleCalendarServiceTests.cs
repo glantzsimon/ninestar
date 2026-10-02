@@ -250,7 +250,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                             It.Is<DateTime>(d => d == batchStart && d.Kind == DateTimeKind.Unspecified),
                             timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
                             EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
-                            EPlannerView.Month, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, model))
+                            EPlannerView.Month, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, model, false))
                         .Returns(new PlannerViewModel
                         {
                             NineStarKiModel = model, Energy = houses.Month, Energies = rows
@@ -269,7 +269,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                         It.Is<DateTime>(d => d == yearStart && d.Kind == DateTimeKind.Unspecified),
                         timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
                         EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
-                        EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null))
+                        EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null, false))
                     .Returns(new PlannerViewModel { NineStarKiModel = model, Energy = houses.Year, Energies = months });
             }
             var calendar = new GoogleCalendarService(package.Object, profiles.Object, users.Object);
@@ -290,13 +290,13 @@ namespace K9.WebApplication.Tests.Unit.Services
                 It.IsAny<DateTime>(), info.BirthTimeZoneId, birthTime, EGender.Male,
                 It.IsAny<DateTime>(), timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
                 EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
-                EPlannerView.Month, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, It.IsAny<NineStarKiModel>()),
+                EPlannerView.Month, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, It.IsAny<NineStarKiModel>(), false),
                 Times.Exactly((numberOfDays + 19) / 20));
             profiles.Verify(e => e.GetPlannerData(
                 It.IsAny<DateTime>(), info.BirthTimeZoneId, birthTime, EGender.Male,
                 It.IsAny<DateTime>(), timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
                 EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
-                EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null),
+                EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null, false),
                 Times.Exactly((numberOfDays + 39) / 40));
             profiles.VerifyAll();
         }

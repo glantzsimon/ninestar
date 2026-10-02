@@ -6,7 +6,7 @@
 <div id="personal-calendar" data-month-url="@Url.Action("Month", "PersonalCalendar")"
      data-subscription-url="@Url.Action("Subscription", "PersonalCalendar")"
      data-revoke-url="@Url.Action("Revoke", "PersonalCalendar")"
-     data-loading="@Dictionary.Loading" data-error="@Dictionary.NetworkError" data-unavailable="@Dictionary.PersonalCalendarUnavailable"
+     data-error="@Dictionary.NetworkError" data-unavailable="@Dictionary.PersonalCalendarUnavailable"
      data-title="@Dictionary.PersonalCalendar" data-help="@Dictionary.CalendarHelp"
      data-previous="@Dictionary.PreviousMonth" data-next="@Dictionary.NextMonth"
      data-copy="@Dictionary.CopyCalendarLink" data-disable="@Dictionary.DisableCalendarLink"
@@ -48,7 +48,7 @@
             <div class="calendar-selected-description"></div>
         </div>
     </div>
-    <p class="personal-calendar-status" role="status" aria-live="polite">@Dictionary.Loading</p>
+    <p class="personal-calendar-status" role="status" aria-live="polite"></p>
     @Html.AntiForgeryToken()
     <div class="calendar-link-container" style="display: none;">
         @Html.BootstrapDisplayFor(e => e.CalendarLink)

@@ -12,6 +12,10 @@ The owner requires UI controls to use existing K9 HTML helpers, rather than hand
 - For dynamic UI, clone helper-rendered controls instead of creating raw button/input HTML in JavaScript.
 - Follow calculator, account and personal-cycle views for spacing, styling and help-icon patterns. Structural layout containers should match existing views.
 
+## Panel loading
+
+Use the existing `$.fn.displaySpinner($container)` and `$.fn.hideSpinner($container)` helpers in `Views/Shared/Scripts/Default.cshtml`, as demonstrated in `Views/Predictions/_CyclesJs.cshtml`. They render the existing `partialSpinner` / optional `partialOverlay` styled by `Content/less/controls/pageSpinner.less`. Do not substitute a plain Loading label or introduce a separate spinner design. Keep the container height stable while loading, stop a pending spinner fade before restarting it, and clear loading on success, failure, timeout and rendering exceptions. Panel requests should own their loading/error handlers without triggering unrelated global AJAX handlers.
+
 ## Globalisation
 
 All user-visible labels, help, tooltips and messages belong in Globalisation. Check existing resource keys and text first; reuse entries without duplicates.

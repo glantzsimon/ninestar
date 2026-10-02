@@ -2,7 +2,7 @@
 #personal-calendar .personal-calendar-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 12px; }
 #personal-calendar .personal-calendar-navigation, #personal-calendar .personal-calendar-actions { display: flex; align-items: center; gap: 8px; }
 #personal-calendar .personal-calendar-navigation { flex: 0 1 auto; min-width: 0; }
-#personal-calendar .personal-calendar-actions { flex-shrink: 0; margin-left: auto; padding-left: 16px; border-left: 1px solid var(--border-color); }
+#personal-calendar .personal-calendar-actions { flex-shrink: 0; margin-left: auto; padding-left: 16px; }
 #personal-calendar .personal-calendar-expanded-title { display: none; margin-bottom: 12px; }
 #personal-calendar .personal-calendar-toolbar button { flex-shrink: 0; position: relative; transition: transform 0.2s, box-shadow 0.2s; }
 #personal-calendar .personal-calendar-toolbar button:hover:not(:disabled), #personal-calendar .personal-calendar-toolbar button:focus-visible:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1) !important; z-index: 1; }

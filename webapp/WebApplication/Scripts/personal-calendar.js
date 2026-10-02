@@ -7,6 +7,7 @@
 
         var $grid = $calendar.find('.personal-calendar-grid'),
             $status = $calendar.find('.personal-calendar-status'),
+            $content = $calendar.find('.personal-calendar-content'),
             $copy = $calendar.find('.calendar-copy'),
             $link = $calendar.find('input[name="CalendarLink"]'),
             currentYear, currentMonth, today, entries = [], request, requestVersion = 0,
@@ -26,7 +27,9 @@
         updateExpandButton(false);
         $calendar.find('.calendar-previous').attr({ 'aria-label': $calendar.attr('data-previous'), title: $calendar.attr('data-previous') });
         $calendar.find('.calendar-next').attr({ 'aria-label': $calendar.attr('data-next'), title: $calendar.attr('data-next') });
-        var dayTemplate = $calendar.find('#personal-calendar-day-template')[0];
+        // Clone the helper-rendered control once, outside the month content that is replaced.
+        var dayTemplate = $calendar.find('#personal-calendar-day-template')[0],
+            dayButton = dayTemplate.content.querySelector('button');
 
         function status(message) { $status.text(message || ''); }
         function select(entry) {
@@ -41,45 +44,85 @@
             });
         }
 
+        function finishLoading(version) {
+            if (version !== requestVersion) return;
+            $calendar.attr('aria-busy', 'false');
+            $.fn.hideSpinner($content);
+        }
+
+        function renderMonth(data) {
+            if (!data || !Array.isArray(data.Entries) || !data.Year || !data.Month)
+                throw new Error('Invalid personal calendar month response.');
+
+            // Prepare the new cells before replacing the visible month.
+            var $cells = $(document.createDocumentFragment());
+            for (var i = 0; i < data.Offset; i++)
+                $('<div class="personal-calendar-empty" aria-hidden="true">').appendTo($cells);
+            data.Entries.forEach(function (entry) {
+                var numbers = entry.YearHouse + '.' + entry.MonthHouse + '.' + entry.DayHouse;
+                var $day = $(dayButton.cloneNode(true)).empty()
+                    .removeAttr('id').attr('aria-pressed', 'false')
+                    .attr('data-date', entry.Date).attr('aria-label', entry.DateLabel + ' · ' + entry.Houses)
+                    .attr('title', entry.EnergyName).toggleClass('is-today', entry.Date === data.Today);
+                $('<span>').text(entry.Day).appendTo($day);
+                $('<img>').attr({ src: entry.ImageUrl, alt: entry.EnergyName }).appendTo($day);
+                $('<span class="calendar-day-numbers">').text(numbers).appendTo($day);
+                $day.on('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    select(entry);
+                }).appendTo($cells);
+            });
+
+            $grid.find('.personal-calendar-day, .personal-calendar-empty').remove();
+            $grid.append($cells);
+            currentYear = data.Year;
+            currentMonth = data.Month;
+            today = data.Today;
+            entries = data.Entries;
+            $calendar.find('.personal-calendar-month').text(data.Title);
+            var chosen = entries.filter(function (e) { return e.Date === selectedDate; })[0] ||
+                entries.filter(function (e) { return e.Date === today; })[0] || entries[0];
+            if (chosen) select(chosen);
+            $calendar.find('.calendar-previous').prop('disabled', currentYear === 1900 && currentMonth === 1);
+            $calendar.find('.calendar-next').prop('disabled', currentYear === 2100 && currentMonth === 12);
+            status('');
+        }
+
         function loadMonth(year, month) {
             var version = ++requestVersion;
             if (request) request.abort();
             $calendar.attr('aria-busy', 'true');
-            $grid.find('.personal-calendar-day, .personal-calendar-empty').remove();
-            $calendar.find('.calendar-selected-date, .calendar-selected-houses, .calendar-selected-description').empty();
-            status($calendar.attr('data-loading'));
-            request = $.getJSON($calendar.attr('data-month-url'), year ? { year: year, month: month } : {})
-                .done(function (data) {
+            status('');
+            // Stop the previous fade-out before showing the panel spinner again.
+            $content.find('.partialSpinner, .partialOverlay').stop(true, true);
+            $.fn.displaySpinner($content);
+            request = $.ajax({
+                url: $calendar.attr('data-month-url'),
+                type: 'GET',
+                dataType: 'json',
+                data: year ? { year: year, month: month } : {},
+                timeout: 30000,
+                // This panel manages its own loading and error state.
+                global: false,
+                success: function (data) {
                     if (version !== requestVersion) return;
-                    currentYear = data.Year;
-                    currentMonth = data.Month;
-                    today = data.Today;
-                    entries = data.Entries;
-                    $calendar.find('.personal-calendar-month').text(data.Title);
-                    for (var i = 0; i < data.Offset; i++) $('<div class="personal-calendar-empty" aria-hidden="true">').appendTo($grid);
-                    entries.forEach(function (entry) {
-                        var numbers = entry.YearHouse + '.' + entry.MonthHouse + '.' + entry.DayHouse;
-                        var $day = $(dayTemplate.content).find('button').first().clone().empty()
-                            .removeAttr('id').attr('aria-pressed', 'false')
-                            .attr('data-date', entry.Date).attr('aria-label', entry.DateLabel + ' · ' + entry.Houses)
-                            .attr('title', entry.EnergyName).toggleClass('is-today', entry.Date === today);
-                        $('<span>').text(entry.Day).appendTo($day);
-                        $('<img>').attr({ src: entry.ImageUrl, alt: entry.EnergyName }).appendTo($day);
-                        $('<span class="calendar-day-numbers">').text(numbers).appendTo($day);
-                        $day.on('click', function () { select(entry); }).appendTo($grid);
-                    });
-                    var chosen = entries.filter(function (e) { return e.Date === selectedDate; })[0] ||
-                        entries.filter(function (e) { return e.Date === today; })[0] || entries[0];
-                    if (chosen) select(chosen);
-                    $calendar.find('.calendar-previous').prop('disabled', currentYear === 1900 && currentMonth === 1);
-                    $calendar.find('.calendar-next').prop('disabled', currentYear === 2100 && currentMonth === 12);
-                    status('');
-                }).fail(function (xhr, result) {
+                    try {
+                        renderMonth(data);
+                    } catch (error) {
+                        status($calendar.attr('data-error'));
+                        if (window.console && window.console.error)
+                            window.console.error('Personal calendar month rendering failed.', error);
+                    } finally {
+                        finishLoading(version);
+                    }
+                },
+                error: function (xhr, result) {
                     if (result !== 'abort' && version === requestVersion)
                         status($calendar.attr(xhr.status === 409 ? 'data-unavailable' : 'data-error'));
-                }).always(function () {
-                    if (version === requestVersion) $calendar.attr('aria-busy', 'false');
-                });
+                },
+                complete: function () { finishLoading(version); }
+            });
         }
 
         function navigate(delta) {
@@ -88,9 +131,9 @@
             if (date.getFullYear() < 1900 || date.getFullYear() > 2100) return;
             loadMonth(date.getFullYear(), date.getMonth() + 1);
         }
-        $calendar.find('.calendar-previous').on('click', function () { navigate(-1); });
-        $calendar.find('.calendar-next').on('click', function () { navigate(1); });
-        $calendar.find('.calendar-today').on('click', function () { selectedDate = null; loadMonth(); });
+        $calendar.find('.calendar-previous').on('click', function (e) { e.preventDefault(); e.stopPropagation(); navigate(-1); });
+        $calendar.find('.calendar-next').on('click', function (e) { e.preventDefault(); e.stopPropagation(); navigate(1); });
+        $calendar.find('.calendar-today').on('click', function (e) { e.preventDefault(); e.stopPropagation(); selectedDate = null; loadMonth(); });
 
         function updateExpandButton(value) {
             var label = $calendar.attr(value ? 'data-close' : 'data-expand'),
@@ -173,7 +216,8 @@
                 });
         });
 
-        loadMonth();
+        // Shared panel helpers are registered by another document-ready callback.
+        setTimeout(loadMonth, 0);
     });
 })(jQuery);
 

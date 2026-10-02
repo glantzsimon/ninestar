@@ -1,0 +1,60 @@
+@using K9.Base.WebApplication.Enums
+@using K9.Base.WebApplication.Helpers
+@using K9.Globalisation
+@model K9.WebApplication.ViewModels.PersonalCalendarViewModel
+<link rel="stylesheet" href="@Url.Content("~/Content/controls/personal-calendar.css")" />
+<div id="personal-calendar" data-month-url="@Url.Action("Month", "PersonalCalendar")"
+     data-subscription-url="@Url.Action("Subscription", "PersonalCalendar")"
+     data-revoke-url="@Url.Action("Revoke", "PersonalCalendar")"
+     data-error="@Dictionary.NetworkError" data-unavailable="@Dictionary.PersonalCalendarUnavailable"
+     data-title="@Dictionary.PersonalCalendar" data-help="@Dictionary.CalendarHelp"
+     data-previous="@Dictionary.PreviousMonth" data-next="@Dictionary.NextMonth"
+     data-copy="@Dictionary.CopyCalendarLink" data-disable="@Dictionary.DisableCalendarLink"
+     data-copied="@Dictionary.Copied" data-copy-error="@Dictionary.FailedToCopyToClipboard"
+     data-expand="@Dictionary.ExpandCalendar" data-close="@Dictionary.CloseCalendar"
+     data-revoked="@Dictionary.CalendarLinkDisabled">
+    <strong class="personal-calendar-expanded-title">@Dictionary.PersonalCalendar</strong>
+    <div class="personal-calendar-toolbar">
+        <div class="personal-calendar-navigation">
+            @Html.BootstrapButton("", "btn-default calendar-previous", EButtonType.Button, "fa-chevron-left")
+            <strong class="personal-calendar-month" aria-live="polite"></strong>
+            @Html.BootstrapButton("", "btn-default calendar-next", EButtonType.Button, "fa-chevron-right")
+            @Html.BootstrapButton(Dictionary.Today, "btn-default calendar-today", EButtonType.Button)
+        </div>
+        <div class="personal-calendar-actions">
+            @Html.BootstrapButton(Dictionary.CopyCalendarLink, "btn-primary calendar-copy", EButtonType.Button, "fa-copy")
+            @Html.BootstrapButton(Dictionary.ExpandCalendar, "btn-default calendar-expand", EButtonType.Button, "fa-expand")
+            @Html.BootstrapButton("", "btn-link calendar-help", EButtonType.Button, "fa-question-circle")
+            <span class="calendar-disable-container" style="display: none;">@Html.BootstrapButton("", "btn-link calendar-disable", EButtonType.Button, "fa-unlink")</span>
+        </div>
+    </div>
+    <div id="personal-calendar-help" class="collapse">
+        <div class="well">
+            <p>@Dictionary.PersonalCalendarHelp</p>
+            <p>@Dictionary.CalendarSubscriptionHelp</p>
+        </div>
+    </div>
+    <template id="personal-calendar-day-template">
+        @Html.BootstrapButton("", "personal-calendar-day", EButtonType.Button)
+    </template>
+    <div class="personal-calendar-content">
+        <div class="personal-calendar-grid">
+            @foreach (var day in new[] { Dictionary.Monday, Dictionary.Tuesday, Dictionary.Wednesday, Dictionary.Thursday, Dictionary.Friday, Dictionary.Saturday, Dictionary.Sunday })
+            {
+                <div class="personal-calendar-weekday" title="@day">@day.Substring(0, Math.Min(3, day.Length))</div>
+            }
+        </div>
+        <div class="personal-calendar-detail" aria-live="polite">
+            <h4 class="calendar-selected-date"></h4>
+            <p class="calendar-selected-houses"></p>
+            <div class="calendar-selected-description"></div>
+        </div>
+    </div>
+    <p class="personal-calendar-status" role="status" aria-live="polite"></p>
+    @Html.AntiForgeryToken()
+    <div class="calendar-link-container" style="display: none;">
+        @Html.BootstrapDisplayFor(e => e.CalendarLink)
+        <p>@Dictionary.CalendarSubscriptionHelp</p>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/personal-calendar.js")"></script>

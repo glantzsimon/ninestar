@@ -32910,5 +32910,194 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("YouthfulFollyTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calendar help.
+        /// </summary>
+        public static string CalendarHelp {
+            get {
+                return ResourceManager.GetString("CalendarHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Private calendar link.
+        /// </summary>
+        public static string CalendarLink {
+            get {
+                return ResourceManager.GetString("CalendarLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your calendar link is disabled. Copy calendar link to create a new one, then subscribe again..
+        /// </summary>
+        public static string CalendarLinkDisabled {
+            get {
+                return ResourceManager.GetString("CalendarLinkDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy your private calendar link. On a computer, open Google Calendar and choose Other calendars, then +, then From URL. Paste the link and select Add calendar. Once added, it will also appear in your Google Calendar app. Updates are automatic but may take time to appear. Keep this link private: anyone with it can read your calendar..
+        /// </summary>
+        public static string CalendarSubscriptionHelp {
+            get {
+                return ResourceManager.GetString("CalendarSubscriptionHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close calendar.
+        /// </summary>
+        public static string CloseCalendar {
+            get {
+                return ResourceManager.GetString("CloseCalendar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy calendar link.
+        /// </summary>
+        public static string CopyCalendarLink {
+            get {
+                return ResourceManager.GetString("CopyCalendarLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable calendar link.
+        /// </summary>
+        public static string DisableCalendarLink {
+            get {
+                return ResourceManager.GetString("DisableCalendarLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expand calendar.
+        /// </summary>
+        public static string ExpandCalendar {
+            get {
+                return ResourceManager.GetString("ExpandCalendar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Friday.
+        /// </summary>
+        public static string Friday {
+            get {
+                return ResourceManager.GetString("Friday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monday.
+        /// </summary>
+        public static string Monday {
+            get {
+                return ResourceManager.GetString("Monday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next month.
+        /// </summary>
+        public static string NextMonth {
+            get {
+                return ResourceManager.GetString("NextMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your personal calendar.
+        /// </summary>
+        public static string PersonalCalendar {
+            get {
+                return ResourceManager.GetString("PersonalCalendar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose a day to see its combined yearly, monthly and daily influences. The numbers appear in year.month.day order. Where the daily house changes, the afternoon influence is included. Expand the calendar to fill your browser window..
+        /// </summary>
+        public static string PersonalCalendarHelp {
+            get {
+                return ResourceManager.GetString("PersonalCalendarHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your calendar could not be generated. Check that your birth details and timezone are saved..
+        /// </summary>
+        public static string PersonalCalendarUnavailable {
+            get {
+                return ResourceManager.GetString("PersonalCalendarUnavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Previous month.
+        /// </summary>
+        public static string PreviousMonth {
+            get {
+                return ResourceManager.GetString("PreviousMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saturday.
+        /// </summary>
+        public static string Saturday {
+            get {
+                return ResourceManager.GetString("Saturday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sunday.
+        /// </summary>
+        public static string Sunday {
+            get {
+                return ResourceManager.GetString("Sunday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thursday.
+        /// </summary>
+        public static string Thursday {
+            get {
+                return ResourceManager.GetString("Thursday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today.
+        /// </summary>
+        public static string Today {
+            get {
+                return ResourceManager.GetString("Today", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tuesday.
+        /// </summary>
+        public static string Tuesday {
+            get {
+                return ResourceManager.GetString("Tuesday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wednesday.
+        /// </summary>
+        public static string Wednesday {
+            get {
+                return ResourceManager.GetString("Wednesday", resourceCulture);
+            }
+        }
     }
 }

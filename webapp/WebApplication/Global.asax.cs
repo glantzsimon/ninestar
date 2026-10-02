@@ -10,6 +10,7 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.SessionState;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication
@@ -54,6 +55,19 @@ namespace K9.WebApplication
             SetSameSiteNoneForCookies();
             SetCacheBehaviour();
             InitMiniProfiler();
+        }
+
+        protected void Application_PostMapRequestHandler()
+        {
+            // Month reads need session identity/culture, but must not hold an
+            // exclusive session lock while calculating an abandoned month.
+            // Run after MVC maps the handler and before AcquireRequestState.
+            if (Request.HttpMethod == "GET" &&
+                string.Equals(Request.AppRelativeCurrentExecutionFilePath.TrimEnd('/'),
+                    "~/personal-calendar/month", StringComparison.OrdinalIgnoreCase))
+            {
+                Context.SetSessionStateBehavior(SessionStateBehavior.ReadOnly);
+            }
         }
 
         protected void Application_EndRequest()

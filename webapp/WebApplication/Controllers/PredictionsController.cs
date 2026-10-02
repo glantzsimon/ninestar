@@ -160,7 +160,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("calculator/alchemy")]
-        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, ECalculatorType calculatorType, EDisplayDataForPeriod displayDataForPeriod, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere)
+        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, ECalculatorType calculatorType = ECalculatorType.Simple, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.Now, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false)
         {
             if (!My.SystemSettings.IsEnabledAlchemy)
             {

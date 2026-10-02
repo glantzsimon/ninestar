@@ -263,6 +263,7 @@
     <Compile Include="Unit\Services\BioRhythmsServiceTests.cs" />
     <Compile Include="Unit\Services\IChingServiceTests.cs" />
     <Compile Include="Unit\Services\NineStarKiServiceTests.cs" />
+    <Compile Include="Unit\Services\GoogleCalendarServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

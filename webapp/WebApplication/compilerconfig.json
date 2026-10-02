@@ -378,6 +378,13 @@
     }
   },
   {
+    "inputFile": "Content/less/controls/personal-calendar.less",
+    "outputFile": "Content/controls/personal-calendar.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/controls/panel.less",
     "outputFile": "Content/controls/panel.css",
     "options": {

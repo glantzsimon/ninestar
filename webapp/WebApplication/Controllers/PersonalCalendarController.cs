@@ -127,7 +127,7 @@ namespace K9.WebApplication.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        [Route("feed.ics")]
+        [Route("feed")]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Feed(string token)
         {

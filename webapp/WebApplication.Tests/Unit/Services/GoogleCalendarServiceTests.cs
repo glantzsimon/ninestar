@@ -1,4 +1,5 @@
 using K9.WebApplication.Models;
+using K9.WebApplication.ViewModels;
 using K9.DataAccessLayer.Enums;
 using K9.Base.DataAccessLayer.Enums;
 using K9.SharedLibrary.Helpers;
@@ -180,12 +181,13 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData("Europe/London", 10, 1)]
-        [InlineData("America/New_York", 10, 1)]
-        [InlineData("Pacific/Auckland", 10, 1)]
-        [InlineData("Europe/London", 3, 29)]
-        [InlineData("Europe/London", 10, 25)]
-        public void CalendarPassesLocalDateBirthTimeAndSavedOptionsToPrimaryCycles(string timeZoneId, int month, int day)
+        [InlineData("Europe/London", 10, 1, 1)]
+        [InlineData("America/New_York", 10, 1, 1)]
+        [InlineData("Pacific/Auckland", 10, 1, 1)]
+        [InlineData("Europe/London", 3, 29, 1)]
+        [InlineData("Europe/London", 10, 25, 1)]
+        [InlineData("Europe/London", 2, 1, 60)]
+        public void CalendarReusesPlannerBatchesWithLocalDatesBirthTimeAndSavedOptions(string timeZoneId, int month, int day, int numberOfDays)
         {
             var date = new DateTime(2026, month, day);
             var birthDate = new DateTime(1979, 6, 16);
@@ -213,22 +215,63 @@ namespace K9.WebApplication.Tests.Unit.Services
             users.Setup(e => e.GetUserPreference(42, SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere, false)).Returns(true);
             users.Setup(e => e.GetUserPreference(42, SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere, false)).Returns(true);
             var profiles = new Mock<INineStarKiService>(MockBehavior.Strict);
-            profiles.Setup(e => e.CalculateNineStarKiProfile(
-                    It.Is<PersonModel>(p => p.DateOfBirth == birthDate.Add(birthTime) &&
-                        p.DateOfBirth.Kind == DateTimeKind.Unspecified && p.TimeOfBirth == birthTime &&
-                        p.BirthTimeZoneId == info.BirthTimeZoneId && p.Gender == EGender.Male),
-                    false, false, It.Is<DateTime?>(d => d.HasValue && d.Value == date && d.Value.Kind == DateTimeKind.Unspecified),
-                    ECalculationMethod.Traditional, ECalculatorType.Advanced, true, false,
-                    timeZoneId, EHousesDisplay.SolarHouse, true, true, EDisplayDataForPeriod.SelectedDate))
-                .Returns(new NineStarKiModel(new PersonModel { DateOfBirth = birthDate, Gender = EGender.Male },
-                    5, 5, 3, 1, 1, 5, 5, 5, 5, 1, 1, 1,
-                    new (int DailyKi, int? InvertedDailyKi)[] { (1, null), (1, null) }, 5,
-                    selectedDate: date, userTimeZoneId: timeZoneId, calculatorType: ECalculatorType.Advanced));
+            var expected = new List<CalendarEntry>();
+            // Deliberately return rows outside the requested range and out of order.
+            // Each batch has its own year/month houses and a split daily energy.
+            for (var offset = 0; offset < numberOfDays; offset += 20)
+            {
+                var batchStart = date.AddDays(offset);
+                var batchEnd = batchStart.AddDays(20);
+                var model = new NineStarKiModel(new PersonModel { DateOfBirth = birthDate, Gender = EGender.Male },
+                    5, 5, 3, 1, 1, 5, 5, 5, 5, 1 + offset / 20, 1, 1,
+                    new (int DailyKi, int? InvertedDailyKi)[] { (3, null), (9, null) }, 5,
+                    selectedDate: batchStart, userTimeZoneId: timeZoneId, calculatorType: ECalculatorType.Advanced);
+                var houses = model.PersonalHousesOccupiedEnergies;
+                var rows = Enumerable.Range(-1, 21).Select(index => new PlannerViewModelItem
+                {
+                    EnergyStartsOn = batchStart.AddDays(index),
+                    Energy = houses.Day,
+                    SecondEnergy = houses.Day2
+                }).Reverse().ToList();
+                profiles.Setup(e => e.GetPlannerData(
+                        It.Is<DateTime>(d => d == birthDate && d.Kind == DateTimeKind.Unspecified),
+                        info.BirthTimeZoneId, birthTime, EGender.Male,
+                        It.Is<DateTime>(d => d == batchStart && d.Kind == DateTimeKind.Unspecified),
+                        timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
+                        EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
+                        EPlannerView.Month, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null))
+                    .Returns(new PlannerViewModel
+                    {
+                        NineStarKiModel = model, Energy = houses.Month, Energies = rows
+                    });
+                for (var expectedDate = batchStart; expectedDate < batchEnd && expectedDate < date.AddDays(numberOfDays); expectedDate = expectedDate.AddDays(1))
+                    expected.Add(new CalendarEntry
+                    {
+                        Date = expectedDate, YearHouse = houses.Year.EnergyNumber,
+                        MonthHouse = houses.Month.EnergyNumber, DayHouse = houses.Day.EnergyNumber,
+                        AfternoonDayHouse = houses.Day2.EnergyNumber == houses.Day.EnergyNumber ? (int?)null : houses.Day2.EnergyNumber
+                    });
+            }
             var calendar = new GoogleCalendarService(package.Object, profiles.Object, users.Object);
 
-            var entry = Assert.Single(calendar.GetCalendarEntries(42, date, date.AddDays(1)));
+            var entries = calendar.GetCalendarEntries(42, date, date.AddDays(numberOfDays));
 
-            Assert.Equal(date, entry.Date);
+            Assert.Equal(expected.Count, entries.Count);
+            for (var index = 0; index < entries.Count; index++)
+            {
+                Assert.Equal(expected[index].Date, entries[index].Date);
+                Assert.Equal(expected[index].YearHouse, entries[index].YearHouse);
+                Assert.Equal(expected[index].MonthHouse, entries[index].MonthHouse);
+                Assert.Equal(expected[index].DayHouse, entries[index].DayHouse);
+                Assert.Equal(expected[index].AfternoonDayHouse, entries[index].AfternoonDayHouse);
+            }
+            // Strict mocks reject any per-date CalculateNineStarKiProfile calls.
+            profiles.Verify(e => e.GetPlannerData(
+                It.IsAny<DateTime>(), info.BirthTimeZoneId, birthTime, EGender.Male,
+                It.IsAny<DateTime>(), timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
+                EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
+                EPlannerView.Month, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null),
+                Times.Exactly((numberOfDays + 19) / 20));
             profiles.VerifyAll();
         }
 

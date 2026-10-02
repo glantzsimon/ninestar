@@ -372,7 +372,7 @@ namespace K9.WebApplication.Services
                 EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None,
                 NineStarKiModel nineStarKiModel = null)
         {
-            return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{timeOfBirth.ToString()}_" +
+            return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{birthTimeZoneId}_{timeOfBirth.ToString()}_" +
                                    $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_{calculatorType}_{displayDataForPeriod}" +
                                    $"{userTimeZoneId}_{housesDisplay}_" +
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +

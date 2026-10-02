@@ -51,14 +51,6 @@ namespace K9.WebApplication.Services
             if (info == null || user.BirthDate == default(DateTime))
                 throw new InvalidOperationException("Birth details are required to generate a personal calendar.");
 
-            var person = new PersonModel
-            {
-                Name = user.FullName,
-                DateOfBirth = DateTime.SpecifyKind(user.BirthDate.Date.Add(info.TimeOfBirth), DateTimeKind.Unspecified),
-                TimeOfBirth = info.TimeOfBirth,
-                BirthTimeZoneId = info.BirthTimeZoneId,
-                Gender = user.Gender
-            };
             var timeZoneId = _userService.GetUserPreference(userId, SessionConstants.UserTimeZone, info.BirthTimeZoneId);
             if (string.IsNullOrWhiteSpace(timeZoneId))
                 throw new InvalidOperationException("A calendar timezone must be saved before generating a calendar.");
@@ -70,39 +62,52 @@ namespace K9.WebApplication.Services
             var descriptions = new Dictionary<string, string>();
             var entries = new List<CalendarEntry>();
 
-            for (var date = startDate; date < endDate; date = date.AddDays(1))
+            var date = DateTime.SpecifyKind(startDate, DateTimeKind.Unspecified);
+            while (date < endDate)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                // Match Primary Cycles: supply the local selected date and its timezone
-                // together. Converting midnight to UTC here can move the calculation
-                // into the previous calendar date.
-                var localDate = DateTime.SpecifyKind(date, DateTimeKind.Unspecified);
-                var model = _nineStarKiService.CalculateNineStarKiProfile(person, today: localDate,
-                    calculationMethod: calculationMethod, calculatorType: calculatorType, includeCycles: true,
-                    userTimeZoneId: timeZoneId, housesDisplay: housesDisplay,
-                    invertDailyAndHourlyKiForSouthernHemisphere: invertNatal,
-                    invertDailyAndHourlyCycleKiForSouthernHemisphere: invertCycles,
-                    displayDataForPeriod: EDisplayDataForPeriod.SelectedDate);
+                // Reuse the planner's solar-month batch instead of calculating a full
+                // profile for every date. GetPlannerData adds the birth time itself.
+                var planner = _nineStarKiService.GetPlannerData(
+                    DateTime.SpecifyKind(user.BirthDate.Date, DateTimeKind.Unspecified),
+                    info.BirthTimeZoneId, info.TimeOfBirth, user.Gender, date, timeZoneId,
+                    calculationMethod, calculatorType, EDisplayDataForPeriod.SelectedDate,
+                    housesDisplay, invertNatal, invertCycles,
+                    EPlannerView.Month, EScopeDisplay.PersonalKi);
                 cancellationToken.ThrowIfCancellationRequested();
-                var houses = model.PersonalHousesOccupiedEnergies;
-                var year = houses.Year.EnergyNumber;
-                var month = houses.Month.EnergyNumber;
-                var day = houses.Day.EnergyNumber;
-                var afternoon = houses.Day2?.EnergyNumber;
-                var description = GetDescription(year, month, day, descriptions);
-                if (afternoon.HasValue && afternoon.Value != day)
-                    description += $"\n\n{K9.Globalisation.Dictionary.AfternoonEnergyLabel} ({year}.{month}.{afternoon.Value}): " + GetDescription(year, month, afternoon.Value, descriptions);
+                var year = planner.NineStarKiModel.PersonalHousesOccupiedEnergies.Year.EnergyNumber;
+                var month = planner.Energy.EnergyNumber;
+                var days = planner.Energies
+                    .Where(e => e.EnergyStartsOn.Date >= date && e.EnergyStartsOn.Date < endDate)
+                    .OrderBy(e => e.EnergyStartsOn)
+                    .ToList();
+                if (days.Count == 0)
+                    throw new InvalidOperationException("The planner returned no dates for the requested calendar period.");
 
-                entries.Add(new CalendarEntry
+                foreach (var item in days)
                 {
-                    Date = localDate,
-                    YearHouse = year,
-                    MonthHouse = month,
-                    DayHouse = day,
-                    AfternoonDayHouse = afternoon.HasValue && afternoon.Value != day ? afternoon : null,
-                    Summary = $"9Star · {year}.{month}.{day}",
-                    Description = description
-                });
+                    cancellationToken.ThrowIfCancellationRequested();
+                    var localDate = DateTime.SpecifyKind(item.EnergyStartsOn.Date, DateTimeKind.Unspecified);
+                    if (localDate != date)
+                        throw new InvalidOperationException("The planner returned a non-contiguous calendar period.");
+                    var day = item.Energy.EnergyNumber;
+                    var afternoon = item.SecondEnergy?.EnergyNumber;
+                    var description = GetDescription(year, month, day, descriptions);
+                    if (afternoon.HasValue && afternoon.Value != day)
+                        description += $"\n\n{K9.Globalisation.Dictionary.AfternoonEnergyLabel} ({year}.{month}.{afternoon.Value}): " + GetDescription(year, month, afternoon.Value, descriptions);
+
+                    entries.Add(new CalendarEntry
+                    {
+                        Date = localDate,
+                        YearHouse = year,
+                        MonthHouse = month,
+                        DayHouse = day,
+                        AfternoonDayHouse = afternoon.HasValue && afternoon.Value != day ? afternoon : null,
+                        Summary = $"9Star · {year}.{month}.{day}",
+                        Description = description
+                    });
+                    date = localDate.AddDays(1);
+                }
             }
             return entries;
         }

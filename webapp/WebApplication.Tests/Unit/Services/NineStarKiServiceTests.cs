@@ -1,6 +1,12 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
+using K9.SharedLibrary.Helpers;
+using K9.DataAccessLayer.Models;
+using K9.WebApplication.Constants;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using K9.WebApplication.Config;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
@@ -47,6 +53,49 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             _astronomyService = new AstronomyService(nineStarKiBasePackage.Object, _output);
             _nineStarKiService = new NineStarKiService(basePackage.Object, _astronomyService, aiTextMergeService.Object, astrologyService.Object);
+        }
+
+        [Theory]
+        [InlineData("Europe/London", 2026, 10)]
+        [InlineData("Europe/London", 2027, 2)]
+        [InlineData("Pacific/Auckland", 2028, 2)]
+        public void CalendarUsingRealPlannerCoversSolarBoundariesAndLeapMonth(string timeZoneId, int year, int month)
+        {
+            var info = new UserInfo
+            {
+                UserId = 42, TimeOfBirth = new TimeSpan(8, 0, 0), BirthTimeZoneId = "Europe/London",
+                CalculationMethod = ECalculationMethod.Traditional,
+                CalculatorType = ECalculatorType.Advanced, HousesDisplay = EHousesDisplay.SolarHouse
+            };
+            var repository = new Mock<IRepository<UserInfo>>();
+            repository.Setup(e => e.Find(It.IsAny<Expression<Func<UserInfo, bool>>>()))
+                .Returns(new List<UserInfo> { info });
+            var package = new Mock<INineStarKiBasePackage>();
+            package.SetupGet(e => e.UserInfosRepository).Returns(repository.Object);
+            var users = new Mock<IUserService>();
+            users.Setup(e => e.Find(42)).Returns(new K9.Base.DataAccessLayer.Models.User
+            {
+                Id = 42, BirthDate = new DateTime(1979, 6, 16), Gender = EGender.Male
+            });
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.UserTimeZone, info.BirthTimeZoneId)).Returns(timeZoneId);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.UserCalculationMethod, info.CalculationMethod)).Returns(info.CalculationMethod);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.DefaultCalculatorType, info.CalculatorType)).Returns(info.CalculatorType);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.UserHousesDisplay, info.HousesDisplay)).Returns(info.HousesDisplay);
+            var calendar = new GoogleCalendarService(package.Object, _nineStarKiService, users.Object);
+            var start = new DateTime(year, month, 1);
+
+            var entries = calendar.GetCalendarEntries(42, start, start.AddMonths(1));
+
+            Assert.Equal(DateTime.DaysInMonth(year, month), entries.Count);
+            Assert.Equal(Enumerable.Range(0, entries.Count).Select(offset => start.AddDays(offset)),
+                entries.Select(e => e.Date));
+            Assert.True(entries.Select(e => e.MonthHouse).Distinct().Count() > 1);
+            if (year == 2026 && month == 10)
+            {
+                Assert.Equal(7, entries[0].YearHouse);
+                Assert.Equal(7, entries[0].MonthHouse);
+                Assert.Equal(7, entries[0].DayHouse);
+            }
         }
 
         [Theory]

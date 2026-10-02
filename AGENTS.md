@@ -17,6 +17,12 @@ The owner requires UI controls to use existing K9 HTML helpers, rather than hand
 
 Use the existing `$.fn.displaySpinner($container)` and `$.fn.hideSpinner($container)` helpers in `Views/Shared/Scripts/Default.cshtml`, as demonstrated in `Views/Predictions/_CyclesJs.cshtml`. They render the existing `partialSpinner` / optional `partialOverlay` styled by `Content/less/controls/pageSpinner.less`. Do not substitute a plain Loading label or introduce a separate spinner design. Keep the container height stable while loading, stop a pending spinner fade before restarting it, and clear loading on success, failure, timeout and rendering exceptions. Panel requests should own their loading/error handlers without triggering unrelated global AJAX handlers.
 
+## Date-range calculations
+
+For calendars, exports and other multi-date features, reuse `NineStarKiService.GetPlannerData` and its existing period-energy batches. Do not loop over dates calling `CalculateNineStarKiProfile`: a complete profile per day is expensive and duplicates planner calculation logic. Month-view personal planner rows provide daily and afternoon occupied houses; fetch successive solar-month batches and trim them to the requested Gregorian date range. Keep year/month houses tied to each batch, preserve saved calculator/house/hemisphere preferences, and check cancellation between batches and while mapping rows.
+
+Pass local selected dates as `DateTimeKind.Unspecified` together with the saved user timezone. Supply the date-only birth date, birth timezone and birth time separately: `GetPlannerData` adds the birth time itself, so pre-combining it would apply it twice. Keep period boundaries in the existing planner/astronomy code rather than introducing another calculation path.
+
 ## Globalisation
 
 All user-visible labels, help, tooltips and messages belong in Globalisation. Check existing resource keys and text first; reuse entries without duplicates.
@@ -49,4 +55,4 @@ Inspect actual stacking contexts and existing z-index values before adding overl
 
 As work proceeds, update this file for verified, lasting project conventions and owner preferences. Update relevant `docs/` files for feature behaviour, calculation contracts, decisions and validation limits. Keep entries concise and current; replace superseded guidance rather than accumulating contradictions. Do not record secrets, private subscription links, encryption keys or transient build status.
 
-At the start of a new thread, fetch the current branch and read `AGENTS.md` and the relevant feature documentation before editing. Repository files are the authoritative technical record; project memory is supplementary. Do not rely on old chat summaries or scratch copies when current repository contents are available. For calendar work, read `docs/personal-calendar.md`; its calculation uses the Primary Cycles selected-date path, preserving local calendar date, birth time and their respective timezones.
+At the start of a new thread, fetch the current branch and read `AGENTS.md` and the relevant feature documentation before editing. Repository files are the authoritative technical record; project memory is supplementary. Do not rely on old chat summaries or scratch copies when current repository contents are available. For calendar work, read `docs/personal-calendar.md`; its calculation reuses the existing planner batches, preserving local calendar date, birth time and their respective timezones.

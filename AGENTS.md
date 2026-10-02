@@ -11,6 +11,7 @@ The owner requires UI controls to use existing K9 HTML helpers, rather than hand
 - Model field labels through existing resource-backed metadata or `EditorOptions`; avoid separately hand-writing labels and inputs.
 - For dynamic UI, clone helper-rendered controls instead of creating raw button/input HTML in JavaScript.
 - Follow calculator, account and personal-cycle views for spacing, styling and help-icon patterns. Structural layout containers should match existing views.
+- Expanded inline help uses the existing `.well` container for rounded corners, even padding and the theme border (white in dark mode). Place it inside the collapse wrapper so the collapsed state and height animation remain correct; reuse shared styles rather than duplicating them.
 
 ## Panel loading
 

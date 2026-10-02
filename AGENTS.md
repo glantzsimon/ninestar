@@ -36,6 +36,8 @@ Keep the corresponding CSS under `Content/` in sync. Check `webapp/WebApplicatio
 
 Reuse existing theme variables instead of hardcoded colours. Panel backgrounds use `background: var(--well-color)` (a gradient in light mode and teal in dark mode). Calendar full-screen mode uses that same variable; embedded mode is transparent. Use the existing energy artwork under `ninestar/energies/` through `MediaService.BaseImagesPath`, matching the cycle views.
 
+For hover and selected states, inspect comparable existing controls before styling. The predictions calendar in `Content/less/sections/predictions.less` provides the calendar visual hierarchy: 2px hover lift and shadow, blue selected background and stronger shadow. Preserve theme colours and account for the general important button shadow in `main/elements.less` when adapting these effects.
+
 Inspect actual stacking contexts and existing z-index values before adding overlays. The calendar is moved to the document body while expanded and restored on close; its z-index must cover the floating navbar/account header. Preserve keyboard focus and Escape handling.
 
 ## Maintaining project continuity

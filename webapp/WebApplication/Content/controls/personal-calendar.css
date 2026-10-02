@@ -4,17 +4,19 @@
 #personal-calendar .personal-calendar-navigation { flex: 0 1 auto; min-width: 0; }
 #personal-calendar .personal-calendar-actions { flex-shrink: 0; margin-left: auto; padding-left: 16px; border-left: 1px solid var(--border-color); }
 #personal-calendar .personal-calendar-expanded-title { display: none; margin-bottom: 12px; }
-#personal-calendar .personal-calendar-toolbar button { flex-shrink: 0; }
+#personal-calendar .personal-calendar-toolbar button { flex-shrink: 0; position: relative; transition: transform 0.2s, box-shadow 0.2s; }
+#personal-calendar .personal-calendar-toolbar button:hover:not(:disabled), #personal-calendar .personal-calendar-toolbar button:focus-visible:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1) !important; z-index: 1; }
 #personal-calendar .calendar-expand, #personal-calendar .calendar-copy { white-space: nowrap; }
 #personal-calendar .personal-calendar-month { flex: 0 1 auto; min-width: 0; text-align: left; }
 #personal-calendar .personal-calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
 #personal-calendar .personal-calendar-weekday { text-align: center; font-size: 0.85em; padding: 6px 0; }
-#personal-calendar .personal-calendar-day { display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 5px 2px; border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-color); background: var(--surface-color); cursor: pointer; }
+#personal-calendar .personal-calendar-day { display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 5px 2px; border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-color); background: var(--surface-color); cursor: pointer; position: relative; transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s; }
 #personal-calendar .personal-calendar-day img { width: 34px; max-width: 90%; height: auto; }
 #personal-calendar .personal-calendar-day .calendar-day-numbers { font-size: 0.7em; white-space: nowrap; }
-#personal-calendar .personal-calendar-day.is-today { font-weight: bold; border-color: var(--primary-blue); }
-#personal-calendar .personal-calendar-day.is-selected, #personal-calendar .personal-calendar-day:focus { outline: 2px solid var(--primary-blue); outline-offset: -2px; }
-#personal-calendar .personal-calendar-day:hover { background: var(--background-color-hover); }
+#personal-calendar .personal-calendar-day:hover:not(:disabled), #personal-calendar .personal-calendar-day:focus-visible:not(:disabled) { background: var(--background-color-hover); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1) !important; z-index: 1 !important; }
+#personal-calendar .personal-calendar-day.is-today { font-weight: bold; border-color: var(--primary-blue); outline: 2px solid var(--primary-blue); outline-offset: -2px; z-index: 2 !important; }
+#personal-calendar .personal-calendar-day.is-selected { background: var(--primary-blue); color: var(--snow-white); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5) !important; z-index: 3 !important; }
+#personal-calendar .personal-calendar-day:focus-visible { outline: 2px solid var(--primary-blue); outline-offset: 2px; }
 #personal-calendar .personal-calendar-detail { border-top: 1px solid var(--border-color); padding-top: 16px; margin-top: 16px; }
 #personal-calendar .calendar-selected-date { margin-top: 0; }
 #personal-calendar .calendar-selected-houses { font-weight: bold; }

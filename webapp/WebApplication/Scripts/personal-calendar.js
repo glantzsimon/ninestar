@@ -2,6 +2,7 @@
     'use strict';
 
     $(function () {
+        var navigationDelay = 400;
         var $calendar = $('#personal-calendar');
         if (!$calendar.length || $calendar.closest('.paywall-remove-element').length) return;
 
@@ -154,7 +155,7 @@
             // Count clicks against the requested month, even while it is loading.
             var date = new Date(targetYear, targetMonth - 1 + delta, 1);
             if (date.getFullYear() < 1900 || date.getFullYear() > 2100) return;
-            loadMonth(date.getFullYear(), date.getMonth() + 1, 150);
+            loadMonth(date.getFullYear(), date.getMonth() + 1, navigationDelay);
         }
         $calendar.find('.calendar-previous').on('click', function (e) { e.preventDefault(); e.stopPropagation(); navigate(-1); });
         $calendar.find('.calendar-next').on('click', function (e) { e.preventDefault(); e.stopPropagation(); navigate(1); });

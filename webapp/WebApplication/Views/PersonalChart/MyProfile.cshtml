@@ -33,7 +33,7 @@
             <div class="energy-summary-container">
                 @Html.Panel(Dictionary.HousesYouCurrentlyOccupy, Html.Partial("../Predictions/_PersonalCycles", Model).ToString())
             </div>
-            <div class="panel-margin-top-20">
+            <div class="margin-top-20">
                 @using (Html.PayWall(ESection.Predictions, Model))
                 {
                     @Html.Panel(Dictionary.PersonalCalendar, Html.Partial("_PersonalCalendar", new K9.WebApplication.ViewModels.PersonalCalendarViewModel()).ToString())

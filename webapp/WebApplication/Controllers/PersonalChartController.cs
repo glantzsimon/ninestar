@@ -89,7 +89,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("free-calculator/alchemy")]
-        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, ECalculationMethod calculationMethod, ECalculatorType calculatorType, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere)
+        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, ECalculationMethod calculationMethod, ECalculatorType calculatorType = ECalculatorType.Simple, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false)
         {
             if (!My.SystemSettings.IsEnabledAlchemy)
             {

@@ -9048,7 +9048,7 @@
     <value>predictions\combined\en-gb\fire-year\fire-month\9-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="PersonalCalendar" xml:space="preserve">
-    <value>Your personal calendar</value>
+    <value>Your Personal Calendar</value>
   </data>
   <data name="ExpandCalendar" xml:space="preserve">
     <value>Expand calendar</value>

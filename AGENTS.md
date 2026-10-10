@@ -41,6 +41,8 @@ Read [docs/services-and-controllers.md](docs/services-and-controllers.md) before
 
 ## Globalisation
 
+Use Title Case for English panel headings, matching existing headings such as `Houses You Currently Occupy` and `Your Personal Calendar`.
+
 All user-visible labels, help, tooltips and messages belong in Globalisation. Check existing resource keys and text first; reuse entries without duplicates.
 
 Use strongly typed `Dictionary.ResourceName` properties for fixed UI text, including weekday headings. Keep generated accessors in sync. Do not use string-key helpers or `ResourceManager.GetString("FixedLabel", ...)` for fixed text. Calculated resource keys, such as combined year/month/day predictions, may use dynamic lookups.

@@ -56,6 +56,55 @@ namespace K9.WebApplication.Tests.Unit.Services
             _nineStarKiService = new NineStarKiService(basePackage.Object, _astronomyService, aiTextMergeService.Object, _astrologyService.Object);
         }
 
+
+        [Fact]
+        public void CalendarPlannerSkipsProfileMoonPhaseAndKeepsFullProfileCacheSeparate()
+        {
+            var date = new DateTime(2027, 3, 15);
+            var person = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"),
+                DateOfBirth = new DateTime(1979, 6, 16, 8, 0, 0),
+                TimeOfBirth = new TimeSpan(8, 0, 0),
+                BirthTimeZoneId = "Europe/London",
+                Gender = EGender.Male
+            };
+            var moonPhaseCalls = 0;
+            _astrologyService.Setup(e => e.GetMoonPhase(It.IsAny<DateTime>(), It.IsAny<string>(),
+                It.IsAny<bool>(), It.IsAny<NineStarKiEnergy>()))
+                .Callback(() => moonPhaseCalls++)
+                .Returns(new MoonPhase(50, true));
+
+            var lightweight = _nineStarKiService.CalculateNineStarKiProfile(person, today: date,
+                calculationMethod: ECalculationMethod.Traditional, calculatorType: ECalculatorType.Advanced,
+                includeCycles: true, userTimeZoneId: "Europe/London", includeMoonPhases: false);
+
+            Assert.Equal(0, moonPhaseCalls);
+            Assert.Null(lightweight.MoonPhase);
+
+            var full = _nineStarKiService.CalculateNineStarKiProfile(person, today: date,
+                calculationMethod: ECalculationMethod.Traditional, calculatorType: ECalculatorType.Advanced,
+                includeCycles: true, userTimeZoneId: "Europe/London");
+
+            Assert.Equal(1, moonPhaseCalls);
+            Assert.NotNull(full.MoonPhase);
+            Assert.NotSame(lightweight, full);
+            Assert.Equal(full.PersonalHousesOccupiedEnergies.Day.EnergyNumber,
+                lightweight.PersonalHousesOccupiedEnergies.Day.EnergyNumber);
+
+            // No supplied profile: exercise the planner's own profile creation path.
+            var planner = _nineStarKiService.GetPlannerData(person.DateOfBirth.Date, person.BirthTimeZoneId,
+                person.TimeOfBirth, person.Gender, new DateTime(2027, 4, 15), "Europe/London",
+                ECalculationMethod.Traditional, ECalculatorType.Advanced,
+                EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, false, false,
+                EPlannerView.Month, includeMoonPhases: false);
+
+            Assert.Equal(1, moonPhaseCalls);
+            Assert.Null(planner.NineStarKiModel.MoonPhase);
+            Assert.Null(planner.MoonPhase);
+            Assert.All(planner.Energies, e => Assert.Null(e.MoonPhase));
+        }
+
         [Fact]
         public void CalendarPlannerCanSkipMoonPhasesWithoutChangingDefaultPlannerBehaviour()
         {

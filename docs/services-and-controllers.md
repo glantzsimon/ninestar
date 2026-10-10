@@ -1,6 +1,6 @@
 # Application service and controller reuse
 
-Scope: the current `webapp/WebApplication/Services` implementations/interfaces and `Controllers` sources, with the supporting packages, cache/model and session/membership contracts. The unencrypted sources were reviewed to map responsibilities and reuse points. `AstronomyService.cs` and `IAstronomyService.cs` are git-crypt protected; astronomy method names below are verified from their existing callers. Their underlying algorithms were not inspected or changed. The owner confirms the existing astronomy batch functions are tested and efficient. This map is not a runtime benchmark or a guarantee that every surrounding workflow is optimal.
+Scope: the current `webapp/WebApplication/Services` implementations/interfaces and `Controllers` sources, with the supporting packages, cache/model and session/membership contracts. The unencrypted sources were reviewed to map responsibilities and reuse points. `AstronomyService.cs` and `IAstronomyService.cs` are git-crypt protected; astronomy method names below are verified from their existing callers. A later owner-supplied plaintext copy was inspected to identify repeated solstice/solar-term work, and the owner applied the supplied caching revision through their local git-crypt checkout. The numerical solver bodies were preserved; the encrypted repository cannot be used here to verify their plaintext contents. The owner confirms the existing astronomy batch functions are tested and efficient. This map is not a runtime benchmark or a guarantee that every surrounding workflow is optimal.
 
 ## Shared infrastructure
 
@@ -27,7 +27,7 @@ Scope: the current `webapp/WebApplication/Services` implementations/interfaces a
 | `NumerologyService.CalculateDailyPlannerCodes`, `CalculateMonthlyPlannerCodes`, `CalculateYearlyPlannerCodes`, `CalculateDharmaCodes` | Existing numerology batches. Use these rather than loops of individual forecast/profile calls. `GetDailyForecast`, `GetMonthlyForecast`, `GetYearlyForecast` supply detail. |
 | `BiorhythmsService.Calculate` | Accepts an existing NineStarKiModel and produces results/summary with monthly astronomy boundaries. |
 | `ReportsService.GetYearlyReport` | Account/report assembly and Year planner. Already demonstrates passing the calculated profile into `GetPlannerData`. |
-| `GoogleCalendarService.GetCalendarEntries` | Year planner once per covered solar year, overlapping Month batches with the same profile, range trimming, houses and combined descriptions. ICS formatting/token handling stay in this service. |
+| `GoogleCalendarService.GetCalendarEntries` | Year planner once per covered solar year, overlapping Month batches with the same profile, no lunar work when disabled, range trimming, houses and combined descriptions. ICS formatting/token handling stay in this service. |
 
 The planner hierarchy does not return every lower level automatically: Year rows are months, not days. Expand the required child periods with the parent's `nineStarKiModel` to avoid repeating full profiles. Read year/month houses from their respective parent energies, rather than the reused profile's fixed snapshot. Obtain boundaries from the existing astronomy-backed periods; do not assume Gregorian months or hardcode February.
 
@@ -78,7 +78,7 @@ The planner hierarchy does not return every lower level automatically: Year rows
 
 ## Cache and performance contracts
 
-`CachableBase.GetOrAddToCache` uses process-wide `MemoryCache.Default`, defaults to 30 minutes, and returns the stored reference. NineStarKi profile/planner/summary calls explicitly use 30 days. The helper neither clones objects nor coalesces concurrent misses. Do not infer request isolation from service instances or mutate cached profiles for new dates.
+`CachableBase.GetOrAddToCache` uses process-wide `MemoryCache.Default`, defaults to 30 minutes, and returns the stored reference. NineStarKi profile/planner/summary calls explicitly use 30 days. The helper returns shared references and coalesces concurrent misses for each key using a process-wide in-flight collection. Completed and failed computations are removed from that collection; failures may be retried. Different keys remain independent. Keep nested cache dependencies acyclic, and do not use the same key for different result types. Removing a cache entry does not cancel a computation already in progress. Do not infer request isolation from service instances or mutate cached profiles for new dates.
 
 Cache keys must reflect every input that changes the result. Planner keys include birth timezone and supplied-profile selected date, so inherited-profile month data does not collide with standalone month calculation. Inspect culture, selected-vs-now behaviour, calculation/calculator/house/hemisphere flags, person data, scope and navigation when changing cached paths. Controller OutputCache keys/custom variation are a separate layer; existing Global.asax `User` variation resolves Current.UserName. Preserve NoStore/private-member handling where used.
 

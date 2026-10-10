@@ -20,7 +20,7 @@ namespace K9.WebApplication.Services
             bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse,
             bool invertDailyAndHourlyKiForSouthernHemisphere = false,
             bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
-            EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate);
+            EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate, bool includeMoonPhases = true);
 
         Task<NineStarKiModel> GetNineStarKiPersonalChartAlchemy(NineStarKiModel model);
 

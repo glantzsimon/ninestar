@@ -259,6 +259,7 @@
     <Compile Include="Unit\Helpers\FakeHttpSessionState.cs" />
     <Compile Include="Unit\Models\NineStarKiModelTests.cs" />
     <Compile Include="Unit\Models\PersonModelTests.cs" />
+    <Compile Include="Unit\Models\CachableBaseTests.cs" />
     <Compile Include="Unit\Services\MembershipServiceTests.cs" />
     <Compile Include="Unit\Services\BioRhythmsServiceTests.cs" />
     <Compile Include="Unit\Services\IChingServiceTests.cs" />

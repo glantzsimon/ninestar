@@ -125,9 +125,9 @@ namespace K9.WebApplication.Services
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
-            bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, ECalculatorType calculatorType = ECalculatorType.Simple, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate)
+            bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, ECalculatorType calculatorType = ECalculatorType.Simple, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate, bool includeMoonPhases = true)
         {
-            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{calculatorType}_{includeCycles}_{housesDisplay}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}_{invertDailyAndHourlyCycleKiForSouthernHemisphere}_{displayDataForPeriod}_{userTimeZoneId}";
+            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{calculatorType}_{includeCycles}_{housesDisplay}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}_{invertDailyAndHourlyCycleKiForSouthernHemisphere}_{displayDataForPeriod}_{userTimeZoneId}_{includeMoonPhases}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 var selectedDateTime = displayDataForPeriod == EDisplayDataForPeriod.Now || today == null
@@ -176,8 +176,10 @@ namespace K9.WebApplication.Services
                         5, 5, 5, 5, 5, new (int DailyKi, int? InvertedDailyKi)[] { (5, 5), (5, 5) }, 5, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod, null, isCompatibility, calculatorType);
                 }
 
-                var moonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, true, model.MainEnergy);
-                model.MoonPhase = moonPhase;
+                if (includeMoonPhases)
+                {
+                    model.MoonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, true, model.MainEnergy);
+                }
 
                 model.Lichun = _astronomyService.GetLichun(DateTime.UtcNow, "");
 
@@ -412,7 +414,8 @@ namespace K9.WebApplication.Services
                     TimeOfBirth = timeOfBirth,
                     Gender = gender
                 }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
-                    housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+                    housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
+                    includeMoonPhases: includeMoonPhases);
 #if DEBUG
                 tracePlanner(reusedProfile ? "supplied profile reused" : "CalculateNineStarKiProfile completed");
 #endif
@@ -495,7 +498,7 @@ namespace K9.WebApplication.Services
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
                             }, false, false, eightyOneYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, calculatorType, true, false, userTimeZoneId,
-                                                  housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate);
+                                                  housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate, includeMoonPhases: includeMoonPhases);
                         }
 
                         plannerModel.Energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Epoch : nineStarKiModel.GlobalCycleEnergies.Epoch;
@@ -553,7 +556,7 @@ namespace K9.WebApplication.Services
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
                             }, false, false, nineYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, calculatorType, true, false, userTimeZoneId,
-                                housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate);
+                                housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate, includeMoonPhases: includeMoonPhases);
                         }
 
                         plannerModel.Energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Generation : nineStarKiModel.GlobalCycleEnergies.Generation;
@@ -647,7 +650,7 @@ namespace K9.WebApplication.Services
                                 Gender = gender
                             }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                                 housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
-                                EDisplayDataForPeriod.SelectedDate);
+                                EDisplayDataForPeriod.SelectedDate, includeMoonPhases: includeMoonPhases);
                         }
 
                         plannerModel.Energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Month : nineStarKiModel.GlobalCycleEnergies.Month;
@@ -702,7 +705,7 @@ namespace K9.WebApplication.Services
                                 Gender = gender
                             }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                                 housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
-                                EDisplayDataForPeriod.SelectedDate);
+                                EDisplayDataForPeriod.SelectedDate, includeMoonPhases: includeMoonPhases);
                         }
 
                         plannerModel.Energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Day : nineStarKiModel.GlobalCycleEnergies.Day;
@@ -802,7 +805,7 @@ namespace K9.WebApplication.Services
                                 Gender = gender
                             }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                                 housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
-                                EDisplayDataForPeriod.SelectedDate);
+                                EDisplayDataForPeriod.SelectedDate, includeMoonPhases: includeMoonPhases);
                         }
 
                         plannerModel.Energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Year : nineStarKiModel.GlobalCycleEnergies.Year;

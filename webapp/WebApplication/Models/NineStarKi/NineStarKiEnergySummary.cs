@@ -5,7 +5,13 @@ namespace K9.WebApplication.Models
 {
     public class NineStarKiEnergySummary
     {
-        private readonly NineStarKiEnergy _nineStarKiEnergy;
+        internal NineStarKiEnergySummary CreateRequestCopy(CalculationCopyContext context) =>
+            context.Copy(this, source => (NineStarKiEnergySummary)source.MemberwiseClone(), (source, copy) =>
+            {
+                copy._nineStarKiEnergy = source._nineStarKiEnergy?.CreateRequestCopy(context);
+            });
+
+        private NineStarKiEnergy _nineStarKiEnergy;
 
         public NineStarKiEnergySummary(NineStarKiEnergy nineStarKiEnergy)
         {

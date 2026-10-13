@@ -266,6 +266,7 @@
     <Compile Include="Unit\Services\NineStarKiServiceTests.cs" />
     <Compile Include="Unit\Services\GoogleCalendarServiceTests.cs" />
     <Compile Include="Unit\Services\ServicePerformanceTests.cs" />
+    <Compile Include="Unit\Services\ApiCacheSafetyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

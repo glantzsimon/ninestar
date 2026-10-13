@@ -34,7 +34,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("yearly-report")]
-        [OutputCache(Duration = 604800, VaryByParam = "userId", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public async Task<ActionResult> YearlyReport(Guid? userId = null)
         {
             var report = _reportsService.GetYearlyReport(userId);

@@ -13,6 +13,19 @@ namespace K9.WebApplication.ViewModels
 {
     public class PlannerViewModel
     {
+        public PlannerViewModel CreateRequestCopy() => CreateRequestCopy(new CalculationCopyContext());
+
+        internal PlannerViewModel CreateRequestCopy(CalculationCopyContext context) =>
+            context.Copy(this, source => (PlannerViewModel)source.MemberwiseClone(), (source, copy) =>
+            {
+                copy.NineStarKiModel = source.NineStarKiModel?.CreateRequestCopy(context);
+                copy.Energy = source.Energy?.CreateRequestCopy(context);
+                copy.SecondEnergy = source.SecondEnergy?.CreateRequestCopy(context);
+                copy.MoonPhase = source.MoonPhase?.CreateRequestCopy(context);
+                copy.Energies = source.Energies == null ? null
+                    : source.Energies.ConvertAll(item => item?.CreateRequestCopy(context));
+            });
+
         [IgnoreDataMember]
         [UIHint("PlannerView")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ViewLabel)]

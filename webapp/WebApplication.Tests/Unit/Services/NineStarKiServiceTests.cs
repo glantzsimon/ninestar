@@ -12,6 +12,7 @@ using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
 using K9.WebApplication.Tests.Unit.Helpers;
 using Moq;
 using System;
@@ -1133,7 +1134,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
 
         [Fact]
-        public void CompatibilityCacheSeparatesSexualChemistryDisplayChoices()
+        public void CompatibilitySeparatesSexualChemistryDisplayChoices()
         {
             var first = new PersonModel
             {
@@ -1153,7 +1154,120 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.False(visible.IsHideSexualChemistry);
             Assert.True(hidden.IsHideSexualChemistry);
             Assert.NotSame(visible, hidden);
-            Assert.Same(visible, _nineStarKiService.CalculateCompatibility(first, second, false));
+            Assert.NotSame(visible, _nineStarKiService.CalculateCompatibility(first, second, false));
+        }
+
+
+        [Fact]
+        public void CachedProfilesAndPlannersReturnIsolatedMutableGraphs()
+        {
+            var person = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"),
+                DateOfBirth = new DateTime(1979, 6, 16),
+                TimeOfBirth = new TimeSpan(8, 0, 0),
+                BirthTimeZoneId = "Europe/London", Gender = EGender.Male
+            };
+            var date = new DateTime(2027, 5, 15);
+            Func<NineStarKiModel> getProfile = () => _nineStarKiService.CalculateNineStarKiProfile(
+                person, today: date, includeCycles: true, userTimeZoneId: "Europe/London",
+                includeMoonPhases: false);
+            var first = getProfile();
+            var energy = first.PersonalHousesOccupiedEnergies.Day.EnergyNumber;
+            var originalAdult = first.PersonalChartEnergies.Year.IsAdult;
+            first.PersonModel.Name = "Changed by one request";
+            first.SelectedDate = date.AddDays(1);
+            first.PersonalChartEnergies.Year.IsAdult = !originalAdult;
+            first.PersonalHousesOccupiedEnergies.Day = new NineStarKiEnergy(ENineStarKiEnergy.Fire);
+            first.IsComplementary = true;
+            var second = getProfile();
+
+            Assert.Equal(person.Name, second.PersonModel.Name);
+            Assert.Equal(date, second.SelectedDate.Value);
+            Assert.Equal(energy, second.PersonalHousesOccupiedEnergies.Day.EnergyNumber);
+            Assert.Equal(originalAdult, second.PersonalChartEnergies.Year.IsAdult);
+            Assert.False(second.IsComplementary);
+            Assert.NotSame(first.PersonModel, second.PersonModel);
+            Assert.NotSame(first.PersonalChartEnergies.Year, second.PersonalChartEnergies.Year);
+
+            Func<PlannerViewModel> getPlanner = () => _nineStarKiService.GetPlannerData(
+                person.DateOfBirth, person.BirthTimeZoneId, person.TimeOfBirth, person.Gender,
+                date, "Europe/London", ECalculationMethod.Chinese, ECalculatorType.Simple,
+                EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, false, false,
+                EPlannerView.Month, nineStarKiModel: second, includeMoonPhases: false);
+            var planner = getPlanner();
+            var originalRows = planner.Energies.Select(e => e.Energy.EnergyNumber).ToArray();
+            planner.UpdateParentUrl = "/one-request";
+            planner.NineStarKiModel.PersonModel.Name = "Changed in planner";
+            planner.Energies[0].Energy.IsGlobal = !planner.Energies[0].Energy.IsGlobal;
+            planner.Energies.Clear();
+            var repeat = getPlanner();
+
+            Assert.Null(repeat.UpdateParentUrl);
+            Assert.Equal(originalRows, repeat.Energies.Select(e => e.Energy.EnergyNumber));
+            Assert.Equal(person.Name, repeat.NineStarKiModel.PersonModel.Name);
+            Assert.NotSame(planner, repeat);
+            Assert.NotSame(planner.Energies, repeat.Energies);
+
+            second.PersonModel.Name = "Current caller name";
+            second.IsComplementary = true;
+            var callerPlanner = getPlanner();
+            Assert.Equal("Current caller name", callerPlanner.NineStarKiModel.PersonModel.Name);
+            Assert.True(callerPlanner.NineStarKiModel.IsComplementary);
+            second.PersonModel.Name = person.Name;
+            second.IsComplementary = false;
+
+
+            // Preserve back-references inside a copied graph without sharing the original.
+            second.PlannerViewModel = repeat;
+            repeat.NineStarKiModel = second;
+            var graphCopy = second.CreateRequestCopy();
+            Assert.NotSame(second, graphCopy);
+            Assert.NotSame(repeat, graphCopy.PlannerViewModel);
+            Assert.Same(graphCopy, graphCopy.PlannerViewModel.NineStarKiModel);
+
+        }
+
+        [Fact]
+        public void CompatibilityPresentationChangesDoNotAffectLaterResults()
+        {
+            var first = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"), DateOfBirth = new DateTime(1979, 6, 16),
+                Gender = EGender.Male, BirthTimeZoneId = "Europe/London"
+            };
+            var second = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"), DateOfBirth = new DateTime(1981, 4, 12),
+                Gender = EGender.Male, BirthTimeZoneId = "Europe/London"
+            };
+            var original = _nineStarKiService.CalculateCompatibility(first, second, false);
+            var description = original.FundamentalEnergiesCompatibility;
+            original.NineStarKiModel1.PersonModel.Name = "Changed";
+            original.IsComplementary = true;
+            original.CompatibilityDetails = null;
+            var repeat = _nineStarKiService.CalculateCompatibility(first, second, false);
+
+            Assert.Equal(first.Name, repeat.FirstPersonName);
+            Assert.Equal(description, repeat.FundamentalEnergiesCompatibility);
+            Assert.False(repeat.IsComplementary);
+            Assert.NotNull(repeat.CompatibilityDetails);
+        }
+
+        [Fact]
+        public void AstrologyDecorationDoesNotMutateAstronomyCachedMoonPhase()
+        {
+            var shared = new MoonPhase(50, true) { LunarDay = 1 };
+            var astronomy = new Mock<IAstronomyService>();
+            astronomy.Setup(e => e.GetMoonPhase(It.IsAny<DateTime>(), It.IsAny<string>(), true))
+                .Returns(shared);
+            var service = new AstrologyService(new Mock<INineStarKiBasePackage>().Object, astronomy.Object);
+            var result = service.GetMoonPhase(new DateTime(2027, 5, 15), "Europe/London", true);
+
+            Assert.NotSame(shared, result);
+            Assert.Null(shared.LunarDayTitle);
+            result.LunarDayTitle = "Changed";
+            Assert.NotEqual("Changed", service.GetMoonPhase(new DateTime(2027, 5, 15), "Europe/London", true).LunarDayTitle);
         }
 
         public void Dispose()

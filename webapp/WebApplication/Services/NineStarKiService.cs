@@ -31,7 +31,7 @@ namespace K9.WebApplication.Services
         public NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male)
         {
             var cacheKey = $"CalculateNineStarKiProfile_{dateOfBirth.ToString()}_{gender}";
-            return GetOrAddToCache(cacheKey, () =>
+            var result = GetOrAddToCache(cacheKey, () =>
             {
                 return CalculateNineStarKiProfile(new PersonModel
                 {
@@ -40,6 +40,7 @@ namespace K9.WebApplication.Services
                 });
 
             }, TimeSpan.FromDays(30));
+            return CreateProfileResult(result);
         }
 
         public async Task<NineStarKiModel> GetNineStarKiPersonalChartAlchemy(NineStarKiModel model)
@@ -128,8 +129,9 @@ namespace K9.WebApplication.Services
             bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, ECalculatorType calculatorType = ECalculatorType.Simple, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate, bool includeMoonPhases = true)
         {
             var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{calculatorType}_{includeCycles}_{housesDisplay}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}_{invertDailyAndHourlyCycleKiForSouthernHemisphere}_{displayDataForPeriod}_{userTimeZoneId}_{includeMoonPhases}";
-            return GetOrAddToCache(cacheKey, () =>
+            var result = GetOrAddToCache(cacheKey, () =>
             {
+                personModel = personModel.CreateRequestCopy(new CalculationCopyContext());
                 var selectedDateTime = displayDataForPeriod == EDisplayDataForPeriod.Now || today == null
                     ? DateTime.UtcNow
                     : today.Value;
@@ -198,55 +200,48 @@ namespace K9.WebApplication.Services
                 return model;
 
             }, TimeSpan.FromDays(30));
+            return CreateProfileResult(result);
         }
 
         public CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,
             EGender gender2)
         {
-            var cacheKey = $"CalculateCompatibility_{dateOfBirth1.ToString()}_{gender1}_{dateOfBirth2.ToString()}_{gender2}";
-            return GetOrAddToCache(cacheKey, () =>
-            {
-                return CalculateCompatibility(
-                    new PersonModel
-                    {
-                        DateOfBirth = dateOfBirth1,
-                        Gender = gender1
-                    }, new PersonModel
-                    {
-                        DateOfBirth = dateOfBirth2,
-                        Gender = gender2
-                    }, false);
+            return CalculateCompatibility(
+                new PersonModel
+                {
+                    DateOfBirth = dateOfBirth1,
+                    Gender = gender1
+                }, new PersonModel
+                {
+                    DateOfBirth = dateOfBirth2,
+                    Gender = gender2
+                }, false);
 
-            }, TimeSpan.FromDays(30));
         }
 
         public CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2,
             bool isHideSexuality, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, ECalculatorType calculatorType = ECalculatorType.Advanced)
         {
-            var cacheKey = $"CalculateCompatibilityFromModel_{personModel1.DateOfBirth.ToString()}_{personModel1.TimeOfBirth.ToString()}_{personModel1.BirthTimeZoneId}_{personModel1.Name}_{personModel1.Gender}_{personModel1.DateOfBirth.ToString()}_{personModel2.TimeOfBirth.ToString()}_{personModel2.BirthTimeZoneId}_{personModel2.Name}_{personModel2.Gender}_{personModel2.DateOfBirth.ToString()}_{calculationMethod}_{calculatorType}_{isHideSexuality}";
-            return GetOrAddToCache(cacheKey, () =>
+            var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true, false, null, calculationMethod, calculatorType);
+            var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true, false, null, calculationMethod, calculatorType);
+
+            var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
             {
-                var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true, false, null, calculationMethod, calculatorType);
-                var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true, false, null, calculationMethod, calculatorType);
+                IsProcessed = true,
+                IsHideSexualChemistry = isHideSexuality
+            };
 
-                var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
-                {
-                    IsProcessed = true,
-                    IsHideSexualChemistry = isHideSexuality
-                };
+            if (string.IsNullOrEmpty(nineStarKiModel1.PersonModel.Name))
+            {
+                nineStarKiModel1.PersonModel.Name = Dictionary.FirstPerson;
+            }
 
-                if (string.IsNullOrEmpty(nineStarKiModel1.PersonModel.Name))
-                {
-                    nineStarKiModel1.PersonModel.Name = Dictionary.FirstPerson;
-                }
+            if (string.IsNullOrEmpty(nineStarKiModel2.PersonModel.Name))
+            {
+                nineStarKiModel2.PersonModel.Name = Dictionary.SecondPerson;
+            }
 
-                if (string.IsNullOrEmpty(nineStarKiModel2.PersonModel.Name))
-                {
-                    nineStarKiModel2.PersonModel.Name = Dictionary.SecondPerson;
-                }
-
-                return model;
-            }, TimeSpan.FromDays(30));
+            return model;
         }
 
         public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()
@@ -388,6 +383,7 @@ namespace K9.WebApplication.Services
             };
             tracePlanner("starting");
 #endif
+            var requestedProfile = nineStarKiModel;
             var result = GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{birthTimeZoneId}_{timeOfBirth.ToString()}_" +
                                    $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_{calculatorType}_{displayDataForPeriod}" +
                                    $"{userTimeZoneId}_{housesDisplay}_" +
@@ -399,6 +395,7 @@ namespace K9.WebApplication.Services
                 cacheMiss = true;
                 tracePlanner("cache miss; GetLichun starting");
 #endif
+                nineStarKiModel = nineStarKiModel?.CreateRequestCopy(new CalculationCopyContext());
                 var energies = new List<PlannerViewModelItem>();
                 var lichun = _astronomyService.GetLichun(selectedDateTime, userTimeZoneId);
 #if DEBUG
@@ -829,7 +826,31 @@ namespace K9.WebApplication.Services
 #if DEBUG
             tracePlanner(cacheMiss ? "cache miss completed" : "cache hit completed");
 #endif
-            return result;
+            var context = new CalculationCopyContext();
+            if (requestedProfile != null)
+            {
+                // Request-specific names/flags/attached presentation never come from a cached caller.
+                context.UseCopy(result.NineStarKiModel, requestedProfile.CreateRequestCopy(context));
+            }
+            var copy = result.CreateRequestCopy(context);
+            if (requestedProfile == null)
+                ApplyRequestPresentation(copy.NineStarKiModel);
+            return copy;
+        }
+
+        private static NineStarKiModel CreateProfileResult(NineStarKiModel model)
+        {
+            var copy = model.CreateRequestCopy();
+            ApplyRequestPresentation(copy);
+            return copy;
+        }
+
+        private static void ApplyRequestPresentation(NineStarKiModel model)
+        {
+            model.ScopeDisplay = K9.WebApplication.Helpers.SessionHelper.GetCurrentUserScopeDisplay();
+            model.EnergyDisplay = (EEnergyDisplay)K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
+            model.ShowDirections = K9.WebApplication.Helpers.SessionHelper.GetShowDirections();
+            model.TimeOfBirthKnown = K9.WebApplication.Helpers.SessionHelper.GetBirthTimeIsKnown();
         }
 
         private NineStarKiEnergy GetInvertedEnergy(NineStarKiEnergy energy)

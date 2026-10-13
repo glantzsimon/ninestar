@@ -10,8 +10,20 @@ namespace K9.WebApplication.Models
 {
     public class NineStarKiDirections
     {
+        internal NineStarKiDirections CreateRequestCopy(CalculationCopyContext context) =>
+            context.Copy(this, source => (NineStarKiDirections)source.MemberwiseClone(), (source, copy) =>
+            {
+                copy.PersonalChartEnergy = source.PersonalChartEnergy?.CreateRequestCopy(context);
+                copy.FiveYelloKilling = source.FiveYelloKilling?.CreateRequestCopy(context);
+                copy.DarkSwordKilling = source.DarkSwordKilling?.CreateRequestCopy(context);
+                copy.SelfLifeKilling = source.SelfLifeKilling?.CreateRequestCopy(context);
+                copy.TargetKilling = source.TargetKilling?.CreateRequestCopy(context);
+                copy.FavourableDirections = source.FavourableDirections == null ? null
+                    : new List<ENineStarKiDirection>(source.FavourableDirections);
+            });
+
         [IgnoreDataMember]
-        public NineStarKiEnergy PersonalChartEnergy { get; }
+        public NineStarKiEnergy PersonalChartEnergy { get; private set; }
 
         private static readonly Dictionary<int, ENineStarKiDirection> _Directions = new Dictionary<int, ENineStarKiDirection>
         {
@@ -27,16 +39,16 @@ namespace K9.WebApplication.Models
         };
 
         [IgnoreDataMember]
-        public NineStarKiDirection FiveYelloKilling { get; }
+        public NineStarKiDirection FiveYelloKilling { get; private set; }
 
         [IgnoreDataMember]
-        public NineStarKiDirection DarkSwordKilling { get; }
+        public NineStarKiDirection DarkSwordKilling { get; private set; }
 
         [IgnoreDataMember]
-        public NineStarKiDirection SelfLifeKilling { get; }
+        public NineStarKiDirection SelfLifeKilling { get; private set; }
 
         [IgnoreDataMember]
-        public NineStarKiDirection TargetKilling { get; }
+        public NineStarKiDirection TargetKilling { get; private set; }
 
         public string FiveYellowKillingDescription
         {
@@ -125,6 +137,6 @@ namespace K9.WebApplication.Models
             TargetKilling
         };
 
-        public List<ENineStarKiDirection> FavourableDirections { get; }
+        public List<ENineStarKiDirection> FavourableDirections { get; private set; }
     }
 }

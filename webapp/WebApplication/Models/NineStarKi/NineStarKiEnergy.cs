@@ -486,6 +486,9 @@ namespace K9.WebApplication.Models
 
     public class NineStarKiEnergy
     {
+        internal NineStarKiEnergy CreateRequestCopy(CalculationCopyContext context) =>
+            context.Copy(this, source => (NineStarKiEnergy)source.MemberwiseClone(), (source, copy) => { });
+
         // Dictionaries for fast lookups instead of switch statements
         private static readonly Dictionary<ENineStarKiEnergy, string> _trigramDescriptions =
             new Dictionary<ENineStarKiEnergy, string>

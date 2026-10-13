@@ -7,6 +7,9 @@ namespace K9.WebApplication.Models
 {
     public class MoonPhase
     {
+        internal MoonPhase CreateRequestCopy(CalculationCopyContext context) =>
+            context.Copy(this, source => (MoonPhase)source.MemberwiseClone(), (source, copy) => { });
+
         private static List<(double Illum, string File)> waxingImages = new List<(double Illum, string File)>()
         {
             (0, "0.png"),

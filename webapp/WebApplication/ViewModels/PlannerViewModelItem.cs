@@ -10,6 +10,17 @@ namespace K9.WebApplication.ViewModels
 {
     public class PlannerViewModelItem
     {
+        internal PlannerViewModelItem CreateRequestCopy(CalculationCopyContext context) =>
+            context.Copy(this, source => (PlannerViewModelItem)source.MemberwiseClone(), (source, copy) =>
+            {
+                copy.Energy = source.Energy?.CreateRequestCopy(context);
+                copy.SecondEnergy = source.SecondEnergy?.CreateRequestCopy(context);
+                copy.EnergySummary = source.EnergySummary?.CreateRequestCopy(context);
+                copy.MagicSquare = source.MagicSquare?.CreateRequestCopy(context);
+                copy.Directions = source.Directions?.CreateRequestCopy(context);
+                copy.MoonPhase = source.MoonPhase?.CreateRequestCopy(context);
+            });
+
         public PlannerViewModelItem()
         {
         }

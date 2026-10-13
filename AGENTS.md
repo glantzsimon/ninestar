@@ -15,6 +15,8 @@ The owner requires UI controls to use existing K9 HTML helpers, rather than hand
 
 ## Performance diagnosis
 
+Read [docs/performance-review.md](docs/performance-review.md) for the service/controller audit, applied query reductions and prioritised follow-ups. Selector metadata must not expand recipients. Batch distinct related IDs within one operation; keep eligibility/authorisation checks fresh and do not parallelise repositories sharing an EF context.
+
 Browser Waiting for server timing measures time before the response, including possible server queuing; it does not identify a particular slow method. Measure controller access checks, preference loading, planner batches and description mapping separately before attributing a delay to astronomy, session locks or caching. DEBUG builds emit correlated `GetPlannerData` stage timings (cache, profile, boundaries, astronomy batches and row construction) and `Personal calendar Month` overall timing through `Debug.WriteLine` to Visual Studio's Debug Output. Keep diagnostic timers and traces inside `#if DEBUG`; avoid duplicate outer-service traces and private inputs. Do not present an unmeasured optimisation as a confirmed root-cause fix.
 
 ## Panel loading

@@ -25,13 +25,21 @@ namespace K9.WebApplication.Controllers
 
         public override ActionResult Index()
         {
-            var memberships = ControllerPackage.Repository.List().Select(e =>
+            var memberships = ControllerPackage.Repository.List().ToList();
+            if (memberships.Count > 0)
             {
-                e.User = My.UsersRepository.Find(e.UserId);
-                e.MembershipOption = _membershipOptionsRepository.Find(m => m.Id == e.MembershipOptionId)
-                    .FirstOrDefault();
-                return e;
-            });
+                var userIds = memberships.Select(e => e.UserId).Distinct().ToList();
+                var optionIds = memberships.Select(e => e.MembershipOptionId).Distinct().ToList();
+                var users = My.UsersRepository.Find(e => userIds.Contains(e.Id)).ToDictionary(e => e.Id);
+                var options = _membershipOptionsRepository.Find(e => optionIds.Contains(e.Id)).ToDictionary(e => e.Id);
+                foreach (var membership in memberships)
+                {
+                    users.TryGetValue(membership.UserId, out var user);
+                    options.TryGetValue(membership.MembershipOptionId, out var option);
+                    membership.User = user;
+                    membership.MembershipOption = option;
+                }
+            }
 
             var model = new UserMembershipsViewModel
             {

@@ -1131,6 +1131,31 @@ namespace K9.WebApplication.Tests.Unit.Services
             }
         }
 
+
+        [Fact]
+        public void CompatibilityCacheSeparatesSexualChemistryDisplayChoices()
+        {
+            var first = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"),
+                DateOfBirth = new DateTime(1979, 6, 16),
+                Gender = EGender.Male, BirthTimeZoneId = "Europe/London"
+            };
+            var second = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"),
+                DateOfBirth = new DateTime(1981, 4, 12),
+                Gender = EGender.Male, BirthTimeZoneId = "Europe/London"
+            };
+            var visible = _nineStarKiService.CalculateCompatibility(first, second, false);
+            var hidden = _nineStarKiService.CalculateCompatibility(first, second, true);
+
+            Assert.False(visible.IsHideSexualChemistry);
+            Assert.True(hidden.IsHideSexualChemistry);
+            Assert.NotSame(visible, hidden);
+            Assert.Same(visible, _nineStarKiService.CalculateCompatibility(first, second, false));
+        }
+
         public void Dispose()
         {
             Trace.Listeners.Remove(_listener);

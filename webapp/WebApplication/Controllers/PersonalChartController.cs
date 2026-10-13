@@ -156,8 +156,6 @@ namespace K9.WebApplication.Controllers
                 DisplayDataForPeriod = EDisplayDataForPeriod.Now
             };
 
-            var model = new PredictionsViewModel(nineStarKiModel, _nineStarKiService.GetNineStarKiSummaryViewModel());
-
             personModel.DateOfBirth = personModel.DateOfBirth.Add(personModel.TimeOfBirth);
             var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true,
                             localNow, nineStarKiModel.CalculationMethod, nineStarKiModel.CalculatorType, true, true, nineStarKiModel.UserTimeZoneId, nineStarKiModel.HousesDisplay, false,

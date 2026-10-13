@@ -42,14 +42,14 @@ The planner hierarchy does not return every lower level automatically: Year rows
 | `UserService` | User lookup/admin checks, birth UserInfo, saved preferences, pending consultations, deletion and marketing preferences. Read preferences once per operation; each generic getter queries the repository. Updates also refresh session preferences. `GetOrCreateUserInfo` can create data. |
 | `MembershipService` | Active membership selection, purchase/switch/assignment, free membership, complementary reading consumption, consultations and reminder scheduling. `GetActiveUserMembership` may create a missing free membership. Keep existing `UserMembership.IsAuthorisedToViewPaidContent`/`IsUnlimited` and accounting semantics. |
 | `ContactService` | Match/create/update contacts by Stripe customer/email and synchronise marketing preferences with user records. `GetOrCreateContact` can update existing records. |
-| `ConsultationService` | Available slots, weekly slots/bookings, slot lookup/selection, consultation creation and notifications. Reuse timezone and availability rules; weekly assembly hydrates related records. |
+| `ConsultationService` | Available slots, weekly slots/bookings, slot lookup/selection, consultation creation and notifications. Reuse timezone and availability rules; weekly assembly batches consultation records for selected slots and loads the selected booking/user once. |
 | `Stripe/StripeService` | Checkout sessions, customers and payment intents; used by payment flow. `Stripe/Charge.cs` is a data object, not another orchestration service. |
 | `DonationService` | Donation creation, notification and funds total. |
 | `PromotionService` | Promotion eligibility/consumption, registration/membership offers and scheduled reminders, integrated with existing queue/templates. |
 | `EmailTemplateService` | Template lookup and Parse/ParseForUser/ParseForContact, unsubscribe URLs, base email wrapper and inline image expansion. Prefer overloads accepting an already-loaded template for bulk work. |
 | `MailerService` | Single/test/bulk template orchestration; bulk path loads template/promotion once and records recipient results. |
 | `EmailQueueService` | Queue insertion, duplicate-send window, delayed scheduling, configured batch size/pause, unsubscribe/upgrade checks and processed/sent outcomes. Keep these rules in the queue. Account/support workflows also use direct mail intentionally. |
-| `MailingListService` | Saved and automatic lists and recipient selection. `Find`/`List` expose `includeUsers`; `ListAll` expands users and automatic membership lists. Inspect cost before using list helpers repeatedly. |
+| `MailingListService` | Saved and automatic lists and recipient selection. `Find`/`List` expose `includeUsers`; system `Find` builds only its target list and retains user hydration. Selector items use metadata only. `ListAll` still expands users and automatic membership lists. Inspect cost before using list helpers repeatedly. |
 | `MailChimpService` | Existing external audience sync via AddContact/AddAllContacts. |
 | `ArticlesService` | Article/tag hydration, comments/moderation, likes, views and dashboard. Preserve ownership/approval checks; detailed article loading expands related data. |
 | `AIService` | Async report and text merge operations and report prompt construction. These make external requests; do not put them in calendar/date loops or create a second AI client workflow. |
@@ -79,6 +79,8 @@ The planner hierarchy does not return every lower level automatically: Year rows
 ## Cache and performance contracts
 
 `CachableBase.GetOrAddToCache` uses process-wide `MemoryCache.Default`, defaults to 30 minutes, and returns the stored reference. NineStarKi profile/planner/summary calls explicitly use 30 days. The helper returns shared references and coalesces concurrent misses for each key using a process-wide in-flight collection. Completed and failed computations are removed from that collection; failures may be retried. Different keys remain independent. Keep nested cache dependencies acyclic, and do not use the same key for different result types. Removing a cache entry does not cancel a computation already in progress. Do not infer request isolation from service instances or mutate cached profiles for new dates.
+
+See [performance-review.md](performance-review.md) for the broader static audit, query-count reductions and remaining risks. Compatibility cache keys include the sexual-chemistry display flag.
 
 Cache keys must reflect every input that changes the result. Planner keys include birth timezone and supplied-profile selected date, so inherited-profile month data does not collide with standalone month calculation. Inspect culture, selected-vs-now behaviour, calculation/calculator/house/hemisphere flags, person data, scope and navigation when changing cached paths. Controller OutputCache keys/custom variation are a separate layer; existing Global.asax `User` variation resolves Current.UserName. Preserve NoStore/private-member handling where used.
 

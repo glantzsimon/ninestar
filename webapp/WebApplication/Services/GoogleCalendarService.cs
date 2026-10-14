@@ -4,6 +4,7 @@ using K9.WebApplication.Constants;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
+using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -62,19 +63,34 @@ namespace K9.WebApplication.Services
             var descriptions = new Dictionary<string, string>();
             var entries = new List<CalendarEntry>();
 
-            var date = DateTime.SpecifyKind(startDate, DateTimeKind.Unspecified);
-            while (date < endDate)
+            // GetPlannerData adds the birth time itself.
+            PlannerViewModel GetYearPlanner(DateTime selectedDate)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                // Fetch the year once, then reuse its profile for every month's daily rows.
-                // GetPlannerData adds the birth time itself.
-                var yearlyPlanner = _nineStarKiService.GetPlannerData(
+                var planner = _nineStarKiService.GetPlannerData(
                     DateTime.SpecifyKind(user.BirthDate.Date, DateTimeKind.Unspecified),
-                    info.BirthTimeZoneId, info.TimeOfBirth, user.Gender, date, timeZoneId,
+                    info.BirthTimeZoneId, info.TimeOfBirth, user.Gender, selectedDate, timeZoneId,
                     calculationMethod, calculatorType, EDisplayDataForPeriod.SelectedDate,
                     housesDisplay, invertNatal, invertCycles,
                     EPlannerView.Year, EScopeDisplay.PersonalKi, includeMoonPhases: false);
                 cancellationToken.ThrowIfCancellationRequested();
+                return planner;
+            }
+
+            var date = DateTime.SpecifyKind(startDate, DateTimeKind.Unspecified);
+            while (date < endDate)
+            {
+                // Fetch the year once, then reuse its profile for every month's daily rows.
+                var yearlyPlanner = GetYearPlanner(date);
+                if (yearlyPlanner.PeriodEndsOn.Date < date)
+                {
+                    // At midnight on Lichun's date, exact-instant year selection can
+                    // still return the previous year, whose all-day rows have ended.
+                    // Match the planner's forward-navigation convention without
+                    // moving the calendar cursor or skipping the transition date.
+                    yearlyPlanner = GetYearPlanner(DateTime.SpecifyKind(
+                        yearlyPlanner.PeriodEndsOn.Date.AddDays(3), DateTimeKind.Unspecified));
+                }
                 var year = yearlyPlanner.Energy.EnergyNumber;
                 var batchStart = date;
                 var batchEnd = date < NineStarKiModel.CYCLE_SWITCH_DATE && endDate > NineStarKiModel.CYCLE_SWITCH_DATE

@@ -185,6 +185,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(Enumerable.Range(0, entries.Count).Select(offset => start.AddDays(offset)),
                 entries.Select(e => e.Date));
             Assert.True(entries.Select(e => e.MonthHouse).Distinct().Count() > 1);
+            // Repeat with warm caches: boundary recovery must not depend on a miss.
+            var repeated = calendar.GetCalendarEntries(42, start, end);
+            Assert.Equal(entries.Select(e => (e.Date, e.YearHouse, e.MonthHouse, e.DayHouse, e.AfternoonDayHouse)),
+                repeated.Select(e => (e.Date, e.YearHouse, e.MonthHouse, e.DayHouse, e.AfternoonDayHouse)));
             if (year == 2026 && month == 10)
             {
                 Assert.Equal(7, entries[0].YearHouse);

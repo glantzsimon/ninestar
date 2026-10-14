@@ -181,13 +181,16 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData("Europe/London", 10, 1, 1)]
-        [InlineData("America/New_York", 10, 1, 1)]
-        [InlineData("Pacific/Auckland", 10, 1, 1)]
-        [InlineData("Europe/London", 3, 29, 1)]
-        [InlineData("Europe/London", 10, 25, 1)]
-        [InlineData("Europe/London", 2, 1, 60)]
-        public void CalendarReusesPlannerBatchesWithLocalDatesBirthTimeAndSavedOptions(string timeZoneId, int month, int day, int numberOfDays)
+        [InlineData("Europe/London", 10, 1, 1, false)]
+        [InlineData("America/New_York", 10, 1, 1, false)]
+        [InlineData("Pacific/Auckland", 10, 1, 1, false)]
+        [InlineData("Europe/London", 3, 29, 1, false)]
+        [InlineData("Europe/London", 10, 25, 1, false)]
+        [InlineData("Europe/London", 2, 1, 60, false)]
+        [InlineData("Europe/London", 2, 4, 1, true)]
+        [InlineData("Pacific/Auckland", 2, 4, 60, true)]
+        [InlineData("Europe/London", 6, 10, 1, true)]
+        public void CalendarReusesPlannerBatchesWithLocalDatesBirthTimeAndSavedOptions(string timeZoneId, int month, int day, int numberOfDays, bool startsBeforeSolarTransition)
         {
             var date = new DateTime(2026, month, day);
             var birthDate = new DateTime(1979, 6, 16);
@@ -263,14 +266,45 @@ namespace K9.WebApplication.Tests.Unit.Services
                             AfternoonDayHouse = houses.Day2.EnergyNumber == houses.Day.EnergyNumber ? (int?)null : houses.Day2.EnergyNumber
                         });
                 }
+                var yearSelection = yearStart;
+                if (startsBeforeSolarTransition && yearOffset == 0)
+                {
+                    // Midnight is still before the exact solar transition. Return
+                    // the expired year's rows, as the real planner does.
+                    profiles.Setup(e => e.GetPlannerData(
+                            It.Is<DateTime>(d => d == birthDate && d.Kind == DateTimeKind.Unspecified),
+                            info.BirthTimeZoneId, birthTime, EGender.Male,
+                            It.Is<DateTime>(d => d == yearStart && d.Kind == DateTimeKind.Unspecified),
+                            timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
+                            EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
+                            EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null, false))
+                        .Returns(new PlannerViewModel
+                        {
+                            PeriodStartsOn = yearStart.AddYears(-1),
+                            PeriodEndsOn = yearStart.AddDays(-1),
+                            Energies = new List<PlannerViewModelItem>
+                            {
+                                new PlannerViewModelItem
+                                {
+                                    EnergyStartsOn = yearStart.AddDays(-30),
+                                    EnergyEndsOn = yearStart.AddDays(-1)
+                                }
+                            }
+                        });
+                    yearSelection = yearStart.AddDays(2);
+                }
                 profiles.Setup(e => e.GetPlannerData(
                         It.Is<DateTime>(d => d == birthDate && d.Kind == DateTimeKind.Unspecified),
                         info.BirthTimeZoneId, birthTime, EGender.Male,
-                        It.Is<DateTime>(d => d == yearStart && d.Kind == DateTimeKind.Unspecified),
+                        It.Is<DateTime>(d => d == yearSelection && d.Kind == DateTimeKind.Unspecified),
                         timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
                         EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
                         EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null, false))
-                    .Returns(new PlannerViewModel { NineStarKiModel = model, Energy = houses.Year, Energies = months });
+                    .Returns(new PlannerViewModel
+                    {
+                        NineStarKiModel = model, Energy = houses.Year, Energies = months,
+                        PeriodStartsOn = yearStart, PeriodEndsOn = yearStart.AddDays(39)
+                    });
             }
             var calendar = new GoogleCalendarService(package.Object, profiles.Object, users.Object);
 
@@ -297,7 +331,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 It.IsAny<DateTime>(), timeZoneId, ECalculationMethod.Traditional, ECalculatorType.Advanced,
                 EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, true, true,
                 EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null, false),
-                Times.Exactly((numberOfDays + 39) / 40));
+                Times.Exactly((numberOfDays + 39) / 40 + (startsBeforeSolarTransition ? 1 : 0)));
             profiles.VerifyAll();
         }
 

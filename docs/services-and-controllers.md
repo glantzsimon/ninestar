@@ -35,7 +35,7 @@ The planner hierarchy does not return every lower level automatically: Year rows
 
 ## Combined descriptions
 
-See [combined-predictions.md](combined-predictions.md). `CombinedPredictionDescriptions` owns shared personal/global resource lookup and legacy UI planner context, using existing astronomy batches and model mapping. `CombinedPrediction` is immutable. New combined month/day endpoints are separate from the unchanged generic actions; the planner and main month/day pills opt in, while knowledge-base and Additional Cycles stay generic. GlobalPredictions resources remain distinct from personal-house predictions. The private ICS service reuses the personal lookup without extra calculation.
+See [combined-predictions.md](combined-predictions.md). `CombinedPredictionHelper` owns shared personal/global resource lookup and legacy UI planner context, using existing astronomy batches and model mapping. `CombinedPrediction` is immutable. New combined month/day endpoints are separate from the unchanged generic actions; the planner and main month/day pills opt in, while knowledge-base and Additional Cycles stay generic. GlobalPredictions resources remain distinct from personal-house predictions. The private ICS service reuses the personal lookup without extra calculation.
 
 ## AJAX calculation contracts
 

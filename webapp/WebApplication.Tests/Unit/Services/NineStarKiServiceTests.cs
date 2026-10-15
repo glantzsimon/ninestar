@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Enums;
+﻿using K9.WebApplication.Helpers;
+using K9.Base.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
 using K9.SharedLibrary.Helpers;
@@ -1285,7 +1286,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 selectedDate: new DateTime(2027, 3, 15), userTimeZoneId: "Europe/London");
             Assert.Equal(3, model.GlobalCycleEnergies.Day.EnergyNumber);
             Assert.Equal(9, model.GlobalCycleEnergies.Day2.EnergyNumber);
-            var combined = CombinedPredictionDescriptions.ForEnergies(model.GlobalCycleEnergies, true, true);
+            var combined = CombinedPredictionHelper.ForEnergies(model.GlobalCycleEnergies, true, true);
             Assert.Equal((int?)9, combined.AfternoonDay);
             Assert.True(combined.IsGlobal);
             var copy = model.CreateRequestCopy();
@@ -1298,23 +1299,23 @@ namespace K9.WebApplication.Tests.Unit.Services
             for (var year = 1; year <= 9; year++)
                 for (var month = 1; month <= 9; month++)
                 {
-                    var monthly = CombinedPredictionDescriptions.GetHtml(year, month);
+                    var monthly = CombinedPredictionHelper.GetHtml(year, month);
                     Assert.Contains("Month</h5>", monthly);
                     Assert.DoesNotContain(" Day", monthly);
-                    var globalMonthly = CombinedPredictionDescriptions.GetHtml(year, month, isGlobal: true);
+                    var globalMonthly = CombinedPredictionHelper.GetHtml(year, month, isGlobal: true);
                     Assert.Contains("Global", globalMonthly);
                     Assert.NotEqual(monthly, globalMonthly);
                     for (var day = 1; day <= 9; day++)
                     {
-                        Assert.Contains("Day</h5>", CombinedPredictionDescriptions.GetHtml(year, month, day));
-                        Assert.Contains("Global", CombinedPredictionDescriptions.GetHtml(year, month, day, isGlobal: true));
+                        Assert.Contains("Day</h5>", CombinedPredictionHelper.GetHtml(year, month, day));
+                        Assert.Contains("Global", CombinedPredictionHelper.GetHtml(year, month, day, isGlobal: true));
                     }
                 }
             Assert.NotEqual(K9.Globalisation.Dictionary._5_5,
-                CombinedPredictionDescriptions.GetHtml(5, 5));
+                CombinedPredictionHelper.GetHtml(5, 5));
             var split = new CombinedPrediction(5, 5, 1, 9);
-            Assert.Contains(CombinedPredictionDescriptions.GetHtml(5, 5, 1), split.Html);
-            Assert.Contains(CombinedPredictionDescriptions.GetHtml(5, 5, 9), split.Html);
+            Assert.Contains(CombinedPredictionHelper.GetHtml(5, 5, 1), split.Html);
+            Assert.Contains(CombinedPredictionHelper.GetHtml(5, 5, 9), split.Html);
             Assert.Null(new CombinedPrediction(5, 5, 1, 1).AfternoonDay);
             Assert.Throws<ArgumentOutOfRangeException>(() => new CombinedPrediction(0, 5));
         }
@@ -1341,7 +1342,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 var planner = Load(direction);
                 var originalRows = planner.Energies.Select(e => e.Energy.EnergyNumber).ToArray();
-                CombinedPredictionDescriptions.PopulatePlanner(planner, _astronomyService);
+                CombinedPredictionHelper.PopulatePlanner(planner, _astronomyService);
                 Assert.Equal(originalRows, planner.Energies.Select(e => e.Energy.EnergyNumber));
                 if (view == EPlannerView.Year)
                 {

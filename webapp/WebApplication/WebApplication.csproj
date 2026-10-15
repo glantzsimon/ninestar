@@ -410,7 +410,7 @@
     <Compile Include="ViewModels\PersonalCalendarViewModel.cs" />
     <Compile Include="Services\IGoogleCalendarService.cs" />
     <Compile Include="Services\GoogleCalendarService.cs" />
-    <Compile Include="Services\CombinedPredictionDescriptions.cs" />
+    <Compile Include="Helpers\CombinedPredictionHelper.cs" />
     <Compile Include="Models\CombinedPrediction.cs" />
     <Compile Include="Services\IAIService.cs" />
     <Compile Include="Services\AIService.cs" />

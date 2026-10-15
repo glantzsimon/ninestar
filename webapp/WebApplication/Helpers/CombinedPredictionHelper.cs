@@ -2,15 +2,16 @@ using K9.Base.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Enums;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
+using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Globalization;
 using System.Linq;
 using K9.WebApplication.Extensions;
 
-namespace K9.WebApplication.Services
+namespace K9.WebApplication.Helpers
 {
-    public static class CombinedPredictionDescriptions
+    public static class CombinedPredictionHelper
     {
         public static string GetHtml(int year, int month, int? day = null, int? afternoonDay = null, bool isGlobal = false)
         {

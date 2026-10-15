@@ -250,15 +250,12 @@ namespace K9.WebApplication.Services
             var key = $"{year}-{month}-{day}";
             if (descriptions.TryGetValue(key, out var description))
                 return description;
-            var resourceKey = string.Format(CultureInfo.InvariantCulture, "_{0}_{1}_{2}", year, month, day);
-            var html = K9.Globalisation.Dictionary.ResourceManager.GetString(resourceKey, K9.Globalisation.Dictionary.Culture);
-            if (string.IsNullOrWhiteSpace(html))
-                throw new InvalidOperationException($"Combined prediction resource not found: {resourceKey}");
+            var html = CombinedPredictionDescriptions.GetHtml(year, month, day);
             var document = new HtmlDocument();
             document.LoadHtml(html);
             var paragraphs = document.DocumentNode.SelectNodes("//p");
             if (paragraphs == null)
-                throw new InvalidOperationException($"Combined prediction has no paragraphs: {resourceKey}");
+                throw new InvalidOperationException($"Combined prediction has no paragraphs: {key}");
             description = string.Join("\n\n", paragraphs.Select(p => HtmlEntity.DeEntitize(p.InnerText).Trim()));
             descriptions.Add(key, description);
             return description;

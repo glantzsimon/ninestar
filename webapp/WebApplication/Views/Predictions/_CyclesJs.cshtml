@@ -91,6 +91,10 @@
                     {
                         energy,
                         display,
+                        year: $el.attr("data-combined-year"),
+                        month: $el.attr("data-combined-month"),
+                        day: $el.attr("data-combined-day"),
+                        afternoonDay: $el.attr("data-combined-afternoon"),
                         userTimeZoneId: '@Model.UserTimeZoneId',
                         selectedDate,
                         adultEnergy: '@(Model.MainEnergy?.Energy)'

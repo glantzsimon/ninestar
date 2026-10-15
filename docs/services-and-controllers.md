@@ -33,6 +33,10 @@ The planner hierarchy does not return every lower level automatically: Year rows
 
 `GetPlannerData` takes a date-only birth date and separate time of birth and combines them itself. Pair local selected dates with user timezone and birth details with birth timezone. Preserve calculation method, calculator, house display, scope and both hemisphere options. `NineStarKiModel.IsCycleSwitchActive` depends on its selected date and existing `CYCLE_SWITCH_DATE`; refresh a reused profile across that state change without mutating cached objects.
 
+## Combined descriptions
+
+See [combined-predictions.md](combined-predictions.md). `CombinedPredictionDescriptions` owns shared personal/global resource lookup and legacy UI planner context, using existing astronomy batches and model mapping. `CombinedPrediction` is immutable. New combined month/day endpoints are separate from the unchanged generic actions; the planner and main month/day pills opt in, while knowledge-base and Additional Cycles stay generic. GlobalPredictions resources remain distinct from personal-house predictions. The private ICS service reuses the personal lookup without extra calculation.
+
 ## AJAX calculation contracts
 
 `Views/Predictions/_CyclesJs.cshtml` sends the model's `CalculatorType` to `Predictions.GetPlanner` (required parameter) and `Predictions.GetAlchemy` (optional Simple default). Both URLs explicitly name Predictions because My Personal Chart also includes this partial. `Views/PersonalChart/_ProfileJs.cshtml` sends the same option explicitly to `PersonalChart.GetAlchemy`. Planner item detail requests must send `adultEnergy` (the model's main energy) to `GetDailyPredictions`; `solarEnergy` is not that action's parameter name and leaves its required enum unbound. Keep profile and predictions alchemy initializers distinct and restrict their selectors to their respective existing panel wrappers; both scripts and panels are present on My Personal Chart.

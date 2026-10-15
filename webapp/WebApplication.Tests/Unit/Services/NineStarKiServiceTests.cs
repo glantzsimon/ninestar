@@ -1274,6 +1274,108 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.NotEqual("Changed", service.GetMoonPhase(new DateTime(2027, 5, 15), "Europe/London", true).LunarDayTitle);
         }
 
+        [Fact]
+        public void GlobalAfternoonEnergyIsRetainedForCombinedPillsAndCopiedIndependently()
+        {
+            var model = new NineStarKiModel(new PersonModel
+            {
+                DateOfBirth = new DateTime(1979, 6, 16), Gender = EGender.Male
+            }, 5, 5, 3, 1, 1, 5, 5, 5, 5, 1, 5, 5,
+                new (int DailyKi, int? InvertedDailyKi)[] { (3, null), (9, null) }, 5,
+                selectedDate: new DateTime(2027, 3, 15), userTimeZoneId: "Europe/London");
+            Assert.Equal(3, model.GlobalCycleEnergies.Day.EnergyNumber);
+            Assert.Equal(9, model.GlobalCycleEnergies.Day2.EnergyNumber);
+            var combined = CombinedPredictionDescriptions.ForEnergies(model.GlobalCycleEnergies, true, true);
+            Assert.Equal((int?)9, combined.AfternoonDay);
+            Assert.True(combined.IsGlobal);
+            var copy = model.CreateRequestCopy();
+            Assert.NotSame(model.GlobalCycleEnergies.Day2, copy.GlobalCycleEnergies.Day2);
+        }
+
+        [Fact]
+        public void CombinedPredictionResourcesAreCompleteAndKeepNumerologySeparate()
+        {
+            for (var year = 1; year <= 9; year++)
+                for (var month = 1; month <= 9; month++)
+                {
+                    var monthly = CombinedPredictionDescriptions.GetHtml(year, month);
+                    Assert.Contains("Month</h5>", monthly);
+                    Assert.DoesNotContain(" Day", monthly);
+                    var globalMonthly = CombinedPredictionDescriptions.GetHtml(year, month, isGlobal: true);
+                    Assert.Contains("Global", globalMonthly);
+                    Assert.NotEqual(monthly, globalMonthly);
+                    for (var day = 1; day <= 9; day++)
+                    {
+                        Assert.Contains("Day</h5>", CombinedPredictionDescriptions.GetHtml(year, month, day));
+                        Assert.Contains("Global", CombinedPredictionDescriptions.GetHtml(year, month, day, isGlobal: true));
+                    }
+                }
+            Assert.NotEqual(K9.Globalisation.Dictionary._5_5,
+                CombinedPredictionDescriptions.GetHtml(5, 5));
+            var split = new CombinedPrediction(5, 5, 1, 9);
+            Assert.Contains(CombinedPredictionDescriptions.GetHtml(5, 5, 1), split.Html);
+            Assert.Contains(CombinedPredictionDescriptions.GetHtml(5, 5, 9), split.Html);
+            Assert.Null(new CombinedPrediction(5, 5, 1, 1).AfternoonDay);
+            Assert.Throws<ArgumentOutOfRangeException>(() => new CombinedPrediction(0, 5));
+        }
+
+        [Theory]
+        [InlineData(EScopeDisplay.PersonalKi, EPlannerView.Year)]
+        [InlineData(EScopeDisplay.GlobalKi, EPlannerView.Year)]
+        [InlineData(EScopeDisplay.PersonalKi, EPlannerView.Month)]
+        [InlineData(EScopeDisplay.GlobalKi, EPlannerView.Month)]
+        [InlineData(EScopeDisplay.PersonalKi, EPlannerView.Day)]
+        [InlineData(EScopeDisplay.GlobalKi, EPlannerView.Day)]
+        public void CombinedPlannerContextUsesNavigatedPeriodsAndPreservesCachedCalculations(EScopeDisplay scope, EPlannerView view)
+        {
+            var birthDate = new DateTime(1979, 6, 16);
+            var birthTime = new TimeSpan(8, 0, 0);
+            PlannerViewModel Load(EPlannerNavigationDirection direction) => _nineStarKiService.GetPlannerData(
+                birthDate, "Europe/London", birthTime, EGender.Male, new DateTime(2027, 2, 3),
+                "Europe/London", ECalculationMethod.Traditional, ECalculatorType.Advanced,
+                EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, false, false,
+                view, scope, direction, includeMoonPhases: false);
+
+            foreach (var direction in new[] { EPlannerNavigationDirection.None,
+                EPlannerNavigationDirection.Forward, EPlannerNavigationDirection.Back })
+            {
+                var planner = Load(direction);
+                var originalRows = planner.Energies.Select(e => e.Energy.EnergyNumber).ToArray();
+                CombinedPredictionDescriptions.PopulatePlanner(planner, _astronomyService);
+                Assert.Equal(originalRows, planner.Energies.Select(e => e.Energy.EnergyNumber));
+                if (view == EPlannerView.Year)
+                {
+                    Assert.All(planner.Energies, row => {
+                        Assert.Equal(scope == EScopeDisplay.GlobalKi, row.CombinedPrediction.IsGlobal);
+                        Assert.Equal(planner.Energy.EnergyNumber, row.CombinedPrediction.Year);
+                        Assert.Equal(row.Energy.EnergyNumber, row.CombinedPrediction.Month);
+                    });
+                }
+                else
+                {
+                    Assert.NotNull(planner.CombinedPrediction);
+                    Assert.Equal(scope == EScopeDisplay.GlobalKi, planner.CombinedPrediction.IsGlobal);
+                    Assert.Contains("Month", planner.CombinedPrediction.Html);
+                    if (view == EPlannerView.Month)
+                    {
+                        Assert.All(planner.Energies, row => {
+                            Assert.Equal(planner.CombinedPrediction.Year, row.CombinedPrediction.Year);
+                            Assert.Equal(planner.CombinedPrediction.Month, row.CombinedPrediction.Month);
+                            Assert.Equal((int?)row.Energy.EnergyNumber, row.CombinedPrediction.Day);
+                        });
+                    }
+                    else
+                    {
+                        Assert.True(planner.CombinedPrediction.Day.HasValue);
+                    }
+                }
+                // Decoration never enters the shared numerical planner template.
+                var fresh = Load(direction);
+                Assert.Null(fresh.CombinedPrediction);
+                Assert.All(fresh.Energies, row => Assert.Null(row.CombinedPrediction));
+            }
+        }
+
         public void Dispose()
         {
             Trace.Listeners.Remove(_listener);

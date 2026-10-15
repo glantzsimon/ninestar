@@ -252,6 +252,9 @@ namespace K9.WebApplication.Models
             GlobalCycleEnergies.Day = GetOrAddToCache($"Day_g_{SelectedDate:yyyyMMddHH}_{preciseDailyCycleMorningEnergy}_{preciseInvertedDailyCycleMorningEnergy}",
                 () => GetGlobalCycleEnergy(preciseDailyCycleMorningEnergy, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
 
+            GlobalCycleEnergies.Day2 = GetOrAddToCache($"DayTwo_g_{SelectedDate:yyyyMMddHH}_{preciseDailyCycleAfternoonEnergy}_{preciseInvertedDailyCycleAfternoonEnergy}",
+                () => GetGlobalCycleEnergy(preciseDailyCycleAfternoonEnergy, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
+
             GlobalCycleEnergies.Hour = GetOrAddToCache($"Hour_g_{SelectedDate:yyyyMMddHH}_{preciseHourlyCycleEnergy}",
                 () => GetGlobalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy), TimeSpan.FromDays(30));
 

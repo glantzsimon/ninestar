@@ -48,6 +48,9 @@ namespace K9.WebApplication.ViewModels
         [IgnoreDataMember]
         public NineStarKiEnergy SecondEnergy { get; set; }
 
+        [IgnoreDataMember]
+        public CombinedPrediction CombinedPrediction { get; set; }
+
         public DateTime EnergyStartsOn { get; set; }
 
         public DateTime EnergyEndsOn { get; set; }

@@ -209,6 +209,7 @@ namespace K9.WebApplication.Controllers
                 selectedDateTime, userTimeZoneId, calculationMethod, calculatorType, displayDataForPeriod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere,
                 invertDailyAndHourlyCycleKiForSouthernHemisphere, view, display, navigationDirection);
 
+            CombinedPredictionDescriptions.PopulatePlanner(plannerData, _astronomyService);
             UpdatePlannerUrls(plannerData);
 
             return PartialView("Planner/_GlobalPlanner", plannerData);
@@ -309,6 +310,40 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
+        [Route("get-combined-monthly-predictions")]
+        public ActionResult GetCombinedMonthlyPredictions(int year, int month, EScopeDisplay display = EScopeDisplay.PersonalKi)
+        {
+            if (year < 1 || year > 9 || month < 1 || month > 9)
+                return new HttpStatusCodeResult(400);
+            return Json(new
+            {
+                CycleDescriptiveName = K9.Globalisation.Dictionary.MonthlyPrediction,
+                CycleDescription = CombinedPredictionDescriptions.GetHtml(year, month, isGlobal: display == EScopeDisplay.GlobalKi),
+                MoonPhase = ""
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        [Route("get-combined-daily-predictions")]
+        public ActionResult GetCombinedDailyPredictions(int year, int month, int day,
+            ENineStarKiEnergy adultEnergy, int? afternoonDay = null,
+            DateTime? selectedDate = null, string userTimeZoneId = "", EScopeDisplay display = EScopeDisplay.PersonalKi)
+        {
+            if (year < 1 || year > 9 || month < 1 || month > 9 || day < 1 || day > 9 ||
+                (afternoonDay.HasValue && (afternoonDay < 1 || afternoonDay > 9)))
+                return new HttpStatusCodeResult(400);
+            var moonPhase = selectedDate.HasValue
+                ? _astrologyService.GetMoonPhase(selectedDate.Value, userTimeZoneId, true,
+                    new NineStarKiEnergy(adultEnergy, ENineStarKiEnergyType.MainEnergy)) : null;
+            var moonHtml = moonPhase == null ? "" :
+                $"{RenderPartialViewToString("~/Views/Astrology/_MoonPhaseLarge.cshtml", moonPhase)} {moonPhase.LunarDayDescription} {moonPhase.YinYangComfortDescription}";
+            return Json(new
+            {
+                CycleDescriptiveName = K9.Globalisation.Dictionary.DailyPrediction,
+                CycleDescription = CombinedPredictionDescriptions.GetHtml(year, month, day, afternoonDay, display == EScopeDisplay.GlobalKi),
+                MoonPhase = moonHtml
+            }, JsonRequestBehavior.AllowGet);
+        }
+
         private JsonResult PredictionsJsonResult(EScopeDisplay display, NineStarKiEnergy cycle, string moonPhaseHtml = "")
         {
             return Json(new
@@ -334,18 +369,18 @@ namespace K9.WebApplication.Controllers
                     break;
 
                 case EPlannerView.Month:
-                    plannerData.UpdateParentUrl = Url.Action("GetMonthlyPredictions");
-                    plannerData.UpdateChildUrl = Url.Action("GetDailyPredictions");
+                    plannerData.UpdateParentUrl = Url.Action("GetCombinedMonthlyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetCombinedDailyPredictions");
                     break;
 
                 case EPlannerView.Day:
-                    plannerData.UpdateParentUrl = Url.Action("GetDailyPredictions");
+                    plannerData.UpdateParentUrl = Url.Action("GetCombinedDailyPredictions");
                     plannerData.UpdateChildUrl = Url.Action("GetHourlyPredictions");
                     break;
 
                 default:
                     plannerData.UpdateParentUrl = Url.Action("GetYearlyPredictions");
-                    plannerData.UpdateChildUrl = Url.Action("GetMonthlyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetCombinedMonthlyPredictions");
                     break;
             }
         }

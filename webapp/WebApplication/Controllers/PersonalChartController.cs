@@ -165,7 +165,7 @@ namespace K9.WebApplication.Controllers
                 EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiProfile);
 
             plannerData.UpdateParentUrl = Url.Action("GetYearlyPredictions", "Predictions");
-            plannerData.UpdateChildUrl = Url.Action("GetMonthlyPredictions", "Predictions");
+            plannerData.UpdateChildUrl = Url.Action("GetCombinedMonthlyPredictions", "Predictions");
 
             nineStarKiProfile.PlannerViewModel = plannerData;
 

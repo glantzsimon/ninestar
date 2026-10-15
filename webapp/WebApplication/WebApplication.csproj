@@ -410,6 +410,8 @@
     <Compile Include="ViewModels\PersonalCalendarViewModel.cs" />
     <Compile Include="Services\IGoogleCalendarService.cs" />
     <Compile Include="Services\GoogleCalendarService.cs" />
+    <Compile Include="Services\CombinedPredictionDescriptions.cs" />
+    <Compile Include="Models\CombinedPrediction.cs" />
     <Compile Include="Services\IAIService.cs" />
     <Compile Include="Services\AIService.cs" />
     <Compile Include="Services\IArticlesService.cs" />
@@ -1751,6 +1753,7 @@
     <Content Include="Views\SystemSettings\Edit.cshtml" />
     <Content Include="Views\SystemSettings\Index.cshtml" />
     <Content Include="Views\Predictions\_CycleHeaderWithDescription.cshtml" />
+    <Content Include="Views\Predictions\_CombinedCycleHeaderWithDescription.cshtml" />
     <Content Include="Views\Shared\_ClickOnATabBelow.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\WithForm\_BiorhythmsWithForm.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\WithForm\_NumerologyWithForm.cshtml" />

@@ -411,7 +411,7 @@
     <Compile Include="Services\IGoogleCalendarService.cs" />
     <Compile Include="Services\GoogleCalendarService.cs" />
     <Compile Include="Helpers\CombinedPredictionHelper.cs" />
-    <Compile Include="Models\CombinedPrediction.cs" />
+    <Compile Include="Models\NineStarKi\CombinedPrediction.cs" />
     <Compile Include="Services\IAIService.cs" />
     <Compile Include="Services\AIService.cs" />
     <Compile Include="Services\IArticlesService.cs" />
@@ -449,7 +449,7 @@
     <Compile Include="Models\MailingListViewModel.cs" />
     <Compile Include="Models\MailingListSendResultItem.cs" />
     <Compile Include="Models\CachableBase.cs" />
-    <Compile Include="Models\CalculationCopyContext.cs" />
+    <Compile Include="Helpers\CalculationCopyContext.cs" />
     <Compile Include="Services\AstronomyService.cs" />
     <Compile Include="Services\IAstronomyService.cs" />
     <Compile Include="Services\NumerologyService.cs" />
@@ -1840,7 +1840,7 @@
     <Content Include="Views\Predictions\_AdditionalCycles.cshtml" />
     <Content Include="Views\PersonalChart\MyProfile.cshtml" />
     <Content Include="Views\PersonalChart\_PersonalCalendar.cshtml" />
-    <Content Include="Scripts\personal-calendar.js" />
+    <Content Include="Scripts\k9\personalCalendar.js" />
     <Content Include="Content\controls\personal-calendar.css" />
     <Content Include="Content\less\controls\personal-calendar.less" />
     <Content Include="Views\Home\SouthernHemisphere.cshtml" />

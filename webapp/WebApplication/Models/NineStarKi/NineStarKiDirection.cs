@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using K9.WebApplication.Helpers;
+using System.Runtime.Serialization;
 using K9.Base.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Enums;

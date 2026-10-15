@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Models;
+﻿using K9.WebApplication.Helpers;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.ViewModels
 {

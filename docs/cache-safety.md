@@ -2,7 +2,7 @@
 
 ## Applied changes
 
-NineStarKiService keeps profile/planner calculation templates in the existing cache and returns request-owned copies. The typed copy methods preserve scalar/private state without invoking constructors, serializing computed getters or rerunning astronomy. They copy people, energy containers/energies, moon phases, directions and lists, planner rows, energy-summary wrappers, magic squares and value-tuple period arrays. A reference-identity context preserves repeated references and cycles (including profile/planner back-references). The lazy personal magic squares and directions-chart presentation are rebuilt against the copy.
+NineStarKiService keeps profile/planner calculation templates in the existing cache and returns request-owned copies. The internal copy context lives in `Helpers/CalculationCopyContext.cs`; it is copying infrastructure rather than a domain model. The typed copy methods preserve scalar/private state without invoking constructors, serializing computed getters or rerunning astronomy. They copy people, energy containers/energies, moon phases, directions and lists, planner rows, energy-summary wrappers, magic squares and value-tuple period arrays. A reference-identity context preserves repeated references and cycles (including profile/planner back-references). The lazy personal magic squares and directions-chart presentation are rebuilt against the copy.
 
 Model getters that need internal rebinding now have private setters; they remain read-only to application callers. Shared MemoryCache infrastructure and static/read-only metadata/resource tables are deliberately retained. The generic CachableBase contract remains shared-reference caching; this ownership policy applies at the profile/planner service boundary, not to arbitrary repository entities or every cache in the application.
 
@@ -26,7 +26,7 @@ Profiles still use the existing date/time/culture and calculation cache identiti
 
 Added regressions for scalar and nested profile changes, person/energy isolation, planner URL/list/profile isolation, cyclic graph copying, compatibility details/name isolation and lunar decoration. The previous display-flag regression now expects a fresh compatibility composite on repeated calls.
 
-ApiCacheSafetyTests exercise the validation envelope's invalid-key/account/permissions and successful membership callback, asserting one lookup and preference access only after validation. They assert NoStore settings on the two sensitive actions. These are unit/structural checks, not a substitute for the IIS pipeline.
+`Unit/Controllers/ApiCacheSafetyTests` exercise the validation envelope's invalid-key/account/permissions and successful membership callback, asserting one lookup and preference access only after validation. They assert NoStore settings on the two sensitive actions. These are unit/structural checks, not a substitute for the IIS pipeline.
 
 Static checks cover XML/registrations, option/signature preservation, typed-copy fields, unchanged validation error branches, removal of explicit cache-enabling headers and no protected-file edits. No .NET Framework compiler/runtime, IIS or SQL Server is configured in the implementation environment: the Windows build and C# tests remain unexecuted.
 

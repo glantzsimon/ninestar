@@ -43,6 +43,10 @@ Pass local selected dates as `DateTimeKind.Unspecified` together with the saved 
 
 Place static utility and presentation helpers in `webapp/WebApplication/Helpers` with the `K9.WebApplication.Helpers` namespace, following existing helper naming conventions (for example, `CombinedPredictionHelper`). Static classes without an injected service lifecycle should not be placed in `Services` merely because controllers or services call them. Keep injected application services and their interfaces in `Services`. Register moved/new files in the project and update namespaces, callers and documentation together.
 
+## File organisation
+
+Keep Nine Star Ki domain models in `Models/NineStarKi`, retaining the existing `K9.WebApplication.Models` namespace used by that folder. Copying infrastructure such as `CalculationCopyContext` belongs in Helpers. Application-specific JavaScript belongs in `Scripts/k9`, using existing camelCase filenames. The main `~/Scripts/js` bundle already includes `Scripts/k9/*.js`; remove standalone script tags when moving a script into that wildcard to prevent duplicate initialisation. Keep controller tests in `Unit/Controllers` and service tests in `Unit/Services`; test support helpers remain separate.
+
 ## Service and controller reuse
 
 Read [docs/services-and-controllers.md](docs/services-and-controllers.md) before implementing service/controller work. It maps the existing application services, controller families and tested astronomy batch call sites. Inspect the relevant interface, implementation and current callers before adding a method; extend the existing owner of the behaviour instead of creating parallel business logic.

@@ -16,7 +16,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Xunit;
 
-namespace K9.WebApplication.Tests.Unit.Services
+namespace K9.WebApplication.Tests.Unit.Controllers
 {
     public class ApiCacheSafetyTests
     {

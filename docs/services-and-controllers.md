@@ -33,6 +33,14 @@ The planner hierarchy does not return every lower level automatically: Year rows
 
 `GetPlannerData` takes a date-only birth date and separate time of birth and combines them itself. Pair local selected dates with user timezone and birth details with birth timezone. Preserve calculation method, calculator, house display, scope and both hemisphere options. `NineStarKiModel.IsCycleSwitchActive` depends on its selected date and existing `CYCLE_SWITCH_DATE`; refresh a reused profile across that state change without mutating cached objects.
 
+## AJAX calculation contracts
+
+`Views/Predictions/_CyclesJs.cshtml` sends the model's `CalculatorType` to `Predictions.GetPlanner` (required parameter) and `Predictions.GetAlchemy` (optional Simple default). Both URLs explicitly name Predictions because My Personal Chart also includes this partial. `Views/PersonalChart/_ProfileJs.cshtml` sends the same option explicitly to `PersonalChart.GetAlchemy`. Keep profile and predictions alchemy initializers distinct and restrict their selectors to their respective existing panel wrappers; both scripts and panels are present on My Personal Chart.
+
+The 43 standalone JavaScript files in the web/mobile projects were reviewed after the owner committed their plaintext versions. Their AJAX calls cover preference updates, payment orchestration, locale and personal calendar operations, plus generic transport wrappers. None adds another direct planner/alchemy call requiring `calculatorType`. Preference updates intentionally send the selected mode as `value` with the existing preference `key`; personal calendar requests resolve saved calculator preferences on the server.
+
+Validation for this correction uses JavaScript syntax and mocked request/panel checks for both calculator modes and both scripts on one page. It does not execute Razor routing or the IIS/.NET Framework application; verify planner navigation and profile/predictions alchemy locally after rebuilding.
+
 ## Other service owners
 
 | Existing owner | Reuse and cost/side effects |

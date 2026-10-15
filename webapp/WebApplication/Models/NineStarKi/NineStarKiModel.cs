@@ -18,6 +18,31 @@ namespace K9.WebApplication.Models
 
     public class NineStarKiModel : CachableBase, IValidatableObject
     {
+        public NineStarKiModel CreateRequestCopy() => CreateRequestCopy(new CalculationCopyContext());
+
+        internal NineStarKiModel CreateRequestCopy(CalculationCopyContext context) =>
+            context.Copy(this, source => (NineStarKiModel)source.MemberwiseClone(), (source, copy) =>
+            {
+                copy.PersonModel = source.PersonModel?.CreateRequestCopy(context);
+                copy.PersonalChartEnergies = source.PersonalChartEnergies?.CreateRequestCopy(context);
+                copy.GlobalCycleEnergies = source.GlobalCycleEnergies?.CreateRequestCopy(context);
+                copy.PersonalHousesOccupiedEnergies = source.PersonalHousesOccupiedEnergies?.CreateRequestCopy(context);
+                copy.PersonalHousesOccupiedLunarEnergies = source.PersonalHousesOccupiedLunarEnergies?.CreateRequestCopy(context);
+                copy.MoonPhase = source.MoonPhase?.CreateRequestCopy(context);
+                copy.YearlyDirections = source.YearlyDirections?.CreateRequestCopy(context);
+                copy.MonthlyDirections = source.MonthlyDirections?.CreateRequestCopy(context);
+                copy.PlannerViewModel = source.PlannerViewModel?.CreateRequestCopy(context);
+                copy.YearlyPeriods = source.YearlyPeriods == null ? null
+                    : ((DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[])source.YearlyPeriods.Clone();
+                copy.MonthlyPeriods = source.MonthlyPeriods == null ? null
+                    : ((DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[])source.MonthlyPeriods.Clone();
+                copy.DailyPeriods = source.DailyPeriods == null ? null
+                    : ((DateTime Date, int DailyKi, int? InvertedDailyKi, int? AfternoonKi, int? InvertedAfternoonKi)[])source.DailyPeriods.Clone();
+                // These presentation objects are lazy and must be rebuilt against the copy.
+                copy._directionsChartViewModel = null;
+                copy._personalChartMagicSquare = null;
+            });
+
         #region Options and Flags
 
         public static DateTime CYCLE_SWITCH_DATE = new DateTime(2105, 2, 4);
@@ -117,7 +142,7 @@ namespace K9.WebApplication.Models
 
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseMonthlyCycleEnergyInverted, (int DailyKi, int? InvertedDailyKi)[] preciseDailyCycleEnergies, int preciseHourlyCycleEnergy, DateTime? selectedDate = null,
 
-            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string userTimeZoneId = "", EDisplayDataForPeriod displayDataForPeiod = EDisplayDataForPeriod.Now, MoonPhase moonPhase = null, bool isCompatibility = false)
+            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string userTimeZoneId = "", EDisplayDataForPeriod displayDataForPeiod = EDisplayDataForPeriod.Now, MoonPhase moonPhase = null, bool isCompatibility = false, ECalculatorType? calculatorType = null)
         {
             Init();
 
@@ -126,7 +151,7 @@ namespace K9.WebApplication.Models
             SelectedDate = selectedDate ?? DateTime.UtcNow;
             SelectedLocaDateTime = DateTimeHelper.ConvertToLocaleDateTime(SelectedDate.Value, UserTimeZoneId);
             CalculationMethod = calculationMethod;
-            CalculatorType = IsCompatibility ? CalculatorType = ECalculatorType.Advanced : CalculatorType;
+            CalculatorType = IsCompatibility ? ECalculatorType.Advanced : calculatorType ?? CalculatorType;
             HousesDisplay = housesDisplay;
             InvertDailyAndHourlyKiForSouthernHemisphere = invertDailyAndHourlyKiForSouthernHemisphere;
             InvertDailyAndHourlyCycleKiForSouthernHemisphere = invertDailyAndHourlyCycleKiForSouthernHemisphere;
@@ -227,6 +252,9 @@ namespace K9.WebApplication.Models
             GlobalCycleEnergies.Day = GetOrAddToCache($"Day_g_{SelectedDate:yyyyMMddHH}_{preciseDailyCycleMorningEnergy}_{preciseInvertedDailyCycleMorningEnergy}",
                 () => GetGlobalCycleEnergy(preciseDailyCycleMorningEnergy, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
 
+            GlobalCycleEnergies.Day2 = GetOrAddToCache($"DayTwo_g_{SelectedDate:yyyyMMddHH}_{preciseDailyCycleAfternoonEnergy}_{preciseInvertedDailyCycleAfternoonEnergy}",
+                () => GetGlobalCycleEnergy(preciseDailyCycleAfternoonEnergy, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
+
             GlobalCycleEnergies.Hour = GetOrAddToCache($"Hour_g_{SelectedDate:yyyyMMddHH}_{preciseHourlyCycleEnergy}",
                 () => GetGlobalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy), TimeSpan.FromDays(30));
 
@@ -306,7 +334,7 @@ namespace K9.WebApplication.Models
             SurfaceEnergy.RelatedEnergy = MainEnergy.Energy;
         }
 
-        public PersonModel PersonModel { get; }
+        public PersonModel PersonModel { get; private set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LichunLabel)]
         public DateTime? Lichun { get; set; }
@@ -339,7 +367,7 @@ namespace K9.WebApplication.Models
 
         public MoonPhase MoonPhase { get; set; }
 
-        public NineStarKiEnergiesModel PersonalChartEnergies { get; }
+        public NineStarKiEnergiesModel PersonalChartEnergies { get; private set; }
 
         private NineStarKiDrectionsChartViewModel _directionsChartViewModel;
 
@@ -575,11 +603,11 @@ namespace K9.WebApplication.Models
             return model;
         }
 
-        public NineStarKiEnergiesModel GlobalCycleEnergies { get; }
+        public NineStarKiEnergiesModel GlobalCycleEnergies { get; private set; }
 
-        public NineStarKiEnergiesModel PersonalHousesOccupiedEnergies { get; }
+        public NineStarKiEnergiesModel PersonalHousesOccupiedEnergies { get; private set; }
 
-        public NineStarKiEnergiesModel PersonalHousesOccupiedLunarEnergies { get; }
+        public NineStarKiEnergiesModel PersonalHousesOccupiedLunarEnergies { get; private set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
         public NineStarKiEnergy MainEnergy => PersonalChartEnergies?.Year;

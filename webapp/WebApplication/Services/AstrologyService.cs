@@ -1,4 +1,5 @@
-﻿using K9.Globalisation;
+﻿using K9.WebApplication.Helpers;
+using K9.Globalisation;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
@@ -18,7 +19,8 @@ namespace K9.WebApplication.Services
 
         public MoonPhase GetMoonPhase(DateTime selectedDateTime, string userTimeZoneId, bool includeLunarDay = false, NineStarKiEnergy energy = null)
         {
-            var moonPhase = _astronomyService.GetMoonPhase(selectedDateTime, userTimeZoneId, includeLunarDay);
+            var moonPhase = _astronomyService.GetMoonPhase(selectedDateTime, userTimeZoneId, includeLunarDay)
+                .CreateRequestCopy(new CalculationCopyContext());
 
             moonPhase.LunarDayTitle = GetLunarDayTitle(moonPhase.LunarDay);
             moonPhase.LunarDayDescription = TemplateParser.Parse(GetLunarDayDescription(moonPhase.LunarDay), new { Illumination = $"({moonPhase.IlluminationDisplay})" });

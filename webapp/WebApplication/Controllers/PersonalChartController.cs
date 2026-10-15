@@ -89,7 +89,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("free-calculator/alchemy")]
-        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, ECalculationMethod calculationMethod, ECalculatorType calculatorType, EHousesDisplay housesDisplay, bool invertDailyAndHourlyKiForSouthernHemisphere)
+        public async Task<JsonResult> GetAlchemy(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, ECalculationMethod calculationMethod, ECalculatorType calculatorType = ECalculatorType.Simple, EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false)
         {
             if (!My.SystemSettings.IsEnabledAlchemy)
             {
@@ -156,8 +156,6 @@ namespace K9.WebApplication.Controllers
                 DisplayDataForPeriod = EDisplayDataForPeriod.Now
             };
 
-            var model = new PredictionsViewModel(nineStarKiModel, _nineStarKiService.GetNineStarKiSummaryViewModel());
-
             personModel.DateOfBirth = personModel.DateOfBirth.Add(personModel.TimeOfBirth);
             var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true,
                             localNow, nineStarKiModel.CalculationMethod, nineStarKiModel.CalculatorType, true, true, nineStarKiModel.UserTimeZoneId, nineStarKiModel.HousesDisplay, false,
@@ -167,7 +165,7 @@ namespace K9.WebApplication.Controllers
                 EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, nineStarKiProfile);
 
             plannerData.UpdateParentUrl = Url.Action("GetYearlyPredictions", "Predictions");
-            plannerData.UpdateChildUrl = Url.Action("GetMonthlyPredictions", "Predictions");
+            plannerData.UpdateChildUrl = Url.Action("GetCombinedMonthlyPredictions", "Predictions");
 
             nineStarKiProfile.PlannerViewModel = plannerData;
 

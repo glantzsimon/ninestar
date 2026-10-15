@@ -2,10 +2,14 @@
 
 <script>
 
-    function initAlchemy() {
-        var url = '@Url.Action("GetAlchemy")';
+    function initProfileAlchemy() {
+        var url = '@Url.Action("GetAlchemy", "PersonalChart")';
 
-        $.fn.displaySpinner("#profile-alchemy-container");
+        if (!$("#personal-profile #profile-alchemy-container").length) {
+            return;
+        }
+
+        $.fn.displaySpinner("#personal-profile #profile-alchemy-container");
 
         ajaxcontroller().get(url,
             {
@@ -14,12 +18,13 @@
                 timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
                 gender: '@Model.PersonModel.Gender',
                 calculationMethod: '@Model.CalculationMethod.ToString()',
+                calculatorType: '@Model.CalculatorType.ToString()',
                 housesDisplay: '@Model.HousesDisplay.ToString()',
                 invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()'
             }).done(
             function(result) {
                 if (result.success) {
-                    let $container = $("#profile-alchemy-container");
+                    let $container = $("#personal-profile #profile-alchemy-container");
                     $container.fadeOut(200,
                         function() {
                             $container.find(".panel .panel-one").html(result.data.AlchemisedSummary);
@@ -28,17 +33,17 @@
 
                             $.fn.initLibraries();
 
-                            $.fn.hideSpinner("#profile-alchemy-container");
+                            $.fn.hideSpinner("#personal-profile #profile-alchemy-container");
                         });
                 } else {
-                    $.fn.hideSpinner("#profile-alchemy-container");
+                    $.fn.hideSpinner("#personal-profile #profile-alchemy-container");
                 }
             });
     }
 
     $(function() {
         setTimeout(function() {
-            initAlchemy();
+            initProfileAlchemy();
         }, 2000);
     });
 

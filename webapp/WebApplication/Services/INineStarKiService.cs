@@ -20,7 +20,7 @@ namespace K9.WebApplication.Services
             bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse,
             bool invertDailyAndHourlyKiForSouthernHemisphere = false,
             bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
-            EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate);
+            EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate, bool includeMoonPhases = true);
 
         Task<NineStarKiModel> GetNineStarKiPersonalChartAlchemy(NineStarKiModel model);
 
@@ -51,6 +51,6 @@ namespace K9.WebApplication.Services
                 EPlannerView view = EPlannerView.Year,
                 EScopeDisplay display = EScopeDisplay.PersonalKi,
                 EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None,
-                NineStarKiModel nineStarKiModel = null);
+                NineStarKiModel nineStarKiModel = null, bool includeMoonPhases = true);
     }
 }

@@ -32,7 +32,7 @@ namespace K9.WebApplication.Services
 
             if (id <= MailingList.AllUsersId)
             {
-                list = ListAll().Where(e => e.Id == id).FirstOrDefault();
+                list = GetAutoList(id);
             }
             else
             {
@@ -86,24 +86,55 @@ namespace K9.WebApplication.Services
 
         public List<ListItem> GetMailingListListItems()
         {
-            return new List<ListItem>(ListAll().Select(e =>
+            return new List<ListItem>(GetAutoLists(false).Concat(List()).Select(e =>
             {
                 return new ListItem(e.Id, e.Name, e.Name);
             }));
         }
 
-        private List<MailingList> GetAutoLists()
+        private List<MailingList> GetAutoLists(bool includeUsers = true)
         {
-            return new List<MailingList>
+            var ids = new[]
             {
-                GetAllUsersOnFreeMembership(),
-                GetAllUsersOnPaidMembership(),
-                GetAllUsersPerSubscriptionType(MembershipOption.ESubscriptionType.WeeklyPlatinum),
-                GetAllUsersPerSubscriptionType(MembershipOption.ESubscriptionType.MonthlyPlatinum),
-                GetAllUsersPerSubscriptionType(MembershipOption.ESubscriptionType.AnnualPlatinum),
-                GetAllUsersPerSubscriptionType(MembershipOption.ESubscriptionType.LifeTimePlatinum),
-                GetAllUsers()
+                MailingList.FreeUsersId, MailingList.PaidUsersId,
+                MailingList.BaseUsersId + (int)MembershipOption.ESubscriptionType.WeeklyPlatinum,
+                MailingList.BaseUsersId + (int)MembershipOption.ESubscriptionType.MonthlyPlatinum,
+                MailingList.BaseUsersId + (int)MembershipOption.ESubscriptionType.AnnualPlatinum,
+                MailingList.BaseUsersId + (int)MembershipOption.ESubscriptionType.LifeTimePlatinum,
+                MailingList.AllUsersId
             };
+            return ids.Select(id => includeUsers ? GetAutoList(id) : new MailingList
+            {
+                Id = id, Name = GetAutoListName(id), IsSystemStandard = true
+            }).ToList();
+        }
+
+        private MailingList GetAutoList(int id)
+        {
+            if (id == MailingList.FreeUsersId) return GetAllUsersOnFreeMembership();
+            if (id == MailingList.PaidUsersId) return GetAllUsersOnPaidMembership();
+            if (id == MailingList.AllUsersId) return GetAllUsers();
+            foreach (var type in new[]
+            {
+                MembershipOption.ESubscriptionType.WeeklyPlatinum,
+                MembershipOption.ESubscriptionType.MonthlyPlatinum,
+                MembershipOption.ESubscriptionType.AnnualPlatinum,
+                MembershipOption.ESubscriptionType.LifeTimePlatinum
+            })
+            {
+                if (id == MailingList.BaseUsersId + (int)type)
+                    return GetAllUsersPerSubscriptionType(type);
+            }
+            return null;
+        }
+
+        private static string GetAutoListName(int id)
+        {
+            if (id == MailingList.FreeUsersId) return "Users on Free Membership";
+            if (id == MailingList.PaidUsersId) return "Users on Full Membership";
+            if (id == MailingList.AllUsersId) return "All Users";
+            var type = (MembershipOption.ESubscriptionType)(id - MailingList.BaseUsersId);
+            return $"Users on {type.ToString().SplitOnCapitalLetter()}";
         }
 
         private MailingList GetAllUsers()
@@ -111,7 +142,7 @@ namespace K9.WebApplication.Services
             return new MailingList
             {
                 Id = MailingList.AllUsersId,
-                Name = "All Users",
+                Name = GetAutoListName(MailingList.AllUsersId),
                 IsSystemStandard = true,
                 Users = My.UsersRepository.List()
                     .OrderBy(e => e.FirstName).ThenBy(e => e.LastName).ToList()
@@ -136,7 +167,7 @@ namespace K9.WebApplication.Services
             return new MailingList
             {
                 Id = MailingList.PaidUsersId,
-                Name = "Users on Full Membership",
+                Name = GetAutoListName(MailingList.PaidUsersId),
                 IsSystemStandard = true,
                 Users = My.UsersRepository.Find(e => paidUserIds.Contains(e.Id))
                     .OrderBy(e => e.FirstName).ThenBy(e => e.LastName).ToList()
@@ -161,7 +192,7 @@ namespace K9.WebApplication.Services
             return new MailingList
             {
                 Id = MailingList.BaseUsersId + (int)subscriptionType,
-                Name = $"Users on {subscriptionType.ToString().SplitOnCapitalLetter()}",
+                Name = GetAutoListName(MailingList.BaseUsersId + (int)subscriptionType),
                 IsSystemStandard = true,
                 Users = My.UsersRepository.Find(e => userIds.Contains(e.Id))
                     .OrderBy(e => e.FirstName).ThenBy(e => e.LastName).ToList()
@@ -207,7 +238,7 @@ namespace K9.WebApplication.Services
             return new MailingList
             {
                 Id = MailingList.FreeUsersId,
-                Name = "Users on Free Membership",
+                Name = GetAutoListName(MailingList.FreeUsersId),
                 IsSystemStandard = true,
                 Users = My.UsersRepository.Find(e => freeMembershipUserIds.Contains(e.Id))
                     .OrderBy(e => e.FirstName).ThenBy(e => e.LastName).ToList()

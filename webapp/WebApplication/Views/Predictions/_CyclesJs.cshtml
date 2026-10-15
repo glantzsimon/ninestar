@@ -91,9 +91,13 @@
                     {
                         energy,
                         display,
+                        year: $el.attr("data-combined-year"),
+                        month: $el.attr("data-combined-month"),
+                        day: $el.attr("data-combined-day"),
+                        afternoonDay: $el.attr("data-combined-afternoon"),
                         userTimeZoneId: '@Model.UserTimeZoneId',
                         selectedDate,
-                        solarEnergy: '@(Model.MainEnergy?.Energy)'
+                        adultEnergy: '@(Model.MainEnergy?.Energy)'
                     }).done(
                     function(result) {
                         if (result.success) {
@@ -121,7 +125,7 @@
     }
 
     function updateGlobalPlanner(view, display, selectedDate, navigationDirection) {
-        var url = '@Url.Action("GetPlanner")';
+        var url = '@Url.Action("GetPlanner", "Predictions")';
 
         $.fn.displaySpinner("#global-planner-container");
 
@@ -138,6 +142,7 @@
                         displayDataForPeriod: '@Model.DisplayDataForPeriod',
                         userTimeZoneId: '@Model.UserTimeZoneId',
                         calculationMethod: '@Model.CalculationMethod.ToString()',
+                        calculatorType: '@Model.CalculatorType.ToString()',
                         housesDisplay: '@Model.HousesDisplay.ToString()',
                         invertDailyAndHourlyKiForSouthernHemisphere:
                             '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
@@ -173,15 +178,15 @@
             }
     }
 
-    function initAlchemy() {
-        var url = '@Url.Action("GetAlchemy")';
+    function initPredictionsAlchemy() {
+        var url = '@Url.Action("GetAlchemy", "Predictions")';
         var selectedDate = $("#SelectedDateTimeString").val();
 
-        if (!selectedDate) {
+        if (!selectedDate || !$(".cycles-tabs-container #profile-alchemy-container").length) {
             return;
         }
 
-        $.fn.displaySpinner("#profile-alchemy-container");
+        $.fn.displaySpinner(".cycles-tabs-container #profile-alchemy-container");
 
         ajaxcontroller().get(url,
             {
@@ -193,13 +198,14 @@
                 displayDataForPeriod: '@Model.DisplayDataForPeriod',
                 userTimeZoneId: '@Model.UserTimeZoneId',
                 calculationMethod: '@Model.CalculationMethod.ToString()',
+                calculatorType: '@Model.CalculatorType.ToString()',
                 housesDisplay: '@Model.HousesDisplay.ToString()',
                 invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
                 invertDailyAndHourlyCycleKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()'
             }).done(
             function(result) {
                 if (result.success) {
-                    let $container = $("#profile-alchemy-container");
+                    let $container = $(".cycles-tabs-container #profile-alchemy-container");
                     $container.fadeOut(200,
                         function() {
                             $container.find(".panel .panel-one").html(result.data.AlchemisedSummary);
@@ -208,10 +214,10 @@
 
                             $.fn.initLibraries();
 
-                            $.fn.hideSpinner("#profile-alchemy-container");
+                            $.fn.hideSpinner(".cycles-tabs-container #profile-alchemy-container");
                         });
                 } else {
-                    $.fn.hideSpinner("#profile-alchemy-container");
+                    $.fn.hideSpinner(".cycles-tabs-container #profile-alchemy-container");
                 }
             });
     }
@@ -220,7 +226,7 @@
         bindGlobalEvents();
 
         setTimeout(function () {
-            initAlchemy();
+            initPredictionsAlchemy();
         }, 2000);
     });
 

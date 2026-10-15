@@ -259,10 +259,15 @@
     <Compile Include="Unit\Helpers\FakeHttpSessionState.cs" />
     <Compile Include="Unit\Models\NineStarKiModelTests.cs" />
     <Compile Include="Unit\Models\PersonModelTests.cs" />
+    <Compile Include="Unit\Models\CachableBaseTests.cs" />
     <Compile Include="Unit\Services\MembershipServiceTests.cs" />
     <Compile Include="Unit\Services\BioRhythmsServiceTests.cs" />
     <Compile Include="Unit\Services\IChingServiceTests.cs" />
     <Compile Include="Unit\Services\NineStarKiServiceTests.cs" />
+    <Compile Include="Unit\Services\GoogleCalendarServiceTests.cs" />
+    <Compile Include="Unit\Services\ServicePerformanceTests.cs" />
+    <Compile Include="Unit\Controllers\ApiCacheSafetyTests.cs" />
+    <Compile Include="Unit\Controllers\PersonalCalendarControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

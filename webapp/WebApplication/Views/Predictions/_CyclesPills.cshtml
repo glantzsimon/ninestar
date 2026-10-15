@@ -81,17 +81,17 @@
                         Model.PersonalHousesOccupiedEnergies.Day.CycleDescriptiveName,
                         Model.PersonalHousesOccupiedLunarEnergies.Day.CycleDescriptiveName,
                         Model.GlobalCycleEnergies.Day.CycleDescriptiveName,
-                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
-                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Day).ToString(),
-                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
+                        Html.Partial("../Predictions/_CombinedCycleHeaderWithDescription", Tuple.Create(Model.PersonalHousesOccupiedEnergies.Day, K9.WebApplication.Helpers.CombinedPredictionHelper.ForEnergies(Model.PersonalHousesOccupiedEnergies, true))).ToString(),
+                        Html.Partial("../Predictions/_CombinedCycleHeaderWithDescription", Tuple.Create(Model.PersonalHousesOccupiedLunarEnergies.Day, K9.WebApplication.Helpers.CombinedPredictionHelper.ForEnergies(Model.PersonalHousesOccupiedLunarEnergies, true))).ToString(),
+                        Html.Partial("../Predictions/_CombinedCycleHeaderWithDescription", Tuple.Create(Model.GlobalCycleEnergies.Day, K9.WebApplication.Helpers.CombinedPredictionHelper.ForEnergies(Model.GlobalCycleEnergies, true, true))).ToString())
                 }
                 else
                 {
                     @Html.PanelWithGlobal(
                                         Model.PersonalHousesOccupiedEnergies.Day.CycleDescriptiveName,
                                         Model.GlobalCycleEnergies.Day.CycleDescriptiveName,
-                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Day).ToString(),
-                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Day).ToString())
+                                        Html.Partial("../Predictions/_CombinedCycleHeaderWithDescription", Tuple.Create(Model.PersonalHousesOccupiedEnergies.Day, K9.WebApplication.Helpers.CombinedPredictionHelper.ForEnergies(Model.PersonalHousesOccupiedEnergies, true))).ToString(),
+                                        Html.Partial("../Predictions/_CombinedCycleHeaderWithDescription", Tuple.Create(Model.GlobalCycleEnergies.Day, K9.WebApplication.Helpers.CombinedPredictionHelper.ForEnergies(Model.GlobalCycleEnergies, true, true))).ToString())
                 }
 
                 @Html.Partial("../Predictions/_LunarCycle")
@@ -112,17 +112,17 @@
                         Model.PersonalHousesOccupiedEnergies.Month.CycleDescriptiveName,
                         Model.PersonalHousesOccupiedLunarEnergies.Month.CycleDescriptiveName,
                         Model.GlobalCycleEnergies.Month.CycleDescriptiveName,
-                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
-                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedLunarEnergies.Month).ToString(),
-                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
+                        Html.Partial("../Predictions/_CombinedCycleHeaderWithDescription", Tuple.Create(Model.PersonalHousesOccupiedEnergies.Month, K9.WebApplication.Helpers.CombinedPredictionHelper.ForEnergies(Model.PersonalHousesOccupiedEnergies, false))).ToString(),
+                        Html.Partial("../Predictions/_CombinedCycleHeaderWithDescription", Tuple.Create(Model.PersonalHousesOccupiedLunarEnergies.Month, K9.WebApplication.Helpers.CombinedPredictionHelper.ForEnergies(Model.PersonalHousesOccupiedLunarEnergies, false))).ToString(),
+                        Html.Partial("../Predictions/_CombinedCycleHeaderWithDescription", Tuple.Create(Model.GlobalCycleEnergies.Month, K9.WebApplication.Helpers.CombinedPredictionHelper.ForEnergies(Model.GlobalCycleEnergies, false, true))).ToString())
                 }
                 else
                 {
                     @Html.PanelWithGlobal(
                                         Model.PersonalHousesOccupiedEnergies.Month.CycleDescriptiveName,
                                         Model.GlobalCycleEnergies.Month.CycleDescriptiveName,
-                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.PersonalHousesOccupiedEnergies.Month).ToString(),
-                                        Html.Partial("../Predictions/_CycleHeaderWithDescription", Model.GlobalCycleEnergies.Month).ToString())
+                                        Html.Partial("../Predictions/_CombinedCycleHeaderWithDescription", Tuple.Create(Model.PersonalHousesOccupiedEnergies.Month, K9.WebApplication.Helpers.CombinedPredictionHelper.ForEnergies(Model.PersonalHousesOccupiedEnergies, false))).ToString(),
+                                        Html.Partial("../Predictions/_CombinedCycleHeaderWithDescription", Tuple.Create(Model.GlobalCycleEnergies.Month, K9.WebApplication.Helpers.CombinedPredictionHelper.ForEnergies(Model.GlobalCycleEnergies, false, true))).ToString())
                 }
             }
 

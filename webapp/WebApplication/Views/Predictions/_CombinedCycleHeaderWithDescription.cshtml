@@ -1,0 +1,7 @@
+@model Tuple<K9.WebApplication.Models.NineStarKiEnergy, K9.WebApplication.Models.CombinedPrediction>
+
+@Html.Partial("../Predictions/_CycleHeader", Model.Item1)
+
+<div>
+    @Html.Raw(Model.Item2.Html)
+</div>

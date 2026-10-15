@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Enums;
+﻿using K9.WebApplication.Helpers;
+using K9.Base.DataAccessLayer.Enums;
 using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.Globalisation;
 using System;
@@ -8,6 +9,9 @@ namespace K9.WebApplication.Models
 {
     public class PersonModel
     {
+        internal PersonModel CreateRequestCopy(CalculationCopyContext context) =>
+            context.Copy(this, source => (PersonModel)source.MemberwiseClone(), (source, copy) => { });
+
         [UIHint("Gender")]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GenderLabel)]

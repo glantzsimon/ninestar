@@ -97,16 +97,29 @@ namespace K9.WebApplication.Services
                 e.MyTimeZone = myTimeZoneId;
             });
 
+            if (slots.Count == 0)
+                return new List<ConsultationBookingViewModel>();
+
+            var slotIds = slots.Select(e => e.Id).Distinct().ToList();
+            var consultationsBySlot = _consultationRepository.Find(e => e.SlotId.HasValue && slotIds.Contains(e.SlotId.Value))
+                .ToLookup(e => e.SlotId);
+            // This is the selected consultation's booking, shared by all candidate slots.
+            var userConsultation = FindUserConsultation(consultation?.Id ?? 0);
+
             return slots.Select(e =>
             {
-                var existingConsultation = _consultationRepository.Find(c => c.SlotId == e.Id).FirstOrDefault();
-                var item = new ConsultationBookingViewModel
+                var existingConsultation = consultationsBySlot[e.Id].FirstOrDefault();
+                if (existingConsultation != null)
+                {
+                    existingConsultation.UserTimeZone = userTimeZoneId;
+                    existingConsultation.MyTimeZone = myTimeZoneId;
+                }
+                return new ConsultationBookingViewModel
                 {
                     Slot = e,
-                    Consultation = Find(existingConsultation?.Id ?? 0),
-                    UserConsultation = FindUserConsultation(consultation?.Id ?? 0),
+                    Consultation = existingConsultation,
+                    UserConsultation = userConsultation
                 };
-                return item;
             }).ToList();
         }
 

@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using K9.WebApplication.Helpers;
+using System.Runtime.Serialization;
 using K9.Base.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Enums;
@@ -7,6 +8,12 @@ namespace K9.WebApplication.Models
 {
     public class NineStarKiDirection
     {
+        internal NineStarKiDirection CreateRequestCopy(CalculationCopyContext context) =>
+            context.Copy(this, source => (NineStarKiDirection)source.MemberwiseClone(), (source, copy) =>
+            {
+                copy.Energy = source.Energy?.CreateRequestCopy(context);
+            });
+
         public string Name { get; }
         public string Title { get; }
 
@@ -14,7 +21,7 @@ namespace K9.WebApplication.Models
         public string Description { get; }
         
         [IgnoreDataMember]
-        public NineStarKiEnergy Energy { get; }
+        public NineStarKiEnergy Energy { get; private set; }
         
         public EUnfavourableDirection UnfavourableDirection { get; }
         public ENineStarKiDirection Direction => Energy.Direction;

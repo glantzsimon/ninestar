@@ -1,11 +1,19 @@
-﻿using K9.Base.DataAccessLayer.Enums;
+﻿using K9.WebApplication.Helpers;
+using K9.Base.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
+using K9.SharedLibrary.Helpers;
+using K9.DataAccessLayer.Models;
+using K9.WebApplication.Constants;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using K9.WebApplication.Config;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
 using K9.WebApplication.Tests.Unit.Helpers;
 using Moq;
 using System;
@@ -21,6 +29,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly TestOutputTraceListener _listener;
         private NineStarKiService _nineStarKiService;
         private AstronomyService _astronomyService;
+        private Mock<IAstrologyService> _astrologyService;
 
         public NineStarKiServiceTests(ITestOutputHelper output)
         {
@@ -33,7 +42,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var aiTextMergeService = new Mock<IAIService>();
 
-            var astrologyService = new Mock<IAstrologyService>();
+            _astrologyService = new Mock<IAstrologyService>();
 
             var nineStarKiBasePackage = new Mock<INineStarKiBasePackage>();
             nineStarKiBasePackage.SetupGet(e => e.DefaultValuesConfiguration).Returns(new DefaultValuesConfiguration
@@ -46,7 +55,171 @@ namespace K9.WebApplication.Tests.Unit.Services
             Trace.Listeners.Add(_listener);
 
             _astronomyService = new AstronomyService(nineStarKiBasePackage.Object, _output);
-            _nineStarKiService = new NineStarKiService(basePackage.Object, _astronomyService, aiTextMergeService.Object, astrologyService.Object);
+            _nineStarKiService = new NineStarKiService(basePackage.Object, _astronomyService, aiTextMergeService.Object, _astrologyService.Object);
+        }
+
+
+        [Fact]
+        public void CalendarPlannerSkipsProfileMoonPhaseAndKeepsFullProfileCacheSeparate()
+        {
+            var date = new DateTime(2027, 3, 15);
+            var person = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"),
+                DateOfBirth = new DateTime(1979, 6, 16, 8, 0, 0),
+                TimeOfBirth = new TimeSpan(8, 0, 0),
+                BirthTimeZoneId = "Europe/London",
+                Gender = EGender.Male
+            };
+            var moonPhaseCalls = 0;
+            _astrologyService.Setup(e => e.GetMoonPhase(It.IsAny<DateTime>(), It.IsAny<string>(),
+                It.IsAny<bool>(), It.IsAny<NineStarKiEnergy>()))
+                .Callback(() => moonPhaseCalls++)
+                .Returns(new MoonPhase(50, true));
+
+            var lightweight = _nineStarKiService.CalculateNineStarKiProfile(person, today: date,
+                calculationMethod: ECalculationMethod.Traditional, calculatorType: ECalculatorType.Advanced,
+                includeCycles: true, userTimeZoneId: "Europe/London", includeMoonPhases: false);
+
+            Assert.Equal(0, moonPhaseCalls);
+            Assert.Null(lightweight.MoonPhase);
+
+            var full = _nineStarKiService.CalculateNineStarKiProfile(person, today: date,
+                calculationMethod: ECalculationMethod.Traditional, calculatorType: ECalculatorType.Advanced,
+                includeCycles: true, userTimeZoneId: "Europe/London");
+
+            Assert.Equal(1, moonPhaseCalls);
+            Assert.NotNull(full.MoonPhase);
+            Assert.NotSame(lightweight, full);
+            Assert.Equal(full.PersonalHousesOccupiedEnergies.Day.EnergyNumber,
+                lightweight.PersonalHousesOccupiedEnergies.Day.EnergyNumber);
+
+            // No supplied profile: exercise the planner's own profile creation path.
+            var planner = _nineStarKiService.GetPlannerData(person.DateOfBirth.Date, person.BirthTimeZoneId,
+                person.TimeOfBirth, person.Gender, new DateTime(2027, 4, 15), "Europe/London",
+                ECalculationMethod.Traditional, ECalculatorType.Advanced,
+                EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, false, false,
+                EPlannerView.Month, includeMoonPhases: false);
+
+            Assert.Equal(1, moonPhaseCalls);
+            Assert.Null(planner.NineStarKiModel.MoonPhase);
+            Assert.Null(planner.MoonPhase);
+            Assert.All(planner.Energies, e => Assert.Null(e.MoonPhase));
+        }
+
+        [Fact]
+        public void CalendarPlannerCanSkipMoonPhasesWithoutChangingDefaultPlannerBehaviour()
+        {
+            var date = new DateTime(2026, 11, 15);
+            var person = new PersonModel
+            {
+                DateOfBirth = new DateTime(1979, 6, 16, 8, 0, 0),
+                TimeOfBirth = new TimeSpan(8, 0, 0), BirthTimeZoneId = "Europe/London", Gender = EGender.Male
+            };
+            var profile = _nineStarKiService.CalculateNineStarKiProfile(person, today: date,
+                calculationMethod: ECalculationMethod.Traditional, calculatorType: ECalculatorType.Advanced,
+                includeCycles: true, userTimeZoneId: "Europe/London");
+            var moonPhaseCalls = 0;
+            _astrologyService.Setup(e => e.GetMoonPhase(It.IsAny<DateTime>(), "Europe/London",
+                It.IsAny<bool>(), It.IsAny<NineStarKiEnergy>()))
+                .Callback(() => moonPhaseCalls++)
+                .Returns(new MoonPhase(50, true));
+
+            var calendarPlanner = _nineStarKiService.GetPlannerData(person.DateOfBirth.Date, person.BirthTimeZoneId,
+                person.TimeOfBirth, person.Gender, date, "Europe/London", ECalculationMethod.Traditional,
+                ECalculatorType.Advanced, EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse,
+                false, false, EPlannerView.Month, nineStarKiModel: profile, includeMoonPhases: false);
+
+            Assert.Null(calendarPlanner.MoonPhase);
+            Assert.All(calendarPlanner.Energies, e => Assert.Null(e.MoonPhase));
+            Assert.Equal(0, moonPhaseCalls);
+
+            var normalPlanner = _nineStarKiService.GetPlannerData(person.DateOfBirth.Date, person.BirthTimeZoneId,
+                person.TimeOfBirth, person.Gender, date, "Europe/London", ECalculationMethod.Traditional,
+                ECalculatorType.Advanced, EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse,
+                false, false, EPlannerView.Month, nineStarKiModel: profile);
+
+            Assert.Equal(normalPlanner.Energies.Count + 1, moonPhaseCalls);
+            Assert.NotNull(normalPlanner.MoonPhase);
+            Assert.All(normalPlanner.Energies, e => Assert.NotNull(e.MoonPhase));
+            Assert.Equal(calendarPlanner.Energies.Select(e => e.Energy.EnergyNumber),
+                normalPlanner.Energies.Select(e => e.Energy.EnergyNumber));
+            Assert.Equal(calendarPlanner.Energies.Select(e => e.SecondEnergy.EnergyNumber),
+                normalPlanner.Energies.Select(e => e.SecondEnergy.EnergyNumber));
+        }
+
+        [Theory]
+        [InlineData("Europe/London", 2026, 10, 1)]
+        [InlineData("Europe/London", 2026, 10, 12)]
+        [InlineData("Europe/London", 2027, 2, 1)]
+        [InlineData("Pacific/Auckland", 2028, 2, 1)]
+        [InlineData("Europe/London", 2105, 2, 1)]
+        public void CalendarUsingRealPlannerCoversSolarBoundariesAndLeapMonth(string timeZoneId, int year, int month, int numberOfMonths)
+        {
+            var info = new UserInfo
+            {
+                UserId = 42, TimeOfBirth = new TimeSpan(8, 0, 0), BirthTimeZoneId = "Europe/London",
+                CalculationMethod = ECalculationMethod.Traditional,
+                CalculatorType = ECalculatorType.Advanced, HousesDisplay = EHousesDisplay.SolarHouse
+            };
+            var repository = new Mock<IRepository<UserInfo>>();
+            repository.Setup(e => e.Find(It.IsAny<Expression<Func<UserInfo, bool>>>()))
+                .Returns(new List<UserInfo> { info });
+            var package = new Mock<INineStarKiBasePackage>();
+            package.SetupGet(e => e.UserInfosRepository).Returns(repository.Object);
+            var users = new Mock<IUserService>();
+            users.Setup(e => e.Find(42)).Returns(new K9.Base.DataAccessLayer.Models.User
+            {
+                Id = 42, BirthDate = new DateTime(1979, 6, 16), Gender = EGender.Male
+            });
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.UserTimeZone, info.BirthTimeZoneId)).Returns(timeZoneId);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.UserCalculationMethod, info.CalculationMethod)).Returns(info.CalculationMethod);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.DefaultCalculatorType, info.CalculatorType)).Returns(info.CalculatorType);
+            users.Setup(e => e.GetUserPreference(42, SessionConstants.UserHousesDisplay, info.HousesDisplay)).Returns(info.HousesDisplay);
+            var calendar = new GoogleCalendarService(package.Object, _nineStarKiService, users.Object);
+            var start = new DateTime(year, month, 1);
+
+            var end = start.AddMonths(numberOfMonths);
+            var entries = calendar.GetCalendarEntries(42, start, end);
+
+            Assert.Equal((end - start).Days, entries.Count);
+            Assert.Equal(Enumerable.Range(0, entries.Count).Select(offset => start.AddDays(offset)),
+                entries.Select(e => e.Date));
+            Assert.True(entries.Select(e => e.MonthHouse).Distinct().Count() > 1);
+            // Repeat with warm caches: boundary recovery must not depend on a miss.
+            var repeated = calendar.GetCalendarEntries(42, start, end);
+            Assert.Equal(entries.Select(e => (e.Date, e.YearHouse, e.MonthHouse, e.DayHouse, e.AfternoonDayHouse)),
+                repeated.Select(e => (e.Date, e.YearHouse, e.MonthHouse, e.DayHouse, e.AfternoonDayHouse)));
+            if (year == 2026 && month == 10)
+            {
+                Assert.Equal(7, entries[0].YearHouse);
+                Assert.Equal(7, entries[0].MonthHouse);
+                Assert.Equal(7, entries[0].DayHouse);
+            }
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(12)]
+        public void OctoberFirst2026PersonalSolarHousesMatchPrimaryCycles(int selectedHour)
+        {
+            var person = new PersonModel
+            {
+                DateOfBirth = new DateTime(1979, 6, 16, 8, 0, 0),
+                TimeOfBirth = new TimeSpan(8, 0, 0),
+                BirthTimeZoneId = "Europe/London",
+                Gender = EGender.Male
+            };
+
+            var profile = _nineStarKiService.CalculateNineStarKiProfile(person,
+                today: new DateTime(2026, 10, 1, selectedHour, 0, 0),
+                calculationMethod: ECalculationMethod.Traditional, calculatorType: ECalculatorType.Advanced,
+                includeCycles: true, userTimeZoneId: "Europe/London", housesDisplay: EHousesDisplay.SolarHouse,
+                displayDataForPeriod: EDisplayDataForPeriod.SelectedDate);
+
+            Assert.Equal(7, profile.PersonalHousesOccupiedEnergies.Year.EnergyNumber);
+            Assert.Equal(7, profile.PersonalHousesOccupiedEnergies.Month.EnergyNumber);
+            Assert.Equal(7, profile.PersonalHousesOccupiedEnergies.Day.EnergyNumber);
         }
 
         [Theory]
@@ -961,6 +1134,246 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 // Female energies are in their inverted personal house
                 Assert.Equal(ninestarWaterYear.PersonalChartEnergies.Year.EnergyNumber, ninestarWaterYear.PersonalHousesOccupiedEnergies.Year.EnergyNumber);
+            }
+        }
+
+
+        [Fact]
+        public void CompatibilitySeparatesSexualChemistryDisplayChoices()
+        {
+            var first = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"),
+                DateOfBirth = new DateTime(1979, 6, 16),
+                Gender = EGender.Male, BirthTimeZoneId = "Europe/London"
+            };
+            var second = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"),
+                DateOfBirth = new DateTime(1981, 4, 12),
+                Gender = EGender.Male, BirthTimeZoneId = "Europe/London"
+            };
+            var visible = _nineStarKiService.CalculateCompatibility(first, second, false);
+            var hidden = _nineStarKiService.CalculateCompatibility(first, second, true);
+
+            Assert.False(visible.IsHideSexualChemistry);
+            Assert.True(hidden.IsHideSexualChemistry);
+            Assert.NotSame(visible, hidden);
+            Assert.NotSame(visible, _nineStarKiService.CalculateCompatibility(first, second, false));
+        }
+
+
+        [Fact]
+        public void CachedProfilesAndPlannersReturnIsolatedMutableGraphs()
+        {
+            var person = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"),
+                DateOfBirth = new DateTime(1979, 6, 16),
+                TimeOfBirth = new TimeSpan(8, 0, 0),
+                BirthTimeZoneId = "Europe/London", Gender = EGender.Male
+            };
+            var date = new DateTime(2027, 5, 15);
+            Func<NineStarKiModel> getProfile = () => _nineStarKiService.CalculateNineStarKiProfile(
+                person, today: date, includeCycles: true, userTimeZoneId: "Europe/London",
+                includeMoonPhases: false);
+            var first = getProfile();
+            var energy = first.PersonalHousesOccupiedEnergies.Day.EnergyNumber;
+            var originalAdult = first.PersonalChartEnergies.Year.IsAdult;
+            first.PersonModel.Name = "Changed by one request";
+            first.SelectedDate = date.AddDays(1);
+            first.PersonalChartEnergies.Year.IsAdult = !originalAdult;
+            first.PersonalHousesOccupiedEnergies.Day = new NineStarKiEnergy(ENineStarKiEnergy.Fire);
+            first.IsComplementary = true;
+            var second = getProfile();
+
+            Assert.Equal(person.Name, second.PersonModel.Name);
+            Assert.Equal(date, second.SelectedDate.Value);
+            Assert.Equal(energy, second.PersonalHousesOccupiedEnergies.Day.EnergyNumber);
+            Assert.Equal(originalAdult, second.PersonalChartEnergies.Year.IsAdult);
+            Assert.False(second.IsComplementary);
+            Assert.NotSame(first.PersonModel, second.PersonModel);
+            Assert.NotSame(first.PersonalChartEnergies.Year, second.PersonalChartEnergies.Year);
+
+            Func<PlannerViewModel> getPlanner = () => _nineStarKiService.GetPlannerData(
+                person.DateOfBirth, person.BirthTimeZoneId, person.TimeOfBirth, person.Gender,
+                date, "Europe/London", ECalculationMethod.Chinese, ECalculatorType.Simple,
+                EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, false, false,
+                EPlannerView.Month, nineStarKiModel: second, includeMoonPhases: false);
+            var planner = getPlanner();
+            var originalRows = planner.Energies.Select(e => e.Energy.EnergyNumber).ToArray();
+            planner.UpdateParentUrl = "/one-request";
+            planner.NineStarKiModel.PersonModel.Name = "Changed in planner";
+            planner.Energies[0].Energy.IsGlobal = !planner.Energies[0].Energy.IsGlobal;
+            planner.Energies.Clear();
+            var repeat = getPlanner();
+
+            Assert.Null(repeat.UpdateParentUrl);
+            Assert.Equal(originalRows, repeat.Energies.Select(e => e.Energy.EnergyNumber));
+            Assert.Equal(person.Name, repeat.NineStarKiModel.PersonModel.Name);
+            Assert.NotSame(planner, repeat);
+            Assert.NotSame(planner.Energies, repeat.Energies);
+
+            second.PersonModel.Name = "Current caller name";
+            second.IsComplementary = true;
+            var callerPlanner = getPlanner();
+            Assert.Equal("Current caller name", callerPlanner.NineStarKiModel.PersonModel.Name);
+            Assert.True(callerPlanner.NineStarKiModel.IsComplementary);
+            second.PersonModel.Name = person.Name;
+            second.IsComplementary = false;
+
+
+            // Preserve back-references inside a copied graph without sharing the original.
+            second.PlannerViewModel = repeat;
+            repeat.NineStarKiModel = second;
+            var graphCopy = second.CreateRequestCopy();
+            Assert.NotSame(second, graphCopy);
+            Assert.NotSame(repeat, graphCopy.PlannerViewModel);
+            Assert.Same(graphCopy, graphCopy.PlannerViewModel.NineStarKiModel);
+
+        }
+
+        [Fact]
+        public void CompatibilityPresentationChangesDoNotAffectLaterResults()
+        {
+            var first = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"), DateOfBirth = new DateTime(1979, 6, 16),
+                Gender = EGender.Male, BirthTimeZoneId = "Europe/London"
+            };
+            var second = new PersonModel
+            {
+                Name = Guid.NewGuid().ToString("N"), DateOfBirth = new DateTime(1981, 4, 12),
+                Gender = EGender.Male, BirthTimeZoneId = "Europe/London"
+            };
+            var original = _nineStarKiService.CalculateCompatibility(first, second, false);
+            var description = original.FundamentalEnergiesCompatibility;
+            original.NineStarKiModel1.PersonModel.Name = "Changed";
+            original.IsComplementary = true;
+            original.CompatibilityDetails = null;
+            var repeat = _nineStarKiService.CalculateCompatibility(first, second, false);
+
+            Assert.Equal(first.Name, repeat.FirstPersonName);
+            Assert.Equal(description, repeat.FundamentalEnergiesCompatibility);
+            Assert.False(repeat.IsComplementary);
+            Assert.NotNull(repeat.CompatibilityDetails);
+        }
+
+        [Fact]
+        public void AstrologyDecorationDoesNotMutateAstronomyCachedMoonPhase()
+        {
+            var shared = new MoonPhase(50, true) { LunarDay = 1 };
+            var astronomy = new Mock<IAstronomyService>();
+            astronomy.Setup(e => e.GetMoonPhase(It.IsAny<DateTime>(), It.IsAny<string>(), true))
+                .Returns(shared);
+            var service = new AstrologyService(new Mock<INineStarKiBasePackage>().Object, astronomy.Object);
+            var result = service.GetMoonPhase(new DateTime(2027, 5, 15), "Europe/London", true);
+
+            Assert.NotSame(shared, result);
+            Assert.Null(shared.LunarDayTitle);
+            result.LunarDayTitle = "Changed";
+            Assert.NotEqual("Changed", service.GetMoonPhase(new DateTime(2027, 5, 15), "Europe/London", true).LunarDayTitle);
+        }
+
+        [Fact]
+        public void GlobalAfternoonEnergyIsRetainedForCombinedPillsAndCopiedIndependently()
+        {
+            var model = new NineStarKiModel(new PersonModel
+            {
+                DateOfBirth = new DateTime(1979, 6, 16), Gender = EGender.Male
+            }, 5, 5, 3, 1, 1, 5, 5, 5, 5, 1, 5, 5,
+                new (int DailyKi, int? InvertedDailyKi)[] { (3, null), (9, null) }, 5,
+                selectedDate: new DateTime(2027, 3, 15), userTimeZoneId: "Europe/London");
+            Assert.Equal(3, model.GlobalCycleEnergies.Day.EnergyNumber);
+            Assert.Equal(9, model.GlobalCycleEnergies.Day2.EnergyNumber);
+            var combined = CombinedPredictionHelper.ForEnergies(model.GlobalCycleEnergies, true, true);
+            Assert.Equal((int?)9, combined.AfternoonDay);
+            Assert.True(combined.IsGlobal);
+            var copy = model.CreateRequestCopy();
+            Assert.NotSame(model.GlobalCycleEnergies.Day2, copy.GlobalCycleEnergies.Day2);
+        }
+
+        [Fact]
+        public void CombinedPredictionResourcesAreCompleteAndKeepNumerologySeparate()
+        {
+            for (var year = 1; year <= 9; year++)
+                for (var month = 1; month <= 9; month++)
+                {
+                    var monthly = CombinedPredictionHelper.GetHtml(year, month);
+                    Assert.Contains("Month</h5>", monthly);
+                    Assert.DoesNotContain(" Day", monthly);
+                    var globalMonthly = CombinedPredictionHelper.GetHtml(year, month, isGlobal: true);
+                    Assert.Contains("Global", globalMonthly);
+                    Assert.NotEqual(monthly, globalMonthly);
+                    for (var day = 1; day <= 9; day++)
+                    {
+                        Assert.Contains("Day</h5>", CombinedPredictionHelper.GetHtml(year, month, day));
+                        Assert.Contains("Global", CombinedPredictionHelper.GetHtml(year, month, day, isGlobal: true));
+                    }
+                }
+            Assert.NotEqual(K9.Globalisation.Dictionary._5_5,
+                CombinedPredictionHelper.GetHtml(5, 5));
+            var split = new CombinedPrediction(5, 5, 1, 9);
+            Assert.Contains(CombinedPredictionHelper.GetHtml(5, 5, 1), split.Html);
+            Assert.Contains(CombinedPredictionHelper.GetHtml(5, 5, 9), split.Html);
+            Assert.Null(new CombinedPrediction(5, 5, 1, 1).AfternoonDay);
+            Assert.Throws<ArgumentOutOfRangeException>(() => new CombinedPrediction(0, 5));
+        }
+
+        [Theory]
+        [InlineData(EScopeDisplay.PersonalKi, EPlannerView.Year)]
+        [InlineData(EScopeDisplay.GlobalKi, EPlannerView.Year)]
+        [InlineData(EScopeDisplay.PersonalKi, EPlannerView.Month)]
+        [InlineData(EScopeDisplay.GlobalKi, EPlannerView.Month)]
+        [InlineData(EScopeDisplay.PersonalKi, EPlannerView.Day)]
+        [InlineData(EScopeDisplay.GlobalKi, EPlannerView.Day)]
+        public void CombinedPlannerContextUsesNavigatedPeriodsAndPreservesCachedCalculations(EScopeDisplay scope, EPlannerView view)
+        {
+            var birthDate = new DateTime(1979, 6, 16);
+            var birthTime = new TimeSpan(8, 0, 0);
+            PlannerViewModel Load(EPlannerNavigationDirection direction) => _nineStarKiService.GetPlannerData(
+                birthDate, "Europe/London", birthTime, EGender.Male, new DateTime(2027, 2, 3),
+                "Europe/London", ECalculationMethod.Traditional, ECalculatorType.Advanced,
+                EDisplayDataForPeriod.SelectedDate, EHousesDisplay.SolarHouse, false, false,
+                view, scope, direction, includeMoonPhases: false);
+
+            foreach (var direction in new[] { EPlannerNavigationDirection.None,
+                EPlannerNavigationDirection.Forward, EPlannerNavigationDirection.Back })
+            {
+                var planner = Load(direction);
+                var originalRows = planner.Energies.Select(e => e.Energy.EnergyNumber).ToArray();
+                CombinedPredictionHelper.PopulatePlanner(planner, _astronomyService);
+                Assert.Equal(originalRows, planner.Energies.Select(e => e.Energy.EnergyNumber));
+                if (view == EPlannerView.Year)
+                {
+                    Assert.All(planner.Energies, row => {
+                        Assert.Equal(scope == EScopeDisplay.GlobalKi, row.CombinedPrediction.IsGlobal);
+                        Assert.Equal(planner.Energy.EnergyNumber, row.CombinedPrediction.Year);
+                        Assert.Equal(row.Energy.EnergyNumber, row.CombinedPrediction.Month);
+                    });
+                }
+                else
+                {
+                    Assert.NotNull(planner.CombinedPrediction);
+                    Assert.Equal(scope == EScopeDisplay.GlobalKi, planner.CombinedPrediction.IsGlobal);
+                    Assert.Contains("Month", planner.CombinedPrediction.Html);
+                    if (view == EPlannerView.Month)
+                    {
+                        Assert.All(planner.Energies, row => {
+                            Assert.Equal(planner.CombinedPrediction.Year, row.CombinedPrediction.Year);
+                            Assert.Equal(planner.CombinedPrediction.Month, row.CombinedPrediction.Month);
+                            Assert.Equal((int?)row.Energy.EnergyNumber, row.CombinedPrediction.Day);
+                        });
+                    }
+                    else
+                    {
+                        Assert.True(planner.CombinedPrediction.Day.HasValue);
+                    }
+                }
+                // Decoration never enters the shared numerical planner template.
+                var fresh = Load(direction);
+                Assert.Null(fresh.CombinedPrediction);
+                Assert.All(fresh.Energies, row => Assert.Null(row.CombinedPrediction));
             }
         }
 

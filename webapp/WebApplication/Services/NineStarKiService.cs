@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Enums;
+﻿using K9.WebApplication.Helpers;
+using K9.Base.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
@@ -10,6 +11,7 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace K9.WebApplication.Services
@@ -30,7 +32,7 @@ namespace K9.WebApplication.Services
         public NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male)
         {
             var cacheKey = $"CalculateNineStarKiProfile_{dateOfBirth.ToString()}_{gender}";
-            return GetOrAddToCache(cacheKey, () =>
+            var result = GetOrAddToCache(cacheKey, () =>
             {
                 return CalculateNineStarKiProfile(new PersonModel
                 {
@@ -39,6 +41,7 @@ namespace K9.WebApplication.Services
                 });
 
             }, TimeSpan.FromDays(30));
+            return CreateProfileResult(result);
         }
 
         public async Task<NineStarKiModel> GetNineStarKiPersonalChartAlchemy(NineStarKiModel model)
@@ -124,11 +127,12 @@ namespace K9.WebApplication.Services
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
-            bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, ECalculatorType calculatorType = ECalculatorType.Simple, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate)
+            bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, ECalculatorType calculatorType = ECalculatorType.Simple, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", EHousesDisplay housesDisplay = EHousesDisplay.SolarHouse, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate, bool includeMoonPhases = true)
         {
-            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{calculatorType}_{includeCycles}_{housesDisplay}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}_{invertDailyAndHourlyCycleKiForSouthernHemisphere}_{displayDataForPeriod}_{userTimeZoneId}";
-            return GetOrAddToCache(cacheKey, () =>
+            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{calculatorType}_{includeCycles}_{housesDisplay}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}_{invertDailyAndHourlyCycleKiForSouthernHemisphere}_{displayDataForPeriod}_{userTimeZoneId}_{includeMoonPhases}";
+            var result = GetOrAddToCache(cacheKey, () =>
             {
+                personModel = personModel.CreateRequestCopy(new CalculationCopyContext());
                 var selectedDateTime = displayDataForPeriod == EDisplayDataForPeriod.Now || today == null
                     ? DateTime.UtcNow
                     : today.Value;
@@ -165,18 +169,20 @@ namespace K9.WebApplication.Services
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
                         preciseEightyOneYearCycleEnergy, preciseNineYearCycleEnergy, preciseYearCycleEnergy, preciseMonthCycleEnergy, preciseMonthCycleEnergyForInvertedYear,
-                        preciseDailyCycleEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod, null, isCompatibility);
+                        preciseDailyCycleEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod, null, isCompatibility, calculatorType);
                 }
                 else
                 {
                     model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy,
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
-                        5, 5, 5, 5, 5, new (int DailyKi, int? InvertedDailyKi)[] { (5, 5), (5, 5) }, 5, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod, null, isCompatibility);
+                        5, 5, 5, 5, 5, new (int DailyKi, int? InvertedDailyKi)[] { (5, 5), (5, 5) }, 5, selectedDateTime, calculationMethod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, userTimeZoneId, displayDataForPeriod, null, isCompatibility, calculatorType);
                 }
 
-                var moonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, true, model.MainEnergy);
-                model.MoonPhase = moonPhase;
+                if (includeMoonPhases)
+                {
+                    model.MoonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, true, model.MainEnergy);
+                }
 
                 model.Lichun = _astronomyService.GetLichun(DateTime.UtcNow, "");
 
@@ -195,55 +201,48 @@ namespace K9.WebApplication.Services
                 return model;
 
             }, TimeSpan.FromDays(30));
+            return CreateProfileResult(result);
         }
 
         public CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,
             EGender gender2)
         {
-            var cacheKey = $"CalculateCompatibility_{dateOfBirth1.ToString()}_{gender1}_{dateOfBirth2.ToString()}_{gender2}";
-            return GetOrAddToCache(cacheKey, () =>
-            {
-                return CalculateCompatibility(
-                    new PersonModel
-                    {
-                        DateOfBirth = dateOfBirth1,
-                        Gender = gender1
-                    }, new PersonModel
-                    {
-                        DateOfBirth = dateOfBirth2,
-                        Gender = gender2
-                    }, false);
+            return CalculateCompatibility(
+                new PersonModel
+                {
+                    DateOfBirth = dateOfBirth1,
+                    Gender = gender1
+                }, new PersonModel
+                {
+                    DateOfBirth = dateOfBirth2,
+                    Gender = gender2
+                }, false);
 
-            }, TimeSpan.FromDays(30));
         }
 
         public CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2,
             bool isHideSexuality, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, ECalculatorType calculatorType = ECalculatorType.Advanced)
         {
-            var cacheKey = $"CalculateCompatibilityFromModel_{personModel1.DateOfBirth.ToString()}_{personModel1.TimeOfBirth.ToString()}_{personModel1.BirthTimeZoneId}_{personModel1.Name}_{personModel1.Gender}_{personModel1.DateOfBirth.ToString()}_{personModel2.TimeOfBirth.ToString()}_{personModel2.BirthTimeZoneId}_{personModel2.Name}_{personModel2.Gender}_{personModel2.DateOfBirth.ToString()}_{calculationMethod}_{calculatorType}";
-            return GetOrAddToCache(cacheKey, () =>
+            var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true, false, null, calculationMethod, calculatorType);
+            var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true, false, null, calculationMethod, calculatorType);
+
+            var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
             {
-                var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true, false, null, calculationMethod, calculatorType);
-                var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true, false, null, calculationMethod, calculatorType);
+                IsProcessed = true,
+                IsHideSexualChemistry = isHideSexuality
+            };
 
-                var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
-                {
-                    IsProcessed = true,
-                    IsHideSexualChemistry = isHideSexuality
-                };
+            if (string.IsNullOrEmpty(nineStarKiModel1.PersonModel.Name))
+            {
+                nineStarKiModel1.PersonModel.Name = Dictionary.FirstPerson;
+            }
 
-                if (string.IsNullOrEmpty(nineStarKiModel1.PersonModel.Name))
-                {
-                    nineStarKiModel1.PersonModel.Name = Dictionary.FirstPerson;
-                }
+            if (string.IsNullOrEmpty(nineStarKiModel2.PersonModel.Name))
+            {
+                nineStarKiModel2.PersonModel.Name = Dictionary.SecondPerson;
+            }
 
-                if (string.IsNullOrEmpty(nineStarKiModel2.PersonModel.Name))
-                {
-                    nineStarKiModel2.PersonModel.Name = Dictionary.SecondPerson;
-                }
-
-                return model;
-            }, TimeSpan.FromDays(30));
+            return model;
         }
 
         public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()
@@ -370,17 +369,40 @@ namespace K9.WebApplication.Services
                 EPlannerView view = EPlannerView.Year,
                 EScopeDisplay display = EScopeDisplay.PersonalKi,
                 EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None,
-                NineStarKiModel nineStarKiModel = null)
+                NineStarKiModel nineStarKiModel = null, bool includeMoonPhases = true)
         {
-            return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{timeOfBirth.ToString()}_" +
+#if DEBUG
+            var plannerTimer = Stopwatch.StartNew();
+            var stageTimer = Stopwatch.StartNew();
+            var traceId = Guid.NewGuid().ToString("N").Substring(0, 8);
+            var traceContext = $"GetPlannerData [{traceId}] {view} {selectedDateTime:yyyy-MM-dd}";
+            var cacheMiss = false;
+            Action<string> tracePlanner = stage =>
+            {
+                Debug.WriteLine($"{traceContext}: {stage}; stage {stageTimer.ElapsedMilliseconds} ms, total {plannerTimer.ElapsedMilliseconds} ms.");
+                stageTimer.Restart();
+            };
+            tracePlanner("starting");
+#endif
+            var requestedProfile = nineStarKiModel;
+            var result = GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{birthTimeZoneId}_{timeOfBirth.ToString()}_" +
                                    $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_{calculatorType}_{displayDataForPeriod}" +
                                    $"{userTimeZoneId}_{housesDisplay}_" +
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
                                    $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}_" +
-                                   $"{display}_{navigationDirection}", () =>
+                                   $"{display}_{navigationDirection}_{nineStarKiModel?.SelectedDate:yyyyMMddHHmm}_{includeMoonPhases}", () =>
             {
+#if DEBUG
+                cacheMiss = true;
+                tracePlanner("cache miss; GetLichun starting");
+#endif
+                nineStarKiModel = nineStarKiModel?.CreateRequestCopy(new CalculationCopyContext());
                 var energies = new List<PlannerViewModelItem>();
                 var lichun = _astronomyService.GetLichun(selectedDateTime, userTimeZoneId);
+#if DEBUG
+                tracePlanner("GetLichun completed; profile resolution starting");
+                var reusedProfile = nineStarKiModel != null;
+#endif
                 // Add time of birth
                 dateOfBirth = dateOfBirth.Add(timeOfBirth);
                 nineStarKiModel = nineStarKiModel ?? CalculateNineStarKiProfile(new PersonModel
@@ -390,7 +412,11 @@ namespace K9.WebApplication.Services
                     TimeOfBirth = timeOfBirth,
                     Gender = gender
                 }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
-                    housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+                    housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
+                    includeMoonPhases: includeMoonPhases);
+#if DEBUG
+                tracePlanner(reusedProfile ? "supplied profile reused" : "CalculateNineStarKiProfile completed");
+#endif
 
                 var plannerModel = new PlannerViewModel
                 {
@@ -402,13 +428,16 @@ namespace K9.WebApplication.Services
                     SelectedDateTime = selectedDateTime
                 };
 
-                if (view == EPlannerView.Month || view == EPlannerView.Day)
+                if (includeMoonPhases && (view == EPlannerView.Month || view == EPlannerView.Day))
                 {
                     plannerModel.MoonPhase = _astrologyService.GetMoonPhase(selectedDateTime, userTimeZoneId, true,
                         nineStarKiModel.MainEnergy);
                 }
 
                 var localNow = nineStarKiModel.SelectedDate.Value;
+#if DEBUG
+                tracePlanner("model setup and optional parent moon phase completed; period lookup starting");
+#endif
 
                 switch (view)
                 {
@@ -467,7 +496,7 @@ namespace K9.WebApplication.Services
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
                             }, false, false, eightyOneYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, calculatorType, true, false, userTimeZoneId,
-                                                  housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate);
+                                                  housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate, includeMoonPhases: includeMoonPhases);
                         }
 
                         plannerModel.Energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Epoch : nineStarKiModel.GlobalCycleEnergies.Epoch;
@@ -525,7 +554,7 @@ namespace K9.WebApplication.Services
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
                             }, false, false, nineYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, calculatorType, true, false, userTimeZoneId,
-                                housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate);
+                                housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate, includeMoonPhases: includeMoonPhases);
                         }
 
                         plannerModel.Energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Generation : nineStarKiModel.GlobalCycleEnergies.Generation;
@@ -557,8 +586,16 @@ namespace K9.WebApplication.Services
                             selectedDateTime = selectedMonthPeriod.PeriodStartsOn;
                         }
 
+#if DEBUG
+                        tracePlanner("Month boundaries and navigation completed; daily astronomy batch starting");
+#endif
+
                         var dailyPeriods =
                             _astronomyService.GetNineStarKiDailyEnergiesForMonth(selectedMonthPeriod.PeriodStartsOn.AddDays(3), userTimeZoneId);
+
+#if DEBUG
+                        tracePlanner("GetNineStarKiDailyEnergiesForMonth completed; daily row construction starting");
+#endif
 
                         foreach (var dailyEnergy in dailyPeriods)
                         {
@@ -585,7 +622,9 @@ namespace K9.WebApplication.Services
 
                             var isActive = dailyEnergy.Day.Date == localNow.Date;
 
-                            var moonPhase = _astrologyService.GetMoonPhase(dailyEnergy.Day.Date, userTimeZoneId, false, nineStarKiModel.MainEnergy);
+                            var moonPhase = includeMoonPhases
+                                ? _astrologyService.GetMoonPhase(dailyEnergy.Day.Date, userTimeZoneId, false, nineStarKiModel.MainEnergy)
+                                : null;
 
                             energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isActive, EPlannerView.Day, moonPhase, new MagicSquareViewModel
                             {
@@ -594,6 +633,10 @@ namespace K9.WebApplication.Services
                                 GlobalKi = globalEnergy
                             }));
                         }
+
+#if DEBUG
+                        tracePlanner("daily rows completed (includes optional row moon phases); navigation profile starting");
+#endif
 
                         if (navigationDirection != EPlannerNavigationDirection.None)
                         {
@@ -605,7 +648,7 @@ namespace K9.WebApplication.Services
                                 Gender = gender
                             }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                                 housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
-                                EDisplayDataForPeriod.SelectedDate);
+                                EDisplayDataForPeriod.SelectedDate, includeMoonPhases: includeMoonPhases);
                         }
 
                         plannerModel.Energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Month : nineStarKiModel.GlobalCycleEnergies.Month;
@@ -660,7 +703,7 @@ namespace K9.WebApplication.Services
                                 Gender = gender
                             }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                                 housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
-                                EDisplayDataForPeriod.SelectedDate);
+                                EDisplayDataForPeriod.SelectedDate, includeMoonPhases: includeMoonPhases);
                         }
 
                         plannerModel.Energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Day : nineStarKiModel.GlobalCycleEnergies.Day;
@@ -693,6 +736,10 @@ namespace K9.WebApplication.Services
                             selectedDateTime = yearlyPeriod.PeriodStartsOn;
                         }
 
+#if DEBUG
+                        tracePlanner("Year boundaries and navigation completed; monthly astronomy batch starting");
+#endif
+
                         var periodsStart = yearlyPeriod.PeriodStartsOn.AddDays(3);
 
                         var needsInvertedMonthlyPeriods =
@@ -705,6 +752,10 @@ namespace K9.WebApplication.Services
                             userTimeZoneId,
                             invert: needsInvertedMonthlyPeriods
                         );
+
+#if DEBUG
+                        tracePlanner("GetNineStarKiMonthlyPeriods completed; monthly row construction starting");
+#endif
 
                         foreach (var monthlyPeriod in monthlyPeriodsForYear)
                         {
@@ -738,6 +789,10 @@ namespace K9.WebApplication.Services
                             ));
                         }
 
+#if DEBUG
+                        tracePlanner("monthly rows completed; navigation profile starting");
+#endif
+
                         if (navigationDirection != EPlannerNavigationDirection.None)
                         {
                             nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
@@ -748,7 +803,7 @@ namespace K9.WebApplication.Services
                                 Gender = gender
                             }, false, false, selectedDateTime, calculationMethod, calculatorType, true, false, userTimeZoneId,
                                 housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
-                                EDisplayDataForPeriod.SelectedDate);
+                                EDisplayDataForPeriod.SelectedDate, includeMoonPhases: includeMoonPhases);
                         }
 
                         plannerModel.Energy = display == EScopeDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Year : nineStarKiModel.GlobalCycleEnergies.Year;
@@ -762,9 +817,41 @@ namespace K9.WebApplication.Services
                 // Update selected time (in case of navigation)
                 plannerModel.SelectedDateTime = selectedDateTime;
 
+#if DEBUG
+                tracePlanner("planner assembly completed");
+#endif
+
                 return plannerModel;
 
             }, TimeSpan.FromDays(30));
+#if DEBUG
+            tracePlanner(cacheMiss ? "cache miss completed" : "cache hit completed");
+#endif
+            var context = new CalculationCopyContext();
+            if (requestedProfile != null)
+            {
+                // Request-specific names/flags/attached presentation never come from a cached caller.
+                context.UseCopy(result.NineStarKiModel, requestedProfile.CreateRequestCopy(context));
+            }
+            var copy = result.CreateRequestCopy(context);
+            if (requestedProfile == null)
+                ApplyRequestPresentation(copy.NineStarKiModel);
+            return copy;
+        }
+
+        private static NineStarKiModel CreateProfileResult(NineStarKiModel model)
+        {
+            var copy = model.CreateRequestCopy();
+            ApplyRequestPresentation(copy);
+            return copy;
+        }
+
+        private static void ApplyRequestPresentation(NineStarKiModel model)
+        {
+            model.ScopeDisplay = K9.WebApplication.Helpers.SessionHelper.GetCurrentUserScopeDisplay();
+            model.EnergyDisplay = (EEnergyDisplay)K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
+            model.ShowDirections = K9.WebApplication.Helpers.SessionHelper.GetShowDirections();
+            model.TimeOfBirthKnown = K9.WebApplication.Helpers.SessionHelper.GetBirthTimeIsKnown();
         }
 
         private NineStarKiEnergy GetInvertedEnergy(NineStarKiEnergy energy)

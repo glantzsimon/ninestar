@@ -1,10 +1,26 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using K9.WebApplication.Helpers;
+using System.ComponentModel.DataAnnotations;
 using K9.Globalisation;
 
 namespace K9.WebApplication.Models
 {
     public class NineStarKiEnergiesModel
     {
+        internal NineStarKiEnergiesModel CreateRequestCopy(CalculationCopyContext context) =>
+            context.Copy(this, source => (NineStarKiEnergiesModel)source.MemberwiseClone(), (source, copy) =>
+            {
+                copy.Epoch = source.Epoch?.CreateRequestCopy(context);
+                copy.Generation = source.Generation?.CreateRequestCopy(context);
+                copy.Year = source.Year?.CreateRequestCopy(context);
+                copy.Month = source.Month?.CreateRequestCopy(context);
+                copy.Surface = source.Surface?.CreateRequestCopy(context);
+                copy.Day = source.Day?.CreateRequestCopy(context);
+                copy.Day2 = source.Day2?.CreateRequestCopy(context);
+                copy.DayInverted = source.DayInverted?.CreateRequestCopy(context);
+                copy.Day2Inverted = source.Day2Inverted?.CreateRequestCopy(context);
+                copy.Hour = source.Hour?.CreateRequestCopy(context);
+            });
+
         /// <summary>
         /// 81 year Period
         /// </summary>

@@ -1,0 +1,252 @@
+(function ($) {
+    'use strict';
+
+    $(function () {
+        var navigationDelay = 400;
+        var $calendar = $('#personal-calendar');
+        if (!$calendar.length || $calendar.closest('.paywall-remove-element').length) return;
+
+        var $grid = $calendar.find('.personal-calendar-grid'),
+            $status = $calendar.find('.personal-calendar-status'),
+            $content = $calendar.find('.personal-calendar-content'),
+            $copy = $calendar.find('.calendar-copy'),
+            $link = $calendar.find('input[name="CalendarLink"]'),
+            currentYear, currentMonth, targetYear, targetMonth, navigationTimer,
+            today, entries = [], request, requestVersion = 0,
+            selectedDate, subscriptionBusy = false, $placeholder, previousFocus;
+
+        $calendar.find('.calendar-help').attr({
+            'data-toggle': 'collapse', 'data-target': '#personal-calendar-help',
+            'aria-controls': 'personal-calendar-help', 'aria-expanded': 'false',
+            'aria-label': $calendar.attr('data-help'), title: $calendar.attr('data-help')
+        });
+        $copy.attr({ 'aria-label': $calendar.attr('data-copy'), title: $calendar.attr('data-copy') })
+            .contents().filter(function () { return this.nodeType === 3; })
+            .wrapAll('<span class="calendar-copy-label"></span>');
+        $calendar.find('.calendar-disable').attr({
+            'aria-label': $calendar.attr('data-disable'), title: $calendar.attr('data-disable')
+        });
+        updateExpandButton(false);
+        $calendar.find('.calendar-previous').attr({ 'aria-label': $calendar.attr('data-previous'), title: $calendar.attr('data-previous') });
+        $calendar.find('.calendar-next').attr({ 'aria-label': $calendar.attr('data-next'), title: $calendar.attr('data-next') });
+        // Clone the helper-rendered control once, outside the month content that is replaced.
+        var dayTemplate = $calendar.find('#personal-calendar-day-template')[0],
+            dayButton = dayTemplate.content.querySelector('button');
+
+        function status(message) { $status.text(message || ''); }
+        function select(entry) {
+            selectedDate = entry.Date;
+            $grid.find('.personal-calendar-day').removeClass('is-selected').attr('aria-pressed', 'false');
+            $grid.find('[data-date="' + entry.Date + '"]').addClass('is-selected').attr('aria-pressed', 'true');
+            $calendar.find('.calendar-selected-date').text(entry.DateLabel);
+            $calendar.find('.calendar-selected-houses').text(entry.Houses);
+            var $description = $calendar.find('.calendar-selected-description').empty();
+            (entry.Description || '').split(/\r?\n\s*\r?\n/).forEach(function (paragraph) {
+                $('<p>').text(paragraph).appendTo($description);
+            });
+        }
+
+        function finishLoading(version) {
+            if (version !== requestVersion) return;
+            $calendar.attr('aria-busy', 'false');
+            $.fn.hideSpinner($content);
+        }
+
+        function renderMonth(data) {
+            if (!data || !Array.isArray(data.Entries) || !data.Year || !data.Month)
+                throw new Error('Invalid personal calendar month response.');
+
+            // Prepare the new cells before replacing the visible month.
+            var $cells = $(document.createDocumentFragment());
+            for (var i = 0; i < data.Offset; i++)
+                $('<div class="personal-calendar-empty" aria-hidden="true">').appendTo($cells);
+            data.Entries.forEach(function (entry) {
+                var numbers = entry.YearHouse + '.' + entry.MonthHouse + '.' + entry.DayHouse;
+                var $day = $(dayButton.cloneNode(true)).empty()
+                    .removeAttr('id').attr('aria-pressed', 'false')
+                    .attr('data-date', entry.Date).attr('aria-label', entry.DateLabel + ' · ' + entry.Houses)
+                    .attr('title', entry.EnergyName).toggleClass('is-today', entry.Date === data.Today);
+                $('<span class="calendar-day-date">').text(entry.Day).appendTo($day);
+                $('<img>').attr({ src: entry.ImageUrl, alt: entry.EnergyName }).appendTo($day);
+                $('<span class="calendar-day-numbers">').text(numbers).appendTo($day);
+                $day.on('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    select(entry);
+                }).appendTo($cells);
+            });
+
+            $grid.find('.personal-calendar-day, .personal-calendar-empty').remove();
+            $grid.append($cells);
+            currentYear = data.Year;
+            currentMonth = data.Month;
+            targetYear = currentYear;
+            targetMonth = currentMonth;
+            today = data.Today;
+            entries = data.Entries;
+            $calendar.find('.personal-calendar-month').text(data.Title);
+            var chosen = entries.filter(function (e) { return e.Date === selectedDate; })[0] ||
+                entries.filter(function (e) { return e.Date === today; })[0] || entries[0];
+            if (chosen) select(chosen);
+            updateNavigation();
+            status('');
+        }
+
+        function updateNavigation() {
+            $calendar.find('.calendar-previous').prop('disabled', targetYear === 1900 && targetMonth === 1);
+            $calendar.find('.calendar-next').prop('disabled', targetYear === 2100 && targetMonth === 12);
+        }
+
+        function loadMonth(year, month, delay) {
+            var version = ++requestVersion;
+            clearTimeout(navigationTimer);
+            if (request) request.abort();
+            request = null;
+            targetYear = year;
+            targetMonth = month;
+            updateNavigation();
+            $calendar.attr('aria-busy', 'true');
+            status('');
+            // Stop the previous fade-out before showing the panel spinner again.
+            $content.find('.partialSpinner, .partialOverlay').stop(true, true);
+            $.fn.displaySpinner($content);
+            navigationTimer = setTimeout(function () {
+                if (version !== requestVersion) return;
+                request = $.ajax({
+                url: $calendar.attr('data-month-url'),
+                type: 'GET',
+                dataType: 'json',
+                data: year ? { year: year, month: month } : {},
+                timeout: 30000,
+                // This panel manages its own loading and error state.
+                global: false,
+                success: function (data) {
+                    if (version !== requestVersion) return;
+                    try {
+                        renderMonth(data);
+                    } catch (error) {
+                        status($calendar.attr('data-error'));
+                        if (window.console && window.console.error)
+                            window.console.error('Personal calendar month rendering failed.', error);
+                    } finally {
+                        finishLoading(version);
+                    }
+                },
+                error: function (xhr, result) {
+                    if (result !== 'abort' && version === requestVersion) {
+                        status($calendar.attr(xhr.status === 409 ? 'data-unavailable' : 'data-error'));
+                        if (window.console && window.console.error)
+                            window.console.error('Personal calendar month request failed.', {
+                                status: xhr.status, result: result, year: year, month: month
+                            });
+                    }
+                },
+                complete: function () {
+                    if (version !== requestVersion) return;
+                    request = null;
+                    finishLoading(version);
+                }
+                });
+            }, delay || 0);
+        }
+
+        function navigate(delta) {
+            if (!targetYear) return;
+            // Count clicks against the requested month, even while it is loading.
+            var date = new Date(targetYear, targetMonth - 1 + delta, 1);
+            if (date.getFullYear() < 1900 || date.getFullYear() > 2100) return;
+            loadMonth(date.getFullYear(), date.getMonth() + 1, navigationDelay);
+        }
+        $calendar.find('.calendar-previous').on('click', function (e) { e.preventDefault(); e.stopPropagation(); navigate(-1); });
+        $calendar.find('.calendar-next').on('click', function (e) { e.preventDefault(); e.stopPropagation(); navigate(1); });
+        $calendar.find('.calendar-today').on('click', function (e) { e.preventDefault(); e.stopPropagation(); selectedDate = null;
+            var parts = today ? today.split('-') : [];
+            loadMonth(parts.length ? Number(parts[0]) : undefined, parts.length ? Number(parts[1]) : undefined);
+         });
+
+        function updateExpandButton(value) {
+            var label = $calendar.attr(value ? 'data-close' : 'data-expand'),
+                $expand = $calendar.find('.calendar-expand').attr({
+                    'aria-expanded': value ? 'true' : 'false', 'aria-label': label, title: label
+                }),
+                $icon = $expand.find('i').first().detach();
+            $icon.toggleClass('fa-expand', !value).toggleClass('fa-compress', value);
+            $expand.empty().append($icon).append($('<span class="calendar-expand-label">').text(' ' + label));
+        }
+
+        function expand(value) {
+            if (value) {
+                previousFocus = document.activeElement;
+                $placeholder = $('<div>').insertBefore($calendar);
+                $calendar.appendTo(document.body);
+                $calendar.attr({ role: 'dialog', 'aria-modal': 'true', 'aria-label': $calendar.attr('data-title') });
+            } else {
+                $calendar.insertBefore($placeholder);
+                $placeholder.remove();
+                $calendar.removeAttr('role aria-modal aria-label');
+            }
+            $calendar.toggleClass('is-expanded', value);
+            $('body').toggleClass('personal-calendar-open', value);
+            updateExpandButton(value);
+            if (value) $calendar.find('.calendar-expand').focus();
+            else if (previousFocus) previousFocus.focus();
+        }
+        $calendar.find('.calendar-expand').on('click', function () { expand(!$calendar.hasClass('is-expanded')); });
+        $(document).on('keydown.personalCalendar', function (e) {
+            if (!$calendar.hasClass('is-expanded')) return;
+            if (e.key === 'Escape') { e.preventDefault(); expand(false); }
+            if (e.key === 'Tab') {
+                var $focusable = $calendar.find('button:visible:not(:disabled), input:visible, a:visible'),
+                    first = $focusable[0], last = $focusable[$focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
+        });
+
+        function post(url) {
+            return $.post(url, { __RequestVerificationToken: $calendar.find('[name="__RequestVerificationToken"]').val() });
+        }
+        function copyLink() {
+            $link[0].focus();
+            $link[0].select();
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText($link.val()).then(function () {
+                    status($calendar.attr('data-copied'));
+                }, function () { status($calendar.attr('data-copy-error')); });
+            } else {
+                try { status($calendar.attr(document.execCommand('copy') ? 'data-copied' : 'data-copy-error')); }
+                catch (e) { status($calendar.attr('data-copy-error')); }
+            }
+        }
+        $copy.on('click', function () {
+            if (subscriptionBusy) return;
+            if ($link.val()) { copyLink(); return; }
+            subscriptionBusy = true;
+            $copy.prop('disabled', true);
+            post($calendar.attr('data-subscription-url')).done(function (data) {
+                $link.val(data.Url);
+                $calendar.find('.calendar-link-container, .calendar-disable-container').show();
+                copyLink();
+            }).fail(function () { status($calendar.attr('data-error')); })
+                .always(function () { subscriptionBusy = false; $copy.prop('disabled', false); });
+        });
+        $calendar.find('.calendar-disable').on('click', function () {
+            if (subscriptionBusy) return;
+            subscriptionBusy = true;
+            $calendar.find('.calendar-copy, .calendar-disable').prop('disabled', true);
+            post($calendar.attr('data-revoke-url')).done(function () {
+                $link.val('');
+                $calendar.find('.calendar-link-container, .calendar-disable-container').hide();
+                status($calendar.attr('data-revoked'));
+            }).fail(function () { status($calendar.attr('data-error')); })
+                .always(function () {
+                    subscriptionBusy = false;
+                    $calendar.find('.calendar-copy, .calendar-disable').prop('disabled', false);
+                });
+        });
+
+        // Shared panel helpers are registered by another document-ready callback.
+        setTimeout(loadMonth, 0);
+    });
+})(jQuery);
+

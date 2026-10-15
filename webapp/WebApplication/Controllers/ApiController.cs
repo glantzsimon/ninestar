@@ -92,15 +92,14 @@ namespace K9.WebApplication.Controllers
                "{dateOfBirth}/{gender}/{selectedDate}/{timeOfBirth}/{birthLocation}")]
         public JsonResult GetPredictions(string accountNumber, DateTime dateOfBirth, EGender gender, DateTime selectedDate, string timeOfBirth = "", string birthLocation = "")
         {
-            return Validate(accountNumber, () =>
+            return Validate(accountNumber, membership =>
             {
-                var membership = GetMembership(accountNumber);
                 if (membership == null)
                 {
                     return InvalidAccountNumberResult();
                 }
 
-                var userInfo = GetUserInfo(accountNumber);
+                var userInfo = GetUserInfo(membership);
 
                 var personModel = new PersonModel
                 {
@@ -145,15 +144,14 @@ namespace K9.WebApplication.Controllers
             bool displaySexualChemistry = false, string firstPersonTimeOfBirth = "", string firstPersonBirthLocation = "",
             string secondPersonTimeOfBirth = "", string secondPersonBirthLocation = "")
         {
-            return Validate(accountNumber, () =>
+            return Validate(accountNumber, membership =>
             {
-                var membership = GetMembership(accountNumber);
                 if (membership == null)
                 {
                     return InvalidAccountNumberResult();
                 }
 
-                var userInfo = GetUserInfo(accountNumber);
+                var userInfo = GetUserInfo(membership);
 
                 var personModel1 = new PersonModel
                 {
@@ -189,13 +187,9 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("knowledgebase/get/{accountNumber}")]
-        [OutputCache(Duration = 2592000, VaryByParam = "accountNumber", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public JsonResult GetKnowledgeBase(string accountNumber)
         {
-            Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
-            Response.Cache.SetExpires(DateTime.UtcNow.AddDays(1));
-            Response.Cache.SetValidUntilExpires(true);
-
             return Validate(accountNumber, () =>
             {
                 var model = new NineStarKiSummaryKbViewModel(_nineStarKiService.GetNineStarKiSummaryViewModel());
@@ -433,14 +427,20 @@ namespace K9.WebApplication.Controllers
 
         private JsonResult Validate(string accountNumber, Func<JsonResult> method)
         {
+            return Validate(accountNumber, membership => method.Invoke());
+        }
+
+        private JsonResult Validate(string accountNumber, Func<UserMembership, JsonResult> method)
+        {
             if (!IsValidApiKey(Request.Headers[authRequestHeader]))
             {
                 return InvalidApiKeyResult();
             }
 
+            UserMembership membership = null;
             if (accountNumber != null)
             {
-                var membership = GetMembership(accountNumber);
+                membership = GetMembership(accountNumber);
                 if (membership == null)
                 {
                     return InvalidAccountNumberResult();
@@ -452,7 +452,7 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
-            return method.Invoke();
+            return method.Invoke(membership);
         }
 
         private JsonResult InvalidApiKeyResult()
@@ -506,10 +506,9 @@ namespace K9.WebApplication.Controllers
             return My.MembershipService.GetActiveUserMembership(accountNumber);
         }
 
-        private UserInfo GetUserInfo(string accountNumber)
+        private UserInfo GetUserInfo(UserMembership membership)
         {
-            var activeUserMembership = My.MembershipService.GetActiveUserMembership(accountNumber);
-            return My.UserService.GetOrCreateUserInfo(activeUserMembership.UserId);
+            return My.UserService.GetOrCreateUserInfo(membership.UserId);
         }
     }
 }

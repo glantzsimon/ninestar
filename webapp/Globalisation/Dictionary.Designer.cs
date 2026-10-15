@@ -33099,5 +33099,4460 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Wednesday", resourceCulture);
             }
         }
+        /// <summary>Combined year 1 and month 1 prediction.</summary>
+        public static string CombinedPrediction_1_1 {
+            get { return ResourceManager.GetString("CombinedPrediction_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined year 1 and month 2 prediction.</summary>
+        public static string CombinedPrediction_1_2 {
+            get { return ResourceManager.GetString("CombinedPrediction_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined year 1 and month 3 prediction.</summary>
+        public static string CombinedPrediction_1_3 {
+            get { return ResourceManager.GetString("CombinedPrediction_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined year 1 and month 4 prediction.</summary>
+        public static string CombinedPrediction_1_4 {
+            get { return ResourceManager.GetString("CombinedPrediction_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined year 1 and month 5 prediction.</summary>
+        public static string CombinedPrediction_1_5 {
+            get { return ResourceManager.GetString("CombinedPrediction_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined year 1 and month 6 prediction.</summary>
+        public static string CombinedPrediction_1_6 {
+            get { return ResourceManager.GetString("CombinedPrediction_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined year 1 and month 7 prediction.</summary>
+        public static string CombinedPrediction_1_7 {
+            get { return ResourceManager.GetString("CombinedPrediction_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined year 1 and month 8 prediction.</summary>
+        public static string CombinedPrediction_1_8 {
+            get { return ResourceManager.GetString("CombinedPrediction_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined year 1 and month 9 prediction.</summary>
+        public static string CombinedPrediction_1_9 {
+            get { return ResourceManager.GetString("CombinedPrediction_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined year 2 and month 1 prediction.</summary>
+        public static string CombinedPrediction_2_1 {
+            get { return ResourceManager.GetString("CombinedPrediction_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined year 2 and month 2 prediction.</summary>
+        public static string CombinedPrediction_2_2 {
+            get { return ResourceManager.GetString("CombinedPrediction_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined year 2 and month 3 prediction.</summary>
+        public static string CombinedPrediction_2_3 {
+            get { return ResourceManager.GetString("CombinedPrediction_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined year 2 and month 4 prediction.</summary>
+        public static string CombinedPrediction_2_4 {
+            get { return ResourceManager.GetString("CombinedPrediction_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined year 2 and month 5 prediction.</summary>
+        public static string CombinedPrediction_2_5 {
+            get { return ResourceManager.GetString("CombinedPrediction_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined year 2 and month 6 prediction.</summary>
+        public static string CombinedPrediction_2_6 {
+            get { return ResourceManager.GetString("CombinedPrediction_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined year 2 and month 7 prediction.</summary>
+        public static string CombinedPrediction_2_7 {
+            get { return ResourceManager.GetString("CombinedPrediction_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined year 2 and month 8 prediction.</summary>
+        public static string CombinedPrediction_2_8 {
+            get { return ResourceManager.GetString("CombinedPrediction_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined year 2 and month 9 prediction.</summary>
+        public static string CombinedPrediction_2_9 {
+            get { return ResourceManager.GetString("CombinedPrediction_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined year 3 and month 1 prediction.</summary>
+        public static string CombinedPrediction_3_1 {
+            get { return ResourceManager.GetString("CombinedPrediction_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined year 3 and month 2 prediction.</summary>
+        public static string CombinedPrediction_3_2 {
+            get { return ResourceManager.GetString("CombinedPrediction_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined year 3 and month 3 prediction.</summary>
+        public static string CombinedPrediction_3_3 {
+            get { return ResourceManager.GetString("CombinedPrediction_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined year 3 and month 4 prediction.</summary>
+        public static string CombinedPrediction_3_4 {
+            get { return ResourceManager.GetString("CombinedPrediction_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined year 3 and month 5 prediction.</summary>
+        public static string CombinedPrediction_3_5 {
+            get { return ResourceManager.GetString("CombinedPrediction_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined year 3 and month 6 prediction.</summary>
+        public static string CombinedPrediction_3_6 {
+            get { return ResourceManager.GetString("CombinedPrediction_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined year 3 and month 7 prediction.</summary>
+        public static string CombinedPrediction_3_7 {
+            get { return ResourceManager.GetString("CombinedPrediction_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined year 3 and month 8 prediction.</summary>
+        public static string CombinedPrediction_3_8 {
+            get { return ResourceManager.GetString("CombinedPrediction_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined year 3 and month 9 prediction.</summary>
+        public static string CombinedPrediction_3_9 {
+            get { return ResourceManager.GetString("CombinedPrediction_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined year 4 and month 1 prediction.</summary>
+        public static string CombinedPrediction_4_1 {
+            get { return ResourceManager.GetString("CombinedPrediction_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined year 4 and month 2 prediction.</summary>
+        public static string CombinedPrediction_4_2 {
+            get { return ResourceManager.GetString("CombinedPrediction_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined year 4 and month 3 prediction.</summary>
+        public static string CombinedPrediction_4_3 {
+            get { return ResourceManager.GetString("CombinedPrediction_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined year 4 and month 4 prediction.</summary>
+        public static string CombinedPrediction_4_4 {
+            get { return ResourceManager.GetString("CombinedPrediction_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined year 4 and month 5 prediction.</summary>
+        public static string CombinedPrediction_4_5 {
+            get { return ResourceManager.GetString("CombinedPrediction_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined year 4 and month 6 prediction.</summary>
+        public static string CombinedPrediction_4_6 {
+            get { return ResourceManager.GetString("CombinedPrediction_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined year 4 and month 7 prediction.</summary>
+        public static string CombinedPrediction_4_7 {
+            get { return ResourceManager.GetString("CombinedPrediction_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined year 4 and month 8 prediction.</summary>
+        public static string CombinedPrediction_4_8 {
+            get { return ResourceManager.GetString("CombinedPrediction_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined year 4 and month 9 prediction.</summary>
+        public static string CombinedPrediction_4_9 {
+            get { return ResourceManager.GetString("CombinedPrediction_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined year 5 and month 1 prediction.</summary>
+        public static string CombinedPrediction_5_1 {
+            get { return ResourceManager.GetString("CombinedPrediction_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined year 5 and month 2 prediction.</summary>
+        public static string CombinedPrediction_5_2 {
+            get { return ResourceManager.GetString("CombinedPrediction_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined year 5 and month 3 prediction.</summary>
+        public static string CombinedPrediction_5_3 {
+            get { return ResourceManager.GetString("CombinedPrediction_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined year 5 and month 4 prediction.</summary>
+        public static string CombinedPrediction_5_4 {
+            get { return ResourceManager.GetString("CombinedPrediction_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined year 5 and month 5 prediction.</summary>
+        public static string CombinedPrediction_5_5 {
+            get { return ResourceManager.GetString("CombinedPrediction_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined year 5 and month 6 prediction.</summary>
+        public static string CombinedPrediction_5_6 {
+            get { return ResourceManager.GetString("CombinedPrediction_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined year 5 and month 7 prediction.</summary>
+        public static string CombinedPrediction_5_7 {
+            get { return ResourceManager.GetString("CombinedPrediction_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined year 5 and month 8 prediction.</summary>
+        public static string CombinedPrediction_5_8 {
+            get { return ResourceManager.GetString("CombinedPrediction_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined year 5 and month 9 prediction.</summary>
+        public static string CombinedPrediction_5_9 {
+            get { return ResourceManager.GetString("CombinedPrediction_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined year 6 and month 1 prediction.</summary>
+        public static string CombinedPrediction_6_1 {
+            get { return ResourceManager.GetString("CombinedPrediction_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined year 6 and month 2 prediction.</summary>
+        public static string CombinedPrediction_6_2 {
+            get { return ResourceManager.GetString("CombinedPrediction_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined year 6 and month 3 prediction.</summary>
+        public static string CombinedPrediction_6_3 {
+            get { return ResourceManager.GetString("CombinedPrediction_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined year 6 and month 4 prediction.</summary>
+        public static string CombinedPrediction_6_4 {
+            get { return ResourceManager.GetString("CombinedPrediction_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined year 6 and month 5 prediction.</summary>
+        public static string CombinedPrediction_6_5 {
+            get { return ResourceManager.GetString("CombinedPrediction_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined year 6 and month 6 prediction.</summary>
+        public static string CombinedPrediction_6_6 {
+            get { return ResourceManager.GetString("CombinedPrediction_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined year 6 and month 7 prediction.</summary>
+        public static string CombinedPrediction_6_7 {
+            get { return ResourceManager.GetString("CombinedPrediction_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined year 6 and month 8 prediction.</summary>
+        public static string CombinedPrediction_6_8 {
+            get { return ResourceManager.GetString("CombinedPrediction_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined year 6 and month 9 prediction.</summary>
+        public static string CombinedPrediction_6_9 {
+            get { return ResourceManager.GetString("CombinedPrediction_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined year 7 and month 1 prediction.</summary>
+        public static string CombinedPrediction_7_1 {
+            get { return ResourceManager.GetString("CombinedPrediction_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined year 7 and month 2 prediction.</summary>
+        public static string CombinedPrediction_7_2 {
+            get { return ResourceManager.GetString("CombinedPrediction_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined year 7 and month 3 prediction.</summary>
+        public static string CombinedPrediction_7_3 {
+            get { return ResourceManager.GetString("CombinedPrediction_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined year 7 and month 4 prediction.</summary>
+        public static string CombinedPrediction_7_4 {
+            get { return ResourceManager.GetString("CombinedPrediction_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined year 7 and month 5 prediction.</summary>
+        public static string CombinedPrediction_7_5 {
+            get { return ResourceManager.GetString("CombinedPrediction_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined year 7 and month 6 prediction.</summary>
+        public static string CombinedPrediction_7_6 {
+            get { return ResourceManager.GetString("CombinedPrediction_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined year 7 and month 7 prediction.</summary>
+        public static string CombinedPrediction_7_7 {
+            get { return ResourceManager.GetString("CombinedPrediction_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined year 7 and month 8 prediction.</summary>
+        public static string CombinedPrediction_7_8 {
+            get { return ResourceManager.GetString("CombinedPrediction_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined year 7 and month 9 prediction.</summary>
+        public static string CombinedPrediction_7_9 {
+            get { return ResourceManager.GetString("CombinedPrediction_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined year 8 and month 1 prediction.</summary>
+        public static string CombinedPrediction_8_1 {
+            get { return ResourceManager.GetString("CombinedPrediction_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined year 8 and month 2 prediction.</summary>
+        public static string CombinedPrediction_8_2 {
+            get { return ResourceManager.GetString("CombinedPrediction_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined year 8 and month 3 prediction.</summary>
+        public static string CombinedPrediction_8_3 {
+            get { return ResourceManager.GetString("CombinedPrediction_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined year 8 and month 4 prediction.</summary>
+        public static string CombinedPrediction_8_4 {
+            get { return ResourceManager.GetString("CombinedPrediction_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined year 8 and month 5 prediction.</summary>
+        public static string CombinedPrediction_8_5 {
+            get { return ResourceManager.GetString("CombinedPrediction_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined year 8 and month 6 prediction.</summary>
+        public static string CombinedPrediction_8_6 {
+            get { return ResourceManager.GetString("CombinedPrediction_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined year 8 and month 7 prediction.</summary>
+        public static string CombinedPrediction_8_7 {
+            get { return ResourceManager.GetString("CombinedPrediction_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined year 8 and month 8 prediction.</summary>
+        public static string CombinedPrediction_8_8 {
+            get { return ResourceManager.GetString("CombinedPrediction_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined year 8 and month 9 prediction.</summary>
+        public static string CombinedPrediction_8_9 {
+            get { return ResourceManager.GetString("CombinedPrediction_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined year 9 and month 1 prediction.</summary>
+        public static string CombinedPrediction_9_1 {
+            get { return ResourceManager.GetString("CombinedPrediction_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined year 9 and month 2 prediction.</summary>
+        public static string CombinedPrediction_9_2 {
+            get { return ResourceManager.GetString("CombinedPrediction_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined year 9 and month 3 prediction.</summary>
+        public static string CombinedPrediction_9_3 {
+            get { return ResourceManager.GetString("CombinedPrediction_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined year 9 and month 4 prediction.</summary>
+        public static string CombinedPrediction_9_4 {
+            get { return ResourceManager.GetString("CombinedPrediction_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined year 9 and month 5 prediction.</summary>
+        public static string CombinedPrediction_9_5 {
+            get { return ResourceManager.GetString("CombinedPrediction_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined year 9 and month 6 prediction.</summary>
+        public static string CombinedPrediction_9_6 {
+            get { return ResourceManager.GetString("CombinedPrediction_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined year 9 and month 7 prediction.</summary>
+        public static string CombinedPrediction_9_7 {
+            get { return ResourceManager.GetString("CombinedPrediction_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined year 9 and month 8 prediction.</summary>
+        public static string CombinedPrediction_9_8 {
+            get { return ResourceManager.GetString("CombinedPrediction_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined year 9 and month 9 prediction.</summary>
+        public static string CombinedPrediction_9_9 {
+            get { return ResourceManager.GetString("CombinedPrediction_9_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-1.</summary>
+        public static string GlobalCombinedPrediction_1_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-1-1.</summary>
+        public static string GlobalCombinedPrediction_1_1_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-1-2.</summary>
+        public static string GlobalCombinedPrediction_1_1_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-1-3.</summary>
+        public static string GlobalCombinedPrediction_1_1_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-1-4.</summary>
+        public static string GlobalCombinedPrediction_1_1_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-1-5.</summary>
+        public static string GlobalCombinedPrediction_1_1_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-1-6.</summary>
+        public static string GlobalCombinedPrediction_1_1_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-1-7.</summary>
+        public static string GlobalCombinedPrediction_1_1_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-1-8.</summary>
+        public static string GlobalCombinedPrediction_1_1_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-1-9.</summary>
+        public static string GlobalCombinedPrediction_1_1_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-2.</summary>
+        public static string GlobalCombinedPrediction_1_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-2-1.</summary>
+        public static string GlobalCombinedPrediction_1_2_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-2-2.</summary>
+        public static string GlobalCombinedPrediction_1_2_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-2-3.</summary>
+        public static string GlobalCombinedPrediction_1_2_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-2-4.</summary>
+        public static string GlobalCombinedPrediction_1_2_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-2-5.</summary>
+        public static string GlobalCombinedPrediction_1_2_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-2-6.</summary>
+        public static string GlobalCombinedPrediction_1_2_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-2-7.</summary>
+        public static string GlobalCombinedPrediction_1_2_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-2-8.</summary>
+        public static string GlobalCombinedPrediction_1_2_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-2-9.</summary>
+        public static string GlobalCombinedPrediction_1_2_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-3.</summary>
+        public static string GlobalCombinedPrediction_1_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-3-1.</summary>
+        public static string GlobalCombinedPrediction_1_3_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-3-2.</summary>
+        public static string GlobalCombinedPrediction_1_3_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-3-3.</summary>
+        public static string GlobalCombinedPrediction_1_3_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-3-4.</summary>
+        public static string GlobalCombinedPrediction_1_3_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-3-5.</summary>
+        public static string GlobalCombinedPrediction_1_3_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-3-6.</summary>
+        public static string GlobalCombinedPrediction_1_3_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-3-7.</summary>
+        public static string GlobalCombinedPrediction_1_3_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-3-8.</summary>
+        public static string GlobalCombinedPrediction_1_3_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-3-9.</summary>
+        public static string GlobalCombinedPrediction_1_3_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-4.</summary>
+        public static string GlobalCombinedPrediction_1_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-4-1.</summary>
+        public static string GlobalCombinedPrediction_1_4_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-4-2.</summary>
+        public static string GlobalCombinedPrediction_1_4_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-4-3.</summary>
+        public static string GlobalCombinedPrediction_1_4_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-4-4.</summary>
+        public static string GlobalCombinedPrediction_1_4_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-4-5.</summary>
+        public static string GlobalCombinedPrediction_1_4_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-4-6.</summary>
+        public static string GlobalCombinedPrediction_1_4_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-4-7.</summary>
+        public static string GlobalCombinedPrediction_1_4_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-4-8.</summary>
+        public static string GlobalCombinedPrediction_1_4_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-4-9.</summary>
+        public static string GlobalCombinedPrediction_1_4_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-5.</summary>
+        public static string GlobalCombinedPrediction_1_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-5-1.</summary>
+        public static string GlobalCombinedPrediction_1_5_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-5-2.</summary>
+        public static string GlobalCombinedPrediction_1_5_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-5-3.</summary>
+        public static string GlobalCombinedPrediction_1_5_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-5-4.</summary>
+        public static string GlobalCombinedPrediction_1_5_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-5-5.</summary>
+        public static string GlobalCombinedPrediction_1_5_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-5-6.</summary>
+        public static string GlobalCombinedPrediction_1_5_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-5-7.</summary>
+        public static string GlobalCombinedPrediction_1_5_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-5-8.</summary>
+        public static string GlobalCombinedPrediction_1_5_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-5-9.</summary>
+        public static string GlobalCombinedPrediction_1_5_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-6.</summary>
+        public static string GlobalCombinedPrediction_1_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-6-1.</summary>
+        public static string GlobalCombinedPrediction_1_6_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-6-2.</summary>
+        public static string GlobalCombinedPrediction_1_6_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-6-3.</summary>
+        public static string GlobalCombinedPrediction_1_6_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-6-4.</summary>
+        public static string GlobalCombinedPrediction_1_6_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-6-5.</summary>
+        public static string GlobalCombinedPrediction_1_6_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-6-6.</summary>
+        public static string GlobalCombinedPrediction_1_6_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-6-7.</summary>
+        public static string GlobalCombinedPrediction_1_6_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-6-8.</summary>
+        public static string GlobalCombinedPrediction_1_6_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-6-9.</summary>
+        public static string GlobalCombinedPrediction_1_6_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-7.</summary>
+        public static string GlobalCombinedPrediction_1_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-7-1.</summary>
+        public static string GlobalCombinedPrediction_1_7_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-7-2.</summary>
+        public static string GlobalCombinedPrediction_1_7_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-7-3.</summary>
+        public static string GlobalCombinedPrediction_1_7_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-7-4.</summary>
+        public static string GlobalCombinedPrediction_1_7_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-7-5.</summary>
+        public static string GlobalCombinedPrediction_1_7_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-7-6.</summary>
+        public static string GlobalCombinedPrediction_1_7_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-7-7.</summary>
+        public static string GlobalCombinedPrediction_1_7_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-7-8.</summary>
+        public static string GlobalCombinedPrediction_1_7_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-7-9.</summary>
+        public static string GlobalCombinedPrediction_1_7_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-8.</summary>
+        public static string GlobalCombinedPrediction_1_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-8-1.</summary>
+        public static string GlobalCombinedPrediction_1_8_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-8-2.</summary>
+        public static string GlobalCombinedPrediction_1_8_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-8-3.</summary>
+        public static string GlobalCombinedPrediction_1_8_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-8-4.</summary>
+        public static string GlobalCombinedPrediction_1_8_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-8-5.</summary>
+        public static string GlobalCombinedPrediction_1_8_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-8-6.</summary>
+        public static string GlobalCombinedPrediction_1_8_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-8-7.</summary>
+        public static string GlobalCombinedPrediction_1_8_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-8-8.</summary>
+        public static string GlobalCombinedPrediction_1_8_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-8-9.</summary>
+        public static string GlobalCombinedPrediction_1_8_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-9.</summary>
+        public static string GlobalCombinedPrediction_1_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-9-1.</summary>
+        public static string GlobalCombinedPrediction_1_9_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-9-2.</summary>
+        public static string GlobalCombinedPrediction_1_9_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-9-3.</summary>
+        public static string GlobalCombinedPrediction_1_9_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-9-4.</summary>
+        public static string GlobalCombinedPrediction_1_9_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-9-5.</summary>
+        public static string GlobalCombinedPrediction_1_9_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-9-6.</summary>
+        public static string GlobalCombinedPrediction_1_9_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-9-7.</summary>
+        public static string GlobalCombinedPrediction_1_9_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-9-8.</summary>
+        public static string GlobalCombinedPrediction_1_9_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 1-9-9.</summary>
+        public static string GlobalCombinedPrediction_1_9_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_1_9_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-1.</summary>
+        public static string GlobalCombinedPrediction_2_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-1-1.</summary>
+        public static string GlobalCombinedPrediction_2_1_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-1-2.</summary>
+        public static string GlobalCombinedPrediction_2_1_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-1-3.</summary>
+        public static string GlobalCombinedPrediction_2_1_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-1-4.</summary>
+        public static string GlobalCombinedPrediction_2_1_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-1-5.</summary>
+        public static string GlobalCombinedPrediction_2_1_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-1-6.</summary>
+        public static string GlobalCombinedPrediction_2_1_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-1-7.</summary>
+        public static string GlobalCombinedPrediction_2_1_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-1-8.</summary>
+        public static string GlobalCombinedPrediction_2_1_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-1-9.</summary>
+        public static string GlobalCombinedPrediction_2_1_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-2.</summary>
+        public static string GlobalCombinedPrediction_2_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-2-1.</summary>
+        public static string GlobalCombinedPrediction_2_2_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-2-2.</summary>
+        public static string GlobalCombinedPrediction_2_2_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-2-3.</summary>
+        public static string GlobalCombinedPrediction_2_2_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-2-4.</summary>
+        public static string GlobalCombinedPrediction_2_2_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-2-5.</summary>
+        public static string GlobalCombinedPrediction_2_2_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-2-6.</summary>
+        public static string GlobalCombinedPrediction_2_2_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-2-7.</summary>
+        public static string GlobalCombinedPrediction_2_2_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-2-8.</summary>
+        public static string GlobalCombinedPrediction_2_2_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-2-9.</summary>
+        public static string GlobalCombinedPrediction_2_2_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-3.</summary>
+        public static string GlobalCombinedPrediction_2_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-3-1.</summary>
+        public static string GlobalCombinedPrediction_2_3_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-3-2.</summary>
+        public static string GlobalCombinedPrediction_2_3_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-3-3.</summary>
+        public static string GlobalCombinedPrediction_2_3_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-3-4.</summary>
+        public static string GlobalCombinedPrediction_2_3_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-3-5.</summary>
+        public static string GlobalCombinedPrediction_2_3_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-3-6.</summary>
+        public static string GlobalCombinedPrediction_2_3_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-3-7.</summary>
+        public static string GlobalCombinedPrediction_2_3_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-3-8.</summary>
+        public static string GlobalCombinedPrediction_2_3_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-3-9.</summary>
+        public static string GlobalCombinedPrediction_2_3_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-4.</summary>
+        public static string GlobalCombinedPrediction_2_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-4-1.</summary>
+        public static string GlobalCombinedPrediction_2_4_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-4-2.</summary>
+        public static string GlobalCombinedPrediction_2_4_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-4-3.</summary>
+        public static string GlobalCombinedPrediction_2_4_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-4-4.</summary>
+        public static string GlobalCombinedPrediction_2_4_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-4-5.</summary>
+        public static string GlobalCombinedPrediction_2_4_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-4-6.</summary>
+        public static string GlobalCombinedPrediction_2_4_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-4-7.</summary>
+        public static string GlobalCombinedPrediction_2_4_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-4-8.</summary>
+        public static string GlobalCombinedPrediction_2_4_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-4-9.</summary>
+        public static string GlobalCombinedPrediction_2_4_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-5.</summary>
+        public static string GlobalCombinedPrediction_2_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-5-1.</summary>
+        public static string GlobalCombinedPrediction_2_5_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-5-2.</summary>
+        public static string GlobalCombinedPrediction_2_5_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-5-3.</summary>
+        public static string GlobalCombinedPrediction_2_5_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-5-4.</summary>
+        public static string GlobalCombinedPrediction_2_5_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-5-5.</summary>
+        public static string GlobalCombinedPrediction_2_5_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-5-6.</summary>
+        public static string GlobalCombinedPrediction_2_5_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-5-7.</summary>
+        public static string GlobalCombinedPrediction_2_5_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-5-8.</summary>
+        public static string GlobalCombinedPrediction_2_5_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-5-9.</summary>
+        public static string GlobalCombinedPrediction_2_5_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-6.</summary>
+        public static string GlobalCombinedPrediction_2_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-6-1.</summary>
+        public static string GlobalCombinedPrediction_2_6_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-6-2.</summary>
+        public static string GlobalCombinedPrediction_2_6_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-6-3.</summary>
+        public static string GlobalCombinedPrediction_2_6_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-6-4.</summary>
+        public static string GlobalCombinedPrediction_2_6_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-6-5.</summary>
+        public static string GlobalCombinedPrediction_2_6_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-6-6.</summary>
+        public static string GlobalCombinedPrediction_2_6_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-6-7.</summary>
+        public static string GlobalCombinedPrediction_2_6_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-6-8.</summary>
+        public static string GlobalCombinedPrediction_2_6_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-6-9.</summary>
+        public static string GlobalCombinedPrediction_2_6_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-7.</summary>
+        public static string GlobalCombinedPrediction_2_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-7-1.</summary>
+        public static string GlobalCombinedPrediction_2_7_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-7-2.</summary>
+        public static string GlobalCombinedPrediction_2_7_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-7-3.</summary>
+        public static string GlobalCombinedPrediction_2_7_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-7-4.</summary>
+        public static string GlobalCombinedPrediction_2_7_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-7-5.</summary>
+        public static string GlobalCombinedPrediction_2_7_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-7-6.</summary>
+        public static string GlobalCombinedPrediction_2_7_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-7-7.</summary>
+        public static string GlobalCombinedPrediction_2_7_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-7-8.</summary>
+        public static string GlobalCombinedPrediction_2_7_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-7-9.</summary>
+        public static string GlobalCombinedPrediction_2_7_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-8.</summary>
+        public static string GlobalCombinedPrediction_2_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-8-1.</summary>
+        public static string GlobalCombinedPrediction_2_8_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-8-2.</summary>
+        public static string GlobalCombinedPrediction_2_8_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-8-3.</summary>
+        public static string GlobalCombinedPrediction_2_8_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-8-4.</summary>
+        public static string GlobalCombinedPrediction_2_8_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-8-5.</summary>
+        public static string GlobalCombinedPrediction_2_8_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-8-6.</summary>
+        public static string GlobalCombinedPrediction_2_8_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-8-7.</summary>
+        public static string GlobalCombinedPrediction_2_8_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-8-8.</summary>
+        public static string GlobalCombinedPrediction_2_8_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-8-9.</summary>
+        public static string GlobalCombinedPrediction_2_8_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-9.</summary>
+        public static string GlobalCombinedPrediction_2_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-9-1.</summary>
+        public static string GlobalCombinedPrediction_2_9_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-9-2.</summary>
+        public static string GlobalCombinedPrediction_2_9_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-9-3.</summary>
+        public static string GlobalCombinedPrediction_2_9_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-9-4.</summary>
+        public static string GlobalCombinedPrediction_2_9_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-9-5.</summary>
+        public static string GlobalCombinedPrediction_2_9_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-9-6.</summary>
+        public static string GlobalCombinedPrediction_2_9_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-9-7.</summary>
+        public static string GlobalCombinedPrediction_2_9_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-9-8.</summary>
+        public static string GlobalCombinedPrediction_2_9_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 2-9-9.</summary>
+        public static string GlobalCombinedPrediction_2_9_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_2_9_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-1.</summary>
+        public static string GlobalCombinedPrediction_3_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-1-1.</summary>
+        public static string GlobalCombinedPrediction_3_1_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-1-2.</summary>
+        public static string GlobalCombinedPrediction_3_1_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-1-3.</summary>
+        public static string GlobalCombinedPrediction_3_1_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-1-4.</summary>
+        public static string GlobalCombinedPrediction_3_1_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-1-5.</summary>
+        public static string GlobalCombinedPrediction_3_1_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-1-6.</summary>
+        public static string GlobalCombinedPrediction_3_1_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-1-7.</summary>
+        public static string GlobalCombinedPrediction_3_1_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-1-8.</summary>
+        public static string GlobalCombinedPrediction_3_1_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-1-9.</summary>
+        public static string GlobalCombinedPrediction_3_1_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-2.</summary>
+        public static string GlobalCombinedPrediction_3_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-2-1.</summary>
+        public static string GlobalCombinedPrediction_3_2_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-2-2.</summary>
+        public static string GlobalCombinedPrediction_3_2_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-2-3.</summary>
+        public static string GlobalCombinedPrediction_3_2_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-2-4.</summary>
+        public static string GlobalCombinedPrediction_3_2_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-2-5.</summary>
+        public static string GlobalCombinedPrediction_3_2_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-2-6.</summary>
+        public static string GlobalCombinedPrediction_3_2_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-2-7.</summary>
+        public static string GlobalCombinedPrediction_3_2_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-2-8.</summary>
+        public static string GlobalCombinedPrediction_3_2_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-2-9.</summary>
+        public static string GlobalCombinedPrediction_3_2_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-3.</summary>
+        public static string GlobalCombinedPrediction_3_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-3-1.</summary>
+        public static string GlobalCombinedPrediction_3_3_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-3-2.</summary>
+        public static string GlobalCombinedPrediction_3_3_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-3-3.</summary>
+        public static string GlobalCombinedPrediction_3_3_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-3-4.</summary>
+        public static string GlobalCombinedPrediction_3_3_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-3-5.</summary>
+        public static string GlobalCombinedPrediction_3_3_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-3-6.</summary>
+        public static string GlobalCombinedPrediction_3_3_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-3-7.</summary>
+        public static string GlobalCombinedPrediction_3_3_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-3-8.</summary>
+        public static string GlobalCombinedPrediction_3_3_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-3-9.</summary>
+        public static string GlobalCombinedPrediction_3_3_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-4.</summary>
+        public static string GlobalCombinedPrediction_3_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-4-1.</summary>
+        public static string GlobalCombinedPrediction_3_4_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-4-2.</summary>
+        public static string GlobalCombinedPrediction_3_4_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-4-3.</summary>
+        public static string GlobalCombinedPrediction_3_4_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-4-4.</summary>
+        public static string GlobalCombinedPrediction_3_4_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-4-5.</summary>
+        public static string GlobalCombinedPrediction_3_4_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-4-6.</summary>
+        public static string GlobalCombinedPrediction_3_4_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-4-7.</summary>
+        public static string GlobalCombinedPrediction_3_4_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-4-8.</summary>
+        public static string GlobalCombinedPrediction_3_4_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-4-9.</summary>
+        public static string GlobalCombinedPrediction_3_4_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-5.</summary>
+        public static string GlobalCombinedPrediction_3_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-5-1.</summary>
+        public static string GlobalCombinedPrediction_3_5_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-5-2.</summary>
+        public static string GlobalCombinedPrediction_3_5_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-5-3.</summary>
+        public static string GlobalCombinedPrediction_3_5_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-5-4.</summary>
+        public static string GlobalCombinedPrediction_3_5_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-5-5.</summary>
+        public static string GlobalCombinedPrediction_3_5_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-5-6.</summary>
+        public static string GlobalCombinedPrediction_3_5_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-5-7.</summary>
+        public static string GlobalCombinedPrediction_3_5_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-5-8.</summary>
+        public static string GlobalCombinedPrediction_3_5_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-5-9.</summary>
+        public static string GlobalCombinedPrediction_3_5_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-6.</summary>
+        public static string GlobalCombinedPrediction_3_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-6-1.</summary>
+        public static string GlobalCombinedPrediction_3_6_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-6-2.</summary>
+        public static string GlobalCombinedPrediction_3_6_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-6-3.</summary>
+        public static string GlobalCombinedPrediction_3_6_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-6-4.</summary>
+        public static string GlobalCombinedPrediction_3_6_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-6-5.</summary>
+        public static string GlobalCombinedPrediction_3_6_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-6-6.</summary>
+        public static string GlobalCombinedPrediction_3_6_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-6-7.</summary>
+        public static string GlobalCombinedPrediction_3_6_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-6-8.</summary>
+        public static string GlobalCombinedPrediction_3_6_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-6-9.</summary>
+        public static string GlobalCombinedPrediction_3_6_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-7.</summary>
+        public static string GlobalCombinedPrediction_3_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-7-1.</summary>
+        public static string GlobalCombinedPrediction_3_7_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-7-2.</summary>
+        public static string GlobalCombinedPrediction_3_7_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-7-3.</summary>
+        public static string GlobalCombinedPrediction_3_7_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-7-4.</summary>
+        public static string GlobalCombinedPrediction_3_7_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-7-5.</summary>
+        public static string GlobalCombinedPrediction_3_7_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-7-6.</summary>
+        public static string GlobalCombinedPrediction_3_7_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-7-7.</summary>
+        public static string GlobalCombinedPrediction_3_7_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-7-8.</summary>
+        public static string GlobalCombinedPrediction_3_7_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-7-9.</summary>
+        public static string GlobalCombinedPrediction_3_7_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-8.</summary>
+        public static string GlobalCombinedPrediction_3_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-8-1.</summary>
+        public static string GlobalCombinedPrediction_3_8_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-8-2.</summary>
+        public static string GlobalCombinedPrediction_3_8_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-8-3.</summary>
+        public static string GlobalCombinedPrediction_3_8_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-8-4.</summary>
+        public static string GlobalCombinedPrediction_3_8_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-8-5.</summary>
+        public static string GlobalCombinedPrediction_3_8_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-8-6.</summary>
+        public static string GlobalCombinedPrediction_3_8_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-8-7.</summary>
+        public static string GlobalCombinedPrediction_3_8_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-8-8.</summary>
+        public static string GlobalCombinedPrediction_3_8_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-8-9.</summary>
+        public static string GlobalCombinedPrediction_3_8_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-9.</summary>
+        public static string GlobalCombinedPrediction_3_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-9-1.</summary>
+        public static string GlobalCombinedPrediction_3_9_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-9-2.</summary>
+        public static string GlobalCombinedPrediction_3_9_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-9-3.</summary>
+        public static string GlobalCombinedPrediction_3_9_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-9-4.</summary>
+        public static string GlobalCombinedPrediction_3_9_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-9-5.</summary>
+        public static string GlobalCombinedPrediction_3_9_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-9-6.</summary>
+        public static string GlobalCombinedPrediction_3_9_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-9-7.</summary>
+        public static string GlobalCombinedPrediction_3_9_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-9-8.</summary>
+        public static string GlobalCombinedPrediction_3_9_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 3-9-9.</summary>
+        public static string GlobalCombinedPrediction_3_9_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_3_9_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-1.</summary>
+        public static string GlobalCombinedPrediction_4_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-1-1.</summary>
+        public static string GlobalCombinedPrediction_4_1_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-1-2.</summary>
+        public static string GlobalCombinedPrediction_4_1_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-1-3.</summary>
+        public static string GlobalCombinedPrediction_4_1_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-1-4.</summary>
+        public static string GlobalCombinedPrediction_4_1_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-1-5.</summary>
+        public static string GlobalCombinedPrediction_4_1_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-1-6.</summary>
+        public static string GlobalCombinedPrediction_4_1_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-1-7.</summary>
+        public static string GlobalCombinedPrediction_4_1_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-1-8.</summary>
+        public static string GlobalCombinedPrediction_4_1_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-1-9.</summary>
+        public static string GlobalCombinedPrediction_4_1_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-2.</summary>
+        public static string GlobalCombinedPrediction_4_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-2-1.</summary>
+        public static string GlobalCombinedPrediction_4_2_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-2-2.</summary>
+        public static string GlobalCombinedPrediction_4_2_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-2-3.</summary>
+        public static string GlobalCombinedPrediction_4_2_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-2-4.</summary>
+        public static string GlobalCombinedPrediction_4_2_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-2-5.</summary>
+        public static string GlobalCombinedPrediction_4_2_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-2-6.</summary>
+        public static string GlobalCombinedPrediction_4_2_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-2-7.</summary>
+        public static string GlobalCombinedPrediction_4_2_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-2-8.</summary>
+        public static string GlobalCombinedPrediction_4_2_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-2-9.</summary>
+        public static string GlobalCombinedPrediction_4_2_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-3.</summary>
+        public static string GlobalCombinedPrediction_4_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-3-1.</summary>
+        public static string GlobalCombinedPrediction_4_3_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-3-2.</summary>
+        public static string GlobalCombinedPrediction_4_3_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-3-3.</summary>
+        public static string GlobalCombinedPrediction_4_3_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-3-4.</summary>
+        public static string GlobalCombinedPrediction_4_3_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-3-5.</summary>
+        public static string GlobalCombinedPrediction_4_3_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-3-6.</summary>
+        public static string GlobalCombinedPrediction_4_3_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-3-7.</summary>
+        public static string GlobalCombinedPrediction_4_3_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-3-8.</summary>
+        public static string GlobalCombinedPrediction_4_3_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-3-9.</summary>
+        public static string GlobalCombinedPrediction_4_3_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-4.</summary>
+        public static string GlobalCombinedPrediction_4_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-4-1.</summary>
+        public static string GlobalCombinedPrediction_4_4_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-4-2.</summary>
+        public static string GlobalCombinedPrediction_4_4_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-4-3.</summary>
+        public static string GlobalCombinedPrediction_4_4_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-4-4.</summary>
+        public static string GlobalCombinedPrediction_4_4_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-4-5.</summary>
+        public static string GlobalCombinedPrediction_4_4_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-4-6.</summary>
+        public static string GlobalCombinedPrediction_4_4_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-4-7.</summary>
+        public static string GlobalCombinedPrediction_4_4_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-4-8.</summary>
+        public static string GlobalCombinedPrediction_4_4_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-4-9.</summary>
+        public static string GlobalCombinedPrediction_4_4_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-5.</summary>
+        public static string GlobalCombinedPrediction_4_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-5-1.</summary>
+        public static string GlobalCombinedPrediction_4_5_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-5-2.</summary>
+        public static string GlobalCombinedPrediction_4_5_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-5-3.</summary>
+        public static string GlobalCombinedPrediction_4_5_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-5-4.</summary>
+        public static string GlobalCombinedPrediction_4_5_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-5-5.</summary>
+        public static string GlobalCombinedPrediction_4_5_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-5-6.</summary>
+        public static string GlobalCombinedPrediction_4_5_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-5-7.</summary>
+        public static string GlobalCombinedPrediction_4_5_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-5-8.</summary>
+        public static string GlobalCombinedPrediction_4_5_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-5-9.</summary>
+        public static string GlobalCombinedPrediction_4_5_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-6.</summary>
+        public static string GlobalCombinedPrediction_4_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-6-1.</summary>
+        public static string GlobalCombinedPrediction_4_6_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-6-2.</summary>
+        public static string GlobalCombinedPrediction_4_6_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-6-3.</summary>
+        public static string GlobalCombinedPrediction_4_6_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-6-4.</summary>
+        public static string GlobalCombinedPrediction_4_6_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-6-5.</summary>
+        public static string GlobalCombinedPrediction_4_6_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-6-6.</summary>
+        public static string GlobalCombinedPrediction_4_6_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-6-7.</summary>
+        public static string GlobalCombinedPrediction_4_6_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-6-8.</summary>
+        public static string GlobalCombinedPrediction_4_6_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-6-9.</summary>
+        public static string GlobalCombinedPrediction_4_6_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-7.</summary>
+        public static string GlobalCombinedPrediction_4_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-7-1.</summary>
+        public static string GlobalCombinedPrediction_4_7_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-7-2.</summary>
+        public static string GlobalCombinedPrediction_4_7_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-7-3.</summary>
+        public static string GlobalCombinedPrediction_4_7_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-7-4.</summary>
+        public static string GlobalCombinedPrediction_4_7_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-7-5.</summary>
+        public static string GlobalCombinedPrediction_4_7_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-7-6.</summary>
+        public static string GlobalCombinedPrediction_4_7_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-7-7.</summary>
+        public static string GlobalCombinedPrediction_4_7_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-7-8.</summary>
+        public static string GlobalCombinedPrediction_4_7_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-7-9.</summary>
+        public static string GlobalCombinedPrediction_4_7_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-8.</summary>
+        public static string GlobalCombinedPrediction_4_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-8-1.</summary>
+        public static string GlobalCombinedPrediction_4_8_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-8-2.</summary>
+        public static string GlobalCombinedPrediction_4_8_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-8-3.</summary>
+        public static string GlobalCombinedPrediction_4_8_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-8-4.</summary>
+        public static string GlobalCombinedPrediction_4_8_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-8-5.</summary>
+        public static string GlobalCombinedPrediction_4_8_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-8-6.</summary>
+        public static string GlobalCombinedPrediction_4_8_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-8-7.</summary>
+        public static string GlobalCombinedPrediction_4_8_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-8-8.</summary>
+        public static string GlobalCombinedPrediction_4_8_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-8-9.</summary>
+        public static string GlobalCombinedPrediction_4_8_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-9.</summary>
+        public static string GlobalCombinedPrediction_4_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-9-1.</summary>
+        public static string GlobalCombinedPrediction_4_9_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-9-2.</summary>
+        public static string GlobalCombinedPrediction_4_9_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-9-3.</summary>
+        public static string GlobalCombinedPrediction_4_9_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-9-4.</summary>
+        public static string GlobalCombinedPrediction_4_9_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-9-5.</summary>
+        public static string GlobalCombinedPrediction_4_9_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-9-6.</summary>
+        public static string GlobalCombinedPrediction_4_9_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-9-7.</summary>
+        public static string GlobalCombinedPrediction_4_9_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-9-8.</summary>
+        public static string GlobalCombinedPrediction_4_9_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 4-9-9.</summary>
+        public static string GlobalCombinedPrediction_4_9_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_4_9_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-1.</summary>
+        public static string GlobalCombinedPrediction_5_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-1-1.</summary>
+        public static string GlobalCombinedPrediction_5_1_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-1-2.</summary>
+        public static string GlobalCombinedPrediction_5_1_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-1-3.</summary>
+        public static string GlobalCombinedPrediction_5_1_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-1-4.</summary>
+        public static string GlobalCombinedPrediction_5_1_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-1-5.</summary>
+        public static string GlobalCombinedPrediction_5_1_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-1-6.</summary>
+        public static string GlobalCombinedPrediction_5_1_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-1-7.</summary>
+        public static string GlobalCombinedPrediction_5_1_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-1-8.</summary>
+        public static string GlobalCombinedPrediction_5_1_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-1-9.</summary>
+        public static string GlobalCombinedPrediction_5_1_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-2.</summary>
+        public static string GlobalCombinedPrediction_5_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-2-1.</summary>
+        public static string GlobalCombinedPrediction_5_2_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-2-2.</summary>
+        public static string GlobalCombinedPrediction_5_2_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-2-3.</summary>
+        public static string GlobalCombinedPrediction_5_2_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-2-4.</summary>
+        public static string GlobalCombinedPrediction_5_2_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-2-5.</summary>
+        public static string GlobalCombinedPrediction_5_2_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-2-6.</summary>
+        public static string GlobalCombinedPrediction_5_2_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-2-7.</summary>
+        public static string GlobalCombinedPrediction_5_2_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-2-8.</summary>
+        public static string GlobalCombinedPrediction_5_2_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-2-9.</summary>
+        public static string GlobalCombinedPrediction_5_2_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-3.</summary>
+        public static string GlobalCombinedPrediction_5_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-3-1.</summary>
+        public static string GlobalCombinedPrediction_5_3_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-3-2.</summary>
+        public static string GlobalCombinedPrediction_5_3_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-3-3.</summary>
+        public static string GlobalCombinedPrediction_5_3_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-3-4.</summary>
+        public static string GlobalCombinedPrediction_5_3_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-3-5.</summary>
+        public static string GlobalCombinedPrediction_5_3_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-3-6.</summary>
+        public static string GlobalCombinedPrediction_5_3_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-3-7.</summary>
+        public static string GlobalCombinedPrediction_5_3_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-3-8.</summary>
+        public static string GlobalCombinedPrediction_5_3_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-3-9.</summary>
+        public static string GlobalCombinedPrediction_5_3_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-4.</summary>
+        public static string GlobalCombinedPrediction_5_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-4-1.</summary>
+        public static string GlobalCombinedPrediction_5_4_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-4-2.</summary>
+        public static string GlobalCombinedPrediction_5_4_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-4-3.</summary>
+        public static string GlobalCombinedPrediction_5_4_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-4-4.</summary>
+        public static string GlobalCombinedPrediction_5_4_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-4-5.</summary>
+        public static string GlobalCombinedPrediction_5_4_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-4-6.</summary>
+        public static string GlobalCombinedPrediction_5_4_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-4-7.</summary>
+        public static string GlobalCombinedPrediction_5_4_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-4-8.</summary>
+        public static string GlobalCombinedPrediction_5_4_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-4-9.</summary>
+        public static string GlobalCombinedPrediction_5_4_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-5.</summary>
+        public static string GlobalCombinedPrediction_5_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-5-1.</summary>
+        public static string GlobalCombinedPrediction_5_5_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-5-2.</summary>
+        public static string GlobalCombinedPrediction_5_5_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-5-3.</summary>
+        public static string GlobalCombinedPrediction_5_5_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-5-4.</summary>
+        public static string GlobalCombinedPrediction_5_5_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-5-5.</summary>
+        public static string GlobalCombinedPrediction_5_5_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-5-6.</summary>
+        public static string GlobalCombinedPrediction_5_5_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-5-7.</summary>
+        public static string GlobalCombinedPrediction_5_5_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-5-8.</summary>
+        public static string GlobalCombinedPrediction_5_5_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-5-9.</summary>
+        public static string GlobalCombinedPrediction_5_5_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-6.</summary>
+        public static string GlobalCombinedPrediction_5_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-6-1.</summary>
+        public static string GlobalCombinedPrediction_5_6_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-6-2.</summary>
+        public static string GlobalCombinedPrediction_5_6_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-6-3.</summary>
+        public static string GlobalCombinedPrediction_5_6_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-6-4.</summary>
+        public static string GlobalCombinedPrediction_5_6_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-6-5.</summary>
+        public static string GlobalCombinedPrediction_5_6_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-6-6.</summary>
+        public static string GlobalCombinedPrediction_5_6_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-6-7.</summary>
+        public static string GlobalCombinedPrediction_5_6_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-6-8.</summary>
+        public static string GlobalCombinedPrediction_5_6_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-6-9.</summary>
+        public static string GlobalCombinedPrediction_5_6_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-7.</summary>
+        public static string GlobalCombinedPrediction_5_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-7-1.</summary>
+        public static string GlobalCombinedPrediction_5_7_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-7-2.</summary>
+        public static string GlobalCombinedPrediction_5_7_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-7-3.</summary>
+        public static string GlobalCombinedPrediction_5_7_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-7-4.</summary>
+        public static string GlobalCombinedPrediction_5_7_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-7-5.</summary>
+        public static string GlobalCombinedPrediction_5_7_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-7-6.</summary>
+        public static string GlobalCombinedPrediction_5_7_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-7-7.</summary>
+        public static string GlobalCombinedPrediction_5_7_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-7-8.</summary>
+        public static string GlobalCombinedPrediction_5_7_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-7-9.</summary>
+        public static string GlobalCombinedPrediction_5_7_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-8.</summary>
+        public static string GlobalCombinedPrediction_5_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-8-1.</summary>
+        public static string GlobalCombinedPrediction_5_8_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-8-2.</summary>
+        public static string GlobalCombinedPrediction_5_8_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-8-3.</summary>
+        public static string GlobalCombinedPrediction_5_8_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-8-4.</summary>
+        public static string GlobalCombinedPrediction_5_8_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-8-5.</summary>
+        public static string GlobalCombinedPrediction_5_8_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-8-6.</summary>
+        public static string GlobalCombinedPrediction_5_8_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-8-7.</summary>
+        public static string GlobalCombinedPrediction_5_8_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-8-8.</summary>
+        public static string GlobalCombinedPrediction_5_8_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-8-9.</summary>
+        public static string GlobalCombinedPrediction_5_8_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-9.</summary>
+        public static string GlobalCombinedPrediction_5_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-9-1.</summary>
+        public static string GlobalCombinedPrediction_5_9_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-9-2.</summary>
+        public static string GlobalCombinedPrediction_5_9_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-9-3.</summary>
+        public static string GlobalCombinedPrediction_5_9_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-9-4.</summary>
+        public static string GlobalCombinedPrediction_5_9_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-9-5.</summary>
+        public static string GlobalCombinedPrediction_5_9_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-9-6.</summary>
+        public static string GlobalCombinedPrediction_5_9_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-9-7.</summary>
+        public static string GlobalCombinedPrediction_5_9_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-9-8.</summary>
+        public static string GlobalCombinedPrediction_5_9_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 5-9-9.</summary>
+        public static string GlobalCombinedPrediction_5_9_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_5_9_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-1.</summary>
+        public static string GlobalCombinedPrediction_6_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-1-1.</summary>
+        public static string GlobalCombinedPrediction_6_1_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-1-2.</summary>
+        public static string GlobalCombinedPrediction_6_1_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-1-3.</summary>
+        public static string GlobalCombinedPrediction_6_1_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-1-4.</summary>
+        public static string GlobalCombinedPrediction_6_1_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-1-5.</summary>
+        public static string GlobalCombinedPrediction_6_1_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-1-6.</summary>
+        public static string GlobalCombinedPrediction_6_1_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-1-7.</summary>
+        public static string GlobalCombinedPrediction_6_1_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-1-8.</summary>
+        public static string GlobalCombinedPrediction_6_1_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-1-9.</summary>
+        public static string GlobalCombinedPrediction_6_1_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-2.</summary>
+        public static string GlobalCombinedPrediction_6_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-2-1.</summary>
+        public static string GlobalCombinedPrediction_6_2_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-2-2.</summary>
+        public static string GlobalCombinedPrediction_6_2_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-2-3.</summary>
+        public static string GlobalCombinedPrediction_6_2_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-2-4.</summary>
+        public static string GlobalCombinedPrediction_6_2_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-2-5.</summary>
+        public static string GlobalCombinedPrediction_6_2_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-2-6.</summary>
+        public static string GlobalCombinedPrediction_6_2_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-2-7.</summary>
+        public static string GlobalCombinedPrediction_6_2_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-2-8.</summary>
+        public static string GlobalCombinedPrediction_6_2_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-2-9.</summary>
+        public static string GlobalCombinedPrediction_6_2_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-3.</summary>
+        public static string GlobalCombinedPrediction_6_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-3-1.</summary>
+        public static string GlobalCombinedPrediction_6_3_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-3-2.</summary>
+        public static string GlobalCombinedPrediction_6_3_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-3-3.</summary>
+        public static string GlobalCombinedPrediction_6_3_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-3-4.</summary>
+        public static string GlobalCombinedPrediction_6_3_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-3-5.</summary>
+        public static string GlobalCombinedPrediction_6_3_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-3-6.</summary>
+        public static string GlobalCombinedPrediction_6_3_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-3-7.</summary>
+        public static string GlobalCombinedPrediction_6_3_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-3-8.</summary>
+        public static string GlobalCombinedPrediction_6_3_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-3-9.</summary>
+        public static string GlobalCombinedPrediction_6_3_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-4.</summary>
+        public static string GlobalCombinedPrediction_6_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-4-1.</summary>
+        public static string GlobalCombinedPrediction_6_4_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-4-2.</summary>
+        public static string GlobalCombinedPrediction_6_4_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-4-3.</summary>
+        public static string GlobalCombinedPrediction_6_4_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-4-4.</summary>
+        public static string GlobalCombinedPrediction_6_4_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-4-5.</summary>
+        public static string GlobalCombinedPrediction_6_4_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-4-6.</summary>
+        public static string GlobalCombinedPrediction_6_4_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-4-7.</summary>
+        public static string GlobalCombinedPrediction_6_4_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-4-8.</summary>
+        public static string GlobalCombinedPrediction_6_4_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-4-9.</summary>
+        public static string GlobalCombinedPrediction_6_4_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-5.</summary>
+        public static string GlobalCombinedPrediction_6_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-5-1.</summary>
+        public static string GlobalCombinedPrediction_6_5_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-5-2.</summary>
+        public static string GlobalCombinedPrediction_6_5_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-5-3.</summary>
+        public static string GlobalCombinedPrediction_6_5_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-5-4.</summary>
+        public static string GlobalCombinedPrediction_6_5_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-5-5.</summary>
+        public static string GlobalCombinedPrediction_6_5_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-5-6.</summary>
+        public static string GlobalCombinedPrediction_6_5_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-5-7.</summary>
+        public static string GlobalCombinedPrediction_6_5_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-5-8.</summary>
+        public static string GlobalCombinedPrediction_6_5_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-5-9.</summary>
+        public static string GlobalCombinedPrediction_6_5_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-6.</summary>
+        public static string GlobalCombinedPrediction_6_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-6-1.</summary>
+        public static string GlobalCombinedPrediction_6_6_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-6-2.</summary>
+        public static string GlobalCombinedPrediction_6_6_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-6-3.</summary>
+        public static string GlobalCombinedPrediction_6_6_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-6-4.</summary>
+        public static string GlobalCombinedPrediction_6_6_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-6-5.</summary>
+        public static string GlobalCombinedPrediction_6_6_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-6-6.</summary>
+        public static string GlobalCombinedPrediction_6_6_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-6-7.</summary>
+        public static string GlobalCombinedPrediction_6_6_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-6-8.</summary>
+        public static string GlobalCombinedPrediction_6_6_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-6-9.</summary>
+        public static string GlobalCombinedPrediction_6_6_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-7.</summary>
+        public static string GlobalCombinedPrediction_6_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-7-1.</summary>
+        public static string GlobalCombinedPrediction_6_7_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-7-2.</summary>
+        public static string GlobalCombinedPrediction_6_7_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-7-3.</summary>
+        public static string GlobalCombinedPrediction_6_7_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-7-4.</summary>
+        public static string GlobalCombinedPrediction_6_7_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-7-5.</summary>
+        public static string GlobalCombinedPrediction_6_7_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-7-6.</summary>
+        public static string GlobalCombinedPrediction_6_7_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-7-7.</summary>
+        public static string GlobalCombinedPrediction_6_7_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-7-8.</summary>
+        public static string GlobalCombinedPrediction_6_7_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-7-9.</summary>
+        public static string GlobalCombinedPrediction_6_7_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-8.</summary>
+        public static string GlobalCombinedPrediction_6_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-8-1.</summary>
+        public static string GlobalCombinedPrediction_6_8_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-8-2.</summary>
+        public static string GlobalCombinedPrediction_6_8_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-8-3.</summary>
+        public static string GlobalCombinedPrediction_6_8_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-8-4.</summary>
+        public static string GlobalCombinedPrediction_6_8_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-8-5.</summary>
+        public static string GlobalCombinedPrediction_6_8_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-8-6.</summary>
+        public static string GlobalCombinedPrediction_6_8_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-8-7.</summary>
+        public static string GlobalCombinedPrediction_6_8_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-8-8.</summary>
+        public static string GlobalCombinedPrediction_6_8_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-8-9.</summary>
+        public static string GlobalCombinedPrediction_6_8_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-9.</summary>
+        public static string GlobalCombinedPrediction_6_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-9-1.</summary>
+        public static string GlobalCombinedPrediction_6_9_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-9-2.</summary>
+        public static string GlobalCombinedPrediction_6_9_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-9-3.</summary>
+        public static string GlobalCombinedPrediction_6_9_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-9-4.</summary>
+        public static string GlobalCombinedPrediction_6_9_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-9-5.</summary>
+        public static string GlobalCombinedPrediction_6_9_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-9-6.</summary>
+        public static string GlobalCombinedPrediction_6_9_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-9-7.</summary>
+        public static string GlobalCombinedPrediction_6_9_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-9-8.</summary>
+        public static string GlobalCombinedPrediction_6_9_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 6-9-9.</summary>
+        public static string GlobalCombinedPrediction_6_9_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_6_9_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-1.</summary>
+        public static string GlobalCombinedPrediction_7_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-1-1.</summary>
+        public static string GlobalCombinedPrediction_7_1_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-1-2.</summary>
+        public static string GlobalCombinedPrediction_7_1_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-1-3.</summary>
+        public static string GlobalCombinedPrediction_7_1_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-1-4.</summary>
+        public static string GlobalCombinedPrediction_7_1_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-1-5.</summary>
+        public static string GlobalCombinedPrediction_7_1_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-1-6.</summary>
+        public static string GlobalCombinedPrediction_7_1_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-1-7.</summary>
+        public static string GlobalCombinedPrediction_7_1_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-1-8.</summary>
+        public static string GlobalCombinedPrediction_7_1_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-1-9.</summary>
+        public static string GlobalCombinedPrediction_7_1_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-2.</summary>
+        public static string GlobalCombinedPrediction_7_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-2-1.</summary>
+        public static string GlobalCombinedPrediction_7_2_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-2-2.</summary>
+        public static string GlobalCombinedPrediction_7_2_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-2-3.</summary>
+        public static string GlobalCombinedPrediction_7_2_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-2-4.</summary>
+        public static string GlobalCombinedPrediction_7_2_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-2-5.</summary>
+        public static string GlobalCombinedPrediction_7_2_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-2-6.</summary>
+        public static string GlobalCombinedPrediction_7_2_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-2-7.</summary>
+        public static string GlobalCombinedPrediction_7_2_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-2-8.</summary>
+        public static string GlobalCombinedPrediction_7_2_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-2-9.</summary>
+        public static string GlobalCombinedPrediction_7_2_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-3.</summary>
+        public static string GlobalCombinedPrediction_7_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-3-1.</summary>
+        public static string GlobalCombinedPrediction_7_3_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-3-2.</summary>
+        public static string GlobalCombinedPrediction_7_3_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-3-3.</summary>
+        public static string GlobalCombinedPrediction_7_3_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-3-4.</summary>
+        public static string GlobalCombinedPrediction_7_3_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-3-5.</summary>
+        public static string GlobalCombinedPrediction_7_3_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-3-6.</summary>
+        public static string GlobalCombinedPrediction_7_3_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-3-7.</summary>
+        public static string GlobalCombinedPrediction_7_3_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-3-8.</summary>
+        public static string GlobalCombinedPrediction_7_3_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-3-9.</summary>
+        public static string GlobalCombinedPrediction_7_3_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-4.</summary>
+        public static string GlobalCombinedPrediction_7_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-4-1.</summary>
+        public static string GlobalCombinedPrediction_7_4_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-4-2.</summary>
+        public static string GlobalCombinedPrediction_7_4_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-4-3.</summary>
+        public static string GlobalCombinedPrediction_7_4_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-4-4.</summary>
+        public static string GlobalCombinedPrediction_7_4_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-4-5.</summary>
+        public static string GlobalCombinedPrediction_7_4_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-4-6.</summary>
+        public static string GlobalCombinedPrediction_7_4_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-4-7.</summary>
+        public static string GlobalCombinedPrediction_7_4_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-4-8.</summary>
+        public static string GlobalCombinedPrediction_7_4_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-4-9.</summary>
+        public static string GlobalCombinedPrediction_7_4_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-5.</summary>
+        public static string GlobalCombinedPrediction_7_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-5-1.</summary>
+        public static string GlobalCombinedPrediction_7_5_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-5-2.</summary>
+        public static string GlobalCombinedPrediction_7_5_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-5-3.</summary>
+        public static string GlobalCombinedPrediction_7_5_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-5-4.</summary>
+        public static string GlobalCombinedPrediction_7_5_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-5-5.</summary>
+        public static string GlobalCombinedPrediction_7_5_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-5-6.</summary>
+        public static string GlobalCombinedPrediction_7_5_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-5-7.</summary>
+        public static string GlobalCombinedPrediction_7_5_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-5-8.</summary>
+        public static string GlobalCombinedPrediction_7_5_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-5-9.</summary>
+        public static string GlobalCombinedPrediction_7_5_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-6.</summary>
+        public static string GlobalCombinedPrediction_7_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-6-1.</summary>
+        public static string GlobalCombinedPrediction_7_6_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-6-2.</summary>
+        public static string GlobalCombinedPrediction_7_6_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-6-3.</summary>
+        public static string GlobalCombinedPrediction_7_6_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-6-4.</summary>
+        public static string GlobalCombinedPrediction_7_6_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-6-5.</summary>
+        public static string GlobalCombinedPrediction_7_6_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-6-6.</summary>
+        public static string GlobalCombinedPrediction_7_6_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-6-7.</summary>
+        public static string GlobalCombinedPrediction_7_6_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-6-8.</summary>
+        public static string GlobalCombinedPrediction_7_6_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-6-9.</summary>
+        public static string GlobalCombinedPrediction_7_6_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-7.</summary>
+        public static string GlobalCombinedPrediction_7_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-7-1.</summary>
+        public static string GlobalCombinedPrediction_7_7_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-7-2.</summary>
+        public static string GlobalCombinedPrediction_7_7_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-7-3.</summary>
+        public static string GlobalCombinedPrediction_7_7_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-7-4.</summary>
+        public static string GlobalCombinedPrediction_7_7_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-7-5.</summary>
+        public static string GlobalCombinedPrediction_7_7_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-7-6.</summary>
+        public static string GlobalCombinedPrediction_7_7_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-7-7.</summary>
+        public static string GlobalCombinedPrediction_7_7_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-7-8.</summary>
+        public static string GlobalCombinedPrediction_7_7_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-7-9.</summary>
+        public static string GlobalCombinedPrediction_7_7_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-8.</summary>
+        public static string GlobalCombinedPrediction_7_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-8-1.</summary>
+        public static string GlobalCombinedPrediction_7_8_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-8-2.</summary>
+        public static string GlobalCombinedPrediction_7_8_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-8-3.</summary>
+        public static string GlobalCombinedPrediction_7_8_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-8-4.</summary>
+        public static string GlobalCombinedPrediction_7_8_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-8-5.</summary>
+        public static string GlobalCombinedPrediction_7_8_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-8-6.</summary>
+        public static string GlobalCombinedPrediction_7_8_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-8-7.</summary>
+        public static string GlobalCombinedPrediction_7_8_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-8-8.</summary>
+        public static string GlobalCombinedPrediction_7_8_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-8-9.</summary>
+        public static string GlobalCombinedPrediction_7_8_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-9.</summary>
+        public static string GlobalCombinedPrediction_7_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-9-1.</summary>
+        public static string GlobalCombinedPrediction_7_9_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-9-2.</summary>
+        public static string GlobalCombinedPrediction_7_9_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-9-3.</summary>
+        public static string GlobalCombinedPrediction_7_9_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-9-4.</summary>
+        public static string GlobalCombinedPrediction_7_9_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-9-5.</summary>
+        public static string GlobalCombinedPrediction_7_9_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-9-6.</summary>
+        public static string GlobalCombinedPrediction_7_9_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-9-7.</summary>
+        public static string GlobalCombinedPrediction_7_9_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-9-8.</summary>
+        public static string GlobalCombinedPrediction_7_9_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 7-9-9.</summary>
+        public static string GlobalCombinedPrediction_7_9_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_7_9_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-1.</summary>
+        public static string GlobalCombinedPrediction_8_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-1-1.</summary>
+        public static string GlobalCombinedPrediction_8_1_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-1-2.</summary>
+        public static string GlobalCombinedPrediction_8_1_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-1-3.</summary>
+        public static string GlobalCombinedPrediction_8_1_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-1-4.</summary>
+        public static string GlobalCombinedPrediction_8_1_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-1-5.</summary>
+        public static string GlobalCombinedPrediction_8_1_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-1-6.</summary>
+        public static string GlobalCombinedPrediction_8_1_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-1-7.</summary>
+        public static string GlobalCombinedPrediction_8_1_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-1-8.</summary>
+        public static string GlobalCombinedPrediction_8_1_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-1-9.</summary>
+        public static string GlobalCombinedPrediction_8_1_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-2.</summary>
+        public static string GlobalCombinedPrediction_8_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-2-1.</summary>
+        public static string GlobalCombinedPrediction_8_2_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-2-2.</summary>
+        public static string GlobalCombinedPrediction_8_2_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-2-3.</summary>
+        public static string GlobalCombinedPrediction_8_2_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-2-4.</summary>
+        public static string GlobalCombinedPrediction_8_2_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-2-5.</summary>
+        public static string GlobalCombinedPrediction_8_2_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-2-6.</summary>
+        public static string GlobalCombinedPrediction_8_2_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-2-7.</summary>
+        public static string GlobalCombinedPrediction_8_2_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-2-8.</summary>
+        public static string GlobalCombinedPrediction_8_2_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-2-9.</summary>
+        public static string GlobalCombinedPrediction_8_2_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-3.</summary>
+        public static string GlobalCombinedPrediction_8_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-3-1.</summary>
+        public static string GlobalCombinedPrediction_8_3_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-3-2.</summary>
+        public static string GlobalCombinedPrediction_8_3_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-3-3.</summary>
+        public static string GlobalCombinedPrediction_8_3_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-3-4.</summary>
+        public static string GlobalCombinedPrediction_8_3_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-3-5.</summary>
+        public static string GlobalCombinedPrediction_8_3_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-3-6.</summary>
+        public static string GlobalCombinedPrediction_8_3_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-3-7.</summary>
+        public static string GlobalCombinedPrediction_8_3_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-3-8.</summary>
+        public static string GlobalCombinedPrediction_8_3_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-3-9.</summary>
+        public static string GlobalCombinedPrediction_8_3_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-4.</summary>
+        public static string GlobalCombinedPrediction_8_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-4-1.</summary>
+        public static string GlobalCombinedPrediction_8_4_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-4-2.</summary>
+        public static string GlobalCombinedPrediction_8_4_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-4-3.</summary>
+        public static string GlobalCombinedPrediction_8_4_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-4-4.</summary>
+        public static string GlobalCombinedPrediction_8_4_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-4-5.</summary>
+        public static string GlobalCombinedPrediction_8_4_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-4-6.</summary>
+        public static string GlobalCombinedPrediction_8_4_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-4-7.</summary>
+        public static string GlobalCombinedPrediction_8_4_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-4-8.</summary>
+        public static string GlobalCombinedPrediction_8_4_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-4-9.</summary>
+        public static string GlobalCombinedPrediction_8_4_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-5.</summary>
+        public static string GlobalCombinedPrediction_8_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-5-1.</summary>
+        public static string GlobalCombinedPrediction_8_5_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-5-2.</summary>
+        public static string GlobalCombinedPrediction_8_5_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-5-3.</summary>
+        public static string GlobalCombinedPrediction_8_5_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-5-4.</summary>
+        public static string GlobalCombinedPrediction_8_5_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-5-5.</summary>
+        public static string GlobalCombinedPrediction_8_5_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-5-6.</summary>
+        public static string GlobalCombinedPrediction_8_5_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-5-7.</summary>
+        public static string GlobalCombinedPrediction_8_5_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-5-8.</summary>
+        public static string GlobalCombinedPrediction_8_5_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-5-9.</summary>
+        public static string GlobalCombinedPrediction_8_5_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-6.</summary>
+        public static string GlobalCombinedPrediction_8_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-6-1.</summary>
+        public static string GlobalCombinedPrediction_8_6_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-6-2.</summary>
+        public static string GlobalCombinedPrediction_8_6_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-6-3.</summary>
+        public static string GlobalCombinedPrediction_8_6_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-6-4.</summary>
+        public static string GlobalCombinedPrediction_8_6_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-6-5.</summary>
+        public static string GlobalCombinedPrediction_8_6_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-6-6.</summary>
+        public static string GlobalCombinedPrediction_8_6_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-6-7.</summary>
+        public static string GlobalCombinedPrediction_8_6_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-6-8.</summary>
+        public static string GlobalCombinedPrediction_8_6_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-6-9.</summary>
+        public static string GlobalCombinedPrediction_8_6_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-7.</summary>
+        public static string GlobalCombinedPrediction_8_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-7-1.</summary>
+        public static string GlobalCombinedPrediction_8_7_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-7-2.</summary>
+        public static string GlobalCombinedPrediction_8_7_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-7-3.</summary>
+        public static string GlobalCombinedPrediction_8_7_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-7-4.</summary>
+        public static string GlobalCombinedPrediction_8_7_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-7-5.</summary>
+        public static string GlobalCombinedPrediction_8_7_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-7-6.</summary>
+        public static string GlobalCombinedPrediction_8_7_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-7-7.</summary>
+        public static string GlobalCombinedPrediction_8_7_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-7-8.</summary>
+        public static string GlobalCombinedPrediction_8_7_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-7-9.</summary>
+        public static string GlobalCombinedPrediction_8_7_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-8.</summary>
+        public static string GlobalCombinedPrediction_8_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-8-1.</summary>
+        public static string GlobalCombinedPrediction_8_8_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-8-2.</summary>
+        public static string GlobalCombinedPrediction_8_8_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-8-3.</summary>
+        public static string GlobalCombinedPrediction_8_8_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-8-4.</summary>
+        public static string GlobalCombinedPrediction_8_8_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-8-5.</summary>
+        public static string GlobalCombinedPrediction_8_8_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-8-6.</summary>
+        public static string GlobalCombinedPrediction_8_8_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-8-7.</summary>
+        public static string GlobalCombinedPrediction_8_8_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-8-8.</summary>
+        public static string GlobalCombinedPrediction_8_8_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-8-9.</summary>
+        public static string GlobalCombinedPrediction_8_8_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-9.</summary>
+        public static string GlobalCombinedPrediction_8_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-9-1.</summary>
+        public static string GlobalCombinedPrediction_8_9_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-9-2.</summary>
+        public static string GlobalCombinedPrediction_8_9_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-9-3.</summary>
+        public static string GlobalCombinedPrediction_8_9_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-9-4.</summary>
+        public static string GlobalCombinedPrediction_8_9_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-9-5.</summary>
+        public static string GlobalCombinedPrediction_8_9_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-9-6.</summary>
+        public static string GlobalCombinedPrediction_8_9_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-9-7.</summary>
+        public static string GlobalCombinedPrediction_8_9_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-9-8.</summary>
+        public static string GlobalCombinedPrediction_8_9_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 8-9-9.</summary>
+        public static string GlobalCombinedPrediction_8_9_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_8_9_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-1.</summary>
+        public static string GlobalCombinedPrediction_9_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-1-1.</summary>
+        public static string GlobalCombinedPrediction_9_1_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_1_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-1-2.</summary>
+        public static string GlobalCombinedPrediction_9_1_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_1_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-1-3.</summary>
+        public static string GlobalCombinedPrediction_9_1_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_1_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-1-4.</summary>
+        public static string GlobalCombinedPrediction_9_1_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_1_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-1-5.</summary>
+        public static string GlobalCombinedPrediction_9_1_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_1_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-1-6.</summary>
+        public static string GlobalCombinedPrediction_9_1_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_1_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-1-7.</summary>
+        public static string GlobalCombinedPrediction_9_1_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_1_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-1-8.</summary>
+        public static string GlobalCombinedPrediction_9_1_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_1_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-1-9.</summary>
+        public static string GlobalCombinedPrediction_9_1_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_1_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-2.</summary>
+        public static string GlobalCombinedPrediction_9_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-2-1.</summary>
+        public static string GlobalCombinedPrediction_9_2_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_2_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-2-2.</summary>
+        public static string GlobalCombinedPrediction_9_2_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_2_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-2-3.</summary>
+        public static string GlobalCombinedPrediction_9_2_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_2_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-2-4.</summary>
+        public static string GlobalCombinedPrediction_9_2_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_2_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-2-5.</summary>
+        public static string GlobalCombinedPrediction_9_2_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_2_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-2-6.</summary>
+        public static string GlobalCombinedPrediction_9_2_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_2_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-2-7.</summary>
+        public static string GlobalCombinedPrediction_9_2_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_2_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-2-8.</summary>
+        public static string GlobalCombinedPrediction_9_2_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_2_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-2-9.</summary>
+        public static string GlobalCombinedPrediction_9_2_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_2_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-3.</summary>
+        public static string GlobalCombinedPrediction_9_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-3-1.</summary>
+        public static string GlobalCombinedPrediction_9_3_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_3_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-3-2.</summary>
+        public static string GlobalCombinedPrediction_9_3_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_3_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-3-3.</summary>
+        public static string GlobalCombinedPrediction_9_3_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_3_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-3-4.</summary>
+        public static string GlobalCombinedPrediction_9_3_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_3_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-3-5.</summary>
+        public static string GlobalCombinedPrediction_9_3_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_3_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-3-6.</summary>
+        public static string GlobalCombinedPrediction_9_3_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_3_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-3-7.</summary>
+        public static string GlobalCombinedPrediction_9_3_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_3_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-3-8.</summary>
+        public static string GlobalCombinedPrediction_9_3_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_3_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-3-9.</summary>
+        public static string GlobalCombinedPrediction_9_3_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_3_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-4.</summary>
+        public static string GlobalCombinedPrediction_9_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-4-1.</summary>
+        public static string GlobalCombinedPrediction_9_4_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_4_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-4-2.</summary>
+        public static string GlobalCombinedPrediction_9_4_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_4_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-4-3.</summary>
+        public static string GlobalCombinedPrediction_9_4_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_4_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-4-4.</summary>
+        public static string GlobalCombinedPrediction_9_4_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_4_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-4-5.</summary>
+        public static string GlobalCombinedPrediction_9_4_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_4_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-4-6.</summary>
+        public static string GlobalCombinedPrediction_9_4_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_4_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-4-7.</summary>
+        public static string GlobalCombinedPrediction_9_4_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_4_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-4-8.</summary>
+        public static string GlobalCombinedPrediction_9_4_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_4_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-4-9.</summary>
+        public static string GlobalCombinedPrediction_9_4_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_4_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-5.</summary>
+        public static string GlobalCombinedPrediction_9_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-5-1.</summary>
+        public static string GlobalCombinedPrediction_9_5_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_5_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-5-2.</summary>
+        public static string GlobalCombinedPrediction_9_5_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_5_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-5-3.</summary>
+        public static string GlobalCombinedPrediction_9_5_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_5_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-5-4.</summary>
+        public static string GlobalCombinedPrediction_9_5_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_5_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-5-5.</summary>
+        public static string GlobalCombinedPrediction_9_5_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_5_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-5-6.</summary>
+        public static string GlobalCombinedPrediction_9_5_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_5_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-5-7.</summary>
+        public static string GlobalCombinedPrediction_9_5_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_5_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-5-8.</summary>
+        public static string GlobalCombinedPrediction_9_5_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_5_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-5-9.</summary>
+        public static string GlobalCombinedPrediction_9_5_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_5_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-6.</summary>
+        public static string GlobalCombinedPrediction_9_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-6-1.</summary>
+        public static string GlobalCombinedPrediction_9_6_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_6_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-6-2.</summary>
+        public static string GlobalCombinedPrediction_9_6_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_6_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-6-3.</summary>
+        public static string GlobalCombinedPrediction_9_6_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_6_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-6-4.</summary>
+        public static string GlobalCombinedPrediction_9_6_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_6_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-6-5.</summary>
+        public static string GlobalCombinedPrediction_9_6_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_6_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-6-6.</summary>
+        public static string GlobalCombinedPrediction_9_6_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_6_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-6-7.</summary>
+        public static string GlobalCombinedPrediction_9_6_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_6_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-6-8.</summary>
+        public static string GlobalCombinedPrediction_9_6_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_6_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-6-9.</summary>
+        public static string GlobalCombinedPrediction_9_6_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_6_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-7.</summary>
+        public static string GlobalCombinedPrediction_9_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-7-1.</summary>
+        public static string GlobalCombinedPrediction_9_7_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_7_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-7-2.</summary>
+        public static string GlobalCombinedPrediction_9_7_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_7_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-7-3.</summary>
+        public static string GlobalCombinedPrediction_9_7_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_7_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-7-4.</summary>
+        public static string GlobalCombinedPrediction_9_7_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_7_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-7-5.</summary>
+        public static string GlobalCombinedPrediction_9_7_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_7_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-7-6.</summary>
+        public static string GlobalCombinedPrediction_9_7_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_7_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-7-7.</summary>
+        public static string GlobalCombinedPrediction_9_7_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_7_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-7-8.</summary>
+        public static string GlobalCombinedPrediction_9_7_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_7_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-7-9.</summary>
+        public static string GlobalCombinedPrediction_9_7_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_7_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-8.</summary>
+        public static string GlobalCombinedPrediction_9_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-8-1.</summary>
+        public static string GlobalCombinedPrediction_9_8_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_8_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-8-2.</summary>
+        public static string GlobalCombinedPrediction_9_8_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_8_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-8-3.</summary>
+        public static string GlobalCombinedPrediction_9_8_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_8_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-8-4.</summary>
+        public static string GlobalCombinedPrediction_9_8_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_8_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-8-5.</summary>
+        public static string GlobalCombinedPrediction_9_8_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_8_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-8-6.</summary>
+        public static string GlobalCombinedPrediction_9_8_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_8_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-8-7.</summary>
+        public static string GlobalCombinedPrediction_9_8_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_8_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-8-8.</summary>
+        public static string GlobalCombinedPrediction_9_8_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_8_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-8-9.</summary>
+        public static string GlobalCombinedPrediction_9_8_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_8_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-9.</summary>
+        public static string GlobalCombinedPrediction_9_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_9", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-9-1.</summary>
+        public static string GlobalCombinedPrediction_9_9_1 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_9_1", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-9-2.</summary>
+        public static string GlobalCombinedPrediction_9_9_2 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_9_2", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-9-3.</summary>
+        public static string GlobalCombinedPrediction_9_9_3 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_9_3", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-9-4.</summary>
+        public static string GlobalCombinedPrediction_9_9_4 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_9_4", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-9-5.</summary>
+        public static string GlobalCombinedPrediction_9_9_5 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_9_5", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-9-6.</summary>
+        public static string GlobalCombinedPrediction_9_9_6 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_9_6", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-9-7.</summary>
+        public static string GlobalCombinedPrediction_9_9_7 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_9_7", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-9-8.</summary>
+        public static string GlobalCombinedPrediction_9_9_8 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_9_8", resourceCulture); }
+        }
+
+        /// <summary>Combined global prediction 9-9-9.</summary>
+        public static string GlobalCombinedPrediction_9_9_9 {
+            get { return ResourceManager.GetString("GlobalCombinedPrediction_9_9_9", resourceCulture); }
+        }
+
     }
 }

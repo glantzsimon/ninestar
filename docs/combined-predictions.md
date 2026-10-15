@@ -4,11 +4,15 @@
 
 The legacy predictions planner and its main month/day pills now show combined period readings. Generic prediction endpoints, the generic cycle-header partial, knowledge-base resources and Additional Cycles retain their previous behaviour. Moon phases remain separately calculated and displayed; they are not part of the combinations.
 
-Personal and global interpretations are distinct. Personal daily readings retain the existing 729 `Predictions/Combined/en-gb/<year>/<month>/Y-M-D.htm` files and `_Y_M_D` resource keys. There are 81 new monthly `Y-M.htm` files in those same folders, with keys `CombinedPrediction_Y_M`. Their text reuses the year/month introductions in the existing daily readings, excluding the daily material. Numeric two-part keys such as `_5_5` already belong to numerology and must not be reused.
+Personal and global interpretations are distinct. Personal daily readings use the existing 729 `Predictions/Combined/en-gb/<year>/<month>/Y-M-D.htm` files and `_Y_M_D` resource keys. There are 81 new monthly `Y-M.htm` files in those same folders, with keys `CombinedPrediction_Y_M`. Their text develops the year/month interactions in the daily readings using the richer personal Yearly and Monthly source material, excluding daily material. Numeric two-part keys such as `_5_5` already belong to numerology and must not be reused.
 
-Global readings live separately under `GlobalPredictions/Combined/en-gb/<year>/<month>/`, with 81 monthly and 729 daily files and keys `GlobalCombinedPrediction_Y_M` / `GlobalCombinedPrediction_Y_M_D`. These are summaries of the owner's existing GlobalPredictions Yearly, Monthly and Day material, expressed as collective/public themes with nested time scales. They are not aliases or copies of personal-house readings. Existing global source files are unchanged. The owner should review the new global editorial text as well as the implementation.
+Global readings live separately under `GlobalPredictions/Combined/en-gb/<year>/<month>/`, with 81 monthly and 729 daily files and keys `GlobalCombinedPrediction_Y_M` / `GlobalCombinedPrediction_Y_M_D`. These develop the owner's existing GlobalPredictions Yearly, Monthly and Day material as collective/public themes with nested time scales and explicit year/month interactions. They are not aliases or copies of personal-house readings. Existing global source files are unchanged. The owner should review the new global editorial text as well as the implementation.
 
 All new files have ResXFileRef entries, public resource accessors and Globalisation project Content registrations. ResourceManager handles resource lookup/culture fallback. Combined keys are calculated dynamically; fixed UI labels retain strongly typed resources.
+
+## Editorial depth
+
+All 81 monthly and 729 daily readings in each family use two substantial paragraphs. Monthly readings blend the enclosing year with the month's emotional, relational or collective emphasis, retaining concrete detail from the original generic sources. Daily readings retain that year/month context and explain how the day modifies it; existing personal combination-specific daily guidance, including repeated/triple energies, is preserved. Global year/month combinations include individually worded interactions rather than relying only on a shared faster/slower bridge. Avoid padding through repetition, merely stacking generic descriptions, or shortening a reading to a single introductory sentence. Keep the original generic source files intact for their existing consumers.
 
 ## Shared lookup and UI path
 

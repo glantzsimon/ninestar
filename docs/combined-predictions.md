@@ -12,7 +12,7 @@ All new files have ResXFileRef entries, public resource accessors and Globalisat
 
 ## Shared lookup and UI path
 
-`CombinedPrediction` is an immutable context containing year, month, optional morning/afternoon day numbers and `IsGlobal`. `CombinedPredictionDescriptions.GetHtml` selects the appropriate resource family. Distinct afternoon readings retain the existing resource-backed afternoon label. `GoogleCalendarService` reuses the personal daily lookup and continues extracting paragraphs for plain-text ICS/UI entries; its calculations and output format are unchanged.
+`CombinedPrediction` is an immutable context containing year, month, optional morning/afternoon day numbers and `IsGlobal`. `Helpers/CombinedPredictionHelper.cs` is a static helper in the `K9.WebApplication.Helpers` namespace, rather than an injected application service. `CombinedPredictionHelper.GetHtml` selects the appropriate resource family. Distinct afternoon readings retain the existing resource-backed afternoon label. `GoogleCalendarService` reuses the personal daily lookup and continues extracting paragraphs for plain-text ICS/UI entries; its calculations and output format are unchanged.
 
 The planner's Year rows carry year/month context. Month rows carry year/month/day/afternoon context, and its parent carries year/month. The Day parent carries the daily context while hourly rows keep their generic descriptions. Both initial rendering and click responses select the combined description. Existing Year/generation/epoch descriptions stay generic.
 

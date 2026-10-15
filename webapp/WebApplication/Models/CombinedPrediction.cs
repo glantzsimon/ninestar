@@ -1,5 +1,5 @@
 using System;
-using K9.WebApplication.Services;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Models
 {
@@ -24,6 +24,6 @@ namespace K9.WebApplication.Models
         public int Month { get; }
         public int? Day { get; }
         public int? AfternoonDay { get; }
-        public string Html => CombinedPredictionDescriptions.GetHtml(Year, Month, Day, AfternoonDay, IsGlobal);
+        public string Html => CombinedPredictionHelper.GetHtml(Year, Month, Day, AfternoonDay, IsGlobal);
     }
 }

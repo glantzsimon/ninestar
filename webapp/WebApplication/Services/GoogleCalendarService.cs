@@ -1,3 +1,4 @@
+using K9.WebApplication.Helpers;
 using HtmlAgilityPack;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Constants;
@@ -250,7 +251,7 @@ namespace K9.WebApplication.Services
             var key = $"{year}-{month}-{day}";
             if (descriptions.TryGetValue(key, out var description))
                 return description;
-            var html = CombinedPredictionDescriptions.GetHtml(year, month, day);
+            var html = CombinedPredictionHelper.GetHtml(year, month, day);
             var document = new HtmlDocument();
             document.LoadHtml(html);
             var paragraphs = document.DocumentNode.SelectNodes("//p");

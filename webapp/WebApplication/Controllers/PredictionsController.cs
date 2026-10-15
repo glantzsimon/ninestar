@@ -209,7 +209,7 @@ namespace K9.WebApplication.Controllers
                 selectedDateTime, userTimeZoneId, calculationMethod, calculatorType, displayDataForPeriod, housesDisplay, invertDailyAndHourlyKiForSouthernHemisphere,
                 invertDailyAndHourlyCycleKiForSouthernHemisphere, view, display, navigationDirection);
 
-            CombinedPredictionDescriptions.PopulatePlanner(plannerData, _astronomyService);
+            CombinedPredictionHelper.PopulatePlanner(plannerData, _astronomyService);
             UpdatePlannerUrls(plannerData);
 
             return PartialView("Planner/_GlobalPlanner", plannerData);
@@ -318,7 +318,7 @@ namespace K9.WebApplication.Controllers
             return Json(new
             {
                 CycleDescriptiveName = K9.Globalisation.Dictionary.MonthlyPrediction,
-                CycleDescription = CombinedPredictionDescriptions.GetHtml(year, month, isGlobal: display == EScopeDisplay.GlobalKi),
+                CycleDescription = CombinedPredictionHelper.GetHtml(year, month, isGlobal: display == EScopeDisplay.GlobalKi),
                 MoonPhase = ""
             }, JsonRequestBehavior.AllowGet);
         }
@@ -339,7 +339,7 @@ namespace K9.WebApplication.Controllers
             return Json(new
             {
                 CycleDescriptiveName = K9.Globalisation.Dictionary.DailyPrediction,
-                CycleDescription = CombinedPredictionDescriptions.GetHtml(year, month, day, afternoonDay, display == EScopeDisplay.GlobalKi),
+                CycleDescription = CombinedPredictionHelper.GetHtml(year, month, day, afternoonDay, display == EScopeDisplay.GlobalKi),
                 MoonPhase = moonHtml
             }, JsonRequestBehavior.AllowGet);
         }

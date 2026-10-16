@@ -11,14 +11,8 @@ The OAuth issuer is **not yet wired to the existing website**. Do not deploy thi
 
 ## Generating the first Code First migration
 
-After validating the isolated context build and restoring all packages, use the EF6 migration tool **against this project/context only**, on an isolated development SQL Server database:
+GitHub Actions now runs `generate-initial-migration.ps1` on a clean **Windows runner**, and publishes the generated EF6 migration files (`.cs`, `.Designer.cs`, `.resx`) as an artifact for code review. The script uses only the runner's temporary **SQL Server LocalDB** and never calls `Update-Database`. The initial scaffold is not yet committed to source control or applied anywhere.
 
-```powershell
-# From Visual Studio Package Manager Console, after adding this project to a
-# developer solution and confirming the separate OAuth context is selected:
-Add-Migration InitialOAuthStore -ConfigurationTypeName NineStarKi.OAuth.Persistence.Migrations.Configuration -ProjectName NineStarKi.OAuth.Persistence -StartUpProjectName WebApplication
-```
+After a successful build, inspect the generated migration and verify all operations affect only OpenIddict's own tables; then add the generated files to this isolated project. Future schema changes must also be generated through `Add-Migration` and reviewed before being applied.
 
-The command must generate the EF6 migration C#, designer metadata and model resource files. **Commit all generated files for review**. Do not hand-write a SQL schema or rely on `AutomaticMigrationsEnabled`; keep `Update-Database` as a separate explicitly reviewed step for the integration SQL Server only. Later, when the OAuth issuer is enabled, run `DbMigrator(new NineStarKi.OAuth.Persistence.Migrations.Configuration()).Update()` only through a controlled migration/deployment task, never from normal website startup.
-
-The OpenIddict OWIN host configuration will be added **after** the generated migration and EF6 model have been verified in Windows CI. Its authentication screen must use the site's existing WebSecurity/FormsAuthentication cookie and must not modify existing credentials.
+**Deployment gate:** Only apply reviewed OAuth migrations to the integration SQL Server through a dedicated, explicit migrator or EF6 migration command. The existing website's automatic `DataConfig.InitialiseDatabase` must never execute this configuration. Test migration rollback before production use.

@@ -4,51 +4,51 @@ using ModelContextProtocol.Server;
 namespace NineStarKi.Mcp;
 
 [McpServerToolType]
-public sealed class AstrologyTools(AstrologyApiClient api)
+public sealed class AstrologyTools(AstrologyApiClient api, McpMemberAccountResolver membership)
 {
-    [McpServerTool, Description("Fetch a person's 9 Star Ki personal chart from the authoritative 9 Star Ki Astrology website. An existing site membership account number is required.")]
+    [McpServerTool, Description("Fetch a person's 9 Star Ki personal chart from the official website. A member's access is verified through their connected 9 Star Ki website login.")]
     public Task<string> GetPersonalChart(
-        [Description("Existing nine-digit site account number")] string accountNumber,
         [Description("Birth date YYYY-MM-DD")] string dateOfBirth,
         [Description("Male, Female, or Other")] string gender,
         [Description("Known birth time HH-mm; do not invent a time")] string timeOfBirth,
-        [Description("Birthplace or an agreed unknown-value placeholder accepted by the website")] string birthLocation,
-        CancellationToken cancellationToken) =>
+        [Description("Birthplace")] string birthLocation,
+        [Description("Staging only: existing nine-digit site account number. Not needed after website OAuth connection.")] string? accountNumber = null,
+        CancellationToken cancellationToken = default) =>
         api.GetAsync(cancellationToken, "api", "personal-chart", "get",
-            AstrologyApiClient.AccountNumber(accountNumber),
+            membership.Resolve(accountNumber),
             AstrologyApiClient.BirthDate(dateOfBirth),
             AstrologyApiClient.Gender(gender),
             AstrologyApiClient.BirthTime(timeOfBirth),
             AstrologyApiClient.RequiredText(birthLocation, nameof(birthLocation)));
 
-    [McpServerTool, Description("Fetch yearly, monthly, nine-year and daily 9 Star Ki predictions from the official website. For a named year use February 5 of that year; for a named month use the 10th.")]
+    [McpServerTool, Description("Fetch yearly, monthly, nine-year and daily 9 Star Ki predictions from the official website. Membership is resolved from the verified website login. For a named year use February 5; for a month use the 10th.")]
     public Task<string> GetPredictions(
-        [Description("Existing nine-digit site account number")] string accountNumber,
         [Description("Birth date YYYY-MM-DD")] string dateOfBirth,
         [Description("Male, Female, or Other")] string gender,
         [Description("Selected prediction date YYYY-MM-DD")] string selectedDate,
         [Description("Known birth time HH-mm; do not invent a time")] string timeOfBirth,
         [Description("Birthplace")] string birthLocation,
-        CancellationToken cancellationToken) =>
+        [Description("Staging only: site account number. Not needed after OAuth connection.")] string? accountNumber = null,
+        CancellationToken cancellationToken = default) =>
         api.GetAsync(cancellationToken, "api", "predictions", "get",
-            AstrologyApiClient.AccountNumber(accountNumber),
+            membership.Resolve(accountNumber),
             AstrologyApiClient.BirthDate(dateOfBirth),
             AstrologyApiClient.Gender(gender),
             AstrologyApiClient.SelectedDate(selectedDate),
             AstrologyApiClient.BirthTime(timeOfBirth),
             AstrologyApiClient.RequiredText(birthLocation, nameof(birthLocation)));
 
-    [McpServerTool, Description("Fetch 9 Star Ki compatibility and relationship dynamics for two people using the official website.")]
+    [McpServerTool, Description("Fetch 9 Star Ki compatibility and relationship dynamics for two people. Uses the connected member's existing website subscription.")]
     public Task<string> GetCompatibility(
-        [Description("Existing nine-digit site account number")] string accountNumber,
         string firstPersonName, string firstPersonDateOfBirth, string firstPersonGender,
         string secondPersonName, string secondPersonDateOfBirth, string secondPersonGender,
         bool displaySexualChemistry,
         string firstPersonTimeOfBirth, string firstPersonBirthLocation,
         string secondPersonTimeOfBirth, string secondPersonBirthLocation,
-        CancellationToken cancellationToken) =>
+        [Description("Staging only: site account number. Not needed after OAuth connection.")] string? accountNumber = null,
+        CancellationToken cancellationToken = default) =>
         api.GetAsync(cancellationToken, "api", "compatibility", "get",
-            AstrologyApiClient.AccountNumber(accountNumber),
+            membership.Resolve(accountNumber),
             AstrologyApiClient.RequiredText(firstPersonName, nameof(firstPersonName)),
             AstrologyApiClient.BirthDate(firstPersonDateOfBirth),
             AstrologyApiClient.Gender(firstPersonGender),
@@ -61,14 +61,14 @@ public sealed class AstrologyTools(AstrologyApiClient api)
             AstrologyApiClient.BirthTime(secondPersonTimeOfBirth),
             AstrologyApiClient.RequiredText(secondPersonBirthLocation, nameof(secondPersonBirthLocation)));
 
-    [McpServerTool, Description("Retrieve the website's 9 Star Ki knowledge base. Requires an existing membership account number.")]
+    [McpServerTool, Description("Retrieve the official website's 9 Star Ki knowledge base. Requires an eligible member, identified through the connected website login.")]
     public Task<string> GetKnowledgeBase(
-        [Description("Existing nine-digit site account number")] string accountNumber,
-        CancellationToken cancellationToken) =>
+        [Description("Staging only: site account number. Not needed after OAuth connection.")] string? accountNumber = null,
+        CancellationToken cancellationToken = default) =>
         api.GetAsync(cancellationToken, "api", "knowledgebase", "get",
-            AstrologyApiClient.AccountNumber(accountNumber));
+            membership.Resolve(accountNumber));
 
-    [McpServerTool, Description("Generate an I Ching hexagram from the official website for interpretation in light of a user's question. No account number required.")]
-    public Task<string> GetIChing(CancellationToken cancellationToken) =>
+    [McpServerTool, Description("Generate an I Ching hexagram from the official 9 Star Ki website for interpretation. No customer membership is required.")]
+    public Task<string> GetIChing(CancellationToken cancellationToken = default) =>
         api.GetAsync(cancellationToken, "api", "iching", "get");
 }

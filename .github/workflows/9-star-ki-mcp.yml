@@ -5,7 +5,7 @@ on:
   pull_request:
     paths:
       - 'integrations/NineStarKi.Mcp/**'
-      - 'integrations/NineStarKi.OAuth.Persistence/**'
+      - 'webapp/DataAccess/**'
       - '.github/workflows/9-star-ki-mcp.yml'
 
 permissions:
@@ -26,16 +26,14 @@ jobs:
         run: dotnet build integrations/NineStarKi.Mcp/NineStarKi.Mcp.csproj --configuration Release --no-restore
       - name: Test membership authorisation
         run: dotnet test integrations/NineStarKi.Mcp.Tests/NineStarKi.Mcp.Tests.csproj --configuration Release
-      - name: Restore isolated OAuth EF6 store
-        run: dotnet restore integrations/NineStarKi.OAuth.Persistence/NineStarKi.OAuth.Persistence.csproj
-      - name: Build isolated OAuth EF6 store
-        run: dotnet build integrations/NineStarKi.OAuth.Persistence/NineStarKi.OAuth.Persistence.csproj --configuration Release --no-restore
-      - name: Verify committed OAuth Code First migration
+      # Database schema changes belong only to the existing DataAccess
+      # project and its LocalDb migration history. Never scaffold a second
+      # context or apply database migrations in this MCP build.
+      - name: Check database migration ownership
         shell: pwsh
         run: |
-          $base = 'integrations/NineStarKi.OAuth.Persistence/Migrations/202610162219497_InitialOAuthStore'
-          @('.cs', '.Designer.cs', '.resx') | ForEach-Object {
-            if (-not (Test-Path ($base + $_))) { throw "Missing tracked migration file: $base$_" }
+          if (Test-Path 'integrations/NineStarKi.OAuth.Persistence') {
+            throw 'Separate OAuth database project must not exist. Use webapp/DataAccess migrations.'
           }
       - name: Publish
         run: dotnet publish integrations/NineStarKi.Mcp/NineStarKi.Mcp.csproj --configuration Release --no-restore --output artifacts/nine-star-ki-mcp

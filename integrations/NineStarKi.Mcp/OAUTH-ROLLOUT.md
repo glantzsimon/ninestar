@@ -56,6 +56,13 @@ The OAuth authorisation server should be implemented using a security-reviewed O
 - `GET /.well-known/oauth-protected-resource` and its `/mcp` variant are served only when OAuth mode is enabled. Failed OAuth authentication emits `WWW-Authenticate: Bearer resource_metadata="..."`.
 - `get_i_ching` remains a public-membership tool, but the staged OAuth implementation currently requires an authorised connection to access the *server*. A future per-tool `noauth`/OAuth `securitySchemes` implementation can allow I Ching before linking; don't incorrectly claim that feature is already implemented.
 
+## Completed development checks (16 October 2026)
+
+- MCP build and publish completed successfully in GitHub Actions run #19.
+- New account-identity tests **passed all six cases**, with zero failures.
+- The website login action has received a **development-branch-only** redirect hardening change, replacing blind `Redirect(returnUrl)` with a local-return-URL check (`Url.IsLocalUrl`). **This website change has not been deployed or independently built**.
+- The signed-token issuer and browser-based account connection **remain to be implemented**. Do not treat a passing MCP build as a completed login integration.
+
 ## Test and deployment gates
 
 1. GitHub Actions must build both the MCP host and the account-isolation tests on the feature branch.

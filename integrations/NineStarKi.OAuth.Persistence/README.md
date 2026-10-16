@@ -5,7 +5,9 @@ This project targets **.NET Framework 4.7.2**, matching the MVC website, and use
 - `OAuthStoreContext` points to the existing website SQL Server **DefaultConnection** connection string but has a distinct EF6 model and migration configuration.
 - `Migrations.Configuration` uses the dedicated context key `NineStarKi.ChatGPT.OAuthStore`, disables automatic migrations and data loss, and intentionally does **not** run from `WebApplication.App_Start.DataConfig.InitialiseDatabase`.
 - In the current website, `DbMigrator(new DatabaseInitialiserLocal()).Update()` runs automatically on startup. OAuth migrations **must not** be inserted into that existing history or registered for automatic application.
-- The OAuth issuer is **not yet wired to the existing website**. Do not deploy this separate class library to production yet.
+- The OpenIddict 7.7.2 EF6 store requires **EntityFramework 6.5.2**, while the current legacy website still references **6.5.1**. The isolated project can build with 6.5.2 independently, but before linking it to the website we must review the EF6 patch-level upgrade and assembly binding redirects in the existing MVC solution, preferably on the integration site. No existing website package has been upgraded here.
+
+The OAuth issuer is **not yet wired to the existing website**. Do not deploy this separate class library to production yet.
 
 ## Generating the first Code First migration
 

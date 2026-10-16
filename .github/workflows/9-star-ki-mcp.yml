@@ -23,6 +23,8 @@ jobs:
         run: dotnet restore integrations/NineStarKi.Mcp/NineStarKi.Mcp.csproj
       - name: Build
         run: dotnet build integrations/NineStarKi.Mcp/NineStarKi.Mcp.csproj --configuration Release --no-restore
+      - name: Test membership authorisation
+        run: dotnet test integrations/NineStarKi.Mcp.Tests/NineStarKi.Mcp.Tests.csproj --configuration Release
       - name: Publish
         run: dotnet publish integrations/NineStarKi.Mcp/NineStarKi.Mcp.csproj --configuration Release --no-restore --output artifacts/nine-star-ki-mcp
       - name: Upload deployable package

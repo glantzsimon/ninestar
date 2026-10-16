@@ -69,6 +69,8 @@ Use strongly typed `Dictionary.ResourceName` properties for fixed UI text, inclu
 
 ## Branch and deployment workflow
 
+The owner's Git Bash `loadbranch` function automatically prepends `feature/` to its argument, fetches origin, then checks out the branch (creating it from the remote if needed) and fast-forwards an existing local branch. Pass only the suffix: `loadbranch mobile-json-api` selects `feature/mobile-json-api`. Never suggest `loadbranch feature/mobile-json-api`, which doubles the prefix. Use `loadmaster` to return to master. Verify the selected branch with `git branch --show-current`.
+
 Work on the existing feature branch and prepare a draft pull request for review. Do not merge or deploy without the user's instruction. Normal commits must not contain `#teamcity`; that marker deliberately triggers Integration deployment and should only be added when deployment is requested.
 
 ## git-crypt

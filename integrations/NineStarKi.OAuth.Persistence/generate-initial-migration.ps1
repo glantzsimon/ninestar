@@ -28,7 +28,6 @@ $connectionString = 'Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=NineStar
     --connection-string $connectionString `
     --connection-provider System.Data.SqlClient `
     --root-namespace NineStarKi.OAuth.Persistence `
-    --language CSharp `
     --no-color
 
 if ($LASTEXITCODE -ne 0) {

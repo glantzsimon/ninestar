@@ -37,7 +37,27 @@ builder.Services.AddMcpServer()
     .WithHttpTransport(options => options.SessionMode = HttpServerSessionMode.Stateless)
     .WithTools<AstrologyTools>();
 
+var requireOpenAiMtls = builder.Configuration.GetValue<bool>("Mcp:RequireOpenAiMtls");
+OpenAiMtlsCertificateValidator? openAiMtlsValidator = null;
+if (requireOpenAiMtls)
+{
+    var rootCaPath = builder.Configuration["Mcp:OpenAiRootCaPath"];
+    var intermediateCaPath = builder.Configuration["Mcp:OpenAiIntermediateCaPath"];
+    if (string.IsNullOrWhiteSpace(rootCaPath) ||
+        string.IsNullOrWhiteSpace(intermediateCaPath))
+    {
+        throw new InvalidOperationException(
+            "Mcp__RequireOpenAiMtls requires both published OpenAI CA certificate file paths.");
+    }
+
+    openAiMtlsValidator = new OpenAiMtlsCertificateValidator(rootCaPath, intermediateCaPath);
+}
+
 var app = builder.Build();
+if (openAiMtlsValidator is not null)
+{
+    app.Lifetime.ApplicationStopped.Register(openAiMtlsValidator.Dispose);
+}
 
 // Private single-operator testing is protected with a server-side bearer secret.
 // For public publication, ChatGPT's current plugin portal does not support
@@ -47,6 +67,21 @@ app.Use(async (context, next) =>
 {
     if (!context.Request.Path.StartsWithSegments("/mcp"))
     {
+        await next();
+        return;
+    }
+
+    if (requireOpenAiMtls)
+    {
+        // IIS must request/accept TLS client certificates for this hostname.
+        // mTLS verifies the ChatGPT CLIENT, not the individual site account.
+        var clientCertificate = await context.Connection.GetClientCertificateAsync(context.RequestAborted);
+        if (!openAiMtlsValidator!.IsValid(clientCertificate))
+        {
+            context.Response.StatusCode = StatusCodes.Status403Forbidden;
+            return;
+        }
+
         await next();
         return;
     }

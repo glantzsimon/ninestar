@@ -30,17 +30,13 @@ jobs:
         run: dotnet restore integrations/NineStarKi.OAuth.Persistence/NineStarKi.OAuth.Persistence.csproj
       - name: Build isolated OAuth EF6 store
         run: dotnet build integrations/NineStarKi.OAuth.Persistence/NineStarKi.OAuth.Persistence.csproj --configuration Release --no-restore
-      # Generate EF6's C# migration from the OpenIddict model using the
-      # runner's isolated LocalDB; the database is never updated/deployed.
-      - name: Scaffold initial OAuth Code First migration
+      - name: Verify committed OAuth Code First migration
         shell: pwsh
-        run: ./integrations/NineStarKi.OAuth.Persistence/generate-initial-migration.ps1
-      - name: Upload OAuth Code First migration for review
-        uses: actions/upload-artifact@v4
-        with:
-          name: nine-star-ki-oauth-ef6-migration
-          path: integrations/NineStarKi.OAuth.Persistence/Migrations/*_InitialOAuthStore*
-          if-no-files-found: error
+        run: |
+          $base = 'integrations/NineStarKi.OAuth.Persistence/Migrations/202610162219497_InitialOAuthStore'
+          @('.cs', '.Designer.cs', '.resx') | ForEach-Object {
+            if (-not (Test-Path ($base + $_))) { throw "Missing tracked migration file: $base$_" }
+          }
       - name: Publish
         run: dotnet publish integrations/NineStarKi.Mcp/NineStarKi.Mcp.csproj --configuration Release --no-restore --output artifacts/nine-star-ki-mcp
       - name: Upload deployable package

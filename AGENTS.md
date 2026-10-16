@@ -49,6 +49,8 @@ Keep Nine Star Ki domain models in `Models/NineStarKi`, retaining the existing `
 
 ## Service and controller reuse
 
+For the mobile JSON API, read [docs/mobile-api.md](docs/mobile-api.md). Keep mobile controllers under `/api/mobile/v1` separate from the plugin `ApiController`; both reuse existing services. Use explicit transport models, enforce identity and membership before projecting paid data, and never serialize an EF entity or the complete calculated view model. The initial endpoint uses the existing authenticated web session; native mobile token authentication is still pending.
+
 Read [docs/services-and-controllers.md](docs/services-and-controllers.md) before implementing service/controller work. It maps the existing application services, controller families and tested astronomy batch call sites. Inspect the relevant interface, implementation and current callers before adding a method; extend the existing owner of the behaviour instead of creating parallel business logic.
 
 - Inject existing service interfaces through the established packages/constructor pattern. `BaseService` exposes `INineStarKiBasePackage` and inherits `CachableBase`. Controllers use `INineStarKiPackage` or `IControllerPackage<T>`; generic `BaseNineStarKiController<T>` already supplies the CRUD event/markup pattern.

@@ -72,6 +72,7 @@ namespace K9.WebApplication
             builder.RegisterType<NineStarKiService>().As<INineStarKiService>().InstancePerLifetimeScope();
             builder.RegisterType<Services.AccountMailerService>().As<Services.IAccountMailerService>().InstancePerLifetimeScope();
             builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerLifetimeScope();
+            builder.RegisterType<OAuthAccountIdentityService>().As<IOAuthAccountIdentityService>().InstancePerLifetimeScope();
             builder.RegisterType<ContactService>().As<IContactService>().InstancePerLifetimeScope();
             builder.RegisterType<MailChimpService>().As<IMailChimpService>().InstancePerLifetimeScope();
             builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();

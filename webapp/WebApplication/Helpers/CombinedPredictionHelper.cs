@@ -13,6 +13,20 @@ namespace K9.WebApplication.Helpers
 {
     public static class CombinedPredictionHelper
     {
+        public static string GetCalendarText(int year, int month, int day)
+        {
+            // Use the same energy validation as website readings, but a separate
+            // personal resource family and plain-text presentation for ICS feeds.
+            new CombinedPrediction(year, month, day);
+            var key = string.Format(CultureInfo.InvariantCulture, "CalendarCombinedPrediction_{0}_{1}_{2}", year, month, day);
+            var template = K9.Globalisation.Dictionary.ResourceManager.GetString(key, K9.Globalisation.Dictionary.Culture);
+            if (string.IsNullOrWhiteSpace(template))
+                throw new InvalidOperationException("Calendar prediction resource not found: " + key);
+            return string.Format(K9.Globalisation.Dictionary.Culture ?? CultureInfo.CurrentUICulture, template,
+                K9.Globalisation.Dictionary.CalendarIdealForHeading,
+                K9.Globalisation.Dictionary.CalendarBeMindfulOfHeading).TrimEnd();
+        }
+
         public static string GetHtml(int year, int month, int? day = null, int? afternoonDay = null, bool isGlobal = false)
         {
             // Also validate callers outside a CombinedPrediction instance.

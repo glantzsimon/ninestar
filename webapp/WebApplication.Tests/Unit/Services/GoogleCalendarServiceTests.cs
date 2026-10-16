@@ -7,6 +7,7 @@ using K9.SharedLibrary.Models;
 using K9.DataAccessLayer.Models;
 using K9.WebApplication.Constants;
 using K9.WebApplication.Enums;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using Moq;
@@ -294,6 +295,28 @@ namespace K9.WebApplication.Tests.Unit.Services
                 EPlannerView.Year, EScopeDisplay.PersonalKi, EPlannerNavigationDirection.None, null, false),
                 Times.Exactly((numberOfDays + 39) / 40 + (startsBeforeSolarTransition ? 1 : 0)));
             profiles.VerifyAll();
+
+            // The same planner batches supply the website and the subscription;
+            // only the description resource family changes for the feed.
+            var rawFeed = calendar.GenerateCalendar(42, date, date.AddDays(numberOfDays));
+            var feed = rawFeed.Replace("\r\n ", string.Empty);
+            var first = entries[0];
+            var concise = CombinedPredictionHelper.GetCalendarText(first.YearHouse, first.MonthHouse, first.DayHouse);
+            Assert.DoesNotContain(K9.Globalisation.Dictionary.CalendarIdealForHeading, first.Description);
+            Assert.Contains("\n\n", first.Description);
+            Assert.True(concise.Length < first.Description.Length);
+            if (first.AfternoonDayHouse.HasValue)
+                concise += $"\n\n{K9.Globalisation.Dictionary.AfternoonEnergyLabel} ({first.YearHouse}.{first.MonthHouse}.{first.AfternoonDayHouse.Value}):\n\n" +
+                    CombinedPredictionHelper.GetCalendarText(first.YearHouse, first.MonthHouse, first.AfternoonDayHouse.Value);
+            var expectedFeed = calendar.ConvertToICalendar(42, new List<CalendarEntry>
+            {
+                new CalendarEntry { Date = first.Date, Description = concise }
+            }).Replace("\r\n ", string.Empty);
+            var expectedDescription = expectedFeed.Split(new[] { "\r\n" }, StringSplitOptions.None)
+                .Single(e => e.StartsWith("DESCRIPTION:", StringComparison.Ordinal));
+            Assert.Contains(expectedDescription + "\r\n", feed);
+            foreach (var line in rawFeed.Split(new[] { "\r\n" }, StringSplitOptions.None))
+                Assert.InRange(Encoding.UTF8.GetByteCount(line), 0, 75);
         }
 
         [Fact]
@@ -326,6 +349,33 @@ namespace K9.WebApplication.Tests.Unit.Services
                         Assert.False(string.IsNullOrWhiteSpace(html));
                         Assert.Contains("<p>", html);
                     }
+        }
+
+        [Fact]
+        public void All729CalendarReadingsHaveTwoListsAndOneParagraph()
+        {
+            for (var year = 1; year <= 9; year++)
+                for (var month = 1; month <= 9; month++)
+                    for (var day = 1; day <= 9; day++)
+                    {
+                        var text = CombinedPredictionHelper.GetCalendarText(year, month, day).Replace("\r\n", "\n");
+                        var blocks = text.Split(new[] { "\n\n" }, StringSplitOptions.None);
+                        Assert.Equal(3, blocks.Length);
+                        var ideal = blocks[0].Split('\n');
+                        var mindful = blocks[1].Split('\n');
+                        Assert.Equal(4, ideal.Length);
+                        Assert.Equal(4, mindful.Length);
+                        Assert.Equal(K9.Globalisation.Dictionary.CalendarIdealForHeading, ideal[0]);
+                        Assert.Equal(K9.Globalisation.Dictionary.CalendarBeMindfulOfHeading, mindful[0]);
+                        Assert.All(ideal.Skip(1).Concat(mindful.Skip(1)), item => Assert.StartsWith("- ", item));
+                        Assert.DoesNotContain("\n", blocks[2]);
+                        Assert.DoesNotContain("<p>", text);
+                        Assert.DoesNotContain("{0}", text);
+                        Assert.DoesNotContain("{1}", text);
+                        Assert.False(string.IsNullOrWhiteSpace(blocks[2]));
+                    }
+            Assert.Throws<ArgumentOutOfRangeException>(() => CombinedPredictionHelper.GetCalendarText(0, 1, 1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => CombinedPredictionHelper.GetCalendarText(1, 1, 10));
         }
     }
 }

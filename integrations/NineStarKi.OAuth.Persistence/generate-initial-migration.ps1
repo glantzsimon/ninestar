@@ -25,6 +25,7 @@ $connectionString = 'Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=NineStar
     --assembly $projectAssembly `
     --project-dir $projectDirectory `
     --migrations-config NineStarKi.OAuth.Persistence.Migrations.Configuration `
+    --config (Join-Path $projectDirectory 'OAuthScaffolding.config') `
     --connection-string $connectionString `
     --connection-provider System.Data.SqlClient `
     --root-namespace NineStarKi.OAuth.Persistence `

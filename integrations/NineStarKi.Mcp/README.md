@@ -24,6 +24,7 @@ All credentials are set as per-application-pool environment variables, not in so
 | `Mcp__OAuthAuthority` | OAuth issuer / OIDC discovery authority from a trusted identity provider; **optional until configured**. |
 | `Mcp__OAuthAudience` | Audience of JWT access tokens issued to the MCP API. Required when OAuth authority is set. Recommended value: `https://mcp.9starkiastrology.com/mcp`. |
 | `Mcp__OAuthScope` | Required delegated access scope, defaults to `read:9starki`. |
+| `Mcp__OAuthSubject` | Stable OAuth user `sub` for the **single allowed operator**. Required when OAuth is enabled. |
 
 **Leave `Mcp__OAuthAuthority` unset until the identity provider is ready.** Without it, this version behaves like the already-tested private connector. Never put provider client secrets or user passwords in this repository or ChatGPT messages.
 
@@ -34,12 +35,12 @@ Use a standards-compliant third-party OAuth 2.1 provider such as Auth0, not a ho
 1. Create an OAuth API at your identity provider with identifier `https://mcp.9starkiastrology.com/mcp`.
 2. Give the private operator identity permission to obtain `read:9starki`; limit which users can request access to the API.
 3. Register ChatGPT via CIMD (preferred) with `https://chatgpt.com/oauth/client.json`, subject to provider support. Its callback is currently `https://chatgpt.com/connector_platform_oauth_redirect`. Check the actual link dialog for the connection's callback before finalising provider settings.
-4. Configure the three `Mcp__OAuth*` variables on the MCP IIS app pool. Recycle **only the MCP pool**.
+4. Configure `Mcp__OAuthAuthority`, `Mcp__OAuthAudience`, and `Mcp__OAuthSubject` (plus the optional scope override) on the MCP IIS app pool. Recycle **only the MCP pool**.
 5. Verify GET `/.well-known/oauth-protected-resource` advertises the expected provider and resource, and unauthorized `/mcp` returns `WWW-Authenticate: Bearer resource_metadata="..."`.
 6. Test an actual OAuth authorization/code exchange and a legitimate ChatGPT tool invocation before switching the private plugin manifest to `auth.type: "oauth"` and `client.mode: "cimd"`.
 7. Keep upstream website access and membership checks separate. This proof-of-concept uses a **single operator** only; multi-member support needs binding OAuth identities to individual website accounts and enforcing entitlements on every tool call.
 
-**Implementation in this branch:** OAuth-enabled mode uses Microsoft ASP.NET Core JWT Bearer token validation against the configured provider's signed JWKS and OIDC issuer metadata. It validates issuer, signature, audience, expiration and scope. Existing `Mcp__BearerToken` access is preserved only for the operator's PowerShell diagnostics. There is no endpoint that creates or issues OAuth tokens.
+**Implementation in this branch:** OAuth-enabled mode uses Microsoft ASP.NET Core JWT Bearer token validation against the configured provider's signed JWKS and OIDC issuer metadata. It validates issuer, signature, audience, expiration, scope **and operator subject**. Existing `Mcp__BearerToken` access is preserved only for the operator's PowerShell diagnostics. There is no endpoint that creates or issues OAuth tokens.
 
 ## Local / hosted build
 

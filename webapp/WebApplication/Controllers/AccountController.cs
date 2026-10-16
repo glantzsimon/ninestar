@@ -96,7 +96,10 @@ namespace K9.WebApplication.Controllers
                 {
                     case ELoginResult.Success:
                         var returnUrl = TempData["ReturnUrl"]?.ToString();
-                        if (!string.IsNullOrEmpty(returnUrl))
+                        // OAuth sign-in must never redirect to an untrusted external URL.
+                        // The approved OAuth callback is handled by the authorisation
+                        // server, not by a caller-controlled login returnUrl.
+                        if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                         {
                             return Redirect(returnUrl);
                         }

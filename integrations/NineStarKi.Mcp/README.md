@@ -1,29 +1,59 @@
-# 9 Star Ki MCP connector (development branch only)
+# 9 Star Ki MCP connector (isolated development branch)
 
-A separate ASP.NET Core 10 Streamable HTTP MCP bridge to the existing 9starkiastrology.com endpoints. **Does not alter the site's existing controllers, business logic, credentials, memberships, or Custom GPT.**
+ASP.NET Core 10 Streamable HTTP MCP bridge for 9starkiastrology.com. The five tools call the existing website API. **This project does not change the website, membership rules, or original Custom GPT.**
 
-## Status
+## Verified baseline (16 October 2026)
 
-Source scaffold only. Not deployed and not yet connected to the private 9 Star Ki ChatGPT plugin. The GitHub workflow builds a downloadable Windows-ready publish artifact on demand. Verify the build before attempting deployment.
+- Windows IIS + Plesk HTTPS deployment: `https://mcp.9starkiastrology.com/mcp`.
+- GET `/healthz` returns `{"status":"ready"}`.
+- Unauthenticated MCP requests return HTTP 401.
+- Authenticated `tools/list` exposed five tools: `get_knowledge_base`, `get_personal_chart`, `get_predictions`, `get_compatibility`, `get_i_ching`.
+- Authenticated `tools/call` with `get_i_ching` returned `success:true` and real hexagram data from the upstream API.
+- The original deployed build does not yet implement OAuth. The OAuth changes in this branch are **not deployed or tested yet**.
 
-## Requirements
+## Configuration on the MCP application's IIS app pool
 
-- .NET 10 ASP.NET Core Hosting Bundle on IIS for live deployment, or a separate reverse-proxy arrangement.
-- HTTPS endpoint under a **separate IIS application or subdomain**. Do not use or replace the existing site's application pool.
-- Two separate secrets supplied as process environment variables / secure server settings:
-  - `NineStarKi__ApiKey`: existing MVC API key, used only on the server to call the source API.
-  - `Mcp__BearerToken`: new long random secret for private MCP access.
-- Optional `NineStarKi__BaseUrl` (defaults to `https://9starkiastrology.com/`).
-- All secrets must remain outside source control and outside chat messages.
+All credentials are set as per-application-pool environment variables, not in source control or chat.
 
-## Behaviour
+| Variable | Purpose |
+| --- | --- |
+| `NineStarKi__ApiKey` | Existing upstream MVC API credential (required). |
+| `Mcp__BearerToken` | Independent strong operator-only Bearer token for diagnostics (required). |
+| `NineStarKi__BaseUrl` | Optional; defaults to `https://9starkiastrology.com/`. |
+| `Mcp__PublicBaseUrl` | Optional HTTPS origin, defaults to `https://mcp.9starkiastrology.com`. |
+| `Mcp__OAuthAuthority` | OAuth issuer / OIDC discovery authority from a trusted identity provider; **optional until configured**. |
+| `Mcp__OAuthAudience` | Audience of JWT access tokens issued to the MCP API. Required when OAuth authority is set. Recommended value: `https://mcp.9starkiastrology.com/mcp`. |
+| `Mcp__OAuthScope` | Required delegated access scope, defaults to `read:9starki`. |
 
-The five MCP tools map to the existing site actions: chart, predictions, compatibility, knowledge base and I Ching. Each request has independent inputs; account numbers are NOT stored. HTTP redirects are disabled; client timeout 40 seconds. Existing MVC API may return `success:false` plus a logical `statusCode` despite HTTP 200, so errors are not inferred from HTTP status alone.
+**Leave `Mcp__OAuthAuthority` unset until the identity provider is ready.** Without it, this version behaves like the already-tested private connector. Never put provider client secrets or user passwords in this repository or ChatGPT messages.
 
-## Important limitations
+## OAuth migration plan
 
-- **Private, single-operator staging only.** A static bearer token is not a suitable publicly available member authentication system. For distribution, integrate OAuth/user binding and enforce the account membership on the website.
-- Legacy API places account numbers and birth details in URL paths, potentially appearing in upstream IIS logs. Review privacy and logging before public deployment.
-- The website presently expects birth time and location in the URL. Do not invent unknown values. Decide separately how optional details will be represented before enabling those flows.
-- Do not publish, deploy, attach the plugin, or add real keys until a reviewed build and host isolation check.
-- Do not send credentials through GitHub Actions inputs, workflow logs, or a chat.
+Use a standards-compliant third-party OAuth 2.1 provider such as Auth0, not a homemade authorization server. Configure an authorization-code + PKCE flow, an authorized ChatGPT CIMD client (or supported DCR), and an RS256 JWT for the MCP API audience. Enable a scope such as `read:9starki` only for the allowed operator account.
+
+1. Create an OAuth API at your identity provider with identifier `https://mcp.9starkiastrology.com/mcp`.
+2. Give the private operator identity permission to obtain `read:9starki`; limit which users can request access to the API.
+3. Register ChatGPT via CIMD (preferred) with `https://chatgpt.com/oauth/client.json`, subject to provider support. Its callback is currently `https://chatgpt.com/connector_platform_oauth_redirect`. Check the actual link dialog for the connection's callback before finalising provider settings.
+4. Configure the three `Mcp__OAuth*` variables on the MCP IIS app pool. Recycle **only the MCP pool**.
+5. Verify GET `/.well-known/oauth-protected-resource` advertises the expected provider and resource, and unauthorized `/mcp` returns `WWW-Authenticate: Bearer resource_metadata="..."`.
+6. Test an actual OAuth authorization/code exchange and a legitimate ChatGPT tool invocation before switching the private plugin manifest to `auth.type: "oauth"` and `client.mode: "cimd"`.
+7. Keep upstream website access and membership checks separate. This proof-of-concept uses a **single operator** only; multi-member support needs binding OAuth identities to individual website accounts and enforcing entitlements on every tool call.
+
+**Implementation in this branch:** OAuth-enabled mode uses Microsoft ASP.NET Core JWT Bearer token validation against the configured provider's signed JWKS and OIDC issuer metadata. It validates issuer, signature, audience, expiration and scope. Existing `Mcp__BearerToken` access is preserved only for the operator's PowerShell diagnostics. There is no endpoint that creates or issues OAuth tokens.
+
+## Local / hosted build
+
+The separate GitHub Actions workflow `.github/workflows/9-star-ki-mcp.yml` builds and publishes the .NET 10 project to artifact `nine-star-ki-mcp`, without requiring an SDK on the Windows desktop. Do not merge this development branch into `master` or deploy the OAuth build until CI and the identity-provider setup are verified.
+
+## Constraints and privacy
+
+- The upstream MVC API may return HTTP 200 even when the response body says `success:false,statusCode:401/404/422`; callers must check JSON contents.
+- The legacy website embeds account numbers and birth details in route paths; IIS upstream logs may record these. Do not expand exposure until logging/privacy are assessed.
+- Birth time and location currently have required path parameters. Never fabricate missing values.
+- The original GPT's old prompt-based administrative bypass must never be ported.
+- Static Bearer-token access is staging/operator-only and is **not** suitable for public deployment.
+- Always keep `healthz` free of account details or credentials.
+
+## MCP PowerShell diagnostic notes
+
+With `Mcp__BearerToken` already in your session's clipboard, authenticated MCP `tools/list` and `tools/call` can be invoked over Streamable HTTP. This SDK exposes lower-case `snake_case` tool names, e.g. `get_i_ching`, not `GetIChing`. For protocol version `2026-07-28`, include metadata `params._meta["io.modelcontextprotocol/protocolVersion"]` in requests, plus the `Mcp-Method` and `Mcp-Name` HTTP headers for tool calls.

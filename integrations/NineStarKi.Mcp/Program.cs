@@ -33,6 +33,7 @@ if (!Uri.TryCreate(baseUrl, UriKind.Absolute, out var baseUri) ||
 // ONLY verifies its signed access tokens. Never accept unverified JWT claims.
 var oauthAuthority = builder.Configuration["Mcp:OAuthAuthority"];
 var oauthAudience = builder.Configuration["Mcp:OAuthAudience"];
+var oauthSubject = builder.Configuration["Mcp:OAuthSubject"];
 var oauthScope = builder.Configuration["Mcp:OAuthScope"] ?? "read:9starki";
 var publicBaseUrl = builder.Configuration["Mcp:PublicBaseUrl"] ?? "https://mcp.9starkiastrology.com";
 
@@ -61,10 +62,11 @@ if (oauthEnabled)
     }
 
     if (string.IsNullOrWhiteSpace(oauthAudience) ||
-        string.IsNullOrWhiteSpace(oauthScope))
+        string.IsNullOrWhiteSpace(oauthScope) ||
+        string.IsNullOrWhiteSpace(oauthSubject))
     {
         throw new InvalidOperationException(
-            "Mcp__OAuthAudience and Mcp__OAuthScope must be configured for OAuth.");
+            "Mcp__OAuthAudience, Mcp__OAuthScope and Mcp__OAuthSubject must be configured for OAuth.");
     }
 
     builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -145,7 +147,8 @@ app.Use(async (context, next) =>
     {
         var authentication = await context.AuthenticateAsync(JwtBearerDefaults.AuthenticationScheme);
         if (authentication.Succeeded && authentication.Principal is not null &&
-            HasRequiredScope(authentication.Principal, oauthScope))
+            HasRequiredScope(authentication.Principal, oauthScope) &&
+            string.Equals(authentication.Principal.FindFirst("sub")?.Value, oauthSubject, StringComparison.Ordinal))
         {
             context.User = authentication.Principal;
             await next();

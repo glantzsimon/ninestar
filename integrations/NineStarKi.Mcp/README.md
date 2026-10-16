@@ -22,6 +22,21 @@ Set the two secrets only in the MCP application's IIS pool environment variables
 
 Optional: `NineStarKi__BaseUrl`, default `https://9starkiastrology.com/`.
 
+### Experimental OpenAI-managed mTLS support (not deployed)
+
+The development branch now provides **opt-in** OpenAI-managed mTLS verification for the `/mcp` endpoint. It is **off by default**, preserving the working private Bearer-token test without additional settings.
+
+- `Mcp__RequireOpenAiMtls=true` enforces an OpenAI client certificate instead of the private Bearer token.
+- `Mcp__OpenAiRootCaPath`: absolute path to OpenAI's official public root CA PEM.
+- `Mcp__OpenAiIntermediateCaPath`: absolute path to OpenAI's official Connectors mTLS intermediate CA PEM.
+
+Download the published PEM files only from the links at https://developers.openai.com/plugins/build/auth#mutual-tls-mtls . The verifier checks leaf DNS SAN `mtls.prod.connectors.openai.com`, client-authentication EKU, chain validity, pinned root and exact Connectors intermediate, and online certificate revocation. Invalid or absent client certificates are rejected.
+
+**IIS/Plesk prerequisite:** configure only the separate MCP HTTPS site to request/accept TLS client certificates, and check that `HttpContext.Connection.GetClientCertificateAsync` receives the real TLS peer certificate. Do not trust forwarded certificate headers supplied by arbitrary callers. Do not set `Mcp__RequireOpenAiMtls=true` until IIS is configured and an actual ChatGPT handshake can be tested. There is no impact on the existing production site unless the new artifact is deployed and the feature enabled.
+
+mTLS authenticates ChatGPT as a **calling service**, not an individual customer. Do not expose paid or account-specific tools using only mTLS and a guessable nine-digit account number. OpenAI's public plugin guidelines prohibit collecting passwords, API keys, or OTP credentials in plugin tool arguments/chat. Customer authorisation needs a separate supported design.
+
+
 Never commit secrets, disclose them in chat, or embed them in a plugin package.
 
 ## Product goal / public distribution

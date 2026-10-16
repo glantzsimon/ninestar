@@ -1,61 +1,58 @@
-# 9 Star Ki MCP connector (isolated development branch)
+# 9 Star Ki MCP connector
 
-Separate .NET 10 Streamable HTTP MCP bridge to the existing 9starkiastrology.com API. This project does **not** change the website, its existing membership checks, or the original Custom GPT.
+Separate .NET 10 Streamable HTTP MCP bridge to the existing website at `9starkiastrology.com`. The connector has five tools; the original website and legacy Custom GPT are not modified by this connector.
 
-## Verified private prototype
+## Verified private deployment (16 October 2026)
 
-- The MCP app runs at `https://mcp.9starkiastrology.com/mcp` (separate IIS site and app pool).
-- `/healthz` returned `{"status":"ready"}`.
-- Unauthenticated calls to `/mcp` returned 401.
-- Authenticated `tools/list` exposed all five tools, using `snake_case` names:
-  `get_personal_chart`, `get_predictions`, `get_compatibility`,
-  `get_knowledge_base`, and `get_i_ching`.
-- Authenticated `get_i_ching` call returned genuine data (`success:true`), confirming the entire MCP -> website API path.
-- Built successfully on GitHub Actions for the original connector and after a provisional OAuth experiment. OAuth support has since been **removed from the development branch**, according to the owner's clarified architecture. The working IIS deployment is unchanged.
+- The **existing deployed build** at `https://mcp.9starkiastrology.com/mcp` responds with `{"status":"ready"}` at `/healthz`.
+- Without authorisation, `/mcp` returns HTTP 401.
+- An authenticated `tools/list` call exposed `get_personal_chart`, `get_predictions`, `get_compatibility`, `get_knowledge_base` and `get_i_ching`.
+- An authenticated `get_i_ching` call successfully fetched a real hexagram from the upstream API.
+- GitHub Actions builds the MCP host; new OAuth and mTLS code is **staged in this development branch** but **not deployed**.
 
-## Server-side configuration
+## Architecture and configuration
 
-Set the two secrets only in the MCP application's IIS pool environment variables:
+The intended **public** user journey is: client installs plugin in ChatGPT, clicks Connect, signs into the **existing** 9 Star Ki website in a secure browser window, and ChatGPT stores a delegated OAuth connection. No Auth0, second account, password in chat or copied membership number is required.
 
-- `NineStarKi__ApiKey` — upstream 9 Star Ki MVC website API key.
-- `Mcp__BearerToken` — separate strong secret for private MCP diagnostic access.
+The two independent MCP security gates are feature flags:
 
-Optional: `NineStarKi__BaseUrl`, default `https://9starkiastrology.com/`.
+| IIS app-pool environment variable | Effect |
+|---|---|
+| `NineStarKi__ApiKey` | Required upstream MVC API secret (never exposed to plugin users) |
+| `Mcp__BearerToken` | Required private diagnostic Bearer token for the current staging mode (never embedded into plugin) |
+| `Mcp__RequireOpenAiMtls` | Optional boolean, defaults false. If true, verifies OpenAI's real TLS client certificate |
+| `Mcp__OpenAiRootCaPath` | Required when mTLS enabled; PEM downloaded from official OpenAI docs |
+| `Mcp__OpenAiIntermediateCaPath` | Required when mTLS enabled; Connectors CA PEM downloaded from official OpenAI docs |
+| `Mcp__RequireUserOAuth` | Optional boolean, defaults false. If true, requires a valid website-issued OAuth token for **every MCP request** |
+| `Mcp__OAuthAuthority` | Required when OAuth enabled; HTTPS issuer URL for the website's OAuth server, to be built |
+| `NineStarKi__BaseUrl` | Optional; default `https://9starkiastrology.com/` |
 
-### Experimental OpenAI-managed mTLS support (not deployed)
+**Do not enable either flag yet.** The legacy private Bearer-token path remains functional when both are false. With both flags true, mTLS checks the calling ChatGPT service AND OAuth checks the individual website member; **mTLS never bypasses OAuth**. A real website OAuth issuer and its signing/JWKS endpoints are required before setting `Mcp__RequireUserOAuth=true`.
 
-The development branch now provides **opt-in** OpenAI-managed mTLS verification for the `/mcp` endpoint. It is **off by default**, preserving the working private Bearer-token test without additional settings.
+`McpMemberAccountResolver` derives the upstream membership account number from the validated issuer-signed `membership_account` token claim in OAuth mode. Any user-supplied account number is ignored, preventing a user from borrowing another member's privileges. In private staging only, the explicit account number parameter is still permitted. The original website API independently validates current subscription status on each paid tool call.
 
-- `Mcp__RequireOpenAiMtls=true` enforces an OpenAI client certificate instead of the private Bearer token.
-- `Mcp__OpenAiRootCaPath`: absolute path to OpenAI's official public root CA PEM.
-- `Mcp__OpenAiIntermediateCaPath`: absolute path to OpenAI's official Connectors mTLS intermediate CA PEM.
+`get_i_ching` requires **no website membership**, although this first OAuth-resource implementation currently requires an OAuth connection to call the MCP server at all. Per-tool anonymous I Ching access is a separate future enhancement, not implemented yet.
 
-Download the published PEM files only from the links at https://developers.openai.com/plugins/build/auth#mutual-tls-mtls . The verifier checks leaf DNS SAN `mtls.prod.connectors.openai.com`, client-authentication EKU, chain validity, pinned root and exact Connectors intermediate, and online certificate revocation. Invalid or absent client certificates are rejected.
+## Implementing the existing-website OAuth issuer
 
-**IIS/Plesk prerequisite:** configure only the separate MCP HTTPS site to request/accept TLS client certificates, and check that `HttpContext.Connection.GetClientCertificateAsync` receives the real TLS peer certificate. Do not trust forwarded certificate headers supplied by arbitrary callers. Do not set `Mcp__RequireOpenAiMtls=true` until IIS is configured and an actual ChatGPT handshake can be tested. There is no impact on the existing production site unless the new artifact is deployed and the feature enabled.
+Read [OAUTH-ROLLOUT.md](OAUTH-ROLLOUT.md) for the implementation plan, integration contracts and required security tests.
 
-mTLS authenticates ChatGPT as a **calling service**, not an individual customer. Do not expose paid or account-specific tools using only mTLS and a guessable nine-digit account number. OpenAI's public plugin guidelines prohibit collecting passwords, API keys, or OTP credentials in plugin tool arguments/chat. Customer authorisation needs a separate supported design.
+OpenIddict 7.7.2 supports the existing ASP.NET MVC 5/OWIN and EF6 technology stack, so the issuer can reuse the website's existing user login without another account provider. The website OAuth issuer (PKCE, registered redirect URIs, signed access tokens, refresh tokens and persistent code/consent storage) **has not yet been implemented**.
 
+**Do not deploy the new MCP artifact or switch the plugin to OAuth** until the issuer, IIS mTLS settings, and browser login flow have been implemented and tested. The plugin configuration still targets the private prototype, so connection through ChatGPT itself is not yet working.
 
-Never commit secrets, disclose them in chat, or embed them in a plugin package.
+## Build and tests
 
-## Product goal / public distribution
+Workflow `.github/workflows/9-star-ki-mcp.yml` restores/builds the .NET 10 MCP project, runs the test project `integrations/NineStarKi.Mcp.Tests` and produces an isolated Windows-ready `nine-star-ki-mcp` artifact.
 
-The owner's intended user flow is: users install 9 Star Ki Astrologer in ChatGPT, are prompted for their existing website **account number**, and the website checks membership entitlement. The owner would prefer **one service-level Bearer credential** between the ChatGPT plugin and the MCP server rather than OAuth or an external identity provider.
+Tests specifically verify that a verified member's token-selected account number cannot be overridden by an account number supplied through chat, and that missing/anonymous membership claims are rejected. Build and test conclusions must be inspected before deployment; a committed test is not proof that it passed.
 
-**Currently blocked by the ChatGPT public plugin portal:** although a portable MCP manifest may declare `auth.type: "api_key", headerScheme: "bearer"`, the public plugin submission/connection flow supports only no authentication, OAuth, or mixed noauth/OAuth. It has **no API-key or static Bearer-token input**. Public submission also rejects embedding nonempty secret request headers in `mcp.json`. See https://developers.openai.com/plugins/deploy/submission#authentication-limitations . Do **not** work around this by hardcoding a secret or misdeclaring the protected endpoint as unauthenticated.
+## Important boundaries
 
-A website account number is an **identifier**, not proof of account ownership. The legacy membership lookup must not be assumed sufficient to authorise access to birth details, compatibility information, or paid subscription features. Before public release choose a supported authentication design or obtain platform support for publisher-managed static credentials. If unauthenticated public MCP access is considered, safeguard personal/member resources with an independent ownership-verification mechanism and robust rate limits; do not remove the auth barrier without reviewing this risk. A public I Ching tool could be exposed separately as unauthenticated if its data access is genuinely public.
-
-The developer may contact OpenAI to ask about submitting a publisher-managed API-key plugin. Otherwise, standard user OAuth can be implemented against the **existing 9 Star Ki website** without necessarily using Auth0.
-
-## Build
-
-The GitHub Actions workflow `.github/workflows/9-star-ki-mcp.yml` builds and publishes `nine-star-ki-mcp`. Keep this branch and draft PR #11 separate from `master`. Do not deploy changed authentication without a supported public solution and explicit testing.
-
-## Upstream caveats
-
-- The existing ASP.NET MVC API can return HTTP 200 with `success:false`, including logical status codes 401, 404, 422; callers must inspect the JSON body.
-- Some endpoints require a nine-digit account number and birth time/location. Don't invent unknown values.
-- The legacy API places some personal parameters in URL paths, which may be logged upstream.
-- Do not carry over the old GPT's prompt-based administrative backdoor.
+- The upstream legacy API sometimes returns `success:false` JSON with HTTP 200 and internal statusCode 401, 404, or 422.
+- Some existing website routes include personal details in path segments; review logging before broad deployment.
+- Birth time and location remain required by current tool signatures; never fabricate unknown values.
+- Review website redirect handling for OAuth callbacks. Never trust arbitrary `returnUrl` values.
+- Do not port the legacy Custom GPT's prompt-based administrator shortcut.
+- Secrets belong in server configuration, not in the plugin manifest or repository.
+- Public rollout requires validated website OAuth, certificate handling, member isolation tests and OpenAI review.

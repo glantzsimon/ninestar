@@ -55,6 +55,9 @@
             </div>
         </div>
         <p class="personal-calendar-status" role="status" aria-live="polite"></p>
+        <div class="personal-calendar-account margin-top-10" style="display: none;">
+            @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account", null, "fa-user-circle")
+        </div>
         @Html.AntiForgeryToken()
         <div class="calendar-link-container" style="display: none;">
             @Html.BootstrapDisplayFor(e => e.CalendarLink)

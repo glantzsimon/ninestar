@@ -33,7 +33,10 @@
         var dayTemplate = $calendar.find('#personal-calendar-day-template')[0],
             dayButton = dayTemplate.content.querySelector('button');
 
-        function status(message) { $status.text(message || ''); }
+        function status(message, showAccount) {
+            $status.text(message || '');
+            $calendar.find('.personal-calendar-account').toggle(showAccount === true);
+        }
         function select(entry) {
             selectedDate = entry.Date;
             $grid.find('.personal-calendar-day').removeClass('is-selected').attr('aria-pressed', 'false');
@@ -134,7 +137,7 @@
                 },
                 error: function (xhr, result) {
                     if (result !== 'abort' && version === requestVersion) {
-                        status($calendar.attr(xhr.status === 409 ? 'data-unavailable' : 'data-error'));
+                        status($calendar.attr(xhr.status === 409 ? 'data-unavailable' : 'data-error'), xhr.status === 409);
                         if (window.console && window.console.error)
                             window.console.error('Personal calendar month request failed.', {
                                 status: xhr.status, result: result, year: year, month: month

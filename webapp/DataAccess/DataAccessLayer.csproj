@@ -576,6 +576,10 @@
     <Compile Include="Migrations\202603010454392_CalculatorUserInfo2.designer.cs">
       <DependentUpon>202603010454392_CalculatorUserInfo2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202610170149068_AddOpenIddictOAuth.cs" />
+    <Compile Include="Migrations\202610170149068_AddOpenIddictOAuth.designer.cs">
+      <DependentUpon>202610170149068_AddOpenIddictOAuth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ArticleView.cs" />
     <Compile Include="Models\BaseLikeable.cs" />
     <Compile Include="Models\Like.cs" />
@@ -823,6 +827,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202603010454392_CalculatorUserInfo2.resx">
       <DependentUpon>202603010454392_CalculatorUserInfo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202610170149068_AddOpenIddictOAuth.resx">
+      <DependentUpon>202610170149068_AddOpenIddictOAuth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

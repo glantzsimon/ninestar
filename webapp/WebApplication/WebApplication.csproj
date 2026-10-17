@@ -644,6 +644,7 @@
     <Compile Include="Services\IMailChimpService.cs" />
     <Compile Include="Services\IMembershipService.cs" />
     <Compile Include="Services\OAuthAccountIdentityService.cs" />
+    <Compile Include="Services\OAuthClaimsPrincipalFactory.cs" />
     <Compile Include="Services\INineStarKiService.cs" />
     <Compile Include="Services\MailChimpService.cs" />
     <Compile Include="Services\MembershipService.cs" />

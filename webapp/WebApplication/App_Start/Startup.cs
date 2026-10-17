@@ -101,16 +101,28 @@ namespace K9.WebApplication
             RegisterStaticTypes();
 
 #if NINESTAR_OAUTH
-            // Add OAuth services to the EXISTING Autofac container. Disabled
-            // until the reviewed DataAccess migration and keys are deployed.
-            OAuthServerConfiguration.RegisterServices(builder);
+            // OAuth is compiled in Debug like any other feature. Only start
+            // the authorization server once the local database migration,
+            // client registration and signing certificates are configured.
+            // An absent setting leaves the existing website fully operational.
+            var oauthEnabled = string.Equals(
+                ConfigurationManager.AppSettings["NineStarKiOAuthEnabled"],
+                "true", StringComparison.OrdinalIgnoreCase);
+
+            if (oauthEnabled)
+            {
+                OAuthServerConfiguration.RegisterServices(builder);
+            }
 #endif
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 
 #if NINESTAR_OAUTH
-            OAuthServerConfiguration.RegisterMiddleware(app, container);
+            if (oauthEnabled)
+            {
+                OAuthServerConfiguration.RegisterMiddleware(app, container);
+            }
 #endif
 
             // Configure Hangfire to use SQL Server storage and the Autofac job activator

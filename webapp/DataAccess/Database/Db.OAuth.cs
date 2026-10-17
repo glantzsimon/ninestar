@@ -1,11 +1,7 @@
-// This file deliberately remains opt-in until the website's legacy
-// packages.config/git-crypt dependencies have been reviewed and OpenIddict
-// is installed in the existing DataAccess project.
-//
-// Enable NINESTAR_OAUTH only after the required NuGet packages have been
-// installed across the existing solution and the DataAccess Code First
-// migration has been generated against the COMPLETE LocalDb model.
-// Never create a second DbContext or migrate an isolated OAuth context.
+// OpenIddict's EF6 mappings are compiled into the existing LocalDb model
+// in ordinary Debug builds so EF6 can scaffold the correct next migration.
+// No separate DbContext or migration history is permitted. The actual
+// database migration belongs in webapp/DataAccess/Migrations/.
 #if NINESTAR_OAUTH
 using System.Data.Entity;
 using OpenIddict.EntityFramework;

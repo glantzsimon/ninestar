@@ -71,6 +71,14 @@ namespace K9.WebApplication.Controllers
                 return RedirectToAction("Login", "Account", new { returnUrl = Request.RawUrl });
             }
 
+            // Re-authentication freshness cannot be established from the
+            // legacy membership cookie alone. Fail closed rather than
+            // falsely claiming to honour prompt=login or max_age.
+            if (request.HasPromptValue(PromptValues.Login) || request.MaxAge != null)
+            {
+                return OAuthError(Errors.LoginRequired);
+            }
+
             if (_accounts.ResolveCurrentUser() == null)
             {
                 return OAuthError(Errors.AccessDenied);

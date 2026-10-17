@@ -1,8 +1,6 @@
-// OpenIddict compiles in normal Debug. Startup activates the server only
-// when NineStarKiOAuthEnabled=true. Before enabling the server locally,
-// prepare the existing DataAccess migration, OpenIddict client registration
-// and persistent signing keys. Preserve FormsAuthentication/WebSecurity.
-#if NINESTAR_OAUTH
+// Startup activates the OAuth server only when NineStarKiOAuthEnabled=true.
+// Before enabling it, configure the OpenIddict client and persistent signing keys.
+// Preserve existing FormsAuthentication/WebSecurity.
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Autofac.Integration.Owin;
@@ -110,4 +108,3 @@ namespace K9.WebApplication
         }
     }
 }
-#endif

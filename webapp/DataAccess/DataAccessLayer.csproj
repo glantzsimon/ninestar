@@ -235,6 +235,7 @@
     <Compile Include="CustomDatasSets\Discounts.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
+    <Compile Include="Database\Db.OAuth.cs" />
     <Compile Include="Database\Seeds\TimeZonesSeeder.cs" />
     <Compile Include="Database\Seeds\SystemSettingsSeeder.cs" />
     <Compile Include="Database\Seeds\EmailTemplatesSeeder.cs" />

@@ -37,7 +37,7 @@ The two independent MCP security gates are feature flags:
 
 Read [OAUTH-ROLLOUT.md](OAUTH-ROLLOUT.md) for the implementation plan, integration contracts and required security tests.
 
-OpenIddict 7.7.2 supports the existing ASP.NET MVC 5/OWIN and EF6 technology stack, so the issuer can reuse the website's existing user login without another account provider. The website OAuth issuer (PKCE, registered redirect URIs, signed access tokens, refresh tokens and persistent code/consent storage) **has not yet been implemented**.
+OpenIddict 7.7.2 supports the existing ASP.NET MVC 5/OWIN and EF6 stack, so the issuer can reuse the website's existing login. **All Code First migrations must be generated in `webapp/DataAccess/Migrations` using the existing `LocalDb` model and migration history.** An earlier isolated OAuth persistence project was removed because it violated this rule; its metadata must not be reused. The corrected migration has **not yet been generated**. The website OAuth issuer (PKCE, registered redirect URIs, signed tokens and refresh/consent storage) is also not implemented.
 
 **Do not deploy the new MCP artifact or switch the plugin to OAuth** until the issuer, IIS mTLS settings, and browser login flow have been implemented and tested. The plugin configuration still targets the private prototype, so connection through ChatGPT itself is not yet working.
 

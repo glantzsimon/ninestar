@@ -63,7 +63,7 @@ namespace K9.WebApplication.Services
             // Claims are not included in OpenIddict access tokens by default.
             // Never put the membership account into an identity token.
             identity.SetDestinations(claim =>
-                claim.Type == MembershipAccountClaim
+                claim.Type == Claims.Subject || claim.Type == MembershipAccountClaim
                     ? new[] { Destinations.AccessToken }
                     : Array.Empty<string>());
 

@@ -100,11 +100,8 @@ namespace K9.WebApplication
 
             RegisterStaticTypes();
 
-#if NINESTAR_OAUTH
-            // OAuth is compiled in Debug like any other feature. Only start
-            // the authorization server once the local database migration,
-            // client registration and signing certificates are configured.
-            // An absent setting leaves the existing website fully operational.
+            // Register OAuth only when its required certificates and client
+            // registrations are configured. Disabled by default.
             var oauthEnabled = string.Equals(
                 ConfigurationManager.AppSettings["NineStarKiOAuthEnabled"],
                 "true", StringComparison.OrdinalIgnoreCase);
@@ -113,17 +110,14 @@ namespace K9.WebApplication
             {
                 OAuthServerConfiguration.RegisterServices(builder);
             }
-#endif
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 
-#if NINESTAR_OAUTH
             if (oauthEnabled)
             {
                 OAuthServerConfiguration.RegisterMiddleware(app, container);
             }
-#endif
 
             // Configure Hangfire to use SQL Server storage and the Autofac job activator
             GlobalConfiguration.Configuration

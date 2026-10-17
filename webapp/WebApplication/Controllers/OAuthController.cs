@@ -204,10 +204,16 @@ namespace K9.WebApplication.Controllers
         }
     }
 
+}
+#endif
+
+// The Razor view model stays compiled in ordinary builds, even while the
+// endpoint itself remains disabled, so MVC view precompilation also succeeds.
+namespace K9.WebApplication.Controllers
+{
     public sealed class OAuthConsentViewModel
     {
         public string ApplicationName { get; set; }
         public string Scope { get; set; }
     }
 }
-#endif

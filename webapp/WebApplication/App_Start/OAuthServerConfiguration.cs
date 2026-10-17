@@ -10,7 +10,6 @@ using OpenIddict.Server.Owin;
 using Owin;
 using System;
 using System.Configuration;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
 namespace K9.WebApplication
@@ -90,7 +89,7 @@ namespace K9.WebApplication
                 throw new ConfigurationErrorsException("Missing OAuth certificate setting: " + setting);
             }
 
-            var thumbprint = new string(supplied.Where(c => !char.IsWhiteSpace(c)).ToArray());
+            var thumbprint = string.Concat(supplied.Split((char[])null, StringSplitOptions.RemoveEmptyEntries));
             using (var store = new X509Store(StoreName.My, StoreLocation.LocalMachine))
             {
                 store.Open(OpenFlags.ReadOnly);

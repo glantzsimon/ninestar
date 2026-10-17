@@ -531,6 +531,7 @@
     <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AccountControllerAjax.cs" />
+    <Compile Include="Controllers\OAuthController.cs" />
     <Compile Include="Controllers\DonationsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
@@ -1281,6 +1282,7 @@
     <Content Include="Views\Account\AccountCreated.cshtml" />
     <Content Include="Views\Account\AccountActivationFailed.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\OAuth\Consent.cshtml" />
     <Content Include="Views\Account\PasswordResetEmailSent.cshtml" />
     <Content Include="Views\Account\PasswordResetRequest.cshtml" />
     <Content Include="Views\Account\RegisterDetails.cshtml" />

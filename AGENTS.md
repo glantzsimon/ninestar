@@ -49,6 +49,8 @@ Keep Nine Star Ki domain models in `Models/NineStarKi`, retaining the existing `
 
 ## Service and controller reuse
 
+For the mobile JSON API, read [docs/mobile-api.md](docs/mobile-api.md). Keep mobile controllers under `/api/mobile/v1` separate from the plugin `ApiController`; both reuse existing services. Use explicit transport models, enforce identity and membership before projecting paid data, and never serialize an EF entity or the complete calculated view model. The initial endpoint uses the existing authenticated web session; native mobile token authentication is still pending.
+
 Read [docs/services-and-controllers.md](docs/services-and-controllers.md) before implementing service/controller work. It maps the existing application services, controller families and tested astronomy batch call sites. Inspect the relevant interface, implementation and current callers before adding a method; extend the existing owner of the behaviour instead of creating parallel business logic.
 
 - Inject existing service interfaces through the established packages/constructor pattern. `BaseService` exposes `INineStarKiBasePackage` and inherits `CachableBase`. Controllers use `INineStarKiPackage` or `IControllerPackage<T>`; generic `BaseNineStarKiController<T>` already supplies the CRUD event/markup pattern.
@@ -68,6 +70,8 @@ All user-visible labels, help, tooltips and messages belong in Globalisation. Th
 Use strongly typed `Dictionary.ResourceName` properties for fixed UI text, including weekday headings. Keep generated accessors in sync. Do not use string-key helpers or `ResourceManager.GetString("FixedLabel", ...)` for fixed text. Calculated resource keys, such as combined year/month/day predictions, may use dynamic lookups.
 
 ## Branch and deployment workflow
+
+The owner's Git Bash `loadbranch` function automatically prepends `feature/` to its argument, fetches origin, then checks out the branch (creating it from the remote if needed) and fast-forwards an existing local branch. Pass only the suffix: `loadbranch mobile-json-api` selects `feature/mobile-json-api`. Never suggest `loadbranch feature/mobile-json-api`, which doubles the prefix. Use `loadmaster` to return to master. Verify the selected branch with `git branch --show-current`.
 
 Work on the existing feature branch and prepare a draft pull request for review. Do not merge or deploy without the user's instruction. Normal commits must not contain `#teamcity`; that marker deliberately triggers Integration deployment and should only be added when deployment is requested.
 

@@ -345,6 +345,10 @@
     <Compile Include="ControllerPackages\INineStarKiBasePackage.cs" />
     <Compile Include="Controllers\ApiPureAlchemyController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\MobileApiControllerBase.cs" />
+    <Compile Include="Controllers\MobilePersonalChartController.cs" />
+    <Compile Include="Helpers\MobilePersonalChartMapper.cs" />
+    <Compile Include="ViewModels\MobileApi\MobilePersonalChartResponse.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />

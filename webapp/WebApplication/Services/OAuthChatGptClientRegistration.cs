@@ -1,8 +1,8 @@
 // Client records must only be created AFTER the OAuth tables have been
 // migrated in the existing website DataAccess context. Not wired to startup.
-#if NINESTAR_OAUTH
 using OpenIddict.Abstractions;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using static OpenIddict.Abstractions.OpenIddictConstants;
@@ -97,9 +97,9 @@ namespace K9.WebApplication.Services
                 registeredRedirects.Length != 1 ||
                 !string.Equals(registeredRedirects[0], descriptor.RedirectUris.Single().AbsoluteUri,
                     StringComparison.Ordinal) ||
-                !registeredPermissions.ToHashSet(StringComparer.Ordinal)
+                !new HashSet<string>(registeredPermissions, StringComparer.Ordinal)
                     .SetEquals(descriptor.Permissions) ||
-                !registeredRequirements.ToHashSet(StringComparer.Ordinal)
+                !new HashSet<string>(registeredRequirements, StringComparer.Ordinal)
                     .SetEquals(descriptor.Requirements))
             {
                 throw new InvalidOperationException(
@@ -108,4 +108,3 @@ namespace K9.WebApplication.Services
         }
     }
 }
-#endif

@@ -6,6 +6,7 @@ using K9.WebApplication.Services;
 using Microsoft.Owin.Security;
 using OpenIddict.Abstractions;
 using OpenIddict.Server.Owin;
+using Owin;
 using System;
 using System.Collections.Generic;
 using System.Globalization;

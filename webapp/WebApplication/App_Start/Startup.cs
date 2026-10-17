@@ -48,7 +48,7 @@ namespace K9.WebApplication
             builder.RegisterSource(new ViewRegistrationSource());
             builder.RegisterFilterProvider();
 
-            builder.RegisterType<LocalDb>().As<DbContext>().InstancePerLifetimeScope();
+            builder.RegisterType<LocalDb>().As<DbContext>().AsSelf().InstancePerLifetimeScope();
             builder.Register(c => LogManager.GetCurrentClassLogger()).As<ILogger>().SingleInstance();
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
             builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerLifetimeScope();
@@ -100,8 +100,18 @@ namespace K9.WebApplication
 
             RegisterStaticTypes();
 
+#if NINESTAR_OAUTH
+            // Add OAuth services to the EXISTING Autofac container. Disabled
+            // until the reviewed DataAccess migration and keys are deployed.
+            OAuthServerConfiguration.RegisterServices(builder);
+#endif
+
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+#if NINESTAR_OAUTH
+            OAuthServerConfiguration.RegisterMiddleware(app, container);
+#endif
 
             // Configure Hangfire to use SQL Server storage and the Autofac job activator
             GlobalConfiguration.Configuration

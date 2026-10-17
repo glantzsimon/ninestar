@@ -1,7 +1,5 @@
-// All OAuth endpoints are opt-in. Do not enable this symbol before a
-// complete DataAccess migration, client registration, signing keys, and
-// integration testing. Existing website authentication is unchanged.
-#if NINESTAR_OAUTH
+// OAuth is activated in Startup only when configured and explicitly enabled.
+// Existing website authentication is unchanged.
 using K9.WebApplication.Services;
 using Microsoft.Owin.Security;
 using OpenIddict.Abstractions;
@@ -214,10 +212,8 @@ namespace K9.WebApplication.Controllers
     }
 
 }
-#endif
 
-// The Razor view model stays compiled in ordinary builds, even while the
-// endpoint itself remains disabled, so MVC view precompilation also succeeds.
+// Model used by the OAuth consent view.
 namespace K9.WebApplication.Controllers
 {
     public sealed class OAuthConsentViewModel

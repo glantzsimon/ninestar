@@ -261,6 +261,7 @@
     <Compile Include="Unit\Models\NineStarKiModelTests.cs" />
     <Compile Include="Unit\Models\PersonModelTests.cs" />
     <Compile Include="Unit\Services\MembershipServiceTests.cs" />
+    <Compile Include="Unit\Services\OAuthClaimsPrincipalFactoryTests.cs" />
     <Compile Include="Unit\Services\BioRhythmsServiceTests.cs" />
     <Compile Include="Unit\Services\IChingServiceTests.cs" />
     <Compile Include="Unit\Services\NineStarKiServiceTests.cs" />

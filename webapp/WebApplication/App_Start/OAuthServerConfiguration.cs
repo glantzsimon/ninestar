@@ -1,7 +1,7 @@
-// Stage only. Do not enable NINESTAR_OAUTH until the DataAccess LocalDb
-// migration has been generated and integration-tested, the OWIN middleware
-// adapter has been installed, and persistent signing keys are provisioned.
-// The existing MVC FormsAuthentication/WebSecurity login remains authoritative.
+// OpenIddict compiles in normal Debug. Startup activates the server only
+// when NineStarKiOAuthEnabled=true. Before enabling the server locally,
+// prepare the existing DataAccess migration, OpenIddict client registration
+// and persistent signing keys. Preserve FormsAuthentication/WebSecurity.
 #if NINESTAR_OAUTH
 using Autofac;
 using Autofac.Extensions.DependencyInjection;

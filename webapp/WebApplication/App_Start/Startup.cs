@@ -49,7 +49,9 @@ namespace K9.WebApplication
             builder.RegisterFilterProvider();
 
             builder.RegisterType<LocalDb>().As<DbContext>().AsSelf().InstancePerLifetimeScope();
-            builder.Register(c => LogManager.GetCurrentClassLogger()).As<ILogger>().SingleInstance();
+            builder.Register<ILogger>(c => LogManager.GetCurrentClassLogger())
+                .As<ILogger>()
+                .SingleInstance();
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
             builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerLifetimeScope();
             builder.RegisterType<Config.ColumnsConfig>().As<IColumnsConfig>().InstancePerLifetimeScope();

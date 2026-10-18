@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+using System.Text;
 
 namespace K9.DataAccessLayer.Helpers
 {
@@ -9,8 +9,22 @@ namespace K9.DataAccessLayer.Helpers
         
         public static string ToSixDigitCode(this string value)
         {
-            var numericOnly = new string(value.Where(char.IsDigit).ToArray());
-            return numericOnly.Substring(0, 9);
+            if (value == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            // Avoid LINQ method-group analysis that crashes the VS2017 editor.
+            var digits = new StringBuilder();
+            foreach (char character in value)
+            {
+                if (char.IsDigit(character))
+                {
+                    digits.Append(character);
+                }
+            }
+
+            return digits.ToString().Substring(0, 9);
         }
     }
 }

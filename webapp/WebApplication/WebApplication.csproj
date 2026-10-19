@@ -548,7 +548,9 @@
     <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AccountControllerAjax.cs" />
+    <!-- TEMP CRASH ISOLATION TEST: webapp OAuth controller excluded from compilation.
     <Compile Include="Controllers\OAuthController.cs" />
+    -->
     <Compile Include="Controllers\DonationsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
@@ -668,8 +670,12 @@
     <Compile Include="Services\IDonationService.cs" />
     <Compile Include="Services\IMailChimpService.cs" />
     <Compile Include="Services\IMembershipService.cs" />
+    <!-- TEMP CRASH ISOLATION TEST: OAuth identity service excluded from compilation.
     <Compile Include="Services\OAuthAccountIdentityService.cs" />
+    -->
+    <!-- TEMP CRASH ISOLATION TEST: OAuth claims factory excluded from compilation.
     <Compile Include="Services\OAuthClaimsPrincipalFactory.cs" />
+    -->
     <Compile Include="Services\INineStarKiService.cs" />
     <Compile Include="Services\MailChimpService.cs" />
     <Compile Include="Services\MembershipService.cs" />

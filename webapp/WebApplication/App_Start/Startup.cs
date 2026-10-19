@@ -74,7 +74,8 @@ namespace K9.WebApplication
             builder.RegisterType<NineStarKiService>().As<INineStarKiService>().InstancePerLifetimeScope();
             builder.RegisterType<Services.AccountMailerService>().As<Services.IAccountMailerService>().InstancePerLifetimeScope();
             builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerLifetimeScope();
-            builder.RegisterType<OAuthAccountIdentityService>().As<IOAuthAccountIdentityService>().InstancePerLifetimeScope();
+            // TEMP CRASH ISOLATION TEST: OAuth service registration disabled.
+            // builder.RegisterType<OAuthAccountIdentityService>().As<IOAuthAccountIdentityService>().InstancePerLifetimeScope();
             builder.RegisterType<ContactService>().As<IContactService>().InstancePerLifetimeScope();
             builder.RegisterType<MailChimpService>().As<IMailChimpService>().InstancePerLifetimeScope();
             builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
@@ -102,24 +103,23 @@ namespace K9.WebApplication
 
             RegisterStaticTypes();
 
-            // Register OAuth only when its required certificates and client
-            // registrations are configured. Disabled by default.
-            var oauthEnabled = string.Equals(
-                ConfigurationManager.AppSettings["NineStarKiOAuthEnabled"],
-                "true", StringComparison.OrdinalIgnoreCase);
-
-            if (oauthEnabled)
-            {
-                OAuthServerConfiguration.RegisterServices(builder);
-            }
+            // TEMP CRASH ISOLATION TEST: OAuth startup wiring disabled.
+            // var oauthEnabled = string.Equals(
+            //     ConfigurationManager.AppSettings["NineStarKiOAuthEnabled"],
+            //     "true", StringComparison.OrdinalIgnoreCase);
+            //
+            // if (oauthEnabled)
+            // {
+            //     OAuthServerConfiguration.RegisterServices(builder);
+            // }
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 
-            if (oauthEnabled)
-            {
-                OAuthServerConfiguration.RegisterMiddleware(app, container);
-            }
+            // if (oauthEnabled)
+            // {
+            //     OAuthServerConfiguration.RegisterMiddleware(app, container);
+            // }
 
             // Configure Hangfire to use SQL Server storage and the Autofac job activator
             GlobalConfiguration.Configuration

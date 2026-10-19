@@ -389,7 +389,9 @@
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\DataConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <!-- TEMP CRASH ISOLATION TEST: excluded from compilation; restore after test.
     <Compile Include="App_Start\OAuthServerConfiguration.cs" />
+    -->
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attributes\NineStarKiDirectionAttribute.cs" />

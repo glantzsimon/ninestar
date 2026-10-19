@@ -229,10 +229,11 @@
     <Reference Include="NodaTime, Version=3.2.1.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
       <HintPath>..\packages\NodaTime.3.2.1\lib\netstandard2.0\NodaTime.dll</HintPath>
     </Reference>
-    <!-- TEMP TEST STEP: OpenIddict reference re-enabled. -->
+    <!-- TEMP CRASH ISOLATION TEST: OpenIddict.Abstractions reference disabled.
     <Reference Include="OpenIddict.Abstractions, Version=7.7.2.0, Culture=neutral, PublicKeyToken=35a561290d20de2f, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenIddict.Abstractions.7.7.2\lib\net472\OpenIddict.Abstractions.dll</HintPath>
     </Reference>
+    -->
     <!-- TEMP CRASH ISOLATION TEST: OpenIddict.Core reference disabled.
     <Reference Include="OpenIddict.Core, Version=7.7.2.0, Culture=neutral, PublicKeyToken=35a561290d20de2f, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenIddict.Core.7.7.2\lib\net472\OpenIddict.Core.dll</HintPath>

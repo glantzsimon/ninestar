@@ -229,36 +229,30 @@
     <Reference Include="NodaTime, Version=3.2.1.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
       <HintPath>..\packages\NodaTime.3.2.1\lib\netstandard2.0\NodaTime.dll</HintPath>
     </Reference>
-    <!-- TEMP CRASH ISOLATION TEST: OAuth-only reference disabled.
+    <!-- TEMP TEST STEP: OpenIddict reference re-enabled. -->
     <Reference Include="OpenIddict.Abstractions, Version=7.7.2.0, Culture=neutral, PublicKeyToken=35a561290d20de2f, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenIddict.Abstractions.7.7.2\lib\net472\OpenIddict.Abstractions.dll</HintPath>
     </Reference>
-    -->
-    <!-- TEMP CRASH ISOLATION TEST: OAuth-only reference disabled.
+    <!-- TEMP TEST STEP: OpenIddict reference re-enabled. -->
     <Reference Include="OpenIddict.Core, Version=7.7.2.0, Culture=neutral, PublicKeyToken=35a561290d20de2f, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenIddict.Core.7.7.2\lib\net472\OpenIddict.Core.dll</HintPath>
     </Reference>
-    -->
-    <!-- TEMP CRASH ISOLATION TEST: OAuth-only reference disabled.
+    <!-- TEMP TEST STEP: OpenIddict reference re-enabled. -->
     <Reference Include="OpenIddict.EntityFramework, Version=7.7.2.0, Culture=neutral, PublicKeyToken=35a561290d20de2f, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenIddict.EntityFramework.7.7.2\lib\net472\OpenIddict.EntityFramework.dll</HintPath>
     </Reference>
-    -->
-    <!-- TEMP CRASH ISOLATION TEST: OAuth-only reference disabled.
+    <!-- TEMP TEST STEP: OpenIddict reference re-enabled. -->
     <Reference Include="OpenIddict.EntityFramework.Models, Version=7.7.2.0, Culture=neutral, PublicKeyToken=35a561290d20de2f, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenIddict.EntityFramework.Models.7.7.2\lib\net472\OpenIddict.EntityFramework.Models.dll</HintPath>
     </Reference>
-    -->
-    <!-- TEMP CRASH ISOLATION TEST: OAuth-only reference disabled.
+    <!-- TEMP TEST STEP: OpenIddict reference re-enabled. -->
     <Reference Include="OpenIddict.Server, Version=7.7.2.0, Culture=neutral, PublicKeyToken=35a561290d20de2f, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenIddict.Server.7.7.2\lib\net472\OpenIddict.Server.dll</HintPath>
     </Reference>
-    -->
-    <!-- TEMP CRASH ISOLATION TEST: OAuth-only reference disabled.
+    <!-- TEMP TEST STEP: OpenIddict reference re-enabled. -->
     <Reference Include="OpenIddict.Server.Owin, Version=7.7.2.0, Culture=neutral, PublicKeyToken=35a561290d20de2f, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenIddict.Server.Owin.7.7.2\lib\net472\OpenIddict.Server.Owin.dll</HintPath>
     </Reference>
-    -->
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>

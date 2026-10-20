@@ -155,8 +155,8 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="OpenIddict.Abstractions, Version=7.7.2.0, Culture=neutral, PublicKeyToken=35a561290d20de2f, processorArchitecture=MSIL">
-      <HintPath>..\packages\OpenIddict.Abstractions.7.7.2\lib\net472\OpenIddict.Abstractions.dll</HintPath>
+    <Reference Include="OpenIddict.Abstractions, Version=6.4.0.0, Culture=neutral, PublicKeyToken=35a561290d20de2f, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenIddict.Abstractions.6.4.0\lib\net472\OpenIddict.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.212\lib\net461\NLog.dll</HintPath>

@@ -16,7 +16,7 @@ namespace K9.WebApplication
 {
     internal static class OAuthServerConfiguration
     {
-        private const string IssuerUrl = "https://9starkiastrology.com/";
+        private const string IssuerSetting = "NineStarKiOAuthIssuer";
         private const string SigningThumbprintSetting = "NineStarKiOAuthSigningCertificateThumbprint";
         private const string EncryptionThumbprintSetting = "NineStarKiOAuthEncryptionCertificateThumbprint";
 
@@ -41,9 +41,10 @@ namespace K9.WebApplication
                 })
                 .AddServer(options =>
                 {
-                    options.SetIssuer(new Uri(IssuerUrl));
-                    options.SetAuthorizationEndpointUris("/oauth/authorize");
-                    options.SetTokenEndpointUris("/oauth/token");
+                    options.SetIssuer(LoadIssuer());
+                    // Relative paths preserve the website's IIS application path.
+                    options.SetAuthorizationEndpointUris("oauth/authorize");
+                    options.SetTokenEndpointUris("oauth/token");
                     options.AllowAuthorizationCodeFlow();
                     options.RequireProofKeyForCodeExchange();
                     options.RegisterScopes(Services.OAuthClaimsPrincipalFactory.ReadScope);
@@ -78,6 +79,26 @@ namespace K9.WebApplication
             // without replacing the site's existing MVC Autofac integration.
             app.UseAutofacLifetimeScopeInjector(container);
             app.UseMiddlewareFromContainer<OpenIddictServerOwinMiddleware>();
+        }
+
+        private static Uri LoadIssuer()
+        {
+            var supplied = ConfigurationManager.AppSettings[IssuerSetting];
+            Uri issuer;
+            if (string.IsNullOrWhiteSpace(supplied) ||
+                !Uri.TryCreate(supplied.Trim(), UriKind.Absolute, out issuer) ||
+                issuer.Scheme != Uri.UriSchemeHttps ||
+                string.IsNullOrEmpty(issuer.Host) ||
+                !string.IsNullOrEmpty(issuer.UserInfo) ||
+                !string.IsNullOrEmpty(issuer.Query) ||
+                !string.IsNullOrEmpty(issuer.Fragment) ||
+                !issuer.AbsolutePath.EndsWith("/", StringComparison.Ordinal))
+            {
+                throw new ConfigurationErrorsException(
+                    IssuerSetting + " must be an absolute HTTPS URL ending in '/', without credentials, a query or a fragment.");
+            }
+
+            return issuer;
         }
 
         private static X509Certificate2 LoadCertificate(string setting)

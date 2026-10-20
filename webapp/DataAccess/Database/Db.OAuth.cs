@@ -6,6 +6,7 @@
 // All schema changes remain in webapp/DataAccess/Migrations/.
 using System.Data.Entity;
 using OpenIddict.EntityFramework;
+using OpenIddict.EntityFramework.Models;
 
 namespace K9.DataAccessLayer.Database
 {
@@ -16,6 +17,13 @@ namespace K9.DataAccessLayer.Database
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.UseOpenIddict();
+
+            // The committed OAuth migration was generated with OpenIddict 7,
+            // which maps Type to 150 characters. Keep that existing schema
+            // when using OpenIddict 6.4 for Visual Studio 2017 compatibility.
+            modelBuilder.Entity<OpenIddictEntityFrameworkToken>()
+                .Property(token => token.Type)
+                .HasMaxLength(150);
         }
     }
 }

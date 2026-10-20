@@ -1,6 +1,19 @@
 # ChatGPT customer sign-in: implementation and safe rollout
 
-**Status:** development only. Resource-server OAuth verification and OpenAI mTLS validation are staged in `feature/9-star-ki-mcp-connector`. Neither mode is enabled on the currently working MCP server. The website's OAuth code now compiles as part of ordinary Debug builds, but the OAuth server remains disabled by default via the `NineStarKiOAuthEnabled` runtime setting. It is not deployed or enabled. The DataAccess migration is committed but has not been applied to a database; the ChatGPT client record does not yet exist, and account linking has NOT been tested.
+**Current local baseline (21 October 2026):** The owner confirmed that OpenIddict 6.4.0 with all OAuth source restored builds, the website tests pass after test dependency/redirect repairs, and the local website starts with OAuth disabled. Controlled tests isolated the Visual Studio 2017 editor crash to the OpenIddict.Abstractions 7.7.2 reference; 6.4.0 avoids it. Keep the OpenIddict package family aligned at 6.4.0 for this toolchain. The existing OAuth migration was applied locally earlier; the explicit 150-character token Type mapping in LocalDb preserves that migration's model after the downgrade. Local success does not verify integration/production or enabled OAuth. The dated implementation notes below describe earlier checkpoints and are superseded by this baseline.
+
+## Local issuer setup
+
+The website reads `NineStarKiOAuthIssuer` from its existing environment-specific Web.config appSettings when OAuth is enabled. It must be an absolute HTTPS URL ending in a slash, with no user information, query or fragment. The confirmed local application URL is `https://localhost/ninestar/`; production must use its own issuer setting. Authorization and token endpoint paths are relative, yielding `https://localhost/ninestar/oauth/authorize` and `https://localhost/ninestar/oauth/token` for local hosting.
+
+Add the issuer to the locally decrypted Web.config and keep OAuth disabled while provisioning credentials:
+
+```xml
+<add key="NineStarKiOAuthIssuer" value="https://localhost/ninestar/" />
+<add key="NineStarKiOAuthEnabled" value="false" />
+```
+
+Update an existing key rather than adding a duplicate. Web.config is git-crypt protected; edit it locally using the owner's normal workflow. The signing and encryption certificate thumbprint settings remain required before enabling OAuth. Keys must be available to the actual IIS/IIS Express process identity. Local OAuth issuer discovery, certificates, client registration and browser authorization still require validation.
 
 ## Confirmed existing capabilities
 
@@ -65,15 +78,9 @@ The corrected migration `webapp/DataAccess/Migrations/202610170149068_AddOpenIdd
 
 **Debug compilation fixes (17 October 2026):** The first flag-on build revealed four C# extension-method errors. The OAuth MVC controller now imports `Owin`, the namespace where OpenIddict 7.7.2 defines `IOwinContext.GetOpenIddictServerRequest()`. The website's existing old-style `WebApplication.csproj` now directly references the already-downloaded `OpenIddict.Core.7.7.2` assembly for `.AddCore(...)` and `OpenIddict.EntityFramework.7.7.2` for `.UseEntityFramework(...)`. Both extension methods are declared in `Microsoft.Extensions.DependencyInjection`. Because the WebApplication `packages.config` is git-crypt protected, the owner should run `Install-Package OpenIddict.EntityFramework -Version 7.7.2 -ProjectName WebApplication` locally in Visual Studio so NuGet records the direct dependency and its OpenIddict.Core dependency in the website's own packages.config. The user should then rebuild Debug and push NuGet metadata using their `push` alias. No migration scaffold or DB update before the compile is clean.
 
-**Next local action:** Pull the branch and use Visual Studio's **ordinary Debug / Rebuild Solution**, which now compiles the OpenIddict MVC controllers, startup config and EF6 model mapping for real. Once the build passes, use the **existing EF6 migrations tooling** in Package Manager Console with `DataAccessLayer` selected as the migration project and `WebApplication` as startup:
+**Next local action:** Pull the configurable-issuer change, add the local issuer appSetting with OAuth still disabled, and rebuild. Provision separate local signing/encryption certificates with private-key access for the website process, then register the approved test client and validate issuer discovery, consent and PKCE locally before integration rollout. Do not scaffold the existing OAuth migration again.
 
-```powershell
-Add-Migration AddOpenIddictOAuth -ProjectName DataAccessLayer -StartUpProjectName WebApplication -ConfigurationTypeName K9.DataAccessLayer.Database.DatabaseInitialiserLocal
-```
-
-This only scaffolds the migration; it does **not** execute SQL or `Update-Database`. Review the generated files in `webapp/DataAccess/Migrations` (migration `.cs`, `.Designer.cs`, and `.resx`) and the corresponding old-style `DataAccessLayer.csproj` entries. The resulting snapshot MUST include the website's existing complete `LocalDb` model and new four OpenIddict tables. If the scaffold unexpectedly drops or recreates existing website tables, stop and review instead of executing it. Do not yet `Update-Database`, deploy or set `NineStarKiOAuthEnabled=true`. To run the website locally later, first apply the reviewed migration to a test database and provision the appropriate signing certificates.
-
-**Database migration safety:** `App_Start/DataConfig.cs` executes DataAccess migrations automatically at startup. The reviewed migration is now committed on the feature branch, but it has **not been applied**. Once this branch is deployed, startup can apply that migration even while the OAuth server is disabled. Test on a verified local/test database first, then use an integration backup and deployment plan before merging/deploying. Do not deploy this branch to production yet.
+**Database migration safety:** `App_Start/DataConfig.cs` executes DataAccess migrations automatically at startup. The reviewed migration is committed on the feature branch and has been applied locally; integration and production rollout remain separate approvals. Once this branch is deployed, startup can apply that migration even while the OAuth server is disabled. Test on a verified local/test database first, then use an integration backup and deployment plan before merging/deploying. Do not deploy this branch to production yet.
 
 ## Authorisation server requirements (to implement on website)
 

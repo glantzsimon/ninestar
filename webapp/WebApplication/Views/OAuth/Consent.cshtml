@@ -8,8 +8,21 @@
 <p>@K9.Globalisation.Dictionary.OAuthConsentReadings</p>
 <p>@K9.Globalisation.Dictionary.OAuthConsentReadOnly</p>
 <p>@K9.Globalisation.Dictionary.OAuthConsentContinue</p>
-<form method="post" action="@Request.RawUrl">
+<form method="post" action="@Request.Path">
     @Html.AntiForgeryToken()
+    @* OpenIddict reads POST parameters from the form body, not the query string. *@
+    @foreach (var parameter in Request.QueryString.AllKeys)
+    {
+        if (!string.IsNullOrEmpty(parameter) &&
+            !string.Equals(parameter, "decision", System.StringComparison.OrdinalIgnoreCase) &&
+            !string.Equals(parameter, "__RequestVerificationToken", System.StringComparison.OrdinalIgnoreCase))
+        {
+            foreach (var value in Request.QueryString.GetValues(parameter))
+            {
+                @Html.Hidden(parameter, value)
+            }
+        }
+    }
     <button type="submit" class="btn btn-primary" name="decision" value="approve">
         @K9.Globalisation.Dictionary.OAuthConsentAllowAccess
     </button>

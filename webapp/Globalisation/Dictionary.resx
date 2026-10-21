@@ -9047,4 +9047,22 @@
   <data name="_9_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\combined\en-gb\fire-year\fire-month\9-9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="OAuthConsentTitle" xml:space="preserve">
+    <value>Connect Your 9 Star Ki Account</value>
+  </data>
+  <data name="OAuthConsentIntroduction" xml:space="preserve">
+    <value>Allow {0} to use your 9 Star Ki membership to provide readings in your conversations.</value>
+  </data>
+  <data name="OAuthConsentReadings" xml:space="preserve">
+    <value>This includes personal birth charts, predictions, relationship compatibility and I Ching readings.</value>
+  </data>
+  <data name="OAuthConsentReadOnly" xml:space="preserve">
+    <value>This connection provides read-only access. It cannot change your account, password or membership.</value>
+  </data>
+  <data name="OAuthConsentContinue" xml:space="preserve">
+    <value>Choose Allow Access to connect and return to the app, or Cancel to leave without connecting.</value>
+  </data>
+  <data name="OAuthConsentAllowAccess" xml:space="preserve">
+    <value>Allow Access</value>
+  </data>
 </root>

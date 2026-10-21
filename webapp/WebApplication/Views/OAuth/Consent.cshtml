@@ -1,21 +1,17 @@
 @model K9.WebApplication.Controllers.OAuthConsentViewModel
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.PermissionRequired;
+    ViewBag.Title = K9.Globalisation.Dictionary.OAuthConsentTitle;
     Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
 }
-<h2>@K9.Globalisation.Dictionary.PermissionRequired</h2>
-<p><strong>@Model.ApplicationName</strong></p>
-<p>
-    @K9.Globalisation.Dictionary.PersonalChart,
-    @K9.Globalisation.Dictionary.Predictions,
-    @K9.Globalisation.Dictionary.Compatibility,
-    @K9.Globalisation.Dictionary.IChing
-</p>
-<p><code>@Model.Scope</code></p>
+<h2>@K9.Globalisation.Dictionary.OAuthConsentTitle</h2>
+<p>@string.Format(K9.Globalisation.Dictionary.OAuthConsentIntroduction, Model.ApplicationName)</p>
+<p>@K9.Globalisation.Dictionary.OAuthConsentReadings</p>
+<p>@K9.Globalisation.Dictionary.OAuthConsentReadOnly</p>
+<p>@K9.Globalisation.Dictionary.OAuthConsentContinue</p>
 <form method="post" action="@Request.RawUrl">
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary" name="decision" value="approve">
-        @K9.Globalisation.Dictionary.Approve
+        @K9.Globalisation.Dictionary.OAuthConsentAllowAccess
     </button>
     <button type="submit" class="btn btn-default" name="decision" value="deny">
         @K9.Globalisation.Dictionary.Cancel

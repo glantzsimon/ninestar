@@ -1,6 +1,35 @@
 # ChatGPT customer sign-in: implementation and safe rollout
 
-**Current local baseline (21 October 2026):** The owner confirmed that OpenIddict 6.4.0 with all OAuth source restored builds, the website tests pass after test dependency/redirect repairs, and the local website starts with OAuth disabled. Controlled tests isolated the Visual Studio 2017 editor crash to the OpenIddict.Abstractions 7.7.2 reference; 6.4.0 avoids it. Keep the OpenIddict package family aligned at 6.4.0 for this toolchain. The existing OAuth migration was applied locally earlier; the explicit 150-character token Type mapping in LocalDb preserves that migration's model after the downgrade. Local success does not verify integration/production or enabled OAuth. The dated implementation notes below describe earlier checkpoints and are superseded by this baseline.
+**Current local baseline (21 October 2026):** The owner confirmed that OpenIddict 6.4.0 with all OAuth source restored builds, website tests pass, and the local website starts. Controlled tests isolated the Visual Studio 2017 editor crash to OpenIddict.Abstractions 7.7.2; keep the package family aligned at 6.4.0. The existing OAuth migration has already been applied locally; the explicit 150-character token Type mapping preserves that migration's model. With local OAuth enabled, the owner verified discovery at `https://localhost/ninestar/.well-known/openid-configuration` and JWKS at `https://localhost/ninestar/.well-known/jwks`. This verifies metadata/public-key publication, not private-key signing, consent or token exchange. Integration is the agreed environment for end-to-end testing. Older dated notes below are historical and superseded by this baseline.
+
+## Integration preparation (21 October 2026)
+
+Work on `feature/9-star-ki-mcp-connector`; integration can deploy this branch without merging master. Normal preparation commits do not trigger TeamCity. Add its deployment marker only when the integration database backup and configuration are ready.
+
+The client-registration helper is now wired through `OAuthServerConfiguration.RegisterMiddleware`. When OAuth is enabled and either client setting is supplied, both settings are validated. On the first request, after ASP.NET Application_Start and its existing DataAccess migrator, a single shared asynchronous task uses a disposable Autofac scope to register the client through OpenIddict. Existing mismatched registrations fail closed rather than being rewritten. Registration failures remain cached until the application is recycled. Leaving both settings absent/empty permits discovery testing without creating a client; OAuth disabled performs no client registration. No new migration or schema change is introduced by this wiring.
+
+The settings to add in locally decrypted Web.config, then override through Web.Integration.config when the actual values are known, are:
+
+```xml
+<add key="NineStarKiOAuthChatGptClientId" value="" />
+<add key="NineStarKiOAuthChatGptRedirectUri" value="" />
+```
+
+For the planned predefined public client, use an agreed public identifier (for example `ninestar-chatgpt-integration`) and the exact callback supplied by the OAuth-configured ChatGPT connection. These are identifiers, not secrets. Do not populate a guessed callback. This does not implement CIMD or dynamic client registration. The installed private plugin version 0.3.1 currently selects api_key/Bearer authentication, so its OAuth connection configuration remains a separate step. Do not switch the working plugin before integration endpoints and registration are ready.
+
+Discovery no longer advertises the default `openid` scope: the implemented controller accepts exactly `nine-star-ki.read` and does not implement OIDC identity-token issuance. Verify the updated scope list after building.
+
+### Deployment sequence
+
+1. Build the latest branch locally and run the existing website tests. The registration wiring and discovery-scope change still need this Windows/.NET Framework validation.
+2. Confirm the integration connection string targets the integration database. Take a database backup and retain the previously deployed website/configuration for rollback. Startup can apply the already committed AddOpenIddictOAuth migration even while OAuth is disabled; do not scaffold it again or enable automatic migrations.
+3. In the encrypted integration transform, set `NineStarKiOAuthIssuer=https://int.9starkiastrology.com/` and `NineStarKiOAuthEnabled=false`. Ensure local `true` is overridden. Deploy the feature branch through the existing TeamCity Integration build.
+4. Provision separate integration signing and encryption certificates in LocalMachine/My on the integration server. Grant the actual IIS application-pool identity Read access to their private keys. Override both certificate thumbprints in the integration transform; do not reuse local development thumbprints or certificates.
+5. Enable integration OAuth and recycle the application. Verify `https://int.9starkiastrology.com/.well-known/openid-configuration` and `https://int.9starkiastrology.com/.well-known/jwks`.
+6. Configure the OAuth test connection, obtain its exact callback, supply both client settings and recycle. First request creates/checks the registration. Verify login, explicit consent, S256 PKCE, rejection cases and token redemption. Configure a separate MCP test environment for the integration issuer/upstream/database; do not point integration tokens at the existing production MCP settings.
+7. Merge and production rollout remain separate steps after integration validation. If rollback is needed after migration, restore the verified integration database backup and matching previous application/configuration together.
+
+Configuration files are git-crypt protected and must be edited by the owner in the decrypted local checkout. Never overwrite encrypted repository blobs with plaintext.
 
 ## Local issuer setup
 
@@ -13,7 +42,7 @@ Add the issuer to the locally decrypted Web.config and keep OAuth disabled while
 <add key="NineStarKiOAuthEnabled" value="false" />
 ```
 
-Update an existing key rather than adding a duplicate. Web.config is git-crypt protected; edit it locally using the owner's normal workflow. The signing and encryption certificate thumbprint settings remain required before enabling OAuth. Keys must be available to the actual IIS/IIS Express process identity. Local OAuth issuer discovery, certificates, client registration and browser authorization still require validation.
+Update an existing key rather than adding a duplicate. Web.config is git-crypt protected; edit it locally using the owner's normal workflow. The signing and encryption certificate thumbprint settings remain required before enabling OAuth. Keys must be available to the actual IIS/IIS Express process identity. Local discovery and JWKS have been verified by the owner. Private-key signing, configured client registration and browser authorization still require validation.
 
 ## Confirmed existing capabilities
 

@@ -12,10 +12,9 @@ public sealed class AstrologyTools(AstrologyApiClient api, McpMemberAccountResol
         [Description("Male, Female, or Other")] string gender,
         [Description("Known birth time HH-mm; do not invent a time")] string timeOfBirth,
         [Description("Birthplace")] string birthLocation,
-        [Description("Staging only: existing nine-digit site account number. Not needed after website OAuth connection.")] string? accountNumber = null,
         CancellationToken cancellationToken = default) =>
         api.GetAsync(cancellationToken, "api", "personal-chart", "get",
-            membership.Resolve(accountNumber),
+            membership.Resolve(null),
             AstrologyApiClient.BirthDate(dateOfBirth),
             AstrologyApiClient.Gender(gender),
             AstrologyApiClient.BirthTime(timeOfBirth),
@@ -28,10 +27,9 @@ public sealed class AstrologyTools(AstrologyApiClient api, McpMemberAccountResol
         [Description("Selected prediction date YYYY-MM-DD")] string selectedDate,
         [Description("Known birth time HH-mm; do not invent a time")] string timeOfBirth,
         [Description("Birthplace")] string birthLocation,
-        [Description("Staging only: site account number. Not needed after OAuth connection.")] string? accountNumber = null,
         CancellationToken cancellationToken = default) =>
         api.GetAsync(cancellationToken, "api", "predictions", "get",
-            membership.Resolve(accountNumber),
+            membership.Resolve(null),
             AstrologyApiClient.BirthDate(dateOfBirth),
             AstrologyApiClient.Gender(gender),
             AstrologyApiClient.SelectedDate(selectedDate),
@@ -45,10 +43,9 @@ public sealed class AstrologyTools(AstrologyApiClient api, McpMemberAccountResol
         bool displaySexualChemistry,
         string firstPersonTimeOfBirth, string firstPersonBirthLocation,
         string secondPersonTimeOfBirth, string secondPersonBirthLocation,
-        [Description("Staging only: site account number. Not needed after OAuth connection.")] string? accountNumber = null,
         CancellationToken cancellationToken = default) =>
         api.GetAsync(cancellationToken, "api", "compatibility", "get",
-            membership.Resolve(accountNumber),
+            membership.Resolve(null),
             AstrologyApiClient.RequiredText(firstPersonName, nameof(firstPersonName)),
             AstrologyApiClient.BirthDate(firstPersonDateOfBirth),
             AstrologyApiClient.Gender(firstPersonGender),
@@ -63,10 +60,9 @@ public sealed class AstrologyTools(AstrologyApiClient api, McpMemberAccountResol
 
     [McpServerTool, Description("Retrieve the official website's 9 Star Ki knowledge base. Requires an eligible member, identified through the connected website login.")]
     public Task<string> GetKnowledgeBase(
-        [Description("Staging only: site account number. Not needed after OAuth connection.")] string? accountNumber = null,
         CancellationToken cancellationToken = default) =>
         api.GetAsync(cancellationToken, "api", "knowledgebase", "get",
-            membership.Resolve(accountNumber));
+            membership.Resolve(null));
 
     [McpServerTool, Description("Generate an I Ching hexagram from the official 9 Star Ki website for interpretation. No customer membership is required.")]
     public Task<string> GetIChing(CancellationToken cancellationToken = default) =>

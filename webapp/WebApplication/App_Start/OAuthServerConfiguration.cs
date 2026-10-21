@@ -8,6 +8,9 @@ using K9.DataAccessLayer.Database;
 using Microsoft.Extensions.DependencyInjection;
 using OpenIddict.Server.Owin;
 using Owin;
+using OpenIddict.Abstractions;
+using K9.WebApplication.Services;
+using System.Threading.Tasks;
 using System;
 using System.Configuration;
 using System.Security.Cryptography.X509Certificates;
@@ -17,6 +20,8 @@ namespace K9.WebApplication
     internal static class OAuthServerConfiguration
     {
         private const string IssuerSetting = "NineStarKiOAuthIssuer";
+        private const string ClientIdSetting = "NineStarKiOAuthChatGptClientId";
+        private const string RedirectUriSetting = "NineStarKiOAuthChatGptRedirectUri";
         private const string SigningThumbprintSetting = "NineStarKiOAuthSigningCertificateThumbprint";
         private const string EncryptionThumbprintSetting = "NineStarKiOAuthEncryptionCertificateThumbprint";
 
@@ -47,7 +52,11 @@ namespace K9.WebApplication
                     options.SetTokenEndpointUris("oauth/token");
                     options.AllowAuthorizationCodeFlow();
                     options.RequireProofKeyForCodeExchange();
-                    options.RegisterScopes(Services.OAuthClaimsPrincipalFactory.ReadScope);
+                    options.RegisterScopes(OAuthClaimsPrincipalFactory.ReadScope);
+                    // This server issues delegated access tokens only. Do not
+                    // advertise openid: the controller deliberately rejects it.
+                    options.Configure(configuration =>
+                        configuration.Scopes.Remove(OpenIddictConstants.Scopes.OpenId));
 
                     options.SetAccessTokenLifetime(TimeSpan.FromMinutes(15));
 
@@ -78,6 +87,37 @@ namespace K9.WebApplication
             // Per-request scope for OpenIddict stores and protocol handlers,
             // without replacing the site's existing MVC Autofac integration.
             app.UseAutofacLifetimeScopeInjector(container);
+
+            var clientId = ConfigurationManager.AppSettings[ClientIdSetting];
+            var redirectUri = ConfigurationManager.AppSettings[RedirectUriSetting];
+            if (!string.IsNullOrWhiteSpace(clientId) ||
+                !string.IsNullOrWhiteSpace(redirectUri))
+            {
+                // Validate both settings before accepting traffic. No guessed
+                // callback or default client is registered.
+                OAuthChatGptClientRegistration.CreateDescriptor(clientId, redirectUri);
+
+                // Defer DB access until requests begin, after Application_Start
+                // has run the existing DataAccess migrator. One task per worker
+                // serialises first-request registration and caches any failure.
+                // A failed registration requires a config fix and app recycle.
+                var registration = new Lazy<Task>(async () =>
+                {
+                    using (var scope = container.BeginLifetimeScope())
+                    {
+                        var manager = scope.Resolve<IOpenIddictApplicationManager>();
+                        await OAuthChatGptClientRegistration.RegisterAsync(
+                            manager, clientId, redirectUri);
+                    }
+                }, true);
+
+                app.Use(async (context, next) =>
+                {
+                    await registration.Value;
+                    await next();
+                });
+            }
+
             app.UseMiddlewareFromContainer<OpenIddictServerOwinMiddleware>();
         }
 

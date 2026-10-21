@@ -1,5 +1,7 @@
 // OAuth is activated in Startup only when configured and explicitly enabled.
 // Existing website authentication is unchanged.
+using K9.Base.WebApplication.Controllers;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using Microsoft.Owin.Security;
 using OpenIddict.Abstractions;
@@ -19,20 +21,32 @@ using static OpenIddict.Abstractions.OpenIddictConstants;
 namespace K9.WebApplication.Controllers
 {
     [RoutePrefix("oauth")]
-    public sealed class OAuthController : Controller
+    public sealed class OAuthController : BaseController
     {
         private readonly IOpenIddictApplicationManager _applications;
         private readonly IOAuthAccountIdentityService _accounts;
         private readonly IMembershipService _memberships;
 
         public OAuthController(
+            INineStarKiPackage nineStarKiPackage,
             IOpenIddictApplicationManager applications,
             IOAuthAccountIdentityService accounts,
             IMembershipService memberships)
+            : base(nineStarKiPackage.Logger, nineStarKiPackage.DataSetsHelper,
+                nineStarKiPackage.Roles, nineStarKiPackage.Authentication, nineStarKiPackage.FileSourceHelper)
         {
             _applications = applications ?? throw new ArgumentNullException(nameof(applications));
             _accounts = accounts ?? throw new ArgumentNullException(nameof(accounts));
             _memberships = memberships ?? throw new ArgumentNullException(nameof(memberships));
+        }
+
+        // The consent layout uses IBaseController.Authentication in LoginLogout.
+        // Use the K9 base without the site controller\'s session initialisation:
+        // token redemption is a backchannel request without a website cookie.
+        [NonAction]
+        public override string GetObjectName()
+        {
+            return string.Empty;
         }
 
         [HttpGet, AllowAnonymous, Route("authorize")]

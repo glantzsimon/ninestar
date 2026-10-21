@@ -8,6 +8,19 @@ namespace NineStarKi.Mcp.Tests;
 
 public sealed class McpMemberAccountResolverTests
 {
+    [Theory]
+    [InlineData(nameof(AstrologyTools.GetPersonalChart))]
+    [InlineData(nameof(AstrologyTools.GetPredictions))]
+    [InlineData(nameof(AstrologyTools.GetCompatibility))]
+    [InlineData(nameof(AstrologyTools.GetKnowledgeBase))]
+    public void PublicToolsDoNotExposeAccountNumber(string toolName)
+    {
+        var method = typeof(AstrologyTools).GetMethod(toolName);
+        Assert.NotNull(method);
+        Assert.DoesNotContain(method!.GetParameters(),
+            parameter => parameter.Name == "accountNumber");
+    }
+
     [Fact]
     public void AuthenticatedMemberCannotOverrideAccountNumber()
     {

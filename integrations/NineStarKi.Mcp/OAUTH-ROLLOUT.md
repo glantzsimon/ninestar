@@ -4,6 +4,8 @@
 
 ## Integration preparation (21 October 2026)
 
+**Integration deployment requested:** The owner confirmed the latest branch is current locally, tests pass, the integration database backup is available, and Web.Integration.config still overrides NineStarKiOAuthEnabled to false. Deploy this feature branch through TeamCity Integration with OAuth disabled. Deployment success and integration certificate provisioning remain to be verified.
+
 Work on `feature/9-star-ki-mcp-connector`; integration can deploy this branch without merging master. Normal preparation commits do not trigger TeamCity. Add its deployment marker only when the integration database backup and configuration are ready.
 
 The client-registration helper is now wired through `OAuthServerConfiguration.RegisterMiddleware`. When OAuth is enabled and either client setting is supplied, both settings are validated. On the first request, after ASP.NET Application_Start and its existing DataAccess migrator, a single shared asynchronous task uses a disposable Autofac scope to register the client through OpenIddict. Existing mismatched registrations fail closed rather than being rewritten. Registration failures remain cached until the application is recycled. Leaving both settings absent/empty permits discovery testing without creating a client; OAuth disabled performs no client registration. No new migration or schema change is introduced by this wiring.

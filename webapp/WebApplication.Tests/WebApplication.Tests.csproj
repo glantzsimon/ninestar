@@ -269,6 +269,9 @@
     <Compile Include="Unit\Controllers\ApiCacheSafetyTests.cs" />
     <Compile Include="Unit\Controllers\PersonalCalendarControllerTests.cs" />
     <Compile Include="Unit\Controllers\MobilePersonalChartControllerTests.cs" />
+    <Compile Include="Unit\Services\MobilePreferenceBoundaryTests.cs" />
+    <Compile Include="Unit\Models\HexagramIsolationTests.cs" />
+    <Compile Include="Unit\Models\MobileCalculationRequestTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

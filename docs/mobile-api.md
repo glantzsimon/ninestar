@@ -1,114 +1,65 @@
 # Mobile JSON API
 
-## Purpose and boundaries
+## Current implementation
 
-The website and mobile app share the existing application services and repositories. Mobile controllers project those results into explicit JSON transport models; they do not invoke MVC view actions, render Razor fragments, duplicate calculations, or serialize complete EF entities/view models. Keep the existing plugin `ApiController` and `ApiPureAlchemyController` unchanged: their API-key/account-number contract serves a different client.
+Work remains on `feature/mobile-json-api`, separate from the plugin API. The expansion adds account/session operations, calculators, predictions/planners, calendar data and subscription management, reports, bookings, membership options/quotes, payment checkout, blog operations and support submissions. These are **implemented source**, not a declaration of complete controller parity or passing runtime tests. Administration, free/complementary parity, media, localisation metadata and some legacy workflows remain on the checklist.
 
-Mobile routes use `/api/mobile/v1`. Start with domain controllers rather than putting all actions into another large controller. `MobileApiControllerBase` supplies only protected response/identity helpers and exception handling; it derives directly from MVC `Controller`, avoiding the public UI/upload actions and session-writing initialisation inherited from `BaseNineStarKiController`. Autofac already registers MVC controllers by assembly, and attribute routing is already enabled.
+See [mobile-api-routes.md](mobile-api-routes.md) for declared routes. Every transport projection is an explicit object or DTO. Do not serialize the EF entity, calculated view-model graph, payment provider object or service result wholesale. The existing plugin ApiController is unchanged.
 
-This branch currently implements **one endpoint**, not complete controller parity. The controller inventory below is a coverage plan. Personal-chart views and their nested partials/paywalls were inspected for the first projection; other families still need view-by-view field and entitlement reviews before implementation. Static pages and redirect/success actions generally map to content or structured outcomes, rather than one endpoint per HTML page. Admin and operational functionality belongs behind separate permissions and must never become public merely to obtain JSON parity.
+## Authentication and requests
 
-## Authentication and access
+The native client can use the existing Forms Authentication provider: retain the server cookies, call `GET account/csrf`, send the returned request token in `X-CSRF-Token` on **every POST**, and fetch a fresh token after login/logout. Login, reset/change-password and deletion require HTTPS outside localhost. Cookie-authenticated mobile operations do not use an embedded API key, a supplied user ID, or a second identity database. The OAuth implementation now on master belongs to the plugin project; it is not copied or replaced on this branch. OAuth/PKCE support for native apps requires integration with that implementation, not a parallel token system.
 
-The initial endpoint uses the existing authenticated **web session** and `Current.UserId`, preserving the application's impersonation convention. A plugin API key, account number, query-string user ID, or JSON payload cannot establish mobile identity. Native mobile login/token issuance, expiry, revocation, refresh and logout are **not implemented**. This endpoint is a development foundation that can be exercised from an authenticated same-origin browser session, not a finished standalone mobile authentication system.
+`MobileApiControllerBase` implements no-store JSON responses, redirects/error-page suppression, request-size limits (64 KiB), and CSRF validation before action execution. Actions explicitly check anonymous/member/admin and ownership requirements. `RequireUser` resolves existing Current identity/impersonation; checkout, account deletion and password changes refuse impersonation where the underlying provider operates on the actual login. Codes are protocol identifiers, not hardcoded UI messages. Native clients localise them.
 
-`GET personal-chart/me` returns full details, including sections protected by `HtmlHelpers.PayWall` in the web views. It requires `IUserService.UserIsAdmin` or an active membership passing `IsAuthorisedToViewPaidContent()`. Identity and entitlement are checked on every request, before user data or calculations. This intentionally does not provide the website's limited free own-chart or complementary-reading experience yet; those require a separate field-level response policy and existing reading accounting. Do not relax the complete-response gate to implement a free preview.
+JSON uses UTF-8, camelCase, ISO timestamps and no type metadata. Success is `{ success: true, data, error: null }`; failure is `{ success: false, data: null, error: { code } }` with an appropriate HTTP error status. Framework/routing failures before controller execution still require IIS checks.
 
-The existing membership lookup can create a free membership if absent. Birth information is read through `UserInfosRepository`; this GET does not call `GetOrCreateUserInfo`, `AccountService.GetAccount`, preference setters, AI alchemy, email, payment, or booking workflows. It does not consume complementary readings. Repository calls remain sequential because the services share an EF context.
+Calculation requests explicitly include person, selected local date/time, birth/user timezone, calculation method, calculator type, house display and both hemisphere flags. Birth dates are date-only, birth time is separate, and selected timestamps have no UTC suffix. Validate real Windows/IANA timezones rather than silently falling back to GMT. Profile/compatibility calls combine birth time once. Planner calls pass birth date and time separately because the existing planner adds the time. Date-range limits and enum validation bound requests. The public chart preview returns numbers/overview only; full profile, compatibility, predictions and numerology require paid/admin access until the per-section free/complementary policy is implemented.
 
-Future writes must retain ownership, permissions and validation. With cookie/session authentication they also require CSRF protection. Native bearer authentication needs an explicit contract before adapting these actions; never place a shared secret in the app and treat possession of it as user authentication. Administration, billing, account deletion, emails and maintenance must retain their existing specific safeguards.
+## Shared services and projections
 
-## Implemented endpoint
+Calculations use NineStarKiService, NumerologyService, BiorhythmsService, IChingService, AstrologyService, ReportsService and existing planner batches. CombinedPredictionHelper populates request-owned planner results; personal and global descriptions remain separate. JSON projections preserve full source descriptions, morning/afternoon and inverted energies, lunar information, period boundaries, directions, numerology codes and series values. No Razor rendering is used by the new JSON endpoints. PDF and ICS remain existing file/download endpoints, with URLs or JSON metadata supplied as needed.
 
-| Method and route | Input | Output | Access |
-| --- | --- | --- | --- |
-| `GET /api/mobile/v1/personal-chart/me` | Authenticated session; saved birth details and preferences. No caller-selected account/user ID. | Allow-listed natal profile, full descriptions and summaries, energy artwork metadata, settings and person display fields. | Authenticated admin or active paid membership. |
+Profile projection preserves the website relationship age gate. Compatibility forwards the selected calculator and birth-time information and omits chemistry text/score when hidden or either person is below sixteen. I Ching templates are now copied before adding changing-line interpretations; otherwise one request could mutate the shared template used by another reading. A regression test covers that isolation.
 
-The request resolves saved calculation method, calculator type, house display, user timezone, natal/cycle hemisphere inversion flags and birth-time-known preference. Preference fallbacks come from the saved UserInfo, following the calendar service convention. Missing birth/timezone details and invalid zones/settings return `409`; invalid timezone identifiers must not silently use the shared helper's GMT fallback. Windows and IANA zones use the existing TimeZoneConverter dependency and DateTimeHelper zone normalisation.
+The request culture is returned with profiles, but existing resource dictionaries and summary caches have inherited culture-isolation limitations. No claim of complete multilingual parity is made. Future work must fix those in their owning models/resources, rather than duplicating texts in the API.
 
-Birth date is normalised with `.Date`, then the saved birth time is added exactly once for `CalculateNineStarKiProfile`. Birth and selected local timestamps have `DateTimeKind.Unspecified`; birth/user timezones remain separate. Selected time is current UTC converted into the saved user timezone. The service receives every calculation option explicitly, with `isMyProfile: true`, `includeCycles: false`, `includePlannerData: false`, and `includeMoonPhases: false`. This is a natal-profile response: current houses, lunar data, directions, predictions, alchemy and planner/calendar data remain separate pending endpoints. Do not return the service's placeholder cycle energies when cycles are disabled. The profile service still performs its existing ancillary Lichun/direction work; this change does not claim to eliminate all non-natal calculation cost.
+## Account and ownership rules
 
-`MobilePersonalChartMapper` reads the request-owned profile without mutation. `ViewModels/MobileApi` contains transport-only types with no calculated getters or EF navigation properties. Dictionary keys and error codes are stable protocol names; the app supplies localised navigation/field labels. Description content comes from the existing model/resource getters, with full text preserved. Some existing energy dictionaries capture strings statically and the profile summary cache does not vary by culture; this first slice inherits that limitation. The `culture` field identifies the current resource/request culture, not a guarantee that every inherited cached description was resolved in it. Audit and correct culture isolation in the owning models before promising multilingual mobile parity. Body/description strings may contain existing resource HTML, but no rendered page, controls, layout, scripts or partial views are included. Native rich-text handling and a general localisation/metadata endpoint are still pending.
+Account updates load the authenticated user's entities and set an allow-list of profile fields. No client-supplied user ID, role, membership or password field is trusted. UserInfo is updated through the existing typed repository rather than passing untrusted strings to the legacy raw-SQL update helper. Preference updates accept only named calculation/timezone flags, never arbitrary preference keys. Reset-request responses never return the legacy service's password-reset token or indicate whether an email exists. Activation requires a real token or an OTP handle plus code/captcha. Deletion requires explicit confirmation and password reauthentication. All such endpoints only execute these effects when called; authoring them does not send messages or change accounts.
 
-### Response contract
+Booking list/calendar responses expose availability without other customers' names or bookings. Selecting a slot verifies the owning user-consultation association, matching duration, future time and availability, then delegates scheduling under the existing shared EF context's serializable transaction. Administrative slot edits are separately guarded.
 
-JSON is UTF-8 with `application/json`, camelCase property names, ISO date/time values and no type metadata. Both successes and errors set `Cache-Control` to prevent storage; IIS error replacement and Forms Authentication login redirects are suppressed. Unexpected action exceptions become `500/internal_error` without exception details. Unmatched routes and framework failures outside the controller are not covered by this action-level error contract and require IIS integration verification.
+## Payment contract
 
-Success envelope:
+Mobile checkout uses the existing Stripe, membership, consultation and donation owners. Prices and eligibility come from server-side membership/consultation data; a client never posts a trusted PurchaseModel or successful-payment assertion. A caller supplies a stable request GUID. Stripe creation uses an idempotency key bound to that GUID and user. Confirmation reloads the server-created intent and verifies succeeded status, quoted amount and currency before fulfilling it.
 
-```json
-{ "success": true, "data": { "person": {}, "settings": {}, "culture": "en-GB", "summary": "...", "overview": "...", "energies": {}, "sections": {} }, "error": null }
-```
+Private checkout state is persisted as a purpose-bound MachineKey-protected JSON record under an internal `MobileCheckout:` UserPreference key, using the **existing database/context**, not a new table, migration or persistence project. These keys are not exposed through preference APIs. The existing public preference writer now accepts only ASCII identifier keys without colons, preventing users from overwriting/replaying internal checkout records, including through SQL-collation Unicode lookalikes. Protection is bound to both user ID and request GUID. Stable application MachineKey material must be retained for durable records to remain readable. A serializable SQL transaction protects creation/completion across workers; completed requests return the existing result rather than granting again. User ID, intent, amount and product association come from persisted server state. The existing Stripe interface has an additive idempotency overload; normal website callers retain their original method.
 
-Error envelope:
+This requires Windows/SQL Server/Stripe integration tests for transaction sharing, concurrent completion, failed commit/retry and real provider responses. Legacy service email sends are not transactional with SQL and may require reconciliation if a surrounding transaction fails. No claim of exactly-once email delivery is made. Checkout is **not release-ready** before those checks. No payment, schema migration, merge or deployment has been executed during this work.
 
-```json
-{ "success": false, "data": null, "error": { "code": "authentication_required" } }
-```
+## Coverage and remaining work
 
-| HTTP status | Error codes |
+| Family | Implementation status |
 | --- | --- |
-| `401` | `authentication_required` |
-| `403` | `membership_required` |
-| `409` | `birth_details_required`, `timezone_required`, `invalid_timezone`, `invalid_calculation_settings` |
-| `500` | `internal_error` |
+| PersonalChart | Full own chart, arbitrary-person full calculation, public numeric preview and alchemy implemented. Free own/complementary section-level parity and retrieve-last pending. |
+| Predictions | Calculation, own snapshot, planner hierarchy, generic cycles, combined descriptions, moon phase and alchemy implemented. Free/complementary and retrieve-last parity pending. |
+| Compatibility | Paid calculation with explicit privacy/age checks implemented; complimentary/retrieve-last pending. |
+| Numerology/Biorhythms | Paid calculations, numerology forecast and structured planners/series implemented. Complementary/retrieval parity pending. |
+| IChing/KnowledgeBase | Public cast and structured knowledge-base data implemented. |
+| PersonalCalendar | Month JSON and protected subscription/revoke implemented; existing ICS feed retained. |
+| Reports | Structured yearly report, existing PDF URL and admin-only prompt implemented. |
+| Account | Session login/logout, CSRF token, own account, profile/preferences updates, registration/activation, password operations and deletion implemented. Native OAuth/PKCE and some legacy external-auth/promotion flows pending. |
+| Membership/Payments | Options and quotes, promo redemption and server-verified durable checkout implemented. Provider/SQL tests required. |
+| Consultation | Owned bookings, slots/calendar, transaction-protected selection and admin slot operations implemented. |
+| Blog/Support | Public articles/tags, comments/likes/moderation, contact/newsletter submission and donation totals implemented. Article administration and broader admin endpoints pending. |
+| Generic administration and operations | Twenty explicit entity contracts provide admin-only schema/read/page operations and selected repository-backed writes. Users and processed email queue are read-only here; user lifecycle and sending use their owner services. Remaining custom administration, operational actions and hook review are still in progress. No arbitrary type/table or internal-preference endpoint exists. |
 
-| Data field | Content |
-| --- | --- |
-| `person` | Name, date-only `yyyy-MM-dd` birthday, `HH:mm:ss` birth time, known-time flag, birth timezone, gender enum name and age-category flags. No email, account number, user ID or entity. |
-| `settings` | Calculation method, calculator type, house display, user timezone, selected local timestamp (no UTC suffix), and both inversion flags. |
-| `culture`, `summary`, `overview` | Current resource culture and existing full profile overview text. |
-| `energies` | `epoch`, `generation`, `core`, `character`, `socialExpression`, `dayStar`, `hour`. Each contains number/name/title, element/modality and descriptions, yin/yang, trigram and description, direction, family member, colour and shared image URL. A missing energy is null. |
-| `sections` | Each value is `{ body, summary }`; body preserves full text and summary is null where no separate source summary exists. See keys below. |
-| `strongYinOrgan`, `strongYangOrgan`, `weakYinOrgans`, `weakYangOrgans` | Existing organ enum names; nullable strong-organ values and empty arrays for absent weak-organ collections. |
+## Validation and next gates
 
-Section keys: `core`, `character`, `socialExpression`, `intellectualQualities`, `interpersonalQualities`, `emotionalLandscape`, `career`, `occupations`, `finances`, `health`, `illnesses`, `spirituality`, `childNature`, `adultChildRelationship`, `stressResponse`, `natalHouseStressResponse`, `childStressResponse`. For people aged sixteen or over, also `relationships`, `relationshipsStraight`, `relationshipsLgbtq`, matching `_ProfileMainEnergyDetails`' relationship-tab gate. Use the existing PersonModel age rules; this change does not alter them.
+Added input/timezone/birth-time and I Ching isolation tests alongside the existing mobile profile tests. C# syntax, project XML, explicit compile registrations, unchanged plugin-controller sources and whitespace are checked in this environment. The environment has no .NET Framework/MSBuild/Mono runtime or restored K9 binaries, and astronomy source is git-crypt protected. Compilation, xUnit execution and MVC/IIS/SQL/Stripe integration tests are **not executed**. A draft PR is not a deployment approval.
 
-## Coverage plan
-
-| Controller family | Data/outcomes to expose | Existing owner and access considerations | Status |
-| --- | --- | --- | --- |
-| PersonalChart | Calculator defaults/options, arbitrary-person charts, saved own chart, energy details, alchemy and retrieval state. | NineStarKiService, UserService, membership reading accounting; free/own/complementary/paid fields differ. | Full paid own natal chart implemented; other actions pending. |
-| Predictions | Current personal/global cycles, planner rows/boundaries, detail and combined month/day descriptions, alchemy. | GetPlannerData batches and CombinedPredictionHelper; preserve all options, personal/global resource families and access. No rendered planner HTML. | Pending. |
-| PersonalCalendar | Month entries, energy metadata, subscription creation/revocation. | GoogleCalendarService, existing paid/admin checks; token secrecy, timezone and CSRF rules. Feed remains ICS, not JSON masquerading as a feed. | Pending. |
-| Compatibility | Both profiles, compatibility details/summaries, optional sexual chemistry, retrieval state. | CalculateCompatibility; preserve calculator semantics, privacy flag and complementary-reading consumption. | Pending. |
-| Biorhythms | Calculated series, summaries and display period. | BiorhythmsService using an existing calculated profile; inspect view paywall. | Pending. |
-| Numerology | Calculated model, forecast detail and planner codes. | NumerologyService and batch APIs; complementary karmic reading accounting and period/offset conventions. | Pending. |
-| IChing | Generated hexagram, lines and existing interpretation data. | IChingService and IChingViewModel; distinguish retrieval from a new random toss. | Pending. |
-| KnowledgeBase | Energy/element/modality summaries and interpretation content. | GetNineStarKiSummaryViewModel and resource-backed models; public vs gated content review. | Pending. |
-| Reports | Structured report sections and download/job outcomes. | ReportsService, AIService, PdfService; retain specific authorisation. PDFs remain file responses, with JSON metadata where needed. | Pending. |
-| Account and AccountControllerAjax | Authentication, registration, activation, reset, safe account/profile/preferences data, deletion outcomes. | AccountService, GoogleService and UserService; own-account checks, captcha/OTP/rate controls and CSRF. Never serialize account/user entities. Native auth is a prerequisite for standalone app use. | Pending. |
-| Membership and MembershipOptions | Plans, eligibility, current entitlements, checkout/switch outcomes. | MembershipService and pricing models; separate public catalogue from admin plan CRUD. | Pending. |
-| Payments (PaymentController.cs) | Payment-intent/checkout metadata and verified purchase outcomes. | Existing StripeService/PurchaseModel workflow. Do not trust client success or expose payment secrets/admin data. | Pending. |
-| Consultation and Consultations | Slot availability, owned bookings, scheduling results; separate admin slot/booking operations. | ConsultationService, timezone/availability rules, paid entitlements, ownership and administrator permissions. | Pending. |
-| Blog and Articles | Articles/tags, comments/likes, moderation and publication outcomes. | ArticlesService; public reading, authenticated owned edits and admin moderation/publishing are distinct. | Pending. |
-| Support, Donations and Contacts | Contact/newsletter submissions, donation checkout/outcomes; separate admin contact/donation data. | Existing captcha, ContactService, DonationService, Stripe and mail workflows. | Pending. |
-| EmailTemplates, EmailQueue, MailingLists, MailingListUsers, MailingListContacts | Authorised template/list/queue data and sending or list-edit outcomes. | Existing email/template/queue services and per-operation permissions. Email sends are writes, never incidental GET side effects. | Pending admin API review. |
-| Users, UserMemberships, UserConsultations, UserPromotions, Promotions, UserRoles | Admin records, assignments, credits/promotions and safe account views. | Existing membership/promotion/consultation services and admin/permission checks; avoid arbitrary-user access. | Pending admin API review. |
-| Roles, Permissions, RolePermissions, Countries, Messages, SystemSettings | Allow-listed reference/configuration/CRUD data. | Existing generic BaseNineStarKiController CRUD and actual controller permissions; Countries must not be assumed to share the other controllers' attributes. No secret-bearing settings projection. | Pending individual review. |
-| Home, Iboga, Error | Informational content, FAQ and structured error outcomes where the app needs them. | Resources/content, not rendered landing/error layouts. | Pending content review. |
-| BaseNineStarKi | Language/preferences, retrieval navigation and shared media/dynamic-field helpers. | Explicit app endpoints only; do not inherit or automatically export public base-controller helpers. | Pending individual review. |
-| Admin, Log, Test | Maintenance, logs, text/resource export, test email and diagnostics. | Operational/admin-only functionality; explicit permission and necessity review before any mobile exposure. | No endpoints added. |
-| Api and ApiPureAlchemy | Existing plugin calculations, knowledge base, I Ching and utility actions. | Existing plugin contract; mobile consumes shared services rather than calling these actions. | Unchanged. |
-
-Inherited generic CRUD actions are not fully enumerated by the concrete-file action inventory below. Inspect K9's actual base-controller permission/event behaviour before providing equivalents. The table records every current controller family; it is not evidence that every family has passed a complete security or view-field audit.
-
-## Next implementation sequence
-
-1. Verify the first slice on Windows/IIS, including actual session resolution, expired membership, culture, routing and JSON errors.
-2. Design native app authentication and safe account/preference contracts using existing account services.
-3. Add free/complementary chart projections and explicit arbitrary-person calculation inputs, preserving existing accounting.
-4. Add predictions/planner/calendar endpoints using existing batch contracts, then compatibility, numerology, biorhythms, I Ching, knowledge base and reports.
-5. Cover booking, payments, content and other writes with their existing permissions and mutation protections; review admin/operational exposure separately.
-6. Add a machine-readable API specification and contract checks as routes settle. This first slice does not introduce a new framework/dependency or migrate the application.
-
-## Validation
-
-Added xUnit/Moq tests for anonymous/unresolved identity, free/expired memberships, missing birth details, missing/invalid zones, saved options, birth-time normalisation, membership revocation between requests, response allow-list/full-text projection, child relationship gating, and JSON/no-store/redirect behaviour. They mock calculations and do not establish astronomical correctness.
-
-C# parsing with tree-sitter found no syntax errors in the five added C# files. Both project XML files parse, every added C# file is explicitly registered, the controller inventory covers all 47 existing controller source files, and whitespace checks pass. The plugin controller files are unchanged.
-
-This environment has no .NET Framework/MSBuild/Mono runtime or restored proprietary K9 dependencies, and astronomy sources remain git-crypt protected. C# tests and the application cannot be compiled or executed here. Local source/project checks do not replace a Windows build and IIS checks. No merge or TeamCity deployment is part of this work.
+Continue the remaining coverage checklist on the same branch, then build/run the website tests in the owner's Windows checkout and validate authenticated requests and error paths under IIS. Do not mark the full API finished while any controller family remains pending.
 
 ## Concrete controller action inventory
 

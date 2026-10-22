@@ -10,6 +10,8 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI;
 using TimeZoneConverter;
+using K9.WebApplication.ViewModels.MobileApi;
+using System.Threading.Tasks;
 
 namespace K9.WebApplication.Controllers
 {
@@ -22,6 +24,45 @@ namespace K9.WebApplication.Controllers
             : base(package)
         {
             _nineStarKiService = nineStarKiService;
+        }
+
+        [HttpPost, Route("calculate")]
+        public ActionResult Calculate(MobileCalculationRequest request)
+        {
+            var error = RequireUser(out var userId, paid: true);
+            if (error != null) return error;
+            if (!ValidInput(request)) return ApiError(400, "invalid_calculation_request");
+            return ApiSuccess(MobilePersonalChartMapper.Map(CalculateProfile(_nineStarKiService, request), request.Person.TimeOfBirthKnown));
+        }
+
+        [HttpPost, Route("preview")]
+        public ActionResult Preview(MobileCalculationRequest request)
+        {
+            if (!ValidInput(request)) return ApiError(400, "invalid_calculation_request");
+            var model = CalculateProfile(_nineStarKiService, request);
+            // The public calculator exposes numbers and its overview. Never
+            // include a full Energy DTO here: descriptions include paid text.
+            return ApiSuccess(new
+            {
+                model.Summary, model.Overview,
+                Core = model.MainEnergy.EnergyNumber, Character = model.CharacterEnergy.EnergyNumber,
+                SocialExpression = model.SurfaceEnergy.EnergyNumber,
+                Generation = model.PersonalChartEnergies.Generation.EnergyNumber,
+                Epoch = model.PersonalChartEnergies.Epoch.EnergyNumber,
+                DayStar = model.PersonalChartEnergies.Day.EnergyNumber,
+                Hour = model.PersonalChartEnergies.Hour.EnergyNumber
+            });
+        }
+
+        [HttpPost, Route("alchemy")]
+        public async Task<ActionResult> Alchemy(MobileCalculationRequest request)
+        {
+            var error = RequireUser(out var userId, paid: true);
+            if (error != null) return error;
+            if (!ValidInput(request)) return ApiError(400, "invalid_calculation_request");
+            if (!Package.SystemSettings.IsEnabledAlchemy) return ApiSuccess(new { Enabled = false });
+            var result = await _nineStarKiService.GetNineStarKiPersonalChartAlchemy(CalculateProfile(_nineStarKiService, request));
+            return ApiSuccess(new { Enabled = true, result.AlchemisedDescription, result.AlchemisedSummary });
         }
 
         [HttpGet]

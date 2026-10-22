@@ -93,7 +93,7 @@ namespace K9.WebApplication.Helpers
         private static MobileChartText Text(string body, string summary = null) =>
             new MobileChartText { Body = body, Summary = summary };
 
-        private static MobileChartEnergy Energy(NineStarKiEnergy energy)
+        public static MobileChartEnergy Energy(NineStarKiEnergy energy)
         {
             if (energy == null)
                 return null;

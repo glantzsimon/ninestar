@@ -71,6 +71,11 @@ namespace K9.WebApplication.Services.Stripe
 
         public PaymentIntent GetPaymentIntent(StripeModel model)
         {
+            return GetPaymentIntent(model, null);
+        }
+
+        public PaymentIntent GetPaymentIntent(StripeModel model, string idempotencyKey)
+        {
             var options = new PaymentIntentCreateOptions
             {
                 Amount = model.AmountAsLong,
@@ -79,7 +84,7 @@ namespace K9.WebApplication.Services.Stripe
             };
 
             var service = new PaymentIntentService();
-            return service.Create(options);
+            return service.Create(options, new RequestOptions { IdempotencyKey = idempotencyKey });
         }
     }
 }

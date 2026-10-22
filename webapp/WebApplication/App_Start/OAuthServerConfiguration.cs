@@ -51,14 +51,19 @@ namespace K9.WebApplication
                     options.SetAuthorizationEndpointUris("oauth/authorize");
                     options.SetTokenEndpointUris("oauth/token");
                     options.AllowAuthorizationCodeFlow();
+                    options.AllowRefreshTokenFlow();
                     options.RequireProofKeyForCodeExchange();
-                    options.RegisterScopes(OAuthClaimsPrincipalFactory.ReadScope);
+                    options.RegisterScopes(OAuthClaimsPrincipalFactory.ReadScope,
+                        OpenIddictConstants.Scopes.OfflineAccess);
                     // This server issues delegated access tokens only. Do not
                     // advertise openid: the controller deliberately rejects it.
                     options.Configure(configuration =>
                         configuration.Scopes.Remove(OpenIddictConstants.Scopes.OpenId));
 
                     options.SetAccessTokenLifetime(TimeSpan.FromMinutes(15));
+                    // OpenIddict rotates refresh tokens and renews their expiry
+                    // on use by default. Keep both protections enabled.
+                    options.SetRefreshTokenLifetime(TimeSpan.FromDays(90));
 
                     // The separate MCP server validates the JWT against the
                     // website's published signing key/JWKS. Access tokens
@@ -168,3 +173,4 @@ namespace K9.WebApplication
         }
     }
 }
+

@@ -59,7 +59,7 @@ namespace K9.WebApplication.Controllers
                 return new HttpStatusCodeResult(400);
             }
 
-            // Only one read-only permission, code flow and S256 PKCE are
+            // One read-only permission, optional offline access and S256 PKCE are
             // permitted for the ChatGPT client. The middleware also validates
             // registered redirect URIs and code challenges before pass-through.
             if (!IsExpectedRequest(request))
@@ -165,7 +165,7 @@ namespace K9.WebApplication.Controllers
 
             // The token endpoint is a backchannel request from ChatGPT, not
             // a browser request with the website's authentication cookie.
-            if (!request.IsAuthorizationCodeGrantType())
+            if (!request.IsAuthorizationCodeGrantType() && !request.IsRefreshTokenGrantType())
             {
                 return OAuthError(Errors.UnsupportedGrantType);
             }
@@ -181,8 +181,29 @@ namespace K9.WebApplication.Controllers
                 return OAuthError(Errors.InvalidGrant);
             }
 
-            // Re-evaluate the authenticated account's ACTIVE membership at
-            // redemption time, to prevent issuing tokens for expired or
+            var validatedPrincipal = new ClaimsPrincipal(ticket.Identity);
+            if (!OAuthClaimsPrincipalFactory.IsSupportedScopes(validatedPrincipal.GetScopes()) ||
+                (request.IsRefreshTokenGrantType() && !validatedPrincipal.HasScope(Scopes.OfflineAccess)))
+            {
+                return OAuthError(Errors.InvalidGrant);
+            }
+
+            // A refresh may retain or narrow the original grant, never widen it.
+            var scopes = validatedPrincipal.GetScopes().ToArray();
+            if (request.IsRefreshTokenGrantType() && request.Scope != null)
+            {
+                var requestedScopes = request.GetScopes().ToArray();
+                if (!OAuthClaimsPrincipalFactory.IsSupportedScopes(requestedScopes) ||
+                    requestedScopes.Except(scopes, StringComparer.Ordinal).Any())
+                {
+                    return OAuthError(Errors.InvalidScope);
+                }
+
+                scopes = requestedScopes;
+            }
+
+            // Re-evaluate the authenticated account's ACTIVE membership on
+            // every code redemption AND refresh, to reject expired or
             // transferred memberships or blindly copying a stale account ID.
             var membership = _memberships.GetExistingActiveMembershipForOAuth(userId);
             if (membership == null || membership.UserId != userId ||
@@ -192,9 +213,9 @@ namespace K9.WebApplication.Controllers
                 return OAuthError(Errors.InvalidGrant);
             }
 
-            var principal = OAuthClaimsPrincipalFactory.Create(
+            var principal = OAuthClaimsPrincipalFactory.Renew(
                 new OAuthAccountIdentity(userId, membership.AccountNumber),
-                new ClaimsPrincipal(ticket.Identity).GetScopes());
+                validatedPrincipal, scopes);
 
             context.Authentication.SignIn((ClaimsIdentity)principal.Identity);
             return new EmptyResult();
@@ -202,13 +223,10 @@ namespace K9.WebApplication.Controllers
 
         private static bool IsExpectedRequest(OpenIddictRequest request)
         {
-            var scopes = request.GetScopes().ToArray();
             return string.Equals(request.ResponseType, ResponseTypes.Code, StringComparison.Ordinal) &&
                    string.Equals(request.CodeChallengeMethod, CodeChallengeMethods.Sha256,
                        StringComparison.Ordinal) &&
-                   scopes.Length == 1 &&
-                   string.Equals(scopes[0], OAuthClaimsPrincipalFactory.ReadScope,
-                       StringComparison.Ordinal);
+                   OAuthClaimsPrincipalFactory.IsSupportedScopes(request.GetScopes());
         }
 
         private ActionResult OAuthError(string error)
@@ -236,3 +254,4 @@ namespace K9.WebApplication.Controllers
         public string Scope { get; set; }
     }
 }
+

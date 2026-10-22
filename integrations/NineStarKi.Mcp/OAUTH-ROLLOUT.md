@@ -1,5 +1,19 @@
 # ChatGPT customer sign-in: implementation and safe rollout
 
+## Renewable connections (23 October 2026)
+
+The code on master now supports authorization-code and refresh-token grants. See
+[OAuth refresh tokens](../../docs/oauth-refresh-tokens.md) for the current scope,
+lifetime, registration-upgrade and validation contract. This supersedes the
+code-only/no-refresh descriptions in the historical implementation notes below.
+Access tokens remain valid for 15 minutes. A connection requesting
+`nine-star-ki.read offline_access` can receive rotating refresh tokens with a
+90-day lifetime renewed on use. Existing read-only connections remain compatible
+but need a new authorization with `offline_access` before they can renew.
+No schema migration or package upgrade is required. Deployment and a real ChatGPT
+renewal test are still required; committing source does not update a connection's
+App-owned OAuth settings or issue refresh tokens to an existing connection.
+
 **Current local baseline (21 October 2026):** The owner confirmed that OpenIddict 6.4.0 with all OAuth source restored builds, website tests pass, and the local website starts. Controlled tests isolated the Visual Studio 2017 editor crash to OpenIddict.Abstractions 7.7.2; keep the package family aligned at 6.4.0. The existing OAuth migration has already been applied locally; the explicit 150-character token Type mapping preserves that migration's model. With local OAuth enabled, the owner verified discovery at `https://localhost/ninestar/.well-known/openid-configuration` and JWKS at `https://localhost/ninestar/.well-known/jwks`. This verifies metadata/public-key publication, not private-key signing, consent or token exchange. Integration is the agreed environment for end-to-end testing. Older dated notes below are historical and superseded by this baseline.
 
 ## Integration preparation (21 October 2026)
@@ -151,3 +165,4 @@ The corrected migration `webapp/DataAccess/Migrations/202610170149068_AddOpenIdd
 6. Prepare public Plugin submission only once signed-in member workflow, privacy policy, and authorisation are actually verified.
 
 No user action is needed to write the isolated development code. Server/Plesk environment changes, certificates, DB schema deployment and enabling production OAuth will require the owner at a later checkpoint.
+

@@ -36,12 +36,10 @@ namespace K9.WebApplication.Services
                 throw new ArgumentNullException(nameof(requestedScopes));
             }
 
-            // For the initial ChatGPT connection we support precisely one
-            // delegated scope. Reject unknown scopes instead of silently
-            // broadening the permissions granted to the client.
+            // Offline access permits renewal, not additional website access.
+            // Old connections requesting only the read scope remain supported.
             var scopes = requestedScopes.ToArray();
-            if (scopes.Length != 1 ||
-                !string.Equals(scopes[0], ReadScope, StringComparison.Ordinal))
+            if (!IsSupportedScopes(scopes))
             {
                 throw new ArgumentException(
                     "The requested OAuth scopes are not supported.", nameof(requestedScopes));
@@ -58,7 +56,7 @@ namespace K9.WebApplication.Services
                 account.UserId.ToString(CultureInfo.InvariantCulture));
             identity.SetClaim(MembershipAccountClaim, account.MembershipAccountNumber);
 
-            identity.SetScopes(ReadScope);
+            identity.SetScopes(scopes);
             identity.SetResources(McpResource);
 
             // Claims are not included in OpenIddict access tokens by default.
@@ -70,6 +68,51 @@ namespace K9.WebApplication.Services
 
             return new ClaimsPrincipal(identity);
         }
+
+        public static bool IsSupportedScopes(IEnumerable<string> requestedScopes)
+        {
+            if (requestedScopes == null) return false;
+
+            var scopes = requestedScopes.ToArray();
+            return scopes.Contains(ReadScope, StringComparer.Ordinal) &&
+                   scopes.Distinct(StringComparer.Ordinal).Count() == scopes.Length &&
+                   scopes.All(scope => string.Equals(scope, ReadScope, StringComparison.Ordinal) ||
+                       string.Equals(scope, Scopes.OfflineAccess, StringComparison.Ordinal));
+        }
+
+        public static ClaimsPrincipal Renew(OAuthAccountIdentity account,
+            ClaimsPrincipal validatedPrincipal, IEnumerable<string> requestedScopes)
+        {
+            if (account == null) throw new ArgumentNullException(nameof(account));
+            if (validatedPrincipal == null) throw new ArgumentNullException(nameof(validatedPrincipal));
+
+            var identity = validatedPrincipal.Identity as ClaimsIdentity;
+            if (identity == null || !string.Equals(identity.FindFirst(Claims.Subject)?.Value,
+                    account.UserId.ToString(CultureInfo.InvariantCulture), StringComparison.Ordinal) ||
+                !IsSupportedScopes(validatedPrincipal.GetScopes()) ||
+                !IsSupportedScopes(requestedScopes))
+            {
+                throw new ArgumentException("The validated OAuth grant is not supported.");
+            }
+
+            var scopes = requestedScopes.ToArray();
+            if (scopes.Except(validatedPrincipal.GetScopes(), StringComparer.Ordinal).Any())
+            {
+                throw new ArgumentException("The OAuth grant cannot be broadened.", nameof(requestedScopes));
+            }
+
+            // Preserve OpenIddict's validated authorization ID, presenters and
+            // token metadata so revocation and rotation remain library-managed.
+            var renewedIdentity = new ClaimsIdentity(identity);
+            renewedIdentity.SetScopes(scopes);
+            renewedIdentity.SetClaim(MembershipAccountClaim, account.MembershipAccountNumber);
+            renewedIdentity.SetDestinations(claim =>
+                claim.Type == Claims.Subject || claim.Type == MembershipAccountClaim
+                    ? new[] { Destinations.AccessToken }
+                    : Array.Empty<string>());
+
+            return new ClaimsPrincipal(renewedIdentity);
+        }
     }
 
     // Public ChatGPT client-registration helpers; no startup-side effects.
@@ -78,7 +121,8 @@ namespace K9.WebApplication.Services
         /// <summary>
         /// Builds one public ChatGPT client restricted to the exact callback
         /// from the ChatGPT MCP connection settings. No wildcard redirects,
-        /// client secrets, implicit grants, password grants or refresh grants.
+        /// client secrets, implicit grants or password grants. Refresh is
+        /// permitted only for a previously approved offline-access grant.
         /// </summary>
         public static OpenIddictApplicationDescriptor CreateDescriptor(
             string configuredClientId, string configuredRedirectUri)
@@ -119,6 +163,7 @@ namespace K9.WebApplication.Services
                     Permissions.Endpoints.Authorization,
                     Permissions.Endpoints.Token,
                     Permissions.GrantTypes.AuthorizationCode,
+                    Permissions.GrantTypes.RefreshToken,
                     Permissions.ResponseTypes.Code,
                     Permissions.Prefixes.Scope + OAuthClaimsPrincipalFactory.ReadScope
                 },
@@ -133,8 +178,8 @@ namespace K9.WebApplication.Services
 
         /// <summary>
         /// Idempotently registers the configured public client.
-        /// Existing clients with different security settings are NOT updated
-        /// or trusted silently. They require explicit administrator review.
+        /// Only the exact previous code-only registration may be upgraded by
+        /// adding refresh permission. All other security differences fail closed.
         /// </summary>
         public static async Task RegisterAsync(
             IOpenIddictApplicationManager manager,
@@ -161,14 +206,31 @@ namespace K9.WebApplication.Services
                 registeredRedirects.Length != 1 ||
                 !string.Equals(registeredRedirects[0], descriptor.RedirectUris.Single().AbsoluteUri,
                     StringComparison.Ordinal) ||
-                !new HashSet<string>(registeredPermissions, StringComparer.Ordinal)
-                    .SetEquals(descriptor.Permissions) ||
                 !new HashSet<string>(registeredRequirements, StringComparer.Ordinal)
                     .SetEquals(descriptor.Requirements))
             {
                 throw new InvalidOperationException(
                     "The existing ChatGPT OAuth client does not match the approved registration.");
             }
+
+            var permissions = new HashSet<string>(registeredPermissions, StringComparer.Ordinal);
+            if (permissions.SetEquals(descriptor.Permissions)) return;
+
+            var previousPermissions = new HashSet<string>(descriptor.Permissions, StringComparer.Ordinal);
+            previousPermissions.Remove(Permissions.GrantTypes.RefreshToken);
+            if (!permissions.SetEquals(previousPermissions))
+            {
+                throw new InvalidOperationException(
+                    "The existing ChatGPT OAuth client does not match the approved registration.");
+            }
+
+            // Preserve stored display metadata and properties; the only change
+            // to the exact legacy registration is the approved refresh grant.
+            var updated = new OpenIddictApplicationDescriptor();
+            await manager.PopulateAsync(updated, existing);
+            updated.Permissions.Add(Permissions.GrantTypes.RefreshToken);
+            await manager.UpdateAsync(existing, updated);
         }
     }
 }
+

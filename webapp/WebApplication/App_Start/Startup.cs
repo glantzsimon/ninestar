@@ -48,8 +48,10 @@ namespace K9.WebApplication
             builder.RegisterSource(new ViewRegistrationSource());
             builder.RegisterFilterProvider();
 
-            builder.RegisterType<LocalDb>().As<DbContext>().InstancePerLifetimeScope();
-            builder.Register(c => LogManager.GetCurrentClassLogger()).As<ILogger>().SingleInstance();
+            builder.RegisterType<LocalDb>().As<DbContext>().AsSelf().InstancePerLifetimeScope();
+            builder.Register<ILogger>(c => LogManager.GetCurrentClassLogger())
+                .As<ILogger>()
+                .SingleInstance();
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
             builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerLifetimeScope();
             builder.RegisterType<Config.ColumnsConfig>().As<IColumnsConfig>().InstancePerLifetimeScope();
@@ -73,6 +75,7 @@ namespace K9.WebApplication
             builder.RegisterType<GoogleCalendarService>().As<IGoogleCalendarService>().InstancePerLifetimeScope();
             builder.RegisterType<Services.AccountMailerService>().As<Services.IAccountMailerService>().InstancePerLifetimeScope();
             builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerLifetimeScope();
+            builder.RegisterType<OAuthAccountIdentityService>().As<IOAuthAccountIdentityService>().InstancePerLifetimeScope();
             builder.RegisterType<ContactService>().As<IContactService>().InstancePerLifetimeScope();
             builder.RegisterType<MailChimpService>().As<IMailChimpService>().InstancePerLifetimeScope();
             builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
@@ -100,8 +103,24 @@ namespace K9.WebApplication
 
             RegisterStaticTypes();
 
+            // Register OAuth only when its required certificates and client
+            // registrations are configured. Disabled by default.
+            var oauthEnabled = string.Equals(
+                ConfigurationManager.AppSettings["NineStarKiOAuthEnabled"],
+                "true", StringComparison.OrdinalIgnoreCase);
+
+            if (oauthEnabled)
+            {
+                OAuthServerConfiguration.RegisterServices(builder);
+            }
+
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            if (oauthEnabled)
+            {
+                OAuthServerConfiguration.RegisterMiddleware(app, container);
+            }
 
             // Configure Hangfire to use SQL Server storage and the Autofac job activator
             GlobalConfiguration.Configuration

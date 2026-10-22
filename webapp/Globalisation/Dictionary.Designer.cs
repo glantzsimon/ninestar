@@ -41213,6 +41213,41 @@ namespace K9.Globalisation {
         public static string PersonalCalendarEventSummaryFormat {
             get { return ResourceManager.GetString("PersonalCalendarEventSummaryFormat", resourceCulture); }
         }
+        public static string OAuthConsentTitle {
+            get {
+                return ResourceManager.GetString("OAuthConsentTitle", resourceCulture);
+            }
+        }
+
+        public static string OAuthConsentIntroduction {
+            get {
+                return ResourceManager.GetString("OAuthConsentIntroduction", resourceCulture);
+            }
+        }
+
+        public static string OAuthConsentReadings {
+            get {
+                return ResourceManager.GetString("OAuthConsentReadings", resourceCulture);
+            }
+        }
+
+        public static string OAuthConsentReadOnly {
+            get {
+                return ResourceManager.GetString("OAuthConsentReadOnly", resourceCulture);
+            }
+        }
+
+        public static string OAuthConsentContinue {
+            get {
+                return ResourceManager.GetString("OAuthConsentContinue", resourceCulture);
+            }
+        }
+
+        public static string OAuthConsentAllowAccess {
+            get {
+                return ResourceManager.GetString("OAuthConsentAllowAccess", resourceCulture);
+            }
+        }
 
     }
 }

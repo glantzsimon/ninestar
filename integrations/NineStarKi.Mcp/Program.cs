@@ -179,6 +179,11 @@ app.Use(async (context, next) =>
     await next();
 });
 
+// Public domain-ownership proof for the OpenAI plugin registration.
+// This token is intentionally public and must be returned verbatim as plain text.
+app.MapGet("/.well-known/openai-apps-challenge", () =>
+    Results.Text("POcdrZNCSiT8eGdpbOyvWVlxHJilBmisvyHdEOtZEPU", "text/plain"));
+
 app.MapGet("/healthz", () => Results.Ok(new { status = "ready" }));
 app.MapMcp("/mcp");
 app.Run();

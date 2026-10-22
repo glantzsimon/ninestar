@@ -40,7 +40,7 @@ public sealed class AstrologyTools(AstrologyApiClient api, McpMemberAccountResol
     public Task<string> GetCompatibility(
         string firstPersonName, string firstPersonDateOfBirth, string firstPersonGender,
         string secondPersonName, string secondPersonDateOfBirth, string secondPersonGender,
-        bool displaySexualChemistry,
+        bool displayChemistry,
         string firstPersonTimeOfBirth, string firstPersonBirthLocation,
         string secondPersonTimeOfBirth, string secondPersonBirthLocation,
         CancellationToken cancellationToken = default) =>
@@ -52,7 +52,7 @@ public sealed class AstrologyTools(AstrologyApiClient api, McpMemberAccountResol
             AstrologyApiClient.RequiredText(secondPersonName, nameof(secondPersonName)),
             AstrologyApiClient.BirthDate(secondPersonDateOfBirth),
             AstrologyApiClient.Gender(secondPersonGender),
-            displaySexualChemistry ? "true" : "false",
+            displayChemistry ? "true" : "false",
             AstrologyApiClient.BirthTime(firstPersonTimeOfBirth),
             AstrologyApiClient.RequiredText(firstPersonBirthLocation, nameof(firstPersonBirthLocation)),
             AstrologyApiClient.BirthTime(secondPersonTimeOfBirth),

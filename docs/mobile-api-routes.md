@@ -4,6 +4,7 @@ Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobil
 
 | Method | Route | Controller action |
 | --- | --- | --- |
+| `GET` | `/api/mobile/v1/metadata/artwork` | `MobileArtworkController.cs:Artwork` |
 | `GET` | `/api/mobile/v1/account/csrf` | `MobileAccountController.cs:Csrf` |
 | `POST` | `/api/mobile/v1/account/login` | `MobileAccountController.cs:Login` |
 | `POST` | `/api/mobile/v1/account/logout` | `MobileAccountController.cs:Logout` |

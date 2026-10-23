@@ -2,6 +2,68 @@
 
 The proposed shared website/app Apple subscription contract is in [Shared website/app membership and Apple subscriptions](#shared-websiteapp-membership-and-apple-subscriptions-proposed-contract). It is a draft for agreement, not an implemented billing feature.
 
+
+## Public artwork catalogue
+
+`GET /api/mobile/v1/metadata/artwork` supplies the shared, public artwork needed by native views. Existing website views/helpers and all existing image fields remain unchanged. This is an additive API feature with no database/migration or purchasing changes.
+
+The response uses the normal success envelope:
+
+```json
+{
+  "success": true,
+  "data": {
+    "version": "<64-character SHA-256>",
+    "assets": {
+      "ninestar.energies.water": {
+        "group": "ninestar.energies",
+        "variants": {
+          "default": {
+            "url": "https://<configured-media-host>/Images/ninestar/energies/water.png?v=<content-sha256>",
+            "revision": "<content-sha256>",
+            "contentType": "image/png",
+            "width": 600,
+            "height": 600
+          }
+        }
+      }
+    }
+  },
+  "error": null
+}
+```
+
+Dimensions above are illustrative; use the actual returned dimensions. `assets` is a dictionary keyed by stable protocol ID, not localised display text. Each entry contains `group` and a dictionary of actual `variants` (`default`, optionally `dark`). Select `dark` when present for dark mode, otherwise `default`. No synthetic/resized variants are advertised. Separately authored logo sizes retain their own IDs. GIF IDs end in `-animated`. IDs are case-sensitive; original filename case is preserved in URLs. Use the exact supplied URL rather than constructing a path from an ID, label or number.
+
+The initial explicit catalogue contains **431 file registrations, 424 logical IDs and 424 distinct image contents**. It covers Nine Star energies, elements, trigrams, modalities, seasons, organs and transformations; yin/yang; all 32 supplied moon-phase images; numerology codes and planner artwork; UI artwork; company branding; I Ching; membership artwork; backgrounds, home/about and shared artwork; and supplied country flags. Seven light/dark pairs share their logical IDs. Identical image contents share a canonical URL and revision even when used under different semantic IDs (for example, earth and stable modality). This avoids duplicate image downloads while preserving useful domain names. The catalogue contains metadata/URLs, never inline image bytes.
+
+Public media is served from the existing `MediaService.BaseImagesPath`, captured once per response. There are no media health requests, directory scans, file reads, database queries, user lookups or calculations in the action. Metadata and content hashes are generated ahead of time and compiled into the application. An unavailable or invalid/non-absolute media base produces `503 artwork_unavailable` with `no-store`; it must not silently return an empty successful catalogue. Keep configured media bases absolute HTTP(S) URLs with no credentials, query or fragment. The existing scheduled health check remains the sole owner of hosted/local fallback selection.
+
+### Artwork references in calculation responses
+
+Additive properties, retaining existing fields:
+
+| Response projection | Added artwork references |
+| --- | --- |
+| Every `MobileChartEnergy` (including profiles, cycles, planners and knowledge base) | `artworkId`, `elementArtworkId`, `trigramArtworkId`, `modalityArtworkId`, `seasonArtworkId`, `yinYangArtworkId` |
+| Full personal chart | `strongYinOrganArtworkId`, `strongYangOrganArtworkId`, `weakYinOrganArtworkIds`, `weakYangOrganArtworkIds` (arrays retain corresponding organ order) |
+| Moon projection | `artworkId`, alongside the unchanged `image` filename |
+| Numerology code and planner-period projections | `artworkId`, based on the domain enum rather than a translated name |
+
+An absent/unregistered symbol returns a null reference; clients use their existing placeholder or legacy field. Unknown future IDs must not break screen rendering. Responses that only expose numbers retain their existing shape; a client must not derive filenames from those numbers. Hexagram lines remain structured data rather than invented image files. This endpoint does not render HTML or rewrite images embedded in resource-authored HTML.
+
+Article-specific images, user avatars/uploads and video URLs remain on their existing owning endpoints, with existing access rules. Article IDs and user IDs are never catalogue keys. Email-only artwork, website favicons/install icons and administrative/private uploads are outside the shared runtime catalogue. A source audit found 92 literal image references across views, LESS and Globalisation content: all content-image references are included; the remaining 15 are website install/favicon images. Dynamic energy/trigram/element/modality/season/organ, numerology and lunar filename families were checked separately against their existing model/enum mappings.
+
+### Cache contract and native client behaviour
+
+This one public, identity-free action uses `Cache-Control: public, max-age=300` and a weak `ETag: W/"<version>"`. Private API responses still use `no-store`. Version reflects media base/fallback, registered IDs, variants, URLs, content hashes, MIME types and dimensions. Image URLs carry their content revision as `?v=...` so changed artwork changes its cache key. The media host must serve the same file when that query is supplied; validate that in Integration.
+
+Cache the successful envelope and its ETag per API environment (not per NineStar account). Revalidate with `If-None-Match` after freshness expires; `304` has no JSON body and retains the cached catalogue. Whole strong/weak tags, lists and wildcard are supported. A changed host/fallback returns `200` and a new version. Do not send conditional headers without a cached body; recover from an unexpected `304` by retrying once without the header. Fetch only images needed for the current/nearby screen; share image cache entries by URL or revision. Do not preload the entire catalogue's artwork. Keep the mobile client's existing 15-second timeout, retain the last successful catalogue on refresh failure, and preserve existing image rendering until this backend is available. Catalogue refresh must not replace account state or unsaved edits.
+
+Maintain `tools/mobile-artwork-paths.txt` as the explicit public allowlist. When adding/changing files, run `python tools/update-mobile-artwork.py` (Python with Pillow), then commit the generated `Helpers/MobileArtworkRegistry.Data.cs`. `--check` verifies source files, image metadata and hashes against the committed catalogue; this is a development check, never a server-startup operation. Preserve existing IDs when filenames move by adjusting the generator/registration deliberately rather than deriving a new client contract accidentally. New private directories must never be allowed.
+
+Validation here: the registry/DTO and isolated controller compiled with C# 7.3 against .NET Framework 4.7.2 reference assemblies with warnings treated as errors (controller compilation used actual MVC/Newtonsoft references and a stub for the existing media-base property); 27 isolated catalogue/ETag/URL/fallback/isolation checks ran under the available Linux .NET runtime. Metadata regeneration, C# syntax, project registrations and literal source coverage are also checked. Added Windows xUnit tests cover the controller, conditional GET, safe failures, complete domain references, variants and public boundaries. Full VS2017 build/xUnit/IIS tests have **not** been executed here; use the handoff in `docs/mobile-artwork-validation.md` before release. No deployment is performed.
+
 ## Current implementation
 
 ### Shared entitlements: website-membership phase

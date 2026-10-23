@@ -400,6 +400,10 @@
     <Compile Include="Controllers\MobileReadingsController.cs" />
     <Compile Include="ViewModels\MobileApi\MobileContactRequest.cs" />
     <Compile Include="Controllers\MobileMetadataController.cs" />
+    <Compile Include="Controllers\MobileArtworkController.cs" />
+    <Compile Include="Helpers\MobileArtworkRegistry.cs" />
+    <Compile Include="Helpers\MobileArtworkRegistry.Data.cs" />
+    <Compile Include="ViewModels\MobileApi\MobileArtworkResponse.cs" />
     <Compile Include="Helpers\MobileMetadataHelper.cs" />
     <Compile Include="Controllers\MobileAdminArticlesController.cs" />
     <Compile Include="Controllers\MobileAdminMailController.cs" />

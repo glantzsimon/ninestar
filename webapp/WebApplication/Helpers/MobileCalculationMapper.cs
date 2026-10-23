@@ -14,6 +14,7 @@ namespace K9.WebApplication.Helpers
         {
             moon.IlluminationPercentage, moon.IsWaxing, moon.IlluminationDisplay,
             Name = moon.GetMoonPhaseName(), Image = moon.GetMoonPhaseImageFile(),
+            ArtworkId = MobileArtworkRegistry.IdForPath("astrology/moon-phases/" + moon.GetMoonPhaseImageFile()),
             moon.LunarDay, moon.LunarDayTitle, moon.LunarDayDescription, moon.YinYangComfortDescription
         };
 
@@ -120,6 +121,7 @@ namespace K9.WebApplication.Helpers
         public static object Code(NumerologyCodeDetails code) => code == null ? null : new
         {
             code.CodeNumber, code.Name, code.Title, code.Colour, code.Purpose, code.Description,
+            ArtworkId = MobileArtworkRegistry.IdForPath("numerology/" + code.NumerologyCode.ToString() + ".png"),
             code.StartDate, code.EndDate, code.Type, code.Offset, code.IsCurrent
         };
 
@@ -131,7 +133,8 @@ namespace K9.WebApplication.Helpers
 
         private static object NumerologyPeriods(IEnumerable<NumerologyPlannerModel> periods) => periods?.Select(e => new
         {
-            e.CodeNumber, e.StartDate, e.EndDate, e.Offset, e.IsCurrent
+            e.CodeNumber, e.StartDate, e.EndDate, e.Offset, e.IsCurrent,
+            ArtworkId = MobileArtworkRegistry.IdForPath("numerology/" + e.NumerologyCode.ToString() + ".png")
         }).ToArray();
 
         public static object Numerology(NumerologyModel model) => new

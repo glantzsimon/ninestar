@@ -13,6 +13,10 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public string Overview { get; set; }
         public Dictionary<string, MobileChartEnergy> Energies { get; set; }
         public Dictionary<string, MobileChartText> Sections { get; set; }
+        public string StrongYinOrganArtworkId { get; set; }
+        public string StrongYangOrganArtworkId { get; set; }
+        public string[] WeakYinOrganArtworkIds { get; set; }
+        public string[] WeakYangOrganArtworkIds { get; set; }
         public string StrongYinOrgan { get; set; }
         public string StrongYangOrgan { get; set; }
         public string[] WeakYinOrgans { get; set; }
@@ -59,6 +63,12 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public string Direction { get; set; }
         public string FamilyMember { get; set; }
         public string Colour { get; set; }
+        public string ArtworkId { get; set; }
+        public string ElementArtworkId { get; set; }
+        public string TrigramArtworkId { get; set; }
+        public string ModalityArtworkId { get; set; }
+        public string SeasonArtworkId { get; set; }
+        public string YinYangArtworkId { get; set; }
         public string ImageUrl { get; set; }
     }
 

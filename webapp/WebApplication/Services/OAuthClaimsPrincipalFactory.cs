@@ -103,7 +103,12 @@ namespace K9.WebApplication.Services
 
             // Preserve OpenIddict's validated authorization ID, presenters and
             // token metadata so revocation and rotation remain library-managed.
-            var renewedIdentity = new ClaimsIdentity(identity);
+            // Token validation uses its own authentication type. OWIN selects the
+            // sign-in handler by this value, so explicitly target the server
+            // while retaining the validated identity and all grant claims.
+            var renewedIdentity = new ClaimsIdentity(identity, null,
+                OpenIddictServerOwinDefaults.AuthenticationType,
+                identity.NameClaimType, identity.RoleClaimType);
             renewedIdentity.SetScopes(scopes);
             renewedIdentity.SetClaim(MembershipAccountClaim, account.MembershipAccountNumber);
             renewedIdentity.SetDestinations(claim =>

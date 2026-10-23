@@ -177,6 +177,8 @@ Inspection findings and extension points:
 
 ### Smallest reliable backend extension
 
+See [apple-verifier-compatibility.md](apple-verifier-compatibility.md) for the 23 October compatibility spike: actual framework-targeted package assets were inspected, the C# 7.3 probe compiled against Framework 4.7.2 references, and 15 primitive checks passed on an isolated Linux .NET 8 runtime. Windows/IIS execution and full Apple trust/transaction verification remain gates; the probe is not a production verifier. There is no identified fundamental framework blocker, and no requirement to contact Apple on each chart/page request. An authenticated app assertion alone is never payment evidence.
+
 Retain the existing account/authentication system and `MembershipService`. Add one narrow Apple verification/synchronisation service behind an `IApplePurchaseVerifier` adapter, with a separate mobile subscription controller and a server-notification controller. The verifier must fit .NET Framework 4.7.2/C# 7.3/VS2017 and be independently tested before implementation is approved. Apple provides maintained server libraries for Node, Python, Java and Swift; do not assume an official legacy .NET package exists. Prefer a reviewed compatible JOSE/X.509 implementation; if compatibility cannot be established, bring back that concrete blocker before introducing a separate verification host. Do not hand-roll signature validation or assume decoding a JWT verifies it.
 
 Proposed additive storage, all under `webapp/DataAccess` and the existing `LocalDb`:

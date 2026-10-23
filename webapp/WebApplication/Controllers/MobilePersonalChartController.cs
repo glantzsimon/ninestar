@@ -32,7 +32,46 @@ namespace K9.WebApplication.Controllers
             var error = RequireUser(out var userId, paid: true);
             if (error != null) return error;
             if (!ValidInput(request)) return ApiError(400, "invalid_calculation_request");
-            return ApiSuccess(MobilePersonalChartMapper.Map(CalculateProfile(_nineStarKiService, request), request.Person.TimeOfBirthKnown));
+            var result = MobilePersonalChartMapper.Map(CalculateProfile(_nineStarKiService, request), request.Person.TimeOfBirthKnown);
+            SaveLastRequest("personal-chart", request);
+            return ApiSuccess(result);
+        }
+
+        [HttpGet, Route("last")]
+        public ActionResult Last()
+        {
+            var error = RequireUser(out var id, paid: true);
+            if (error != null) return error;
+            var request = ReadLastRequest<MobileCalculationRequest>("personal-chart");
+            return request == null ? (ActionResult)ApiError(404, "reading_not_found") : Calculate(request);
+        }
+
+        [HttpGet, Route("me/free")]
+        public ActionResult MyFreeChart()
+        {
+            var error = RequireUser(out var id);
+            if (error != null) return error;
+            var request = ReadOwnCalculationRequest(id);
+            if (!ValidInput(request)) return ApiError(409, "birth_details_required");
+            var model = CalculateProfile(_nineStarKiService, request, own: true);
+            // Match the own/free chart's explicit section grants. In particular,
+            // do not reuse the full Energy DTO, which includes other paid prose.
+            return ApiSuccess(new
+            {
+                model.Summary, model.Overview,
+                Core = model.MainEnergy.EnergyNumber, Character = model.CharacterEnergy.EnergyNumber,
+                SocialExpression = model.SurfaceEnergy.EnergyNumber,
+                Generation = model.PersonalChartEnergies.Generation.EnergyNumber,
+                Epoch = model.PersonalChartEnergies.Epoch.EnergyNumber,
+                DayStar = model.PersonalChartEnergies.Day.EnergyNumber,
+                Hour = model.PersonalChartEnergies.Hour.EnergyNumber,
+                Sections = new
+                {
+                    Core = new { Body = model.MainEnergy.EnergyDescription, Summary = model.MainEnergy.MainEnergySummary },
+                    Character = new { Body = model.CharacterEnergy.EnergyDescription, Summary = model.CharacterEnergy.CharacterEnergySummary },
+                    IntellectualQualities = new { Body = model.MainEnergy.IntellectualQualities, Summary = model.MainEnergy.IntellectualQualitiesSummary }
+                }
+            });
         }
 
         [HttpPost, Route("preview")]

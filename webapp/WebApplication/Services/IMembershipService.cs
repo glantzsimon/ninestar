@@ -36,5 +36,6 @@ namespace K9.WebApplication.Services
         void UseComplementaryPredictionsReading(int userId);
         void UseComplementaryCompatibilityReading(int userId);
         void UseComplementaryKarmicReading(int userId);
+        void AllocateFreeReadingsToAllAccounts();
     }
 }

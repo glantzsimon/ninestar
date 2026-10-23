@@ -85,7 +85,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult RunMaintenance()
         {
-            AllocateFreeReadingsToAllAccounts();
+            My.MembershipService.AllocateFreeReadingsToAllAccounts();
             return RedirectToAction("MaintenanceComplete");
         }
 
@@ -125,13 +125,5 @@ namespace K9.WebApplication.Controllers
             htmlContent.Append("</div");
         }
 
-        private void AllocateFreeReadingsToAllAccounts()
-        {
-            _userMembershipsRepository.GetQuery($"UPDATE [{nameof(UserMembership)}] " +
-                                                $"SET [{nameof(UserMembership.ComplementaryPersonalChartReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
-                                                $"[{nameof(UserMembership.ComplementaryPredictionsReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
-                                                $"[{nameof(UserMembership.ComplementaryCompatibilityReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
-                                                $"[{nameof(UserMembership.ComplementaryKarmicReadingCount)}] = {UserMembership.TotalFreeReadings}");
-        }
     }
 }

@@ -29,6 +29,12 @@ namespace K9.WebApplication.Controllers
         [HttpPost, Route("{entity}/delete")]
         public ActionResult Delete(string entity, int id) => Run(() => { _data.Delete(entity, id); return new { Deleted = true }; });
 
+        [HttpGet, Route("associations/{relationship}")]
+        public ActionResult Selection(string relationship, int ownerId) => Run(() => _data.Selection(relationship, ownerId));
+
+        [HttpPost, Route("associations/{relationship}/replace")]
+        public ActionResult ReplaceSelection(string relationship, MobileAssociationRequest request) => Run(() => _data.ReplaceSelection(relationship, request));
+
         private ActionResult Run(Func<object> operation)
         {
             var error = RequireUser(out var id, admin: true);

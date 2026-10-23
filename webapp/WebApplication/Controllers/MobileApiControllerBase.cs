@@ -97,6 +97,36 @@ namespace K9.WebApplication.Controllers
             return Validator.TryValidateObject(input, new ValidationContext(input), new List<ValidationResult>(), true);
         }
 
+        protected void SavePreferences(int id, MobileCalculationRequest settings)
+        {
+            var users = Package.UserService;
+            users.UpdateUserPreference(id, Constants.SessionConstants.UserTimeZone, settings.UserTimeZoneId);
+            users.UpdateUserPreference(id, Constants.SessionConstants.UserCalculationMethod, settings.CalculationMethod);
+            users.UpdateUserPreference(id, Constants.SessionConstants.DefaultCalculatorType, settings.CalculatorType);
+            users.UpdateUserPreference(id, Constants.SessionConstants.UserHousesDisplay, settings.HousesDisplay);
+            users.UpdateUserPreference(id, Constants.SessionConstants.BirthTimeIsKnown, settings.Person.TimeOfBirthKnown);
+            users.UpdateUserPreference(id, Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere, settings.InvertDailyAndHourlyKiForSouthernHemisphere);
+            users.UpdateUserPreference(id, Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere, settings.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
+        }
+
+        protected void SaveLastRequest<T>(string section, T request)
+        {
+            // Store input only, never a paid response. Identity forms part of the
+            // session key so logging in or impersonating cannot reveal another
+            // account's birth details. Retrieval rechecks current entitlement.
+            var id = GetAuthenticatedUserId();
+            if (id > 0 && Session != null)
+                Session["MobileLast:" + id + ":" + section] = JsonConvert.SerializeObject(request, JsonSettings);
+        }
+
+        protected T ReadLastRequest<T>(string section) where T : class
+        {
+            var id = GetAuthenticatedUserId();
+            if (id <= 0 || Session == null) return null;
+            var json = Session["MobileLast:" + id + ":" + section] as string;
+            return json == null ? null : JsonConvert.DeserializeObject<T>(json, JsonSettings);
+        }
+
         protected NineStarKiModel CalculateProfile(INineStarKiService service, MobileCalculationRequest request,
             bool cycles = false, bool moon = false, bool own = false)
         {

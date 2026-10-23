@@ -21,7 +21,18 @@ namespace K9.WebApplication.Controllers
             var error = RequireUser(out var userId, paid: true);
             if (error != null) return error;
             if (!ValidInput(request)) return ApiError(400, "invalid_person_request");
-            return ApiSuccess(MobileCalculationMapper.Numerology(_numerology.Calculate(new NumerologyModel(request.ToPerson(false)))));
+            var result = MobileCalculationMapper.Numerology(_numerology.Calculate(new NumerologyModel(request.ToPerson(false))));
+            SaveLastRequest("numerology", request);
+            return ApiSuccess(result);
+        }
+
+        [HttpGet, Route("last")]
+        public ActionResult Last()
+        {
+            var error = RequireUser(out var id, paid: true);
+            if (error != null) return error;
+            var request = ReadLastRequest<MobilePersonRequest>("numerology");
+            return request == null ? (ActionResult)ApiError(404, "reading_not_found") : Calculate(request);
         }
 
         [HttpPost, Route("forecast")]

@@ -2,7 +2,7 @@
 
 ## Current implementation
 
-Work remains on `feature/mobile-json-api`, separate from the plugin API. The expansion adds account/session operations, calculators, predictions/planners, calendar data and subscription management, reports, bookings, membership options/quotes, payment checkout, blog operations and support submissions. These are **implemented source**, not a declaration of complete controller parity or passing runtime tests. Administration, free/complementary parity, media, localisation metadata and some legacy workflows remain on the checklist.
+Work remains on `feature/mobile-json-api`, separate from the plugin API. The expansion adds account/session operations, calculators, predictions/planners, calendar data and subscription management, reports, bookings, membership options/quotes, payment checkout, blog operations and support submissions. These are **implemented source**, not a declaration of complete controller parity or passing runtime tests. Custom administration, public content, typed selector metadata, owned messages and paid retrieve-last routes are also implemented. Complementary-reading accounting, broader free-section parity, media and some legacy workflows remain on the checklist.
 
 See [mobile-api-routes.md](mobile-api-routes.md) for declared routes. Every transport projection is an explicit object or DTO. Do not serialize the EF entity, calculated view-model graph, payment provider object or service result wholesale. The existing plugin ApiController is unchanged.
 
@@ -42,22 +42,32 @@ This requires Windows/SQL Server/Stripe integration tests for transaction sharin
 
 | Family | Implementation status |
 | --- | --- |
-| PersonalChart | Full own chart, arbitrary-person full calculation, public numeric preview and alchemy implemented. Free own/complementary section-level parity and retrieve-last pending. |
-| Predictions | Calculation, own snapshot, planner hierarchy, generic cycles, combined descriptions, moon phase and alchemy implemented. Free/complementary and retrieve-last parity pending. |
-| Compatibility | Paid calculation with explicit privacy/age checks implemented; complimentary/retrieve-last pending. |
-| Numerology/Biorhythms | Paid calculations, numerology forecast and structured planners/series implemented. Complementary/retrieval parity pending. |
+| PersonalChart | Full own chart, arbitrary-person full calculation, public numeric preview, free own-chart sections, alchemy and paid retrieve-last implemented. Complementary and free alchemy parity pending. |
+| Predictions | Calculation, own snapshot, planner hierarchy, generic cycles, combined descriptions, moon phase and alchemy implemented. Free/complementary section parity pending; paid retrieve-last implemented. |
+| Compatibility | Paid calculation with explicit privacy/age checks and retrieve-last implemented; complementary parity pending. |
+| Numerology/Biorhythms | Paid calculations, numerology forecast and structured planners/series implemented. Paid retrieve-last implemented. Complementary numerology and free biorhythm summary parity pending. |
 | IChing/KnowledgeBase | Public cast and structured knowledge-base data implemented. |
 | PersonalCalendar | Month JSON and protected subscription/revoke implemented; existing ICS feed retained. |
 | Reports | Structured yearly report, existing PDF URL and admin-only prompt implemented. |
 | Account | Session login/logout, CSRF token, own account, profile/preferences updates, registration/activation, password operations and deletion implemented. Native OAuth/PKCE and some legacy external-auth/promotion flows pending. |
 | Membership/Payments | Options and quotes, promo redemption and server-verified durable checkout implemented. Provider/SQL tests required. |
 | Consultation | Owned bookings, slots/calendar, transaction-protected selection and admin slot operations implemented. |
-| Blog/Support | Public articles/tags, comments/likes/moderation, contact/newsletter submission and donation totals implemented. Article administration and broader admin endpoints pending. |
-| Generic administration and operations | Twenty explicit entity contracts provide admin-only schema/read/page operations and selected repository-backed writes. Users and processed email queue are read-only here; user lifecycle and sending use their owner services. Remaining custom administration, operational actions and hook review are still in progress. No arbitrary type/table or internal-preference endpoint exists. |
+| Blog/Support | Public articles/tags, comments/likes/moderation, contact/newsletter submission and donation totals implemented. Article editing, publishing and deletion delegate existing owners. Per-user messages mirror the existing owned CRUD without adding delivery semantics. |
+| Generic administration and operations | Twenty explicit entity contracts provide admin-only schema/read/page operations and selected repository-backed writes. Users and processed email queue are read-only here; user lifecycle and sending use their owner services. Custom user lifecycle and assignments, impersonation, article publishing, template test/single/list sending, logs, free-reading maintenance and MailChimp sync are implemented. Six explicit association pairs support atomic replacement with target validation. SQL recipient preview, donor import, resource export and further hook review remain in progress. No arbitrary type/table or internal-preference endpoint exists. |
+
+## Additional transport contracts
+
+`GET personal-chart/me/free` returns numbers and the core, character and intellectual sections granted by the website for one's own chart. It never calls the full mapper or returns energy descriptions for paid sections. Full `/me` remains paid. The five calculator `/last` endpoints save only validated request inputs under a user-bound session key and recalculate after fresh entitlement checks. Saved settings include birth time/timezone and calculation flags; switching identity cannot retrieve another user's saved request. Logging out clears this session state. Anonymous previews are not saved.
+
+`content/{page}` returns resource-backed title and authored content for privacy, terms, FAQ, data removal, calculation methods, southern hemisphere and AI information. Resource-authored HTML is content, not a rendered view. `metadata/options` supplies protocol values with resource-backed enum labels; `metadata/timezones` mirrors the existing extended selector. Administrative schemas include resource-backed field labels and enum choices. No complete multilingual guarantee is implied.
+
+Bulk association pairs are `user-roles`, `role-permissions`, `user-mailing-lists`, `contact-mailing-lists`, `mailing-list-users` and `mailing-list-contacts`. Replacement takes `{ ownerId, selectedIds }`, rejects missing/deleted targets, and applies repository changes in one serializable transaction. An empty array clears the selection; automatic mailing lists cannot be edited as stored rows. General records and association reads exclude soft-deleted rows.
+
+Administrative mail and operational endpoints execute effects only when explicitly called. Test/single/list sends reuse MailerService; free-reading maintenance is shared with the existing web controller through MembershipService. The all-account maintenance and MailChimp sync routes require `confirm: true` as part of their request contract. Updating another user's saved preferences no longer replaces the administrator's current session preferences.
 
 ## Validation and next gates
 
-Added input/timezone/birth-time and I Ching isolation tests alongside the existing mobile profile tests. C# syntax, project XML, explicit compile registrations, unchanged plugin-controller sources and whitespace are checked in this environment. The environment has no .NET Framework/MSBuild/Mono runtime or restored K9 binaries, and astronomy source is git-crypt protected. Compilation, xUnit execution and MVC/IIS/SQL/Stripe integration tests are **not executed**. A draft PR is not a deployment approval.
+Added input/timezone/birth-time, I Ching isolation and session identity/access-revocation tests alongside the existing mobile profile tests. C# syntax, project XML, explicit compile registrations, unchanged plugin-controller sources and whitespace are checked in this environment. The environment has no .NET Framework/MSBuild/Mono runtime or restored K9 binaries, and astronomy source is git-crypt protected. Compilation, xUnit execution and MVC/IIS/SQL/Stripe integration tests are **not executed**. A draft PR is not a deployment approval.
 
 Continue the remaining coverage checklist on the same branch, then build/run the website tests in the owner's Windows checkout and validate authenticated requests and error paths under IIS. Do not mark the full API finished while any controller family remains pending.
 

@@ -297,9 +297,13 @@ namespace K9.WebApplication.Services
                 });
             }
 
-            SessionHelper.SetValue(key, value);
-
-            InitUserPreferences(userId);
+            // An administrator may edit another account. Only refresh the
+            // session belonging to the effective current user.
+            if (System.Web.HttpContext.Current != null && Current.UserId == userId)
+            {
+                SessionHelper.SetValue(key, value);
+                InitUserPreferences(userId);
+            }
         }
 
         public T GetUserPreference<T>(int userId, string key, T defaultValue = default)

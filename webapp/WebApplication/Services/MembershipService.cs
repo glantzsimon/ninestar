@@ -43,6 +43,17 @@ namespace K9.WebApplication.Services
             _emailTemplateService = emailTemplateService;
         }
 
+        public void AllocateFreeReadingsToAllAccounts()
+        {
+            // The existing administrative maintenance operation, shared by both
+            // transports. It deliberately replaces, rather than increments, counts.
+            _userMembershipRepository.GetQuery($"UPDATE [{nameof(UserMembership)}] " +
+                $"SET [{nameof(UserMembership.ComplementaryPersonalChartReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
+                $"[{nameof(UserMembership.ComplementaryPredictionsReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
+                $"[{nameof(UserMembership.ComplementaryCompatibilityReadingCount)}] = {UserMembership.TotalFreeReadings}, " +
+                $"[{nameof(UserMembership.ComplementaryKarmicReadingCount)}] = {UserMembership.TotalFreeReadings}");
+        }
+
         public UserMembership GetActiveUserMembership(string accountNumber)
         {
             var membershipIds =

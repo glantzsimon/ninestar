@@ -20,7 +20,18 @@ namespace K9.WebApplication.Controllers
             var error = RequireUser(out var userId, paid: true);
             if (error != null) return error;
             if (!ValidInput(request)) return ApiError(400, "invalid_calculation_request");
-            return ApiSuccess(MobileCalculationMapper.Biorhythms(_biorhythms.Calculate(CalculateProfile(_profiles, request), request.GetSelectedDate(GetUtcNow()))));
+            var result = MobileCalculationMapper.Biorhythms(_biorhythms.Calculate(CalculateProfile(_profiles, request), request.GetSelectedDate(GetUtcNow())));
+            SaveLastRequest("biorhythms", request);
+            return ApiSuccess(result);
+        }
+
+        [HttpGet, Route("last")]
+        public ActionResult Last()
+        {
+            var error = RequireUser(out var id, paid: true);
+            if (error != null) return error;
+            var request = ReadLastRequest<MobileCalculationRequest>("biorhythms");
+            return request == null ? (ActionResult)ApiError(404, "reading_not_found") : Calculate(request);
         }
     }
 }

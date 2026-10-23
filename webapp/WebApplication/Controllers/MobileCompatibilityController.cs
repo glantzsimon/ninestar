@@ -24,7 +24,17 @@ namespace K9.WebApplication.Controllers
             var second = request.SecondPerson.ToPerson();
             var hide = request.HideSexualChemistry || !first.IsSixteenOrOver() || !second.IsSixteenOrOver();
             var result = _profiles.CalculateCompatibility(first, second, hide, request.CalculationMethod, request.CalculatorType);
+            SaveLastRequest("compatibility", request);
             return ApiSuccess(MobileCalculationMapper.Compatibility(result, hide));
+        }
+
+        [HttpGet, Route("last")]
+        public ActionResult Last()
+        {
+            var error = RequireUser(out var id, paid: true);
+            if (error != null) return error;
+            var request = ReadLastRequest<MobileCompatibilityRequest>("compatibility");
+            return request == null ? (ActionResult)ApiError(404, "reading_not_found") : Calculate(request);
         }
     }
 }

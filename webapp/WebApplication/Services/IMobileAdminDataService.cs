@@ -10,5 +10,7 @@ namespace K9.WebApplication.Services
         object Find(string entity, int id);
         object Save(string entity, MobileAdminWriteRequest request);
         void Delete(string entity, int id);
+        object Selection(string relationship, int ownerId);
+        object ReplaceSelection(string relationship, MobileAssociationRequest request);
     }
 }

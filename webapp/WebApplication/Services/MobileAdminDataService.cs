@@ -15,6 +15,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
+using System.Linq.Expressions;
 
 namespace K9.WebApplication.Services
 {
@@ -32,7 +33,7 @@ namespace K9.WebApplication.Services
             _package = package; _components = components; _database = database;
             _catalog = new Dictionary<string, Func<IEntityContract>>(StringComparer.OrdinalIgnoreCase)
             {
-                { "countries", () => Contract<Country>("Name", "Name") },
+                { "countries", () => Contract<Country>("Name,TwoLetterCountryCode,ThreeLetterCountryCode", "Name,TwoLetterCountryCode,ThreeLetterCountryCode") },
                 { "roles", () => Contract<Role>("Name", "Name") },
                 { "permissions", () => Contract<Permission>("Name", "Name") },
                 { "role-permissions", () => Contract<RolePermission>("RoleId,PermissionId", "RoleId,PermissionId") },
@@ -76,6 +77,66 @@ namespace K9.WebApplication.Services
         public object Save(string entity, MobileAdminWriteRequest request) => Get(entity).Save(request);
         public void Delete(string entity, int id) => Get(entity).Delete(id);
 
+        public object Selection(string relationship, int ownerId) => Association(relationship, ownerId, null);
+
+        public object ReplaceSelection(string relationship, MobileAssociationRequest request)
+        {
+            if (request?.SelectedIds == null || request.SelectedIds.Length > 1000 || request.SelectedIds.Any(e => e <= 0))
+                throw new ArgumentException("invalid_selection");
+            return Association(relationship, request.OwnerId, request.SelectedIds.Distinct().ToArray());
+        }
+
+        private object Association(string relationship, int ownerId, int[] selected)
+        {
+            if (!_package.UserService.UserIsAdmin(Current.UserId)) throw new UnauthorizedAccessException();
+            if (ownerId <= 0) throw new ArgumentException("invalid_owner");
+            // Explicit pairs mirror the existing EditMultiple screens. Automatic
+            // mailing lists are calculated and cannot be assigned as stored rows.
+            switch (relationship)
+            {
+                case "user-roles": return Associate<User, Role, UserRole>(ownerId, selected, e => e.UserId == ownerId, e => e.RoleId,
+                    id => new UserRole { UserId = ownerId, RoleId = id });
+                case "role-permissions": return Associate<Role, Permission, RolePermission>(ownerId, selected, e => e.RoleId == ownerId, e => e.PermissionId,
+                    id => new RolePermission { RoleId = ownerId, PermissionId = id });
+                case "user-mailing-lists": return Associate<User, MailingList, MailingListUser>(ownerId, selected, e => e.UserId == ownerId, e => e.MailingListId,
+                    id => new MailingListUser { UserId = ownerId, MailingListId = id });
+                case "contact-mailing-lists": return Associate<Contact, MailingList, MailingListContact>(ownerId, selected, e => e.ContactId == ownerId, e => e.MailingListId,
+                    id => new MailingListContact { ContactId = ownerId, MailingListId = id });
+                case "mailing-list-users": return Associate<MailingList, User, MailingListUser>(ownerId, selected, e => e.MailingListId == ownerId, e => e.UserId,
+                    id => new MailingListUser { MailingListId = ownerId, UserId = id });
+                case "mailing-list-contacts": return Associate<MailingList, Contact, MailingListContact>(ownerId, selected, e => e.MailingListId == ownerId, e => e.ContactId,
+                    id => new MailingListContact { MailingListId = ownerId, ContactId = id });
+                default: throw new KeyNotFoundException();
+            }
+        }
+
+        private object Associate<TOwner, TTarget, TLink>(int ownerId, int[] selected,
+            Expression<Func<TLink, bool>> predicate, Func<TLink, int> targetId, Func<int, TLink> create)
+            where TOwner : class, IObjectBase, new()
+            where TTarget : class, IObjectBase, new()
+            where TLink : class, IObjectBase, new()
+        {
+            if (selected == null)
+            {
+                if (!_database.Set<TOwner>().Any(e => e.Id == ownerId && !e.IsDeleted)) throw new KeyNotFoundException();
+                return new { OwnerId = ownerId, SelectedIds = _database.Set<TLink>().AsNoTracking()
+                    .Where(e => !e.IsDeleted).Where(predicate).ToList().Select(targetId).Distinct().ToArray() };
+            }
+            using (var transaction = _database.Database.BeginTransaction(IsolationLevel.Serializable))
+            {
+                if (!_database.Set<TOwner>().Any(e => e.Id == ownerId && !e.IsDeleted)) throw new KeyNotFoundException();
+                if (_database.Set<TTarget>().Count(e => !e.IsDeleted && selected.Contains(e.Id)) != selected.Length)
+                    throw new ArgumentException("invalid_selection_target");
+                var repository = _components.Resolve<IRepository<TLink>>();
+                var existing = repository.Find(predicate).Where(e => !e.IsDeleted).ToList();
+                var existingIds = existing.Select(targetId).ToArray();
+                repository.DeleteBatch(existing.Where(e => !selected.Contains(targetId(e))).ToList());
+                repository.CreateBatch(selected.Except(existingIds).Select(create).ToList());
+                transaction.Commit();
+                return new { OwnerId = ownerId, SelectedIds = selected };
+            }
+        }
+
         private interface IEntityContract
         {
             object Schema(); object List(int afterId, int limit); object Find(int id);
@@ -117,23 +178,25 @@ namespace K9.WebApplication.Services
                 CanWrite = _write.Count > 0, CanDelete = _canDelete,
                 Fields = _read.Select(e => new
                 {
-                    e.Name, Type = (Nullable.GetUnderlyingType(e.PropertyType) ?? e.PropertyType).Name,
+                    e.Name, Label = e.GetCustomAttribute<DisplayAttribute>()?.GetName(),
+                    Type = (Nullable.GetUnderlyingType(e.PropertyType) ?? e.PropertyType).Name,
                     Writable = _write.ContainsKey(e.Name), Required = e.GetCustomAttribute<RequiredAttribute>() != null,
-                    MaxLength = e.GetCustomAttribute<StringLengthAttribute>()?.MaximumLength
+                    MaxLength = e.GetCustomAttribute<StringLengthAttribute>()?.MaximumLength,
+                    Options = MobileMetadataHelper.EnumOptions(Nullable.GetUnderlyingType(e.PropertyType) ?? e.PropertyType)
                 }).ToArray()
             };
 
             public object List(int afterId, int limit)
             {
                 if (afterId < 0 || limit < 1 || limit > 100) throw new ArgumentException("invalid_page");
-                var rows = _database.Set<T>().AsNoTracking().Where(e => e.Id > afterId).OrderBy(e => e.Id).Take(limit).ToList();
+                var rows = _database.Set<T>().AsNoTracking().Where(e => !e.IsDeleted && e.Id > afterId).OrderBy(e => e.Id).Take(limit).ToList();
                 return new { Items = rows.Select(Project).ToArray(), NextAfterId = rows.LastOrDefault()?.Id, HasMore = rows.Count == limit };
             }
 
             public object Find(int id)
             {
                 var entity = _repository.Find(id);
-                if (entity == null) throw new KeyNotFoundException();
+                if (entity == null || entity.IsDeleted) throw new KeyNotFoundException();
                 return Project(entity);
             }
 

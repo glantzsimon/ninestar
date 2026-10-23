@@ -125,18 +125,6 @@ namespace K9.WebApplication.Controllers
             return ApiSuccess(new { Updated = true });
         }
 
-        private void SavePreferences(int id, MobileCalculationRequest settings)
-        {
-            var users = Package.UserService;
-            users.UpdateUserPreference(id, Constants.SessionConstants.UserTimeZone, settings.UserTimeZoneId);
-            users.UpdateUserPreference(id, Constants.SessionConstants.UserCalculationMethod, settings.CalculationMethod);
-            users.UpdateUserPreference(id, Constants.SessionConstants.DefaultCalculatorType, settings.CalculatorType);
-            users.UpdateUserPreference(id, Constants.SessionConstants.UserHousesDisplay, settings.HousesDisplay);
-            users.UpdateUserPreference(id, Constants.SessionConstants.BirthTimeIsKnown, settings.Person.TimeOfBirthKnown);
-            users.UpdateUserPreference(id, Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere, settings.InvertDailyAndHourlyKiForSouthernHemisphere);
-            users.UpdateUserPreference(id, Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere, settings.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
-        }
-
         [HttpPost, Route("preferences")]
         public ActionResult Preferences(MobileCalculationRequest request)
         {

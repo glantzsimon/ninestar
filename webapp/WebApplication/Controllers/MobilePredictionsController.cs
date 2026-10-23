@@ -29,7 +29,18 @@ namespace K9.WebApplication.Controllers
             var error = RequireUser(out var userId, paid: true);
             if (error != null) return error;
             if (!ValidInput(request)) return ApiError(400, "invalid_calculation_request");
-            return ApiSuccess(MobileCalculationMapper.Predictions(CalculateProfile(_profiles, request, true, true), request.Person.TimeOfBirthKnown));
+            var result = MobileCalculationMapper.Predictions(CalculateProfile(_profiles, request, true, true), request.Person.TimeOfBirthKnown);
+            SaveLastRequest("predictions", request);
+            return ApiSuccess(result);
+        }
+
+        [HttpGet, Route("last")]
+        public ActionResult Last()
+        {
+            var error = RequireUser(out var id, paid: true);
+            if (error != null) return error;
+            var request = ReadLastRequest<MobileCalculationRequest>("predictions");
+            return request == null ? (ActionResult)ApiError(404, "reading_not_found") : Calculate(request);
         }
 
         [HttpGet, Route("me")]

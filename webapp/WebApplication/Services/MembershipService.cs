@@ -114,6 +114,28 @@ namespace K9.WebApplication.Services
         }
 
         /// <summary>
+        /// Return the currently active membership belonging to a user whose
+        /// identity was established by the website's own login process.
+        /// Unlike GetActiveUserMembership, this method has NO side effects:
+        /// it never creates a free membership or trusts a membership number
+        /// provided by the browser/ChatGPT client.
+        /// OAuth token issuance must resolve the user ID from the verified
+        /// sign-in session rather than accepting it as an HTTP parameter.
+        /// </summary>
+        public UserMembership GetExistingActiveMembershipForOAuth(int authenticatedUserId)
+        {
+            if (authenticatedUserId <= 0)
+            {
+                return null;
+            }
+
+            return GetActiveUserMemberships(authenticatedUserId)
+                .Where(membership => membership.IsActive && membership.MembershipOption != null)
+                .OrderByDescending(membership => membership.MembershipOption.SubscriptionType)
+                .FirstOrDefault();
+        }
+
+        /// <summary>
         /// Sometimes user memberships can overlap, when upgrading for example. This returns the Active membership.
         /// </summary>
         /// <param name="userId"></param>

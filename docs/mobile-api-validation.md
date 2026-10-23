@@ -21,6 +21,12 @@ $runner = Get-ChildItem webapp\packages\xunit.runner.console.2.3.1 -Recurse -Fil
 
 Resolve build failures against the actual restored K9 2.0.0.212 assemblies before proceeding. Source inspection of a shared-library repository is not a substitute for compiling against those binaries. New tests cover mobile profile access/options/projections, request date/time validation, I Ching isolation, reserved preferences, session isolation/revocation, image boundaries, protected actions, error scoping, donor deduplication and moderation. Run the existing tests as well because shared owners changed.
 
+## Existing DEV database compatibility
+
+DEV was confirmed to have `202610170149068_AddOpenIddictOAuth` applied under `K9.DataAccessLayer.Database.DatabaseInitialiserLocal`. An earlier version of this feature branch lacked that migration and its OpenIddict model mappings, causing `AutomaticMigrationsDisabledException` at startup. Current master has now been merged into the feature branch, retaining the existing migration, unconditional LocalDb OpenIddict mappings and package/configuration updates. No new migration, rollback or migration-history edit is part of this fix.
+
+After pulling the updated branch, stop the local site, restore NuGet packages and clean/rebuild the solution before rerunning DEV. The owner uses git-crypt, so protected configuration/package files must be read in the normal decrypted checkout. Do not enable automatic migrations to make an older branch fit an already migrated database. If startup still reports a mismatch, inspect the actual connection target, loaded assemblies and migration history before changing schema.
+
 ## IIS and data gates
 
 Use a test instance and disposable test data. Record the actual result for each gate; this document is not evidence they passed.
@@ -45,7 +51,7 @@ Use a test instance and disposable test data. Record the actual result for each 
 2. Load `metadata/options`, `metadata/timezones` and `account/me`. Build one vertical slice: login, own chart, date selection and predictions. Use the typed calculation request settings rather than reimplementing calculations in the app.
 3. Add planner, compatibility, numerology, bookings and account editing. Use paid routes or explicit complementary operations according to the account's returned entitlements. Render resource-authored rich text safely in the chosen native framework.
 4. Add payments only after the Stripe/SQL gates pass. Keep a stable request GUID per checkout and fulfil only through server confirmation.
-5. If native OAuth/PKCE or external-provider sign-in is selected, integrate with the authentication implementation already on master; do not create another token store. Cookie login already has a transport contract on this branch.
+5. If native OAuth/PKCE or external-provider sign-in is selected, integrate with the existing authentication implementation brought in from master; do not create another token store. Cookie login already has a transport contract on this branch.
 6. Review and merge after validation. Request Integration deployment separately through the established TeamCity workflow. Normal branch commits do not contain the deployment trigger marker.
 
 The endpoint inventory is [mobile-api-routes.md](mobile-api-routes.md); request DTOs are in `webapp/WebApplication/ViewModels/MobileApi`. All website and app calculations continue to come from the existing shared services and repositories.

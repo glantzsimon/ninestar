@@ -39,6 +39,11 @@ namespace K9.WebApplication.Services
 
         public List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken)
         {
+            return GetCalendarEntries(userId, startDate, endDate, cancellationToken, false);
+        }
+
+        private List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken, bool forSubscription)
+        {
             cancellationToken.ThrowIfCancellationRequested();
             ValidateUserId(userId);
             if (startDate.TimeOfDay != TimeSpan.Zero || endDate.TimeOfDay != TimeSpan.Zero)
@@ -129,9 +134,10 @@ namespace K9.WebApplication.Services
                             throw new InvalidOperationException("The planner returned a non-contiguous calendar period.");
                         var day = item.Energy.EnergyNumber;
                         var afternoon = item.SecondEnergy?.EnergyNumber;
-                        var description = GetDescription(year, month, day, descriptions);
+                        var description = GetDescription(year, month, day, descriptions, forSubscription);
                         if (afternoon.HasValue && afternoon.Value != day)
-                            description += $"\n\n{K9.Globalisation.Dictionary.AfternoonEnergyLabel} ({year}.{month}.{afternoon.Value}): " + GetDescription(year, month, afternoon.Value, descriptions);
+                            description += $"\n\n{K9.Globalisation.Dictionary.AfternoonEnergyLabel} ({year}.{month}.{afternoon.Value}):" +
+                                (forSubscription ? "\n\n" : " ") + GetDescription(year, month, afternoon.Value, descriptions, forSubscription);
 
                         entries.Add(new CalendarEntry
                         {
@@ -140,7 +146,7 @@ namespace K9.WebApplication.Services
                             MonthHouse = month,
                             DayHouse = day,
                             AfternoonDayHouse = afternoon.HasValue && afternoon.Value != day ? afternoon : null,
-                            Summary = $"9Star · {year}.{month}.{day}",
+                            Summary = string.Format(CultureInfo.InvariantCulture, K9.Globalisation.Dictionary.PersonalCalendarEventSummaryFormat, year, month, day),
                             Description = description
                         });
                         date = localDate.AddDays(1);
@@ -154,7 +160,7 @@ namespace K9.WebApplication.Services
 
         public string GenerateCalendar(int userId, DateTime startDate, DateTime endDate)
         {
-            return ConvertToICalendar(userId, GetCalendarEntries(userId, startDate, endDate));
+            return ConvertToICalendar(userId, GetCalendarEntries(userId, startDate, endDate, CancellationToken.None, true));
         }
 
         public DateTime GetCalendarToday(int userId)
@@ -228,7 +234,7 @@ namespace K9.WebApplication.Services
             AppendLine(calendar, "VERSION:2.0");
             AppendLine(calendar, "PRODID:-//Nine Star Ki//Personal Calendar//EN");
             AppendLine(calendar, "CALSCALE:GREGORIAN");
-            AppendLine(calendar, "X-WR-CALNAME:Nine Star Ki");
+            AppendLine(calendar, "X-WR-CALNAME:" + EscapeText(K9.Globalisation.Dictionary.NineStarKiTitle));
             foreach (var entry in entries.OrderBy(e => e.Date))
             {
                 var date = entry.Date.Date;
@@ -246,11 +252,17 @@ namespace K9.WebApplication.Services
             return calendar.ToString();
         }
 
-        private static string GetDescription(int year, int month, int day, Dictionary<string, string> descriptions)
+        private static string GetDescription(int year, int month, int day, Dictionary<string, string> descriptions, bool forSubscription)
         {
             var key = $"{year}-{month}-{day}";
             if (descriptions.TryGetValue(key, out var description))
                 return description;
+            if (forSubscription)
+            {
+                description = CombinedPredictionHelper.GetCalendarText(year, month, day);
+                descriptions.Add(key, description);
+                return description;
+            }
             var html = CombinedPredictionHelper.GetHtml(year, month, day);
             var document = new HtmlDocument();
             document.LoadHtml(html);

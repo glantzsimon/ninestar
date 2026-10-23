@@ -1,0 +1,53 @@
+name: Build 9 Star Ki MCP connector
+
+on:
+  push:
+    branches:
+      - 'feature/9-star-ki-mcp-connector'
+    paths:
+      - 'integrations/NineStarKi.Mcp/**'
+      - 'integrations/NineStarKi.Mcp.Tests/**'
+      - '.github/workflows/9-star-ki-mcp.yml'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'integrations/NineStarKi.Mcp/**'
+      - 'integrations/NineStarKi.Mcp.Tests/**'
+      - 'webapp/DataAccess/**'
+      - '.github/workflows/9-star-ki-mcp.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install .NET 10 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore
+        run: dotnet restore integrations/NineStarKi.Mcp/NineStarKi.Mcp.csproj
+      - name: Build
+        run: dotnet build integrations/NineStarKi.Mcp/NineStarKi.Mcp.csproj --configuration Release --no-restore
+      - name: Test membership authorisation
+        run: dotnet test integrations/NineStarKi.Mcp.Tests/NineStarKi.Mcp.Tests.csproj --configuration Release
+      # Database schema changes belong only to the existing DataAccess
+      # project and its LocalDb migration history. Never scaffold a second
+      # context or apply database migrations in this MCP build.
+      - name: Check database migration ownership
+        shell: pwsh
+        run: |
+          if (Test-Path 'integrations/NineStarKi.OAuth.Persistence') {
+            throw 'Separate OAuth database project must not exist. Use webapp/DataAccess migrations.'
+          }
+      - name: Publish
+        run: dotnet publish integrations/NineStarKi.Mcp/NineStarKi.Mcp.csproj --configuration Release --no-restore --output artifacts/nine-star-ki-mcp
+      - name: Upload deployable package
+        uses: actions/upload-artifact@v4
+        with:
+          name: nine-star-ki-mcp
+          path: artifacts/nine-star-ki-mcp/
+          if-no-files-found: error

@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace K9.DataAccessLayer.Database
 {
-    public class LocalDb : Base.DataAccessLayer.Database.Db
+    public partial class LocalDb : Base.DataAccessLayer.Database.Db
     {
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Donation> Donations { get; set; }

@@ -30,6 +30,12 @@ namespace K9.WebApplication.Services
 
         List<UserMembership> GetActiveUserMemberships(int userId, bool includeScheduled = false);
         UserMembership GetActiveUserMembership(int? userId = null);
+        /// <summary>
+        /// OAuth only: look up an existing active membership for the VERIFIED
+        /// website user ID. Never create a free membership or accept a
+        /// chat-supplied account number as proof of identity.
+        /// </summary>
+        UserMembership GetExistingActiveMembershipForOAuth(int authenticatedUserId);
         UserMembership GetActiveUserMembership(string accountNumber);
         MembershipOption GetMembershipOption(int id);
         void UseComplementaryPersonalChartReading(int userId);

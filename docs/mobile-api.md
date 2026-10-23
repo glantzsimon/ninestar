@@ -2,7 +2,7 @@
 
 ## Current implementation
 
-Work remains on `feature/mobile-json-api`, separate from the plugin API. The expansion adds account/session operations, calculators, predictions/planners, calendar data and subscription management, reports, bookings, membership options/quotes, payment checkout, blog operations and support submissions. These are **implemented source**, not a declaration of complete controller parity or passing runtime tests. Custom administration, public content, typed selector metadata, owned messages and paid retrieve-last routes are also implemented. Complementary reading routes and constrained image uploads are also implemented. Some legacy administrative/account workflows and runtime verification remain on the checklist.
+The mobile JSON transport implementation and controller-family coverage audit are complete on `feature/mobile-json-api` for the scope below. This is **source completion**, not a passing build, executed integration tests or release approval. The separate API covers calculator/readings, account/session, predictions/planners, calendar/report data, membership/payment, booking, blog/support, metadata/content and reviewed administration operations. Existing website routes and views continue to use their original entry points and are not switched to HTTP calls through the mobile API.
 
 See [mobile-api-routes.md](mobile-api-routes.md) for declared routes. Every transport projection is an explicit object or DTO. Do not serialize the EF entity, calculated view-model graph, payment provider object or service result wholesale. The existing plugin ApiController is unchanged.
 
@@ -12,7 +12,7 @@ The native client can use the existing Forms Authentication provider: retain the
 
 `MobileApiControllerBase` implements no-store JSON responses, redirects/error-page suppression, request-size limits (64 KiB), and CSRF validation before action execution. Actions explicitly check anonymous/member/admin and ownership requirements. `RequireUser` resolves existing Current identity/impersonation; checkout, account deletion and password changes refuse impersonation where the underlying provider operates on the actual login. Codes are protocol identifiers, not hardcoded UI messages. Native clients localise them.
 
-JSON uses UTF-8, camelCase, ISO timestamps and no type metadata. Success is `{ success: true, data, error: null }`; failure is `{ success: false, data: null, error: { code } }` with an appropriate HTTP error status. Framework/routing failures before controller execution still require IIS checks.
+JSON uses UTF-8, camelCase, ISO timestamps and no type metadata. Success is `{ success: true, data, error: null }`; failure is `{ success: false, data: null, error: { code } }` with an appropriate HTTP error status. Managed framework/routing failures in the mobile URL namespace are also converted to the JSON envelope by a path-scoped Application_Error handler. Normal website errors retain their existing handling. IIS-level failures before ASP.NET executes still require deployment checks.
 
 Calculation requests explicitly include person, selected local date/time, birth/user timezone, calculation method, calculator type, house display and both hemisphere flags. Birth dates are date-only, birth time is separate, and selected timestamps have no UTC suffix. Validate real Windows/IANA timezones rather than silently falling back to GMT. Profile/compatibility calls combine birth time once. Planner calls pass birth date and time separately because the existing planner adds the time. Date-range limits and enum validation bound requests. The public chart preview returns numbers/overview only; full profile, compatibility, predictions and numerology use paid/admin routes. Separate `readings/*` routes apply the complementary section policy and counters.
 
@@ -38,7 +38,7 @@ Private checkout state is persisted as a purpose-bound MachineKey-protected JSON
 
 This requires Windows/SQL Server/Stripe integration tests for transaction sharing, concurrent completion, failed commit/retry and real provider responses. Legacy service email sends are not transactional with SQL and may require reconciliation if a surrounding transaction fails. No claim of exactly-once email delivery is made. Checkout is **not release-ready** before those checks. No payment, schema migration, merge or deployment has been executed during this work.
 
-## Coverage and remaining work
+## Audited implementation coverage
 
 | Family | Implementation status |
 | --- | --- |
@@ -49,11 +49,11 @@ This requires Windows/SQL Server/Stripe integration tests for transaction sharin
 | IChing/KnowledgeBase | Public cast and structured knowledge-base data implemented. |
 | PersonalCalendar | Month JSON and protected subscription/revoke implemented; existing ICS feed retained. |
 | Reports | Structured yearly report, existing PDF URL and admin-only prompt implemented. |
-| Account | Session login/logout, CSRF token, own account, profile/preferences updates, registration/activation, password operations and deletion implemented. Native OAuth/PKCE and some legacy external-auth/promotion flows pending. |
+| Account | Session login/logout, CSRF token, own account, profile/preferences updates, registration/activation, password operations and deletion implemented. Captcha-protected registration availability, opaque-link unsubscribe and admin promotion email operations are implemented. First-party cookie login is supported; native OAuth/PKCE and external provider browser callbacks are a separate authentication integration, not reimplemented here. |
 | Membership/Payments | Options and quotes, promo redemption and server-verified durable checkout implemented. Provider/SQL tests required. |
 | Consultation | Owned bookings, slots/calendar, transaction-protected selection and admin slot operations implemented. |
 | Blog/Support | Public articles/tags, comments/likes/moderation, contact/newsletter submission and donation totals implemented. Article editing, publishing and deletion delegate existing owners. Per-user messages mirror the existing owned CRUD without adding delivery semantics. |
-| Generic administration and operations | Twenty explicit entity contracts provide admin-only schema/read/page operations and selected repository-backed writes. Users and processed email queue are read-only here; user lifecycle and sending use their owner services. Custom user lifecycle and assignments, impersonation, article publishing, template test/single/list sending, logs, free-reading maintenance and MailChimp sync are implemented. Six explicit association pairs support atomic replacement with target validation. SQL recipient preview, donor import, resource export and further hook review remain in progress. No arbitrary type/table or internal-preference endpoint exists. |
+| Generic administration and operations | Twenty explicit entity contracts provide admin-only schema/read/page operations and selected repository-backed writes. Users and processed email queue are read-only here; user lifecycle and sending use their owner services. Custom user lifecycle and assignments, impersonation, article publishing, template test/single/list sending, logs, free-reading maintenance and MailChimp sync are implemented. Six explicit association pairs support atomic replacement with target validation. Chosen-list recipient data, deduplicated donor import and bounded resource HTML/text export are implemented. SQL authoring/execution is intentionally excluded; stored association selection uses explicit IDs. No arbitrary type/table or internal-preference endpoint exists. |
 
 ## Additional transport contracts
 
@@ -73,10 +73,10 @@ Complementary profiles expose the same restricted sections as the own/free chart
 
 `POST media/avatar` writes only the current account's avatar. `POST media/article-image` and deletion require administration. JPEG/PNG payloads are limited to 2 MiB, decoded, checked for dimensions, resized and re-encoded as PNG with server-generated filenames. The media transport alone allows multipart framing above the normal 64 KiB JSON cap. Storage uses MediaManagementService and fixed mobile image folders. No caller-supplied filesystem folder, executable file extension, arbitrary CLR image-option type or arbitrary deletion path is accepted. Avatar removal clears the current account's reference and removes only an owned mobile image; it does not delete external/legacy media. Account responses include the avatar URL. Image decoding and storage still need Windows/IIS tests.
 
-## Remaining scope decisions and validation gates
+## Scope boundaries and validation gates
 
-- Account external identity flows should link to the existing authentication/OAuth owner rather than return Facebook/Google redirect views or introduce another token store. Integration with current master is pending.
-- Legacy email promotion and unsubscribe links, donor-to-contact import, recipient SQL preview and administrative resource exports remain to be mapped explicitly. Existing file endpoints (ICS/PDF) continue to serve their formats.
+- The app can use the implemented first-party Forms Authentication cookie flow. Native OAuth/PKCE, Facebook/Google redirects and provider callbacks must be integrated with the authentication owner on master when selected for the app; this branch does not duplicate that infrastructure.
+- Promotion emails, opaque-link unsubscribe, donor import, chosen-list recipient data and resource exports have JSON contracts. Recipient SQL authoring, arbitrary SQL execution and edits to processed email queue rows are excluded administrative tools. Sending uses MailerService and its queue rules. Existing ICS/PDF endpoints continue to serve their file formats.
 - Media management deliberately supports owned avatars and admin article images; arbitrary file upload, arbitrary type-based dynamic image controls and arbitrary-path deletion are excluded from the JSON transport.
 - Pure view layouts, success/failure redirect pages, debug/test controllers, raw SQL maintenance utilities and controller infrastructure helpers are not mobile data endpoints. Any newly required operational capability must use a reviewed explicit contract.
 - Build the complete branch on Windows with restored K9 packages and decrypted astronomy sources, run xUnit, then validate routing/error JSON, cookie/CSRF handling, ownership and section grants under IIS.
@@ -84,9 +84,16 @@ Complementary profiles expose the same restricted sections as the own/free chart
 
 ## Validation and next gates
 
-Added input/timezone/birth-time, I Ching isolation and session identity/access-revocation, free-section projection and image-boundary tests alongside the existing mobile profile tests. C# syntax, project XML, explicit compile registrations, unchanged plugin-controller sources and whitespace are checked in this environment. The environment has no .NET Framework/MSBuild/Mono runtime or restored K9 binaries, and astronomy source is git-crypt protected. Compilation, xUnit execution and MVC/IIS/SQL/Stripe integration tests are **not executed**. A draft PR is not a deployment approval.
+Added input/timezone/birth-time, I Ching isolation and session identity/access-revocation, free-section projection, image-boundary, protected-action access, transport-error, donor deduplication and moderation tests alongside the existing mobile profile tests. C# syntax, project XML, explicit compile registrations, unchanged plugin-controller sources and whitespace are checked in this environment. The environment has no .NET Framework/MSBuild/Mono runtime or restored K9 binaries, and astronomy source is git-crypt protected. Compilation, xUnit execution and MVC/IIS/SQL/Stripe integration tests are **not executed**. A draft PR is not a deployment approval.
 
-Continue the remaining coverage checklist on the same branch, then build/run the website tests in the owner's Windows checkout and validate authenticated requests and error paths under IIS. Do not mark the full API finished while any controller family remains pending.
+The source coverage audit is closed with the explicit exclusions above. Follow [mobile-api-validation.md](mobile-api-validation.md) for the Windows build, xUnit, IIS and provider gates and the first app integration steps. The mobile layer must not be described as release-ready before those checks pass.
+
+
+## Website compatibility and final workflow notes
+
+No views, existing URL registrations or plugin ApiController source were changed by this mobile expansion. Existing maintenance now delegates its original operation to MembershipService. Shared backend additions include Stripe idempotency support, internal preference protection/session isolation, I Ching template isolation, a missing-list null guard, constrained image storage and moderation authorisation. ArticlesService now permits authors/admins to edit/delete comments and requires an administrator for approval/rejection; the mobile transport delegates those operations to that same owner, preserving like cleanup. The application-level error hook is restricted to `~/api/mobile/v1` and does not intercept ordinary website errors.
+
+Registration availability requires captcha and returns correctly named availability booleans. Unsubscribe uses the existing opaque external link identifier and owner services, accepts only `user` or `contact`, and requires the mobile CSRF pair. Promotion email acceptance does not assert delivery, because the existing owner does not report all delivery failures. Donor import does not alter existing contacts or resubscribe them and deduplicates email addresses within the import. Admin resource export accepts catalogued folder names, pages at most 100 files and limits source bytes per page; it returns authored HTML and extracted text, never a rendered view or arbitrary file path.
 
 ## Concrete controller action inventory
 

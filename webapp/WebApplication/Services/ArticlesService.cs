@@ -203,10 +203,16 @@ namespace K9.WebApplication.Services
             }
         }
 
+        private bool CanManageComment(ArticleComment comment)
+        {
+            var id = Current.UserId;
+            return id > 0 && comment != null && (comment.UserId == id || _userService.UserIsAdmin(id));
+        }
+
         public void DeleteComment(int id)
         {
             var comment = _articleCommentsRepository.Find(id);
-            if (comment == null || comment.UserId != Current.UserId)
+            if (!CanManageComment(comment))
                 throw new UnauthorizedAccessException();
 
             var likes = _likesRepository.Find(e => e.ArticleCommentId == id);
@@ -218,7 +224,7 @@ namespace K9.WebApplication.Services
         public void EditComment(int id, string comment)
         {
             var entity = _articleCommentsRepository.Find(id);
-            if (entity == null || entity.UserId != Current.UserId)
+            if (!CanManageComment(entity))
                 throw new UnauthorizedAccessException();
 
             entity.Comment = comment.Trim();
@@ -229,7 +235,7 @@ namespace K9.WebApplication.Services
         public void RejectComment(int id)
         {
             var entity = _articleCommentsRepository.Find(id);
-            if (entity == null || entity.UserId != Current.UserId)
+            if (entity == null || Current.UserId <= 0 || !_userService.UserIsAdmin(Current.UserId))
                 throw new UnauthorizedAccessException();
 
             entity.IsApproved = false;
@@ -240,7 +246,7 @@ namespace K9.WebApplication.Services
         public void ApproveComment(int id)
         {
             var entity = _articleCommentsRepository.Find(id);
-            if (entity == null || entity.UserId != Current.UserId)
+            if (entity == null || Current.UserId <= 0 || !_userService.UserIsAdmin(Current.UserId))
                 throw new UnauthorizedAccessException();
 
             entity.IsApproved = true;

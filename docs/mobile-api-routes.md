@@ -1,6 +1,6 @@
 # Declared mobile API routes
 
-Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobile-api.md) for access rules and pending work. Every POST requires the CSRF header/cookie pair.
+Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobile-api.md) for access rules and scope, and [mobile-api-validation.md](mobile-api-validation.md) for runtime gates. Every POST requires the CSRF header/cookie pair.
 
 | Method | Route | Controller action |
 | --- | --- | --- |
@@ -10,6 +10,7 @@ Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobil
 | `GET` | `/api/mobile/v1/account/me` | `MobileAccountController.cs:Me` |
 | `POST` | `/api/mobile/v1/account/update` | `MobileAccountController.cs:Update` |
 | `POST` | `/api/mobile/v1/account/preferences` | `MobileAccountController.cs:Preferences` |
+| `POST` | `/api/mobile/v1/account/availability` | `MobileAccountController.cs:Availability` |
 | `POST` | `/api/mobile/v1/account/register` | `MobileAccountController.cs:Register` |
 | `POST` | `/api/mobile/v1/account/activate` | `MobileAccountController.cs:Activate` |
 | `POST` | `/api/mobile/v1/account/activation-code` | `MobileAccountController.cs:VerifyActivationCode` |
@@ -22,6 +23,8 @@ Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobil
 | `POST` | `/api/mobile/v1/admin/articles/save` | `MobileAdminArticlesController.cs:Save` |
 | `POST` | `/api/mobile/v1/admin/articles/publication` | `MobileAdminArticlesController.cs:Publication` |
 | `POST` | `/api/mobile/v1/admin/articles/delete` | `MobileAdminArticlesController.cs:Delete` |
+| `GET` | `/api/mobile/v1/admin/content/folders` | `MobileAdminContentController.cs:Folders` |
+| `GET` | `/api/mobile/v1/admin/content/files` | `MobileAdminContentController.cs:Files` |
 | `GET` | `/api/mobile/v1/admin/data` | `MobileAdminDataController.cs:Catalog` |
 | `GET` | `/api/mobile/v1/admin/data/{entity}/schema` | `MobileAdminDataController.cs:Schema` |
 | `GET` | `/api/mobile/v1/admin/data/{entity}` | `MobileAdminDataController.cs:List` |
@@ -31,12 +34,16 @@ Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobil
 | `GET` | `/api/mobile/v1/admin/data/associations/{relationship}` | `MobileAdminDataController.cs:Selection` |
 | `POST` | `/api/mobile/v1/admin/data/associations/{relationship}/replace` | `MobileAdminDataController.cs:ReplaceSelection` |
 | `GET` | `/api/mobile/v1/admin/mail/lists` | `MobileAdminMailController.cs:Lists` |
+| `GET` | `/api/mobile/v1/admin/mail/recipients` | `MobileAdminMailController.cs:Recipients` |
 | `POST` | `/api/mobile/v1/admin/mail/test` | `MobileAdminMailController.cs:Test` |
 | `POST` | `/api/mobile/v1/admin/mail/send-user` | `MobileAdminMailController.cs:SendUser` |
 | `POST` | `/api/mobile/v1/admin/mail/send-list` | `MobileAdminMailController.cs:SendList` |
+| `POST` | `/api/mobile/v1/admin/operations/import-donors` | `MobileAdminOperationsController.cs:ImportDonors` |
 | `GET` | `/api/mobile/v1/admin/operations/logs` | `MobileAdminOperationsController.cs:Logs` |
 | `POST` | `/api/mobile/v1/admin/operations/allocate-free-readings` | `MobileAdminOperationsController.cs:AllocateFreeReadings` |
 | `POST` | `/api/mobile/v1/admin/operations/sync-mailchimp` | `MobileAdminOperationsController.cs:SyncMailChimp` |
+| `POST` | `/api/mobile/v1/admin/promotions/email-registration` | `MobileAdminPromotionsController.cs:EmailRegistration` |
+| `POST` | `/api/mobile/v1/admin/promotions/email-membership` | `MobileAdminPromotionsController.cs:EmailMembership` |
 | `GET` | `/api/mobile/v1/admin/users/{userId:int}` | `MobileAdminUsersController.cs:Account` |
 | `POST` | `/api/mobile/v1/admin/users/create` | `MobileAdminUsersController.cs:Create` |
 | `POST` | `/api/mobile/v1/admin/users/update` | `MobileAdminUsersController.cs:Update` |
@@ -58,6 +65,7 @@ Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobil
 | `POST` | `/api/mobile/v1/blog/like` | `MobileBlogController.cs:Like` |
 | `GET` | `/api/mobile/v1/blog/admin/moderation` | `MobileBlogController.cs:Moderation` |
 | `POST` | `/api/mobile/v1/blog/admin/moderate` | `MobileBlogController.cs:Moderate` |
+| `POST` | `/api/mobile/v1/blog/admin/comment/edit` | `MobileBlogController.cs:ModerateEdit` |
 | `GET` | `/api/mobile/v1/calendar/month` | `MobileCalendarController.cs:Month` |
 | `POST` | `/api/mobile/v1/calendar/subscription` | `MobileCalendarController.cs:Subscription` |
 | `POST` | `/api/mobile/v1/calendar/revoke` | `MobileCalendarController.cs:Revoke` |
@@ -119,3 +127,4 @@ Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobil
 | `POST` | `/api/mobile/v1/support/contact` | `MobileSupportController.cs:Contact` |
 | `POST` | `/api/mobile/v1/support/newsletter` | `MobileSupportController.cs:Newsletter` |
 | `GET` | `/api/mobile/v1/support/donations/total` | `MobileSupportController.cs:DonationTotal` |
+| `POST` | `/api/mobile/v1/unsubscribe/{target}` | `MobileUnsubscribeController.cs:Unsubscribe` |

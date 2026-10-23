@@ -254,6 +254,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Unit\Services\MobileModerationTests.cs" />
+    <Compile Include="Unit\Controllers\MobileAccessBoundaryTests.cs" />
+    <Compile Include="Unit\Controllers\MobileApiErrorTests.cs" />
+    <Compile Include="Unit\Services\MobileDonorImportTests.cs" />
     <Compile Include="Unit\Services\MobileImageBoundaryTests.cs" />
     <Compile Include="Unit\Controllers\MobileApiSessionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

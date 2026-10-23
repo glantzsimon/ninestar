@@ -108,11 +108,26 @@ namespace K9.WebApplication.Controllers
             if (error != null) return error;
             var entity = _comments.Find(commentId);
             if (entity == null) return ApiError(404, "comment_not_found");
-            if (decision == "approve") { entity.IsApproved = true; entity.IsRejected = false; }
-            else if (decision == "reject") { entity.IsApproved = false; entity.IsRejected = true; }
+            if (decision == "approve") _articles.ApproveComment(commentId);
+            else if (decision == "reject") _articles.RejectComment(commentId);
+            else if (decision == "delete")
+            {
+                _articles.DeleteComment(commentId);
+                return ApiSuccess(new { Deleted = true });
+            }
             else return ApiError(400, "invalid_moderation_decision");
-            _comments.Update(entity);
-            return ApiSuccess(CommentData(entity));
+            return ApiSuccess(CommentData(_comments.Find(commentId)));
+        }
+
+        [HttpPost, Route("admin/comment/edit")]
+        public ActionResult ModerateEdit(int commentId, string text)
+        {
+            var error = RequireUser(out var id, admin: true);
+            if (error != null) return error;
+            if (!ValidComment(text)) return ApiError(400, "invalid_comment");
+            if (_comments.Find(commentId) == null) return ApiError(404, "comment_not_found");
+            _articles.EditComment(commentId, text);
+            return ApiSuccess(CommentData(_comments.Find(commentId)));
         }
 
         private static bool ValidComment(string text) => !string.IsNullOrWhiteSpace(text) && text.Length <= 500;

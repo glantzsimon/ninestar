@@ -25,6 +25,21 @@ namespace K9.WebApplication.Controllers
             return ApiSuccess(_lists.GetMailingListListItems().Select(e => new { e.Id, e.Name, e.Value }).ToArray());
         }
 
+        [HttpGet, Route("recipients")]
+        public ActionResult Recipients(int mailingListId, int afterId = 0, int limit = 50)
+        {
+            var error = RequireUser(out var id, admin: true);
+            if (error != null) return error;
+            if (!ModelState.IsValid || afterId < 0 || limit < 1 || limit > 100) return ApiError(400, "invalid_page");
+            // Resolve only the chosen stored/automatic list. Arbitrary recipient
+            // SQL is a website diagnostic tool, not a mobile transport contract.
+            var list = _lists.Find(mailingListId, true);
+            if (list == null) return ApiError(404, "mailing_list_not_found");
+            var users = list.Users.Where(e => !e.IsDeleted && e.Id > afterId).OrderBy(e => e.Id).Take(limit + 1).ToArray();
+            var page = users.Take(limit).Select(e => new { e.Id, e.FullName, e.EmailAddress }).ToArray();
+            return ApiSuccess(new { Items = page, NextAfterId = page.LastOrDefault()?.Id, HasMore = users.Length > limit });
+        }
+
         [HttpPost, Route("test")]
         public ActionResult Test(int templateId)
         {

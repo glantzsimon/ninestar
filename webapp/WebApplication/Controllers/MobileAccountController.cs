@@ -136,6 +136,18 @@ namespace K9.WebApplication.Controllers
             return ApiSuccess(new { Updated = true });
         }
 
+        [HttpPost, Route("availability")]
+        public ActionResult Availability(MobileRegistrationAvailabilityRequest request)
+        {
+            if (!ValidInput(request)) return ApiError(400, "invalid_registration_request");
+            if (!_captcha.Validate(request.CaptchaToken)) return ApiError(400, "invalid_captcha");
+            return ApiSuccess(new
+            {
+                UsernameAvailable = !Package.UsersRepository.Exists(e => e.Username == request.Username),
+                EmailAvailable = !Package.UsersRepository.Exists(e => e.EmailAddress == request.EmailAddress)
+            });
+        }
+
         [HttpPost, Route("register")]
         public ActionResult Register(UserAccount.RegisterModel model, string captchaToken)
         {

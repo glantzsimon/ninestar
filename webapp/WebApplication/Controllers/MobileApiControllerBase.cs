@@ -190,7 +190,8 @@ namespace K9.WebApplication.Controllers
 
             // Do not include account/birth data or exception details in the response.
             Package.Logger.Error("Mobile API failed: " + filterContext.Exception.GetType().Name);
-            filterContext.Result = ApiError(500, "internal_error");
+            var status = MobileApiErrorHelper.Status(filterContext.Exception);
+            filterContext.Result = ApiError(status, MobileApiErrorHelper.Code(status));
             filterContext.ExceptionHandled = true;
         }
     }

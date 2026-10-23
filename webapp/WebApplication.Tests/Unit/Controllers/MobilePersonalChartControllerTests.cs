@@ -133,6 +133,21 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             Assert.Equal(child.CharacterEnergy.ChildStressDescription, result.Sections["childStressResponse"].Body);
         }
 
+        [Fact]
+        public void FreeProfileProjectionContainsOnlyTheGrantedSections()
+        {
+            var fixture = new Fixture();
+            var profile = fixture.CreateProfile(new DateTime(1979, 6, 16));
+            var json = JObject.FromObject(MobilePersonalChartMapper.FreeProfile(profile));
+            var sections = Assert.IsType<JObject>(json["Sections"]);
+            Assert.Equal(new[] { "Core", "Character", "IntellectualQualities" },
+                System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Select(sections.Properties(), p => p.Name)));
+            Assert.Null(json["Energies"]);
+            Assert.Null(json["StrongYinOrgan"]);
+            Assert.Equal(profile.MainEnergy.EnergyDescription, (string)sections["Core"]["Body"]);
+            Assert.Equal(profile.CharacterEnergy.EnergyDescription, (string)sections["Character"]["Body"]);
+        }
+
         private sealed class TestController : MobilePersonalChartController
         {
             private readonly int _userId;

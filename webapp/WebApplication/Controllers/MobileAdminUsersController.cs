@@ -17,6 +17,30 @@ namespace K9.WebApplication.Controllers
         private readonly IPromotionService _promotions;
         public MobileAdminUsersController(INineStarKiPackage package, IPromotionService promotions) : base(package) { _promotions = promotions; }
 
+        [HttpGet, Route("{userId:int}")]
+        public ActionResult Account(int userId)
+        {
+            var error = RequireUser(out var actorId, admin: true);
+            if (error != null) return error;
+            var user = Package.UserService.Find(userId);
+            if (user == null || user.IsDeleted) return ApiError(404, "user_not_found");
+            var membership = Package.MembershipService.GetActiveUserMembership(userId);
+            return ApiSuccess(new
+            {
+                user.Id, user.Username, user.FirstName, user.LastName, user.FullName,
+                user.EmailAddress, user.PhoneNumber, user.AccountActivated,
+                AllowMarketingEmails = !user.IsUnsubscribed,
+                Calculation = ReadOwnCalculationRequest(userId),
+                Membership = membership == null ? null : new
+                {
+                    membership.Id, membership.MembershipOptionId, membership.StartsOn, membership.EndsOn,
+                    membership.IsActive, membership.IsAutoRenew, membership.IsDeactivated,
+                    membership.ComplementaryPersonalChartReadingCount, membership.ComplementaryPredictionsReadingCount,
+                    membership.ComplementaryCompatibilityReadingCount, membership.ComplementaryKarmicReadingCount
+                }
+            });
+        }
+
         [HttpPost, Route("create")]
         public ActionResult Create(UserAccount.RegisterModel model)
         {

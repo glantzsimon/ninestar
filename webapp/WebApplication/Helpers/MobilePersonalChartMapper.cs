@@ -10,6 +10,34 @@ namespace K9.WebApplication.Helpers
 {
     public static class MobilePersonalChartMapper
     {
+        public static object FreeProfile(NineStarKiModel model) => new
+        {
+            model.Summary, model.Overview,
+            Core = model.MainEnergy.EnergyNumber, Character = model.CharacterEnergy.EnergyNumber,
+            SocialExpression = model.SurfaceEnergy.EnergyNumber,
+            Generation = model.PersonalChartEnergies.Generation.EnergyNumber,
+            Epoch = model.PersonalChartEnergies.Epoch.EnergyNumber,
+            DayStar = model.PersonalChartEnergies.Day.EnergyNumber,
+            Hour = model.PersonalChartEnergies.Hour.EnergyNumber,
+            Sections = new
+            {
+                Core = Text(model.MainEnergy.EnergyDescription, model.MainEnergy.MainEnergySummary),
+                Character = Text(model.CharacterEnergy.EnergyDescription, model.CharacterEnergy.CharacterEnergySummary),
+                IntellectualQualities = Text(model.MainEnergy.IntellectualQualities, model.MainEnergy.IntellectualQualitiesSummary)
+            }
+        };
+
+        public static object Numbers(NineStarKiModel model) => new
+        {
+            model.PersonModel.Name, model.Summary,
+            Core = model.MainEnergy.EnergyNumber, Character = model.CharacterEnergy.EnergyNumber,
+            SocialExpression = model.SurfaceEnergy.EnergyNumber,
+            Generation = model.PersonalChartEnergies.Generation.EnergyNumber,
+            Epoch = model.PersonalChartEnergies.Epoch.EnergyNumber,
+            DayStar = model.PersonalChartEnergies.Day.EnergyNumber,
+            Hour = model.PersonalChartEnergies.Hour.EnergyNumber
+        };
+
         public static MobilePersonalChartResponse Map(NineStarKiModel model, bool birthTimeKnown)
         {
             if (model?.PersonModel == null || model.MainEnergy == null || model.CharacterEnergy == null)

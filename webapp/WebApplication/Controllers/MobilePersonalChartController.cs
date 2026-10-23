@@ -56,22 +56,7 @@ namespace K9.WebApplication.Controllers
             var model = CalculateProfile(_nineStarKiService, request, own: true);
             // Match the own/free chart's explicit section grants. In particular,
             // do not reuse the full Energy DTO, which includes other paid prose.
-            return ApiSuccess(new
-            {
-                model.Summary, model.Overview,
-                Core = model.MainEnergy.EnergyNumber, Character = model.CharacterEnergy.EnergyNumber,
-                SocialExpression = model.SurfaceEnergy.EnergyNumber,
-                Generation = model.PersonalChartEnergies.Generation.EnergyNumber,
-                Epoch = model.PersonalChartEnergies.Epoch.EnergyNumber,
-                DayStar = model.PersonalChartEnergies.Day.EnergyNumber,
-                Hour = model.PersonalChartEnergies.Hour.EnergyNumber,
-                Sections = new
-                {
-                    Core = new { Body = model.MainEnergy.EnergyDescription, Summary = model.MainEnergy.MainEnergySummary },
-                    Character = new { Body = model.CharacterEnergy.EnergyDescription, Summary = model.CharacterEnergy.CharacterEnergySummary },
-                    IntellectualQualities = new { Body = model.MainEnergy.IntellectualQualities, Summary = model.MainEnergy.IntellectualQualitiesSummary }
-                }
-            });
+            return ApiSuccess(MobilePersonalChartMapper.FreeProfile(model));
         }
 
         [HttpPost, Route("preview")]

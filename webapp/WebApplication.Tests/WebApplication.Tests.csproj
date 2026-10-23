@@ -254,6 +254,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Unit\Services\MobileImageBoundaryTests.cs" />
     <Compile Include="Unit\Controllers\MobileApiSessionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit\Helpers\TestOutputTraceListener.cs" />

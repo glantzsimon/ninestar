@@ -2,7 +2,7 @@
 
 ## Current implementation
 
-Work remains on `feature/mobile-json-api`, separate from the plugin API. The expansion adds account/session operations, calculators, predictions/planners, calendar data and subscription management, reports, bookings, membership options/quotes, payment checkout, blog operations and support submissions. These are **implemented source**, not a declaration of complete controller parity or passing runtime tests. Custom administration, public content, typed selector metadata, owned messages and paid retrieve-last routes are also implemented. Complementary-reading accounting, broader free-section parity, media and some legacy workflows remain on the checklist.
+Work remains on `feature/mobile-json-api`, separate from the plugin API. The expansion adds account/session operations, calculators, predictions/planners, calendar data and subscription management, reports, bookings, membership options/quotes, payment checkout, blog operations and support submissions. These are **implemented source**, not a declaration of complete controller parity or passing runtime tests. Custom administration, public content, typed selector metadata, owned messages and paid retrieve-last routes are also implemented. Complementary reading routes and constrained image uploads are also implemented. Some legacy administrative/account workflows and runtime verification remain on the checklist.
 
 See [mobile-api-routes.md](mobile-api-routes.md) for declared routes. Every transport projection is an explicit object or DTO. Do not serialize the EF entity, calculated view-model graph, payment provider object or service result wholesale. The existing plugin ApiController is unchanged.
 
@@ -14,7 +14,7 @@ The native client can use the existing Forms Authentication provider: retain the
 
 JSON uses UTF-8, camelCase, ISO timestamps and no type metadata. Success is `{ success: true, data, error: null }`; failure is `{ success: false, data: null, error: { code } }` with an appropriate HTTP error status. Framework/routing failures before controller execution still require IIS checks.
 
-Calculation requests explicitly include person, selected local date/time, birth/user timezone, calculation method, calculator type, house display and both hemisphere flags. Birth dates are date-only, birth time is separate, and selected timestamps have no UTC suffix. Validate real Windows/IANA timezones rather than silently falling back to GMT. Profile/compatibility calls combine birth time once. Planner calls pass birth date and time separately because the existing planner adds the time. Date-range limits and enum validation bound requests. The public chart preview returns numbers/overview only; full profile, compatibility, predictions and numerology require paid/admin access until the per-section free/complementary policy is implemented.
+Calculation requests explicitly include person, selected local date/time, birth/user timezone, calculation method, calculator type, house display and both hemisphere flags. Birth dates are date-only, birth time is separate, and selected timestamps have no UTC suffix. Validate real Windows/IANA timezones rather than silently falling back to GMT. Profile/compatibility calls combine birth time once. Planner calls pass birth date and time separately because the existing planner adds the time. Date-range limits and enum validation bound requests. The public chart preview returns numbers/overview only; full profile, compatibility, predictions and numerology use paid/admin routes. Separate `readings/*` routes apply the complementary section policy and counters.
 
 ## Shared services and projections
 
@@ -42,10 +42,10 @@ This requires Windows/SQL Server/Stripe integration tests for transaction sharin
 
 | Family | Implementation status |
 | --- | --- |
-| PersonalChart | Full own chart, arbitrary-person full calculation, public numeric preview, free own-chart sections, alchemy and paid retrieve-last implemented. Complementary and free alchemy parity pending. |
-| Predictions | Calculation, own snapshot, planner hierarchy, generic cycles, combined descriptions, moon phase and alchemy implemented. Free/complementary section parity pending; paid retrieve-last implemented. |
-| Compatibility | Paid calculation with explicit privacy/age checks and retrieve-last implemented; complementary parity pending. |
-| Numerology/Biorhythms | Paid calculations, numerology forecast and structured planners/series implemented. Paid retrieve-last implemented. Complementary numerology and free biorhythm summary parity pending. |
+| PersonalChart | Full own chart, arbitrary-person full calculation, public numeric preview, free own-chart sections, alchemy and paid retrieve-last implemented. Complementary section projection and own/complementary alchemy implemented through the readings routes. |
+| Predictions | Calculation, own snapshot, planner hierarchy, generic cycles, combined descriptions, moon phase and alchemy implemented. Paid retrieve-last, own/free yearly sections and complementary yearly sections/alchemy implemented. |
+| Compatibility | Paid calculation with explicit privacy/age checks and retrieve-last implemented; complementary calculation omits the two full personal-chart payloads. |
+| Numerology/Biorhythms | Paid calculations, numerology forecast and structured planners/series implemented. Paid retrieve-last implemented. Complementary numerology implemented. The website paywalls biorhythm gauges, planners and analysis; these remain paid. |
 | IChing/KnowledgeBase | Public cast and structured knowledge-base data implemented. |
 | PersonalCalendar | Month JSON and protected subscription/revoke implemented; existing ICS feed retained. |
 | Reports | Structured yearly report, existing PDF URL and admin-only prompt implemented. |
@@ -65,9 +65,26 @@ Bulk association pairs are `user-roles`, `role-permissions`, `user-mailing-lists
 
 Administrative mail and operational endpoints execute effects only when explicitly called. Test/single/list sends reuse MailerService; free-reading maintenance is shared with the existing web controller through MembershipService. The all-account maintenance and MailChimp sync routes require `confirm: true` as part of their request contract. Updating another user's saved preferences no longer replaces the administrator's current session preferences.
 
+## Complementary readings and images
+
+`POST readings/personal-chart`, `readings/predictions`, `readings/compatibility` and `readings/numerology` are explicit credit-consuming operations for free memberships. They validate inputs, read available credits and delegate the relevant MembershipService decrement under the shared scoped DbContext's serializable transaction. Projection/serialization precedes commit so a failed calculation does not consume the credit. These transaction semantics still require SQL Server concurrency tests. Paid accounts use the normal calculator routes; they are not debited here.
+
+Complementary profiles expose the same restricted sections as the own/free chart. Complementary predictions expose the yearly personal, lunar and global interpretations; they do not return all paid periods or the full profile graph. Complementary compatibility exposes compatibility detail and numeric personal charts, rather than returning unrelated paid natal sections. Numerology follows its complementary grant for the calculation and outlooks. `GET readings/{section}/last` recalculates the session's successfully granted reading without another debit. The grant is server-held, bound to the current user, expires with the session and cannot be created by the paid retrieve-last routes. New POSTs each consume a credit; clients should use the corresponding GET to reopen a successful reading rather than replaying POST. Own and successfully granted complementary profile/prediction alchemy use existing services and the enabled setting.
+
+`POST media/avatar` writes only the current account's avatar. `POST media/article-image` and deletion require administration. JPEG/PNG payloads are limited to 2 MiB, decoded, checked for dimensions, resized and re-encoded as PNG with server-generated filenames. The media transport alone allows multipart framing above the normal 64 KiB JSON cap. Storage uses MediaManagementService and fixed mobile image folders. No caller-supplied filesystem folder, executable file extension, arbitrary CLR image-option type or arbitrary deletion path is accepted. Avatar removal clears the current account's reference and removes only an owned mobile image; it does not delete external/legacy media. Account responses include the avatar URL. Image decoding and storage still need Windows/IIS tests.
+
+## Remaining scope decisions and validation gates
+
+- Account external identity flows should link to the existing authentication/OAuth owner rather than return Facebook/Google redirect views or introduce another token store. Integration with current master is pending.
+- Legacy email promotion and unsubscribe links, donor-to-contact import, recipient SQL preview and administrative resource exports remain to be mapped explicitly. Existing file endpoints (ICS/PDF) continue to serve their formats.
+- Media management deliberately supports owned avatars and admin article images; arbitrary file upload, arbitrary type-based dynamic image controls and arbitrary-path deletion are excluded from the JSON transport.
+- Pure view layouts, success/failure redirect pages, debug/test controllers, raw SQL maintenance utilities and controller infrastructure helpers are not mobile data endpoints. Any newly required operational capability must use a reviewed explicit contract.
+- Build the complete branch on Windows with restored K9 packages and decrypted astronomy sources, run xUnit, then validate routing/error JSON, cookie/CSRF handling, ownership and section grants under IIS.
+- Exercise SQL transaction sharing and concurrent complementary/booking/checkout writes; test failed commit/retry and Stripe confirmation before release. Source checks cannot prove these behaviours.
+
 ## Validation and next gates
 
-Added input/timezone/birth-time, I Ching isolation and session identity/access-revocation tests alongside the existing mobile profile tests. C# syntax, project XML, explicit compile registrations, unchanged plugin-controller sources and whitespace are checked in this environment. The environment has no .NET Framework/MSBuild/Mono runtime or restored K9 binaries, and astronomy source is git-crypt protected. Compilation, xUnit execution and MVC/IIS/SQL/Stripe integration tests are **not executed**. A draft PR is not a deployment approval.
+Added input/timezone/birth-time, I Ching isolation and session identity/access-revocation, free-section projection and image-boundary tests alongside the existing mobile profile tests. C# syntax, project XML, explicit compile registrations, unchanged plugin-controller sources and whitespace are checked in this environment. The environment has no .NET Framework/MSBuild/Mono runtime or restored K9 binaries, and astronomy source is git-crypt protected. Compilation, xUnit execution and MVC/IIS/SQL/Stripe integration tests are **not executed**. A draft PR is not a deployment approval.
 
 Continue the remaining coverage checklist on the same branch, then build/run the website tests in the owner's Windows checkout and validate authenticated requests and error paths under IIS. Do not mark the full API finished while any controller family remains pending.
 

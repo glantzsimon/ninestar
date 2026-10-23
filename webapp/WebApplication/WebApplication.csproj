@@ -320,6 +320,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\MobileMediaController.cs" />
+    <Compile Include="Controllers\MobileReadingsController.cs" />
+    <Compile Include="ViewModels\MobileApi\MobileContactRequest.cs" />
     <Compile Include="Controllers\MobileMetadataController.cs" />
     <Compile Include="Helpers\MobileMetadataHelper.cs" />
     <Compile Include="Controllers\MobileAdminArticlesController.cs" />

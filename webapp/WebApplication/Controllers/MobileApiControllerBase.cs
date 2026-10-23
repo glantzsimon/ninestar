@@ -49,6 +49,7 @@ namespace K9.WebApplication.Controllers
         protected virtual int ResolveCurrentUserId() => Current.UserId;
 
         protected virtual DateTime GetUtcNow() => DateTime.UtcNow;
+        protected virtual int MaximumRequestBytes => 65536;
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -57,7 +58,7 @@ namespace K9.WebApplication.Controllers
             Response.TrySkipIisCustomErrors = true;
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetNoStore();
-            if (Request.ContentLength > 65536)
+            if (Request.ContentLength > MaximumRequestBytes)
             {
                 filterContext.Result = ApiError(413, "request_too_large");
                 return;

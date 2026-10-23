@@ -37,6 +37,7 @@ Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobil
 | `GET` | `/api/mobile/v1/admin/operations/logs` | `MobileAdminOperationsController.cs:Logs` |
 | `POST` | `/api/mobile/v1/admin/operations/allocate-free-readings` | `MobileAdminOperationsController.cs:AllocateFreeReadings` |
 | `POST` | `/api/mobile/v1/admin/operations/sync-mailchimp` | `MobileAdminOperationsController.cs:SyncMailChimp` |
+| `GET` | `/api/mobile/v1/admin/users/{userId:int}` | `MobileAdminUsersController.cs:Account` |
 | `POST` | `/api/mobile/v1/admin/users/create` | `MobileAdminUsersController.cs:Create` |
 | `POST` | `/api/mobile/v1/admin/users/update` | `MobileAdminUsersController.cs:Update` |
 | `POST` | `/api/mobile/v1/admin/users/delete` | `MobileAdminUsersController.cs:Delete` |
@@ -72,6 +73,10 @@ Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobil
 | `GET` | `/api/mobile/v1/content/{page}` | `MobileContentController.cs:Page` |
 | `POST` | `/api/mobile/v1/iching/cast` | `MobileIChingController.cs:Cast` |
 | `GET` | `/api/mobile/v1/knowledge-base` | `MobileKnowledgeBaseController.cs:Index` |
+| `POST` | `/api/mobile/v1/media/avatar` | `MobileMediaController.cs:Avatar` |
+| `POST` | `/api/mobile/v1/media/avatar/delete` | `MobileMediaController.cs:DeleteAvatar` |
+| `POST` | `/api/mobile/v1/media/article-image` | `MobileMediaController.cs:ArticleImage` |
+| `POST` | `/api/mobile/v1/media/article-image/delete` | `MobileMediaController.cs:DeleteArticleImage` |
 | `GET` | `/api/mobile/v1/membership/options` | `MobileMembershipController.cs:Options` |
 | `GET` | `/api/mobile/v1/membership/quote` | `MobileMembershipController.cs:Quote` |
 | `GET` | `/api/mobile/v1/membership/switch-quote` | `MobileMembershipController.cs:SwitchQuote` |
@@ -101,6 +106,14 @@ Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobil
 | `GET` | `/api/mobile/v1/predictions/combined` | `MobilePredictionsController.cs:Combined` |
 | `POST` | `/api/mobile/v1/predictions/moon-phase` | `MobilePredictionsController.cs:MoonPhase` |
 | `POST` | `/api/mobile/v1/predictions/alchemy` | `MobilePredictionsController.cs:Alchemy` |
+| `POST` | `/api/mobile/v1/readings/personal-chart` | `MobileReadingsController.cs:PersonalChart` |
+| `POST` | `/api/mobile/v1/readings/predictions` | `MobileReadingsController.cs:Predictions` |
+| `POST` | `/api/mobile/v1/readings/compatibility` | `MobileReadingsController.cs:Compatibility` |
+| `POST` | `/api/mobile/v1/readings/numerology` | `MobileReadingsController.cs:Numerology` |
+| `GET` | `/api/mobile/v1/readings/predictions/me/free` | `MobileReadingsController.cs:OwnPredictions` |
+| `POST` | `/api/mobile/v1/readings/{section}/me/alchemy` | `MobileReadingsController.cs:OwnAlchemy` |
+| `POST` | `/api/mobile/v1/readings/{section}/last/alchemy` | `MobileReadingsController.cs:LastAlchemy` |
+| `GET` | `/api/mobile/v1/readings/{section}/last` | `MobileReadingsController.cs:Last` |
 | `GET` | `/api/mobile/v1/reports/yearly` | `MobileReportsController.cs:Yearly` |
 | `GET` | `/api/mobile/v1/reports/yearly/prompt` | `MobileReportsController.cs:Prompt` |
 | `POST` | `/api/mobile/v1/support/contact` | `MobileSupportController.cs:Contact` |

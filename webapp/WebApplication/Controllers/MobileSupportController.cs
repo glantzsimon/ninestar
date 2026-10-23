@@ -2,7 +2,7 @@ using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
-using System.ComponentModel.DataAnnotations;
+using K9.WebApplication.ViewModels.MobileApi;
 using System.Web;
 using System.Web.Mvc;
 
@@ -57,12 +57,4 @@ namespace K9.WebApplication.Controllers
         private static string HtmlUtilityText(string text) => HttpUtility.HtmlEncode(text).Replace("\r\n", "\n").Replace("\n", "<br />");
     }
 
-    public class MobileContactRequest
-    {
-        [Required, StringLength(128)] public string Name { get; set; }
-        [Required, EmailAddress, StringLength(200)] public string EmailAddress { get; set; }
-        [StringLength(200)] public string Subject { get; set; }
-        [StringLength(10000)] public string Body { get; set; }
-        [Required, StringLength(10000)] public string CaptchaToken { get; set; }
-    }
 }

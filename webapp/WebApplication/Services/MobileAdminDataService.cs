@@ -225,6 +225,7 @@ namespace K9.WebApplication.Services
                     var promotion = entity as Promotion;
                     if (promotion != null)
                     {
+                        promotion.Name = promotion.Code;
                         promotion.MembershipOption = _package.MembershipService.GetMembershipOption(promotion.MembershipOptionId);
                         if (promotion.MembershipOption == null || promotion.MembershipOption.IsFree ||
                             promotion.SpecialPrice < 0 || promotion.SpecialPrice >= promotion.MembershipOption.Price)
@@ -234,6 +235,9 @@ namespace K9.WebApplication.Services
                     // Preserve the shared generic controller's curly-markup hook.
                     HtmlMarkupHelper.ConvertToHtml(ref entity);
                     if (request.Id.HasValue) _repository.Update(entity); else _repository.Create(entity);
+                    var contact = entity as Contact;
+                    if (contact != null)
+                        _package.ContactService.EnableMarketingEmails(contact.Name, !contact.IsUnsubscribed);
                     transaction.Commit();
                     var settings = entity as SystemSetting;
                     if (settings != null) _package.DefaultValuesConfiguration.SystemSettings = settings;

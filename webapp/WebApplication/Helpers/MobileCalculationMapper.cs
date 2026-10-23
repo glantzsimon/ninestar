@@ -74,14 +74,14 @@ namespace K9.WebApplication.Helpers
             }).ToArray()
         };
 
-        public static object Compatibility(CompatibilityModel model, bool hideSexualChemistry)
+        public static object Compatibility(CompatibilityModel model, bool hideSexualChemistry, bool includeFullProfiles = true)
         {
             var details = model.CompatibilityDetails;
             var score = details?.Score;
             return new
             {
-                FirstPerson = MobilePersonalChartMapper.Map(model.NineStarKiModel1, false),
-                SecondPerson = MobilePersonalChartMapper.Map(model.NineStarKiModel2, false),
+                FirstPerson = includeFullProfiles ? (object)MobilePersonalChartMapper.Map(model.NineStarKiModel1, false) : MobilePersonalChartMapper.Numbers(model.NineStarKiModel1),
+                SecondPerson = includeFullProfiles ? (object)MobilePersonalChartMapper.Map(model.NineStarKiModel2, false) : MobilePersonalChartMapper.Numbers(model.NineStarKiModel2),
                 model.FundamentalEnergiesCompatibility,
                 SexualChemistryDetails = hideSexualChemistry ? null : model.SexualChemistryDetails,
                 Details = details == null ? null : new

@@ -74,6 +74,7 @@ namespace K9.WebApplication.Controllers
                 user.FirstName, user.LastName, user.FullName, user.EmailAddress, user.PhoneNumber,
                 BirthDate = user.BirthDate.ToString("yyyy-MM-dd"), user.Gender,
                 AllowMarketingEmails = !user.IsUnsubscribed,
+                AvatarImageUrl = info?.AvatarImageUrl,
                 BirthDetails = info == null ? null : new { info.TimeOfBirth, info.BirthTimeZoneId },
                 Calculation = ReadOwnCalculationRequest(id),
                 Membership = membership == null ? null : new

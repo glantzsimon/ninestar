@@ -2,6 +2,7 @@ using K9.WebApplication.Services;
 using OpenIddict.Abstractions;
 using System;
 using System.Linq;
+using System.Security.Claims;
 using Xunit;
 
 namespace K9.WebApplication.Tests.Unit.Services
@@ -102,6 +103,35 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.True(renewed.HasScope(OpenIddictConstants.Scopes.OfflineAccess));
             Assert.Contains(OpenIddictConstants.Destinations.AccessToken,
                 renewed.FindFirst(OAuthClaimsPrincipalFactory.MembershipAccountClaim).GetDestinations());
+        }
+
+        [Theory]
+        [InlineData(false)]
+        [InlineData(true)]
+        public void ValidatedTokenIdentityTargetsTheServerSignInHandler(bool offlineAccess)
+        {
+            var scopes = offlineAccess
+                ? new[] { OAuthClaimsPrincipalFactory.ReadScope, OpenIddictConstants.Scopes.OfflineAccess }
+                : new[] { OAuthClaimsPrincipalFactory.ReadScope };
+            var issued = OAuthClaimsPrincipalFactory.Create(new OAuthAccountIdentity(27, "123456789"), scopes);
+            issued.SetAuthorizationId("approved-grant");
+            issued.SetPresenters("registered-client");
+            var validated = new ClaimsPrincipal(new ClaimsIdentity(
+                issued.Claims, "TokenValidation", "custom-name", "custom-role"));
+
+            var renewed = OAuthClaimsPrincipalFactory.Renew(
+                new OAuthAccountIdentity(27, "987654321"), validated, scopes);
+
+            Assert.Equal(issued.Identity.AuthenticationType, renewed.Identity.AuthenticationType);
+            Assert.Equal("TokenValidation", validated.Identity.AuthenticationType);
+            Assert.Equal("custom-name", ((ClaimsIdentity)renewed.Identity).NameClaimType);
+            Assert.Equal("custom-role", ((ClaimsIdentity)renewed.Identity).RoleClaimType);
+            Assert.Equal("approved-grant", renewed.GetAuthorizationId());
+            Assert.Equal("registered-client", renewed.GetPresenters().Single());
+            Assert.Equal(OAuthClaimsPrincipalFactory.McpResource, renewed.GetResources().Single());
+            Assert.Equal(offlineAccess, renewed.HasScope(OpenIddictConstants.Scopes.OfflineAccess));
+            Assert.Equal("987654321", renewed.FindFirst(OAuthClaimsPrincipalFactory.MembershipAccountClaim).Value);
+            Assert.Equal("123456789", validated.FindFirst(OAuthClaimsPrincipalFactory.MembershipAccountClaim).Value);
         }
 
         [Fact]

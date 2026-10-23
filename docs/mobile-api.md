@@ -155,6 +155,8 @@ The list below records declared MVC-returning actions from the existing controll
 
 **Status: draft for agreement, 23 October 2026. No Apple endpoints, persistence, migration, purchase verification or deployment are implemented by this proposal.** This section supersedes any app-only subscription proposal. App notes belong in the separate `ninestar-mobile/docs/` directory; this file is the shared backend contract.
 
+**Contract revision 2:** resolves the app review of `efe0d438`: token-error precedence, complete schemas/examples, unfinished-purchase recovery, plan changes/retired products, and the current 15-second client timeout. This revision remains proposed until agreed. The review findings were supplied in chat; the separate local `ninestar-mobile/docs/apple-contract-review.md` file is not accessible from this backend workspace.
+
 The owner reports that Expo login succeeds on iPhone and My Account/own-chart screens exist, with further device validation outstanding. Those observations do not validate Apple billing.
 
 ### Product decision and existing architecture
@@ -204,16 +206,17 @@ All relative paths below are beneath `/api/mobile/v1`. They retain the existing 
 | Method and path | Request | Proposed successful data |
 | --- | --- | --- |
 | GET `membership/entitlements` | None | The entitlement snapshot defined below, freshly read from persisted verified state. No Apple network call or new grant on this GET. |
-| POST `subscriptions/apple/context` | `{}` | `{ appAccountToken, purchaseAllowed, purchaseBlockedReason, products, entitlements }`. Idempotently get/create this account's binding. `products` contains only enabled server-allowlisted `{ productId, subscriptionType }` mappings. Token is returned even when purchase is blocked, to support same-account restore. |
-| POST `subscriptions/apple/verify` | `{ "transactionId": "opaque-storekit-id" }` | `{ processed: true, state, entitlements }` only after server verification and durable transaction/grant commit. Repeated same-owner submissions succeed without duplicate benefits. A valid inactive purchase can be recorded with `state: "expired"` or `"revoked"` and no Apple access. |
-| POST `subscriptions/apple/refresh` | `{}` | `{ processed: true, entitlements }` after server reconciliation of this account's already-linked chains. No arbitrary transaction/account selector. Rate-limit/coalesce calls. |
+| POST `subscriptions/apple/context` | `{}` | `{ appAccountToken, environment, purchaseAllowed, purchaseBlockedReason, canManageSubscription, canChangePlan, products, entitlements }`. Idempotently get/create this account's binding. Products include recognised retired mappings as well as saleable ones, distinguished by `availableForPurchase`. Token is returned even when a new purchase is blocked, to support same-account restore. |
+| POST `subscriptions/apple/verify` | `{ "transactionId": "opaque-storekit-id" }` | `{ processed: true, transactionId, state, entitlements }` only after server verification and durable transaction/grant commit. Echo the requested transaction ID; repeated same-owner submissions succeed without duplicate benefits. A valid inactive purchase can be recorded with `state: "expired"` or `"revoked"` and no Apple access. |
+| POST `subscriptions/apple/refresh` | `{}` | `{ processed: true, complete, verifiedSubscriptionCount, pendingSubscriptionCount, retryAfterSeconds, entitlements }`. Reconcile this account's already-linked chains within the request budget. `complete: false` explicitly reports a partial refresh; see timing rules below. No arbitrary transaction/account selector. |
 
-`purchaseBlockedReason` is null when allowed, otherwise `website_membership_active` or `apple_subscription_active` for a current active/grace grant; current-chain billing retry uses `apple_subscription_requires_management` until provider reconciliation establishes the appropriate recovery route. No second subscription should be offered blindly. `products` is a product mapping, not a price quote: display actual StoreKit-localised pricing/periods and disclosures.
+`purchaseAllowed` governs starting a **new** Apple subscription, not restoring or managing an owned chain. `purchaseBlockedReason` is null when allowed; otherwise choose `website_membership_active` first if any eligible legacy grant exists, then `apple_subscription_active` for an active/grace Apple grant, then `apple_subscription_requires_management` for billing retry. No second subscription should be offered blindly. Same-group plan changes remain available through Apple management even when a new purchase is blocked. `products` is a product mapping, not a price quote: display actual StoreKit-localised pricing/periods and disclosures.
 
 Example entitlement snapshot (illustrative timestamps and enum values, not a live response):
 
 ```json
 {
+  "asOfUtc": "2026-10-23T20:00:00Z",
   "paid": true,
   "unlimited": true,
   "websiteAccess": true,
@@ -225,13 +228,18 @@ Example entitlement snapshot (illustrative timestamps and enum values, not a liv
       "state": "active",
       "endsOn": null,
       "expiresAtUtc": "2026-11-23T18:00:00Z",
-      "autoRenewEnabled": true
+      "autoRenewEnabled": true,
+      "productId": "example.platinum.monthly",
+      "nextProductId": null,
+      "nextSubscriptionType": null,
+      "changeEffectiveAtUtc": null,
+      "verifiedAtUtc": "2026-10-23T19:59:00Z"
     }
   ]
 }
 ```
 
-`paid` and `unlimited` represent membership benefits, not an admin-role bypass. `websiteAccess` and `mobileAccess` mean membership-derived paid access; free features still work when false. `sources` includes the current legacy grant (if any) plus owned Apple chains, including inactive chains needed for management; it never exposes provider evidence, other accounts, tokens, secrets or transaction history. Provider `website` represents existing website/admin/promotion grants; its `endsOn` is the legacy inclusive date (`yyyy-MM-dd`, null for lifetime) and `expiresAtUtc` is null. Apple uses the exclusive UTC access boundary, including verified grace when applicable, and null `endsOn`. A null legacy auto-renew flag may be returned when actual provider renewal state is unknown; legacy IsAutoRenew alone is not proof of a Stripe recurring subscription.
+`paid` and `unlimited` represent membership benefits, not an admin-role bypass. `websiteAccess` and `mobileAccess` mean membership-derived paid access; free features still work when false. `sources` includes the current eligible legacy grant (if any) plus owned Apple chains, including inactive chains needed for management; it never exposes provider evidence, other accounts, tokens, secrets or transaction history. Provider `website` represents existing website/admin/promotion grants; its `endsOn` is the legacy inclusive date (`yyyy-MM-dd`, null for free/unbounded or lifetime grants) and `expiresAtUtc` is null. Apple uses the exclusive UTC access boundary, including verified grace when applicable, and null `endsOn`. A null legacy auto-renew flag is returned when actual provider renewal state is unknown; legacy IsAutoRenew alone is not proof of a Stripe recurring subscription.
 
 Add the **same** snapshot as an additive `entitlements` property on `GET account/me`; preserve its existing `membership` fields and meanings for compatibility. Do not replace or rename current fields. The dedicated GET and account snapshot use one shared projection. Existing paid routes continue server-side membership enforcement; the app must not calculate access from its own receipt or dates. Fetch account/entitlements after purchase, restore and foreground, and handle fresh membership-required responses.
 
@@ -240,12 +248,269 @@ Restore is a client StoreKit operation followed by server verification: enumerat
 Proposed error contract uses the existing failure envelope:
 - 400: `invalid_apple_request`, `invalid_apple_transaction`, `apple_product_not_supported`, `apple_environment_not_allowed`.
 - 401: `authentication_required`; existing 400 `invalid_csrf_token` remains unchanged.
-- 403: `impersonation_not_allowed`, `apple_account_mismatch` (wrong/missing token, unsupported ownership or another account's chain, without revealing its owner).
-- 409: `apple_account_link_required` for a genuinely unbound/tokenless legacy purchase needing reviewed support recovery. Never silently claim it or overwrite its token.
+- 403: `impersonation_not_allowed`, `apple_account_mismatch` (wrong/malformed/unrecognised token, unsupported ownership, another account's chain or a missing token on an already-linked chain without approved legacy status; exact precedence below). Never reveal the other owner.
+- 409: `apple_account_link_required` only for a verified, supported, **unbound and tokenless** purchase needing reviewed support recovery. Never silently claim it or overwrite its token.
 - 429: `apple_rate_limited`.
 - 503: `apple_verification_unavailable` for provider/network/verifier/reconciliation failure. No new/unverified access on failure; retry with the same transaction ID. Do not return a durable-success assertion before commit.
 
 The existing request-size limits apply. Bound and validate transaction ID strings (maximum 128 characters); no client JWS, expiry, price, plan or success flag is required/trusted.
+
+### Revision 2: response schemas and state definitions
+
+These are the complete proposed `data` shapes inside the existing success envelope. All listed fields are required, including nullable ones; clients tolerate additive unknown fields. A failure retains `{ success: false, data: null, error: { code } }`, not a success-shaped payload. Examples use fictional product IDs.
+
+| Shape/field | Type and meaning |
+| --- | --- |
+| Entitlements `asOfUtc` | ISO 8601 UTC timestamp with Z, evaluated for this response. It does not make older Apple evidence newly verified. |
+| Entitlements `paid`, `unlimited`, `websiteAccess`, `mobileAccess` | Four booleans. Access is the union of currently active paid sources; Free never grants paid access. Existing endpoint-specific benefits/ownership still apply. |
+| Entitlements `sources` | Array of Source objects, empty when no existing legacy membership or Apple chain is present. It is not an account's entire purchase history. |
+| Source `provider` | `website` or `apple`. |
+| Source `subscriptionType` | Exact existing enum name: `Free`, `WeeklyPlatinum`, `MonthlyPlatinum`, `AnnualPlatinum`, `LifeTimePlatinum`. |
+| Source `state` | `active`, `grace`, `billing_retry`, `expired` or `revoked`, as defined below. Website sources are current eligible grants and use `active`, including Free. |
+| Source `endsOn` | Nullable date-only string, inclusive legacy website end date; null for Apple, free/unbounded or lifetime. |
+| Source `expiresAtUtc` | Nullable exclusive Apple access boundary, including verified grace when applicable; null for website. Retain the past boundary for inactive Apple chains; null only if no trusted interval is available. |
+| Source `autoRenewEnabled` | Boolean or null when not verified/not applicable. It is independent of current access. |
+| Source `productId` | Current Apple product ID string, including retired recognised IDs; null for website. |
+| Source `nextProductId`, `nextSubscriptionType` | Nullable verified scheduled renewal product and mapped enum. Both null if no verified change, auto-renew is off or source is website. Do not set them from an unconfirmed client selection. |
+| Source `changeEffectiveAtUtc` | Nullable verified effective instant for the scheduled change. Null if unavailable; do not invent one from a guessed month length. |
+| Source `verifiedAtUtc` | Last successful Apple server verification timestamp, or null for website/no verified evidence. |
+
+Apple `state` is the latest verified subscription state, bounded by current time: `active` has a currently valid paid interval; `grace` has a current Apple-granted grace interval; `billing_retry` has provider-confirmed billing recovery but no current paid/grace interval; `expired` has no current entitlement and no applicable retry/revocation; `revoked` means the relevant current entitlement is invalidated by verified refund/revocation. A cancelled-but-still-paid chain is `active` with `autoRenewEnabled: false`. Once a known active/grace interval ends, it cannot remain entitled merely because no notification/job arrived; project `expired` unless verified evidence establishes retry or revocation. No pending client purchase state belongs in this server enum.
+
+All example snapshots below are evaluated at `2026-10-23T20:00:00Z`. Free, website-only, lifetime, expired-Apple and overlapping-source examples are complete Entitlements objects; outer success envelopes are omitted.
+
+**Free**
+
+```json
+{
+  "asOfUtc": "2026-10-23T20:00:00Z",
+  "paid": false,
+  "unlimited": false,
+  "websiteAccess": false,
+  "mobileAccess": false,
+  "sources": [
+    {
+      "provider": "website",
+      "subscriptionType": "Free",
+      "state": "active",
+      "endsOn": null,
+      "expiresAtUtc": null,
+      "autoRenewEnabled": null,
+      "productId": null,
+      "nextProductId": null,
+      "nextSubscriptionType": null,
+      "changeEffectiveAtUtc": null,
+      "verifiedAtUtc": null
+    }
+  ]
+}
+```
+
+
+**Website-only annual**
+
+```json
+{
+  "asOfUtc": "2026-10-23T20:00:00Z",
+  "paid": true,
+  "unlimited": true,
+  "websiteAccess": true,
+  "mobileAccess": true,
+  "sources": [
+    {
+      "provider": "website",
+      "subscriptionType": "AnnualPlatinum",
+      "state": "active",
+      "endsOn": "2027-02-28",
+      "expiresAtUtc": null,
+      "autoRenewEnabled": null,
+      "productId": null,
+      "nextProductId": null,
+      "nextSubscriptionType": null,
+      "changeEffectiveAtUtc": null,
+      "verifiedAtUtc": null
+    }
+  ]
+}
+```
+
+
+**Website lifetime**
+
+```json
+{
+  "asOfUtc": "2026-10-23T20:00:00Z",
+  "paid": true,
+  "unlimited": true,
+  "websiteAccess": true,
+  "mobileAccess": true,
+  "sources": [
+    {
+      "provider": "website",
+      "subscriptionType": "LifeTimePlatinum",
+      "state": "active",
+      "endsOn": null,
+      "expiresAtUtc": null,
+      "autoRenewEnabled": null,
+      "productId": null,
+      "nextProductId": null,
+      "nextSubscriptionType": null,
+      "changeEffectiveAtUtc": null,
+      "verifiedAtUtc": null
+    }
+  ]
+}
+```
+
+
+**Expired Apple, free fallback**
+
+```json
+{
+  "asOfUtc": "2026-10-23T20:00:00Z",
+  "paid": false,
+  "unlimited": false,
+  "websiteAccess": false,
+  "mobileAccess": false,
+  "sources": [
+    {
+      "provider": "website",
+      "subscriptionType": "Free",
+      "state": "active",
+      "endsOn": null,
+      "expiresAtUtc": null,
+      "autoRenewEnabled": null,
+      "productId": null,
+      "nextProductId": null,
+      "nextSubscriptionType": null,
+      "changeEffectiveAtUtc": null,
+      "verifiedAtUtc": null
+    },
+    {
+      "provider": "apple",
+      "subscriptionType": "MonthlyPlatinum",
+      "state": "expired",
+      "endsOn": null,
+      "expiresAtUtc": "2026-10-20T18:00:00Z",
+      "autoRenewEnabled": false,
+      "productId": "example.platinum.monthly",
+      "nextProductId": null,
+      "nextSubscriptionType": null,
+      "changeEffectiveAtUtc": null,
+      "verifiedAtUtc": "2026-10-23T19:59:00Z"
+    }
+  ]
+}
+```
+
+
+**Overlapping website and Apple**
+
+```json
+{
+  "asOfUtc": "2026-10-23T20:00:00Z",
+  "paid": true,
+  "unlimited": true,
+  "websiteAccess": true,
+  "mobileAccess": true,
+  "sources": [
+    {
+      "provider": "website",
+      "subscriptionType": "AnnualPlatinum",
+      "state": "active",
+      "endsOn": "2027-02-28",
+      "expiresAtUtc": null,
+      "autoRenewEnabled": null,
+      "productId": null,
+      "nextProductId": null,
+      "nextSubscriptionType": null,
+      "changeEffectiveAtUtc": null,
+      "verifiedAtUtc": null
+    },
+    {
+      "provider": "apple",
+      "subscriptionType": "MonthlyPlatinum",
+      "state": "active",
+      "endsOn": null,
+      "expiresAtUtc": "2026-11-23T18:00:00Z",
+      "autoRenewEnabled": true,
+      "productId": "example.platinum.monthly",
+      "nextProductId": null,
+      "nextSubscriptionType": null,
+      "changeEffectiveAtUtc": null,
+      "verifiedAtUtc": "2026-10-23T19:59:00Z"
+    }
+  ]
+}
+```
+
+
+### Revision 2: operation response schemas
+
+Complete operation responses:
+
+| Operation data | Required fields and constraints |
+| --- | --- |
+| Context | `appAccountToken`: UUID string; `environment`: `Sandbox` or `Production` from server configuration; `purchaseAllowed`: boolean; `purchaseBlockedReason`: null or one of the three documented reason codes; `canManageSubscription`, `canChangePlan`: booleans; `products`: Product[]; `entitlements`: Entitlements. |
+| Product | `productId`: nonempty string; `subscriptionType`: mapped membership enum; `availableForPurchase`: boolean. Only recognised server mappings are returned; retired mappings remain with false. Sort by product ID for deterministic output. |
+| Verify | `processed`: literal true; `transactionId`: the exact requested opaque string; `state`: Apple state enum above; `entitlements`: Entitlements. Processing success is not synonymous with paid access. |
+| Refresh | `processed`: literal true; `complete`: boolean; `verifiedSubscriptionCount`, `pendingSubscriptionCount`: nonnegative integers for distinct chains in this invocation; `retryAfterSeconds`: null if complete, otherwise positive integer; `entitlements`: Entitlements after committed updates. A partial success requires at least one committed chain reconciliation. |
+
+`canManageSubscription` is true when an owned Apple chain exists, including an expired/revoked chain, and directs the app to native Apple subscription management, never a caller-supplied URL. `canChangePlan` is true when an owned active/grace/retry chain has another saleable mapped product in the same group; Apple still determines actual eligibility and timing. These flags do not establish which App Store account is signed into the device, authorise account transfers or guarantee StoreKit will offer a change.
+
+### Revision 2: deterministic account-link errors
+
+Validate authentication, CSRF, HTTPS, syntax and supported verified app/product/environment first. Failure to obtain/verify provider evidence is 503 for a transient dependency failure or 400 for invalid signed evidence, never a token-recovery response. For valid supported evidence apply these rules in order:
+
+| Verified evidence / stored association | Result |
+| --- | --- |
+| Chain is already linked to a different NineStar user, regardless of token presence | 403 `apple_account_mismatch`; never identify that user. |
+| Unsupported ownership, including Family Sharing in this version | 403 `apple_account_mismatch`. |
+| Token is present but malformed, unrecognised or differs from this user's server-issued token | 403 `apple_account_mismatch`, whether chain is linked or unbound. |
+| Token is absent and chain is unbound | 409 `apple_account_link_required`; do not auto-link. |
+| Token is absent and chain is linked to this user | Allow only previously approved, explicitly recorded tokenless-legacy recovery status; otherwise 403 `apple_account_mismatch`. No automatic legacy exception is created. |
+| Token matches this user and chain is unbound or already linked to this user | Atomically link/reconcile, with database uniqueness enforcing the same result under races. |
+
+The first release has no tokenless adoption endpoint. Support recovery is a separately reviewed process, not an app-side retry or token rewrite.
+
+### Revision 2: unfinished purchase and account recovery
+
+1. Obtain context while signed into the intended NineStar account before starting a new purchase. Pass its appAccountToken to StoreKit and associate pending local work with that token and configured environment; never store a password, auth cookie or reusable credentials inside a purchase queue.
+2. Observe StoreKit transaction updates from app launch and enumerate unfinished transactions after login/restart. StoreKit's queue is the recovery source; local queue storage supplements it and must not be the only evidence that work remains.
+3. Verify each supported transaction using the same transactionId. If a response is lost after server commit, the next same-owner call returns committed processing success without another benefit/grant.
+4. On 401, stop automatic retries, retain unfinished work and request sign-in. After login obtain fresh CSRF and context; proceed only when the current account binding matches the pending purchase. A 400 `invalid_csrf_token` permits one token refresh and one same-ID retry for the same authenticated session/account; do not loop.
+5. On logout/account switch, advance an auth-session generation, abort old client requests where possible and discard late responses from the old generation. Re-authenticate before resuming; a request already accepted by the server can still complete for its original account. Never merge that response into the new account, silently retry it as the new user, change the appAccountToken or transfer the chain.
+6. On 403 mismatch or 409 recovery-required, stop automatic retries and show a localised sign-in/support action. Do not finish the transaction as delivered to the wrong account. Return to the original NineStar account or complete separately reviewed recovery. No other user's identity is returned.
+7. On timeout/disconnect/429/503, keep the transaction unfinished and follow the retry budget below. A timeout means the commit result is unknown, not that the purchase failed. Do not start another StoreKit purchase to retry server verification.
+8. Finish the matching StoreKit transaction only after a same-account `verify` response has `processed: true` and the echoed ID matches. Apply the returned entitlements before showing access. Successful processing of an expired/revoked transaction may finish without paid access. If StoreKit finish itself fails, re-enumerate/re-verify/retry finish; fulfilment remains idempotent. A context, GET or refresh response alone is not a transaction-completion acknowledgement.
+
+Pending/Ask-to-Buy, cancelled purchase sheets and locally unverified transactions are client workflow states, not successful backend verification. Do not invent a transaction ID or finish an unsettled purchase merely to clear a spinner. A later verified StoreKit update can resume the flow.
+
+### Revision 2: plan changes and retired products
+
+New-subscription blocking does not block restore, verify, refresh or same-group subscription management. Monthly and annual products have the same content/service level in App Store Connect; their duration alone does not make annual an Apple upgrade. The app may offer **Manage Subscription / Change Plan** for an owned chain even while `purchaseAllowed` is false. Use Apple's native management flow for this first version, rather than opening another independent purchase flow.
+
+Retain current benefits until Apple verifies the change is effective. Store verified pending product/renewal information in AppleSubscription and project the nullable next-product fields. A different-duration crossgrade normally takes effect at renewal; immediate changes follow Apple's actual signed transaction/status. Do not switch membership option, fabricate dates or revoke current access from the user's UI selection alone. Preserve the original chain owner; if Apple introduces another chain during a verified transition, apply the same token/unique-ownership rules and reconcile the resulting valid grants without stacking durations.
+
+Keep recognised product mappings separate from sale availability. Retiring a product sets `availableForPurchase: false`; never delete its membership mapping or reject its legitimate renewal, notification, verify or restore solely because it is no longer sold. Context returns recognised retired IDs so the app's restore filter includes them even when StoreKit cannot return a saleable product listing. A verified product absent from the recognised catalogue returns `apple_product_not_supported`; resolve it through reviewed server catalogue configuration, never a client-selected membership mapping.
+
+### Revision 2: deadlines, retries and partial refresh
+
+Proposed initial timing contract, subject to real IIS/Apple tests before release:
+- Keep the app's existing **15-second** HTTP timeout. Use a **12-second aggregate server action budget** for verify/refresh, including provider calls, certificate checks, coordination and commit work. Individual outbound calls have a maximum 5-second timeout further clipped to the remaining aggregate budget; no automatic provider retry inside a foreground action. Avoid session-lock waits that consume the whole budget. Target local context/entitlement reads within 3 seconds. These budgets are implementation targets, not a guarantee against network/proxy/IIS delays.
+- Never declare `processed: true` before commit or assume cancellation can undo an in-progress commit. If the deadline is reached before a successful commit, return 503 `apple_verification_unavailable` where a response is still possible. If the connection is lost or commit outcome uncertain, the same-ID retry determines the durable result.
+- Initial per-account rate limits: context 30/minute, verify 10/minute and refresh 6/minute, applied across workers; apply wider abuse controls separately. Coalesce identical in-flight verify requests for the same account/environment/transaction, without reusing one account's result for another. Return 429 `apple_rate_limited` with integer-seconds `Retry-After` (minimum 1, actual time until allowed); transient 503 responses include `Retry-After: 5`.
+- On timeout/disconnect/503 use base delays of 2, 4, 8, 16, 30 and then 60 seconds, with up to 20% added jitter. Honour the longer valid Retry-After delay when supplied, including 429. Attempt at most three automatic retries during one foreground recovery cycle, then retain pending work for explicit retry or the next foreground/login/restart. Do not spin while offline or unauthenticated. Do not automatically retry permanent 400/403/409 errors, except the single CSRF refresh described above.
+- Refresh commits each successfully verified chain independently; it is **not one all-or-nothing account-wide transaction**. If all known chains reconcile, return complete true, pendingSubscriptionCount 0 and retryAfterSeconds null. No known chains is a complete 200 result with both counts 0.
+- If at least one chain commits but others fail or cannot be attempted within the budget, return 200 with complete false, the number committed in verifiedSubscriptionCount, remaining distinct chains in pendingSubscriptionCount, retryAfterSeconds 5 and the currently persisted combined entitlements. Counts describe this invocation, not cumulative lifetime progress. Mark unresolved chains for bounded background reconciliation using existing Hangfire; process fairly using persisted last-attempt times so one failing chain cannot starve others.
+- If no chain commits and outstanding work remains, return 503 with the normal failure envelope; do not label stale data a successful refresh. The app may GET membership/entitlements for the last verified, time-bounded snapshot. Successful partial grants are never rolled back because another provider call failed, and a failure must never extend an unverified interval or erase an independent website grant.
+- For a partial 200, the app honours retryAfterSeconds before another refresh, applying the same three-retry foreground cap. It can show currently verified access plus a localised refresh-pending status; it must not interpret complete false as a completed purchase acknowledgement.
+
+### Revision 2: app/backend boundary
+
+The app needs a development build with its IAP native module; Expo Go does not support that module. Keep explicit build/API/environment matching (Integration/Sandbox, Production/Production) and compare context.environment before purchases; changing a client setting cannot make one environment's evidence valid in another. The app maintains account-scoped entitlements separately from editable My Account form state: refresh only the entitlement/session state, preserving unsaved profile edits. Ignore stale or previous-account responses and clear paid UI state on logout. Record concrete app implementation/library notes in `ninestar-mobile/docs/`; this backend file owns only the shared contract.
+
+
 
 ### Server verification and ownership
 
@@ -255,7 +520,7 @@ Validate JWS signatures, certificate chain to configured Apple trust roots and c
 
 Require the cryptographically verified appAccountToken to match this signed-in account's server-issued binding on initial link. Enforce immutable chain ownership with database uniqueness/transactions, not only application checks. On subsequent verification, renewals and restore, both chain ownership and token must remain consistent; fail closed/quarantine anomalies. Do not call Apple's Set App Account Token API to make a mismatched transaction fit. A UUID known by a caller is not independent proof of identity.
 
-Tokenless purchases are not auto-linked by email, receipt possession or first caller. Previously linked tokenless transactions may be reconciled only through the existing trusted immutable owner association; initial adoption requires a separately reviewed recovery process. Family-shared transactions do not grant a second NineStar account access in this first version.
+Tokenless purchases are not auto-linked by email, receipt possession or first caller. A previously linked tokenless legacy transaction may be reconciled only when a separately reviewed recovery process has explicitly recorded approved legacy status against the same immutable owner; a missing token does not create that status. Otherwise a linked missing-token transaction fails with 403. Initial tokenless adoption requires reviewed support recovery and is outside the first implementation. Family-shared transactions do not grant a second NineStar account access in this first version.
 
 Production accepts only Production evidence. Integration accepts only Sandbox with isolated test users/database/configuration. A TestFlight sandbox purchase never grants production website membership. Do not fall back to Sandbox on arbitrary verification failure or mix environments. Xcode/local StoreKit test signatures are for isolated tests, never production entitlement proof.
 

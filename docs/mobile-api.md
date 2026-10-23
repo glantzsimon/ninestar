@@ -1,5 +1,7 @@
 # Mobile JSON API
 
+The proposed shared website/app Apple subscription contract is in [Shared website/app membership and Apple subscriptions](#shared-websiteapp-membership-and-apple-subscriptions-proposed-contract). It is a draft for agreement, not an implemented billing feature.
+
 ## Current implementation
 
 The mobile JSON transport implementation and controller-family coverage audit are complete on `feature/mobile-json-api` for the scope below. This is **source completion**, not a passing build, executed integration tests or release approval. The separate API covers calculator/readings, account/session, predictions/planners, calendar/report data, membership/payment, booking, blog/support, metadata/content and reviewed administration operations. Existing website routes and views continue to use their original entry points and are not switched to HTTP calls through the mobile API.
@@ -30,7 +32,7 @@ Account updates load the authenticated user's entities and set an allow-list of 
 
 Booking list/calendar responses expose availability without other customers' names or bookings. Selecting a slot verifies the owning user-consultation association, matching duration, future time and availability, then delegates scheduling under the existing shared EF context's serializable transaction. Administrative slot edits are separately guarded.
 
-## Payment contract
+## Existing Stripe payment contract
 
 Mobile checkout uses the existing Stripe, membership, consultation and donation owners. Prices and eligibility come from server-side membership/consultation data; a client never posts a trusted PurchaseModel or successful-payment assertion. A caller supplies a stable request GUID. Stripe creation uses an idempotency key bound to that GUID and user. Confirmation reloads the server-created intent and verifies succeeded status, quoted amount and currency before fulfilling it.
 
@@ -148,3 +150,148 @@ The list below records declared MVC-returning actions from the existing controll
 | `UserPromotionsController.cs` | Inherited CRUD; inspect base controller. |
 | `UserRolesController.cs` | `EditRolesForUser` |
 | `UsersController.cs` | `AssignMembershipStart`, `AssignMembership`, `AssignMembershipSuccess`, `AssignFreeConsultationStart`, `AssignFreeConsultation`, `AssignFreeConsultationSuccess`, `AssignPromoCodeStart`, `AssignPromoCode`, `AssignPromoCodeSuccess`, `ViewAccount` |
+
+## Shared website/app membership and Apple subscriptions: proposed contract
+
+**Status: draft for agreement, 23 October 2026. No Apple endpoints, persistence, migration, purchase verification or deployment are implemented by this proposal.** This section supersedes any app-only subscription proposal. App notes belong in the separate `ninestar-mobile/docs/` directory; this file is the shared backend contract.
+
+The owner reports that Expo login succeeds on iPhone and My Account/own-chart screens exist, with further device validation outstanding. Those observations do not validate Apple billing.
+
+### Product decision and existing architecture
+
+One existing NineStar account is used on website and app. An eligible website membership grants corresponding mobile access; a verified Apple subscription grants corresponding website and API access. Eligibility follows the existing active paid/unlimited membership rules, rather than a separate mobile paywall. Keep free own-chart/complementary rules, ownership, age gates, administration permissions and existing membership benefits.
+
+Inspection findings and extension points:
+- `DataAccess/Models/UserMembership.cs` owns membership dates, deactivation, complementary counters and paid/unlimited predicates. Legacy activity uses inclusive calendar dates; Apple expiry must use an exact UTC instant.
+- `MembershipOption` defines Free, WeeklyPlatinum, MonthlyPlatinum, AnnualPlatinum and LifeTimePlatinum. Existing paid periods are unlimited; duration is not a new benefit tier.
+- `MembershipService.GetActiveUserMembership(s)` selects the highest active option. Its fallback may create a free membership. The OAuth lookup is deliberately read-only. Website paywalls, mobile checks and calendar access already use these paths.
+- `MembershipService.CreateMembership` and `AssignMembershipToUser` call `TerminateExistingMemberships`. The purchase method uses `Current.UserId`, sets locally calculated dates and may send mail/create a lifetime consultation. **Do not call these methods for Apple verification, restore or renewal.**
+- `MobileCheckoutService` coordinates existing Stripe fulfilment, with private checkout records in UserPreference. This is not an Apple subscription ledger.
+- `Current.UserId` can represent impersonation. Apple account linking must use the actual authenticated WebSecurity account and reject impersonation, as existing sensitive account/payment operations do.
+- `MailingListService` contains direct date-based paid-member queries; `PromotionService`, `EmailQueueService` and generic membership administration also read membership records. Audit/update these narrow consumers for provider-managed UTC grants and protection, rather than assuming every check passes through one service.
+- Existing Hangfire infrastructure can run notification processing/reconciliation. Do not introduce a second scheduler or database owner.
+
+**Recommended initial mapping for agreement:** Apple monthly -> existing MonthlyPlatinum; Apple annual -> existing AnnualPlatinum, with the same benefits across both platforms. Exact App Store product IDs, bundle ID, numeric app Apple ID and subscription-group ID must be supplied/confirmed before implementation. Keep one subscription group, Family Sharing disabled and no Apple lifetime product for this first version. Existing website weekly, monthly, annual, lifetime, promotions and consultation benefits remain intact. Do not create/reset complementary credits or award lifetime consultations on monthly/annual renewals or restores.
+
+### Smallest reliable backend extension
+
+Retain the existing account/authentication system and `MembershipService`. Add one narrow Apple verification/synchronisation service behind an `IApplePurchaseVerifier` adapter, with a separate mobile subscription controller and a server-notification controller. The verifier must fit .NET Framework 4.7.2/C# 7.3/VS2017 and be independently tested before implementation is approved. Apple provides maintained server libraries for Node, Python, Java and Swift; do not assume an official legacy .NET package exists. Prefer a reviewed compatible JOSE/X.509 implementation; if compatibility cannot be established, bring back that concrete blocker before introducing a separate verification host. Do not hand-roll signature validation or assume decoding a JWT verifies it.
+
+Proposed additive storage, all under `webapp/DataAccess` and the existing `LocalDb`:
+1. `AppleAccountBinding`: existing UserId, server-generated random appAccountToken UUID, timestamps; unique UserId and unique token. Issue once and reuse across reinstall/restore; the token is an association identifier, not a credential.
+2. `AppleSubscription`: immutable owning UserId/binding, bundle/environment/originalTransactionId, mapped MembershipOptionId, provider status, latest transaction/product, auto-renew flag, paid/grace/revocation timestamps, last verification/reconciliation time and concurrency version. Unique (bundle ID, environment, originalTransactionId); exactly one linked provider-managed UserMembership grant per chain.
+3. `AppleTransaction`: unique (bundle ID, environment, transactionId), subscription association, signed product/group/token/ownership data, purchase/expiry/revocation information, verification timestamps and bounded evidence/hash. Transaction IDs are opaque strings throughout JSON and SQL, never JavaScript numbers. Retain refund/state revisions through the notification audit rather than discarding contrary evidence.
+4. `AppleNotification`: durable inbox/audit keyed uniquely by environment/app/notificationUUID, verified signed payload or protected evidence, processing state/attempts/timestamps/error category. Unknown-owner but valid events are retained for reconciliation without granting access.
+
+These records provide binding, subscription state, transaction idempotency and durable event recovery; a single current-membership row or user preference cannot safely replace them. No general billing platform or migration of historical Stripe records is needed.
+
+Add nullable `Provider`, `AccessStartsAtUtc` and `AccessEndsAtUtc` fields to UserMembership for the Apple-managed grant (legacy Provider null; Apple Provider `apple`). Maintain its existing StartsOn/EndsOn for legacy presentation only. For provider grants, `IsActive` must require a recognised provider, non-deactivation and `AccessStartsAtUtc <= UtcNow < AccessEndsAtUtc`; missing bounds fail closed. Keep all legacy/null-provider date and lifetime semantics unchanged. The approved shared predicate/query must be used consistently by direct membership consumers as well as service lookups.
+
+Apple synchronisation upserts only its chain's grant, using an explicit verified UserId, and updates provider evidence plus the grant atomically in the existing shared EF context. Membership lookup includes those grants, so existing website/API consumers receive the same access. Use fresh request-owned membership state; do not cache paid access in session, claims or profile/calculation caches. Provider selection changes must never transfer, reset or destroy counters on a separate legacy membership. Apple-grant complementary counters start at zero; preserve the existing free/legacy counters for fallback after expiry. Exclude provider-managed grants from free-credit maintenance and generic edits. Keep account-number identity compatibility for current plugin/OAuth consumers; do not rotate a grant's membership identity on renewal.
+
+Change `TerminateExistingMemberships` narrowly to exclude Apple-managed rows; normal website-versus-website purchase behaviour remains unchanged. Apple updates never terminate legacy memberships. Generic admin APIs/forms must not manufacture/edit provider-managed grants, evidence or binding fields; provider ledger rows are not general CRUD resources. Explicit account suspension/deletion still takes precedence over any paid grant. Persist enough non-reassignable ownership history under the existing retention policy to prevent automatic relinking after deletion; do not recreate an account or reactivate a deleted/suspended user from a webhook.
+
+### Entitlement and overlap rules
+
+Effective access is the union of currently eligible legacy and Apple grants. Select existing membership options according to established precedence; lifetime retains its benefits. A refund/expiry/revocation changes only the relevant Apple grant and cannot remove an independent website grant. Do not add purchased durations together, convert billing periods, credit/prorate website purchases or cancel one provider on behalf of the other.
+
+Recommended duplicate-billing policy: block initiating a new Apple purchase when an eligible website grant or an already-entitled Apple subscription exists. Return a machine-readable reason so the app offers existing access or subscription management. Add the equivalent check at website membership checkout initiation for an active Apple grant; website-only purchase behaviour remains unchanged. This avoids known duplicate starts but cannot guarantee that independent provider renewals or purchases already in flight never overlap. An already-paid, verified purchase must still be reconciled and linked to its rightful account even if another valid grant appeared meanwhile; never reject restore/fulfilment merely because access already exists. Preserve both provider records and show the billing sources. Changing plans/cancelling Apple billing remains an Apple operation.
+
+### Proposed mobile endpoints
+
+All relative paths below are beneath `/api/mobile/v1`. They retain the existing JSON envelope, no-store headers and cookie authentication. POSTs require the existing CSRF pair and HTTPS. New subscription endpoints reject impersonation and derive UserId from the actual authenticated account; no posted UserId, membership ID, email or account number can select an owner.
+
+| Method and path | Request | Proposed successful data |
+| --- | --- | --- |
+| GET `membership/entitlements` | None | The entitlement snapshot defined below, freshly read from persisted verified state. No Apple network call or new grant on this GET. |
+| POST `subscriptions/apple/context` | `{}` | `{ appAccountToken, purchaseAllowed, purchaseBlockedReason, products, entitlements }`. Idempotently get/create this account's binding. `products` contains only enabled server-allowlisted `{ productId, subscriptionType }` mappings. Token is returned even when purchase is blocked, to support same-account restore. |
+| POST `subscriptions/apple/verify` | `{ "transactionId": "opaque-storekit-id" }` | `{ processed: true, state, entitlements }` only after server verification and durable transaction/grant commit. Repeated same-owner submissions succeed without duplicate benefits. A valid inactive purchase can be recorded with `state: "expired"` or `"revoked"` and no Apple access. |
+| POST `subscriptions/apple/refresh` | `{}` | `{ processed: true, entitlements }` after server reconciliation of this account's already-linked chains. No arbitrary transaction/account selector. Rate-limit/coalesce calls. |
+
+`purchaseBlockedReason` is null when allowed, otherwise `website_membership_active` or `apple_subscription_active` for a current active/grace grant; current-chain billing retry uses `apple_subscription_requires_management` until provider reconciliation establishes the appropriate recovery route. No second subscription should be offered blindly. `products` is a product mapping, not a price quote: display actual StoreKit-localised pricing/periods and disclosures.
+
+Example entitlement snapshot (illustrative timestamps and enum values, not a live response):
+
+```json
+{
+  "paid": true,
+  "unlimited": true,
+  "websiteAccess": true,
+  "mobileAccess": true,
+  "sources": [
+    {
+      "provider": "apple",
+      "subscriptionType": "MonthlyPlatinum",
+      "state": "active",
+      "endsOn": null,
+      "expiresAtUtc": "2026-11-23T18:00:00Z",
+      "autoRenewEnabled": true
+    }
+  ]
+}
+```
+
+`paid` and `unlimited` represent membership benefits, not an admin-role bypass. `websiteAccess` and `mobileAccess` mean membership-derived paid access; free features still work when false. `sources` includes the current legacy grant (if any) plus owned Apple chains, including inactive chains needed for management; it never exposes provider evidence, other accounts, tokens, secrets or transaction history. Provider `website` represents existing website/admin/promotion grants; its `endsOn` is the legacy inclusive date (`yyyy-MM-dd`, null for lifetime) and `expiresAtUtc` is null. Apple uses the exclusive UTC access boundary, including verified grace when applicable, and null `endsOn`. A null legacy auto-renew flag may be returned when actual provider renewal state is unknown; legacy IsAutoRenew alone is not proof of a Stripe recurring subscription.
+
+Add the **same** snapshot as an additive `entitlements` property on `GET account/me`; preserve its existing `membership` fields and meanings for compatibility. Do not replace or rename current fields. The dedicated GET and account snapshot use one shared projection. Existing paid routes continue server-side membership enforcement; the app must not calculate access from its own receipt or dates. Fetch account/entitlements after purchase, restore and foreground, and handle fresh membership-required responses.
+
+Restore is a client StoreKit operation followed by server verification: enumerate restorable/current transactions for the configured products, call `verify` per transaction, then `refresh` and read account/entitlements. No separate receipt-trusting restore endpoint is needed. If no device transaction exists, `refresh` can still recover this account's known chains. Finish a StoreKit transaction only after the server returns committed processing success; retain/retry on transport/provider failures. StoreKit pending/Ask-to-Buy/cancelled/unverified client states never grant access. An expired/refunded processed transaction can finish without unlocking.
+
+Proposed error contract uses the existing failure envelope:
+- 400: `invalid_apple_request`, `invalid_apple_transaction`, `apple_product_not_supported`, `apple_environment_not_allowed`.
+- 401: `authentication_required`; existing 400 `invalid_csrf_token` remains unchanged.
+- 403: `impersonation_not_allowed`, `apple_account_mismatch` (wrong/missing token, unsupported ownership or another account's chain, without revealing its owner).
+- 409: `apple_account_link_required` for a genuinely unbound/tokenless legacy purchase needing reviewed support recovery. Never silently claim it or overwrite its token.
+- 429: `apple_rate_limited`.
+- 503: `apple_verification_unavailable` for provider/network/verifier/reconciliation failure. No new/unverified access on failure; retry with the same transaction ID. Do not return a durable-success assertion before commit.
+
+The existing request-size limits apply. Bound and validate transaction ID strings (maximum 128 characters); no client JWS, expiry, price, plan or success flag is required/trusted.
+
+### Server verification and ownership
+
+For verify/restore, retrieve transaction information from Apple using the supplied ID, validate its signed transaction, then obtain current subscription status for the verified originalTransactionId. Verify signed renewal/transaction data, configured bundle ID and production app Apple ID, enabled environment, product allowlist/group, supported auto-renewable type, ownership and current expiry/grace/revocation state. Select the intended chain, not unrelated subscriptions included in Apple's response. A historical transaction's expiry alone cannot establish current access.
+
+Validate JWS signatures, certificate chain to configured Apple trust roots and certificate policy/validity/revocation as required; never trust an embedded x5c root, an arbitrary client signing key, unverified decoded claims, or an unexpected algorithm. Keep provider API credentials/private signing keys on the server. Use fixed Apple API hosts, bounded timeouts and controlled retries; client input cannot select a URL. The concrete .NET-compatible verifier and its signed-data test fixtures are a pre-implementation technical gate.
+
+Require the cryptographically verified appAccountToken to match this signed-in account's server-issued binding on initial link. Enforce immutable chain ownership with database uniqueness/transactions, not only application checks. On subsequent verification, renewals and restore, both chain ownership and token must remain consistent; fail closed/quarantine anomalies. Do not call Apple's Set App Account Token API to make a mismatched transaction fit. A UUID known by a caller is not independent proof of identity.
+
+Tokenless purchases are not auto-linked by email, receipt possession or first caller. Previously linked tokenless transactions may be reconciled only through the existing trusted immutable owner association; initial adoption requires a separately reviewed recovery process. Family-shared transactions do not grant a second NineStar account access in this first version.
+
+Production accepts only Production evidence. Integration accepts only Sandbox with isolated test users/database/configuration. A TestFlight sandbox purchase never grants production website membership. Do not fall back to Sandbox on arbitrary verification failure or mix environments. Xcode/local StoreKit test signatures are for isolated tests, never production entitlement proof.
+
+### Notifications, renewal and recovery
+
+Proposed server callback: POST `/payments/apple/notifications/v2` with `{ signedPayload }`, outside the mobile cookie/CSRF base. It is a server-to-server endpoint authenticated by verified Apple JWS, not a user session or shared public API key. Do not weaken CSRF on other routes. Verify the outer payload, nested signed payloads and configured app/environment before durable acceptance. The callback returns HTTP 200 after verified inbox commit (including an already-stored duplicate); invalid evidence returns 400, transient verification/storage failures return 503. Its provider acknowledgement is separate from the mobile JSON envelope.
+
+Process the inbox with the existing job infrastructure. Atomically update transaction evidence, chain state, its membership grant and processing marker; use unique indexes, concurrency tokens and database coordination across workers. Repeated events and restore/verify races must not duplicate membership grants, free readings, mail or consultations. Provider calls should not hold long SQL locks. Use per-chain coordination/version checks and re-fetch on conflicts so an older concurrent response cannot overwrite a newer committed state.
+
+Use verified current Apple status/transaction information to reconcile delayed/out-of-order events; never simply add a month/year, choose the largest historic expiry or treat receipt replay as a new purchase. A refund for an old period must not cancel an independently valid current renewal; a refund reversal can restore only the currently verified valid grant. Notification types are triggers for reconciliation, not unverified instructions to toggle an account.
+
+| Verified state/event | Access result |
+| --- | --- |
+| Initial purchase / renewal / recovery | Upsert the chain grant to Apple's exact verified interval; renewals do not reset benefits/counters. |
+| Auto-renew disabled / cancellation | Keep the already-paid interval until expiry; disabling future renewal is not immediate revocation. |
+| Billing grace | Continue only through Apple's verified grace boundary when enabled and actually granted by Apple. |
+| Billing retry without valid paid/grace interval | No Apple paid access; keep the chain for recovery and subscription management. |
+| Expiry | Apple grant ends at the exclusive UTC boundary without depending on a job running. Other valid grants remain. |
+| Refund / revocation | Reconcile and remove only access invalidated by Apple; retain audit, other valid periods and website grants. |
+| Refund reversed | Reconcile current evidence; re-enable only if Apple now verifies a valid interval. |
+| Unknown owner | Retain verified inbox evidence, do not create a user/grant, reconcile after a valid account link. |
+
+Proposed operational target: process notifications within one minute under normal operation and reconcile active/grace/retry/recently expired chains every 15 minutes using Hangfire, with backoff/alerts and notification-history recovery for outages. These are design targets, not guarantees already achieved. Expiry is checked on every access; an unseen refund cannot be enforced before evidence arrives. On Apple outage retain only previously verified access through its known bound, never extend grace speculatively. Establish and measure stale-verification monitoring before release.
+
+### Agreement, implementation and deployment gates
+
+Agree this contract and the initial product mapping/overlap/grace/Family Sharing policies before the app adds purchasing. Subscription product setup and operational identifiers are still outstanding; no invented App Store IDs belong in code. This draft does not authorise live purchases or change product configuration.
+
+After agreement: implement the verifier compatibility spike, additive DataAccess entities/model changes and owning service/controller updates; generate the **complete** EF6 migration/designer/resx from the real `LocalDb` using `DatabaseInitialiserLocal`. Do not create another DbContext, schema owner or migration stream. No migration is generated or executed at this proposal stage. Startup calls DbMigrator.Update: a deployment can apply schema changes, so a future migration must not be deployed implicitly with unrelated work. Review the migration/script and Integration backup/rollback plan and obtain the owner's deployment/schema instruction before applying it.
+
+Required tests before release: existing website/free/weekly/monthly/annual/lifetime/promotion/consultation regression; shared app/web paid checks; exact UTC/grace boundaries; duplicate and simultaneous verify/restore/webhook; wrong account/token/product/bundle/environment/signature; original-chain ownership/deleted-account protection; cancellation/renewal/expiry/retry/refund/reversal; old-event/new-renewal ordering; provider outage/retry; concurrent website purchase preservation; admin provider-field protection; transaction/job recovery; sandbox notifications/real-device restore and both account screens. Verify no paid output is served from a stale cache after revocation. Do not claim production readiness from source checks alone.
+
+Primary references checked for the proposal:
+- [Apple appAccountToken](https://developer.apple.com/documentation/appstoreserverapi/appaccounttoken)
+- [App Store Server API](https://developer.apple.com/documentation/appstoreserverapi)
+- [Get All Subscription Statuses](https://developer.apple.com/documentation/appstoreserverapi/get-all-subscription-statuses)
+- [Receiving Server Notifications V2](https://developer.apple.com/documentation/appstoreservernotifications/receiving-app-store-server-notifications)
+- [Notification types](https://developer.apple.com/documentation/appstoreservernotifications/notificationtype)
+- [Apple server library and signed-data verification examples](https://github.com/apple/app-store-server-library-node)

@@ -8,7 +8,11 @@ Source checks cover C# syntax, project XML/compile registrations, route inventor
 
 ## Windows build and tests
 
-In the owner's normal decrypted checkout, select `loadbranch mobile-json-api` in Git Bash, then verify `git branch --show-current`. Use the Visual Studio developer environment with the .NET Framework 4.7.2 targeting pack and normal package access.
+For the website-membership entitlement phase, first build/run the updated Windows solution and existing tests, including `MobileEntitlementsControllerTests`, `MobileEntitlementsMapperTests` and the new read-only lookup tests in `MembershipModelserviceTests`. Full solution/xUnit execution has not been performed in the cloud environment. The previously passing standalone verifier probe is separate evidence and does not validate these endpoint changes.
+
+After an explicitly requested Integration deployment, use the app's authenticated cookie session to compare `GET /api/mobile/v1/membership/entitlements` with `GET /api/mobile/v1/account/me` -> `data.entitlements` (asOfUtc naturally differs between requests). Exercise existing free, paid and lifetime accounts; confirm paid expiry/deactivation causes fresh flags/chart access to match current server rules, and that switching account/logout cannot retain paid UI state. Check anonymous 401, missing-account 404, JSON/no-store behaviour and empty sources without grant creation. Existing profile fields and complementary counters must be preserved. No new schema migration is required. Keep unsaved My Account edits separate from refreshed app entitlements.
+
+In the owner's normal decrypted checkout, select `loadbranch mobile-json-api` in Git Bash, then verify `git rev-parse --abbrev-ref HEAD` (the owner's older Git does not support `branch --show-current`). Use the Visual Studio developer environment with the .NET Framework 4.7.2 targeting pack and normal package access.
 
 From the repository root:
 

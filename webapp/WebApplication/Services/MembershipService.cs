@@ -124,6 +124,11 @@ namespace K9.WebApplication.Services
         /// </summary>
         public UserMembership GetExistingActiveMembershipForOAuth(int authenticatedUserId)
         {
+            return GetExistingActiveMembership(authenticatedUserId);
+        }
+
+        public UserMembership GetExistingActiveMembership(int authenticatedUserId)
+        {
             if (authenticatedUserId <= 0)
             {
                 return null;

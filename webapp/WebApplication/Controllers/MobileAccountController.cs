@@ -68,7 +68,7 @@ namespace K9.WebApplication.Controllers
             var user = Package.UserService.Find(id);
             if (user == null) return ApiError(404, "account_not_found");
             var info = Package.UserInfosRepository.Find(e => e.UserId == id).FirstOrDefault();
-            var membership = Package.MembershipService.GetActiveUserMembership(id);
+            var membership = Package.MembershipService.GetExistingActiveMembership(id);
             return ApiSuccess(new
             {
                 user.FirstName, user.LastName, user.FullName, user.EmailAddress, user.PhoneNumber,
@@ -77,6 +77,7 @@ namespace K9.WebApplication.Controllers
                 AvatarImageUrl = info?.AvatarImageUrl,
                 BirthDetails = info == null ? null : new { info.TimeOfBirth, info.BirthTimeZoneId },
                 Calculation = ReadOwnCalculationRequest(id),
+                Entitlements = MobileEntitlementsMapper.Map(id, membership, GetUtcNow()),
                 Membership = membership == null ? null : new
                 {
                     membership.StartsOn, membership.EndsOn, membership.IsActive,

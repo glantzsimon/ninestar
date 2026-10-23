@@ -86,6 +86,7 @@ Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobil
 | `POST` | `/api/mobile/v1/media/article-image` | `MobileMediaController.cs:ArticleImage` |
 | `POST` | `/api/mobile/v1/media/article-image/delete` | `MobileMediaController.cs:DeleteArticleImage` |
 | `GET` | `/api/mobile/v1/membership/options` | `MobileMembershipController.cs:Options` |
+| `GET` | `/api/mobile/v1/membership/entitlements` | `MobileMembershipController.cs:Entitlements` |
 | `GET` | `/api/mobile/v1/membership/quote` | `MobileMembershipController.cs:Quote` |
 | `GET` | `/api/mobile/v1/membership/switch-quote` | `MobileMembershipController.cs:SwitchQuote` |
 | `POST` | `/api/mobile/v1/membership/redeem-promotion` | `MobileMembershipController.cs:RedeemPromotion` |

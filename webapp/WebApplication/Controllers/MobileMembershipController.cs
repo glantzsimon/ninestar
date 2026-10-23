@@ -1,5 +1,6 @@
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
+using K9.WebApplication.Helpers;
 using System;
 using System.Linq;
 using System.Web.Mvc;
@@ -11,6 +12,16 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IPromotionService _promotions;
         public MobileMembershipController(INineStarKiPackage package, IPromotionService promotions) : base(package) { _promotions = promotions; }
+
+        [HttpGet, Route("entitlements")]
+        public ActionResult Entitlements()
+        {
+            var error = RequireUser(out var id);
+            if (error != null) return error;
+            if (Package.UserService.Find(id) == null) return ApiError(404, "account_not_found");
+            var membership = Package.MembershipService.GetExistingActiveMembership(id);
+            return ApiSuccess(MobileEntitlementsMapper.Map(id, membership, GetUtcNow()));
+        }
 
         [HttpGet, Route("options")]
         public ActionResult Options()

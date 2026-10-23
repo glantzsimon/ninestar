@@ -40,7 +40,9 @@ Server-side **verification** is mandatory for the proposed security boundary; an
 
 ## Next concrete checks
 
-- Run the standalone probe on the owner's Windows .NET Framework runtime; no schema or deployment is involved.
+The owner subsequently reported a successful Windows run: VS2017 MSBuild 15.9.30.58560, .NET Framework 4.7.2/C# 7.3 target, installed Framework runtime 4.8.03752, build exit 0 with zero warnings/errors, executable exit 0 and 15/15 checks passing. This clears the primitive Windows runtime check; full Apple trust-policy, IIS and Sandbox checks remain outstanding.
+
+- Primitive Windows runtime check: passed as reported above; no schema or deployment was involved.
 - Verify full Apple policy and signing-key import with reviewed synthetic/official test fixtures, then real Sandbox transactions/notifications and current-status API responses once bundle/product/account credentials are configured.
 - Exercise certificate rotation, online revocation/network failures, request deadlines and negative account/environment cases; confirm unchanged site build, editor behaviour and authentication.
 - Select the verifier adapter implementation before calling the contract's verifier gate passed. Entitlement projection for existing website memberships can proceed independently after contract agreement.

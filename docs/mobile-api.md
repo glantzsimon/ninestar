@@ -4,6 +4,16 @@ The proposed shared website/app Apple subscription contract is in [Shared websit
 
 ## Current implementation
 
+### Shared entitlements: website-membership phase
+
+Following the app review of contract revision 2, the first phase is implemented in source: authenticated read-only `GET /api/mobile/v1/membership/entitlements` and the identical additive `account/me.entitlements` projection. The snapshot contains only existing website membership grants and uses the revision 2 response shape (all Apple-only fields null). Existing account fields remain present. Both reads use `MembershipService.GetExistingActiveMembership`, without creating a free grant when no eligible record exists; in that case sources is empty, access flags are false and account/me.membership is null. A missing account returns 404; an anonymous/unresolved session returns 401. Admin role alone does not grant subscription benefits.
+
+The shared mapper uses existing UserMembership paid/unlimited/activity rules, retaining inclusive local legacy end dates, lifetime and deactivation behaviour. It does not cache entitlements, query Apple, change schema, consume/reset complementary credits or alter existing chart access checks. The OAuth read-only entry point delegates the same lookup without changing its identity contract. No views, plugin API or website purchase flows are rerouted.
+
+Tests were added for free/weekly/monthly/annual/lifetime projection, missing/expired/future/deactivated grants, ownership/allowlists, legacy dates, snapshot parity, identity/logout/revocation changes and no free-grant creation. Source syntax, project registrations, route inventory and whitespace are checked here; full Windows solution build, xUnit and IIS/device validation remain outstanding for this change. No Integration deployment is part of implementation. App consumption must update account-scoped entitlement state without overwriting unsaved profile edits, retain the 15-second timeout and tolerate the property being absent until the backend is deployed.
+
+Apple contract sections below remain proposed and unimplemented. No Apple bindings, provider grants, product setup, verification or purchasing is introduced by this first phase.
+
 The mobile JSON transport implementation and controller-family coverage audit are complete on `feature/mobile-json-api` for the scope below. This is **source completion**, not a passing build, executed integration tests or release approval. The separate API covers calculator/readings, account/session, predictions/planners, calendar/report data, membership/payment, booking, blog/support, metadata/content and reviewed administration operations. Existing website routes and views continue to use their original entry points and are not switched to HTTP calls through the mobile API.
 
 See [mobile-api-routes.md](mobile-api-routes.md) for declared routes. Every transport projection is an explicit object or DTO. Do not serialize the EF entity, calculated view-model graph, payment provider object or service result wholesale. The existing plugin ApiController is unchanged.

@@ -10,10 +10,12 @@ using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels.MobileApi;
 using Moq;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
@@ -142,10 +144,69 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             var sections = Assert.IsType<JObject>(json["Sections"]);
             Assert.Equal(new[] { "Core", "Character", "IntellectualQualities" },
                 System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Select(sections.Properties(), p => p.Name)));
-            Assert.Null(json["Energies"]);
+            var energies = Assert.IsType<JObject>(json["Energies"]);
+            Assert.Equal(new[] { "character", "core", "dayStar", "epoch", "generation", "hour", "socialExpression" },
+                energies.Properties().Select(e => e.Name).OrderBy(e => e).ToArray());
+            var metadataFields = new[] { "Colour", "Direction", "FamilyMember", "InternalRepresentation",
+                "MostChallengingCombinations", "MostHarmoniousCombinations", "Number", "Physiognomy", "PrimaryAttributes", "Season" };
+            foreach (var entry in energies.Properties())
+            {
+                var metadata = Assert.IsType<JObject>(entry.Value);
+                // Exact allowlist: no paid descriptions can enter the free DTO.
+                Assert.Equal(metadataFields, metadata.Properties().Select(e => e.Name).OrderBy(e => e).ToArray());
+            }
+            Assert.Equal((int)json["Core"], (int)energies["core"]["Number"]);
+            Assert.Equal((int)json["Character"], (int)energies["character"]["Number"]);
+            Assert.Equal((int)json["SocialExpression"], (int)energies["socialExpression"]["Number"]);
+            Assert.Equal(profile.MainEnergy.SeasonDescription, (string)energies["core"]["Season"]);
+            Assert.Equal(profile.MainEnergy.MetaData.GetInternalRepresentation(), (string)energies["core"]["InternalRepresentation"]);
             Assert.Null(json["StrongYinOrgan"]);
             Assert.Equal(profile.MainEnergy.EnergyDescription, (string)sections["Core"]["Body"]);
             Assert.Equal(profile.CharacterEnergy.EnergyDescription, (string)sections["Character"]["Body"]);
+        }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        [InlineData(5)]
+        [InlineData(6)]
+        [InlineData(7)]
+        [InlineData(8)]
+        [InlineData(9)]
+        public void FreeAndFullEnergyMetadataMatchEveryWebsiteHeaderRow(int number)
+        {
+            var energy = new NineStarKiEnergy((ENineStarKiEnergy)number);
+            var metadata = energy.MetaData;
+            var overview = MobilePersonalChartMapper.EnergyOverview(energy);
+            var full = MobilePersonalChartMapper.Energy(energy);
+            foreach (var value in new MobileChartEnergyOverview[] { overview, full })
+            {
+                Assert.Equal(number, value.Number);
+                Assert.Equal(metadata.GetColour(), value.Colour);
+                Assert.Equal(metadata.GetDirection(), value.Direction);
+                Assert.Equal(metadata.GetFamilyMember(), value.FamilyMember);
+                Assert.Equal(energy.SeasonDescription, value.Season);
+                Assert.Equal(metadata.GetInternalRepresentation(), value.InternalRepresentation);
+                Assert.Equal(metadata.GetPhysiognomy(), value.Physiognomy);
+                Assert.Equal(metadata.GetPrimaryAttributes(), value.PrimaryAttributes);
+                Assert.Equal(metadata.GetMostHarmoniousCombinationsString(), value.MostHarmoniousCombinations);
+                Assert.Equal(metadata.GetMostChallengingCombinationsString(), value.MostChallengingCombinations);
+            }
+            Assert.Equal(energy.EnergyDescription, full.Description);
+            Assert.Equal(energy.ElementDescription, full.ElementDescription);
+            Assert.Equal(energy.ModalityDescription, full.ModalityDescription);
+            Assert.Equal(energy.TrigramDescription, full.TrigramDescription);
+            Assert.Null(JObject.FromObject(overview)["Description"]);
+            Assert.Null(JObject.FromObject(overview)["ElementDescription"]);
+        }
+
+        [Fact]
+        public void MissingEnergyHasNoOverviewOrFullProjection()
+        {
+            Assert.Null(MobilePersonalChartMapper.EnergyOverview(null));
+            Assert.Null(MobilePersonalChartMapper.Energy(null));
         }
 
         private sealed class TestController : MobilePersonalChartController

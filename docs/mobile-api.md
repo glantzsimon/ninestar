@@ -131,9 +131,33 @@ This requires Windows/SQL Server/Stripe integration tests for transaction sharin
 | Blog/Support | Public articles/tags, comments/likes/moderation, contact/newsletter submission and donation totals implemented. Article editing, publishing and deletion delegate existing owners. Per-user messages mirror the existing owned CRUD without adding delivery semantics. |
 | Generic administration and operations | Twenty explicit entity contracts provide admin-only schema/read/page operations and selected repository-backed writes. Users and processed email queue are read-only here; user lifecycle and sending use their owner services. Custom user lifecycle and assignments, impersonation, article publishing, template test/single/list sending, logs, free-reading maintenance and MailChimp sync are implemented. Six explicit association pairs support atomic replacement with target validation. Chosen-list recipient data, deduplicated donor import and bounded resource HTML/text export are implemented. SQL authoring/execution is intentionally excluded; stored association selection uses explicit IDs. No arbitrary type/table or internal-preference endpoint exists. |
 
+## Chart overview table metadata
+
+Full energy DTOs now include the six missing website header-table values. The free own-chart projection additionally returns `data.energies`, keyed by the same roles as the full chart: `epoch`, `generation`, `core`, `character`, `socialExpression`, `dayStar` and `hour`. Each free entry is an explicit `MobileChartEnergyOverview`, containing only `number` and the nine table values below. Existing numeric properties at `data.core`, `data.character`, etc., `summary`, `overview` (a string) and the three already granted `sections` remain unchanged. There is no new endpoint or entitlement requirement.
+
+| JSON field on each energy | Type | Existing website value |
+| --- | --- | --- |
+| `colour` | string | `MetaData.GetColour()` |
+| `direction` | string | `MetaData.GetDirection()` |
+| `familyMember` | string | `MetaData.GetFamilyMember()` |
+| `season` | string | `SeasonDescription`, exactly as in `_ProfileHeaderInfo.cshtml` |
+| `internalRepresentation` | string | `MetaData.GetInternalRepresentation()` |
+| `physiognomy` | string | `MetaData.GetPhysiognomy()` |
+| `primaryAttributes` | string | `MetaData.GetPrimaryAttributes()` |
+| `mostHarmoniousCombinations` | string | `MetaData.GetMostHarmoniousCombinationsString()` |
+| `mostChallengingCombinations` | string | `MetaData.GetMostChallengingCombinationsString()` |
+
+These are resource-backed display strings, not new paid interpretations. Combination fields preserve the website's comma-separated number-and-element labels; do not interpret them as JSON arrays or recalculate compatibility in the app. `number` is an integer. The full `MobileChartEnergy` inherits this allowlisted metadata and retains every existing paid field/artwork reference; JSON stays flat, for example `data.energies.core.season`. Other existing full-energy projections (cycles, planners, knowledge base) inherit the additive fields too.
+
+Free entries have exactly ten properties. They do **not** include `description`, `elementDescription`, `modalityDescription`, `trigramDescription`, `yinYangExpansionDescription`, or additional paid sections. Use these entries to connect the overview table; they are not a substitute for the full paid energy DTO. A missing energy produces a null entry. Older deployed backends can lack `energies` or the new properties; omit unavailable rows gracefully until the new revision is deployed.
+
+The own free endpoint `GET /api/mobile/v1/personal-chart/me/free` and already authorised complementary profile responses share this projection. Public anonymous `personal-chart/preview` and the `Numbers` projection remain unchanged. Existing authentication, ownership, membership, complementary-credit checks and no-store policies are unchanged. No website views/helpers, resources, billing or schema are changed.
+
+Validation handoff: build with VS2017 and run `MobilePersonalChartControllerTests`, including the nine-energy website-row parity cases and the exact free-DTO allowlist, plus the existing mobile access and artwork tests. After an owner-authorised Integration deployment, compare full and free `energies.core` metadata for the same account/settings and the website header, verify all seven roles, the existing three free sections and absence of paid descriptions. The mobile app continues to use Integration directly and retains its 15-second timeout. Source syntax/registration/whitespace checks are performed here; Windows build/tests and live Integration verification remain outstanding for this revision. No deployment or migration execution is part of this source change.
+
 ## Additional transport contracts
 
-`GET personal-chart/me/free` returns numbers and the core, character and intellectual sections granted by the website for one's own chart. It never calls the full mapper or returns energy descriptions for paid sections. Full `/me` remains paid. The five calculator `/last` endpoints save only validated request inputs under a user-bound session key and recalculate after fresh entitlement checks. Saved settings include birth time/timezone and calculation flags; switching identity cannot retrieve another user's saved request. Logging out clears this session state. Anonymous previews are not saved.
+`GET personal-chart/me/free` returns numbers, the allowlisted overview table metadata described above, and the core, character and intellectual sections granted by the website for one's own chart. It never calls the full mapper or returns energy descriptions for paid sections. Full `/me` remains paid. The five calculator `/last` endpoints save only validated request inputs under a user-bound session key and recalculate after fresh entitlement checks. Saved settings include birth time/timezone and calculation flags; switching identity cannot retrieve another user's saved request. Logging out clears this session state. Anonymous previews are not saved.
 
 `content/{page}` returns resource-backed title and authored content for privacy, terms, FAQ, data removal, calculation methods, southern hemisphere and AI information. Resource-authored HTML is content, not a rendered view. `metadata/options` supplies protocol values with resource-backed enum labels; `metadata/timezones` mirrors the existing extended selector. Administrative schemas include resource-backed field labels and enum choices. No complete multilingual guarantee is implied.
 

@@ -19,6 +19,16 @@ namespace K9.WebApplication.Helpers
             Epoch = model.PersonalChartEnergies.Epoch.EnergyNumber,
             DayStar = model.PersonalChartEnergies.Day.EnergyNumber,
             Hour = model.PersonalChartEnergies.Hour.EnergyNumber,
+            Energies = new Dictionary<string, MobileChartEnergyOverview>
+            {
+                { "epoch", EnergyOverview(model.PersonalChartEnergies.Epoch) },
+                { "generation", EnergyOverview(model.PersonalChartEnergies.Generation) },
+                { "core", EnergyOverview(model.MainEnergy) },
+                { "character", EnergyOverview(model.CharacterEnergy) },
+                { "socialExpression", EnergyOverview(model.SurfaceEnergy) },
+                { "dayStar", EnergyOverview(model.PersonalChartEnergies.Day) },
+                { "hour", EnergyOverview(model.PersonalChartEnergies.Hour) }
+            },
             Sections = new
             {
                 Core = Text(model.MainEnergy.EnergyDescription, model.MainEnergy.MainEnergySummary),
@@ -128,36 +138,55 @@ namespace K9.WebApplication.Helpers
         private static string OrganArtworkId(string organ) =>
             MobileArtworkRegistry.IdForPath("ninestar/organs/" + organ?.ToLowerInvariant() + ".png");
 
+        public static MobileChartEnergyOverview EnergyOverview(NineStarKiEnergy energy) =>
+            MapEnergyOverview<MobileChartEnergyOverview>(energy);
+
+        private static T MapEnergyOverview<T>(NineStarKiEnergy energy) where T : MobileChartEnergyOverview, new()
+        {
+            if (energy == null) return null;
+            var metadata = energy.MetaData;
+            // Match every formatter in Views/PersonalChart/_ProfileHeaderInfo.
+            // Season is its SeasonDescription value, not a cycle interpretation.
+            return new T
+            {
+                Number = energy.EnergyNumber,
+                Colour = metadata.GetColour(),
+                Direction = metadata.GetDirection(),
+                FamilyMember = metadata.GetFamilyMember(),
+                Season = energy.SeasonDescription,
+                InternalRepresentation = metadata.GetInternalRepresentation(),
+                Physiognomy = metadata.GetPhysiognomy(),
+                PrimaryAttributes = metadata.GetPrimaryAttributes(),
+                MostHarmoniousCombinations = metadata.GetMostHarmoniousCombinationsString(),
+                MostChallengingCombinations = metadata.GetMostChallengingCombinationsString()
+            };
+        }
+
         public static MobileChartEnergy Energy(NineStarKiEnergy energy)
         {
             if (energy == null)
                 return null;
 
-            return new MobileChartEnergy
-            {
-                Number = energy.EnergyNumber,
-                Name = energy.EnergyName,
-                Title = energy.EnergyTitle,
-                Element = energy.ElementName,
-                ElementDescription = energy.ElementDescription,
-                Modality = energy.ModalityName,
-                ModalityDescription = energy.ModalityDescription,
-                YinYang = energy.YinYangName,
-                YinYangExpansionDescription = energy.YinYangExpansionDescription,
-                Description = energy.EnergyDescription,
-                Trigram = energy.Trigram,
-                TrigramDescription = energy.TrigramDescription,
-                Direction = energy.DirectionName,
-                FamilyMember = energy.FamilyMember,
-                Colour = energy.Colour,
-                ArtworkId = MobileArtworkRegistry.IdForPath("ninestar/energies/" + energy.EnergyLowerCase + ".png"),
-                ElementArtworkId = MobileArtworkRegistry.IdForPath("ninestar/elements/" + energy.Element.ToString().ToLowerInvariant() + ".png"),
-                TrigramArtworkId = MobileArtworkRegistry.IdForPath("ninestar/trigrams/trigram-" + energy.EnergyLowerCase + "-square.png"),
-                ModalityArtworkId = MobileArtworkRegistry.IdForPath("ninestar/modalities/" + energy.Modality.ToString().ToLowerInvariant() + ".png"),
-                SeasonArtworkId = MobileArtworkRegistry.IdForPath("ninestar/seasons/" + energy.MetaData.Cycle.ToString().ToLowerInvariant() + ".png"),
-                YinYangArtworkId = MobileArtworkRegistry.IdForPath("ninestar/yinyang/" + energy.YinYang.ToString().ToLowerInvariant() + ".png"),
-                ImageUrl = MediaService.BaseImagesPath + "/ninestar/energies/" + energy.EnergyLowerCase + ".png"
-            };
+            var result = MapEnergyOverview<MobileChartEnergy>(energy);
+            result.Name = energy.EnergyName;
+            result.Title = energy.EnergyTitle;
+            result.Element = energy.ElementName;
+            result.ElementDescription = energy.ElementDescription;
+            result.Modality = energy.ModalityName;
+            result.ModalityDescription = energy.ModalityDescription;
+            result.YinYang = energy.YinYangName;
+            result.YinYangExpansionDescription = energy.YinYangExpansionDescription;
+            result.Description = energy.EnergyDescription;
+            result.Trigram = energy.Trigram;
+            result.TrigramDescription = energy.TrigramDescription;
+            result.ArtworkId = MobileArtworkRegistry.IdForPath("ninestar/energies/" + energy.EnergyLowerCase + ".png");
+            result.ElementArtworkId = MobileArtworkRegistry.IdForPath("ninestar/elements/" + energy.Element.ToString().ToLowerInvariant() + ".png");
+            result.TrigramArtworkId = MobileArtworkRegistry.IdForPath("ninestar/trigrams/trigram-" + energy.EnergyLowerCase + "-square.png");
+            result.ModalityArtworkId = MobileArtworkRegistry.IdForPath("ninestar/modalities/" + energy.Modality.ToString().ToLowerInvariant() + ".png");
+            result.SeasonArtworkId = MobileArtworkRegistry.IdForPath("ninestar/seasons/" + energy.MetaData.Cycle.ToString().ToLowerInvariant() + ".png");
+            result.YinYangArtworkId = MobileArtworkRegistry.IdForPath("ninestar/yinyang/" + energy.YinYang.ToString().ToLowerInvariant() + ".png");
+            result.ImageUrl = MediaService.BaseImagesPath + "/ninestar/energies/" + energy.EnergyLowerCase + ".png";
+            return result;
         }
     }
 }

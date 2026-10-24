@@ -46,9 +46,23 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public bool InvertDailyAndHourlyCycleKiForSouthernHemisphere { get; set; }
     }
 
-    public class MobileChartEnergy
+    // Free header-table values only. Do not add interpretation/prose fields here.
+    public class MobileChartEnergyOverview
     {
         public int Number { get; set; }
+        public string Direction { get; set; }
+        public string FamilyMember { get; set; }
+        public string Colour { get; set; }
+        public string Season { get; set; }
+        public string InternalRepresentation { get; set; }
+        public string Physiognomy { get; set; }
+        public string PrimaryAttributes { get; set; }
+        public string MostHarmoniousCombinations { get; set; }
+        public string MostChallengingCombinations { get; set; }
+    }
+
+    public class MobileChartEnergy : MobileChartEnergyOverview
+    {
         public string Name { get; set; }
         public string Title { get; set; }
         public string Element { get; set; }
@@ -60,9 +74,6 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public string Description { get; set; }
         public string Trigram { get; set; }
         public string TrigramDescription { get; set; }
-        public string Direction { get; set; }
-        public string FamilyMember { get; set; }
-        public string Colour { get; set; }
         public string ArtworkId { get; set; }
         public string ElementArtworkId { get; set; }
         public string TrigramArtworkId { get; set; }

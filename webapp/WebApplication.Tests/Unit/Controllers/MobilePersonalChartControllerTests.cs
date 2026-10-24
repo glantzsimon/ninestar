@@ -128,6 +128,8 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             var child = fixture.CreateProfile(DateTime.Today.AddYears(-10));
             var result = MobilePersonalChartMapper.Map(child, false);
             Assert.False(result.Person.IsSixteenOrOver);
+            Assert.False(result.Help.ContainsKey("relationships"));
+            Assert.Equal(K9.Globalisation.Dictionary.MainEnergyDescription, result.Help["core"].HtmlBody);
             Assert.False(result.Sections.ContainsKey("relationships"));
             Assert.False(result.Sections.ContainsKey("relationshipsStraight"));
             Assert.False(result.Sections.ContainsKey("relationshipsLgbtq"));
@@ -141,6 +143,8 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             var fixture = new Fixture();
             var profile = fixture.CreateProfile(new DateTime(1979, 6, 16));
             var json = JObject.FromObject(MobilePersonalChartMapper.FreeProfile(profile));
+            Assert.Equal(K9.Globalisation.Dictionary.MainEnergyDescription, (string)json["Help"]["core"]["HtmlBody"]);
+            Assert.Null(json["Help"]["adultChildRelationship"]);
             var sections = Assert.IsType<JObject>(json["Sections"]);
             Assert.Equal(new[] { "Core", "Character", "IntellectualQualities" },
                 System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Select(sections.Properties(), p => p.Name)));
@@ -207,6 +211,17 @@ namespace K9.WebApplication.Tests.Unit.Controllers
         {
             Assert.Null(MobilePersonalChartMapper.EnergyOverview(null));
             Assert.Null(MobilePersonalChartMapper.Energy(null));
+        }
+
+        [Fact]
+        public void EmbeddedProfilesCanOmitRepeatedChartHelpWithoutChangingReadings()
+        {
+            var fixture = new Fixture();
+            var profile = fixture.CreateProfile(new DateTime(1979, 6, 16));
+            var result = MobilePersonalChartMapper.Map(profile, false, includeHelp: false);
+            Assert.Null(result.Help);
+            Assert.Equal(profile.MainEnergy.EnergyDescription, result.Sections["core"].Body);
+            Assert.Equal(profile.MainEnergy.EnergyNumber, result.Energies["core"].Number);
         }
 
         private sealed class TestController : MobilePersonalChartController

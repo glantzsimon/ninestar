@@ -18,6 +18,7 @@ namespace K9.WebApplication.Controllers
             var reading = new IChingViewModel(_iching.GenerateHexagram());
             return ApiSuccess(new
             {
+                Help = MobileHelpMapper.IChing(),
                 Primary = MobileCalculationMapper.Hexagram(reading.Hexagram),
                 Transformed = MobileCalculationMapper.Hexagram(reading.TransformedHexagram)
             });

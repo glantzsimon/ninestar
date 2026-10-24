@@ -14,7 +14,18 @@ namespace K9.WebApplication.Controllers
         [HttpGet, Route("")]
         public ActionResult Index()
         {
-            return ApiSuccess(MobileCalculationMapper.KnowledgeBase(_profiles.GetNineStarKiSummaryViewModel()));
+            var userId = GetAuthenticatedUserId();
+            var includeMemberHelp = false;
+            if (userId > 0)
+            {
+                var membership = Package.MembershipService.GetActiveUserMembership(userId);
+                includeMemberHelp = Package.UserService.UserIsAdmin(userId) ||
+                    (membership != null && (membership.IsAuthorisedToViewPaidContent() ||
+                        membership.MembershipOption?.SubscriptionType >= K9.DataAccessLayer.Models.MembershipOption.ESubscriptionType.Free));
+            }
+            var help = MobileHelpMapper.KnowledgeBase(includeMemberHelp,
+                Url.Action("Index", "KnowledgeBase", null, Request.Url.Scheme));
+            return ApiSuccess(MobileCalculationMapper.KnowledgeBase(_profiles.GetNineStarKiSummaryViewModel(), help));
         }
     }
 }

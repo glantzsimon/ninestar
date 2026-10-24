@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Packages;
+using K9.WebApplication.Attributes;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System.Web.Mvc;
@@ -18,7 +19,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("free-hexagram-generator")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Index()
         {
             return View();
@@ -26,6 +27,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("free-hexagram-generator")]
         [HttpPost]
+        [CalculatorTrial]
         public ActionResult Toss()
         {
             var model = new IChingViewModel(_ichingService.GenerateHexagram());

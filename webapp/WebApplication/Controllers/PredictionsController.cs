@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Enums;
+using K9.WebApplication.Attributes;
+using K9.Base.DataAccessLayer.Enums;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
@@ -36,7 +37,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("calculator")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader = "User-Agent", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Index()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
@@ -55,6 +56,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("calculator/result")]
         [HttpPost]
+        [CalculatorTrial]
         public ActionResult IndexPost(NineStarKiModel model)
         {
             if (ModelState.IsValid)

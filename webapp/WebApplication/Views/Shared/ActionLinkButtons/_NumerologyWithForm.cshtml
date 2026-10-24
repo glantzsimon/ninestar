@@ -3,11 +3,11 @@
 @{
 }
 <div class="inline-form">
-    @using (Html.BeginForm("Link", "Numerology", FormMethod.Post))
+    @using (Html.BeginForm("Link", "Numerology", FormMethod.Post, new { data_calculator_page = "numerology", data_calculator_restore = "false", data_calculator_hidden_inputs = "true" }))
     {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => Model.PersonModel.Name)
-        @Html.HiddenFor(model => Model.PersonModel.DateOfBirth)
+        @Html.HiddenFor(model => Model.PersonModel.DateOfBirth, new { data_calculator_date = Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd") })
         @Html.HiddenFor(model => Model.PersonModel.Gender)
 
         @Html.BootstrapButton(Dictionary.KarmicNumerologyCalculator, EButtonType.Submit, "fa-sort-numeric-up", EButtonClass.Large)

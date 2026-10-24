@@ -1,7 +1,8 @@
 ﻿@model K9.WebApplication.Models.CompatibilityModel
 
-@using (Html.BeginForm("IndexPost", "Compatibility", FormMethod.Post))
+@using (Html.BeginForm("IndexPost", "Compatibility", FormMethod.Post, new { data_calculator_page = "compatibility", data_calculator_restore = (Request.HttpMethod == "GET").ToString().ToLowerInvariant() }))
 {
+    @Html.Partial("_CalculatorTrialNotice")
     using (Html.BeginBootstrapForm())
     {
         <div class="row">

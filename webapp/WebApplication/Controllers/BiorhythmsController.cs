@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Helpers;
+using K9.WebApplication.Attributes;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
@@ -22,7 +23,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("calculator")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader="User-Agent", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Index()
         {
             return View(new BioRhythmsModel(new NineStarKiModel(), DateTime.Now));
@@ -30,6 +31,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("calculator/result")]
         [HttpPost]
+        [CalculatorTrial]
         public ActionResult IndexPost(BioRhythmsModel model)
         {
             if (ModelState.IsValid)

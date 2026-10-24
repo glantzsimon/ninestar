@@ -1,7 +1,8 @@
 ﻿@using K9.WebApplication.Config
 
-@using (Html.BeginForm("Toss", "IChing", FormMethod.Post))
+@using (Html.BeginForm("Toss", "IChing", FormMethod.Post, new { data_calculator_page = "i-ching", data_calculator_restore = (Request.HttpMethod == "GET").ToString().ToLowerInvariant() }))
 {
+    @Html.Partial("_CalculatorTrialNotice")
     using (Html.BeginBootstrapForm())
     {
         <img loading="lazy" class="iching-image light" title="i-ching" alt="i-ching free hexagram generator" src="@MediaService.BaseImagesPath/iching/iching.png" />

@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Attributes;
+using K9.WebApplication.Attributes;
+using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Helpers;
@@ -27,7 +28,7 @@ namespace K9.WebApplication.Controllers
             _nineStarKiService = nineStarKiService;
         }
 
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader = "User-Agent", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         [Route("free-calculator")]
         public ActionResult Index()
         {
@@ -36,6 +37,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("free-calculator/result")]
         [HttpPost]
+        [CalculatorTrial]
         public ActionResult IndexPost(NineStarKiModel model)
         {
             if (ModelState.IsValid)

@@ -8,6 +8,11 @@
     var returnUrl = TempData["ReturnUrl"] ?? string.Empty;
 }
 
+@if (TempData["CalculatorSignInRequired"] as bool? == true)
+{
+    <p>@K9.Globalisation.Dictionary.CalculatorSignInRequired</p>
+}
+
 @using (Html.BeginForm())
 {
     using (Html.BeginBootstrapForm())

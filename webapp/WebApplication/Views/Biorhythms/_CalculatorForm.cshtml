@@ -1,7 +1,8 @@
 ﻿@model K9.WebApplication.Models.BioRhythmsModel
 
-@using (Html.BeginForm("IndexPost", "Biorhythms", FormMethod.Post))
+@using (Html.BeginForm("IndexPost", "Biorhythms", FormMethod.Post, new { data_calculator_page = "biorhythms", data_calculator_restore = (Request.HttpMethod == "GET").ToString().ToLowerInvariant() }))
 {
+    @Html.Partial("_CalculatorTrialNotice")
     using (Html.BeginBootstrapForm())
     {
         @Html.BootstrapEditorFor(model => model.PersonModel.Name, new EditorOptions

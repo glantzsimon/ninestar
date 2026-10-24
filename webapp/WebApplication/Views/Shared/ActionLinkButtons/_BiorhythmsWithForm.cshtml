@@ -1,10 +1,10 @@
 ﻿@model K9.WebApplication.Models.NineStarKiModel
 <div class="inline-form">
-    @using (Html.BeginForm("IndexPost", "Biorhythms", FormMethod.Post))
+    @using (Html.BeginForm("IndexPost", "Biorhythms", FormMethod.Post, new { data_calculator_page = "biorhythms", data_calculator_restore = "false", data_calculator_hidden_inputs = "true" }))
     {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.PersonModel.Name)
-        @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
+        @Html.HiddenFor(model => model.PersonModel.DateOfBirth, new { data_calculator_date = Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd") })
         @Html.HiddenFor(model => model.PersonModel.Gender)
         @Html.HiddenFor(model => model.SelectedDate)
 

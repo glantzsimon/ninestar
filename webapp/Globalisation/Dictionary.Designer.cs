@@ -41249,5 +41249,13 @@ namespace K9.Globalisation {
             }
         }
 
+        public static string CalculatorTrialNotice {
+            get { return ResourceManager.GetString("CalculatorTrialNotice", resourceCulture); }
+        }
+
+        public static string CalculatorSignInRequired {
+            get { return ResourceManager.GetString("CalculatorSignInRequired", resourceCulture); }
+        }
+
     }
 }

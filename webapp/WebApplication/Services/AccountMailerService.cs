@@ -19,7 +19,7 @@ namespace K9.WebApplication.Services
             _emailTemplateService = emailTemplateService;
         }
 
-        public void SendActivationEmailToUser(User user, int sixDigitCode)
+        public void SendActivationEmailToUser(User user, UserOTP otp)
         {
             SendActivationEmailToUser(new UserAccount.RegisterModel
             {
@@ -29,10 +29,10 @@ namespace K9.WebApplication.Services
                 UserName = user.Username,
                 FirstName = user.FirstName,
                 LastName = user.LastName
-            }, sixDigitCode);
+            }, otp);
         }
 
-        public void SendActivationEmailToUser(UserAccount.RegisterModel model, int sixDigitCode)
+        public void SendActivationEmailToUser(UserAccount.RegisterModel model, UserOTP otp)
         {
             var user = My.UsersRepository.Find(e => e.Username == model.UserName).FirstOrDefault();
             var title = Dictionary.Welcome;
@@ -43,8 +43,8 @@ namespace K9.WebApplication.Services
                 new
                 {
                     model.FirstName,
-                    ActivationCode = sixDigitCode,
-                    AccountActivationUrl = My.UrlHelper.AbsoluteAction("AccountCreated", "Account", new { uniqueIdentifier = user.Name })
+                    ActivationCode = otp.SixDigitCode,
+                    AccountActivationUrl = My.UrlHelper.AbsoluteAction("AccountCreated", "Account", new { uniqueIdentifier = otp.UniqueIdentifier })
                 });
 
             try

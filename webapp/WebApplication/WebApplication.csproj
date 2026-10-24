@@ -441,6 +441,8 @@
     <Compile Include="ControllerPackages\INineStarKiBasePackage.cs" />
     <Compile Include="Controllers\ApiPureAlchemyController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\ApiController.Deployment.cs" />
+    <Compile Include="Helpers\DeploymentTargetHelper.cs" />
     <Compile Include="Controllers\MobileApiControllerBase.cs" />
     <Compile Include="ViewModels\MobileApi\MobileAdminWriteRequest.cs" />
     <Compile Include="Services\MobileAdminDataService.cs" />

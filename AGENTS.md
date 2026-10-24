@@ -97,6 +97,8 @@ Before running an older feature branch against the usual DEV database, compare i
 
 Work on the existing feature branch and prepare a draft pull request for review. Do not merge or deploy without the user's instruction. Normal commits must not contain `#teamcity`; that marker deliberately triggers Integration deployment and should only be added when deployment is requested.
 
+For the quick deployment workflow, read `docs/quick-deployment.md`. The secret-free entry point is `tools/quick_deploy.py`; it loads the existing locally decrypted uploader for configuration and keeps that encrypted source unchanged. Production and Integration have separate staging/checkpoints, and the client requires protocol/environment preflight plus successful upload/maintenance JSON. Installing the root-vault PowerShell script and bootstrapping the backend through normal deployment are separate owner actions. Do not run deployment tooling or restart sites merely to test it.
+
 ## git-crypt
 
 The owner uses git-crypt locally: protected files are stored encrypted in Git and decrypted in the local working project. Before editing any file, check the applicable .gitattributes rules (or `git check-attr filter diff -- <path>`) for git-crypt protection. Leave protected files and their encryption attributes untouched. Do not replace ciphertext with plaintext, bypass the filters, or change keys. If a requested change needs a protected file, explain the need to the owner before proceeding. Work on ordinary, unprotected files normally.

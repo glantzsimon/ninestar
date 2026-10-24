@@ -128,10 +128,12 @@ namespace K9.WebApplication
             if (HttpContext.Current != null && HttpContext.Current.Response != null)
             {
 #if DEBUG
-                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                const HttpCacheability defaultPolicy = HttpCacheability.NoCache;
 #else
-                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
+                const HttpCacheability defaultPolicy = HttpCacheability.ServerAndPrivate;
 #endif
+                MobileArtworkCacheHelper.ApplyRequestDefault(
+                    new HttpContextWrapper(HttpContext.Current), defaultPolicy);
             }
         }
 

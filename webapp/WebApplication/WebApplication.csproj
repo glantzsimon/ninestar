@@ -402,6 +402,7 @@
     <Compile Include="Controllers\MobileMetadataController.cs" />
     <Compile Include="Controllers\MobileArtworkController.cs" />
     <Compile Include="Helpers\MobileArtworkRegistry.cs" />
+    <Compile Include="Helpers\MobileArtworkCacheHelper.cs" />
     <Compile Include="Helpers\MobileArtworkRegistry.Data.cs" />
     <Compile Include="ViewModels\MobileApi\MobileArtworkResponse.cs" />
     <Compile Include="Helpers\MobileMetadataHelper.cs" />

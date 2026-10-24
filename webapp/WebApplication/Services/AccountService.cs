@@ -302,7 +302,7 @@ namespace K9.WebApplication.Services
             try
             {
                 var otp = GetOTPForUser(user.Id);
-                _accountMailerService.SendActivationEmailToUser(model.RegisterModel, otp.SixDigitCode);
+                _accountMailerService.SendActivationEmailToUser(model.RegisterModel, otp);
             }
             catch (Exception e)
             {
@@ -669,7 +669,7 @@ namespace K9.WebApplication.Services
         {
             var user = _userService.Find(userId);
             var otp = CreateAccountActivationOTP(userId, true);
-            _accountMailerService.SendActivationEmailToUser(user, otp.SixDigitCode);
+            _accountMailerService.SendActivationEmailToUser(user, otp);
         }
 
         public UserOTP CreateAccountActivationOTP(int userId, bool recreate = false)

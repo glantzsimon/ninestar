@@ -22,7 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		NineStar.vsmdi = NineStar.vsmdi
 		..\deploy\publish.ps1 = ..\deploy\publish.ps1
 		..\deploy\quick-deploy.py = ..\deploy\quick-deploy.py
-		..\tools\quick_deploy.py = ..\tools\quick_deploy.py
 		..\docs\quick-deployment.md = ..\docs\quick-deployment.md
 		..\deploy\storj.ps1 = ..\deploy\storj.ps1
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings

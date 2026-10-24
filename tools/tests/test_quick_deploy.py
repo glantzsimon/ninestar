@@ -8,7 +8,9 @@ import subprocess
 import tempfile
 import unittest
 
-spec = importlib.util.spec_from_file_location('quick_deploy', Path(__file__).resolve().parents[1] / 'quick_deploy.py')
+script = Path(os.environ.get('NINESTAR_QUICK_DEPLOY_TEST_SOURCE',
+    str(Path(__file__).resolve().parents[2] / 'deploy/quick-deploy.py')))
+spec = importlib.util.spec_from_file_location('quick_deploy', script)
 q = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(q)
 

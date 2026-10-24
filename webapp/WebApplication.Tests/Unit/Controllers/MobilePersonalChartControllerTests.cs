@@ -1,3 +1,5 @@
+using K9.Base.DataAccessLayer.Attributes;
+using K9.SharedLibrary.Extensions;
 using K9.Base.DataAccessLayer.Enums;
 using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Enums;
@@ -222,6 +224,31 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             Assert.Null(result.Help);
             Assert.Equal(profile.MainEnergy.EnergyDescription, result.Sections["core"].Body);
             Assert.Equal(profile.MainEnergy.EnergyNumber, result.Energies["core"].Number);
+        }
+
+        [Fact]
+        public void HealthPanelsMatchWebsiteResourcesAndCalculatedOrgans()
+        {
+            var fixture = new Fixture();
+            var profile = fixture.CreateProfile(new DateTime(1979, 6, 16));
+            var result = MobilePersonalChartMapper.Map(profile, false);
+            Assert.Equal(K9.Globalisation.Dictionary.StrongOrgans, result.Health.StrongOrgans.Title);
+            Assert.Equal(K9.Globalisation.Dictionary.StrongOrgansDescription, result.Health.StrongOrgans.HtmlBody);
+            Assert.Equal(K9.Globalisation.Dictionary.WeakOrgans, result.Health.WeakOrgans.Title);
+            Assert.Equal(K9.Globalisation.Dictionary.WeakOrgansDescription, result.Health.WeakOrgans.HtmlBody);
+            Assert.Equal(profile.MainEnergy.YinYangExpansionTitle, result.Energies["core"].YinYangExpansionTitle);
+            Assert.Equal(profile.MainEnergy.YinYangExpansionDescription, result.Energies["core"].YinYangExpansionDescription);
+
+            var expected = new[] { profile.StrongYinOrgans.Value, profile.StrongYangOrgans.Value }
+                .Concat(profile.WeakYinOrgans).Concat(profile.WeakYangOrgans).ToArray();
+            var actual = result.Health.StrongOrgans.YinOrgans.Concat(result.Health.StrongOrgans.YangOrgans)
+                .Concat(result.Health.WeakOrgans.YinOrgans).Concat(result.Health.WeakOrgans.YangOrgans).ToArray();
+            Assert.Equal(expected.Select(e => e.ToString()), actual.Select(e => e.Value));
+            Assert.Equal(expected.Select(e => e.GetAttribute<EnumDescriptionAttribute>().GetDescription()),
+                actual.Select(e => e.Label));
+            Assert.Equal(result.StrongYinOrganArtworkId, result.Health.StrongOrgans.YinOrgans.Single().ArtworkId);
+            Assert.Equal(result.WeakYangOrganArtworkIds, result.Health.WeakOrgans.YangOrgans.Select(e => e.ArtworkId).ToArray());
+            Assert.Null(JObject.FromObject(MobilePersonalChartMapper.FreeProfile(profile))["Health"]);
         }
 
         private sealed class TestController : MobilePersonalChartController

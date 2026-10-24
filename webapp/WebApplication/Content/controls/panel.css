@@ -110,6 +110,7 @@
   font-size: 16px;
 }
 .panel .panel-body {
+  color: var(--text-color);
   background: var(--well-color);
   font-size: 15px;
   line-height: 1.7;

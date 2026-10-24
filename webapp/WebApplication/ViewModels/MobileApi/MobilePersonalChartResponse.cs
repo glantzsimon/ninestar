@@ -14,6 +14,7 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public Dictionary<string, MobileHelpText> Help { get; set; }
         public Dictionary<string, MobileChartEnergy> Energies { get; set; }
         public Dictionary<string, MobileChartText> Sections { get; set; }
+        public MobileChartHealth Health { get; set; }
         public string StrongYinOrganArtworkId { get; set; }
         public string StrongYangOrganArtworkId { get; set; }
         public string[] WeakYinOrganArtworkIds { get; set; }
@@ -22,6 +23,27 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public string StrongYangOrgan { get; set; }
         public string[] WeakYinOrgans { get; set; }
         public string[] WeakYangOrgans { get; set; }
+    }
+
+    public class MobileChartHealth
+    {
+        public MobileChartOrganPanel StrongOrgans { get; set; }
+        public MobileChartOrganPanel WeakOrgans { get; set; }
+    }
+
+    public class MobileChartOrganPanel
+    {
+        public string Title { get; set; }
+        public string HtmlBody { get; set; }
+        public MobileChartOrgan[] YinOrgans { get; set; }
+        public MobileChartOrgan[] YangOrgans { get; set; }
+    }
+
+    public class MobileChartOrgan
+    {
+        public string Value { get; set; }
+        public string Label { get; set; }
+        public string ArtworkId { get; set; }
     }
 
     public class MobileChartPerson
@@ -71,6 +93,7 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public string Modality { get; set; }
         public string ModalityDescription { get; set; }
         public string YinYang { get; set; }
+        public string YinYangExpansionTitle { get; set; }
         public string YinYangExpansionDescription { get; set; }
         public string Description { get; set; }
         public string Trigram { get; set; }

@@ -1,3 +1,6 @@
+using K9.Base.DataAccessLayer.Attributes;
+using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels.MobileApi;
@@ -123,6 +126,23 @@ namespace K9.WebApplication.Helpers
                     { "hour", Energy(model.PersonalChartEnergies.Hour) }
                 },
                 Sections = sections,
+                Health = new MobileChartHealth
+                {
+                    StrongOrgans = new MobileChartOrganPanel
+                    {
+                        Title = K9.Globalisation.Dictionary.StrongOrgans,
+                        HtmlBody = K9.Globalisation.Dictionary.StrongOrgansDescription,
+                        YinOrgans = Organs(model.StrongYinOrgans.HasValue ? new[] { model.StrongYinOrgans.Value } : null),
+                        YangOrgans = Organs(model.StrongYangOrgans.HasValue ? new[] { model.StrongYangOrgans.Value } : null)
+                    },
+                    WeakOrgans = new MobileChartOrganPanel
+                    {
+                        Title = K9.Globalisation.Dictionary.WeakOrgans,
+                        HtmlBody = K9.Globalisation.Dictionary.WeakOrgansDescription,
+                        YinOrgans = Organs(model.WeakYinOrgans),
+                        YangOrgans = Organs(model.WeakYangOrgans)
+                    }
+                },
                 StrongYinOrganArtworkId = OrganArtworkId(model.StrongYinOrgans?.ToString()),
                 StrongYangOrganArtworkId = OrganArtworkId(model.StrongYangOrgans?.ToString()),
                 WeakYinOrganArtworkIds = model.WeakYinOrgans?.Select(e => OrganArtworkId(e.ToString())).ToArray() ?? new string[0],
@@ -136,6 +156,14 @@ namespace K9.WebApplication.Helpers
 
         private static MobileChartText Text(string body, string summary = null) =>
             new MobileChartText { Body = body, Summary = summary };
+
+        private static MobileChartOrgan[] Organs(IEnumerable<EOrgan> organs) =>
+            organs?.Select(organ => new MobileChartOrgan
+            {
+                Value = organ.ToString(),
+                Label = organ.GetAttribute<EnumDescriptionAttribute>().GetDescription(),
+                ArtworkId = OrganArtworkId(organ.ToString())
+            }).ToArray() ?? new MobileChartOrgan[0];
 
         private static string OrganArtworkId(string organ) =>
             MobileArtworkRegistry.IdForPath("ninestar/organs/" + organ?.ToLowerInvariant() + ".png");
@@ -177,6 +205,7 @@ namespace K9.WebApplication.Helpers
             result.Modality = energy.ModalityName;
             result.ModalityDescription = energy.ModalityDescription;
             result.YinYang = energy.YinYangName;
+            result.YinYangExpansionTitle = energy.YinYangExpansionTitle;
             result.YinYangExpansionDescription = energy.YinYangExpansionDescription;
             result.Description = energy.EnergyDescription;
             result.Trigram = energy.Trigram;

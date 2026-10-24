@@ -707,3 +707,11 @@ Primary references checked for the proposal:
 - [Receiving Server Notifications V2](https://developer.apple.com/documentation/appstoreservernotifications/receiving-app-store-server-notifications)
 - [Notification types](https://developer.apple.com/documentation/appstoreservernotifications/notificationtype)
 - [Apple server library and signed-data verification examples](https://github.com/apple/app-store-server-library-node)
+
+### Health panel parity
+
+Full chart projections now add `health.strongOrgans` and `health.weakOrgans`. Each panel contains `title`, `htmlBody`, `yinOrgans` and `yangOrgans`. Titles and introductions use the same Dictionary properties as the website Health panels. Each organ entry contains its stable enum `value`, Dictionary-backed `label` (resolved through the same EnumDescriptionAttribute as the website Organ template), and catalogue `artworkId`. Missing organ collections are empty arrays. Existing top-level organ identifiers and artwork fields remain unchanged for compatibility.
+
+Full energy projections also add `yinYangExpansionTitle`, taken from the existing calculated energy resource property, alongside `yinYangExpansionDescription`. To reproduce Health, use `sections.health` for the reading, `sections.illnesses` for common challenges, `energies.core.yinYangExpansionTitle` and `yinYangExpansionDescription` for the group panel, and `health.strongOrgans` / `health.weakOrgans` for the final two panels. Do not turn enum values into display labels. These additions stay within full, already authorised chart projections (including embedded profiles); the free overview and anonymous number-only projections are unchanged.
+
+Regression coverage checks resource parity, calculated organ selection/order, display labels/artwork and exclusion from the free projection. Windows build/xUnit and signed-in Integration validation remain required; no deployment is performed by this change.

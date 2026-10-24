@@ -46,7 +46,8 @@ namespace K9.WebApplication.Helpers
 
         public static object Predictions(NineStarKiModel model, bool birthTimeKnown) => new
         {
-            Profile = MobilePersonalChartMapper.Map(model, birthTimeKnown),
+            Help = MobileHelpMapper.Predictions(),
+            Profile = MobilePersonalChartMapper.Map(model, birthTimeKnown, includeHelp: false),
             Personal = Cycles(model.PersonalHousesOccupiedEnergies),
             Lunar = Cycles(model.PersonalHousesOccupiedLunarEnergies),
             Global = Cycles(model.GlobalCycleEnergies, true), MoonPhase = Moon(model.MoonPhase),
@@ -60,6 +61,7 @@ namespace K9.WebApplication.Helpers
 
         public static object Planner(PlannerViewModel planner) => new
         {
+            Help = MobileHelpMapper.Predictions(),
             planner.View, planner.Display, planner.HousesDisplay, planner.SelectedDateTime,
             planner.PeriodStartsOn, planner.PeriodEndsOn, planner.ChildView, planner.NextViewUp,
             Energy = Cycle(planner.Energy, planner.Display == EScopeDisplay.GlobalKi),
@@ -81,8 +83,9 @@ namespace K9.WebApplication.Helpers
             var score = details?.Score;
             return new
             {
-                FirstPerson = includeFullProfiles ? (object)MobilePersonalChartMapper.Map(model.NineStarKiModel1, false) : MobilePersonalChartMapper.Numbers(model.NineStarKiModel1),
-                SecondPerson = includeFullProfiles ? (object)MobilePersonalChartMapper.Map(model.NineStarKiModel2, false) : MobilePersonalChartMapper.Numbers(model.NineStarKiModel2),
+                Help = MobileHelpMapper.Compatibility(),
+                FirstPerson = includeFullProfiles ? (object)MobilePersonalChartMapper.Map(model.NineStarKiModel1, false, includeHelp: false) : MobilePersonalChartMapper.Numbers(model.NineStarKiModel1),
+                SecondPerson = includeFullProfiles ? (object)MobilePersonalChartMapper.Map(model.NineStarKiModel2, false, includeHelp: false) : MobilePersonalChartMapper.Numbers(model.NineStarKiModel2),
                 model.FundamentalEnergiesCompatibility,
                 SexualChemistryDetails = hideSexualChemistry ? null : model.SexualChemistryDetails,
                 Details = details == null ? null : new
@@ -139,6 +142,7 @@ namespace K9.WebApplication.Helpers
 
         public static object Numerology(NumerologyModel model) => new
         {
+            Help = MobileHelpMapper.Numerology(),
             Primary = Code(model.Primary), Emergence = Code(model.Emergence), Actualisation = Code(model.Actualisation),
             Mastery = Code(model.Mastery), BirthYear = Code(model.BirthYear), CurrentYear = Code(model.CurrentYear), CurrentMonth = Code(model.CurrentMonth),
             MonthlyPlanner = NumerologyPeriods(model.MonthlyPlannerCodes), YearlyPlanner = NumerologyPeriods(model.YearlyPlannerCodes),
@@ -152,6 +156,7 @@ namespace K9.WebApplication.Helpers
 
         public static object Biorhythms(BioRhythmsModel model) => new
         {
+            Help = MobileHelpMapper.Biorhythms(),
             model.SelectedDate, model.MonthlyPeriodStartsOn, model.MonthlyPeriodEndsOn, model.DaysElapsedSinceBirth, model.Summary,
             Results = model.GetBiorhythmResultsByDisplayIndex().Select(e => new
             {
@@ -175,8 +180,10 @@ namespace K9.WebApplication.Helpers
             };
         }
 
-        public static object KnowledgeBase(NineStarKiSummaryViewModel model) => new
+        public static object KnowledgeBase(NineStarKiSummaryViewModel model,
+            Dictionary<string, K9.WebApplication.ViewModels.MobileApi.MobileHelpText> help = null) => new
         {
+            Help = help,
             MainEnergies = model.MainEnergies.Select(MobilePersonalChartMapper.Energy).ToArray(),
             CharacterEnergies = model.CharacterEnergies.Select(MobilePersonalChartMapper.Energy).ToArray(),
             EpochCycles = model.EightyOneYearlyCycleEnergies.Select(e => Cycle(e)).ToArray(),

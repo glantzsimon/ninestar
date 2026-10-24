@@ -2,6 +2,8 @@
 
 Preserve existing structure, naming, formatting, services, repository patterns and dependency injection. Keep changes focused; do not refactor unrelated code. Use C# 7.3 and .NET Framework 4.7.2-compatible code.
 
+Prefer a targeted patch to working code. Preserve its structure, formatting and dormant functionality; do not compress code, remove unused features or introduce broader refactoring without discussing that scope with the owner first. A passing replacement test suite does not establish full behavioural parity with an existing working script.
+
 ## UI authoring
 
 The owner requires UI controls to use existing K9 HTML helpers, rather than hand-written control markup or client-generated control HTML. Inspect comparable views and actual helper signatures before implementing UI.

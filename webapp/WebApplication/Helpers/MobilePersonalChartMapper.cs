@@ -13,6 +13,7 @@ namespace K9.WebApplication.Helpers
         public static object FreeProfile(NineStarKiModel model) => new
         {
             model.Summary, model.Overview,
+            Help = MobileHelpMapper.Chart(model.PersonModel.IsSixteenOrOver(), includeMemberHelp: false),
             Core = model.MainEnergy.EnergyNumber, Character = model.CharacterEnergy.EnergyNumber,
             SocialExpression = model.SurfaceEnergy.EnergyNumber,
             Generation = model.PersonalChartEnergies.Generation.EnergyNumber,
@@ -48,7 +49,7 @@ namespace K9.WebApplication.Helpers
             Hour = model.PersonalChartEnergies.Hour.EnergyNumber
         };
 
-        public static MobilePersonalChartResponse Map(NineStarKiModel model, bool birthTimeKnown)
+        public static MobilePersonalChartResponse Map(NineStarKiModel model, bool birthTimeKnown, bool includeHelp = true)
         {
             if (model?.PersonModel == null || model.MainEnergy == null || model.CharacterEnergy == null)
                 throw new ArgumentException("A calculated profile is required.", nameof(model));
@@ -110,6 +111,7 @@ namespace K9.WebApplication.Helpers
                 },
                 Summary = model.Summary,
                 Overview = model.Overview,
+                Help = includeHelp ? MobileHelpMapper.Chart(person.IsSixteenOrOver(), includeMemberHelp: true) : null,
                 Energies = new Dictionary<string, MobileChartEnergy>
                 {
                     { "epoch", Energy(model.PersonalChartEnergies.Epoch) },

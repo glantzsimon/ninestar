@@ -29,6 +29,7 @@ namespace K9.WebApplication.Controllers
                 var entries = _calendar.GetCalendarEntries(id, start, start.AddMonths(1), DisconnectedToken());
                 return ApiSuccess(new
                 {
+                    Help = K9.WebApplication.Helpers.MobileHelpMapper.Calendar(),
                     Year = start.Year, Month = start.Month, Title = start.ToString("Y", CultureInfo.CurrentCulture),
                     Today = today.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture), Offset = ((int)start.DayOfWeek + 6) % 7,
                     Entries = entries.Select(e => new

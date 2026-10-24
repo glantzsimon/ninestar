@@ -11,6 +11,7 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public string Culture { get; set; }
         public string Summary { get; set; }
         public string Overview { get; set; }
+        public Dictionary<string, MobileHelpText> Help { get; set; }
         public Dictionary<string, MobileChartEnergy> Energies { get; set; }
         public Dictionary<string, MobileChartText> Sections { get; set; }
         public string StrongYinOrganArtworkId { get; set; }
@@ -81,6 +82,13 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public string SeasonArtworkId { get; set; }
         public string YinYangArtworkId { get; set; }
         public string ImageUrl { get; set; }
+    }
+
+    public class MobileHelpText
+    {
+        public string Title { get; set; }
+        public string HtmlBody { get; set; }
+        public string Culture { get; set; }
     }
 
     public class MobileChartText

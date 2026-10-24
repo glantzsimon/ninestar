@@ -66,6 +66,53 @@ Maintain `tools/mobile-artwork-paths.txt` as the explicit public allowlist. When
 
 Validation here: the registry/DTO and isolated controller compiled with C# 7.3 against .NET Framework 4.7.2 reference assemblies with warnings treated as errors (controller compilation used actual MVC/Newtonsoft references and a stub for the existing media-base property); 27 isolated catalogue/ETag/URL/fallback/isolation checks ran under the available Linux .NET runtime. Metadata regeneration, C# syntax, project registrations and literal source coverage are also checked. Added Windows xUnit tests cover the controller, conditional GET, safe failures, complete domain references, variants and public boundaries. Full VS2017 build/xUnit/IIS tests have **not** been executed here; use the handoff in `docs/mobile-artwork-validation.md` before release. No deployment is performed.
 
+## Contextual explanatory help
+
+Existing feature responses now include additive `data.help` dictionaries containing the website's resource-authored introductions and help text. This includes the Constitution introduction shown above the core-energy reading. These introductions are different from a calculated energy's `description` or a personal `sections.*.body`; those existing readings and fields remain unchanged. No website views are rerouted, and no new endpoint, migration, billing operation or global help download is introduced.
+
+Each entry has this shape (text shortened for illustration):
+
+```json
+{
+  "help": {
+    "core": {
+      "title": "Constitution",
+      "htmlBody": "<h4>Constitution...</h4><p>...</p>",
+      "culture": "en-GB"
+    }
+  }
+}
+```
+
+Keys are stable, case-sensitive protocol identifiers. Titles and HTML come from existing strongly typed Globalisation resources, resolved at request/projection time using the existing resource culture; `culture` reports that culture. Do not hardcode the English examples in the app. Missing keys mean unavailable/not applicable, and must be handled gracefully. Do not use absence as an entitlement signal; retain the shared entitlements/access-error contract.
+
+| Response | Help keys |
+| --- | --- |
+| Full personal chart (`me`, `calculate`, `last`, and full complementary chart results) | `overview`, `core`, `character`, `socialExpression`, `dayStar`, `generation`, `epoch`, `adultChildRelationship`; `relationships` only when the chart person is sixteen or over |
+| Own/free chart and free complementary chart projection | Same public introductions, excluding `adultChildRelationship`; `relationships` retains the sixteen-or-over gate |
+| Predictions (`me`, `calculate`, `last`) and planner | `day`, `month`, `year`, `generation`, `epoch`, `globalKiWarning`, `moreOnCycles` |
+| Calendar `month` | `overview`, `subscription` |
+| Compatibility calculation/last/complementary result | `overview` |
+| Numerology calculation/last | `overview` |
+| Biorhythms calculation/last | `overview` |
+| I Ching `cast` | `overview` |
+| Knowledge base, all callers | `origins`, `lightAndDark`, `yinYang`, `modalities`, `mainEnergies`, `characterEnergies`, `year`, `month`, `personalChart`, `relationships` |
+| Knowledge base, authenticated account eligible for the website's Free-level content, or authenticated admin | Additionally `elements`, `fire`, `earth`, `metal`, `water`, `tree`, `transformations`, `sexuality` |
+
+The six chart introductions map to `MainEnergyDescription`, `CharacterEnergyDescription`, `SurfaceEnergyDescription`, `DayStarDescription`, `GenerationalEnergyDescription` and `EpochEnergyDescription`. Relationship help uses `relationships_description`; adult-child help uses `AdultChildRelationship`. Cycle introductions use `day_description`, `month_description`, `year_description`, `generation_description`, `epoch_description`; the Global Ki caveat is separate `globalki_display_warning`, and More on Cycles uses `holograhpic_spirals`. Calendar help uses `PersonalCalendarHelp` and `CalendarSubscriptionHelp`. Other feature overviews use `compatibility_subtitle`, `karmic_numerology`, `biorhythms` and `i_ching_info` respectively.
+
+Knowledge-base articles retain the website's Free-membership access check for the newly exposed element/transformation/sexuality articles. Anonymous callers receive only the new public introductions. Existing reference arrays and their existing access behaviour are unchanged. Template placeholders in five-elements/transformations/sexuality HTML are resolved through the existing TemplateParser with the configured media base, existing transformation resources and the absolute website knowledge-base URL. No Razor controls or layouts are returned.
+
+Help appears once at its owning response level, never on each energy or planner row. Full profiles embedded in predictions or compatibility have `help: null`, avoiding duplicate chart introductions, especially across two compatibility profiles; use the standalone chart response for chart help. Other standalone detail/number-only/anonymous preview responses, existing content pages, alchemy, subscription/revoke responses and artwork catalogue retain their current shape. There is no invented hourly introduction because the website does not supply one in these panels. The website's "Click on a tab below" instruction, collapsed/expanded state, panel wrappers, loading messages and navigation controls are not API content.
+
+Render `htmlBody` as the same resource-authored rich content used elsewhere in the app. Never append it into a calculated reading or substitute it for paid prose. Show `globalKiWarning` when presenting Global Ki. Embedded media remains ordinary resource-authored HTML; it does not create duplicate artwork-catalogue registrations. Existing response caching remains private/no-store, and the mobile timeout remains 15 seconds.
+
+### Source audit and validation
+
+The audit covers all `Html.CollapsiblePanel` calls in `Views/PersonalChart`, `Views/Predictions` and `Views/IChing`, the explicit calendar help collapse, and related feature/knowledge-base introduction panels. Energy/child/trigram interpretations, individual cycle descriptions and I Ching detailed interpretations already have existing chart/energy/cycle/hexagram fields and are not duplicated in help. This is not an automatic dump of every resource, tooltip or view.
+
+Added tests cover website-resource parity, free/member and age filtering, the help transport shape, template replacement, per-response isolation and unchanged reading projections when embedded help is omitted. Existing free-energy field allowlists and existing authentication/ownership checks remain in place. Cloud validation is limited to C# syntax, resource/accessor/template checks, project registration and source/diff checks; a Windows VS2017 build, xUnit execution and signed-in Integration verification are required before release. No website startup, schema execution or deployment was performed here.
+
 ## Current implementation
 
 ### Shared entitlements: website-membership phase

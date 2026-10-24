@@ -14,6 +14,14 @@ Local IIS validation is a separate outstanding gate. `Application_Start` still c
 
 The app-side validation report at `ninestar-mobile/docs/artwork-backend-validation.md` remains owned by the mobile checkout. Bring its exact failing assertions into the local rerun; that Windows path is not available in the backend editing environment. This correction has source/project checks here, not a completed Windows or live-HTTP validation claim.
 
+## Missing max-age follow-up
+
+Integration subsequently returned public catalogue 200, valid ETag/empty 304, sample images with 30-day caching, and anonymous private 401/no-store responses. The owner relayed a successful VS2017 build and 609 passing tests. The remaining wire-level failure was a missing `max-age=300`; those results precede this follow-up.
+
+The artwork action now explicitly calls `SetSlidingExpiration(true)` alongside `SetMaxAge(five minutes)` to request a constant per-response client lifetime, and `SetNoServerCaching()` to prevent origin/kernel caching from retaining an old media-base/ETag selection or affecting client expiration headers. Private endpoints, global route boundaries, ETags and image-host policies are unchanged. Regression assertions cover these settings on both fresh 200 and conditional 304 response policies. This is a source correction, not evidence that the missing Integration header is resolved.
+
+Pull the follow-up on `feature/mobile-json-api`, build and rerun artwork tests without starting the website or migrations. After a separately authorised Integration deployment, require actual response headers on both 200 and 304 to contain `public` and `max-age=300`, with a matching ETag and empty 304 body. Recheck anonymous private endpoints remain 401/no-store. Retain the app's 15-second timeout. Do not change the catalogue lifetime to the image host's 30-day policy; they serve different purposes. Update the mobile validation report with the deployed revision and exact wire headers before clearing its gate. No deployment or schema execution is part of preparing this fix.
+
 ## Website Codex: validate locally first
 
 1. In `D:\Workspace\ninestar`, confirm `git rev-parse --abbrev-ref HEAD` is `feature/mobile-json-api`, preserve local edits and `git pull --ff-only`.

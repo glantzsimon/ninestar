@@ -25,6 +25,8 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             Assert.NotNull(data["data"]["assets"]["ninestar.energies.water"]);
             fixture.Cache.Verify(e => e.SetCacheability(HttpCacheability.Public), Times.Once);
             fixture.Cache.Verify(e => e.SetMaxAge(TimeSpan.FromMinutes(5)), Times.Once);
+            fixture.Cache.Verify(e => e.SetSlidingExpiration(true), Times.Once);
+            fixture.Cache.Verify(e => e.SetNoServerCaching(), Times.Once);
             fixture.Cache.Verify(e => e.SetNoStore(), Times.Never);
             fixture.Headers["If-None-Match"] = "W/\"" + (string)data["data"]["version"] + "\"";
             Assert.Equal(304, Assert.IsType<HttpStatusCodeResult>(fixture.Controller.Artwork()).StatusCode);
@@ -71,6 +73,8 @@ namespace K9.WebApplication.Tests.Unit.Controllers
                 Assert.Equal(HttpCacheability.Public, response.Cache.GetCacheability());
 
                 Assert.Equal(TimeSpan.FromMinutes(5), response.Cache.GetMaxAge());
+                Assert.True(response.Cache.HasSlidingExpiration());
+                Assert.True(response.Cache.GetNoServerCaching());
                 Assert.False(response.Cache.GetNoStore());
                 var version = (string)JObject.Parse(result.Content)["data"]["version"];
                 Assert.Equal("W/\"" + version + "\"", response.Cache.GetETag());
@@ -82,6 +86,11 @@ namespace K9.WebApplication.Tests.Unit.Controllers
                 MobileArtworkCacheHelper.ApplyRequestDefault(context.Object, defaultPolicy);
                 Assert.Equal(304, Assert.IsType<HttpStatusCodeResult>(controller.Artwork()).StatusCode);
                 Assert.Equal(HttpCacheability.Public, response.Cache.GetCacheability());
+                Assert.Equal(TimeSpan.FromMinutes(5), response.Cache.GetMaxAge());
+                Assert.True(response.Cache.HasSlidingExpiration());
+                Assert.True(response.Cache.GetNoServerCaching());
+                Assert.Equal("W/\"" + version + "\"", response.Cache.GetETag());
+                Assert.False(response.Cache.GetNoStore());
             }
         }
 

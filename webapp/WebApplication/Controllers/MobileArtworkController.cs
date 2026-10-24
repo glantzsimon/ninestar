@@ -38,6 +38,10 @@ namespace K9.WebApplication.Controllers
             var data = MobileArtworkRegistry.Create(imageBase);
             Response.Cache.SetCacheability(HttpCacheability.Public);
             Response.Cache.SetMaxAge(TimeSpan.FromMinutes(5));
+            // Emit a constant client lifetime on each 200/304 response. Keep
+            // origin/kernel caching out of the way of fresh media-host/ETag selection.
+            Response.Cache.SetSlidingExpiration(true);
+            Response.Cache.SetNoServerCaching();
             Response.Cache.SetETag("W/\"" + data.Version + "\"");
             if (MobileArtworkRegistry.MatchesETag(Request.Headers["If-None-Match"], data.Version))
                 return new HttpStatusCodeResult(304);

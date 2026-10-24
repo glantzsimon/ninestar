@@ -18,7 +18,6 @@ try {
 
     $siteRoot = Split-Path -Parent $vaultRoot
     $destination = Join-Path $siteRoot $(if ($Environment -eq 'int') { 'int' } else { 'httpdocs' })
-    $appPool = if ($Environment -eq 'int') { 'int.9starkiastrology.com(domain)(4.0)(pool)' } else { '9starkiastrology.com(domain)(4.0)(pool)' }
     if (-not (Test-Path -LiteralPath $destination -PathType Container)) { throw 'Destination website is missing.' }
     $plan = @()
     $groups = @(
@@ -48,12 +47,8 @@ try {
         foreach ($item in $plan) { Write-Host "Would copy $($item.Source) -> $($item.Target)" }
         return
     }
-    $hasBinaries = @($plan | Where-Object { $_.Binary }).Count -gt 0
-    if ($hasBinaries) {
-        Import-Module WebAdministration -ErrorAction Stop
-        if (-not (Test-Path -LiteralPath "IIS:\AppPools\$appPool")) { throw "Application pool not found: $appPool" }
-    }
-    # Do not consume staged files until every copy and the requested restart succeed.
+    # ASP.NET reloads the application when bin files or web.config change.
+    # Do not consume staged files until every copy has been verified.
     foreach ($item in $plan) {
         $folder = Split-Path -Parent $item.Target
         if (-not (Test-Path -LiteralPath $folder)) { New-Item -ItemType Directory -Path $folder -Force | Out-Null }
@@ -61,7 +56,6 @@ try {
         if ((Get-FileHash -LiteralPath $item.Source -Algorithm SHA256).Hash -ne
             (Get-FileHash -LiteralPath $item.Target -Algorithm SHA256).Hash) { throw "Copy verification failed: $($item.Target)" }
     }
-    if ($hasBinaries) { Restart-WebAppPool -Name $appPool -ErrorAction Stop }
     foreach ($item in $plan) { Remove-Item -LiteralPath $item.Source -Force -ErrorAction Stop }
     Write-Host "Deployment completed successfully: $Environment"
     exit 0

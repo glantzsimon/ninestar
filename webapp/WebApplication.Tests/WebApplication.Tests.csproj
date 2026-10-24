@@ -273,6 +273,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Unit\Services\MobileModerationTests.cs" />
+    <Compile Include="Unit\Controllers\MobileAccessBoundaryTests.cs" />
+    <Compile Include="Unit\Controllers\MobileApiErrorTests.cs" />
+    <Compile Include="Unit\Services\MobileDonorImportTests.cs" />
+    <Compile Include="Unit\Services\MobileImageBoundaryTests.cs" />
+    <Compile Include="Unit\Controllers\MobileApiSessionTests.cs" />
+    <Compile Include="Unit\Controllers\MobileEntitlementsControllerTests.cs" />
+    <Compile Include="Unit\Controllers\MobileArtworkControllerTests.cs" />
+    <Compile Include="Unit\Helpers\MobileArtworkRegistryTests.cs" />
+    <Compile Include="Unit\Helpers\MobileArtworkCacheHelperTests.cs" />
+    <Compile Include="Unit\Helpers\MobileEntitlementsMapperTests.cs" />
+    <Compile Include="Unit\Helpers\MobileHelpMapperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit\Helpers\TestOutputTraceListener.cs" />
     <Compile Include="Unit\Helpers\FakeHttpSessionState.cs" />
@@ -288,7 +300,13 @@
     <Compile Include="Unit\Services\GoogleCalendarServiceTests.cs" />
     <Compile Include="Unit\Services\ServicePerformanceTests.cs" />
     <Compile Include="Unit\Controllers\ApiCacheSafetyTests.cs" />
+    <Compile Include="Unit\Controllers\DeploymentControllerTests.cs" />
+    <Compile Include="Unit\Helpers\DeploymentTargetHelperTests.cs" />
     <Compile Include="Unit\Controllers\PersonalCalendarControllerTests.cs" />
+    <Compile Include="Unit\Controllers\MobilePersonalChartControllerTests.cs" />
+    <Compile Include="Unit\Services\MobilePreferenceBoundaryTests.cs" />
+    <Compile Include="Unit\Models\HexagramIsolationTests.cs" />
+    <Compile Include="Unit\Models\MobileCalculationRequestTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

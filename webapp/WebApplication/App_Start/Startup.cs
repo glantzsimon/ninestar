@@ -69,6 +69,8 @@ namespace K9.WebApplication
             builder.RegisterType<NineStarKiBasePackage>().As<INineStarKiBasePackage>().InstancePerLifetimeScope();
             builder.RegisterType<FacebookService>().As<IFacebookService>().InstancePerLifetimeScope();
             builder.RegisterType<StripeService>().As<IStripeService>().InstancePerLifetimeScope();
+            builder.RegisterType<MobileCheckoutService>().As<IMobileCheckoutService>().InstancePerLifetimeScope();
+            builder.RegisterType<MobileAdminDataService>().As<IMobileAdminDataService>().InstancePerLifetimeScope();
             builder.RegisterType<DonationService>().As<IDonationService>().InstancePerLifetimeScope();
             builder.RegisterType<ConsultationService>().As<IConsultationService>().InstancePerLifetimeScope();
             builder.RegisterType<NineStarKiService>().As<INineStarKiService>().InstancePerLifetimeScope();

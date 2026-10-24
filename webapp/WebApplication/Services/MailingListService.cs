@@ -37,7 +37,7 @@ namespace K9.WebApplication.Services
             else
             {
                 list = _mailingListsRepository.Find(id);
-                if (includeUsers)
+                if (includeUsers && list != null)
                     list.Users = GetUsersForMailingList(id);
             }
             

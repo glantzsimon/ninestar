@@ -261,6 +261,15 @@ namespace K9.WebApplication.Services
 
         public void UpdateUserPreference(int userId, string key, object value)
         {
+            // Public preference actions accept keys from the client. Internal
+            // namespaces (notably MobileCheckout:) must never be writable there.
+            // Restrict to the existing ASCII naming convention as SQL collation
+            // can equate Unicode lookalikes with reserved punctuation/letters.
+            if (string.IsNullOrEmpty(key) || key.Any(c =>
+                !((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') ||
+                  (c >= '0' && c <= '9') || c == '_' || c == '-' || c == '.')))
+                throw new ArgumentException("reserved_preference_key", nameof(key));
+
             if (userId <= 0)
                 throw new ArgumentException("User ID must be greater than 0.", nameof(userId));
 
@@ -288,9 +297,13 @@ namespace K9.WebApplication.Services
                 });
             }
 
-            SessionHelper.SetValue(key, value);
-
-            InitUserPreferences(userId);
+            // An administrator may edit another account. Only refresh the
+            // session belonging to the effective current user.
+            if (System.Web.HttpContext.Current != null && Current.UserId == userId)
+            {
+                SessionHelper.SetValue(key, value);
+                InitUserPreferences(userId);
+            }
         }
 
         public T GetUserPreference<T>(int userId, string key, T defaultValue = default)

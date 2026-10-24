@@ -1195,12 +1195,13 @@ namespace K9.WebApplication.Models
         public HexagramInfo GetHexagramInfo()
         {
             var info = HexagramDetails.ContainsKey(Number) ? HexagramDetails[Number] : null;
-            if (info != null && GetChangingLines().Any())
+            if (info == null) return null;
+            // Dictionary entries are shared templates. A reading must not
+            // change another request's changing-line interpretation.
+            return new HexagramInfo(info.Stage, info.Name, info.Title, info.Summary, info.Details)
             {
-                info.ChangingLinesInterpretation = GetChangingLinesInterpretation();
-            }
-
-            return info;
+                ChangingLinesInterpretation = GetChangingLines().Any() ? GetChangingLinesInterpretation() : null
+            };
         }
 
         public Hexagram Transform()

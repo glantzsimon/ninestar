@@ -10,6 +10,7 @@ namespace K9.WebApplication.Services.Stripe
         Customer GetCustomer(string sessionId);
         PaymentIntent GetPaymentIntent(string sessionId);
         PaymentIntent GetPaymentIntent(StripeModel model);
+        PaymentIntent GetPaymentIntent(StripeModel model, string idempotencyKey);
         PaymentIntent GetPaymentIntentById(string id);
     }
 }

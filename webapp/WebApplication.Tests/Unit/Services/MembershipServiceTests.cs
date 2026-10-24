@@ -439,6 +439,43 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed, ex.Message);
         }
 
+        [Fact]
+        public void ReadOnlyMembershipLookupDoesNotCreateMissingFreeMembership()
+        {
+            _userMembershipRepository.Setup(e => e.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
+                .Returns(new List<UserMembership>());
+            Assert.Null(_membershipservice.GetExistingActiveMembership(_userId));
+            Assert.Null(_membershipservice.GetExistingActiveMembershipForOAuth(_userId));
+            _userMembershipRepository.Verify(e => e.Create(It.IsAny<UserMembership>()), Times.Never);
+        }
+
+        [Fact]
+        public void ReadOnlyMembershipLookupRetainsExistingHighestActiveOptionAndIgnoresScheduledGrants()
+        {
+            var active = new UserMembership
+            {
+                UserId = _userId, StartsOn = DateTime.Today.AddDays(-1), EndsOn = DateTime.Today,
+                MembershipOptionId = _platinumMonthlyMembership.Id, MembershipOption = _platinumMonthlyMembership
+            };
+            var scheduled = new UserMembership
+            {
+                UserId = _userId, StartsOn = DateTime.Today.AddDays(1), EndsOn = DateTime.Today.AddDays(30),
+                MembershipOptionId = _platinumYearlyMembership.Id, MembershipOption = _platinumYearlyMembership
+            };
+            var free = new UserMembership
+            {
+                UserId = _userId, StartsOn = DateTime.Today.AddDays(-1), EndsOn = DateTime.MaxValue,
+                MembershipOptionId = _freeMembership.Id, MembershipOption = _freeMembership
+            };
+            _userMembershipRepository.Setup(e => e.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
+                .Returns(new List<UserMembership> { free, active, scheduled });
+            Assert.Same(active, _membershipservice.GetExistingActiveMembership(_userId));
+            Assert.Same(active, _membershipservice.GetExistingActiveMembershipForOAuth(_userId));
+            active.IsDeactivated = true;
+            Assert.Same(free, _membershipservice.GetExistingActiveMembership(_userId));
+            _userMembershipRepository.Verify(e => e.Create(It.IsAny<UserMembership>()), Times.Never);
+        }
+
         private void AuthenticateUser()
         {
             _authentication.SetupGet(_ => _.IsAuthenticated).Returns(true);

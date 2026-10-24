@@ -137,5 +137,20 @@ namespace K9.WebApplication.Services
             }
             return !contact.IsUnsubscribed;
         }
+
+        public int ImportContactsFromDonations(IEnumerable<Donation> donations)
+        {
+            var existing = new HashSet<string>(My.ContactsRepository.List()
+                .Where(e => !string.IsNullOrWhiteSpace(e.EmailAddress)).Select(e => e.EmailAddress.Trim()), StringComparer.OrdinalIgnoreCase);
+            var contacts = (donations ?? Enumerable.Empty<Donation>())
+                .Where(e => !string.IsNullOrWhiteSpace(e.CustomerEmail) && existing.Add(e.CustomerEmail.Trim()))
+                .Select(e => new Contact
+                {
+                    FullName = string.IsNullOrWhiteSpace(e.Customer) ? e.CustomerEmail.Trim() : e.Customer,
+                    EmailAddress = e.CustomerEmail.Trim()
+                }).ToList();
+            if (contacts.Count > 0) My.ContactsRepository.CreateBatch(contacts);
+            return contacts.Count;
+        }
     }
 }

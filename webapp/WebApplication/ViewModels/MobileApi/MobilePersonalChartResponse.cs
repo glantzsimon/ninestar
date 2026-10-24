@@ -116,6 +116,7 @@ namespace K9.WebApplication.ViewModels.MobileApi
 
     public class MobileChartText
     {
+        public string Title { get; set; }
         public string Body { get; set; }
         public string Summary { get; set; }
     }

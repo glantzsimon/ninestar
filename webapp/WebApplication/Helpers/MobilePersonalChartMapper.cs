@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using Dictionary = K9.Globalisation.Dictionary;
 
 namespace K9.WebApplication.Helpers
 {
@@ -36,7 +37,7 @@ namespace K9.WebApplication.Helpers
             Sections = new
             {
                 Core = Text(model.MainEnergy.EnergyDescription, model.MainEnergy.MainEnergySummary),
-                Character = Text(model.CharacterEnergy.EnergyDescription, model.CharacterEnergy.CharacterEnergySummary),
+                Character = Text(model.CharacterEnergy.EnergyDescription, model.CharacterEnergy.CharacterEnergySummary, title: model.CharacterEnergy.DescriptiveTitle),
                 IntellectualQualities = Text(model.MainEnergy.IntellectualQualities, model.MainEnergy.IntellectualQualitiesSummary)
             }
         };
@@ -63,7 +64,7 @@ namespace K9.WebApplication.Helpers
             var sections = new Dictionary<string, MobileChartText>
             {
                 { "core", Text(main.EnergyDescription, main.MainEnergySummary) },
-                { "character", Text(character.EnergyDescription, character.CharacterEnergySummary) },
+                { "character", Text(character.EnergyDescription, character.CharacterEnergySummary, title: character.DescriptiveTitle) },
                 { "socialExpression", Text(model.SurfaceEnergy?.EnergyDescription, model.SurfaceEnergy?.SurfaceEnergySummary) },
                 { "intellectualQualities", Text(main.IntellectualQualities, main.IntellectualQualitiesSummary) },
                 { "interpersonalQualities", Text(main.InterpersonalQualities, main.InterpersonalQualitiesSummary) },
@@ -74,11 +75,11 @@ namespace K9.WebApplication.Helpers
                 { "health", Text(model.Health, main.HealthSummary) },
                 { "illnesses", Text(main.Illnesses) },
                 { "spirituality", Text(main.Spirituality, main.SpiritualitySummary) },
-                { "childNature", Text(character.ChildDescription) },
-                { "adultChildRelationship", Text(model.AdultChildRelationsihpDescription) },
-                { "stressResponse", Text(model.StressResponseDetails) },
-                { "natalHouseStressResponse", Text(model.StressResponseFromNatalHouseDetails) },
-                { "childStressResponse", Text(character.ChildStressDescription) }
+                { "childNature", Text(character.ChildDescription, title: Dictionary.ChildNature) },
+                { "adultChildRelationship", Text(model.AdultChildRelationsihpDescription, title: Dictionary.AdultChildRelationshipTitle) },
+                { "stressResponse", Text(model.StressResponseDetails, title: Dictionary.StressResponse) },
+                { "natalHouseStressResponse", Text(model.StressResponseFromNatalHouseDetails, title: Dictionary.StressResponse) },
+                { "childStressResponse", Text(character.ChildStressDescription, title: Dictionary.StressResponse) }
             };
             // Match the relationship tab's age gate in _ProfileMainEnergyDetails.
             if (person.IsSixteenOrOver())
@@ -154,8 +155,8 @@ namespace K9.WebApplication.Helpers
             };
         }
 
-        private static MobileChartText Text(string body, string summary = null) =>
-            new MobileChartText { Body = body, Summary = summary };
+        private static MobileChartText Text(string body, string summary = null, string title = null) =>
+            new MobileChartText { Title = title, Body = body, Summary = summary };
 
         private static MobileChartOrgan[] Organs(IEnumerable<EOrgan> organs) =>
             organs?.Select(organ => new MobileChartOrgan

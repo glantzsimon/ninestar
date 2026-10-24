@@ -251,6 +251,43 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             Assert.Null(JObject.FromObject(MobilePersonalChartMapper.FreeProfile(profile))["Health"]);
         }
 
+        [Fact]
+        public void CharacterNavigationTitlesMatchWebsiteWithoutChangingReadingsOrHelp()
+        {
+            var profile = new Fixture().CreateProfile(new DateTime(1979, 6, 16));
+            var result = MobilePersonalChartMapper.Map(profile, false);
+            Assert.Equal(profile.CharacterEnergy.DescriptiveTitle, result.Sections["character"].Title);
+            Assert.Equal(K9.Globalisation.Dictionary.ChildNature, result.Sections["childNature"].Title);
+            Assert.Equal(K9.Globalisation.Dictionary.AdultChildRelationshipTitle, result.Sections["adultChildRelationship"].Title);
+            foreach (var key in new[] { "stressResponse", "natalHouseStressResponse", "childStressResponse" })
+                Assert.Equal(K9.Globalisation.Dictionary.StressResponse, result.Sections[key].Title);
+            Assert.Equal(profile.CharacterEnergy.ChildDescription, result.Sections["childNature"].Body);
+            Assert.Equal(profile.CharacterEnergy.EnergyDescription, result.Sections["character"].Body);
+            Assert.Equal(profile.CharacterEnergy.CharacterEnergySummary, result.Sections["character"].Summary);
+            Assert.Equal(K9.Globalisation.Dictionary.CharacterEnergyLabel, result.Help["character"].Title);
+            Assert.Equal(profile.StressResponseDetails, result.Sections["stressResponse"].Body);
+            Assert.Equal(profile.StressResponseFromNatalHouseDetails, result.Sections["natalHouseStressResponse"].Body);
+            Assert.Equal(profile.CharacterEnergy.ChildStressDescription, result.Sections["childStressResponse"].Body);
+
+            var serializer = Newtonsoft.Json.JsonSerializer.Create(new Newtonsoft.Json.JsonSerializerSettings
+            {
+                ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver()
+            });
+            var json = JObject.FromObject(result, serializer);
+            Assert.Equal(K9.Globalisation.Dictionary.ChildNature, (string)json["sections"]["childNature"]["title"]);
+            Assert.NotNull(json["sections"]["character"]["body"]);
+            Assert.NotNull(json["sections"]["character"]["summary"]);
+            var embedded = MobilePersonalChartMapper.Map(profile, false, includeHelp: false);
+            Assert.Null(embedded.Help);
+            Assert.Equal(result.Sections["childNature"].Title, embedded.Sections["childNature"].Title);
+
+            var free = JObject.FromObject(MobilePersonalChartMapper.FreeProfile(profile), serializer);
+            Assert.Equal(profile.CharacterEnergy.DescriptiveTitle, (string)free["sections"]["character"]["title"]);
+            Assert.Null(free["sections"]["childNature"]);
+            Assert.Null(free["sections"]["stressResponse"]);
+            Assert.Null(free["sections"]["adultChildRelationship"]);
+        }
+
         private sealed class TestController : MobilePersonalChartController
         {
             private readonly int _userId;

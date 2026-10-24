@@ -715,3 +715,41 @@ Full chart projections now add `health.strongOrgans` and `health.weakOrgans`. Ea
 Full energy projections also add `yinYangExpansionTitle`, taken from the existing calculated energy resource property, alongside `yinYangExpansionDescription`. To reproduce Health, use `sections.health` for the reading, `sections.illnesses` for common challenges, `energies.core.yinYangExpansionTitle` and `yinYangExpansionDescription` for the group panel, and `health.strongOrgans` / `health.weakOrgans` for the final two panels. Do not turn enum values into display labels. These additions stay within full, already authorised chart projections (including embedded profiles); the free overview and anonymous number-only projections are unchanged.
 
 Regression coverage checks resource parity, calculated organ selection/order, display labels/artwork and exclusion from the free projection. Windows build/xUnit and signed-in Integration validation remain required; no deployment is performed by this change.
+
+### Character navigation section titles
+
+`MobileChartText` adds an optional `title` field alongside the existing `body` and `summary`. It is reusable by other reading sections, but this change populates only Character navigation and its existing stress subreadings. Unmapped sections may have `title: null`; clients must not invent wording by converting machine keys into labels.
+
+These are navigation labels from `Views/PersonalChart/_ProfileCharacterEnergyDetails.cshtml`, not substitutes for explanatory `help` titles or longer reading-panel headings:
+
+| JSON path under `data` | Website source | English value / meaning |
+| --- | --- | --- |
+| `sections.character.title` | `model.CharacterEnergy.DescriptiveTitle` | Existing energy-specific navigation label, e.g. `The Pioneer`; reuses the website formatter and Dictionary-backed descriptive-name metadata |
+| `sections.childNature.title` | `Dictionary.ChildNature` | `Child Nature` |
+| `sections.adultChildRelationship.title` | `Dictionary.AdultChildRelationshipTitle` | `Adult / Child Relationship` |
+| `sections.stressResponse.title` | `Dictionary.StressResponse` | `Stress Response` |
+| `sections.natalHouseStressResponse.title` | `Dictionary.StressResponse` | Part of the same Stress Response panel |
+| `sections.childStressResponse.title` | `Dictionary.StressResponse` | Part of the same Stress Response panel |
+
+`data.help.character.title` remains `Dictionary.CharacterEnergyLabel` (the longer generic Character introduction). The full energy reading heading remains `data.energies.character.title` (`EnergyTitle`). Neither should replace the short navigation label. No new `help` entries or prose are invented. The website combines `stressResponse.body`, `natalHouseStressResponse.body` and `childStressResponse.body`, in that order, under one Stress Response heading; do not render three navigation tabs.
+
+Example response fragment (reading HTML abbreviated):
+
+```json
+{
+  "data": {
+    "sections": {
+      "character": { "title": "The Pioneer", "body": "<p>...</p>", "summary": "<p>...</p>" },
+      "childNature": { "title": "Child Nature", "body": "<p>...</p>", "summary": null },
+      "adultChildRelationship": { "title": "Adult / Child Relationship", "body": "<p>...</p>", "summary": null },
+      "stressResponse": { "title": "Stress Response", "body": "<p>...</p>", "summary": null },
+      "natalHouseStressResponse": { "title": "Stress Response", "body": "<p>...</p>", "summary": null },
+      "childStressResponse": { "title": "Stress Response", "body": "<p>...</p>", "summary": null }
+    }
+  }
+}
+```
+
+Full authorised chart projections, including embedded profiles when `help` is suppressed, receive these titles. The free projection adds only the title of its already exposed `sections.character`; it does not add the paid Child Nature, Adult / Child Relationship or Stress Response sections. Anonymous previews and number-only responses are unchanged. Existing bodies, summaries, authentication, membership, age gates and complementary-reading rules are unchanged. Purchasing is unaffected. Older servers may omit `title`, so clients must treat it as optional.
+
+Regression coverage checks website/resource parity, camel-case JSON fields, unchanged reading bodies/summaries and help, embedded titles, and free projection boundaries. Build/xUnit execution requires Windows/VS2017; source validation is not evidence of deployment. After an owner-authorised Integration deployment, verify the authenticated full `/api/mobile/v1/personal-chart/me` response for the exact fields above. An unauthenticated response cannot establish whether these private fields are live.

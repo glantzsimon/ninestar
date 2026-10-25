@@ -30,6 +30,8 @@ namespace K9.WebApplication.Services
 
         List<UserMembership> GetActiveUserMemberships(int userId, bool includeScheduled = false);
         UserMembership GetActiveUserMembership(int? userId = null);
+        /// <summary>Read an existing active membership without creating a free grant.</summary>
+        UserMembership GetExistingActiveMembership(int authenticatedUserId);
         /// <summary>
         /// OAuth only: look up an existing active membership for the VERIFIED
         /// website user ID. Never create a free membership or accept a
@@ -42,5 +44,6 @@ namespace K9.WebApplication.Services
         void UseComplementaryPredictionsReading(int userId);
         void UseComplementaryCompatibilityReading(int userId);
         void UseComplementaryKarmicReading(int userId);
+        void AllocateFreeReadingsToAllAccounts();
     }
 }

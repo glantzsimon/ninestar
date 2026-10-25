@@ -6,8 +6,8 @@
 @if (Model != null)
 {
     <div class="main-content clear-both">
-        @Html.CollapsiblePanel(Dictionary.AdultChildRelationshipTitle, Dictionary.AdultChildRelationship)
+        @Html.CollapsiblePanel(Dictionary.AboutAdultChildRelationship, Dictionary.AdultChildRelationship)
 
-        @Html.Panel(Model.AdultChildRelationsihpTitle, Model.AdultChildRelationsihpDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel(Dictionary.AdultChildRelationshipTitle, Model.AdultChildRelationsihpDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
     </div>
 }

@@ -2,6 +2,8 @@
 
 Preserve existing structure, naming, formatting, services, repository patterns and dependency injection. Keep changes focused; do not refactor unrelated code. Use C# 7.3 and .NET Framework 4.7.2-compatible code.
 
+Prefer a targeted patch to working code. Preserve its structure, formatting and dormant functionality; do not compress code, remove unused features or introduce broader refactoring without discussing that scope with the owner first. A passing replacement test suite does not establish full behavioural parity with an existing working script.
+
 ## UI authoring
 
 The owner requires UI controls to use existing K9 HTML helpers, rather than hand-written control markup or client-generated control HTML. Inspect comparable views and actual helper signatures before implementing UI.
@@ -49,6 +51,8 @@ Keep Nine Star Ki domain models in `Models/NineStarKi`, retaining the existing `
 
 ## Service and controller reuse
 
+For the mobile JSON API, read [docs/mobile-api.md](docs/mobile-api.md). The website and mobile API are parallel transports over shared services; do not reroute existing pages through the API. See [docs/mobile-api-validation.md](docs/mobile-api-validation.md) for the build/runtime handoff and explicit scope boundaries. Keep mobile controllers under `/api/mobile/v1` separate from the plugin `ApiController`; both reuse existing services. Use explicit transport models, enforce identity and membership before projecting paid data, and never serialize an EF entity or the complete calculated view model. The mobile API uses the existing Forms Authentication session/cookies; native clients must retain cookies, obtain `/api/mobile/v1/account/csrf`, and send `X-CSRF-Token` on POST requests. It does not introduce a second token store. Private mobile checkout state is stored only under internal `MobileCheckout:` preference keys and is never returned by general preference endpoints. Native OAuth/PKCE must integrate with the OAuth owner on master rather than rebuilding authentication.
+
 Read [docs/services-and-controllers.md](docs/services-and-controllers.md) before implementing service/controller work. It maps the existing application services, controller families and tested astronomy batch call sites. Inspect the relevant interface, implementation and current callers before adding a method; extend the existing owner of the behaviour instead of creating parallel business logic.
 
 - Inject existing service interfaces through the established packages/constructor pattern. `BaseService` exposes `INineStarKiBasePackage` and inherits `CachableBase`. Controllers use `INineStarKiPackage` or `IControllerPackage<T>`; generic `BaseNineStarKiController<T>` already supplies the CRUD event/markup pattern.
@@ -58,6 +62,12 @@ Read [docs/services-and-controllers.md](docs/services-and-controllers.md) before
 - Use `EmailTemplateService` for templates and unsubscribe links, `MailerService.SendEmailTemplateToUsers` for bulk sends, `EmailQueueService` for queue rules, and `PromotionService` for promotions/reminders. Reuse consultation booking, contact matching, Stripe, PDF and media services rather than rebuilding their workflows.
 - Inspect the actual cost of a reused method. Avoid database queries, full profiles, AI/HTTP calls or process launches inside per-row loops where a batch exists. `MailingListService.ListAll` expands users/system lists; `GetAllSlotsAndBookings` loads a weekly collection and hydrates bookings. Use lighter existing methods/options when their semantics fit, and do not label all existing code inherently efficient.
 - `CachableBase` uses process-wide `MemoryCache.Default` and returns shared object references. Keep all result-changing inputs in keys, including dates, timezones, calculation/calculator/house/hemisphere choices and supplied-profile state. It coalesces concurrent misses per key across service instances, removes completed/failed in-flight work, and does not clone models. Keep nested cache dependencies acyclic. Do not mutate a shared profile to change its selected date; preserve culture/user-dependent output-cache variation and avoid caching anonymous private-feed results by URL/token.
+
+The public mobile artwork catalogue is the one identity-free cacheable exception: `GET /api/mobile/v1/metadata/artwork` uses a separate controller and does not relax private API `no-store`. Its exact GET path is excluded from the global BeginRequest cache default because ASP.NET cacheability cannot be relaxed after a restrictive policy is set. Test real `HttpCachePolicy.GetCacheability()` as well as controller calls; the compatibility `HttpResponse.CacheControl` getter is not proof of emitted headers. Artwork tests can run without website startup; IIS startup still executes migrations and requires separate authorisation under a no-schema-execution instruction. Read the artwork section in `docs/mobile-api.md` and `docs/mobile-artwork-validation.md`. Keep its explicit public allowlist and generated metadata in sync using `tools/update-mobile-artwork.py`; never scan media directories or probe each asset during requests. User/article media stays on its owning endpoint. Preserve existing website views/helpers and legacy image fields.
+
+## Shared website and mobile subscriptions
+
+One existing NineStar account serves website and app. Eligible website membership grants mobile access; server-verified Apple subscriptions must grant corresponding website/API benefits. Keep provider records separate and preserve independent website purchases. Read the proposed shared contract in `docs/mobile-api.md` before billing work; it is a draft for agreement, not implemented Apple support. Apple verification must bind signed provider evidence to the actual authenticated account, reject impersonation and duplicate cross-account claims, and handle renewals, expiry, refunds/revocation and restore idempotently. Do not route Apple fulfilment through legacy membership creation that terminates other memberships. DataAccess remains the sole schema owner; no schema execution or deployment is authorised by contract documentation. Keep app implementation notes in the separate `ninestar-mobile/docs/` repository.
 
 ## Globalisation
 
@@ -83,7 +93,13 @@ For the ChatGPT MCP/OAuth work, also read `integrations/NineStarKi.Mcp/OAUTH-ROL
 
 ## Branch and deployment workflow
 
+The owner's Git Bash `loadbranch` function automatically prepends `feature/` to its argument, fetches origin, then checks out the branch (creating it from the remote if needed) and fast-forwards an existing local branch. Pass only the suffix: `loadbranch mobile-json-api` selects `feature/mobile-json-api`. Never suggest `loadbranch feature/mobile-json-api`, which doubles the prefix. Use `loadmaster` to return to master. Verify the selected branch with `git branch --show-current`.
+
+Before running an older feature branch against the usual DEV database, compare its EF context/model, migration history and package references with current master. The database does not switch with Git branches. If DEV has already applied a newer master migration, bring the compatible model and migration/dependencies into the feature branch before testing; do not enable automatic migrations, generate a reverse/corrective migration from the older model, or alter __MigrationHistory to hide the mismatch. Keep OpenIddict mappings in LocalDb in every configuration, including when OAuth is disabled, exactly as the committed snapshot requires.
+
 Work on the existing feature branch and prepare a draft pull request for review. Do not merge or deploy without the user's instruction. Normal commits must not contain `#teamcity`; that marker deliberately triggers Integration deployment and should only be added when deployment is requested.
+
+For the quick deployment workflow, read `docs/quick-deployment.md`. Keep one uploader at `deploy/quick-deploy.py`. If git-crypt prevents inspection/editing, explain which file is needed and ask the owner for a plaintext upload; edit that supplied file and return a replacement for their local git-crypt commit. Never add wrappers or duplicate implementations to work around encryption. Production and Integration have separate staging/checkpoints, and the uploader requires protocol/environment preflight plus successful upload/maintenance JSON. Installing the root-vault PowerShell script and bootstrapping the backend through normal deployment are separate owner actions. Do not run deployment tooling or restart sites merely to test it.
 
 ## git-crypt
 
@@ -112,3 +128,7 @@ At the start of a new thread, fetch the current branch and read `AGENTS.md` and 
 ## Visual Studio 2017 editor compatibility
 
 The owner confirmed editor hard errors in the original inferred NLog Autofac registration, the certificate thumbprint LINQ expression, and `DataAccess/Helpers/Methods.cs`'s `ToSixDigitCode` LINQ expression. The captured event shows Roslyn 2.10 throwing `NullReferenceException` in `CSharpSemanticModel.AddReducedAndFilteredMethodGroupSymbol` during semantic classification. Controlled MCP-branch tests isolated the editor crash to the OpenIddict.Abstractions 7.7.2 reference, even with OAuth source and the new Autofac integration references disabled. The owner confirmed editor stability, restored-source build, passing website tests and local startup with OpenIddict 6.4.0. Keep the OpenIddict packages aligned at 6.4.0 for this VS2017 toolchain; preserve the existing 150-character OpenIddict token Type mapping so the downgrade matches the committed migration. Use explicit `Register<ILogger>(...)` for the NLog workaround and ordinary character loops for confirmed string-filtering triggers; do not rewrite unrelated LINQ speculatively. Preserve `ToSixDigitCode`'s existing nine-digit output, Unicode `char.IsDigit` behaviour and invalid-input exceptions despite its legacy method name. The character-loop change requires local build/editor verification.
+
+## Website calculator entry and input memory
+
+Read `docs/website-calculators.md` for the single anonymous result shared across website calculators and browser/page-specific input memory. Keep public pages/knowledge-base access and signed-in memberships unchanged. Guard website calculator submissions server-side; do not turn the browser trial marker into API authorisation or grant membership. Preserve entered details through sign-in, keep result pages separate from stored inputs, and do not persist tokens/entitlements or fire preference writes when restoring form controls.

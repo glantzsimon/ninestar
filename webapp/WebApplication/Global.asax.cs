@@ -75,6 +75,29 @@ namespace K9.WebApplication
             StopMiniProfiler();
         }
 
+        protected void Application_Error()
+        {
+            // Only the separate mobile namespace receives this transport error
+            // envelope. Existing website routes and friendly error views retain
+            // their original handling.
+            if (!MobileApiErrorHelper.IsMobilePath(Request.AppRelativeCurrentExecutionFilePath)) return;
+            var exception = Server.GetLastError();
+            if (exception == null) return;
+            var status = MobileApiErrorHelper.Status(exception);
+            NLog.LogManager.GetCurrentClassLogger().Error("Mobile API pipeline failed: " + exception.GetType().Name);
+            Server.ClearError();
+            Response.Clear();
+            Response.StatusCode = status;
+            Response.SuppressFormsAuthenticationRedirect = true;
+            Response.TrySkipIisCustomErrors = true;
+            Response.ContentType = "application/json";
+            Response.ContentEncoding = System.Text.Encoding.UTF8;
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetNoStore();
+            Response.Write(MobileApiErrorHelper.Json(status));
+            CompleteRequest();
+        }
+
         private void ConfigureMiniProfiler()
         {
 #if DEBUG
@@ -105,10 +128,12 @@ namespace K9.WebApplication
             if (HttpContext.Current != null && HttpContext.Current.Response != null)
             {
 #if DEBUG
-                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                const HttpCacheability defaultPolicy = HttpCacheability.NoCache;
 #else
-                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
+                const HttpCacheability defaultPolicy = HttpCacheability.ServerAndPrivate;
 #endif
+                MobileArtworkCacheHelper.ApplyRequestDefault(
+                    new HttpContextWrapper(HttpContext.Current), defaultPolicy);
             }
         }
 

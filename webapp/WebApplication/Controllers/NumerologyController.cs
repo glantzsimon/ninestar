@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Enums;
+using K9.WebApplication.Attributes;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
@@ -23,7 +24,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("calculator")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", VaryByHeader="User-Agent", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Index()
         {
             return View(new NumerologyModel());
@@ -31,6 +32,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("calculator-l")]
         [HttpPost]
+        [CalculatorTrial]
         public ActionResult Link(NineStarKiModel model)
         {
             NumerologyModel nModel = null;
@@ -62,6 +64,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("calculator")]
         [HttpPost]
+        [CalculatorTrial]
         public ActionResult Index(NumerologyModel model)
         {
             if (model.PersonModel != null)

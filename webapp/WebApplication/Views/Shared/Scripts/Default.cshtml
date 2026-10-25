@@ -317,6 +317,8 @@
             datasets: @Html.Raw(this.GetDropdownData().GetAllDataSetsJson())
         }).init();
 
+        calculatorMemory().init();
+
 		buttonBehaviours().init();
         
 		fadePageIn({

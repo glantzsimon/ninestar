@@ -22,16 +22,16 @@ namespace K9.WebApplication.Helpers
         {
             var help = new Dictionary<string, MobileHelpText>
             {
-                { "overview", Text(Dictionary.PersonalChart, Dictionary.personal_chart) },
-                { "core", Text(Dictionary.MainEnergyLabel, Dictionary.MainEnergyDescription) },
-                { "character", Text(Dictionary.CharacterEnergyLabel, Dictionary.CharacterEnergyDescription) },
-                { "socialExpression", Text(Dictionary.SurfaceEnergyLabel, Dictionary.SurfaceEnergyDescription) },
-                { "dayStar", Text(Dictionary.DayStarLabel, Dictionary.DayStarDescription) },
-                { "generation", Text(Dictionary.GenerationalEnergyLabel, Dictionary.GenerationalEnergyDescription) },
-                { "epoch", Text(Dictionary.EpochEnergyLabel, Dictionary.EpochEnergyDescription) }
+                { "overview", Text(Dictionary.AboutPersonalChart, Dictionary.personal_chart) },
+                { "core", Text(Dictionary.AboutConstitution, Dictionary.MainEnergyDescription) },
+                { "character", Text(Dictionary.AboutCharacterNature, Dictionary.CharacterEnergyDescription) },
+                { "socialExpression", Text(Dictionary.AboutSocialExpression, Dictionary.SurfaceEnergyDescription) },
+                { "dayStar", Text(Dictionary.AboutDayStar, Dictionary.DayStarDescription) },
+                { "generation", Text(Dictionary.AboutGenerationalKi, Dictionary.GenerationalEnergyDescription) },
+                { "epoch", Text(Dictionary.AboutEpochKi, Dictionary.EpochEnergyDescription) }
             };
             if (includeRelationships)
-                help.Add("relationships", Text(Dictionary.SexualityTitle, Dictionary.relationships_description));
+                help.Add("relationships", Text(Dictionary.AboutRelationshipsAndIntimacy, Dictionary.relationships_description));
             // This explanation is inside the character tab's paywall on the web.
             if (includeMemberHelp)
                 help.Add("adultChildRelationship", Text(Dictionary.AboutAdultChildRelationship, Dictionary.AdultChildRelationship));
@@ -40,24 +40,24 @@ namespace K9.WebApplication.Helpers
 
         public static Dictionary<string, MobileHelpText> Predictions() => new Dictionary<string, MobileHelpText>
         {
-            { "day", Text(Dictionary.DailyPrediction, Dictionary.day_description) },
-            { "month", Text(Dictionary.MonthlyPrediction, Dictionary.month_description) },
-            { "year", Text(Dictionary.YearlyPrediction, Dictionary.year_description) },
-            { "generation", Text(Dictionary.NineYearlyPrediction, Dictionary.generation_description) },
-            { "epoch", Text(Dictionary.EightyOneYearlyPrediction, Dictionary.epoch_description) },
-            { "globalKiWarning", Text(Dictionary.GlobalKiLabel, Dictionary.globalki_display_warning) },
+            { "day", Text(Dictionary.AboutDailyPredictions, Dictionary.day_description) },
+            { "month", Text(Dictionary.AboutMonthlyPredictions, Dictionary.month_description) },
+            { "year", Text(Dictionary.AboutYearlyPredictions, Dictionary.year_description) },
+            { "generation", Text(Dictionary.AboutNineYearPredictions, Dictionary.generation_description) },
+            { "epoch", Text(Dictionary.AboutEightyOneYearPredictions, Dictionary.epoch_description) },
+            { "globalKiWarning", Text(Dictionary.AboutGlobalKi, Dictionary.globalki_display_warning) },
             { "moreOnCycles", Text(Dictionary.MoreOnCycles, Dictionary.holograhpic_spirals) }
         };
 
         public static Dictionary<string, MobileHelpText> Calendar() => new Dictionary<string, MobileHelpText>
         {
-            { "overview", Text(Dictionary.PersonalCalendar, Dictionary.PersonalCalendarHelp) },
-            { "subscription", Text(Dictionary.PersonalCalendar, Dictionary.CalendarSubscriptionHelp) }
+            { "overview", Text(Dictionary.AboutPersonalCalendar, Dictionary.PersonalCalendarHelp) },
+            { "subscription", Text(Dictionary.AboutPersonalCalendar, Dictionary.CalendarSubscriptionHelp) }
         };
 
         public static Dictionary<string, MobileHelpText> Compatibility() => new Dictionary<string, MobileHelpText>
         {
-            { "overview", Text(Dictionary.CompatibilityTitle, Dictionary.compatibility_subtitle) }
+            { "overview", Text(Dictionary.AboutCompatibilityCalculator, Dictionary.compatibility_subtitle) }
         };
 
         public static Dictionary<string, MobileHelpText> Numerology() => new Dictionary<string, MobileHelpText>

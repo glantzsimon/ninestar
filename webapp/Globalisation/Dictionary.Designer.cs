@@ -41261,5 +41261,69 @@ namespace K9.Globalisation {
             get { return ResourceManager.GetString("AboutAdultChildRelationship", resourceCulture); }
         }
 
+        public static string AboutPersonalChart {
+            get { return ResourceManager.GetString("AboutPersonalChart", resourceCulture); }
+        }
+
+        public static string AboutConstitution {
+            get { return ResourceManager.GetString("AboutConstitution", resourceCulture); }
+        }
+
+        public static string AboutCharacterNature {
+            get { return ResourceManager.GetString("AboutCharacterNature", resourceCulture); }
+        }
+
+        public static string AboutSocialExpression {
+            get { return ResourceManager.GetString("AboutSocialExpression", resourceCulture); }
+        }
+
+        public static string AboutDayStar {
+            get { return ResourceManager.GetString("AboutDayStar", resourceCulture); }
+        }
+
+        public static string AboutGenerationalKi {
+            get { return ResourceManager.GetString("AboutGenerationalKi", resourceCulture); }
+        }
+
+        public static string AboutEpochKi {
+            get { return ResourceManager.GetString("AboutEpochKi", resourceCulture); }
+        }
+
+        public static string AboutRelationshipsAndIntimacy {
+            get { return ResourceManager.GetString("AboutRelationshipsAndIntimacy", resourceCulture); }
+        }
+
+        public static string AboutDailyPredictions {
+            get { return ResourceManager.GetString("AboutDailyPredictions", resourceCulture); }
+        }
+
+        public static string AboutMonthlyPredictions {
+            get { return ResourceManager.GetString("AboutMonthlyPredictions", resourceCulture); }
+        }
+
+        public static string AboutYearlyPredictions {
+            get { return ResourceManager.GetString("AboutYearlyPredictions", resourceCulture); }
+        }
+
+        public static string AboutNineYearPredictions {
+            get { return ResourceManager.GetString("AboutNineYearPredictions", resourceCulture); }
+        }
+
+        public static string AboutEightyOneYearPredictions {
+            get { return ResourceManager.GetString("AboutEightyOneYearPredictions", resourceCulture); }
+        }
+
+        public static string AboutGlobalKi {
+            get { return ResourceManager.GetString("AboutGlobalKi", resourceCulture); }
+        }
+
+        public static string AboutPersonalCalendar {
+            get { return ResourceManager.GetString("AboutPersonalCalendar", resourceCulture); }
+        }
+
+        public static string AboutCompatibilityCalculator {
+            get { return ResourceManager.GetString("AboutCompatibilityCalculator", resourceCulture); }
+        }
+
     }
 }

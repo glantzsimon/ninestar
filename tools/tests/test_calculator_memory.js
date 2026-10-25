@@ -44,7 +44,7 @@ function run(page, inputs, storage, restore = true, displays = {}, hidden = fals
     const context = { $, localStorage: storage, document: { getElementById: id => displays[id] }, moment: value => value };
     vm.runInNewContext(source, context);
     context.calculatorMemory().init();
-    return { form, triggered, save: () => form.events['submit.calculatorMemory']() };
+    return { form, triggered, save: () => form.events['submit.calculatorMemory']({ type: 'submit' }), draft: () => form.events['input.calculatorMemory change.calculatorMemory']({ type: 'change' }) };
 }
 
 const data = new Map();
@@ -95,7 +95,7 @@ assert.ok(restored.form.events['dp.change.calculatorMemory'], 'Date-picker chang
 
 const other = field('PersonModel.DateOfBirth', '1982-03-12');
 run('predictions', [other], storage);
-assert.equal(other.value, '1982-03-12', 'Calculator pages must not share values');
+assert.equal(other.value, '1979-06-16', 'Single-person calculators share the last submitted birth date');
 const posted = field('PersonModel.DateOfBirth', '1990-01-01');
 run('personal-chart', [posted], storage, false);
 assert.equal(posted.value, '1990-01-01', 'Do not overwrite a POST response or server validation errors');
@@ -112,4 +112,33 @@ data.set(key('numerology'), '{broken json');
 assert.doesNotThrow(() => run('numerology', [field('PersonModel.Name', 'unchanged')], storage));
 const unavailable = { getItem() { throw Error('disabled'); }, setItem() { throw Error('full'); } };
 assert.doesNotThrow(() => run('biorhythms', [field('PersonModel.Name', 'Alex')], unavailable).save());
+// Forecast dates and optional names/options stay page-specific.
+const forecast = run('predictions', [field('PersonModel.DateOfBirth', '1900-01-01'), field('SelectedDate', '2027-02-10'), field('PersonModel.Name', 'Prediction Name')], storage);
+forecast.save();
+const chartWithDate = [field('PersonModel.DateOfBirth', ''), field('SelectedDate', '2028-01-01'), field('PersonModel.Name', 'Chart Name')];
+run('personal-chart', chartWithDate, storage);
+assert.equal(chartWithDate[1].value, '2028-01-01', 'Forecast target dates are not shared');
+assert.equal(chartWithDate[2].value, 'Chart Name', 'Optional names are not shared');
+
+// Draft edits do not change the globally submitted person.
+const draft = run('numerology', [field('PersonModel.DateOfBirth', '2001-04-05')], storage, false);
+draft.draft();
+assert.equal(JSON.parse(data.get('NineStarKi.CalculatorPerson.v1'))['PersonModel.DateOfBirth'], '1979-06-16');
+draft.save();
+const newPerson = JSON.parse(data.get('NineStarKi.CalculatorPerson.v1'));
+assert.equal(newPerson['PersonModel.DateOfBirth'], '2001-04-05');
+assert.equal(newPerson['PersonModel.TimeOfBirth'], undefined, 'A new DOB must not inherit another person’s time');
+
+// Only an unsaved Compatibility pair receives the shared DOB in its first slot.
+data.delete(key('compatibility'));
+const firstPair = [field('NineStarKiModel1.PersonModel.DateOfBirth', ''), field('NineStarKiModel2.PersonModel.DateOfBirth', '1982-03-12')];
+const firstPairRun = run('compatibility', firstPair, storage);
+assert.equal(firstPair[0].value, '2001-04-05');
+assert.equal(firstPair[1].value, '1982-03-12');
+firstPairRun.save();
+run('numerology', [field('PersonModel.DateOfBirth', '1990-09-09')], storage, false).save();
+const rememberedPair = [field('NineStarKiModel1.PersonModel.DateOfBirth', ''), field('NineStarKiModel2.PersonModel.DateOfBirth', '')];
+run('compatibility', rememberedPair, storage);
+assert.equal(rememberedPair[0].value, '2001-04-05', 'A saved pair must not be replaced by a newer shared person');
+assert.equal(rememberedPair[1].value, '1982-03-12');
 console.log('Calculator memory behaviour checks passed.');

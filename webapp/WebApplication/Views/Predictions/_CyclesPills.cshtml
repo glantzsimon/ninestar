@@ -71,7 +71,7 @@
 
     <div class="tab-content">
         <div id="current-daily-cycle" class="tab-pane fade">
-            @Html.CollapsiblePanel(Dictionary.DailyPrediction, Dictionary.day_description)
+            @Html.CollapsiblePanel(Dictionary.AboutDailyPredictions, Dictionary.day_description)
 
             @using (Html.PayWall(ESection.Predictions, Model))
             {
@@ -102,7 +102,7 @@
         </div>
 
         <div id="current-monthly-cycle" class="tab-pane fade in active">
-            @Html.CollapsiblePanel(Dictionary.MonthlyPrediction, Dictionary.month_description)
+            @Html.CollapsiblePanel(Dictionary.AboutMonthlyPredictions, Dictionary.month_description)
 
             @using (Html.PayWall(ESection.Predictions, Model))
             {
@@ -131,7 +131,7 @@
         </div>
 
         <div id="current-yearly-cycle" class="tab-pane fade">
-            @Html.CollapsiblePanel(Dictionary.YearlyPrediction, Dictionary.year_description)
+            @Html.CollapsiblePanel(Dictionary.AboutYearlyPredictions, Dictionary.year_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfileOrComplementary))
             {
@@ -160,7 +160,7 @@
         </div>
 
         <div id="current-generation-cycle" class="tab-pane fade">
-            @Html.CollapsiblePanel(Dictionary.NineYearlyPrediction, Dictionary.generation_description)
+            @Html.CollapsiblePanel(Dictionary.AboutNineYearPredictions, Dictionary.generation_description)
 
             @using (Html.PayWall(ESection.Predictions, Model))
             {
@@ -189,7 +189,7 @@
         </div>
 
         <div id="current-epoch-cycle" class="tab-pane fade">
-            @Html.CollapsiblePanel($"{Dictionary.EightyOneYearlyPrediction} ({Dictionary.GlobalKiLabel})", $"{Dictionary.epoch_description} {Dictionary.globalki_display_warning}")
+            @Html.CollapsiblePanel($"{Dictionary.AboutEightyOneYearPredictions} ({Dictionary.GlobalKiLabel})", $"{Dictionary.epoch_description} {Dictionary.globalki_display_warning}")
 
             @using (Html.PayWall(ESection.Predictions, Model))
             {

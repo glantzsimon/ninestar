@@ -13998,12 +13998,60 @@
     <value>Allow Access</value>
   </data>
   <data name="CalculatorTrialNotice" xml:space="preserve">
-    <value>Try one calculation free. Create a free account or sign in to calculate again. Your last-entered details are remembered separately for each calculator in this browser.</value>
+    <value>Try one free calculation in each section. Sign in or create a free account to calculate again.</value>
   </data>
   <data name="CalculatorSignInRequired" xml:space="preserve">
-    <value>You have used your free calculation. Sign in or create a free account to continue; your entered details will be waiting when you return to the calculator.</value>
+    <value>You have used your free calculation for this section. Sign in or create a free account to continue; your entered details will be waiting when you return to the calculator.</value>
   </data>
   <data name="AboutAdultChildRelationship" xml:space="preserve">
     <value>About Adult / Child Relationship</value>
+  </data>
+  <data name="AboutPersonalChart" xml:space="preserve">
+    <value>About Your Personal Chart</value>
+  </data>
+  <data name="AboutConstitution" xml:space="preserve">
+    <value>About Your Constitution</value>
+  </data>
+  <data name="AboutCharacterNature" xml:space="preserve">
+    <value>About Character Nature / the Inner Child</value>
+  </data>
+  <data name="AboutSocialExpression" xml:space="preserve">
+    <value>About Social Expression</value>
+  </data>
+  <data name="AboutDayStar" xml:space="preserve">
+    <value>About the Day Star</value>
+  </data>
+  <data name="AboutGenerationalKi" xml:space="preserve">
+    <value>About Generational Ki</value>
+  </data>
+  <data name="AboutEpochKi" xml:space="preserve">
+    <value>About Epoch Ki</value>
+  </data>
+  <data name="AboutRelationshipsAndIntimacy" xml:space="preserve">
+    <value>About Relationships &amp; Intimacy</value>
+  </data>
+  <data name="AboutDailyPredictions" xml:space="preserve">
+    <value>About Daily Predictions</value>
+  </data>
+  <data name="AboutMonthlyPredictions" xml:space="preserve">
+    <value>About Monthly Predictions</value>
+  </data>
+  <data name="AboutYearlyPredictions" xml:space="preserve">
+    <value>About Yearly Predictions</value>
+  </data>
+  <data name="AboutNineYearPredictions" xml:space="preserve">
+    <value>About 9-Year Predictions</value>
+  </data>
+  <data name="AboutEightyOneYearPredictions" xml:space="preserve">
+    <value>About 81-Year Predictions</value>
+  </data>
+  <data name="AboutGlobalKi" xml:space="preserve">
+    <value>About Global Ki</value>
+  </data>
+  <data name="AboutPersonalCalendar" xml:space="preserve">
+    <value>About Your Personal Calendar</value>
+  </data>
+  <data name="AboutCompatibilityCalculator" xml:space="preserve">
+    <value>About the Compatibility Calculator</value>
   </data>
 </root>

@@ -16,7 +16,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
         public void ChartIntroductionsMatchWebsiteResourcesWithoutTabInstructions()
         {
             var help = MobileHelpMapper.Chart(true, true);
-            Assert.Equal(Dictionary.MainEnergyLabel, help["core"].Title);
+            Assert.Equal(Dictionary.AboutConstitution, help["core"].Title);
             Assert.Equal(Dictionary.MainEnergyDescription, help["core"].HtmlBody);
             Assert.Equal(Dictionary.CharacterEnergyDescription, help["character"].HtmlBody);
             Assert.Equal(Dictionary.SurfaceEnergyDescription, help["socialExpression"].HtmlBody);
@@ -27,6 +27,32 @@ namespace K9.WebApplication.Tests.Unit.Helpers
             Assert.Equal(Dictionary.AboutAdultChildRelationship, help["adultChildRelationship"].Title);
             Assert.Equal(Dictionary.AdultChildRelationship, help["adultChildRelationship"].HtmlBody);
             Assert.Equal(9, help.Count);
+        }
+
+        [Fact]
+        public void ContextualAboutTitlesStaySeparateFromNavigationAndPreserveExceptions()
+        {
+            var chart = MobileHelpMapper.Chart(true, true);
+            Assert.Equal(Dictionary.AboutPersonalChart, chart["overview"].Title);
+            Assert.Equal(Dictionary.AboutCharacterNature, chart["character"].Title);
+            Assert.Equal(Dictionary.AboutSocialExpression, chart["socialExpression"].Title);
+            Assert.Equal(Dictionary.AboutDayStar, chart["dayStar"].Title);
+            Assert.Equal(Dictionary.AboutGenerationalKi, chart["generation"].Title);
+            Assert.Equal(Dictionary.AboutEpochKi, chart["epoch"].Title);
+            Assert.Equal(Dictionary.AboutRelationshipsAndIntimacy, chart["relationships"].Title);
+            var cycles = MobileHelpMapper.Predictions();
+            Assert.Equal(Dictionary.AboutDailyPredictions, cycles["day"].Title);
+            Assert.Equal(Dictionary.AboutMonthlyPredictions, cycles["month"].Title);
+            Assert.Equal(Dictionary.AboutYearlyPredictions, cycles["year"].Title);
+            Assert.Equal(Dictionary.AboutNineYearPredictions, cycles["generation"].Title);
+            Assert.Equal(Dictionary.AboutEightyOneYearPredictions, cycles["epoch"].Title);
+            Assert.Equal(Dictionary.AboutGlobalKi, cycles["globalKiWarning"].Title);
+            Assert.Equal(Dictionary.MoreOnCycles, cycles["moreOnCycles"].Title);
+            Assert.Equal(Dictionary.WhatIsKarmicNumerology, MobileHelpMapper.Numerology()["overview"].Title);
+            Assert.Equal(Dictionary.AboutPersonalCalendar, MobileHelpMapper.Calendar()["overview"].Title);
+            Assert.Equal(Dictionary.AboutPersonalCalendar, MobileHelpMapper.Calendar()["subscription"].Title);
+            Assert.Equal(Dictionary.AboutCompatibilityCalculator, MobileHelpMapper.Compatibility()["overview"].Title);
+            Assert.Equal(Dictionary.PersonalChart, MobileHelpMapper.KnowledgeBase(false, "https://example.test/learn")["personalChart"].Title);
         }
 
         [Theory]

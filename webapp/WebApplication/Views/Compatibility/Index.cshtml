@@ -25,7 +25,7 @@
             <article>
                 @if (Model != null && Model.IsProcessed)
                 {
-                    @Html.Raw(Html.Panel(Dictionary.CompatibilityTitle, Dictionary.compatibility_subtitle).ToString())
+                    @Html.Raw(Html.Panel(Dictionary.AboutCompatibilityCalculator, Dictionary.compatibility_subtitle).ToString())
 
                     @Html.Panel(Dictionary.CompatibilityResults, Html.Partial("_CompatibilityPills").ToString())
                 }

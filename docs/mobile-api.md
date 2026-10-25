@@ -731,7 +731,7 @@ These are navigation labels from `Views/PersonalChart/_ProfileCharacterEnergyDet
 | `sections.natalHouseStressResponse.title` | `Dictionary.StressResponse` | Part of the same Stress Response panel |
 | `sections.childStressResponse.title` | `Dictionary.StressResponse` | Part of the same Stress Response panel |
 
-`data.help.character.title` remains `Dictionary.CharacterEnergyLabel` (the longer generic Character introduction). The full energy reading heading remains `data.energies.character.title` (`EnergyTitle`). Neither should replace the short navigation label. No new `help` entries or prose are invented. The website combines `stressResponse.body`, `natalHouseStressResponse.body` and `childStressResponse.body`, in that order, under one Stress Response heading; do not render three navigation tabs.
+`data.help.character.title` uses `Dictionary.AboutCharacterNature` (the generic Character introduction); `sections.character.title` remains the short energy-specific navigation label. The full energy reading heading remains `data.energies.character.title` (`EnergyTitle`). Neither should replace the short navigation label. No new `help` entries or prose are invented. The website combines `stressResponse.body`, `natalHouseStressResponse.body` and `childStressResponse.body`, in that order, under one Stress Response heading; do not render three navigation tabs.
 
 Example response fragment (reading HTML abbreviated):
 
@@ -782,3 +782,28 @@ The full standalone API chart mirrors that distinction:
 ```
 
 Mobile clients should use `help.adultChildRelationship.title` for the expandable explanation and `sections.adultChildRelationship.title` for its navigation/details heading. Help/body text and member-access rules are unchanged; free responses still omit this member helper and embedded profiles still suppress duplicated help.
+
+### Contextual About headings
+
+Website explanatory helper panels and matching API `help` titles use dedicated Dictionary resources, so navigation/section titles and reading headings remain unchanged. Knowledge-base article headings, individual energy/cycle readings, The Nine Yearly/Monthly Cycles collections and Detailed Interpretation keep their existing labels. More on Predictions (`Dictionary.MoreOnCycles`) and What is Karmic Numerology? (`Dictionary.WhatIsKarmicNumerology`) are explicitly unchanged, as are the existing About Adult / Child Relationship, About 9 Star Ki Biorhythms and About The I Ching labels.
+
+| Response/help key | Dictionary resource | English title |
+| --- | --- | --- |
+| chart overview | `Dictionary.AboutPersonalChart` | About Your Personal Chart |
+| chart core | `Dictionary.AboutConstitution` | About Your Constitution |
+| chart character | `Dictionary.AboutCharacterNature` | About Character Nature / the Inner Child |
+| chart socialExpression | `Dictionary.AboutSocialExpression` | About Social Expression |
+| chart dayStar | `Dictionary.AboutDayStar` | About the Day Star |
+| chart generation | `Dictionary.AboutGenerationalKi` | About Generational Ki |
+| chart epoch | `Dictionary.AboutEpochKi` | About Epoch Ki |
+| chart relationships | `Dictionary.AboutRelationshipsAndIntimacy` | About Relationships & Intimacy |
+| predictions day | `Dictionary.AboutDailyPredictions` | About Daily Predictions |
+| predictions month | `Dictionary.AboutMonthlyPredictions` | About Monthly Predictions |
+| predictions year | `Dictionary.AboutYearlyPredictions` | About Yearly Predictions |
+| predictions generation | `Dictionary.AboutNineYearPredictions` | About 9-Year Predictions |
+| predictions epoch | `Dictionary.AboutEightyOneYearPredictions` | About 81-Year Predictions |
+| predictions globalKiWarning | `Dictionary.AboutGlobalKi` | About Global Ki |
+| calendar overview/subscription | `Dictionary.AboutPersonalCalendar` | About Your Personal Calendar |
+| compatibility overview | `Dictionary.AboutCompatibilityCalculator` | About the Compatibility Calculator |
+
+The website 81-year helper retains `(Global Ki)` after its About heading. API prediction help retains its existing separate `epoch` and `globalKiWarning` entries. Only titles change: help HTML, section bodies/summaries, memberships and age/access restrictions remain unchanged.

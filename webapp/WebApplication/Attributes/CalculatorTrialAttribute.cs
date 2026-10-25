@@ -12,10 +12,10 @@ namespace K9.WebApplication.Attributes
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             context.HttpContext.Response.Cache.SetNoStore();
-            if (context.HttpContext.User?.Identity?.IsAuthenticated == true ||
-                !CalculatorTrialHelper.HasUsedTrial(context.HttpContext)) return;
-
             var controller = context.ActionDescriptor.ControllerDescriptor.ControllerName;
+            if (context.HttpContext.User?.Identity?.IsAuthenticated == true ||
+                !CalculatorTrialHelper.HasUsedTrial(context.HttpContext, controller)) return;
+
             var returnUrl = new UrlHelper(context.RequestContext).Action("Index", controller);
             context.Controller.TempData["CalculatorSignInRequired"] = true;
             context.Result = new RedirectToRouteResult(new RouteValueDictionary(new
@@ -36,7 +36,8 @@ namespace K9.WebApplication.Attributes
                 model is PredictionsViewModel predictions && predictions.NineStarKiModel?.IsProcessed == true ||
                 model is BioRhythmsModel biorhythms && biorhythms.BiorhythmResults?.Count > 0 ||
                 model is IChingViewModel iching && iching.Hexagram != null;
-            if (success) CalculatorTrialHelper.RecordResult(context.HttpContext);
+            if (success) CalculatorTrialHelper.RecordResult(context.HttpContext,
+                context.ActionDescriptor.ControllerDescriptor.ControllerName);
         }
     }
 }

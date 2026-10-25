@@ -265,7 +265,7 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             Assert.Equal(profile.CharacterEnergy.ChildDescription, result.Sections["childNature"].Body);
             Assert.Equal(profile.CharacterEnergy.EnergyDescription, result.Sections["character"].Body);
             Assert.Equal(profile.CharacterEnergy.CharacterEnergySummary, result.Sections["character"].Summary);
-            Assert.Equal(K9.Globalisation.Dictionary.CharacterEnergyLabel, result.Help["character"].Title);
+            Assert.Equal(K9.Globalisation.Dictionary.AboutCharacterNature, result.Help["character"].Title);
             Assert.Equal(profile.StressResponseDetails, result.Sections["stressResponse"].Body);
             Assert.Equal(profile.StressResponseFromNatalHouseDetails, result.Sections["natalHouseStressResponse"].Body);
             Assert.Equal(profile.CharacterEnergy.ChildStressDescription, result.Sections["childStressResponse"].Body);

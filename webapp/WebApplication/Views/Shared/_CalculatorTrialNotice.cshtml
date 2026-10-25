@@ -1,5 +1,5 @@
 @using K9.WebApplication.Helpers
 @if (!Request.IsAuthenticated)
 {
-    <p>@(CalculatorTrialHelper.HasUsedTrial(ViewContext.HttpContext) ? Dictionary.CalculatorSignInRequired : Dictionary.CalculatorTrialNotice)</p>
+    <p>@(CalculatorTrialHelper.HasUsedTrial(ViewContext.HttpContext, ViewContext.RouteData.Values["controller"].ToString()) ? Dictionary.CalculatorSignInRequired : Dictionary.CalculatorTrialNotice)</p>
 }

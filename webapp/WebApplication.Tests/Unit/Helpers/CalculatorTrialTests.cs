@@ -88,6 +88,18 @@ namespace K9.WebApplication.Tests.Unit.Helpers
             public ActionResult Index() => new EmptyResult();
         }
 
+        // Use the same stateful session double as MobileApiSessionTests. Its
+        // indexer must retain values across calls, including before a cookie round trip.
+        private sealed class SessionState : HttpSessionStateBase
+        {
+            private readonly Dictionary<string, object> _items = new Dictionary<string, object>();
+            public override object this[string name]
+            {
+                get => _items.TryGetValue(name, out var value) ? value : null;
+                set => _items[name] = value;
+            }
+        }
+
         private sealed class Fixture
         {
             public readonly Mock<HttpContextBase> Http = new Mock<HttpContextBase>();
@@ -107,14 +119,9 @@ namespace K9.WebApplication.Tests.Unit.Helpers
                 var response = new Mock<HttpResponseBase>();
                 response.SetupGet(e => e.Cookies).Returns(ResponseCookies);
                 response.SetupGet(e => e.Cache).Returns(new Mock<HttpCachePolicyBase>().Object);
-                var values = new Dictionary<string, object>();
-                var session = new Mock<HttpSessionStateBase>();
-                session.Setup(e => e[It.IsAny<string>()]).Returns((string key) => values.ContainsKey(key) ? values[key] : null);
-                session.SetupSet(e => e[It.IsAny<string>()] = It.IsAny<object>())
-                    .Callback<string, object>((key, value) => values[key] = value);
                 Http.SetupGet(e => e.Request).Returns(request.Object);
                 Http.SetupGet(e => e.Response).Returns(response.Object);
-                Http.SetupGet(e => e.Session).Returns(session.Object);
+                Http.SetupGet(e => e.Session).Returns(new SessionState());
                 Http.SetupGet(e => e.User).Returns(new GenericPrincipal(new GenericIdentity(authenticated ? "member" : ""), new string[0]));
                 Controller.ControllerContext = new ControllerContext(Http.Object, new RouteData(), Controller);
                 _action = new ReflectedActionDescriptor(typeof(TestController).GetMethod("Index"), "Index",

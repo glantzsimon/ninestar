@@ -524,7 +524,7 @@
     <value>The 3 Modalities / Groups</value>
   </data>
   <data name="YinAndYang" xml:space="preserve">
-    <value>Yin and Yang</value>
+    <value>Yin And Yang</value>
   </data>
   <data name="EarthElement" xml:space="preserve">
     <value>Earth Element</value>
@@ -2375,7 +2375,7 @@
     <value>Create Free Slots</value>
   </data>
   <data name="CyclesOfLightAndDark" xml:space="preserve">
-    <value>Cycles of Light and Dark</value>
+    <value>Cycles Of Light And Dark</value>
   </data>
   <data name="DoYouHaveAQuestion" xml:space="preserve">
     <value>Do you have a question?</value>
@@ -4088,7 +4088,7 @@
     <value>articles\en-gb\karmic-numerology.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="WhatIsKarmicNumerology" xml:space="preserve">
-    <value>What is Karmic Numerology?</value>
+    <value>What Is Karmic Numerology?</value>
   </data>
   <data name="mentor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>numerology\en-gb\codes\mentor.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -4220,7 +4220,7 @@
     <value>Yin / Yang Analysis</value>
   </data>
   <data name="YinYangTitle" xml:space="preserve">
-    <value>Yin and Yang</value>
+    <value>Yin And Yang</value>
   </data>
   <data name="UserIsUnsubscribed" xml:space="preserve">
     <value>User Is Unsubscribed</value>
@@ -6275,7 +6275,7 @@
     <value>astrology\en-gb\lunardays\lunar-day-9-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="MoreOnCycles" xml:space="preserve">
-    <value>More on Predictions</value>
+    <value>More On Predictions</value>
   </data>
   <data name="OtherCyclesDescription" xml:space="preserve">
     <value>Explore &lt;strong&gt;predictions&lt;/strong&gt; across &lt;strong&gt;81-year, 9-year, daily&lt;/strong&gt;, and &lt;strong&gt;hourly cycles&lt;/strong&gt; for deeper insight into the &lt;strong&gt;rhythms shaping your life&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;</value>
@@ -14013,13 +14013,13 @@
     <value>About Your Constitution</value>
   </data>
   <data name="AboutCharacterNature" xml:space="preserve">
-    <value>About Character Nature / the Inner Child</value>
+    <value>About Character Nature / The Inner Child</value>
   </data>
   <data name="AboutSocialExpression" xml:space="preserve">
     <value>About Social Expression</value>
   </data>
   <data name="AboutDayStar" xml:space="preserve">
-    <value>About the Day Star</value>
+    <value>About The Day Star</value>
   </data>
   <data name="AboutGenerationalKi" xml:space="preserve">
     <value>About Generational Ki</value>
@@ -14052,6 +14052,6 @@
     <value>About Your Personal Calendar</value>
   </data>
   <data name="AboutCompatibilityCalculator" xml:space="preserve">
-    <value>About the Compatibility Calculator</value>
+    <value>About The Compatibility Calculator</value>
   </data>
 </root>

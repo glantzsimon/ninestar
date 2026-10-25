@@ -71,7 +71,7 @@ One existing NineStar account serves website and app. Eligible website membershi
 
 ## Globalisation
 
-Use Title Case for English panel headings, matching existing headings such as `Houses You Currently Occupy` and `Your Personal Calendar`.
+Use Proper Case (capitalise every word, including The, Is, On, And and Of) for helper headings. Keep all heading text Dictionary-backed. Use Title Case for English panel headings, matching existing headings such as `Houses You Currently Occupy` and `Your Personal Calendar`.
 
 All user-visible labels, help, tooltips and messages belong in Globalisation. This includes exported calendar display names, event-title formats and list headings. Developer-only diagnostics and protocol identifiers are not display resources. Check existing resource keys and text first; reuse entries without duplicates.
 

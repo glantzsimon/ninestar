@@ -785,15 +785,15 @@ Mobile clients should use `help.adultChildRelationship.title` for the expandable
 
 ### Contextual About headings
 
-Website explanatory helper panels and matching API `help` titles use dedicated Dictionary resources, so navigation/section titles and reading headings remain unchanged. Knowledge-base article headings, individual energy/cycle readings, The Nine Yearly/Monthly Cycles collections and Detailed Interpretation keep their existing labels. More on Predictions (`Dictionary.MoreOnCycles`) and What is Karmic Numerology? (`Dictionary.WhatIsKarmicNumerology`) are explicitly unchanged, as are the existing About Adult / Child Relationship, About 9 Star Ki Biorhythms and About The I Ching labels.
+Website explanatory helper panels and matching API `help` titles use dedicated Dictionary resources, so navigation/section titles and reading headings remain unchanged. Knowledge-base article headings, individual energy/cycle readings, The Nine Yearly/Monthly Cycles collections and Detailed Interpretation keep their existing labels. More On Predictions (`Dictionary.MoreOnCycles`) and What Is Karmic Numerology? (`Dictionary.WhatIsKarmicNumerology`) are explicitly unchanged, as are the existing About Adult / Child Relationship, About 9 Star Ki Biorhythms and About The I Ching labels.
 
 | Response/help key | Dictionary resource | English title |
 | --- | --- | --- |
 | chart overview | `Dictionary.AboutPersonalChart` | About Your Personal Chart |
 | chart core | `Dictionary.AboutConstitution` | About Your Constitution |
-| chart character | `Dictionary.AboutCharacterNature` | About Character Nature / the Inner Child |
+| chart character | `Dictionary.AboutCharacterNature` | About Character Nature / The Inner Child |
 | chart socialExpression | `Dictionary.AboutSocialExpression` | About Social Expression |
-| chart dayStar | `Dictionary.AboutDayStar` | About the Day Star |
+| chart dayStar | `Dictionary.AboutDayStar` | About The Day Star |
 | chart generation | `Dictionary.AboutGenerationalKi` | About Generational Ki |
 | chart epoch | `Dictionary.AboutEpochKi` | About Epoch Ki |
 | chart relationships | `Dictionary.AboutRelationshipsAndIntimacy` | About Relationships & Intimacy |
@@ -804,6 +804,6 @@ Website explanatory helper panels and matching API `help` titles use dedicated D
 | predictions epoch | `Dictionary.AboutEightyOneYearPredictions` | About 81-Year Predictions |
 | predictions globalKiWarning | `Dictionary.AboutGlobalKi` | About Global Ki |
 | calendar overview/subscription | `Dictionary.AboutPersonalCalendar` | About Your Personal Calendar |
-| compatibility overview | `Dictionary.AboutCompatibilityCalculator` | About the Compatibility Calculator |
+| compatibility overview | `Dictionary.AboutCompatibilityCalculator` | About The Compatibility Calculator |
 
 The website 81-year helper retains `(Global Ki)` after its About heading. API prediction help retains its existing separate `epoch` and `globalKiWarning` entries. Only titles change: help HTML, section bodies/summaries, memberships and age/access restrictions remain unchanged.

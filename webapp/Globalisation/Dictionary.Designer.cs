@@ -41257,5 +41257,9 @@ namespace K9.Globalisation {
             get { return ResourceManager.GetString("CalculatorSignInRequired", resourceCulture); }
         }
 
+        public static string AboutAdultChildRelationship {
+            get { return ResourceManager.GetString("AboutAdultChildRelationship", resourceCulture); }
+        }
+
     }
 }

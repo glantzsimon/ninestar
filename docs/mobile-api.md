@@ -753,3 +753,32 @@ Example response fragment (reading HTML abbreviated):
 Full authorised chart projections, including embedded profiles when `help` is suppressed, receive these titles. The free projection adds only the title of its already exposed `sections.character`; it does not add the paid Child Nature, Adult / Child Relationship or Stress Response sections. Anonymous previews and number-only responses are unchanged. Existing bodies, summaries, authentication, membership, age gates and complementary-reading rules are unchanged. Purchasing is unaffected. Older servers may omit `title`, so clients must treat it as optional.
 
 Regression coverage checks website/resource parity, camel-case JSON fields, unchanged reading bodies/summaries and help, embedded titles, and free projection boundaries. Build/xUnit execution requires Windows/VS2017; source validation is not evidence of deployment. After an owner-authorised Integration deployment, verify the authenticated full `/api/mobile/v1/personal-chart/me` response for the exact fields above. An unauthenticated response cannot establish whether these private fields are live.
+
+### Adult / Child Relationship headings
+
+The website helper now uses `Dictionary.AboutAdultChildRelationship` (`About Adult / Child Relationship`) while its details panel and Character navigation use the existing `Dictionary.AdultChildRelationshipTitle` (`Adult / Child Relationship`). The pattern-specific `AdultChildRelationsihpTitle` is no longer used as that website panel heading; its calculation/property and reading body are unchanged.
+
+The full standalone API chart mirrors that distinction:
+
+```json
+{
+  "data": {
+    "help": {
+      "adultChildRelationship": {
+        "title": "About Adult / Child Relationship",
+        "htmlBody": "<p>...</p>",
+        "culture": "en-GB"
+      }
+    },
+    "sections": {
+      "adultChildRelationship": {
+        "title": "Adult / Child Relationship",
+        "body": "<p>...</p>",
+        "summary": null
+      }
+    }
+  }
+}
+```
+
+Mobile clients should use `help.adultChildRelationship.title` for the expandable explanation and `sections.adultChildRelationship.title` for its navigation/details heading. Help/body text and member-access rules are unchanged; free responses still omit this member helper and embedded profiles still suppress duplicated help.

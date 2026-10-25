@@ -24,6 +24,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
             Assert.Equal(Dictionary.GenerationalEnergyDescription, help["generation"].HtmlBody);
             Assert.Equal(Dictionary.EpochEnergyDescription, help["epoch"].HtmlBody);
             Assert.Equal(Dictionary.relationships_description, help["relationships"].HtmlBody);
+            Assert.Equal(Dictionary.AboutAdultChildRelationship, help["adultChildRelationship"].Title);
             Assert.Equal(Dictionary.AdultChildRelationship, help["adultChildRelationship"].HtmlBody);
             Assert.Equal(9, help.Count);
         }

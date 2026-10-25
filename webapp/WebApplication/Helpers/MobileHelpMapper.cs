@@ -34,7 +34,7 @@ namespace K9.WebApplication.Helpers
                 help.Add("relationships", Text(Dictionary.SexualityTitle, Dictionary.relationships_description));
             // This explanation is inside the character tab's paywall on the web.
             if (includeMemberHelp)
-                help.Add("adultChildRelationship", Text(Dictionary.AdultChildRelationshipTitle, Dictionary.AdultChildRelationship));
+                help.Add("adultChildRelationship", Text(Dictionary.AboutAdultChildRelationship, Dictionary.AdultChildRelationship));
             return help;
         }
 

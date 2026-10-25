@@ -26,7 +26,7 @@ The common server script lives at `C:\inetpub\vhosts\9starkiastrology.com\vault\
 | prod | `vault` | sibling `httpdocs` | `9starkiastrology.com(domain)(4.0)(pool)` |
 | int | `vault\int` | sibling `int` | `int.9starkiastrology.com(domain)(4.0)(pool)` |
 
-It accepts `-Environment prod|int` and `-SourceRoot`, defaults to the existing Production behaviour, and rejects a source root inconsistent with the environment. It verifies copies using SHA-256, checks the app pool before binary copying, and exits nonzero on copy/restart/cleanup errors. Source files are only consumed after all copies and any binary-triggered app-pool restart succeed. This is **not** an atomic deployment or rollback: a failure after some copies can leave a partially updated destination. Inspect it before retrying. A lost HTTP acknowledgement during a restart is treated as unconfirmed, not as success; verify server state before retrying.
+It accepts `-Environment prod|int` and `-SourceRoot`, defaults to the existing Production behaviour, and rejects a source root inconsistent with the environment. It verifies copies using SHA-256 and exits nonzero on copy/verification/cleanup errors. Source files are only consumed after all copies are verified. It does not access IIS configuration or explicitly restart the application pool: ASP.NET reloads the application when bin files or web.config change. Integration has been verified serving updated code after this automatic reload. The existing quick-deploy workflow therefore does not require IIS administration rights. This is **not** an atomic deployment or rollback: a failure after some copies can leave a partially updated destination. Inspect it before retrying. A lost HTTP acknowledgement during an application reload is treated as unconfirmed, not as success; verify server state before retrying.
 
 ## Installation order: one-time setup
 
@@ -45,7 +45,7 @@ deployninestar() {
 6. First run `deployninestar full int --dry-run`. It performs no network calls, builds, staging writes or deployment. Review the target, configuration and file selection. A first Integration run without its own timestamp selects the complete asset baseline.
 7. Only when explicitly ready to deploy, run `deployninestar full int`. It preflights the server, transforms Integration web.config, stages/uploads the already-built DLLs and selected assets, invokes maintenance, and requires a successful acknowledgement before advancing the checkpoint. As in the original workflow, compile the intended code/configuration in Visual Studio beforehand. Confirm Integration and the mobile API, and verify Production was untouched.
 
-Server-side preview, when desired, is `powershell.exe -NoProfile -File C:\inetpub\vhosts\9starkiastrology.com\vault\deploy-vault-to-app.ps1 -Environment int -WhatIf`. This only lists a plan; a real deployment can restart the app and run its existing startup migrations. No schema/startup bypass was added.
+Server-side preview, when desired, is `powershell.exe -NoProfile -File C:\inetpub\vhosts\9starkiastrology.com\vault\deploy-vault-to-app.ps1 -Environment int -WhatIf`. This only lists a plan; a real deployment can reload the app and run its existing startup migrations. No schema/startup bypass was added.
 
 ## Commands and failure semantics
 

@@ -259,6 +259,7 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             Assert.Equal(profile.CharacterEnergy.DescriptiveTitle, result.Sections["character"].Title);
             Assert.Equal(K9.Globalisation.Dictionary.ChildNature, result.Sections["childNature"].Title);
             Assert.Equal(K9.Globalisation.Dictionary.AdultChildRelationshipTitle, result.Sections["adultChildRelationship"].Title);
+            Assert.Equal(K9.Globalisation.Dictionary.AboutAdultChildRelationship, result.Help["adultChildRelationship"].Title);
             foreach (var key in new[] { "stressResponse", "natalHouseStressResponse", "childStressResponse" })
                 Assert.Equal(K9.Globalisation.Dictionary.StressResponse, result.Sections[key].Title);
             Assert.Equal(profile.CharacterEnergy.ChildDescription, result.Sections["childNature"].Body);

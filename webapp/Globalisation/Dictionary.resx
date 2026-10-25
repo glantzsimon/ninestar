@@ -14003,4 +14003,7 @@
   <data name="CalculatorSignInRequired" xml:space="preserve">
     <value>You have used your free calculation. Sign in or create a free account to continue; your entered details will be waiting when you return to the calculator.</value>
   </data>
+  <data name="AboutAdultChildRelationship" xml:space="preserve">
+    <value>About Adult / Child Relationship</value>
+  </data>
 </root>

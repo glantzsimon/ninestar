@@ -2,7 +2,7 @@
 
 @using (Html.BeginForm("IndexPost", "Biorhythms", FormMethod.Post, new { data_calculator_page = "biorhythms", data_calculator_restore = (Request.HttpMethod == "GET").ToString().ToLowerInvariant() }))
 {
-    @Html.Partial("_CalculatorTrialNotice")
+    @Html.Partial("_CalculatorTrialNotice", "biorhythms")
     using (Html.BeginBootstrapForm())
     {
         @Html.BootstrapEditorFor(model => model.PersonModel.Name, new EditorOptions

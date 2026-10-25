@@ -2,7 +2,7 @@
 
 @using (Html.BeginForm("IndexPost", "Compatibility", FormMethod.Post, new { data_calculator_page = "compatibility", data_calculator_restore = (Request.HttpMethod == "GET").ToString().ToLowerInvariant() }))
 {
-    @Html.Partial("_CalculatorTrialNotice")
+    @Html.Partial("_CalculatorTrialNotice", "compatibility")
     using (Html.BeginBootstrapForm())
     {
         <div class="row">

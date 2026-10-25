@@ -2,6 +2,6 @@
 
 @using (Html.BeginForm("IndexPost", "Predictions", FormMethod.Post, new { data_calculator_page = "predictions", data_calculator_restore = (Request.HttpMethod == "GET").ToString().ToLowerInvariant() }))
 {
-    @Html.Partial("_CalculatorTrialNotice")
+    @Html.Partial("_CalculatorTrialNotice", "predictions")
     @Html.Partial("../NineStarKi/_CalculatorForm")
 }

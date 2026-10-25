@@ -835,3 +835,9 @@ Full and free personal-chart responses add `data.roleLabels`, also retained on f
 ```
 
 These are six stable role labels, not age-dependent website navigation substitutions. Hourly energy retains its existing contract; no seventh label is invented. Older servers may omit `roleLabels`; clients must handle absence without deriving invented display text from role keys. Source/syntax checks do not establish live deployment; Windows build/xUnit and an authenticated Integration response remain release validation steps.
+
+### Website display-string audit
+
+The public Personal Chart calculator introduction now uses `Dictionary.AboutPersonalChart`, matching `help.overview.title`. Compatibility explanatory panel headings reuse `RelationshipsTitle`, `FiveTransformationsTitle` and `SexualityTitle` rather than literal strings. No API payload or memberships change in this patch.
+
+A targeted audit of the calculator/helper views also found older hardcoded strings in `Views/Biorhythms/_BioRhythms.cshtml` (chart tooltip Date/Value/Description) and `Views/Numerology/Legacy/_NumerologyYearlyPlanner*.cshtml` (Age, Year, numerology-code headings and Roadmap/Foundation/Guide/Ascension/Elders). These remain recorded follow-ups; this is not a claim that the entire site is free of historic hardcoded display text. Do not change reading prose, structural HTML, CSS classes, route identifiers or chart format tokens as part of localisation.

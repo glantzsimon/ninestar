@@ -73,7 +73,7 @@ One existing NineStar account serves website and app. Eligible website membershi
 
 Use Proper Case (capitalise every word, including The, Is, On, And and Of) for helper headings. Keep all heading text Dictionary-backed. Use Title Case for English panel headings, matching existing headings such as `Houses You Currently Occupy` and `Your Personal Calendar`.
 
-All user-visible labels, help, tooltips and messages belong in Globalisation. This includes exported calendar display names, event-title formats and list headings. Developer-only diagnostics and protocol identifiers are not display resources. Check existing resource keys and text first; reuse entries without duplicates.
+All user-visible labels, help, tooltips and messages belong in Globalisation. This applies to Razor helper arguments, chart/tooltips, JavaScript-generated UI and API display labels. Reuse strongly typed Dictionary resources; do not add literal display text or assemble English labels from API keys. Check changed views/scripts for hardcoded text before completing UI work. This includes exported calendar display names, event-title formats and list headings. Developer-only diagnostics and protocol identifiers are not display resources. Check existing resource keys and text first; reuse entries without duplicates.
 
 Use strongly typed `Dictionary.ResourceName` properties for fixed UI text, including weekday headings. Keep generated accessors in sync. Do not use string-key helpers or `ResourceManager.GetString("FixedLabel", ...)` for fixed text. Calculated resource keys, such as combined year/month/day predictions, may use dynamic lookups.
 

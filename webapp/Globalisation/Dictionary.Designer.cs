@@ -32483,6 +32483,18 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Year.
         /// </summary>
+        public static string Epoch {
+            get {
+                return ResourceManager.GetString("Epoch", resourceCulture);
+            }
+        }
+
+        public static string Hour {
+            get {
+                return ResourceManager.GetString("Hour", resourceCulture);
+            }
+        }
+
         public static string Year {
             get {
                 return ResourceManager.GetString("Year", resourceCulture);

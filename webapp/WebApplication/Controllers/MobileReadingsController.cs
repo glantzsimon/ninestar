@@ -165,10 +165,11 @@ namespace K9.WebApplication.Controllers
 
         private static object FreePredictions(NineStarKiModel model) => new
         {
+            Labels = MobileCalculationMapper.PredictionLabels(),
             model.SelectedDate, Profile = MobilePersonalChartMapper.Numbers(model),
             Year = FreeYear(model.PersonalHousesOccupiedEnergies.Year),
             LunarYear = FreeYear(model.PersonalHousesOccupiedLunarEnergies?.Year),
-            GlobalYear = FreeYear(model.GlobalCycleEnergies.Year)
+            GlobalYear = FreeYear(model.GlobalCycleEnergies.Year, global: true)
         };
     }
 }

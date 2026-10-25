@@ -14054,4 +14054,10 @@
   <data name="AboutCompatibilityCalculator" xml:space="preserve">
     <value>About The Compatibility Calculator</value>
   </data>
+  <data name="Epoch" xml:space="preserve">
+    <value>Epoch</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Hour</value>
+  </data>
 </root>

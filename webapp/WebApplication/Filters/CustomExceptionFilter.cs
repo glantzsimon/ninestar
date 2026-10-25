@@ -11,6 +11,11 @@ namespace K9.WebApplication.Services
             if (filterContext.ExceptionHandled)
                 return;
 
+            // Mobile controllers and Application_Error own the JSON error envelope.
+            if (K9.WebApplication.Helpers.MobileApiErrorHelper.IsMobilePath(
+                filterContext.HttpContext.Request.AppRelativeCurrentExecutionFilePath))
+                return;
+
             var exception = filterContext.Exception;
             var controllerName = filterContext.RouteData.Values["controller"]?.ToString() ?? "Unknown";
             var actionName = filterContext.RouteData.Values["action"]?.ToString() ?? "Unknown";

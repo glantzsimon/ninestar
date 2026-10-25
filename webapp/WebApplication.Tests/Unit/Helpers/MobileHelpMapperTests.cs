@@ -13,6 +13,25 @@ namespace K9.WebApplication.Tests.Unit.Helpers
     public class MobileHelpMapperTests
     {
         [Fact]
+        public void PredictionLabelsUseShortDictionaryResourcesWithoutReadingContent()
+        {
+            var labels = JObject.FromObject(MobileCalculationMapper.PredictionLabels(),
+                JsonSerializer.Create(new JsonSerializerSettings
+                { ContractResolver = new CamelCasePropertyNamesContractResolver() }));
+            Assert.Equal(Dictionary.Year, (string)labels["periods"]["year"]);
+            Assert.Equal(Dictionary.Month, (string)labels["periods"]["month"]);
+            Assert.Equal(Dictionary.Day, (string)labels["periods"]["day"]);
+            Assert.Equal(Dictionary.Generation, (string)labels["periods"]["generation"]);
+            Assert.Equal(Dictionary.Epoch, (string)labels["periods"]["epoch"]);
+            Assert.Equal(Dictionary.Hour, (string)labels["periods"]["hour"]);
+            Assert.Equal(Dictionary.PersonalView, (string)labels["scopes"]["personal"]);
+            Assert.Equal(Dictionary.PersonalLunarView, (string)labels["scopes"]["lunar"]);
+            Assert.Equal(Dictionary.GlobalView, (string)labels["scopes"]["global"]);
+            Assert.Equal(6, ((JObject)labels["periods"]).Count);
+            Assert.Equal(3, ((JObject)labels["scopes"]).Count);
+        }
+
+        [Fact]
         public void ChartIntroductionsMatchWebsiteResourcesWithoutTabInstructions()
         {
             var help = MobileHelpMapper.Chart(true, true);

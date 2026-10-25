@@ -1,5 +1,7 @@
 using K9.WebApplication.Helpers;
 using Newtonsoft.Json.Linq;
+using Moq;
+using System.Web.Mvc;
 using System;
 using System.Web;
 using Xunit;
@@ -19,6 +21,22 @@ namespace K9.WebApplication.Tests.Unit.Controllers
         public void PipelineHandlingIsConfinedToTheMobileNamespace(string path, bool expected)
         {
             Assert.Equal(expected, MobileApiErrorHelper.IsMobilePath(path));
+        }
+
+        [Fact]
+        public void WebsiteErrorFilterDoesNotReplaceMobileFailuresWithHtml()
+        {
+            var http = new Mock<HttpContextBase>();
+            http.SetupGet(e => e.Request.AppRelativeCurrentExecutionFilePath)
+                .Returns("~/api/mobile/v1/metadata/options");
+            var context = new ExceptionContext
+            {
+                HttpContext = http.Object,
+                Exception = new Exception("private diagnostic content")
+            };
+            new K9.WebApplication.Services.CustomExceptionFilter().OnException(context);
+            Assert.False(context.ExceptionHandled);
+            Assert.False(context.Result is ViewResult);
         }
 
         [Fact]

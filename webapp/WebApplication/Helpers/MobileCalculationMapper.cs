@@ -44,8 +44,25 @@ namespace K9.WebApplication.Helpers
             }).ToArray()
         };
 
+        public static object PredictionLabels() => new
+        {
+            Periods = new
+            {
+                Year = K9.Globalisation.Dictionary.Year, Month = K9.Globalisation.Dictionary.Month,
+                Day = K9.Globalisation.Dictionary.Day, Generation = K9.Globalisation.Dictionary.Generation,
+                Epoch = K9.Globalisation.Dictionary.Epoch, Hour = K9.Globalisation.Dictionary.Hour
+            },
+            Scopes = new
+            {
+                Personal = K9.Globalisation.Dictionary.PersonalView,
+                Lunar = K9.Globalisation.Dictionary.PersonalLunarView,
+                Global = K9.Globalisation.Dictionary.GlobalView
+            }
+        };
+
         public static object Predictions(NineStarKiModel model, bool birthTimeKnown) => new
         {
+            Labels = PredictionLabels(),
             Help = MobileHelpMapper.Predictions(),
             Profile = MobilePersonalChartMapper.Map(model, birthTimeKnown, includeHelp: false),
             Personal = Cycles(model.PersonalHousesOccupiedEnergies),

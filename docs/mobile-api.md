@@ -841,3 +841,47 @@ These are six stable role labels, not age-dependent website navigation substitut
 The public Personal Chart calculator introduction now uses `Dictionary.AboutPersonalChart`, matching `help.overview.title`. Compatibility explanatory panel headings reuse `RelationshipsTitle`, `FiveTransformationsTitle` and `SexualityTitle` rather than literal strings. No API payload or memberships change in this patch.
 
 A targeted audit of the calculator/helper views also found older hardcoded strings in `Views/Biorhythms/_BioRhythms.cshtml` (chart tooltip Date/Value/Description) and `Views/Numerology/Legacy/_NumerologyYearlyPlanner*.cshtml` (Age, Year, numerology-code headings and Roadmap/Foundation/Guide/Ascension/Elders). These remain recorded follow-ups; this is not a claim that the entire site is free of historic hardcoded display text. Do not change reading prose, structural HTML, CSS classes, route identifiers or chart format tokens as part of localisation.
+
+
+## Predictions short period and scope labels
+
+Full Predictions (`predictions/calculate`, `predictions/me`, `predictions/last`, and full saved-reading projections) and free/complementary Predictions (`readings/predictions/me/free`, `readings/predictions`, and their existing saved-reading projections) include `data.labels`. These are navigation labels, separate from longer `help` titles and energy-specific reading titles. Clients must use the supplied strings rather than translating enum keys or removing “About” from help titles.
+
+| Field | Dictionary resource | English value |
+| --- | --- | --- |
+| `labels.periods.year` | `Year` | Year |
+| `labels.periods.month` | `Month` | Month |
+| `labels.periods.day` | `Day` | Day |
+| `labels.periods.generation` | `Generation` | Generation |
+| `labels.periods.epoch` | `Epoch` | Epoch |
+| `labels.periods.hour` | `Hour` | Hour |
+| `labels.scopes.personal` | `PersonalView` | Personal Houses |
+| `labels.scopes.lunar` | `PersonalLunarView` | Personal Lunar View |
+| `labels.scopes.global` | `GlobalView` | Global Ki |
+
+Scope resources match the existing `EPanelCycleView` display labels. Website form controls also have distinct instructional labels such as `PersonalHouses` (“Display Houses Occupied”); these are not short navigation labels. `Epoch` and `Hour` are new Dictionary resources; all other resources already exist. No display wording is derived from transport keys.
+
+Example fragment, identical in full and free responses:
+
+```json
+{
+  "success": true,
+  "data": {
+    "labels": {
+      "periods": { "year": "Year", "month": "Month", "day": "Day", "generation": "Generation", "epoch": "Epoch", "hour": "Hour" },
+      "scopes": { "personal": "Personal Houses", "lunar": "Personal Lunar View", "global": "Global Ki" }
+    }
+  },
+  "error": null
+}
+```
+
+This fragment omits the existing reading fields. Free responses still expose only their existing yearly readings (`year`, `lunarYear`, `globalYear`); the presence of a month/day/hour label does not grant that reading. Full responses retain their existing access checks and reading structure. `globalYear.description` now explicitly selects `GlobalCycleDescription`, matching full Predictions global prose; personal and lunar yearly prose remain unchanged.
+
+### Integration error verification and indexing
+
+Public GET checks during investigation returned JSON: `metadata/options` 200, `predictions/me` 401, and `readings/predictions/me/free` 401. These checks used no signed-in cookies and do not establish that authenticated calculation or an earlier timeout is resolved. Do not confuse HEAD routing responses with GET behaviour. If signed-in failures persist, capture the timestamp, route, status and server exception from Integration logs, and compare a non-calculation endpoint to distinguish site/startup/SQL availability from calculation failure. Do not post cookies or birth details in diagnostic reports.
+
+The shared website exception filter now leaves mobile paths to the existing controller/pipeline JSON handlers instead of selecting FriendlyError HTML. This does not repair IIS/startup failures before the application runs or eliminate server timeouts.
+
+Integration was observed already sending `X-Robots-Tag: noindex, nofollow`. Persist this only in the Integration web.config transform, under `system.webServer/httpProtocol/customHeaders`, using XDT `SetAttributes` matched by name for an existing header, or `Insert` if absent (with `InsertIfMissing` for absent parent elements). Do not add it to shared or Production configuration. The repository transform is git-crypt protected and requires the owner’s plaintext upload for editing. Keep crawling enabled so Google can read noindex; temporary Search Console prefix removal can accelerate removal of existing Integration results.

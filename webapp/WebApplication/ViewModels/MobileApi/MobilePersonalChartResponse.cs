@@ -11,6 +11,7 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public string Culture { get; set; }
         public string Summary { get; set; }
         public string Overview { get; set; }
+        public Dictionary<string, string> RoleLabels { get; set; }
         public Dictionary<string, MobileHelpText> Help { get; set; }
         public Dictionary<string, MobileChartEnergy> Energies { get; set; }
         public Dictionary<string, MobileChartText> Sections { get; set; }

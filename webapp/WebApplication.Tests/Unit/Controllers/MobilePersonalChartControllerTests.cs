@@ -289,6 +289,26 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             Assert.Null(free["sections"]["adultChildRelationship"]);
         }
 
+        [Fact]
+        public void ShortRoleLabelsMatchDictionaryInFullFreeAndEmbeddedProfiles()
+        {
+            var profile = new Fixture().CreateProfile(new DateTime(1979, 6, 16));
+            var full = MobilePersonalChartMapper.Map(profile, false);
+            Assert.Equal(6, full.RoleLabels.Count);
+            Assert.Equal(K9.Globalisation.Dictionary.MainEnergyLabel, full.RoleLabels["core"]);
+            Assert.Equal(K9.Globalisation.Dictionary.CharacterEnergyLabel, full.RoleLabels["character"]);
+            Assert.Equal(K9.Globalisation.Dictionary.SurfaceEnergyLabel, full.RoleLabels["socialExpression"]);
+            Assert.Equal(K9.Globalisation.Dictionary.DayStarLabel, full.RoleLabels["dayStar"]);
+            Assert.Equal(K9.Globalisation.Dictionary.GenerationalEnergyLabel, full.RoleLabels["generation"]);
+            Assert.Equal(K9.Globalisation.Dictionary.EpochEnergyLabel, full.RoleLabels["epoch"]);
+            var embedded = MobilePersonalChartMapper.Map(profile, false, includeHelp: false);
+            Assert.Null(embedded.Help);
+            Assert.Equal(full.RoleLabels["core"], embedded.RoleLabels["core"]);
+            var free = JObject.FromObject(MobilePersonalChartMapper.FreeProfile(profile));
+            Assert.Equal(full.RoleLabels["dayStar"], (string)free["RoleLabels"]["dayStar"]);
+            Assert.Equal(K9.Globalisation.Dictionary.AboutDayStar, full.Help["dayStar"].Title);
+        }
+
         private sealed class TestController : MobilePersonalChartController
         {
             private readonly int _userId;

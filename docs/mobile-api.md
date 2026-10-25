@@ -807,3 +807,31 @@ Website explanatory helper panels and matching API `help` titles use dedicated D
 | compatibility overview | `Dictionary.AboutCompatibilityCalculator` | About The Compatibility Calculator |
 
 The website 81-year helper retains `(Global Ki)` after its About heading. API prediction help retains its existing separate `epoch` and `globalKiWarning` entries. Only titles change: help HTML, section bodies/summaries, memberships and age/access restrictions remain unchanged.
+
+### Short energy role labels
+
+Full and free personal-chart responses add `data.roleLabels`, also retained on full embedded profiles when help is omitted. Use the same role label for each role card and its destination screen. This is separate from `help.<role>.title` (About explanations), `energies.<role>.title` (the full energy heading) and `sections.<key>.title` (reading/navigation subsection headings). Stable role keys remain untranslated; display values come directly from Dictionary on each response. No resources, access rules or paid readings are added to free responses.
+
+| JSON field | Dictionary source |
+| --- | --- |
+| `roleLabels.core` | `Dictionary.MainEnergyLabel` |
+| `roleLabels.character` | `Dictionary.CharacterEnergyLabel` |
+| `roleLabels.socialExpression` | `Dictionary.SurfaceEnergyLabel` |
+| `roleLabels.dayStar` | `Dictionary.DayStarLabel` |
+| `roleLabels.generation` | `Dictionary.GenerationalEnergyLabel` |
+| `roleLabels.epoch` | `Dictionary.EpochEnergyLabel` |
+
+```json
+{
+  "roleLabels": {
+    "core": "Constitution",
+    "character": "Character Nature / Inner Child",
+    "socialExpression": "Social Expression",
+    "dayStar": "Day Star",
+    "generation": "Generational Ki",
+    "epoch": "Epoch Ki"
+  }
+}
+```
+
+These are six stable role labels, not age-dependent website navigation substitutions. Hourly energy retains its existing contract; no seventh label is invented. Older servers may omit `roleLabels`; clients must handle absence without deriving invented display text from role keys. Source/syntax checks do not establish live deployment; Windows build/xUnit and an authenticated Integration response remain release validation steps.

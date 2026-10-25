@@ -17,6 +17,7 @@ namespace K9.WebApplication.Helpers
         public static object FreeProfile(NineStarKiModel model) => new
         {
             model.Summary, model.Overview,
+            RoleLabels = RoleLabels(),
             Help = MobileHelpMapper.Chart(model.PersonModel.IsSixteenOrOver(), includeMemberHelp: false),
             Core = model.MainEnergy.EnergyNumber, Character = model.CharacterEnergy.EnergyNumber,
             SocialExpression = model.SurfaceEnergy.EnergyNumber,
@@ -91,6 +92,7 @@ namespace K9.WebApplication.Helpers
 
             return new MobilePersonalChartResponse
             {
+                RoleLabels = RoleLabels(),
                 Culture = (K9.Globalisation.Dictionary.Culture ?? CultureInfo.CurrentUICulture).Name,
                 Person = new MobileChartPerson
                 {
@@ -154,6 +156,16 @@ namespace K9.WebApplication.Helpers
                 WeakYangOrgans = model.WeakYangOrgans?.Select(e => e.ToString()).ToArray() ?? new string[0]
             };
         }
+
+        public static Dictionary<string, string> RoleLabels() => new Dictionary<string, string>
+        {
+            { "core", Dictionary.MainEnergyLabel },
+            { "character", Dictionary.CharacterEnergyLabel },
+            { "socialExpression", Dictionary.SurfaceEnergyLabel },
+            { "dayStar", Dictionary.DayStarLabel },
+            { "generation", Dictionary.GenerationalEnergyLabel },
+            { "epoch", Dictionary.EpochEnergyLabel }
+        };
 
         private static MobileChartText Text(string body, string summary = null, string title = null) =>
             new MobileChartText { Title = title, Body = body, Summary = summary };

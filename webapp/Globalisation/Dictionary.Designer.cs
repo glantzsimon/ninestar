@@ -32492,6 +32492,15 @@ namespace K9.Globalisation {
             }
         }
 
+        /// <summary>
+        ///   Explains collective Global Ki and individual personal houses.
+        /// </summary>
+        public static string GlobalKiIntroduction {
+            get {
+                return ResourceManager.GetString("GlobalKiIntroduction", resourceCulture);
+            }
+        }
+
         public static string ExtendedGlobalCycles {
             get {
                 return ResourceManager.GetString("ExtendedGlobalCycles", resourceCulture);

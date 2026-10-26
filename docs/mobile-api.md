@@ -941,7 +941,7 @@ Both full Predictions and free/complementary Predictions expose `data.help.overv
 | Field | Title resource | Body resource | Purpose |
 | --- | --- | --- | --- |
 | `help.overview` | `PredictionsOverview` | `PredictionsIntroduction` | New two-paragraph general introduction for the top of the Predictions screen |
-| `help.globalKi` | `AboutGlobalKi` | `GlobalKiDescription` | Existing general explanation of personal versus collective influences, reused unchanged from the website membership page |
+| `help.globalKi` | `AboutGlobalKi` | `GlobalKiIntroduction` | Dedicated explanation of collective/planetary Ki versus individual personal houses |
 
 Render the supplied `htmlBody` using the existing safe HTML renderer. Do not hardcode or paraphrase either text. `help.moreOnCycles` is separate supplementary material, and `help.globalKiWarning` is only the existing Epoch-specific warning. Neither is the general introduction. Full help retains all existing entries. Free help adds only the two public introductions, not paid reading content, other help entries or additional cycle readings. Existing memberships, counters and ownership checks remain unchanged. The public introductory text describes available concepts without granting access to every period.
 
@@ -951,7 +951,7 @@ Example response fragment (bodies abbreviated here only):
 {
   "help": {
     "overview": { "title": "Predictions Overview", "htmlBody": "<p>Nine Star Ki predictions explore...</p><p>Use these readings...</p>", "culture": "en-GB" },
-    "globalKi": { "title": "About Global Ki", "htmlBody": "Easily toggle between your own <strong>personal Nine Star Ki influences</strong>...", "culture": "en-GB" }
+    "globalKi": { "title": "About Global Ki", "htmlBody": "<p>Global Ki describes the changing energy that influences the collective and the planet as a whole...</p><p>Your personal house describes...</p>", "culture": "en-GB" }
   }
 }
 ```
@@ -990,3 +990,6 @@ Example fragment:
 ```
 
 The mobile app should select the heading centrally by period key and use the returned string verbatim. Do not derive it from “Year”, append “Prediction” locally, or substitute a help title. All six labels are public metadata; their presence does not grant access to readings. Existing full/free reading contents, access checks and complementary accounting remain unchanged. No new Dictionary wording is added.
+
+
+`help.globalKi.htmlBody` now uses the dedicated two-paragraph `Dictionary.GlobalKiIntroduction`, explaining the collective/planetary energetic climate and how it differs from the individual personal house. It replaces the previously exposed membership-page description at the same API field; clients need no field-name change. `Dictionary.GlobalKiDescription` remains the original membership-page promotional text and is unchanged. The new resource lives in `webapp/Globalisation/Dictionary.resx`, with its accessor in `Dictionary.Designer.cs`, and is selected by `MobileHelpMapper.PredictionIntroductions()`. Both full and free Predictions receive it. It is distinct from the Epoch-only `help.globalKiWarning`; no reading access changes.

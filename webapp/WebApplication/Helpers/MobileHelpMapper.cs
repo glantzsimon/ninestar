@@ -41,7 +41,7 @@ namespace K9.WebApplication.Helpers
         public static Dictionary<string, MobileHelpText> PredictionIntroductions() => new Dictionary<string, MobileHelpText>
         {
             { "overview", Text(Dictionary.PredictionsOverview, Dictionary.PredictionsIntroduction) },
-            { "globalKi", Text(Dictionary.AboutGlobalKi, Dictionary.GlobalKiDescription) }
+            { "globalKi", Text(Dictionary.AboutGlobalKi, Dictionary.GlobalKiIntroduction) }
         };
 
         public static Dictionary<string, MobileHelpText> Predictions() => new Dictionary<string, MobileHelpText>(PredictionIntroductions())

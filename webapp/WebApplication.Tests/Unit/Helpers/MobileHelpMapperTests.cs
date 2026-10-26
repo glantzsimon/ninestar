@@ -112,7 +112,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
             Assert.Equal(Dictionary.PredictionsOverview, introductions["overview"].Title);
             Assert.Equal(Dictionary.PredictionsIntroduction, introductions["overview"].HtmlBody);
             Assert.Equal(Dictionary.AboutGlobalKi, introductions["globalKi"].Title);
-            Assert.Equal(Dictionary.GlobalKiDescription, introductions["globalKi"].HtmlBody);
+            Assert.Equal(Dictionary.GlobalKiIntroduction, introductions["globalKi"].HtmlBody);
             Assert.Equal(introductions["overview"].HtmlBody, help["overview"].HtmlBody);
             Assert.Equal(introductions["globalKi"].HtmlBody, help["globalKi"].HtmlBody);
             Assert.DoesNotContain("moreOnCycles", introductions.Keys);

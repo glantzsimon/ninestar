@@ -18,6 +18,8 @@ namespace K9.WebApplication.Tests.Unit.Helpers
             var labels = JObject.FromObject(MobileCalculationMapper.PredictionLabels(),
                 JsonSerializer.Create(new JsonSerializerSettings
                 { ContractResolver = new CamelCasePropertyNamesContractResolver() }));
+            Assert.Equal(Dictionary.YourPredictions, (string)labels["yourPredictions"]);
+            Assert.Equal(Dictionary.HousesYouCurrentlyOccupy, (string)labels["housesYouCurrentlyOccupy"]);
             Assert.Equal(Dictionary.Year, (string)labels["periods"]["year"]);
             Assert.Equal(Dictionary.Month, (string)labels["periods"]["month"]);
             Assert.Equal(Dictionary.Day, (string)labels["periods"]["day"]);

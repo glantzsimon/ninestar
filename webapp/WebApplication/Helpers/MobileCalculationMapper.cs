@@ -112,6 +112,8 @@ namespace K9.WebApplication.Helpers
 
         public static object PredictionLabels() => new
         {
+            YourPredictions = K9.Globalisation.Dictionary.YourPredictions,
+            HousesYouCurrentlyOccupy = K9.Globalisation.Dictionary.HousesYouCurrentlyOccupy,
             Periods = new
             {
                 Year = K9.Globalisation.Dictionary.Year, Month = K9.Globalisation.Dictionary.Month,

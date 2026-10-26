@@ -1057,3 +1057,15 @@ This example omits the other six weekday objects, other labels, artwork IDs and 
 
 
 The calendar subscription panel heading is `data.labels.googleCalendarLink` (Dictionary.GoogleCalendarLink: “Google Calendar Link”), returned by `GET /api/mobile/v1/calendar/month`. Use `data.help.subscription.htmlBody` for its existing instructions and `data.labels.copyCalendarLink` for the copy button. Keep the explanatory `AboutPersonalCalendar` help title separate from this link-panel heading. Existing subscription/revocation responses, permissions and private link handling are unchanged.
+
+
+## Predictions screen and current-house headings
+
+Full and free Predictions expose two additional strings through their shared labels projection (including existing saved-reading projections):
+
+| Field | Dictionary resource | English value |
+| --- | --- | --- |
+| `data.labels.yourPredictions` | `YourPredictions` (new) | Your Predictions |
+| `data.labels.housesYouCurrentlyOccupy` | `HousesYouCurrentlyOccupy` (existing website resource) | Houses You Currently Occupy |
+
+Use `yourPredictions` for the screen heading and `housesYouCurrentlyOccupy` for the personal current-house section heading. Keep period detail headings (`predictionTitles`), card headings (`cycleTitles`), group headings (`groups`) and help titles separate. Both strings are display metadata and do not expand access to readings or change membership rules. Example fragment: `{ "labels": { "yourPredictions": "Your Predictions", "housesYouCurrentlyOccupy": "Houses You Currently Occupy" } }`. Build Globalisation and the website before deployment; native clients should use the supplied values rather than hardcoding them.

@@ -14075,4 +14075,7 @@
   <data name="GoogleCalendarLink" xml:space="preserve">
     <value>Google Calendar Link</value>
   </data>
+  <data name="YourPredictions" xml:space="preserve">
+    <value>Your Predictions</value>
+  </data>
 </root>

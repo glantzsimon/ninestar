@@ -14066,4 +14066,7 @@
   <data name="PredictionsIntroduction" xml:space="preserve">
     <value>&lt;p&gt;Nine Star Ki predictions explore the changing energies that influence different periods of your life. Yearly cycles reveal the broader themes unfolding around you, monthly cycles bring those themes into sharper focus, and daily cycles offer insight into the rhythm of everyday life. Longer cycles provide a wider perspective, while hourly influences add finer detail.&lt;/p&gt;&lt;p&gt;Use these readings to reflect on the opportunities and challenges of each period, and to recognise when it may be helpful to act, connect, consolidate or rest. Your personal cycles describe the houses you occupy, while Global Ki reflects the collective energetic climate. Together, they offer guidance for working consciously with change rather than a fixed account of what must happen.&lt;/p&gt;</value>
   </data>
+  <data name="ExtendedGlobalCycles" xml:space="preserve">
+    <value>Extended Global Cycles</value>
+  </data>
 </root>

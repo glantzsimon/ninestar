@@ -66,7 +66,8 @@ namespace K9.WebApplication.Helpers
             {
                 Primary = K9.Globalisation.Dictionary.PrimaryCycles,
                 Additional = K9.Globalisation.Dictionary.ExtendedCycles,
-                Global = K9.Globalisation.Dictionary.GlobalCycles
+                Global = K9.Globalisation.Dictionary.GlobalCycles,
+                ExtendedGlobal = K9.Globalisation.Dictionary.ExtendedGlobalCycles
             },
             Scopes = new
             {

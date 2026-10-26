@@ -32492,6 +32492,12 @@ namespace K9.Globalisation {
             }
         }
 
+        public static string ExtendedGlobalCycles {
+            get {
+                return ResourceManager.GetString("ExtendedGlobalCycles", resourceCulture);
+            }
+        }
+
         public static string GlobalCycles {
             get {
                 return ResourceManager.GetString("GlobalCycles", resourceCulture);

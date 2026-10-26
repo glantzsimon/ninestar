@@ -2,6 +2,8 @@
 
 ## Status
 
+For the current merged-master implementation and remaining release checks, read the 26 October 2026 handover in `docs/mobile-app-handover.md`. The original branch-stage status below is historical, not the current deployed revision.
+
 The JSON transport source and controller-family coverage audit are complete, with the exclusions in [mobile-api.md](mobile-api.md). The branch is `feature/mobile-json-api`, reviewed through draft PR 12. Website routes/views and the plugin API remain separate. No deployment, merge, live payment, message send or administrative operation was executed to validate this implementation.
 
 Source checks cover C# syntax, project XML/compile registrations, route inventory uniqueness, unchanged view/route/plugin files and whitespace. This environment does not provide .NET Framework/MSBuild or decrypted astronomy sources. **Compilation, xUnit execution and HTTP/SQL/Stripe/image integration remain unverified.**

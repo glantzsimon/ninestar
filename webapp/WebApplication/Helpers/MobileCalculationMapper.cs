@@ -53,6 +53,15 @@ namespace K9.WebApplication.Helpers
                 Day = K9.Globalisation.Dictionary.Day, Generation = K9.Globalisation.Dictionary.Generation,
                 Epoch = K9.Globalisation.Dictionary.Epoch, Hour = K9.Globalisation.Dictionary.Hour
             },
+            PredictionTitles = new
+            {
+                Year = K9.Globalisation.Dictionary.YearlyPrediction,
+                Month = K9.Globalisation.Dictionary.MonthlyPrediction,
+                Day = K9.Globalisation.Dictionary.DailyPrediction,
+                Generation = K9.Globalisation.Dictionary.NineYearlyPrediction,
+                Epoch = K9.Globalisation.Dictionary.EightyOneYearlyPrediction,
+                Hour = K9.Globalisation.Dictionary.HourlyPrediction
+            },
             CycleTitles = new
             {
                 Year = K9.Globalisation.Dictionary.YearlyCycle,

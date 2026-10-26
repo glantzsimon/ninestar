@@ -957,3 +957,36 @@ Example response fragment (bodies abbreviated here only):
 ```
 
 Dictionary/resource XML and C# syntax can be checked here; Windows build/xUnit and authenticated Integration verification remain required. Resource changes require rebuilding the Globalisation assembly before deployment.
+
+
+## Predictions detail-screen headings
+
+Full and free Predictions expose `data.labels.predictionTitles` through the shared labels mapper, including existing saved-reading projections. These are the existing Dictionary prediction titles for detail-screen headings. Keep them separate from short `labels.periods`, card `labels.cycleTitles` and explanatory `help` titles.
+
+| Field | Dictionary resource | English value |
+| --- | --- | --- |
+| `labels.predictionTitles.year` | `YearlyPrediction` | Yearly Prediction |
+| `labels.predictionTitles.month` | `MonthlyPrediction` | Monthly Prediction |
+| `labels.predictionTitles.day` | `DailyPrediction` | Daily Prediction |
+| `labels.predictionTitles.generation` | `NineYearlyPrediction` | 9-Year Prediction |
+| `labels.predictionTitles.epoch` | `EightyOneYearlyPrediction` | 81-Year Prediction |
+| `labels.predictionTitles.hour` | `HourlyPrediction` | Hourly Prediction |
+
+Example fragment:
+
+```json
+{
+  "labels": {
+    "predictionTitles": {
+      "year": "Yearly Prediction",
+      "month": "Monthly Prediction",
+      "day": "Daily Prediction",
+      "generation": "9-Year Prediction",
+      "epoch": "81-Year Prediction",
+      "hour": "Hourly Prediction"
+    }
+  }
+}
+```
+
+The mobile app should select the heading centrally by period key and use the returned string verbatim. Do not derive it from “Year”, append “Prediction” locally, or substitute a help title. All six labels are public metadata; their presence does not grant access to readings. Existing full/free reading contents, access checks and complementary accounting remain unchanged. No new Dictionary wording is added.

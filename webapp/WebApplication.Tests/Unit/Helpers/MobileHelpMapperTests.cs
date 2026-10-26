@@ -35,6 +35,13 @@ namespace K9.WebApplication.Tests.Unit.Helpers
             Assert.Equal(Dictionary.HourlyEnergy, (string)labels["cycleTitles"]["hour"]);
             Assert.Equal(Dictionary.PrimaryCycles, (string)labels["groups"]["primary"]);
             Assert.Equal(Dictionary.ExtendedCycles, (string)labels["groups"]["additional"]);
+            Assert.Equal(Dictionary.YearlyPrediction, (string)labels["predictionTitles"]["year"]);
+            Assert.Equal(Dictionary.MonthlyPrediction, (string)labels["predictionTitles"]["month"]);
+            Assert.Equal(Dictionary.DailyPrediction, (string)labels["predictionTitles"]["day"]);
+            Assert.Equal(Dictionary.NineYearlyPrediction, (string)labels["predictionTitles"]["generation"]);
+            Assert.Equal(Dictionary.EightyOneYearlyPrediction, (string)labels["predictionTitles"]["epoch"]);
+            Assert.Equal(Dictionary.HourlyPrediction, (string)labels["predictionTitles"]["hour"]);
+            Assert.Equal(6, ((JObject)labels["predictionTitles"]).Count);
             Assert.Equal(6, ((JObject)labels["periods"]).Count);
             Assert.Equal(3, ((JObject)labels["scopes"]).Count);
         }

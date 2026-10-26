@@ -17,6 +17,7 @@ namespace K9.WebApplication.Helpers
             NextMonth = K9.Globalisation.Dictionary.NextMonth,
             Today = K9.Globalisation.Dictionary.Today,
             Help = K9.Globalisation.Dictionary.CalendarHelp,
+            GoogleCalendarLink = K9.Globalisation.Dictionary.GoogleCalendarLink,
             CopyCalendarLink = K9.Globalisation.Dictionary.CopyCalendarLink,
             DisableCalendarLink = K9.Globalisation.Dictionary.DisableCalendarLink,
             Copied = K9.Globalisation.Dictionary.Copied,

@@ -1006,6 +1006,7 @@ The mobile app should select the heading centrally by period key and use the ret
 | `title` | `PersonalCalendar` |
 | `previousMonth`, `nextMonth`, `today` | `PreviousMonth`, `NextMonth`, `Today` |
 | `help` | `CalendarHelp` |
+| `googleCalendarLink` | `GoogleCalendarLink` (Google Calendar Link) |
 | `copyCalendarLink`, `disableCalendarLink` | `CopyCalendarLink`, `DisableCalendarLink` |
 | `copied`, `copyError` | `Copied`, `FailedToCopyToClipboard` |
 | `expand`, `close` | `ExpandCalendar`, `CloseCalendar` |
@@ -1053,3 +1054,6 @@ Example abbreviated response structure:
 ```
 
 This example omits the other six weekday objects, other labels, artwork IDs and unchanged reading text; use the actual returned long-date formatting and catalogue IDs. Presentation mapping is in `MobileCalculationMapper.CalendarLabels()` and `.CalendarDay()`; `MobileCalendarController.Month` continues to call the existing cancellation-aware calendar service once. Syntax/contract source checks do not replace a Windows build/xUnit run or authenticated Integration test.
+
+
+The calendar subscription panel heading is `data.labels.googleCalendarLink` (Dictionary.GoogleCalendarLink: “Google Calendar Link”), returned by `GET /api/mobile/v1/calendar/month`. Use `data.help.subscription.htmlBody` for its existing instructions and `data.labels.copyCalendarLink` for the copy button. Keep the explanatory `AboutPersonalCalendar` help title separate from this link-panel heading. Existing subscription/revocation responses, permissions and private link handling are unchanged.

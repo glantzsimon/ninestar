@@ -32495,6 +32495,12 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Explains collective Global Ki and individual personal houses.
         /// </summary>
+        public static string GoogleCalendarLink {
+            get {
+                return ResourceManager.GetString("GoogleCalendarLink", resourceCulture);
+            }
+        }
+
         public static string GlobalKiIntroduction {
             get {
                 return ResourceManager.GetString("GlobalKiIntroduction", resourceCulture);

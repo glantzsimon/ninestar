@@ -895,6 +895,7 @@ Full and free Predictions also include these fields under `data.labels`. These a
 | --- | --- | --- |
 | `labels.groups.primary` | `PrimaryCycles` | Primary Cycles |
 | `labels.groups.additional` | `ExtendedCycles` | Additional Cycles |
+| `labels.groups.global` | `GlobalCycles` | Global Cycles |
 | `labels.cycleTitles.year` | `YearlyCycle` | Yearly Ki |
 | `labels.cycleTitles.month` | `MonthlyCycle` | Monthly Ki |
 | `labels.cycleTitles.day` | `DailyCycleEnergy` | Daily Ki |

@@ -5,6 +5,7 @@ using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Packages;
 using System;
 using System.Linq;
+using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Services
 {

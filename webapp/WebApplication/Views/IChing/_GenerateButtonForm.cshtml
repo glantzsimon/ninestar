@@ -2,7 +2,6 @@
 
 @using (Html.BeginForm("Toss", "IChing", FormMethod.Post, new { data_calculator_page = "i-ching", data_calculator_restore = (Request.HttpMethod == "GET").ToString().ToLowerInvariant() }))
 {
-    @Html.Partial("_CalculatorTrialNotice", "i-ching")
     using (Html.BeginBootstrapForm())
     {
         <img loading="lazy" class="iching-image light" title="i-ching" alt="i-ching free hexagram generator" src="@MediaService.BaseImagesPath/iching/iching.png" />
@@ -16,4 +15,5 @@
             @Html.BootstrapButton(Dictionary.Generate, EButtonType.Submit, "", EButtonClass.Large)
         </div>
     }
+    @Html.Partial("_CalculatorTrialNotice", "i-ching")
 }

@@ -6,6 +6,8 @@ Prefer a targeted patch to working code. Preserve its structure, formatting and 
 
 ## UI authoring
 
+Check with the owner before adding unrequested user-facing explanatory or promotional copy. Calculator forms must remain visually flush at the top; place any approved trial/sign-in notice below the Calculate/Generate controls, never above the inputs.
+
 The owner requires UI controls to use existing K9 HTML helpers, rather than hand-written control markup or client-generated control HTML. Inspect comparable views and actual helper signatures before implementing UI.
 
 - Use `Html.BootstrapEditorFor` for editable model properties and `Html.BootstrapDisplayFor` for display properties, with existing editor/display templates and `EditorOptions`.

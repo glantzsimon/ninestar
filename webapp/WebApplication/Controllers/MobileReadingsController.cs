@@ -158,6 +158,7 @@ namespace K9.WebApplication.Controllers
 
         private static object FreeYear(NineStarKiEnergy energy, bool global = false) => energy == null ? null : new
         {
+            HouseName = energy.HouseName,
             Number = energy.EnergyNumber, Title = energy.CycleDescriptiveName,
             energy.Season, energy.SeasonDescription,
             Description = global ? energy.GlobalCycleDescription : energy.CycleDescription

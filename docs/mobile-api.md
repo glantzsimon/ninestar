@@ -885,3 +885,48 @@ Public GET checks during investigation returned JSON: `metadata/options` 200, `p
 The shared website exception filter now leaves mobile paths to the existing controller/pipeline JSON handlers instead of selecting FriendlyError HTML. This does not repair IIS/startup failures before the application runs or eliminate server timeouts.
 
 Integration was observed already sending `X-Robots-Tag: noindex, nofollow`. Persist this only in the Integration web.config transform, under `system.webServer/httpProtocol/customHeaders`, using XDT `SetAttributes` matched by name for an existing header, or `Insert` if absent (with `InsertIfMissing` for absent parent elements). Do not add it to shared or Production configuration. The repository transform is git-crypt protected and requires the owner’s plaintext upload for editing. Keep crawling enabled so Google can read noindex; temporary Search Console prefix removal can accelerate removal of existing Integration results.
+
+
+## Predictions cycle cards matching the website
+
+Full and free Predictions also include these fields under `data.labels`. These are the website’s exact card/panel resources, distinct from short `labels.periods` and explanatory `help` titles.
+
+| Field | Dictionary resource | English value |
+| --- | --- | --- |
+| `labels.groups.primary` | `PrimaryCycles` | Primary Cycles |
+| `labels.groups.additional` | `ExtendedCycles` | Additional Cycles |
+| `labels.cycleTitles.year` | `YearlyCycle` | Yearly Ki |
+| `labels.cycleTitles.month` | `MonthlyCycle` | Monthly Ki |
+| `labels.cycleTitles.day` | `DailyCycleEnergy` | Daily Ki |
+| `labels.cycleTitles.generation` | `NineYearlyEnergy` | Nine-Yearly Ki |
+| `labels.cycleTitles.epoch` | `EightyOneYearlyEnergy` | 81-Yearly Ki |
+| `labels.cycleTitles.hour` | `HourlyEnergy` | Hourly Ki |
+
+Each non-null full cycle projection (`personal`, `lunar`, `global`, and existing planner/knowledge-base cycle projections) now includes `houseName`, taken directly from `NineStarKiEnergy.HouseName`. This is the same formatter used by the website: `ElementNameAndNumber` plus `Dictionary.House`, for example “7 Metal House”. Free yearly projections (`year`, `lunarYear`, `globalYear`) include the same field. No local string concatenation or hardcoded “House” is needed in the app. Null readings stay null, and free responses gain no additional readings.
+
+Render the screenshot layout in this order:
+
+1. Group heading: `data.labels.groups.primary` (year/month/day), or `.additional` (generation/epoch/hour).
+2. Card heading: corresponding `data.labels.cycleTitles` value.
+3. House line: reading’s `houseName`.
+4. Existing energy image/artwork.
+5. For year/month/day, existing `cycleDescriptiveName` beneath the image in full responses, or `title` for the free year. Preserve the existing text, including “Harvest / Abundance and Celebration”; do not replace it with the house line or natal energy title.
+
+Example full-response fragment:
+
+```json
+{
+  "labels": {
+    "groups": { "primary": "Primary Cycles", "additional": "Additional Cycles" },
+    "cycleTitles": { "year": "Yearly Ki", "month": "Monthly Ki", "day": "Daily Ki", "generation": "Nine-Yearly Ki", "epoch": "81-Yearly Ki", "hour": "Hourly Ki" }
+  },
+  "personal": {
+    "year": {
+      "houseName": "7 Metal House",
+      "cycleDescriptiveName": "Harvest / Abundance and Celebration"
+    }
+  }
+}
+```
+
+This fragment omits unchanged fields. The cycle description remains personalised reading content. Existing artwork availability, scopes, membership checks and complementary counters are unchanged. No new Dictionary wording is required for these card labels.

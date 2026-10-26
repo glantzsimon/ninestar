@@ -20,6 +20,7 @@ namespace K9.WebApplication.Helpers
 
         public static object Cycle(NineStarKiEnergy energy, bool global = false) => energy == null ? null : new
         {
+            HouseName = energy.HouseName,
             Energy = MobilePersonalChartMapper.Energy(energy),
             energy.CycleDescriptiveName, energy.Season, energy.SeasonDescription,
             Description = global ? energy.GlobalCycleDescription : energy.CycleDescription
@@ -51,6 +52,20 @@ namespace K9.WebApplication.Helpers
                 Year = K9.Globalisation.Dictionary.Year, Month = K9.Globalisation.Dictionary.Month,
                 Day = K9.Globalisation.Dictionary.Day, Generation = K9.Globalisation.Dictionary.Generation,
                 Epoch = K9.Globalisation.Dictionary.Epoch, Hour = K9.Globalisation.Dictionary.Hour
+            },
+            CycleTitles = new
+            {
+                Year = K9.Globalisation.Dictionary.YearlyCycle,
+                Month = K9.Globalisation.Dictionary.MonthlyCycle,
+                Day = K9.Globalisation.Dictionary.DailyCycleEnergy,
+                Generation = K9.Globalisation.Dictionary.NineYearlyEnergy,
+                Epoch = K9.Globalisation.Dictionary.EightyOneYearlyEnergy,
+                Hour = K9.Globalisation.Dictionary.HourlyEnergy
+            },
+            Groups = new
+            {
+                Primary = K9.Globalisation.Dictionary.PrimaryCycles,
+                Additional = K9.Globalisation.Dictionary.ExtendedCycles
             },
             Scopes = new
             {

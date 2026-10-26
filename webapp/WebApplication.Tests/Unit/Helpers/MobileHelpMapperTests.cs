@@ -27,6 +27,14 @@ namespace K9.WebApplication.Tests.Unit.Helpers
             Assert.Equal(Dictionary.PersonalView, (string)labels["scopes"]["personal"]);
             Assert.Equal(Dictionary.PersonalLunarView, (string)labels["scopes"]["lunar"]);
             Assert.Equal(Dictionary.GlobalView, (string)labels["scopes"]["global"]);
+            Assert.Equal(Dictionary.YearlyCycle, (string)labels["cycleTitles"]["year"]);
+            Assert.Equal(Dictionary.MonthlyCycle, (string)labels["cycleTitles"]["month"]);
+            Assert.Equal(Dictionary.DailyCycleEnergy, (string)labels["cycleTitles"]["day"]);
+            Assert.Equal(Dictionary.NineYearlyEnergy, (string)labels["cycleTitles"]["generation"]);
+            Assert.Equal(Dictionary.EightyOneYearlyEnergy, (string)labels["cycleTitles"]["epoch"]);
+            Assert.Equal(Dictionary.HourlyEnergy, (string)labels["cycleTitles"]["hour"]);
+            Assert.Equal(Dictionary.PrimaryCycles, (string)labels["groups"]["primary"]);
+            Assert.Equal(Dictionary.ExtendedCycles, (string)labels["groups"]["additional"]);
             Assert.Equal(6, ((JObject)labels["periods"]).Count);
             Assert.Equal(3, ((JObject)labels["scopes"]).Count);
         }

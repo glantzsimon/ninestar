@@ -113,6 +113,8 @@ Do not assume an unexpected modified-file status is caused by git-crypt. Inspect
 
 Treat `webapp/WebApplication/Content/less/` as the styling source. Preserve the existing organisation: `sections/` for page/feature sections (such as predictions and navbar), `controls/` for reusable controls (such as panels and the personal calendar), `main/` for general and responsive styles, and `config/` for shared colours and paths. Edit the relevant existing LESS file rather than adding unrelated overrides.
 
+Dark-theme standard borders use the shared `@dark-border-color` (#b8b8b8) through the border custom properties in `config/colours.less`; see `docs/website-theme.md`. Preserve light defaults, widths and blue focus/selection accents. Use the existing theme border tokens rather than hardcoded white outlines.
+
 Keep the corresponding CSS under `Content/` in sync. Check `webapp/WebApplication/compilerconfig.json` for the LESS-to-CSS mapping; register new stylesheets there and in the project as required. Compile with the project's tooling when available. If compilation is unavailable, update both files consistently and clearly state the verification limit.
 
 Reuse existing theme variables instead of hardcoded colours. Panel backgrounds use `background: var(--well-color)` (a gradient in light mode and teal in dark mode). Calendar full-screen mode uses that same variable; embedded mode is transparent. Use the existing energy artwork under `ninestar/energies/` through `MediaService.BaseImagesPath`, matching the cycle views.

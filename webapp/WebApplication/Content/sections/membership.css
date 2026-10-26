@@ -17,6 +17,8 @@
   --text-color: #444444;
   --hover-text-color: #515151;
   --border-color: #dddddd;
+  --border-muted-color: #eeeeee;
+  --border-inverse-color: #ffffff;
   --well-color: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
   --panel-header-top: #f7fbff;
   --panel-header-bottom: #f0f8ff;
@@ -51,14 +53,16 @@
   --error-red: #ff1a1a;
   --snow-white: #ffffff;
   --charcoal-black: #2f3842;
-  --border-grey: #ffffff;
+  --border-grey: #b8b8b8;
   --light-grey: #aeaeae;
   --background-color: #0f1215;
   --background-color-hover: #2f3842;
   --surface-color: #444444;
   --text-color: #f9f9f9;
   --hover-text-color: #ffffff;
-  --border-color: #ffffff;
+  --border-color: #b8b8b8;
+  --border-muted-color: var(--border-color);
+  --border-inverse-color: var(--border-color);
   --well-color: #091a22;
   --panel-header-top: #246587;
   --panel-header-bottom: #0f2c3a;
@@ -74,7 +78,7 @@
   --pills-tab-background: rgba(20, 56, 74, 0.11);
   --table-background-color: rgba(20, 56, 74, 0.72);
   --table-background: linear-gradient(to bottom, rgba(20, 56, 74, 0.33) 0%, rgba(20, 56, 74, 0.11) 100%);
-  --table-border-color: #f9f9f9;
+  --table-border-color: var(--border-color);
   --nav-pills-button-background: #1e5875;
   --readmore-overlay-background: linear-gradient(to bottom, rgba(20, 56, 74, 0) 22%, #14384a 81%);
   --ninestar-summary-container-hover: #14384a;
@@ -257,7 +261,7 @@
   background: white;
   border-radius: 5px;
   padding: 10px;
-  border: 1px solid #eeeeee;
+  border: 1px solid var(--border-muted-color);
 }
 .upgrade-container:not(:empty) {
   width: 100%;

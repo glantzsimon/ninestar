@@ -112,6 +112,7 @@
 @surface-color: @ghost-white;
 @text-color: @deep-grey;
 @border-color: @border-grey;
+@dark-border-color: #b8b8b8;
 @hover-white: darken(@snow-white, 5%);
 
 @teal-blue-light: lighten(@teal-blue, 18%);
@@ -153,6 +154,8 @@
     --text-color: @text-color;
     --hover-text-color: lighten(@text-color, 5%);
     --border-color: @border-color;
+    --border-muted-color: @ghost-white;
+    --border-inverse-color: @snow-white;
     --well-color: linear-gradient(to bottom, #f9f9f9 0, #fdfdfd 100%);
     --panel-header-top: @table-gradient-top;
     --panel-header-bottom: @alice-blue;
@@ -192,14 +195,16 @@
     --error-red: lighten(@error-red, 15%);
     --snow-white: lighten(@snow-white, 15%);
     --charcoal-black: lighten(@charcoal-black, 15%);
-    --border-grey: lighten(@border-grey, 15%);
+    --border-grey: @dark-border-color;
     --light-grey: lighten(@light-grey, 15%);
     --background-color: @charcoal-black;
     --background-color-hover: lighten(@charcoal-black, 15%);
     --surface-color: @deep-grey;
     --text-color: @whisper-white;
     --hover-text-color: lighten(@snow-white, 5%);
-    --border-color: lighten(@border-grey, 15%);
+    --border-color: @dark-border-color;
+    --border-muted-color: var(--border-color);
+    --border-inverse-color: var(--border-color);
     --well-color: darken(@teal-blue, 28%);
     --panel-header-top: darken(@teal-blue, 3%);
     --panel-header-bottom: darken(@teal-blue, 22%);
@@ -215,7 +220,7 @@
     --pills-tab-background: @dark-teal-blue-alpha-dark;
     --table-background-color: @dark-teal-blue-alpha;
     --table-background: linear-gradient(to bottom, @dark-teal-blue-alpha-medium 0%, @dark-teal-blue-alpha-dark 100%);
-    --table-border-color: @whisper-white;
+    --table-border-color: var(--border-color);
     --nav-pills-button-background: @teal-blue-dark;
     --readmore-overlay-background: linear-gradient( to bottom, @dark-teal-blue-alpha-zero 22%, @dark-teal-blue 81% );
     --ninestar-summary-container-hover: @dark-teal-blue;

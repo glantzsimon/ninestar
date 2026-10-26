@@ -1,6 +1,6 @@
 @model string
 @using K9.WebApplication.Helpers
-@if (!Request.IsAuthenticated)
+@if (!Request.IsAuthenticated && CalculatorTrialHelper.HasUsedTrial(ViewContext.HttpContext, Model))
 {
-    <p>@(CalculatorTrialHelper.HasUsedTrial(ViewContext.HttpContext, Model) ? Dictionary.CalculatorSignInRequired : Dictionary.CalculatorTrialNotice)</p>
+    <p>@Dictionary.CalculatorSignInRequired</p>
 }

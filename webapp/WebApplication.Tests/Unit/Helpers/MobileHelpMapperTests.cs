@@ -47,6 +47,32 @@ namespace K9.WebApplication.Tests.Unit.Helpers
         }
 
         [Fact]
+        public void CalendarPresentationPreservesWebsiteLabelsAndRegisteredArtwork()
+        {
+            var labels = JObject.FromObject(MobileCalculationMapper.CalendarLabels());
+            Assert.Equal(Dictionary.Today, (string)labels["Today"]);
+            Assert.Equal(Dictionary.Monday, (string)labels["Weekdays"][0]["Label"]);
+            Assert.Equal(Dictionary.Sunday, (string)labels["Weekdays"][6]["Label"]);
+            Assert.Equal(7, labels["Weekdays"].Count());
+            var entry = new K9.WebApplication.Models.CalendarEntry
+            {
+                Date = new System.DateTime(2026, 10, 1), YearHouse = 7, MonthHouse = 7,
+                DayHouse = 7, AfternoonDayHouse = 4, Summary = "7.7.7", Description = "existing reading"
+            };
+            var day = JObject.FromObject(MobileCalculationMapper.CalendarDay(entry));
+            Assert.Equal("2026-10-01", (string)day["Date"]);
+            Assert.Equal(entry.Date.ToString("D", CultureInfo.CurrentCulture), (string)day["DateLabel"]);
+            Assert.Equal(entry.Description, (string)day["Description"]);
+            Assert.Equal(MobileArtworkRegistry.IdForPath("ninestar/energies/lake.png"), (string)day["ArtworkId"]);
+            Assert.False(string.IsNullOrEmpty((string)day["ArtworkId"]));
+            Assert.Equal(MobileArtworkRegistry.IdForPath("ninestar/energies/wind.png"), (string)day["AfternoonArtworkId"]);
+            entry.AfternoonDayHouse = null;
+            day = JObject.FromObject(MobileCalculationMapper.CalendarDay(entry));
+            Assert.Equal(JTokenType.Null, day["AfternoonArtworkId"].Type);
+            Assert.Equal(JTokenType.Null, day["AfternoonDayHouseLabel"].Type);
+        }
+
+        [Fact]
         public void ChartIntroductionsMatchWebsiteResourcesWithoutTabInstructions()
         {
             var help = MobileHelpMapper.Chart(true, true);

@@ -10,6 +10,70 @@ namespace K9.WebApplication.Helpers
     // to JsonConvert: models include back references and presentation getters.
     public static class MobileCalculationMapper
     {
+        public static object CalendarLabels() => new
+        {
+            Title = K9.Globalisation.Dictionary.PersonalCalendar,
+            PreviousMonth = K9.Globalisation.Dictionary.PreviousMonth,
+            NextMonth = K9.Globalisation.Dictionary.NextMonth,
+            Today = K9.Globalisation.Dictionary.Today,
+            Help = K9.Globalisation.Dictionary.CalendarHelp,
+            CopyCalendarLink = K9.Globalisation.Dictionary.CopyCalendarLink,
+            DisableCalendarLink = K9.Globalisation.Dictionary.DisableCalendarLink,
+            Copied = K9.Globalisation.Dictionary.Copied,
+            CopyError = K9.Globalisation.Dictionary.FailedToCopyToClipboard,
+            Expand = K9.Globalisation.Dictionary.ExpandCalendar,
+            Close = K9.Globalisation.Dictionary.CloseCalendar,
+            Revoked = K9.Globalisation.Dictionary.CalendarLinkDisabled,
+            Error = K9.Globalisation.Dictionary.NetworkError,
+            Unavailable = K9.Globalisation.Dictionary.PersonalCalendarUnavailable,
+            MyAccount = K9.Base.Globalisation.Dictionary.MyAccountTitle,
+            Year = K9.Globalisation.Dictionary.Year,
+            Month = K9.Globalisation.Dictionary.Month,
+            Day = K9.Globalisation.Dictionary.Day,
+            Weekdays = new[]
+            {
+                K9.Globalisation.Dictionary.Monday, K9.Globalisation.Dictionary.Tuesday,
+                K9.Globalisation.Dictionary.Wednesday, K9.Globalisation.Dictionary.Thursday,
+                K9.Globalisation.Dictionary.Friday, K9.Globalisation.Dictionary.Saturday,
+                K9.Globalisation.Dictionary.Sunday
+            }.Select((label, index) => new
+            {
+                DayOfWeek = index + 1, Label = label,
+                ShortLabel = label.Substring(0, System.Math.Min(3, label.Length))
+            }).ToArray()
+        };
+
+        private static string CalendarEnergyName(int number) =>
+            number.ToString(System.Globalization.CultureInfo.InvariantCulture) + " " +
+            new NineStarKiEnergy((ENineStarKiEnergy)number).EnergyName;
+
+        private static string CalendarArtworkId(int number) => MobileArtworkRegistry.IdForPath(
+            "ninestar/energies/" + new NineStarKiEnergy((ENineStarKiEnergy)number).EnergyLowerCase + ".png");
+
+        public static object CalendarDay(CalendarEntry entry) => new
+        {
+            Date = entry.Date.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture),
+            DateLabel = entry.Date.ToString("D", System.Globalization.CultureInfo.CurrentCulture),
+            Day = entry.Date.Day,
+            entry.YearHouse, entry.MonthHouse, entry.DayHouse, entry.AfternoonDayHouse,
+            entry.Summary, entry.Description,
+            Houses = string.Join(" \u00b7 ", new[]
+            {
+                K9.Globalisation.Dictionary.Year + ": " + CalendarEnergyName(entry.YearHouse),
+                K9.Globalisation.Dictionary.Month + ": " + CalendarEnergyName(entry.MonthHouse),
+                K9.Globalisation.Dictionary.Day + ": " + CalendarEnergyName(entry.DayHouse)
+            }),
+            EnergyName = CalendarEnergyName(entry.DayHouse),
+            YearHouseLabel = CalendarEnergyName(entry.YearHouse),
+            MonthHouseLabel = CalendarEnergyName(entry.MonthHouse),
+            DayHouseLabel = CalendarEnergyName(entry.DayHouse),
+            AfternoonDayHouseLabel = entry.AfternoonDayHouse.HasValue ? CalendarEnergyName(entry.AfternoonDayHouse.Value) : null,
+            ArtworkId = CalendarArtworkId(entry.DayHouse),
+            YearArtworkId = CalendarArtworkId(entry.YearHouse),
+            MonthArtworkId = CalendarArtworkId(entry.MonthHouse),
+            AfternoonArtworkId = entry.AfternoonDayHouse.HasValue ? CalendarArtworkId(entry.AfternoonDayHouse.Value) : null
+        };
+
         public static object Moon(MoonPhase moon) => moon == null ? null : new
         {
             moon.IlluminationPercentage, moon.IsWaxing, moon.IlluminationDisplay,

@@ -993,3 +993,63 @@ The mobile app should select the heading centrally by period key and use the ret
 
 
 `help.globalKi.htmlBody` now uses the dedicated two-paragraph `Dictionary.GlobalKiIntroduction`, explaining the collective/planetary energetic climate and how it differs from the individual personal house. It replaces the previously exposed membership-page description at the same API field; clients need no field-name change. `Dictionary.GlobalKiDescription` remains the original membership-page promotional text and is unchanged. The new resource lives in `webapp/Globalisation/Dictionary.resx`, with its accessor in `Dictionary.Designer.cs`, and is selected by `MobileHelpMapper.PredictionIntroductions()`. Both full and free Predictions receive it. It is distinct from the Epoch-only `help.globalKiWarning`; no reading access changes.
+
+
+## Native personal calendar presentation
+
+`GET /api/mobile/v1/calendar/month?year=2026&month=10` now adds presentation metadata to the existing month response. The route, optional year/month behaviour, Monday-first `offset`, member-timezone `today`, numeric houses, summary and full website description are preserved. Access still requires the existing paid predictions membership or administrator check. No new calculation, subscription, purchasing or persistence behaviour is introduced.
+
+`data.labels` contains the website calendar resources:
+
+| Field under `labels` | Dictionary resource |
+| --- | --- |
+| `title` | `PersonalCalendar` |
+| `previousMonth`, `nextMonth`, `today` | `PreviousMonth`, `NextMonth`, `Today` |
+| `help` | `CalendarHelp` |
+| `copyCalendarLink`, `disableCalendarLink` | `CopyCalendarLink`, `DisableCalendarLink` |
+| `copied`, `copyError` | `Copied`, `FailedToCopyToClipboard` |
+| `expand`, `close` | `ExpandCalendar`, `CloseCalendar` |
+| `revoked` | `CalendarLinkDisabled` |
+| `error`, `unavailable` | `NetworkError`, `PersonalCalendarUnavailable` |
+| `myAccount` | `K9.Base.Globalisation.Dictionary.MyAccountTitle` |
+| `year`, `month`, `day` | `Year`, `Month`, `Day` |
+
+All resources other than the explicitly qualified My Account title use `K9.Globalisation.Dictionary`. `labels.weekdays` is a Monday-to-Sunday array with `{ dayOfWeek, label, shortLabel }`. `dayOfWeek` uses ISO numbering 1 (Monday) to 7 (Sunday), not .NET/JavaScript Sunday-zero numbering. `label` comes from `Monday` through `Sunday`; `shortLabel` uses the first up-to-three characters, matching the website. Use these values for headings and accessibility labels rather than hardcoded English or device-generated abbreviations. Existing `data.help.overview` and `.subscription` retain their Dictionary-backed title/HTML/culture fields.
+
+Each `data.entries[]` adds:
+
+| Field | Meaning |
+| --- | --- |
+| `dateLabel` | Long date formatted with request `CurrentCulture`, matching website `DateLabel`; use ISO `date` for identity/navigation |
+| `day` | Gregorian day number |
+| `houses` | Website summary: Dictionary Year/Month/Day labels and number plus resource-backed energy name, separated by ` · ` |
+| `energyName` | Daily number plus existing resource-backed energy name, matching the website |
+| `yearHouseLabel`, `monthHouseLabel`, `dayHouseLabel` | The corresponding number plus energy name, using the website formatter convention |
+| `afternoonDayHouseLabel` | Same format for the optional afternoon energy; null if absent |
+| `artworkId` | Existing registry ID for the daily energy image |
+| `yearArtworkId`, `monthArtworkId`, `afternoonArtworkId` | Existing registry IDs for those energies; afternoon is null if absent |
+
+House labels intentionally use the website’s energy-name convention (e.g. the enum energy’s descriptive name), rather than the separate Predictions card `houseName` element/House format. Resolve IDs through the existing `/api/mobile/v1/metadata/artwork` catalogue and image/cache pipeline; do not construct asset URLs or interpret an ID as a URL. All images use the same `ninestar/energies/<energy>.png` assets as the website. Existing `yearHouse`, `monthHouse`, `dayHouse`, `afternoonDayHouse`, `summary` and `description` remain untouched. Missing afternoon values must not fabricate an afternoon reading or image.
+
+Example abbreviated response structure:
+
+```json
+{
+  "success": true,
+  "data": {
+    "year": 2026, "month": 10, "title": "October 2026",
+    "today": "2026-10-26", "offset": 3,
+    "labels": {
+      "today": "Today",
+      "weekdays": [{ "dayOfWeek": 1, "label": "Monday", "shortLabel": "Mon" }]
+    },
+    "entries": [{
+      "date": "2026-10-01", "dateLabel": "01 October 2026", "day": 1,
+      "yearHouse": 7, "monthHouse": 7, "dayHouse": 7,
+      "afternoonDayHouse": null, "afternoonDayHouseLabel": null, "afternoonArtworkId": null
+    }]
+  }
+}
+```
+
+This example omits the other six weekday objects, other labels, artwork IDs and unchanged reading text; use the actual returned long-date formatting and catalogue IDs. Presentation mapping is in `MobileCalculationMapper.CalendarLabels()` and `.CalendarDay()`; `MobileCalendarController.Month` continues to call the existing cancellation-aware calendar service once. Syntax/contract source checks do not replace a Windows build/xUnit run or authenticated Integration test.

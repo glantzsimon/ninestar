@@ -30,13 +30,10 @@ namespace K9.WebApplication.Controllers
                 return ApiSuccess(new
                 {
                     Help = K9.WebApplication.Helpers.MobileHelpMapper.Calendar(),
+                    Labels = K9.WebApplication.Helpers.MobileCalculationMapper.CalendarLabels(),
                     Year = start.Year, Month = start.Month, Title = start.ToString("Y", CultureInfo.CurrentCulture),
                     Today = today.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture), Offset = ((int)start.DayOfWeek + 6) % 7,
-                    Entries = entries.Select(e => new
-                    {
-                        Date = e.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture),
-                        e.YearHouse, e.MonthHouse, e.DayHouse, e.AfternoonDayHouse, e.Summary, e.Description
-                    }).ToArray()
+                    Entries = entries.Select(K9.WebApplication.Helpers.MobileCalculationMapper.CalendarDay).ToArray()
                 });
             }
             catch (InvalidOperationException) { return ApiError(409, "calendar_details_required"); }

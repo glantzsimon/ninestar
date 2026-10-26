@@ -348,6 +348,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                         var html = K9.Globalisation.Dictionary.ResourceManager.GetString(name, K9.Globalisation.Dictionary.Culture);
                         Assert.False(string.IsNullOrWhiteSpace(html));
                         Assert.Contains("<p>", html);
+                        var firstParagraph = html.Substring(html.IndexOf("<p>", StringComparison.Ordinal) + 3);
+                        Assert.StartsWith("Today’s ", firstParagraph);
                     }
         }
 
@@ -373,6 +375,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                         Assert.DoesNotContain("{0}", text);
                         Assert.DoesNotContain("{1}", text);
                         Assert.False(string.IsNullOrWhiteSpace(blocks[2]));
+                        Assert.StartsWith("Today’s ", blocks[2]);
                     }
             Assert.Throws<ArgumentOutOfRangeException>(() => CombinedPredictionHelper.GetCalendarText(0, 1, 1));
             Assert.Throws<ArgumentOutOfRangeException>(() => CombinedPredictionHelper.GetCalendarText(1, 1, 10));

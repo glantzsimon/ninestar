@@ -931,3 +931,28 @@ Example full-response fragment:
 ```
 
 This fragment omits unchanged fields. The cycle description remains personalised reading content. Existing artwork availability, scopes, membership checks and complementary counters are unchanged. No new Dictionary wording is required for these card labels.
+
+
+## Predictions and Global Ki introductions
+
+Both full Predictions and free/complementary Predictions expose `data.help.overview` and `data.help.globalKi`, including existing saved-reading projections. Each has `title`, `htmlBody` and `culture`, following the standard help contract.
+
+| Field | Title resource | Body resource | Purpose |
+| --- | --- | --- | --- |
+| `help.overview` | `PredictionsOverview` | `PredictionsIntroduction` | New two-paragraph general introduction for the top of the Predictions screen |
+| `help.globalKi` | `AboutGlobalKi` | `GlobalKiDescription` | Existing general explanation of personal versus collective influences, reused unchanged from the website membership page |
+
+Render the supplied `htmlBody` using the existing safe HTML renderer. Do not hardcode or paraphrase either text. `help.moreOnCycles` is separate supplementary material, and `help.globalKiWarning` is only the existing Epoch-specific warning. Neither is the general introduction. Full help retains all existing entries. Free help adds only the two public introductions, not paid reading content, other help entries or additional cycle readings. Existing memberships, counters and ownership checks remain unchanged. The public introductory text describes available concepts without granting access to every period.
+
+Example response fragment (bodies abbreviated here only):
+
+```json
+{
+  "help": {
+    "overview": { "title": "Predictions Overview", "htmlBody": "<p>Nine Star Ki predictions explore...</p><p>Use these readings...</p>", "culture": "en-GB" },
+    "globalKi": { "title": "About Global Ki", "htmlBody": "Easily toggle between your own <strong>personal Nine Star Ki influences</strong>...", "culture": "en-GB" }
+  }
+}
+```
+
+Dictionary/resource XML and C# syntax can be checked here; Windows build/xUnit and authenticated Integration verification remain required. Resource changes require rebuilding the Globalisation assembly before deployment.

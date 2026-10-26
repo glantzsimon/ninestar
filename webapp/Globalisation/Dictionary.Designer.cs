@@ -32486,6 +32486,12 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Global Cycles.
         /// </summary>
+        public static string PredictionsIntroduction {
+            get {
+                return ResourceManager.GetString("PredictionsIntroduction", resourceCulture);
+            }
+        }
+
         public static string GlobalCycles {
             get {
                 return ResourceManager.GetString("GlobalCycles", resourceCulture);

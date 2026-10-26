@@ -100,6 +100,16 @@ namespace K9.WebApplication.Tests.Unit.Helpers
         public void PredictionsKeepGlobalWarningSeparateFromGenericEpochText()
         {
             var help = MobileHelpMapper.Predictions();
+            var introductions = MobileHelpMapper.PredictionIntroductions();
+            Assert.Equal(2, introductions.Count);
+            Assert.Equal(Dictionary.PredictionsOverview, introductions["overview"].Title);
+            Assert.Equal(Dictionary.PredictionsIntroduction, introductions["overview"].HtmlBody);
+            Assert.Equal(Dictionary.AboutGlobalKi, introductions["globalKi"].Title);
+            Assert.Equal(Dictionary.GlobalKiDescription, introductions["globalKi"].HtmlBody);
+            Assert.Equal(introductions["overview"].HtmlBody, help["overview"].HtmlBody);
+            Assert.Equal(introductions["globalKi"].HtmlBody, help["globalKi"].HtmlBody);
+            Assert.DoesNotContain("moreOnCycles", introductions.Keys);
+            Assert.DoesNotContain("globalKiWarning", introductions.Keys);
             Assert.Equal(Dictionary.day_description, help["day"].HtmlBody);
             Assert.Equal(Dictionary.month_description, help["month"].HtmlBody);
             Assert.Equal(Dictionary.year_description, help["year"].HtmlBody);

@@ -167,6 +167,7 @@ namespace K9.WebApplication.Controllers
         private static object FreePredictions(NineStarKiModel model) => new
         {
             Labels = MobileCalculationMapper.PredictionLabels(),
+            Help = MobileHelpMapper.PredictionIntroductions(),
             model.SelectedDate, Profile = MobilePersonalChartMapper.Numbers(model),
             Year = FreeYear(model.PersonalHousesOccupiedEnergies.Year),
             LunarYear = FreeYear(model.PersonalHousesOccupiedLunarEnergies?.Year),

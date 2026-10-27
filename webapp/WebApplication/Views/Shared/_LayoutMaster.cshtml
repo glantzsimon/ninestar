@@ -118,7 +118,10 @@
 <body>
     @* 🔥 Load Spinner Only When Needed *@
     <div id="pageFadeInOverlay">
-        <img loading="eager" width="114" height="114" class="page-loading-image cropped" alt="@Dictionary.NineStarKiAstrologyFreeCalculator" src="@Url.Content("~/Images/shared/ninestar-spinner.png")" />
+        <picture>
+            <source srcset="@Url.Content("~/Images/shared/ninestar-spinner.webp")" type="image/webp" media="(prefers-reduced-motion: no-preference)">
+            <img loading="eager" width="114" height="114" class="page-loading-image cropped" alt="@Dictionary.NineStarKiAstrologyFreeCalculator" src="@Url.Content("~/Images/shared/ninestar-spinner.png")" />
+        </picture>
     </div>
     <div id="pageSpinner"></div>
     <div id="pageOverlay"></div>

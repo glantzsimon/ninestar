@@ -1258,6 +1258,7 @@
     <Content Include="Images\ninestar\yinyang\yin.png" />
     <Content Include="Images\ninestar\yinyang\yinyang-large.png" />
     <Content Include="Images\shared\ninestar-spinner.png" />
+    <Content Include="Images\shared\ninestar-spinner.webp" />
     <Content Include="Images\shared\ninestar-spinner.gif" />
     <Content Include="Images\shared\powered-by-stripe-cards.png" />
     <Content Include="Images\shared\powered-by-stripe.png" />

@@ -14,7 +14,7 @@ All generated PNGs preserve the supplied artwork's alpha transparency. Do not ad
 
 ## Regeneration and cleanup
 
-Run `python tools/generate-site-icons.py` with Pillow. The approved 1023-square artwork formerly named `facebook-app-icon-1024x1024.png` is preserved as `tools/assets/ninestar-icon-source.png`; the generator corrects output dimensions and does not upscale the master. Project Content items explicitly include every generated public file and the shared partial.
+Run `python tools/generate-site-icons.py` with Pillow to regenerate **only** the favicon and maskable icon from the current owner-supplied `Images/icons/icon-512.png`. It preserves alpha and does not rewrite the Apple icon, standard 192/512 icons or manifest. The former master under `tools/assets/` is historical artwork; it must not overwrite the owner's updated tighter-cropped icons.
 
 Superseded Apple size variants, Android 192 variant, individual PNG favicon variants, Safari pinned-tab asset and unused social/web/duplicate logo filenames were removed from the website icons folder and project. The original layout's legacy declarations and nonexistent Windows tile link were replaced by the shared partial. No corresponding MobileApplication files or company logos were removed. Mobile artwork metadata was regenerated to reflect the owner's newly replaced company assets; the public IDs and explicit allowlist remain unchanged.
 
@@ -23,3 +23,11 @@ References in database-stored historical email or external bookmarks cannot be r
 ## Validation
 
 Checked exact image dimensions, transparent PNG backgrounds, all three ICO frames, manifest-relative target existence, XML project registrations, consistent shared layout usage and absence of removed icon references in website source. Mobile artwork generator `--check` passes. No schema execution, website startup, deployment or production media deletion was performed. Windows MVC/Razor build and actual browser/home-screen rendering remain to be checked after the normal build/deployment workflow. Favicons and saved shortcuts can retain cached artwork; recreate shortcuts when checking an update.
+
+## Page-load logo
+
+The main and retained original layouts now use `Images/shared/ninestar-spinner.png`, copied without pixel changes from the owner's updated icon-512.png. It is displayed at the previous GIF's 114-square size. The existing `pageFadeInOverlay`, centring styles and fadePageIn.js timings remain intact. The image loads eagerly rather than lazily inside a blocking overlay.
+
+The shared pageSpinner LESS/CSS applies a gentle 1.8-second opacity pulse (1 to 0.55) to `.page-loading-image`, with no rotation or scaling. This avoids wobble from asymmetric artwork. Reduced-motion users get a static image. Existing pageSpinner/partialSpinner border animations are unchanged. The old GIF remains for the original mobile artwork catalogue and external consumers; its main website page-load references were replaced, not its public asset removed.
+
+Validation: exact transparent maskable output and ICO frames checked; source Apple/192/512 icons and manifest unchanged; spinner PNG matches icon-512 bytes; project includes PNG; layout paths and CSS/LESS pulse agree. Full LESS compiler, Windows build and browser verification are unavailable in this environment; compiled CSS was synchronised manually. No deployment or schema operations.

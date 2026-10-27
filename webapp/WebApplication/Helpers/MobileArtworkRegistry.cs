@@ -32,8 +32,8 @@ namespace K9.WebApplication.Helpers
         // Initialise through a nested holder so partial-file field order cannot affect lookup creation.
         private static class Lookup
         {
-            internal static readonly Dictionary<string, string> Ids = Sources.ToDictionary(
-                e => e.Path, e => e.Id, StringComparer.Ordinal);
+            internal static readonly Dictionary<string, string> Ids = Sources.GroupBy(e => e.Path, StringComparer.Ordinal).ToDictionary(
+                e => e.Key, e => e.First().Id, StringComparer.Ordinal);
             internal static readonly Dictionary<string, string> PathsByRevision = Sources
                 .GroupBy(e => e.Revision, StringComparer.Ordinal)
                 .ToDictionary(e => e.Key, e => e.First().Path, StringComparer.Ordinal);

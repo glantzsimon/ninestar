@@ -140,3 +140,8 @@ Read `docs/website-calculators.md` for the single anonymous result per website c
 ## Image transparency
 
 Preserve the alpha transparency of owner-supplied artwork when resizing or exporting icons and logos. Never add a background colour or flatten transparency unless the owner explicitly requests it.
+
+
+## Artwork direction
+
+Read `docs/visual-design.md` before changing artwork. The owner prefers beautiful, ancient, mystical astrological imagery with warm gold grounds, restrained symbolic detail and a coherent handcrafted feel. Keep icons legible at their real display size. Preserve dimensions, actual image format, filenames and alpha transparency unless an explicit exception is approved. Gold inside an emblem is welcome; the surrounding canvas must remain transparent so it works across themes. Do not apply the artwork refresh to unrelated folders or site layout without authorisation.

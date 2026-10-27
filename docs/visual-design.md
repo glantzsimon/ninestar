@@ -1,0 +1,39 @@
+# Visual design standard
+
+## Owner-approved direction
+
+The website should feel beautiful, ancient, magical and mystical, appropriate to astrology and inner exploration. Use meaningful symbols and artwork rather than generic modern clip art. The owner likes a gold background within each emblem. Prefer warm antique gold, softly burnished champagne highlights and dark bronze engraved recesses, with restrained celestial geometry and a handcrafted relief finish. Avoid excessive intricacy, clutter, neon, cartoon faces and illegible decorative writing. Preserve clarity at the actual small navigation size.
+
+The initial implementation is limited to `webapp/WebApplication/Images/ui`. This establishes a direction for future work, not permission to restyle other artwork, page layout, colours or controls automatically. Existing website theme tokens, blue focus accents, Dictionary-backed text and UI helper conventions remain authoritative.
+
+The approved visual reference is the Constitution medallion below. Match its warm gold relief, thin rim, readable central symbol and transparent outer canvas when expanding the family.
+
+![Approved Constitution artwork](../webapp/WebApplication/Images/ui/constitution.png)
+
+## Asset invariants
+
+Keep each existing canvas width and height, actual file format and filename, except explicitly approved renames. All artwork has a genuinely transparent surrounding canvas; a gold disc or object may itself be opaque. Preserve clean alpha edges when resizing and never flatten onto the page colour. No shadows, glow or solid rectangles outside the artwork. No baked-in UI labels; use Dictionary text in the interface. Numerals identifying nine-year and 81-year periods are meaningful symbols already present in the source artwork.
+
+Preserve functional meanings: success, warning, failure, lock and selection must remain recognisable, including their established green, red and blue cues. Provider marks must remain identifiable. Functional gradients and animation must retain their original dimensions and rendering purpose. Do not add elaborate ornamental frames to tiny controls where that would obscure their state.
+
+## Approved naming cleanup
+
+| Original file | Replacement | Meaning |
+| --- | --- | --- |
+| `solar-nature.png` | `constitution.png` | Constitution / main energy |
+| `lunar-nature.png` | `character.png` | Character / inner nature |
+| `question-mark.jpg` | `question-mark.png` | Help; PNG conversion explicitly approved to permit transparency |
+
+The existing website mapping was solar to Constitution and lunar to Character. Preserve that semantic mapping. `document.jpg` is actually a PNG, despite its extension; retain its existing filename and actual PNG encoding. `fail.gif` is animated and must remain GIF. `Thumbs.db` and `ui.lnk` are not image artwork and are not part of the redesign.
+
+Active nature-label callers use the existing `Dictionary.CharacterLabel` instead of the obsolete `Dictionary.LunarNature` reference; both currently display Character. Preserve the old resource for compatibility. Solar/lunar astronomical cycles, lunar phases and legacy API protocol property names have separate domain meanings and are not subject to a global search-and-replace.
+
+## Mobile catalogue compatibility
+
+New artwork IDs are `ui.constitution` and `ui.character`. Previously published `ui.solar-nature` and `ui.lunar-nature` remain aliases resolving to the same new files and revisions. Canonical path lookups return the new IDs. `ui.question-mark` keeps its ID and resolves to the new PNG. Clients must obtain URLs from `/api/mobile/v1/metadata/artwork`, rather than reconstructing filenames or caching obsolete literal paths indefinitely.
+
+After any image change, regenerate and check `tools/update-mobile-artwork.py`; ship the images and catalogue together. The existing content revisions and ETag mechanism invalidate cached artwork. Upload the changed images to the configured media host as well as deploying the application; changing repository files alone does not update a separate CDN.
+
+## Generation and export
+
+Artwork uses the built-in image-generation tool. The shared prompt requests a front-facing antique gold medallion, burnished champagne highlights, bronze recessed engraving, subtle handworked texture, thin raised rim, a strong readable symbol and actual transparent surrounding space, with no watermark or external shadow. Each asset receives its own subject brief. Final export must restore its exact original canvas dimensions and actual format while preserving alpha. Record subject briefs and validation in `docs/ui-artwork-report.md`.

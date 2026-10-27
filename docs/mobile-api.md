@@ -1280,3 +1280,11 @@ Available on the existing full and complementary Compatibility projections after
 ```
 
 The example body is abbreviated. Fetch this endpoint when opening the I Ching calculator to display its introduction before casting. Do not call `cast` just to obtain help. The cast response continues to include the same `data.help.overview` fields. Integration URL: `https://int.9starkiastrology.com/api/mobile/v1/iching/help`. Deployment and live verification are separate from publishing the source change.
+
+### UI artwork naming and style refresh
+
+The UI gold artwork refresh preserves image dimensions and existing public IDs. Canonical new IDs `ui.constitution` and `ui.character` resolve to `ui/constitution.png` and `ui/character.png`. Previously published `ui.solar-nature` and `ui.lunar-nature` remain aliases pointing at the same new URLs/revisions. Use the canonical IDs in new clients. The canonical path lookup returns the new ID. `ui.question-mark` retains its ID but now uses `ui/question-mark.png` with `image/png` to support transparency. `ui.document` still uses `document.jpg`, whose actual encoding is PNG.
+
+Refresh `/api/mobile/v1/metadata/artwork` through the existing ETag/revision mechanism and render its returned URLs. Do not reconstruct the old filenames. The registry now has 433 logical IDs and 440 variant registrations for 438 files, including two compatibility aliases. Ship image files to the configured media host alongside the regenerated application catalogue. See `docs/visual-design.md` and `docs/ui-artwork-report.md` for the design and file audit.
+
+The refresh also adds seven 160 × 160 PNG navigation assets: `ui.knowledge-base`, `ui.articles`, `ui.ai-astrologer`, `ui.personal-chart`, `ui.origins`, `ui.nine-core-energies` and `ui.nine-character-energies`. They use the same default-variant URL/width/height/contentType/revision contract. Reuse `ui.predictions` for Predictions, `ui.relationships` for Compatibility and Relationships, `ui.daily-cycle` for Cycles of Light and Dark, `ui.yinyang` for Yin and Yang, `ui.sun` for Yearly Predictions and `ui.moon` for Monthly Predictions. These are artwork mappings, not new text labels or calculation endpoints.

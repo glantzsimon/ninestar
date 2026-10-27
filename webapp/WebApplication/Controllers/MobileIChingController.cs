@@ -12,6 +12,9 @@ namespace K9.WebApplication.Controllers
         private readonly IIChingService _iching;
         public MobileIChingController(INineStarKiPackage package, IIChingService iching) : base(package) { _iching = iching; }
 
+        [HttpGet, Route("help")]
+        public ActionResult Help() => ApiSuccess(new { Help = MobileHelpMapper.IChing() });
+
         [HttpPost, Route("cast")]
         public ActionResult Cast()
         {

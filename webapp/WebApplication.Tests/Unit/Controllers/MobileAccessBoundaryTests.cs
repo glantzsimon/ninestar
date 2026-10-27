@@ -63,6 +63,26 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             Assert.Null(json["data"]["gauges"]);
         }
 
+        [Fact]
+        public void IChingHelpIsPublicAndDoesNotCastOrReadAccountData()
+        {
+            var package = new Mock<INineStarKiPackage>(MockBehavior.Strict);
+            var controller = new MobileIChingController(package.Object, null);
+            var response = new Mock<HttpResponseBase>();
+            response.SetupProperty(e => e.StatusCode);
+            response.SetupGet(e => e.Cache).Returns(new Mock<HttpCachePolicyBase>().Object);
+            var context = new Mock<HttpContextBase>();
+            context.SetupGet(e => e.Response).Returns(response.Object);
+            controller.ControllerContext = new ControllerContext(context.Object, new RouteData(), controller);
+            var result = Assert.IsType<ContentResult>(controller.Help());
+            var json = JObject.Parse(result.Content);
+            Assert.True((bool)json["success"]);
+            Assert.Equal(K9.Globalisation.Dictionary.AboutTheIChing, (string)json["data"]["help"]["overview"]["title"]);
+            Assert.Equal(K9.Globalisation.Dictionary.i_ching_info, (string)json["data"]["help"]["overview"]["htmlBody"]);
+            Assert.Null(json["data"]["primary"]);
+            Assert.Null(json["data"]["transformed"]);
+        }
+
         [Theory, MemberData(nameof(ProtectedActions))]
         public async Task AnonymousRequestsCannotReachProtectedDependencies(Type controllerType, string actionName)
         {

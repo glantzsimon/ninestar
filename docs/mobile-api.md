@@ -1264,3 +1264,19 @@ Example abbreviated result:
 ```
 
 Available on the existing full and complementary Compatibility projections after their existing access checks. Missing elements remain null. Existing HTML, scores, labels, gauges, age/hide flags and membership/credit semantics are unchanged. No catalogue entries, images, new prose or calculations are introduced. Build and run MobileHelpMapperTests on Windows, then compare the same two people with the website on Integration, including both diagram themes and a breakdown with truncated percentages.
+
+### I Ching help before casting
+
+`GET /api/mobile/v1/iching/help` is public and returns only existing Dictionary-backed help. It does not generate a hexagram, access account data, consume credits or change the existing `POST /api/mobile/v1/iching/cast` response.
+
+| Response field | Source |
+| --- | --- |
+| `data.help.overview.title` | `Dictionary.AboutTheIChing` (About The I Ching) |
+| `data.help.overview.htmlBody` | `Dictionary.i_ching_info`, the same full HTML used by the website help panel |
+| `data.help.overview.culture` | Existing help content culture |
+
+```json
+{"success":true,"data":{"help":{"overview":{"title":"About The I Ching","htmlBody":"<p>…</p>","culture":"en-GB"}}},"error":null}
+```
+
+The example body is abbreviated. Fetch this endpoint when opening the I Ching calculator to display its introduction before casting. Do not call `cast` just to obtain help. The cast response continues to include the same `data.help.overview` fields. Integration URL: `https://int.9starkiastrology.com/api/mobile/v1/iching/help`. Deployment and live verification are separate from publishing the source change.

@@ -136,3 +136,7 @@ The owner confirmed editor hard errors in the original inferred NLog Autofac reg
 ## Website calculator entry and input memory
 
 Read `docs/website-calculators.md` for the single anonymous result per website calculator section and browser input memory with shared last-submitted birth details plus page-specific options. Keep public pages/knowledge-base access and signed-in memberships unchanged. Guard website calculator submissions server-side; do not turn the browser trial marker into API authorisation or grant membership. Preserve entered details through sign-in, keep result pages separate from stored inputs, and do not persist tokens/entitlements or fire preference writes when restoring form controls.
+
+## Image transparency
+
+Preserve the alpha transparency of owner-supplied artwork when resizing or exporting icons and logos. Never add a background colour or flatten transparency unless the owner explicitly requests it.

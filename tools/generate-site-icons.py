@@ -16,11 +16,11 @@ for name, size, ratio in [
     ("icon-512.png", 512, 0.9),
     ("icon-maskable-512.png", 512, 0.74),
 ]:
-    canvas = Image.new("RGBA", (size, size), "#071c39")
+    canvas = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     artwork = source.copy()
     artwork.thumbnail((round(size * ratio), round(size * ratio)), Image.Resampling.LANCZOS)
     canvas.alpha_composite(artwork, ((size - artwork.width) // 2, (size - artwork.height) // 2))
-    canvas.convert("RGB").save(icons / name, optimize=True)
+    canvas.save(icons / name, optimize=True)
 
 source.resize((256, 256), Image.Resampling.LANCZOS).save(
     icons / "favicon.ico", format="ICO", sizes=[(16, 16), (32, 32), (48, 48)])

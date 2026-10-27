@@ -10,7 +10,7 @@
 - `Images/icons/icon-maskable-512.png`: separate icon with more padding to keep the emblem inside the central 80%-diameter safe circle.
 - `Images/icons/manifest.json`: existing JSON extension retained; image URLs are relative to its own directory. No new IIS MIME mapping or protected configuration edit is needed. This is icon metadata, not an implementation of offline/installable PWA behaviour.
 
-Home-screen PNGs have an opaque midnight-blue background; the OS applies its own shape. The detailed approved logo is retained at all sizes, rather than introducing a new favicon design. It naturally loses detail at 16 pixels.
+All generated PNGs preserve the supplied artwork's alpha transparency. Do not add a background colour or flatten transparency unless the owner explicitly requests it. The OS controls its own home-screen rendering. The detailed approved logo is retained at all sizes, rather than introducing a new favicon design. It naturally loses detail at 16 pixels.
 
 ## Regeneration and cleanup
 
@@ -22,4 +22,4 @@ References in database-stored historical email or external bookmarks cannot be r
 
 ## Validation
 
-Checked exact image dimensions, opaque home-screen backgrounds, all three ICO frames, manifest-relative target existence, XML project registrations, consistent shared layout usage and absence of removed icon references in website source. Mobile artwork generator `--check` passes. No schema execution, website startup, deployment or production media deletion was performed. Windows MVC/Razor build and actual browser/home-screen rendering remain to be checked after the normal build/deployment workflow. Favicons and saved shortcuts can retain cached artwork; recreate shortcuts when checking an update.
+Checked exact image dimensions, transparent PNG backgrounds, all three ICO frames, manifest-relative target existence, XML project registrations, consistent shared layout usage and absence of removed icon references in website source. Mobile artwork generator `--check` passes. No schema execution, website startup, deployment or production media deletion was performed. Windows MVC/Razor build and actual browser/home-screen rendering remain to be checked after the normal build/deployment workflow. Favicons and saved shortcuts can retain cached artwork; recreate shortcuts when checking an update.

@@ -12,6 +12,9 @@ namespace K9.WebApplication.Controllers
         private readonly INineStarKiService _profiles;
         public MobileCompatibilityController(INineStarKiPackage package, INineStarKiService profiles) : base(package) { _profiles = profiles; }
 
+        [HttpGet, Route("help")]
+        public ActionResult Help() => ApiSuccess(new { Help = MobileHelpMapper.Compatibility() });
+
         [HttpPost, Route("calculate")]
         public ActionResult Calculate(MobileCompatibilityRequest request)
         {

@@ -1180,3 +1180,28 @@ Example abbreviated response fragment:
 ```
 
 This fragment omits unchanged fields and other gauges. Actual title/navigation spelling comes from Dictionary and should never be substituted with the example text. Rebuild Globalisation and the website, run the Compatibility presentation regression tests in MobileHelpMapperTests, and verify paid/complementary results plus hidden/minor chemistry after Integration deployment. Source syntax/resource validation here does not establish Windows build/xUnit or live runtime success.
+
+
+## Compatibility form introduction without calculation
+
+`GET /api/mobile/v1/compatibility/help` is a public, read-only endpoint for the existing public website introduction, usable before sign-in or entering either person's birth details. It calls no calculation, membership, account or credit service. Calculation/result endpoints retain their existing authorisation. The standard JSON/no-store response is:
+
+```json
+{
+  "success": true,
+  "data": {
+    "help": {
+      "overview": {
+        "title": "About The Compatibility Calculator",
+        "htmlBody": "existing Dictionary-authored HTML introduction",
+        "culture": "en-GB"
+      }
+    }
+  },
+  "error": null
+}
+```
+
+`data.help.overview.title` comes from Dictionary.AboutCompatibilityCalculator; `htmlBody` comes from Dictionary.compatibility_subtitle; `culture` follows the existing help mapper. This is the same help object included in authorised Compatibility calculation responses. Use it above the two-person form only, and hide it on results as requested by the owner. Render existing server-authored HTML safely; do not hardcode the text or consume a complementary calculation to retrieve it. No new prose, display headings, purchasing or schema change is introduced.
+
+Integration URL: `https://int.9starkiastrology.com/api/mobile/v1/compatibility/help`. Repository changes are not confirmation of deployment; check HTTP 200 JSON after the owner rebuilds/deploys. The regression test verifies anonymous help without protected dependencies; existing protected-action tests explicitly exempt this public resource-only GET.

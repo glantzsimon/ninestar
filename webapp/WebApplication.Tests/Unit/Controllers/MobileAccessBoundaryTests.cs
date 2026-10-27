@@ -37,9 +37,30 @@ namespace K9.WebApplication.Tests.Unit.Controllers
                     .Where(e => e.GetCustomAttribute<RouteAttribute>() != null))
                 {
                     if (type == typeof(MobilePersonalChartController) && action.Name == "Preview") continue;
+                    if (type == typeof(MobileCompatibilityController) && action.Name == "Help") continue;
                     if (type == typeof(MobileBlogController) && new[] { "Index", "Article", "Tags" }.Contains(action.Name)) continue;
                     yield return new object[] { type, action.Name };
                 }
+        }
+
+        [Fact]
+        public void CompatibilityHelpIsPublicAndDoesNotCalculateOrReadAccountData()
+        {
+            var package = new Mock<INineStarKiPackage>(MockBehavior.Strict);
+            var controller = new MobileCompatibilityController(package.Object, null);
+            var response = new Mock<HttpResponseBase>();
+            response.SetupProperty(e => e.StatusCode);
+            response.SetupGet(e => e.Cache).Returns(new Mock<HttpCachePolicyBase>().Object);
+            var context = new Mock<HttpContextBase>();
+            context.SetupGet(e => e.Response).Returns(response.Object);
+            controller.ControllerContext = new ControllerContext(context.Object, new RouteData(), controller);
+            var result = Assert.IsType<ContentResult>(controller.Help());
+            var json = JObject.Parse(result.Content);
+            Assert.True((bool)json["success"]);
+            Assert.Equal(K9.Globalisation.Dictionary.AboutCompatibilityCalculator, (string)json["data"]["help"]["overview"]["title"]);
+            Assert.Equal(K9.Globalisation.Dictionary.compatibility_subtitle, (string)json["data"]["help"]["overview"]["htmlBody"]);
+            Assert.Null(json["data"]["firstPerson"]);
+            Assert.Null(json["data"]["gauges"]);
         }
 
         [Theory, MemberData(nameof(ProtectedActions))]

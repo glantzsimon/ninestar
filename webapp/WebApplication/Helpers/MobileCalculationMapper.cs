@@ -334,6 +334,38 @@ namespace K9.WebApplication.Helpers
             return gauges.ToArray();
         }
 
+        public static object CompatibilityTransformation(ETransformationType transformation)
+        {
+            string kind;
+            switch (transformation)
+            {
+                case ETransformationType.Supports:
+                case ETransformationType.IsSupported: kind = "supportive"; break;
+                case ETransformationType.Controls:
+                case ETransformationType.IsControlled: kind = "challenging"; break;
+                case ETransformationType.Sibling: kind = "same"; break;
+                default: return null;
+            }
+            return new
+            {
+                Type = transformation.ToString(), Kind = kind,
+                ArtworkId = MobileArtworkRegistry.IdForPath("ninestar/transformations/transformation-" + kind + ".png")
+            };
+        }
+
+        public static object[] CompatibilityElementBreakdown(double supportive, double sibling, double challenging) => new object[]
+        {
+            new { Key = "supportive", Label = K9.Globalisation.Dictionary.SupportiveElements, Percentage = supportive, Value = (int)supportive, Color = "#22BB44" },
+            new { Key = "sibling", Label = K9.Globalisation.Dictionary.SiblingElements, Percentage = sibling, Value = (int)sibling, Color = "#0074E4" },
+            new { Key = "challenging", Label = K9.Globalisation.Dictionary.ChallengingElements, Percentage = challenging, Value = (int)challenging, Color = "red" }
+        };
+
+        private static object[] CompatibilityElementBreakdown(ElementCompatibility elements)
+        {
+            var fractions = elements.GetTransformationFractions();
+            return CompatibilityElementBreakdown(fractions.SupportivePercentage, fractions.SiblingPercentage, fractions.ChallengingPercentage);
+        }
+
         public static object Compatibility(CompatibilityModel model, bool hideSexualChemistry, string knowledgeBaseUrl, bool includeFullProfiles = true)
         {
             var details = model.CompatibilityDetails;
@@ -361,6 +393,9 @@ namespace K9.WebApplication.Helpers
                 {
                     Elements = details.ElementCompatibility == null ? null : new
                     {
+                        FundamentalTransformation = CompatibilityTransformation(details.ElementCompatibility.FundamentalEnergiesTransformationType),
+                        CharacterTransformation = CompatibilityTransformation(details.ElementCompatibility.CharacterEnergiesTransformationType),
+                        Breakdown = CompatibilityElementBreakdown(details.ElementCompatibility),
                         details.ElementCompatibility.FundamentalElementsTransformationDetails,
                         details.ElementCompatibility.CharacterElementsTransformationDetails,
                         details.ElementCompatibility.FundamentalElementsCompatibilityDetails,

@@ -1205,3 +1205,62 @@ This fragment omits unchanged fields and other gauges. Actual title/navigation s
 `data.help.overview.title` comes from Dictionary.AboutCompatibilityCalculator; `htmlBody` comes from Dictionary.compatibility_subtitle; `culture` follows the existing help mapper. This is the same help object included in authorised Compatibility calculation responses. Use it above the two-person form only, and hide it on results as requested by the owner. Render existing server-authored HTML safely; do not hardcode the text or consume a complementary calculation to retrieve it. No new prose, display headings, purchasing or schema change is introduced.
 
 Integration URL: `https://int.9starkiastrology.com/api/mobile/v1/compatibility/help`. Repository changes are not confirmation of deployment; check HTTP 200 JSON after the owner rebuilds/deploys. The regression test verifies anonymous help without protected dependencies; existing protected-action tests explicitly exempt this public resource-only GET.
+
+
+## Compatibility element diagrams and total-elements pie
+
+The catalogue already includes the three website transformation diagrams with default/light and dark variants. Compatibility results now explicitly associate each reading with its selected diagram, rather than requiring mobile clients to scrape image tags from reading HTML.
+
+| Field under `data.details.elements` | Meaning |
+| --- | --- |
+| `fundamentalTransformation` | Visual for the core/solar elements reading |
+| `characterTransformation` | Visual for the character/lunar elements reading |
+| `breakdown` | Native pie/legend segments for the total-elements section |
+
+Each transformation object contains `type` (existing directional ETransformationType identifier), `kind` (supportive, challenging or same) and `artworkId`. Supports/IsSupported select the supportive diagram; Controls/IsControlled select the challenging diagram; Sibling selects the same-element diagram, exactly matching the website resource branches. Unknown/unsupported types produce null, not an invented image. Direction remains in `type`; the diagram is shared by both directions of a relationship.
+
+Resolve `artworkId` through `GET /api/mobile/v1/metadata/artwork`, then use `data.assets[id].variants.dark.url` in dark mode or `.variants.default.url` in light mode. IDs are:
+
+- `ninestar.transformations.transformation-supportive`
+- `ninestar.transformations.transformation-challenging`
+- `ninestar.transformations.transformation-same`
+
+These are the existing 440 by 440 images with their embedded element names/arrows. Core and character may select different diagrams. Show each diagram in its corresponding reading panel. The existing fundamentalElementsTransformationDetails and characterElementsTransformationDetails HTML already includes website image tags; render either the explicit artwork plus prose with those duplicate image tags suppressed, or the existing HTML imagery, never both. Preserve the text surrounding those tags; do not strip the reading.
+
+The total-elements pie is generated, not a static image. `breakdown` calls the existing ElementCompatibility.GetTransformationFractions() and returns three segments in website order: supportive, sibling, challenging. Each has `key`, Dictionary `label`, original floating-point `percentage`, integer `value` and website `color`:
+
+| key | Dictionary label resource | color |
+| --- | --- | --- |
+| supportive | SupportiveElements | #22BB44 |
+| sibling | SiblingElements | #0074E4 |
+| challenging | ChallengingElements | red |
+
+`value` truncates the percentage to an integer, matching the website pie and legend. Integers can sum to 99; do not recalculate relationship scores or change legend numbers to force 100. A native pie may normalise its visual slices as needed, while retaining supplied values for the legend. `percentage` is available when the native chart supports the precise proportions. This is the weighted element breakdown, not the separate supportiveScoreAsPercentage/sameScoreAsPercentage/challengingAsPercentage aggregate score fields; do not substitute those fields.
+
+Example abbreviated result:
+
+```json
+{
+  "details": {
+    "elements": {
+      "fundamentalTransformation": {
+        "type": "Controls",
+        "kind": "challenging",
+        "artworkId": "ninestar.transformations.transformation-challenging"
+      },
+      "characterTransformation": {
+        "type": "Sibling",
+        "kind": "same",
+        "artworkId": "ninestar.transformations.transformation-same"
+      },
+      "breakdown": [
+        { "key": "supportive", "label": "Supportive Elements", "percentage": 33.333, "value": 33, "color": "#22BB44" },
+        { "key": "sibling", "label": "Sibling Elements", "percentage": 11.111, "value": 11, "color": "#0074E4" },
+        { "key": "challenging", "label": "Challenging Elements", "percentage": 55.556, "value": 55, "color": "red" }
+      ]
+    }
+  }
+}
+```
+
+Available on the existing full and complementary Compatibility projections after their existing access checks. Missing elements remain null. Existing HTML, scores, labels, gauges, age/hide flags and membership/credit semantics are unchanged. No catalogue entries, images, new prose or calculations are introduced. Build and run MobileHelpMapperTests on Windows, then compare the same two people with the website on Integration, including both diagram themes and a breakdown with truncated percentages.

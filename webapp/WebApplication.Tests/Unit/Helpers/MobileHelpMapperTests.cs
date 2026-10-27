@@ -160,6 +160,36 @@ namespace K9.WebApplication.Tests.Unit.Helpers
         }
 
         [Fact]
+        public void CompatibilityVisualsUseRegisteredThemeArtworkAndWebsitePieValues()
+        {
+            foreach (var pair in new[]
+            {
+                new { Type = K9.WebApplication.Enums.ETransformationType.Supports, Kind = "supportive" },
+                new { Type = K9.WebApplication.Enums.ETransformationType.IsSupported, Kind = "supportive" },
+                new { Type = K9.WebApplication.Enums.ETransformationType.Controls, Kind = "challenging" },
+                new { Type = K9.WebApplication.Enums.ETransformationType.IsControlled, Kind = "challenging" },
+                new { Type = K9.WebApplication.Enums.ETransformationType.Sibling, Kind = "same" }
+            })
+            {
+                var visual = JObject.FromObject(MobileCalculationMapper.CompatibilityTransformation(pair.Type));
+                Assert.Equal(pair.Kind, (string)visual["Kind"]);
+                var id = MobileArtworkRegistry.IdForPath("ninestar/transformations/transformation-" + pair.Kind + ".png");
+                Assert.False(string.IsNullOrEmpty(id));
+                Assert.Equal(id, (string)visual["ArtworkId"]);
+                Assert.Equal(id, MobileArtworkRegistry.IdForPath("ninestar/transformations/transformation-" + pair.Kind + "-dark.png"));
+            }
+            Assert.Null(MobileCalculationMapper.CompatibilityTransformation(K9.WebApplication.Enums.ETransformationType.Unspecified));
+            var slices = JArray.FromObject(MobileCalculationMapper.CompatibilityElementBreakdown(33.33, 11.12, 55.55));
+            Assert.Equal(Dictionary.SupportiveElements, (string)slices[0]["Label"]);
+            Assert.Equal(Dictionary.SiblingElements, (string)slices[1]["Label"]);
+            Assert.Equal(Dictionary.ChallengingElements, (string)slices[2]["Label"]);
+            Assert.Equal(33.33, (double)slices[0]["Percentage"]);
+            Assert.Equal(33, (int)slices[0]["Value"]);
+            Assert.Equal(11, (int)slices[1]["Value"]);
+            Assert.Equal(55, (int)slices[2]["Value"]);
+        }
+
+        [Fact]
         public void ChartIntroductionsMatchWebsiteResourcesWithoutTabInstructions()
         {
             var help = MobileHelpMapper.Chart(true, true);

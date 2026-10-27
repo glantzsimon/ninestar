@@ -50,7 +50,7 @@
     <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="/">
-    <link rel="shortcut icon" href="@MediaService.BaseImagesPath/icons/favicon.ico" type="image/x-icon">
+    @Html.Partial("_SiteIcons")
 
     @* 🔥 Optimize DNS prefetching to reduce latency *@
     @foreach (var domain in new[] { "cdn.bootcss.com", "cdnjs.cloudflare.com", "fonts.googleapis.com", "ajax.googleapis.com",
@@ -118,7 +118,10 @@
 <body>
     @* 🔥 Load Spinner Only When Needed *@
     <div id="pageFadeInOverlay">
-        <img loading="lazy" class="page-loading-image cropped" alt="@Dictionary.NineStarKiAstrologyFreeCalculator" src="@MediaService.BaseImagesPath/shared/ninestar-spinner.gif" />
+        <picture>
+            <source srcset="@Url.Content("~/Images/shared/ninestar-spinner.webp")" type="image/webp" media="(prefers-reduced-motion: no-preference)">
+            <img loading="eager" width="114" height="114" class="page-loading-image cropped" alt="@Dictionary.NineStarKiAstrologyFreeCalculator" src="@Url.Content("~/Images/shared/ninestar-spinner.png")" />
+        </picture>
     </div>
     <div id="pageSpinner"></div>
     <div id="pageOverlay"></div>

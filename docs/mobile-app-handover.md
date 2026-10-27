@@ -2,6 +2,12 @@
 
 Prepared 23 October 2026. This is a starting snapshot; inspect the current checkout before making changes.
 
+## Artwork follow-up: 27 October 2026
+
+The owner approved the antique gold artwork standard in `docs/visual-design.md`. The implementation is on `feature/ui-artwork-refresh`, draft PR #16, pending merge/deployment. It refreshes all UI artwork and every PNG under `Images/ninestar`, preserving filenames, dimensions and formats except the approved UI naming/PNG exceptions. Read `docs/ui-artwork-report.md` and `docs/ninestar-artwork-report.md` for exact asset/ID mappings and validation limits. Technical trigram bars and relationship arrows are rendered from precise vector geometry; the dark cycle-of-five sibling-image error is corrected.
+
+The mobile artwork catalogue must use its request origin/application path plus Images. It now does so instead of selecting the website's shared media/CDN host. Integration URLs must remain on Integration. Deploy image files to the application Images folder, then refresh the environment-specific catalogue/ETag. Do not rewrite hosts or hardcode image filenames in the app. The website's separate CDN configuration and embedded HTML media selection are unchanged. Windows build/xUnit and live release checks remain outstanding here.
+
 ## Current handover: 26 October 2026
 
 The backend feature is merged into master. Continue from current master, not the old feature/mobile-json-api branch or an old TeamCity feature-branch build. The latest implementation commit at this handover is 82fd5748. Native app code remains in the separate ninestar-mobile project; its current UI state must be checked there.

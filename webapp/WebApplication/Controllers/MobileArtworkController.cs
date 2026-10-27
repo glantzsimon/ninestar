@@ -1,5 +1,4 @@
 using K9.WebApplication.Helpers;
-using K9.WebApplication.Services;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
@@ -21,7 +20,7 @@ namespace K9.WebApplication.Controllers
         {
             Response.SuppressFormsAuthenticationRedirect = true;
             Response.TrySkipIisCustomErrors = true;
-            // Read once: a scheduled media health check can switch this base concurrently.
+            // The catalogue belongs to this installation, independently of website CDN selection.
             var imageBase = GetBaseImagesPath();
             Uri absoluteBase;
             if (!Uri.TryCreate(imageBase, UriKind.Absolute, out absoluteBase)
@@ -55,6 +54,14 @@ namespace K9.WebApplication.Controllers
                 }), "application/json", Encoding.UTF8);
         }
 
-        protected virtual string GetBaseImagesPath() => MediaService.BaseImagesPath;
+        protected virtual string GetBaseImagesPath()
+        {
+            var request = ControllerContext?.HttpContext?.Request;
+            var requestUrl = request?.Url;
+            if (requestUrl == null || !requestUrl.IsAbsoluteUri) return null;
+            var applicationPath = string.IsNullOrEmpty(request.ApplicationPath) ? "/" : request.ApplicationPath;
+            var imagesPath = VirtualPathUtility.ToAbsolute("~/Images", applicationPath);
+            return new Uri(requestUrl, imagesPath).AbsoluteUri;
+        }
     }
 }

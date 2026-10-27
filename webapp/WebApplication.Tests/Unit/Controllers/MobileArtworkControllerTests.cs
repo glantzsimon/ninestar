@@ -34,6 +34,33 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             Assert.IsType<ContentResult>(fixture.Controller.Artwork());
         }
 
+        [Theory]
+        [InlineData("https://int.9starkiastrology.com/api/mobile/v1/metadata/artwork", "/", "https://int.9starkiastrology.com/Images/")]
+        [InlineData("https://9starkiastrology.com/api/mobile/v1/metadata/artwork", "/", "https://9starkiastrology.com/Images/")]
+        [InlineData("https://localhost:44370/ninestar/api/mobile/v1/metadata/artwork", "/ninestar", "https://localhost:44370/ninestar/Images/")]
+        [InlineData("http://localhost:8080/ninestar/api/mobile/v1/metadata/artwork", "/ninestar", "http://localhost:8080/ninestar/Images/")]
+        [InlineData("https://int.9starkiastrology.com/api/mobile/v1/metadata/artwork", null, "https://int.9starkiastrology.com/Images/")]
+        public void CatalogueUsesItsOwnRequestOriginAndApplicationPath(string url, string applicationPath, string expectedBase)
+        {
+            // Exercise the real controller, not the fixture's media-base override.
+            var request = new Mock<HttpRequestBase>();
+            request.SetupGet(e => e.Url).Returns(new Uri(url));
+            request.SetupGet(e => e.ApplicationPath).Returns(applicationPath);
+            request.SetupGet(e => e.Headers).Returns(new NameValueCollection());
+            var response = new Mock<HttpResponseBase>();
+            response.SetupGet(e => e.Cache).Returns(new Mock<HttpCachePolicyBase>().Object);
+            var context = new Mock<HttpContextBase>();
+            context.SetupGet(e => e.Request).Returns(request.Object);
+            context.SetupGet(e => e.Response).Returns(response.Object);
+            var controller = new MobileArtworkController();
+            controller.ControllerContext = new ControllerContext(context.Object, new RouteData(), controller);
+            var result = Assert.IsType<ContentResult>(controller.Artwork());
+            var data = JObject.Parse(result.Content);
+            foreach (var asset in (JObject)data["data"]["assets"])
+                foreach (var variant in (JObject)asset.Value["variants"])
+                    Assert.StartsWith(expectedBase, (string)variant.Value["url"]);
+        }
+
         [Fact]
         public void MissingBaseReturnsUncacheableJson503()
         {

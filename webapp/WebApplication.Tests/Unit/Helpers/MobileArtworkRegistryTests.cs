@@ -17,7 +17,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
             Assert.Equal(433, data.Assets.Count);
             var variants = data.Assets.Values.SelectMany(e => e.Variants.Values).ToArray();
             Assert.Equal(440, variants.Length);
-            Assert.Equal(431, variants.Select(e => e.Url).Distinct().Count());
+            Assert.Equal(430, variants.Select(e => e.Url).Distinct().Count());
             Assert.All(variants.GroupBy(e => e.Revision), sameImage =>
                 Assert.Single(sameImage.Select(e => e.Url).Distinct()));
             Assert.Equal(data.Assets["ninestar.elements.earth"].Variants["default"].Url,
@@ -66,6 +66,17 @@ namespace K9.WebApplication.Tests.Unit.Helpers
             Assert.Equal(160, image.Width);
             Assert.Equal(160, image.Height);
             Assert.Equal("image/png", image.ContentType);
+        }
+
+        [Theory]
+        [InlineData("default")]
+        [InlineData("dark")]
+        public void CycleOfFiveShowsTheSupportiveCycleInBothThemes(string variant)
+        {
+            var data = MobileArtworkRegistry.Create("https://media.example/Images");
+            var cycle = data.Assets["ninestar.elements.cycle-five"].Variants[variant].Url;
+            Assert.Equal(data.Assets["ninestar.transformations.transformation-supportive"].Variants[variant].Url, cycle);
+            Assert.NotEqual(data.Assets["ninestar.transformations.transformation-same"].Variants[variant].Url, cycle);
         }
 
         [Fact]

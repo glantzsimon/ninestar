@@ -145,3 +145,6 @@ Preserve the alpha transparency of owner-supplied artwork when resizing or expor
 ## Artwork direction
 
 Read `docs/visual-design.md` before changing artwork. The owner prefers beautiful, ancient, mystical astrological imagery with warm gold grounds, restrained symbolic detail and a coherent handcrafted feel. Keep icons legible at their real display size. Preserve dimensions, actual image format, filenames and alpha transparency unless an explicit exception is approved. Gold inside an emblem is welcome; the surrounding canvas must remain transparent so it works across themes. Do not apply the artwork refresh to unrelated folders or site layout without authorisation.
+
+
+For Nine Star Ki artwork, preserve energy numerals, organ silhouettes and yin/yang polarity. Render exact trigram bars and relationship arrows with `tools/render-ninestar-diagrams.py` over the gold artwork; do not rely on generated marks for precise diagrams. See `docs/ninestar-artwork-report.md`. The neutral centre has no assigned trigram.

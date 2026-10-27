@@ -1069,3 +1069,114 @@ Full and free Predictions expose two additional strings through their shared lab
 | `data.labels.housesYouCurrentlyOccupy` | `HousesYouCurrentlyOccupy` (existing website resource) | Houses You Currently Occupy |
 
 Use `yourPredictions` for the screen heading and `housesYouCurrentlyOccupy` for the personal current-house section heading. Keep period detail headings (`predictionTitles`), card headings (`cycleTitles`), group headings (`groups`) and help titles separate. Both strings are display metadata and do not expand access to readings or change membership rules. Example fragment: `{ "labels": { "yourPredictions": "Your Predictions", "housesYouCurrentlyOccupy": "Houses You Currently Occupy" } }`. Build Globalisation and the website before deployment; native clients should use the supplied values rather than hardcoding them.
+
+
+## Compatibility presentation and gauges
+
+The existing paid `POST /api/mobile/v1/compatibility/calculate`, `GET /api/mobile/v1/compatibility/last`, and existing complementary `readings/compatibility` projections now add labels, gauges and a short Strengths and Challenges subtitle. The existing reading/score fields remain unchanged. Access checks, ownership, complementary-credit consumption and age/user-setting sexual-chemistry restrictions are unchanged; no new free endpoint is added.
+
+### Gauges
+
+`data.gauges` is ordered as on the website. Each item has `key`, Dictionary-backed `label`, numeric `value`, `minValue` (0), `maxValue` and `isInverted`. Values are enum ordinals, not percentages; use `(value - minValue) / (maxValue - minValue)` for needle position. Standard scores span 0-9 (`ECompatibilityScore.ExtremelyHigh`); Sexual Chemistry spans 0-15 (`ESexualChemistryScore.OffTheCharts`). `isInverted` reverses the colour desirability only: a high conflict score remains a high needle value and should be red, not green. Other gauges run red through yellow to green as their value increases. Use a native gauge, not an image of the website canvas.
+
+| Gauge key | Dictionary resource | Maximum | Inverted |
+| --- | --- | --- | --- |
+| complementarity | ComplementarityScore | 9 | false |
+| conflict | ConflictScore | 9 | true |
+| harmony | HarmonyScore | 9 | false |
+| spark | SparkScore | 9 | false |
+| sexualChemistry | SexualChemistry | 15 | false |
+| learningPotential | LearningPotentialScore | 9 | false |
+| mutualUnderstanding | MutualUnderstanding | 9 | false |
+| mutualSupport | MutualSupport | 9 | false |
+
+When chemistry is hidden by request or either person is under 16, the sexualChemistry gauge and its section label are omitted. The other seven gauges retain their order, and existing sexualChemistryDetails/score hiding remains. If the calculated score is absent, gauges is null. Do not invent zero-valued gauges for absent data. Existing `details.score.*` enum-name fields remain available; the new numeric gauge projection avoids parsing enum names in mobile.
+
+### Section labels and Yin/Yang reading
+
+`data.labels.title`, `results`, `firstPerson`, `secondPerson` map to Dictionary.RelationshipCompatibilityCalculator, CompatibilityResults, FirstPerson and SecondPerson. `data.labels.sections.<key>` has `title` (panel heading) and `navigationTitle` (the shorter website mobile-tab label where different):
+
+| Section key | Title resource | Navigation resource |
+| --- | --- | --- |
+| overview | CompatibilityOverview | OverviewLabel |
+| strengthsAndChallenges | StrengthsWeaknesses | GiftsTrials |
+| inDepth | InDepthAnalysis | InDepthAnalysis |
+| solarElements | FundamentalElementsAnalysis | SolarElements |
+| lunarElements | CharacterElementsAnalysis | LunarElements |
+| allElements | AllElementsBreakdown | AllElements |
+| yinYang | YinAndYangAnalysis | YinYangLabel |
+| birthMonth | BirthMonthAnalysis | BirthMonth |
+| sexualChemistry | SexualChemistryDetails | SexualChemistryDetails |
+
+Score headings are supplied directly as `gauges[].label`. They are also exposed centrally under `data.labels.scores`, keyed to the existing score fields: `complementarityScore`, `conflictScore`, `harmonyScore`, `sparkScore`, `learningPotentialScore`, `mutualUnderstandingScore`, `supportScore`, and (only when visible) `sexualChemistryScore`. These use the same resources as the gauge table above. Keep these labels separate from generic `help.overview` explanations and from the personalised reading subtitles.
+
+`data.details.gender.description` adds the website's selected Yin/Yang HTML explanation alongside the unchanged flags. It mirrors `_CompatibilityYinYang.cshtml`: both matching energies select `both_gender_same_yin` or `both_gender_same_yang` based on fundamental polarity; otherwise combine the appropriate `main_gender_same_yin`, `main_gender_same_yang` or `main_gender_opposite` with `character_gender_same_yin`, `character_gender_same_yang` or `character_gender_opposite`. Use the exact existing selection, including the both-matching branch, rather than inferring prose on mobile. The existing TemplateParser resolves SameTransformationLink, SupportiveTransformationLink and ChallengingTransformationLink to the website knowledge-base URL generated by MVC with its matching anchor. Render this as server-authored HTML using the app's existing safe renderer and open those links appropriately. No new Yin/Yang prose was written.
+
+### Strengths and Challenges subtitles
+
+The original opening heading comes from Dictionary.main_11 through main_99, backed by `Globalisation/Compatibility/en-gb/main-XY.htm`, selected by `CompatibilityModel.GetFundamentalEnergiesCompatibilityDetails()` and personalised with TemplateParser. There are 45 unique unordered constitution-energy pairs; swapping the two people uses the same reading family.
+
+`data.sections.strengthsAndChallenges` adds `{ title, subtitle, body }`. `title` is Dictionary.StrengthsWeaknesses; `body` is exactly the existing `fundamentalEnergiesCompatibility` reading, which is also retained at its original field. `subtitle` is an independently localisable short label derived from that reading's opening heading, not dynamically scraped/truncated HTML. It uses new Dictionary.CompatibilitySubtitleXY resources, where X is the smaller fundamental energy number and Y the larger. The app must use the returned string verbatim, not derive it from the pair, score or long opening text.
+
+| Pair | Resource | Subtitle |
+| --- | --- | --- |
+| 11 | CompatibilitySubtitle11 | Deep Emotional Harmony |
+| 12 | CompatibilitySubtitle12 | Potentially Challenging |
+| 13 | CompatibilitySubtitle13 | Vibrant And Harmonious |
+| 14 | CompatibilitySubtitle14 | Vibrant And Harmonious |
+| 15 | CompatibilitySubtitle15 | Complex With Strong Chemistry |
+| 16 | CompatibilitySubtitle16 | Harmonious And Complementary |
+| 17 | CompatibilitySubtitle17 | Harmonious And Uplifting |
+| 18 | CompatibilitySubtitle18 | Potentially Very Challenging |
+| 19 | CompatibilitySubtitle19 | Potentially Very Challenging |
+| 22 | CompatibilitySubtitle22 | Deep Harmony And Friendship |
+| 23 | CompatibilitySubtitle23 | Challenging With Growth Potential |
+| 24 | CompatibilitySubtitle24 | Potentially Challenging |
+| 25 | CompatibilitySubtitle25 | Harmonious And Supportive |
+| 26 | CompatibilitySubtitle26 | Deeply Complementary And Harmonious |
+| 27 | CompatibilitySubtitle27 | Naturally Harmonious And Complementary |
+| 28 | CompatibilitySubtitle28 | Harmony And Mutual Support |
+| 29 | CompatibilitySubtitle29 | Harmony And Mutual Understanding |
+| 33 | CompatibilitySubtitle33 | Energetic And Harmonious |
+| 34 | CompatibilitySubtitle34 | Harmonious And Creative |
+| 35 | CompatibilitySubtitle35 | Challenging With Strong Chemistry |
+| 36 | CompatibilitySubtitle36 | Challenging With Mutual Learning |
+| 37 | CompatibilitySubtitle37 | Challenging With Growth Potential |
+| 38 | CompatibilitySubtitle38 | Challenging And Transformative |
+| 39 | CompatibilitySubtitle39 | Harmonious And Vibrant |
+| 44 | CompatibilitySubtitle44 | Gentle And Harmonious |
+| 45 | CompatibilitySubtitle45 | Contrasting Rhythms |
+| 46 | CompatibilitySubtitle46 | Challenging With Growth Potential |
+| 47 | CompatibilitySubtitle47 | Challenging With Strong Chemistry |
+| 48 | CompatibilitySubtitle48 | Challenging With Growth Potential |
+| 49 | CompatibilitySubtitle49 | Harmonious And Stimulating |
+| 55 | CompatibilitySubtitle55 | Harmony And Stability |
+| 56 | CompatibilitySubtitle56 | Harmonious And Complementary |
+| 57 | CompatibilitySubtitle57 | Highly Harmonious And Complementary |
+| 58 | CompatibilitySubtitle58 | Harmony And Lasting Friendship |
+| 59 | CompatibilitySubtitle59 | Highly Harmonious And Complementary |
+| 66 | CompatibilitySubtitle66 | Harmony With Leadership Challenges |
+| 67 | CompatibilitySubtitle67 | Harmony And Mutual Respect |
+| 68 | CompatibilitySubtitle68 | Harmonious And Stable |
+| 69 | CompatibilitySubtitle69 | Challenging With Strong Chemistry |
+| 77 | CompatibilitySubtitle77 | Harmony And Friendship |
+| 78 | CompatibilitySubtitle78 | Harmony And Growth |
+| 79 | CompatibilitySubtitle79 | Challenging With Growth Potential |
+| 88 | CompatibilitySubtitle88 | Harmony And Friendship |
+| 89 | CompatibilitySubtitle89 | Harmonious And Complementary |
+| 99 | CompatibilitySubtitle99 | Harmony And Friendship |
+
+Example abbreviated response fragment:
+
+```json
+{
+  "gauges": [
+    { "key": "conflict", "label": "Conflict Likelihood", "value": 7, "minValue": 0, "maxValue": 9, "isInverted": true }
+  ],
+  "labels": { "sections": { "yinYang": { "title": "Yin / Yang Analysis", "navigationTitle": "Yin / Yang" } } },
+  "sections": { "strengthsAndChallenges": { "title": "Strengths & Challenges", "subtitle": "Potentially Challenging", "body": "existing personalised HTML reading" } },
+  "details": { "gender": { "description": "existing selected Dictionary HTML with resolved links" } }
+}
+```
+
+This fragment omits unchanged fields and other gauges. Actual title/navigation spelling comes from Dictionary and should never be substituted with the example text. Rebuild Globalisation and the website, run the Compatibility presentation regression tests in MobileHelpMapperTests, and verify paid/complementary results plus hidden/minor chemistry after Integration deployment. Source syntax/resource validation here does not establish Windows build/xUnit or live runtime success.

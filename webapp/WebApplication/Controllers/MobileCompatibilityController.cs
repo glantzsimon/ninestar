@@ -25,7 +25,7 @@ namespace K9.WebApplication.Controllers
             var hide = request.HideSexualChemistry || !first.IsSixteenOrOver() || !second.IsSixteenOrOver();
             var result = _profiles.CalculateCompatibility(first, second, hide, request.CalculationMethod, request.CalculatorType);
             SaveLastRequest("compatibility", request);
-            return ApiSuccess(MobileCalculationMapper.Compatibility(result, hide));
+            return ApiSuccess(MobileCalculationMapper.Compatibility(result, hide, Url.Action("Index", "KnowledgeBase", null, Request.Url.Scheme)));
         }
 
         [HttpGet, Route("last")]

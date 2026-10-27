@@ -187,15 +187,174 @@ namespace K9.WebApplication.Helpers
             }).ToArray()
         };
 
-        public static object Compatibility(CompatibilityModel model, bool hideSexualChemistry, bool includeFullProfiles = true)
+        public static string CompatibilitySubtitle(int firstEnergy, int secondEnergy)
+        {
+            if (firstEnergy < 1 || firstEnergy > 9 || secondEnergy < 1 || secondEnergy > 9) return null;
+            var pair = System.Math.Min(firstEnergy, secondEnergy) * 10 + System.Math.Max(firstEnergy, secondEnergy);
+            switch (pair)
+            {
+                case 11: return K9.Globalisation.Dictionary.CompatibilitySubtitle11;
+                case 12: return K9.Globalisation.Dictionary.CompatibilitySubtitle12;
+                case 13: return K9.Globalisation.Dictionary.CompatibilitySubtitle13;
+                case 14: return K9.Globalisation.Dictionary.CompatibilitySubtitle14;
+                case 15: return K9.Globalisation.Dictionary.CompatibilitySubtitle15;
+                case 16: return K9.Globalisation.Dictionary.CompatibilitySubtitle16;
+                case 17: return K9.Globalisation.Dictionary.CompatibilitySubtitle17;
+                case 18: return K9.Globalisation.Dictionary.CompatibilitySubtitle18;
+                case 19: return K9.Globalisation.Dictionary.CompatibilitySubtitle19;
+                case 22: return K9.Globalisation.Dictionary.CompatibilitySubtitle22;
+                case 23: return K9.Globalisation.Dictionary.CompatibilitySubtitle23;
+                case 24: return K9.Globalisation.Dictionary.CompatibilitySubtitle24;
+                case 25: return K9.Globalisation.Dictionary.CompatibilitySubtitle25;
+                case 26: return K9.Globalisation.Dictionary.CompatibilitySubtitle26;
+                case 27: return K9.Globalisation.Dictionary.CompatibilitySubtitle27;
+                case 28: return K9.Globalisation.Dictionary.CompatibilitySubtitle28;
+                case 29: return K9.Globalisation.Dictionary.CompatibilitySubtitle29;
+                case 33: return K9.Globalisation.Dictionary.CompatibilitySubtitle33;
+                case 34: return K9.Globalisation.Dictionary.CompatibilitySubtitle34;
+                case 35: return K9.Globalisation.Dictionary.CompatibilitySubtitle35;
+                case 36: return K9.Globalisation.Dictionary.CompatibilitySubtitle36;
+                case 37: return K9.Globalisation.Dictionary.CompatibilitySubtitle37;
+                case 38: return K9.Globalisation.Dictionary.CompatibilitySubtitle38;
+                case 39: return K9.Globalisation.Dictionary.CompatibilitySubtitle39;
+                case 44: return K9.Globalisation.Dictionary.CompatibilitySubtitle44;
+                case 45: return K9.Globalisation.Dictionary.CompatibilitySubtitle45;
+                case 46: return K9.Globalisation.Dictionary.CompatibilitySubtitle46;
+                case 47: return K9.Globalisation.Dictionary.CompatibilitySubtitle47;
+                case 48: return K9.Globalisation.Dictionary.CompatibilitySubtitle48;
+                case 49: return K9.Globalisation.Dictionary.CompatibilitySubtitle49;
+                case 55: return K9.Globalisation.Dictionary.CompatibilitySubtitle55;
+                case 56: return K9.Globalisation.Dictionary.CompatibilitySubtitle56;
+                case 57: return K9.Globalisation.Dictionary.CompatibilitySubtitle57;
+                case 58: return K9.Globalisation.Dictionary.CompatibilitySubtitle58;
+                case 59: return K9.Globalisation.Dictionary.CompatibilitySubtitle59;
+                case 66: return K9.Globalisation.Dictionary.CompatibilitySubtitle66;
+                case 67: return K9.Globalisation.Dictionary.CompatibilitySubtitle67;
+                case 68: return K9.Globalisation.Dictionary.CompatibilitySubtitle68;
+                case 69: return K9.Globalisation.Dictionary.CompatibilitySubtitle69;
+                case 77: return K9.Globalisation.Dictionary.CompatibilitySubtitle77;
+                case 78: return K9.Globalisation.Dictionary.CompatibilitySubtitle78;
+                case 79: return K9.Globalisation.Dictionary.CompatibilitySubtitle79;
+                case 88: return K9.Globalisation.Dictionary.CompatibilitySubtitle88;
+                case 89: return K9.Globalisation.Dictionary.CompatibilitySubtitle89;
+                case 99: return K9.Globalisation.Dictionary.CompatibilitySubtitle99;
+                default: return null;
+            }
+        }
+
+        private static object CompatibilitySectionLabel(string title, string navigationTitle) => new
+        {
+            Title = title, NavigationTitle = navigationTitle
+        };
+
+        public static object CompatibilityLabels(bool hideSexualChemistry)
+        {
+            var scores = new Dictionary<string, string>
+            {
+                { "complementarityScore", K9.Globalisation.Dictionary.ComplementarityScore },
+                { "conflictScore", K9.Globalisation.Dictionary.ConflictScore },
+                { "harmonyScore", K9.Globalisation.Dictionary.HarmonyScore },
+                { "sparkScore", K9.Globalisation.Dictionary.SparkScore },
+                { "learningPotentialScore", K9.Globalisation.Dictionary.LearningPotentialScore },
+                { "mutualUnderstandingScore", K9.Globalisation.Dictionary.MutualUnderstanding },
+                { "supportScore", K9.Globalisation.Dictionary.MutualSupport }
+            };
+            if (!hideSexualChemistry)
+                scores.Add("sexualChemistryScore", K9.Globalisation.Dictionary.SexualChemistry);
+            var sections = new Dictionary<string, object>
+            {
+                { "overview", CompatibilitySectionLabel(K9.Globalisation.Dictionary.CompatibilityOverview, K9.Globalisation.Dictionary.OverviewLabel) },
+                { "strengthsAndChallenges", CompatibilitySectionLabel(K9.Globalisation.Dictionary.StrengthsWeaknesses, K9.Globalisation.Dictionary.GiftsTrials) },
+                { "inDepth", CompatibilitySectionLabel(K9.Globalisation.Dictionary.InDepthAnalysis, K9.Globalisation.Dictionary.InDepthAnalysis) },
+                { "solarElements", CompatibilitySectionLabel(K9.Globalisation.Dictionary.FundamentalElementsAnalysis, K9.Globalisation.Dictionary.SolarElements) },
+                { "lunarElements", CompatibilitySectionLabel(K9.Globalisation.Dictionary.CharacterElementsAnalysis, K9.Globalisation.Dictionary.LunarElements) },
+                { "allElements", CompatibilitySectionLabel(K9.Globalisation.Dictionary.AllElementsBreakdown, K9.Globalisation.Dictionary.AllElements) },
+                { "yinYang", CompatibilitySectionLabel(K9.Globalisation.Dictionary.YinAndYangAnalysis, K9.Globalisation.Dictionary.YinYangLabel) },
+                { "birthMonth", CompatibilitySectionLabel(K9.Globalisation.Dictionary.BirthMonthAnalysis, K9.Globalisation.Dictionary.BirthMonth) }
+            };
+            if (!hideSexualChemistry)
+                sections.Add("sexualChemistry", CompatibilitySectionLabel(K9.Globalisation.Dictionary.SexualChemistryDetails, K9.Globalisation.Dictionary.SexualChemistryDetails));
+            return new
+            {
+                Title = K9.Globalisation.Dictionary.RelationshipCompatibilityCalculator,
+                Results = K9.Globalisation.Dictionary.CompatibilityResults,
+                FirstPerson = K9.Globalisation.Dictionary.FirstPerson,
+                SecondPerson = K9.Globalisation.Dictionary.SecondPerson,
+                Sections = sections, Scores = scores
+            };
+        }
+
+        public static string CompatibilityYinYang(bool mainSame, bool characterSame,
+            ENineStarKiYinYang mainYinYang, ENineStarKiYinYang characterYinYang, string knowledgeBaseUrl)
+        {
+            string html;
+            if (mainSame && characterSame)
+                html = mainYinYang == ENineStarKiYinYang.Yin
+                    ? K9.Globalisation.Dictionary.both_gender_same_yin : K9.Globalisation.Dictionary.both_gender_same_yang;
+            else
+            {
+                html = mainSame
+                    ? (mainYinYang == ENineStarKiYinYang.Yin ? K9.Globalisation.Dictionary.main_gender_same_yin : K9.Globalisation.Dictionary.main_gender_same_yang)
+                    : K9.Globalisation.Dictionary.main_gender_opposite;
+                html += "\n" + (characterSame
+                    ? (characterYinYang == ENineStarKiYinYang.Yin ? K9.Globalisation.Dictionary.character_gender_same_yin : K9.Globalisation.Dictionary.character_gender_same_yang)
+                    : K9.Globalisation.Dictionary.character_gender_opposite);
+            }
+            return K9.SharedLibrary.Helpers.TemplateParser.Parse(html, new
+            {
+                SameTransformationLink = knowledgeBaseUrl + "#same-transformation",
+                SupportiveTransformationLink = knowledgeBaseUrl + "#supportive-transformation",
+                ChallengingTransformationLink = knowledgeBaseUrl + "#challenging-transformation"
+            });
+        }
+
+        private static object CompatibilityGauge(string key, string label, int value,
+            bool isInverted = false, int maxValue = (int)ECompatibilityScore.ExtremelyHigh) => new
+        {
+            Key = key, Label = label, Value = value, MinValue = 0,
+            MaxValue = maxValue, IsInverted = isInverted
+        };
+
+        public static object[] CompatibilityGauges(CompatibilityScoreModel score, bool hideSexualChemistry)
+        {
+            if (score == null) return null;
+            var gauges = new List<object>
+            {
+                CompatibilityGauge("complementarity", K9.Globalisation.Dictionary.ComplementarityScore, (int)score.ComplementarityScore),
+                CompatibilityGauge("conflict", K9.Globalisation.Dictionary.ConflictScore, (int)score.ConflictScore, isInverted: true),
+                CompatibilityGauge("harmony", K9.Globalisation.Dictionary.HarmonyScore, (int)score.HarmonyScore),
+                CompatibilityGauge("spark", K9.Globalisation.Dictionary.SparkScore, (int)score.SparkScore),
+                CompatibilityGauge("learningPotential", K9.Globalisation.Dictionary.LearningPotentialScore, (int)score.LearningPotentialScore),
+                CompatibilityGauge("mutualUnderstanding", K9.Globalisation.Dictionary.MutualUnderstanding, (int)score.MutualUnderstandingScore),
+                CompatibilityGauge("mutualSupport", K9.Globalisation.Dictionary.MutualSupport, (int)score.SupportScore)
+            };
+            if (!hideSexualChemistry)
+                gauges.Insert(4, CompatibilityGauge("sexualChemistry", K9.Globalisation.Dictionary.SexualChemistry,
+                    (int)score.SexualChemistryScore, maxValue: (int)ESexualChemistryScore.OffTheCharts));
+            return gauges.ToArray();
+        }
+
+        public static object Compatibility(CompatibilityModel model, bool hideSexualChemistry, string knowledgeBaseUrl, bool includeFullProfiles = true)
         {
             var details = model.CompatibilityDetails;
             var score = details?.Score;
             return new
             {
+                Labels = CompatibilityLabels(hideSexualChemistry),
                 Help = MobileHelpMapper.Compatibility(),
+                Gauges = CompatibilityGauges(score, hideSexualChemistry),
                 FirstPerson = includeFullProfiles ? (object)MobilePersonalChartMapper.Map(model.NineStarKiModel1, false, includeHelp: false) : MobilePersonalChartMapper.Numbers(model.NineStarKiModel1),
                 SecondPerson = includeFullProfiles ? (object)MobilePersonalChartMapper.Map(model.NineStarKiModel2, false, includeHelp: false) : MobilePersonalChartMapper.Numbers(model.NineStarKiModel2),
+                Sections = new
+                {
+                    StrengthsAndChallenges = new
+                    {
+                        Title = K9.Globalisation.Dictionary.StrengthsWeaknesses,
+                        Subtitle = CompatibilitySubtitle(model.NineStarKiModel1.MainEnergy.EnergyNumber,
+                            model.NineStarKiModel2.MainEnergy.EnergyNumber),
+                        Body = model.FundamentalEnergiesCompatibility
+                    }
+                },
                 model.FundamentalEnergiesCompatibility,
                 SexualChemistryDetails = hideSexualChemistry ? null : model.SexualChemistryDetails,
                 Details = details == null ? null : new
@@ -211,7 +370,11 @@ namespace K9.WebApplication.Helpers
                     Gender = details.GenderCompatibility == null ? null : new
                     {
                         details.GenderCompatibility.IsFundamtenalGenderSame, details.GenderCompatibility.IsCharacterGenderSame,
-                        details.GenderCompatibility.IsBothGenderSame
+                        details.GenderCompatibility.IsBothGenderSame,
+                        Description = CompatibilityYinYang(details.GenderCompatibility.IsFundamtenalGenderSame,
+                            details.GenderCompatibility.IsCharacterGenderSame,
+                            details.GenderCompatibility.FundamentalGenderSameYinYang,
+                            details.GenderCompatibility.CharacterGenderSameYinYang, knowledgeBaseUrl)
                     },
                     Modality = details.ModalityCompatibility == null ? null : new
                     {

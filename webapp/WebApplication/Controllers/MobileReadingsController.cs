@@ -153,7 +153,8 @@ namespace K9.WebApplication.Controllers
             var second = request.SecondPerson.ToPerson();
             var hide = request.HideSexualChemistry || !first.IsSixteenOrOver() || !second.IsSixteenOrOver();
             return MobileCalculationMapper.Compatibility(_profiles.CalculateCompatibility(first, second, hide,
-                request.CalculationMethod, request.CalculatorType), hide, includeFullProfiles: false);
+                request.CalculationMethod, request.CalculatorType), hide,
+                Url.Action("Index", "KnowledgeBase", null, Request.Url.Scheme), includeFullProfiles: false);
         }
 
         private static object FreeYear(NineStarKiEnergy energy, bool global = false) => energy == null ? null : new

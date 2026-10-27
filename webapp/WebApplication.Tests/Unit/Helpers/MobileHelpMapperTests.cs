@@ -75,6 +75,91 @@ namespace K9.WebApplication.Tests.Unit.Helpers
         }
 
         [Fact]
+        public void CompatibilityGaugesMatchWebsiteScalesLabelsAndPrivacy()
+        {
+            var score = new K9.WebApplication.Models.CompatibilityScoreModel
+            {
+                ConflictScore = K9.WebApplication.Enums.ECompatibilityScore.High,
+                HarmonyScore = K9.WebApplication.Enums.ECompatibilityScore.Low,
+                SexualChemistryScore = K9.WebApplication.Enums.ESexualChemistryScore.ExtremelyHigh
+            };
+            var gauges = JArray.FromObject(MobileCalculationMapper.CompatibilityGauges(score, false));
+            Assert.Equal(8, gauges.Count);
+            Assert.Equal(Dictionary.ComplementarityScore, (string)gauges[0]["Label"]);
+            Assert.Equal(Dictionary.ConflictScore, (string)gauges[1]["Label"]);
+            Assert.Equal(7, (int)gauges[1]["Value"]);
+            Assert.True((bool)gauges[1]["IsInverted"]);
+            Assert.Equal(Dictionary.HarmonyScore, (string)gauges[2]["Label"]);
+            Assert.Equal(3, (int)gauges[2]["Value"]);
+            Assert.Equal(Dictionary.SparkScore, (string)gauges[3]["Label"]);
+            Assert.Equal(Dictionary.SexualChemistry, (string)gauges[4]["Label"]);
+            Assert.Equal(14, (int)gauges[4]["Value"]);
+            Assert.Equal(15, (int)gauges[4]["MaxValue"]);
+            Assert.Equal(Dictionary.LearningPotentialScore, (string)gauges[5]["Label"]);
+            Assert.Equal(Dictionary.MutualUnderstanding, (string)gauges[6]["Label"]);
+            Assert.Equal(Dictionary.MutualSupport, (string)gauges[7]["Label"]);
+            Assert.All(gauges.Where(g => (string)g["Key"] != "sexualChemistry"), g => Assert.Equal(9, (int)g["MaxValue"]));
+            Assert.All(gauges, g => Assert.Equal(0, (int)g["MinValue"]));
+            Assert.All(gauges.Where(g => (string)g["Key"] != "conflict"), g => Assert.False((bool)g["IsInverted"]));
+            var hidden = JArray.FromObject(MobileCalculationMapper.CompatibilityGauges(score, true));
+            Assert.Equal(7, hidden.Count);
+            Assert.DoesNotContain(hidden, g => (string)g["Key"] == "sexualChemistry");
+            Assert.Null(MobileCalculationMapper.CompatibilityGauges(null, false));
+        }
+
+        [Fact]
+        public void CompatibilitySectionsKeepShortNavigationSeparateAndHideChemistry()
+        {
+            var labels = JObject.FromObject(MobileCalculationMapper.CompatibilityLabels(false));
+            Assert.Equal(Dictionary.FirstPerson, (string)labels["FirstPerson"]);
+            Assert.Equal(Dictionary.ConflictScore, (string)labels["Scores"]["conflictScore"]);
+            Assert.Equal(Dictionary.SecondPerson, (string)labels["SecondPerson"]);
+            Assert.Equal(Dictionary.FundamentalElementsAnalysis, (string)labels["Sections"]["solarElements"]["Title"]);
+            Assert.Equal(Dictionary.SolarElements, (string)labels["Sections"]["solarElements"]["NavigationTitle"]);
+            Assert.Equal(Dictionary.YinAndYangAnalysis, (string)labels["Sections"]["yinYang"]["Title"]);
+            Assert.Equal(Dictionary.YinYangLabel, (string)labels["Sections"]["yinYang"]["NavigationTitle"]);
+            Assert.NotNull(labels["Sections"]["sexualChemistry"]);
+            var hidden = JObject.FromObject(MobileCalculationMapper.CompatibilityLabels(true));
+            Assert.Null(hidden["Sections"]["sexualChemistry"]);
+            Assert.Null(hidden["Scores"]["sexualChemistryScore"]);
+        }
+
+        [Fact]
+        public void CompatibilityYinYangUsesWebsiteResourcesAndResolvesLinks()
+        {
+            const string url = "https://example.test/learn";
+            var yin = K9.WebApplication.Models.ENineStarKiYinYang.Yin;
+            var yang = K9.WebApplication.Models.ENineStarKiYinYang.Yang;
+            var bothYin = MobileCalculationMapper.CompatibilityYinYang(true, true, yin, yin, url);
+            Assert.Equal(Dictionary.both_gender_same_yin, bothYin);
+            var bothYang = MobileCalculationMapper.CompatibilityYinYang(true, true, yang, yang, url);
+            Assert.Equal(Dictionary.both_gender_same_yang, bothYang);
+            var opposite = MobileCalculationMapper.CompatibilityYinYang(false, false, yin, yang, url);
+            Assert.Contains(url + "#challenging-transformation", opposite);
+            Assert.DoesNotContain("{ChallengingTransformationLink}", opposite);
+            Assert.DoesNotContain("{SameTransformationLink}", opposite);
+            Assert.DoesNotContain("{SupportiveTransformationLink}", opposite);
+            Assert.Contains("\n", opposite);
+        }
+
+        [Fact]
+        public void CompatibilitySubtitlesCoverEveryPairAndRemainSymmetric()
+        {
+            for (var first = 1; first <= 9; first++)
+                for (var second = 1; second <= 9; second++)
+                {
+                    var subtitle = MobileCalculationMapper.CompatibilitySubtitle(first, second);
+                    Assert.False(string.IsNullOrWhiteSpace(subtitle));
+                    Assert.Equal(subtitle, MobileCalculationMapper.CompatibilitySubtitle(second, first));
+                    Assert.DoesNotContain("<", subtitle);
+                }
+            Assert.Equal(Dictionary.CompatibilitySubtitle12, MobileCalculationMapper.CompatibilitySubtitle(1, 2));
+            Assert.Equal(Dictionary.CompatibilitySubtitle26, MobileCalculationMapper.CompatibilitySubtitle(6, 2));
+            Assert.Null(MobileCalculationMapper.CompatibilitySubtitle(0, 1));
+            Assert.Null(MobileCalculationMapper.CompatibilitySubtitle(1, 10));
+        }
+
+        [Fact]
         public void ChartIntroductionsMatchWebsiteResourcesWithoutTabInstructions()
         {
             var help = MobileHelpMapper.Chart(true, true);

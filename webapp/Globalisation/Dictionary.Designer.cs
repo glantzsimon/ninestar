@@ -32498,6 +32498,276 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Your Predictions.
         /// </summary>
+        public static string CompatibilitySubtitle11 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle11", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle12 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle12", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle13 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle13", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle14 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle14", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle15 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle15", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle16 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle16", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle17 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle17", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle18 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle18", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle19 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle19", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle22 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle22", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle23 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle23", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle24 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle24", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle25 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle25", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle26 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle26", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle27 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle27", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle28 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle28", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle29 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle29", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle33 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle33", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle34 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle34", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle35 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle35", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle36 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle36", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle37 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle37", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle38 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle38", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle39 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle39", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle44 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle44", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle45 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle45", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle46 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle46", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle47 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle47", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle48 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle48", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle49 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle49", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle55 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle55", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle56 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle56", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle57 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle57", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle58 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle58", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle59 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle59", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle66 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle66", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle67 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle67", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle68 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle68", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle69 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle69", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle77 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle77", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle78 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle78", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle79 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle79", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle88 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle88", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle89 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle89", resourceCulture);
+            }
+        }
+
+        public static string CompatibilitySubtitle99 {
+            get {
+                return ResourceManager.GetString("CompatibilitySubtitle99", resourceCulture);
+            }
+        }
+
         public static string YourPredictions {
             get {
                 return ResourceManager.GetString("YourPredictions", resourceCulture);

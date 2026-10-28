@@ -94,11 +94,9 @@
   width: 50px;
   height: 50px;
   margin: -25px 0 0 -25px;
-  border: 6px solid #e6e6e6;
-  border-radius: 50%;
-  border-top: 6px solid var(--primary-blue);
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  border: 0;
+  -webkit-animation: none;
+  animation: none;
   display: none;
 }
 #pageOverlay {
@@ -134,38 +132,11 @@
   height: 50px;
   margin: -25px 0 0 -25px;
   /* Centers the spinner */
-  border: 6px solid #e6e6e6;
-  border-radius: 50%;
-  border-top: 6px solid var(--primary-blue);
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  border: 0;
+  -webkit-animation: none;
+  animation: none;
   display: none;
 }
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-#pageSpinner.has-spinner-artwork,
-.partialSpinner.has-spinner-artwork {
-    border: 0;
-    border-radius: 0;
-    -webkit-animation: none;
-    animation: none;
-}
-
 #pageSpinner.has-spinner-artwork picture,
 .partialSpinner.has-spinner-artwork picture,
 #pageSpinner.has-spinner-artwork img,
@@ -175,4 +146,8 @@
     height: 100%;
     margin: 0;
     max-width: none;
+}
+
+.partialSpinner:not(.has-spinner-artwork) {
+    background: url("../../Images/shared/ninestar-spinner.gif") center / contain no-repeat;
 }

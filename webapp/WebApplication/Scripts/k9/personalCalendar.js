@@ -13,6 +13,7 @@
             $link = $calendar.find('input[name="CalendarLink"]'),
             currentYear, currentMonth, targetYear, targetMonth, navigationTimer,
             today, entries = [], request, requestVersion = 0,
+            lunarRequest, lunarVersion = 0,
             selectedDate, subscriptionBusy = false, $placeholder, previousFocus;
 
         $calendar.find('.calendar-help').attr({
@@ -37,6 +38,49 @@
             $status.text(message || '');
             $calendar.find('.personal-calendar-account').toggle(showAccount === true);
         }
+        function finishLunarLoading(version) {
+            if (version !== lunarVersion) return;
+            var $lunar = $calendar.find('.personal-calendar-lunar');
+            $lunar.attr('aria-busy', 'false');
+            $.fn.hideSpinner($lunar);
+            $lunar.children('.partialSpinner, .partialOverlay').stop(true, true).hide();
+        }
+
+        function cancelLunar() {
+            ++lunarVersion;
+            if (lunarRequest) lunarRequest.abort();
+            lunarRequest = null;
+            finishLunarLoading(lunarVersion);
+        }
+
+        function loadLunar(entry) {
+            cancelLunar();
+            if (!$calendar.hasClass('is-expanded') || !entry.Moon) return;
+            var version = lunarVersion,
+                $lunar = $calendar.find('.personal-calendar-lunar');
+            $lunar.attr('aria-busy', 'true');
+            $.fn.displaySpinner($lunar);
+            lunarRequest = $.ajax({
+                url: $calendar.attr('data-lunar-url'), type: 'GET', dataType: 'json',
+                data: { date: entry.Date }, timeout: 30000, global: false,
+                success: function (data) {
+                    if (version !== lunarVersion || selectedDate !== entry.Date || !$calendar.hasClass('is-expanded')) return;
+                    $lunar.find('.moon-wrapper img').attr({ src: data.ImageUrl, alt: data.Label });
+                    // Only the server-owned lunar resources supply this HTML.
+                    $lunar.find('.calendar-lunar-description').html(data.DescriptionHtml || '');
+                },
+                error: function (xhr, result) {
+                    if (result !== 'abort' && version === lunarVersion)
+                        $lunar.find('.calendar-lunar-description').text($calendar.attr('data-error'));
+                },
+                complete: function () {
+                    if (version !== lunarVersion) return;
+                    lunarRequest = null;
+                    finishLunarLoading(version);
+                }
+            });
+        }
+
         function select(entry) {
             selectedDate = entry.Date;
             $grid.find('.personal-calendar-day').removeClass('is-selected').attr('aria-pressed', 'false');
@@ -52,10 +96,17 @@
             if (moon) {
                 $lunar.find('.moon-wrapper img').attr({ src: moon.ImageUrl, alt: moon.Label });
                 // HTML comes from the existing server-owned lunar Dictionary resources.
-                $lunar.find('.calendar-lunar-description').html(moon.DescriptionHtml || '');
+                $lunar.find('.calendar-lunar-description').empty();
             } else {
                 $lunar.find('.calendar-lunar-description').empty();
             }
+            cancelLunar();
+            var version = lunarVersion;
+            // Let month completion hide its loader before starting the nested panel.
+            setTimeout(function () {
+                if (version === lunarVersion && selectedDate === entry.Date &&
+                    $calendar.attr('aria-busy') !== 'true') loadLunar(entry);
+            }, 0);
         }
 
         function finishLoading(version) {
@@ -124,6 +175,7 @@
         }
 
         function loadMonth(year, month, delay) {
+            cancelLunar();
             var version = ++requestVersion;
             clearTimeout(navigationTimer);
             if (request) request.abort();

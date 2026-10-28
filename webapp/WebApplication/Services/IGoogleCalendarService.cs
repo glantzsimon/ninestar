@@ -11,6 +11,7 @@ namespace K9.WebApplication.Services
         List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate);
         List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken);
         List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken, bool includeMoonPhases);
+        CalendarEntry GetLunarCalendarEntry(int userId, DateTime date, CancellationToken cancellationToken);
         string ConvertToICalendar(int userId, List<CalendarEntry> entries);
         string GenerateCalendar(int userId, DateTime startDate, DateTime endDate);
         DateTime GetCalendarToday(int userId);

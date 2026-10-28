@@ -303,10 +303,16 @@ namespace K9.WebApplication.Tests.Unit.Services
             var phase = new MoonPhase(88.6, false) { LunarDay = 19, LunarDayDescription = "<p>Lunar reading</p>" };
             astrology.Setup(e => e.GetMoonPhase(
                 It.Is<DateTime>(d => d.Kind == DateTimeKind.Unspecified && d >= date && d < date.AddDays(numberOfDays)),
-                timeZoneId, true, It.IsAny<NineStarKiEnergy>())).Returns(phase);
+                timeZoneId, false, It.IsAny<NineStarKiEnergy>())).Returns(phase);
             var expanded = calendar.GetCalendarEntries(42, date, date.AddDays(numberOfDays), CancellationToken.None, true);
             Assert.Equal(entries.Select(e => e.Date), expanded.Select(e => e.Date));
             Assert.All(expanded, e => Assert.Same(phase, e.MoonPhase));
+            astrology.Setup(e => e.GetMoonPhase(
+                It.Is<DateTime>(d => d == date && d.Kind == DateTimeKind.Unspecified),
+                timeZoneId, true, It.IsAny<NineStarKiEnergy>())).Returns(phase);
+            var selectedLunar = calendar.GetLunarCalendarEntry(42, date, CancellationToken.None);
+            Assert.Equal(date, selectedLunar.Date);
+            Assert.Same(phase, selectedLunar.MoonPhase);
 
             // The same planner batches supply the website and the subscription;
             // only the description resource family changes for the feed.
@@ -327,8 +333,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             var expectedDescription = expectedFeed.Split(new[] { "\r\n" }, StringSplitOptions.None)
                 .Single(e => e.StartsWith("DESCRIPTION:", StringComparison.Ordinal));
             Assert.Contains(expectedDescription + "\r\n", feed);
-            astrology.Verify(e => e.GetMoonPhase(It.IsAny<DateTime>(), timeZoneId, true,
+            astrology.Verify(e => e.GetMoonPhase(It.IsAny<DateTime>(), timeZoneId, false,
                 It.IsAny<NineStarKiEnergy>()), Times.Exactly(numberOfDays));
+            astrology.Verify(e => e.GetMoonPhase(It.IsAny<DateTime>(), timeZoneId, true,
+                It.IsAny<NineStarKiEnergy>()), Times.Once);
             foreach (var line in rawFeed.Split(new[] { "\r\n" }, StringSplitOptions.None))
                 Assert.InRange(Encoding.UTF8.GetByteCount(line), 0, 75);
         }

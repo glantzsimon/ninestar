@@ -10,6 +10,7 @@
 @using (Html.PayWall(ESection.Predictions, Model))
 {
     <div id="personal-calendar" data-month-url="@Url.Action("Month", "PersonalCalendar")"
+         data-lunar-url="@Url.Action("LunarCycle", "PersonalCalendar")"
          data-subscription-url="@Url.Action("Subscription", "PersonalCalendar")"
          data-revoke-url="@Url.Action("Revoke", "PersonalCalendar")"
          data-error="@Dictionary.NetworkError" data-unavailable="@Dictionary.PersonalCalendarUnavailable"

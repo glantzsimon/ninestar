@@ -41,15 +41,20 @@ namespace K9.WebApplication.Services
 
         public List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken)
         {
-            return GetCalendarEntries(userId, startDate, endDate, cancellationToken, false, false);
+            return BuildCalendarEntries(userId, startDate, endDate, cancellationToken, false, false, false);
         }
 
         public List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken, bool includeMoonPhases)
         {
-            return GetCalendarEntries(userId, startDate, endDate, cancellationToken, false, includeMoonPhases);
+            return BuildCalendarEntries(userId, startDate, endDate, cancellationToken, false, includeMoonPhases, false);
         }
 
-        private List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken, bool forSubscription, bool includeMoonPhases)
+        public CalendarEntry GetLunarCalendarEntry(int userId, DateTime date, CancellationToken cancellationToken)
+        {
+            return BuildCalendarEntries(userId, date, date.AddDays(1), cancellationToken, false, true, true).Single();
+        }
+
+        private List<CalendarEntry> BuildCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken, bool forSubscription, bool includeMoonPhases, bool includeLunarDay)
         {
             cancellationToken.ThrowIfCancellationRequested();
             ValidateUserId(userId);
@@ -156,7 +161,7 @@ namespace K9.WebApplication.Services
                             Summary = string.Format(CultureInfo.InvariantCulture, K9.Globalisation.Dictionary.PersonalCalendarEventSummaryFormat, year, month, day),
                             Description = description,
                             MoonPhase = includeMoonPhases
-                                ? _astrologyService.GetMoonPhase(localDate, timeZoneId, true, yearlyPlanner.NineStarKiModel.MainEnergy)
+                                ? _astrologyService.GetMoonPhase(localDate, timeZoneId, includeLunarDay, yearlyPlanner.NineStarKiModel.MainEnergy)
                                 : null
                         });
                         date = localDate.AddDays(1);
@@ -170,7 +175,7 @@ namespace K9.WebApplication.Services
 
         public string GenerateCalendar(int userId, DateTime startDate, DateTime endDate)
         {
-            return ConvertToICalendar(userId, GetCalendarEntries(userId, startDate, endDate, CancellationToken.None, true, false));
+            return ConvertToICalendar(userId, BuildCalendarEntries(userId, startDate, endDate, CancellationToken.None, true, false, false));
         }
 
         public DateTime GetCalendarToday(int userId)

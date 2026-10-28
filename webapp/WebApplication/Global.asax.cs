@@ -59,12 +59,14 @@ namespace K9.WebApplication
 
         protected void Application_PostMapRequestHandler()
         {
-            // Month reads need session identity/culture, but must not hold an
+            // Calendar reads need session identity/culture, but must not hold an
             // exclusive session lock while calculating an abandoned month.
             // Run after MVC maps the handler and before AcquireRequestState.
             if (Request.HttpMethod == "GET" &&
-                string.Equals(Request.AppRelativeCurrentExecutionFilePath.TrimEnd('/'),
-                    "~/personal-calendar/month", StringComparison.OrdinalIgnoreCase))
+                (string.Equals(Request.AppRelativeCurrentExecutionFilePath.TrimEnd('/'),
+                    "~/personal-calendar/month", StringComparison.OrdinalIgnoreCase) ||
+                 string.Equals(Request.AppRelativeCurrentExecutionFilePath.TrimEnd('/'),
+                    "~/personal-calendar/lunar-cycle", StringComparison.OrdinalIgnoreCase)))
             {
                 Context.SetSessionStateBehavior(SessionStateBehavior.ReadOnly);
             }

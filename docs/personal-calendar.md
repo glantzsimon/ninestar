@@ -88,3 +88,5 @@ Regression coverage adds profile lunar opt-out/default separation, energy equali
 ## Mobile month presentation
 
 The separate mobile `calendar/month` transport now includes the website control/status Dictionary labels, Monday-first weekday labels/abbreviations, culture-formatted date labels and house summaries, and registered energy artwork IDs. `MobileCalculationMapper.CalendarLabels`/`CalendarDay` project the existing entries; the website controller and service calculations are unchanged. See `docs/mobile-api.md` for the exact additive fields and catalogue guidance. Paid access, member-local dates, cancellation, subscription handling and existing full descriptions remain unchanged. Run `MobileHelpMapperTests` with the Windows solution and verify an authenticated month response after deployment; cloud checks cover syntax only.
+
+Calendar day-cell energy images have a -2px top margin to move the centred artwork up slightly in both embedded and expanded views. Date labels, house-number captions, cell sizes and interactions are unchanged.

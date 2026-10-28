@@ -216,3 +216,6 @@ button a .fa,
 a.btn a .fa {
   margin-right: 2px;
 }
+.btn > .glyphicon {
+    top: 3px;
+}

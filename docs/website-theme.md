@@ -21,3 +21,7 @@ After deploying assets, visually check dark/light panels, calculator controls an
 ## Artwork direction
 
 The UI artwork family follows the owner-approved antique gold, restrained mystical astrology standard in [visual-design.md](visual-design.md). Gold belongs inside each emblem; transparent surrounding space lets the same asset work on both themes. The artwork refresh does not change the shared colour palette, blue focus/selection accents or page layout. See [ui-artwork-report.md](ui-artwork-report.md) for canonical filenames, mobile IDs and the navigation reuse map.
+
+Selected-state artwork now retains its supplied colours in both themes. The old dark-only img[alt="selected"] invert(100%) rule was intended for earlier monochrome artwork; it inverted the refreshed gold selection badge to blue. Remove that obsolete rule in dark.less and dark.css rather than editing Images/ui/selected.png or adding a competing override.
+
+Bootstrap button glyphs use a 3px top offset (2px below Bootstrap's default 1px) to align with the current button label font. The scoped .btn > .glyphicon rule lives in elements.less and elements.css and leaves button dimensions, padding and interaction unchanged.

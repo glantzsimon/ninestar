@@ -1298,3 +1298,67 @@ The catalogue now uses the API request's own origin and application path, rather
 All 60 PNGs under `Images/ninestar` are redesigned in the approved antique gold family, preserving filenames, dimensions, catalogue IDs and default/dark variant names. This includes energy numerals, elements, modalities, organs, seasons, exact trigrams and yin/yang. Eight trigram patterns, the four-arrow cycle symbol and ten relationship/cycle diagrams use precise vector geometry over the gold artwork. Diagram element labels are sourced from the existing Dictionary resources.
 
 `ninestar.elements.cycle-five` now shows the supportive five-element cycle in both themes; its old dark file incorrectly showed sibling pairs. It deliberately shares content/URLs with `ninestar.transformations.transformation-supportive`. `ninestar.transformations.transformation-same` remains the sibling-pair diagram. Resolve returned catalogue URLs rather than expecting an ID to map to a particular physical filename. All existing access rules and calculation data remain unchanged. See `docs/ninestar-artwork-report.md` for the full inventory, source audit and release checks.
+
+### Travel summary and magic-square rendering
+
+Full Predictions endpoints (`POST /api/mobile/v1/predictions/calculate`, `GET /api/mobile/v1/predictions/me`, `GET /api/mobile/v1/predictions/last`) add `data.travelSummary` and `data.magicSquares`. They are null unless the authenticated caller is an admin or has an active unlimited membership. The controller checks eligibility server-side; clients cannot request entitlement through a flag. Existing paid endpoint checks remain in place. The default mapper projection also denies these fields unless explicitly authorised.
+
+The website permits complementary results in its unlimited-style panels, but mobile complementary/free responses currently expose only the existing year readings. Those responses remain unchanged: neither `/readings/predictions` nor `/readings/predictions/me/free` receives these details. Existing `yearlyDirections`, `monthlyDirections`, cycles and planner `magicSquareNumbers` are unchanged. No new endpoint, access grant or purchase flow is introduced.
+
+`data.travelSummary` reuses `NineStarKiModel.GetDrectionsChartViewModel().GetDirectionsChartData()` including its Year/Month/Day/Hour weights (5/3/2/1), centre-house penalties, descending score grouping and guidance thresholds. Generation/Epoch do not contribute. Fields:
+
+| Field | Source / meaning |
+| --- | --- |
+| `title` | `Dictionary.WorstDirectionsToTravelIn` (Directions of Travel Summary) |
+| `instructions` | `Dictionary.DirectionsInstructions` |
+| `labels.direction`, `.score`, `.guidance` | `Dictionary.Direction`, `Score`, `Guidance` |
+| `rows[]` | Website score groups, descending score; direction order retained |
+| `rows[].score` | Existing summed score, not a percentage |
+| `rows[].severity`, `.color` | Website status class and matching hex colour |
+| `rows[].showWarning` | True for scores >= 10, matching the warning triangle |
+| `rows[].guidance` | Existing parsed Dictionary guidance, with the same score thresholds |
+| `rows[].directions[]` | Direction objects defined below |
+
+Status colours mirror `Content/less/sections/predictions.less`: purple-warning #800080 (>=11), red-warning #cc0000 (>=10), red #ff0000 (>=8), light-red #ff6666 (>=7), orange #ffa500 (>=5), yellow #ffff00 (>=3), light-yellow #ffffcc (>=1), green #90ee90 (otherwise). Guidance reuses AvoidAllTravel, AvoidTravel, KeepTravelShortAndInfrequent, TravelWithGreatCare and TravelWithCare. The website's existing zero-score `OK` string is now `Dictionary.TravelOkay`; no wording was added or rewritten. Direction labels now consistently resolve existing North/NorthEast/East/SouthEast/South/SouthWest/West/NorthWest/Centre Dictionary entries in both website guidance and API labels/tooltips.
+
+`data.magicSquares.personal` and `.global` each contain `epoch`, `generation`, `year`, `month`, `day`, `hour`, projected from the website's `GetCycleMagicSquares` / `GetGlobalCycleMagicSquares`. Each square has:
+
+| Field | Meaning |
+| --- | --- |
+| `title` | Existing Dictionary EpochEnergyLabel, GenerationalEnergyLabel, YearlyEnergyLabel, MonthlyEnergyLabel, DailyEnergyLabel or HourlyEnergyLabel |
+| `houseName` | Existing formatted website house label |
+| `globalNumber`, `personalHouse` | Global centre number and occupied house number |
+| `isGlobal`, `isSplit`, `isDualView` | Existing square presentation flags |
+| `showDirections` | Arrows apply to personal Year/Month/Day/Hour; false for global, Epoch and Generation |
+| `artworkId` | `ninestar.magic-square-plate`; resolve its URL through metadata/artwork |
+| `cells[]` | Exactly nine cells in top-left to bottom-right order |
+| `cells[].row`, `.column` | Zero-based grid coordinates |
+| `cells[].house` | Fixed position/house number, **not** the displayed number |
+| `cells[].number`, `.color` | Calculated number for that position and website number colour |
+| `cells[].isActive`, `.isLunarActive` | Primary/global-centre and dual lunar highlights |
+| `arrows[]` | Four personal arrow objects, or null when inapplicable |
+| `secondaryHouseName` | Optional second house label, without hardcoded Pri/Sec suffixes |
+| `secondary` | Second complete square only for a split day; otherwise null |
+
+Arrow fields: `key` (five-yellow-killing/dark-sword-killing/self-life-killing/target-killing), `color`, Dictionary-backed `title`, fully parsed `description`, period `score`, and a `direction` object. Colours match the website: #ffff00, #333333, #ff0000, #0000ff respectively. Overlapping arrows remain separate, and Centre is a ring rather than a directional line. Generation/Epoch have no arrows.
+
+Each direction object has `key` (stable enum identifier), `label` (Dictionary display label), `displayDirection` (website screen-side identifier), `endX`, `endY`, `isCentre`. Draw arrows from (0.5,0.5) to the normalised endpoint on a unit square with top-left origin. **The website is south-up**: actual North ends at (0.5,1), East at (0,0.5), South at (0.5,0), West at (1,0.5). Northeast is bottom-left. Do not interpret the key as a north-up screen coordinate or rotate it a second time. Summary direction icons use the same endpoints. For Centre, draw the website's ring overlay rather than a zero-length arrow.
+
+The fixed cell house order is `[4,9,2,3,5,7,8,1,6]`. For global centre 2, the displayed row-order numbers are `[1,6,8,9,2,4,5,7,3]`. Highlight positions by `isActive`, never by comparing the displayed number with `personalHouse`. Use `isLunarActive` on the same grid for dual houses; render `secondary` as another grid only for split days. These fields reflect existing selected-date, house-display and hemisphere calculations; the app must not recalculate them. The existing website Hour/dual-view source mapping is retained, not independently corrected in the transport.
+
+Example direction/arrow excerpt inside a personal square:
+
+```json
+{
+  "key": "self-life-killing",
+  "color": "#ff0000",
+  "title": "Self Life Killing (\"Hon Mei Satsu\")",
+  "score": 5,
+  "direction": {
+    "key": "North", "label": "North", "displayDirection": "South",
+    "endX": 0.5, "endY": 1.0, "isCentre": false
+  }
+}
+```
+
+The excerpt omits `description` for brevity; render the server-supplied text. Native rendering may follow the app's typography/spacing while using the supplied plate, numbers, highlight flags, colours and endpoints. Showing/hiding arrows is a client presentation preference and does not change server access checks. These changes are additive; Windows build/xUnit and authenticated Integration verification remain outstanding. A repository push is not a deployment.

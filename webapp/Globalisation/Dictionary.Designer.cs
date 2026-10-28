@@ -41652,5 +41652,9 @@ namespace K9.Globalisation {
             get { return ResourceManager.GetString("AboutCompatibilityCalculator", resourceCulture); }
         }
 
+        public static string TravelOkay {
+            get { return ResourceManager.GetString("TravelOkay", resourceCulture); }
+        }
+
     }
 }

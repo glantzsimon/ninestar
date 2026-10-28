@@ -14213,4 +14213,7 @@
   <data name="CompatibilitySubtitle99" xml:space="preserve">
     <value>Harmony And Friendship</value>
   </data>
+  <data name="TravelOkay" xml:space="preserve">
+    <value>OK</value>
+  </data>
 </root>

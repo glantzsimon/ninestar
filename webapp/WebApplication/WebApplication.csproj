@@ -468,6 +468,7 @@
     <Compile Include="ViewModels\MobileApi\MobileCheckoutRequest.cs" />
     <Compile Include="ViewModels\MobileApi\MobileCalculationRequest.cs" />
     <Compile Include="Helpers\MobileCalculationMapper.cs" />
+    <Compile Include="Helpers\MobileTravelMapper.cs" />
     <Compile Include="Helpers\MobileHelpMapper.cs" />
     <Compile Include="Controllers\MobileConsultationsController.cs" />
     <Compile Include="Controllers\MobileAccountController.cs" />

@@ -144,3 +144,7 @@ Start with the first slice rather than building every screen at once. Do not cha
 ## Suggested initial instruction to local Codex
 
 Read this handover and the referenced backend documentation in D:\Workspace\ninestar. Inspect the actual environment, then help me create the Expo/TypeScript app in D:\Workspace\ninestar-mobile. Begin with API connectivity and a working sign-in, own-chart and predictions flow. Keep existing web pages unchanged and report progress as you complete each step.
+
+## Travel directions and magic-square transport (28 October 2026)
+
+Full Predictions adds `data.travelSummary` and `data.magicSquares` for active unlimited members/admins only; other paid callers receive null, and complementary/free responses remain unchanged. Read the Travel summary and magic-square rendering section in mobile-api.md. Use returned grouped scores/guidance, nine row-ordered cells, highlight flags, `ninestar.magic-square-plate`, split/dual data and arrow endpoints. The website orientation is south-up: North points down, East left. Do not recalculate scores or rotate returned endpoints. Dictionary-backed titles/direction labels and parsed tooltip descriptions are included. Existing yearly/monthly direction fields and planner arrays are preserved. No deployment or Windows runtime verification has been performed here.

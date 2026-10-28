@@ -60,7 +60,7 @@ namespace K9.WebApplication.Models
                 {
                     Direction = FiveYelloKilling.Direction == ENineStarKiDirection.Centre
                         ? centreDescription
-                        : FiveYelloKilling.Direction.ToString().ToProperCase(),
+                        : NineStarKiDirection.GetDirectionLabel(FiveYelloKilling.Direction),
                     Direction2 = Dictionary.Somewhere
                 });
             }
@@ -75,7 +75,7 @@ namespace K9.WebApplication.Models
                 {
                     Direction = DarkSwordKilling.Direction == ENineStarKiDirection.Centre
                     ? centreDescription
-                    : DarkSwordKilling.Direction.ToString().ToProperCase(),
+                    : NineStarKiDirection.GetDirectionLabel(DarkSwordKilling.Direction),
                     Direction2 = Dictionary.Somewhere
                 });
             }
@@ -90,7 +90,7 @@ namespace K9.WebApplication.Models
                 {
                     Direction = SelfLifeKilling.Direction == ENineStarKiDirection.Centre
                         ? directionDescription
-                        : SelfLifeKilling.Direction.ToString().ToProperCase(),
+                        : NineStarKiDirection.GetDirectionLabel(SelfLifeKilling.Direction),
                     Direction2 = Dictionary.Somewhere
                 });
             }
@@ -105,7 +105,7 @@ namespace K9.WebApplication.Models
                 {
                     Direction = TargetKilling.Direction == ENineStarKiDirection.Centre
                         ? directionDescription
-                        : TargetKilling.Direction.ToString().ToProperCase(),
+                        : NineStarKiDirection.GetDirectionLabel(TargetKilling.Direction),
                     Direction2 = Dictionary.Somewhere
                 });
             }

@@ -153,7 +153,7 @@ namespace K9.WebApplication.Helpers
             }
         };
 
-        public static object Predictions(NineStarKiModel model, bool birthTimeKnown) => new
+        public static object Predictions(NineStarKiModel model, bool birthTimeKnown, bool includeTravelDetails = false) => new
         {
             Labels = PredictionLabels(),
             Help = MobileHelpMapper.Predictions(),
@@ -161,7 +161,9 @@ namespace K9.WebApplication.Helpers
             Personal = Cycles(model.PersonalHousesOccupiedEnergies),
             Lunar = Cycles(model.PersonalHousesOccupiedLunarEnergies),
             Global = Cycles(model.GlobalCycleEnergies, true), MoonPhase = Moon(model.MoonPhase),
-            YearlyDirections = Directions(model.YearlyDirections), MonthlyDirections = Directions(model.MonthlyDirections)
+            YearlyDirections = Directions(model.YearlyDirections), MonthlyDirections = Directions(model.MonthlyDirections),
+            TravelSummary = MobileTravelMapper.Summary(model, includeTravelDetails),
+            MagicSquares = MobileTravelMapper.MagicSquares(model, includeTravelDetails)
         };
 
         public static object Combined(CombinedPrediction combined) => combined == null ? null : new

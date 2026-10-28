@@ -1,4 +1,5 @@
 ﻿using K9.WebApplication.Helpers;
+using K9.Globalisation;
 using System.Runtime.Serialization;
 using K9.Base.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
@@ -29,7 +30,23 @@ namespace K9.WebApplication.Models
         [IgnoreDataMember]
         public int Score => GetScore();
 
-        public string GetDirectionName() => Direction.GetAttribute<EnumDescriptionAttribute>().Name.ToProperCase();
+        public string GetDirectionName() => GetDirectionLabel(Direction);
+
+        public static string GetDirectionLabel(ENineStarKiDirection direction)
+        {
+            switch (direction)
+            {
+                case ENineStarKiDirection.North: return Dictionary.North;
+                case ENineStarKiDirection.NorthEast: return Dictionary.NorthEast;
+                case ENineStarKiDirection.East: return Dictionary.East;
+                case ENineStarKiDirection.SouthEast: return Dictionary.SouthEast;
+                case ENineStarKiDirection.South: return Dictionary.South;
+                case ENineStarKiDirection.SouthWest: return Dictionary.SouthWest;
+                case ENineStarKiDirection.West: return Dictionary.West;
+                case ENineStarKiDirection.NorthWest: return Dictionary.NorthWest;
+                default: return Dictionary.Centre;
+            }
+        }
 
         public NineStarKiDirection(EUnfavourableDirection unfavourableDirection, string description, NineStarKiEnergy energy)
         {

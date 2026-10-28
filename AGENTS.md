@@ -148,3 +148,11 @@ Read `docs/visual-design.md` before changing artwork. The owner prefers beautifu
 
 
 For Nine Star Ki artwork, preserve energy numerals, organ silhouettes and yin/yang polarity. Render exact trigram bars and relationship arrows with `tools/render-ninestar-diagrams.py` over the gold artwork; do not rely on generated marks for precise diagrams. See `docs/ninestar-artwork-report.md`. The neutral centre has no assigned trigram.
+
+## Encrypted files
+
+If an encrypted file blocks requested work, stop and ask the owner how to proceed. Never create alternate configuration files, duplicate settings, or bypasses to work around encryption. The owner can provide a relevant plaintext excerpt or apply precise edits locally. This applies to encrypted configuration classes as well as settings files.
+
+## Media paths
+
+Read `docs/media-paths.md`. Use existing DefaultValuesConfiguration and ConfigHelper for media settings; UseHostedMedia is disabled explicitly in the existing appsettings.json. Integration build symbols take precedence over DEBUG for media selection. Do not infer deployment environment with Request.IsLocal. Keep static, configuration and email media paths consistent. The mobile artwork catalogue remains request-origin based.

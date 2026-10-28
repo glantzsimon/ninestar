@@ -66,7 +66,7 @@ Validation for this correction uses JavaScript syntax and mocked request/panel c
 | `ArticlesService` | Article/tag hydration, comments/moderation, likes, views and dashboard. Preserve ownership/approval checks; detailed article loading expands related data. |
 | `AIService` | Async report and text merge operations and report prompt construction. These make external requests; do not put them in calendar/date loops or create a second AI client workflow. |
 | `PdfService` | HtmlToPdf/UrlToPdf using the configured wkhtmltopdf process and temporary-file cleanup. Reuse it instead of another process wrapper; it is not a cheap per-row formatting helper. |
-| `MediaService`/`MediaManagementService` | Shared image/video base URLs, periodic hosted-media health/fallback and Storj upload process. Use the shared paths; do not probe media availability per displayed image. Base-controller local upload and Storj upload are separate existing paths. |
+| `MediaService`/`MediaManagementService` | Shared image/video base URLs selected by build environment, optional hosted-media health/fallback and Storj upload process. See `media-paths.md`. Use the shared paths; do not probe media availability per displayed image. Base-controller local upload and Storj upload are separate existing paths. |
 | `RecaptchaService` | Existing contact/registration captcha validation. |
 | `IChingService` | Hexagram generation for the I Ching page/API. |
 | `LogService`/`CookieService` | Existing log retrieval and static cookie-warning preference helpers. |

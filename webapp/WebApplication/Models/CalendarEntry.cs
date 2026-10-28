@@ -9,6 +9,7 @@ namespace K9.WebApplication.Models
         public int MonthHouse { get; set; }
         public int DayHouse { get; set; }
         public int? AfternoonDayHouse { get; set; }
+        public MoonPhase MoonPhase { get; set; }
         public string Summary { get; set; }
         public string Description { get; set; }
     }

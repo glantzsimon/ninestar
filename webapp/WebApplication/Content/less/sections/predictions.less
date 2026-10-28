@@ -741,3 +741,37 @@
         }
     }
 }
+
+/* Month-view energy stays central; the moon is a separate corner detail. */
+.daily-planner-container .calendar-day { position: relative; min-height: 126px; }
+.daily-planner-container .calendar-day .date-label { position: absolute; top: 5px; left: 5px; right: 36px; width: auto; text-align: left !important; }
+.daily-planner-container .calendar-day .calendar-energy-content { position: absolute; top: 50%; left: 0; right: 0; width: 100%; transform: translateY(-50%); margin-top: 3px; }
+.daily-planner-container .calendar-day .calendar-moon-content { position: absolute; top: 5px; right: 5px; width: 30px; }
+.daily-planner-container .calendar-day .calendar-moon-content .moon-phase,
+.daily-planner-container .calendar-day .calendar-moon-content .moon-wrapper { margin: 0; width: 100%; }
+.daily-planner-container .calendar-day .calendar-moon-content .moon-wrapper img { width: 30px !important; max-width: 30px !important; height: 30px; object-fit: contain; padding: 0; margin: 0; }
+@media (max-width: 767px) {
+    .daily-planner-container .calendar-day { min-height: 110px; }
+    .daily-planner-container .calendar-day .date-label { right: 30px; }
+    .daily-planner-container .calendar-day .calendar-moon-content { width: 24px; }
+    .daily-planner-container .calendar-day .calendar-moon-content .moon-wrapper img { width: 24px !important; max-width: 24px !important; height: 24px; }
+}
+
+/* Gold navigation medals retain the existing planner controls and dimensions. */
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a.planner-navigation,
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a.planner-zoom-out {
+    outline: 1px solid #8c5b13;
+    background: linear-gradient(145deg, #fff4b0 0%, #eec566 24%, #b77a24 50%, #f6d981 74%, #d39c3e 100%);
+    box-shadow: inset 0 1px 1px #fff7c9, inset 0 -1px 2px #926018;
+}
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a.planner-navigation:hover,
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a.planner-zoom-out:hover {
+    background: linear-gradient(145deg, #fff9d4, #efc364 45%, #ffe49b 75%, #dba440);
+}
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a.planner-navigation i,
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a.planner-navigation:hover i,
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a.planner-zoom-out i,
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide.level-up div a.planner-zoom-out:hover i {
+    color: #56320a;
+    text-shadow: 0 1px 0 #fff0b0;
+}

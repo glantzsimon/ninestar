@@ -33,7 +33,7 @@ namespace K9.WebApplication.Controllers
         [HttpGet]
         [Route("month")]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult Month(int? year = null, int? month = null)
+        public ActionResult Month(int? year = null, int? month = null, bool includeMoonPhases = false)
         {
 #if DEBUG
             var timer = Stopwatch.StartNew();
@@ -51,7 +51,9 @@ namespace K9.WebApplication.Controllers
             {
                 var today = _calendarService.GetCalendarToday(userId);
                 var start = new DateTime(year ?? today.Year, month ?? today.Month, 1);
-                var entries = _calendarService.GetCalendarEntries(userId, start, start.AddMonths(1), GetClientDisconnectedToken());
+                var entries = includeMoonPhases
+                    ? _calendarService.GetCalendarEntries(userId, start, start.AddMonths(1), GetClientDisconnectedToken(), true)
+                    : _calendarService.GetCalendarEntries(userId, start, start.AddMonths(1), GetClientDisconnectedToken());
 #if DEBUG
                 Debug.WriteLine($"Personal calendar Month: calendar entries returned at {timer.ElapsedMilliseconds} ms.");
 #endif
@@ -79,6 +81,14 @@ namespace K9.WebApplication.Controllers
                             K9.Globalisation.Dictionary.Month + ": " + GetEnergyName(e.MonthHouse),
                             K9.Globalisation.Dictionary.Day + ": " + GetEnergyName(e.DayHouse)
                         }),
+                        Moon = e.MoonPhase == null ? null : new
+                        {
+                            ImageUrl = MediaService.BaseImagesPath + "/astrology/moon-phases/" + e.MoonPhase.GetMoonPhaseImageFile(),
+                            Label = e.MoonPhase.LunarDayTitle + " (" + e.MoonPhase.IlluminationDisplay + ")",
+                            IsNewMoon = e.MoonPhase.IlluminationPercentage < 3.5,
+                            DescriptionHtml = (e.MoonPhase.LunarDayDescription ?? string.Empty) + " " +
+                                (e.MoonPhase.YinYangComfortDescription ?? string.Empty)
+                        },
                         EnergyName = GetEnergyName(e.DayHouse),
                         ImageUrl = MediaService.BaseImagesPath + "/ninestar/energies/" + EnergyImages[e.DayHouse - 1] + ".png"
                     })

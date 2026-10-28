@@ -3,6 +3,8 @@
 @using K9.Globalisation
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
+@using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.PersonalCalendarViewModel
 <link rel="stylesheet" href="@Url.Content("~/Content/controls/personal-calendar.css")" />
 @using (Html.PayWall(ESection.Predictions, Model))
@@ -52,6 +54,9 @@
                 <h4 class="calendar-selected-date"></h4>
                 <p class="calendar-selected-houses"></p>
                 <div class="calendar-selected-description"></div>
+                <div class="personal-calendar-lunar main-content clear-both">
+                    @Html.Panel(Dictionary.LunarCycle, $"{Html.Partial("~/Views/Astrology/_MoonPhaseLarge.cshtml", new MoonPhase(0, true)).ToString()}<div class='calendar-lunar-description'></div>", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                </div>
             </div>
         </div>
         <p class="personal-calendar-status" role="status" aria-live="polite"></p>

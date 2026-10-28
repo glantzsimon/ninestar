@@ -176,7 +176,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             users.Setup(e => e.GetUserPreference(42, SessionConstants.UserCalculationMethod, info.CalculationMethod)).Returns(info.CalculationMethod);
             users.Setup(e => e.GetUserPreference(42, SessionConstants.DefaultCalculatorType, info.CalculatorType)).Returns(info.CalculatorType);
             users.Setup(e => e.GetUserPreference(42, SessionConstants.UserHousesDisplay, info.HousesDisplay)).Returns(info.HousesDisplay);
-            var calendar = new GoogleCalendarService(package.Object, _nineStarKiService, users.Object);
+            var calendar = new GoogleCalendarService(package.Object, _nineStarKiService, users.Object, _astrologyService.Object);
             var start = new DateTime(year, month, 1);
 
             var end = start.AddMonths(numberOfMonths);

@@ -47,6 +47,15 @@
             (entry.Description || '').split(/\r?\n\s*\r?\n/).forEach(function (paragraph) {
                 $('<p>').text(paragraph).appendTo($description);
             });
+            var moon = entry.Moon,
+                $lunar = $calendar.find('.personal-calendar-lunar').toggleClass('has-lunar-data', !!moon);
+            if (moon) {
+                $lunar.find('.moon-wrapper img').attr({ src: moon.ImageUrl, alt: moon.Label });
+                // HTML comes from the existing server-owned lunar Dictionary resources.
+                $lunar.find('.calendar-lunar-description').html(moon.DescriptionHtml || '');
+            } else {
+                $lunar.find('.calendar-lunar-description').empty();
+            }
         }
 
         function finishLoading(version) {
@@ -70,7 +79,12 @@
                     .attr('data-date', entry.Date).attr('aria-label', entry.DateLabel + ' · ' + entry.Houses)
                     .attr('title', entry.EnergyName).toggleClass('is-today', entry.Date === data.Today);
                 $('<span class="calendar-day-date">').text(entry.Day).appendTo($day);
-                $('<img>').attr({ src: entry.ImageUrl, alt: entry.EnergyName }).appendTo($day);
+                $('<img class="calendar-day-energy">').attr({ src: entry.ImageUrl, alt: entry.EnergyName }).appendTo($day);
+                if (entry.Moon) {
+                    $('<img class="calendar-day-moon">').attr({
+                        src: entry.Moon.ImageUrl, alt: entry.Moon.Label, title: entry.Moon.Label
+                    }).toggleClass('new-moon', entry.Moon.IsNewMoon).appendTo($day);
+                }
                 $('<span class="calendar-day-numbers">').text(numbers).appendTo($day);
                 $day.on('click', function (e) {
                     e.preventDefault();
@@ -115,11 +129,13 @@
             $.fn.displaySpinner($content);
             navigationTimer = setTimeout(function () {
                 if (version !== requestVersion) return;
+                var requestData = year ? { year: year, month: month } : {};
+                if ($calendar.hasClass('is-expanded')) requestData.includeMoonPhases = true;
                 request = $.ajax({
                 url: $calendar.attr('data-month-url'),
                 type: 'GET',
                 dataType: 'json',
-                data: year ? { year: year, month: month } : {},
+                data: requestData,
                 timeout: 30000,
                 // This panel manages its own loading and error state.
                 global: false,
@@ -191,6 +207,8 @@
             $calendar.toggleClass('is-expanded', value);
             $('body').toggleClass('personal-calendar-open', value);
             updateExpandButton(value);
+            // Reload through the existing cancellable month request when display mode changes.
+            loadMonth(targetYear, targetMonth);
             if (value) $calendar.find('.calendar-expand').focus();
             else if (previousFocus) previousFocus.focus();
         }

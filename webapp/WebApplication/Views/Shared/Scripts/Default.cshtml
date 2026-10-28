@@ -199,7 +199,12 @@
 
 	        // Create the spinner and overlay elements if they don't exist
 	        if ($this.find('.partialSpinner').length === 0) {
-	            $this.append('<div class="partialSpinner"></div>');
+                var $newSpinner = $('<div class="partialSpinner"></div>');
+                var $spinnerImage = $('#pageSpinner > picture').first().clone();
+                if ($spinnerImage.length) {
+                    $newSpinner.addClass('has-spinner-artwork').append($spinnerImage);
+                }
+                $this.append($newSpinner);
 	        }
             if (showOverlay === true) {
                 if ($this.find('.partialOverlay').length === 0) {

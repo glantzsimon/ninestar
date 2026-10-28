@@ -157,3 +157,22 @@
     transform: rotate(360deg);
   }
 }
+
+#pageSpinner.has-spinner-artwork,
+.partialSpinner.has-spinner-artwork {
+    border: 0;
+    border-radius: 0;
+    -webkit-animation: none;
+    animation: none;
+}
+
+#pageSpinner.has-spinner-artwork picture,
+.partialSpinner.has-spinner-artwork picture,
+#pageSpinner.has-spinner-artwork img,
+.partialSpinner.has-spinner-artwork img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    max-width: none;
+}

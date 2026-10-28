@@ -1264,6 +1264,9 @@
     <Content Include="Images\ninestar\yinyang\yang.png" />
     <Content Include="Images\ninestar\yinyang\yin.png" />
     <Content Include="Images\ninestar\yinyang\yinyang-large.png" />
+    <Content Include="Images\ninestar\magic-square-plate.png" />
+    <Content Include="Images\shared\ajax-spinner-gold.png" />
+    <Content Include="Images\shared\ajax-spinner-gold-animated.webp" />
     <Content Include="Images\shared\ninestar-spinner.png" />
     <Content Include="Images\shared\ninestar-spinner.webp" />
     <Content Include="Images\shared\ninestar-spinner.gif" />
@@ -1463,6 +1466,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Shared\EditorTemplates\Text.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Text.cshtml" />
+    <Content Include="Views\Shared\_AjaxLoadingImage.cshtml" />
     <Content Include="Views\Shared\_LayoutMaster.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />

@@ -312,6 +312,7 @@ ninestar/energies/soil.png
 ninestar/energies/thunder.png
 ninestar/energies/water.png
 ninestar/energies/wind.png
+ninestar/magic-square-plate.png
 ninestar/modalities/dynamic.png
 ninestar/modalities/reflective.png
 ninestar/modalities/stable.png
@@ -367,6 +368,8 @@ numerology/karmic-blueprint.png
 numerology/karmic-evolution.png
 numerology/twelve-month-planner.png
 numerology/twelve-year-planner.png
+shared/ajax-spinner-gold.png
+shared/ajax-spinner-gold-animated.webp
 shared/ninestar-spinner-ex.gif
 shared/ninestar-spinner.gif
 shared/powered-by-stripe-cards-dark.png

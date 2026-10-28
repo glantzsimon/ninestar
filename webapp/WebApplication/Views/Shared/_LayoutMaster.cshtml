@@ -123,7 +123,7 @@
             <img loading="eager" width="114" height="114" class="page-loading-image cropped" alt="@Dictionary.NineStarKiAstrologyFreeCalculator" src="@Url.Content("~/Images/shared/ninestar-spinner.png")" />
         </picture>
     </div>
-    <div id="pageSpinner"></div>
+    <div id="pageSpinner" class="has-spinner-artwork">@Html.Partial("_AjaxLoadingImage")</div>
     <div id="pageOverlay"></div>
 
     @Html.Partial("_SEO", "header")

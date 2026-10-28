@@ -8,6 +8,12 @@ The owner-approved UI medallion is the reference: warm antique gold, burnished c
 
 The built-in image-generation tool creates the sculpted illustration, using the approved Constitution medallion as its explicit style reference. Organ silhouettes and polarity icons also use their old artwork as subject references. The existing approved blank gold medallion supplies the neutral trigram background. Export restores exact original dimensions without flattening alpha. Precise symbols and relationships are composed as vector geometry with `tools/render-ninestar-diagrams.py`, rather than trusting generated text, bars or arrows.
 
+## Large energy numerals
+
+The nine energy medallions now use large central serif numerals in the approved energy colours. The owner-approved visible artwork and rims are retained. Because the previews were flattened, the artwork hidden by each numeral was reconstructed with image generation. Numeral fill masks are then composited numerically as 90% numeral colour plus 10% reconstructed background, rather than generating an imitation pattern inside the glyph. Existing fine bevels and outlines remain for readability. Outside the fill mask, the approved image pixels and exterior alpha are preserved before resizing. Final exports keep the existing 160 × 160 PNG paths and transparent exterior. Core Earth deliberately uses restrained circular embossing.
+
+Validation checks the blend equation, unchanged pixels outside each fill mask, preserved alpha, all nine output dimensions/formats and regenerated catalogue revisions. This change only replaces the nine energy images and their metadata; no page layout or image-loading behaviour changes.
+
 ## Source audit and correction
 
 The old `elements/cycle-five-dark.png` was byte-identical to `transformations/transformation-same-dark.png`: it showed five sibling pairs. The light cycle-of-five file and its owning knowledge-base article, `Globalisation/Elements/en-gb/five-elements.htm`, instead show Earth between Fire and Metal in the supportive cycle. The refresh corrects the dark cycle-of-five image to the same directed cycle as the light image. The old light cycle-of-four graphic also omitted its Fire label; both redrawn variants now contain all five existing Dictionary element labels. Both cycle-of-five files deliberately share their final content with the matching supportive-transformation file.
@@ -56,15 +62,15 @@ All paths below are relative to Images/ninestar. The artwork ID and variant rema
 | `elements/metal.png` | 160 × 160 | `ninestar.elements.metal` | default | An elegant polished metal disc with concentric turned-metal rings, unmistakable metal element, no numbers. |
 | `elements/tree.png` | 160 × 160 | `ninestar.elements.tree` | default | One beautiful rooted tree with a spreading leafy canopy, pure tree element. No numbers. |
 | `elements/water.png` | 160 × 160 | `ninestar.elements.water` | default | A bold sculpted water droplet above concentric ripples, pure water element. No numbers. |
-| `energies/coreearth.png` | 160 × 160 | `ninestar.energies.coreearth` | default | An Earth globe with recognisable continents symbolising the centre, with the single large unmistakable Arabic numeral 5 in dark bronze at lower centre. |
-| `energies/fire.png` | 160 × 160 | `ninestar.energies.fire` | default | A bold upward dancing flame, with the single large unmistakable Arabic numeral 9 in dark bronze at lower centre. |
-| `energies/heaven.png` | 160 × 160 | `ninestar.energies.heaven` | default | A luminous open sky with two restrained sculpted clouds, with the single large unmistakable Arabic numeral 6 in dark bronze at lower centre. |
-| `energies/lake.png` | 160 × 160 | `ninestar.energies.lake` | default | A still lake with a low distant mountain reflected in it, with the single large unmistakable Arabic numeral 7 in dark bronze at lower centre. |
-| `energies/mountain.png` | 160 × 160 | `ninestar.energies.mountain` | default | One strong majestic mountain peak, with the single large unmistakable Arabic numeral 8 in dark bronze at lower centre. |
-| `energies/soil.png` | 160 × 160 | `ninestar.energies.soil` | default | Layered fertile earth and gently furrowed soil, with the single large unmistakable Arabic numeral 2 in dark bronze at lower centre. |
-| `energies/thunder.png` | 160 × 160 | `ninestar.energies.thunder` | default | A bold lightning bolt emerging from a small storm cloud, with the single large unmistakable Arabic numeral 3 in dark bronze at lower centre. |
-| `energies/water.png` | 160 × 160 | `ninestar.energies.water` | default | A sculpted water droplet above flowing ripples, with the single large unmistakable Arabic numeral 1 in dark bronze at lower centre. |
-| `energies/wind.png` | 160 × 160 | `ninestar.energies.wind` | default | Gracefully flowing wind ribbons through a simple leafy branch, with the single large unmistakable Arabic numeral 4 in dark bronze at lower centre. |
+| `energies/coreearth.png` | 160 × 160 | `ninestar.energies.coreearth` | default | Bright yellow 5 over minimal concentric core circles and globe arcs. |
+| `energies/fire.png` | 160 × 160 | `ninestar.energies.fire` | default | Purple 9 over curling golden flames. |
+| `energies/heaven.png` | 160 × 160 | `ninestar.energies.heaven` | default | White 6 over celestial clouds, stars and rays. |
+| `energies/lake.png` | 160 × 160 | `ninestar.energies.lake` | default | Red 7 over calm lake ripples and reflections. |
+| `energies/mountain.png` | 160 × 160 | `ninestar.energies.mountain` | default | White 8 over golden mountain ridges. |
+| `energies/soil.png` | 160 × 160 | `ninestar.energies.soil` | default | Black 2 over fertile soil strata and furrows. |
+| `energies/thunder.png` | 160 × 160 | `ninestar.energies.thunder` | default | Bright green 3 over lightning and storm scrolls. |
+| `energies/water.png` | 160 × 160 | `ninestar.energies.water` | default | White 1 over flowing water and ripple patterns, without a central droplet. |
+| `energies/wind.png` | 160 × 160 | `ninestar.energies.wind` | default | Deep green 4 over wind ribbons and swept leaves. |
 | `modalities/dynamic.png` | 160 × 160 | `ninestar.modalities.dynamic` | default | A bold energetic burst of sculpted sparks and rays, dynamic outward movement. No numbers. |
 | `modalities/reflective.png` | 160 × 160 | `ninestar.modalities.reflective` | default | A still lake reflecting a mountain beneath a quiet crescent, inward reflective calm. No numbers. |
 | `modalities/stable.png` | 160 × 160 | `ninestar.modalities.stable` | default | Shared with the redesigned Earth element: grounded mountain/earth. |

@@ -60,3 +60,7 @@ body.personal-calendar-open { overflow: hidden; }
 #personal-calendar.is-expanded .personal-calendar-day img.calendar-day-moon { display: block; top: 5px; right: 5px; left: auto; width: 28%; min-width: 20px; max-width: 30px; max-height: 30px; height: auto; margin: 0; transform: none; }
 #personal-calendar.is-expanded .personal-calendar-lunar.has-lunar-data { display: block; margin-top: 20px; }
 #personal-calendar .personal-calendar-lunar .moon-wrapper.large img { width: 140px; max-width: 100%; height: auto; }
+
+/* Request state wins over any queued spinner fade or cached display value. */
+#personal-calendar[aria-busy="false"] .personal-calendar-content > .partialSpinner,
+#personal-calendar[aria-busy="false"] .personal-calendar-content > .partialOverlay { display: none !important; }

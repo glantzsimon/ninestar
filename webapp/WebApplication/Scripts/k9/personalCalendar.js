@@ -62,11 +62,20 @@
             if (version !== requestVersion) return;
             $calendar.attr('aria-busy', 'false');
             $.fn.hideSpinner($content);
+            // This calendar owns these direct children. Finish synchronously so a
+            // queued fade or mode switch cannot leave the loading artwork visible.
+            $content.children('.partialSpinner, .partialOverlay').stop(true, true).hide();
         }
 
         function renderMonth(data) {
             if (!data || !Array.isArray(data.Entries) || !data.Year || !data.Month)
                 throw new Error('Invalid personal calendar month response.');
+
+            if ($calendar.hasClass('is-expanded') && data.Entries.length &&
+                data.Entries.every(function (entry) { return !entry.Moon; }) &&
+                window.console && window.console.warn) {
+                window.console.warn('Expanded calendar response contains no moon data. Rebuild and restart the website after updating the calendar C# files.');
+            }
 
             // Prepare the new cells before replacing the visible month.
             var $cells = $(document.createDocumentFragment());

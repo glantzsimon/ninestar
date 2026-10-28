@@ -1305,13 +1305,14 @@ Full Predictions endpoints (`POST /api/mobile/v1/predictions/calculate`, `GET /a
 
 The website permits complementary results in its unlimited-style panels, but mobile complementary/free responses currently expose only the existing year readings. Those responses remain unchanged: neither `/readings/predictions` nor `/readings/predictions/me/free` receives these details. Existing `yearlyDirections`, `monthlyDirections`, cycles and planner `magicSquareNumbers` are unchanged. No new endpoint, access grant or purchase flow is introduced.
 
-`data.travelSummary` reuses `NineStarKiModel.GetDrectionsChartViewModel().GetDirectionsChartData()` including its Year/Month/Day/Hour weights (5/3/2/1), centre-house penalties, descending score grouping and guidance thresholds. Generation/Epoch do not contribute. Fields:
+`data.travelSummary` reuses `NineStarKiModel.GetDrectionsChartViewModel().GetDirectionsChartData()` including its Year/Month/Day weights (5/3/2), centre-house penalties, descending score grouping and guidance thresholds. Hour, Generation and Epoch do not contribute. This is the shared website/API summary rule; hourly square arrows remain separate. Fields:
 
 | Field | Source / meaning |
 | --- | --- |
 | `title` | `Dictionary.WorstDirectionsToTravelIn` (Directions of Travel Summary) |
 | `instructions` | `Dictionary.DirectionsInstructions` |
 | `labels.direction`, `.score`, `.guidance` | `Dictionary.Direction`, `Score`, `Guidance` |
+| `periods` | `["year", "month", "day"]`, the stable identifiers included in scoring |
 | `rows[]` | Website score groups, descending score; direction order retained |
 | `rows[].score` | Existing summed score, not a percentage |
 | `rows[].severity`, `.color` | Website status class and matching hex colour |
@@ -1362,3 +1363,36 @@ Example direction/arrow excerpt inside a personal square:
 ```
 
 The excerpt omits `description` for brevity; render the server-supplied text. Native rendering may follow the app's typography/spacing while using the supplied plate, numbers, highlight flags, colours and endpoints. Showing/hiding arrows is a client presentation preference and does not change server access checks. These changes are additive; Windows build/xUnit and authenticated Integration verification remain outstanding. A repository push is not a deployment.
+
+
+### Predictions display and Directionology controls
+
+`GET /api/mobile/v1/metadata/options` additively exposes `data.energyDisplays` using the existing `EEnergyDisplay` enum, plus `data.predictionControls`. Full and free Predictions responses expose the identical control labels under `data.labels.controls` and options under `data.labels.displayOptions` through the shared mapper. Metadata contains no readings or entitlement grants.
+
+| Control field | Dictionary resource | English value |
+| --- | --- | --- |
+| `display` | `EnergyDisplayLabel` | Display |
+| `advancedOptions` | `AdvancedOptions` (new) | Advanced Options |
+| `directionology` | `Directionology` | Directionology |
+| `showDirections` | `ShowDirectionsLabel` | Show Directions |
+
+Options are `{value, number, label}` using the existing metadata convention:
+
+```json
+{
+  "energyDisplays": [
+    { "value": "Graphical", "number": 0, "label": "Graphical Display" },
+    { "value": "MagicSquare", "number": 1, "label": "Magic Square" }
+  ],
+  "predictionControls": {
+    "display": "Display",
+    "advancedOptions": "Advanced Options",
+    "directionology": "Directionology",
+    "showDirections": "Show Directions"
+  }
+}
+```
+
+Labels for the options resolve `Dictionary.Graphical` and `Dictionary.MagicSquare` through the existing enum metadata helper. These are display choices, not `CalculatorType` values or new calculation request properties. The native app can switch presentation locally using the already-returned energies/squares. Displaying these labels on a free response does not grant magic-square or travel-summary access. Unlimited/admin gates and free reading content remain unchanged.
+
+The travel summary now includes Year, Month and Day only, with existing 5/3/2 weights, centre penalties and guidance/severity thresholds preserved. Changes to Hour cannot change summary scores or guidance. The hourly square, arrows and independent direction scores remain available under their existing access rules. Build/xUnit and authenticated Integration checks remain outstanding here; a push does not establish deployment.

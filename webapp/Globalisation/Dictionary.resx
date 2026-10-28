@@ -14216,4 +14216,7 @@
   <data name="TravelOkay" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="AdvancedOptions" xml:space="preserve">
+    <value>Advanced Options</value>
+  </data>
 </root>

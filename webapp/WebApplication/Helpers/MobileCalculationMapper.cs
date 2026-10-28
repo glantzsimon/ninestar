@@ -110,8 +110,18 @@ namespace K9.WebApplication.Helpers
             }).ToArray()
         };
 
+        public static object PredictionControls() => new
+        {
+            Display = K9.Globalisation.Dictionary.EnergyDisplayLabel,
+            AdvancedOptions = K9.Globalisation.Dictionary.AdvancedOptions,
+            Directionology = K9.Globalisation.Dictionary.Directionology,
+            ShowDirections = K9.Globalisation.Dictionary.ShowDirectionsLabel
+        };
+
         public static object PredictionLabels() => new
         {
+            Controls = PredictionControls(),
+            DisplayOptions = MobileMetadataHelper.EnumOptions(typeof(EEnergyDisplay)),
             YourPredictions = K9.Globalisation.Dictionary.YourPredictions,
             HousesYouCurrentlyOccupy = K9.Globalisation.Dictionary.HousesYouCurrentlyOccupy,
             Periods = new

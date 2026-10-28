@@ -24,6 +24,8 @@ namespace K9.WebApplication.Controllers
             CalculationMethods = MobileMetadataHelper.EnumOptions(typeof(ECalculationMethod)),
             CalculatorTypes = MobileMetadataHelper.EnumOptions(typeof(ECalculatorType)),
             HouseDisplays = MobileMetadataHelper.EnumOptions(typeof(EHousesDisplay)),
+            EnergyDisplays = MobileMetadataHelper.EnumOptions(typeof(EEnergyDisplay)),
+            PredictionControls = MobileCalculationMapper.PredictionControls(),
             Genders = MobileMetadataHelper.EnumOptions(typeof(EGender)),
             PlannerViews = MobileMetadataHelper.EnumOptions(typeof(EPlannerView)),
             Scopes = MobileMetadataHelper.EnumOptions(typeof(EScopeDisplay)),

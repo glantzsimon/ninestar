@@ -148,3 +148,8 @@ Read this handover and the referenced backend documentation in D:\Workspace\nine
 ## Travel directions and magic-square transport (28 October 2026)
 
 Full Predictions adds `data.travelSummary` and `data.magicSquares` for active unlimited members/admins only; other paid callers receive null, and complementary/free responses remain unchanged. Read the Travel summary and magic-square rendering section in mobile-api.md. Use returned grouped scores/guidance, nine row-ordered cells, highlight flags, `ninestar.magic-square-plate`, split/dual data and arrow endpoints. The website orientation is south-up: North points down, East left. Do not recalculate scores or rotate returned endpoints. Dictionary-backed titles/direction labels and parsed tooltip descriptions are included. Existing yearly/monthly direction fields and planner arrays are preserved. No deployment or Windows runtime verification has been performed here.
+
+
+### Travel scoring and display controls revision
+
+The shared website/API travel summary now uses Year/Month/Day only (5/3/2); Hour no longer contributes. Hourly squares/arrows remain separate. `travelSummary.periods` documents the included identifiers. Metadata options adds `energyDisplays` and `predictionControls`; full/free Predictions adds the same options as `labels.displayOptions` and labels as `labels.controls`. Use Dictionary-backed Graphical Display, Magic Square, Display, Show Directions, Directionology and the new AdvancedOptions resource. Display choices do not alter calculation settings or access. See mobile-api.md for exact mappings and example. Not deployed or Windows-tested here.

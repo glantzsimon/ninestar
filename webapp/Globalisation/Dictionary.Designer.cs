@@ -41656,5 +41656,9 @@ namespace K9.Globalisation {
             get { return ResourceManager.GetString("TravelOkay", resourceCulture); }
         }
 
+        public static string AdvancedOptions {
+            get { return ResourceManager.GetString("AdvancedOptions", resourceCulture); }
+        }
+
     }
 }

@@ -120,6 +120,49 @@ namespace K9.WebApplication.Tests.Unit.Helpers
             }
         }
 
+        [Fact]
+        public void HourChangesDoNotAffectTheSharedTravelSummary()
+        {
+            var first = JObject.FromObject(MobileTravelMapper.Summary(CreateModel(1), true));
+            var second = JObject.FromObject(MobileTravelMapper.Summary(CreateModel(5), true));
+            Assert.True(JToken.DeepEquals(first, second));
+            Assert.Equal(new[] { "year", "month", "day" }, first["Periods"].Values<string>().ToArray());
+            // Hour still has its own separate square and arrows.
+            var square = JObject.FromObject(MobileTravelMapper.MagicSquares(CreateModel(1), true));
+            Assert.NotNull(square["Personal"]["Hour"]["Arrows"]);
+        }
+
+        [Fact]
+        public void PredictionDisplayControlsReuseDictionaryAndEnumValues()
+        {
+            var labels = JObject.FromObject(MobileCalculationMapper.PredictionLabels());
+            Assert.Equal(Dictionary.AdvancedOptions, (string)labels["Controls"]["AdvancedOptions"]);
+            Assert.Equal(Dictionary.Directionology, (string)labels["Controls"]["Directionology"]);
+            Assert.Equal(Dictionary.EnergyDisplayLabel, (string)labels["Controls"]["Display"]);
+            Assert.Equal(Dictionary.ShowDirectionsLabel, (string)labels["Controls"]["ShowDirections"]);
+            Assert.Equal(new[] { "Graphical", "MagicSquare" }, labels["DisplayOptions"].Select(option => (string)option["Value"]).ToArray());
+            Assert.Equal(new[] { Dictionary.Graphical, Dictionary.MagicSquare }, labels["DisplayOptions"].Select(option => (string)option["Label"]).ToArray());
+        }
+
+        private static NineStarKiModel CreateModel(int hour)
+        {
+            var model = (NineStarKiModel)System.Runtime.Serialization.FormatterServices.GetUninitializedObject(typeof(NineStarKiModel));
+            foreach (var property in new[] { "GlobalCycleEnergies", "PersonalHousesOccupiedEnergies", "PersonalHousesOccupiedLunarEnergies", "PersonalChartEnergies" })
+            {
+                var energies = new NineStarKiEnergiesModel
+                {
+                    Epoch = new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyCycleType.EpochEnergy),
+                    Generation = new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyCycleType.GenerationalEnergy),
+                    Year = new NineStarKiEnergy(ENineStarKiEnergy.Soil, ENineStarKiEnergyCycleType.YearlyCycleEnergy),
+                    Month = new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyCycleType.MonthlyCycleEnergy),
+                    Day = new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyCycleType.DailyEnergy),
+                    Hour = new NineStarKiEnergy((ENineStarKiEnergy)hour, ENineStarKiEnergyCycleType.HourlyEnergy)
+                };
+                typeof(NineStarKiModel).GetProperty(property).SetValue(model, energies);
+            }
+            return model;
+        }
+
         private static MagicSquareViewModel CreateSquare(int global, int personal) => new MagicSquareViewModel
         {
             GlobalKi = new NineStarKiEnergy((ENineStarKiEnergy)global, ENineStarKiEnergyCycleType.YearlyCycleEnergy),

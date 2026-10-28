@@ -31,6 +31,7 @@ namespace K9.WebApplication.Helpers
             if (!allowed) return null;
             return new
             {
+                Periods = new[] { "year", "month", "day" },
                 Title = Dictionary.WorstDirectionsToTravelIn,
                 Instructions = Dictionary.DirectionsInstructions,
                 Labels = new { Direction = Dictionary.Direction, Score = Dictionary.Score, Guidance = Dictionary.Guidance },

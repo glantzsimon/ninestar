@@ -9,3 +9,5 @@ The browser selects animated shared/ajax-spinner-gold-animated.webp through the 
 Only artwork presentation changes. Submit validation, payment handlers, AJAX lifecycle, request data and loading container ownership are unchanged. LESS and compiled CSS receive identical flat presentation rules. Windows/IIS visual verification remains a local check.
 
 The gold animation rotates about the measured geometric centre of its ring, with a fixed canvas/pivot for every frame. Rotation is performed only inside the WebP, never again on its HTML container. After updating local DEBUG assets, hard-refresh the page to discard cached spinner CSS.
+
+The gold loader now completes two anticlockwise turns per 1.8-second loop. Its angular speed varies smoothly, peaking after the first turn and returning to its starting speed at the second; the fixed geometric pivot is retained. Small alpha-blended gold sparks emit and fade close to the rim within the existing 160px canvas. The GIF fallback and reduced-motion still are unchanged; only the WebP frames animate.

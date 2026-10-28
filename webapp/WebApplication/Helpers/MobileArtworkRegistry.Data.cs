@@ -375,7 +375,7 @@ namespace K9.WebApplication.Helpers
             new ArtworkSource("numerology.twelve-month-planner", "numerology", "default", "numerology/twelve-month-planner.png", "615983601bbe5d95d77e84a407866ee4fec6737028cf7e683210a81e732a49f1", "image/png", 222, 222),
             new ArtworkSource("numerology.twelve-year-planner", "numerology", "default", "numerology/twelve-year-planner.png", "83a22bdc210a393b0650ad97e72fdad9d67e3a6f81194076ead0b5f870ef0858", "image/png", 222, 222),
             new ArtworkSource("shared.ajax-spinner-gold", "shared", "default", "shared/ajax-spinner-gold.png", "c1af5a31cfb189eef247d6898c3d65615f968446873e9b8ff44d565774b84784", "image/png", 256, 256),
-            new ArtworkSource("shared.ajax-spinner-gold-animated", "shared", "default", "shared/ajax-spinner-gold-animated.webp", "91cfb868fe344894cbfae9c6cd957e31c957d37c6db18ac3de5072d701ebda3e", "image/webp", 160, 160),
+            new ArtworkSource("shared.ajax-spinner-gold-animated", "shared", "default", "shared/ajax-spinner-gold-animated.webp", "dad14e0da4fc6b659ebc151d94eea43933d4b326d727c1e140fc95d582ce9208", "image/webp", 160, 160),
             new ArtworkSource("shared.ninestar-spinner-ex-animated", "shared", "default", "shared/ninestar-spinner-ex.gif", "3d647ed888df643b3ad0b01dd72ddb90b766d85014f7e12e6984ef19d28ca8e1", "image/gif", 342, 342),
             new ArtworkSource("shared.ninestar-spinner-animated", "shared", "default", "shared/ninestar-spinner.gif", "d73cf96f374ce93170277ab7b1b284aaa88da869aedab03eceda72b186fd4935", "image/gif", 114, 114),
             new ArtworkSource("shared.powered-by-stripe-cards", "shared", "dark", "shared/powered-by-stripe-cards-dark.png", "e41b9b4e3f3b8191669118cf12578b31ffd99ee7d5f5b8b48fe16b6acd1f4954", "image/png", 889, 113),

@@ -98,18 +98,18 @@
   margin: 20px;
 }
 .hexagram-container .hexagram-hex-container {
-  width: 167px;
-  height: 167px;
+  width: 163px;
+  height: 163px;
   margin: 20px auto;
   padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 9px;
+  gap: 8.2px;
   background: url("../../Images/ninestar/magic-square-plate.png") center / 100% 100% no-repeat;
 }
 .hexagram-container .hexagram-hex-container .hex-line {
-  width: 124px;
+  width: 120px;
   height: 10px;
   margin: 0 auto;
   flex-shrink: 0;
@@ -123,9 +123,9 @@
 }
 .hexagram-container .hexagram-hex-container .hex-line.yin {
   background: linear-gradient(to right,
-    var(--hexagram-line-color) 0, var(--hexagram-line-color) 52px,
-    transparent 52px, transparent 72px,
-    var(--hexagram-line-color) 72px, var(--hexagram-line-color) 100%);
+    var(--hexagram-line-color) 0, var(--hexagram-line-color) 50px,
+    transparent 50px, transparent 70px,
+    var(--hexagram-line-color) 70px, var(--hexagram-line-color) 100%);
 }
 .hexagram-container .hexagram-title {
   margin-top: 14px;

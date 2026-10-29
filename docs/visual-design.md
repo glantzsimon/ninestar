@@ -51,3 +51,5 @@ The HTML magic square uses the existing Cormorant Infant serif font in bold lini
 I Ching calculator artwork uses a gold octagonal medallion with the exact original eight trigram shapes composited separately. Live hexagrams reuse the square gold plate; render their six bars and changing-line colours in HTML/CSS, with genuinely transparent broken-line gaps. See docs/iching-artwork.md.
 
 The explicitly approved `Images/about/light-dark.png` refresh preserves the day/night Earth composition: champagne-gold daylight on the left, deep bronze night with gold city lights on the right. It remains a 472 × 472 PNG with transparent exterior. Built-in image generation uses the original as its reference; the subject brief is a front-facing gold relief globe, vertical central terminator, no labels or exterior shadow.
+
+Do not enlarge artwork display dimensions to create spacing: the owner requires spacing adjustments within the live HTML content instead, preserving image sharpness.

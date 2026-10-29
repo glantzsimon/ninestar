@@ -98,10 +98,10 @@
   margin: 20px;
 }
 .hexagram-container .hexagram-hex-container {
-  width: 163px;
-  height: 163px;
+  width: 167px;
+  height: 167px;
   margin: 20px auto;
-  padding: 16px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -414,6 +414,7 @@
     <Compile Include="Helpers\MobileArtworkRegistry.Data.cs" />
     <Compile Include="ViewModels\MobileApi\MobileArtworkResponse.cs" />
     <Compile Include="Helpers\MobileMetadataHelper.cs" />
+    <Compile Include="Helpers\MobileUiLabels.cs" />
     <Compile Include="Controllers\MobileAdminArticlesController.cs" />
     <Compile Include="Controllers\MobileAdminMailController.cs" />
     <Compile Include="Controllers\MobileAdminOperationsController.cs" />

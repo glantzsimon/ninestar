@@ -495,6 +495,7 @@ namespace K9.WebApplication.Helpers
             var info = hexagram.GetHexagramInfo();
             return new
             {
+                Heading = string.Format(System.Globalization.CultureInfo.CurrentCulture, K9.Globalisation.Dictionary.HexagramHeadingFormat, hexagram.Number, hexagram.Name),
                 hexagram.Number, hexagram.Name, Lines = hexagram.Lines.Select(e => e.ToString()).ToArray(),
                 Info = info == null ? null : new { info.Stage, info.Name, info.Title, info.Summary, info.Details, info.ChangingLinesInterpretation }
             };

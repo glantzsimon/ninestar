@@ -153,3 +153,8 @@ Full Predictions adds `data.travelSummary` and `data.magicSquares` for active un
 ### Travel scoring and display controls revision
 
 The shared website/API travel summary now uses Year/Month/Day only (5/3/2); Hour no longer contributes. Hourly squares/arrows remain separate. `travelSummary.periods` documents the included identifiers. Metadata options adds `energyDisplays` and `predictionControls`; full/free Predictions adds the same options as `labels.displayOptions` and labels as `labels.controls`. Use Dictionary-backed Graphical Display, Magic Square, Display, Show Directions, Directionology and the new AdvancedOptions resource. Display choices do not alter calculation settings or access. See mobile-api.md for exact mappings and example. Not deployed or Windows-tested here.
+
+
+## Central UI labels (29 October 2026)
+
+`GET /api/mobile/v1/metadata/labels` is the public bootstrap label catalogue, grouped into shared controls/calculator, navigation and named screens. Read docs/mobile-ui-labels.md for all fixed mappings and all 173 destinations from mobile ui-copy.ts. Sources were read from ninestar-mobile, including calculator-labels-handover.md, ui-label-audit.md and iching-api-handover.md. Do not edit native code in this backend task. Use exact server casing; keep help/reading headings separate. Display Data For choices reuse Now/SelectedDate and preserve null-versus-local-timestamp semantics; Current Time Zone and its requested helper are Dictionary-backed. account/me adds membership.displayName; cast hexagrams add heading. Existing labels and access rules remain compatible. No deployment or Windows runtime validation performed here.

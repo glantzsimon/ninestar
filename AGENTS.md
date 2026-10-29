@@ -156,3 +156,7 @@ If an encrypted file blocks requested work, stop and ask the owner how to procee
 ## Media paths
 
 Read `docs/media-paths.md`. Use existing DefaultValuesConfiguration and ConfigHelper for media settings; UseHostedMedia is disabled explicitly in the existing appsettings.json. Integration build symbols take precedence over DEBUG for media selection. Do not infer deployment environment with Request.IsLocal. Keep static, configuration and email media paths consistent. The mobile artwork catalogue remains request-origin based.
+
+## Mobile UI labels
+
+Public UI text is explicitly registered in Helpers/MobileUiLabels.cs and documented in docs/mobile-ui-labels.md. Add new interface labels/messages there using strongly typed Dictionary resources; never export the whole resource manager, which also holds paid content. Keep shared calculator fields, screen navigation, About help and personalised reading headings distinct. Preserve website casing and protocol/display separation. Offline native bootstrap wording must come from the same approved Dictionary values.

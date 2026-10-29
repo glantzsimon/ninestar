@@ -41660,5 +41660,465 @@ namespace K9.Globalisation {
             get { return ResourceManager.GetString("AdvancedOptions", resourceCulture); }
         }
 
+        public static string BirthDetails {
+            get { return ResourceManager.GetString("BirthDetails", resourceCulture); }
+        }
+
+        public static string AdvancedCalculationPreferences {
+            get { return ResourceManager.GetString("AdvancedCalculationPreferences", resourceCulture); }
+        }
+
+        public static string CurrentTimeZone {
+            get { return ResourceManager.GetString("CurrentTimeZone", resourceCulture); }
+        }
+
+        public static string CurrentTimeZoneHelp {
+            get { return ResourceManager.GetString("CurrentTimeZoneHelp", resourceCulture); }
+        }
+
+        public static string EditCalculation {
+            get { return ResourceManager.GetString("EditCalculation", resourceCulture); }
+        }
+
+        public static string YourChart {
+            get { return ResourceManager.GetString("YourChart", resourceCulture); }
+        }
+
+        public static string YourPersonalChart {
+            get { return ResourceManager.GetString("YourPersonalChart", resourceCulture); }
+        }
+
+        public static string YourCalendar {
+            get { return ResourceManager.GetString("YourCalendar", resourceCulture); }
+        }
+
+        public static string PredictionsCalculator {
+            get { return ResourceManager.GetString("PredictionsCalculator", resourceCulture); }
+        }
+
+        public static string HexagramHeadingFormat {
+            get { return ResourceManager.GetString("HexagramHeadingFormat", resourceCulture); }
+        }
+
+        public static string MobileUiKnowledgeBack {
+            get { return ResourceManager.GetString("MobileUiKnowledgeBack", resourceCulture); }
+        }
+
+        public static string MobileUiKnowledgeLoading {
+            get { return ResourceManager.GetString("MobileUiKnowledgeLoading", resourceCulture); }
+        }
+
+        public static string MobileUiKnowledgeUnavailable {
+            get { return ResourceManager.GetString("MobileUiKnowledgeUnavailable", resourceCulture); }
+        }
+
+        public static string MobileUiExternalLinkError {
+            get { return ResourceManager.GetString("MobileUiExternalLinkError", resourceCulture); }
+        }
+
+        public static string MobileUiIchingUnavailable {
+            get { return ResourceManager.GetString("MobileUiIchingUnavailable", resourceCulture); }
+        }
+
+        public static string MobileUiFeedbackErrorTitle {
+            get { return ResourceManager.GetString("MobileUiFeedbackErrorTitle", resourceCulture); }
+        }
+
+        public static string MobileUiFeedbackPreviewError {
+            get { return ResourceManager.GetString("MobileUiFeedbackPreviewError", resourceCulture); }
+        }
+
+        public static string MobileUiDateTimeChooseDate {
+            get { return ResourceManager.GetString("MobileUiDateTimeChooseDate", resourceCulture); }
+        }
+
+        public static string MobileUiDateTimeChooseTime {
+            get { return ResourceManager.GetString("MobileUiDateTimeChooseTime", resourceCulture); }
+        }
+
+        public static string MobileUiDateTimeDone {
+            get { return ResourceManager.GetString("MobileUiDateTimeDone", resourceCulture); }
+        }
+
+        public static string MobileUiDateTimeClear {
+            get { return ResourceManager.GetString("MobileUiDateTimeClear", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationFirstName {
+            get { return ResourceManager.GetString("MobileUiAccountValidationFirstName", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationLastName {
+            get { return ResourceManager.GetString("MobileUiAccountValidationLastName", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationFullName {
+            get { return ResourceManager.GetString("MobileUiAccountValidationFullName", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationEmailAddress {
+            get { return ResourceManager.GetString("MobileUiAccountValidationEmailAddress", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationPhoneNumber {
+            get { return ResourceManager.GetString("MobileUiAccountValidationPhoneNumber", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationDateFormat {
+            get { return ResourceManager.GetString("MobileUiAccountValidationDateFormat", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationDateRange {
+            get { return ResourceManager.GetString("MobileUiAccountValidationDateRange", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationTimeKnown {
+            get { return ResourceManager.GetString("MobileUiAccountValidationTimeKnown", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationTime {
+            get { return ResourceManager.GetString("MobileUiAccountValidationTime", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationGender {
+            get { return ResourceManager.GetString("MobileUiAccountValidationGender", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationBirthTimeZoneId {
+            get { return ResourceManager.GetString("MobileUiAccountValidationBirthTimeZoneId", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationUserTimeZoneId {
+            get { return ResourceManager.GetString("MobileUiAccountValidationUserTimeZoneId", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationCalculationMethod {
+            get { return ResourceManager.GetString("MobileUiAccountValidationCalculationMethod", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationHousesDisplay {
+            get { return ResourceManager.GetString("MobileUiAccountValidationHousesDisplay", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationSupportedMode {
+            get { return ResourceManager.GetString("MobileUiAccountValidationSupportedMode", resourceCulture); }
+        }
+
+        public static string MobileUiAccountValidationHemisphere {
+            get { return ResourceManager.GetString("MobileUiAccountValidationHemisphere", resourceCulture); }
+        }
+
+        public static string MobileUiMyChartBack {
+            get { return ResourceManager.GetString("MobileUiMyChartBack", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarTitle {
+            get { return ResourceManager.GetString("MobileUiCalendarTitle", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarLoading {
+            get { return ResourceManager.GetString("MobileUiCalendarLoading", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarPrevious {
+            get { return ResourceManager.GetString("MobileUiCalendarPrevious", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarNext {
+            get { return ResourceManager.GetString("MobileUiCalendarNext", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarExpand {
+            get { return ResourceManager.GetString("MobileUiCalendarExpand", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarCopy {
+            get { return ResourceManager.GetString("MobileUiCalendarCopy", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarLink {
+            get { return ResourceManager.GetString("MobileUiCalendarLink", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarCopied {
+            get { return ResourceManager.GetString("MobileUiCalendarCopied", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarCopyFailed {
+            get { return ResourceManager.GetString("MobileUiCalendarCopyFailed", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarDisable {
+            get { return ResourceManager.GetString("MobileUiCalendarDisable", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarDisabled {
+            get { return ResourceManager.GetString("MobileUiCalendarDisabled", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarRetry {
+            get { return ResourceManager.GetString("MobileUiCalendarRetry", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarRevokeTitle {
+            get { return ResourceManager.GetString("MobileUiCalendarRevokeTitle", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarRevokePrompt {
+            get { return ResourceManager.GetString("MobileUiCalendarRevokePrompt", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarAccount {
+            get { return ResourceManager.GetString("MobileUiCalendarAccount", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarSignIn {
+            get { return ResourceManager.GetString("MobileUiCalendarSignIn", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarSignInRequired {
+            get { return ResourceManager.GetString("MobileUiCalendarSignInRequired", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarMobileOnly {
+            get { return ResourceManager.GetString("MobileUiCalendarMobileOnly", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarUnavailable {
+            get { return ResourceManager.GetString("MobileUiCalendarUnavailable", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarMembershipRequired {
+            get { return ResourceManager.GetString("MobileUiCalendarMembershipRequired", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarCalendarDetailsRequired {
+            get { return ResourceManager.GetString("MobileUiCalendarCalendarDetailsRequired", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarRequestTimeout {
+            get { return ResourceManager.GetString("MobileUiCalendarRequestTimeout", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarNetworkError {
+            get { return ResourceManager.GetString("MobileUiCalendarNetworkError", resourceCulture); }
+        }
+
+        public static string MobileUiCalendarSubscriptionUnavailable {
+            get { return ResourceManager.GetString("MobileUiCalendarSubscriptionUnavailable", resourceCulture); }
+        }
+
+        public static string MobileUiLoadingPersonalChart {
+            get { return ResourceManager.GetString("MobileUiLoadingPersonalChart", resourceCulture); }
+        }
+
+        public static string MobileUiPredictionsAdditionalUnavailable {
+            get { return ResourceManager.GetString("MobileUiPredictionsAdditionalUnavailable", resourceCulture); }
+        }
+
+        public static string MobileUiPredictionsLoading {
+            get { return ResourceManager.GetString("MobileUiPredictionsLoading", resourceCulture); }
+        }
+
+        public static string MobileUiPredictionsSignInRequired {
+            get { return ResourceManager.GetString("MobileUiPredictionsSignInRequired", resourceCulture); }
+        }
+
+        public static string MobileUiPredictionsUnavailable {
+            get { return ResourceManager.GetString("MobileUiPredictionsUnavailable", resourceCulture); }
+        }
+
+        public static string MobileUiPredictionsBirthDetailsRequired {
+            get { return ResourceManager.GetString("MobileUiPredictionsBirthDetailsRequired", resourceCulture); }
+        }
+
+        public static string MobileUiPredictionsInvalidCalculationSettings {
+            get { return ResourceManager.GetString("MobileUiPredictionsInvalidCalculationSettings", resourceCulture); }
+        }
+
+        public static string MobileUiPredictionsMobileOnly {
+            get { return ResourceManager.GetString("MobileUiPredictionsMobileOnly", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorMissingPreferences {
+            get { return ResourceManager.GetString("MobileUiCalculatorMissingPreferences", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorBack {
+            get { return ResourceManager.GetString("MobileUiCalculatorBack", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorLoading {
+            get { return ResourceManager.GetString("MobileUiCalculatorLoading", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorSignInRequired {
+            get { return ResourceManager.GetString("MobileUiCalculatorSignInRequired", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorMobileOnly {
+            get { return ResourceManager.GetString("MobileUiCalculatorMobileOnly", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsInvalidName {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsInvalidName", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsInvalidDate {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsInvalidDate", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsInvalidTime {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsInvalidTime", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsInvalidTimeKnown {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsInvalidTimeKnown", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsInvalidPreferences {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsInvalidPreferences", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsInvalidSelectedDate {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsInvalidSelectedDate", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsMembershipRequired {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsMembershipRequired", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsAuthenticationRequired {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsAuthenticationRequired", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsInvalidCsrfToken {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsInvalidCsrfToken", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsInvalidCalculationRequest {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsInvalidCalculationRequest", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsRequestTimeout {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsRequestTimeout", resourceCulture); }
+        }
+
+        public static string MobileUiCalculatorErrorsUnavailable {
+            get { return ResourceManager.GetString("MobileUiCalculatorErrorsUnavailable", resourceCulture); }
+        }
+
+        public static string MobileUiPredictionCalculatorSignInRequired {
+            get { return ResourceManager.GetString("MobileUiPredictionCalculatorSignInRequired", resourceCulture); }
+        }
+
+        public static string MobileUiPredictionCalculatorMembershipRequired {
+            get { return ResourceManager.GetString("MobileUiPredictionCalculatorMembershipRequired", resourceCulture); }
+        }
+
+        public static string MobileUiCompatibilitySignInRequired {
+            get { return ResourceManager.GetString("MobileUiCompatibilitySignInRequired", resourceCulture); }
+        }
+
+        public static string MobileUiCompatibilityMembershipRequired {
+            get { return ResourceManager.GetString("MobileUiCompatibilityMembershipRequired", resourceCulture); }
+        }
+
+        public static string MobileUiCompatibilityUnavailable {
+            get { return ResourceManager.GetString("MobileUiCompatibilityUnavailable", resourceCulture); }
+        }
+
+        public static string MobileUiNavigationExplore {
+            get { return ResourceManager.GetString("MobileUiNavigationExplore", resourceCulture); }
+        }
+
+        public static string MobileUiNavigationPredictions {
+            get { return ResourceManager.GetString("MobileUiNavigationPredictions", resourceCulture); }
+        }
+
+        public static string MobileUiNavigationAccount {
+            get { return ResourceManager.GetString("MobileUiNavigationAccount", resourceCulture); }
+        }
+
+        public static string MobileUiExploreIntroduction {
+            get { return ResourceManager.GetString("MobileUiExploreIntroduction", resourceCulture); }
+        }
+
+        public static string MobileUiExploreReadings {
+            get { return ResourceManager.GetString("MobileUiExploreReadings", resourceCulture); }
+        }
+
+        public static string MobileUiExploreAsk {
+            get { return ResourceManager.GetString("MobileUiExploreAsk", resourceCulture); }
+        }
+
+        public static string MobileUiExploreUnavailable {
+            get { return ResourceManager.GetString("MobileUiExploreUnavailable", resourceCulture); }
+        }
+
+        public static string MobileUiLoginStaySignedIn {
+            get { return ResourceManager.GetString("MobileUiLoginStaySignedIn", resourceCulture); }
+        }
+
+        public static string MobileUiReadMore {
+            get { return ResourceManager.GetString("MobileUiReadMore", resourceCulture); }
+        }
+
+        public static string MobileUiShowLess {
+            get { return ResourceManager.GetString("MobileUiShowLess", resourceCulture); }
+        }
+
+        public static string MobileUiBackToMenu {
+            get { return ResourceManager.GetString("MobileUiBackToMenu", resourceCulture); }
+        }
+
+        public static string MobileUiClose {
+            get { return ResourceManager.GetString("MobileUiClose", resourceCulture); }
+        }
+
+        public static string MobileUiMenuHint {
+            get { return ResourceManager.GetString("MobileUiMenuHint", resourceCulture); }
+        }
+
+        public static string MobileUiEnergyDetailsHint {
+            get { return ResourceManager.GetString("MobileUiEnergyDetailsHint", resourceCulture); }
+        }
+
+        public static string MobileUiChartGuidance {
+            get { return ResourceManager.GetString("MobileUiChartGuidance", resourceCulture); }
+        }
+
+        public static string MobileUiExtendedUnavailable {
+            get { return ResourceManager.GetString("MobileUiExtendedUnavailable", resourceCulture); }
+        }
+
+        public static string MobileUiAccessNotice {
+            get { return ResourceManager.GetString("MobileUiAccessNotice", resourceCulture); }
+        }
+
+        public static string MobileAccountOptionalPhoneNumber {
+            get { return ResourceManager.GetString("MobileAccountOptionalPhoneNumber", resourceCulture); }
+        }
+
+        public static string MobileAccountSaveChanges {
+            get { return ResourceManager.GetString("MobileAccountSaveChanges", resourceCulture); }
+        }
+
+        public static string MobileAccountDiscardChanges {
+            get { return ResourceManager.GetString("MobileAccountDiscardChanges", resourceCulture); }
+        }
+
+        public static string MobileAccountCheckSavedDetails {
+            get { return ResourceManager.GetString("MobileAccountCheckSavedDetails", resourceCulture); }
+        }
+
+        public static string MobileAccountTrySignOutAgain {
+            get { return ResourceManager.GetString("MobileAccountTrySignOutAgain", resourceCulture); }
+        }
+
+        public static string MobileAccountMobileOnly {
+            get { return ResourceManager.GetString("MobileAccountMobileOnly", resourceCulture); }
+        }
+
     }
 }

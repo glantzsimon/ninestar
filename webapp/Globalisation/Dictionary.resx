@@ -14219,4 +14219,349 @@
   <data name="AdvancedOptions" xml:space="preserve">
     <value>Advanced Options</value>
   </data>
+  <data name="BirthDetails" xml:space="preserve">
+    <value>Birth Details</value>
+  </data>
+  <data name="AdvancedCalculationPreferences" xml:space="preserve">
+    <value>Advanced Calculation Preferences</value>
+  </data>
+  <data name="CurrentTimeZone" xml:space="preserve">
+    <value>Current Time Zone</value>
+  </data>
+  <data name="CurrentTimeZoneHelp" xml:space="preserve">
+    <value>The timezone of your current location.</value>
+  </data>
+  <data name="EditCalculation" xml:space="preserve">
+    <value>Edit Calculation</value>
+  </data>
+  <data name="YourChart" xml:space="preserve">
+    <value>Your Chart</value>
+  </data>
+  <data name="YourPersonalChart" xml:space="preserve">
+    <value>Your Personal Chart</value>
+  </data>
+  <data name="YourCalendar" xml:space="preserve">
+    <value>Your Calendar</value>
+  </data>
+  <data name="PredictionsCalculator" xml:space="preserve">
+    <value>Predictions Calculator</value>
+  </data>
+  <data name="HexagramHeadingFormat" xml:space="preserve">
+    <value>Hexagram {0}: {1}</value>
+  </data>
+  <data name="MobileUiKnowledgeBack" xml:space="preserve">
+    <value>Back to Knowledge Base</value>
+  </data>
+  <data name="MobileUiKnowledgeLoading" xml:space="preserve">
+    <value>Loading knowledge base…</value>
+  </data>
+  <data name="MobileUiKnowledgeUnavailable" xml:space="preserve">
+    <value>We could not load the knowledge base. Please try again.</value>
+  </data>
+  <data name="MobileUiExternalLinkError" xml:space="preserve">
+    <value>We could not open the link. Please try again.</value>
+  </data>
+  <data name="MobileUiIchingUnavailable" xml:space="preserve">
+    <value>We could not load the I Ching reading. Please try again.</value>
+  </data>
+  <data name="MobileUiFeedbackErrorTitle" xml:space="preserve">
+    <value>Unable to complete request</value>
+  </data>
+  <data name="MobileUiFeedbackPreviewError" xml:space="preserve">
+    <value>Preview error dialog</value>
+  </data>
+  <data name="MobileUiDateTimeChooseDate" xml:space="preserve">
+    <value>Choose date</value>
+  </data>
+  <data name="MobileUiDateTimeChooseTime" xml:space="preserve">
+    <value>Choose time</value>
+  </data>
+  <data name="MobileUiDateTimeDone" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="MobileUiDateTimeClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="MobileUiAccountValidationFirstName" xml:space="preserve">
+    <value>Enter your first name (up to 100 characters).</value>
+  </data>
+  <data name="MobileUiAccountValidationLastName" xml:space="preserve">
+    <value>Enter your last name (up to 100 characters).</value>
+  </data>
+  <data name="MobileUiAccountValidationFullName" xml:space="preserve">
+    <value>Your full name must be no longer than 200 characters.</value>
+  </data>
+  <data name="MobileUiAccountValidationEmailAddress" xml:space="preserve">
+    <value>Enter a valid email address.</value>
+  </data>
+  <data name="MobileUiAccountValidationPhoneNumber" xml:space="preserve">
+    <value>Phone number must be no longer than 100 characters.</value>
+  </data>
+  <data name="MobileUiAccountValidationDateFormat" xml:space="preserve">
+    <value>Enter your birth date as YYYY-MM-DD.</value>
+  </data>
+  <data name="MobileUiAccountValidationDateRange" xml:space="preserve">
+    <value>Enter a real birth date between 1800 and 2200.</value>
+  </data>
+  <data name="MobileUiAccountValidationTimeKnown" xml:space="preserve">
+    <value>Choose whether your birth time is known.</value>
+  </data>
+  <data name="MobileUiAccountValidationTime" xml:space="preserve">
+    <value>Enter a birth time in 24-hour format (HH:mm or HH:mm:ss). Use 00:00 if unknown.</value>
+  </data>
+  <data name="MobileUiAccountValidationGender" xml:space="preserve">
+    <value>Choose your gender.</value>
+  </data>
+  <data name="MobileUiAccountValidationBirthTimeZoneId" xml:space="preserve">
+    <value>Choose your birth timezone.</value>
+  </data>
+  <data name="MobileUiAccountValidationUserTimeZoneId" xml:space="preserve">
+    <value>Choose your current timezone.</value>
+  </data>
+  <data name="MobileUiAccountValidationCalculationMethod" xml:space="preserve">
+    <value>Choose your calculation method.</value>
+  </data>
+  <data name="MobileUiAccountValidationHousesDisplay" xml:space="preserve">
+    <value>Choose your house display.</value>
+  </data>
+  <data name="MobileUiAccountValidationSupportedMode" xml:space="preserve">
+    <value>Choose your supported calculation mode.</value>
+  </data>
+  <data name="MobileUiAccountValidationHemisphere" xml:space="preserve">
+    <value>Choose both southern hemisphere options in Advanced Calculation Preferences.</value>
+  </data>
+  <data name="MobileUiMyChartBack" xml:space="preserve">
+    <value>Back to My Chart</value>
+  </data>
+  <data name="MobileUiCalendarTitle" xml:space="preserve">
+    <value>My Calendar</value>
+  </data>
+  <data name="MobileUiCalendarLoading" xml:space="preserve">
+    <value>Loading your calendar…</value>
+  </data>
+  <data name="MobileUiCalendarPrevious" xml:space="preserve">
+    <value>Previous Month</value>
+  </data>
+  <data name="MobileUiCalendarNext" xml:space="preserve">
+    <value>Next Month</value>
+  </data>
+  <data name="MobileUiCalendarExpand" xml:space="preserve">
+    <value>Expand Calendar</value>
+  </data>
+  <data name="MobileUiCalendarCopy" xml:space="preserve">
+    <value>Copy Calendar Link</value>
+  </data>
+  <data name="MobileUiCalendarLink" xml:space="preserve">
+    <value>Calendar Link</value>
+  </data>
+  <data name="MobileUiCalendarCopied" xml:space="preserve">
+    <value>Calendar link copied.</value>
+  </data>
+  <data name="MobileUiCalendarCopyFailed" xml:space="preserve">
+    <value>Could not copy the calendar link. Please try again.</value>
+  </data>
+  <data name="MobileUiCalendarDisable" xml:space="preserve">
+    <value>Disable Calendar Link</value>
+  </data>
+  <data name="MobileUiCalendarDisabled" xml:space="preserve">
+    <value>Calendar link disabled.</value>
+  </data>
+  <data name="MobileUiCalendarRetry" xml:space="preserve">
+    <value>Try Again</value>
+  </data>
+  <data name="MobileUiCalendarRevokeTitle" xml:space="preserve">
+    <value>Disable Calendar Link?</value>
+  </data>
+  <data name="MobileUiCalendarRevokePrompt" xml:space="preserve">
+    <value>Existing calendar subscriptions will stop updating. You can create a new link later.</value>
+  </data>
+  <data name="MobileUiCalendarAccount" xml:space="preserve">
+    <value>Open My Account</value>
+  </data>
+  <data name="MobileUiCalendarSignIn" xml:space="preserve">
+    <value>Go to Sign In</value>
+  </data>
+  <data name="MobileUiCalendarSignInRequired" xml:space="preserve">
+    <value>Sign in to see your calendar.</value>
+  </data>
+  <data name="MobileUiCalendarMobileOnly" xml:space="preserve">
+    <value>Open NineStar on your phone to see your calendar.</value>
+  </data>
+  <data name="MobileUiCalendarUnavailable" xml:space="preserve">
+    <value>We could not load your calendar. Please try again.</value>
+  </data>
+  <data name="MobileUiCalendarMembershipRequired" xml:space="preserve">
+    <value>Your calendar requires an active paid membership.</value>
+  </data>
+  <data name="MobileUiCalendarCalendarDetailsRequired" xml:space="preserve">
+    <value>Please review your birth details and timezones in My Account.</value>
+  </data>
+  <data name="MobileUiCalendarRequestTimeout" xml:space="preserve">
+    <value>The request took too long. Please try again.</value>
+  </data>
+  <data name="MobileUiCalendarNetworkError" xml:space="preserve">
+    <value>We could not connect. Check your connection and try again.</value>
+  </data>
+  <data name="MobileUiCalendarSubscriptionUnavailable" xml:space="preserve">
+    <value>We could not update your calendar link. Please try again.</value>
+  </data>
+  <data name="MobileUiLoadingPersonalChart" xml:space="preserve">
+    <value>Opening your personal chart…</value>
+  </data>
+  <data name="MobileUiPredictionsAdditionalUnavailable" xml:space="preserve">
+    <value>No additional cycles are included in this response.</value>
+  </data>
+  <data name="MobileUiPredictionsLoading" xml:space="preserve">
+    <value>Loading predictions…</value>
+  </data>
+  <data name="MobileUiPredictionsSignInRequired" xml:space="preserve">
+    <value>Sign in on My Chart to see your predictions.</value>
+  </data>
+  <data name="MobileUiPredictionsUnavailable" xml:space="preserve">
+    <value>We could not load your predictions. Please try again.</value>
+  </data>
+  <data name="MobileUiPredictionsBirthDetailsRequired" xml:space="preserve">
+    <value>Please review your birth details in My Account.</value>
+  </data>
+  <data name="MobileUiPredictionsInvalidCalculationSettings" xml:space="preserve">
+    <value>Please review your calculation preferences in My Account.</value>
+  </data>
+  <data name="MobileUiPredictionsMobileOnly" xml:space="preserve">
+    <value>Open NineStar on your phone to see your predictions.</value>
+  </data>
+  <data name="MobileUiCalculatorMissingPreferences" xml:space="preserve">
+    <value>Some calculation preferences were not returned by the server. Choose them below before saving.</value>
+  </data>
+  <data name="MobileUiCalculatorBack" xml:space="preserve">
+    <value>Back to Explore</value>
+  </data>
+  <data name="MobileUiCalculatorLoading" xml:space="preserve">
+    <value>Loading calculator…</value>
+  </data>
+  <data name="MobileUiCalculatorSignInRequired" xml:space="preserve">
+    <value>Sign in on My Chart to calculate a full personal chart.</value>
+  </data>
+  <data name="MobileUiCalculatorMobileOnly" xml:space="preserve">
+    <value>Open NineStar on your phone to use the calculator with your signed-in account.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsInvalidName" xml:space="preserve">
+    <value>The name must be no longer than 200 characters.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsInvalidDate" xml:space="preserve">
+    <value>Enter a real birth date between 1800 and 2200 as YYYY-MM-DD.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsInvalidTime" xml:space="preserve">
+    <value>Enter a birth time in 24-hour format (HH:mm or HH:mm:ss).</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsInvalidTimeKnown" xml:space="preserve">
+    <value>Choose whether the birth time is known.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsInvalidPreferences" xml:space="preserve">
+    <value>Choose the birth and current timezones, gender and all calculation preferences.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsInvalidSelectedDate" xml:space="preserve">
+    <value>Enter a real selected date and local time between 1800 and 2200.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsMembershipRequired" xml:space="preserve">
+    <value>Full personal chart calculations require a paid membership.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsAuthenticationRequired" xml:space="preserve">
+    <value>Your session has ended. Please sign in on My Chart.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsInvalidCsrfToken" xml:space="preserve">
+    <value>Your session could not be verified. Please try again.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsInvalidCalculationRequest" xml:space="preserve">
+    <value>Check the birth details, timezones and calculation preferences.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsRequestTimeout" xml:space="preserve">
+    <value>The request took too long. Your entries are still here. Please try again.</value>
+  </data>
+  <data name="MobileUiCalculatorErrorsUnavailable" xml:space="preserve">
+    <value>We could not load the calculator or chart. Please try again.</value>
+  </data>
+  <data name="MobileUiPredictionCalculatorSignInRequired" xml:space="preserve">
+    <value>Sign in to calculate predictions.</value>
+  </data>
+  <data name="MobileUiPredictionCalculatorMembershipRequired" xml:space="preserve">
+    <value>Prediction calculations require a paid membership.</value>
+  </data>
+  <data name="MobileUiCompatibilitySignInRequired" xml:space="preserve">
+    <value>Sign in to calculate compatibility.</value>
+  </data>
+  <data name="MobileUiCompatibilityMembershipRequired" xml:space="preserve">
+    <value>Compatibility calculations require a paid membership.</value>
+  </data>
+  <data name="MobileUiCompatibilityUnavailable" xml:space="preserve">
+    <value>We could not load compatibility. Please try again.</value>
+  </data>
+  <data name="MobileUiNavigationExplore" xml:space="preserve">
+    <value>Explore</value>
+  </data>
+  <data name="MobileUiNavigationPredictions" xml:space="preserve">
+    <value>My Predictions</value>
+  </data>
+  <data name="MobileUiNavigationAccount" xml:space="preserve">
+    <value>My Account</value>
+  </data>
+  <data name="MobileUiExploreIntroduction" xml:space="preserve">
+    <value>Discover readings, explore connections and deepen your understanding.</value>
+  </data>
+  <data name="MobileUiExploreReadings" xml:space="preserve">
+    <value>Readings</value>
+  </data>
+  <data name="MobileUiExploreAsk" xml:space="preserve">
+    <value>Ask</value>
+  </data>
+  <data name="MobileUiExploreUnavailable" xml:space="preserve">
+    <value>Coming soon</value>
+  </data>
+  <data name="MobileUiLoginStaySignedIn" xml:space="preserve">
+    <value>Stay signed in</value>
+  </data>
+  <data name="MobileUiReadMore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="MobileUiShowLess" xml:space="preserve">
+    <value>Show Less</value>
+  </data>
+  <data name="MobileUiBackToMenu" xml:space="preserve">
+    <value>Back to Menu</value>
+  </data>
+  <data name="MobileUiClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="MobileUiMenuHint" xml:space="preserve">
+    <value>Scrolls to the section buttons without closing the details</value>
+  </data>
+  <data name="MobileUiEnergyDetailsHint" xml:space="preserve">
+    <value>Opens the details for this energy</value>
+  </data>
+  <data name="MobileUiChartGuidance" xml:space="preserve">
+    <value>Tap an energy to explore its meaning in more depth.</value>
+  </data>
+  <data name="MobileUiExtendedUnavailable" xml:space="preserve">
+    <value>Your extended energies are not available for this chart yet.</value>
+  </data>
+  <data name="MobileUiAccessNotice" xml:space="preserve">
+    <value>You are viewing the chart sections included with your account.</value>
+  </data>
+  <data name="MobileAccountOptionalPhoneNumber" xml:space="preserve">
+    <value>Phone number (optional)</value>
+  </data>
+  <data name="MobileAccountSaveChanges" xml:space="preserve">
+    <value>Save Changes</value>
+  </data>
+  <data name="MobileAccountDiscardChanges" xml:space="preserve">
+    <value>Discard Changes</value>
+  </data>
+  <data name="MobileAccountCheckSavedDetails" xml:space="preserve">
+    <value>Check Saved Details</value>
+  </data>
+  <data name="MobileAccountTrySignOutAgain" xml:space="preserve">
+    <value>Try Signing Out Again</value>
+  </data>
+  <data name="MobileAccountMobileOnly" xml:space="preserve">
+    <value>Open the mobile app to edit your account.</value>
+  </data>
 </root>

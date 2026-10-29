@@ -17,10 +17,14 @@ namespace K9.WebApplication.Controllers
         private readonly DbContext _database;
         public MobileMetadataController(INineStarKiPackage package, DbContext database) : base(package) { _database = database; }
 
+        [HttpGet, Route("labels")]
+        public ActionResult Labels() => ApiSuccess(MobileUiLabels.Map());
+
         [HttpGet, Route("options")]
         public ActionResult Options() => ApiSuccess(new
         {
             Culture = CultureInfo.CurrentUICulture.Name,
+            DisplayDataForPeriods = MobileMetadataHelper.EnumOptions(typeof(EDisplayDataForPeriod)),
             CalculationMethods = MobileMetadataHelper.EnumOptions(typeof(ECalculationMethod)),
             CalculatorTypes = MobileMetadataHelper.EnumOptions(typeof(ECalculatorType)),
             HouseDisplays = MobileMetadataHelper.EnumOptions(typeof(EHousesDisplay)),

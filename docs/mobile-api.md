@@ -1396,3 +1396,43 @@ Options are `{value, number, label}` using the existing metadata convention:
 Labels for the options resolve `Dictionary.Graphical` and `Dictionary.MagicSquare` through the existing enum metadata helper. These are display choices, not `CalculatorType` values or new calculation request properties. The native app can switch presentation locally using the already-returned energies/squares. Displaying these labels on a free response does not grant magic-square or travel-summary access. Unlimited/admin gates and free reading content remain unchanged.
 
 The travel summary now includes Year, Month and Day only, with existing 5/3/2 weights, centre penalties and guidance/severity thresholds preserved. Changes to Hour cannot change summary scores or guidance. The hourly square, arrows and independent direction scores remain available under their existing access rules. Build/xUnit and authenticated Integration checks remain outstanding here; a push does not establish deployment.
+
+
+### Central UI label catalogue
+
+Public `GET /api/mobile/v1/metadata/labels` returns Dictionary-backed interface labels before calculation/login. Existing label/help fields remain compatible. Exact screen/shared mappings, all 173 current mobile uiCopy destinations, culture rules and missing-label behaviour are in [mobile-ui-labels.md](mobile-ui-labels.md).
+
+Fields under `data`: `version` (1), `culture`, `shared` (`actions`, `calculator`, `dateTime`, `feedback`, `chartUi`, `navigation`), `navigation` (feature names), and `screens` (`yourChart`, `explore`, `personalChart`, `predictions`, `compatibility`, `iching`, `karmicNumerology`, `biorhythms`, `calendar`, `account`, `knowledgeBase`, `articles`, `aiAstrologer`). Screen titles/navigation, About help and personalised reading titles remain distinct. No resource enumeration, account/profile data or paid descriptions are exposed by this catalogue.
+
+Example **excerpt** (the actual response contains the other registered groups):
+
+```json
+{
+  "success": true,
+  "data": {
+    "version": 1,
+    "culture": "en-GB",
+    "shared": {
+      "calculator": {
+        "groups": { "birthDetails": "Birth Details", "advancedPreferences": "Advanced Calculation Preferences" },
+        "fields": { "currentTimeZone": "Current Time Zone", "displayDataFor": "Display Data For" },
+        "help": { "currentTimeZone": "The timezone of your current location." },
+        "displayDataForPeriods": [
+          { "value": "Now", "number": 0, "label": "Now" },
+          { "value": "SelectedDate", "number": 1, "label": "Selected Date and Time" }
+        ]
+      }
+    },
+    "screens": {
+      "iching": { "title": "I Ching", "generate": "Generate Hexagram", "detailedInterpretation": "Detailed Interpretation" }
+    }
+  },
+  "error": null
+}
+```
+
+`metadata/options` also adds `data.displayDataForPeriods` using the existing EDisplayDataForPeriod enum. Now still sends `selectedDateTime:null`; SelectedDate sends the chosen wall-clock timestamp in `userTimeZoneId`. No new calculation request property, permissions or mode selector is introduced. Keep hidden selected-date drafts/validation separate from the Now request.
+
+`account/me` adds private `data.membership.displayName` from the existing localised subscription resource (FreeMembership for a free option). I Ching cast result objects add `heading` formatted by the new Dictionary.HexagramHeadingFormat. Existing endpoints, help, result gating and content are unchanged. Labels do not grant access. The catalogue retains `no-store`; client offline/bootstrap labels should be seeded from the same approved resource values, keyed by environment/culture/version, with no machine-key or fabricated-English fallback.
+
+This is a source/contract addition. Windows build/xUnit, deployment and live JSON verification remain outstanding.

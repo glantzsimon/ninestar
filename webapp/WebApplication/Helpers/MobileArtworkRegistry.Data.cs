@@ -5,7 +5,7 @@ namespace K9.WebApplication.Helpers
     {
         private static readonly ArtworkSource[] Sources =
         {
-            new ArtworkSource("about.light", "about", "dark", "about/light-dark.png", "bb45c6bc5f16740007ec1164400b71c4efd61c91f12d9350129db3d5897b9849", "image/png", 472, 472),
+            new ArtworkSource("about.light", "about", "dark", "about/light-dark.png", "9f484976ec5121e9fc5c26a61642b823c748d5ac671e3d24f0f4d2a5adc9b9cb", "image/png", 472, 472),
             new ArtworkSource("astrology.moon-phases.0", "astrology.moon-phases", "default", "astrology/moon-phases/0.png", "60cb4d6b0571acbe7335f56287de2bdb933967ce81bd608986cb3fd3c92139fc", "image/png", 275, 275),
             new ArtworkSource("astrology.moon-phases.100", "astrology.moon-phases", "default", "astrology/moon-phases/100.png", "3fca55419f2ab80575626f461adfec21fadabe10a2dc9fadaac68e47a3ec8fe7", "image/png", 275, 275),
             new ArtworkSource("astrology.moon-phases.wane-14.5", "astrology.moon-phases", "default", "astrology/moon-phases/wane-14.5.png", "8c0d07387e0896e9b1d14d70b8cb4e812bb7e056016edbdb028fba0742775d9f", "image/png", 275, 275),
@@ -295,8 +295,8 @@ namespace K9.WebApplication.Helpers
             new ArtworkSource("flags.zw", "flags", "default", "flags/zw.png", "b546d55dd33c7049ef9bbfe4b665c785489b3470a04e6a2db4fda1fea403dc62", "image/png", 16, 11),
             new ArtworkSource("home.gpt-example", "home", "default", "home/gpt-example.png", "bc84429730e693029fbc8fd92f074480f5def631747301fb86715a2d8ea38a6c", "image/png", 723, 900),
             new ArtworkSource("home.ninestar-home-bg", "home", "default", "home/ninestar-home-bg.jpg", "eb776af7cd846c887aa36bfa4a51fb07f107c38f962ba94c6dcc26d3ef3fd76d", "image/jpeg", 1721, 975),
-            new ArtworkSource("iching.iching", "iching", "dark", "iching/iching-dark.png", "97278d25572f5873f0b7c074d27008b48f937f24a553b45d85610c154e055c89", "image/png", 200, 200),
-            new ArtworkSource("iching.iching", "iching", "default", "iching/iching.png", "432e466724e916622b1013c6d235e325c0a0f4b23726cf6c0649679a0fe42322", "image/png", 200, 200),
+            new ArtworkSource("iching.iching", "iching", "dark", "iching/iching-dark.png", "782845e867a2b7eb71c218d38c29c342d7fa777f32d60b7eae65f051d9b6f477", "image/png", 200, 200),
+            new ArtworkSource("iching.iching", "iching", "default", "iching/iching.png", "782845e867a2b7eb71c218d38c29c342d7fa777f32d60b7eae65f051d9b6f477", "image/png", 200, 200),
             new ArtworkSource("membership.membership-medal-green", "membership", "default", "membership/membership-medal-green.png", "2355a89c18cac7feb2fa8eb333e8efa40ac499efbf912ae7068f712bba099690", "image/png", 180, 180),
             new ArtworkSource("membership.membership-medal", "membership", "default", "membership/membership-medal.png", "4032b85db6277922242fb9bd300130c3a6447bcf019306db91171065804cda75", "image/png", 180, 180),
             new ArtworkSource("ninestar.elements.cycle-five", "ninestar.elements", "dark", "ninestar/elements/cycle-five-dark.png", "dd7644826d1fbbb7ac785e2220c43d86692fc22a45ed71b4af66daa553513c0a", "image/png", 440, 440),

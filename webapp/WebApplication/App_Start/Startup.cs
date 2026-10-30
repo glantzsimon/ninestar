@@ -147,10 +147,17 @@ namespace K9.WebApplication
             RecurringJob.AddOrUpdate("CleanupOldJobs", () =>
                 CleanupOldJobs(), Cron.Daily);
 
-            RecurringJob.AddOrUpdate<IMediaService>(
-                "CheckStorjHealth",
-                service => service.ScheduledHealthCheck(),
-                Cron.MinuteInterval(11));
+            if (DefaultValuesConfiguration.Instance.UseHostedMedia)
+            {
+                RecurringJob.AddOrUpdate<IMediaService>(
+                    "CheckStorjHealth",
+                    service => service.ScheduledHealthCheck(),
+                    Cron.MinuteInterval(11));
+            }
+            else
+            {
+                RecurringJob.RemoveIfExists("CheckStorjHealth");
+            }
 
             // Set Media paths
             using (var scope = container.BeginLifetimeScope())
@@ -222,12 +229,11 @@ namespace K9.WebApplication
             builder.Register(c => defaultConfig).SingleInstance();
             DefaultValuesConfiguration.Instance = defaultConfig.Value;
 
-#if DEBUG
+#if DEBUG && !Integration && !PRODUCTION
             DefaultValuesConfiguration.Instance.SiteBaseUrl = DefaultValuesConfiguration.Instance.LocalSiteBaseUrl;
 #endif
 
-            defaultConfig.Value.BaseEmailTemplateImagesPath = defaultConfig.Value.BaseImagesPath;
-            defaultConfig.Value.BaseBaseEmailTemplateVideosPath = defaultConfig.Value.BaseVideosPath;
+            MediaService.InitialiseMediaPaths(defaultConfig.Value);
             
             var apiConfig = ConfigHelper.GetConfiguration<ApiConfiguration>(json);
             builder.Register(c => apiConfig).SingleInstance();
@@ -237,12 +243,6 @@ namespace K9.WebApplication
             Helpers.Environment.IsDebug = true;
 #endif
 
-#if !Integration
-#if DEBUG
-            defaultConfig.Value.BaseImagesPath = "https://localhost/ninestar/Images";
-            defaultConfig.Value.BaseVideosPath = "https://localhost/ninestar/Videos";
-#endif
-#endif
         }
     }
 }

@@ -414,6 +414,7 @@
     <Compile Include="Helpers\MobileArtworkRegistry.Data.cs" />
     <Compile Include="ViewModels\MobileApi\MobileArtworkResponse.cs" />
     <Compile Include="Helpers\MobileMetadataHelper.cs" />
+    <Compile Include="Helpers\MobileUiLabels.cs" />
     <Compile Include="Controllers\MobileAdminArticlesController.cs" />
     <Compile Include="Controllers\MobileAdminMailController.cs" />
     <Compile Include="Controllers\MobileAdminOperationsController.cs" />
@@ -468,6 +469,7 @@
     <Compile Include="ViewModels\MobileApi\MobileCheckoutRequest.cs" />
     <Compile Include="ViewModels\MobileApi\MobileCalculationRequest.cs" />
     <Compile Include="Helpers\MobileCalculationMapper.cs" />
+    <Compile Include="Helpers\MobileTravelMapper.cs" />
     <Compile Include="Helpers\MobileHelpMapper.cs" />
     <Compile Include="Controllers\MobileConsultationsController.cs" />
     <Compile Include="Controllers\MobileAccountController.cs" />
@@ -1197,6 +1199,13 @@
     <Content Include="Images\ninestar\organs\stomach.png" />
     <Content Include="Images\ninestar\organs\urinarybladder.png" />
     <Content Include="Images\shared\powered-by-stripe-cards-dark.png" />
+    <Content Include="Images\ui\knowledge-base.png" />
+    <Content Include="Images\ui\articles.png" />
+    <Content Include="Images\ui\ai-astrologer.png" />
+    <Content Include="Images\ui\personal-chart.png" />
+    <Content Include="Images\ui\origins.png" />
+    <Content Include="Images\ui\nine-core-energies.png" />
+    <Content Include="Images\ui\nine-character-energies.png" />
     <Content Include="Images\ui\adult-child-relationship.png" />
     <Content Include="Images\ui\alchemy.png" />
     <Content Include="Images\ui\daily-cycle.png" />
@@ -1210,7 +1219,7 @@
     <Content Include="Images\ui\inner-child.png" />
     <Content Include="Images\ui\intellectual-qualities.png" />
     <Content Include="Images\ui\interpersonal-qualities.png" />
-    <Content Include="Images\ui\lunar-nature.png" />
+    <Content Include="Images\ui\character.png" />
     <Content Include="Images\ui\nine-year-cycle.png" />
     <Content Include="Images\ui\nine-year-planner.png" />
     <Content Include="Images\ui\eighty-one-cycle.png" />
@@ -1257,6 +1266,9 @@
     <Content Include="Images\ninestar\yinyang\yang.png" />
     <Content Include="Images\ninestar\yinyang\yin.png" />
     <Content Include="Images\ninestar\yinyang\yinyang-large.png" />
+    <Content Include="Images\ninestar\magic-square-plate.png" />
+    <Content Include="Images\shared\ajax-spinner-gold.png" />
+    <Content Include="Images\shared\ajax-spinner-gold-animated.webp" />
     <Content Include="Images\shared\ninestar-spinner.png" />
     <Content Include="Images\shared\ninestar-spinner.webp" />
     <Content Include="Images\shared\ninestar-spinner.gif" />
@@ -1268,10 +1280,10 @@
     <Content Include="Images\ui\fail-red.png" />
     <Content Include="Images\ui\notfoundold.png" />
     <Content Include="Images\ui\locked.png" />
-    <Content Include="Images\ui\question-mark.jpg" />
+    <Content Include="Images\ui\question-mark.png" />
     <Content Include="Images\ui\selected.png" />
     <Content Include="Images\ui\social-expression.png" />
-    <Content Include="Images\ui\solar-nature.png" />
+    <Content Include="Images\ui\constitution.png" />
     <Content Include="Images\ui\spirituality.png" />
     <Content Include="Images\ui\stress-response.png" />
     <Content Include="Images\ui\success.png" />
@@ -1456,6 +1468,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Shared\EditorTemplates\Text.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Text.cshtml" />
+    <Content Include="Views\Shared\_AjaxLoadingImage.cshtml" />
     <Content Include="Views\Shared\_LayoutMaster.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />

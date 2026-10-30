@@ -14,10 +14,10 @@ namespace K9.WebApplication.Tests.Unit.Helpers
         public void CatalogueIsPublicCompleteAndDeduplicatesIdenticalImageContent()
         {
             var data = MobileArtworkRegistry.Create("https://media.example/Images");
-            Assert.Equal(424, data.Assets.Count);
+            Assert.Equal(433, data.Assets.Count);
             var variants = data.Assets.Values.SelectMany(e => e.Variants.Values).ToArray();
-            Assert.Equal(431, variants.Length);
-            Assert.Equal(424, variants.Select(e => e.Url).Distinct().Count());
+            Assert.Equal(440, variants.Length);
+            Assert.Equal(430, variants.Select(e => e.Url).Distinct().Count());
             Assert.All(variants.GroupBy(e => e.Revision), sameImage =>
                 Assert.Single(sameImage.Select(e => e.Url).Distinct()));
             Assert.Equal(data.Assets["ninestar.elements.earth"].Variants["default"].Url,
@@ -32,6 +32,51 @@ namespace K9.WebApplication.Tests.Unit.Helpers
                 Assert.DoesNotContain("articles/", item.Url);
                 Assert.StartsWith("image/", item.ContentType);
             }
+        }
+
+        [Fact]
+        public void RenamedRoleArtworkUsesCanonicalPathsAndKeepsPublishedIds()
+        {
+            var data = MobileArtworkRegistry.Create("https://media.example/Images");
+            Assert.Equal("ui.constitution", MobileArtworkRegistry.IdForPath("ui/constitution.png"));
+            Assert.Equal("ui.character", MobileArtworkRegistry.IdForPath("ui/character.png"));
+            Assert.Null(MobileArtworkRegistry.IdForPath("ui/solar-nature.png"));
+            Assert.Null(MobileArtworkRegistry.IdForPath("ui/lunar-nature.png"));
+            Assert.Equal(data.Assets["ui.constitution"].Variants["default"].Url,
+                data.Assets["ui.solar-nature"].Variants["default"].Url);
+            Assert.Equal(data.Assets["ui.character"].Variants["default"].Url,
+                data.Assets["ui.lunar-nature"].Variants["default"].Url);
+            Assert.Contains("/ui/constitution.png?", data.Assets["ui.constitution"].Variants["default"].Url);
+            Assert.Contains("/ui/character.png?", data.Assets["ui.character"].Variants["default"].Url);
+            Assert.Contains("/ui/question-mark.png?", data.Assets["ui.question-mark"].Variants["default"].Url);
+        }
+
+        [Theory]
+        [InlineData("ui.knowledge-base")]
+        [InlineData("ui.articles")]
+        [InlineData("ui.ai-astrologer")]
+        [InlineData("ui.personal-chart")]
+        [InlineData("ui.origins")]
+        [InlineData("ui.nine-core-energies")]
+        [InlineData("ui.nine-character-energies")]
+        public void NewNavigationArtworkIsPublishedAtStandardDimensions(string id)
+        {
+            var data = MobileArtworkRegistry.Create("https://media.example/Images");
+            var image = data.Assets[id].Variants["default"];
+            Assert.Equal(160, image.Width);
+            Assert.Equal(160, image.Height);
+            Assert.Equal("image/png", image.ContentType);
+        }
+
+        [Theory]
+        [InlineData("default")]
+        [InlineData("dark")]
+        public void CycleOfFiveShowsTheSupportiveCycleInBothThemes(string variant)
+        {
+            var data = MobileArtworkRegistry.Create("https://media.example/Images");
+            var cycle = data.Assets["ninestar.elements.cycle-five"].Variants[variant].Url;
+            Assert.Equal(data.Assets["ninestar.transformations.transformation-supportive"].Variants[variant].Url, cycle);
+            Assert.NotEqual(data.Assets["ninestar.transformations.transformation-same"].Variants[variant].Url, cycle);
         }
 
         [Fact]

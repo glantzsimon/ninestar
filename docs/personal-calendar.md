@@ -88,3 +88,23 @@ Regression coverage adds profile lunar opt-out/default separation, energy equali
 ## Mobile month presentation
 
 The separate mobile `calendar/month` transport now includes the website control/status Dictionary labels, Monday-first weekday labels/abbreviations, culture-formatted date labels and house summaries, and registered energy artwork IDs. `MobileCalculationMapper.CalendarLabels`/`CalendarDay` project the existing entries; the website controller and service calculations are unchanged. See `docs/mobile-api.md` for the exact additive fields and catalogue guidance. Paid access, member-local dates, cancellation, subscription handling and existing full descriptions remain unchanged. Run `MobileHelpMapperTests` with the Windows solution and verify an authenticated month response after deployment; cloud checks cover syntax only.
+
+Calendar day-cell energy images have a -2px top margin to move the centred artwork up slightly in both embedded and expanded views. Date labels, house-number captions, cell sizes and interactions are unchanged.
+
+## Expanded lunar presentation
+
+Only expanded month requests send `includeMoonPhases=true`. The authenticated Month action preserves its access checks and cancellation token, opting into the new calendar-service overload only for that flag. Calendar entries still reuse the same yearly/monthly energy batches. Expanded month entries obtain only lightweight phase images from the existing AstrologyService, with lunar-day calculations disabled. The member's saved timezone, local unspecified date and natal main energy remain authoritative. Default calendar callers and ICS generation do not request moons.
+
+The month response projects only moon image URL, phase label and new-moon flag. A separate authenticated selected-day lunar-cycle GET returns the existing Dictionary-owned lunar/comfort HTML. The existing Panel helper and _MoonPhaseLarge partial supply the Lunar Cycle box. Selection updates that box through an independent cancellable request after the month loader has finished. CSS hides day moons and the lunar panel unless expanded; toggling modes uses the existing versioned cancellable month loader, so superseded responses cannot replace the current mode. Expanded cells allow enough height for the date, corner moon, energy and house caption. The embedded energy image retains its earlier -2px offset.
+
+The old Predictions month grid alone centres its energy content 3px below the vertical midpoint and places a 30px moon (24px on narrow screens) at the top right. Split energies and all planner data/click attributes remain unchanged. Its existing navigation and zoom-out anchors receive gold gradient/bevel styling without replacing their controls or changing sizes and handlers.
+
+JavaScript checks cover expanded-only request flags, cancellation on collapse, stale-response rejection, selected lunar content and clearing, and the embedded visibility guard. Added service cases check no default/feed moon calls and exact dated/timezone-aware moon calls in expanded entries. C# tests, the Windows build and browser layout checks were not run in this environment.
+
+Completed calendar requests now stop and hide their owned spinner/overlay synchronously after invoking the shared helper. A scoped aria-busy=false CSS guard also prevents completed loading artwork from remaining visible. A successful expanded response without any Moon values logs a diagnostic: the moon DTO and calculations require rebuilding/restarting the C# website, while updated JavaScript alone can still display energy values from the old action.
+
+### Independent selected-day lunar read
+
+Detailed lunar-day calculation is performed only for the selected date, through GetLunarCalendarEntry and the same calendar batch builder. It is not repeated across the visible month. Its request/spinner/version are separate from month navigation; navigation, date changes and collapse invalidate and abort stale lunar reads. Both month and lunar-cycle GETs use read-only session access so lunar work cannot take an exclusive session lock ahead of navigation. The existing subscription/revocation POSTs retain writable session access.
+
+Run `node tools/tests/test_personal_calendar_lunar.js` for the actual JavaScript request-handler harness. It covers main-loader completion before nested lunar loading, navigation during a pending lunar read, stale lunar response rejection and collapse to lightweight month data. C# tests cover lightweight phase calls for month entries and one detailed phase call for the selected date; these require the Windows solution and were not executed here.

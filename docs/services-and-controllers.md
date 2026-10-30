@@ -66,7 +66,7 @@ Validation for this correction uses JavaScript syntax and mocked request/panel c
 | `ArticlesService` | Article/tag hydration, comments/moderation, likes, views and dashboard. Preserve ownership/approval checks; detailed article loading expands related data. |
 | `AIService` | Async report and text merge operations and report prompt construction. These make external requests; do not put them in calendar/date loops or create a second AI client workflow. |
 | `PdfService` | HtmlToPdf/UrlToPdf using the configured wkhtmltopdf process and temporary-file cleanup. Reuse it instead of another process wrapper; it is not a cheap per-row formatting helper. |
-| `MediaService`/`MediaManagementService` | Shared image/video base URLs, periodic hosted-media health/fallback and Storj upload process. Use the shared paths; do not probe media availability per displayed image. Base-controller local upload and Storj upload are separate existing paths. |
+| `MediaService`/`MediaManagementService` | Shared image/video base URLs selected by build environment, optional hosted-media health/fallback and Storj upload process. See `media-paths.md`. Use the shared paths; do not probe media availability per displayed image. Base-controller local upload and Storj upload are separate existing paths. |
 | `RecaptchaService` | Existing contact/registration captcha validation. |
 | `IChingService` | Hexagram generation for the I Ching page/API. |
 | `LogService`/`CookieService` | Existing log retrieval and static cookie-warning preference helpers. |
@@ -78,7 +78,7 @@ Validation for this correction uses JavaScript syntax and mocked request/panel c
 | `PersonalChart`, `Compatibility`, `Predictions` | Profile/compatibility calculation, saved/retrieved readings, complementary access and prediction detail/planner routes. Predictions.GetPlanner renders `Planner/_GlobalPlanner` and sets parent/child URLs. |
 | `Biorhythms`, `Numerology`, `IChing`, `KnowledgeBase` | Their service-backed calculators, forecasts, saved-state or summary views. |
 | `Reports` | Report, prompt and PDF endpoints using Reports/AI/PDF services. |
-| `PersonalCalendar` | Direct MVC Controller with explicit access/culture handling, month data, protected subscription/revoke POSTs and private anonymous feed. Read-only month session is selected in Global.asax before acquiring session; preserve this special case. |
+| `PersonalCalendar` | Direct MVC Controller with explicit access/culture handling, lightweight month data, selected-day lunar readings, protected subscription/revoke POSTs and private anonymous feed. Read-only month/lunar session is selected in Global.asax before acquiring session; preserve this special case. |
 | `Account`/`AccountControllerAjax.cs` | Account/login/registration/activation/reset/external-auth/preferences and unsubscribe workflows. Both files are one partial controller. |
 | `Api`/`ApiPureAlchemyController.cs` | Shared API-key and account/membership validation envelope and calculator endpoints; the latter file is part of ApiController. Reuse its validation/results instead of an independent account lookup per API step. |
 | `Membership`, `PaymentController.cs`, `Consultation`, `Support` | Purchases/switching, Stripe intent-to-PurchaseModel conversion, booking and contact/donation flows. PaymentController.cs declares PaymentsController. Preserve specific access and POST/anti-forgery checks. |

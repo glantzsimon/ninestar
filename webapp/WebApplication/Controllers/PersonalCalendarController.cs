@@ -33,7 +33,7 @@ namespace K9.WebApplication.Controllers
         [HttpGet]
         [Route("month")]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult Month(int? year = null, int? month = null)
+        public ActionResult Month(int? year = null, int? month = null, bool includeMoonPhases = false)
         {
 #if DEBUG
             var timer = Stopwatch.StartNew();
@@ -51,7 +51,9 @@ namespace K9.WebApplication.Controllers
             {
                 var today = _calendarService.GetCalendarToday(userId);
                 var start = new DateTime(year ?? today.Year, month ?? today.Month, 1);
-                var entries = _calendarService.GetCalendarEntries(userId, start, start.AddMonths(1), GetClientDisconnectedToken());
+                var entries = includeMoonPhases
+                    ? _calendarService.GetCalendarEntries(userId, start, start.AddMonths(1), GetClientDisconnectedToken(), true)
+                    : _calendarService.GetCalendarEntries(userId, start, start.AddMonths(1), GetClientDisconnectedToken());
 #if DEBUG
                 Debug.WriteLine($"Personal calendar Month: calendar entries returned at {timer.ElapsedMilliseconds} ms.");
 #endif
@@ -79,6 +81,12 @@ namespace K9.WebApplication.Controllers
                             K9.Globalisation.Dictionary.Month + ": " + GetEnergyName(e.MonthHouse),
                             K9.Globalisation.Dictionary.Day + ": " + GetEnergyName(e.DayHouse)
                         }),
+                        Moon = e.MoonPhase == null ? null : new
+                        {
+                            ImageUrl = MediaService.BaseImagesPath + "/astrology/moon-phases/" + e.MoonPhase.GetMoonPhaseImageFile(),
+                            Label = e.MoonPhase.GetMoonPhaseName() + " (" + e.MoonPhase.IlluminationDisplay + ")",
+                            IsNewMoon = e.MoonPhase.IlluminationPercentage < 3.5
+                        },
                         EnergyName = GetEnergyName(e.DayHouse),
                         ImageUrl = MediaService.BaseImagesPath + "/ninestar/energies/" + EnergyImages[e.DayHouse - 1] + ".png"
                     })
@@ -96,6 +104,35 @@ namespace K9.WebApplication.Controllers
             {
                 return new HttpStatusCodeResult(409);
             }
+        }
+
+        [HttpGet]
+        [Route("lunar-cycle")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public ActionResult LunarCycle(string date)
+        {
+            var userId = Current.UserId;
+            if (!CanAccess(userId))
+                return new HttpStatusCodeResult(403);
+            if (!DateTime.TryParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture,
+                DateTimeStyles.None, out var selectedDate) || selectedDate.Year < 1900 || selectedDate.Year > 2100)
+                return new HttpStatusCodeResult(400);
+            try
+            {
+                var entry = _calendarService.GetLunarCalendarEntry(userId,
+                    DateTime.SpecifyKind(selectedDate, DateTimeKind.Unspecified), GetClientDisconnectedToken());
+                var phase = entry.MoonPhase;
+                return Json(new
+                {
+                    Date = entry.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture),
+                    ImageUrl = MediaService.BaseImagesPath + "/astrology/moon-phases/" + phase.GetMoonPhaseImageFile(),
+                    Label = phase.LunarDayTitle + " (" + phase.IlluminationDisplay + ")",
+                    DescriptionHtml = (phase.LunarDayDescription ?? string.Empty) + " " +
+                        (phase.YinYangComfortDescription ?? string.Empty)
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (OperationCanceledException) { return new EmptyResult(); }
+            catch (InvalidOperationException) { return new HttpStatusCodeResult(409); }
         }
 
         private CancellationToken GetClientDisconnectedToken()

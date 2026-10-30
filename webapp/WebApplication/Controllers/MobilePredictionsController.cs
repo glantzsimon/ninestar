@@ -29,7 +29,7 @@ namespace K9.WebApplication.Controllers
             var error = RequireUser(out var userId, paid: true);
             if (error != null) return error;
             if (!ValidInput(request)) return ApiError(400, "invalid_calculation_request");
-            var result = MobileCalculationMapper.Predictions(CalculateProfile(_profiles, request, true, true), request.Person.TimeOfBirthKnown);
+            var result = MobileCalculationMapper.Predictions(CalculateProfile(_profiles, request, true, true), request.Person.TimeOfBirthKnown, CanViewTravelDetails(userId));
             SaveLastRequest("predictions", request);
             return ApiSuccess(result);
         }
@@ -52,8 +52,12 @@ namespace K9.WebApplication.Controllers
             if (request == null) return ApiError(409, "birth_details_required");
             request.SelectedDateTime = selectedDateTime;
             if (!ValidInput(request)) return ApiError(409, "invalid_calculation_settings");
-            return ApiSuccess(MobileCalculationMapper.Predictions(CalculateProfile(_profiles, request, true, true, true), request.Person.TimeOfBirthKnown));
+            return ApiSuccess(MobileCalculationMapper.Predictions(CalculateProfile(_profiles, request, true, true, true), request.Person.TimeOfBirthKnown, CanViewTravelDetails(userId)));
         }
+
+        private bool CanViewTravelDetails(int userId) =>
+            Package.UserService.UserIsAdmin(userId)
+            || Package.MembershipService.GetActiveUserMembership(userId)?.IsUnlimited() == true;
 
         [HttpPost, Route("planner")]
         public ActionResult Planner(MobilePlannerRequest request)

@@ -110,8 +110,18 @@ namespace K9.WebApplication.Helpers
             }).ToArray()
         };
 
+        public static object PredictionControls() => new
+        {
+            Display = K9.Globalisation.Dictionary.EnergyDisplayLabel,
+            AdvancedOptions = K9.Globalisation.Dictionary.AdvancedOptions,
+            Directionology = K9.Globalisation.Dictionary.Directionology,
+            ShowDirections = K9.Globalisation.Dictionary.ShowDirectionsLabel
+        };
+
         public static object PredictionLabels() => new
         {
+            Controls = PredictionControls(),
+            DisplayOptions = MobileMetadataHelper.EnumOptions(typeof(EEnergyDisplay)),
             YourPredictions = K9.Globalisation.Dictionary.YourPredictions,
             HousesYouCurrentlyOccupy = K9.Globalisation.Dictionary.HousesYouCurrentlyOccupy,
             Periods = new
@@ -153,7 +163,7 @@ namespace K9.WebApplication.Helpers
             }
         };
 
-        public static object Predictions(NineStarKiModel model, bool birthTimeKnown) => new
+        public static object Predictions(NineStarKiModel model, bool birthTimeKnown, bool includeTravelDetails = false) => new
         {
             Labels = PredictionLabels(),
             Help = MobileHelpMapper.Predictions(),
@@ -161,7 +171,9 @@ namespace K9.WebApplication.Helpers
             Personal = Cycles(model.PersonalHousesOccupiedEnergies),
             Lunar = Cycles(model.PersonalHousesOccupiedLunarEnergies),
             Global = Cycles(model.GlobalCycleEnergies, true), MoonPhase = Moon(model.MoonPhase),
-            YearlyDirections = Directions(model.YearlyDirections), MonthlyDirections = Directions(model.MonthlyDirections)
+            YearlyDirections = Directions(model.YearlyDirections), MonthlyDirections = Directions(model.MonthlyDirections),
+            TravelSummary = MobileTravelMapper.Summary(model, includeTravelDetails),
+            MagicSquares = MobileTravelMapper.MagicSquares(model, includeTravelDetails)
         };
 
         public static object Combined(CombinedPrediction combined) => combined == null ? null : new
@@ -483,6 +495,7 @@ namespace K9.WebApplication.Helpers
             var info = hexagram.GetHexagramInfo();
             return new
             {
+                Heading = string.Format(System.Globalization.CultureInfo.CurrentCulture, K9.Globalisation.Dictionary.HexagramHeadingFormat, hexagram.Number, hexagram.Name),
                 hexagram.Number, hexagram.Name, Lines = hexagram.Lines.Select(e => e.ToString()).ToArray(),
                 Info = info == null ? null : new { info.Stage, info.Name, info.Title, info.Summary, info.Details, info.ChangingLinesInterpretation }
             };

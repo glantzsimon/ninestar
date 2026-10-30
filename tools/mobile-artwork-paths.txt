@@ -312,6 +312,7 @@ ninestar/energies/soil.png
 ninestar/energies/thunder.png
 ninestar/energies/water.png
 ninestar/energies/wind.png
+ninestar/magic-square-plate.png
 ninestar/modalities/dynamic.png
 ninestar/modalities/reflective.png
 ninestar/modalities/stable.png
@@ -367,6 +368,8 @@ numerology/karmic-blueprint.png
 numerology/karmic-evolution.png
 numerology/twelve-month-planner.png
 numerology/twelve-year-planner.png
+shared/ajax-spinner-gold.png
+shared/ajax-spinner-gold-animated.webp
 shared/ninestar-spinner-ex.gif
 shared/ninestar-spinner.gif
 shared/powered-by-stripe-cards-dark.png
@@ -403,7 +406,7 @@ ui/inner-child.png
 ui/intellectual-qualities.png
 ui/interpersonal-qualities.png
 ui/locked.png
-ui/lunar-nature.png
+ui/character.png
 ui/mirror-energy.png
 ui/monthly-planner.png
 ui/moon.png
@@ -413,12 +416,12 @@ ui/notfound.png
 ui/notfoundold.png
 ui/overview.png
 ui/predictions.png
-ui/question-mark.jpg
+ui/question-mark.png
 ui/relationships-strengths-challenges.png
 ui/relationships.png
 ui/selected.png
 ui/social-expression.png
-ui/solar-nature.png
+ui/constitution.png
 ui/spirituality.png
 ui/stress-response.png
 ui/success.png
@@ -430,3 +433,10 @@ ui/video.png
 ui/warning.png
 ui/yearly-planner.png
 ui/yinyang.png
+ui/knowledge-base.png
+ui/articles.png
+ui/ai-astrologer.png
+ui/personal-chart.png
+ui/origins.png
+ui/nine-core-energies.png
+ui/nine-character-energies.png

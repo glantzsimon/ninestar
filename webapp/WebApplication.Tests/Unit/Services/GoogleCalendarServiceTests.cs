@@ -27,7 +27,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         private static GoogleCalendarService CreateService()
         {
             return new GoogleCalendarService(new Mock<INineStarKiBasePackage>().Object,
-                new Mock<INineStarKiService>().Object, new Mock<IUserService>().Object);
+                new Mock<INineStarKiService>().Object, new Mock<IUserService>().Object, new Mock<IAstrologyService>().Object);
         }
 
         [Fact]
@@ -36,7 +36,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             var users = new Mock<IUserService>(MockBehavior.Strict);
             var profiles = new Mock<INineStarKiService>(MockBehavior.Strict);
             var service = new GoogleCalendarService(new Mock<INineStarKiBasePackage>().Object,
-                profiles.Object, users.Object);
+                profiles.Object, users.Object, new Mock<IAstrologyService>().Object);
             using (var cancellation = new CancellationTokenSource())
             {
                 cancellation.Cancel();
@@ -57,7 +57,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             userService.Setup(e => e.UpdateUserPreference(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<object>()))
                 .Callback((int id, string key, object value) => preferences[id] = (string)value);
             var service = new GoogleCalendarService(new Mock<INineStarKiBasePackage>().Object,
-                new Mock<INineStarKiService>().Object, userService.Object);
+                new Mock<INineStarKiService>().Object, userService.Object, new Mock<IAstrologyService>().Object);
 
             var token = service.GetOrCreateSubscriptionToken(42);
             Assert.Equal(token, service.GetOrCreateSubscriptionToken(42));
@@ -78,7 +78,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         {
             var userService = new Mock<IUserService>(MockBehavior.Strict);
             var service = new GoogleCalendarService(new Mock<INineStarKiBasePackage>().Object,
-                new Mock<INineStarKiService>().Object, userService.Object);
+                new Mock<INineStarKiService>().Object, userService.Object, new Mock<IAstrologyService>().Object);
             Assert.Null(service.GetUserIdFromSubscriptionToken(null));
             Assert.Null(service.GetUserIdFromSubscriptionToken(" "));
             Assert.Null(service.GetUserIdFromSubscriptionToken(new string('A', 1025)));
@@ -268,7 +268,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                         PeriodStartsOn = yearStart, PeriodEndsOn = yearStart.AddDays(39)
                     });
             }
-            var calendar = new GoogleCalendarService(package.Object, profiles.Object, users.Object);
+            var astrology = new Mock<IAstrologyService>(MockBehavior.Strict);
+            var calendar = new GoogleCalendarService(package.Object, profiles.Object, users.Object, astrology.Object);
 
             var entries = calendar.GetCalendarEntries(42, date, date.AddDays(numberOfDays));
 
@@ -296,6 +297,23 @@ namespace K9.WebApplication.Tests.Unit.Services
                 Times.Exactly((numberOfDays + 39) / 40 + (startsBeforeSolarTransition ? 1 : 0)));
             profiles.VerifyAll();
 
+            Assert.All(entries, e => Assert.Null(e.MoonPhase));
+            astrology.Verify(e => e.GetMoonPhase(It.IsAny<DateTime>(), It.IsAny<string>(),
+                It.IsAny<bool>(), It.IsAny<NineStarKiEnergy>()), Times.Never);
+            var phase = new MoonPhase(88.6, false) { LunarDay = 19, LunarDayDescription = "<p>Lunar reading</p>" };
+            astrology.Setup(e => e.GetMoonPhase(
+                It.Is<DateTime>(d => d.Kind == DateTimeKind.Unspecified && d >= date && d < date.AddDays(numberOfDays)),
+                timeZoneId, false, It.IsAny<NineStarKiEnergy>())).Returns(phase);
+            var expanded = calendar.GetCalendarEntries(42, date, date.AddDays(numberOfDays), CancellationToken.None, true);
+            Assert.Equal(entries.Select(e => e.Date), expanded.Select(e => e.Date));
+            Assert.All(expanded, e => Assert.Same(phase, e.MoonPhase));
+            astrology.Setup(e => e.GetMoonPhase(
+                It.Is<DateTime>(d => d == date && d.Kind == DateTimeKind.Unspecified),
+                timeZoneId, true, It.IsAny<NineStarKiEnergy>())).Returns(phase);
+            var selectedLunar = calendar.GetLunarCalendarEntry(42, date, CancellationToken.None);
+            Assert.Equal(date, selectedLunar.Date);
+            Assert.Same(phase, selectedLunar.MoonPhase);
+
             // The same planner batches supply the website and the subscription;
             // only the description resource family changes for the feed.
             var rawFeed = calendar.GenerateCalendar(42, date, date.AddDays(numberOfDays));
@@ -315,6 +333,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             var expectedDescription = expectedFeed.Split(new[] { "\r\n" }, StringSplitOptions.None)
                 .Single(e => e.StartsWith("DESCRIPTION:", StringComparison.Ordinal));
             Assert.Contains(expectedDescription + "\r\n", feed);
+            astrology.Verify(e => e.GetMoonPhase(It.IsAny<DateTime>(), timeZoneId, false,
+                It.IsAny<NineStarKiEnergy>()), Times.Exactly(numberOfDays));
+            astrology.Verify(e => e.GetMoonPhase(It.IsAny<DateTime>(), timeZoneId, true,
+                It.IsAny<NineStarKiEnergy>()), Times.Once);
             foreach (var line in rawFeed.Split(new[] { "\r\n" }, StringSplitOptions.None))
                 Assert.InRange(Encoding.UTF8.GetByteCount(line), 0, 75);
         }

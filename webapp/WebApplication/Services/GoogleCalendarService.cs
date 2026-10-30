@@ -24,12 +24,14 @@ namespace K9.WebApplication.Services
         private const string SubscriptionPurpose = "NineStarKi.PersonalCalendar.v1";
         private readonly INineStarKiService _nineStarKiService;
         private readonly IUserService _userService;
+        private readonly IAstrologyService _astrologyService;
 
-        public GoogleCalendarService(INineStarKiBasePackage my, INineStarKiService nineStarKiService, IUserService userService)
+        public GoogleCalendarService(INineStarKiBasePackage my, INineStarKiService nineStarKiService, IUserService userService, IAstrologyService astrologyService)
             : base(my)
         {
             _nineStarKiService = nineStarKiService;
             _userService = userService;
+            _astrologyService = astrologyService;
         }
 
         public List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate)
@@ -39,10 +41,20 @@ namespace K9.WebApplication.Services
 
         public List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken)
         {
-            return GetCalendarEntries(userId, startDate, endDate, cancellationToken, false);
+            return BuildCalendarEntries(userId, startDate, endDate, cancellationToken, false, false, false);
         }
 
-        private List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken, bool forSubscription)
+        public List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken, bool includeMoonPhases)
+        {
+            return BuildCalendarEntries(userId, startDate, endDate, cancellationToken, false, includeMoonPhases, false);
+        }
+
+        public CalendarEntry GetLunarCalendarEntry(int userId, DateTime date, CancellationToken cancellationToken)
+        {
+            return BuildCalendarEntries(userId, date, date.AddDays(1), cancellationToken, false, true, true).Single();
+        }
+
+        private List<CalendarEntry> BuildCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken, bool forSubscription, bool includeMoonPhases, bool includeLunarDay)
         {
             cancellationToken.ThrowIfCancellationRequested();
             ValidateUserId(userId);
@@ -147,7 +159,10 @@ namespace K9.WebApplication.Services
                             DayHouse = day,
                             AfternoonDayHouse = afternoon.HasValue && afternoon.Value != day ? afternoon : null,
                             Summary = string.Format(CultureInfo.InvariantCulture, K9.Globalisation.Dictionary.PersonalCalendarEventSummaryFormat, year, month, day),
-                            Description = description
+                            Description = description,
+                            MoonPhase = includeMoonPhases
+                                ? _astrologyService.GetMoonPhase(localDate, timeZoneId, includeLunarDay, yearlyPlanner.NineStarKiModel.MainEnergy)
+                                : null
                         });
                         date = localDate.AddDays(1);
                     }
@@ -160,7 +175,7 @@ namespace K9.WebApplication.Services
 
         public string GenerateCalendar(int userId, DateTime startDate, DateTime endDate)
         {
-            return ConvertToICalendar(userId, GetCalendarEntries(userId, startDate, endDate, CancellationToken.None, true));
+            return ConvertToICalendar(userId, BuildCalendarEntries(userId, startDate, endDate, CancellationToken.None, true, false, false));
         }
 
         public DateTime GetCalendarToday(int userId)

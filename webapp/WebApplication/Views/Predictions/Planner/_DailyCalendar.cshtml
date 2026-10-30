@@ -46,7 +46,7 @@
             <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-display="@Model.Display" data-type="child" data-combined-year="@(energy.CombinedPrediction?.Year)" data-combined-month="@(energy.CombinedPrediction?.Month)" data-combined-day="@(energy.CombinedPrediction?.Day)" data-combined-afternoon="@(energy.CombinedPrediction?.AfternoonDay)" data-selected-date="@energy.EnergyStartsOnDateTimeString" data-update-url="@Model.UpdateChildUrl">
                 <div class="calendar-day child-block @energy.SelectedCssClass">
                     <div class="date-label">@Model.GetEnergyTitle(energy)</div>
-                    <div class="custom-content">
+                    <div class="custom-content calendar-energy-content">
                         @if (energy.IsSplitEnergy)
                         {
                             <div class="double-energy-container">
@@ -61,7 +61,7 @@
                             <img loading="lazy" title="@energy.Energy.EnergyName" alt="@energy.ImageAlt" class="auto-size center-block" src="@energy.ImageSrc" />
                         }
                     </div>
-                    <div class="custom-content">
+                    <div class="custom-content calendar-moon-content">
                         @Html.Partial("~/Views/Astrology/_MoonPhase.cshtml", energy.MoonPhase)
                     </div>
                 </div>

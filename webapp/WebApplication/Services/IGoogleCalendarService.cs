@@ -10,6 +10,8 @@ namespace K9.WebApplication.Services
         // Calendar dates in the member's saved timezone; endDate is exclusive.
         List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate);
         List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken);
+        List<CalendarEntry> GetCalendarEntries(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken, bool includeMoonPhases);
+        CalendarEntry GetLunarCalendarEntry(int userId, DateTime date, CancellationToken cancellationToken);
         string ConvertToICalendar(int userId, List<CalendarEntry> entries);
         string GenerateCalendar(int userId, DateTime startDate, DateTime endDate);
         DateTime GetCalendarToday(int userId);

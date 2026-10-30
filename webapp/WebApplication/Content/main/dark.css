@@ -639,9 +639,6 @@
 .dark-mode .membership-option-container .membership-option .membership-footer .membership-valid-until-container {
   color: #aaaaaa;
 }
-.dark-mode img[alt="selected"] {
-  filter: invert(100%) !important;
-}
 .dark-mode .custom-uploader .btn-upload-trigger {
   background: #276e93;
   border-color: var(--border-color);

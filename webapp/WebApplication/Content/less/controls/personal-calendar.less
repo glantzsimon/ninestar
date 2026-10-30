@@ -49,7 +49,7 @@
         position: relative;
         transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
         .calendar-day-date { position: absolute; top: 4px; left: 5px; font-size: 0.75em; line-height: 1; }
-        img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 34px; max-width: 55%; max-height: 55%; height: auto; object-fit: contain; }
+        img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin-top: -2px; width: 34px; max-width: 55%; max-height: 55%; height: auto; object-fit: contain; }
         .calendar-day-numbers { position: absolute; bottom: 4px; left: 0; right: 0; text-align: center; font-size: 0.7em; line-height: 1; white-space: nowrap; }
         // Reuse the predictions calendar's hover/current/active visual hierarchy.
         &:hover:not(:disabled), &:focus-visible:not(:disabled) {
@@ -122,3 +122,15 @@ body.personal-calendar-open { overflow: hidden; }
         .personal-calendar-detail { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); }
     }
 }
+
+#personal-calendar .personal-calendar-day img.calendar-day-moon,
+#personal-calendar .personal-calendar-lunar { display: none; }
+#personal-calendar.is-expanded .personal-calendar-day { min-height: 96px; }
+#personal-calendar.is-expanded .personal-calendar-day img.calendar-day-energy { margin-top: 3px; }
+#personal-calendar.is-expanded .personal-calendar-day img.calendar-day-moon { display: block; top: 5px; right: 5px; left: auto; width: 28%; min-width: 20px; max-width: 30px; max-height: 30px; height: auto; margin: 0; transform: none; }
+#personal-calendar.is-expanded .personal-calendar-lunar.has-lunar-data { display: block; margin-top: 20px; }
+#personal-calendar .personal-calendar-lunar .moon-wrapper.large img { width: 140px; max-width: 100%; height: auto; }
+
+/* Request state wins over any queued spinner fade or cached display value. */
+#personal-calendar[aria-busy="false"] .personal-calendar-content > .partialSpinner,
+#personal-calendar[aria-busy="false"] .personal-calendar-content > .partialOverlay { display: none !important; }

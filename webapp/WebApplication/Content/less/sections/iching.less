@@ -14,30 +14,35 @@
 
     .hexagram-hex-container {
         width: 163px;
-        height: auto;
+        height: 163px;
         margin: 20px auto;
-        padding: 11px;
-        background: @whisper-white;
-        
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8.2px;
+        background: url("../../../Images/ninestar/magic-square-plate.png") center / 100% 100% no-repeat;
+
         .hex-line {
-            width: 124px;
+            width: 120px;
             height: 10px;
-            margin: 9px auto;
-            background: black;
+            margin: 0 auto;
+            flex-shrink: 0;
+            --hexagram-line-color: #291a0b;
+            background: var(--hexagram-line-color);
+            filter: drop-shadow(0 1px 0 rgba(63, 34, 4, 0.55));
             position: relative;
 
             &.changing {
-                background: var(--vibrant-orange);
+                --hexagram-line-color: var(--vibrant-orange);
             }
         }
 
-        .yin::before {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 10px;
-            background: white;
-            left: 52px;
+        .hex-line.yin {
+            background: linear-gradient(to right,
+                var(--hexagram-line-color) 0, var(--hexagram-line-color) 50px,
+                transparent 50px, transparent 70px,
+                var(--hexagram-line-color) 70px, var(--hexagram-line-color) 100%);
         }
     }
 

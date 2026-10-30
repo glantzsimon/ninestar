@@ -140,3 +140,23 @@ Read `docs/website-calculators.md` for the single anonymous result per website c
 ## Image transparency
 
 Preserve the alpha transparency of owner-supplied artwork when resizing or exporting icons and logos. Never add a background colour or flatten transparency unless the owner explicitly requests it.
+
+
+## Artwork direction
+
+Read `docs/visual-design.md` before changing artwork. The owner prefers beautiful, ancient, mystical astrological imagery with warm gold grounds, restrained symbolic detail and a coherent handcrafted feel. Keep icons legible at their real display size. Preserve dimensions, actual image format, filenames and alpha transparency unless an explicit exception is approved. Gold inside an emblem is welcome; the surrounding canvas must remain transparent so it works across themes. Do not apply the artwork refresh to unrelated folders or site layout without authorisation.
+
+
+For Nine Star Ki artwork, preserve energy numerals, organ silhouettes and yin/yang polarity. Render exact trigram bars and relationship arrows with `tools/render-ninestar-diagrams.py` over the gold artwork; do not rely on generated marks for precise diagrams. See `docs/ninestar-artwork-report.md`. The neutral centre has no assigned trigram.
+
+## Encrypted files
+
+If an encrypted file blocks requested work, stop and ask the owner how to proceed. Never create alternate configuration files, duplicate settings, or bypasses to work around encryption. The owner can provide a relevant plaintext excerpt or apply precise edits locally. This applies to encrypted configuration classes as well as settings files.
+
+## Media paths
+
+Read `docs/media-paths.md`. Use existing DefaultValuesConfiguration and ConfigHelper for media settings; UseHostedMedia is disabled explicitly in the existing appsettings.json. Integration build symbols take precedence over DEBUG for media selection. Do not infer deployment environment with Request.IsLocal. Keep static, configuration and email media paths consistent. The mobile artwork catalogue remains request-origin based.
+
+## Mobile UI labels
+
+Public UI text is explicitly registered in Helpers/MobileUiLabels.cs and documented in docs/mobile-ui-labels.md. Add new interface labels/messages there using strongly typed Dictionary resources; never export the whole resource manager, which also holds paid content. Keep shared calculator fields, screen navigation, About help and personalised reading headings distinct. Preserve website casing and protocol/display separation. Offline native bootstrap wording must come from the same approved Dictionary values.

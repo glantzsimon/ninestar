@@ -17,3 +17,11 @@ Use the input/output mappings in `webapp/WebApplication/compilerconfig.json`. Th
 Validation for this change compiled all 69 configured LESS inputs successfully. The 41 affected CSS outputs were parsed and checked: 2,792 non-dark declarations retain their resolved light-theme values; 27 changed border/outline declarations preserve widths/styles; blue accent declarations are unchanged. Existing generated URL rewriting was retained. Browser visual validation and the Windows application build were not executed here.
 
 After deploying assets, visually check dark/light panels, calculator controls and focused inputs, tables, expanded help, tabs, mobile navbar, and selected calendar days. Blue focus/selection should remain recognisable and standard dark outlines should be #b8b8b8.
+
+## Artwork direction
+
+The UI artwork family follows the owner-approved antique gold, restrained mystical astrology standard in [visual-design.md](visual-design.md). Gold belongs inside each emblem; transparent surrounding space lets the same asset work on both themes. The artwork refresh does not change the shared colour palette, blue focus/selection accents or page layout. See [ui-artwork-report.md](ui-artwork-report.md) for canonical filenames, mobile IDs and the navigation reuse map.
+
+Selected-state artwork now retains its supplied colours in both themes. The old dark-only img[alt="selected"] invert(100%) rule was intended for earlier monochrome artwork; it inverted the refreshed gold selection badge to blue. Remove that obsolete rule in dark.less and dark.css rather than editing Images/ui/selected.png or adding a competing override.
+
+Bootstrap button glyphs use a 3px top offset (2px below Bootstrap's default 1px) to align with the current button label font. The scoped .btn > .glyphicon rule lives in elements.less and elements.css and leaves button dimensions, padding and interaction unchanged.

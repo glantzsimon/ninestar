@@ -80,6 +80,8 @@ namespace K9.WebApplication.Controllers
                 Entitlements = MobileEntitlementsMapper.Map(id, membership, GetUtcNow()),
                 Membership = membership == null ? null : new
                 {
+                    DisplayName = membership.MembershipOption == null ? null : membership.MembershipOption.IsFree
+                        ? K9.Globalisation.Dictionary.FreeMembership : membership.MembershipOption.SubscriptionTypeNameLocal,
                     membership.StartsOn, membership.EndsOn, membership.IsActive,
                     Paid = membership.IsAuthorisedToViewPaidContent(), Unlimited = membership.IsUnlimited(),
                     membership.ComplementaryPersonalChartReadingCount, membership.ComplementaryPredictionsReadingCount,

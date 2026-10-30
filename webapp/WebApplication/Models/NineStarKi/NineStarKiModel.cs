@@ -381,7 +381,6 @@ namespace K9.WebApplication.Models
                 unfavourableDirections.Add((directions.Year.PersonalHouseOccupied, directions.Year.GlobalKi, ENineStarKiEnergyCycleType.YearlyCycleEnergy, directions.Year.GetDirections().UnfavourableDirections));
                 unfavourableDirections.Add((directions.Month.PersonalHouseOccupied, directions.Month.GlobalKi, ENineStarKiEnergyCycleType.MonthlyCycleEnergy, directions.Month.GetDirections().UnfavourableDirections));
                 unfavourableDirections.Add((directions.Day.PersonalHouseOccupied, directions.Day.GlobalKi, ENineStarKiEnergyCycleType.DailyEnergy, directions.Day.GetDirections().UnfavourableDirections));
-                unfavourableDirections.Add((directions.Hour.PersonalHouseOccupied, directions.Hour.GlobalKi, ENineStarKiEnergyCycleType.HourlyEnergy, directions.Hour.GetDirections().UnfavourableDirections));
 
                 _directionsChartViewModel = new NineStarKiDrectionsChartViewModel(unfavourableDirections);
             }

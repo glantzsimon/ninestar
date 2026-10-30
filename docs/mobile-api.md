@@ -35,9 +35,9 @@ The response uses the normal success envelope:
 
 Dimensions above are illustrative; use the actual returned dimensions. `assets` is a dictionary keyed by stable protocol ID, not localised display text. Each entry contains `group` and a dictionary of actual `variants` (`default`, optionally `dark`). Select `dark` when present for dark mode, otherwise `default`. No synthetic/resized variants are advertised. Separately authored logo sizes retain their own IDs. GIF IDs end in `-animated`. IDs are case-sensitive; original filename case is preserved in URLs. Use the exact supplied URL rather than constructing a path from an ID, label or number.
 
-The initial explicit catalogue contains **431 file registrations, 424 logical IDs and 424 distinct image contents**. It covers Nine Star energies, elements, trigrams, modalities, seasons, organs and transformations; yin/yang; all 32 supplied moon-phase images; numerology codes and planner artwork; UI artwork; company branding; I Ching; membership artwork; backgrounds, home/about and shared artwork; and supplied country flags. Seven light/dark pairs share their logical IDs. Identical image contents share a canonical URL and revision even when used under different semantic IDs (for example, earth and stable modality). This avoids duplicate image downloads while preserving useful domain names. The catalogue contains metadata/URLs, never inline image bytes.
+The explicit catalogue currently contains **438 files, 433 logical IDs, 440 variant registrations and 430 distinct image contents**, including two backwards-compatible UI aliases. It covers Nine Star energies, elements, trigrams, modalities, seasons, organs and transformations; yin/yang; all 32 supplied moon-phase images; numerology codes and planner artwork; UI artwork; company branding; I Ching; membership artwork; backgrounds, home/about and shared artwork; and supplied country flags. Seven light/dark pairs share their logical IDs. Identical image contents share a canonical URL and revision even when used under different semantic IDs (for example, earth and stable modality). This avoids duplicate image downloads while preserving useful domain names. The catalogue contains metadata/URLs, never inline image bytes.
 
-Public media is served from the existing `MediaService.BaseImagesPath`, captured once per response. There are no media health requests, directory scans, file reads, database queries, user lookups or calculations in the action. Metadata and content hashes are generated ahead of time and compiled into the application. An unavailable or invalid/non-absolute media base produces `503 artwork_unavailable` with `no-store`; it must not silently return an empty successful catalogue. Keep configured media bases absolute HTTP(S) URLs with no credentials, query or fragment. The existing scheduled health check remains the sole owner of hosted/local fallback selection.
+Catalogue image URLs use the current request origin and application virtual path plus `/Images`, independently of `MediaService.BaseImagesPath` and website CDN/health-check selection. Integration therefore returns `https://int.9starkiastrology.com/Images/...`; Production returns its own request host; a local application under `/ninestar` returns `/ninestar/Images/...` on its request host and port. Deploy the artwork files into that installation’s Images folder. There are no media health requests, directory scans, file reads, database queries, user lookups or calculations in the action. Metadata and content hashes are generated ahead of time and compiled into the application. A missing or invalid/non-absolute request-derived base produces `503 artwork_unavailable` with `no-store`. The website’s separate media/CDN selection is unchanged.
 
 ### Artwork references in calculation responses
 
@@ -58,9 +58,9 @@ Article-specific images, user avatars/uploads and video URLs remain on their exi
 
 The global BeginRequest cache default explicitly excludes only this exact artwork GET route; it must not pre-set DEBUG NoCache or Release ServerAndPrivate, because the action cannot relax an already restrictive ASP.NET policy. All other requests retain their existing defaults. Success caching remains the action's responsibility; errors remain no-store. See the startup-free regression checks and deferred IIS gate in `docs/mobile-artwork-validation.md`.
 
-This one public, identity-free action uses `Cache-Control: public, max-age=300` and a weak `ETag: W/"<version>"`. The action explicitly sets a five-minute max age and ASP.NET sliding expiration for a constant per-response client lifetime, and disables origin/server caching so each request selects the current media base and ETag. This does not create a sliding server cache or renew a client's freshness without a network response. Image-file caching is separate and is controlled by the image host. Private API responses still use `no-store`. Version reflects media base/fallback, registered IDs, variants, URLs, content hashes, MIME types and dimensions. Image URLs carry their content revision as `?v=...` so changed artwork changes its cache key. The media host must serve the same file when that query is supplied; validate that in Integration.
+This one public, identity-free action uses `Cache-Control: public, max-age=300` and a weak `ETag: W/"<version>"`. The action explicitly sets a five-minute max age and ASP.NET sliding expiration for a constant per-response client lifetime, and disables origin/server caching so each request selects the current media base and ETag. This does not create a sliding server cache or renew a client's freshness without a network response. Image-file caching is separate and is controlled by the image host. Private API responses still use `no-store`. Version reflects request origin/application image base, registered IDs, variants, URLs, content hashes, MIME types and dimensions. Image URLs carry their content revision as `?v=...` so changed artwork changes its cache key. The media host must serve the same file when that query is supplied; validate that in Integration.
 
-Cache the successful envelope and its ETag per API environment (not per NineStar account). Revalidate with `If-None-Match` after freshness expires; `304` has no JSON body and retains the cached catalogue. Whole strong/weak tags, lists and wildcard are supported. A changed host/fallback returns `200` and a new version. Do not send conditional headers without a cached body; recover from an unexpected `304` by retrying once without the header. Fetch only images needed for the current/nearby screen; share image cache entries by URL or revision. Do not preload the entire catalogue's artwork. Keep the mobile client's existing 15-second timeout, retain the last successful catalogue on refresh failure, and preserve existing image rendering until this backend is available. Catalogue refresh must not replace account state or unsaved edits.
+Cache the successful envelope and its ETag per API environment (not per NineStar account). Revalidate with `If-None-Match` after freshness expires; `304` has no JSON body and retains the cached catalogue. Whole strong/weak tags, lists and wildcard are supported. A changed request origin/application path returns `200` and a new version. Do not send conditional headers without a cached body; recover from an unexpected `304` by retrying once without the header. Fetch only images needed for the current/nearby screen; share image cache entries by URL or revision. Do not preload the entire catalogue's artwork. Keep the mobile client's existing 15-second timeout, retain the last successful catalogue on refresh failure, and preserve existing image rendering until this backend is available. Catalogue refresh must not replace account state or unsaved edits.
 
 Maintain `tools/mobile-artwork-paths.txt` as the explicit public allowlist. When adding/changing files, run `python tools/update-mobile-artwork.py` (Python with Pillow), then commit the generated `Helpers/MobileArtworkRegistry.Data.cs`. `--check` verifies source files, image metadata and hashes against the committed catalogue; this is a development check, never a server-startup operation. Preserve existing IDs when filenames move by adjusting the generator/registration deliberately rather than deriving a new client contract accidentally. New private directories must never be allowed.
 
@@ -206,7 +206,23 @@ Validation handoff: build with VS2017 and run `MobilePersonalChartControllerTest
 
 `GET personal-chart/me/free` returns numbers, the allowlisted overview table metadata described above, and the core, character and intellectual sections granted by the website for one's own chart. It never calls the full mapper or returns energy descriptions for paid sections. Full `/me` remains paid. The five calculator `/last` endpoints save only validated request inputs under a user-bound session key and recalculate after fresh entitlement checks. Saved settings include birth time/timezone and calculation flags; switching identity cannot retrieve another user's saved request. Logging out clears this session state. Anonymous previews are not saved.
 
-`content/{page}` returns resource-backed title and authored content for privacy, terms, FAQ, data removal, calculation methods, southern hemisphere and AI information. Resource-authored HTML is content, not a rendered view. `metadata/options` supplies protocol values with resource-backed enum labels; `metadata/timezones` mirrors the existing extended selector. Administrative schemas include resource-backed field labels and enum choices. No complete multilingual guarantee is implied.
+`content/{page}` returns resource-backed title and authored content for privacy, terms, FAQ, data removal, calculation methods, southern hemisphere and AI information. Resource-authored HTML is content, not a rendered view. `GET /api/mobile/v1/content/ai-astrologer` additionally returns `data.externalUrl`, sourced from the existing `ApiConfiguration.NineStarKiAstrologerGptUrl` setting used by the website. Fetch this value when opening the AI Astrologer so the app does not embed a GPT/plugin URL in its bundle. It may be null when no link is configured; handle that without constructing a fallback URL. Other content-page response shapes are unchanged. `metadata/options` supplies protocol values with resource-backed enum labels; `metadata/timezones` mirrors the existing extended selector. Administrative schemas include resource-backed field labels and enum choices. No complete multilingual guarantee is implied.
+
+AI Astrologer response excerpt:
+
+```json
+{
+  "success": true,
+  "data": {
+    "page": "ai-astrologer",
+    "title": "AI Astrologer",
+    "htmlBody": "<h4>About the 9 Star Ki AI Astrologer</h4>...",
+    "culture": "en-GB",
+    "externalUrl": "https://<configured-gpt-or-plugin-url>"
+  },
+  "error": null
+}
+```
 
 Bulk association pairs are `user-roles`, `role-permissions`, `user-mailing-lists`, `contact-mailing-lists`, `mailing-list-users` and `mailing-list-contacts`. Replacement takes `{ ownerId, selectedIds }`, rejects missing/deleted targets, and applies repository changes in one serializable transaction. An empty array clears the selection; automatic mailing lists cannot be edited as stored rows. General records and association reads exclude soft-deleted rows.
 
@@ -1280,3 +1296,159 @@ Available on the existing full and complementary Compatibility projections after
 ```
 
 The example body is abbreviated. Fetch this endpoint when opening the I Ching calculator to display its introduction before casting. Do not call `cast` just to obtain help. The cast response continues to include the same `data.help.overview` fields. Integration URL: `https://int.9starkiastrology.com/api/mobile/v1/iching/help`. Deployment and live verification are separate from publishing the source change.
+
+### UI artwork naming and style refresh
+
+The UI gold artwork refresh preserves image dimensions and existing public IDs. Canonical new IDs `ui.constitution` and `ui.character` resolve to `ui/constitution.png` and `ui/character.png`. Previously published `ui.solar-nature` and `ui.lunar-nature` remain aliases pointing at the same new URLs/revisions. Use the canonical IDs in new clients. The canonical path lookup returns the new ID. `ui.question-mark` retains its ID but now uses `ui/question-mark.png` with `image/png` to support transparency. `ui.document` still uses `document.jpg`, whose actual encoding is PNG.
+
+Refresh `/api/mobile/v1/metadata/artwork` through the existing ETag/revision mechanism and render its returned URLs. Do not reconstruct the old filenames. The registry now has 433 logical IDs and 440 variant registrations for 438 files, including two compatibility aliases. Ship image files to the configured media host alongside the regenerated application catalogue. See `docs/visual-design.md` and `docs/ui-artwork-report.md` for the design and file audit.
+
+The refresh also adds seven 160 × 160 PNG navigation assets: `ui.knowledge-base`, `ui.articles`, `ui.ai-astrologer`, `ui.personal-chart`, `ui.origins`, `ui.nine-core-energies` and `ui.nine-character-energies`. They use the same default-variant URL/width/height/contentType/revision contract. Reuse `ui.predictions` for Predictions, `ui.relationships` for Compatibility and Relationships, `ui.daily-cycle` for Cycles of Light and Dark, `ui.yinyang` for Yin and Yang, `ui.sun` for Yearly Predictions and `ui.moon` for Monthly Predictions. These are artwork mappings, not new text labels or calculation endpoints.
+
+### Catalogue host isolation
+
+The catalogue now uses the API request's own origin and application path, rather than the website's shared configured media host. After deployment, refresh the catalogue using its existing ETag handling; the base URL contributes to the version, so an old Production-based Integration catalogue receives a new `200` response and version. Keep caches separated by API environment. Do not rewrite image hosts in the mobile client. This does not alter embedded resource HTML media selection or the website CDN configuration. Added controller regression cases cover Integration, Production, local virtual directories, ports and HTTP/HTTPS. Windows execution and live deployment verification remain required.
+
+### Nine Star Ki artwork refresh
+
+All 60 PNGs under `Images/ninestar` are redesigned in the approved antique gold family, preserving filenames, dimensions, catalogue IDs and default/dark variant names. This includes energy numerals, elements, modalities, organs, seasons, exact trigrams and yin/yang. Eight trigram patterns, the four-arrow cycle symbol and ten relationship/cycle diagrams use precise vector geometry over the gold artwork. Diagram element labels are sourced from the existing Dictionary resources.
+
+`ninestar.elements.cycle-five` now shows the supportive five-element cycle in both themes; its old dark file incorrectly showed sibling pairs. It deliberately shares content/URLs with `ninestar.transformations.transformation-supportive`. `ninestar.transformations.transformation-same` remains the sibling-pair diagram. Resolve returned catalogue URLs rather than expecting an ID to map to a particular physical filename. All existing access rules and calculation data remain unchanged. See `docs/ninestar-artwork-report.md` for the full inventory, source audit and release checks.
+
+### Travel summary and magic-square rendering
+
+Full Predictions endpoints (`POST /api/mobile/v1/predictions/calculate`, `GET /api/mobile/v1/predictions/me`, `GET /api/mobile/v1/predictions/last`) add `data.travelSummary` and `data.magicSquares`. They are null unless the authenticated caller is an admin or has an active unlimited membership. The controller checks eligibility server-side; clients cannot request entitlement through a flag. Existing paid endpoint checks remain in place. The default mapper projection also denies these fields unless explicitly authorised.
+
+The website permits complementary results in its unlimited-style panels, but mobile complementary/free responses currently expose only the existing year readings. Those responses remain unchanged: neither `/readings/predictions` nor `/readings/predictions/me/free` receives these details. Existing `yearlyDirections`, `monthlyDirections`, cycles and planner `magicSquareNumbers` are unchanged. No new endpoint, access grant or purchase flow is introduced.
+
+`data.travelSummary` reuses `NineStarKiModel.GetDrectionsChartViewModel().GetDirectionsChartData()` including its Year/Month/Day weights (5/3/2), centre-house penalties, descending score grouping and guidance thresholds. Hour, Generation and Epoch do not contribute. This is the shared website/API summary rule; hourly square arrows remain separate. Fields:
+
+| Field | Source / meaning |
+| --- | --- |
+| `title` | `Dictionary.WorstDirectionsToTravelIn` (Directions of Travel Summary) |
+| `instructions` | `Dictionary.DirectionsInstructions` |
+| `labels.direction`, `.score`, `.guidance` | `Dictionary.Direction`, `Score`, `Guidance` |
+| `periods` | `["year", "month", "day"]`, the stable identifiers included in scoring |
+| `rows[]` | Website score groups, descending score; direction order retained |
+| `rows[].score` | Existing summed score, not a percentage |
+| `rows[].severity`, `.color` | Website status class and matching hex colour |
+| `rows[].showWarning` | True for scores >= 10, matching the warning triangle |
+| `rows[].guidance` | Existing parsed Dictionary guidance, with the same score thresholds |
+| `rows[].directions[]` | Direction objects defined below |
+
+Status colours mirror `Content/less/sections/predictions.less`: purple-warning #800080 (>=11), red-warning #cc0000 (>=10), red #ff0000 (>=8), light-red #ff6666 (>=7), orange #ffa500 (>=5), yellow #ffff00 (>=3), light-yellow #ffffcc (>=1), green #90ee90 (otherwise). Guidance reuses AvoidAllTravel, AvoidTravel, KeepTravelShortAndInfrequent, TravelWithGreatCare and TravelWithCare. The website's existing zero-score `OK` string is now `Dictionary.TravelOkay`; no wording was added or rewritten. Direction labels now consistently resolve existing North/NorthEast/East/SouthEast/South/SouthWest/West/NorthWest/Centre Dictionary entries in both website guidance and API labels/tooltips.
+
+`data.magicSquares.personal` and `.global` each contain `epoch`, `generation`, `year`, `month`, `day`, `hour`, projected from the website's `GetCycleMagicSquares` / `GetGlobalCycleMagicSquares`. Each square has:
+
+| Field | Meaning |
+| --- | --- |
+| `title` | Existing Dictionary EpochEnergyLabel, GenerationalEnergyLabel, YearlyEnergyLabel, MonthlyEnergyLabel, DailyEnergyLabel or HourlyEnergyLabel |
+| `houseName` | Existing formatted website house label |
+| `globalNumber`, `personalHouse` | Global centre number and occupied house number |
+| `isGlobal`, `isSplit`, `isDualView` | Existing square presentation flags |
+| `showDirections` | Arrows apply to personal Year/Month/Day/Hour; false for global, Epoch and Generation |
+| `artworkId` | `ninestar.magic-square-plate`; resolve its URL through metadata/artwork |
+| `cells[]` | Exactly nine cells in top-left to bottom-right order |
+| `cells[].row`, `.column` | Zero-based grid coordinates |
+| `cells[].house` | Fixed position/house number, **not** the displayed number |
+| `cells[].number`, `.color` | Calculated number for that position and website number colour |
+| `cells[].isActive`, `.isLunarActive` | Primary/global-centre and dual lunar highlights |
+| `arrows[]` | Four personal arrow objects, or null when inapplicable |
+| `secondaryHouseName` | Optional second house label, without hardcoded Pri/Sec suffixes |
+| `secondary` | Second complete square only for a split day; otherwise null |
+
+Arrow fields: `key` (five-yellow-killing/dark-sword-killing/self-life-killing/target-killing), `color`, Dictionary-backed `title`, fully parsed `description`, period `score`, and a `direction` object. Colours match the website: #ffff00, #333333, #ff0000, #0000ff respectively. Overlapping arrows remain separate, and Centre is a ring rather than a directional line. Generation/Epoch have no arrows.
+
+Each direction object has `key` (stable enum identifier), `label` (Dictionary display label), `displayDirection` (website screen-side identifier), `endX`, `endY`, `isCentre`. Draw arrows from (0.5,0.5) to the normalised endpoint on a unit square with top-left origin. **The website is south-up**: actual North ends at (0.5,1), East at (0,0.5), South at (0.5,0), West at (1,0.5). Northeast is bottom-left. Do not interpret the key as a north-up screen coordinate or rotate it a second time. Summary direction icons use the same endpoints. For Centre, draw the website's ring overlay rather than a zero-length arrow.
+
+The fixed cell house order is `[4,9,2,3,5,7,8,1,6]`. For global centre 2, the displayed row-order numbers are `[1,6,8,9,2,4,5,7,3]`. Highlight positions by `isActive`, never by comparing the displayed number with `personalHouse`. Use `isLunarActive` on the same grid for dual houses; render `secondary` as another grid only for split days. These fields reflect existing selected-date, house-display and hemisphere calculations; the app must not recalculate them. The existing website Hour/dual-view source mapping is retained, not independently corrected in the transport.
+
+Example direction/arrow excerpt inside a personal square:
+
+```json
+{
+  "key": "self-life-killing",
+  "color": "#ff0000",
+  "title": "Self Life Killing (\"Hon Mei Satsu\")",
+  "score": 5,
+  "direction": {
+    "key": "North", "label": "North", "displayDirection": "South",
+    "endX": 0.5, "endY": 1.0, "isCentre": false
+  }
+}
+```
+
+The excerpt omits `description` for brevity; render the server-supplied text. Native rendering may follow the app's typography/spacing while using the supplied plate, numbers, highlight flags, colours and endpoints. Showing/hiding arrows is a client presentation preference and does not change server access checks. These changes are additive; Windows build/xUnit and authenticated Integration verification remain outstanding. A repository push is not a deployment.
+
+
+### Predictions display and Directionology controls
+
+`GET /api/mobile/v1/metadata/options` additively exposes `data.energyDisplays` using the existing `EEnergyDisplay` enum, plus `data.predictionControls`. Full and free Predictions responses expose the identical control labels under `data.labels.controls` and options under `data.labels.displayOptions` through the shared mapper. Metadata contains no readings or entitlement grants.
+
+| Control field | Dictionary resource | English value |
+| --- | --- | --- |
+| `display` | `EnergyDisplayLabel` | Display |
+| `advancedOptions` | `AdvancedOptions` (new) | Advanced Options |
+| `directionology` | `Directionology` | Directionology |
+| `showDirections` | `ShowDirectionsLabel` | Show Directions |
+
+Options are `{value, number, label}` using the existing metadata convention:
+
+```json
+{
+  "energyDisplays": [
+    { "value": "Graphical", "number": 0, "label": "Graphical Display" },
+    { "value": "MagicSquare", "number": 1, "label": "Magic Square" }
+  ],
+  "predictionControls": {
+    "display": "Display",
+    "advancedOptions": "Advanced Options",
+    "directionology": "Directionology",
+    "showDirections": "Show Directions"
+  }
+}
+```
+
+Labels for the options resolve `Dictionary.Graphical` and `Dictionary.MagicSquare` through the existing enum metadata helper. These are display choices, not `CalculatorType` values or new calculation request properties. The native app can switch presentation locally using the already-returned energies/squares. Displaying these labels on a free response does not grant magic-square or travel-summary access. Unlimited/admin gates and free reading content remain unchanged.
+
+The travel summary now includes Year, Month and Day only, with existing 5/3/2 weights, centre penalties and guidance/severity thresholds preserved. Changes to Hour cannot change summary scores or guidance. The hourly square, arrows and independent direction scores remain available under their existing access rules. Build/xUnit and authenticated Integration checks remain outstanding here; a push does not establish deployment.
+
+
+### Central UI label catalogue
+
+Public `GET /api/mobile/v1/metadata/labels` returns Dictionary-backed interface labels before calculation/login. Existing label/help fields remain compatible. Exact screen/shared mappings, all 173 current mobile uiCopy destinations, culture rules and missing-label behaviour are in [mobile-ui-labels.md](mobile-ui-labels.md).
+
+Fields under `data`: `version` (1), `culture`, `shared` (`actions`, `calculator`, `dateTime`, `feedback`, `chartUi`, `navigation`), `navigation` (feature names), and `screens` (`yourChart`, `explore`, `personalChart`, `predictions`, `compatibility`, `iching`, `karmicNumerology`, `biorhythms`, `calendar`, `account`, `knowledgeBase`, `articles`, `aiAstrologer`). Screen titles/navigation, About help and personalised reading titles remain distinct. No resource enumeration, account/profile data or paid descriptions are exposed by this catalogue.
+
+Example **excerpt** (the actual response contains the other registered groups):
+
+```json
+{
+  "success": true,
+  "data": {
+    "version": 1,
+    "culture": "en-GB",
+    "shared": {
+      "calculator": {
+        "groups": { "birthDetails": "Birth Details", "advancedPreferences": "Advanced Calculation Preferences" },
+        "fields": { "currentTimeZone": "Current Time Zone", "displayDataFor": "Display Data For" },
+        "help": { "currentTimeZone": "The timezone of your current location." },
+        "displayDataForPeriods": [
+          { "value": "Now", "number": 0, "label": "Now" },
+          { "value": "SelectedDate", "number": 1, "label": "Selected Date and Time" }
+        ]
+      }
+    },
+    "screens": {
+      "iching": { "title": "I Ching", "generate": "Generate Hexagram", "detailedInterpretation": "Detailed Interpretation" }
+    }
+  },
+  "error": null
+}
+```
+
+`metadata/options` also adds `data.displayDataForPeriods` using the existing EDisplayDataForPeriod enum. Now still sends `selectedDateTime:null`; SelectedDate sends the chosen wall-clock timestamp in `userTimeZoneId`. No new calculation request property, permissions or mode selector is introduced. Keep hidden selected-date drafts/validation separate from the Now request.
+
+`account/me` adds private `data.membership.displayName` from the existing localised subscription resource (FreeMembership for a free option). I Ching cast result objects add `heading` formatted by the new Dictionary.HexagramHeadingFormat. Existing endpoints, help, result gating and content are unchanged. Labels do not grant access. The catalogue retains `no-store`; client offline/bootstrap labels should be seeded from the same approved resource values, keyed by environment/culture/version, with no machine-key or fabricated-English fallback.
+
+This is a source/contract addition. Windows build/xUnit, deployment and live JSON verification remain outstanding.

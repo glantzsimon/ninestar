@@ -193,6 +193,7 @@ namespace K9.WebApplication.Helpers
             return new T
             {
                 Number = energy.EnergyNumber,
+                ArtworkId = MobileArtworkRegistry.IdForPath("ninestar/energies/" + energy.EnergyLowerCase + ".png"),
                 Colour = metadata.GetColour(),
                 Direction = metadata.GetDirection(),
                 FamilyMember = metadata.GetFamilyMember(),
@@ -223,7 +224,6 @@ namespace K9.WebApplication.Helpers
             result.Description = energy.EnergyDescription;
             result.Trigram = energy.Trigram;
             result.TrigramDescription = energy.TrigramDescription;
-            result.ArtworkId = MobileArtworkRegistry.IdForPath("ninestar/energies/" + energy.EnergyLowerCase + ".png");
             result.ElementArtworkId = MobileArtworkRegistry.IdForPath("ninestar/elements/" + energy.Element.ToString().ToLowerInvariant() + ".png");
             result.TrigramArtworkId = MobileArtworkRegistry.IdForPath("ninestar/trigrams/trigram-" + energy.EnergyLowerCase + "-square.png");
             result.ModalityArtworkId = MobileArtworkRegistry.IdForPath("ninestar/modalities/" + energy.Modality.ToString().ToLowerInvariant() + ".png");

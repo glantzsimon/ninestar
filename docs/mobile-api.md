@@ -206,7 +206,23 @@ Validation handoff: build with VS2017 and run `MobilePersonalChartControllerTest
 
 `GET personal-chart/me/free` returns numbers, the allowlisted overview table metadata described above, and the core, character and intellectual sections granted by the website for one's own chart. It never calls the full mapper or returns energy descriptions for paid sections. Full `/me` remains paid. The five calculator `/last` endpoints save only validated request inputs under a user-bound session key and recalculate after fresh entitlement checks. Saved settings include birth time/timezone and calculation flags; switching identity cannot retrieve another user's saved request. Logging out clears this session state. Anonymous previews are not saved.
 
-`content/{page}` returns resource-backed title and authored content for privacy, terms, FAQ, data removal, calculation methods, southern hemisphere and AI information. Resource-authored HTML is content, not a rendered view. `metadata/options` supplies protocol values with resource-backed enum labels; `metadata/timezones` mirrors the existing extended selector. Administrative schemas include resource-backed field labels and enum choices. No complete multilingual guarantee is implied.
+`content/{page}` returns resource-backed title and authored content for privacy, terms, FAQ, data removal, calculation methods, southern hemisphere and AI information. Resource-authored HTML is content, not a rendered view. `GET /api/mobile/v1/content/ai-astrologer` additionally returns `data.externalUrl`, sourced from the existing `ApiConfiguration.NineStarKiAstrologerGptUrl` setting used by the website. Fetch this value when opening the AI Astrologer so the app does not embed a GPT/plugin URL in its bundle. It may be null when no link is configured; handle that without constructing a fallback URL. Other content-page response shapes are unchanged. `metadata/options` supplies protocol values with resource-backed enum labels; `metadata/timezones` mirrors the existing extended selector. Administrative schemas include resource-backed field labels and enum choices. No complete multilingual guarantee is implied.
+
+AI Astrologer response excerpt:
+
+```json
+{
+  "success": true,
+  "data": {
+    "page": "ai-astrologer",
+    "title": "AI Astrologer",
+    "htmlBody": "<h4>About the 9 Star Ki AI Astrologer</h4>...",
+    "culture": "en-GB",
+    "externalUrl": "https://<configured-gpt-or-plugin-url>"
+  },
+  "error": null
+}
+```
 
 Bulk association pairs are `user-roles`, `role-permissions`, `user-mailing-lists`, `contact-mailing-lists`, `mailing-list-users` and `mailing-list-contacts`. Replacement takes `{ ownerId, selectedIds }`, rejects missing/deleted targets, and applies repository changes in one serializable transaction. An empty array clears the selection; automatic mailing lists cannot be edited as stored rows. General records and association reads exclude soft-deleted rows.
 

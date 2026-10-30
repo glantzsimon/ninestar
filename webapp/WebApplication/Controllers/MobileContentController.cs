@@ -35,6 +35,18 @@ namespace K9.WebApplication.Controllers
             }
             // Resource-authored prose/HTML is content. No Razor layout or controls
             // are rendered, and no resource key or filesystem path is accepted.
+            if (page == "ai-astrologer")
+            {
+                return ApiSuccess(new
+                {
+                    Page = page,
+                    Title = title,
+                    HtmlBody = body,
+                    Culture = CultureInfo.CurrentUICulture.Name,
+                    ExternalUrl = Package.ApiConfiguration?.NineStarKiAstrologerGptUrl
+                });
+            }
+
             return ApiSuccess(new { Page = page, Title = title, HtmlBody = body, Culture = CultureInfo.CurrentUICulture.Name });
         }
     }

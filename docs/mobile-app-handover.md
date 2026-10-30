@@ -158,3 +158,7 @@ The shared website/API travel summary now uses Year/Month/Day only (5/3/2); Hour
 ## Central UI labels (29 October 2026)
 
 `GET /api/mobile/v1/metadata/labels` is the public bootstrap label catalogue, grouped into shared controls/calculator, navigation and named screens. Read docs/mobile-ui-labels.md for all fixed mappings and all 173 destinations from mobile ui-copy.ts. Sources were read from ninestar-mobile, including calculator-labels-handover.md, ui-label-audit.md and iching-api-handover.md. Do not edit native code in this backend task. Use exact server casing; keep help/reading headings separate. Display Data For choices reuse Now/SelectedDate and preserve null-versus-local-timestamp semantics; Current Time Zone and its requested helper are Dictionary-backed. account/me adds membership.displayName; cast hexagrams add heading. Existing labels and access rules remain compatible. No deployment or Windows runtime validation performed here.
+
+## AI Astrologer link and page copy (30 October 2026)
+
+`GET /api/mobile/v1/content/ai-astrologer` includes `data.externalUrl`, read from the existing `ApiConfiguration.NineStarKiAstrologerGptUrl` setting also used by website links. The native app should fetch this URL when opening the feature and must not embed the GPT/plugin address. The website introduction is the Dictionary-backed `gptinfo` resource (`Globalisation/Gpt/en-gb/gptinfo.htm`); its copy now explains the tool's scope and use in a neutral, informative tone. No AI API integration, account change or deployment is included.

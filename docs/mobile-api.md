@@ -180,10 +180,11 @@ This requires Windows/SQL Server/Stripe integration tests for transaction sharin
 
 ## Chart overview table metadata
 
-Full energy DTOs now include the six missing website header-table values. The free own-chart projection additionally returns `data.energies`, keyed by the same roles as the full chart: `epoch`, `generation`, `core`, `character`, `socialExpression`, `dayStar` and `hour`. Each free entry is an explicit `MobileChartEnergyOverview`, containing only `number` and the nine table values below. Existing numeric properties at `data.core`, `data.character`, etc., `summary`, `overview` (a string) and the three already granted `sections` remain unchanged. There is no new endpoint or entitlement requirement.
+Full energy DTOs now include the six missing website header-table values. The free own-chart projection additionally returns `data.energies`, keyed by the same roles as the full chart: `epoch`, `generation`, `core`, `character`, `socialExpression`, `dayStar` and `hour`. Each free entry is an explicit `MobileChartEnergyOverview`, containing only `number`, the nine table values below, and `artworkId`. Existing numeric properties at `data.core`, `data.character`, etc., `summary`, `overview` (a string) and the three already granted `sections` remain unchanged. There is no new endpoint or entitlement requirement.
 
 | JSON field on each energy | Type | Existing website value |
 | --- | --- | --- |
+| `artworkId` | string | `MobileArtworkRegistry.IdForPath("ninestar/energies/" + energy.EnergyLowerCase + ".png")`, the same server-side mapping used by the full chart |
 | `colour` | string | `MetaData.GetColour()` |
 | `direction` | string | `MetaData.GetDirection()` |
 | `familyMember` | string | `MetaData.GetFamilyMember()` |
@@ -196,7 +197,7 @@ Full energy DTOs now include the six missing website header-table values. The fr
 
 These are resource-backed display strings, not new paid interpretations. Combination fields preserve the website's comma-separated number-and-element labels; do not interpret them as JSON arrays or recalculate compatibility in the app. `number` is an integer. The full `MobileChartEnergy` inherits this allowlisted metadata and retains every existing paid field/artwork reference; JSON stays flat, for example `data.energies.core.season`. Other existing full-energy projections (cycles, planners, knowledge base) inherit the additive fields too.
 
-Free entries have exactly ten properties. They do **not** include `description`, `elementDescription`, `modalityDescription`, `trigramDescription`, `yinYangExpansionDescription`, or additional paid sections. Use these entries to connect the overview table; they are not a substitute for the full paid energy DTO. A missing energy produces a null entry. Older deployed backends can lack `energies` or the new properties; omit unavailable rows gracefully until the new revision is deployed.
+Free entries have exactly eleven properties, including the stable artwork registry ID. They do not include image URLs or paid energy prose. They do **not** include `description`, `elementDescription`, `modalityDescription`, `trigramDescription`, `yinYangExpansionDescription`, or additional paid sections. Use these entries to connect the overview table; they are not a substitute for the full paid energy DTO. A missing energy produces a null entry. Older deployed backends can lack `energies` or the new properties; omit unavailable rows gracefully until the new revision is deployed.
 
 The own free endpoint `GET /api/mobile/v1/personal-chart/me/free` and already authorised complementary profile responses share this projection. Public anonymous `personal-chart/preview` and the `Numbers` projection remain unchanged. Existing authentication, ownership, membership, complementary-credit checks and no-store policies are unchanged. No website views/helpers, resources, billing or schema are changed.
 

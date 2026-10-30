@@ -74,6 +74,7 @@ namespace K9.WebApplication.ViewModels.MobileApi
     public class MobileChartEnergyOverview
     {
         public int Number { get; set; }
+        public string ArtworkId { get; set; }
         public string Direction { get; set; }
         public string FamilyMember { get; set; }
         public string Colour { get; set; }
@@ -99,7 +100,6 @@ namespace K9.WebApplication.ViewModels.MobileApi
         public string Description { get; set; }
         public string Trigram { get; set; }
         public string TrigramDescription { get; set; }
-        public string ArtworkId { get; set; }
         public string ElementArtworkId { get; set; }
         public string TrigramArtworkId { get; set; }
         public string ModalityArtworkId { get; set; }

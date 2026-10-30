@@ -153,13 +153,17 @@ namespace K9.WebApplication.Tests.Unit.Controllers
             var energies = Assert.IsType<JObject>(json["Energies"]);
             Assert.Equal(new[] { "character", "core", "dayStar", "epoch", "generation", "hour", "socialExpression" },
                 energies.Properties().Select(e => e.Name).OrderBy(e => e).ToArray());
-            var metadataFields = new[] { "Colour", "Direction", "FamilyMember", "InternalRepresentation",
+            var metadataFields = new[] { "ArtworkId", "Colour", "Direction", "FamilyMember", "InternalRepresentation",
                 "MostChallengingCombinations", "MostHarmoniousCombinations", "Number", "Physiognomy", "PrimaryAttributes", "Season" };
             foreach (var entry in energies.Properties())
             {
                 var metadata = Assert.IsType<JObject>(entry.Value);
-                // Exact allowlist: no paid descriptions can enter the free DTO.
+                // Exact allowlist: no paid descriptions or image URLs can enter the free DTO.
                 Assert.Equal(metadataFields, metadata.Properties().Select(e => e.Name).OrderBy(e => e).ToArray());
+                var number = (int)metadata["Number"];
+                var energy = new NineStarKiEnergy((ENineStarKiEnergy)number);
+                Assert.Equal(MobileArtworkRegistry.IdForPath("ninestar/energies/" + energy.EnergyLowerCase + ".png"),
+                    (string)metadata["ArtworkId"]);
             }
             Assert.Equal((int)json["Core"], (int)energies["core"]["Number"]);
             Assert.Equal((int)json["Character"], (int)energies["character"]["Number"]);

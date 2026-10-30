@@ -65,7 +65,7 @@
         <div class="cell @active8Class @active8LunarClass number-@magicSquareNumbers[0]" data-index="8"><span class="magic-square-number">@magicSquareNumbers[0]</span></div>
         <div class="cell @active9Class @active9LunarClass number-@magicSquareNumbers[5]" data-index="9"><span class="magic-square-number">@magicSquareNumbers[5]</span></div>
 
-        @if (Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.EpochEnergy && Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.GenerationalEnergy && !Model.IsGlobal)
+        @if (!Model.IsPersonalChart && Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.EpochEnergy && Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.GenerationalEnergy && !Model.IsGlobal)
         {
             <div class="directions-line-overlay" style="@directionsStyle">
                 <div data-tooltip-title="@directions.FiveYelloKilling.Title" data-tooltip="@directions.FiveYellowKillingDescription" class="line five-yellow-killing to-@directions.FiveYelloKilling.Direction"></div>

@@ -24,6 +24,7 @@
                             : Model.PersonalHouseOccupied.EnergyCycleType == ENineStarKiEnergyCycleType.EpochEnergy ? Dictionary.EpochEnergyLabel
                                 : string.Empty;
 
+    var personalChartClass = Model.IsPersonalChart ? " personal-chart-magic-square" : "";
     var displayPreference = K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
     var magicStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "display: none;" : "";
 
@@ -41,7 +42,7 @@
     : "";
 }
 
-<div class="magic-square-display" style="@magicStyle">
+<div class="magic-square-display@personalChartClass" style="@magicStyle">
     <div class="ninestar-summary-container margin-3">
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
         @if (Model.IsDualView && !Model.IsGlobal)

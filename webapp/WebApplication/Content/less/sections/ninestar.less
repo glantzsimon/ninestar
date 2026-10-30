@@ -546,3 +546,13 @@ a > .ninestar-summary-container {
 .magic-square-container .magic-square .cell:nth-child(-n+6):not(.active):not(.active-lunar)::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(to bottom, rgba(111, 61, 10, 0.55), rgba(255, 244, 188, 0.65)); pointer-events: none; }
 .magic-square-container .magic-square .cell.active { font-size: calc(2.6rem * 1.4); transform: scale(1.08); }
 .magic-square-container .magic-square .cell.active-lunar { font-size: calc(2.6rem * 1.2); transform: scale(1.04); }
+
+.personal-chart-magic-square {
+    .magic-square .cell {
+        font-size: 2.35rem;
+    }
+
+    .magic-square .cell.active {
+        font-size: calc(2.35rem * 1.25);
+    }
+}

@@ -123,7 +123,8 @@ namespace K9.WebApplication.Helpers
                 NatalHouseStressResponse = (object)null, ChildStressResponse = (object)null,
                 Relationships = (object)null, RelationshipsStraight = (object)null,
                 RelationshipsLgbtq = (object)null
-            }
+            },
+            Health = new { StrongOrgans = (object)null, WeakOrgans = (object)null }
         };
 
         public static MobilePersonalChartResponse Map(NineStarKiModel model, bool birthTimeKnown, bool includeHelp = true)

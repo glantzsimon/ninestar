@@ -15,7 +15,7 @@ Public endpoint: `GET /api/mobile/v1/metadata/labels`. Response envelope remains
 - `data.screens`: `yourChart`, `explore`, `personalChart`, `predictions`, `compatibility`, `iching`, `karmicNumerology`, `biorhythms`, `calendar`, `account`, `knowledgeBase`, `articles`, `aiAstrologer`.
 - Personal chart: `titles`, `groups`, `menu`, `facts`, `roles`. Prediction labels retain the existing `labels` structure and gain `titles`, `ui`, `calculatorUi`. Compatibility uses `labels` from the existing Compatibility label mapper and `ui` for form/status wording. Calendar uses `labels` from CalendarLabels and `ui` for the existing mobile messages. Account includes fixed field/actions, `fields` (firstName/lastName/phoneNumber/optionalPhoneNumber), `actions` (saveChanges/discardChanges/checkSavedDetails/trySignOutAgain), `mobileOnly`, `login` and `validation`. First/last/phone labels reuse the base Dictionary FirstNameLabel/LastNameLabel/PhoneNumberLabel; optional-phone and remaining Account actions preserve the current Account component wording in dedicated MobileAccount resources. Other `ui` blocks contain existing mobile interface wording, not authored readings.
 
-The catalogue exposes all 173 leaf entries in the audited `ninestar-mobile/src/lib/ui-copy.ts` snapshot, with the migration table below identifying their destination. It also exposes the requested website-only calculator, menu/fact and feature labels. Website wording takes precedence for shared fields (including casing); remaining already-visible mobile wording was moved unchanged into `MobileUi...` Dictionary resources. No new promotional text or interface controls were added. Mobile component wiring and removal of its local literals belong to ninestar-mobile, not this backend change.
+The catalogue exposes all 173 leaf entries in the audited `ninestar-mobile/src/lib/ui-copy.ts` snapshot, with the migration table below identifying their destination. It also exposes the requested website-only calculator, menu/fact and feature labels. Website wording takes precedence for shared fields (including casing); remaining already-visible mobile wording was moved unchanged into `MobileUi...` Dictionary resources. No new promotional message or interface control was added; the localized existing membership action label is available to free calculator prompts. Mobile component wiring and removal of its local literals belong to ninestar-mobile, not this backend change.
 
 ## Culture, caching and missing values
 
@@ -62,6 +62,7 @@ All paths below are under `data`. `Base.` denotes `K9.Base.Globalisation.Diction
 | `shared.actions.signOut` | `Base.LogOut` |
 | `shared.actions.createAccount` | `CreateAccount` |
 | `shared.actions.update` | `Base.Update` |
+| `shared.actions.upgradeMembership` | `UpgradeMembershipText` |
 | `shared.calculator.groups.birthDetails` | `BirthDetails` |
 | `shared.calculator.groups.advancedPreferences` | `AdvancedCalculationPreferences` |
 | `shared.calculator.groups.southernHemisphere` | `SouthernHemisphereOptions` |

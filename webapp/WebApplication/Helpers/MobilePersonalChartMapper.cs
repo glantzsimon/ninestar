@@ -44,12 +44,13 @@ namespace K9.WebApplication.Helpers
             var upgradeAvailable = restricted.Count > 0;
             result["availability"] = new JObject
             {
+                ["contractVersion"] = 1,
                 ["status"] = isPartial ? "partial" : "included",
                 ["isPartial"] = isPartial,
                 ["requiredMembershipLevel"] = (string)null,
                 ["upgradeAvailable"] = upgradeAvailable,
                 ["upgradeLabel"] = upgradeAvailable ? K9.Globalisation.Dictionary.UpgradeMembershipText : null,
-                ["lockedFields"] = restricted
+                ["fields"] = restricted
             };
             return result;
         }

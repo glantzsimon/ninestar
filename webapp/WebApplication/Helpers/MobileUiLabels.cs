@@ -35,7 +35,8 @@ namespace K9.WebApplication.Helpers
                     SignIn = Dictionary.SignIn,
                     SignOut = BaseDictionary.LogOut,
                     CreateAccount = Dictionary.CreateAccount,
-                    Update = BaseDictionary.Update
+                    Update = BaseDictionary.Update,
+                    UpgradeMembership = Dictionary.UpgradeMembershipText
                 },
                 Calculator = new
                 {

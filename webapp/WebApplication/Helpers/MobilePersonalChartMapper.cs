@@ -110,7 +110,19 @@ namespace K9.WebApplication.Helpers
             Generation = model.PersonalChartEnergies.Generation.EnergyNumber,
             Epoch = model.PersonalChartEnergies.Epoch.EnergyNumber,
             DayStar = model.PersonalChartEnergies.Day.EnergyNumber,
-            Hour = model.PersonalChartEnergies.Hour.EnergyNumber
+            Hour = model.PersonalChartEnergies.Hour.EnergyNumber,
+            Sections = new
+            {
+                Core = (object)null, Character = (object)null, SocialExpression = (object)null,
+                IntellectualQualities = (object)null, InterpersonalQualities = (object)null,
+                EmotionalLandscape = (object)null, Career = (object)null, Occupations = (object)null,
+                Finances = (object)null, Health = (object)null, Illnesses = (object)null,
+                Spirituality = (object)null, ChildNature = (object)null,
+                AdultChildRelationship = (object)null, StressResponse = (object)null,
+                NatalHouseStressResponse = (object)null, ChildStressResponse = (object)null,
+                Relationships = (object)null, RelationshipsStraight = (object)null,
+                RelationshipsLgbtq = (object)null
+            }
         };
 
         public static MobilePersonalChartResponse Map(NineStarKiModel model, bool birthTimeKnown, bool includeHelp = true)

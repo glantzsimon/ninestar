@@ -191,12 +191,13 @@ All paths below are under `data`. `Base.` denotes `K9.Base.Globalisation.Diction
 | --- | --- |
 | `screens.membership.title`, `optionsTitle`, `choosePlan` | `MembershipLabel`, `MembershipOptions`, `ChooseYourPlan` |
 | `whyUpgrade`, `whyUpgradeDescription` | `WhyUpgrade`, `why_upgrade` |
+| `upgradePromptTitle`, `upgradePromptDescription` | `WhyUpgrade`, `why_upgrade` (shown only when response availability says `requires_membership`) |
 | `benefitsTitle`, `benefitsIntroductionHtml` | `WhatDoIGet`, `what_you_get` |
 | Benefit headings and descriptions | The matching resources used by `Views/Membership/Index.cshtml` (personal chart, compatibility, yearly/monthly and other cycles, Global Ki, Directionology, calendar, configurations, precision, Biorhythms, I Ching, Numerology, AI astrologer, Knowledge Base and consultation) |
 | `screens.membership.actions.*` | `Select`, `Unlock`, `Upgrade`, `Unavailable`, `UpgradeMembershipText` |
 | `shared.actions.upgradeMembership` | `UpgradeMembershipText` |
 
-This is display copy only. It does not grant or imply access. The native app should show an upgrade action only beside a response field whose availability status is `requires_membership`, and should navigate to its own membership page. Native billing must obtain localized prices and billing periods from StoreKit or Google Play, not this copy or the legacy website/Stripe price fields.
+This is display copy only. It does not grant or imply access. The native app should show the localized upgrade prompt/action only beside a response field whose availability status is `requires_membership`, and should navigate to its own membership page. Native billing must obtain localized prices and billing periods from StoreKit or Google Play, not this copy or the legacy website/Stripe price fields.
 
 ## Existing mobile UI migration
 

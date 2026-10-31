@@ -190,6 +190,7 @@ namespace K9.WebApplication.Helpers
                     WhyUpgradeDescription = Dictionary.why_upgrade,
                     UpgradePromptTitle = Dictionary.WhyUpgrade,
                     UpgradePromptDescription = Dictionary.why_upgrade,
+                    FreeAccountExplanation = Dictionary.why_upgrade,
                     BenefitsTitle = Dictionary.WhatDoIGet,
                     BenefitsIntroductionHtml = Dictionary.what_you_get,
                     ChoosePlan = Dictionary.ChooseYourPlan,

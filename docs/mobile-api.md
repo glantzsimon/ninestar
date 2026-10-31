@@ -396,7 +396,7 @@ For the Apple options screen, the proposed `products` array uses this shape (ill
 ```json
 {
   "productId": "<configured-app-store-product-id>",
-  "membershipOptionId": "<server-resolved-membership-option-id>",
+  "membershipOptionId": 123,
   "subscriptionType": "MonthlyPlatinum",
   "availableForPurchase": true,
   "eligibleForPurchase": true,
@@ -404,7 +404,7 @@ For the Apple options screen, the proposed `products` array uses this shape (ill
 }
 ```
 
-The server recognizes only configured product IDs and resolves the membership option itself. The agreed initial mapping is monthly → `MonthlyPlatinum` and annual → `AnnualPlatinum`; actual App Store identifiers and database option IDs are not present in this repository contract and must be supplied before implementation. The existing `GET metadata/labels` `screens.membership` block supplies localized titles, benefit descriptions and action labels. The app loads price and billing period from StoreKit.
+The server recognizes only configured product IDs and resolves the membership option itself. `membershipOptionId` is an integer; `123` above is illustrative and not a real configured option ID. The agreed initial mapping is monthly → `MonthlyPlatinum` and annual → `AnnualPlatinum`; actual App Store identifiers and database option IDs are not present in this repository contract and must be supplied before implementation. The existing `GET metadata/labels` `screens.membership` block supplies localized titles, benefit descriptions and action labels. The app loads price and billing period from StoreKit.
 
 The current `GET membership/options` remains the existing website/Stripe options projection and may include its server-computed `subscriptionPrice`; do not use that value for a native StoreKit or Play purchase. The future Apple `products[]` mapping contains identifiers, existing membership-option association, sale availability and current-account eligibility only. Product IDs are recognized from server-owned configuration and mapped to existing `MembershipOption.ESubscriptionType` values; they are not accepted from a client as an entitlement claim.
 

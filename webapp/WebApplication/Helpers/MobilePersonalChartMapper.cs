@@ -30,6 +30,7 @@ namespace K9.WebApplication.Helpers
             {
                 ["isPartial"] = isPartial,
                 ["upgradeAvailable"] = true,
+                ["upgradeLabel"] = K9.Globalisation.Dictionary.UpgradeMembershipText,
                 ["lockedFields"] = new JArray(lockedFields ?? new string[0])
             };
             return result;

@@ -3,6 +3,21 @@
 The proposed shared website/app Apple subscription contract is in [Shared website/app membership and Apple subscriptions](#shared-websiteapp-membership-and-apple-subscriptions-proposed-contract). It is a draft for agreement, not an implemented billing feature.
 
 
+## Native store billing and Integration status
+
+Source status as of 2026-10-31:
+
+| Capability | Source implementation | Integration deployment |
+| --- | --- | --- |
+| Existing membership options, quotes, entitlements and promotion redemption | Implemented on the current source branch. `membership/options` and quote routes use the existing website membership/Stripe model. The current entitlements projection reports the legacy website membership source. | Not independently verified in this work. |
+| Stripe mobile checkout | `payments/start` and `payments/complete` exist; server-side completion validates the persisted Stripe intent before fulfillment. This is website/Stripe checkout, not Apple or Google Play verification. | Not independently verified in this work. |
+| Apple in-app purchase | The `subscriptions/apple/context`, `verify` and `refresh` routes, account binding, product mapping, transaction verification, notification handling and provider-backed entitlement ledger below are proposed only. No Apple subscription controller/routes or provider ledger are present in the current source route inventory. | Not deployed; no live Integration verification was available. |
+| Google Play Billing | Deferred to Android Phase 2. No Google Play verification or entitlement-sync routes are specified or implemented. | Not deployed. |
+
+The mobile API source and route inventory establish which endpoints are declared in the repository; they do not prove which version is live on Integration. This work changes source on `master` only and performs no deployment. The Integration host did not return accessible endpoint responses through the available read-only inspection, so current deployment status for existing routes remains unverified. Do not treat the proposed Apple routes below as deployed or allow an app to unlock from a StoreKit/Play client result.
+
+Until a provider verifier is implemented, tested and deployed, preserve all current membership checks and the existing website/Stripe billing records. The existing `membership/options` price is for its current website/Stripe flow. Future native StoreKit or Play screens must use native localized price and billing-period data, not that field.
+
 ## Public artwork catalogue
 
 `GET /api/mobile/v1/metadata/artwork` supplies the shared, public artwork needed by native views. Existing website views/helpers and all existing image fields remain unchanged. This is an additive API feature with no database/migration or purchasing changes.
@@ -860,26 +875,44 @@ The public Personal Chart calculator introduction now uses `Dictionary.AboutPers
 A targeted audit of the calculator/helper views also found older hardcoded strings in `Views/Biorhythms/_BioRhythms.cshtml` (chart tooltip Date/Value/Description) and `Views/Numerology/Legacy/_NumerologyYearlyPlanner*.cshtml` (Age, Year, numerology-code headings and Roadmap/Foundation/Guide/Ascension/Elders). These remain recorded follow-ups; this is not a claim that the entire site is free of historic hardcoded display text. Do not change reading prose, structural HTML, CSS classes, route identifiers or chart format tokens as part of localisation.
 
 
-## Free calculator placeholders and upgrade metadata
+## Free calculator availability contract
 
-All free or partial calculator projections add a common `data.availability` object. This applies to free personal-chart preview/own-chart responses, free and complementary predictions, and all complementary reading calculators. Paid calculation responses and their existing membership checks are unchanged.
+Free and paid responses for a calculator use the same field paths and object shape. The content value is populated only when included; membership-protected text, objects and arrays are `null`/empty in the free response. Every response slot that can be gated has an availability status, so a client can distinguish a membership gate from a field that an older server did not send or content that does not exist.
+
+The field-level contract is:
+
+| Status | Meaning | requiredMembershipLevel |
+| --- | --- | --- |
+| `included` | This response includes the content. | `null` |
+| `requires_membership` | The field is empty because the account lacks the needed membership. | Stable membership level, currently `paid` |
+| `not_applicable` | The field does not apply (for example, an age-gated relationship panel). | `null` |
+| `no_content` | The field applies, but the calculation has no content for it. | `null` |
+
+Each gated field is described in `data.availability.fields`:
 
 ```json
 {
   "availability": {
+    "contractVersion": 1,
     "isPartial": true,
+    "fields": [
+      {
+        "path": "personal.month",
+        "status": "requires_membership",
+        "requiredMembershipLevel": "paid"
+      }
+    ],
     "upgradeAvailable": true,
-    "upgradeLabel": "Upgrade Membership",
-    "lockedFields": ["personal.month", "personal.day"]
+    "upgradeLabel": "Upgrade Membership"
   }
 }
 ```
 
-`upgradeAvailable` lets the app show its membership action without inferring access from a missing field. `upgradeLabel` is the existing localized `Dictionary.UpgradeMembershipText`; the app owns navigation to the membership screen. `lockedFields` contains stable camel-case data paths when specific fields are withheld. `isPartial` distinguishes limited projections from complete complementary results such as Numerology. Missing-cycle fields are explicitly `null` in the new `personal`, `lunar` and `global` cycle groups, so the app can reserve empty slots. Existing free fields remain unchanged.
+The app may show an upgrade action only for a field with `status: "requires_membership"`. `upgradeLabel` is the localized `Dictionary.UpgradeMembershipText`; the app owns navigation to its membership screen. A missing `availability`/field marker means the response came from an older server or an unsupported projection; it must not be interpreted as a membership gate. `no_content` and `not_applicable` never show an upgrade action. The API must not return paid reading text in a free projection.
 
-Free Predictions continue to expose the same yearly readings. Each available yearly energy now also includes registry-backed `artworkId` (no URL); the new cycle groups expose yearly values and null placeholders for unavailable periods. The full cycle groups, descriptions and paid readings remain behind the same access checks.
+The current source adds this availability metadata to free/partial projections and preserves existing paid checks. The full-shape status contract above is the required evolution for remaining calculator projections; do not infer membership from absent properties. The free Predictions projection keeps the existing yearly fields, adds registry-backed `artworkId` (never image URLs), and reserves the same period slots under `personal`, `lunar` and `global`. Protected periods remain empty with a `requires_membership` status. Personal Chart's protected section slots likewise remain empty and are listed as gated. Existing free readings, account access rules and counters remain unchanged.
 
-Suggested copy for the Predictions empty state: “Your free account includes yearly cycles only. Upgrade your membership to unlock monthly, daily and other additional cycles.” For other calculators, use: “Your free account includes limited access to this calculator. Upgrade your membership to unlock the full reading.” The mobile app can display its localized copy and open the upgrade screen when `availability.upgradeAvailable` is true. The older `predictions.additionalUnavailable` label can be retired from this flow in favor of the explicit free-account explanation.
+Suggested Predictions copy: “Your free account includes yearly cycles only. Upgrade your membership to unlock monthly, daily and other additional cycles.” General calculator copy: “Your free account includes limited access to this calculator. Upgrade your membership to unlock the full reading.” The API supplies the localized action label; clients can use their own localized explanation text. The previous `predictions.additionalUnavailable` text should not replace the explicit status.
 
 ## Predictions short period and scope labels
 

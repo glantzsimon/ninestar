@@ -20,7 +20,7 @@ namespace K9.WebApplication.Helpers
         public static string[] FreeChartLockedFields => new[]
         {
             "sections.socialExpression", "sections.interpersonalQualities", "sections.emotionalLandscape",
-            "sections.career", "sections.occupations", "sections.finances", "sections.health",
+            "sections.adultChildRelationship", "sections.career", "sections.occupations", "sections.finances", "sections.health",
             "sections.illnesses", "sections.spirituality", "sections.childNature", "sections.stressResponse",
             "sections.natalHouseStressResponse", "sections.childStressResponse",
             "health.strongOrgans", "health.weakOrgans"

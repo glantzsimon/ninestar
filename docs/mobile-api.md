@@ -391,6 +391,21 @@ All relative paths below are beneath `/api/mobile/v1`. They retain the existing 
 | POST `subscriptions/apple/verify` | `{ "transactionId": "opaque-storekit-id" }` | `{ processed: true, transactionId, state, entitlements }` only after server verification and durable transaction/grant commit. Echo the requested transaction ID; repeated same-owner submissions succeed without duplicate benefits. A valid inactive purchase can be recorded with `state: "expired"` or `"revoked"` and no Apple access. |
 | POST `subscriptions/apple/refresh` | `{}` | `{ processed: true, complete, verifiedSubscriptionCount, pendingSubscriptionCount, retryAfterSeconds, entitlements }`. Reconcile this account's already-linked chains within the request budget. `complete: false` explicitly reports a partial refresh; see timing rules below. No arbitrary transaction/account selector. |
 
+For the Apple options screen, the proposed `products` array uses this shape (illustrative IDs only):
+
+```json
+{
+  "productId": "<configured-app-store-product-id>",
+  "membershipOptionId": "<server-resolved-membership-option-id>",
+  "subscriptionType": "MonthlyPlatinum",
+  "availableForPurchase": true,
+  "eligibleForPurchase": true,
+  "ineligibleReason": null
+}
+```
+
+The server recognizes only configured product IDs and resolves the membership option itself. The agreed initial mapping is monthly → `MonthlyPlatinum` and annual → `AnnualPlatinum`; actual App Store identifiers and database option IDs are not present in this repository contract and must be supplied before implementation. The existing `GET metadata/labels` `screens.membership` block supplies localized titles, benefit descriptions and action labels. The app loads price and billing period from StoreKit.
+
 The current `GET membership/options` remains the existing website/Stripe options projection and may include its server-computed `subscriptionPrice`; do not use that value for a native StoreKit or Play purchase. The future Apple `products[]` mapping contains identifiers, existing membership-option association, sale availability and current-account eligibility only. Product IDs are recognized from server-owned configuration and mapped to existing `MembershipOption.ESubscriptionType` values; they are not accepted from a client as an entitlement claim.
 
 `purchaseAllowed` governs starting a **new** Apple subscription, not restoring or managing an owned chain. `purchaseBlockedReason` is null when allowed; otherwise choose `website_membership_active` first if any eligible legacy grant exists, then `apple_subscription_active` for an active/grace Apple grant, then `apple_subscription_requires_management` for billing retry. No second subscription should be offered blindly. Same-group plan changes remain available through Apple management even when a new purchase is blocked. `products` is a product mapping, not a price quote: display actual StoreKit-localised pricing/periods and disclosures.

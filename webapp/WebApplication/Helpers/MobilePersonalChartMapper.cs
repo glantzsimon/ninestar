@@ -17,6 +17,15 @@ namespace K9.WebApplication.Helpers
 {
     public static class MobilePersonalChartMapper
     {
+        public static string[] FreeChartLockedFields => new[]
+        {
+            "sections.socialExpression", "sections.interpersonalQualities", "sections.emotionalLandscape",
+            "sections.career", "sections.occupations", "sections.finances", "sections.health",
+            "sections.illnesses", "sections.spirituality", "sections.childNature", "sections.stressResponse",
+            "sections.natalHouseStressResponse", "sections.childStressResponse",
+            "health.strongOrgans", "health.weakOrgans"
+        };
+
         // Additive availability metadata for free/partial calculator projections.
         // Serialize through the API's camel-case contract before modifying the JSON.
         public static JObject WithFreeAvailability(object projection, bool isPartial, params string[] lockedFields)

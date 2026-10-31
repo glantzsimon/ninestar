@@ -182,6 +182,50 @@ namespace K9.WebApplication.Helpers
                     ActualisationYears = Dictionary.ActualisationYears,
                     MasteryYears = Dictionary.MasteryYears
                 },
+                Membership = new
+                {
+                    Title = Dictionary.MembershipLabel,
+                    OptionsTitle = Dictionary.MembershipOptions,
+                    WhyUpgrade = Dictionary.WhyUpgrade,
+                    WhyUpgradeDescription = Dictionary.why_upgrade,
+                    BenefitsTitle = Dictionary.WhatDoIGet,
+                    BenefitsIntroductionHtml = Dictionary.what_you_get,
+                    ChoosePlan = Dictionary.ChooseYourPlan,
+                    Benefits = new
+                    {
+                        PersonalChartReadings = Dictionary.PersonalChartReadings,
+                        PersonalChartDescriptionHtml = Dictionary.PersonalChartDescription,
+                        CompatibilityReadings = Dictionary.CompatibilityReadings,
+                        CompatibilityDescriptionHtml = Dictionary.CompatibilityDescription,
+                        YearlyAndMonthlyCycles = Dictionary.YearlyAndMonthlyCycles,
+                        OtherCycles = Dictionary.OtherCyclesTitle,
+                        OtherCyclesDescriptionHtml = Dictionary.OtherCyclesDescription,
+                        GlobalKi = Dictionary.GlobalKiTitle,
+                        GlobalKiDescriptionHtml = Dictionary.GlobalKiDescription,
+                        Directionology = Dictionary.Directionology,
+                        DirectionologyDescriptionHtml = Dictionary.DirectionologyDetails,
+                        InteractiveCalendar = Dictionary.InteractiveCalendar,
+                        InteractiveCalendarDescriptionHtml = Dictionary.InteractiveCalendarDescription,
+                        ConfigurableCalculators = Dictionary.ConfigurationTitle,
+                        ConfigurableCalculatorsDescriptionHtml = Dictionary.ConfigurationsDescription,
+                        AstronomicalPrecision = Dictionary.AstronomicalPrecision,
+                        AstronomicalPrecisionDescriptionHtml = Dictionary.AstronomicalPrecisionDetails,
+                        Biorhythms = Dictionary.NineStarKiBiorhythmsLabel,
+                        IChing = Dictionary.IChingHexagramGenerator,
+                        Numerology = Dictionary.AccessToKarmicNumerology,
+                        AiAstrologer = Dictionary.AccessToOurGPTMembershipItem,
+                        KnowledgeBase = Dictionary.KnowledgeBase,
+                        ComplimentaryConsultation = Dictionary.FreeConsultationOfferText
+                    },
+                    Actions = new
+                    {
+                        Select = Dictionary.Select,
+                        Unlock = Dictionary.Unlock,
+                        Upgrade = Dictionary.Upgrade,
+                        Unavailable = Dictionary.Unavailable,
+                        UpgradeMembership = Dictionary.UpgradeMembershipText
+                    }
+                },
                 Biorhythms = new
                 {
                     Title = Dictionary.BiorhythmsLabel,

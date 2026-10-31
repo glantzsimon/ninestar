@@ -82,9 +82,10 @@ namespace K9.WebApplication.Controllers
                     EmotionalLandscape = (object)null, Career = (object)null, Occupations = (object)null,
                     Finances = (object)null, Health = (object)null, Illnesses = (object)null,
                     Spirituality = (object)null, ChildNature = (object)null,
-                    StressResponse = (object)null, NatalHouseStressResponse = (object)null,
-                    ChildStressResponse = (object)null
-                }
+                    AdultChildRelationship = (object)null, StressResponse = (object)null,
+                    NatalHouseStressResponse = (object)null, ChildStressResponse = (object)null
+                },
+                Health = new { StrongOrgans = (object)null, WeakOrgans = (object)null }
             };
             return ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(preview, true, MobilePersonalChartMapper.FreeChartLockedFields));
         }

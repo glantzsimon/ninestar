@@ -79,7 +79,25 @@ namespace K9.WebApplication.Helpers
             {
                 Core = Text(model.MainEnergy.EnergyDescription, model.MainEnergy.MainEnergySummary),
                 Character = Text(model.CharacterEnergy.EnergyDescription, model.CharacterEnergy.CharacterEnergySummary, title: model.CharacterEnergy.DescriptiveTitle),
-                IntellectualQualities = Text(model.MainEnergy.IntellectualQualities, model.MainEnergy.IntellectualQualitiesSummary)
+                SocialExpression = Text(null),
+                IntellectualQualities = Text(model.MainEnergy.IntellectualQualities, model.MainEnergy.IntellectualQualitiesSummary),
+                InterpersonalQualities = Text(null),
+                EmotionalLandscape = Text(null),
+                Career = Text(null),
+                Occupations = Text(null),
+                Finances = Text(null),
+                Health = Text(null),
+                Illnesses = Text(null),
+                Spirituality = Text(null),
+                ChildNature = Text(null, title: Dictionary.ChildNature),
+                StressResponse = Text(null, title: Dictionary.StressResponse),
+                NatalHouseStressResponse = Text(null, title: Dictionary.StressResponse),
+                ChildStressResponse = Text(null, title: Dictionary.StressResponse)
+            },
+            Health = new
+            {
+                StrongOrgans = new { Title = (string)null, HtmlBody = (string)null, YinOrgans = (object)null, YangOrgans = (object)null },
+                WeakOrgans = new { Title = (string)null, HtmlBody = (string)null, YinOrgans = (object)null, YangOrgans = (object)null }
             }
         };
 

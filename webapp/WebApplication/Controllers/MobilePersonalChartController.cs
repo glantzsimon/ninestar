@@ -56,7 +56,7 @@ namespace K9.WebApplication.Controllers
             var model = CalculateProfile(_nineStarKiService, request, own: true);
             // Match the own/free chart's explicit section grants. In particular,
             // do not reuse the full Energy DTO, which includes other paid prose.
-            return ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(MobilePersonalChartMapper.FreeProfile(model), true));
+            return ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(MobilePersonalChartMapper.FreeProfile(model), true, MobilePersonalChartMapper.FreeChartLockedFields));
         }
 
         [HttpPost, Route("preview")]
@@ -76,7 +76,7 @@ namespace K9.WebApplication.Controllers
                 DayStar = model.PersonalChartEnergies.Day.EnergyNumber,
                 Hour = model.PersonalChartEnergies.Hour.EnergyNumber
             };
-            return ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(preview, true));
+            return ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(preview, true, MobilePersonalChartMapper.FreeChartLockedFields));
         }
 
         [HttpPost, Route("alchemy")]

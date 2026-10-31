@@ -183,6 +183,21 @@ All paths below are under `data`. `Base.` denotes `K9.Base.Globalisation.Diction
 
 `screens.personalChart.roles` reuses MobilePersonalChartMapper.RoleLabels; `screens.predictions.labels` reuses PredictionLabels; `screens.compatibility.labels` reuses CompatibilityLabels; `screens.calendar.labels` reuses CalendarLabels. Their exact existing mappings remain documented in mobile-api.md. They contain labels only, not readings or calculated scores. The Compatibility catalogue contains the complete label vocabulary; a result's privacy/access-controlled content still decides which sections to render.
 
+## Membership options screen copy
+
+`data.screens.membership` is an additive, Dictionary-backed block in the existing `GET /api/mobile/v1/metadata/labels` response. It includes membership page titles, the “Why upgrade?” and benefits introductions, each website benefit heading/description, plan-selection actions, and the existing localized `UpgradeMembershipText` action. Resource values and capitalization are passed through unchanged; fields ending in `Html` are the same resource-authored HTML used by the website membership page.
+
+| API field | Dictionary resource |
+| --- | --- |
+| `screens.membership.title`, `optionsTitle`, `choosePlan` | `MembershipLabel`, `MembershipOptions`, `ChooseYourPlan` |
+| `whyUpgrade`, `whyUpgradeDescription` | `WhyUpgrade`, `why_upgrade` |
+| `benefitsTitle`, `benefitsIntroductionHtml` | `WhatDoIGet`, `what_you_get` |
+| Benefit headings and descriptions | The matching resources used by `Views/Membership/Index.cshtml` (personal chart, compatibility, yearly/monthly and other cycles, Global Ki, Directionology, calendar, configurations, precision, Biorhythms, I Ching, Numerology, AI astrologer, Knowledge Base and consultation) |
+| `screens.membership.actions.*` | `Select`, `Unlock`, `Upgrade`, `Unavailable`, `UpgradeMembershipText` |
+| `shared.actions.upgradeMembership` | `UpgradeMembershipText` |
+
+This is display copy only. It does not grant or imply access. The native app should show an upgrade action only beside a response field whose availability status is `requires_membership`, and should navigate to its own membership page. Native billing must obtain localized prices and billing periods from StoreKit or Google Play, not this copy or the legacy website/Stripe price fields.
+
 ## Existing mobile UI migration
 
 Source: glantzsimon/ninestar-mobile `src/lib/ui-copy.ts` (blob `8ff158ad7c528055a4c828104c089eb9d2e8b508`), plus calculator-labels-handover.md, ui-label-audit.md and iching-api-handover.md. Left column is the previous local uiCopy path; middle column is the new API path under `data`. This table covers the current central inventory; additional scattered component literals should reuse these fields or be registered as explicit resources, never dynamically exported.

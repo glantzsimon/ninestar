@@ -46,7 +46,7 @@ namespace K9.WebApplication.Controllers
             var request = ReadOwnCalculationRequest(id);
             if (request != null) request.SelectedDateTime = selectedDateTime;
             if (!ValidInput(request)) return ApiError(409, "birth_details_required");
-            return ApiSuccess(FreePredictions(CalculateProfile(_profiles, request, true, true, true)));
+            return ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(FreePredictions(CalculateProfile(_profiles, request, true, true, true)), true, LockedFields("predictions")));
         }
 
         [HttpPost, Route("{section}/me/alchemy")]
@@ -93,16 +93,17 @@ namespace K9.WebApplication.Controllers
                 case "predictions":
                     var request = ReadLastRequest<MobileCalculationRequest>("complementary-" + section);
                     if (!ValidInput(request)) return ApiError(404, "reading_not_found");
-                    return ApiSuccess(section == "personal-chart"
+                    var profileResult = section == "personal-chart"
                         ? MobilePersonalChartMapper.FreeProfile(CalculateProfile(_profiles, request))
-                        : FreePredictions(CalculateProfile(_profiles, request, true, true)));
+                        : FreePredictions(CalculateProfile(_profiles, request, true, true));
+                    return ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(profileResult, true, LockedFields(section)));
                 case "compatibility":
                     var compatibility = ReadLastRequest<MobileCompatibilityRequest>("complementary-compatibility");
-                    return !ValidInput(compatibility) ? (ActionResult)ApiError(404, "reading_not_found") : ApiSuccess(ComplementaryCompatibility(compatibility));
+                    return !ValidInput(compatibility) ? (ActionResult)ApiError(404, "reading_not_found") : ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(ComplementaryCompatibility(compatibility), true));
                 case "numerology":
                     var person = ReadLastRequest<MobilePersonRequest>("complementary-numerology");
                     return !ValidInput(person) ? (ActionResult)ApiError(404, "reading_not_found")
-                        : ApiSuccess(MobileCalculationMapper.Numerology(_numerology.Calculate(new NumerologyModel(person.ToPerson(false)))));
+                        : ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(MobileCalculationMapper.Numerology(_numerology.Calculate(new NumerologyModel(person.ToPerson(false)))), false));
                 default: return ApiError(404, "reading_not_found");
             }
         }
@@ -120,6 +121,9 @@ namespace K9.WebApplication.Controllers
                 if (membership?.MembershipOption?.IsFree != true) return ApiError(409, "use_paid_calculation");
                 if (Remaining(membership, section) <= 0) return ApiError(403, "complementary_readings_exhausted");
                 var data = calculate();
+                var availability = MobilePersonalChartMapper.WithFreeAvailability(data,
+                    section == "personal-chart" || section == "predictions" || section == "compatibility",
+                    LockedFields(section));
                 switch (section)
                 {
                     case "personal-chart": Package.MembershipService.UseComplementaryPersonalChartReading(id); break;
@@ -128,7 +132,7 @@ namespace K9.WebApplication.Controllers
                     case "numerology": Package.MembershipService.UseComplementaryKarmicReading(id); break;
                     default: throw new ArgumentException(nameof(section));
                 }
-                var result = ApiSuccess(data); // Serialize successfully before committing the debit.
+                var result = ApiSuccess(availability); // Serialize successfully before committing the debit.
                 transaction.Commit();
                 SaveLastRequest("complementary-" + section, request);
                 return result;
@@ -160,10 +164,24 @@ namespace K9.WebApplication.Controllers
         private static object FreeYear(NineStarKiEnergy energy, bool global = false) => energy == null ? null : new
         {
             HouseName = energy.HouseName,
-            Number = energy.EnergyNumber, Title = energy.CycleDescriptiveName,
+            Number = energy.EnergyNumber,
+            ArtworkId = MobileArtworkRegistry.IdForPath("ninestar/energies/" + energy.EnergyLowerCase + ".png"),
+            Title = energy.CycleDescriptiveName,
             energy.Season, energy.SeasonDescription,
             Description = global ? energy.GlobalCycleDescription : energy.CycleDescription
         };
+
+        private static object FreeCycles(NineStarKiEnergiesModel energies, bool global = false) => energies == null ? null : new
+        {
+            Epoch = (object)null, Generation = (object)null,
+            Year = FreeYear(energies.Year, global), Month = (object)null,
+            Day = (object)null, Afternoon = (object)null, InvertedDay = (object)null,
+            InvertedAfternoon = (object)null, Hour = (object)null
+        };
+
+        private static string[] LockedFields(string section) => section == "predictions"
+            ? new[] { "personal.epoch", "personal.generation", "personal.month", "personal.day", "personal.afternoon", "personal.invertedDay", "personal.invertedAfternoon", "personal.hour", "lunar.epoch", "lunar.generation", "lunar.month", "lunar.day", "lunar.afternoon", "lunar.invertedDay", "lunar.invertedAfternoon", "lunar.hour", "global.epoch", "global.generation", "global.month", "global.day", "global.afternoon", "global.invertedDay", "global.invertedAfternoon", "global.hour" }
+            : new string[0];
 
         private static object FreePredictions(NineStarKiModel model) => new
         {
@@ -172,7 +190,10 @@ namespace K9.WebApplication.Controllers
             model.SelectedDate, Profile = MobilePersonalChartMapper.Numbers(model),
             Year = FreeYear(model.PersonalHousesOccupiedEnergies.Year),
             LunarYear = FreeYear(model.PersonalHousesOccupiedLunarEnergies?.Year),
-            GlobalYear = FreeYear(model.GlobalCycleEnergies.Year, global: true)
+            GlobalYear = FreeYear(model.GlobalCycleEnergies.Year, global: true),
+            Personal = FreeCycles(model.PersonalHousesOccupiedEnergies),
+            Lunar = FreeCycles(model.PersonalHousesOccupiedLunarEnergies),
+            Global = FreeCycles(model.GlobalCycleEnergies, global: true)
         };
     }
 }

@@ -74,7 +74,17 @@ namespace K9.WebApplication.Controllers
                 Generation = model.PersonalChartEnergies.Generation.EnergyNumber,
                 Epoch = model.PersonalChartEnergies.Epoch.EnergyNumber,
                 DayStar = model.PersonalChartEnergies.Day.EnergyNumber,
-                Hour = model.PersonalChartEnergies.Hour.EnergyNumber
+                Hour = model.PersonalChartEnergies.Hour.EnergyNumber,
+                Sections = new
+                {
+                    Core = (object)null, Character = (object)null, SocialExpression = (object)null,
+                    IntellectualQualities = (object)null, InterpersonalQualities = (object)null,
+                    EmotionalLandscape = (object)null, Career = (object)null, Occupations = (object)null,
+                    Finances = (object)null, Health = (object)null, Illnesses = (object)null,
+                    Spirituality = (object)null, ChildNature = (object)null,
+                    StressResponse = (object)null, NatalHouseStressResponse = (object)null,
+                    ChildStressResponse = (object)null
+                }
             };
             return ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(preview, true, MobilePersonalChartMapper.FreeChartLockedFields));
         }

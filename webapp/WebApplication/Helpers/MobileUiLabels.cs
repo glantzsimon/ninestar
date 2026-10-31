@@ -188,6 +188,8 @@ namespace K9.WebApplication.Helpers
                     OptionsTitle = Dictionary.MembershipOptions,
                     WhyUpgrade = Dictionary.WhyUpgrade,
                     WhyUpgradeDescription = Dictionary.why_upgrade,
+                    UpgradePromptTitle = Dictionary.WhyUpgrade,
+                    UpgradePromptDescription = Dictionary.why_upgrade,
                     BenefitsTitle = Dictionary.WhatDoIGet,
                     BenefitsIntroductionHtml = Dictionary.what_you_get,
                     ChoosePlan = Dictionary.ChooseYourPlan,

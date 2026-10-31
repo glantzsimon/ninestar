@@ -7,6 +7,7 @@ using K9.WebApplication.ViewModels.MobileApi;
 using System;
 using System.Data;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -179,11 +180,19 @@ namespace K9.WebApplication.Controllers
             InvertedAfternoon = (object)null, Hour = (object)null
         };
 
-        private static string[] LockedFields(string section) => section == "predictions"
-            ? new[] { "personal.epoch", "personal.generation", "personal.month", "personal.day", "personal.afternoon", "personal.invertedDay", "personal.invertedAfternoon", "personal.hour", "lunar.epoch", "lunar.generation", "lunar.month", "lunar.day", "lunar.afternoon", "lunar.invertedDay", "lunar.invertedAfternoon", "lunar.hour", "global.epoch", "global.generation", "global.month", "global.day", "global.afternoon", "global.invertedDay", "global.invertedAfternoon", "global.hour" }
-            : section == "personal-chart"
-                ? MobilePersonalChartMapper.FreeChartLockedFields
-                : new string[0];
+        private static string[] LockedFields(string section)
+        {
+            if (section == "predictions")
+                return new[] { "personal.epoch", "personal.generation", "personal.month", "personal.day", "personal.afternoon", "personal.invertedDay", "personal.invertedAfternoon", "personal.hour", "lunar.epoch", "lunar.generation", "lunar.month", "lunar.day", "lunar.afternoon", "lunar.invertedDay", "lunar.invertedAfternoon", "lunar.hour", "global.epoch", "global.generation", "global.month", "global.day", "global.afternoon", "global.invertedDay", "global.invertedAfternoon", "global.hour" }
+                    .Concat(MobilePersonalChartMapper.FreeChartLockedFields.Select(path => "profile." + path))
+                    .ToArray();
+            if (section == "personal-chart")
+                return MobilePersonalChartMapper.FreeChartLockedFields;
+            if (section == "compatibility")
+                return MobilePersonalChartMapper.FreeChartLockedFields
+                    .SelectMany(path => new[] { "firstPerson." + path, "secondPerson." + path }).ToArray();
+            return new string[0];
+        }
 
         private static object FreePredictions(NineStarKiModel model) => new
         {

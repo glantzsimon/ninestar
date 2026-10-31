@@ -56,7 +56,7 @@ namespace K9.WebApplication.Controllers
             var model = CalculateProfile(_nineStarKiService, request, own: true);
             // Match the own/free chart's explicit section grants. In particular,
             // do not reuse the full Energy DTO, which includes other paid prose.
-            return ApiSuccess(MobilePersonalChartMapper.FreeProfile(model));
+            return ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(MobilePersonalChartMapper.FreeProfile(model), true));
         }
 
         [HttpPost, Route("preview")]
@@ -66,7 +66,7 @@ namespace K9.WebApplication.Controllers
             var model = CalculateProfile(_nineStarKiService, request);
             // The public calculator exposes numbers and its overview. Never
             // include a full Energy DTO here: descriptions include paid text.
-            return ApiSuccess(new
+            var preview = new
             {
                 model.Summary, model.Overview,
                 Core = model.MainEnergy.EnergyNumber, Character = model.CharacterEnergy.EnergyNumber,
@@ -75,7 +75,8 @@ namespace K9.WebApplication.Controllers
                 Epoch = model.PersonalChartEnergies.Epoch.EnergyNumber,
                 DayStar = model.PersonalChartEnergies.Day.EnergyNumber,
                 Hour = model.PersonalChartEnergies.Hour.EnergyNumber
-            });
+            };
+            return ApiSuccess(MobilePersonalChartMapper.WithFreeAvailability(preview, true));
         }
 
         [HttpPost, Route("alchemy")]

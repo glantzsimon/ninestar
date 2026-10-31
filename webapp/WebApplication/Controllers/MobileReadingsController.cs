@@ -181,7 +181,9 @@ namespace K9.WebApplication.Controllers
 
         private static string[] LockedFields(string section) => section == "predictions"
             ? new[] { "personal.epoch", "personal.generation", "personal.month", "personal.day", "personal.afternoon", "personal.invertedDay", "personal.invertedAfternoon", "personal.hour", "lunar.epoch", "lunar.generation", "lunar.month", "lunar.day", "lunar.afternoon", "lunar.invertedDay", "lunar.invertedAfternoon", "lunar.hour", "global.epoch", "global.generation", "global.month", "global.day", "global.afternoon", "global.invertedDay", "global.invertedAfternoon", "global.hour" }
-            : new string[0];
+            : section == "personal-chart"
+                ? new[] { "sections.socialExpression", "sections.interpersonalQualities", "sections.emotionalLandscape", "sections.career", "sections.occupations", "sections.finances", "sections.health", "sections.illnesses", "sections.spirituality", "sections.childNature", "sections.stressResponse", "sections.natalHouseStressResponse", "sections.childStressResponse", "health.strongOrgans", "health.weakOrgans" }
+                : new string[0];
 
         private static object FreePredictions(NineStarKiModel model) => new
         {

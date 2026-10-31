@@ -860,6 +860,27 @@ The public Personal Chart calculator introduction now uses `Dictionary.AboutPers
 A targeted audit of the calculator/helper views also found older hardcoded strings in `Views/Biorhythms/_BioRhythms.cshtml` (chart tooltip Date/Value/Description) and `Views/Numerology/Legacy/_NumerologyYearlyPlanner*.cshtml` (Age, Year, numerology-code headings and Roadmap/Foundation/Guide/Ascension/Elders). These remain recorded follow-ups; this is not a claim that the entire site is free of historic hardcoded display text. Do not change reading prose, structural HTML, CSS classes, route identifiers or chart format tokens as part of localisation.
 
 
+## Free calculator placeholders and upgrade metadata
+
+All free or partial calculator projections add a common `data.availability` object. This applies to free personal-chart preview/own-chart responses, free and complementary predictions, and all complementary reading calculators. Paid calculation responses and their existing membership checks are unchanged.
+
+```json
+{
+  "availability": {
+    "isPartial": true,
+    "upgradeAvailable": true,
+    "upgradeLabel": "Upgrade Membership",
+    "lockedFields": ["personal.month", "personal.day"]
+  }
+}
+```
+
+`upgradeAvailable` lets the app show its membership action without inferring access from a missing field. `upgradeLabel` is the existing localized `Dictionary.UpgradeMembershipText`; the app owns navigation to the membership screen. `lockedFields` contains stable camel-case data paths when specific fields are withheld. `isPartial` distinguishes limited projections from complete complementary results such as Numerology. Missing-cycle fields are explicitly `null` in the new `personal`, `lunar` and `global` cycle groups, so the app can reserve empty slots. Existing free fields remain unchanged.
+
+Free Predictions continue to expose the same yearly readings. Each available yearly energy now also includes registry-backed `artworkId` (no URL); the new cycle groups expose yearly values and null placeholders for unavailable periods. The full cycle groups, descriptions and paid readings remain behind the same access checks.
+
+Suggested copy for the Predictions empty state: “Your free account includes yearly cycles only. Upgrade your membership to unlock monthly, daily and other additional cycles.” For other calculators, use: “Your free account includes limited access to this calculator. Upgrade your membership to unlock the full reading.” The mobile app can display its localized copy and open the upgrade screen when `availability.upgradeAvailable` is true. The older `predictions.additionalUnavailable` label can be retired from this flow in favor of the explicit free-account explanation.
+
 ## Predictions short period and scope labels
 
 Full Predictions (`predictions/calculate`, `predictions/me`, `predictions/last`, and full saved-reading projections) and free/complementary Predictions (`readings/predictions/me/free`, `readings/predictions`, and their existing saved-reading projections) include `data.labels`. These are navigation labels, separate from longer `help` titles and energy-specific reading titles. Clients must use the supplied strings rather than translating enum keys or removing “About” from help titles.

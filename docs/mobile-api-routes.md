@@ -1,6 +1,6 @@
 # Declared mobile API routes
 
-Source inventory, not evidence of executed HTTP tests. See [mobile-api.md](mobile-api.md) for access rules and scope, and [mobile-api-validation.md](mobile-api-validation.md) for runtime gates. Every POST requires the CSRF header/cookie pair.
+Source inventory, not evidence of executed HTTP tests or Integration deployment. Apple `subscriptions/apple/*` routes remain proposed and are intentionally absent from this implemented-route list; Google Play Billing is deferred to Android Phase 2. See [mobile-api.md](mobile-api.md) for billing and access status, and [mobile-api-validation.md](mobile-api-validation.md) for runtime gates. Every POST requires the CSRF header/cookie pair.
 
 | Method | Route | Controller action |
 | --- | --- | --- |

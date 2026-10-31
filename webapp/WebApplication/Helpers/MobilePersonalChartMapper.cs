@@ -91,6 +91,7 @@ namespace K9.WebApplication.Helpers
                 Illnesses = Text(null),
                 Spirituality = Text(null),
                 ChildNature = Text(null, title: Dictionary.ChildNature),
+                AdultChildRelationship = Text(null, title: Dictionary.AdultChildRelationshipTitle),
                 StressResponse = Text(null, title: Dictionary.StressResponse),
                 NatalHouseStressResponse = Text(null, title: Dictionary.StressResponse),
                 ChildStressResponse = Text(null, title: Dictionary.StressResponse)

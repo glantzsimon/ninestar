@@ -35,12 +35,21 @@ namespace K9.WebApplication.Helpers
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
             });
             var result = JObject.FromObject(projection, serializer);
+            var restricted = new JArray((lockedFields ?? new string[0]).Select(path => new JObject
+            {
+                ["path"] = path,
+                ["status"] = "requires_membership",
+                ["requiredMembershipLevel"] = "paid"
+            }));
+            var upgradeAvailable = restricted.Count > 0;
             result["availability"] = new JObject
             {
+                ["status"] = isPartial ? "partial" : "included",
                 ["isPartial"] = isPartial,
-                ["upgradeAvailable"] = true,
-                ["upgradeLabel"] = K9.Globalisation.Dictionary.UpgradeMembershipText,
-                ["lockedFields"] = new JArray(lockedFields ?? new string[0])
+                ["requiredMembershipLevel"] = (string)null,
+                ["upgradeAvailable"] = upgradeAvailable,
+                ["upgradeLabel"] = upgradeAvailable ? K9.Globalisation.Dictionary.UpgradeMembershipText : null,
+                ["lockedFields"] = restricted
             };
             return result;
         }

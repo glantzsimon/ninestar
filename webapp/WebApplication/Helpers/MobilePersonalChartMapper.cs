@@ -8,12 +8,33 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 using Dictionary = K9.Globalisation.Dictionary;
 
 namespace K9.WebApplication.Helpers
 {
     public static class MobilePersonalChartMapper
     {
+        // Additive availability metadata for free/partial calculator projections.
+        // Serialize through the API's camel-case contract before modifying the JSON.
+        public static JObject WithFreeAvailability(object projection, bool isPartial, params string[] lockedFields)
+        {
+            var serializer = JsonSerializer.Create(new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            });
+            var result = JObject.FromObject(projection, serializer);
+            result["availability"] = new JObject
+            {
+                ["isPartial"] = isPartial,
+                ["upgradeAvailable"] = true,
+                ["lockedFields"] = new JArray(lockedFields ?? new string[0])
+            };
+            return result;
+        }
+
         public static object FreeProfile(NineStarKiModel model) => new
         {
             model.Summary, model.Overview,

@@ -13,7 +13,7 @@ namespace K9.DataAccessLayer.Database.Seeds
 
             AddOrEditMembershipOption(context, "WeeklyPlatinumMembership", "weekly_membership_description", MembershipOption.ESubscriptionType.WeeklyPlatinum, 9, true);
 
-            AddOrEditMembershipOption(context, "MonthlyPlatinumMembership", "monthly_membership_description", MembershipOption.ESubscriptionType.MonthlyPlatinum, 27, true);
+            AddOrEditMembershipOption(context, "MonthlyPlatinumMembership", "monthly_membership_description", MembershipOption.ESubscriptionType.MonthlyPlatinum, 18, true);
 
             AddOrEditMembershipOption(context, "YearlyPlatinumMembership", "annual_membership_description", MembershipOption.ESubscriptionType.AnnualPlatinum, 81, true);
 

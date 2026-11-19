@@ -26,8 +26,8 @@ Checked exact image dimensions, transparent PNG backgrounds, all three ICO frame
 
 ## Page-load logo
 
-The main and retained original layouts use the owner's committed `Images/shared/ninestar-spinner.webp` for page loading. Its rotation, blur and opacity changes are encoded in the image; no additional CSS pulse is applied. A picture source selects WebP when reduced motion is not requested; the existing PNG is the fallback for unsupported WebP or reduced motion. The supplied WebP and PNG are unchanged.
+The main and retained original layouts use the owner's `Images/shared/ninestar-spinner.gif` for page loading. A picture source selects the existing still PNG for visitors who prefer reduced motion; the GIF is the default and the fallback where `<picture>` is unsupported. No additional CSS pulse is applied. The WebP and PNG assets remain in the project, but the page-loading layouts no longer request the WebP.
 
 The existing application-relative Url.Content paths, 114-square size, eager image loading, centring styles, pageFadeInOverlay and fadePageIn.js timings are preserved. Existing pageSpinner and partialSpinner controls and old GIF assets remain untouched. The WebP is explicitly registered as Content for publishing.
 
-Validation: source asset exists in the branch; project XML, references, unchanged image hashes and removal of CSS pulse checked. Full Windows MVC/Razor build and hosted browser validation remain outstanding. IIS must serve .webp as image/webp; protected hosting configuration has not been inspected or changed. No deployment or schema operations.
+Validation: GIF, PNG and WebP assets exist; both layouts preserve the 114-square display size and reduced-motion still image. Full Windows MVC/Razor build and hosted browser validation remain outstanding. No deployment or schema operations.
